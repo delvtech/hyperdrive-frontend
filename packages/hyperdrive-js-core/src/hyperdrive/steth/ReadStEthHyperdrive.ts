@@ -155,43 +155,28 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     async previewCloseLong({
       maturityTime,
       bondAmountIn,
-      minAmountOut: _minAmountOut,
-      destination,
       asBase,
-      extraData,
       options,
     }: Parameters<ReadHyperdrive["previewCloseLong"]>[0]): ReturnType<
       ReadHyperdrive["previewCloseLong"]
     > {
       const requiresConversion = !asBase && !this.isUsingSharesAccounting;
-      let minAmountOut = _minAmountOut;
 
-      if (requiresConversion) {
-        // Using the latest block since the preview will simulate the transaction
-        // using the latest state of the contract.
-        minAmountOut = await this.convertToShares(minAmountOut, {
-          blockTag: "latest",
-        });
-      }
-
-      const { flatPlusCurveFee, maxBondsOut } = await super.previewCloseLong({
+      const { flatPlusCurveFee, maxAmountOut } = await super.previewCloseLong({
         maturityTime,
         bondAmountIn,
-        minAmountOut,
-        destination,
         asBase,
-        extraData,
         options,
       });
 
       if (requiresConversion) {
-        const convertedStEthAmount = await this.convertToStEth(maxBondsOut, {
+        const convertedStEthAmount = await this.convertToStEth(maxAmountOut, {
           blockTag: "latest",
         });
-        return { maxBondsOut: convertedStEthAmount, flatPlusCurveFee };
+        return { maxAmountOut: convertedStEthAmount, flatPlusCurveFee };
       }
 
-      return { maxBondsOut, flatPlusCurveFee };
+      return { maxAmountOut, flatPlusCurveFee };
     }
 
     async previewOpenShort({

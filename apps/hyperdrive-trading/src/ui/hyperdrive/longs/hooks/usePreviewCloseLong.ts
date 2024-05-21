@@ -59,15 +59,13 @@ export function usePreviewCloseLong({
           readHyperdrive.previewCloseLong({
             maturityTime,
             bondAmountIn,
-            minAmountOut: minOutput,
-            destination,
             asBase,
           })
       : undefined,
   });
 
   return {
-    amountOut: data?.maxBondsOut,
+    amountOut: data?.maxAmountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseLongStatus: status,
   };

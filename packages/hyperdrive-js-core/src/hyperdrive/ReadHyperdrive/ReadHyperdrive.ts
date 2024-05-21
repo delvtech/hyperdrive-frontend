@@ -11,7 +11,7 @@ import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
-import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
+import { MAX_UINT256 } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
@@ -1529,25 +1529,18 @@ export class ReadHyperdrive extends ReadModel {
   async previewCloseLong({
     maturityTime,
     bondAmountIn,
-    minAmountOut,
-    destination,
     asBase,
-    extraData = ZERO_ADDRESS,
     options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
     asBase: boolean;
-    extraData?: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<{ maxBondsOut: bigint; flatPlusCurveFee: bigint }> {
+  }): Promise<{ maxAmountOut: bigint; flatPlusCurveFee: bigint }> {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
-
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
-    // Calculate fees
+
     const flatFeeInShares = BigInt(
       hyperwasm.closeLongFlatFee(
         convertBigIntsToStrings(info),
@@ -1567,9 +1560,6 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
-    // console.log(dnum.format([flatFee, 18]), "flatFee");
-    // console.log(dnum.format([curveFee, 18]), "curveFee");
-
     const maxOutInShares = BigInt(
       hyperwasm.calcCloseLong(
         convertBigIntsToStrings(info),
@@ -1579,10 +1569,10 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    let maxOut = maxOutInShares;
+    let maxAmountOut = maxOutInShares;
     let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
     if (asBase) {
-      maxOut = convertSharesToBase({
+      maxAmountOut = convertSharesToBase({
         sharesAmount: maxOutInShares,
         vaultSharePrice: info.vaultSharePrice,
         decimals: await this.getDecimals(),
@@ -1595,8 +1585,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     return {
-      // TODO: Rename this to maxAmountOut
-      maxBondsOut: maxOut,
+      maxAmountOut,
       flatPlusCurveFee,
     };
   }
