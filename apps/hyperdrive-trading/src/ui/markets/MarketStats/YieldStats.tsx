@@ -35,14 +35,15 @@ export function YieldStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { impliedRate, impliedRateStatus } = useImpliedRate({
-    bondAmount: parseUnits("1", 18),
-    hyperdriveAddress: hyperdrive.address,
-    variableApy: vaultRate ? vaultRate.vaultRate : undefined,
-    timestamp: BigInt(Math.floor(Date.now() / 1000)),
-  });
+  const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
+    useImpliedRate({
+      bondAmount: parseUnits("1", 18),
+      hyperdriveAddress: hyperdrive.address,
+      variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
+      timestamp: BigInt(Math.floor(Date.now() / 1000)),
+    });
 
-  const formattedRate = impliedRate ? formatRate(impliedRate) : "0";
+  const formattedRate = impliedRate ? `${formatRate(impliedRate)}%` : "-";
 
   return (
     <Well transparent>
@@ -63,7 +64,9 @@ export function YieldStats({
             <Stat
               label="Fixed APR"
               value={
-                fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+                fixedAPRStatus === "loading" &&
+                impliedRateFetchStatus !== "idle" &&
+                fixedAPR === undefined ? (
                   <Skeleton className="w-20" />
                 ) : (
                   <span className={classNames("flex items-center gap-1.5")}>
@@ -78,11 +81,13 @@ export function YieldStats({
             <Stat
               label="Short HPR"
               value={
-                impliedRateStatus === "loading" && impliedRate === undefined ? (
+                impliedRateStatus === "loading" &&
+                impliedRateFetchStatus === "fetching" &&
+                impliedRate === undefined ? (
                   <Skeleton className="w-20" />
                 ) : (
                   <span className={classNames("flex items-center gap-1.5")}>
-                    {formattedRate}%
+                    {formattedRate}
                   </span>
                 )
               }

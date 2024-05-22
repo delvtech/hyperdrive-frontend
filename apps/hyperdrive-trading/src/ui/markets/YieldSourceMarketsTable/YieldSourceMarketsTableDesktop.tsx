@@ -199,7 +199,7 @@ function getColumns(appConfig: AppConfig) {
         const shortApy = getValue();
         return (
           <span key="short-apy" className="lg:flex lg:w-20 lg:justify-end">
-            {formatRate(shortApy)}%
+            {shortApy ? `${formatRate(shortApy)}%` : "-"}
           </span>
         );
       },
