@@ -38,9 +38,6 @@ export function useTotalShortsValue({
               destination: account,
               asBase: false,
               minAmountOut: parseUnits("0", 18),
-              options: {
-                from: account,
-              },
             }),
           );
 
@@ -50,7 +47,7 @@ export function useTotalShortsValue({
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
-              sharesAmount: result,
+              sharesAmount: result.maxAmountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
             totalShortsValue += amountOutInBase || 0n;

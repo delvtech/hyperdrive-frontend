@@ -1652,10 +1652,7 @@ export class ReadHyperdrive extends ReadModel {
   async previewCloseShort({
     maturityTime,
     shortAmountIn,
-    minAmountOut,
-    destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     maturityTime: bigint;
@@ -1668,7 +1665,6 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{ maxAmountOut: bigint; flatPlusCurveFee: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
-    const decimals = await this.getDecimals();
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
       this.network,
       options,
@@ -1692,7 +1688,6 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    // console.log(flatFeeInShares);
     const curveFeeInShares = BigInt(
       hyperwasm.closeShortCurveFee(
         convertBigIntsToStrings(poolInfo),
