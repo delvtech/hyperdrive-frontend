@@ -85,7 +85,7 @@ export function CurrentValueCell({
         >
           <span>{isPositiveChangeInValue ? "+" : ""}</span>
           {profitLoss
-            ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
+            ? `${profitLoss === "-0" ? "" : `${profitLoss} ${baseToken.symbol}`}`
             : undefined}
         </div>
       ) : (

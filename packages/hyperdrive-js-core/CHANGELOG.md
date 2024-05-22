@@ -1,5 +1,16 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.1.0
+
+### Minor Changes
+
+- 1564468: Replace simulate call in previewAdddLiquidity with hyperwasm method
+
+### Patch Changes
+
+- 8283062: Refactor getYieldSourceRate to use internal calc based on vaultSharePrice
+- c277e22: Add mainnet steth yield source apy
+
 ## 2.0.0
 
 ### Minor Changes
