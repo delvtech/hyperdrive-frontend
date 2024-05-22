@@ -5,14 +5,12 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Badge } from "src/ui/base/components/Badge";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindLessThanSm } from "src/ui/base/mediaBreakpoints";
 import { YieldSourceMarketsTableDesktop } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableDesktop";
 import { YieldSourceMarketsTableMobile } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableMobile";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
 export function YieldSourceCard({
   yieldSourceProtocol,
@@ -28,10 +26,6 @@ export function YieldSourceCard({
     yieldSourceId: yieldSourceProtocol.id,
     hyperdrives: appConfig.hyperdrives,
     tokens: appConfig.tokens,
-  });
-
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    hyperdriveAddress: pools[0]?.address,
   });
 
   if (!pools.length) {
@@ -63,23 +57,12 @@ export function YieldSourceCard({
             <div>
               <img
                 src={yieldSourceProtocol.iconUrl}
-                className="h-20 scale-75 sm:scale-100 "
+                className="h-20 scale-75 sm:scale-100"
               />
             </div>
             <div className="text-center md:text-left">
               <h3 className="mb-1">{sharesToken.extensions.shortName}</h3>
-              {vaultRateStatus === "loading" && !vaultRate ? (
-                <Skeleton className="w-42 h-8" />
-              ) : (
-                <Badge>
-                  <span className="font-dmMono text-neutral-content">
-                    Variable APY @{" "}
-                    <span className="text-base-content">
-                      {vaultRate?.formatted}%
-                    </span>
-                  </span>
-                </Badge>
-              )}
+              <YieldSourceRateBadge hyperdriveAddress={firstPool.address} />
             </div>
           </div>
 

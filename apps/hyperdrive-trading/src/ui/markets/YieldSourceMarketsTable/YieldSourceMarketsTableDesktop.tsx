@@ -180,8 +180,8 @@ function getColumns(appConfig: AppConfig) {
       id: "short-apy",
       header: () => (
         <TextWithTooltip
-          label="Short APY"
-          tooltip="Effective rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
+          label="Short HPR"
+          tooltip="Holding period return on shorts assuming the current variable rate stays the same until maturity."
         />
       ),
       cell: ({ getValue }) => {
