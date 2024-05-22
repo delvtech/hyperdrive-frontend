@@ -9,6 +9,8 @@ import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIdleLiquidity } from "src/ui/hyperdrive/hooks/useIdleLiquidity";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
+import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
+import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useBlockNumber } from "wagmi";
 export function LiquidityStats({
   hyperdrive,
@@ -26,6 +28,12 @@ export function LiquidityStats({
     useTradingVolume(hyperdrive.address, currentBlockNumber);
 
   const { presentValue, presentValueStatus } = usePresentValue({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const { maxBondsOut: maxLong } = useMaxLong({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const { maxBondsOut: maxShort } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -57,8 +65,8 @@ export function LiquidityStats({
             description={`The present value in the pool`}
           />
           <Stat
-            label={`Available (${baseToken.symbol})`}
-            description={`The idle liquidity available for opening Longs and Shorts, and exiting LP positions`}
+            label={`Idle (${baseToken.symbol})`}
+            description={`The idle liquidity available for opening Longs and Shorts, and exiting LP positions\n\nMax Long: ${formatBalance({ balance: maxLong || 0n, decimals: baseToken.decimals })} hy${baseToken.symbol}\nMax Short: ${formatBalance({ balance: maxShort || 0n, decimals: baseToken.decimals })} hy${baseToken.symbol}`}
             value={
               idleLiquidityStatus === "loading" &&
               idleLiquidity === undefined ? (
