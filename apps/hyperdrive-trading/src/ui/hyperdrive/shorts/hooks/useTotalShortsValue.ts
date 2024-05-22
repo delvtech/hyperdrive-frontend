@@ -44,7 +44,7 @@ export function useTotalShortsValue({
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
-              sharesAmount: result.maxAmountOut,
+              sharesAmount: result.amountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
             totalShortsValue += amountOutInBase || 0n;

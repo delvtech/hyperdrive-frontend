@@ -59,7 +59,7 @@ export function usePreviewCloseShort({
   });
 
   return {
-    maxAmountOut: data?.maxAmountOut,
+    maxAmountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseShortStatus: status,
   };

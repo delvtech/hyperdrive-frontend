@@ -1660,7 +1660,7 @@ export class ReadHyperdrive extends ReadModel {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<{ maxAmountOut: bigint; flatPlusCurveFee: bigint }> {
+  }): Promise<{ amountOut: bigint; flatPlusCurveFee: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
@@ -1696,7 +1696,7 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
-    const maxOutInShares = BigInt(
+    const amountOutInShares = BigInt(
       hyperwasm.calcCloseShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
@@ -1707,11 +1707,11 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    let maxAmountOut = maxOutInShares;
+    let amountOut = amountOutInShares;
     let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
     if (asBase) {
-      maxAmountOut = convertSharesToBase({
-        sharesAmount: maxOutInShares,
+      amountOut = convertSharesToBase({
+        sharesAmount: amountOutInShares,
         vaultSharePrice: poolInfo.vaultSharePrice,
         decimals: await this.getDecimals(),
       });
@@ -1721,7 +1721,7 @@ export class ReadHyperdrive extends ReadModel {
         decimals: await this.getDecimals(),
       });
     }
-    return { maxAmountOut, flatPlusCurveFee };
+    return { amountOut, flatPlusCurveFee };
   }
 
   /**
