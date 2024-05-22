@@ -1657,8 +1657,6 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractReadOptions;

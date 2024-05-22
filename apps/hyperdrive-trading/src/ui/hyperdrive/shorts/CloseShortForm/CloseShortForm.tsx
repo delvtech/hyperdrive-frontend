@@ -186,6 +186,7 @@ export function CloseShortForm({
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
                       decimals: baseToken.decimals,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
                       places: 6,
                     })}`
                   : "0"}{" "}

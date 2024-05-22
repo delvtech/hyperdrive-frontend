@@ -45,17 +45,13 @@ export function usePreviewCloseShort({
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
       shortAmountIn: shortAmountIn?.toString(),
-      minAmountOut: minAmountOut?.toString(),
-      destination,
       asBase,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () =>
           readHyperdrive.previewCloseShort({
-            destination,
             maturityTime,
-            minAmountOut,
             shortAmountIn,
             asBase,
           })
