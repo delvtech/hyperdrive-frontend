@@ -5,6 +5,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -41,6 +42,16 @@ export function YieldSourceMarketsTableDesktop({
     columns: getColumns(appConfig),
     data: rowData || EMPTY_ARRAY,
     getCoreRowModel: getCoreRowModel(),
+    initialState: {
+      sorting: [
+        {
+          // short terms to at the top
+          id: "term",
+          desc: false,
+        },
+      ],
+    },
+    getSortedRowModel: getSortedRowModel(),
   });
 
   if (status === "loading") {

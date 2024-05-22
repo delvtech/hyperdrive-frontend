@@ -5,6 +5,7 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import sortBy from "lodash.sortby";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
@@ -31,13 +32,13 @@ export function useRowData(
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () => {
+      ? async () => {
           const hyperdrives = findYieldSourceHyperdrives({
             yieldSourceId: protocol.id,
             hyperdrives: appConfig.hyperdrives,
             tokens: appConfig.tokens,
           });
-          return Promise.all(
+          const rows = await Promise.all(
             hyperdrives.map(
               async (hyperdrive): Promise<YieldSourceMarketsTableRowData> => {
                 const sharesToken = findYieldSourceToken({
@@ -70,6 +71,7 @@ export function useRowData(
               },
             ),
           );
+          return sortBy(rows, "market.poolConfig.positionDuration");
         }
       : undefined,
   });
