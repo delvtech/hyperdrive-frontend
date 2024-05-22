@@ -114,6 +114,7 @@ function formatMobileColumnData(
   });
   return [
     {
+      id: "term",
       name: "Term",
       value: (
         <span className="flex flex-row items-center justify-start">
