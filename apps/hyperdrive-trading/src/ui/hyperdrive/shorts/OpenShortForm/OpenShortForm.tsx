@@ -288,7 +288,12 @@ export function OpenShortForm({
         if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
-              Insufficient liquidity
+              Pool limit exceeded. Max short size is{" "}
+              {formatBalance({
+                balance: maxBondsOut || 0n,
+                decimals: hyperdrive.decimals,
+              })}{" "}
+              hy{baseToken.symbol}
             </p>
           );
         }

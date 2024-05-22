@@ -988,6 +988,7 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
+    const decimals = await this.getDecimals();
 
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
       this.network,
@@ -1022,8 +1023,8 @@ export class ReadHyperdrive extends ReadModel {
       openSharePrice.toString(),
     );
     const maxSharesIn = dnum.divide(
-      [BigInt(maxBaseIn), 18],
-      [poolInfo?.vaultSharePrice, 18],
+      [BigInt(maxBaseIn), decimals],
+      [poolInfo?.vaultSharePrice, decimals],
     )[0];
 
     return {
