@@ -5,8 +5,6 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
@@ -50,7 +48,7 @@ export function MarketHeader({
         </h1>{" "}
         <div className="flex w-full flex-wrap items-center gap-8">
           <PriceBadges hyperdrive={hyperdrive} />
-          <div className="flex gap-4">
+          <div className="flex shrink-0 gap-4">
             {analyticsUrl ? (
               <a
                 href={analyticsUrl}
@@ -62,19 +60,6 @@ export function MarketHeader({
                 <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
               </a>
             ) : undefined}
-            <a
-              href={makeAddressUrl(
-                hyperdrive.address,
-                appConfig.chainId as SupportedChainId,
-              )}
-              className="daisy-btn daisy-btn-sm flex items-center gap-2 rounded-full "
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/etherscan-logo-circle-light.svg" className="h-4" />
-              View on Etherscan
-              <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
-            </a>
           </div>
         </div>
       </div>

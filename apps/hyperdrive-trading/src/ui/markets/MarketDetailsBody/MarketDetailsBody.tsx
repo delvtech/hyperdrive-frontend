@@ -23,7 +23,7 @@ export function MarketDetailsBody({
     <div className="flex flex-col gap-12 xl:w-[1200px]">
       <div className="flex flex-wrap items-center justify-start gap-8 sm:justify-between">
         <div className="flex flex-col">
-          <MarketBreadcrumbs />
+          <MarketBreadcrumbs hyperdrive={hyperdrive} />
           <MarketHeader hyperdrive={hyperdrive} />
         </div>
         {!account ? undefined : <YourBalanceWell hyperdrive={hyperdrive} />}

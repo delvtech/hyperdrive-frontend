@@ -52,16 +52,18 @@ export function useRowData(
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
-                // Get the apy from 48 hours ago, but if that doesn't exist
-                // (since the pool is too new), then grab the all time apy
                 const vaultRate = await getYieldSourceRate(readHyperdrive);
 
                 const fixedApr = await readHyperdrive.getSpotRate();
-                const shortApy = await readHyperdrive.getImpliedRate({
-                  bondAmount: parseUnits("1", hyperdrive.decimals),
-                  variableApy: vaultRate,
-                  timestamp: BigInt(Math.floor(Date.now() / 1000)),
-                });
+
+                let shortApy = 0n;
+                if (vaultRate) {
+                  shortApy = await readHyperdrive.getImpliedRate({
+                    bondAmount: parseUnits("1", hyperdrive.decimals),
+                    variableApy: vaultRate,
+                    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+                  });
+                }
                 return {
                   market: hyperdrive,
                   liquidity,
