@@ -1659,7 +1659,7 @@ export class ReadHyperdrive extends ReadModel {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }): Promise<{ maxAmountOut: bigint; flatPlusCurveFee: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
     const decimals = await this.getDecimals();
@@ -1677,24 +1677,24 @@ export class ReadHyperdrive extends ReadModel {
 
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
 
-    // const flatFeeInShares = BigInt(
-    //   hyperwasm.closeShortFlatFee(
-    //     convertBigIntsToStrings(info),
-    //     convertBigIntsToStrings(config),
-    //     shortAmountIn.toString(),
-    //     maturityTime.toString(),
-    //     currentTime.toString(),
-    //   ),
-    // );
-    // const curveFeeInShares = BigInt(
-    //   hyperwasm.closeShortCurveFee(
-    //     convertBigIntsToStrings(info),
-    //     convertBigIntsToStrings(config),
-    //     shortAmountIn.toString(),
-    //     maturityTime.toString(),
-    //     currentTime.toString(),
-    //   ),
-    // );
+    const flatFeeInShares = BigInt(
+      hyperwasm.closeShortFlatFee(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    const curveFeeInShares = BigInt(
+      hyperwasm.closeShortCurveFee(
+        convertBigIntsToStrings(poolConfig),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
 
     const maxOutInShares = BigInt(
       hyperwasm.calcCloseShort(
@@ -1708,20 +1708,20 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
     let maxAmountOut = maxOutInShares;
-    // let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
+    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
     if (asBase) {
       maxAmountOut = convertSharesToBase({
         sharesAmount: maxOutInShares,
         vaultSharePrice: poolInfo.vaultSharePrice,
         decimals: await this.getDecimals(),
       });
-      // flatPlusCurveFee = convertSharesToBase({
-      //   sharesAmount: flatPlusCurveFee,
-      //   vaultSharePrice: info.vaultSharePrice,
-      //   decimals: await this.getDecimals(),
-      // });
+      flatPlusCurveFee = convertSharesToBase({
+        sharesAmount: flatPlusCurveFee,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
     }
-    return maxAmountOut;
+    return { maxAmountOut, flatPlusCurveFee };
   }
 
   /**

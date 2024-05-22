@@ -26,7 +26,7 @@ export function CurrentValueCell({
     tokens: appConfig.tokens,
   });
 
-  const { amountOut: currentValueInShares, previewCloseShortStatus } =
+  const { maxAmountOut: currentValueInShares, previewCloseShortStatus } =
     usePreviewCloseShort({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: openShort.maturity,

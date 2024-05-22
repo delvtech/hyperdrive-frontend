@@ -16,7 +16,8 @@ interface UsePreviewCloseShortOptions {
 
 interface UsePreviewCloseShortResult {
   previewCloseShortStatus: QueryStatus;
-  amountOut: bigint | undefined;
+  maxAmountOut: bigint | undefined;
+  flatPlusCurveFee: bigint | undefined;
 }
 
 export function usePreviewCloseShort({
@@ -39,7 +40,7 @@ export function usePreviewCloseShort({
     !!destination &&
     enabled;
 
-  const { data: amountOut, status } = useQuery({
+  const { data, status } = useQuery({
     queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
@@ -57,10 +58,13 @@ export function usePreviewCloseShort({
             minAmountOut,
             shortAmountIn,
             asBase,
-            options: { from: account },
           })
       : undefined,
   });
 
-  return { amountOut, previewCloseShortStatus: status };
+  return {
+    maxAmountOut: data?.maxAmountOut,
+    flatPlusCurveFee: data?.flatPlusCurveFee,
+    previewCloseShortStatus: status,
+  };
 }

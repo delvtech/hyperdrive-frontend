@@ -74,20 +74,21 @@ export function CloseShortForm({
   const isAmountLargerThanPositionSize = !!(
     amountAsBigInt && amountAsBigInt > short.bondAmount
   );
-  const { amountOut, previewCloseShortStatus } = usePreviewCloseShort({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: short.maturity,
-    shortAmountIn: amountAsBigInt,
-    minAmountOut: 0n,
-    destination: account,
-    asBase: activeWithdrawToken.address === baseToken.address,
-    enabled: !isAmountLargerThanPositionSize,
-  });
+  const { maxAmountOut, flatPlusCurveFee, previewCloseShortStatus } =
+    usePreviewCloseShort({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: short.maturity,
+      shortAmountIn: amountAsBigInt,
+      minAmountOut: 0n,
+      destination: account,
+      asBase: activeWithdrawToken.address === baseToken.address,
+      enabled: !isAmountLargerThanPositionSize,
+    });
 
   const minAmountOutAfterSlippage =
-    amountOut &&
+    maxAmountOut &&
     adjustAmountByPercentage({
-      amount: amountOut,
+      amount: maxAmountOut,
       percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
@@ -160,21 +161,39 @@ export function CloseShortForm({
         ) : undefined
       }
       transactionPreview={
-        <LabelValue
-          label="You receive"
-          value={
-            <p className="font-bold">
-              {amountOut
-                ? `${formatBalance({
-                    balance: amountOut,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })}`
-                : "0"}{" "}
-              {activeWithdrawToken.symbol}
-            </p>
-          }
-        />
+        <>
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {maxAmountOut
+                  ? `${formatBalance({
+                      balance: maxAmountOut,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+
+          <LabelValue
+            label="Pool fee"
+            value={
+              <p className="font-bold">
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+        </>
       }
       disclaimer={
         !!amountAsBigInt && isAmountLargerThanPositionSize ? (
