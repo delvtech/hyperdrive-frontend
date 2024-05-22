@@ -2,14 +2,12 @@ import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { parseUnits } from "src/base/parseUnits";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { useAccount } from "wagmi";
 
 export function CurrentValueCell({
   openShort,
@@ -18,7 +16,6 @@ export function CurrentValueCell({
   openShort: OpenShort;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { address: account } = useAccount();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -26,13 +23,11 @@ export function CurrentValueCell({
     tokens: appConfig.tokens,
   });
 
-  const { maxAmountOut: currentValueInShares, previewCloseShortStatus } =
+  const { amountOut: currentValueInShares, previewCloseShortStatus } =
     usePreviewCloseShort({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: openShort.maturity,
       shortAmountIn: openShort.bondAmount,
-      minAmountOut: parseUnits("0", baseToken.decimals),
-      destination: account,
       // Withdraw as shares and convert to base separately to show the current
       // value, as not all hyperdrives allow withdrawing to base, (see
       // HyperdriveConfig).

@@ -2,21 +2,18 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useAccount } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
-  minAmountOut: bigint | undefined;
-  destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
 }
 
 interface UsePreviewCloseShortResult {
   previewCloseShortStatus: QueryStatus;
-  maxAmountOut: bigint | undefined;
+  amountOut: bigint | undefined;
   flatPlusCurveFee: bigint | undefined;
 }
 
@@ -24,21 +21,12 @@ export function usePreviewCloseShort({
   hyperdriveAddress,
   maturityTime,
   shortAmountIn,
-  minAmountOut,
-  destination,
   asBase = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const { address: account } = useAccount();
   const queryEnabled =
-    !!account &&
-    !!readHyperdrive &&
-    !!maturityTime &&
-    !!shortAmountIn &&
-    minAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
-    !!destination &&
-    enabled;
+    !!readHyperdrive && !!maturityTime && !!shortAmountIn && enabled;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewCloseShort", {
@@ -59,7 +47,7 @@ export function usePreviewCloseShort({
   });
 
   return {
-    maxAmountOut: data?.amountOut,
+    amountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseShortStatus: status,
   };

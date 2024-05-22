@@ -74,21 +74,19 @@ export function CloseShortForm({
   const isAmountLargerThanPositionSize = !!(
     amountAsBigInt && amountAsBigInt > short.bondAmount
   );
-  const { maxAmountOut, flatPlusCurveFee, previewCloseShortStatus } =
+  const { amountOut, flatPlusCurveFee, previewCloseShortStatus } =
     usePreviewCloseShort({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: short.maturity,
       shortAmountIn: amountAsBigInt,
-      minAmountOut: 0n,
-      destination: account,
       asBase: activeWithdrawToken.address === baseToken.address,
       enabled: !isAmountLargerThanPositionSize,
     });
 
   const minAmountOutAfterSlippage =
-    maxAmountOut &&
+    amountOut &&
     adjustAmountByPercentage({
-      amount: maxAmountOut,
+      amount: amountOut,
       percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
@@ -166,9 +164,9 @@ export function CloseShortForm({
             label="You receive"
             value={
               <p className="font-bold">
-                {maxAmountOut
+                {amountOut
                   ? `${formatBalance({
-                      balance: maxAmountOut,
+                      balance: amountOut,
                       decimals: baseToken.decimals,
                       places: baseToken.places,
                     })}`
