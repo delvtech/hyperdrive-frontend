@@ -101,9 +101,7 @@ export function useOpenLong({
       });
     },
     onError(error) {
-      const message = parseError({
-        error,
-      });
+      const message = parseError(error);
       toast.error(message);
     },
   });

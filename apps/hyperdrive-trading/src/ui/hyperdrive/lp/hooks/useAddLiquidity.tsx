@@ -99,9 +99,7 @@ export function useAddLiquidity({
       }
     },
     onError(error) {
-      const message = parseError({
-        error,
-      });
+      const message = parseError(error);
       toast.error(message);
     },
   });

@@ -1,11 +1,13 @@
 import { BaseError as BaseViemError, DecodeErrorResultReturnType } from "viem";
 
 /**
- * Parses an viem/wagmi error to get a displayable string
- * @param error - error object
- * @returns parsed error string
+ * Parses an viem/wagmi error to get a displayable string.
+ * @param error - The error to parse.
+ * @returns The parsed error string.
  */
-export function parseError({ error }: { error: any }): string {
+// TODO: Consider removing this rule
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function parseError(error: any): string {
   let message: string = error.message ?? "An unknown error occurred";
   if (error instanceof BaseViemError) {
     if (error.details) {

@@ -107,9 +107,7 @@ export function useOpenShort({
       }
     },
     onError(error) {
-      const message = parseError({
-        error,
-      });
+      const message = parseError(error);
       toast.error(message);
     },
   });
