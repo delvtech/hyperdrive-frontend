@@ -2,7 +2,6 @@ import { Short } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { parseUnits } from "src/base/parseUnits";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -35,12 +34,7 @@ export function useTotalShortsValue({
             readHyperdrive.previewCloseShort({
               maturityTime: short.maturity,
               shortAmountIn: short.bondAmount,
-              destination: account,
               asBase: false,
-              minAmountOut: parseUnits("0", 18),
-              options: {
-                from: account,
-              },
             }),
           );
 
@@ -50,7 +44,7 @@ export function useTotalShortsValue({
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
-              sharesAmount: result,
+              sharesAmount: result.amountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
             totalShortsValue += amountOutInBase || 0n;

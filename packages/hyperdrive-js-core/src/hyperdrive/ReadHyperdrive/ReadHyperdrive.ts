@@ -1649,33 +1649,79 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Predicts the amount of base asset a user will receive when closing a short.
    */
-  previewCloseShort({
+  async previewCloseShort({
     maturityTime,
     shortAmountIn,
-    minAmountOut,
-    destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    return this.contract.simulateWrite(
-      "closeShort",
-      {
-        _maturityTime: maturityTime,
-        _bondAmount: shortAmountIn,
-        _minOutput: minAmountOut,
-        _options: { destination, asBase, extraData },
-      },
+    options?: ContractReadOptions;
+  }): Promise<{ amountOut: bigint; flatPlusCurveFee: bigint }> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
       options,
     );
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
+    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
+
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
+
+    const flatFeeInShares = BigInt(
+      hyperwasm.closeShortFlatFee(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    const curveFeeInShares = BigInt(
+      hyperwasm.closeShortCurveFee(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+
+    const amountOutInShares = BigInt(
+      hyperwasm.calcCloseShort(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        openSharePrice.toString(),
+        poolInfo.vaultSharePrice.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    let amountOut = amountOutInShares;
+    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
+    if (asBase) {
+      amountOut = convertSharesToBase({
+        sharesAmount: amountOutInShares,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+      flatPlusCurveFee = convertSharesToBase({
+        sharesAmount: flatPlusCurveFee,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+    }
+    return { amountOut, flatPlusCurveFee };
   }
 
   /**

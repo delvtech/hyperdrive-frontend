@@ -74,15 +74,14 @@ export function CloseShortForm({
   const isAmountLargerThanPositionSize = !!(
     amountAsBigInt && amountAsBigInt > short.bondAmount
   );
-  const { amountOut, previewCloseShortStatus } = usePreviewCloseShort({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: short.maturity,
-    shortAmountIn: amountAsBigInt,
-    minAmountOut: 0n,
-    destination: account,
-    asBase: activeWithdrawToken.address === baseToken.address,
-    enabled: !isAmountLargerThanPositionSize,
-  });
+  const { amountOut, flatPlusCurveFee, previewCloseShortStatus } =
+    usePreviewCloseShort({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: short.maturity,
+      shortAmountIn: amountAsBigInt,
+      asBase: activeWithdrawToken.address === baseToken.address,
+      enabled: !isAmountLargerThanPositionSize,
+    });
 
   const minAmountOutAfterSlippage =
     amountOut &&
@@ -160,21 +159,40 @@ export function CloseShortForm({
         ) : undefined
       }
       transactionPreview={
-        <LabelValue
-          label="You receive"
-          value={
-            <p className="font-bold">
-              {amountOut
-                ? `${formatBalance({
-                    balance: amountOut,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })}`
-                : "0"}{" "}
-              {activeWithdrawToken.symbol}
-            </p>
-          }
-        />
+        <>
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {amountOut
+                  ? `${formatBalance({
+                      balance: amountOut,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+
+          <LabelValue
+            label="Pool fee"
+            value={
+              <p className="font-bold">
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: baseToken.decimals,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 6,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+        </>
       }
       disclaimer={
         !!amountAsBigInt && isAmountLargerThanPositionSize ? (
