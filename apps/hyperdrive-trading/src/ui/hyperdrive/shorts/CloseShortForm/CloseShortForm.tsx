@@ -186,7 +186,7 @@ export function CloseShortForm({
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
                       decimals: baseToken.decimals,
-                      places: baseToken.places,
+                      places: 6,
                     })}`
                   : "0"}{" "}
                 {activeWithdrawToken.symbol}

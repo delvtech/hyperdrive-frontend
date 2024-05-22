@@ -1692,9 +1692,10 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
+    // console.log(flatFeeInShares);
     const curveFeeInShares = BigInt(
       hyperwasm.closeShortCurveFee(
-        convertBigIntsToStrings(poolConfig),
+        convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         shortAmountIn.toString(),
         maturityTime.toString(),
