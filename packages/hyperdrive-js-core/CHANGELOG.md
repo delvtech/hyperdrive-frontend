@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.2.0
+
+### Minor Changes
+
+- 53bfffc: refactor previewCloseShort to add fees and use hyerwasm functions
+
 ## 2.1.0
 
 ### Minor Changes
