@@ -122,7 +122,7 @@ export function OpenLongForm({
     amount: depositAmountAsBigInt,
   });
 
-  const { maxBaseIn, maxSharesIn } = useMaxLong({
+  const { maxBaseIn, maxSharesIn, maxBondsOut } = useMaxLong({
     hyperdriveAddress: hyperdrive.address,
   });
   const activeTokenMaxTradeSize =
@@ -269,7 +269,12 @@ export function OpenLongForm({
         if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
-              Insufficient liquidity
+              Pool limit exceeded. Max long size is{" "}
+              {formatBalance({
+                balance: maxBondsOut || 0n,
+                decimals: baseToken.decimals,
+              })}{" "}
+              hy{baseToken.symbol}
             </p>
           );
         }
