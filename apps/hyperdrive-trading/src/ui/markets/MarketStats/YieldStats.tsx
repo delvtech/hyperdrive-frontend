@@ -80,7 +80,7 @@ export function YieldStats({
           </Animated>
           <Animated isActive={position === "Shorts"}>
             <Stat
-              label="Short HPR"
+              label="Short ROI"
               value={
                 impliedRateStatus === "loading" &&
                 impliedRateFetchStatus === "fetching" &&

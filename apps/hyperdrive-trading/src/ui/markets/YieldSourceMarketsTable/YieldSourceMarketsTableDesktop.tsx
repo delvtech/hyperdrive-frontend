@@ -191,7 +191,7 @@ function getColumns(appConfig: AppConfig) {
       id: "short-apy",
       header: () => (
         <TextWithTooltip
-          label="Short HPR"
+          label="Short ROI"
           tooltip="Holding period return on shorts assuming the current variable rate stays the same until maturity."
         />
       ),
