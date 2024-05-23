@@ -17,7 +17,9 @@ export function Stat({
 }: StatProps): ReactElement {
   return (
     <div className="flex w-full flex-col items-center whitespace-pre-wrap ease-in-out">
-      <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
+      <div className="mb-1 whitespace-nowrap text-h5 font-bold lg:text-h4">
+        {value}
+      </div>
       {description ? (
         <p
           data-tip={description}

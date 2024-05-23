@@ -59,7 +59,7 @@ export function YieldStats({
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 lg:gap-16">
+        <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
             <Stat
               label="Fixed APR"
