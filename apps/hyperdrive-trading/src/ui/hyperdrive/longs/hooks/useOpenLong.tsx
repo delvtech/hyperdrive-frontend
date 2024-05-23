@@ -1,4 +1,3 @@
-import { ContractWriteOptions } from "@delvtech/hyperdrive-viem";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -8,7 +7,7 @@ import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
-import { Address, Hash } from "viem";
+import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
@@ -61,38 +60,35 @@ export function useOpenLong({
         return;
       }
 
-      const options: ContractWriteOptions = {
-        value: ethValue,
-      };
-
-      function onTransactionCompleted(txHash: Hash) {
-        queryClient.invalidateQueries();
-        toast.success(
-          <TransactionToast message="Long opened" txHash={txHash} />,
-          { id: txHash, duration: SUCCESS_TOAST_DURATION },
-        );
-        setTimeout(() => {
-          toastWarpcast();
-        }, SUCCESS_TOAST_DURATION);
-        onExecuted?.(txHash);
-      }
-
       const hash = await readWriteHyperdrive.openLong({
         args: {
           amount,
-          minBondsOut: minBondsOut,
+          minBondsOut,
           destination,
           minVaultSharePrice: minSharePrice,
           asBase,
         },
-        options,
-        onTransactionCompleted,
+        options: {
+          value: ethValue,
+        },
+        onTransactionCompleted: (txHash) => {
+          queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Long opened" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
+          setTimeout(() => {
+            toastWarpcast();
+          }, SUCCESS_TOAST_DURATION);
+          onExecuted?.(txHash);
+        },
       });
 
       toast.loading(
         <TransactionToast txHash={hash} message="Opening a Long..." />,
         { id: hash },
       );
+
       onSubmitted?.(hash);
 
       addTransaction({
