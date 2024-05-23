@@ -54,50 +54,82 @@ export function YieldStats({
             <YieldSourceRateBadge
               hyperdriveAddress={hyperdrive.address}
               labelRenderer={(vaultRate) =>
-                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} % APY`
+                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} % APR`
               }
             />
           </div>
         </div>
         <div className="flex flex-wrap gap-16">
-          <Animated isActive={position === "Longs"}>
-            <Stat
-              label="Fixed APR"
-              value={
-                fixedAPRStatus === "loading" &&
-                impliedRateFetchStatus !== "idle" &&
-                fixedAPR === undefined ? (
-                  <Skeleton className="w-20" />
-                ) : (
-                  <span className={classNames("flex items-center gap-1.5")}>
-                    {fixedAPR?.formatted || "0"}%
-                  </span>
-                )
-              }
-              description="Fixed rate earned from opening longs, before fees and slippage are applied."
-            />
-          </Animated>
-          <Animated isActive={position === "Shorts"}>
-            <Stat
-              label="Short HPR"
-              value={
-                impliedRateStatus === "loading" &&
-                impliedRateFetchStatus === "fetching" &&
-                impliedRate === undefined ? (
-                  <Skeleton className="w-20" />
-                ) : (
-                  <span className={classNames("flex items-center gap-1.5")}>
-                    {formattedRate}
-                  </span>
-                )
-              }
-              description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
-              tooltipPosition={"right"}
-            />
-          </Animated>
+          <div className="flex flex-col">
+            <Animated isActive={position === "Longs"}>
+              <Stat
+                label="Fixed Rate"
+                value={
+                  fixedAPRStatus === "loading" &&
+                  impliedRateFetchStatus !== "idle" &&
+                  fixedAPR === undefined ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {fixedAPR?.formatted || "0"}%
+                    </span>
+                  )
+                }
+                description="Fixed rate earned from opening longs, before fees and slippage are applied."
+              />
+            </Animated>
+            <div className="daisy-join mt-1 flex w-full">
+              <span
+                className="daisy-btn daisy-join-item daisy-btn-active daisy-btn-xs flex-1"
+                data-tip="View as APR"
+              >
+                APR
+              </span>
+              <span
+                className="daisy-btn daisy-join-item daisy-btn-xs flex-1 text-opacity-80"
+                data-tip="View as ROI"
+              >
+                ROI
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <Animated isActive={position === "Shorts"}>
+              <Stat
+                label="Implied Short Rate"
+                value={
+                  impliedRateStatus === "loading" &&
+                  impliedRateFetchStatus === "fetching" &&
+                  impliedRate === undefined ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {formattedRate}
+                    </span>
+                  )
+                }
+                description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
+                tooltipPosition={"right"}
+              />
+            </Animated>
+            <div className="daisy-join mt-1 flex w-full">
+              <span
+                className="daisy-btn daisy-join-item daisy-btn-active daisy-btn-xs flex-1"
+                data-tip="View as APR"
+              >
+                APR
+              </span>
+              <span
+                className="daisy-btn daisy-join-item daisy-btn-xs flex-1 text-opacity-80"
+                data-tip="View as ROI"
+              >
+                ROI
+              </span>
+            </div>
+          </div>
           <Animated isActive={position === "LP"}>
             <Stat
-              label="LP APY (7d)"
+              label="LP APR (7d)"
               value={
                 lpApyStatus !== "loading" ? (
                   <span className="flex items-center gap-1.5">

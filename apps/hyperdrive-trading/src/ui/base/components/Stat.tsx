@@ -16,7 +16,7 @@ export function Stat({
   tooltipPosition = "bottom",
 }: StatProps): ReactElement {
   return (
-    <div className="flex flex-col items-start whitespace-pre-wrap ease-in-out">
+    <div className="flex flex-col items-start whitespace-pre-wrap text-center ease-in-out">
       <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
       {description ? (
         <p
