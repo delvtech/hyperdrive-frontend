@@ -48,7 +48,7 @@ export function YieldStats({
   return (
     <Well transparent>
       <div className="space-y-8">
-        <div className="flex justify-between gap-20">
+        <div className="flex justify-between">
           <h5 className="flex text-neutral-content">Yield</h5>
           <div className="font-dmMono text-neutral-content">
             <YieldSourceRateBadge
@@ -59,7 +59,7 @@ export function YieldStats({
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-16">
+        <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
             <Stat
               label="Fixed APR"
@@ -75,6 +75,7 @@ export function YieldStats({
                 )
               }
               description="Fixed rate earned from opening longs, before fees and slippage are applied."
+              tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
             />
           </Animated>
           <Animated isActive={position === "Shorts"}>
@@ -92,7 +93,7 @@ export function YieldStats({
                 )
               }
               description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
-              tooltipPosition={"right"}
+              tooltipPosition={"bottom"}
             />
           </Animated>
           <Animated isActive={position === "LP"}>
@@ -110,7 +111,7 @@ export function YieldStats({
                 )
               }
               description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
-              tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
+              tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
             />
           </Animated>
         </div>
@@ -126,7 +127,7 @@ function Animated({
   return (
     <div
       className={classNames("transition-all duration-200 ease-in-out", {
-        "gradient-text z-20 -translate-y-1 scale-105": isActive,
+        "gradient-text z-20 scale-105": isActive,
       })}
     >
       {children}

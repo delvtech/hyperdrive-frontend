@@ -6,6 +6,7 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useIdleLiquidity } from "src/ui/hyperdrive/hooks/useIdleLiquidity";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
@@ -17,6 +18,7 @@ export function LiquidityStats({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { data: currentBlockNumber } = useBlockNumber();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -45,7 +47,7 @@ export function LiquidityStats({
     <Well transparent>
       <div className="space-y-8">
         <h5 className="flex text-neutral-content">Liquidity</h5>
-        <div className="flex gap-16">
+        <div className="flex gap-6 lg:gap-16">
           <Stat
             label={`Total (${baseToken.symbol})`}
             value={
@@ -63,6 +65,7 @@ export function LiquidityStats({
               )
             }
             description={`The present value in the pool`}
+            tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
           />
           <Stat
             label={`Idle (${baseToken.symbol})`}
@@ -109,6 +112,7 @@ export function LiquidityStats({
                 />
               )
             }
+            tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
           />
         </div>
       </div>

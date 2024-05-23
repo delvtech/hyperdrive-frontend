@@ -16,13 +16,15 @@ export function Stat({
   tooltipPosition = "bottom",
 }: StatProps): ReactElement {
   return (
-    <div className="flex flex-col items-start whitespace-pre-wrap ease-in-out">
-      <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
+    <div className="flex w-full flex-col items-center whitespace-pre-wrap ease-in-out">
+      <div className="mb-1 whitespace-nowrap text-h5 font-bold lg:text-h4">
+        {value}
+      </div>
       {description ? (
         <p
           data-tip={description}
           className={classNames(
-            `group daisy-tooltip cursor-help text-sm text-neutral-content before:max-w-56 before:p-2 before:text-start`,
+            `group daisy-tooltip cursor-help text-sm text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start`,
             {
               "daisy-tooltip-top": tooltipPosition === "top",
               "daisy-tooltip-bottom": tooltipPosition === "bottom",
@@ -32,7 +34,7 @@ export function Stat({
           )}
         >
           {label}
-          <InformationCircleIcon className="group-hover:text-gray-500 ml-1 inline-block w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100" />
+          <InformationCircleIcon className="group-hover:text-gray-500 ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
         </p>
       ) : (
         <p className="text-sm text-neutral-content">{label}</p>
