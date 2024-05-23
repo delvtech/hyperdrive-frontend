@@ -34,7 +34,7 @@ export function YieldSourceRateBadge({
 
   return (
     <Badge>
-      <span className="font-dmMono text-neutral-content">
+      <span className="font-dmMono text-sm text-neutral-content lg:text-md">
         {labelRenderer ? (
           labelRenderer(vaultRate)
         ) : (
