@@ -34,7 +34,7 @@ export function Modal({
       >
         <form
           method="dialog"
-          className={classNames("daisy-modal-box bg-base-200", className)}
+          className={classNames("daisy-modal-box bg-base-200 p-0", className)}
         >
           {modalContent}
         </form>
