@@ -47,9 +47,9 @@ export function LiquidityStats({
     <Well transparent>
       <div className="space-y-8">
         <h5 className="flex text-neutral-content">Liquidity</h5>
-        <div className="flex w-full gap-6 lg:gap-16">
+        <div className="flex gap-6 lg:gap-16">
           <Stat
-            label={`Total ${baseToken.symbol}`}
+            label={`Total (${baseToken.symbol})`}
             value={
               presentValueStatus === "loading" && presentValue === undefined ? (
                 <Skeleton className="w-20" />

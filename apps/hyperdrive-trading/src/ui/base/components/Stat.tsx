@@ -24,7 +24,7 @@ export function Stat({
         <p
           data-tip={description}
           className={classNames(
-            `group daisy-tooltip flex w-full cursor-help justify-center text-center text-sm text-neutral-content before:z-50 before:max-w-56 before:p-2 before:text-start lg:text-center`,
+            `group daisy-tooltip flex w-full cursor-help justify-center text-sm text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start`,
             {
               "daisy-tooltip-top": tooltipPosition === "top",
               "daisy-tooltip-bottom": tooltipPosition === "bottom",
