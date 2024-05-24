@@ -12,10 +12,10 @@ export function FeatureFlagPicker(): ReactElement {
         className="daisy-menu daisy-dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-100 p-2 shadow"
       >
         <li className="daisy-menu-title">Feature flags</li>
-        {/* Place your feature flag menu items here, eg: 
-         <FeatureFlagMenuItem flagName="my-feature">
-          My new feature 
-        </FeatureFlagMenuItem> */}
+        {/* Place your feature flag menu items here, eg:  */}
+        <FeatureFlagMenuItem flagName="roi-apr">
+          ROI and APR
+        </FeatureFlagMenuItem>
       </ul>
     </div>
   );

@@ -3,15 +3,20 @@ import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { parseUnits } from "viem";
 import { FixedRateStat } from "./FixedRateStat";
-import { ShortRateStat } from "./ShortRateStat";
 export function YieldStats({
   hyperdrive,
 }: {
@@ -26,7 +31,27 @@ export function YieldStats({
   });
 
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
+  const { isFlagEnabled: showMultiStats } = useFeatureFlag("roi-apr");
 
+  // fixed apr
+  const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
+
+  // short apr
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
+    useImpliedRate({
+      bondAmount: parseUnits("1", 18),
+      hyperdriveAddress: hyperdrive.address,
+      variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
+      timestamp: BigInt(Math.floor(Date.now() / 1000)),
+    });
+  const isLoadingShortRoi =
+    impliedRateStatus === "loading" &&
+    impliedRateFetchStatus === "fetching" &&
+    impliedRate === undefined;
+  const formattedRate = impliedRate ? `${formatRate(impliedRate)}%` : "-";
   return (
     <Well transparent>
       <div className="space-y-8">
@@ -43,10 +68,44 @@ export function YieldStats({
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
-            <FixedRateStat hyperdrive={hyperdrive} />
+            {showMultiStats ? (
+              <FixedRateStat hyperdrive={hyperdrive} />
+            ) : (
+              <Stat
+                label="Fixed APR"
+                value={
+                  fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {fixedAPR?.formatted || "0"}%
+                    </span>
+                  )
+                }
+                description="Annualized fixed rate earned from opening longs, before fees and slippage are applied."
+                tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
+              />
+            )}
           </Animated>
           <Animated isActive={position === "Shorts"}>
-            <ShortRateStat hyperdrive={hyperdrive} />
+            {showMultiStats ? (
+              <FixedRateStat hyperdrive={hyperdrive} />
+            ) : (
+              <Stat
+                label="Short ROI"
+                description="Annualized return on shorts assuming the current variable rate stays the same for 1 year."
+                tooltipPosition="bottom"
+                value={
+                  isLoadingShortRoi ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {formattedRate}
+                    </span>
+                  )
+                }
+              />
+            )}
           </Animated>
           <Animated isActive={position === "LP"}>
             <Stat

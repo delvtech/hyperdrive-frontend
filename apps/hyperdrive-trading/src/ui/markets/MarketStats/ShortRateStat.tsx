@@ -14,14 +14,13 @@ export function ShortRateStat({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { vaultRate } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-  });
-
   const [rateType, setRateType] = useLocalStorage<"shortApr" | "shortRoi">(
     "yield-stats-short-rate-type",
     "shortApr",
   );
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
     useImpliedRate({
