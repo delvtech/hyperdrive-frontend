@@ -11,7 +11,7 @@ export default function Footer(): ReactElement {
   const footerTitleClassName =
     "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title
   return (
-    <footer className="daisy-footer max-w-6xl p-10 text-base-content">
+    <footer className="daisy-footer max-w-6xl grid-cols-2 p-10 text-base-content sm:grid-cols-4">
       <aside>
         <Link
           to="/"
