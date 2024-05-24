@@ -127,7 +127,7 @@ function formatMobileColumnData(
     },
     { name: "Fixed APR", value: `${formatRate(row.fixedApr)}%` },
     {
-      name: "Short HPR",
+      name: "Short ROI",
       value: row.shortApy ? `${formatRate(row.shortApy)}%` : "-",
     },
     {
