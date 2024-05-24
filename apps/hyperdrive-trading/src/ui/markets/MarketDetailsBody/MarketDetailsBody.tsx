@@ -30,7 +30,7 @@ export function MarketDetailsBody({
       </div>
 
       {/* Stats section */}
-      <div className="flex flex-wrap gap-16 ">
+      <div className="flex flex-wrap gap-16">
         <YieldStats hyperdrive={hyperdrive} />
         <LiquidityStats hyperdrive={hyperdrive} />
       </div>
