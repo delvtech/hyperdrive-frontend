@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import classNames from "classnames";
 import { ReactElement } from "react";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import DiscordIcon from "src/ui/base/icons/discord";
@@ -12,11 +11,7 @@ export default function Footer(): ReactElement {
   const footerTitleClassName =
     "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title
   return (
-    <footer
-      className={classNames(
-        "daisy-footer max-w-6xl grid-cols-2 p-10 text-base-content sm:grid-cols-4",
-      )}
-    >
+    <footer className="daisy-footer max-w-6xl grid-cols-2 p-10 text-base-content sm:grid-cols-4">
       <aside>
         <Link
           to="/"
