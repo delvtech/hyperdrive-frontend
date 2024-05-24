@@ -4,23 +4,39 @@ import { ReactElement } from "react";
 import { Stat, StatProps } from "src/ui/base/components/Stat";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 
-export function TabbedStat({
+export interface MultiStatProps extends StatProps {
+  id: string;
+}
+
+export function MultiStat({
   stats,
-  onStatChange,
-  defaultActiveStatIndex,
+  activeStatId,
+  onTabChange,
 }: {
-  stats: (StatProps & { id: string })[];
-  onStatChange: (stat: StatProps & { id: string }) => void;
-  defaultActiveStatIndex: number;
+  stats: MultiStatProps[];
+  onTabChange: (stat: MultiStatProps) => void;
+  activeStatId: string;
 }): ReactElement {
   const { activeItem, setActiveItemId } = useActiveItem({
     items: stats,
-    defaultActiveItemId: stats[defaultActiveStatIndex].id,
     idField: "id",
+    defaultActiveItemId: stats.find((stat) => activeStatId === stat.id)
+      ?.id as string,
   });
 
   return (
-    <div className="flex flex-col gap-2">
+    <button
+      className="flex flex-col gap-2"
+      onClick={() => {
+        // if the active item isn't the last one, go to the next item
+        const currentIndex = stats.findIndex((i) => i.id === activeItem.id);
+        if (currentIndex !== stats.length - 1) {
+          setActiveItemId(stats[currentIndex + 1].id);
+          return;
+        }
+        setActiveItemId(stats[0].id);
+      }}
+    >
       <Stat
         label={
           <div className="flex flex-col gap-1">
@@ -58,9 +74,8 @@ export function TabbedStat({
             >
               {stats.map(({ id }) => {
                 return (
-                  <button
+                  <div
                     key={id}
-                    onClick={() => setActiveItemId(id)}
                     className={classNames(
                       "transition-all hover:opacity-90",
                       id === activeItem.id
@@ -69,7 +84,7 @@ export function TabbedStat({
                     )}
                   >
                     •
-                  </button>
+                  </div>
                 );
               })}
             </div>
@@ -77,6 +92,6 @@ export function TabbedStat({
         }
         value={activeItem.value}
       />
-    </div>
+    </button>
   );
 }
