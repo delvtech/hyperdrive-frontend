@@ -109,6 +109,25 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
     }
 
+    // Calculations
+
+    async getMaxLong(
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxLong"]> {
+      const result = await super.getMaxLong(options);
+
+      if (!this.setUseSharesAccounting) {
+        return {
+          ...result,
+          maxSharesIn: result.maxBaseIn,
+        };
+      }
+
+      return result;
+    }
+
+    // Previews
+
     async previewOpenLong({
       amountIn: _amountIn,
       asBase,
