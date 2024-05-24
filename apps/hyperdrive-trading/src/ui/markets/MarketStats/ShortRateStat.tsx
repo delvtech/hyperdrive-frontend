@@ -2,9 +2,10 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useLocalStorage } from "react-use";
 import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
-import { MultiStat } from "src/ui/base/components/MultiStat";
+import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
@@ -16,6 +17,11 @@ export function ShortRateStat({
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const [rateType, setRateType] = useLocalStorage<"shortApr" | "shortRoi">(
+    "yield-stats-short-rate-type",
+    "shortApr",
+  );
 
   const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
     useImpliedRate({
@@ -33,6 +39,10 @@ export function ShortRateStat({
 
   return (
     <MultiStat
+      activeStatId={
+        rateType! /* Stripping off the undefined because we set a default value
+        in useLocalStorage */
+      }
       stats={[
         {
           id: "shortApr",
@@ -63,10 +73,8 @@ export function ShortRateStat({
           ),
         },
       ]}
-      activeStatId={"shortRoi"}
-      onTabChange={(stat: TabbedStatProps) => {
-        // TODO: Store in local storage
-        throw new Error("Function not implemented.");
+      onTabChange={(stat: MultiStatProps) => {
+        setRateType(stat.id as any);
       }}
     />
   );

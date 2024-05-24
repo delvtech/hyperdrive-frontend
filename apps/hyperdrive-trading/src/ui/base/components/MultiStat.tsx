@@ -29,12 +29,13 @@ export function MultiStat({
       className="flex flex-col gap-2"
       onClick={() => {
         // if the active item isn't the last one, go to the next item
-        const currentIndex = stats.findIndex((i) => i.id === activeItem.id);
-        if (currentIndex !== stats.length - 1) {
-          setActiveItemId(stats[currentIndex + 1].id);
-          return;
+        const currentStatIndex = stats.findIndex((i) => i.id === activeItem.id);
+        let nextStat = stats[0];
+        if (currentStatIndex !== stats.length - 1) {
+          nextStat = stats[currentStatIndex + 1];
         }
-        setActiveItemId(stats[0].id);
+        setActiveItemId(nextStat.id);
+        onTabChange(nextStat);
       }}
     >
       <Stat
