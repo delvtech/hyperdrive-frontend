@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
 export interface StatProps {
-  label: string;
+  label: ReactNode;
   value: ReactNode;
   description?: string;
   tooltipPosition?: "top" | "bottom" | "left" | "right";

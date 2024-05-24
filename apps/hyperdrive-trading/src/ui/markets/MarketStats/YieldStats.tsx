@@ -6,7 +6,8 @@ import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Stat } from "src/ui/base/components/Stat";
+import { Stat, StatProps } from "src/ui/base/components/Stat";
+import { TabbedStat } from "src/ui/base/components/TabbedStat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
@@ -61,21 +62,50 @@ export function YieldStats({
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
-            <Stat
-              label="Fixed APR"
-              value={
-                fixedAPRStatus === "loading" &&
-                impliedRateFetchStatus !== "idle" &&
-                fixedAPR === undefined ? (
-                  <Skeleton className="w-20" />
-                ) : (
-                  <span className={classNames("flex items-center gap-1.5")}>
-                    {fixedAPR?.formatted || "0"}%
-                  </span>
-                )
-              }
-              description="Fixed rate earned from opening longs, before fees and slippage are applied."
-              tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
+            <TabbedStat
+              stats={[
+                {
+                  id: "fixedApr",
+                  label: "Fixed APR",
+                  value:
+                    fixedAPRStatus === "loading" &&
+                    impliedRateFetchStatus !== "idle" &&
+                    fixedAPR === undefined ? (
+                      <Skeleton className="w-20" />
+                    ) : (
+                      <span className={classNames("flex items-center gap-1.5")}>
+                        {fixedAPR?.formatted || "0"}%
+                      </span>
+                    ),
+
+                  description:
+                    "Fixed rate earned from opening longs, before fees and slippage are applied.",
+                  tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
+                },
+                {
+                  id: "fixedRoi",
+                  label: "Fixed ROI",
+                  value:
+                    fixedAPRStatus === "loading" &&
+                    impliedRateFetchStatus !== "idle" &&
+                    fixedAPR === undefined ? (
+                      <Skeleton className="w-20" />
+                    ) : (
+                      <span className={classNames("flex items-center gap-1.5")}>
+                        {fixedAPR?.formatted || "0"}%
+                      </span>
+                    ),
+
+                  description:
+                    "Fixed rate earned from opening longs, before fees and slippage are applied.",
+                  tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
+                },
+              ]}
+              onStatChange={(stat: StatProps): void => {
+                // TODO: Store default index in local storage
+                throw new Error("Function not implemented.");
+              }}
+              defaultActiveStatIndex={0}
             />
           </Animated>
           <Animated isActive={position === "Shorts"}>
