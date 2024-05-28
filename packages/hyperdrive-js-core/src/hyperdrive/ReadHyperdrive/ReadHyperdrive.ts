@@ -1886,26 +1886,6 @@ export class ReadHyperdrive extends ReadModel {
   }
 }
 
-function calculateBaseAmount({
-  vaultShareAmount,
-  asBase,
-  baseAmount,
-}: {
-  vaultShareAmount: bigint;
-  asBase: boolean;
-  baseAmount: bigint;
-}): bigint {
-  // If you paid in base, no need to convert anything
-  if (asBase) {
-    return baseAmount;
-  }
-
-  // Get the vault share price at the time you opened the position
-  // so we can convert your shares paid into their base value
-  const vaultSharePrice = dnum.div([baseAmount, 18], [vaultShareAmount, 18])[0];
-  return dnum.multiply([vaultSharePrice, 18], [vaultShareAmount, 18])[0];
-}
-
 /*
  * This  returns the LP APY using the following formula for continuous compounding:
 
