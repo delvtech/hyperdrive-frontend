@@ -36,4 +36,256 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       network: this.network,
     });
   }
+
+  async initialize({
+    args: { contribution, apr, destination, asBase, extraData },
+    options,
+  }: Parameters<ReadWriteHyperdrive["initialize"]>[0]): ReturnType<
+    ReadWriteHyperdrive["initialize"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      contribution = await this.convertToShares({
+        baseAmount: contribution,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.initialize({
+      args: { contribution, apr, destination, asBase, extraData },
+      options,
+    });
+  }
+
+  async openLong({
+    args: {
+      destination,
+      amount,
+      minBondsOut,
+      minVaultSharePrice,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["openLong"]>[0]): ReturnType<
+    ReadWriteHyperdrive["openLong"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      amount = await this.convertToShares({
+        baseAmount: amount,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.openLong({
+      args: {
+        destination,
+        amount,
+        minBondsOut,
+        minVaultSharePrice,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
+
+  async closeLong({
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["closeLong"]>[0]): ReturnType<
+    ReadWriteHyperdrive["closeLong"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      minAmountOut = await this.convertToShares({
+        baseAmount: minAmountOut,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.closeLong({
+      args: {
+        maturityTime,
+        bondAmountIn,
+        minAmountOut,
+        destination,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
+
+  async openShort({
+    args: {
+      destination,
+      bondAmount,
+      minVaultSharePrice,
+      maxDeposit,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["openShort"]>[0]): ReturnType<
+    ReadWriteHyperdrive["openShort"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      maxDeposit = await this.convertToShares({
+        baseAmount: maxDeposit,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.openShort({
+      args: {
+        destination,
+        bondAmount,
+        minVaultSharePrice,
+        maxDeposit,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
+
+  async closeShort({
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["closeShort"]>[0]): ReturnType<
+    ReadWriteHyperdrive["closeShort"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      minAmountOut = await this.convertToShares({
+        baseAmount: minAmountOut,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.closeLong({
+      args: {
+        maturityTime,
+        bondAmountIn,
+        minAmountOut,
+        destination,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
+
+  async addLiquidity({
+    args: {
+      destination,
+      contribution,
+      minAPR,
+      minLpSharePrice,
+      maxAPR,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["addLiquidity"]>[0]): ReturnType<
+    ReadWriteHyperdrive["addLiquidity"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      contribution = await this.convertToShares({
+        baseAmount: contribution,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.addLiquidity({
+      args: {
+        destination,
+        contribution,
+        minAPR,
+        minLpSharePrice,
+        maxAPR,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
+
+  async removeLiquidity({
+    args: { destination, lpSharesIn, minOutputPerShare, asBase, extraData },
+    options,
+  }: Parameters<ReadWriteHyperdrive["removeLiquidity"]>[0]): ReturnType<
+    ReadWriteHyperdrive["removeLiquidity"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      minOutputPerShare = await this.convertToShares({
+        baseAmount: minOutputPerShare,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.removeLiquidity({
+      args: { destination, lpSharesIn, minOutputPerShare, asBase, extraData },
+      options,
+    });
+  }
+
+  async redeemWithdrawalShares({
+    args: {
+      withdrawalSharesIn,
+      minOutputPerShare,
+      destination,
+      asBase,
+      extraData,
+    },
+    options,
+  }: Parameters<ReadWriteHyperdrive["redeemWithdrawalShares"]>[0]): ReturnType<
+    ReadWriteHyperdrive["redeemWithdrawalShares"]
+  > {
+    if (!asBase && !this.isUsingSharesAccounting) {
+      minOutputPerShare = await this.convertToShares({
+        baseAmount: minOutputPerShare,
+        options: {
+          blockTag: "latest",
+        },
+      });
+    }
+
+    return super.redeemWithdrawalShares({
+      args: {
+        withdrawalSharesIn,
+        minOutputPerShare,
+        destination,
+        asBase,
+        extraData,
+      },
+      options,
+    });
+  }
 }
