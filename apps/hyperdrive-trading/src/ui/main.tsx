@@ -1,6 +1,10 @@
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
+import {
+  ErrorBoundary as RollbarErrorBoundary,
+  Provider as RollbarProvider,
+} from "@rollbar/react"; // Provider imports 'rollbar'
 import { QueryClientProvider } from "@tanstack/react-query";
 import classNames from "classnames";
 import { createRoot } from "react-dom/client";
@@ -50,7 +54,16 @@ root.render(
         theme={customRainbowTheme()}
       >
         <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
-          <App />
+          <RollbarProvider
+            config={{
+              accessToken: import.meta.env.VITE_ROLLBAR_ACCESS_TOKEN as string,
+              environment: import.meta.env.VITE_ROLLBAR_ENV as string,
+            }}
+          >
+            <RollbarErrorBoundary>
+              <App />
+            </RollbarErrorBoundary>
+          </RollbarProvider>
         </SkeletonTheme>
       </RainbowKitProvider>
     </QueryClientProvider>

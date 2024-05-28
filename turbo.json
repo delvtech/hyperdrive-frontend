@@ -21,7 +21,9 @@
         "VITE_SEPOLIA_RPC_URL",
         "VITE_CAPSULE_API_KEY",
         "VITE_CAPSULE_ENV",
-        "VITE_ADDRESS_SCREEN_URL"
+        "VITE_ADDRESS_SCREEN_URL",
+        "VITE_ROLLBAR_ACCESS_TOKEN",
+        "VITE_ROLLBAR_ENV"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
