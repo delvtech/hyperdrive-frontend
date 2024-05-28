@@ -8,8 +8,8 @@ use crate::{
     utils::set_panic_hook,
 };
 
-/// Calculates the amount of shares or base the trader will receive after fees
-/// for closing a long
+/// Calculates the amount of shares the trader will receive after fees for
+/// closing a long
 ///
 /// @param poolInfo - The current state of the pool
 ///
