@@ -1507,10 +1507,10 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Predicts the amount of base asset it will cost to open a short.
+   * Calculates the cost to open a short given the current pool state and the
+   * amount of bonds the user wants to short.
    * @param amountOfBondsToShort The number of bonds to short
    * @param asBase If true, the traderDeposit will be in base. If false, the traderDeposit will be in shares
-   * @param asBase The decimal precision of the traderDeposit value
    */
   async previewOpenShort({
     amountOfBondsToShort,
