@@ -44,7 +44,7 @@ export function useTotalLongsValue({
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
-              sharesAmount: result.maxAmountOut,
+              sharesAmount: result.amountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
             totalLongsValue += amountOutInBase || 0n;
