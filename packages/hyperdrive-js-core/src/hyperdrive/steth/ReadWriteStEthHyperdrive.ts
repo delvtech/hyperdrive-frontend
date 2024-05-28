@@ -194,7 +194,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       });
     }
 
-    return super.closeLong({
+    return super.closeShort({
       args: {
         maturityTime,
         bondAmountIn,
