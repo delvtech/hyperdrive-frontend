@@ -114,7 +114,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Convert an amount of shares to base tokens using the current vault share price.
    */
-  async convertToBase({
+  protected async convertToBase({
     sharesAmount,
     options,
   }: {
@@ -123,13 +123,16 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<bigint> {
     const { vaultSharePrice } = await this.getPoolInfo(options);
     const decimals = await this.getDecimals();
-    return (sharesAmount * vaultSharePrice) / 10n ** BigInt(decimals);
+    return dnum.multiply(
+      [sharesAmount, decimals],
+      [vaultSharePrice, decimals],
+    )[0];
   }
 
   /**
    * Convert an amount of base tokens to shares using the current vault share price.
    */
-  async convertToShares({
+  protected async convertToShares({
     baseAmount,
     options,
   }: {
@@ -138,7 +141,7 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<bigint> {
     const { vaultSharePrice } = await this.getPoolInfo(options);
     const decimals = await this.getDecimals();
-    return (baseAmount * 10n ** BigInt(decimals)) / vaultSharePrice;
+    return dnum.divide([baseAmount, decimals], [vaultSharePrice, decimals])[0];
   }
 
   async getInitializationBlock(): Promise<Block> {
