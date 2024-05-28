@@ -24,7 +24,7 @@ export function CurrentValueCell({
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
-  const { maxAmountOut: sharesAmountOut, previewCloseLongStatus } =
+  const { amountOut: sharesAmountOut, previewCloseLongStatus } =
     usePreviewCloseLong({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: row.maturity,

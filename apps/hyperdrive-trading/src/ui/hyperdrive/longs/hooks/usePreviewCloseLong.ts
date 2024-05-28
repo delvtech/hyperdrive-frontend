@@ -15,7 +15,7 @@ interface UsePreviewCloseLongOptions {
 }
 
 interface UsePreviewCloseLongResult {
-  maxAmountOut: bigint | undefined;
+  amountOut: bigint | undefined;
   flatPlusCurveFee: bigint | undefined;
   previewCloseLongStatus: QueryStatus;
 }
@@ -54,7 +54,7 @@ export function usePreviewCloseLong({
   });
 
   return {
-    maxAmountOut: data?.maxAmountOut,
+    amountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseLongStatus: status,
   };
