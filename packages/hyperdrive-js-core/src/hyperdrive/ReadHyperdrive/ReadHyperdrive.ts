@@ -141,6 +141,17 @@ export class ReadHyperdrive extends ReadModel {
     return (baseAmount * 10n ** BigInt(decimals)) / vaultSharePrice;
   }
 
+  async getInitializationBlock(): Promise<Block> {
+    const events = await this.contract.getEvents("Initialize");
+
+    if (!events.length || events[0].blockNumber === undefined) {
+      throw new Error("Pool has not been initialized, no block found.");
+    }
+    const blockNumber = events[0].blockNumber;
+
+    return getBlockOrThrow(this.network, { blockNumber });
+  }
+
   /**
    * Get a standardized variable rate using vault share prices from checkpoints in
    * the last `timeRange` seconds.
@@ -154,18 +165,6 @@ export class ReadHyperdrive extends ReadModel {
    * @param timeRange The time range (in seconds) to use to calculate the variable
    * rate to look for checkpoints.
    */
-
-  async getInitializationBlock(): Promise<Block> {
-    const events = await this.contract.getEvents("Initialize");
-
-    if (!events.length || events[0].blockNumber === undefined) {
-      throw new Error("Pool has not been initialized, no block found.");
-    }
-    const blockNumber = events[0].blockNumber;
-
-    return getBlockOrThrow(this.network, { blockNumber });
-  }
-
   async getYieldSourceRate({
     blockRange,
   }: {
