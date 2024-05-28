@@ -119,7 +119,12 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       if (!this.isUsingSharesAccounting) {
         return {
           ...result,
-          maxSharesIn: result.maxBaseIn,
+          // TODO: Remove this for mainnet. The MockLido updates it price based
+          // on the current timestamp, so max calculations will be inaccurate
+          // after one block. This truncates the max shares to the nearest .0001
+          // stETH to reduce the error.
+          maxSharesIn: (result.maxBaseIn / BigInt(1e14)) * BigInt(1e14),
+          // maxSharesIn: result.maxBaseIn,
         };
       }
 
@@ -134,7 +139,12 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       if (!this.isUsingSharesAccounting) {
         return {
           ...result,
-          maxSharesIn: result.maxBaseIn,
+          // TODO: Remove this for mainnet. The MockLido updates it price based
+          // on the current timestamp, so max calculations will be inaccurate
+          // after one block. This truncates the max shares to the nearest .0001
+          // stETH to reduce the error.
+          maxSharesIn: (result.maxBaseIn / BigInt(1e14)) * BigInt(1e14),
+          // maxSharesIn: result.maxBaseIn,
         };
       }
 
