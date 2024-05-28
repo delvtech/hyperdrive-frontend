@@ -54,7 +54,7 @@ export function usePreviewCloseLong({
   });
 
   return {
-    maxAmountOut: data?.maxAmountOut,
+    maxAmountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseLongStatus: status,
   };
