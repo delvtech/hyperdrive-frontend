@@ -40,6 +40,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
   async initialize({
     args: { contribution, apr, destination, asBase, extraData },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["initialize"]>[0]): ReturnType<
     ReadWriteHyperdrive["initialize"]
   > {
@@ -55,6 +56,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
     return super.initialize({
       args: { contribution, apr, destination, asBase, extraData },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -68,6 +70,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["openLong"]>[0]): ReturnType<
     ReadWriteHyperdrive["openLong"]
   > {
@@ -90,6 +93,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -103,6 +107,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["closeLong"]>[0]): ReturnType<
     ReadWriteHyperdrive["closeLong"]
   > {
@@ -125,6 +130,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -138,6 +144,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["openShort"]>[0]): ReturnType<
     ReadWriteHyperdrive["openShort"]
   > {
@@ -160,6 +167,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -173,6 +181,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["closeShort"]>[0]): ReturnType<
     ReadWriteHyperdrive["closeShort"]
   > {
@@ -195,6 +204,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -209,6 +219,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["addLiquidity"]>[0]): ReturnType<
     ReadWriteHyperdrive["addLiquidity"]
   > {
@@ -232,12 +243,14 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 
   async removeLiquidity({
     args: { destination, lpSharesIn, minOutputPerShare, asBase, extraData },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["removeLiquidity"]>[0]): ReturnType<
     ReadWriteHyperdrive["removeLiquidity"]
   > {
@@ -253,6 +266,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
     return super.removeLiquidity({
       args: { destination, lpSharesIn, minOutputPerShare, asBase, extraData },
       options,
+      onTransactionCompleted,
     });
   }
 
@@ -265,6 +279,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
       extraData,
     },
     options,
+    onTransactionCompleted,
   }: Parameters<ReadWriteHyperdrive["redeemWithdrawalShares"]>[0]): ReturnType<
     ReadWriteHyperdrive["redeemWithdrawalShares"]
   > {
@@ -286,6 +301,7 @@ export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
         extraData,
       },
       options,
+      onTransactionCompleted,
     });
   }
 }
