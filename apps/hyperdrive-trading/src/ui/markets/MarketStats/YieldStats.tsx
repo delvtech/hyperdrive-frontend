@@ -93,7 +93,7 @@ export function YieldStats({
             ) : (
               <Stat
                 label="Short ROI"
-                description="Annualized return on shorts assuming the current variable rate stays the same for 1 year."
+                description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
                 tooltipPosition="bottom"
                 value={
                   isLoadingShortRoi ? (
