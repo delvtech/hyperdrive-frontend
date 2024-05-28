@@ -111,6 +111,21 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     // Calculations
 
+    async getMaxShort(
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort(options);
+
+      if (!this.setUseSharesAccounting) {
+        return {
+          ...result,
+          maxSharesIn: result.maxBaseIn,
+        };
+      }
+
+      return result;
+    }
+
     async getMaxLong(
       options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
     ): ReturnType<ReadHyperdrive["getMaxLong"]> {
