@@ -112,6 +112,36 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
+   * Convert an amount of shares to base tokens using the current vault share price.
+   */
+  async convertToBase({
+    sharesAmount,
+    options,
+  }: {
+    sharesAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharePrice } = await this.getPoolInfo(options);
+    const decimals = await this.getDecimals();
+    return (sharesAmount * vaultSharePrice) / 10n ** BigInt(decimals);
+  }
+
+  /**
+   * Convert an amount of base tokens to shares using the current vault share price.
+   */
+  async convertToShares({
+    baseAmount,
+    options,
+  }: {
+    baseAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharePrice } = await this.getPoolInfo(options);
+    const decimals = await this.getDecimals();
+    return (baseAmount * 10n ** BigInt(decimals)) / vaultSharePrice;
+  }
+
+  /**
    * Get a standardized variable rate using vault share prices from checkpoints in
    * the last `timeRange` seconds.
    *
