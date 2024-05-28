@@ -76,7 +76,7 @@ export function CloseLongForm({
 
   // Preview the amount of base or shares they get back from closing their long.
   const {
-    maxAmountOut: withdrawAmount,
+    amountOut: withdrawAmount,
     flatPlusCurveFee,
     previewCloseLongStatus,
   } = usePreviewCloseLong({
