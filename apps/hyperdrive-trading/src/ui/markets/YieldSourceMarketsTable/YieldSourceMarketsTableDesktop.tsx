@@ -18,6 +18,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
+import { ShortRateCell } from "src/ui/markets/YieldSourceMarketsTable/ShortRateCell";
 import {
   YieldSourceMarketsTableRowData,
   useRowData,
@@ -187,20 +188,17 @@ function getColumns(appConfig: AppConfig) {
         );
       },
     }),
-    columnHelper.accessor("shortApy", {
-      id: "short-apy",
+    columnHelper.display({
+      id: "short-rate",
       header: () => (
         <TextWithTooltip
           label="Short ROI"
           tooltip="Holding period return on shorts assuming the current variable rate stays the same until maturity."
         />
       ),
-      cell: ({ getValue }) => {
-        const shortApy = getValue();
+      cell: ({ row }) => {
         return (
-          <span key="short-apy" className="lg:flex lg:w-20 lg:justify-end">
-            {shortApy ? `${formatRate(shortApy)}%` : "-"}
-          </span>
+          <ShortRateCell key="short-apy" hyperdrive={row.original.market} />
         );
       },
     }),
