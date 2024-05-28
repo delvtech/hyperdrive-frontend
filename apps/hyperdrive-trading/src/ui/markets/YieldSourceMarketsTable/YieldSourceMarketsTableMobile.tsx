@@ -14,6 +14,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
+import { ShortRateCell } from "src/ui/markets/YieldSourceMarketsTable/ShortRateCell";
 import {
   YieldSourceMarketsTableRowData,
   useRowData,
@@ -128,7 +129,7 @@ function formatMobileColumnData(
     { name: "Fixed APR", value: `${formatRate(row.fixedApr)}%` },
     {
       name: "Short ROI",
-      value: row.shortApy ? `${formatRate(row.shortApy)}%` : "-",
+      value: <ShortRateCell hyperdrive={row.market} />,
     },
     {
       name: "LP APY",
