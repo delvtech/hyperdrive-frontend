@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/hooks/useTermsOfUseAndPrivacyPolicyAccepted";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
-import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/useTermsOfUseAndPrivacyPolicyAccepted";
 
 export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
   const {
