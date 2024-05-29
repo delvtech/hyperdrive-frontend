@@ -35,7 +35,7 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
   },
   appName: "Hyperdrive",
   theme: Theme.dark,
-  logo: "/hyperdrive-logo-white.svg",
+  logo: "/capsule-wordmark.png",
 
   oAuthMethods: [
     OAuthMethod.GOOGLE,
@@ -54,7 +54,7 @@ export const capsuleWallet: CreateWalletFn | undefined = hasRequiredEnvVars
 
         // override the rainbowkit name and icon options
         name: "Capsule",
-        iconUrl: "/capsule-logo.jpeg",
+        iconUrl: "/capsule-logo.png",
       };
     }
   : undefined;
