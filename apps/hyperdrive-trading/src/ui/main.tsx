@@ -28,7 +28,27 @@ root.render(
   <WagmiProvider config={wagmiConfig}>
     <ToastProvider />
     <QueryClientProvider client={queryClient}>
-      <RainbowKitProvider showRecentTransactions theme={customRainbowTheme()}>
+      <RainbowKitProvider
+        appInfo={{
+          appName: "Hyperdrive",
+          disclaimer: () => (
+            <span className="text-xs text-neutral-content">
+              Note: If you choose to log in with Capsule, please review their{" "}
+              <a
+                href="https://capsule-org.notion.site/Capsule-Labs-Inc-Privacy-Policy-7421971b985d4320abfe8454c4ba185c"
+                target="_blank"
+                rel="noreferrer"
+                className="underline"
+              >
+                privacy
+              </a>{" "}
+              policy.{" "}
+            </span>
+          ),
+        }}
+        showRecentTransactions
+        theme={customRainbowTheme()}
+      >
         <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
           <App />
         </SkeletonTheme>
