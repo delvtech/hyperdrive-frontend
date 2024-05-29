@@ -1,4 +1,5 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import * as dnum from "dnum";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -71,6 +72,46 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         namespace: this.contract.namespace,
         network: this.network,
       });
+    }
+
+    // Calculations
+
+    async getMaxShort(
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort(options);
+
+      const decimals = await this.getDecimals();
+      return {
+        ...result,
+        // FIXME: MockRocketPool updates its price based on the current
+        // timestamp, so the accuracy of max calculations will slowly drift
+        // every second. This pads the max shares to avoid errors trying to open
+        // the max, but may not be needed for mainnet.
+        maxSharesIn: dnum.multiply(
+          [result.maxSharesIn, decimals],
+          [BigInt(1e18) - BigInt(1e12), decimals],
+        )[0],
+      };
+    }
+
+    async getMaxLong(
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxLong"]> {
+      const result = await super.getMaxLong(options);
+
+      const decimals = await this.getDecimals();
+      return {
+        ...result,
+        // FIXME: MockRocketPool updates its price based on the current
+        // timestamp, so the accuracy of max calculations will slowly drift
+        // every second. This pads the max shares to avoid errors trying to open
+        // the max, but may not be needed for mainnet.
+        maxSharesIn: dnum.multiply(
+          [result.maxSharesIn, decimals],
+          [BigInt(1e18) - BigInt(1e12), decimals],
+        )[0],
+      };
     }
   };
 }

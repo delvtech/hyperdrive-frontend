@@ -112,18 +112,37 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Get a standardized variable rate using vault share prices from checkpoints in
-   * the last `timeRange` seconds.
-   *
-   * Note: This function will throw an error if the pool was deployed within the
-   * last `timeRange` seconds.
-   *
-   * See Agent0 for calculation:
-   * https://github.com/delvtech/agent0/blob/854e9392e09898e65aeed0040c5e648c8d3d1380/src/agent0/ethpy/hyperdrive/interface/read_interface.py#L421
-   *
-   * @param timeRange The time range (in seconds) to use to calculate the variable
-   * rate to look for checkpoints.
+   * Convert an amount of shares to base tokens using the current vault share price.
    */
+  protected async convertToBase({
+    sharesAmount,
+    options,
+  }: {
+    sharesAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharePrice } = await this.getPoolInfo(options);
+    const decimals = await this.getDecimals();
+    return dnum.multiply(
+      [sharesAmount, decimals],
+      [vaultSharePrice, decimals],
+    )[0];
+  }
+
+  /**
+   * Convert an amount of base tokens to shares using the current vault share price.
+   */
+  protected async convertToShares({
+    baseAmount,
+    options,
+  }: {
+    baseAmount: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharePrice } = await this.getPoolInfo(options);
+    const decimals = await this.getDecimals();
+    return dnum.divide([baseAmount, decimals], [vaultSharePrice, decimals])[0];
+  }
 
   async getInitializationBlock(): Promise<Block> {
     const events = await this.contract.getEvents("Initialize");
@@ -136,6 +155,19 @@ export class ReadHyperdrive extends ReadModel {
     return getBlockOrThrow(this.network, { blockNumber });
   }
 
+  /**
+   * Get a standardized variable rate using vault share prices from checkpoints in
+   * the last `timeRange` seconds.
+   *
+   * Note: This function will throw an error if the pool was deployed within the
+   * last `timeRange` seconds.
+   *
+   * See Agent0 for calculation:
+   * https://github.com/delvtech/agent0/blob/854e9392e09898e65aeed0040c5e648c8d3d1380/src/agent0/ethpy/hyperdrive/interface/read_interface.py#L421
+   *
+   * @param timeRange The time range (in seconds) to use to calculate the variable
+   * rate to look for checkpoints.
+   */
   async getYieldSourceRate({
     blockRange,
   }: {
@@ -1475,10 +1507,10 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Predicts the amount of base asset it will cost to open a short.
+   * Calculates the cost to open a short given the current pool state and the
+   * amount of bonds the user wants to short.
    * @param amountOfBondsToShort The number of bonds to short
    * @param asBase If true, the traderDeposit will be in base. If false, the traderDeposit will be in shares
-   * @param asBase The decimal precision of the traderDeposit value
    */
   async previewOpenShort({
     amountOfBondsToShort,
@@ -1884,26 +1916,6 @@ export class ReadHyperdrive extends ReadModel {
       withdrawalSharesRedeemed,
     };
   }
-}
-
-function calculateBaseAmount({
-  vaultShareAmount,
-  asBase,
-  baseAmount,
-}: {
-  vaultShareAmount: bigint;
-  asBase: boolean;
-  baseAmount: bigint;
-}): bigint {
-  // If you paid in base, no need to convert anything
-  if (asBase) {
-    return baseAmount;
-  }
-
-  // Get the vault share price at the time you opened the position
-  // so we can convert your shares paid into their base value
-  const vaultSharePrice = dnum.div([baseAmount, 18], [vaultShareAmount, 18])[0];
-  return dnum.multiply([vaultSharePrice, 18], [vaultShareAmount, 18])[0];
 }
 
 /*

@@ -1,4 +1,5 @@
 import { ContractReadOptions } from "@delvtech/evm-client";
+import * as dnum from "dnum";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -109,17 +110,68 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
     }
 
+    // Calculations
+
+    async getMaxShort(
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort(options);
+
+      if (!this.isUsingSharesAccounting) {
+        result.maxSharesIn = result.maxBaseIn;
+      }
+
+      const decimals = await this.getDecimals();
+      return {
+        ...result,
+        // FIXME: MockLido updates its price based on the current timestamp, so
+        // the accuracy of max calculations will slowly drift every second.
+        // This pads the max shares to avoid errors trying to open the max,
+        // but may not be needed for mainnet.
+        maxSharesIn: dnum.multiply(
+          [result.maxSharesIn, decimals],
+          [BigInt(1e18) - BigInt(1e12), decimals],
+        )[0],
+      };
+    }
+
+    async getMaxLong(
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
+    ): ReturnType<ReadHyperdrive["getMaxLong"]> {
+      const result = await super.getMaxLong(options);
+
+      if (!this.isUsingSharesAccounting) {
+        result.maxSharesIn = result.maxBaseIn;
+      }
+
+      const decimals = await this.getDecimals();
+      return {
+        ...result,
+        // FIXME: MockLido updates its price based on the current timestamp, so
+        // the accuracy of max calculations will slowly drift every second.
+        // This pads the max shares to avoid errors trying to open the max,
+        // but may not be needed for mainnet.
+        maxSharesIn: dnum.multiply(
+          [result.maxSharesIn, decimals],
+          [BigInt(1e18) - BigInt(1e12), decimals],
+        )[0],
+      };
+    }
+
+    // Previews
+
     async previewOpenLong({
-      amountIn: _amountIn,
+      amountIn,
       asBase,
       options,
     }: Parameters<ReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
       ReadHyperdrive["previewOpenLong"]
     > {
-      let amountIn = _amountIn;
-
       if (!asBase && !this.isUsingSharesAccounting) {
-        amountIn = await this.convertToShares(amountIn, options);
+        amountIn = await this.convertToShares({
+          baseAmount: amountIn,
+          options,
+        });
       }
 
       return super.previewOpenLong({
@@ -137,8 +189,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }: Parameters<ReadHyperdrive["previewCloseLong"]>[0]): ReturnType<
       ReadHyperdrive["previewCloseLong"]
     > {
-      const requiresConversion = !asBase && !this.isUsingSharesAccounting;
-
       const { flatPlusCurveFee, amountOut } = await super.previewCloseLong({
         maturityTime,
         bondAmountIn,
@@ -146,14 +196,17 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         options,
       });
 
-      if (requiresConversion) {
-        const convertedStEthAmount = await this.convertToStEth(amountOut, {
-          blockTag: "latest",
-        });
-        return { amountOut: convertedStEthAmount, flatPlusCurveFee };
+      if (!asBase && !this.isUsingSharesAccounting) {
+        return {
+          flatPlusCurveFee,
+          amountOut: await this.convertToBase({
+            sharesAmount: amountOut,
+            options,
+          }),
+        };
       }
 
-      return { amountOut, flatPlusCurveFee };
+      return { flatPlusCurveFee, amountOut };
     }
 
     async previewOpenShort({
@@ -172,10 +225,10 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       if (!asBase && !this.isUsingSharesAccounting) {
         return {
           ...result,
-          traderDeposit: await this.convertToStEth(
-            result.traderDeposit,
+          traderDeposit: await this.convertToBase({
+            sharesAmount: result.traderDeposit,
             options,
-          ),
+          }),
         };
       }
 
@@ -191,8 +244,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }: Parameters<ReadHyperdrive["previewCloseShort"]>[0]): ReturnType<
       ReadHyperdrive["previewCloseShort"]
     > {
-      const requiresConversion = !asBase && !this.isUsingSharesAccounting;
-
       const { amountOut, flatPlusCurveFee } = await super.previewCloseShort({
         asBase,
         maturityTime,
@@ -201,35 +252,36 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         options,
       });
 
-      if (requiresConversion) {
-        const convertedStEthAmount = await this.convertToStEth(amountOut, {
-          blockTag: "latest",
-        });
-        return { amountOut: convertedStEthAmount, flatPlusCurveFee };
+      if (!asBase && !this.isUsingSharesAccounting) {
+        return {
+          amountOut: await this.convertToBase({
+            sharesAmount: amountOut,
+            options,
+          }),
+          flatPlusCurveFee,
+        };
       }
 
       return { amountOut, flatPlusCurveFee };
     }
 
     async previewAddLiquidity({
-      contribution: _contribution,
+      contribution,
       minAPR,
       minLpSharePrice,
       maxAPR,
-      destination,
       asBase,
-      extraData,
       options,
+      // TODO: Remove unused fields
+      destination,
+      extraData,
     }: Parameters<ReadHyperdrive["previewAddLiquidity"]>[0]): ReturnType<
       ReadHyperdrive["previewAddLiquidity"]
     > {
-      let contribution = _contribution;
-
       if (!asBase && !this.isUsingSharesAccounting) {
-        // Using the latest block since the preview will simulate the transaction
-        // using the latest state of the contract.
-        contribution = await this.convertToShares(contribution, {
-          blockTag: "latest",
+        contribution = await this.convertToShares({
+          baseAmount: contribution,
+          options,
         });
       }
 
@@ -238,16 +290,16 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         minAPR,
         minLpSharePrice,
         maxAPR,
-        destination,
         asBase,
-        extraData,
         options,
+        destination,
+        extraData,
       });
     }
 
     async previewRemoveLiquidity({
       lpSharesIn,
-      minOutputPerShare: _minOutputPerShare,
+      minOutputPerShare,
       destination,
       asBase,
       extraData,
@@ -256,13 +308,15 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       ReadHyperdrive["previewRemoveLiquidity"]
     > {
       const requiresConversion = !asBase && !this.isUsingSharesAccounting;
-      let minOutputPerShare = _minOutputPerShare;
 
       if (requiresConversion) {
         // Using the latest block since the preview will simulate the transaction
         // using the latest state of the contract.
-        minOutputPerShare = await this.convertToShares(minOutputPerShare, {
-          blockTag: "latest",
+        minOutputPerShare = await this.convertToShares({
+          baseAmount: minOutputPerShare,
+          options: {
+            blockTag: "latest",
+          },
         });
       }
 
@@ -278,41 +332,63 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       if (requiresConversion) {
         return {
           ...result,
-          proceeds: await this.convertToStEth(result.proceeds),
+          proceeds: await this.convertToBase({
+            sharesAmount: result.proceeds,
+            options: {
+              blockTag: "latest",
+            },
+          }),
         };
       }
 
       return result;
     }
 
-    /**
-     * Convert a stETH amount to shares.
-     */
-    private async convertToShares(
-      stEthAmount: bigint,
-      options?: ContractReadOptions,
-    ): Promise<bigint> {
-      const stEth = await this.getSharesToken();
-      const sharesAmount = await stEth.getSharesByPooledEth({
-        ethAmount: stEthAmount,
+    async previewRedeemWithdrawalShares({
+      withdrawalSharesIn,
+      minOutputPerShare,
+      destination,
+      asBase,
+      extraData,
+      options,
+    }: Parameters<
+      ReadHyperdrive["previewRedeemWithdrawalShares"]
+    >[0]): ReturnType<ReadHyperdrive["previewRedeemWithdrawalShares"]> {
+      const requiresConversion = !asBase && !this.isUsingSharesAccounting;
+
+      if (requiresConversion) {
+        // Using the latest block since the preview will simulate the transaction
+        // using the latest state of the contract.
+        minOutputPerShare = await this.convertToShares({
+          baseAmount: minOutputPerShare,
+          options: {
+            blockTag: "latest",
+          },
+        });
+      }
+
+      const result = await super.previewRedeemWithdrawalShares({
+        withdrawalSharesIn,
+        minOutputPerShare,
+        destination,
+        asBase,
+        extraData,
         options,
       });
-      // FIXME: Remove and find solution for mainnet
-      // This is needed because the conversion done before submitting the
-      // transaction to open a position and by the time the position TX is
-      // submitted, the share price could have changed.
-      return sharesAmount - (sharesAmount % BigInt(1e16));
-    }
 
-    /**
-     * Convert a share amount to stETH.
-     */
-    private async convertToStEth(
-      sharesAmount: bigint,
-      options?: ContractReadOptions,
-    ): Promise<bigint> {
-      const stEth = await this.getSharesToken();
-      return stEth.getPooledEthByShares({ sharesAmount, options });
+      if (requiresConversion) {
+        return {
+          ...result,
+          sharesProceeds: await this.convertToBase({
+            sharesAmount: result.sharesProceeds,
+            options: {
+              blockTag: "latest",
+            },
+          }),
+        };
+      }
+
+      return result;
     }
   };
 }
