@@ -77,7 +77,7 @@ export function TokenPicker({
       >
         <button
           className={classNames(
-            "daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30 hover:bg-base-100",
+            "daisy-btn no-animation flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30 hover:bg-base-100",
 
             { "border-r-none rounded-r-none": joined },
           )}
