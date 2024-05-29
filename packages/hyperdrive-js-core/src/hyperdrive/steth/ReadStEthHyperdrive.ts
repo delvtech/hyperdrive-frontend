@@ -1,4 +1,5 @@
 import { ContractReadOptions } from "@delvtech/evm-client";
+import * as dnum from "dnum";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -117,9 +118,18 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const result = await super.getMaxShort(options);
 
       if (!this.isUsingSharesAccounting) {
+        const decimals = await this.getDecimals();
         return {
           ...result,
-          maxSharesIn: result.maxBaseIn,
+          // TODO: MockLido updates its price based on the current timestamp, so
+          // the accuracy of max calculations will slowly drift every second.
+          // This pads the max shares to avoid errors trying to open the max,
+          // but may not be needed for mainnet.
+          maxSharesIn: dnum.multiply(
+            [result.maxBaseIn, decimals],
+            [BigInt(1e18) - BigInt(1e12), decimals],
+          )[0],
+          // maxSharesIn: result.maxBaseIn,
         };
       }
 
@@ -132,9 +142,18 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const result = await super.getMaxLong(options);
 
       if (!this.isUsingSharesAccounting) {
+        const decimals = await this.getDecimals();
         return {
           ...result,
-          maxSharesIn: result.maxBaseIn,
+          // TODO: MockLido updates its price based on the current timestamp, so
+          // the accuracy of max calculations will slowly drift every second.
+          // This pads the max shares to avoid errors trying to open the max,
+          // but may not be needed for mainnet.
+          maxSharesIn: dnum.multiply(
+            [result.maxBaseIn, decimals],
+            [BigInt(1e18) - BigInt(1e12), decimals],
+          )[0],
+          // maxSharesIn: result.maxBaseIn,
         };
       }
 
