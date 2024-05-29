@@ -53,8 +53,8 @@ export const capsuleWallet: CreateWalletFn | undefined = hasRequiredEnvVars
         ...wallet,
 
         // override the rainbowkit name and icon options
-        name: "Log in or Sign up",
-        iconUrl: "/hyperdrive-solo-logo-white.svg",
+        name: "Capsule",
+        iconUrl: "/capsule-logo.jpeg",
       };
     }
   : undefined;

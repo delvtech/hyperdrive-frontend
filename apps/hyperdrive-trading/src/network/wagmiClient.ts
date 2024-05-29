@@ -75,11 +75,11 @@ export const wagmiConfig = getDefaultConfig({
   chains: chains as [Chain, ...restChains: Chain[]],
   wallets: [
     {
-      groupName: "Recommended",
+      groupName: "Other",
       wallets: recommendedWallets,
     },
     {
-      groupName: "Continue with Email",
+      groupName: "Log In or Sign Up with Capsule",
       wallets: customWallets,
     },
   ],
