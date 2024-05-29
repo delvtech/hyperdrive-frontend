@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
 
@@ -24,22 +24,6 @@ export function TokenPicker({
   label?: string;
   joined?: boolean;
 }): ReactElement {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (ref.current && !ref.current.contains(event.target as Node)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
@@ -70,7 +54,6 @@ export function TokenPicker({
         </label>
       ) : undefined}
       <div
-        ref={ref}
         className={
           "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
         }
@@ -83,25 +66,21 @@ export function TokenPicker({
           )}
           onClick={(e) => {
             e.preventDefault();
-            setIsOpen(!isOpen);
           }}
         >
-          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5 " />{" "}
-          {activeToken?.tokenConfig?.symbol}
-          <ChevronDownIcon
-            className={classNames(
-              "ml-2 h-3 transition-transform duration-200",
-              {
-                "rotate-180": isOpen,
-                "rotate-0": !isOpen,
-              },
-            )}
-          />
+          <label tabIndex={0} className="group">
+            <img src={activeToken?.tokenConfig?.iconUrl} className="h-5 " />{" "}
+            {activeToken?.tokenConfig?.symbol}
+            <ChevronDownIcon
+              className={classNames(
+                "ml-2 h-3 transition-transform duration-200 group-focus:rotate-180",
+              )}
+            />
+          </label>
         </button>
         <ul
           className={classNames(
             "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow",
-            { hidden: !isOpen },
           )}
         >
           {tokens.map(({ tokenConfig, tokenBalance }) => (
@@ -110,7 +89,6 @@ export function TokenPicker({
                 onClick={(e) => {
                   onChange(tokenConfig?.address);
                   e.preventDefault();
-                  setIsOpen(false);
                 }}
                 className="gap-2"
               >
