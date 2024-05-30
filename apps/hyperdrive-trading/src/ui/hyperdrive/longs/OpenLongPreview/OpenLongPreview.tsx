@@ -1,6 +1,7 @@
 import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
+  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -38,6 +39,10 @@ export function OpenLongPreview({
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
@@ -99,15 +104,16 @@ export function OpenLongPreview({
                     calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: asBase
-                        ? long.baseAmountPaid
-                        : // TODO: move sharesAmountPaid into the sdk's Long interface
-                          // instead of converting here
-                          convertSharesToBase({
-                            sharesAmount: long.baseAmountPaid,
-                            vaultSharePrice: vaultSharePrice,
-                            decimals: activeToken.decimals,
-                          }),
+                      baseAmount:
+                        asBase || sharesToken.extensions.isSharesPeggedToBase
+                          ? long.baseAmountPaid
+                          : // TODO: move sharesAmountPaid into the sdk's Long interface
+                            // instead of converting here
+                            convertSharesToBase({
+                              sharesAmount: long.baseAmountPaid,
+                              vaultSharePrice: vaultSharePrice,
+                              decimals: activeToken.decimals,
+                            }),
                       bondAmount: long.bondAmount,
                     }),
                     baseToken.decimals,
