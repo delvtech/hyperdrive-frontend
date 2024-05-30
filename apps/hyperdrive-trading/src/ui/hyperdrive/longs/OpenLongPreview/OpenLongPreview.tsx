@@ -1,6 +1,7 @@
 import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
+  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -15,6 +16,7 @@ import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { getIsSteth } from "src/vaults/isSteth";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -40,8 +42,12 @@ export function OpenLongPreview({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
-
+  const isSteth = getIsSteth(sharesToken);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (
@@ -99,15 +105,16 @@ export function OpenLongPreview({
                     calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: asBase
-                        ? long.baseAmountPaid
-                        : // TODO: move sharesAmountPaid into the sdk's Long interface
-                          // instead of converting here
-                          convertSharesToBase({
-                            sharesAmount: long.baseAmountPaid,
-                            vaultSharePrice: vaultSharePrice,
-                            decimals: activeToken.decimals,
-                          }),
+                      baseAmount:
+                        asBase || isSteth
+                          ? long.baseAmountPaid
+                          : // TODO: move sharesAmountPaid into the sdk's Long interface
+                            // instead of converting here
+                            convertSharesToBase({
+                              sharesAmount: long.baseAmountPaid,
+                              vaultSharePrice: vaultSharePrice,
+                              decimals: activeToken.decimals,
+                            }),
                       bondAmount: long.bondAmount,
                     }),
                     baseToken.decimals,
