@@ -2,6 +2,7 @@ import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -14,6 +15,7 @@ interface AddLiquidityPreviewProps {
   depositTokenDecimals: number;
   depositTokenPlaces: number;
   depositTokenSymbol: string;
+  addLiquidityPreviewStatus: "error" | "idle" | "loading" | "success";
 }
 
 export function AddLiquidityPreview({
@@ -24,6 +26,7 @@ export function AddLiquidityPreview({
   depositTokenDecimals,
   depositTokenPlaces,
   lpSharesOut,
+  addLiquidityPreviewStatus,
 }: AddLiquidityPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -35,22 +38,27 @@ export function AddLiquidityPreview({
       <LabelValue
         label="Your pool share"
         value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-              {
-                "border-b border-dashed border-current": poolShareAfterDeposit,
-              },
-            )}
-            data-tip="Your share of the total liquidity in the pool"
-          >
-            {poolShareAfterDeposit
-              ? `${dnum.format(
-                  [poolShareAfterDeposit, hyperdrive.decimals],
-                  4,
-                )}%`
-              : "-"}
-          </span>
+          addLiquidityPreviewStatus === "loading" && depositAmount ? (
+            <Skeleton width={100} />
+          ) : (
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                {
+                  "border-b border-dashed border-current":
+                    poolShareAfterDeposit,
+                },
+              )}
+              data-tip="Your share of the total liquidity in the pool"
+            >
+              {poolShareAfterDeposit
+                ? `${dnum.format(
+                    [poolShareAfterDeposit, hyperdrive.decimals],
+                    4,
+                  )}%`
+                : "-"}
+            </span>
+          )
         }
       />
       <LabelValue
@@ -70,15 +78,19 @@ export function AddLiquidityPreview({
       <LabelValue
         label="You receive"
         value={
-          <p className="font-bold">
-            {lpSharesOut
-              ? `${formatBalance({
-                  balance: lpSharesOut,
-                  decimals: hyperdrive.decimals,
-                  places: baseToken.places,
-                })} ${baseToken.symbol}-LP`
-              : "-"}
-          </p>
+          addLiquidityPreviewStatus === "loading" && depositAmount ? (
+            <Skeleton width={100} />
+          ) : (
+            <p className="font-bold">
+              {lpSharesOut
+                ? `${formatBalance({
+                    balance: lpSharesOut,
+                    decimals: hyperdrive.decimals,
+                    places: baseToken.places,
+                  })} ${baseToken.symbol}-LP`
+                : "-"}
+            </p>
+          )
         }
       />
     </div>
