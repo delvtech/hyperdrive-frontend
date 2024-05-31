@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
+import { useBlockNumber } from "wagmi";
 interface UsePreviewOpenLongOptions {
   hyperdriveAddress: Address;
   amountIn: bigint | undefined;
@@ -23,14 +24,14 @@ export function usePreviewOpenLong({
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-
+  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!amountIn && !!readHyperdrive;
-
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       hyperdrive: hyperdriveAddress,
       amountIn: amountIn?.toString(),
       asBase,
+      blockNumber: blockNumber?.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
