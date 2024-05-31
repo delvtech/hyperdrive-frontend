@@ -49,7 +49,6 @@ export function OpenLongPreview({
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
-
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (
@@ -68,7 +67,7 @@ export function OpenLongPreview({
         <LabelValue
           label="You receive"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <span className="font-bold">{`${formatBalance({
@@ -82,7 +81,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Pool fee"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -106,7 +105,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Net fixed rate"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -140,7 +139,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Market rate after open"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -162,7 +161,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Fixed APR impact"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -190,7 +189,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Yield at maturity"
           value={
-            openLongPreviewStatus === "loading" ? (
+            openLongPreviewStatus === "loading" && long.bondAmount ? (
               <Skeleton width={100} />
             ) : (
               <div

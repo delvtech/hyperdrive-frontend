@@ -5,6 +5,7 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -236,13 +237,27 @@ export function OpenShortForm({
           shortSize={amountOfBondsToShortAsBigInt}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
+          openShortPreviewStatus={openShortPreviewStatus}
         />
       }
       disclaimer={(() => {
-        if (traderDeposit && !!amountOfBondsToShortAsBigInt) {
+        if (!amountOfBondsToShortAsBigInt) {
+          return null;
+        } else if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+          return (
+            <p className="text-center text-sm text-error">
+              Pool limit exceeded. Max short size is{" "}
+              {formatBalance({
+                balance: maxBondsOut || 0n,
+                decimals: hyperdrive.decimals,
+              })}{" "}
+              hy{baseToken.symbol}
+            </p>
+          );
+        } else {
           return (
             <div className="flex flex-col gap-4">
-              {!hasEnoughBalance ? (
+              {!hasEnoughBalance && openShortPreviewStatus !== "loading" ? (
                 <p className="text-center text-sm text-error">
                   Insufficient balance
                 </p>
@@ -250,22 +265,34 @@ export function OpenShortForm({
               <p className="text-center text-sm text-neutral-content">
                 You pay{" "}
                 <strong>
-                  {formatBalance({
-                    balance: traderDeposit || 0n,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })}{" "}
-                  {activeToken.symbol}
+                  {openShortPreviewStatus === "loading" ? (
+                    // make this an inline skeleton
+                    <span className="inline-block">
+                      <Skeleton width={50} />
+                    </span>
+                  ) : (
+                    formatBalance({
+                      balance: traderDeposit || 0n,
+                      decimals: activeToken.decimals,
+                      includeCommas: true,
+                      places: activeToken.places,
+                    })
+                  )}{" "}
                 </strong>{" "}
                 in exchange for the yield on{" "}
                 <strong>
-                  {formatBalance({
-                    balance: amountOfBondsToShortAsBigInt,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })}{" "}
+                  {openShortPreviewStatus === "loading" ? (
+                    <span className="inline-block">
+                      <Skeleton width={50} />
+                    </span>
+                  ) : (
+                    formatBalance({
+                      balance: amountOfBondsToShortAsBigInt,
+                      decimals: activeToken.decimals,
+                      includeCommas: true,
+                      places: activeToken.places,
+                    })
+                  )}{" "}
                   {baseToken.symbol}
                 </strong>{" "}
                 deposited into{" "}
@@ -283,18 +310,6 @@ export function OpenShortForm({
                   : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
               </p>
             </div>
-          );
-        }
-        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
-          return (
-            <p className="text-center text-sm text-error">
-              Pool limit exceeded. Max short size is{" "}
-              {formatBalance({
-                balance: maxBondsOut || 0n,
-                decimals: hyperdrive.decimals,
-              })}{" "}
-              hy{baseToken.symbol}
-            </p>
           );
         }
       })()}
