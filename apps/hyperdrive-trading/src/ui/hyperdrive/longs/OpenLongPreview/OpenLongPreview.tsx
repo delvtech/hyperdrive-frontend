@@ -8,6 +8,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
@@ -20,6 +21,7 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
+  openLongPreviewStatus: "error" | "idle" | "loading" | "success";
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
@@ -30,6 +32,7 @@ interface OpenLongPreviewProps {
 export function OpenLongPreview({
   hyperdrive,
   long,
+  openLongPreviewStatus,
   spotRateAfterOpen,
   activeToken,
   curveFee,
@@ -65,28 +68,36 @@ export function OpenLongPreview({
         <LabelValue
           label="You receive"
           value={
-            <span className="font-bold">{`${formatBalance({
-              balance: long.bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })} hy${baseToken.symbol}`}</span>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span className="font-bold">{`${formatBalance({
+                balance: long.bondAmount,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })} hy${baseToken.symbol}`}</span>
+            )
           }
         />
         <LabelValue
           label="Pool fee"
           value={
-            <span
-              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-              data-tip="Total combined fee paid to LPs and governance to open the long."
-            >
-              {curveFee
-                ? `${formatBalance({
-                    balance: curveFee,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })} hy${baseToken.symbol}`
-                : `0 hy${baseToken.symbol}`}
-            </span>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+                data-tip="Total combined fee paid to LPs and governance to open the long."
+              >
+                {curveFee
+                  ? `${formatBalance({
+                      balance: curveFee,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })} hy${baseToken.symbol}`
+                  : `0 hy${baseToken.symbol}`}
+              </span>
+            )
           }
         />
       </div>
@@ -95,64 +106,78 @@ export function OpenLongPreview({
         <LabelValue
           label="Net fixed rate"
           value={
-            <span
-              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-              data-tip="Your net fixed rate after pool fees and slippage are applied."
-            >
-              {long.bondAmount > 0
-                ? `${formatRate(
-                    calculateAprFromPrice({
-                      positionDuration:
-                        hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount:
-                        asBase || sharesToken.extensions.isSharesPeggedToBase
-                          ? long.baseAmountPaid
-                          : // TODO: move sharesAmountPaid into the sdk's Long interface
-                            // instead of converting here
-                            convertSharesToBase({
-                              sharesAmount: long.baseAmountPaid,
-                              vaultSharePrice: vaultSharePrice,
-                              decimals: activeToken.decimals,
-                            }),
-                      bondAmount: long.bondAmount,
-                    }),
-                    baseToken.decimals,
-                  )}% APR`
-                : "0% APR"}
-            </span>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+                data-tip="Your net fixed rate after pool fees and slippage are applied."
+              >
+                {long.bondAmount > 0
+                  ? `${formatRate(
+                      calculateAprFromPrice({
+                        positionDuration:
+                          hyperdrive.poolConfig.positionDuration || 0n,
+                        baseAmount:
+                          asBase || sharesToken.extensions.isSharesPeggedToBase
+                            ? long.baseAmountPaid
+                            : // TODO: move sharesAmountPaid into the sdk's Long interface
+                              // instead of converting here
+                              convertSharesToBase({
+                                sharesAmount: long.baseAmountPaid,
+                                vaultSharePrice: vaultSharePrice,
+                                decimals: activeToken.decimals,
+                              }),
+                        bondAmount: long.bondAmount,
+                      }),
+                      baseToken.decimals,
+                    )}% APR`
+                  : "0% APR"}
+              </span>
+            )
           }
         />
         <LabelValue
           label="Market rate after open"
           value={
-            <span
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                { "border-b border-dashed border-current": spotRateAfterOpen },
-              )}
-              data-tip="The market fixed rate after opening the long."
-            >
-              {spotRateAfterOpen
-                ? `${formatRate(spotRateAfterOpen)}% APR`
-                : "-"}
-            </span>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                  {
+                    "border-b border-dashed border-current": spotRateAfterOpen,
+                  },
+                )}
+                data-tip="The market fixed rate after opening the long."
+              >
+                {spotRateAfterOpen
+                  ? `${formatRate(spotRateAfterOpen)}% APR`
+                  : "-"}
+              </span>
+            )
           }
         />
         <LabelValue
           label="Fixed APR impact"
           value={
-            <span
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-                {
-                  "border-b border-dashed border-error text-error":
-                    spotRateAfterOpen,
-                },
-              )}
-              data-tip={`The net market impact on the fixed rate after opening the long.`}
-            >
-              {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
-            </span>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
+                  {
+                    "border-b border-dashed border-error text-error":
+                      spotRateAfterOpen,
+                  },
+                )}
+                data-tip={`The net market impact on the fixed rate after opening the long.`}
+              >
+                {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
+              </span>
+            )
           }
         />
       </div>
@@ -165,35 +190,39 @@ export function OpenLongPreview({
         <LabelValue
           label="Yield at maturity"
           value={
-            <div
-              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
-              data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
-            >
-              {long.bondAmount > 0 ? (
-                <span className="cursor-help border-b border-dashed border-success text-success">
-                  {long.bondAmount > long.baseAmountPaid ? "+" : ""}
-                  {long.baseAmountPaid
-                    ? `${formatBalance({
-                        balance:
-                          long.bondAmount -
-                          (asBase
-                            ? long.baseAmountPaid
-                            : convertSharesToBase({
-                                sharesAmount: long.baseAmountPaid,
-                                vaultSharePrice: vaultSharePrice,
-                                decimals: baseToken.decimals,
-                              })),
-                        decimals: baseToken.decimals,
-                        places: baseToken.places,
-                      })} ${baseToken.symbol}`
-                    : undefined}
-                </span>
-              ) : (
-                <span className="cursor-help border-b border-dashed">
-                  0 {baseToken.symbol}
-                </span>
-              )}
-            </div>
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <div
+                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
+                data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
+              >
+                {long.bondAmount > 0 ? (
+                  <span className="cursor-help border-b border-dashed border-success text-success">
+                    {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                    {long.baseAmountPaid
+                      ? `${formatBalance({
+                          balance:
+                            long.bondAmount -
+                            (asBase
+                              ? long.baseAmountPaid
+                              : convertSharesToBase({
+                                  sharesAmount: long.baseAmountPaid,
+                                  vaultSharePrice: vaultSharePrice,
+                                  decimals: baseToken.decimals,
+                                })),
+                          decimals: baseToken.decimals,
+                          places: baseToken.places,
+                        })} ${baseToken.symbol}`
+                      : undefined}
+                  </span>
+                ) : (
+                  <span className="cursor-help border-b border-dashed">
+                    0 {baseToken.symbol}
+                  </span>
+                )}
+              </div>
+            )
           }
         />
       </div>
