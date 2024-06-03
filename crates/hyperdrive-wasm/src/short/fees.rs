@@ -28,7 +28,7 @@ pub fn openShortCurveFee(
     };
     let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
 
-    let result_fp = state.open_short_curve_fee(bond_amount);
+    let result_fp = state.open_short_curve_fee(bond_amount).unwrap();
 
     U256::from(result_fp).to_string()
 }
@@ -53,7 +53,7 @@ pub fn openShortGovernanceFee(
     };
     let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
 
-    let result_fp = state.open_short_governance_fee(bond_amount);
+    let result_fp = state.open_short_governance_fee(bond_amount, None).unwrap();
 
     U256::from(result_fp).to_string()
 }
@@ -86,7 +86,9 @@ pub fn closeShortCurveFee(
     let maturity_time = U256::from_dec_str(maturityTime).unwrap();
     let current_time = U256::from_dec_str(currentTime).unwrap();
 
-    let result_fp = state.close_short_curve_fee(bond_amount, maturity_time, current_time);
+    let result_fp = state
+        .close_short_curve_fee(bond_amount, maturity_time, current_time)
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }

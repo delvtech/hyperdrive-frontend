@@ -46,13 +46,15 @@ pub fn calcCloseShort(
     let maturity_time = U256::from_dec_str(maturityTime).unwrap();
     let current_time = U256::from_dec_str(currentTime).unwrap();
 
-    let result_fp = state.calculate_close_short(
-        bond_amount,
-        open_vault_share_price,
-        close_vault_share_price,
-        maturity_time,
-        current_time,
-    );
+    let result_fp = state
+        .calculate_close_short(
+            bond_amount,
+            open_vault_share_price,
+            close_vault_share_price,
+            maturity_time,
+            current_time,
+        )
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }

@@ -37,7 +37,9 @@ pub fn calcCloseLong(
     let maturity_time = U256::from_dec_str(maturityTime).unwrap();
     let current_time = U256::from_dec_str(currentTime).unwrap();
 
-    let result_fp = state.calculate_close_long(bond_amount, maturity_time, current_time);
+    let result_fp = state
+        .calculate_close_long(bond_amount, maturity_time, current_time)
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }

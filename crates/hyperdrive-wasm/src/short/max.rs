@@ -45,20 +45,21 @@ pub fn maxShort(
     let _budget = U256::from_dec_str(budget).unwrap();
     let checkpoint_exposure: I256 = I256::from_dec_str(checkpointExposure).unwrap();
     // TODO: Why is from_raw used here?
-    let open_vault_share_price: I256 =
-        I256::from_raw(U256::from_dec_str(openVaultSharePrice).unwrap());
+    let open_vault_share_price = U256::from_dec_str(openVaultSharePrice).unwrap();
 
     let _maybe_conservative_price: Option<FixedPoint> = maybeConservativePrice
         .as_ref()
         .map(|price_str| FixedPoint::from(U256::from_dec_str(price_str).unwrap()));
 
-    let result_fp = state.calculate_max_short(
-        _budget,
-        open_vault_share_price,
-        checkpoint_exposure,
-        _maybe_conservative_price,
-        maybeMaxIterations.map(|x| x.into()),
-    );
+    let result_fp = state
+        .calculate_max_short(
+            _budget,
+            open_vault_share_price,
+            checkpoint_exposure,
+            _maybe_conservative_price,
+            maybeMaxIterations.map(|x| x.into()),
+        )
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }
