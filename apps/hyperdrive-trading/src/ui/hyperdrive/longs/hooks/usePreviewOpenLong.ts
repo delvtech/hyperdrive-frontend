@@ -26,7 +26,7 @@ export function usePreviewOpenLong({
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!amountIn && !!readHyperdrive;
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       hyperdrive: hyperdriveAddress,
       amountIn: amountIn?.toString(),
@@ -43,12 +43,17 @@ export function usePreviewOpenLong({
       : undefined,
   });
 
+  let queryStatus: UsePreviewOpenLongResult["status"] = status;
+  if (fetchStatus === "idle" && status === "loading") {
+    queryStatus = "idle";
+  }
+
   return {
     bondsReceived: data?.bondProceeds,
     maturityTime: data?.maturityTime,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status: queryEnabled ? status : "idle",
+    status: queryStatus,
   };
 }

@@ -240,6 +240,7 @@ export function AddLiquidityForm({
           depositTokenPlaces={activeToken.places}
           depositTokenSymbol={activeToken.symbol}
           poolShareAfterDeposit={poolShareAfterDeposit}
+          addLiquidityPreviewStatus={addLiquidityPreviewStatus}
         />
       }
       disclaimer={

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useAccount, usePublicClient } from "wagmi";
+import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
   hyperdriveAddress: Address;
@@ -35,6 +35,7 @@ export function usePreviewAddLiquidity({
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled =
     minAPR !== undefined &&
     minLpSharePrice !== undefined &&
@@ -46,7 +47,7 @@ export function usePreviewAddLiquidity({
     enabled &&
     !!readHyperdrive;
 
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,
       destination,
@@ -56,6 +57,7 @@ export function usePreviewAddLiquidity({
       minLpSharePrice: minLpSharePrice?.toString(),
       asBase,
       ethValue: ethValue?.toString(),
+      blockNumber: blockNumber?.toString(),
     }),
     queryFn: queryEnabled
       ? () => {
@@ -72,8 +74,13 @@ export function usePreviewAddLiquidity({
     enabled: queryEnabled,
   });
 
+  let queryStatus: UsePreviewAddLiquidityResult["status"] = status;
+  if (fetchStatus === "idle" && status === "loading") {
+    queryStatus = "idle";
+  }
+
   return {
-    status,
+    status: queryStatus,
     lpSharesOut: data?.lpSharesOut,
   };
 }

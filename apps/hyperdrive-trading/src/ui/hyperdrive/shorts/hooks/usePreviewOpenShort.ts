@@ -28,7 +28,7 @@ export function usePreviewOpenShort({
   const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
 
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
       hyperdrive: hyperdriveAddress,
       amountBondShorts: amountOfBondsToShort?.toString(),
@@ -44,11 +44,15 @@ export function usePreviewOpenShort({
           })
       : undefined,
   });
+  let queryStatus: UsePreviewOpenShortResult["status"] = status;
+  if (fetchStatus === "idle" && status === "loading") {
+    queryStatus = "idle";
+  }
   return {
     traderDeposit: data?.traderDeposit,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status: queryEnabled ? status : "idle",
+    status: queryStatus,
   };
 }
