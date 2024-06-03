@@ -14,15 +14,21 @@ export async function getYieldSourceRate(
       // If the 48 hour rate doesn't exist, assume the pool was initialized less
       // than 48 hours ago and try to get the all-time rate
       .catch(async () => {
-        const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
-        const initializationBlock =
-          await readHyperdrive.getInitializationBlock();
-        const blocksSinceInitialization =
-          currentBlock.blockNumber! - initializationBlock.blockNumber!;
+        try {
+          const currentBlock =
+            (await readHyperdrive.network.getBlock()) as Block;
+          const initializationBlock =
+            await readHyperdrive.getInitializationBlock();
+          const blocksSinceInitialization =
+            currentBlock.blockNumber! - initializationBlock.blockNumber!;
 
-        return readHyperdrive.getYieldSourceRate({
-          blockRange: blocksSinceInitialization,
-        });
+          return readHyperdrive.getYieldSourceRate({
+            blockRange: blocksSinceInitialization,
+          });
+        } catch (e) {
+          console.error(e);
+          return 0n;
+        }
       })
   );
 }
