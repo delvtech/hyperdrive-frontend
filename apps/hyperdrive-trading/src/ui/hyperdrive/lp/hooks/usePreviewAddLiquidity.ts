@@ -75,7 +75,7 @@ export function usePreviewAddLiquidity({
   });
 
   return {
-    status,
+    status: queryEnabled ? status : "idle",
     lpSharesOut: data?.lpSharesOut,
   };
 }

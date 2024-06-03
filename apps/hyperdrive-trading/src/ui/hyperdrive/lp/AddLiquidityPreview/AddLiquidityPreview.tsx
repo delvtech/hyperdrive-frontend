@@ -38,7 +38,7 @@ export function AddLiquidityPreview({
       <LabelValue
         label="Your pool share"
         value={
-          addLiquidityPreviewStatus === "loading" && depositAmount ? (
+          addLiquidityPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
             <span
@@ -78,7 +78,7 @@ export function AddLiquidityPreview({
       <LabelValue
         label="You receive"
         value={
-          addLiquidityPreviewStatus === "loading" && depositAmount ? (
+          addLiquidityPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
             <p className="font-bold">
