@@ -49,7 +49,6 @@ export function OpenLongPreview({
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
-
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (

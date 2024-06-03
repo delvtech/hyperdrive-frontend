@@ -6,6 +6,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -20,6 +21,7 @@ interface OpenShortPreviewProps {
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
+  openShortPreviewStatus: "error" | "idle" | "loading" | "success";
 }
 
 export function OpenShortPreview({
@@ -29,6 +31,7 @@ export function OpenShortPreview({
   shortSize,
   spotRateAfterOpen,
   curveFee,
+  openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -36,7 +39,6 @@ export function OpenShortPreview({
     tokens: appConfig.tokens,
   });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
-
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   return (
     <div className="flex flex-col gap-3">
@@ -60,35 +62,43 @@ export function OpenShortPreview({
       <LabelValue
         label="Pool fee"
         value={
-          <span
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-            data-tip="Total combined fee paid to LPs and governance to open the short."
-          >
-            {curveFee
-              ? `${formatBalance({
-                  balance: curveFee,
-                  decimals: tokenIn.decimals,
-                  places: tokenIn.places,
-                })} ${tokenIn.symbol}`
-              : `0 ${tokenIn.symbol}`}
-          </span>
+          openShortPreviewStatus === "loading" ? (
+            <Skeleton width={100} />
+          ) : (
+            <span
+              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+              data-tip="Total combined fee paid to LPs and governance to open the short."
+            >
+              {curveFee
+                ? `${formatBalance({
+                    balance: curveFee,
+                    decimals: tokenIn.decimals,
+                    places: tokenIn.places,
+                  })} ${tokenIn.symbol}`
+                : `0 ${tokenIn.symbol}`}
+            </span>
+          )
         }
       />
       <LabelValue
         label="You pay"
         value={
-          <span
-            className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-            data-tip="The upfront cost to open a short."
-          >
-            {costBasis
-              ? `${formatBalance({
-                  balance: costBasis,
-                  decimals: tokenIn.decimals,
-                  places: tokenIn.places,
-                })} ${tokenIn.symbol}`
-              : `0 ${tokenIn.symbol}`}
-          </span>
+          openShortPreviewStatus === "loading" ? (
+            <Skeleton width={100} />
+          ) : (
+            <span
+              className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+              data-tip="The upfront cost to open a short."
+            >
+              {costBasis
+                ? `${formatBalance({
+                    balance: costBasis,
+                    decimals: tokenIn.decimals,
+                    places: tokenIn.places,
+                  })} ${tokenIn.symbol}`
+                : `0 ${tokenIn.symbol}`}
+            </span>
+          )
         }
       />
       <div className="flex flex-col gap-3">
@@ -96,34 +106,44 @@ export function OpenShortPreview({
         <LabelValue
           label="Fixed APR after open"
           value={
-            <span
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                { "border-b border-dashed border-current": spotRateAfterOpen },
-              )}
-              data-tip="The market fixed rate after opening the short."
-            >
-              {spotRateAfterOpen
-                ? `${formatRate(spotRateAfterOpen)}% APR`
-                : "-"}
-            </span>
+            openShortPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                  {
+                    "border-b border-dashed border-current": spotRateAfterOpen,
+                  },
+                )}
+                data-tip="The market fixed rate after opening the short."
+              >
+                {spotRateAfterOpen
+                  ? `${formatRate(spotRateAfterOpen)}% APR`
+                  : "-"}
+              </span>
+            )
           }
         />
         <LabelValue
           label="Fixed APR impact"
           value={
-            <span
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-                {
-                  "border-b border-dashed border-success text-success":
-                    spotRateAfterOpen,
-                },
-              )}
-              data-tip={`The net market impact on the fixed rate after opening the short.`}
-            >
-              {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
-            </span>
+            openShortPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
+                  {
+                    "border-b border-dashed border-success text-success":
+                      spotRateAfterOpen,
+                  },
+                )}
+                data-tip={`The net market impact on the fixed rate after opening the short.`}
+              >
+                {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
+              </span>
+            )
           }
         />
       </div>

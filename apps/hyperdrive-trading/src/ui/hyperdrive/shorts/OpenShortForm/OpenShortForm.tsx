@@ -5,6 +5,7 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -236,67 +237,85 @@ export function OpenShortForm({
           shortSize={amountOfBondsToShortAsBigInt}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
+          openShortPreviewStatus={openShortPreviewStatus}
         />
       }
       disclaimer={(() => {
-        if (traderDeposit && !!amountOfBondsToShortAsBigInt) {
-          return (
-            <div className="flex flex-col gap-4">
-              {!hasEnoughBalance ? (
-                <p className="text-center text-sm text-error">
-                  Insufficient balance
-                </p>
-              ) : null}
-              <p className="text-center text-sm text-neutral-content">
-                You pay{" "}
-                <strong>
-                  {formatBalance({
-                    balance: traderDeposit || 0n,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })}{" "}
-                  {activeToken.symbol}
-                </strong>{" "}
-                in exchange for the yield on{" "}
-                <strong>
-                  {formatBalance({
-                    balance: amountOfBondsToShortAsBigInt,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })}{" "}
-                  {baseToken.symbol}
-                </strong>{" "}
-                deposited into{" "}
-                <strong>{sharesToken.extensions.shortName}</strong> for{" "}
-                <strong>
-                  {convertMillisecondsToDays(
-                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
-                  )}{" "}
-                  days.
-                </strong>{" "}
-              </p>
-              <p className="text-center text-sm text-neutral-content">
-                {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-                  ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
-                  : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
-              </p>
-            </div>
-          );
+        // If the user has not input a short amount, don't show the disclaimer
+        if (!amountOfBondsToShortAsBigInt) {
+          return null;
         }
-        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+        // If the user has input an amount, but that amount makes the hasEnoughLiquidity become falsy, show the pool limit exceeded note
+        else if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
               Pool limit exceeded. Max short size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
                 decimals: hyperdrive.decimals,
+                includeCommas: true,
+                places: activeToken.places,
               })}{" "}
               hy{baseToken.symbol}
             </p>
           );
         }
+        // In all other cases where the user has input an amount, show the disclaimer, but ensure a skeleton is shown only on the stats that are being refetched on new blocks
+        return (
+          <div className="flex flex-col gap-4">
+            {!hasEnoughBalance && openShortPreviewStatus !== "loading" ? (
+              <p className="text-center text-sm text-error">
+                Insufficient balance
+              </p>
+            ) : null}
+            <p className="text-center text-sm text-neutral-content">
+              You pay{" "}
+              <strong>
+                {openShortPreviewStatus === "loading" ? (
+                  <span className="inline-block">
+                    <Skeleton width={50} />
+                  </span>
+                ) : (
+                  formatBalance({
+                    balance: traderDeposit || 0n,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: activeToken.places,
+                  })
+                )}{" "}
+              </strong>{" "}
+              in exchange for the yield on{" "}
+              <strong>
+                {openShortPreviewStatus === "loading" ? (
+                  <span className="inline-block">
+                    <Skeleton width={50} />
+                  </span>
+                ) : (
+                  formatBalance({
+                    balance: amountOfBondsToShortAsBigInt,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: activeToken.places,
+                  })
+                )}{" "}
+                {baseToken.symbol}
+              </strong>{" "}
+              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
+              for{" "}
+              <strong>
+                {convertMillisecondsToDays(
+                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                )}{" "}
+                days.
+              </strong>{" "}
+            </p>
+            <p className="text-center text-sm text-neutral-content">
+              {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
+                : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+            </p>
+          </div>
+        );
       })()}
       actionButton={(() => {
         if (!account) {
