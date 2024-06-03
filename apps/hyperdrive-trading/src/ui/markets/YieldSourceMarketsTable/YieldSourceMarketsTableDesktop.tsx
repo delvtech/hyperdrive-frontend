@@ -192,8 +192,8 @@ function getColumns(appConfig: AppConfig) {
       id: "short-rate",
       header: () => (
         <TextWithTooltip
-          label="Short ROI"
-          tooltip="Holding period return on shorts assuming the current variable rate stays the same until maturity."
+          label="Short APR"
+          tooltip="Annualized return on shorts assuming the current variable rate stays the same until maturity."
         />
       ),
       cell: ({ row }) => {

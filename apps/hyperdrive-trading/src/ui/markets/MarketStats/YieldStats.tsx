@@ -92,8 +92,8 @@ export function YieldStats({
               <FixedRateStat hyperdrive={hyperdrive} />
             ) : (
               <Stat
-                label="Short ROI"
-                description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
+                label="Short APR"
+                description="Annualized return on shorts assuming the current variable rate stays the same until maturity."
                 tooltipPosition="bottom"
                 value={
                   isLoadingShortRoi ? (
