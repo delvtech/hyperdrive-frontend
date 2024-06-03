@@ -1,4 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
+import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -23,6 +24,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
+import { PositionActionsMenu } from "src/ui/base/components/PositionActionsMenu";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -294,11 +296,29 @@ function getColumns({
             >
               Close Long
             </button>
-            <CalendarLinkMenu
-              date={maturityDate}
-              title={`Hyperdrive - Long position has matured`}
-              description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
-            />
+            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left">
+              <div
+                tabIndex={0}
+                role="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+                className="daisy-btn daisy-btn-ghost daisy-btn-sm rotate-90 hover:bg-transparent"
+              >
+                <EllipsisVerticalIcon className="h-5" />
+              </div>
+              <ul
+                tabIndex={0}
+                className="daisy-menu daisy-dropdown-content z-10 w-52 rounded-lg bg-base-100 p-4 shadow"
+              >
+                <CalendarLinkMenu
+                  date={maturityDate}
+                  title={`Hyperdrive - Long position has matured`}
+                  description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
+                />
+                <PositionActionsMenu position={row.original} />
+              </ul>
+            </div>
           </div>
         );
       },
