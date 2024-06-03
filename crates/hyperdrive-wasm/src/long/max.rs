@@ -36,11 +36,13 @@ pub fn maxLong(
     let _budget = U256::from_dec_str(&budget).unwrap();
     let checkpoint_exposure: I256 = I256::from_dec_str(&checkpointExposure).unwrap();
 
-    let result_fp = state.calculate_max_long(
-        _budget,
-        checkpoint_exposure,
-        maybeMaxIterations.map(|x| x.into()),
-    );
+    let result_fp = state
+        .calculate_max_long(
+            _budget,
+            checkpoint_exposure,
+            maybeMaxIterations.map(|x| x.into()),
+        )
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }

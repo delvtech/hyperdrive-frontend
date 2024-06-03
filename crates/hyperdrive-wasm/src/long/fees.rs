@@ -29,7 +29,7 @@ pub fn openLongCurveFee(
 
     let base_amount = FixedPoint::from(U256::from_dec_str(baseAmount).unwrap());
 
-    let result_fp = state.open_long_curve_fees(base_amount);
+    let result_fp = state.open_long_curve_fee(base_amount).unwrap();
 
     U256::from(result_fp).to_string()
 }
@@ -55,7 +55,7 @@ pub fn openLongGovernanceFee(
     };
     let base_amount = FixedPoint::from(U256::from_dec_str(baseAmount).unwrap());
 
-    let result_fp = state.open_long_governance_fee(base_amount);
+    let result_fp = state.open_long_governance_fee(base_amount, None).unwrap();
 
     U256::from(result_fp).to_string()
 }
@@ -90,7 +90,9 @@ pub fn closeLongCurveFee(
     let maturity_time = U256::from_dec_str(maturityTime).unwrap();
     let current_time = U256::from_dec_str(currentTime).unwrap();
 
-    let result_fp = state.close_long_curve_fee(bond_amount, maturity_time, current_time);
+    let result_fp = state
+        .close_long_curve_fee(bond_amount, maturity_time, current_time)
+        .unwrap();
 
     U256::from(result_fp).to_string()
 }

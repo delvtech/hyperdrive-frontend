@@ -24,7 +24,7 @@ pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
         config: poolConfig.into(),
         info: poolInfo.into(),
     };
-    let result_fp = state.calculate_spot_price();
+    let result_fp = state.calculate_spot_price().unwrap();
     U256::from(result_fp).to_string()
 }
 
@@ -76,6 +76,6 @@ pub fn spotRate(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
         info: poolInfo.into(),
         config: poolConfig.into(),
     };
-    let result_fp = state.calculate_spot_rate();
+    let result_fp = state.calculate_spot_rate().unwrap();
     U256::from(result_fp).to_string()
 }
