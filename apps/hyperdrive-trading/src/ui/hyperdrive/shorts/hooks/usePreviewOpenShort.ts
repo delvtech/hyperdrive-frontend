@@ -2,6 +2,7 @@ import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
+import { useBlockNumber } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
   hyperdriveAddress: Address;
@@ -23,6 +24,8 @@ export function usePreviewOpenShort({
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+
+  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
 
   const { data, status } = useQuery({
@@ -30,6 +33,7 @@ export function usePreviewOpenShort({
       hyperdrive: hyperdriveAddress,
       amountBondShorts: amountOfBondsToShort?.toString(),
       asBase,
+      blockNumber: blockNumber?.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -45,6 +49,6 @@ export function usePreviewOpenShort({
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status,
+    status: queryEnabled ? status : "idle",
   };
 }

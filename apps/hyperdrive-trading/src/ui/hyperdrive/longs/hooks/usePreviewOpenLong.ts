@@ -49,6 +49,6 @@ export function usePreviewOpenLong({
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status,
+    status: queryEnabled ? status : "idle",
   };
 }
