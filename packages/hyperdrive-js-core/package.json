@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@delvtech/hyperdrive-artifacts": "^0.3.0",
-    "@delvtech/hyperdrive-wasm": "^0.14.0",
+    "@delvtech/hyperdrive-wasm": "^0.14.1",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0"
   },
