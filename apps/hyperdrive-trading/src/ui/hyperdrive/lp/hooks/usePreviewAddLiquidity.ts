@@ -47,7 +47,7 @@ export function usePreviewAddLiquidity({
     enabled &&
     !!readHyperdrive;
 
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,
       destination,
@@ -74,8 +74,13 @@ export function usePreviewAddLiquidity({
     enabled: queryEnabled,
   });
 
+  let queryStatus: UsePreviewAddLiquidityResult["status"] = status;
+  if (fetchStatus === "idle" && status === "loading") {
+    queryStatus = "idle";
+  }
+
   return {
-    status: queryEnabled ? status : "idle",
+    status: queryStatus,
     lpSharesOut: data?.lpSharesOut,
   };
 }
