@@ -62,7 +62,7 @@ export function OpenShortPreview({
       <LabelValue
         label="Pool fee"
         value={
-          openShortPreviewStatus === "loading" && shortSize ? (
+          openShortPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
             <span
@@ -83,7 +83,7 @@ export function OpenShortPreview({
       <LabelValue
         label="You pay"
         value={
-          openShortPreviewStatus === "loading" && shortSize ? (
+          openShortPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
             <span
@@ -106,7 +106,7 @@ export function OpenShortPreview({
         <LabelValue
           label="Fixed APR after open"
           value={
-            openShortPreviewStatus === "loading" && shortSize ? (
+            openShortPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -128,7 +128,7 @@ export function OpenShortPreview({
         <LabelValue
           label="Fixed APR impact"
           value={
-            openShortPreviewStatus === "loading" && shortSize ? (
+            openShortPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span

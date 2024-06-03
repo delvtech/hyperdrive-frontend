@@ -67,7 +67,7 @@ export function OpenLongPreview({
         <LabelValue
           label="You receive"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span className="font-bold">{`${formatBalance({
@@ -81,7 +81,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Pool fee"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -105,7 +105,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Net fixed rate"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -139,7 +139,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Market rate after open"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -161,7 +161,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Fixed APR impact"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
@@ -189,7 +189,7 @@ export function OpenLongPreview({
         <LabelValue
           label="Yield at maturity"
           value={
-            openLongPreviewStatus === "loading" && long.bondAmount ? (
+            openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <div
