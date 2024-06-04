@@ -802,7 +802,27 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
+  // async getOpenLongEvents({
+  //   account,
+  //   options,
+  // }: {
+  //   account: `0x${string}`;
+  //   options?: ContractReadOptions;
+  // }): Promise<Event<HyperdriveAbi, "OpenLong">[]> {
+  //   const toBlock = getBlockFromReadOptions(options);
+
+  //   const openLongEvents = await this.contract.getEvents("OpenLong", {
+  //     filter: { trader: account },
+  //     toBlock,
+  //   });
+  //   const closeLongEvents = await this.contract.getEvents("CloseLong", {
+  //     filter: { trader: account },
+  //     toBlock,
+  //   });
+  // }
+
   /**
+   * @deprecated Use ReadHyperdrive.getOpenLongEvents instead
    * Gets the active longs opened by a specific user.
    * @param account - The user's address
    * @param options.toBlock - The end block, defaults to "latest"
