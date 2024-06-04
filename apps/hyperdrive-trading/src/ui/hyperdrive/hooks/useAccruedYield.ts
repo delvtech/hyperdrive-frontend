@@ -24,10 +24,7 @@ export function useAccruedYield({
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.getShortAccruedYield({
-            checkpointTime: checkpointTime,
-            bondAmount,
-          })
+          readHyperdrive.getShortAccruedYield({ checkpointTime, bondAmount })
       : undefined,
     enabled: queryEnabled,
   });
