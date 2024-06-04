@@ -58,10 +58,10 @@ export type {
 } from "src/evm-client/contractFactory";
 
 // Pool
-export type { Checkpoint } from "src/pool/Checkpoint";
+export { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
+export type { Checkpoint, CheckpointEvent } from "src/checkpoint/types";
 export type { PoolConfig } from "src/pool/PoolConfig";
 export type { PoolInfo } from "src/pool/PoolInfo";
-export { getCheckpointTime } from "src/pool/getCheckpointTime";
 
 // Shorts
 export type { ClosedShort, OpenShort, Short } from "src/shorts/types";

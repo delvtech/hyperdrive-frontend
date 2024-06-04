@@ -15,6 +15,13 @@ import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFract
 import { MAX_UINT256 } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
 import { MergeKeys } from "src/base/types";
+import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
+import {
+  Checkpoint,
+  CheckpointEvent,
+  GetCheckpointParams,
+  GetCheckpointTimeParams,
+} from "src/checkpoint/types";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
@@ -26,11 +33,9 @@ import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
-import { getCheckpointTime } from "src/pool/getCheckpointTime";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -1879,54 +1884,6 @@ export class ReadHyperdrive extends ReadModel {
     };
   }
 }
-
-type GetCheckpointTimeParams = (
-  | {
-      /**
-       * A timestamp that falls within the checkpoint.
-       */
-      timestamp?: bigint;
-      blockNumber?: never;
-    }
-  | {
-      timestamp?: never;
-      /**
-       * A block number that falls within the checkpoint.
-       */
-      blockNumber?: bigint;
-    }
-) & {
-  options?: ContractReadOptions;
-};
-
-type GetCheckpointParams = (
-  | {
-      /**
-       * The time of the checkpoint.
-       */
-      checkpointTime?: bigint;
-      timestamp?: never;
-      blockNumber?: never;
-    }
-  | {
-      checkpointTime?: never;
-      /**
-       * A timestamp that falls within the checkpoint.
-       */
-      timestamp?: bigint;
-      blockNumber?: never;
-    }
-  | {
-      checkpointTime?: never;
-      timestamp?: never;
-      /**
-       * A block number that falls within the checkpoint.
-       */
-      blockNumber?: bigint;
-    }
-) & {
-  options?: ContractReadOptions;
-};
 
 /*
  * This  returns the LP APY using the following formula for continuous compounding:
