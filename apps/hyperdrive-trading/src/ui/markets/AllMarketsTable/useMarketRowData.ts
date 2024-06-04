@@ -51,7 +51,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
-                const longApr = await readHyperdrive.getSpotRate();
+                const longApr = await readHyperdrive.getFixedApr();
 
                 const yieldSource = findYieldSourceToken({
                   yieldSourceTokenAddress: hyperdrive.sharesToken,

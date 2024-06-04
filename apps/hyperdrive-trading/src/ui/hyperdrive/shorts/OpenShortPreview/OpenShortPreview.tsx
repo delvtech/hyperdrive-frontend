@@ -13,7 +13,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
-import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
   tokenIn: TokenConfig<any>;
@@ -38,7 +38,7 @@ export function OpenShortPreview({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { fixedAPR } = useCurrentFixedAPR(hyperdrive.address);
+  const { fixedApr } = useCurrentFixedRate(hyperdrive.address);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   return (
     <div className="flex flex-col gap-3">
@@ -141,7 +141,7 @@ export function OpenShortPreview({
                 )}
                 data-tip={`The net market impact on the fixed rate after opening the short.`}
               >
-                {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
+                {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
               </span>
             )
           }
