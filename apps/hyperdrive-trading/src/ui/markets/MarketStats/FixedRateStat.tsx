@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
 
 export function FixedRateStat({
   hyperdrive,
@@ -13,7 +13,9 @@ export function FixedRateStat({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
+  const { fixedApr, fixedRoi, fixedAprStatus } = useCurrentFixedRate(
+    hyperdrive.address,
+  );
   const [rateType, setRateType] = useLocalStorage<"fixedApr" | "fixedRoi">(
     "yield-stats-long-rate-type",
     "fixedApr",
@@ -29,32 +31,32 @@ export function FixedRateStat({
           id: "fixedApr",
           label: "Fixed APR",
           value:
-            fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+            fixedAprStatus === "loading" && fixedApr === undefined ? (
               <Skeleton className="w-20" />
             ) : (
               <span className={classNames("flex items-center gap-1.5")}>
-                {fixedAPR?.formatted || "0"}%
+                {fixedApr?.formatted || "0"}%
               </span>
             ),
 
           description:
-            "Annualized fixed rate earned from opening longs, before fees and slippage are applied.",
+            "Annualized fixed rate earned from opening a Long, before fees and slippage are applied.",
           tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
         },
         {
           id: "fixedRoi",
           label: "Fixed ROI",
           value:
-            fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+            fixedAprStatus === "loading" && fixedApr === undefined ? (
               <Skeleton className="w-20" />
             ) : (
               <span className={classNames("flex items-center gap-1.5")}>
-                {fixedAPR?.formatted || "0"}%
+                {fixedRoi?.formatted || "0"}%
               </span>
             ),
 
           description:
-            "Holding period return for the duration of the term, before fees and slippage are applied.",
+            "Holding period return from opening a Long, before fees and slippage are applied.",
           tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
         },
       ]}

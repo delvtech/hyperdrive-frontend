@@ -21,7 +21,7 @@ import * as hyperwasm from "@delvtech/hyperdrive-wasm";
 
 hyperwasm.initSync(hyperwasm.wasmBuffer);
 
-const apr = hyperwasm.getSpotRate(poolInfo, poolConfig); // => '0.034999999999999999'
+const apr = hyperwasm.getFixedApr(poolInfo, poolConfig); // => '0.034999999999999999'
 ```
 
 ## Building
