@@ -79,6 +79,8 @@ export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWith
 
 // Math utils
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
+export { getHprFromApr } from "src/base/getHprFromApr";
+export { getHprFromApy } from "src/base/getHprFromApy";
 export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
 // Model
