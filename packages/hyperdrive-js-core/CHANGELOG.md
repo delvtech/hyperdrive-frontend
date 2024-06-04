@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.2.1
+
+### Patch Changes
+
+- 6a53f5a: Add calcHprGivenApy and calcHprGivenApr methods to hyperwasm
+- Updated dependencies [6a53f5a]
+  - @delvtech/hyperdrive-wasm@0.14.3
+
 ## 2.2.0
 
 ### Minor Changes
