@@ -1,7 +1,7 @@
 import * as dnum from "dnum";
 import { ALICE, BOB } from "src/base/testing/accounts";
+import { CheckpointEvent } from "src/checkpoint/types";
 import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
-import { CheckpointEvent } from "src/pool/Checkpoint";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
   simplePoolConfig30Days,
