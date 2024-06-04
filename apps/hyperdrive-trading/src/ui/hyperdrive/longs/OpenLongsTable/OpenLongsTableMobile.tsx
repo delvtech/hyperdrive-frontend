@@ -104,7 +104,7 @@ export function OpenLongsTableMobile({
   }
 
   return (
-    <div className="overflow-x-clip">
+    <div>
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -149,7 +149,9 @@ export function OpenLongsTableMobile({
         </thead>
 
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
+          {tableInstance.getRowModel().rows.map((row, index) => {
+            const isLastRow =
+              index === tableInstance.getRowModel().rows.length - 1;
             return (
               <tr
                 key={row.id}
@@ -160,10 +162,16 @@ export function OpenLongsTableMobile({
                 }}
               >
                 <>
-                  {row.getVisibleCells().map((cell) => {
+                  {row.getVisibleCells().map((cell, cellIndex) => {
+                    const isFirstCell = cellIndex === 0;
+                    const isLastCell =
+                      cellIndex === row.getVisibleCells().length - 1;
                     return (
                       <td
-                        className="align-top text-xs md:text-md"
+                        className={classNames("align-top text-xs md:text-md", {
+                          "rounded-bl-box": isLastRow && isFirstCell,
+                          "rounded-br-box": isLastRow && isLastCell,
+                        })}
                         key={cell.id}
                       >
                         {flexRender(
