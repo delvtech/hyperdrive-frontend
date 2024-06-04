@@ -305,9 +305,16 @@ export class ReadHyperdrive extends ReadModel {
       timestamp,
       poolConfig.checkpointDuration,
     );
-    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+
+    // The vault share price at the time the current checkpoint was minted is
+    // the most accurate, however if there is no current checkpoint we should
+    // just use the current vualt share price.
+    let { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
       checkpointId,
     });
+    if (!openVaultSharePrice) {
+      openVaultSharePrice = (await this.getPoolInfo()).vaultSharePrice;
+    }
 
     const impliedRateString = hyperwasm.calcImpliedRate(
       convertBigIntsToStrings(poolInfo),
@@ -1588,10 +1595,6 @@ export class ReadHyperdrive extends ReadModel {
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        hyperwasm.spotPrice(
-          convertBigIntsToStrings(poolInfo),
-          convertBigIntsToStrings(poolConfig),
-        ),
       ),
     );
     let curveFee = curveFeeInBase;
@@ -1765,9 +1768,7 @@ export class ReadHyperdrive extends ReadModel {
     minAPR,
     minLpSharePrice,
     maxAPR,
-    destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     contribution: bigint;
