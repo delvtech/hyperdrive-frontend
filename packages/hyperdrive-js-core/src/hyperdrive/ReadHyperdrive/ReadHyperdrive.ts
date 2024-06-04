@@ -14,23 +14,28 @@ import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256 } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
+import { MergeKeys } from "src/base/types";
+import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
+import {
+  Checkpoint,
+  CheckpointEvent,
+  GetCheckpointParams,
+  GetCheckpointTimeParams,
+} from "src/checkpoint/types";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
-import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { hyperwasm } from "src/hyperwasm";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
-import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -214,30 +219,87 @@ export class ReadHyperdrive extends ReadModel {
     return annualizedRateOfReturn;
   }
 
-  getCheckpoint({
-    checkpointId,
-    options,
-  }: {
-    checkpointId: bigint;
-    options?: ContractReadOptions;
-  }): Promise<Checkpoint> {
-    return this.contract.read(
-      "getCheckpoint",
-      { _checkpointTime: checkpointId },
-      options,
-    );
+  /**
+   * Get the checkpoint time for a given timestamp or block number, defaulting
+   * to the latest block.
+   * @returns The time of the checkpoint.
+   */
+  getCheckpointTime(params: GetCheckpointTimeParams = {}): Promise<bigint> {
+    return this._getCheckpointTime(params);
   }
 
-  getCheckpointExposure({
-    checkpointId,
+  /**
+   * A protected version of {@linkcode ReadHyperdrive.getCheckpointTime} with
+   * more relaxed types to streamline internal usage. The public API ensures
+   * only one of `timestamp` or `blockNumber` is provided to avoid ambiguity,
+   * but this function allows both to be provided, in which case `timestamp`
+   * will take precedence.
+   */
+  protected async _getCheckpointTime({
+    timestamp,
+    blockNumber,
     options,
-  }: {
-    checkpointId: bigint;
-    options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }: MergeKeys<GetCheckpointTimeParams> = {}): Promise<bigint> {
+    const { checkpointDuration } = await this.getPoolConfig(options);
+
+    // If no timestamp is provided, use the timestamp from the the given block
+    // number, or the latest block if no block number is provided
+    if (timestamp === undefined) {
+      const block = await getBlockOrThrow(this.network, { blockNumber });
+      timestamp = block.timestamp;
+    }
+
+    return getCheckpointTime(timestamp, checkpointDuration);
+  }
+
+  async getCheckpoint({
+    checkpointTime,
+    timestamp,
+    blockNumber,
+    options,
+  }: GetCheckpointParams = {}): Promise<Checkpoint> {
+    if (checkpointTime === undefined) {
+      checkpointTime = await this._getCheckpointTime({
+        timestamp,
+        blockNumber,
+        options,
+      });
+    }
+
+    const {
+      lastWeightedSpotPriceUpdateTime,
+      vaultSharePrice,
+      weightedSpotPrice,
+    } = await this.contract.read(
+      "getCheckpoint",
+      { _checkpointTime: checkpointTime },
+      options,
+    );
+
+    return {
+      checkpointTime,
+      lastWeightedSpotPriceUpdateTime,
+      vaultSharePrice,
+      weightedSpotPrice,
+    };
+  }
+
+  async getCheckpointExposure({
+    checkpointTime,
+    blockNumber,
+    timestamp,
+    options,
+  }: GetCheckpointParams = {}): Promise<bigint> {
+    if (checkpointTime === undefined) {
+      checkpointTime = await this._getCheckpointTime({
+        blockNumber,
+        timestamp,
+      });
+    }
+
     return this.contract.read(
       "getCheckpointExposure",
-      { _checkpointTime: checkpointId },
+      { _checkpointTime: checkpointTime },
       options,
     );
   }
@@ -301,16 +363,11 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const checkpointId = getCheckpointId(
-      timestamp,
-      poolConfig.checkpointDuration,
-    );
-
     // The vault share price at the time the current checkpoint was minted is
     // the most accurate, however if there is no current checkpoint we should
     // just use the current vualt share price.
     let { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      timestamp,
     });
     if (!openVaultSharePrice) {
       openVaultSharePrice = (await this.getPoolInfo()).vaultSharePrice;
@@ -363,39 +420,31 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
    * Note that shorts stop accruing yield once they reach maturity.
-   * @param checkpointId - The checkpoint the short was opened in
+   * @param checkpointTime - The checkpoint the short was opened in
    * @param bondAmount - The number of bonds shorted
    * @param decimals
    * @param options
    */
   async getShortAccruedYield({
-    checkpointId,
+    checkpointTime,
     bondAmount,
-    decimals,
     options,
   }: {
-    checkpointId: bigint;
+    checkpointTime: bigint;
     bondAmount: bigint;
-    // TODO: Remove `decimals` param and just use this.getDecimals() internally
-    decimals: number;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    // Get the vault share price when the short was opened
-    const checkpoint = await this.getCheckpoint({ checkpointId });
-
-    const { checkpointDuration, positionDuration } = await this.getPoolConfig();
-    const isCheckpointMature =
-      checkpointId + positionDuration <
-      getCheckpointId(
-        (await getBlockOrThrow(this.network)).timestamp,
-        checkpointDuration,
-      );
+    const { positionDuration } = await this.getPoolConfig(options);
+    const maturityTime = checkpointTime + positionDuration;
+    const latestCheckpointTime = await this.getCheckpointTime({ options });
+    const isMatured = maturityTime < latestCheckpointTime;
 
     // If the short is mature, get the vault share price at maturity
     let finalSharePrice;
-    if (isCheckpointMature) {
+    if (isMatured) {
       const checkpointAtMaturity = await this.getCheckpoint({
-        checkpointId: checkpointId + positionDuration,
+        checkpointTime: maturityTime,
+        options,
       });
       finalSharePrice = checkpointAtMaturity.vaultSharePrice;
     } else {
@@ -404,13 +453,18 @@ export class ReadHyperdrive extends ReadModel {
       finalSharePrice = poolInfo.vaultSharePrice;
     }
 
-    const accruedYield = calculateShortAccruedYield({
-      fromSharePrice: checkpoint.vaultSharePrice,
+    // Get the vault share price when the short was opened
+    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+      checkpointTime,
+      options,
+    });
+
+    return calculateShortAccruedYield({
+      fromSharePrice: openVaultSharePrice,
       toSharePrice: finalSharePrice,
       bondAmount,
-      decimals,
+      decimals: await this.getDecimals(),
     });
-    return accruedYield;
   }
 
   /**
@@ -631,8 +685,6 @@ export class ReadHyperdrive extends ReadModel {
     fromBlock: bigint;
     toBlock: bigint;
   }): Promise<{ lpApy: number }> {
-    const { checkpointDuration } = await this.getPoolConfig();
-
     const checkpointEvents = await this.getCheckpointEvents({
       fromBlock,
       toBlock,
@@ -644,38 +696,31 @@ export class ReadHyperdrive extends ReadModel {
 
     // The starting lp share price comes from the first checkpoint in our events
     const {
-      args: {
-        checkpointTime: startingCheckpointTime,
-        lpSharePrice: startingCheckpointLpSharePrice,
-      },
+      args: { checkpointTime: startTime, lpSharePrice: startingLpSharePrice },
     } = checkpointEvents[0];
 
-    // The ending lp share price is either the current checkpoint's lp share
-    // price, or the last checkpoint in our events if looking at historical
-    // apys.
-    const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
-    const block = await this.network.getBlock();
-    const currentCheckpointId = getCheckpointId(
-      block?.timestamp as bigint,
-      checkpointDuration,
-    );
-    const endingCheckpointId = getCheckpointId(
-      endingCheckpoint.args.checkpointTime,
-      checkpointDuration,
-    );
-    const { lpSharePrice: currentLpSharePrice } = await this.getPoolInfo();
-    const endingCheckpointLpSharePrice =
-      currentCheckpointId === endingCheckpointId
-        ? currentLpSharePrice
-        : endingCheckpoint.args.lpSharePrice;
+    let {
+      args: { checkpointTime: endTime, lpSharePrice: endingLpSharePrice },
+    } = checkpointEvents[checkpointEvents.length - 1];
 
-    const timeFrame =
-      endingCheckpoint.args.checkpointTime - startingCheckpointTime;
+    const endingBlock = await getBlockOrThrow(this.network, {
+      blockNumber: toBlock,
+    });
+
+    // If the toBlock lands on a checkpoint, we can use the lp share price
+    // from the event. Otherwise, we get the price at the toBlock
+    if (endTime < endingBlock.timestamp) {
+      endTime = endingBlock.timestamp;
+      const { lpSharePrice } = await this.getPoolInfo({
+        blockNumber: toBlock,
+      });
+      endingLpSharePrice = lpSharePrice;
+    }
 
     const lpApy = calculateLpApy({
-      startingCheckpointLpSharePrice,
-      endingCheckpointLpSharePrice,
-      timeFrame,
+      startingLpSharePrice,
+      endingLpSharePrice,
+      timeFrame: endTime - startTime,
     });
 
     return { lpApy };
@@ -847,6 +892,7 @@ export class ReadHyperdrive extends ReadModel {
 
     const openShorts: Record<string, OpenShort> = {};
 
+    const decimals = await this.getDecimals();
     for (const event of orderedShortEvents) {
       const assetId = event.args.assetId.toString();
       const { timestamp } = await getBlockOrThrow(this.network, {
@@ -859,7 +905,7 @@ export class ReadHyperdrive extends ReadModel {
         hyperdriveAddress,
         assetId: event.args.assetId,
         maturity: event.args.maturityTime,
-        checkpointId: getCheckpointId(timestamp, checkpointDuration),
+        checkpointTime: getCheckpointTime(timestamp, checkpointDuration),
         // The openedTimestamp will always reflect the latest short, if you open
         // twice in the same checkpoint
         openedTimestamp: timestamp,
@@ -869,7 +915,6 @@ export class ReadHyperdrive extends ReadModel {
         fixedRatePaid: 0n,
       };
 
-      const decimals = await this.getDecimals();
       const baseAmount = event.args.asBase
         ? event.args.amount
         : convertSharesToBase({
@@ -1009,7 +1054,7 @@ export class ReadHyperdrive extends ReadModel {
           baseAmountReceived: baseAmount,
           maturity: maturityTime,
           closedTimestamp: timestamp,
-          checkpointId: getCheckpointId(timestamp, checkpointDuration),
+          checkpointTime: getCheckpointTime(timestamp, checkpointDuration),
         };
       }),
     );
@@ -1027,49 +1072,40 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
-    const decimals = await this.getDecimals();
-
-    const { timestamp: blockTimestamp } = await getBlockOrThrow(
-      this.network,
-      options,
-    );
-    const checkpointId = getCheckpointId(
-      blockTimestamp,
-      poolConfig.checkpointDuration,
-    );
-    const checkpointExposure = await this.getCheckpointExposure({
-      checkpointId,
-      options,
-    });
+    const checkpointExposure = await this.getCheckpointExposure({ options });
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      options,
     });
 
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBondsOut = hyperwasm.maxShort(
-      stringifiedPoolInfo,
-      stringifiedPoolConfig,
-      MAX_UINT256.toString(),
-      openSharePrice.toString(),
-      checkpointExposure.toString(),
+    const maxBondsOut = BigInt(
+      hyperwasm.maxShort(
+        stringifiedPoolInfo,
+        stringifiedPoolConfig,
+        MAX_UINT256.toString(),
+        openSharePrice.toString(),
+        checkpointExposure.toString(),
+      ),
     );
-    const maxBaseIn = hyperwasm.calcOpenShort(
-      stringifiedPoolInfo,
-      stringifiedPoolConfig,
-      maxBondsOut,
-      openSharePrice.toString(),
+    const maxBaseIn = BigInt(
+      hyperwasm.calcOpenShort(
+        stringifiedPoolInfo,
+        stringifiedPoolConfig,
+        maxBondsOut.toString(),
+        openSharePrice.toString(),
+      ),
     );
-    const maxSharesIn = dnum.divide(
-      [BigInt(maxBaseIn), decimals],
-      [poolInfo?.vaultSharePrice, decimals],
-    )[0];
+    const maxSharesIn = await this.convertToShares({
+      baseAmount: maxBaseIn,
+      options,
+    });
 
     return {
-      maxBaseIn: BigInt(maxBaseIn),
-      maxSharesIn: BigInt(maxSharesIn),
-      maxBondsOut: BigInt(maxBondsOut),
+      maxBaseIn,
+      maxSharesIn,
+      maxBondsOut,
     };
   }
 
@@ -1083,45 +1119,37 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const poolInfo = await this.getPoolInfo(options);
     const poolConfig = await this.getPoolConfig(options);
-
-    const { timestamp: blockTimestamp } = await getBlockOrThrow(
-      this.network,
-      options,
-    );
-    const checkpointId = getCheckpointId(
-      blockTimestamp,
-      poolConfig.checkpointDuration,
-    );
-    const checkpointExposure = await this.getCheckpointExposure({
-      checkpointId,
-      options,
-    });
+    const checkpointExposure = await this.getCheckpointExposure({ options });
 
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBaseIn = hyperwasm.maxLong(
-      stringifiedPoolInfo,
-      stringifiedPoolConfig,
-      MAX_UINT256.toString(),
-      checkpointExposure.toString(),
+    const maxBaseIn = BigInt(
+      hyperwasm.maxLong(
+        stringifiedPoolInfo,
+        stringifiedPoolConfig,
+        MAX_UINT256.toString(),
+        checkpointExposure.toString(),
+      ),
     );
 
-    const maxSharesIn = dnum.divide(
-      [BigInt(maxBaseIn), 18],
-      [poolInfo?.vaultSharePrice, 18],
-    )[0];
+    const maxSharesIn = await this.convertToShares({
+      baseAmount: maxBaseIn,
+      options,
+    });
 
-    const maxBondsOut = hyperwasm.calcOpenLong(
-      stringifiedPoolInfo,
-      stringifiedPoolConfig,
-      maxBaseIn,
+    const maxBondsOut = BigInt(
+      hyperwasm.calcOpenLong(
+        stringifiedPoolInfo,
+        stringifiedPoolConfig,
+        maxBaseIn.toString(),
+      ),
     );
 
     return {
-      maxBaseIn: BigInt(maxBaseIn),
-      maxSharesIn: BigInt(maxSharesIn),
-      maxBondsOut: BigInt(maxBondsOut),
+      maxBaseIn,
+      maxSharesIn,
+      maxBondsOut,
     };
   }
 
@@ -1187,49 +1215,48 @@ export class ReadHyperdrive extends ReadModel {
       decimals,
     });
 
-    let baseValue = 0n;
-    let sharesValue = 0n;
-    if (lpShareBalance) {
-      // Note: `previewRemoveLiquidity` uses the `simulateWrite` method which
-      // simulates the transaction at the current block. This means that the
-      // calculated value of the position will always be based on the current
-      // state of the pool, even if the lp balance and amount paid were
-      // calculated using past events via the block in options.
-      const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
-        lpSharesIn: lpShareBalance,
-        minOutputPerShare: 1n,
-        asBase: false,
-        destination: account,
-      });
-
-      // convert the proceeds into base using vaultSharePrice
-      // Note: we don't pass in the options here because we want the current
-      // prices that were used in the previewRemoveLiquidity call.
-      const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
-      const proceedsBaseValue = dnum.multiply(
-        [vaultSharePrice, 18],
-        [proceeds, 18],
-      );
-
-      // convert the withdrawal shares into base using lpSharePrice
-      const withdrawalSharesBaseValue = dnum.multiply(
-        [lpSharePrice, 18],
-        [withdrawalShares, 18],
-      );
-      const withdrawalSharesSharesValue = dnum.divide(
-        withdrawalSharesBaseValue,
-        [vaultSharePrice, 18],
-      );
-
-      baseValue = dnum.add(proceedsBaseValue, withdrawalSharesBaseValue)[0];
-      sharesValue = dnum.add([proceeds, 18], withdrawalSharesSharesValue)[0];
+    if (!lpShareBalance) {
+      return {
+        lpShareBalance,
+        baseAmountPaid,
+        baseValue: 0n,
+        sharesValue: 0n,
+      };
     }
+
+    // Note: `previewRemoveLiquidity` uses the `simulateWrite` method which
+    // simulates the transaction at the current block. This means that the
+    // calculated value of the position will always be based on the current
+    // state of the pool, even if the lp balance and amount paid were
+    // calculated using past events via the block in options.
+    const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
+      lpSharesIn: lpShareBalance,
+      minOutputPerShare: 1n,
+      asBase: false,
+      destination: account,
+    });
+
+    // Note: we don't pass in the options here because we want the current
+    // prices that were used in the previewRemoveLiquidity call.
+    const proceedsBaseValue = await this.convertToBase({
+      sharesAmount: proceeds,
+    });
+
+    // convert the withdrawal shares into base using lpSharePrice
+    const { lpSharePrice } = await this.getPoolInfo();
+    const withdrawalSharesBaseValue = dnum.multiply(
+      [lpSharePrice, decimals],
+      [withdrawalShares, decimals],
+    )[0];
+    const withdrawalSharesSharesValue = await this.convertToShares({
+      baseAmount: withdrawalSharesBaseValue,
+    });
 
     return {
       lpShareBalance,
-      baseValue,
-      sharesValue,
       baseAmountPaid,
+      baseValue: proceedsBaseValue + withdrawalSharesBaseValue,
+      sharesValue: proceeds + withdrawalSharesSharesValue,
     };
   }
 
@@ -1281,14 +1308,8 @@ export class ReadHyperdrive extends ReadModel {
           });
 
       if (event.eventName === "AddLiquidity") {
-        lpShareBalance = dnum.add(
-          [lpShareBalance, decimals],
-          [event.args.lpAmount, decimals],
-        )[0];
-        baseAmountPaid = dnum.add(
-          [baseAmountPaid, decimals],
-          [baseAmount, decimals],
-        )[0];
+        lpShareBalance += event.args.lpAmount;
+        baseAmountPaid += baseAmount;
       }
 
       if (event.eventName === "RemoveLiquidity") {
@@ -1301,14 +1322,8 @@ export class ReadHyperdrive extends ReadModel {
         }
         // otherwise just subtract the amount of lp shares they closed and baseAmount
         // they received back from the running total
-        lpShareBalance = dnum.subtract(
-          [lpShareBalance, decimals],
-          [event.args.lpAmount, decimals],
-        )[0];
-        baseAmountPaid = dnum.subtract(
-          [baseAmountPaid, decimals],
-          [baseAmount, decimals],
-        )[0];
+        lpShareBalance -= event.args.lpAmount;
+        baseAmountPaid -= baseAmount;
       }
     });
 
@@ -1446,26 +1461,15 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
-
-    const { timestamp: blockTimestamp } = await getBlockOrThrow(
-      this.network,
-      options,
-    );
-    const checkpointId = getCheckpointId(
-      blockTimestamp,
-      poolConfig.checkpointDuration,
-    );
-
-    const decimals = await this.getDecimals();
+    const checkpointTime = await this.getCheckpointTime({ options });
 
     // calcOpenLong only accepts base, so if the user is depositing shares we
     // need to convert that value to base before we can preview the trade for them
     let depositAmountConvertedToBase = amountIn;
     if (!asBase) {
-      depositAmountConvertedToBase = convertSharesToBase({
-        decimals,
+      depositAmountConvertedToBase = await this.convertToBase({
         sharesAmount: amountIn,
-        vaultSharePrice: poolInfo.vaultSharePrice,
+        options,
       });
     }
 
@@ -1483,7 +1487,7 @@ export class ReadHyperdrive extends ReadModel {
       poolConfig.positionDuration,
     );
     const spotRateAfterOpen = dnum.divide(
-      dnum.subtract(dnum.from("1", 18), [spotPriceAfterOpen, 18]),
+      [BigInt(1e18) - spotPriceAfterOpen, 18],
       dnum.multiply(
         [spotPriceAfterOpen, 18],
         dnum.from(termLengthInYearFractions, 18),
@@ -1505,7 +1509,7 @@ export class ReadHyperdrive extends ReadModel {
     );
 
     return {
-      maturityTime: checkpointId + poolConfig.positionDuration,
+      maturityTime: checkpointTime + poolConfig.positionDuration,
       bondProceeds: BigInt(bondProceeds),
       spotPriceAfterOpen,
       spotRateAfterOpen,
@@ -1536,38 +1540,16 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
-
-    const decimals = await this.getDecimals();
-    const { timestamp: blockTimestamp } = await getBlockOrThrow(
-      this.network,
-      options,
-    );
-    const checkpointId = getCheckpointId(
-      blockTimestamp,
-      poolConfig.checkpointDuration,
-    );
-    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
-    });
+    const latestCheckpoint = await this.getCheckpoint({ options });
 
     const baseDepositAmount = BigInt(
       hyperwasm.calcOpenShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        openSharePrice.toString(),
+        latestCheckpoint.vaultSharePrice.toString(),
       ),
     );
-    // calcOpenShort only returns the preview in terms of base, so if the user
-    // wants to deposit shares we need to convert that value to shares.
-    let traderDeposit = baseDepositAmount;
-    if (!asBase) {
-      traderDeposit = convertBaseToShares({
-        decimals,
-        vaultSharePrice: poolInfo.vaultSharePrice,
-        baseAmount: baseDepositAmount,
-      });
-    }
 
     const spotPriceAfterOpen = BigInt(
       hyperwasm.spotPriceAfterShort(
@@ -1583,7 +1565,7 @@ export class ReadHyperdrive extends ReadModel {
       poolConfig.positionDuration,
     );
     const spotRateAfterOpen = dnum.divide(
-      dnum.subtract(dnum.from("1", 18), [spotPriceAfterOpen, 18]),
+      [BigInt(1e18) - spotPriceAfterOpen, 18],
       dnum.multiply(
         [spotPriceAfterOpen, 18],
         dnum.from(termLengthInYearFractions, 18),
@@ -1597,21 +1579,31 @@ export class ReadHyperdrive extends ReadModel {
         amountOfBondsToShort.toString(),
       ),
     );
-    let curveFee = curveFeeInBase;
-    if (!asBase) {
-      curveFee = convertBaseToShares({
-        baseAmount: curveFeeInBase,
-        vaultSharePrice: poolInfo.vaultSharePrice,
-        decimals,
-      });
+
+    if (asBase) {
+      return {
+        maturityTime:
+          latestCheckpoint.checkpointTime + poolConfig.positionDuration,
+        traderDeposit: baseDepositAmount,
+        spotPriceAfterOpen,
+        spotRateAfterOpen,
+        curveFee: curveFeeInBase,
+      };
     }
 
     return {
-      maturityTime: checkpointId + poolConfig.positionDuration,
-      traderDeposit,
+      maturityTime:
+        latestCheckpoint.checkpointTime + poolConfig.positionDuration,
+      traderDeposit: await this.convertToShares({
+        baseAmount: baseDepositAmount,
+        options,
+      }),
       spotPriceAfterOpen,
       spotRateAfterOpen,
-      curveFee,
+      curveFee: await this.convertToShares({
+        baseAmount: curveFeeInBase,
+        options,
+      }),
     };
   }
 
@@ -1651,6 +1643,7 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
+    const flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
 
     const amountOutInShares = BigInt(
       hyperwasm.calcCloseLong(
@@ -1661,24 +1654,23 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    let amountOut = amountOutInShares;
-    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
-    if (asBase) {
-      amountOut = convertSharesToBase({
-        sharesAmount: amountOutInShares,
-        vaultSharePrice: info.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
-      flatPlusCurveFee = convertSharesToBase({
-        sharesAmount: flatPlusCurveFee,
-        vaultSharePrice: info.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
+
+    if (!asBase) {
+      return {
+        amountOut: amountOutInShares,
+        flatPlusCurveFee,
+      };
     }
 
     return {
-      amountOut,
-      flatPlusCurveFee,
+      amountOut: await this.convertToBase({
+        sharesAmount: amountOutInShares,
+        options,
+      }),
+      flatPlusCurveFee: await this.convertToBase({
+        sharesAmount: flatPlusCurveFee,
+        options,
+      }),
     };
   }
 
@@ -1699,16 +1691,8 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{ amountOut: bigint; flatPlusCurveFee: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
-    const { timestamp: blockTimestamp } = await getBlockOrThrow(
-      this.network,
-      options,
-    );
-    const checkpointId = getCheckpointId(
-      blockTimestamp,
-      poolConfig.checkpointDuration,
-    );
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      options,
     });
 
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
@@ -1731,6 +1715,7 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
+    const flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
 
     const amountOutInShares = BigInt(
       hyperwasm.calcCloseShort(
@@ -1743,21 +1728,24 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    let amountOut = amountOutInShares;
-    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
-    if (asBase) {
-      amountOut = convertSharesToBase({
-        sharesAmount: amountOutInShares,
-        vaultSharePrice: poolInfo.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
-      flatPlusCurveFee = convertSharesToBase({
-        sharesAmount: flatPlusCurveFee,
-        vaultSharePrice: poolInfo.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
+
+    if (!asBase) {
+      return {
+        amountOut: amountOutInShares,
+        flatPlusCurveFee,
+      };
     }
-    return { amountOut, flatPlusCurveFee };
+
+    return {
+      amountOut: await this.convertToBase({
+        sharesAmount: amountOutInShares,
+        options,
+      }),
+      flatPlusCurveFee: await this.convertToBase({
+        sharesAmount: flatPlusCurveFee,
+        options,
+      }),
+    };
   }
 
   /**
@@ -1795,27 +1783,21 @@ export class ReadHyperdrive extends ReadModel {
         maxAPR.toString(),
       ),
     );
-    const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
     const decimals = await this.getDecimals();
     const lpSharesOutInBase = dnum.multiply(
       [lpSharesOut, decimals],
-      [lpSharePrice, decimals],
+      [poolInfo.lpSharePrice, decimals],
     )[0];
     const valueOfLpShares = asBase
       ? lpSharesOutInBase
-      : convertBaseToShares({
+      : await this.convertToShares({
           baseAmount: lpSharesOutInBase,
-          vaultSharePrice,
-          decimals,
+          options,
         });
 
-    const slippagePaid = dnum.subtract(
-      [contribution, decimals],
-      [valueOfLpShares, decimals],
-    )[0];
     return {
       lpSharesOut,
-      slippagePaid,
+      slippagePaid: contribution - valueOfLpShares,
     };
   }
 
@@ -1891,29 +1873,15 @@ export class ReadHyperdrive extends ReadModel {
         },
         options,
       );
-    const { vaultSharePrice } = await this.getPoolInfo();
-    const decimals = await this.getDecimals();
-
-    const baseProceeds = asBase
-      ? proceeds
-      : convertSharesToBase({
-          sharesAmount: proceeds,
-          vaultSharePrice,
-          decimals,
-        });
-
-    const sharesProceeds = asBase
-      ? convertBaseToShares({
-          baseAmount: proceeds,
-          vaultSharePrice,
-          decimals,
-        })
-      : proceeds;
 
     return {
       asBase,
-      baseProceeds,
-      sharesProceeds,
+      baseProceeds: asBase
+        ? proceeds
+        : await this.convertToBase({ sharesAmount: proceeds }),
+      sharesProceeds: asBase
+        ? await this.convertToShares({ baseAmount: proceeds })
+        : proceeds,
       withdrawalSharesRedeemed,
     };
   }
@@ -1930,19 +1898,16 @@ export class ReadHyperdrive extends ReadModel {
  * r = ln(p_1 / p_0) / t
  */
 function calculateLpApy({
-  startingCheckpointLpSharePrice,
-  endingCheckpointLpSharePrice,
+  startingLpSharePrice,
+  endingLpSharePrice,
   timeFrame,
 }: {
-  startingCheckpointLpSharePrice: bigint;
-  endingCheckpointLpSharePrice: bigint;
+  startingLpSharePrice: bigint;
+  endingLpSharePrice: bigint;
   timeFrame: bigint;
 }): number {
   const priceRatio = dnum.toNumber(
-    dnum.div(
-      [endingCheckpointLpSharePrice, 18],
-      [startingCheckpointLpSharePrice, 18],
-    ),
+    dnum.div([endingLpSharePrice, 18], [startingLpSharePrice, 18]),
     18,
   );
   const logOfPriceRatio = dnum.from(Math.log(priceRatio), 18);

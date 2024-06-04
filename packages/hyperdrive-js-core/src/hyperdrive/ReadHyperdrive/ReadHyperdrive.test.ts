@@ -1,7 +1,7 @@
 import * as dnum from "dnum";
 import { ALICE, BOB } from "src/base/testing/accounts";
+import { CheckpointEvent } from "src/checkpoint/types";
 import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
-import { CheckpointEvent } from "src/pool/Checkpoint";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
   simplePoolConfig30Days,
@@ -183,9 +183,8 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
-    checkpointId: 0n,
+    checkpointTime: 0n,
     bondAmount: dnum.from("100", 18)[0],
-    decimals: 18,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
@@ -232,9 +231,8 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
-    checkpointId: 1n,
+    checkpointTime: 1n,
     bondAmount: dnum.from("100", 18)[0],
-    decimals: 18,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
@@ -924,7 +922,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      checkpointId: 1713798000n,
+      checkpointTime: 1713798000n,
       baseAmountPaid: dnum.from("1.450580466488873595", 18)[0],
       bondAmount: dnum.from("100", 18)[0],
       baseProceeds: dnum.from("98.576966043666144584", 18)[0],
@@ -992,7 +990,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      checkpointId: 1713798000n,
+      checkpointTime: 1713798000n,
       baseAmountPaid: dnum.from("1.450580466488178494", 18)[0],
       bondAmount: dnum.from("100", 18)[0],
       baseProceeds: dnum.from("98.576966043666144584", 18)[0],
@@ -1060,7 +1058,7 @@ test("getOpenShorts should account for shorts partially closed to base", async (
       bondAmount: dnum.from("25", 18)[0],
       baseAmountPaid: dnum.from("0.367919766722905778", 18)[0],
       baseProceeds: dnum.from("24.637035274042034163", 18)[0],
-      checkpointId: 123454800n,
+      checkpointTime: 123454800n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       fixedRatePaid: dnum.from("0.179245221000329781", 18)[0],
       maturity: 1716336000n,
@@ -1177,7 +1175,7 @@ test("getOpenShorts should account for shorts partially closed to shares", async
       bondAmount: dnum.from("25", 18)[0],
       baseAmountPaid: dnum.from("0.367919766723039830", 18)[0],
       baseProceeds: dnum.from("24.637035274042034163", 18)[0],
-      checkpointId: 123454800n,
+      checkpointTime: 123454800n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       fixedRatePaid: dnum.from("0.179245221000329781", 18)[0],
       maturity: 1716336000n,
@@ -1329,7 +1327,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
       baseProceeds: dnum.from("49.288354060447513457", 18)[0],
       fixedRatePaid: dnum.from("0.175667439018216359", 18)[0],
       maturity: 1716336000n,
-      checkpointId: 123454800n,
+      checkpointTime: 123454800n,
       openedTimestamp: 123456789n,
       hyperdriveAddress: readHyperdrive.contract.address,
     },
@@ -1375,7 +1373,7 @@ test("getClosedShorts should account for shorts closed to base", async () => {
       assetId: 1n,
       baseAmountReceived: dnum.from("2", 18)[0],
       bondAmount: dnum.from("100", 18)[0],
-      checkpointId: 123454800n,
+      checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       maturity: 1708617600n,
@@ -1425,7 +1423,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
       assetId: 1n,
       baseAmountReceived: dnum.from("1.21", 18)[0],
       bondAmount: dnum.from("100", 18)[0],
-      checkpointId: 123454800n,
+      checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       maturity: 1708617600n,
