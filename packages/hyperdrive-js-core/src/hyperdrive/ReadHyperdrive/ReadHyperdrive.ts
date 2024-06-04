@@ -14,6 +14,7 @@ import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256 } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
+import { MergeKeys } from "src/base/types";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
@@ -214,27 +215,84 @@ export class ReadHyperdrive extends ReadModel {
     return annualizedRateOfReturn;
   }
 
-  getCheckpoint({
-    checkpointTime,
+  /**
+   * Get the checkpoint time for a given timestamp or block number, defaulting
+   * to the latest block.
+   * @returns The time of the checkpoint.
+   */
+  getCheckpointTime(params: GetCheckpointTimeParams = {}): Promise<bigint> {
+    return this._getCheckpointTime(params);
+  }
+
+  /**
+   * A protected version of {@linkcode ReadHyperdrive.getCheckpointTime} with
+   * more relaxed types to streamline internal usage. The public API ensures
+   * only one of `timestamp` or `blockNumber` is provided to avoid ambiguity,
+   * but this function allows both to be provided, in which case `timestamp`
+   * will take precedence.
+   */
+  protected async _getCheckpointTime({
+    timestamp,
+    blockNumber,
     options,
-  }: {
-    checkpointTime: bigint;
-    options?: ContractReadOptions;
-  }): Promise<Checkpoint> {
-    return this.contract.read(
+  }: MergeKeys<GetCheckpointTimeParams> = {}): Promise<bigint> {
+    const { checkpointDuration } = await this.getPoolConfig(options);
+
+    // If no timestamp is provided, use the timestamp from the the given block
+    // number, or the latest block if no block number is provided
+    if (timestamp === undefined) {
+      const block = await getBlockOrThrow(this.network, { blockNumber });
+      timestamp = block.timestamp;
+    }
+
+    return getCheckpointTime(timestamp, checkpointDuration);
+  }
+
+  async getCheckpoint({
+    checkpointTime,
+timestamp,
+    blockNumber,
+    options,
+  }: GetCheckpointParams = {}): Promise<Checkpoint> {
+    if (checkpointTime === undefined) {
+      checkpointTime = await this._getCheckpointTime({
+        timestamp,
+        blockNumber,
+        options,
+      });
+    }
+
+    const {
+      lastWeightedSpotPriceUpdateTime,
+      vaultSharePrice,
+      weightedSpotPrice,
+    } = await this.contract.read(
       "getCheckpoint",
       { _checkpointTime: checkpointTime },
       options,
     );
+  
+    return {
+      checkpointTime,
+      lastWeightedSpotPriceUpdateTime,
+      vaultSharePrice,
+      weightedSpotPrice,
+    };
   }
 
-  getCheckpointExposure({
+  async getCheckpointExposure({
     checkpointTime,
+blockNumber,
+    timestamp,
     options,
-  }: {
-    checkpointTime: bigint;
-    options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }: GetCheckpointParams = {}): Promise<bigint> {
+if (checkpointTime === undefined) {
+      checkpointTime = await this._getCheckpointTime({
+        blockNumber,
+        timestamp,
+      });
+    }
+
     return this.contract.read(
       "getCheckpointExposure",
       { _checkpointTime: checkpointTime },
@@ -1918,6 +1976,54 @@ export class ReadHyperdrive extends ReadModel {
     };
   }
 }
+
+type GetCheckpointTimeParams = (
+  | {
+      /**
+       * A timestamp that falls within the checkpoint.
+       */
+      timestamp?: bigint;
+      blockNumber?: never;
+    }
+  | {
+      timestamp?: never;
+      /**
+       * A block number that falls within the checkpoint.
+       */
+      blockNumber?: bigint;
+    }
+) & {
+  options?: ContractReadOptions;
+};
+
+type GetCheckpointParams = (
+  | {
+      /**
+       * The time of the checkpoint.
+       */
+      checkpointTime?: bigint;
+      timestamp?: never;
+      blockNumber?: never;
+    }
+  | {
+      checkpointTime?: never;
+      /**
+       * A timestamp that falls within the checkpoint.
+       */
+      timestamp?: bigint;
+      blockNumber?: never;
+    }
+  | {
+      checkpointTime?: never;
+      timestamp?: never;
+      /**
+       * A block number that falls within the checkpoint.
+       */
+      blockNumber?: bigint;
+    }
+) & {
+  options?: ContractReadOptions;
+};
 
 /*
  * This  returns the LP APY using the following formula for continuous compounding:
