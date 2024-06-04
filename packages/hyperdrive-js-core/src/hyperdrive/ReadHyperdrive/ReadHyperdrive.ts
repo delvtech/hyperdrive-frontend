@@ -701,7 +701,7 @@ export class ReadHyperdrive extends ReadModel {
 
     let {
       args: { checkpointTime: endTime, lpSharePrice: endingLpSharePrice },
-    } = checkpointEvents[0];
+    } = checkpointEvents[checkpointEvents.length - 1];
 
     const endingBlock = await getBlockOrThrow(this.network, {
       blockNumber: toBlock,
