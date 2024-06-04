@@ -249,7 +249,15 @@ export class ReadHyperdrive extends ReadModel {
       timestamp = block.timestamp;
     }
 
-    return getCheckpointTime(timestamp, checkpointDuration);
+    const time = getCheckpointTime(timestamp, checkpointDuration);
+
+    if (time + checkpointDuration < timestamp) {
+      console.warn(`Missing checkpoint for timestamp ${timestamp}.
+        time:                                        ${time}
+        checkpointDuration:                          ${checkpointDuration}`);
+    }
+
+    return time;
   }
 
   async getCheckpoint({
@@ -1097,7 +1105,7 @@ export class ReadHyperdrive extends ReadModel {
       hyperwasm.calcOpenShort(
         stringifiedPoolInfo,
         stringifiedPoolConfig,
-        maxBondsOut.toString,
+        maxBondsOut.toString(),
         openSharePrice.toString(),
       ),
     );
