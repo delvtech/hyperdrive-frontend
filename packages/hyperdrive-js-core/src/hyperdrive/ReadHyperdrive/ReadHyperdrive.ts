@@ -710,15 +710,11 @@ export class ReadHyperdrive extends ReadModel {
     // If the toBlock lands on a checkpoint, we can use the lp share price
     // from the event. Otherwise, we get the price at the toBlock
     if (endTime < endingBlock.timestamp) {
+      endTime = endingBlock.timestamp;
       const { lpSharePrice } = await this.getPoolInfo({
         blockNumber: toBlock,
       });
       endingLpSharePrice = lpSharePrice;
-
-      const { timestamp } = await getBlockOrThrow(this.network, {
-        blockNumber: toBlock,
-      });
-      endTime = timestamp;
     }
 
     const lpApy = calculateLpApy({
