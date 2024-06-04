@@ -9,7 +9,7 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
@@ -35,7 +35,7 @@ export function YieldStats({
   const { isFlagEnabled: showMultiStats } = useFeatureFlag("roi-apr");
 
   // fixed apr
-  const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
+  const { fixedApr, fixedAprStatus } = useCurrentFixedRate(hyperdrive.address);
 
   // short apr
   const { vaultRate } = useYieldSourceRate({
@@ -75,11 +75,11 @@ export function YieldStats({
               <Stat
                 label="Fixed APR"
                 value={
-                  fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+                  fixedAprStatus === "loading" && fixedApr === undefined ? (
                     <Skeleton className="w-20" />
                   ) : (
                     <span className={classNames("flex items-center gap-1.5")}>
-                      {fixedAPR?.formatted || "0"}%
+                      {fixedApr?.formatted || "0"}%
                     </span>
                   )
                 }
