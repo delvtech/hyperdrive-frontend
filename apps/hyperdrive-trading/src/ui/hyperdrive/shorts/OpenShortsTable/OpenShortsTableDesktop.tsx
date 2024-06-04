@@ -234,7 +234,7 @@ function getColumns(
             <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700">
               Close Short
             </button>
-            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left absolute right-10 z-10">
+            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left absolute right-8 z-10">
               <div
                 tabIndex={0}
                 role="button"
