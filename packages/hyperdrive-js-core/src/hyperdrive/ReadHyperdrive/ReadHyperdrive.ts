@@ -1245,8 +1245,8 @@ export class ReadHyperdrive extends ReadModel {
     // convert the withdrawal shares into base using lpSharePrice
     const { lpSharePrice } = await this.getPoolInfo();
     const withdrawalSharesBaseValue = dnum.multiply(
-      [lpSharePrice, 18],
-      [withdrawalShares, 18],
+      [lpSharePrice, decimals],
+      [withdrawalShares, decimals],
     )[0];
     const withdrawalSharesSharesValue = await this.convertToShares({
       baseAmount: withdrawalSharesBaseValue,
