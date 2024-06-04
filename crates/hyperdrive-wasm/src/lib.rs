@@ -7,7 +7,8 @@ mod types;
 mod utils;
 
 use ethers::types::U256;
-use hyperdrive_math::State;
+use fixed_point::FixedPoint;
+use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy, State};
 use types::{JsPoolConfig, JsPoolInfo};
 use utils::set_panic_hook;
 use wasm_bindgen::prelude::*;
@@ -25,6 +26,39 @@ pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
         info: poolInfo.into(),
     };
     let result_fp = state.calculate_spot_price().unwrap();
+
+    U256::from(result_fp).to_string()
+}
+
+/// Calculate the holding period return (HPR) given a non-compounding,
+/// annualized rate (APR).
+///
+/// @param apr - The annualized rate
+///
+/// @param positionDuration - The position duration in seconds
+#[wasm_bindgen(skip_jsdoc)]
+pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> String {
+    set_panic_hook();
+    let apr_fp = FixedPoint::from(U256::from_dec_str(apr).unwrap());
+    let position_duration_fp = FixedPoint::from(U256::from_dec_str(positionDuration).unwrap());
+    let result_fp = calculate_hpr_given_apr(apr_fp, position_duration_fp);
+
+    U256::from(result_fp).to_string()
+}
+
+/// Calculate the holding period return (HPR) given a compounding, annualized
+/// rate (APY).
+///
+/// @param apy - The annualized rate
+///
+/// @param positionDuration - The position duration in seconds
+#[wasm_bindgen(skip_jsdoc)]
+pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> String {
+    set_panic_hook();
+    let apy_fp = FixedPoint::from(U256::from_dec_str(apy).unwrap());
+    let position_duration_fp = FixedPoint::from(U256::from_dec_str(positionDuration).unwrap());
+    let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).unwrap();
+
     U256::from(result_fp).to_string()
 }
 
