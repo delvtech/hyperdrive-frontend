@@ -128,7 +128,7 @@ function formatMobileColumnData(
     },
     { name: "Fixed APR", value: `${formatRate(row.fixedApr)}%` },
     {
-      name: "Short ROI",
+      name: "Short APR",
       value: <ShortRateCell hyperdrive={row.market} />,
     },
     {

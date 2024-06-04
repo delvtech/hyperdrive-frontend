@@ -14,7 +14,7 @@ export function AccruedYieldCell({
   openShort: OpenShort;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { bondAmount, checkpointId } = openShort;
+  const { bondAmount, checkpointTime } = openShort;
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -24,7 +24,7 @@ export function AccruedYieldCell({
   const { accruedYield } = useAccruedYield({
     hyperdrive,
     bondAmount,
-    checkpointId,
+    checkpointTime,
   });
 
   return (

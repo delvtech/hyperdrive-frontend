@@ -50,7 +50,7 @@ export function OpenLongsTableMobile({
     initialState: {
       sorting: [
         {
-          id: "maturationDate",
+          id: "ColumnValues",
           desc: true,
         },
       ],
@@ -272,6 +272,9 @@ function getMobileColumns({
     }),
     columnHelper.display({
       id: "ColumnValues",
+      sortingFn: (rowA, rowB) => {
+        return Number(rowA.original.maturity - rowB.original.maturity);
+      },
       cell: ({ row }) => {
         const data = formatOpenLongMobileColumnData(
           row.original,
