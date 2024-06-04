@@ -47,14 +47,6 @@ export function OpenLongsTableMobile({
   const tableInstance = useReactTable({
     columns: getMobileColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
-    initialState: {
-      sorting: [
-        {
-          id: "maturationDate",
-          desc: true,
-        },
-      ],
-    },
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
