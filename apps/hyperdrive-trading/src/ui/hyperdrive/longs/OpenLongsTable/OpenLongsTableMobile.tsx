@@ -47,6 +47,14 @@ export function OpenLongsTableMobile({
   const tableInstance = useReactTable({
     columns: getMobileColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
+    initialState: {
+      sorting: [
+        {
+          id: "ColumnValues",
+          desc: true,
+        },
+      ],
+    },
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -257,6 +265,9 @@ function getMobileColumns({
     }),
     columnHelper.display({
       id: "ColumnValues",
+      sortingFn: (rowA, rowB) => {
+        return Number(rowA.original.maturity - rowB.original.maturity);
+      },
       cell: ({ row }) => {
         const data = formatOpenLongMobileColumnData(
           row.original,
