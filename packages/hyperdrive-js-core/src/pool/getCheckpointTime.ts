@@ -1,4 +1,4 @@
-export function getCheckpointId(
+export function getCheckpointTime(
   blockTimestamp: bigint,
   checkpointDuration: bigint,
 ): bigint {

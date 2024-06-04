@@ -61,7 +61,7 @@ export type {
 export type { Checkpoint } from "src/pool/Checkpoint";
 export type { PoolConfig } from "src/pool/PoolConfig";
 export type { PoolInfo } from "src/pool/PoolInfo";
-export { getCheckpointId } from "src/pool/getCheckpointId";
+export { getCheckpointTime } from "src/pool/getCheckpointTime";
 
 // Shorts
 export type { ClosedShort, OpenShort, Short } from "src/shorts/types";

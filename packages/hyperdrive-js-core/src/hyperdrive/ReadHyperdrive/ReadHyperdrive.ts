@@ -30,7 +30,7 @@ import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
-import { getCheckpointId } from "src/pool/getCheckpointId";
+import { getCheckpointTime } from "src/pool/getCheckpointTime";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -215,29 +215,29 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   getCheckpoint({
-    checkpointId,
+    checkpointTime,
     options,
   }: {
-    checkpointId: bigint;
+    checkpointTime: bigint;
     options?: ContractReadOptions;
   }): Promise<Checkpoint> {
     return this.contract.read(
       "getCheckpoint",
-      { _checkpointTime: checkpointId },
+      { _checkpointTime: checkpointTime },
       options,
     );
   }
 
   getCheckpointExposure({
-    checkpointId,
+    checkpointTime,
     options,
   }: {
-    checkpointId: bigint;
+    checkpointTime: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
     return this.contract.read(
       "getCheckpointExposure",
-      { _checkpointTime: checkpointId },
+      { _checkpointTime: checkpointTime },
       options,
     );
   }
@@ -301,7 +301,7 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       timestamp,
       poolConfig.checkpointDuration,
     );
@@ -310,7 +310,7 @@ export class ReadHyperdrive extends ReadModel {
     // the most accurate, however if there is no current checkpoint we should
     // just use the current vualt share price.
     let { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      checkpointTime,
     });
     if (!openVaultSharePrice) {
       openVaultSharePrice = (await this.getPoolInfo()).vaultSharePrice;
@@ -363,30 +363,30 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
    * Note that shorts stop accruing yield once they reach maturity.
-   * @param checkpointId - The checkpoint the short was opened in
+   * @param checkpointTime - The checkpoint the short was opened in
    * @param bondAmount - The number of bonds shorted
    * @param decimals
    * @param options
    */
   async getShortAccruedYield({
-    checkpointId,
+    checkpointTime,
     bondAmount,
     decimals,
     options,
   }: {
-    checkpointId: bigint;
+    checkpointTime: bigint;
     bondAmount: bigint;
     // TODO: Remove `decimals` param and just use this.getDecimals() internally
     decimals: number;
     options?: ContractReadOptions;
   }): Promise<bigint> {
     // Get the vault share price when the short was opened
-    const checkpoint = await this.getCheckpoint({ checkpointId });
+    const checkpoint = await this.getCheckpoint({ checkpointTime });
 
     const { checkpointDuration, positionDuration } = await this.getPoolConfig();
     const isCheckpointMature =
-      checkpointId + positionDuration <
-      getCheckpointId(
+      checkpointTime + positionDuration <
+      getCheckpointTime(
         (await getBlockOrThrow(this.network)).timestamp,
         checkpointDuration,
       );
@@ -395,7 +395,7 @@ export class ReadHyperdrive extends ReadModel {
     let finalSharePrice;
     if (isCheckpointMature) {
       const checkpointAtMaturity = await this.getCheckpoint({
-        checkpointId: checkpointId + positionDuration,
+        checkpointTime: checkpointTime + positionDuration,
       });
       finalSharePrice = checkpointAtMaturity.vaultSharePrice;
     } else {
@@ -655,17 +655,17 @@ export class ReadHyperdrive extends ReadModel {
     // apys.
     const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
     const block = await this.network.getBlock();
-    const currentCheckpointId = getCheckpointId(
+    const currentCheckpointTime = getCheckpointTime(
       block?.timestamp as bigint,
       checkpointDuration,
     );
-    const endingCheckpointId = getCheckpointId(
+    const endingCheckpointTime = getCheckpointTime(
       endingCheckpoint.args.checkpointTime,
       checkpointDuration,
     );
     const { lpSharePrice: currentLpSharePrice } = await this.getPoolInfo();
     const endingCheckpointLpSharePrice =
-      currentCheckpointId === endingCheckpointId
+      currentCheckpointTime === endingCheckpointTime
         ? currentLpSharePrice
         : endingCheckpoint.args.lpSharePrice;
 
@@ -859,7 +859,7 @@ export class ReadHyperdrive extends ReadModel {
         hyperdriveAddress,
         assetId: event.args.assetId,
         maturity: event.args.maturityTime,
-        checkpointId: getCheckpointId(timestamp, checkpointDuration),
+        checkpointTime: getCheckpointTime(timestamp, checkpointDuration),
         // The openedTimestamp will always reflect the latest short, if you open
         // twice in the same checkpoint
         openedTimestamp: timestamp,
@@ -1009,7 +1009,7 @@ export class ReadHyperdrive extends ReadModel {
           baseAmountReceived: baseAmount,
           maturity: maturityTime,
           closedTimestamp: timestamp,
-          checkpointId: getCheckpointId(timestamp, checkpointDuration),
+          checkpointTime: getCheckpointTime(timestamp, checkpointDuration),
         };
       }),
     );
@@ -1033,16 +1033,16 @@ export class ReadHyperdrive extends ReadModel {
       this.network,
       options,
     );
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
     const checkpointExposure = await this.getCheckpointExposure({
-      checkpointId,
+      checkpointTime,
       options,
     });
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      checkpointTime,
     });
 
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
@@ -1088,12 +1088,12 @@ export class ReadHyperdrive extends ReadModel {
       this.network,
       options,
     );
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
     const checkpointExposure = await this.getCheckpointExposure({
-      checkpointId,
+      checkpointTime,
       options,
     });
 
@@ -1451,7 +1451,7 @@ export class ReadHyperdrive extends ReadModel {
       this.network,
       options,
     );
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
@@ -1505,7 +1505,7 @@ export class ReadHyperdrive extends ReadModel {
     );
 
     return {
-      maturityTime: checkpointId + poolConfig.positionDuration,
+      maturityTime: checkpointTime + poolConfig.positionDuration,
       bondProceeds: BigInt(bondProceeds),
       spotPriceAfterOpen,
       spotRateAfterOpen,
@@ -1542,12 +1542,12 @@ export class ReadHyperdrive extends ReadModel {
       this.network,
       options,
     );
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      checkpointTime,
     });
 
     const baseDepositAmount = BigInt(
@@ -1607,7 +1607,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     return {
-      maturityTime: checkpointId + poolConfig.positionDuration,
+      maturityTime: checkpointTime + poolConfig.positionDuration,
       traderDeposit,
       spotPriceAfterOpen,
       spotRateAfterOpen,
@@ -1703,12 +1703,12 @@ export class ReadHyperdrive extends ReadModel {
       this.network,
       options,
     );
-    const checkpointId = getCheckpointId(
+    const checkpointTime = getCheckpointTime(
       blockTimestamp,
       poolConfig.checkpointDuration,
     );
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
-      checkpointId,
+      checkpointTime,
     });
 
     const currentTime = BigInt(Math.floor(Date.now() / 1000));

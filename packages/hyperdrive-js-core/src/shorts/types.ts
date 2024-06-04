@@ -2,7 +2,7 @@ export interface Short {
   hyperdriveAddress: `0x${string}`;
   assetId: bigint;
   bondAmount: bigint;
-  checkpointId: bigint;
+  checkpointTime: bigint;
   /**
    * Time in seconds when this short will mature
    */
