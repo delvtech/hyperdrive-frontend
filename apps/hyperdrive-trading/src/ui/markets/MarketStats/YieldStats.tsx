@@ -9,15 +9,15 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
+import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { parseUnits } from "viem";
-import { FixedRateStat } from "./FixedRateStat";
 export function YieldStats({
   hyperdrive,
 }: {
@@ -35,14 +35,14 @@ export function YieldStats({
   const { isFlagEnabled: showMultiStats } = useFeatureFlag("roi-apr");
 
   // fixed apr
-  const { fixedApr, fixedAprStatus } = useCurrentFixedRate(hyperdrive.address);
+  const { fixedApr, fixedAprStatus } = useFixedRate(hyperdrive.address);
 
   // short apr
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
   const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
-    useImpliedRate({
+    useShortRate({
       bondAmount: parseUnits("1", 18),
       hyperdriveAddress: hyperdrive.address,
       variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,

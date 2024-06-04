@@ -8,7 +8,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-export function useCurrentFixedRate(hyperdriveAddress: Address): {
+export function useFixedRate(hyperdriveAddress: Address): {
   fixedApr: { apr: bigint; formatted: string } | undefined;
   fixedRoi: { roi: bigint; formatted: string } | undefined;
   fixedAprStatus: "loading" | "error" | "success";

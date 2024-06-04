@@ -6,7 +6,7 @@ import { useLocalStorage } from "react-use";
 import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
-import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
@@ -23,7 +23,7 @@ export function ShortRateStat({
   });
 
   const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
-    useImpliedRate({
+    useShortRate({
       bondAmount: parseUnits("1", 18),
       hyperdriveAddress: hyperdrive.address,
       variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,

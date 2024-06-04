@@ -16,7 +16,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
-import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -48,7 +48,7 @@ export function OpenLongPreview({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const { fixedApr } = useCurrentFixedRate(hyperdrive.address);
+  const { fixedApr } = useFixedRate(hyperdrive.address);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (

@@ -1,7 +1,7 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
-import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { parseUnits } from "viem";
 
@@ -13,7 +13,7 @@ export function ShortRateCell({
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
-  const { impliedRate } = useImpliedRate({
+  const { impliedRate } = useShortRate({
     hyperdriveAddress: hyperdrive.address,
     bondAmount: parseUnits("100", hyperdrive.decimals),
     variableApy: vaultRate?.vaultRate,

@@ -12,7 +12,7 @@ interface UseImpliedRateOptions {
 /**
  * Returns the list of shorts that the account currently has open.
  */
-export function useImpliedRate({
+export function useShortRate({
   bondAmount,
   timestamp,
   variableApy,
