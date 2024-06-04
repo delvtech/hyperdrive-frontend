@@ -333,7 +333,7 @@ export class ReadHyperdrive extends ReadModel {
    * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
    * open a long.
    */
-  async getSpotRate(options?: ContractReadOptions): Promise<bigint> {
+  async getFixedApr(options?: ContractReadOptions): Promise<bigint> {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 

@@ -58,7 +58,7 @@ test("getFixedRate should get the fixed rate as-is", async () => {
     value: simplePoolInfo,
   });
 
-  const value = await readHyperdrive.getSpotRate();
+  const value = await readHyperdrive.getFixedApr();
   expect(value).toBe(50000000000000000n);
 });
 

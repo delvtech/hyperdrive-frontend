@@ -49,7 +49,7 @@ export function useRowData(
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
-                const fixedApr = await readHyperdrive.getSpotRate();
+                const fixedApr = await readHyperdrive.getFixedApr();
 
                 return {
                   market: hyperdrive,
