@@ -13,7 +13,7 @@ export function PositionActionsMenu({
   return (
     <>
       <span className="daisy-menu-title text-neutral-content">
-        Position Details
+        Position details
       </span>
       <li>
         <button
