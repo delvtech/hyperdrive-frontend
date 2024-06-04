@@ -159,31 +159,25 @@ export function OpenLongsTableDesktop({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
+                className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
                 }}
               >
-                {row.getVisibleCells().map((cell, cellIndex) => {
-                  const isFirstCell = cellIndex === 0;
-                  const isLastCell =
-                    cellIndex === row.getVisibleCells().length - 1;
-                  return (
-                    <td
-                      className={classNames("align-top text-xs md:text-md", {
-                        "rounded-bl-box": isLastRow && isFirstCell,
-                        "rounded-br-box": isLastRow && isLastCell,
-                      })}
-                      key={cell.id}
-                    >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
-                    </td>
-                  );
-                })}
+                {row.getVisibleCells().map((cell, cellIndex) => (
+                  <td
+                    className={classNames("align-top text-xs md:text-md", {
+                      "rounded-bl-box ": isLastRow && cellIndex === 0,
+                      "rounded-br-box":
+                        isLastRow &&
+                        cellIndex === row.getVisibleCells().length - 1,
+                    })}
+                    key={cell.id}
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
               </tr>
             );
           })}
@@ -195,6 +189,7 @@ export function OpenLongsTableDesktop({
     </div>
   );
 }
+
 const columnHelper = createColumnHelper<Long>();
 
 function getColumns({

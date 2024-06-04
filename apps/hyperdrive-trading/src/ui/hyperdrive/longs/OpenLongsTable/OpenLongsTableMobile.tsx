@@ -163,14 +163,13 @@ export function OpenLongsTableMobile({
               >
                 <>
                   {row.getVisibleCells().map((cell, cellIndex) => {
-                    const isFirstCell = cellIndex === 0;
-                    const isLastCell =
-                      cellIndex === row.getVisibleCells().length - 1;
                     return (
                       <td
                         className={classNames("align-top text-xs md:text-md", {
-                          "rounded-bl-box": isLastRow && isFirstCell,
-                          "rounded-br-box": isLastRow && isLastCell,
+                          "rounded-bl-box": isLastRow && cellIndex === 0,
+                          "rounded-br-box":
+                            isLastRow &&
+                            cellIndex === row.getVisibleCells().length - 1,
                         })}
                         key={cell.id}
                       >

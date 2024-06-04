@@ -1,28 +1,30 @@
-import { Long, Short } from "@delvtech/hyperdrive-viem";
-import { ClipboardDocumentIcon } from "@heroicons/react/16/solid";
+import { Long, OpenShort } from "@delvtech/hyperdrive-viem";
+import { formatAddress } from "src/ui/base/formatting/formatAddress";
 
 export function PositionActionsMenu({
   position,
 }: {
-  position: Long | Short;
+  position: Long | OpenShort;
 }): JSX.Element {
+  function copyToClipboard() {
+    navigator.clipboard.writeText(position.assetId.toString());
+  }
   return (
     <>
       <span className="daisy-menu-title text-neutral-content">
-        Position actions
+        Position Details
       </span>
       <li>
-        <a
-          rel="noreferrer"
-          target="_blank"
+        <button
           onClick={(e) => {
             e.stopPropagation();
+            copyToClipboard();
           }}
-          // href={google(calendarDetails)}
         >
-          <ClipboardDocumentIcon className="h-4" />
-          Copy to clipboard
-        </a>
+          <span>ID:</span>
+          {/* <DocumentDuplicateIcon className="h-4" /> */}
+          {formatAddress(position.assetId.toString())}
+        </button>
       </li>
     </>
   );
