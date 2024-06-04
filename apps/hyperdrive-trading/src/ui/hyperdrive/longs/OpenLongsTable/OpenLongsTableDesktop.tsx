@@ -153,7 +153,9 @@ export function OpenLongsTableDesktop({
         </thead>
 
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
+          {tableInstance.getRowModel().rows.map((row, index) => {
+            const isLastRow =
+              index === tableInstance.getRowModel().rows.length - 1;
             return (
               <tr
                 key={row.id}
@@ -163,21 +165,25 @@ export function OpenLongsTableDesktop({
                   (window as any)[modalId].showModal();
                 }}
               >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td
-                        className="align-top text-xs md:text-md"
-                        key={cell.id}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
+                {row.getVisibleCells().map((cell, cellIndex) => {
+                  const isFirstCell = cellIndex === 0;
+                  const isLastCell =
+                    cellIndex === row.getVisibleCells().length - 1;
+                  return (
+                    <td
+                      className={classNames("align-top text-xs md:text-md", {
+                        "rounded-bl-box": isLastRow && isFirstCell,
+                        "rounded-br-box": isLastRow && isLastCell,
+                      })}
+                      key={cell.id}
+                    >
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </td>
+                  );
+                })}
               </tr>
             );
           })}
@@ -296,7 +302,7 @@ function getColumns({
             >
               Close Long
             </button>
-            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left">
+            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left absolute right-10 z-10">
               <div
                 tabIndex={0}
                 role="button"

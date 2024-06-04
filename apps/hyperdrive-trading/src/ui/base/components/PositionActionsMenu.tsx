@@ -1,4 +1,5 @@
 import { Long, Short } from "@delvtech/hyperdrive-viem";
+import { ClipboardDocumentIcon } from "@heroicons/react/16/solid";
 
 export function PositionActionsMenu({
   position,
@@ -19,8 +20,8 @@ export function PositionActionsMenu({
           }}
           // href={google(calendarDetails)}
         >
-          <img className="h-6" src="/calendar-icons/google-calendar.svg" />{" "}
-          Google
+          <ClipboardDocumentIcon className="h-4" />
+          Copy to clipboard
         </a>
       </li>
     </>
