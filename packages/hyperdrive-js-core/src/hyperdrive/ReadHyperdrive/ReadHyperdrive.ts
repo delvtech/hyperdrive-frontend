@@ -249,15 +249,7 @@ export class ReadHyperdrive extends ReadModel {
       timestamp = block.timestamp;
     }
 
-    const time = getCheckpointTime(timestamp, checkpointDuration);
-
-    if (time + checkpointDuration < timestamp) {
-      console.warn(`Missing checkpoint for timestamp ${timestamp}.
-        time:                                        ${time}
-        checkpointDuration:                          ${checkpointDuration}`);
-    }
-
-    return time;
+    return getCheckpointTime(timestamp, checkpointDuration);
   }
 
   async getCheckpoint({
