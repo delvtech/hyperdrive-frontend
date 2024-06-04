@@ -22,9 +22,9 @@ import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { PositionActionsMenu } from "src/ui/base/components/PositionActionsMenu";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { AccruedYieldCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/AccruedYieldCell";
 import { CurrentValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentValueCell";
@@ -120,6 +120,7 @@ export function OpenShortsTableDesktop({
                     return (
                       <td
                         className={classNames("align-top text-xs md:text-md", {
+                          // This rounds the edges of the first and last cell on the bottom row to match the rounding of the tabs component. Border radius can't be applied to <tr />
                           "rounded-bl-box": isLastRow && cellIndex === 0,
                           "rounded-br-box":
                             isLastRow &&

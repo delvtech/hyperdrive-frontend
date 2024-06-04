@@ -24,9 +24,9 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { PositionActionsMenu } from "src/ui/base/components/PositionActionsMenu";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
@@ -167,12 +167,16 @@ export function OpenLongsTableDesktop({
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
-                    className={classNames("align-top text-xs md:text-md", {
-                      "rounded-bl-box ": isLastRow && cellIndex === 0,
-                      "rounded-br-box":
-                        isLastRow &&
-                        cellIndex === row.getVisibleCells().length - 1,
-                    })}
+                    className={classNames(
+                      "align-top text-xs md:text-md",
+                      // This rounds the edges of the first and last cell on the bottom row to match the rounding of the tabs component. Border radius can't be applied to <tr />
+                      {
+                        "rounded-bl-box ": isLastRow && cellIndex === 0,
+                        "rounded-br-box":
+                          isLastRow &&
+                          cellIndex === row.getVisibleCells().length - 1,
+                      },
+                    )}
                     key={cell.id}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
