@@ -12,6 +12,7 @@ import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
@@ -89,7 +90,7 @@ export function YieldStats({
           </Animated>
           <Animated isActive={position === "Shorts"}>
             {showMultiStats ? (
-              <FixedRateStat hyperdrive={hyperdrive} />
+              <ShortRateStat hyperdrive={hyperdrive} />
             ) : (
               <Stat
                 label="Short APR"

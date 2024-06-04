@@ -38,7 +38,7 @@ export function FixedRateStat({
             ),
 
           description:
-            "Annualized fixed rate earned from opening longs, before fees and slippage are applied.",
+            "Annualized fixed rate earned from opening a Long, before fees and slippage are applied.",
           tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
         },
         {
@@ -54,7 +54,7 @@ export function FixedRateStat({
             ),
 
           description:
-            "Holding period return for the duration of the term, before fees and slippage are applied.",
+            "Holding period return from opening a Long, before fees and slippage are applied.",
           tooltipPosition: isTailwindSmallScreen ? "right" : "bottom",
         },
       ]}
