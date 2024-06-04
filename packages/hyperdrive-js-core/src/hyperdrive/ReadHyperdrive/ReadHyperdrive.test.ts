@@ -185,7 +185,6 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: 0n,
     bondAmount: dnum.from("100", 18)[0],
-    decimals: 18,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
@@ -234,7 +233,6 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: 1n,
     bondAmount: dnum.from("100", 18)[0],
-    decimals: 18,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
