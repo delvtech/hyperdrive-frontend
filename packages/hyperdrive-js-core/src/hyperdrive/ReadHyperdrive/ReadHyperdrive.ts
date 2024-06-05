@@ -803,7 +803,7 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
-  async getAllLongs({
+  async getAllOpenLongs({
     account,
     options,
   }: {
@@ -824,6 +824,11 @@ export class ReadHyperdrive extends ReadModel {
         event.data as `0x${string}`,
       );
       return assetType === "LONG";
+    });
+
+    const closedLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      toBlock,
     });
 
     return allLongEvents.map((event) => {

@@ -33,7 +33,7 @@ import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import {
-  useAllOpenLongs,
+  useAllLongs,
   useOpenLongs,
   useOpenLongsWithDetails,
 } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
@@ -48,7 +48,7 @@ export function OpenLongsTableDesktop({
 
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
-  const { openLongs: allLongs } = useAllOpenLongs({
+  const { allLongs } = useAllLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -58,11 +58,11 @@ export function OpenLongsTableDesktop({
     longs: allLongs,
   });
   console.log(openLongsWithDetails, "withdetails");
-
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  console.log(openLongs, "openlongsoriginal");
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
