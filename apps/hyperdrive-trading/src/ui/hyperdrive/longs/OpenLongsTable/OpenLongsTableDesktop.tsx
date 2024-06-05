@@ -1,4 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
+import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -25,6 +26,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
@@ -151,31 +153,35 @@ export function OpenLongsTableDesktop({
         </thead>
 
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
+          {tableInstance.getRowModel().rows.map((row, index) => {
+            const isLastRow =
+              index === tableInstance.getRowModel().rows.length - 1;
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
+                className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
                 }}
               >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td
-                        className="align-top text-xs md:text-md"
-                        key={cell.id}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
+                {row.getVisibleCells().map((cell, cellIndex) => (
+                  <td
+                    className={classNames(
+                      "align-top text-xs md:text-md",
+                      // This rounds the edges of the first and last cell on the bottom row to match the rounding of the tabs component. Border radius can't be applied to <tr />
+                      {
+                        "rounded-bl-box ": isLastRow && cellIndex === 0,
+                        "rounded-br-box":
+                          isLastRow &&
+                          cellIndex === row.getVisibleCells().length - 1,
+                      },
+                    )}
+                    key={cell.id}
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
               </tr>
             );
           })}
@@ -187,6 +193,7 @@ export function OpenLongsTableDesktop({
     </div>
   );
 }
+
 const columnHelper = createColumnHelper<Long>();
 
 function getColumns({
@@ -294,11 +301,29 @@ function getColumns({
             >
               Close Long
             </button>
-            <CalendarLinkMenu
-              date={maturityDate}
-              title={`Hyperdrive - Long position has matured`}
-              description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
-            />
+            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left absolute right-10 z-10">
+              <div
+                tabIndex={0}
+                role="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+                className="daisy-btn daisy-btn-ghost daisy-btn-sm rotate-90 hover:bg-transparent"
+              >
+                <EllipsisVerticalIcon className="h-5" />
+              </div>
+              <ul
+                tabIndex={0}
+                className="daisy-menu daisy-dropdown-content z-10 w-52 rounded-lg bg-base-100 p-4 shadow"
+              >
+                <CalendarLinkMenu
+                  date={maturityDate}
+                  title={`Hyperdrive - Long position has matured`}
+                  description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
+                />
+                <PositionActionsMenu position={row.original} />
+              </ul>
+            </div>
           </div>
         );
       },

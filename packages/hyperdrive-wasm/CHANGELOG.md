@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.14.3
+
+### Patch Changes
+
+- 6a53f5a: Add calcHprGivenApy and calcHprGivenApr methods to hyperwasm
+
 ## 0.14.1
 
 ### Patch Changes

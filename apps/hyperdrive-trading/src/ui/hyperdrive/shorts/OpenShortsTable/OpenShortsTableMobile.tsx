@@ -95,21 +95,28 @@ export function OpenShortsTableMobile({
           ))}
         </thead>
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
+          {tableInstance.getRowModel().rows.map((row, index) => {
+            const isLastRow =
+              index === tableInstance.getRowModel().rows.length - 1;
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
+                className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
                 }}
               >
                 <>
-                  {row.getVisibleCells().map((cell) => {
+                  {row.getVisibleCells().map((cell, cellIndex) => {
                     return (
                       <td
-                        className="align-top text-xs md:text-md"
+                        className={classNames("align-top text-xs md:text-md", {
+                          "rounded-bl-box": isLastRow && cellIndex === 0,
+                          "rounded-br-box":
+                            isLastRow &&
+                            cellIndex === row.getVisibleCells().length - 1,
+                        })}
                         key={cell.id}
                       >
                         {flexRender(
