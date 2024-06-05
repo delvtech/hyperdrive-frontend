@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { calculateTimeLeft } from "src/base/calculateTimeLeft";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useBlock } from "wagmi";
 
@@ -12,9 +12,19 @@ export function MaturesOnCell({
   const { data: currentBlock } = useBlock();
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
-  const daysLeft = convertMillisecondsToDays(
-    Number(maturityDateMS - (currentBlock?.timestamp || 0n) * 1000n),
+  const { days, hours, minutes } = calculateTimeLeft(
+    Number(currentBlock?.timestamp || 0),
+    Number(maturity),
   );
+
+  let remainingTime;
+  if (isTermComplete) {
+    remainingTime = "Term complete";
+  } else if (days > 0) {
+    remainingTime = `${days} days left`;
+  } else {
+    remainingTime = `${hours} hours, ${minutes} minutes left`;
+  }
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
@@ -26,7 +36,7 @@ export function MaturesOnCell({
           "text-success": isTermComplete,
         })}
       >
-        {isTermComplete ? "Term complete" : `${daysLeft} days left`}
+        {remainingTime}
       </div>
     </div>
   );
