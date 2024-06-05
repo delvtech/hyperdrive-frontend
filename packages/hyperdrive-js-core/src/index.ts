@@ -60,8 +60,7 @@ export type {
 // Pool
 export { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
 export type { Checkpoint, CheckpointEvent } from "src/checkpoint/types";
-export type { PoolConfig } from "src/pool/PoolConfig";
-export type { PoolInfo } from "src/pool/PoolInfo";
+export type { PoolConfig, PoolInfo } from "src/pool/types";
 
 // Shorts
 export type { ClosedShort, OpenShort, Short } from "src/shorts/types";
@@ -81,7 +80,6 @@ export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWith
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { getHprFromApr } from "src/base/getHprFromApr";
 export { getHprFromApy } from "src/base/getHprFromApy";
-export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
 // Model
 export {
