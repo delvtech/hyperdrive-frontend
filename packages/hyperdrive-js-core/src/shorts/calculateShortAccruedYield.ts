@@ -1,20 +1,20 @@
-import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
+import * as dnum from "dnum";
 
 export function calculateShortAccruedYield({
-  toSharePrice,
-  fromSharePrice,
+  openVaultSharePrice,
+  endingVaultSharePrice,
   bondAmount,
   decimals,
 }: {
-  toSharePrice: bigint;
-  fromSharePrice: bigint;
+  openVaultSharePrice: bigint;
+  endingVaultSharePrice: bigint;
   bondAmount: bigint;
   decimals: number;
 }): bigint {
-  // Current Accrued yield = (current share price - checkpoint share price) x number of bonds
-  return multiplyBigInt(
-    [subtractBigInt([toSharePrice, fromSharePrice]), bondAmount],
-    decimals,
-  );
+  // Current Accrued yield = (current share price - checkpoint share price) x
+  // number of bonds
+  return dnum.multiply(
+    [endingVaultSharePrice - openVaultSharePrice, decimals],
+    [bondAmount, decimals],
+  )[0];
 }

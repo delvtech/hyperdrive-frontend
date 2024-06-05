@@ -3,16 +3,16 @@ import {
   Event,
   FunctionReturn,
 } from "@delvtech/evm-client";
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { Prettify } from "src/base/types";
+import { HyperdriveAbi } from "src/hyperdrive/abi";
 
 export type Checkpoint = Prettify<
   {
     checkpointTime: bigint;
-  } & FunctionReturn<typeof IHyperdrive.abi, "getCheckpoint">
+  } & FunctionReturn<HyperdriveAbi, "getCheckpoint">
 >;
 
-export type CheckpointEvent = Event<typeof IHyperdrive.abi, "CreateCheckpoint">;
+export type CheckpointEvent = Event<HyperdriveAbi, "CreateCheckpoint">;
 
 export type GetCheckpointTimeParams = (
   | {

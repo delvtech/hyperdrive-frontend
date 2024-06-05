@@ -1,5 +1,5 @@
-import { PoolConfig } from "src/pool/PoolConfig";
 import { ZERO_ADDRESS } from "src/pool/testing/constants";
+import { PoolConfig } from "src/pool/types";
 
 const SEVEN_DAYS = 604_800n;
 export const simplePoolConfig7Days: PoolConfig = {
