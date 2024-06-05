@@ -8,8 +8,8 @@ test("calculateShortAccruedYield should return the yield a short has accrued sin
 
   const value = calculateShortAccruedYield({
     bondAmount: dnum.from("100", 18)[0],
-    fromSharePrice: sharePriceAtCheckpointOpened,
-    toSharePrice: currentSharePrice,
+    openVaultSharePrice: sharePriceAtCheckpointOpened,
+    endingVaultSharePrice: currentSharePrice,
     decimals: 18,
   });
   // If you opened a short position on 100 bonds at a previous checkpoint price

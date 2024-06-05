@@ -292,7 +292,7 @@ export class ReadHyperdrive extends ReadModel {
       checkpointTime = await this._getCheckpointTime({
         blockNumber,
         timestamp,
-options,
+        options,
       });
     }
 
@@ -433,34 +433,34 @@ options,
     bondAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    const { positionDuration } = await this.getPoolConfig(options);
-    const maturityTime = checkpointTime + positionDuration;
-    const latestCheckpointTime = await this.getCheckpointTime({ options });
-    const isMatured = maturityTime < latestCheckpointTime;
-
-    // If the short is mature, get the vault share price at maturity
-    let finalSharePrice;
-    if (isMatured) {
-      const checkpointAtMaturity = await this.getCheckpoint({
-        checkpointTime: maturityTime,
-        options,
-      });
-      finalSharePrice = checkpointAtMaturity.vaultSharePrice;
-    } else {
-      // Otherwise get the current vault share price
-      const poolInfo = await this.getPoolInfo(options);
-      finalSharePrice = poolInfo.vaultSharePrice;
-    }
-
     // Get the vault share price when the short was opened
     const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
       checkpointTime,
       options,
     });
 
+    const { positionDuration } = await this.getPoolConfig(options);
+    const maturityTime = checkpointTime + positionDuration;
+    const latestCheckpointTime = await this.getCheckpointTime({ options });
+    const isMatured = latestCheckpointTime > maturityTime;
+
+    // If the short is mature, get the vault share price at maturity
+    let endingVaultSharePrice;
+    if (isMatured) {
+      const checkpointAtMaturity = await this.getCheckpoint({
+        checkpointTime: maturityTime,
+        options,
+      });
+      endingVaultSharePrice = checkpointAtMaturity.vaultSharePrice;
+    } else {
+      // Otherwise get the current vault share price
+      const poolInfo = await this.getPoolInfo(options);
+      endingVaultSharePrice = poolInfo.vaultSharePrice;
+    }
+
     return calculateShortAccruedYield({
-      fromSharePrice: openVaultSharePrice,
-      toSharePrice: finalSharePrice,
+      openVaultSharePrice,
+      endingVaultSharePrice,
       bondAmount,
       decimals: await this.getDecimals(),
     });
