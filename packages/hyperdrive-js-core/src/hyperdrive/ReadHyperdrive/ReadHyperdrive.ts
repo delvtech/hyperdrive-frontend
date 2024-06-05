@@ -442,7 +442,7 @@ export class ReadHyperdrive extends ReadModel {
     const { positionDuration } = await this.getPoolConfig(options);
     const maturityTime = checkpointTime + positionDuration;
     const latestCheckpointTime = await this.getCheckpointTime({ options });
-    const isMatured = latestCheckpointTime > maturityTime;
+    const isMatured = latestCheckpointTime >= maturityTime;
 
     // If the short is mature, get the vault share price at maturity
     let endingVaultSharePrice;
