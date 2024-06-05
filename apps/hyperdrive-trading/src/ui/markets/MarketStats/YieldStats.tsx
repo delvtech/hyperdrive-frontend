@@ -8,14 +8,10 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { parseUnits } from "viem";
 export function YieldStats({
   hyperdrive,
 }: {
@@ -31,22 +27,6 @@ export function YieldStats({
 
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
-  // fixed apr
-  const { fixedApr, fixedRateStatus: fixedAprStatus } = useFixedRate(
-    hyperdrive.address,
-  );
-
-  // short apr
-  const { vaultRate } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const { shortApr, shortRateStatus } = useShortRate({
-    bondAmount: parseUnits("1", 18),
-    hyperdriveAddress: hyperdrive.address,
-    variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
-    timestamp: BigInt(Math.floor(Date.now() / 1000)),
-  });
-  const formattedRate = shortApr ? `${shortApr.formatted}%` : "-";
   return (
     <Well transparent>
       <div className="space-y-8">
