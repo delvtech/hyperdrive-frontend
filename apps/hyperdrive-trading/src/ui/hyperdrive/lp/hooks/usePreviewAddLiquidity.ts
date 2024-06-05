@@ -35,7 +35,6 @@ export function usePreviewAddLiquidity({
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled =
     minAPR !== undefined &&
     minLpSharePrice !== undefined &&
@@ -46,6 +45,10 @@ export function usePreviewAddLiquidity({
     !!account &&
     enabled &&
     !!readHyperdrive;
+  const { data: blockNumber } = useBlockNumber({
+    watch: true,
+    query: { enabled: queryEnabled },
+  });
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {

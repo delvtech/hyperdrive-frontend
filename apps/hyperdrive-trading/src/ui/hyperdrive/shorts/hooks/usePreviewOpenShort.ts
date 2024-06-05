@@ -25,8 +25,11 @@ export function usePreviewOpenShort({
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
 
-  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
+  const { data: blockNumber } = useBlockNumber({
+    watch: true,
+    query: { enabled: queryEnabled },
+  });
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
