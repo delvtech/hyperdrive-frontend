@@ -1,5 +1,10 @@
-import { FetchStatus, useQuery } from "@tanstack/react-query";
+import { getHprFromApr } from "@delvtech/hyperdrive-viem";
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { useQuery } from "@tanstack/react-query";
+import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { getStatus } from "src/base/queryStatus";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseImpliedRateOptions {
@@ -18,28 +23,30 @@ export function useShortRate({
   variableApy,
   hyperdriveAddress,
 }: UseImpliedRateOptions): {
-  impliedRate: bigint | undefined;
-  impliedRateStatus: "error" | "success" | "loading";
-  impliedRateFetchStatus: FetchStatus;
+  shortApr: { apr: bigint; formatted: string } | undefined;
+  shortRoi: { roi: bigint; formatted: string } | undefined;
+  shortRateStatus: "loading" | "error" | "success" | "idle";
 } {
+  const { hyperdrives } = useAppConfig();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
+    !!hyperdriveAddress &&
     !!readHyperdrive &&
     bondAmount !== undefined &&
     timestamp !== undefined &&
     variableApy !== undefined;
 
   const {
-    data: impliedRate,
-    status: impliedRateStatus,
+    data,
+    status,
     // If the query is disabled and does not have cached data, then the query
     // will start in the status === 'loading' and fetchStatus === 'idle' state.
     // This is needed to avoid showing infinite skeletons when the query is
     // disabled and not fetching.
     // See: https://tanstack.com/query/v4/docs/framework/react/guides/disabling-queries#:~:text=When%20enabled%20is%20false%3A,not%20automatically%20fetch%20on%20mount.
-    fetchStatus: impliedRateFetchStatus,
+    fetchStatus,
   } = useQuery({
-    queryKey: makeQueryKey("impliedRate", {
+    queryKey: makeQueryKey("shortRate", {
       hyperdriveAddress,
       bondAmount: bondAmount?.toString(),
       timestamp: timestamp?.toString(),
@@ -48,19 +55,33 @@ export function useShortRate({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const result = await readHyperdrive.getImpliedRate({
+          const hyperdrive = findHyperdriveConfig({
+            hyperdrives,
+            hyperdriveAddress,
+          });
+          const shortApr = await readHyperdrive.getImpliedRate({
             bondAmount,
             timestamp,
             variableApy,
           });
-          return result;
+          const shortRoi = getHprFromApr(
+            shortApr,
+            hyperdrive.poolConfig.positionDuration,
+          );
+          return {
+            shortApr: {
+              apr: shortApr,
+              formatted: formatRate(shortApr),
+            },
+            shortRoi: { roi: shortRoi, formatted: formatRate(shortRoi) },
+          };
         }
       : undefined,
   });
 
   return {
-    impliedRate,
-    impliedRateStatus,
-    impliedRateFetchStatus,
+    shortApr: data?.shortApr,
+    shortRoi: data?.shortRoi,
+    shortRateStatus: getStatus(status, fetchStatus),
   };
 }

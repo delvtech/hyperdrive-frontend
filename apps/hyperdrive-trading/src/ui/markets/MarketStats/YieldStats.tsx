@@ -3,11 +3,9 @@ import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -32,27 +30,23 @@ export function YieldStats({
   });
 
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
-  const { isFlagEnabled: showMultiStats } = useFeatureFlag("roi-apr");
 
   // fixed apr
-  const { fixedApr, fixedAprStatus } = useFixedRate(hyperdrive.address);
+  const { fixedApr, fixedRateStatus: fixedAprStatus } = useFixedRate(
+    hyperdrive.address,
+  );
 
   // short apr
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
-  const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
-    useShortRate({
-      bondAmount: parseUnits("1", 18),
-      hyperdriveAddress: hyperdrive.address,
-      variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
-      timestamp: BigInt(Math.floor(Date.now() / 1000)),
-    });
-  const isLoadingShortRoi =
-    impliedRateStatus === "loading" &&
-    impliedRateFetchStatus === "fetching" &&
-    impliedRate === undefined;
-  const formattedRate = impliedRate ? `${formatRate(impliedRate)}%` : "-";
+  const { shortApr, shortRateStatus } = useShortRate({
+    bondAmount: parseUnits("1", 18),
+    hyperdriveAddress: hyperdrive.address,
+    variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
+    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+  });
+  const formattedRate = shortApr ? `${shortApr.formatted}%` : "-";
   return (
     <Well transparent>
       <div className="space-y-8">
@@ -69,44 +63,10 @@ export function YieldStats({
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
-            {showMultiStats ? (
-              <FixedRateStat hyperdrive={hyperdrive} />
-            ) : (
-              <Stat
-                label="Fixed APR"
-                value={
-                  fixedAprStatus === "loading" && fixedApr === undefined ? (
-                    <Skeleton className="w-20" />
-                  ) : (
-                    <span className={classNames("flex items-center gap-1.5")}>
-                      {fixedApr?.formatted || "0"}%
-                    </span>
-                  )
-                }
-                description="Annualized fixed rate earned from opening longs, before fees and slippage are applied."
-                tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
-              />
-            )}
+            <FixedRateStat hyperdrive={hyperdrive} />
           </Animated>
           <Animated isActive={position === "Shorts"}>
-            {showMultiStats ? (
-              <ShortRateStat hyperdrive={hyperdrive} />
-            ) : (
-              <Stat
-                label="Short APR"
-                description="Annualized return on shorts assuming the current variable rate stays the same until maturity."
-                tooltipPosition="bottom"
-                value={
-                  isLoadingShortRoi ? (
-                    <Skeleton className="w-20" />
-                  ) : (
-                    <span className={classNames("flex items-center gap-1.5")}>
-                      {formattedRate}
-                    </span>
-                  )
-                }
-              />
-            )}
+            <ShortRateStat hyperdrive={hyperdrive} />
           </Animated>
           <Animated isActive={position === "LP"}>
             <Stat

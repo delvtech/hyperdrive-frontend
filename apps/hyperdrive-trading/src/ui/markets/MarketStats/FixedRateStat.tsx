@@ -13,9 +13,11 @@ export function FixedRateStat({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { fixedApr, fixedRoi, fixedAprStatus } = useFixedRate(
-    hyperdrive.address,
-  );
+  const {
+    fixedApr,
+    fixedRoi,
+    fixedRateStatus: fixedAprStatus,
+  } = useFixedRate(hyperdrive.address);
   const [rateType, setRateType] = useLocalStorage<"fixedApr" | "fixedRoi">(
     "yield-stats-long-rate-type",
     "fixedApr",
