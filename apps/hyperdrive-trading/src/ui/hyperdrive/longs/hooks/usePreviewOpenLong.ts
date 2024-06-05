@@ -24,8 +24,11 @@ export function usePreviewOpenLong({
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const { data: blockNumber } = useBlockNumber({ watch: true });
   const queryEnabled = !!amountIn && !!readHyperdrive;
+  const { data: blockNumber } = useBlockNumber({
+    watch: true,
+    query: { enabled: queryEnabled },
+  });
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       hyperdrive: hyperdriveAddress,

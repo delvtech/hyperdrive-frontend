@@ -13,9 +13,9 @@ export function FeatureFlagPicker(): ReactElement {
       >
         <li className="daisy-menu-title">Feature flags</li>
         {/* Place your feature flag menu items here, eg:  */}
-        <FeatureFlagMenuItem flagName="roi-apr">
-          ROI and APR
-        </FeatureFlagMenuItem>
+        {/* <FeatureFlagMenuItem flagName="name-here">
+        Menu Item Name here
+        </FeatureFlagMenuItem> */}
       </ul>
     </div>
   );

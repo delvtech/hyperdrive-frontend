@@ -31,8 +31,12 @@ export function MarketDetailsBody({
 
       {/* Stats section */}
       <div className="flex flex-wrap gap-16">
-        <YieldStats hyperdrive={hyperdrive} />
-        <LiquidityStats hyperdrive={hyperdrive} />
+        <div className="flex-1">
+          <YieldStats hyperdrive={hyperdrive} />
+        </div>
+        <div className="flex-1">
+          <LiquidityStats hyperdrive={hyperdrive} />
+        </div>
       </div>
 
       {marketState?.isPaused && (

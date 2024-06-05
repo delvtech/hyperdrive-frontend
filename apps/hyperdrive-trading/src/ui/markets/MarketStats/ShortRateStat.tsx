@@ -3,10 +3,9 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
-import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
-import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
@@ -22,19 +21,14 @@ export function ShortRateStat({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { impliedRate, impliedRateStatus, impliedRateFetchStatus } =
-    useImpliedRate({
-      bondAmount: parseUnits("1", 18),
-      hyperdriveAddress: hyperdrive.address,
-      variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
-      timestamp: BigInt(Math.floor(Date.now() / 1000)),
-    });
-  const isLoadingShortRoi =
-    impliedRateStatus === "loading" &&
-    impliedRateFetchStatus === "fetching" &&
-    impliedRate === undefined;
-
-  const formattedRate = impliedRate ? `${formatRate(impliedRate)}%` : "-";
+  const { shortApr, shortRoi, shortRateStatus } = useShortRate({
+    bondAmount: parseUnits("1", 18),
+    hyperdriveAddress: hyperdrive.address,
+    variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
+    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+  });
+  const isLoadingShortRate =
+    shortRateStatus === "loading" && shortApr === undefined;
 
   return (
     <MultiStat
@@ -49,11 +43,11 @@ export function ShortRateStat({
           description:
             "Annualized return on shorts assuming the current variable rate stays the same for 1 year.",
           tooltipPosition: "bottom",
-          value: isLoadingShortRoi ? (
+          value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
             <span className={classNames("flex items-center gap-1.5")}>
-              {formattedRate}
+              {shortApr?.formatted ? `${shortApr.formatted}%` : "-"}
             </span>
           ),
         },
@@ -63,11 +57,11 @@ export function ShortRateStat({
           description:
             "Holding period return on shorts assuming the current variable rate stays the same until maturity.",
           tooltipPosition: "bottom",
-          value: isLoadingShortRoi ? (
+          value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
             <span className={classNames("flex items-center gap-1.5")}>
-              {formattedRate}
+              {shortRoi?.formatted ? `${shortRoi.formatted}%` : "-"}
             </span>
           ),
         },

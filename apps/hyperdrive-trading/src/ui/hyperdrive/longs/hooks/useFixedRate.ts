@@ -4,21 +4,22 @@ import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-export function useCurrentFixedRate(hyperdriveAddress: Address): {
+export function useFixedRate(hyperdriveAddress: Address): {
   fixedApr: { apr: bigint; formatted: string } | undefined;
   fixedRoi: { roi: bigint; formatted: string } | undefined;
-  fixedAprStatus: "loading" | "error" | "success";
+  fixedRateStatus: QueryStatusWithIdle;
 } {
   const { hyperdrives } = useAppConfig();
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const hyperdrive = findHyperdriveConfig({ hyperdrives, hyperdriveAddress });
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
 
   const queryEnabled = !!readHyperdrive;
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("fixedApr", { address: hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
@@ -45,6 +46,6 @@ export function useCurrentFixedRate(hyperdriveAddress: Address): {
   return {
     fixedApr: data?.fixedApr,
     fixedRoi: data?.fixedRoi,
-    fixedAprStatus: status,
+    fixedRateStatus: getStatus(status, fetchStatus),
   };
 }
