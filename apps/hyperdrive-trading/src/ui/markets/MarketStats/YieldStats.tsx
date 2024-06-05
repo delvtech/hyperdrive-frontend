@@ -28,7 +28,7 @@ export function YieldStats({
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
   return (
-    <Well transparent>
+    <Well transparent block>
       <div className="space-y-8">
         <div className="flex justify-between">
           <h5 className="flex text-neutral-content">Yield</h5>
