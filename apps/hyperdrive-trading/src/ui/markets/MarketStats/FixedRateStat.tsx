@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useCurrentFixedRate } from "src/ui/hyperdrive/hooks/useCurrentFixedRate";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 export function FixedRateStat({
   hyperdrive,
@@ -13,9 +13,11 @@ export function FixedRateStat({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { fixedApr, fixedRoi, fixedAprStatus } = useCurrentFixedRate(
-    hyperdrive.address,
-  );
+  const {
+    fixedApr,
+    fixedRoi,
+    fixedRateStatus: fixedAprStatus,
+  } = useFixedRate(hyperdrive.address);
   const [rateType, setRateType] = useLocalStorage<"fixedApr" | "fixedRoi">(
     "yield-stats-long-rate-type",
     "fixedApr",
