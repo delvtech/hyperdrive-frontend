@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getStatus } from "src/base/queryStatus";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -12,7 +12,7 @@ import { Address } from "viem";
 export function useFixedRate(hyperdriveAddress: Address): {
   fixedApr: { apr: bigint; formatted: string } | undefined;
   fixedRoi: { roi: bigint; formatted: string } | undefined;
-  fixedRateStatus: "loading" | "error" | "success" | "idle";
+  fixedRateStatus: QueryStatusWithIdle;
 } {
   const { hyperdrives } = useAppConfig();
   const hyperdrive = findHyperdriveConfig({ hyperdrives, hyperdriveAddress });
