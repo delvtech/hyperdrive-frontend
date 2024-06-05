@@ -3,12 +3,11 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [["@delvtech/hyperdrive-wasm", "hyperdrive-wasm"]],
-  "linked": [],
+  "linked": [["@delvtech/hyperdrive-viem", "@delvtech/hyperdrive-js-core"]],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "privatePackages": {
     "version": false
   }
-  
 }
