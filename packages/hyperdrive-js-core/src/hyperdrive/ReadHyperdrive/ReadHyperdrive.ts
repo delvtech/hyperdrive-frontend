@@ -36,6 +36,7 @@ import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { MarketState } from "src/pool/MarketState";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -802,27 +803,73 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
-  // async getOpenLongEvents({
-  //   account,
-  //   options,
-  // }: {
-  //   account: `0x${string}`;
-  //   options?: ContractReadOptions;
-  // }): Promise<Event<HyperdriveAbi, "OpenLong">[]> {
-  //   const toBlock = getBlockFromReadOptions(options);
+  async getAllLongs({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<{ id: bigint; value: bigint; from: `0x${string}` }[]> {
+    const toBlock = getBlockFromReadOptions(options);
 
-  //   const openLongEvents = await this.contract.getEvents("OpenLong", {
-  //     filter: { trader: account },
-  //     toBlock,
-  //   });
-  //   const closeLongEvents = await this.contract.getEvents("CloseLong", {
-  //     filter: { trader: account },
-  //     toBlock,
-  //   });
-  // }
+    const allTransferSingleEvents = await this.contract.getEvents(
+      "TransferSingle",
+      {
+        filter: { to: account },
+        toBlock,
+      },
+    );
+    const allLongEvents = allTransferSingleEvents.filter((event) => {
+      const { assetType } = decodeAssetFromTransferSingleEventData(
+        event.data as `0x${string}`,
+      );
+      return assetType === "LONG";
+    });
+
+    return allLongEvents.map((event) => {
+      return {
+        id: event.args.id,
+        value: event.args.value,
+        from: event.args.from,
+      };
+    });
+  }
+
+  async getOpenLongDetails({
+    assetId,
+  }: {
+    assetId: bigint;
+  }): Promise<Long | undefined> {
+    const decimals = await this.getDecimals();
+    const openLongEvent = await this.contract.getEvents("OpenLong", {
+      filter: { assetId: assetId },
+    });
+
+    if (!openLongEvent) {
+      return undefined;
+    }
+    const long: Long = {
+      assetId: openLongEvent[0].args.assetId,
+      maturity: openLongEvent[0].args.maturityTime,
+      baseAmountPaid: 0n,
+      bondAmount: 0n,
+    };
+    const baseAmount = openLongEvent[0].args.asBase
+      ? openLongEvent[0].args.amount
+      : convertSharesToBase({
+          sharesAmount: openLongEvent[0].args.amount,
+          vaultSharePrice: openLongEvent[0].args.vaultSharePrice,
+          decimals,
+        });
+    return {
+      ...long,
+      baseAmountPaid: long.baseAmountPaid - baseAmount,
+      bondAmount: long.bondAmount - openLongEvent[0].args.bondAmount,
+    };
+  }
 
   /**
-   * @deprecated Use ReadHyperdrive.getOpenLongEvents instead
+   * @deprecated Use ReadHyperdrive.getAllLongs instead to retrieve all longs opened or received by a user.
    * Gets the active longs opened by a specific user.
    * @param account - The user's address
    * @param options.toBlock - The end block, defaults to "latest"

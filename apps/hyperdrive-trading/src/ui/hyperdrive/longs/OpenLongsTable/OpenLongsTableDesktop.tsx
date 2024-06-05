@@ -32,7 +32,11 @@ import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButt
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
-import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
+import {
+  useAllOpenLongs,
+  useOpenLongs,
+  useOpenLongsWithDetails,
+} from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useAccount } from "wagmi";
 
 export function OpenLongsTableDesktop({
@@ -41,8 +45,20 @@ export function OpenLongsTableDesktop({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
+  const { openLongs: allLongs } = useAllOpenLongs({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const { openLongsWithDetails } = useOpenLongsWithDetails({
+    hyperdrive,
+    longs: allLongs,
+  });
+  console.log(openLongsWithDetails, "withdetails");
+
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
