@@ -12,7 +12,7 @@
     "viem": "^2.7.8"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-js-core": "^2.2.1",
+    "@delvtech/hyperdrive-js-core": "2.2.1",
     "@delvtech/evm-client-viem": "^0.6.1"
   },
   "devDependencies": {
