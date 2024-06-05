@@ -33,21 +33,6 @@ export const cloudChainAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["yieldSource", "reth"],
-      extensions: {
-        shortName: "Rocket Pool ETH",
-        protocol: "rocketPool",
-        isSharesPeggedToBase: false,
-      },
-    },
-    {
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       decimals: 18,
       places: 2,
@@ -72,10 +57,25 @@ export const cloudChainAppConfig: AppConfig = {
       tags: [],
       extensions: {},
     },
+    {
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["yieldSource", "reth"],
+      extensions: {
+        shortName: "Rocket Pool ETH",
+        protocol: "rocketPool",
+        isSharesPeggedToBase: false,
+      },
+    },
   ],
   hyperdrives: [
     {
-      address: "0x99ddd3EF0dEb6d909F05E8B96a34eC4b83a1F4b5",
+      address: "0x6eAfeC16d5293210ec7CDfE4001889db0788A7c5",
       version: "v1.0.7",
       name: "14d DAI-Maker DSR",
       decimals: 18,
@@ -95,7 +95,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1086818183671753896n,
+        initialVaultSharePrice: 1086822408780033000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -114,7 +114,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x13c7f560b0E2d623DF8d930Ac6E5cd6e05Cc3682",
+      address: "0x9457bab1480b128bF275C6C7b2f2e95E536EA88d",
       version: "v1.0.7",
       name: "30d DAI-Maker DSR",
       decimals: 18,
@@ -134,7 +134,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1086818406464247275n,
+        initialVaultSharePrice: 1086822427346144548n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
