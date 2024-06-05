@@ -292,6 +292,7 @@ export class ReadHyperdrive extends ReadModel {
       checkpointTime = await this._getCheckpointTime({
         blockNumber,
         timestamp,
+options,
       });
     }
 
