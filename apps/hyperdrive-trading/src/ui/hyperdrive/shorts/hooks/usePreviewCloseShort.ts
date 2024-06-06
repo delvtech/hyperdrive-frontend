@@ -1,5 +1,6 @@
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -12,7 +13,8 @@ interface UsePreviewCloseShortOptions {
 }
 
 interface UsePreviewCloseShortResult {
-  previewCloseShortStatus: QueryStatus;
+  previewCloseShortStatus: QueryStatusWithIdle;
+  previewCloseShortError: Error;
   amountOut: bigint | undefined;
   flatPlusCurveFee: bigint | undefined;
 }
@@ -28,13 +30,19 @@ export function usePreviewCloseShort({
   const queryEnabled =
     !!readHyperdrive && !!maturityTime && !!shortAmountIn && enabled;
 
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
       shortAmountIn: shortAmountIn?.toString(),
       asBase,
     }),
+
+    // Don't retry this if it throws an error. Normally react-query will retry a
+    // failed request 3 times w/ exponential backoff before showing an error to
+    // the user. In this case, retrying isn't helpful, since previewCloseShort
+    // throws errors on bad inputs and is pretty much a pure function.
+    retry: false,
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () =>
@@ -49,6 +57,7 @@ export function usePreviewCloseShort({
   return {
     amountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
-    previewCloseShortStatus: status,
+    previewCloseShortStatus: getStatus(status, fetchStatus),
+    previewCloseShortError: error as Error,
   };
 }
