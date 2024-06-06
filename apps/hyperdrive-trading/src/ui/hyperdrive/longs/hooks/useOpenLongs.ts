@@ -34,16 +34,18 @@ export function useOpenLongs({
   return { openLongs, openLongsStatus };
 }
 
-export function useAllLongs({
+export function useAllOpenLongs({
   account,
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
-  allLongs: { id: bigint; value: bigint; from: `0x${string}` }[] | undefined;
-  allLongsStatus: "error" | "success" | "loading";
+  allOpenLongs:
+    | { id: bigint; value: bigint; from: `0x${string}` }[]
+    | undefined;
+  allOpenLongsStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!account;
-  const { data: allLongs, status: allLongsStatus } = useQuery({
+  const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
     queryFn: queryEnabled
@@ -51,7 +53,7 @@ export function useAllLongs({
       : undefined,
   });
 
-  return { allLongs, allLongsStatus };
+  return { allOpenLongs, allOpenLongsStatus };
 }
 
 export function useOpenLongsWithDetails({

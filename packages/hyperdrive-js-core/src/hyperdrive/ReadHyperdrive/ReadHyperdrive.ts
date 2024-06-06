@@ -831,11 +831,36 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    return allLongEvents.map((event) => {
+    const allLongEventsFiltered = allLongEvents.filter((event) => {
+      return !closedLongEvents.some(
+        (closedLong) => closedLong.args.assetId === event.args.id,
+      );
+    });
+    const combinedOpenLongs: {
+      id: bigint;
+      value: bigint;
+      from: `0x${string}`;
+    }[] = [];
+    // combine the filtered long events if the id are the same and combine the values
+    allLongEventsFiltered.forEach((event) => {
+      const index = combinedOpenLongs.findIndex(
+        (long) => long.id === event.args.id,
+      );
+      if (index === -1) {
+        combinedOpenLongs.push({
+          id: event.args.id,
+          value: event.args.value,
+          from: event.args.from,
+        });
+      } else {
+        combinedOpenLongs[index].value += event.args.value;
+      }
+    });
+    return combinedOpenLongs.map((event) => {
       return {
-        id: event.args.id,
-        value: event.args.value,
-        from: event.args.from,
+        id: event.id,
+        value: event.value,
+        from: event.from,
       };
     });
   }
