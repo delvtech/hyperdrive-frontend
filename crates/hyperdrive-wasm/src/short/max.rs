@@ -44,7 +44,6 @@ pub fn maxShort(
     };
     let _budget = U256::from_dec_str(budget).unwrap();
     let checkpoint_exposure: I256 = I256::from_dec_str(checkpointExposure).unwrap();
-    // TODO: Why is from_raw used here?
     let open_vault_share_price = U256::from_dec_str(openVaultSharePrice).unwrap();
 
     let _maybe_conservative_price: Option<FixedPoint> = maybeConservativePrice
