@@ -841,7 +841,6 @@ export class ReadHyperdrive extends ReadModel {
       value: bigint;
       from: `0x${string}`;
     }[] = [];
-    // combine the filtered long events if the id are the same and combine the values
     allLongEventsFiltered.forEach((event) => {
       const index = combinedOpenLongs.findIndex(
         (long) => long.id === event.args.id,
