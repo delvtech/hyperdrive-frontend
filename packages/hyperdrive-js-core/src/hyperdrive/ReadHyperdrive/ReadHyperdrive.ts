@@ -891,8 +891,8 @@ export class ReadHyperdrive extends ReadModel {
     const long: Long = {
       assetId: openLongEvent.args.assetId,
       maturity: openLongEvent.args.maturityTime,
-      baseAmountPaid: -baseAmount,
-      bondAmount: -openLongEvent.args.bondAmount,
+      baseAmountPaid: baseAmount,
+      bondAmount: openLongEvent.args.bondAmount,
     };
 
     return long;
