@@ -39,17 +39,30 @@ export function useAllOpenLongs({
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
   allOpenLongs:
-    | { id: bigint; value: bigint; from: `0x${string}` }[]
+    | { id: bigint; value: bigint; details: Long | undefined }[]
     | undefined;
   allOpenLongsStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive && !!account;
+  const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
   const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? () => readHyperdrive.getAllOpenLongs({ account })
+      ? async () => {
+          const allLongs = await readHyperdrive.getAllOpenLongs({ account });
+          const promises = allLongs.map(async (long) => {
+            const details = await readHyperdrive.getOpenLongDetails({
+              assetId: long.id,
+            });
+            return {
+              id: long.id,
+              value: long.value,
+              details: long.from === ZERO_ADDRESS ? details : undefined,
+            };
+          });
+          return Promise.all(promises);
+        }
       : undefined,
   });
 
@@ -71,30 +84,27 @@ export function useOpenLongsWithDetails({
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!longs;
 
-  const fetchOpenLongsWithDetails = async () => {
-    if (!queryEnabled) {
-      return;
-    }
-    const promises = longs.map(async (long) => {
-      const details = await readHyperdrive.getOpenLongDetails({
-        assetId: long.id,
-      });
-      return {
-        id: long.id,
-        value: long.value,
-        details: long.from === ZERO_ADDRESS ? details : undefined,
-      };
-    });
-    return Promise.all(promises);
-  };
-
   const { data: openLongsWithDetails, status: openLongsWithDetailsStatus } =
     useQuery({
       enabled: queryEnabled,
       queryKey: makeQueryKey("openLongsWithDetails", {
         hyperdriveAddress: hyperdrive.address,
       }),
-      queryFn: fetchOpenLongsWithDetails,
+      queryFn: queryEnabled
+        ? async () => {
+            const promises = longs.map(async (long) => {
+              const details = await readHyperdrive.getOpenLongDetails({
+                assetId: long.id,
+              });
+              return {
+                id: long.id,
+                value: long.value,
+                details: long.from === ZERO_ADDRESS ? details : undefined,
+              };
+            });
+            return Promise.all(promises);
+          }
+        : undefined,
     });
 
   return { openLongsWithDetails, openLongsWithDetailsStatus };

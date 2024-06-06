@@ -819,6 +819,7 @@ export class ReadHyperdrive extends ReadModel {
         toBlock,
       },
     );
+
     const allLongEvents = allTransferSingleEvents.filter((event) => {
       const { assetType } = decodeAssetFromTransferSingleEventData(
         event.data as `0x${string}`,
@@ -836,11 +837,13 @@ export class ReadHyperdrive extends ReadModel {
         (closedLong) => closedLong.args.assetId === event.args.id,
       );
     });
+
     const combinedOpenLongs: {
       id: bigint;
       value: bigint;
       from: `0x${string}`;
     }[] = [];
+
     allLongEventsFiltered.forEach((event) => {
       const index = combinedOpenLongs.findIndex(
         (long) => long.id === event.args.id,
@@ -855,13 +858,8 @@ export class ReadHyperdrive extends ReadModel {
         combinedOpenLongs[index].value += event.args.value;
       }
     });
-    return combinedOpenLongs.map((event) => {
-      return {
-        id: event.id,
-        value: event.value,
-        from: event.from,
-      };
-    });
+
+    return combinedOpenLongs;
   }
 
   async getOpenLongDetails({
@@ -870,6 +868,7 @@ export class ReadHyperdrive extends ReadModel {
     assetId: bigint;
   }): Promise<Long | undefined> {
     const decimals = await this.getDecimals();
+
     const openLongEvent = await this.contract.getEvents("OpenLong", {
       filter: { assetId: assetId },
     });
@@ -877,12 +876,14 @@ export class ReadHyperdrive extends ReadModel {
     if (!openLongEvent) {
       return undefined;
     }
+
     const long: Long = {
       assetId: openLongEvent[0].args.assetId,
       maturity: openLongEvent[0].args.maturityTime,
       baseAmountPaid: 0n,
       bondAmount: 0n,
     };
+
     const baseAmount = openLongEvent[0].args.asBase
       ? openLongEvent[0].args.amount
       : convertSharesToBase({
@@ -890,6 +891,7 @@ export class ReadHyperdrive extends ReadModel {
           vaultSharePrice: openLongEvent[0].args.vaultSharePrice,
           decimals,
         });
+
     return {
       ...long,
       baseAmountPaid: long.baseAmountPaid - baseAmount,

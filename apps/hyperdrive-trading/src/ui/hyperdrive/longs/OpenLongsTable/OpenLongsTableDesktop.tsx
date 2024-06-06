@@ -35,7 +35,6 @@ import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateC
 import {
   useAllOpenLongs,
   useOpenLongs,
-  useOpenLongsWithDetails,
 } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useAccount } from "wagmi";
 
@@ -52,17 +51,17 @@ export function OpenLongsTableDesktop({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-
-  const { openLongsWithDetails } = useOpenLongsWithDetails({
-    hyperdrive,
-    longs: allOpenLongs,
-  });
-  console.log(openLongsWithDetails, "withdetails");
+  console.log(allOpenLongs, "allOpenLongs");
+  // const { openLongsWithDetails } = useOpenLongsWithDetails({
+  //   hyperdrive,
+  //   longs: allOpenLongs,
+  // });
+  // console.log(openLongsWithDetails, "withdetails");
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-  console.log(openLongs, "openlongsoriginal");
+  // console.log(openLongs, "openlongsoriginal");
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
