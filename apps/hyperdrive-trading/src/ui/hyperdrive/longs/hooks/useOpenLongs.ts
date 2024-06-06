@@ -1,5 +1,4 @@
 import { Long } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -34,6 +33,9 @@ export function useOpenLongs({
   return { openLongs, openLongsStatus };
 }
 
+/**
+ * Returns the list of longs that the account currently has open. This includes longs that have been transferred to the account from another address.
+ */
 export function useAllOpenLongs({
   account,
   hyperdriveAddress,
@@ -52,13 +54,15 @@ export function useAllOpenLongs({
       ? async () => {
           const allLongs = await readHyperdrive.getAllOpenLongs({ account });
           const promises = allLongs.map(async (long) => {
-            const details = await readHyperdrive.getOpenLongDetails({
-              assetId: long.id,
-            });
             return {
               id: long.id,
               value: long.value,
-              details: long.from === ZERO_ADDRESS ? details : undefined,
+              details:
+                long.from === ZERO_ADDRESS
+                  ? await readHyperdrive.getOpenLongDetails({
+                      assetId: long.id,
+                    })
+                  : undefined,
             };
           });
           return Promise.all(promises);
@@ -67,45 +71,4 @@ export function useAllOpenLongs({
   });
 
   return { allOpenLongs, allOpenLongsStatus };
-}
-
-export function useOpenLongsWithDetails({
-  hyperdrive,
-  longs,
-}: {
-  hyperdrive: HyperdriveConfig;
-  longs: { id: bigint; value: bigint; from: `0x${string}` }[] | undefined;
-}): {
-  openLongsWithDetails:
-    | { id: bigint; value: bigint; details: Long | undefined }[]
-    | undefined;
-  openLongsWithDetailsStatus: "error" | "success" | "loading";
-} {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const queryEnabled = !!readHyperdrive && !!longs;
-
-  const { data: openLongsWithDetails, status: openLongsWithDetailsStatus } =
-    useQuery({
-      enabled: queryEnabled,
-      queryKey: makeQueryKey("openLongsWithDetails", {
-        hyperdriveAddress: hyperdrive.address,
-      }),
-      queryFn: queryEnabled
-        ? async () => {
-            const promises = longs.map(async (long) => {
-              const details = await readHyperdrive.getOpenLongDetails({
-                assetId: long.id,
-              });
-              return {
-                id: long.id,
-                value: long.value,
-                details: long.from === ZERO_ADDRESS ? details : undefined,
-              };
-            });
-            return Promise.all(promises);
-          }
-        : undefined,
-    });
-
-  return { openLongsWithDetails, openLongsWithDetailsStatus };
 }
