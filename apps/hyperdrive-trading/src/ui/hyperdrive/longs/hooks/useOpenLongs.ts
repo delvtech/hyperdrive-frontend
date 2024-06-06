@@ -11,6 +11,7 @@ interface UseOpenLongsOptions {
 }
 
 /**
+ * @deprecated Use useAllOpenLongs instead to include longs that have been transferred to the account from another address.
  * Returns the list of longs that the account currently has open.
  */
 export function useOpenLongs({
@@ -34,7 +35,7 @@ export function useOpenLongs({
 }
 
 /**
- * Returns the list of longs that the account currently has open. This includes longs that have been transferred to the account from another address.
+ * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
  */
 export function useAllOpenLongs({
   account,
