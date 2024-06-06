@@ -832,11 +832,12 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const allLongEventsFiltered = allLongEvents.filter((event) => {
-      return !closedLongEvents.some(
-        (closedLong) => closedLong.args.assetId === event.args.id,
-      );
-    });
+    const openLongs = allLongEvents.filter(
+      (event) =>
+        !closedLongEvents.some(
+          (closedLong) => closedLong.args.assetId === event.args.id,
+        ),
+    );
 
     const combinedOpenLongs: {
       id: bigint;
@@ -844,18 +845,18 @@ export class ReadHyperdrive extends ReadModel {
       from: `0x${string}`;
     }[] = [];
 
-    allLongEventsFiltered.forEach((event) => {
-      const index = combinedOpenLongs.findIndex(
+    openLongs.forEach((event) => {
+      const existingLong = combinedOpenLongs.find(
         (long) => long.id === event.args.id,
       );
-      if (index === -1) {
+      if (existingLong) {
+        existingLong.value += event.args.value;
+      } else {
         combinedOpenLongs.push({
           id: event.args.id,
           value: event.args.value,
           from: event.args.from,
         });
-      } else {
-        combinedOpenLongs[index].value += event.args.value;
       }
     });
 
@@ -869,34 +870,32 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<Long | undefined> {
     const decimals = await this.getDecimals();
 
-    const openLongEvent = await this.contract.getEvents("OpenLong", {
-      filter: { assetId: assetId },
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { assetId },
     });
 
-    if (!openLongEvent) {
+    if (!openLongEvents || openLongEvents.length === 0) {
       return undefined;
     }
 
-    const long: Long = {
-      assetId: openLongEvent[0].args.assetId,
-      maturity: openLongEvent[0].args.maturityTime,
-      baseAmountPaid: 0n,
-      bondAmount: 0n,
-    };
+    const openLongEvent = openLongEvents[0];
 
-    const baseAmount = openLongEvent[0].args.asBase
-      ? openLongEvent[0].args.amount
+    const baseAmount = openLongEvent.args.asBase
+      ? openLongEvent.args.amount
       : convertSharesToBase({
-          sharesAmount: openLongEvent[0].args.amount,
-          vaultSharePrice: openLongEvent[0].args.vaultSharePrice,
+          sharesAmount: openLongEvent.args.amount,
+          vaultSharePrice: openLongEvent.args.vaultSharePrice,
           decimals,
         });
 
-    return {
-      ...long,
-      baseAmountPaid: long.baseAmountPaid - baseAmount,
-      bondAmount: long.bondAmount - openLongEvent[0].args.bondAmount,
+    const long: Long = {
+      assetId: openLongEvent.args.assetId,
+      maturity: openLongEvent.args.maturityTime,
+      baseAmountPaid: -baseAmount,
+      bondAmount: -openLongEvent.args.bondAmount,
     };
+
+    return long;
   }
 
   /**
