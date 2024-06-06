@@ -12,55 +12,73 @@ pub enum HyperdriveWasmError {
     Generic(String, String),
 }
 
-/// Conversions ///
+// Conversions //
 
+// Convert a HyperdriveWasmError to a JsValue via `.into()` or `::from()`
 impl From<HyperdriveWasmError> for JsValue {
     fn from(error: HyperdriveWasmError) -> JsValue {
         error.to_string().into()
     }
 }
 
+/// Convert a value to a `HyperdriveWasmError` via `.to_error(location: &Location)`
 pub trait ToHyperdriveWasmError {
-    /// Converts the given value to a `HyperdriveWasmError`
-    fn to_error(self) -> HyperdriveWasmError;
+    /// Convert a value to a `HyperdriveWasmError`, capturing the current location
+    #[track_caller]
+    fn to_error(&self) -> HyperdriveWasmError {
+        self.to_error_at(&Location::caller().to_string())
+    }
+
+    fn to_error_at(&self, location: &str) -> HyperdriveWasmError;
 }
 
-// If it can `to_string`, it can `to_error``
+// If a value can `.to_string()`, it can `.to_error()`
 impl<T> ToHyperdriveWasmError for T
 where
     T: ToString,
 {
-    fn to_error(self) -> HyperdriveWasmError {
-        HyperdriveWasmError::Generic(self.to_string(), format!("{}", Location::caller()))
+    fn to_error_at(&self, location: &str) -> HyperdriveWasmError {
+        HyperdriveWasmError::Generic(self.to_string(), location.to_string())
     }
 }
 
-// If it can `into` a String, it can `into` a HyperdriveWasmError
+// If a value can `.into()` a String, it can `.into()` a HyperdriveWasmError
 impl<T> From<T> for HyperdriveWasmError
 where
     T: Into<String>,
 {
+    #[track_caller]
     fn from(t: T) -> Self {
-        t.into().to_error()
+        t.into().to_error_at(&Location::caller().to_string())
     }
 }
 
+/// Convert a value to a `Result<T, JsValue>` via `.to_js_result()`
 pub trait ToJsResult<T> {
-    /// Converts a `Result` to one JavaScript can handle
-    fn to_js_result(self) -> Result<T, JsValue>;
+    /// Convert a value to a `Result<T, JsValue>`, capturing the current location
+    #[track_caller]
+    fn to_js_result(self) -> Result<T, JsValue>
+    where
+        Self: Sized,
+    {
+        self.to_js_result_at(&Location::caller().to_string())
+    }
+
+    fn to_js_result_at(self, location: &str) -> Result<T, JsValue>;
 }
 
-// If the result's error can `to_error`, the result can `to_js_result`
+// If a Result's error type can `.to_error()`, the Result can be
+// converted to a `Result<T, JsValue>`
 impl<T, E> ToJsResult<T> for Result<T, E>
 where
     E: ToHyperdriveWasmError,
 {
-    fn to_js_result(self) -> Result<T, JsValue> {
-        self.map_err(|e| e.to_error().into())
+    fn to_js_result_at(self, location: &str) -> Result<T, JsValue> {
+        self.map_err(|e| e.to_error_at(location).into())
     }
 }
 
-/// Macros ///
+// Macros //
 
 #[macro_export]
 macro_rules! error {
