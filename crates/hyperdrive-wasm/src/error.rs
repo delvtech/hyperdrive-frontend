@@ -21,7 +21,7 @@ impl From<HyperdriveWasmError> for JsValue {
     }
 }
 
-/// Convert a value to a `HyperdriveWasmError` via `.to_error(location: &Location)`
+/// Convert a value to a `HyperdriveWasmError` via `.to_error()`
 pub trait ToHyperdriveWasmError {
     /// Convert a value to a `HyperdriveWasmError`, capturing the current location
     #[track_caller]
