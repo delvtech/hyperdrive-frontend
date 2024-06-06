@@ -27,8 +27,8 @@ pub fn initialize() {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
     let result_fp = state.calculate_spot_price().to_js_result()?;
 
@@ -47,7 +47,7 @@ pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<String, JsVa
     let position_duration_fp = positionDuration.to_fixed_point()?;
     let result_fp = calculate_hpr_given_apr(apr_fp, position_duration_fp);
 
-    Ok(result_fp.to_u256()?.to_string()) // JSVaulue::bigint_from_str ??
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculate the holding period return (HPR) given a compounding, annualized
@@ -76,8 +76,8 @@ pub fn idleShareReservesInBase(
     poolConfig: &JsPoolConfig,
 ) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
 
     let result_fp = state.calculate_idle_share_reserves_in_base();
@@ -98,8 +98,8 @@ pub fn presentValue(
     currentTime: &str,
 ) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
     let currentTime = currentTime.to_u256()?;
     let result_fp = state.calculate_present_value(currentTime).to_js_result()?;
@@ -116,8 +116,8 @@ pub fn presentValue(
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotRate(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
     let result_fp = state.calculate_spot_rate().to_js_result()?;
 

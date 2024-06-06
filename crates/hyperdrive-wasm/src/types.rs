@@ -1,8 +1,11 @@
-use ethers::core::types::{Address, I256, U256};
 use hyperdrive_wrappers::wrappers::ihyperdrive::{Fees, PoolConfig, PoolInfo};
 use serde::{Deserialize, Serialize};
-use std::str::FromStr;
 use wasm_bindgen::prelude::*;
+
+use crate::{
+    error::HyperdriveWasmError,
+    utils::{ToAddress, ToI256, ToU256},
+};
 
 // Add typescript types to the generated JS bindings
 #[wasm_bindgen(typescript_custom_section)]
@@ -114,70 +117,64 @@ pub struct StringPoolInfo {
     pub zombieShareReserves: String,
 }
 
-impl From<&JsPoolInfo> for PoolInfo {
-    fn from(pool_info: &JsPoolInfo) -> PoolInfo {
+impl TryFrom<&JsPoolInfo> for PoolInfo {
+    type Error = HyperdriveWasmError;
+
+    fn try_from(pool_info: &JsPoolInfo) -> Result<Self, HyperdriveWasmError> {
         let js_pool_info: StringPoolInfo =
             serde_wasm_bindgen::from_value(pool_info.into()).unwrap();
-        PoolInfo {
-            share_reserves: U256::from_dec_str(&js_pool_info.shareReserves).unwrap(),
-            share_adjustment: I256::from_dec_str(&js_pool_info.shareAdjustment).unwrap(),
-            bond_reserves: U256::from_dec_str(&js_pool_info.bondReserves).unwrap(),
-            long_exposure: U256::from_dec_str(&js_pool_info.longExposure).unwrap(),
-            vault_share_price: U256::from_dec_str(&js_pool_info.vaultSharePrice).unwrap(),
-            longs_outstanding: U256::from_dec_str(&js_pool_info.longsOutstanding).unwrap(),
-            shorts_outstanding: U256::from_dec_str(&js_pool_info.shortsOutstanding).unwrap(),
-            long_average_maturity_time: U256::from_dec_str(&js_pool_info.longAverageMaturityTime)
-                .unwrap(),
-            short_average_maturity_time: U256::from_dec_str(&js_pool_info.shortAverageMaturityTime)
-                .unwrap(),
-            lp_total_supply: U256::from_dec_str(&js_pool_info.lpTotalSupply).unwrap(),
-            lp_share_price: U256::from_dec_str(&js_pool_info.lpSharePrice).unwrap(),
-            withdrawal_shares_proceeds: U256::from_dec_str(&js_pool_info.withdrawalSharesProceeds)
-                .unwrap(),
-            withdrawal_shares_ready_to_withdraw: U256::from_dec_str(
-                &js_pool_info.withdrawalSharesReadyToWithdraw,
-            )
-            .unwrap(),
-            zombie_base_proceeds: U256::from_dec_str(&js_pool_info.zombieBaseProceeds).unwrap(),
-            zombie_share_reserves: U256::from_dec_str(&js_pool_info.zombieShareReserves).unwrap(),
-        }
+        Ok(PoolInfo {
+            share_reserves: js_pool_info.shareReserves.to_u256()?,
+            share_adjustment: js_pool_info.shareAdjustment.to_i256()?,
+            bond_reserves: js_pool_info.bondReserves.to_u256()?,
+            long_exposure: js_pool_info.longExposure.to_u256()?,
+            vault_share_price: js_pool_info.vaultSharePrice.to_u256()?,
+            longs_outstanding: js_pool_info.longsOutstanding.to_u256()?,
+            shorts_outstanding: js_pool_info.shortsOutstanding.to_u256()?,
+            long_average_maturity_time: js_pool_info.longAverageMaturityTime.to_u256()?,
+            short_average_maturity_time: js_pool_info.shortAverageMaturityTime.to_u256()?,
+            lp_total_supply: js_pool_info.lpTotalSupply.to_u256()?,
+            lp_share_price: js_pool_info.lpSharePrice.to_u256()?,
+            withdrawal_shares_proceeds: js_pool_info.withdrawalSharesProceeds.to_u256()?,
+            withdrawal_shares_ready_to_withdraw: js_pool_info
+                .withdrawalSharesReadyToWithdraw
+                .to_u256()?,
+            zombie_base_proceeds: js_pool_info.zombieBaseProceeds.to_u256()?,
+            zombie_share_reserves: js_pool_info.zombieShareReserves.to_u256()?,
+        })
     }
 }
 
-impl From<&JsPoolConfig> for PoolConfig {
-    fn from(pool_config: &JsPoolConfig) -> PoolConfig {
+impl TryFrom<&JsPoolConfig> for PoolConfig {
+    type Error = HyperdriveWasmError;
+
+    fn try_from(pool_config: &JsPoolConfig) -> Result<Self, HyperdriveWasmError> {
         let js_pool_config: StringPoolConfig =
             serde_wasm_bindgen::from_value(pool_config.into()).unwrap();
-        PoolConfig {
-            base_token: Address::from_str(&js_pool_config.baseToken).unwrap(),
-            sweep_collector: Address::from_str(&js_pool_config.sweepCollector).unwrap(),
-            governance: Address::from_str(&js_pool_config.governance).unwrap(),
-            fee_collector: Address::from_str(&js_pool_config.feeCollector).unwrap(),
+        Ok(PoolConfig {
+            base_token: js_pool_config.baseToken.to_address()?,
+            sweep_collector: js_pool_config.sweepCollector.to_address()?,
+            governance: js_pool_config.governance.to_address()?,
+            fee_collector: js_pool_config.feeCollector.to_address()?,
             fees: Fees {
-                curve: U256::from_dec_str(&js_pool_config.fees.curve).unwrap(),
-                flat: U256::from_dec_str(&js_pool_config.fees.flat).unwrap(),
-                governance_lp: U256::from_dec_str(&js_pool_config.fees.governanceLP).unwrap(),
-                governance_zombie: U256::from_dec_str(&js_pool_config.fees.governanceZombie)
-                    .unwrap(),
+                curve: js_pool_config.fees.curve.to_u256()?,
+                flat: js_pool_config.fees.flat.to_u256()?,
+                governance_lp: js_pool_config.fees.governanceLP.to_u256()?,
+                governance_zombie: js_pool_config.fees.governanceZombie.to_u256()?,
             },
-            initial_vault_share_price: U256::from_dec_str(&js_pool_config.initialVaultSharePrice)
-                .unwrap(),
-            minimum_share_reserves: U256::from_dec_str(&js_pool_config.minimumShareReserves)
-                .unwrap(),
-            minimum_transaction_amount: U256::from_dec_str(
-                &js_pool_config.minimumTransactionAmount,
-            )
-            .unwrap(),
-            time_stretch: U256::from_dec_str(&js_pool_config.timeStretch).unwrap(),
-            position_duration: U256::from_dec_str(&js_pool_config.positionDuration).unwrap(),
-            checkpoint_duration: U256::from_dec_str(&js_pool_config.checkpointDuration).unwrap(),
-            linker_factory: Address::from_str(&js_pool_config.linkerFactory).unwrap(),
+            initial_vault_share_price: js_pool_config.initialVaultSharePrice.to_u256()?,
+            minimum_share_reserves: js_pool_config.minimumShareReserves.to_u256()?,
+            minimum_transaction_amount: js_pool_config.minimumTransactionAmount.to_u256()?,
+            time_stretch: js_pool_config.timeStretch.to_u256()?,
+            position_duration: js_pool_config.positionDuration.to_u256()?,
+            checkpoint_duration: js_pool_config.checkpointDuration.to_u256()?,
+            linker_factory: js_pool_config.linkerFactory.to_address()?,
             linker_code_hash: hex::decode(&js_pool_config.linkerCodeHash)
                 .unwrap()
                 .try_into()
                 .unwrap(),
-            vault_shares_token: Address::from_str(&js_pool_config.vaultSharesToken).unwrap(),
-            circuit_breaker_delta: U256::from_str(&js_pool_config.circuitBreakerDelta).unwrap(),
-        }
+            vault_shares_token: js_pool_config.vaultSharesToken.to_address()?,
+            circuit_breaker_delta: js_pool_config.circuitBreakerDelta.to_u256()?,
+        })
     }
 }
