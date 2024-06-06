@@ -17,14 +17,12 @@ export function MaturesOnCell({
     Number(maturity),
   );
 
-  let remainingTime;
-  if (isTermComplete) {
-    remainingTime = "Term complete";
-  } else if (days > 0) {
-    remainingTime = `${days} days left`;
-  } else {
-    remainingTime = `${hours} hours, ${minutes} minutes left`;
-  }
+  const remainingTime = getRemainingTimeLabel(
+    isTermComplete,
+    days,
+    hours,
+    minutes,
+  );
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
@@ -40,4 +38,29 @@ export function MaturesOnCell({
       </div>
     </div>
   );
+}
+
+function getRemainingTimeLabel(
+  isTermComplete: boolean,
+  days: number,
+  hours: number,
+  minutes: number,
+): string {
+  if (isTermComplete) {
+    return "Term complete";
+  }
+
+  if (days > 0) {
+    return `${days} days left`;
+  }
+
+  if (hours > 0) {
+    return `${hours} hours, ${minutes} minutes left`;
+  }
+
+  if (minutes > 0) {
+    return `${minutes} minutes left`;
+  }
+
+  return "-";
 }
