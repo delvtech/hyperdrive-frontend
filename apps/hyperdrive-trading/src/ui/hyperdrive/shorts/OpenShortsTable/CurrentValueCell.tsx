@@ -33,9 +33,9 @@ export function CurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
-    // Withdraw as shares and convert to base separately to show the current
-    // value, as not all hyperdrives allow withdrawing to base, (see
-    // HyperdriveConfig).
+    // Not all hyperdrives can close to base, but they can all close to
+    // shares! To make this component easy, we'll always preview to shares
+    // then do the conversion to base ourselves.
     asBase: false,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
@@ -88,7 +88,7 @@ export function CurrentValueCell({
         ) : (
           ""
         )}{" "}
-        {currentValueLabel?.toString()}
+        {currentValueLabel}
       </span>
 
       {/* the current value of the user's position */}

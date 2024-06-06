@@ -1,7 +1,9 @@
 import { Long } from "@delvtech/hyperdrive-viem";
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -24,16 +26,19 @@ export function CurrentValueCell({
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
-  const { amountOut: sharesAmountOut, previewCloseLongStatus } =
-    usePreviewCloseLong({
-      hyperdriveAddress: hyperdrive.address,
-      maturityTime: row.maturity,
-      bondAmountIn: row.bondAmount,
-      // Not all hyperdrives can close to base, but they can all close to
-      // shares! To make this component easy, we'll always preview to shares
-      // then do the conversion to base ourselves.
-      asBase: false,
-    });
+  const {
+    amountOut: sharesAmountOut,
+    previewCloseLongStatus,
+    previewCloseLongError,
+  } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: row.maturity,
+    bondAmountIn: row.bondAmount,
+    // Not all hyperdrives can close to base, but they can all close to
+    // shares! To make this component easy, we'll always preview to shares
+    // then do the conversion to base ourselves.
+    asBase: false,
+  });
 
   // To get the base value of the shares, just do a simple conversion
   const amountOutInBase = convertSharesToBase({
@@ -56,28 +61,44 @@ export function CurrentValueCell({
 
   const isPositiveChangeInValue =
     amountOutInBase && amountOutInBase > row.baseAmountPaid;
-  if (previewCloseLongStatus === "error") {
-    return <div>Insufficient Liquidity</div>;
+
+  const cellClassName = classNames("daisy-stat flex flex-row p-0 xl:flex-col", {
+    "flex w-32 flex-col items-end": !isTailwindSmallScreen,
+  });
+
+  if (previewCloseLongStatus === "loading") {
+    return (
+      <div className={cellClassName}>
+        <Skeleton width={100} />
+      </div>
+    );
   }
+
   return (
-    <div
-      className={classNames("daisy-stat flex flex-row p-0 xl:flex-col", {
-        "flex w-32 flex-col items-end": !isTailwindSmallScreen,
-      })}
-    >
-      <span className="daisy-stat-value text-xs font-bold md:text-md">
+    <div className={cellClassName}>
+      <span className="daisy-stat-value flex items-center gap-2 text-md font-bold">
+        {/* warning icon with tooltip for liquidity issues
+         TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
+         have calcMaxCloseLong */}
+        {previewCloseLongError ? (
+          <span
+            className="daisy-tooltip before:font-normal"
+            data-tip="This position cannot be fully closed at this time"
+          >
+            <ExclamationTriangleIcon className="size-4 text-warning" />
+          </span>
+        ) : (
+          ""
+        )}{" "}
         {currentValueLabel}
       </span>
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
           "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
-          { "text-success": isPositiveChangeInValue },
           {
-            "text-error":
-              !isPositiveChangeInValue &&
-              profitLoss !== "-0" &&
-              previewCloseLongStatus !== "loading",
+            "text-success": isPositiveChangeInValue,
+            "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
           },
         )}
       >
