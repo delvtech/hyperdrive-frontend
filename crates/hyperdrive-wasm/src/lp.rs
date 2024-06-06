@@ -1,11 +1,12 @@
 use ethers::types::U256;
 use fixed_point::{fixed, FixedPoint};
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{ToFixedPoint, ToU256},
 };
 
 /// Calculates the amount of lp shares the trader will receive after adding
@@ -39,31 +40,27 @@ pub fn calcAddLiquidity(
     minLpSharePrice: Option<String>,
     minApr: Option<String>,
     maxApr: Option<String>,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let current_time = U256::from_dec_str(currentTime).unwrap();
-    let contribution = FixedPoint::from(U256::from_dec_str(contribution).unwrap());
-
+    let current_time = currentTime.to_u256()?;
+    let contribution = contribution.to_fixed_point()?;
     let as_base = asBase.unwrap_or(true);
 
     let min_lp_share_price = match minLpSharePrice {
-        Some(min_lp_share_price) => {
-            FixedPoint::from(U256::from_dec_str(&min_lp_share_price).unwrap())
-        }
+        Some(min_lp_share_price) => min_lp_share_price.to_fixed_point()?,
         None => fixed!(0),
     };
 
     let min_apr = match minApr {
-        Some(min_apr) => FixedPoint::from(U256::from_dec_str(&min_apr).unwrap()),
+        Some(min_apr) => min_apr.to_fixed_point()?,
         None => fixed!(0),
     };
 
     let max_apr = match maxApr {
-        Some(max_apr) => FixedPoint::from(U256::from_dec_str(&max_apr).unwrap()),
+        Some(max_apr) => max_apr.to_fixed_point()?,
         None => FixedPoint::from(U256::MAX),
     };
 
@@ -76,7 +73,7 @@ pub fn calcAddLiquidity(
             max_apr,
             as_base,
         )
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }

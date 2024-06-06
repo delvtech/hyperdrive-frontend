@@ -1,11 +1,10 @@
-use ethers::types::{I256, U256};
-use fixed_point::FixedPoint;
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{ToFixedPoint, ToU256},
 };
 
 /// Calculates the amount of base the trader will need to deposit for a short of
@@ -25,20 +24,19 @@ pub fn calcOpenShort(
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
     openVaultSharePrice: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let open_vault_share_price = FixedPoint::from(U256::from_dec_str(openVaultSharePrice).unwrap());
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let open_vault_share_price = openVaultSharePrice.to_fixed_point()?;
 
     let result_fp = state
         .calculate_open_short(bond_amount, open_vault_share_price)
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the spot price after opening the short on the YieldSpace curve
@@ -54,19 +52,18 @@ pub fn spotPriceAfterShort(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
+    let bond_amount = bondAmount.to_fixed_point()?;
 
     let result_fp = state
         .calculate_spot_price_after_short(bond_amount, None)
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculate the implied rate of opening a short at a given size. This rate
@@ -88,19 +85,18 @@ pub fn calcImpliedRate(
     bondAmount: &str,
     openVaultSharePrice: &str,
     variableApy: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let open_vault_share_price = FixedPoint::from(U256::from_dec_str(openVaultSharePrice).unwrap());
-    let variable_apy = FixedPoint::from(U256::from_dec_str(variableApy).unwrap());
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let open_vault_share_price = openVaultSharePrice.to_fixed_point()?;
+    let variable_apy = variableApy.to_fixed_point()?;
 
     let result_fp = state
         .calculate_implied_rate(bond_amount, open_vault_share_price, variable_apy)
-        .unwrap();
+        .to_js_result()?;
 
-    I256::from(result_fp).to_string()
+    Ok(result_fp.to_string())
 }

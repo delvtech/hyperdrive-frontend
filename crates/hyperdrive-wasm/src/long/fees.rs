@@ -1,11 +1,10 @@
-use ethers::types::U256;
-use fixed_point::FixedPoint;
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{set_panic_hook, ToFixedPoint, ToU256},
 };
 
 /// Calculates the curve fee paid in bonds by traders when they open a long.
@@ -20,18 +19,15 @@ pub fn openLongCurveFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     baseAmount: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
+    let base_amount = baseAmount.to_fixed_point()?;
+    let result_fp = state.open_long_curve_fee(base_amount).to_js_result()?;
 
-    let base_amount = FixedPoint::from(U256::from_dec_str(baseAmount).unwrap());
-
-    let result_fp = state.open_long_curve_fee(base_amount).unwrap();
-
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the governance fee paid in bonds by traders when they open a
@@ -47,17 +43,18 @@ pub fn openLongGovernanceFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     baseAmount: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let base_amount = FixedPoint::from(U256::from_dec_str(baseAmount).unwrap());
+    let base_amount = baseAmount.to_fixed_point()?;
 
-    let result_fp = state.open_long_governance_fee(base_amount, None).unwrap();
+    let result_fp = state
+        .open_long_governance_fee(base_amount, None)
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the curve fee paid in shares or base by traders when they close a
@@ -79,22 +76,21 @@ pub fn closeLongCurveFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> String {
+) -> Result<String, JsValue> {
     set_panic_hook();
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let maturity_time = U256::from_dec_str(maturityTime).unwrap();
-    let current_time = U256::from_dec_str(currentTime).unwrap();
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let maturity_time = maturityTime.to_u256()?;
+    let current_time = currentTime.to_u256()?;
 
     let result_fp = state
         .close_long_curve_fee(bond_amount, maturity_time, current_time)
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the flat fee paid in shares or base by traders when they close a
@@ -116,18 +112,18 @@ pub fn closeLongFlatFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> String {
+) -> Result<String, JsValue> {
     set_panic_hook();
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
 
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let maturity_time = U256::from_dec_str(maturityTime).unwrap();
-    let current_time = U256::from_dec_str(currentTime).unwrap();
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let maturity_time = maturityTime.to_u256()?;
+    let current_time = currentTime.to_u256()?;
 
     let result_fp = state.close_long_flat_fee(bond_amount, maturity_time, current_time);
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
