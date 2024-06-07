@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -10,6 +10,7 @@ interface UseOpenLongsOptions {
 }
 
 /**
+ * @deprecated Use useOpenLongPositions instead to include longs that have been transferred to the account from another address.
  * Returns the list of longs that the account currently has open.
  */
 export function useOpenLongs({
@@ -30,4 +31,49 @@ export function useOpenLongs({
   });
 
   return { openLongs, openLongsStatus };
+}
+
+/**
+ * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
+ * TODO: Rename this hook to useOpenLongs once the old useOpenLongs hook is removed.
+ */
+export function useOpenLongPositions({
+  account,
+  hyperdriveAddress,
+}: UseOpenLongsOptions): {
+  openLongPositionsReceived: OpenLongPositionReceived[] | undefined;
+  openLongPositionsReceivedStatus: "error" | "success" | "loading";
+} {
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
+  const {
+    data: openLongPositionsReceived,
+    status: openLongPositionsReceivedStatus,
+  } = useQuery({
+    enabled: queryEnabled,
+    queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
+    queryFn: queryEnabled
+      ? async () => {
+          const allLongs = await readHyperdrive.getOpenLongPositions({
+            account,
+          });
+
+          const openLongPositionsReceived = await Promise.all(
+            allLongs.map(async (long) => ({
+              assetId: long.assetId,
+              value: long.value,
+              maturity: long.maturity,
+              details: await readHyperdrive.getOpenLongDetails({
+                assetId: long.assetId,
+                account,
+              }),
+            })),
+          );
+
+          return openLongPositionsReceived;
+        }
+      : undefined,
+  });
+
+  return { openLongPositionsReceived, openLongPositionsReceivedStatus };
 }

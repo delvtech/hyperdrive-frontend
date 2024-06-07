@@ -29,10 +29,16 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { hyperwasm } from "src/hyperwasm";
-import { ClosedLong, Long } from "src/longs/types";
+import {
+  ClosedLong,
+  Long,
+  OpenLongPositionReceivedWithoutDetails,
+} from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { MarketState, PoolConfig, PoolInfo } from "src/pool/types";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
@@ -801,7 +807,145 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
+  // TODO: Rename this to getOpenLongs once this function replaces the existing getOpenLongs
+  async getOpenLongPositions({
+    account,
+    options,
+  }: {
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<OpenLongPositionReceivedWithoutDetails[]> {
+    const toBlock = getBlockFromReadOptions(options);
+
+    const transfersReceived = await this.contract.getEvents("TransferSingle", {
+      filter: { to: account },
+      toBlock,
+    });
+    const transfersSent = await this.contract.getEvents("TransferSingle", {
+      filter: { from: account },
+      toBlock,
+    });
+
+    const longsReceived = transfersReceived.filter((event) => {
+      const { assetType } = decodeAssetFromTransferSingleEventData(
+        event.data as `0x${string}`,
+      );
+      return assetType === "LONG";
+    });
+
+    const longsSent = transfersSent.filter((event) => {
+      const { assetType } = decodeAssetFromTransferSingleEventData(
+        event.data as `0x${string}`,
+      );
+      return assetType === "LONG";
+    });
+
+    // Put open and long events in block order. We spread openLongEvents first
+    // since you have to open a long before you can close one.
+    const orderedLongEvents = [...longsReceived, ...longsSent].sort(
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
+    );
+
+    const openLongs: Record<string, OpenLongPositionReceivedWithoutDetails> =
+      {};
+
+    orderedLongEvents.forEach((event) => {
+      const assetId = event.args.id.toString();
+
+      const long: OpenLongPositionReceivedWithoutDetails = openLongs[
+        assetId
+      ] || {
+        assetId,
+        maturity: decodeAssetFromTransferSingleEventData(
+          event.data as `0x${string}`,
+        ).timestamp,
+        value: 0n,
+      };
+
+      const isLongReceived = event.args.to === account;
+      if (isLongReceived) {
+        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
+          ...long,
+          value: long.value + event.args.value,
+        };
+        openLongs[assetId] = updatedLong;
+        return;
+      }
+
+      const isLongSent = event.args.from === account;
+      if (isLongSent) {
+        // If a user closes their whole position, we should remove the whole
+        // position since it's basically starting over
+        if (event.args.value === long.value) {
+          delete openLongs[assetId];
+          return;
+        }
+        // otherwise just subtract the amount of bonds they closed and baseAmount
+        // they received back from the running total
+        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
+          ...long,
+          value: long.value - event.args.value,
+        };
+        openLongs[assetId] = updatedLong;
+      }
+    });
+    return Object.values(openLongs).filter((long) => long.value);
+  }
+
+  async getOpenLongDetails({
+    assetId,
+    account,
+    options,
+  }: {
+    assetId: bigint;
+    account: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<Long | undefined> {
+    const decimals = await this.getDecimals();
+    const allLongPositions = await this.getOpenLongPositions({
+      account,
+      options,
+    });
+
+    const longPosition = allLongPositions.find((p) => p.assetId === assetId);
+
+    if (!longPosition) {
+      throw new Error(
+        `No position with asset id: ${assetId} found for account ${account}`,
+      );
+    }
+
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { trader: account },
+    });
+
+    const closeLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+    });
+
+    const allOpenLongDetails = this._calcOpenLongs({
+      openLongEvents,
+      closeLongEvents,
+      decimals,
+    });
+
+    const openLongDetails = allOpenLongDetails.find(
+      (details) =>
+        details.assetId.toString() === longPosition.assetId.toString(),
+    );
+    // If no details exists for the position, the user must have just received
+    // some longs via transfer but never opened them themselves.
+    // OR If the amounts aren't the same, then they may have opened some and
+    // received some from another wallet. In this case, we still can't be sure
+    // of the details, so we return undefined.
+    if (!openLongDetails || openLongDetails.bondAmount !== longPosition.value) {
+      return;
+    }
+
+    return openLongDetails;
+  }
   /**
+   * @deprecated Use ReadHyperdrive.getOpenLongPositions and ReadHyperdrive.getOpenLongDetails instead to retrieve all longs opened or received by a user.
    * Gets the active longs opened by a specific user.
    * @param account - The user's address
    * @param options.toBlock - The end block, defaults to "latest"
