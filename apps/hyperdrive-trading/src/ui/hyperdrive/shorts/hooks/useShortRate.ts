@@ -52,6 +52,7 @@ export function useShortRate({
       timestamp: timestamp?.toString(),
       variableApy: variableApy?.toString(),
     }),
+    retry: false,
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {

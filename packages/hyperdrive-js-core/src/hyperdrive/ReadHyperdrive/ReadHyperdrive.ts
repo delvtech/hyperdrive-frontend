@@ -1690,11 +1690,16 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{ amountOut: bigint; flatPlusCurveFee: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
+
+    // The checkpoint in which this position was opened.
+    // This is always maturity time - position duration thanks to mint on demand
+    const openCheckpointTimestamp = maturityTime - poolConfig.positionDuration;
     const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+      timestamp: openCheckpointTimestamp,
       options,
     });
 
-    const currentTime = BigInt(Math.floor(Date.now() / 1000));
+    const currentTime = Math.floor(Date.now() / 1000);
 
     const flatFeeInShares = BigInt(
       hyperwasm.closeShortFlatFee(
