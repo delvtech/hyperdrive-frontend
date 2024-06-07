@@ -56,7 +56,8 @@ pub trait ToI256 {
 // For string arguments
 impl ToI256 for &str {
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
-        I256::from_str(self).map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+        I256::from_dec_str(self)
+            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -64,7 +65,8 @@ impl ToI256 for &str {
 impl ToI256 for String {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
-        I256::from_str(self).map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+        I256::from_dec_str(self)
+            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -111,5 +113,49 @@ impl ToAddress for String {
     fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
         Address::from_str(&self.to_string())
             .map_err(|e| type_error!("Invalid address: {}\n    {e}", self.to_string()))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::ops::Neg;
+
+    use fixed_point::{fixed, int256, uint256};
+
+    use super::*;
+
+    #[test]
+    fn test_to_u256() {
+        assert_eq!("0".to_u256().unwrap(), uint256!(0));
+        assert_eq!("1".to_u256().unwrap(), uint256!(1));
+        assert_eq!(
+            "1000000000000000000".to_u256().unwrap(),
+            uint256!(1_000_000_000_000_000_000)
+        );
+    }
+
+    #[test]
+    fn test_to_i256() {
+        assert_eq!("0".to_i256().unwrap(), int256!(0));
+        assert_eq!("1".to_i256().unwrap(), int256!(1));
+        assert_eq!("-1".to_i256().unwrap(), int256!(1).neg());
+        assert_eq!(
+            "1000000000000000000".to_i256().unwrap(),
+            int256!(1_000_000_000_000_000_000)
+        );
+        assert_eq!(
+            "-1000000000000000000".to_i256().unwrap(),
+            int256!(1_000_000_000_000_000_000).neg()
+        );
+    }
+
+    #[test]
+    fn test_to_fixed_point() {
+        assert_eq!("0".to_fixed_point().unwrap(), fixed!(0));
+        assert_eq!("1".to_fixed_point().unwrap(), fixed!(1));
+        assert_eq!(
+            "1000000000000000000".to_fixed_point().unwrap(),
+            fixed!(1_000_000_000_000_000_000)
+        );
     }
 }
