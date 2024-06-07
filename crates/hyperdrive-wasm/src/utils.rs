@@ -84,6 +84,13 @@ pub trait ToFixedPoint {
     fn to_fixed_point(&self) -> Result<FixedPoint, HyperdriveWasmError>;
 }
 
+impl ToFixedPoint for U256 {
+    #[track_caller]
+    fn to_fixed_point(&self) -> Result<FixedPoint, HyperdriveWasmError> {
+        Ok(FixedPoint::from(self.to_owned()))
+    }
+}
+
 // If a value can `.to_u256()`, it can `.to_fixed_point()`
 impl<T> ToFixedPoint for T
 where
