@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@delvtech/hyperdrive-artifacts": "^0.3.0",
-    "@delvtech/hyperdrive-viem": "^0.1.0",
+    "@delvtech/hyperdrive-viem": "^2.3.0",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

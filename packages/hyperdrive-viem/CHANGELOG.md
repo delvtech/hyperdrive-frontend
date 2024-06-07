@@ -1,5 +1,18 @@
 # @delvtech/hyperdrive-viem
 
+## 2.3.0
+
+### Minor Changes
+
+- fece201: Updated the `@delvtech/hyperdrive-core` version and made it fixed.
+
+### Patch Changes
+
+- Updated dependencies [21dca9c]
+- Updated dependencies [21dca9c]
+- Updated dependencies [b91debc]
+  - @delvtech/hyperdrive-js-core@2.3.0
+
 ## 0.1.0
 
 ### Minor Changes
