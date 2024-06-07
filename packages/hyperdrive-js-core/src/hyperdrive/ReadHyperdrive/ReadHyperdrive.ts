@@ -944,7 +944,7 @@ export class ReadHyperdrive extends ReadModel {
     return openLongDetails;
   }
   /**
-   * @deprecated Use ReadHyperdrive.getAllLongs instead to retrieve all longs opened or received by a user.
+   * @deprecated Use ReadHyperdrive.getOpenLongPositions and ReadHyperdrive.getOpenLongDetails instead to retrieve all longs opened or received by a user.
    * Gets the active longs opened by a specific user.
    * @param account - The user's address
    * @param options.toBlock - The end block, defaults to "latest"
