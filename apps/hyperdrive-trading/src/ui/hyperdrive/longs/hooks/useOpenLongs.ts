@@ -1,6 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -34,42 +33,65 @@ export function useOpenLongs({
   return { openLongs, openLongsStatus };
 }
 
-/**
- * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
- */
-export function useAllOpenLongs({
-  account,
-  hyperdriveAddress,
-}: UseOpenLongsOptions): {
-  allOpenLongs:
-    | { id: bigint; value: bigint; details: Long | undefined }[]
-    | undefined;
-  allOpenLongsStatus: "error" | "success" | "loading";
-} {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
-  const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
-    enabled: queryEnabled,
-    queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
-    queryFn: queryEnabled
-      ? async () => {
-          const allLongs = await readHyperdrive.getAllOpenLongs({ account });
-          const promises = allLongs.map(async (long) => {
-            return {
-              id: long.id,
-              value: long.value,
-              details:
-                long.from === ZERO_ADDRESS
-                  ? await readHyperdrive.getOpenLongDetails({
-                      assetId: long.id,
-                    })
-                  : undefined,
-            };
-          });
-          return Promise.all(promises);
-        }
-      : undefined,
-  });
+// /**
+//  * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
+//  */
+// export function useAllOpenLongs({
+//   account,
+//   hyperdriveAddress,
+// }: UseOpenLongsOptions): {
+//   allOpenLongs: Long[] | undefined;
+//   allOpenLongsStatus: "error" | "success" | "loading";
+// } {
+//   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+//   const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
+//   const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
+//     enabled: queryEnabled,
+//     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
+//     queryFn: queryEnabled
+//       ? async () => {
+//           const openLongs: {
+//             id: bigint;
+//             value: bigint;
+//             details: Long | undefined;
+//           }[] = [];
+//           const allLongs = await readHyperdrive.getOpenLongPositions({
+//             account,
+//           });
 
-  return { allOpenLongs, allOpenLongsStatus };
-}
+//           for (const long of allLongs) {
+//             const existingLongIndex = openLongs.findIndex(
+//               (l) => l.id === long.args.id,
+//             );
+//             const longWithDetails = await readHyperdrive.getOpenLongDetails({
+//               assetId: long.args.id,
+//               existingLong:
+//                 existingLongIndex !== -1
+//                   ? openLongs[existingLongIndex].details
+//                   : undefined,
+//             });
+
+//             if (existingLongIndex !== -1) {
+//               openLongs[existingLongIndex] = {
+//                 id: long.args.id,
+//                 value: long.args.value,
+//                 details:
+//                   long.args.from === ZERO_ADDRESS ? longWithDetails : undefined,
+//               };
+//             } else {
+//               openLongs.push({
+//                 id: long.args.id,
+//                 value: long.args.value,
+//                 details:
+//                   long.args.from === ZERO_ADDRESS ? longWithDetails : undefined,
+//               });
+//             }
+//           }
+//           console.log("openLongs", openLongs);
+//           return openLongs;
+//         }
+//       : undefined,
+//   });
+
+//   return { allOpenLongs, allOpenLongsStatus };
+// }
