@@ -44,11 +44,6 @@ export function usePreviewCloseLong({
       bondAmountIn: bondAmountIn?.toString(),
       asBase,
     }),
-    // Don't retry this if it throws an error. Normally react-query will retry a
-    // failed request 3 times w/ exponential backoff before showing an error to
-    // the user. In this case, retrying isn't helpful, since previewCloseLong
-    // throws errors on bad inputs and is pretty much a pure function.
-    retry: false,
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
