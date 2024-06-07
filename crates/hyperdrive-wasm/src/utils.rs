@@ -2,7 +2,7 @@ use ethers::types::{Address, I256, U256};
 use fixed_point::FixedPoint;
 use std::str::FromStr;
 
-use crate::{type_error, error::HyperdriveWasmError};
+use crate::{error::HyperdriveWasmError, type_error};
 
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
@@ -56,8 +56,7 @@ pub trait ToI256 {
 // For string arguments
 impl ToI256 for &str {
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
-        I256::from_str(self)
-            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+        I256::from_str(self).map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -65,8 +64,7 @@ impl ToI256 for &str {
 impl ToI256 for String {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
-        I256::from_str(self)
-            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+        I256::from_str(self).map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -100,11 +98,15 @@ pub trait ToAddress {
     fn to_address(&self) -> Result<Address, HyperdriveWasmError>;
 }
 
-// If a value can `.to_string()`, it can `.to_address()`
-impl<T> ToAddress for T
-where
-    T: ToString,
-{
+// For string arguments
+impl ToAddress for &str {
+    fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
+        Address::from_str(self).map_err(|e| type_error!("Invalid address: {}\n    {e}", self))
+    }
+}
+
+// For strings deserialized from JS
+impl ToAddress for String {
     #[track_caller]
     fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
         Address::from_str(&self.to_string())
