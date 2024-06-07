@@ -2,7 +2,7 @@ use ethers::types::{Address, I256, U256};
 use fixed_point::FixedPoint;
 use std::str::FromStr;
 
-use crate::{conversion_error, error::HyperdriveWasmError};
+use crate::{type_error, error::HyperdriveWasmError};
 
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
@@ -27,7 +27,7 @@ impl ToU256 for &str {
     #[track_caller]
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
         U256::from_dec_str(self)
-            .map_err(|error| conversion_error!("Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error!("Invalid uint256: {}\n    {error}", self))
     }
 }
 
@@ -36,7 +36,7 @@ impl ToU256 for String {
     #[track_caller]
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
         U256::from_dec_str(self)
-            .map_err(|error| conversion_error!("Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error!("Invalid uint256: {}\n    {error}", self))
     }
 }
 
@@ -57,7 +57,7 @@ pub trait ToI256 {
 impl ToI256 for &str {
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
         I256::from_str(self)
-            .map_err(|error| conversion_error!("Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -66,7 +66,7 @@ impl ToI256 for String {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
         I256::from_str(self)
-            .map_err(|error| conversion_error!("Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -75,7 +75,7 @@ impl ToI256 for FixedPoint {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
         I256::try_from(self.to_owned())
-            .map_err(|error| conversion_error!("Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -108,6 +108,6 @@ where
     #[track_caller]
     fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
         Address::from_str(&self.to_string())
-            .map_err(|e| conversion_error!("Invalid address: {}\n    {e}", self.to_string()))
+            .map_err(|e| type_error!("Invalid address: {}\n    {e}", self.to_string()))
     }
 }

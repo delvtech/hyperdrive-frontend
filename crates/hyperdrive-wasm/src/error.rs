@@ -6,8 +6,8 @@ use wasm_bindgen::JsValue;
 /// a JsValue for passing to JavaScript.
 #[derive(Error, Debug)]
 pub enum HyperdriveWasmError {
-    #[error("ConversionError: {0}\n    Location: {1}")]
-    ConversionError(String, String),
+    #[error("TypeError: {0}\n    Location: {1}")]
+    TypeError(String, String),
     #[error("Error: {0}\n    Location: {1}")]
     Generic(String, String),
 }
@@ -88,9 +88,9 @@ macro_rules! error {
 }
 
 #[macro_export]
-macro_rules! conversion_error {
+macro_rules! type_error {
   ($($arg:tt)*) => {
-    $crate::error::HyperdriveWasmError::ConversionError(format!($($arg)*), format!("{}", ::std::panic::Location::caller()))
+    $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), format!("{}", ::std::panic::Location::caller()))
   };
 }
 
@@ -99,7 +99,7 @@ mod tests {
 
     #[test]
     fn test_conversion_error() {
-        let error = conversion_error!("Bad value: {}", "Foo");
+        let error = type_error!("Bad value: {}", "Foo");
         assert!(error
             .to_string()
             .starts_with("Conversion error: Bad value: Foo\n    Location: "));
