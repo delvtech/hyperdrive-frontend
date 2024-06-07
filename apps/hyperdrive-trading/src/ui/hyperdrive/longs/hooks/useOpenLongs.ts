@@ -59,7 +59,7 @@ export function useOpenLongPositions({
           });
           allLongs.forEach(async (long) => {
             openLongPositionsReceived.push({
-              id: long.assetId,
+              assetId: long.assetId,
               value: long.value,
               maturity: long.maturity,
               details: await readHyperdrive.getOpenLongDetails({

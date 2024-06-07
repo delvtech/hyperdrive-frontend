@@ -29,7 +29,11 @@ import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { hyperwasm } from "src/hyperwasm";
-import { ClosedLong, Long } from "src/longs/types";
+import {
+  ClosedLong,
+  Long,
+  OpenLongPositionReceivedWithoutDetails,
+} from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
@@ -42,12 +46,6 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
-
-interface SimplePosition {
-  assetId: bigint;
-  value: bigint;
-  maturity: bigint;
-}
 
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
@@ -815,7 +813,7 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<SimplePosition[]> {
+  }): Promise<OpenLongPositionReceivedWithoutDetails[]> {
     const toBlock = getBlockFromReadOptions(options);
 
     const transfersReceived = await this.contract.getEvents("TransferSingle", {
@@ -847,12 +845,15 @@ export class ReadHyperdrive extends ReadModel {
       (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
-    const openLongs: Record<string, SimplePosition> = {};
+    const openLongs: Record<string, OpenLongPositionReceivedWithoutDetails> =
+      {};
 
     orderedLongEvents.forEach((event) => {
       const assetId = event.args.id.toString();
 
-      const long: SimplePosition = openLongs[assetId] || {
+      const long: OpenLongPositionReceivedWithoutDetails = openLongs[
+        assetId
+      ] || {
         assetId,
         maturity: decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
@@ -862,7 +863,7 @@ export class ReadHyperdrive extends ReadModel {
 
       const isLongReceived = event.args.to === account;
       if (isLongReceived) {
-        const updatedLong: SimplePosition = {
+        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
           ...long,
           value: long.value + event.args.value,
         };
@@ -880,7 +881,7 @@ export class ReadHyperdrive extends ReadModel {
         }
         // otherwise just subtract the amount of bonds they closed and baseAmount
         // they received back from the running total
-        const updatedLong: SimplePosition = {
+        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
           ...long,
           value: long.value - event.args.value,
         };
