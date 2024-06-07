@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -36,38 +36,29 @@ export function useOpenLongs({
 /**
  * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
  */
-export function useAllOpenLongs({
+export function useOpenLongPositions({
   account,
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
-  allOpenLongs:
-    | {
-        id: bigint;
-        value: bigint;
-        maturity: bigint;
-        details: Long | undefined;
-      }[]
-    | undefined;
-  allOpenLongsStatus: "error" | "success" | "loading";
+  openLongPositionsReceived: OpenLongPositionReceived[] | undefined;
+  openLongPositionsReceivedStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
-  const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
+  const {
+    data: openLongPositionsReceived,
+    status: openLongPositionsReceivedStatus,
+  } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const openLongs: {
-            id: bigint;
-            value: bigint;
-            maturity: bigint;
-            details: Long | undefined;
-          }[] = [];
+          const openLongPositionsReceived: OpenLongPositionReceived[] = [];
           const allLongs = await readHyperdrive.getOpenLongPositions({
             account,
           });
           allLongs.forEach(async (long) => {
-            openLongs.push({
+            openLongPositionsReceived.push({
               id: long.assetId,
               value: long.value,
               maturity: long.maturity,
@@ -78,10 +69,10 @@ export function useAllOpenLongs({
             });
           });
 
-          return openLongs;
+          return openLongPositionsReceived;
         }
       : undefined,
   });
 
-  return { allOpenLongs, allOpenLongsStatus };
+  return { openLongPositionsReceived, openLongPositionsReceivedStatus };
 }

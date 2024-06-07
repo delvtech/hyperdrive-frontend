@@ -68,7 +68,11 @@ export type { ClosedShort, OpenShort, Short } from "src/shorts/types";
 // Longs
 export { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
-export type { ClosedLong, Long } from "src/longs/types";
+export type {
+  ClosedLong,
+  Long,
+  OpenLongPositionReceived,
+} from "src/longs/types";
 
 // LP
 export type { ClosedLpShares } from "src/lp/ClosedLpShares";
