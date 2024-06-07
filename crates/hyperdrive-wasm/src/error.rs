@@ -6,7 +6,7 @@ use wasm_bindgen::JsValue;
 /// a JsValue for passing to JavaScript.
 #[derive(Error, Debug)]
 pub enum HyperdriveWasmError {
-    #[error("Conversion error: {0}\n    Location: {1}")]
+    #[error("ConversionError: {0}\n    Location: {1}")]
     ConversionError(String, String),
     #[error("Error: {0}\n    Location: {1}")]
     Generic(String, String),
