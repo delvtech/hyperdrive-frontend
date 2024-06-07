@@ -10,7 +10,7 @@ interface UseOpenLongsOptions {
 }
 
 /**
- * @deprecated Use useAllOpenLongs instead to include longs that have been transferred to the account from another address.
+ * @deprecated Use useOpenLongPositions instead to include longs that have been transferred to the account from another address.
  * Returns the list of longs that the account currently has open.
  */
 export function useOpenLongs({

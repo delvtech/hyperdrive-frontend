@@ -43,7 +43,6 @@ export function OpenLongsTableDesktop({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
-
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,

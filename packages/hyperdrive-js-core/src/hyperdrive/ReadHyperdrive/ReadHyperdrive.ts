@@ -827,7 +827,7 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const longsRecieved = transfersReceived.filter((event) => {
+    const longsReceived = transfersReceived.filter((event) => {
       const { assetType } = decodeAssetFromTransferSingleEventData(
         event.data as `0x${string}`,
       );
@@ -843,7 +843,7 @@ export class ReadHyperdrive extends ReadModel {
 
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
-    const orderedLongEvents = [...longsRecieved, ...longsSent].sort(
+    const orderedLongEvents = [...longsReceived, ...longsSent].sort(
       (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
@@ -921,7 +921,7 @@ export class ReadHyperdrive extends ReadModel {
       filter: { trader: account },
     });
 
-    const allOpenLongDetails = await this._calcOpenLongs({
+    const allOpenLongDetails = this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
       decimals,
@@ -932,15 +932,11 @@ export class ReadHyperdrive extends ReadModel {
         details.assetId.toString() === longPosition.assetId.toString(),
     );
     // If no details exists for the position, the user must have just received
-    // some longs via transfer but never opened them themselves
-    if (!openLongDetails) {
-      return;
-    }
-
-    // If the amounts aren't the same, then they may have opened some and
+    // some longs via transfer but never opened them themselves.
+    // OR If the amounts aren't the same, then they may have opened some and
     // received some from another wallet. In this case, we still can't be sure
     // of the details, so we return undefined.
-    if (openLongDetails.bondAmount !== longPosition.value) {
+    if (!openLongDetails || openLongDetails.bondAmount !== longPosition.value) {
       return;
     }
 
