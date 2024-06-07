@@ -1,11 +1,10 @@
-use ethers::types::{I256, U256};
-use fixed_point::FixedPoint;
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{ToFixedPoint, ToI256, ToU256},
 };
 
 /// Calculates the max amount of longs that can be shorted given the current
@@ -36,29 +35,28 @@ pub fn maxShort(
     checkpointExposure: &str,
     maybeConservativePrice: Option<String>,
     maybeMaxIterations: Option<u8>,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let _budget = U256::from_dec_str(budget).unwrap();
-    let checkpoint_exposure: I256 = I256::from_dec_str(checkpointExposure).unwrap();
-    let open_vault_share_price = U256::from_dec_str(openVaultSharePrice).unwrap();
-
-    let _maybe_conservative_price: Option<FixedPoint> = maybeConservativePrice
-        .as_ref()
-        .map(|price_str| FixedPoint::from(U256::from_dec_str(price_str).unwrap()));
+    let _budget = budget.to_u256()?;
+    let checkpoint_exposure = checkpointExposure.to_i256()?;
+    let open_vault_share_price = openVaultSharePrice.to_u256()?;
+    let maybe_conservative_price = match maybeConservativePrice {
+        Some(price_str) => Some(price_str.to_fixed_point()?),
+        None => None,
+    };
 
     let result_fp = state
         .calculate_max_short(
             _budget,
             open_vault_share_price,
             checkpoint_exposure,
-            _maybe_conservative_price,
+            maybe_conservative_price,
             maybeMaxIterations.map(|x| x.into()),
         )
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }

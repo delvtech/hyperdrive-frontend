@@ -1,11 +1,10 @@
-use ethers::types::U256;
-use fixed_point::FixedPoint;
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{ToFixedPoint, ToU256},
 };
 
 /// Calculates the curve fee paid by the trader when they open a short.
@@ -20,17 +19,16 @@ pub fn openShortCurveFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
+    let bond_amount = bondAmount.to_fixed_point()?;
 
-    let result_fp = state.open_short_curve_fee(bond_amount).unwrap();
+    let result_fp = state.open_short_curve_fee(bond_amount).to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the governance fee paid by the trader when they open a short.
@@ -45,17 +43,18 @@ pub fn openShortGovernanceFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
+    let bond_amount = bondAmount.to_fixed_point()?;
 
-    let result_fp = state.open_short_governance_fee(bond_amount, None).unwrap();
+    let result_fp = state
+        .open_short_governance_fee(bond_amount, None)
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the curve fee paid by the trader when they close a short.
@@ -76,21 +75,20 @@ pub fn closeShortCurveFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let maturity_time = U256::from_dec_str(maturityTime).unwrap();
-    let current_time = U256::from_dec_str(currentTime).unwrap();
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let maturity_time = maturityTime.to_u256()?;
+    let current_time = currentTime.to_u256()?;
 
     let result_fp = state
         .close_short_curve_fee(bond_amount, maturity_time, current_time)
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the flat fee paid by the trader when they close a short.
@@ -111,17 +109,16 @@ pub fn closeShortFlatFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let maturity_time = U256::from_dec_str(maturityTime).unwrap();
-    let current_time = U256::from_dec_str(currentTime).unwrap();
+    let bond_amount = bondAmount.to_fixed_point()?;
+    let maturity_time = maturityTime.to_u256()?;
+    let current_time = currentTime.to_u256()?;
 
     let result_fp = state.close_short_flat_fee(bond_amount, maturity_time, current_time);
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }

@@ -1,10 +1,10 @@
-use ethers::types::U256;
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::ToU256,
 };
 
 /// Calculates the amount of shares the trader will receive after fees for
@@ -34,17 +34,16 @@ pub fn calcCloseShort(
     closeVaultSharePrice: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let bond_amount = U256::from_dec_str(bondAmount).unwrap();
-    let open_vault_share_price = U256::from_dec_str(openVaultSharePrice).unwrap();
-    let close_vault_share_price = U256::from_dec_str(closeVaultSharePrice).unwrap();
-    let maturity_time = U256::from_dec_str(maturityTime).unwrap();
-    let current_time = U256::from_dec_str(currentTime).unwrap();
+    let bond_amount = bondAmount.to_u256()?;
+    let open_vault_share_price = openVaultSharePrice.to_u256()?;
+    let close_vault_share_price = closeVaultSharePrice.to_u256()?;
+    let maturity_time = maturityTime.to_u256()?;
+    let current_time = currentTime.to_u256()?;
 
     let result_fp = state
         .calculate_close_short(
@@ -54,7 +53,7 @@ pub fn calcCloseShort(
             maturity_time,
             current_time,
         )
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
