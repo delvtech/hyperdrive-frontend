@@ -1,10 +1,10 @@
-use ethers::types::{I256, U256};
 use hyperdrive_math::State;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
 
 use crate::{
+    error::ToJsResult,
     types::{JsPoolConfig, JsPoolInfo},
-    utils::set_panic_hook,
+    utils::{ToI256, ToU256},
 };
 
 /// Calculates the max amount of base that can be used to open a long given a
@@ -27,14 +27,13 @@ pub fn maxLong(
     budget: &str,
     checkpointExposure: &str,
     maybeMaxIterations: Option<u8>,
-) -> String {
-    set_panic_hook();
+) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let _budget = U256::from_dec_str(&budget).unwrap();
-    let checkpoint_exposure: I256 = I256::from_dec_str(&checkpointExposure).unwrap();
+    let _budget = budget.to_u256()?;
+    let checkpoint_exposure = checkpointExposure.to_i256()?;
 
     let result_fp = state
         .calculate_max_long(
@@ -42,7 +41,7 @@ pub fn maxLong(
             checkpoint_exposure,
             maybeMaxIterations.map(|x| x.into()),
         )
-        .unwrap();
+        .to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }

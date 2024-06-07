@@ -1,5 +1,6 @@
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -17,7 +18,8 @@ interface UsePreviewCloseLongOptions {
 interface UsePreviewCloseLongResult {
   amountOut: bigint | undefined;
   flatPlusCurveFee: bigint | undefined;
-  previewCloseLongStatus: QueryStatus;
+  previewCloseLongStatus: QueryStatusWithIdle;
+  previewCloseLongError: Error;
 }
 
 export function usePreviewCloseLong({
@@ -35,7 +37,7 @@ export function usePreviewCloseLong({
     !!readHyperdrive &&
     enabled;
 
-  const { data, status } = useQuery({
+  const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewCloseLong", {
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
@@ -56,6 +58,7 @@ export function usePreviewCloseLong({
   return {
     amountOut: data?.amountOut,
     flatPlusCurveFee: data?.flatPlusCurveFee,
-    previewCloseLongStatus: status,
+    previewCloseLongStatus: getStatus(status, fetchStatus),
+    previewCloseLongError: error as Error,
   };
 }

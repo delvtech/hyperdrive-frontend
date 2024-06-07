@@ -1,5 +1,18 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.3.0
+
+### Minor Changes
+
+- 21dca9c: Cleanup
+
+### Patch Changes
+
+- 21dca9c: Simplify checkpoint retrieval. Add `getCheckpointTime` method.
+- b91debc: Fix incorrect openVaultSharePrice argument for previewCloseShort
+- Updated dependencies [a9aedb1]
+  - @delvtech/hyperdrive-wasm@0.14.4
+
 ## 2.2.1
 
 ### Patch Changes

@@ -1,17 +1,23 @@
 #![allow(non_snake_case)]
 
+mod error;
 mod long;
 mod lp;
 mod short;
 mod types;
 mod utils;
 
-use ethers::types::U256;
-use fixed_point::FixedPoint;
+use error::ToJsResult;
 use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy, State};
 use types::{JsPoolConfig, JsPoolInfo};
-use utils::set_panic_hook;
-use wasm_bindgen::prelude::*;
+use utils::{set_panic_hook, ToFixedPoint, ToU256};
+use wasm_bindgen::{prelude::*, JsValue};
+
+// Initialization function
+#[wasm_bindgen(start)]
+pub fn initialize() {
+    set_panic_hook();
+}
 
 /// Calculates the pool's spot price, i.e. the price to open a long of 1.
 ///
@@ -19,15 +25,14 @@ use wasm_bindgen::prelude::*;
 ///
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
-pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
-    set_panic_hook();
+pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
-    let result_fp = state.calculate_spot_price().unwrap();
+    let result_fp = state.calculate_spot_price().to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculate the holding period return (HPR) given a non-compounding,
@@ -37,13 +42,12 @@ pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> String {
-    set_panic_hook();
-    let apr_fp = FixedPoint::from(U256::from_dec_str(apr).unwrap());
-    let position_duration_fp = FixedPoint::from(U256::from_dec_str(positionDuration).unwrap());
+pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<String, JsValue> {
+    let apr_fp = apr.to_fixed_point()?;
+    let position_duration_fp = positionDuration.to_fixed_point()?;
     let result_fp = calculate_hpr_given_apr(apr_fp, position_duration_fp);
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculate the holding period return (HPR) given a compounding, annualized
@@ -53,13 +57,12 @@ pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> String {
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> String {
-    set_panic_hook();
-    let apy_fp = FixedPoint::from(U256::from_dec_str(apy).unwrap());
-    let position_duration_fp = FixedPoint::from(U256::from_dec_str(positionDuration).unwrap());
-    let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).unwrap();
+pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<String, JsValue> {
+    let apy_fp = apy.to_fixed_point()?;
+    let position_duration_fp = positionDuration.to_fixed_point()?;
+    let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).to_js_result()?;
 
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the pool's idle liquidity in base
@@ -68,14 +71,17 @@ pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> String {
 ///
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
-pub fn idleShareReservesInBase(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
-    set_panic_hook();
+pub fn idleShareReservesInBase(
+    poolInfo: &JsPoolInfo,
+    poolConfig: &JsPoolConfig,
+) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
+
     let result_fp = state.calculate_idle_share_reserves_in_base();
-    U256::from(result_fp).to_string()
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the pool's present value in base
@@ -86,15 +92,19 @@ pub fn idleShareReservesInBase(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig)
 ///
 /// @param currentTime - The time at which to grab the present value
 #[wasm_bindgen(skip_jsdoc)]
-pub fn presentValue(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig, currentTime: &str) -> String {
-    set_panic_hook();
+pub fn presentValue(
+    poolInfo: &JsPoolInfo,
+    poolConfig: &JsPoolConfig,
+    currentTime: &str,
+) -> Result<String, JsValue> {
     let state = State {
-        config: poolConfig.into(),
-        info: poolInfo.into(),
+        config: poolConfig.try_into()?,
+        info: poolInfo.try_into()?,
     };
-    let current_time = U256::from_dec_str(currentTime).unwrap();
-    let result_fp = state.calculate_present_value(current_time).unwrap();
-    U256::from(result_fp).to_string()
+    let currentTime = currentTime.to_u256()?;
+    let result_fp = state.calculate_present_value(currentTime).to_js_result()?;
+
+    Ok(result_fp.to_u256()?.to_string())
 }
 
 /// Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
@@ -104,12 +114,12 @@ pub fn presentValue(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig, currentTim
 ///
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
-pub fn spotRate(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> String {
-    set_panic_hook();
+pub fn spotRate(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
     let state = State {
-        info: poolInfo.into(),
-        config: poolConfig.into(),
+        info: poolInfo.try_into()?,
+        config: poolConfig.try_into()?,
     };
-    let result_fp = state.calculate_spot_rate().unwrap();
-    U256::from(result_fp).to_string()
+    let result_fp = state.calculate_spot_rate().to_js_result()?;
+
+    Ok(result_fp.to_u256()?.to_string())
 }

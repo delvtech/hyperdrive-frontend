@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.14.4
+
+### Patch Changes
+
+- a9aedb1: Added error handling and conversion utils
+
 ## 0.14.3
 
 ### Patch Changes

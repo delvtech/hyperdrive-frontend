@@ -1455,7 +1455,7 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wasm"
-version = "0.14.1"
+version = "0.14.3"
 dependencies = [
  "console_error_panic_hook",
  "const-hex",
@@ -1468,6 +1468,7 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen",
  "serde_json",
+ "thiserror",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wasm-bindgen-test",
