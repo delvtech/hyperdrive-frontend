@@ -1,6 +1,62 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+*/
+export function initialize(): void;
+/**
+* Calculates the pool's spot price, i.e. the price to open a long of 1.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function spotPrice(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
+* Calculate the holding period return (HPR) given a non-compounding,
+* annualized rate (APR).
+*
+* @param apr - The annualized rate
+*
+* @param positionDuration - The position duration in seconds
+*/
+export function calcHprGivenApr(apr: string, positionDuration: string): string;
+/**
+* Calculate the holding period return (HPR) given a compounding, annualized
+* rate (APY).
+*
+* @param apy - The annualized rate
+*
+* @param positionDuration - The position duration in seconds
+*/
+export function calcHprGivenApy(apy: string, positionDuration: string): string;
+/**
+* Calculates the pool's idle liquidity in base
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function idleShareReservesInBase(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
+* Calculates the pool's present value in base
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param currentTime - The time at which to grab the present value
+*/
+export function presentValue(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string): string;
+/**
+* Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
+* they open a long.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function spotRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
 * Calculates the max amount of longs that can be shorted given the current
 * state of the pool.
 *
@@ -257,62 +313,6 @@ export function closeShortFlatFee(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig
 * @param currentTime - The current timestamp (in seconds)
 */
 export function calcCloseShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, openVaultSharePrice: string, closeVaultSharePrice: string, maturityTime: string, currentTime: string): string;
-/**
-*/
-export function initialize(): void;
-/**
-* Calculates the pool's spot price, i.e. the price to open a long of 1.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function spotPrice(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
-/**
-* Calculate the holding period return (HPR) given a non-compounding,
-* annualized rate (APR).
-*
-* @param apr - The annualized rate
-*
-* @param positionDuration - The position duration in seconds
-*/
-export function calcHprGivenApr(apr: string, positionDuration: string): string;
-/**
-* Calculate the holding period return (HPR) given a compounding, annualized
-* rate (APY).
-*
-* @param apy - The annualized rate
-*
-* @param positionDuration - The position duration in seconds
-*/
-export function calcHprGivenApy(apy: string, positionDuration: string): string;
-/**
-* Calculates the pool's idle liquidity in base
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function idleShareReservesInBase(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
-/**
-* Calculates the pool's present value in base
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param currentTime - The time at which to grab the present value
-*/
-export function presentValue(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string): string;
-/**
-* Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
-* they open a long.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function spotRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
 
 interface JsFees {
     curve: string;
@@ -364,6 +364,13 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
+  readonly spotPrice: (a: number, b: number, c: number) => void;
+  readonly calcHprGivenApr: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly calcHprGivenApy: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly idleShareReservesInBase: (a: number, b: number, c: number) => void;
+  readonly presentValue: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly spotRate: (a: number, b: number, c: number) => void;
+  readonly initialize: () => void;
   readonly maxShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number) => void;
   readonly calcCloseLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly calcOpenLong: (a: number, b: number, c: number, d: number, e: number) => void;
@@ -382,13 +389,6 @@ export interface InitOutput {
   readonly closeShortCurveFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly closeShortFlatFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly calcCloseShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
-  readonly spotPrice: (a: number, b: number, c: number) => void;
-  readonly calcHprGivenApr: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly calcHprGivenApy: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly idleShareReservesInBase: (a: number, b: number, c: number) => void;
-  readonly presentValue: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly spotRate: (a: number, b: number, c: number) => void;
-  readonly initialize: () => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
