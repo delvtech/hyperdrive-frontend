@@ -1,10 +1,11 @@
 use hyperdrive_math::State;
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use js_sys::BigInt;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
-    error::ToJsResult,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     types::{JsPoolConfig, JsPoolInfo},
-    utils::{ToI256, ToU256},
+    utils::{ToBigInt, ToI256, ToU256},
 };
 
 /// Calculates the max amount of base that can be used to open a long given a
@@ -27,7 +28,7 @@ pub fn maxLong(
     budget: &str,
     checkpointExposure: &str,
     maybeMaxIterations: Option<u8>,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -41,7 +42,7 @@ pub fn maxLong(
             checkpoint_exposure,
             maybeMaxIterations.map(|x| x.into()),
         )
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }

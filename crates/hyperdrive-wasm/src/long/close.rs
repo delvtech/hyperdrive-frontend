@@ -1,10 +1,11 @@
 use hyperdrive_math::State;
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use js_sys::BigInt;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
-    error::ToJsResult,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     types::{JsPoolConfig, JsPoolInfo},
-    utils::ToU256,
+    utils::{ToBigInt, ToU256},
 };
 
 /// Calculates the amount of shares the trader will receive after fees for
@@ -26,7 +27,7 @@ pub fn calcCloseLong(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -37,7 +38,7 @@ pub fn calcCloseLong(
 
     let result_fp = state
         .calculate_close_long(bond_amount, maturity_time, current_time)
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }

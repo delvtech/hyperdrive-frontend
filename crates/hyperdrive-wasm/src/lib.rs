@@ -7,11 +7,12 @@ mod short;
 mod types;
 mod utils;
 
-use error::ToJsResult;
+use error::{HyperdriveWasmError, ToHyperdriveWasmResult};
 use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy, State};
+use js_sys::BigInt;
 use types::{JsPoolConfig, JsPoolInfo};
-use utils::{set_panic_hook, ToFixedPoint, ToI256, ToU256};
-use wasm_bindgen::{prelude::*, JsValue};
+use utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToU256};
+use wasm_bindgen::prelude::*;
 
 // Initialization function
 #[wasm_bindgen(start)]
@@ -25,14 +26,17 @@ pub fn initialize() {
 ///
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
-pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
+pub fn spotPrice(
+    poolInfo: &JsPoolInfo,
+    poolConfig: &JsPoolConfig,
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
         info: poolInfo.try_into()?,
     };
-    let result_fp = state.calculate_spot_price().to_js_result()?;
+    let result_fp = state.calculate_spot_price().to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculate the holding period return (HPR) given a non-compounding,
@@ -42,12 +46,12 @@ pub fn spotPrice(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<Str
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<String, JsValue> {
-    let position_duration = positionDuration.to_fixed_point()?;
-    let apr_int = apr.to_i256()?;
-    let result_fp = calculate_hpr_given_apr(apr_int, position_duration).to_js_result()?;
+pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<BigInt, HyperdriveWasmError> {
+    let apr_fp = apr.to_fixed_point()?;
+    let position_duration_fp = positionDuration.to_fixed_point()?;
+    let result_fp = calculate_hpr_given_apr(apr_fp, position_duration_fp);
 
-    Ok(result_fp.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculate the holding period return (HPR) given a compounding, annualized
@@ -57,12 +61,12 @@ pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<String, JsVa
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<String, JsValue> {
-    let apy_fp = apy.to_i256()?;
+pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<BigInt, HyperdriveWasmError> {
+    let apy_fp = apy.to_fixed_point()?;
     let position_duration_fp = positionDuration.to_fixed_point()?;
-    let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).to_js_result()?;
+    let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).to_result()?;
 
-    Ok(result_fp.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculates the pool's idle liquidity in base
@@ -74,14 +78,14 @@ pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<String, JsVa
 pub fn idleShareReservesInBase(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
         info: poolInfo.try_into()?,
     };
-
     let result_fp = state.calculate_idle_share_reserves_in_base();
-    Ok(result_fp.to_u256()?.to_string())
+
+    result_fp.to_big_int()
 }
 
 /// Calculates the pool's present value in shares
@@ -96,15 +100,15 @@ pub fn presentValue(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     currentTime: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
         info: poolInfo.try_into()?,
     };
     let currentTime = currentTime.to_u256()?;
-    let result_fp = state.calculate_present_value(currentTime).to_js_result()?;
+    let result_fp = state.calculate_present_value(currentTime).to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
@@ -114,12 +118,15 @@ pub fn presentValue(
 ///
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
-pub fn spotRate(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig) -> Result<String, JsValue> {
+pub fn spotRate(
+    poolInfo: &JsPoolInfo,
+    poolConfig: &JsPoolConfig,
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
     };
-    let result_fp = state.calculate_spot_rate().to_js_result()?;
+    let result_fp = state.calculate_spot_rate().to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }

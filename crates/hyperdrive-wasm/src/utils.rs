@@ -1,8 +1,9 @@
 use ethers::types::{Address, I256, U256};
 use fixed_point::FixedPoint;
-use std::str::FromStr;
+use js_sys::BigInt;
+use std::{panic::Location, str::FromStr};
 
-use crate::{error::HyperdriveWasmError, type_error};
+use crate::{error::HyperdriveWasmError, type_error_at};
 
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
@@ -22,25 +23,24 @@ pub trait ToU256 {
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError>;
 }
 
-// For string arguments
-impl ToU256 for &str {
-    #[track_caller]
-    fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
-        U256::from_dec_str(self)
-            .map_err(|error| type_error!("Invalid uint256: {}\n    {error}", self))
-    }
-}
-
-// For strings deserialized from JS
 impl ToU256 for String {
     #[track_caller]
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
+        let location = Location::caller();
         U256::from_dec_str(self)
-            .map_err(|error| type_error!("Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
     }
 }
 
-// For fixed point results
+impl ToU256 for &str {
+    #[track_caller]
+    fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
+        let location = Location::caller();
+        U256::from_dec_str(self)
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
+    }
+}
+
 impl ToU256 for FixedPoint {
     #[track_caller]
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
@@ -53,29 +53,28 @@ pub trait ToI256 {
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError>;
 }
 
-// For string arguments
-impl ToI256 for &str {
-    fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
-        I256::from_dec_str(self)
-            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
-    }
-}
-
-// For strings deserialized from JS
 impl ToI256 for String {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
+        let location = Location::caller();
         I256::from_dec_str(self)
-            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+    }
+}
+impl ToI256 for &str {
+    fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
+        let location = Location::caller();
+        I256::from_dec_str(self)
+            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
     }
 }
 
-// For fixed point results
 impl ToI256 for FixedPoint {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
+        let location = Location::caller();
         I256::try_from(self.to_owned())
-            .map_err(|error| type_error!("Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
     }
 }
 
@@ -107,19 +106,68 @@ pub trait ToAddress {
     fn to_address(&self) -> Result<Address, HyperdriveWasmError>;
 }
 
-// For string arguments
-impl ToAddress for &str {
-    fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
-        Address::from_str(self).map_err(|e| type_error!("Invalid address: {}\n    {e}", self))
-    }
-}
-
-// For strings deserialized from JS
 impl ToAddress for String {
     #[track_caller]
     fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
+        let location = Location::caller();
         Address::from_str(&self.to_string())
-            .map_err(|e| type_error!("Invalid address: {}\n    {e}", self.to_string()))
+            .map_err(|e| type_error_at!(location, "Invalid address: {}\n    {e}", self.to_string()))
+    }
+}
+
+impl ToAddress for &str {
+    fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
+        let location = Location::caller();
+        Address::from_str(self)
+            .map_err(|e| type_error_at!(location, "Invalid address: {}\n    {e}", self))
+    }
+}
+
+/// Convert a value to a `Result<BigInt, HyperdriveWasmError>` via `.to_big_int()`
+pub trait ToBigInt {
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError>;
+}
+
+impl ToBigInt for String {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        let location = Location::caller();
+        BigInt::from_str(&self).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
+    }
+}
+
+impl ToBigInt for &str {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        let location = Location::caller();
+        BigInt::from_str(&self).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
+    }
+}
+
+impl ToBigInt for U256 {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        let location = Location::caller();
+        BigInt::from_str(&self.to_string())
+            .map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
+    }
+}
+
+impl ToBigInt for I256 {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        let location = Location::caller();
+        BigInt::from_str(&self.to_string())
+            .map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
+    }
+}
+
+impl ToBigInt for FixedPoint {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        let location = Location::caller();
+        BigInt::from_str(&self.to_u256()?.to_string())
+            .map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
     }
 }
 
