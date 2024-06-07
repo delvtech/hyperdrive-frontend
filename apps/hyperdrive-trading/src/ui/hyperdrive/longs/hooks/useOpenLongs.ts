@@ -35,6 +35,7 @@ export function useOpenLongs({
 
 /**
  * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
+ * TODO: Rename this hook to useOpenLongs once the old useOpenLongs hook is removed.
  */
 export function useOpenLongPositions({
   account,
@@ -53,12 +54,12 @@ export function useOpenLongPositions({
     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const openLongPositionsReceived: OpenLongPositionReceived[] = [];
           const allLongs = await readHyperdrive.getOpenLongPositions({
             account,
           });
-          allLongs.forEach(async (long) => {
-            openLongPositionsReceived.push({
+
+          const openLongPositionsReceived = await Promise.all(
+            allLongs.map(async (long) => ({
               assetId: long.assetId,
               value: long.value,
               maturity: long.maturity,
@@ -66,8 +67,8 @@ export function useOpenLongPositions({
                 assetId: long.assetId,
                 account,
               }),
-            });
-          });
+            })),
+          );
 
           return openLongPositionsReceived;
         }

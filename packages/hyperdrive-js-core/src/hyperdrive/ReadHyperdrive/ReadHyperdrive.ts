@@ -807,6 +807,7 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
+  // TODO: Rename this to getOpenLongs once this function replaces the existing getOpenLongs
   async getOpenLongPositions({
     account,
     options,
