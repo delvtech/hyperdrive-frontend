@@ -1,12 +1,13 @@
 use ethers::types::U256;
 use fixed_point::{fixed, FixedPoint};
 use hyperdrive_math::State;
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use js_sys::BigInt;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
-    error::ToJsResult,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     types::{JsPoolConfig, JsPoolInfo},
-    utils::{ToFixedPoint, ToU256},
+    utils::{ToBigInt, ToFixedPoint, ToU256},
 };
 
 /// Calculates the amount of lp shares the trader will receive after adding
@@ -40,7 +41,7 @@ pub fn calcAddLiquidity(
     minLpSharePrice: Option<String>,
     minApr: Option<String>,
     maxApr: Option<String>,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -73,7 +74,7 @@ pub fn calcAddLiquidity(
             max_apr,
             as_base,
         )
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }

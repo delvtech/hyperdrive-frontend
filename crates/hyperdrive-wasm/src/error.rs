@@ -53,56 +53,79 @@ where
     }
 }
 
-/// Convert a value to a `Result<T, JsValue>` via `.to_js_result()`
-pub trait ToJsResult<T> {
-    /// Convert a value to a `Result<T, JsValue>`, capturing the current location
+/// Convert a value to `Result<T, HyperdriveWasmError>` via `.to_result()`
+pub trait ToHyperdriveWasmResult<T> {
+    /// Convert a value to a `Result<T, HyperdriveWasmError>`, capturing the current location
     #[track_caller]
-    fn to_js_result(self) -> Result<T, JsValue>
+    fn to_result(self) -> Result<T, HyperdriveWasmError>
     where
         Self: Sized,
     {
-        self.to_js_result_at(&Location::caller().to_string())
+        self.to_result_at(&Location::caller().to_string())
     }
 
-    fn to_js_result_at(self, location: &str) -> Result<T, JsValue>;
+    fn to_result_at(self, location: &str) -> Result<T, HyperdriveWasmError>;
 }
 
-// If a Result's error type can `.to_error()`, the Result can be
-// converted to a `Result<T, JsValue>`
-impl<T, E> ToJsResult<T> for Result<T, E>
+// If the error type of a Result can `.to_error()`, the Result can `.to_result()`
+impl<T, E> ToHyperdriveWasmResult<T> for Result<T, E>
 where
     E: ToHyperdriveWasmError,
 {
-    fn to_js_result_at(self, location: &str) -> Result<T, JsValue> {
-        self.map_err(|e| e.to_error_at(location).into())
+    fn to_result_at(self, location: &str) -> Result<T, HyperdriveWasmError> {
+        self.map_err(|e| e.to_error_at(location))
     }
 }
 
 // Macros //
 
 #[macro_export]
+macro_rules! error_at {
+    ($location:expr, $($arg:tt)*) => {
+        $crate::error::HyperdriveWasmError::Generic(format!($($arg)*), $location.to_string())
+    };
+}
+
+#[macro_export]
 macro_rules! error {
     ($($arg:tt)*) => {
-      $crate::error::HyperdriveWasmError::Generic(format!($($arg)*), format!("{}", ::std::panic::Location::caller()))
+        $crate::error_at!(::std::panic::Location::caller(), $($arg)*)
+    };
+}
+
+#[macro_export]
+macro_rules! type_error_at {
+    ($location:expr, $($arg:tt)*) => {
+        $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), $location.to_string())
     };
 }
 
 #[macro_export]
 macro_rules! type_error {
-  ($($arg:tt)*) => {
-    $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), format!("{}", ::std::panic::Location::caller()))
-  };
+    ($($arg:tt)*) => {
+        $crate::type_error_at!(::std::panic::Location::caller(), $($arg)*)
+    };
 }
 
 #[cfg(test)]
 mod tests {
+    use std::panic::Location;
 
     #[test]
-    fn test_conversion_error() {
+    fn test_type_error() {
         let error = type_error!("Bad value: {}", "Foo");
         assert!(error
             .to_string()
-            .starts_with("Conversion error: Bad value: Foo\n    Location: "));
+            .starts_with(&format!("TypeError: Bad value: Foo\n    Location: ")));
+    }
+
+    #[test]
+    fn test_type_error_at() {
+        let location = Location::caller().to_string();
+        let error = type_error_at!(location, "Bad value: {}", "Foo");
+        assert!(error.to_string().starts_with(
+            format!("TypeError: Bad value: Foo\n    Location: {}", location).as_str()
+        ));
     }
 
     #[test]
@@ -111,5 +134,14 @@ mod tests {
         assert!(error
             .to_string()
             .starts_with("Error: Bad value: Foo\n    Location: "));
+    }
+
+    #[test]
+    fn test_generic_error_at() {
+        let location = Location::caller().to_string();
+        let error = error_at!(location, "Bad value: {}", "Foo");
+        assert!(error
+            .to_string()
+            .starts_with(format!("Error: Bad value: Foo\n    Location: {}", location).as_str()));
     }
 }

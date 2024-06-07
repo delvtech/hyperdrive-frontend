@@ -1,10 +1,11 @@
 use hyperdrive_math::State;
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use js_sys::BigInt;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
-    error::ToJsResult,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     types::{JsPoolConfig, JsPoolInfo},
-    utils::{ToFixedPoint, ToI256, ToU256},
+    utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
 };
 
 /// Calculates the max amount of longs that can be shorted given the current
@@ -35,7 +36,7 @@ pub fn maxShort(
     checkpointExposure: &str,
     maybeConservativePrice: Option<String>,
     maybeMaxIterations: Option<u8>,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -56,7 +57,7 @@ pub fn maxShort(
             maybe_conservative_price,
             maybeMaxIterations.map(|x| x.into()),
         )
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }

@@ -342,12 +342,10 @@ export class ReadHyperdrive extends ReadModel {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprString = hyperwasm.spotRate(
+    return hyperwasm.spotRate(
       convertBigIntsToStrings(info),
       convertBigIntsToStrings(config),
     );
-
-    return BigInt(aprString);
   }
 
   /**
@@ -378,15 +376,13 @@ export class ReadHyperdrive extends ReadModel {
       openVaultSharePrice = (await this.getPoolInfo()).vaultSharePrice;
     }
 
-    const impliedRateString = hyperwasm.calcImpliedRate(
+    return hyperwasm.calcImpliedRate(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
       bondAmount.toString(),
       openVaultSharePrice.toString(),
       variableApy.toString(),
     );
-
-    return BigInt(impliedRateString);
   }
 
   /**
@@ -396,12 +392,10 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const liquidityString = hyperwasm.idleShareReservesInBase(
+    return hyperwasm.idleShareReservesInBase(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
     );
-
-    return BigInt(liquidityString);
   }
 
   /**
@@ -413,13 +407,11 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const liquidityString = hyperwasm.presentValue(
+    return hyperwasm.presentValue(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
       Math.floor(Date.now() / 1000).toString(),
     );
-
-    return BigInt(liquidityString);
   }
 
   /**
@@ -534,12 +526,10 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const spotPrice = hyperwasm.spotPrice(
+    return hyperwasm.spotPrice(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
     );
-
-    return BigInt(spotPrice);
   }
 
   private async getOpenLongEvents(
@@ -1223,22 +1213,18 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBondsOut = BigInt(
-      hyperwasm.maxShort(
-        stringifiedPoolInfo,
-        stringifiedPoolConfig,
-        MAX_UINT256.toString(),
-        openSharePrice.toString(),
-        checkpointExposure.toString(),
-      ),
+    const maxBondsOut = hyperwasm.maxShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      openSharePrice.toString(),
+      checkpointExposure.toString(),
     );
-    const maxBaseIn = BigInt(
-      hyperwasm.calcOpenShort(
-        stringifiedPoolInfo,
-        stringifiedPoolConfig,
-        maxBondsOut.toString(),
-        openSharePrice.toString(),
-      ),
+    const maxBaseIn = hyperwasm.calcOpenShort(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBondsOut.toString(),
+      openSharePrice.toString(),
     );
     const maxSharesIn = await this.convertToShares({
       baseAmount: maxBaseIn,
@@ -1267,13 +1253,11 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBaseIn = BigInt(
-      hyperwasm.maxLong(
-        stringifiedPoolInfo,
-        stringifiedPoolConfig,
-        MAX_UINT256.toString(),
-        checkpointExposure.toString(),
-      ),
+    const maxBaseIn = hyperwasm.maxLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      MAX_UINT256.toString(),
+      checkpointExposure.toString(),
     );
 
     const maxSharesIn = await this.convertToShares({
@@ -1281,12 +1265,10 @@ export class ReadHyperdrive extends ReadModel {
       options,
     });
 
-    const maxBondsOut = BigInt(
-      hyperwasm.calcOpenLong(
-        stringifiedPoolInfo,
-        stringifiedPoolConfig,
-        maxBaseIn.toString(),
-      ),
+    const maxBondsOut = hyperwasm.calcOpenLong(
+      stringifiedPoolInfo,
+      stringifiedPoolConfig,
+      maxBaseIn.toString(),
     );
 
     return {
@@ -1616,12 +1598,10 @@ export class ReadHyperdrive extends ReadModel {
       });
     }
 
-    const spotPriceAfterOpen = BigInt(
-      hyperwasm.spotPriceAfterLong(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        depositAmountConvertedToBase.toString(),
-      ),
+    const spotPriceAfterOpen = hyperwasm.spotPriceAfterLong(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      depositAmountConvertedToBase.toString(),
     );
 
     // See for spot rate calc:
@@ -1643,17 +1623,15 @@ export class ReadHyperdrive extends ReadModel {
       depositAmountConvertedToBase.toString(),
     );
 
-    const curveFeeInBonds = BigInt(
-      hyperwasm.openLongCurveFee(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        depositAmountConvertedToBase.toString(),
-      ),
+    const curveFeeInBonds = hyperwasm.openLongCurveFee(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      depositAmountConvertedToBase.toString(),
     );
 
     return {
       maturityTime: checkpointTime + poolConfig.positionDuration,
-      bondProceeds: BigInt(bondProceeds),
+      bondProceeds,
       spotPriceAfterOpen,
       spotRateAfterOpen,
       curveFee: curveFeeInBonds,
@@ -1685,21 +1663,17 @@ export class ReadHyperdrive extends ReadModel {
     const poolInfo = await this.getPoolInfo(options);
     const latestCheckpoint = await this.getCheckpoint({ options });
 
-    const baseDepositAmount = BigInt(
-      hyperwasm.calcOpenShort(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        amountOfBondsToShort.toString(),
-        latestCheckpoint.vaultSharePrice.toString(),
-      ),
+    const baseDepositAmount = hyperwasm.calcOpenShort(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      amountOfBondsToShort.toString(),
+      latestCheckpoint.vaultSharePrice.toString(),
     );
 
-    const spotPriceAfterOpen = BigInt(
-      hyperwasm.spotPriceAfterShort(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        amountOfBondsToShort.toString(),
-      ),
+    const spotPriceAfterOpen = hyperwasm.spotPriceAfterShort(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      amountOfBondsToShort.toString(),
     );
 
     // See for spot rate calc:
@@ -1715,12 +1689,10 @@ export class ReadHyperdrive extends ReadModel {
       ),
     )[0];
 
-    const curveFeeInBase = BigInt(
-      hyperwasm.openShortCurveFee(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        amountOfBondsToShort.toString(),
-      ),
+    const curveFeeInBase = hyperwasm.openShortCurveFee(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      amountOfBondsToShort.toString(),
     );
 
     if (asBase) {
@@ -1768,34 +1740,28 @@ export class ReadHyperdrive extends ReadModel {
     const info = await this.getPoolInfo(options);
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
 
-    const flatFeeInShares = BigInt(
-      hyperwasm.closeLongFlatFee(
-        convertBigIntsToStrings(info),
-        convertBigIntsToStrings(config),
-        bondAmountIn.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
+    const flatFeeInShares = hyperwasm.closeLongFlatFee(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+      bondAmountIn.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
     );
-    const curveFeeInShares = BigInt(
-      hyperwasm.closeLongCurveFee(
-        convertBigIntsToStrings(info),
-        convertBigIntsToStrings(config),
-        bondAmountIn.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
+    const curveFeeInShares = hyperwasm.closeLongCurveFee(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+      bondAmountIn.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
     );
     const flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
 
-    const amountOutInShares = BigInt(
-      hyperwasm.calcCloseLong(
-        convertBigIntsToStrings(info),
-        convertBigIntsToStrings(config),
-        bondAmountIn.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
+    const amountOutInShares = hyperwasm.calcCloseLong(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+      bondAmountIn.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
     );
 
     if (!asBase) {
@@ -1931,27 +1897,23 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    const curveFeeInShares = BigInt(
-      hyperwasm.closeShortCurveFee(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        shortAmountIn.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
+    const curveFeeInShares = hyperwasm.closeShortCurveFee(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      shortAmountIn.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
     );
     const flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
 
-    const amountOutInShares = BigInt(
-      hyperwasm.calcCloseShort(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        shortAmountIn.toString(),
-        openSharePrice.toString(),
-        closeSharePrice.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
+    const amountOutInShares = hyperwasm.calcCloseShort(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      shortAmountIn.toString(),
+      openSharePrice.toString(),
+      closeSharePrice.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
     );
 
     if (!asBase) {
@@ -1996,17 +1958,15 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
-    const lpSharesOut = BigInt(
-      hyperwasm.calcAddLiquidity(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        currentTime.toString(),
-        contribution.toString(),
-        asBase,
-        minLpSharePrice.toString(),
-        minAPR.toString(),
-        maxAPR.toString(),
-      ),
+    const lpSharesOut = hyperwasm.calcAddLiquidity(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      currentTime.toString(),
+      contribution.toString(),
+      asBase,
+      minLpSharePrice.toString(),
+      minAPR.toString(),
+      maxAPR.toString(),
     );
     const decimals = await this.getDecimals();
     const lpSharesOutInBase = dnum.multiply(

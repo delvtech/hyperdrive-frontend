@@ -1,10 +1,11 @@
 use hyperdrive_math::State;
-use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use js_sys::BigInt;
+use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
-    error::ToJsResult,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     types::{JsPoolConfig, JsPoolInfo},
-    utils::{ToFixedPoint, ToU256},
+    utils::{ToBigInt, ToFixedPoint, ToU256},
 };
 
 /// Calculates the curve fee paid by the trader when they open a short.
@@ -19,16 +20,16 @@ pub fn openShortCurveFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
     };
     let bond_amount = bondAmount.to_fixed_point()?;
 
-    let result_fp = state.open_short_curve_fee(bond_amount).to_js_result()?;
+    let result_fp = state.open_short_curve_fee(bond_amount).to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculates the governance fee paid by the trader when they open a short.
@@ -43,7 +44,7 @@ pub fn openShortGovernanceFee(
     poolInfo: &JsPoolInfo,
     poolConfig: &JsPoolConfig,
     bondAmount: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -52,9 +53,9 @@ pub fn openShortGovernanceFee(
 
     let result_fp = state
         .open_short_governance_fee(bond_amount, None)
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculates the curve fee paid by the trader when they close a short.
@@ -75,7 +76,7 @@ pub fn closeShortCurveFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -86,9 +87,9 @@ pub fn closeShortCurveFee(
 
     let result_fp = state
         .close_short_curve_fee(bond_amount, maturity_time, current_time)
-        .to_js_result()?;
+        .to_result()?;
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
 
 /// Calculates the flat fee paid by the trader when they close a short.
@@ -109,7 +110,7 @@ pub fn closeShortFlatFee(
     bondAmount: &str,
     maturityTime: &str,
     currentTime: &str,
-) -> Result<String, JsValue> {
+) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
@@ -120,5 +121,5 @@ pub fn closeShortFlatFee(
 
     let result_fp = state.close_short_flat_fee(bond_amount, maturity_time, current_time);
 
-    Ok(result_fp.to_u256()?.to_string())
+    result_fp.to_big_int()
 }
