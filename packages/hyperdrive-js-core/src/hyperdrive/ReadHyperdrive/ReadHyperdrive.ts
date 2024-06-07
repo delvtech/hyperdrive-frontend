@@ -44,7 +44,7 @@ import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawa
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
 interface SimplePosition {
-  id: bigint;
+  assetId: bigint;
   value: bigint;
   maturity: bigint;
 }
@@ -907,7 +907,7 @@ export class ReadHyperdrive extends ReadModel {
       options,
     });
 
-    const longPosition = allLongPositions.find((p) => p.id === assetId);
+    const longPosition = allLongPositions.find((p) => p.assetId === assetId);
 
     if (!longPosition) {
       throw new Error(
@@ -916,11 +916,11 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     const openLongEvents = await this.contract.getEvents("OpenLong", {
-      filter: { assetId },
+      filter: { trader: account },
     });
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
-      filter: { assetId },
+      filter: { trader: account },
     });
 
     const allOpenLongDetails = await this._calcOpenLongs({
@@ -930,7 +930,8 @@ export class ReadHyperdrive extends ReadModel {
     });
 
     const openLongDetails = allOpenLongDetails.find(
-      (details) => details.assetId === longPosition.id,
+      (details) =>
+        details.assetId.toString() === longPosition.assetId.toString(),
     );
     // If no details exists for the position, the user must have just received
     // some longs via transfer but never opened them themselves

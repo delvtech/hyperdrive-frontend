@@ -33,65 +33,55 @@ export function useOpenLongs({
   return { openLongs, openLongsStatus };
 }
 
-// /**
-//  * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
-//  */
-// export function useAllOpenLongs({
-//   account,
-//   hyperdriveAddress,
-// }: UseOpenLongsOptions): {
-//   allOpenLongs: Long[] | undefined;
-//   allOpenLongsStatus: "error" | "success" | "loading";
-// } {
-//   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-//   const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
-//   const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
-//     enabled: queryEnabled,
-//     queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
-//     queryFn: queryEnabled
-//       ? async () => {
-//           const openLongs: {
-//             id: bigint;
-//             value: bigint;
-//             details: Long | undefined;
-//           }[] = [];
-//           const allLongs = await readHyperdrive.getOpenLongPositions({
-//             account,
-//           });
+/**
+ * Returns the list of longs the account currently has open. This includes longs that have been transferred to the account from another address.
+ */
+export function useAllOpenLongs({
+  account,
+  hyperdriveAddress,
+}: UseOpenLongsOptions): {
+  allOpenLongs:
+    | {
+        id: bigint;
+        value: bigint;
+        maturity: bigint;
+        details: Long | undefined;
+      }[]
+    | undefined;
+  allOpenLongsStatus: "error" | "success" | "loading";
+} {
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
+  const { data: allOpenLongs, status: allOpenLongsStatus } = useQuery({
+    enabled: queryEnabled,
+    queryKey: makeQueryKey("allOpenLongs", { account, hyperdriveAddress }),
+    queryFn: queryEnabled
+      ? async () => {
+          const openLongs: {
+            id: bigint;
+            value: bigint;
+            maturity: bigint;
+            details: Long | undefined;
+          }[] = [];
+          const allLongs = await readHyperdrive.getOpenLongPositions({
+            account,
+          });
+          allLongs.forEach(async (long) => {
+            openLongs.push({
+              id: long.assetId,
+              value: long.value,
+              maturity: long.maturity,
+              details: await readHyperdrive.getOpenLongDetails({
+                assetId: long.assetId,
+                account,
+              }),
+            });
+          });
 
-//           for (const long of allLongs) {
-//             const existingLongIndex = openLongs.findIndex(
-//               (l) => l.id === long.args.id,
-//             );
-//             const longWithDetails = await readHyperdrive.getOpenLongDetails({
-//               assetId: long.args.id,
-//               existingLong:
-//                 existingLongIndex !== -1
-//                   ? openLongs[existingLongIndex].details
-//                   : undefined,
-//             });
+          return openLongs;
+        }
+      : undefined,
+  });
 
-//             if (existingLongIndex !== -1) {
-//               openLongs[existingLongIndex] = {
-//                 id: long.args.id,
-//                 value: long.args.value,
-//                 details:
-//                   long.args.from === ZERO_ADDRESS ? longWithDetails : undefined,
-//               };
-//             } else {
-//               openLongs.push({
-//                 id: long.args.id,
-//                 value: long.args.value,
-//                 details:
-//                   long.args.from === ZERO_ADDRESS ? longWithDetails : undefined,
-//               });
-//             }
-//           }
-//           console.log("openLongs", openLongs);
-//           return openLongs;
-//         }
-//       : undefined,
-//   });
-
-//   return { allOpenLongs, allOpenLongsStatus };
-// }
+  return { allOpenLongs, allOpenLongsStatus };
+}
