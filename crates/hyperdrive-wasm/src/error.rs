@@ -26,10 +26,10 @@ pub trait ToHyperdriveWasmError {
     /// Convert a value to a `HyperdriveWasmError`, capturing the current location
     #[track_caller]
     fn to_error(&self) -> HyperdriveWasmError {
-        self.to_error_at(&Location::caller().to_string())
+        self.to_error_at(Location::caller())
     }
 
-    fn to_error_at(&self, location: &str) -> HyperdriveWasmError;
+    fn to_error_at(&self, location: &Location) -> HyperdriveWasmError;
 }
 
 // If a value can `.to_string()`, it can `.to_error()`
@@ -37,7 +37,7 @@ impl<T> ToHyperdriveWasmError for T
 where
     T: ToString,
 {
-    fn to_error_at(&self, location: &str) -> HyperdriveWasmError {
+    fn to_error_at(&self, location: &Location) -> HyperdriveWasmError {
         HyperdriveWasmError::Generic(self.to_string(), location.to_string())
     }
 }
@@ -49,7 +49,8 @@ where
 {
     #[track_caller]
     fn from(t: T) -> Self {
-        t.into().to_error_at(&Location::caller().to_string())
+        let location = Location::caller();
+        t.into().to_error_at(location)
     }
 }
 
@@ -61,10 +62,10 @@ pub trait ToHyperdriveWasmResult<T> {
     where
         Self: Sized,
     {
-        self.to_result_at(&Location::caller().to_string())
+        self.to_result_at(Location::caller())
     }
 
-    fn to_result_at(self, location: &str) -> Result<T, HyperdriveWasmError>;
+    fn to_result_at(self, location: &Location) -> Result<T, HyperdriveWasmError>;
 }
 
 // If the error type of a Result can `.to_error()`, the Result can `.to_result()`
@@ -72,7 +73,7 @@ impl<T, E> ToHyperdriveWasmResult<T> for Result<T, E>
 where
     E: ToHyperdriveWasmError,
 {
-    fn to_result_at(self, location: &str) -> Result<T, HyperdriveWasmError> {
+    fn to_result_at(self, location: &Location) -> Result<T, HyperdriveWasmError> {
         self.map_err(|e| e.to_error_at(location))
     }
 }
