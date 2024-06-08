@@ -1845,6 +1845,17 @@ export class ReadHyperdrive extends ReadModel {
 
     const currentTime = Math.floor(Date.now() / 1000);
 
+    // If the position is mature, we use the closing vault share price otherwise
+    // use the current vault share price
+    let closeSharePrice = poolInfo.vaultSharePrice;
+    if (maturityTime >= currentTime) {
+      const closingCheckpoint = await this.getCheckpoint({
+        timestamp: maturityTime,
+        options,
+      });
+      closeSharePrice = closingCheckpoint.vaultSharePrice;
+    }
+
     const flatFeeInShares = BigInt(
       hyperwasm.closeShortFlatFee(
         convertBigIntsToStrings(poolInfo),
@@ -1871,7 +1882,7 @@ export class ReadHyperdrive extends ReadModel {
         convertBigIntsToStrings(poolConfig),
         shortAmountIn.toString(),
         openSharePrice.toString(),
-        poolInfo.vaultSharePrice.toString(),
+        closeSharePrice.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
