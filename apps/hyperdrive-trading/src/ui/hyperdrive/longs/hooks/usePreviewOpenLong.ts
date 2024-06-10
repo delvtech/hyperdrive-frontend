@@ -1,5 +1,10 @@
+import {
+  findHyperdriveConfig,
+  findYieldSourceToken,
+} from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
@@ -24,6 +29,23 @@ export function usePreviewOpenLong({
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const appConfig = useAppConfig();
+
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdrives: appConfig.hyperdrives,
+    hyperdriveAddress,
+  });
+
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdriveConfig.sharesToken,
+    tokens: appConfig.tokens,
+  });
+
+  const prepper = getPrepFnByName(sharesToken.extensions.prepFn);
+
+  if (!asBase) {
+    amountIn = prepper(amountIn);
+  }
   const queryEnabled = !!amountIn && !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
     watch: true,

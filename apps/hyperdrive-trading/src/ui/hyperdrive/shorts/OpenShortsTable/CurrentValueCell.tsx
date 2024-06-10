@@ -10,6 +10,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
+import { formatUnits } from "viem";
 
 export function CurrentValueCell({
   openShort,
@@ -27,6 +28,7 @@ export function CurrentValueCell({
 
   const {
     amountOut: currentValueInShares,
+    marketEstimate,
     previewCloseShortStatus,
     previewCloseShortError,
   } = usePreviewCloseShort({
@@ -44,6 +46,10 @@ export function CurrentValueCell({
     decimals: hyperdrive.decimals,
     vaultSharePrice: poolInfo?.vaultSharePrice,
   });
+  if (marketEstimate && currentValueInBase) {
+    console.log("marketEstimate", formatUnits(marketEstimate, 18));
+    console.log("preview amount out", formatUnits(currentValueInBase, 18));
+  }
 
   const currentValueLabel = formatBalance({
     balance: currentValueInBase || 0n,

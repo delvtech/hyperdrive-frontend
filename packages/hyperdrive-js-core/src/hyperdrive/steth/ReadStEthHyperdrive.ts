@@ -254,6 +254,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
       if (!asBase && !this.isUsingSharesAccounting) {
         return {
+          marketEstimate: 0n,
           amountOut: await this.convertToBase({
             sharesAmount: amountOut,
             options,
@@ -262,7 +263,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         };
       }
 
-      return { amountOut, flatPlusCurveFee };
+      return { amountOut, flatPlusCurveFee, marketEstimate: 0n };
     }
 
     async previewAddLiquidity({

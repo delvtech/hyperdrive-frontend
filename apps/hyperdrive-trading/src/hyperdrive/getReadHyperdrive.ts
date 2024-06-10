@@ -1,7 +1,6 @@
 import {
   ReadHyperdrive,
   ReadMetaMorphoHyperdrive,
-  ReadStEthHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { sdkCache } from "src/sdk/sdkCache";
@@ -19,14 +18,14 @@ export function getReadHyperdrive({
   sharesToken: TokenConfig<any>;
 }): ReadHyperdrive {
   const isSteth = getIsSteth(sharesToken);
-  if (isSteth) {
-    return new ReadStEthHyperdrive({
-      address: hyperdriveAddress,
-      publicClient,
-      cache: sdkCache,
-      namespace: publicClient.chain?.id.toString(),
-    });
-  }
+  // if (isSteth) {
+  //   return new ReadStEthHyperdrive({
+  //     address: hyperdriveAddress,
+  //     publicClient,
+  //     cache: sdkCache,
+  //     namespace: publicClient.chain?.id.toString(),
+  //   });
+  // }
 
   const isMetaMorpho = getIsMetaMorpho(sharesToken);
   if (isMetaMorpho) {
