@@ -33,7 +33,7 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://hyperdrive.delv.tech/docs"
+          href="https://docs.hyperdrive.box"
           className="daisy-link-hover daisy-link"
         >
           Documentation
