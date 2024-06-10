@@ -12,9 +12,7 @@ export function PositionActionsMenu({
   }
   return (
     <>
-      <span className="daisy-menu-title text-neutral-content">
-        Position details
-      </span>
+      <span className="daisy-menu-title text-neutral-content">Asset ID</span>
       <li>
         <button
           onClick={(e) => {
