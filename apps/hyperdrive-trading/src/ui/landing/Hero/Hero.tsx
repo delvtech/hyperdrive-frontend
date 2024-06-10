@@ -17,7 +17,7 @@ export function Hero(): ReactElement {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://hyperdrive.delv.tech/docs"
+            href="https://docs.hyperdrive.box"
             className="daisy-btn daisy-btn-ghost rounded-full"
           >
             Read the Hyperdrive docs <ArrowRightIcon className="inline h-4" />
