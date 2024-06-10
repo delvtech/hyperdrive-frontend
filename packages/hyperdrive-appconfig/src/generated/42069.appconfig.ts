@@ -33,6 +33,21 @@ export const cloudChainAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["yieldSource", "reth"],
+      extensions: {
+        shortName: "Rocket Pool ETH",
+        protocol: "rocketPool",
+        isSharesPeggedToBase: false,
+      },
+    },
+    {
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       decimals: 18,
       places: 2,
@@ -56,21 +71,6 @@ export const cloudChainAppConfig: AppConfig = {
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: [],
       extensions: {},
-    },
-    {
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["yieldSource", "reth"],
-      extensions: {
-        shortName: "Rocket Pool ETH",
-        protocol: "rocketPool",
-        isSharesPeggedToBase: false,
-      },
     },
   ],
   hyperdrives: [
