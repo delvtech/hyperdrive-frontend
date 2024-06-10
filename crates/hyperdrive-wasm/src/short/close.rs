@@ -1,8 +1,9 @@
 use std::ops::{Div, Mul, Sub};
 
-use fixed_point::FixedPoint;
+use fixed_point::{fixed, FixedPoint};
 use hyperdrive_math::State;
 use wasm_bindgen::{prelude::wasm_bindgen, JsValue};
+use web_sys::console;
 
 use crate::{
     error::ToJsResult,
@@ -75,10 +76,6 @@ pub fn calcCloseShort(
 ///
 /// @param closeVaultSharePrice - The current vault share price, or if the
 /// position has matured, the vault share price from the closing checkpoint
-///
-/// @param maturityTime - The maturity timestamp of the short (in seconds)
-///
-/// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcShortMarketValue(
     poolInfo: &JsPoolInfo,
@@ -93,26 +90,44 @@ pub fn calcShortMarketValue(
     };
 
     // p is the current pool spot price
-    let spot_price = state.calculate_spot_price().unwrap().to_fixed_point()?;
+    let spot_price = state
+        .calculate_spot_price()
+        .to_js_result()?
+        .to_fixed_point()?;
 
-    //
-    // c is the current vault share price if the position hasn't matured, or it is the share price at the maturity checkpoint
-    // c0 is the open vault share price
-    // dy is the amount of bonds they shorted
+    console::log_2(&"spot_price".into(), &format!("{:?}", spot_price).into());
+
+    // dy is the bonds shorted
     let bond_amount = bondAmount.to_fixed_point()?;
+    console::log_2(&"bond_amount".into(), &format!("{:?}", bond_amount).into());
+
+    // c0 is the open vault share price
     let open_vault_share_price = openVaultSharePrice.to_fixed_point()?;
+    console::log_2(
+        &"open_vault_share_price".into(),
+        &format!("{:?}", open_vault_share_price).into(),
+    );
+
+    // c is the closing vault share price
     let close_vault_share_price = closeVaultSharePrice.to_fixed_point()?;
+    console::log_2(
+        &"close_vault_share_price".into(),
+        &format!("{:?}", close_vault_share_price).into(),
+    );
 
     // account for variable interest accrued
     //  (c/c0 * dy)
     let interest = close_vault_share_price
         .div(open_vault_share_price)
         .mul(bond_amount);
+    console::log_2(&"interest".into(), &format!("{:?}", interest).into());
 
     // 1 - p
-    let one_minus_p = FixedPoint::from(1).sub(spot_price);
+    let one_minus_p = fixed!(1e18).sub(spot_price);
+    console::log_2(&"one_minus_p".into(), &format!("{:?}", one_minus_p).into());
 
     let result = interest.mul(one_minus_p);
+    console::log_2(&"result".into(), &format!("{:?}", result).into());
 
     Ok(result.to_u256()?.to_string())
 }
