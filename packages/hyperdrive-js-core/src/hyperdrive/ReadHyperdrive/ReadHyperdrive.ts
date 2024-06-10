@@ -123,7 +123,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Convert an amount of shares to base tokens using the current vault share price.
    */
-  protected async convertToBase({
+  async convertToBase({
     sharesAmount,
     options,
   }: {
@@ -141,7 +141,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Convert an amount of base tokens to shares using the current vault share price.
    */
-  protected async convertToShares({
+  async convertToShares({
     baseAmount,
     options,
   }: {
@@ -1831,7 +1831,10 @@ export class ReadHyperdrive extends ReadModel {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<{ amountOut: bigint; flatPlusCurveFee: bigint }> {
+  }): Promise<{
+    amountOut: bigint;
+    flatPlusCurveFee: bigint;
+  }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -1876,15 +1879,6 @@ export class ReadHyperdrive extends ReadModel {
     );
     const flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
 
-    console.log(
-      convertBigIntsToStrings(poolInfo),
-      convertBigIntsToStrings(poolConfig),
-      shortAmountIn.toString(),
-      openSharePrice.toString(),
-      closeSharePrice.toString(),
-      maturityTime.toString(),
-      currentTime.toString(),
-    );
     const amountOutInShares = BigInt(
       hyperwasm.calcCloseShort(
         convertBigIntsToStrings(poolInfo),
