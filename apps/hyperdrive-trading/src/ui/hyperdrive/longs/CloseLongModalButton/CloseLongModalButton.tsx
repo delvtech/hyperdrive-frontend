@@ -8,7 +8,7 @@ import { CloseLongForm } from "src/ui/hyperdrive/longs/CloseLongForm/CloseLongFo
 export interface CloseLongModalButtonProps {
   modalId: string;
   hyperdrive: HyperdriveConfig;
-  long: Long;
+  long: Long | undefined;
 }
 export function CloseLongModalButton({
   modalId,

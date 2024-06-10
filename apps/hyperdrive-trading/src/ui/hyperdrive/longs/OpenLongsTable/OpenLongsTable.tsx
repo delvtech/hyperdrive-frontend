@@ -2,7 +2,6 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { OpenLongsTableDesktop } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktop";
-import { OpenLongsTableMobile } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableMobile";
 
 export function OpenLongsTable({
   hyperdrive,
@@ -10,8 +9,8 @@ export function OpenLongsTable({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isSmallScreenView = useIsTailwindSmallScreen();
-  if (isSmallScreenView) {
-    return <OpenLongsTableMobile hyperdrive={hyperdrive} />;
-  }
+  // if (isSmallScreenView) {
+  //   return <OpenLongsTableMobile hyperdrive={hyperdrive} />;
+  // }
   return <OpenLongsTableDesktop hyperdrive={hyperdrive} />;
 }

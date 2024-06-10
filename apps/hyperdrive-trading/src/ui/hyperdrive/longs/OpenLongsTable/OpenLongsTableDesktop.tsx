@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { OpenLongReceived } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
@@ -26,9 +26,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
@@ -43,13 +41,19 @@ export function OpenLongsTableDesktop({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
-  const { openLongs, openLongsStatus } = useOpenLongs({
+  // const { openLongs, openLongsStatus } = useOpenLongs({
+  //   account,
+  //   hyperdriveAddress: hyperdrive.address,
+  // });
+
+  const { openLongsReceived, openLongsReceivedStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  console.log("openLongsReceived", openLongsReceived);
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
-    data: openLongs || [],
+    data: openLongsReceived || [],
     initialState: {
       sorting: [
         {
@@ -74,7 +78,7 @@ export function OpenLongsTableDesktop({
       </div>
     );
   }
-  if (openLongsStatus === "loading") {
+  if (openLongsReceivedStatus === "loading") {
     return (
       <LoadingState
         heading="Loading your Longs..."
@@ -83,7 +87,7 @@ export function OpenLongsTableDesktop({
     );
   }
 
-  if (!openLongs?.length && openLongsStatus === "success") {
+  if (!openLongsReceived?.length && openLongsReceivedStatus === "success") {
     if (marketState?.isPaused) {
       return (
         <div className="my-28">
@@ -110,17 +114,26 @@ export function OpenLongsTableDesktop({
   return (
     <div className="overflow-x-clip">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
-      {tableInstance.getRowModel().rows.map((row) => {
+      {/* {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
         return (
           <CloseLongModalButton
             key={modalId}
             hyperdrive={hyperdrive}
             modalId={modalId}
-            long={row.original}
+            long={
+              row.original.details
+                ? row.original.details
+                : {
+                    assetId: row.original.assetId,
+                    maturity: row.original.maturity,
+                    bondAmount: undefined,
+                    baseAmountPaid: undefined,
+                  }
+            }
           />
         );
-      })}
+      })} */}
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -194,7 +207,7 @@ export function OpenLongsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<Long>();
+const columnHelper = createColumnHelper<OpenLongReceived>();
 
 function getColumns({
   hyperdrive,
@@ -215,14 +228,17 @@ function getColumns({
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
     }),
-    columnHelper.accessor("bondAmount", {
+    columnHelper.accessor("details.bondAmount", {
       id: "size",
       header: `Size (hy${baseToken.symbol})`,
       cell: ({ row }) => {
+        // if (!row.original.details) {
+        //   return <span>Cannot be displayed</span>;
+        // }
         return (
           <span className="flex w-20 justify-end">
             {formatBalance({
-              balance: row.original.bondAmount,
+              balance: row.original.value,
               decimals: baseToken.decimals,
               places: baseToken.places,
             })}
@@ -230,11 +246,11 @@ function getColumns({
         );
       },
     }),
-    columnHelper.accessor("baseAmountPaid", {
+    columnHelper.accessor("value", {
       id: "valuePaid",
       header: `Cost (${baseToken.symbol})`,
-      cell: (baseAmountPaid) => {
-        const amountPaid = baseAmountPaid.getValue();
+      cell: (value) => {
+        const amountPaid = value.getValue();
         return (
           <span className="flex w-16 justify-end">
             {formatBalance({
@@ -250,26 +266,29 @@ function getColumns({
       id: "fixedRate",
       header: `Fixed APR`,
       cell: ({ row }) => {
+        if (!row.original.details) {
+          return <span>Cannot be displayed</span>;
+        }
         return (
           <FixedRateCell
             vertical
             hyperdrive={hyperdrive}
-            baseAmountPaid={row.original.baseAmountPaid}
-            bondAmount={row.original.bondAmount}
+            baseAmountPaid={row.original.details.baseAmountPaid}
+            bondAmount={row.original.details.bondAmount}
           />
         );
       },
       sortingFn: (rowA, rowB) => {
         const aFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowA.original.baseAmountPaid,
-          amountAfter: rowA.original.bondAmount,
+          amountBefore: rowA.original.details?.baseAmountPaid ?? 0n,
+          amountAfter: rowA.original?.details?.bondAmount ?? 0n,
           days: convertMillisecondsToDays(
             Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
         });
         const bFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowB.original.baseAmountPaid,
-          amountAfter: rowB.original.bondAmount,
+          amountBefore: rowB.original?.details?.baseAmountPaid ?? 0n,
+          amountAfter: rowB.original?.details?.bondAmount ?? 0n,
           days: convertMillisecondsToDays(
             Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
@@ -281,7 +300,15 @@ function getColumns({
       id: "value",
       header: `Current Value (${baseToken.symbol})`,
       cell: ({ row }) => {
-        return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
+        if (!row.original.details) {
+          return <span>Cannot be displayed</span>;
+        }
+        return (
+          <CurrentValueCell
+            hyperdrive={hyperdrive}
+            row={row.original.details}
+          />
+        );
       },
     }),
     columnHelper.display({
@@ -321,7 +348,7 @@ function getColumns({
                   title={`Hyperdrive - Long position has matured`}
                   description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
                 />
-                <PositionActionsMenu position={row.original} />
+                {/* <PositionActionsMenu position={row.original} /> */}
               </ul>
             </div>
           </div>

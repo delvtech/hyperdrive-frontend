@@ -32,7 +32,7 @@ import { hyperwasm } from "src/hyperwasm";
 import {
   ClosedLong,
   Long,
-  OpenLongPositionReceivedWithoutDetails,
+  OpenLongReceived as OpenLongReceivedWithoutDetails,
 } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
@@ -807,20 +807,21 @@ export class ReadHyperdrive extends ReadModel {
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
-  // TODO: Rename this to getOpenLongs once this function replaces the existing getOpenLongs
-  async getOpenLongPositions({
+  async getOpenLongs({
     account,
     options,
   }: {
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<OpenLongPositionReceivedWithoutDetails[]> {
+  }): Promise<OpenLongReceivedWithoutDetails[]> {
     const toBlock = getBlockFromReadOptions(options);
 
     const transfersReceived = await this.contract.getEvents("TransferSingle", {
       filter: { to: account },
       toBlock,
     });
+
+    console.log("transfersReceived", transfersReceived);
     const transfersSent = await this.contract.getEvents("TransferSingle", {
       filter: { from: account },
       toBlock,
@@ -846,15 +847,12 @@ export class ReadHyperdrive extends ReadModel {
       (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
-    const openLongs: Record<string, OpenLongPositionReceivedWithoutDetails> =
-      {};
+    const openLongs: Record<string, OpenLongReceivedWithoutDetails> = {};
 
     orderedLongEvents.forEach((event) => {
       const assetId = event.args.id.toString();
 
-      const long: OpenLongPositionReceivedWithoutDetails = openLongs[
-        assetId
-      ] || {
+      const long: OpenLongReceivedWithoutDetails = openLongs[assetId] || {
         assetId,
         maturity: decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
@@ -864,7 +862,7 @@ export class ReadHyperdrive extends ReadModel {
 
       const isLongReceived = event.args.to === account;
       if (isLongReceived) {
-        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
+        const updatedLong: OpenLongReceivedWithoutDetails = {
           ...long,
           value: long.value + event.args.value,
         };
@@ -882,7 +880,7 @@ export class ReadHyperdrive extends ReadModel {
         }
         // otherwise just subtract the amount of bonds they closed and baseAmount
         // they received back from the running total
-        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
+        const updatedLong: OpenLongReceivedWithoutDetails = {
           ...long,
           value: long.value - event.args.value,
         };
@@ -902,7 +900,7 @@ export class ReadHyperdrive extends ReadModel {
     options?: ContractReadOptions;
   }): Promise<Long | undefined> {
     const decimals = await this.getDecimals();
-    const allLongPositions = await this.getOpenLongPositions({
+    const allLongPositions = await this.getOpenLongs({
       account,
       options,
     });
@@ -943,39 +941,6 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     return openLongDetails;
-  }
-  /**
-   * @deprecated Use ReadHyperdrive.getOpenLongPositions and ReadHyperdrive.getOpenLongDetails instead to retrieve all longs opened or received by a user.
-   * Gets the active longs opened by a specific user.
-   * @param account - The user's address
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the active longs opened by a specific user
-   */
-  async getOpenLongs({
-    account,
-    options,
-  }: {
-    account: `0x${string}`;
-    options?: ContractReadOptions;
-  }): Promise<Long[]> {
-    const toBlock = getBlockFromReadOptions(options);
-
-    const openLongEvents = await this.contract.getEvents("OpenLong", {
-      filter: { trader: account },
-      toBlock,
-    });
-    const closeLongEvents = await this.contract.getEvents("CloseLong", {
-      filter: { trader: account },
-      toBlock,
-    });
-
-    const decimals = await this.getDecimals();
-
-    return this._calcOpenLongs({
-      openLongEvents,
-      closeLongEvents,
-      decimals,
-    });
   }
 
   /**
