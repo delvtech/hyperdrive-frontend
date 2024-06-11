@@ -113,6 +113,26 @@ export function OpenShortPreview({
           )
         }
       />
+      <LabelValue
+        label="Net Short Rate"
+        value={
+          shortRateStatus === "loading" ? (
+            <Skeleton width={100} />
+          ) : (
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                {
+                  "border-b border-dashed border-current": spotRateAfterOpen,
+                },
+              )}
+              data-tip="The annualized return on shorts assuming the current yield source rate stays the same for one year"
+            >
+              {shortApr ? `${shortApr.formatted}% APR` : "-"}
+            </span>
+          )
+        }
+      />
       <div className="flex flex-col gap-3">
         <h6 className="font-medium">Market Impact</h6>
         <LabelValue
@@ -154,26 +174,6 @@ export function OpenShortPreview({
                 data-tip={`The net market impact on the fixed rate after opening the short.`}
               >
                 {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
-              </span>
-            )
-          }
-        />
-        <LabelValue
-          label="Net Short Rate"
-          value={
-            shortRateStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                  {
-                    "border-b border-dashed border-current": spotRateAfterOpen,
-                  },
-                )}
-                data-tip="The market short APR after opening the short."
-              >
-                {shortApr ? `${shortApr.formatted}% APR` : "-"}
               </span>
             )
           }
