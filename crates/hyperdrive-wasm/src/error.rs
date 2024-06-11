@@ -12,6 +12,36 @@ pub enum HyperdriveWasmError {
     Generic(String, String),
 }
 
+// Macros //
+
+#[macro_export]
+macro_rules! error_at {
+    ($location:expr, $($arg:tt)*) => {
+        $crate::error::HyperdriveWasmError::Generic(format!($($arg)*), $location.to_string())
+    };
+}
+
+#[macro_export]
+macro_rules! error {
+    ($($arg:tt)*) => {
+        $crate::error_at!(::std::panic::Location::caller(), $($arg)*)
+    };
+}
+
+#[macro_export]
+macro_rules! type_error_at {
+    ($location:expr, $($arg:tt)*) => {
+        $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), $location.to_string())
+    };
+}
+
+#[macro_export]
+macro_rules! type_error {
+    ($($arg:tt)*) => {
+        $crate::type_error_at!(::std::panic::Location::caller(), $($arg)*)
+    };
+}
+
 // Conversions //
 
 // Convert a HyperdriveWasmError to a JsValue via `.into()` or `::from()`
@@ -79,34 +109,13 @@ where
     }
 }
 
-// Macros //
-
-#[macro_export]
-macro_rules! error_at {
-    ($location:expr, $($arg:tt)*) => {
-        $crate::error::HyperdriveWasmError::Generic(format!($($arg)*), $location.to_string())
-    };
-}
-
-#[macro_export]
-macro_rules! error {
-    ($($arg:tt)*) => {
-        $crate::error_at!(::std::panic::Location::caller(), $($arg)*)
-    };
-}
-
-#[macro_export]
-macro_rules! type_error_at {
-    ($location:expr, $($arg:tt)*) => {
-        $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), $location.to_string())
-    };
-}
-
-#[macro_export]
-macro_rules! type_error {
-    ($($arg:tt)*) => {
-        $crate::type_error_at!(::std::panic::Location::caller(), $($arg)*)
-    };
+impl<T> ToHyperdriveWasmResult<T> for Option<T>
+where
+    T: ToHyperdriveWasmError,
+{
+    fn to_result_at(self, location: &Location) -> Result<T, HyperdriveWasmError> {
+        self.ok_or_else(|| error_at!(location, "Expected a value, found None"))
+    }
 }
 
 #[cfg(test)]
