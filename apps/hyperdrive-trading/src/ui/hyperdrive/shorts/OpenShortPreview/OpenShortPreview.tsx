@@ -14,6 +14,8 @@ import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
   tokenIn: TokenConfig<any>;
@@ -40,6 +42,16 @@ export function OpenShortPreview({
   });
   const { fixedApr } = useFixedRate(hyperdrive.address);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const { shortApr, shortRateStatus } = useShortRate({
+    bondAmount: shortSize,
+    hyperdriveAddress: hyperdrive.address,
+    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+    variableApy: vaultRate?.vaultRate,
+  });
+
   return (
     <div className="flex flex-col gap-3">
       <LabelValue
@@ -97,6 +109,26 @@ export function OpenShortPreview({
                     places: tokenIn.places,
                   })} ${tokenIn.symbol}`
                 : `0 ${tokenIn.symbol}`}
+            </span>
+          )
+        }
+      />
+      <LabelValue
+        label="Net Short Rate"
+        value={
+          shortRateStatus === "loading" ? (
+            <Skeleton width={100} />
+          ) : (
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                {
+                  "border-b border-dashed border-current": spotRateAfterOpen,
+                },
+              )}
+              data-tip="The annualized return on shorts assuming the current yield source rate stays the same for one year"
+            >
+              {shortApr ? `${shortApr.formatted}% APR` : "-"}
             </span>
           )
         }
