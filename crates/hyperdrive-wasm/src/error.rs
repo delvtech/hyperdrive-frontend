@@ -1,4 +1,4 @@
-use std::panic::Location;
+use std::{fmt::Debug, panic::Location};
 use thiserror::Error;
 use wasm_bindgen::JsValue;
 
@@ -32,16 +32,6 @@ pub trait ToHyperdriveWasmError {
     fn to_error_at(&self, location: &Location) -> HyperdriveWasmError;
 }
 
-// If a value can `.to_string()`, it can `.to_error()`
-impl<T> ToHyperdriveWasmError for T
-where
-    T: ToString,
-{
-    fn to_error_at(&self, location: &Location) -> HyperdriveWasmError {
-        HyperdriveWasmError::Generic(self.to_string(), location.to_string())
-    }
-}
-
 // If a value can `.into()` a String, it can `.into()` a HyperdriveWasmError
 impl<T> From<T> for HyperdriveWasmError
 where
@@ -51,6 +41,16 @@ where
     fn from(t: T) -> Self {
         let location = Location::caller();
         t.into().to_error_at(location)
+    }
+}
+
+// If a value can `.fmt()` as Debug, it can `.to_error()`
+impl<T> ToHyperdriveWasmError for T
+where
+    T: Debug,
+{
+    fn to_error_at(&self, location: &Location) -> HyperdriveWasmError {
+        HyperdriveWasmError::Generic(format!("{:?}", self), location.to_string())
     }
 }
 
