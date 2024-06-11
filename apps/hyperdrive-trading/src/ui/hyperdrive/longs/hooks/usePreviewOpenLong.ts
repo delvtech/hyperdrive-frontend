@@ -1,10 +1,8 @@
-import {
-  findHyperdriveConfig,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
@@ -29,24 +27,9 @@ export function usePreviewOpenLong({
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+
   const appConfig = useAppConfig();
-
-  const hyperdriveConfig = findHyperdriveConfig({
-    hyperdrives: appConfig.hyperdrives,
-    hyperdriveAddress,
-  });
-
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdriveConfig.sharesToken,
-    tokens: appConfig.tokens,
-  });
-
-  const prepper = getPrepFnByName(sharesToken.extensions.prepFn);
-
-  if (!asBase) {
-    amountIn = prepper(amountIn);
-  }
-  const queryEnabled = !!amountIn && !!readHyperdrive;
+  const queryEnabled = amountIn !== undefined && !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
     watch: true,
     query: { enabled: queryEnabled },
@@ -60,18 +43,21 @@ export function usePreviewOpenLong({
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () =>
-          readHyperdrive.previewOpenLong({
-            amountIn,
+      ? async () => {
+          return readHyperdrive.previewOpenLong({
+            amountIn: asBase
+              ? amountIn
+              : await prepareSharesIn({
+                  appConfig,
+                  hyperdriveAddress,
+                  readHyperdrive,
+                  sharesAmount: amountIn,
+                }),
             asBase,
-          })
+          });
+        }
       : undefined,
   });
-
-  let queryStatus: UsePreviewOpenLongResult["status"] = status;
-  if (fetchStatus === "idle" && status === "loading") {
-    queryStatus = "idle";
-  }
 
   return {
     bondsReceived: data?.bondProceeds,
@@ -79,6 +65,6 @@ export function usePreviewOpenLong({
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status: queryStatus,
+    status: getStatus(status, fetchStatus),
   };
 }
