@@ -198,12 +198,22 @@ export function OpenLongPreview({
               >
                 {long.bondAmount > 0 ? (
                   <span className="cursor-help border-b border-dashed border-success text-success">
-                    {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                    {long.bondAmount -
+                    (asBase || sharesToken.extensions.isSharesPeggedToBase
+                      ? long.baseAmountPaid
+                      : convertSharesToBase({
+                          sharesAmount: long.baseAmountPaid,
+                          vaultSharePrice: vaultSharePrice,
+                          decimals: baseToken.decimals,
+                        }))
+                      ? "+"
+                      : ""}
                     {long.baseAmountPaid
                       ? `${formatBalance({
                           balance:
                             long.bondAmount -
-                            (asBase
+                            (asBase ||
+                            sharesToken.extensions.isSharesPeggedToBase
                               ? long.baseAmountPaid
                               : convertSharesToBase({
                                   sharesAmount: long.baseAmountPaid,
