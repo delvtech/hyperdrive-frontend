@@ -65,6 +65,7 @@ pub trait ToHyperdriveWasmResult<T> {
         self.to_result_at(Location::caller())
     }
 
+    /// Convert a value to a `Result<T, HyperdriveWasmError>` with a provided location
     fn to_result_at(self, location: &Location) -> Result<T, HyperdriveWasmError>;
 }
 
