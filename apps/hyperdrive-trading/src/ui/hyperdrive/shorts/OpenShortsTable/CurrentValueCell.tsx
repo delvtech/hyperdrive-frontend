@@ -8,6 +8,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
+import { formatUnits } from "viem";
 
 export function CurrentValueCell({
   openShort,
@@ -25,6 +26,7 @@ export function CurrentValueCell({
 
   const {
     amountOut: currentValueInBase,
+    marketEstimate,
     previewCloseShortStatus,
     previewCloseShortError,
   } = usePreviewCloseShort({
@@ -32,6 +34,10 @@ export function CurrentValueCell({
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
   });
+  if (marketEstimate && currentValueInBase) {
+    console.log("marketEstimate", formatUnits(marketEstimate, 18));
+    console.log("preview amount out", formatUnits(currentValueInBase, 18));
+  }
 
   const currentValueLabel = formatBalance({
     balance: currentValueInBase || 0n,

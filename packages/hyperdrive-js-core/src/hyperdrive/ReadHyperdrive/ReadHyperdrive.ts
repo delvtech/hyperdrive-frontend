@@ -1834,6 +1834,7 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{
     amountOut: bigint;
     flatPlusCurveFee: bigint;
+    marketEstimate: bigint;
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
@@ -1891,9 +1892,20 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
+    const marketEstimate = BigInt(
+      hyperwasm.calcShortMarketValue(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        openSharePrice.toString(),
+        closeSharePrice.toString(),
+      ),
+    );
+    console.log("marketEstimate", marketEstimate);
     if (!asBase) {
       return {
         amountOut: amountOutInShares,
+        marketEstimate: marketEstimate,
         flatPlusCurveFee,
       };
     }
@@ -1901,6 +1913,10 @@ export class ReadHyperdrive extends ReadModel {
     return {
       amountOut: await this.convertToBase({
         sharesAmount: amountOutInShares,
+        options,
+      }),
+      marketEstimate: await this.convertToBase({
+        sharesAmount: marketEstimate,
         options,
       }),
       flatPlusCurveFee: await this.convertToBase({
