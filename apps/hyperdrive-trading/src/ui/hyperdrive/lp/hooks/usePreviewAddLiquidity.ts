@@ -18,6 +18,7 @@ interface UsePreviewAddLiquidityOptions {
 
 interface UsePreviewAddLiquidityResult {
   status: "error" | "idle" | "loading" | "success";
+  previewAddLiquidityError: string;
   lpSharesOut: bigint | undefined;
 }
 
@@ -50,7 +51,7 @@ export function usePreviewAddLiquidity({
     query: { enabled: queryEnabled },
   });
 
-  const { data, status, fetchStatus } = useQuery({
+  const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,
       destination,
@@ -84,6 +85,7 @@ export function usePreviewAddLiquidity({
 
   return {
     status: queryStatus,
+    previewAddLiquidityError: error as string,
     lpSharesOut: data?.lpSharesOut,
   };
 }
