@@ -1,7 +1,7 @@
 // appconfigs
 export type { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
-
+export { cloudChainAppConfig } from "src/generated/42069.appconfig";
 // appconfig helpers
 export { findBaseToken } from "src/appconfig/helpers/findBaseToken";
 export { findHyperdriveConfig } from "src/appconfig/helpers/findHyperdriveConfig";
