@@ -51,6 +51,7 @@ export function OpenLongPreview({
   const { fixedApr } = useFixedRate(hyperdrive.address);
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
+  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-3">
@@ -117,16 +118,15 @@ export function OpenLongPreview({
                       calculateAprFromPrice({
                         positionDuration:
                           hyperdrive.poolConfig.positionDuration || 0n,
-                        baseAmount:
-                          asBase || sharesToken.extensions.isSharesPeggedToBase
-                            ? long.baseAmountPaid
-                            : // TODO: move sharesAmountPaid into the sdk's Long interface
-                              // instead of converting here
-                              convertSharesToBase({
-                                sharesAmount: long.baseAmountPaid,
-                                vaultSharePrice: vaultSharePrice,
-                                decimals: activeToken.decimals,
-                              }),
+                        baseAmount: isBaseAmount
+                          ? long.baseAmountPaid
+                          : // TODO: move sharesAmountPaid into the sdk's Long interface
+                            // instead of converting here
+                            convertSharesToBase({
+                              sharesAmount: long.baseAmountPaid,
+                              vaultSharePrice: vaultSharePrice,
+                              decimals: activeToken.decimals,
+                            }),
                         bondAmount: long.bondAmount,
                       }),
                       baseToken.decimals,
@@ -198,12 +198,21 @@ export function OpenLongPreview({
               >
                 {long.bondAmount > 0 ? (
                   <span className="cursor-help border-b border-dashed border-success text-success">
-                    {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                    {long.bondAmount -
+                    (isBaseAmount
+                      ? long.baseAmountPaid
+                      : convertSharesToBase({
+                          sharesAmount: long.baseAmountPaid,
+                          vaultSharePrice: vaultSharePrice,
+                          decimals: baseToken.decimals,
+                        }))
+                      ? "+"
+                      : ""}
                     {long.baseAmountPaid
                       ? `${formatBalance({
                           balance:
                             long.bondAmount -
-                            (asBase
+                            (isBaseAmount
                               ? long.baseAmountPaid
                               : convertSharesToBase({
                                   sharesAmount: long.baseAmountPaid,
