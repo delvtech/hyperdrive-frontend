@@ -50,6 +50,7 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
 export class ReadHyperdrive extends ReadModel {
+  readonly address: Address;
   readonly contract: CachedReadContract<HyperdriveAbi>;
 
   /**
@@ -64,6 +65,7 @@ export class ReadHyperdrive extends ReadModel {
     namespace,
   }: ReadHyperdriveOptions) {
     super({ contractFactory, name, network });
+    this.address = address;
     this.contract = contractFactory({
       abi: hyperdriveAbi,
       address,
