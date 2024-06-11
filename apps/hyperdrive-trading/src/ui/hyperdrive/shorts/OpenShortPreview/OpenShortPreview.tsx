@@ -159,7 +159,7 @@ export function OpenShortPreview({
           }
         />
         <LabelValue
-          label="Short APR after open"
+          label="Net Short Rate"
           value={
             shortRateStatus === "loading" ? (
               <Skeleton width={100} />
