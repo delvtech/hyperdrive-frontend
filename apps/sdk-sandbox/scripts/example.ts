@@ -1,9 +1,18 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import {
+  findYieldSourceHyperdrives,
+  sepoliaAppConfig,
+} from "@hyperdrive/appconfig";
 import { formatEther } from "viem";
 import { publicClient } from "../client";
 
+const makerDeployments = findYieldSourceHyperdrives({
+  appConfig: sepoliaAppConfig,
+  yieldSourceId: "maker",
+});
+
 const hyperdrive = new ReadHyperdrive({
-  address: "0xA975225D750dFC948171710739F1b3BBAd5d7451",
+  address: makerDeployments[0].address,
   publicClient,
 });
 
