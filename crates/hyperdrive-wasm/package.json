@@ -10,7 +10,9 @@
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",
     "@types/node": "^20.12.8",
+    "@types/proper-lockfile": "^4.1.4",
     "onchange": "^7.1.0",
+    "proper-lockfile": "^4.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "wasm-pack": "^0.12.1"
