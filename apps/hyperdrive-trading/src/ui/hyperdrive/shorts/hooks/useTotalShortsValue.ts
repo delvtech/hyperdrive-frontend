@@ -39,8 +39,8 @@ export function useTotalShortsValue({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          let totalShortsValue = 0n;
           if (activeOpenOrClosedTab === "Closed" && isClosedShorts(shorts)) {
-            let totalShortsValue = 0n;
             shorts.forEach((short) => {
               totalShortsValue += short.baseAmountReceived;
             });
@@ -56,7 +56,6 @@ export function useTotalShortsValue({
 
           const results = await Promise.all(promises);
 
-          let totalShortsValue = 0n;
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,

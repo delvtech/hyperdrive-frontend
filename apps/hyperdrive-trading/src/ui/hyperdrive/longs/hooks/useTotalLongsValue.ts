@@ -37,8 +37,8 @@ export function useTotalLongsValue({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          let totalLongsValue = 0n;
           if (activeOpenOrClosedTab === "Closed" && isClosedLongs(longs)) {
-            let totalLongsValue = 0n;
             longs.forEach((long) => {
               totalLongsValue += long.baseAmount;
             });
@@ -54,7 +54,6 @@ export function useTotalLongsValue({
 
           const results = await Promise.all(promises);
 
-          let totalLongsValue = 0n;
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
