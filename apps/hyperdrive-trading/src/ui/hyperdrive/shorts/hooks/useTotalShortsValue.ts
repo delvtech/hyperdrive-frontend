@@ -45,30 +45,28 @@ export function useTotalShortsValue({
               totalShortsValue += short.baseAmountReceived;
             });
             return totalShortsValue;
-          } else if (activeOpenOrClosedTab === "Open") {
-            const promises = (shorts as Short[]).map((short) =>
-              readHyperdrive.previewCloseShort({
-                maturityTime: short.maturity,
-                shortAmountIn: short.bondAmount,
-                asBase: false,
-              }),
-            );
-
-            const results = await Promise.all(promises);
-
-            let totalShortsValue = 0n;
-            results.forEach((result) => {
-              const amountOutInBase = convertSharesToBase({
-                decimals: hyperdrive.decimals,
-                sharesAmount: result.amountOut,
-                vaultSharePrice: poolInfo?.vaultSharePrice,
-              });
-              totalShortsValue += amountOutInBase || 0n;
-            });
-
-            return totalShortsValue;
           }
-          return 0n;
+          const promises = shorts.map((short) =>
+            readHyperdrive.previewCloseShort({
+              maturityTime: short.maturity,
+              shortAmountIn: short.bondAmount,
+              asBase: false,
+            }),
+          );
+
+          const results = await Promise.all(promises);
+
+          let totalShortsValue = 0n;
+          results.forEach((result) => {
+            const amountOutInBase = convertSharesToBase({
+              decimals: hyperdrive.decimals,
+              sharesAmount: result.amountOut,
+              vaultSharePrice: poolInfo?.vaultSharePrice,
+            });
+            totalShortsValue += amountOutInBase || 0n;
+          });
+
+          return totalShortsValue;
         }
       : undefined,
   });
