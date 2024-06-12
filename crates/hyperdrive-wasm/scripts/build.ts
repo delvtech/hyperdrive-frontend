@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 import { spawnSync } from "child_process";
-import { appendFileSync, readFileSync, rmSync, writeFileSync } from "fs";
+import {
+  appendFileSync,
+  existsSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  writeFileSync,
+} from "fs";
 import { readFile } from "fs/promises";
 import { basename, resolve } from "path";
 import { version } from "../package.json";
@@ -25,6 +32,7 @@ console.log(`
 
 async function main() {
   const outDir = resolve(args[0] || DEFAULT_OUT_DIR);
+  const backupPath = `${outDir}_backup`;
 
   // Log settings
   console.log("Version: ", version);
@@ -41,11 +49,11 @@ async function main() {
     ),
   );
 
-  // Reset the output dir and build the package with the "@delvtech/" scope
+  // Create a backup of the previous build if it exists
+  backupBuild(outDir, backupPath);
+
+  // Build the package with the "@delvtech/" scope
   console.log("Building package...");
-  const changelogPath = resolve(outDir, "CHANGELOG.md");
-  const changelog = readFileSync(changelogPath, "utf8");
-  rmSync(outDir, { recursive: true, force: true });
   const buildProcessResult = spawnSync(
     "npx",
     [
@@ -62,10 +70,23 @@ async function main() {
       stdio: "inherit",
     },
   );
-  writeFileSync(changelogPath, changelog);
 
+  // Restore the previous build and exit if the build failed
   if (buildProcessResult.error) {
+    restoreBackup(outDir, backupPath);
     process.exit(1);
+  }
+
+  // Restore the changelog and remove the previous build if it exists
+  if (existsSync(backupPath)) {
+    const changelogPath = resolve(backupPath, "CHANGELOG.md");
+    if (existsSync(changelogPath)) {
+      console.log("Restoring previous changelog...");
+      renameSync(changelogPath, resolve(outDir, "CHANGELOG.md"));
+    }
+
+    console.log("Removing previous build...");
+    rmSync(backupPath, { recursive: true });
   }
 
   console.log("Modifying package for increased compatibility...");
@@ -108,15 +129,55 @@ export const wasmBuffer: ArrayBuffer;`,
 
   // Add a main field for improved commonjs compatibility.
   packageJson.main = "hyperdrive_wasm.js";
-  
+
   // Explicitly set the publishConfig access to public to ensure it's published
   // by changesets.
   packageJson.publishConfig = { access: "public" };
-  
+
   writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
-  
+
   // Remove the .gitignore, we want the compiled wasm to be checked in
   rmSync(resolve(outDir, ".gitignore"));
+
+  console.log("Done!");
+}
+
+function backupBuild(outDir: string, backupPath: string) {
+  // Don't overwrite existing backups
+  if (!existsSync(outDir) || existsSync(backupPath)) {
+    return;
+  }
+
+  console.log("Creating backup of previous build at: ", backupPath);
+  renameSync(outDir, backupPath);
+
+  // There's an edge case found with the watcher where an npm script is run
+  // after the new package.json is created and the backup is still present.
+  // When this happens, yarn workspaces will throw an error about having
+  // multiple packages with the same name. To avoid this, we temporarily
+  // rename the backup package.json to avoid conflicts.
+  renameSync(
+    resolve(backupPath, "package.json"),
+    resolve(backupPath, "package.json.backup"),
+  );
+}
+
+function restoreBackup(outDir: string, backupPath: string) {
+  if (!existsSync(backupPath)) {
+    return;
+  }
+
+  console.log("Restoring backup of previous build from: ", backupPath);
+
+  if (existsSync(outDir)) {
+    rmSync(outDir, { recursive: true });
+  }
+
+  renameSync(backupPath, outDir);
+  renameSync(
+    resolve(outDir, "package.json.backup"),
+    resolve(outDir, "package.json"),
+  );
 }
 
 main()
