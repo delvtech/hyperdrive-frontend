@@ -10,15 +10,18 @@ export function useTotalClosedLongsValue({
   hyperdrive,
   account,
   closedLongs,
+  enabled,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
   closedLongs: ClosedLong[] | undefined;
+  enabled: boolean;
 }): { totalClosedLongsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
-  const queryEnabled = !!account && !!closedLongs && !!readHyperdrive;
+  const queryEnabled =
+    !!account && !!closedLongs && !!readHyperdrive && enabled;
 
   const { data: totalClosedLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalClosedLongsValue", {

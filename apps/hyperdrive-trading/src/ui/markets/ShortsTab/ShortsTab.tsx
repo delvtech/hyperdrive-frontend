@@ -36,12 +36,14 @@ export function ShortsTab({
       hyperdrive,
       account,
       shorts: openShorts,
+      enabled: activeOpenOrClosedTab === "Open",
     });
   const { totalClosedShortsValue, isLoading: isTotalClosedValueLoading } =
     useTotalClosedShortsValue({
       hyperdrive,
       account,
       closedShorts,
+      enabled: activeOpenOrClosedTab === "Closed",
     });
 
   const baseToken = findBaseToken({

@@ -36,12 +36,14 @@ export function LongsTab({
       hyperdrive,
       account,
       longs: openLongs,
+      enabled: activeOpenOrClosedTab === "Open",
     });
   const { totalClosedLongsValue, isLoading: isTotalClosedLongsValueLoading } =
     useTotalClosedLongsValue({
       hyperdrive,
       account,
       closedLongs,
+      enabled: activeOpenOrClosedTab === "Closed",
     });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,

@@ -11,15 +11,18 @@ export function useTotalOpenShortsValue({
   hyperdrive,
   account,
   shorts,
+  enabled,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
   shorts: Short[] | undefined;
+  enabled: boolean;
 }): { totalOpenShortsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
-  const queryEnabled = !!account && !!shorts && !!readHyperdrive && !!poolInfo;
+  const queryEnabled =
+    !!account && !!shorts && !!readHyperdrive && !!poolInfo && enabled;
 
   const { data: totalOpenShortsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalOpenShortsValue", {

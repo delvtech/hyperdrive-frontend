@@ -12,15 +12,18 @@ export function useTotalOpenLongsValue({
   hyperdrive,
   account,
   longs,
+  enabled,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
   longs: Long[] | undefined;
+  enabled: boolean;
 }): { totalOpenLongsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
-  const queryEnabled = !!account && !!longs && !!readHyperdrive && !!poolInfo;
+  const queryEnabled =
+    !!account && !!longs && !!readHyperdrive && !!poolInfo && enabled;
 
   const { data: totalOpenLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalLongsValue", {
