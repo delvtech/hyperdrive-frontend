@@ -10,6 +10,7 @@
   "dependencies": {
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
+    "@hyperdrive/appconfig": "*",
     "viem": "^2.9.2"
   },
   "devDependencies": {
