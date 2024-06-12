@@ -6,6 +6,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
+import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalLongsValue } from "src/ui/hyperdrive/longs/hooks/useTotalLongsValue";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
@@ -24,10 +25,14 @@ export function LongsTab({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { closedLongs } = useClosedLongs({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { totalLongsValue, isLoading } = useTotalLongsValue({
     hyperdrive,
     account,
-    openLongs,
+    longs: activeOpenOrClosedTab === "Open" ? openLongs : closedLongs,
   });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,

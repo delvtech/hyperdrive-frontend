@@ -1,56 +1,71 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { ClosedLong, Long } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
+
+function isClosedLongs(longs: Long[] | ClosedLong[]): longs is ClosedLong[] {
+  return (longs as ClosedLong[])[0]?.baseAmount !== undefined;
+}
 
 export function useTotalLongsValue({
   hyperdrive,
   account,
-  openLongs,
+  longs,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
-  openLongs: Long[] | undefined;
+  longs: Long[] | ClosedLong[] | undefined;
 }): { totalLongsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
-  const queryEnabled =
-    !!account && !!openLongs && !!readHyperdrive && !!poolInfo;
+  const queryEnabled = !!account && !!longs && !!readHyperdrive && !!poolInfo;
 
   const { data: totalLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalLongsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
+      activeOpenOrClosedTab,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const promises = openLongs.map((long) =>
-            readHyperdrive.previewCloseLong({
-              maturityTime: long.maturity,
-              bondAmountIn: long.bondAmount,
-              asBase: false,
-            }),
-          );
-
-          const results = await Promise.all(promises);
-
-          let totalLongsValue = 0n;
-          results.forEach((result) => {
-            const amountOutInBase = convertSharesToBase({
-              decimals: hyperdrive.decimals,
-              sharesAmount: result.amountOut,
-              vaultSharePrice: poolInfo?.vaultSharePrice,
+          if (activeOpenOrClosedTab === "Closed" && isClosedLongs(longs)) {
+            let totalLongsValue = 0n;
+            longs.forEach((long) => {
+              totalLongsValue += long.baseAmount;
             });
-            totalLongsValue += amountOutInBase || 0n;
-          });
+            return totalLongsValue;
+          } else if (activeOpenOrClosedTab === "Open") {
+            const promises = (longs as Long[]).map((long) =>
+              readHyperdrive.previewCloseLong({
+                maturityTime: long.maturity,
+                bondAmountIn: long.bondAmount,
+                asBase: false,
+              }),
+            );
 
-          return totalLongsValue;
+            const results = await Promise.all(promises);
+
+            let totalLongsValue = 0n;
+            results.forEach((result) => {
+              const amountOutInBase = convertSharesToBase({
+                decimals: hyperdrive.decimals,
+                sharesAmount: result.amountOut,
+                vaultSharePrice: poolInfo?.vaultSharePrice,
+              });
+              totalLongsValue += amountOutInBase || 0n;
+            });
+
+            return totalLongsValue;
+          }
+          return 0n;
         }
       : undefined,
   });
