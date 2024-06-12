@@ -127,6 +127,9 @@ export const wasmBuffer: ArrayBuffer;`,
     (filename: string) => !filename.startsWith("hyperdrive_wasm_bg.wasm"),
   );
 
+  // Set the type field to "module"
+  packageJson.type = "module";
+
   // Add a main field for improved commonjs compatibility.
   packageJson.main = "hyperdrive_wasm.js";
 
