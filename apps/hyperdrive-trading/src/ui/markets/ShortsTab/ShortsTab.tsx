@@ -35,8 +35,6 @@ export function ShortsTab({
     shorts: activeOpenOrClosedTab === "Open" ? openShorts : closedShorts,
   });
 
-  console.log(totalShortsValue, "totalShortsValue");
-
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,

@@ -8,6 +8,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
 
+// Typeguard for ClosedLongs
 function isClosedLongs(longs: Long[] | ClosedLong[]): longs is ClosedLong[] {
   return (longs as ClosedLong[])[0]?.baseAmount !== undefined;
 }
