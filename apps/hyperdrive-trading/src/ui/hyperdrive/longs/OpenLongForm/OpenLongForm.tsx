@@ -231,6 +231,14 @@ export function OpenLongForm({
                   : undefined}
               </span>
               <span>{`Slippage: ${slippage || "0.5"}%`}</span>
+              <a
+                className="underline"
+                href="https://discord.com/channels/754739461707006013/826211846541148211"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Need help?
+              </a>
             </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
