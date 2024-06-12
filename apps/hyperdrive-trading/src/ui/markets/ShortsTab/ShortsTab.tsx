@@ -53,7 +53,6 @@ export function ShortsTab({
     activeOpenOrClosedTab === "Open"
       ? totalOpenShortsValue
       : totalClosedShortsValue;
-  const isLoading = isTotalOpenValueLoading || isTotalClosedValueLoading;
   const shorts = activeOpenOrClosedTab === "Open" ? openShorts : closedShorts;
 
   return (
@@ -63,7 +62,7 @@ export function ShortsTab({
           <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Short Positions</h5>
-              {!isLoading ? (
+              {!isTotalOpenValueLoading || !isTotalClosedValueLoading ? (
                 shorts?.length ? (
                   <p className="text-sm text-neutral-content">
                     Total Value:{" "}

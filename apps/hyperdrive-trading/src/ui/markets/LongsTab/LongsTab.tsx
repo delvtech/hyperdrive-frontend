@@ -52,7 +52,6 @@ export function LongsTab({
     activeOpenOrClosedTab === "Open"
       ? totalOpenLongsValue
       : totalClosedLongsValue;
-  const isLoading = isTotalOpenValueLoading || isTotalClosedLongsValueLoading;
   const longs = activeOpenOrClosedTab === "Open" ? openLongs : closedLongs;
 
   return (
@@ -62,7 +61,7 @@ export function LongsTab({
           <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Long Positions</h5>
-              {!isLoading ? (
+              {!isTotalOpenValueLoading || !isTotalClosedLongsValueLoading ? (
                 longs?.length ? (
                   <p className="text-sm text-neutral-content">
                     Total Value:{" "}

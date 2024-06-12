@@ -3,6 +3,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
 
 export function useTotalClosedShortsValue({
@@ -15,6 +16,7 @@ export function useTotalClosedShortsValue({
   closedShorts: ClosedShort[] | undefined;
 }): { totalClosedShortsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const queryEnabled = !!account && !!closedShorts && !!readHyperdrive;
 
@@ -22,6 +24,7 @@ export function useTotalClosedShortsValue({
     queryKey: makeQueryKey("totalClosedShortsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
+      activeOpenOrClosedTab,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
