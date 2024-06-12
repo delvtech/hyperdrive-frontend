@@ -42,30 +42,28 @@ export function useTotalLongsValue({
               totalLongsValue += long.baseAmount;
             });
             return totalLongsValue;
-          } else if (activeOpenOrClosedTab === "Open") {
-            const promises = (longs as Long[]).map((long) =>
-              readHyperdrive.previewCloseLong({
-                maturityTime: long.maturity,
-                bondAmountIn: long.bondAmount,
-                asBase: false,
-              }),
-            );
-
-            const results = await Promise.all(promises);
-
-            let totalLongsValue = 0n;
-            results.forEach((result) => {
-              const amountOutInBase = convertSharesToBase({
-                decimals: hyperdrive.decimals,
-                sharesAmount: result.amountOut,
-                vaultSharePrice: poolInfo?.vaultSharePrice,
-              });
-              totalLongsValue += amountOutInBase || 0n;
-            });
-
-            return totalLongsValue;
           }
-          return 0n;
+          const promises = longs.map((long) =>
+            readHyperdrive.previewCloseLong({
+              maturityTime: long.maturity,
+              bondAmountIn: long.bondAmount,
+              asBase: false,
+            }),
+          );
+
+          const results = await Promise.all(promises);
+
+          let totalLongsValue = 0n;
+          results.forEach((result) => {
+            const amountOutInBase = convertSharesToBase({
+              decimals: hyperdrive.decimals,
+              sharesAmount: result.amountOut,
+              vaultSharePrice: poolInfo?.vaultSharePrice,
+            });
+            totalLongsValue += amountOutInBase || 0n;
+          });
+
+          return totalLongsValue;
         }
       : undefined,
   });

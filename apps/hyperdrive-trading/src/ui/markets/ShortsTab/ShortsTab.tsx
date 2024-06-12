@@ -4,6 +4,7 @@ import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ClosedShortsTable } from "src/ui/hyperdrive/shorts/ClosedShortsTable/ClosedShortsTable";
+import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalShortsValue";
 import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
@@ -24,11 +25,17 @@ export function ShortsTab({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { closedShorts } = useClosedShorts({
+    account,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { totalShortsValue, isLoading } = useTotalShortsValue({
     account,
     hyperdrive,
-    openShorts,
+    shorts: activeOpenOrClosedTab === "Open" ? openShorts : closedShorts,
   });
+
+  console.log(totalShortsValue, "totalShortsValue");
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -43,7 +50,9 @@ export function ShortsTab({
               <h5 className="font-medium">Short Positions</h5>
               {!isLoading ? (
                 <>
-                  {openShorts?.length ? (
+                  {(openShorts?.length && activeOpenOrClosedTab === "Open") ||
+                  (closedShorts?.length &&
+                    activeOpenOrClosedTab === "Closed") ? (
                     <p className="text-sm text-neutral-content">
                       Total Value:{" "}
                       {formatBalance({

@@ -47,7 +47,9 @@ export function LongsTab({
               <h5 className="font-medium">Long Positions</h5>
               {!isLoading ? (
                 <>
-                  {openLongs?.length ? (
+                  {(openLongs?.length && activeOpenOrClosedTab === "Open") ||
+                  (closedLongs?.length &&
+                    activeOpenOrClosedTab === "Closed") ? (
                     <p className="text-sm text-neutral-content">
                       Total Value:{" "}
                       {formatBalance({
