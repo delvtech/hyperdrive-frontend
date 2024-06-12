@@ -6,13 +6,15 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ClosedShortsTable } from "src/ui/hyperdrive/shorts/ClosedShortsTable/ClosedShortsTable";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
-import { useTotalShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalShortsValue";
+import { useTotalClosedShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalClosedShortsValue";
+import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
 import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { OpenShortsTable } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTable";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
 import { useAccount } from "wagmi";
+
 export function ShortsTab({
   hyperdrive,
 }: {
@@ -29,16 +31,31 @@ export function ShortsTab({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { totalShortsValue, isLoading } = useTotalShortsValue({
-    account,
-    hyperdrive,
-    shorts: activeOpenOrClosedTab === "Open" ? openShorts : closedShorts,
-  });
+  const { totalOpenShortsValue, isLoading: isTotalOpenValueLoading } =
+    useTotalOpenShortsValue({
+      hyperdrive,
+      account,
+      shorts: openShorts,
+    });
+  const { totalClosedShortsValue, isLoading: isTotalClosedValueLoading } =
+    useTotalClosedShortsValue({
+      hyperdrive,
+      account,
+      closedShorts,
+    });
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+
+  const totalValue =
+    activeOpenOrClosedTab === "Open"
+      ? totalOpenShortsValue
+      : totalClosedShortsValue;
+  const isLoading = isTotalOpenValueLoading || isTotalClosedValueLoading;
+  const shorts = activeOpenOrClosedTab === "Open" ? openShorts : closedShorts;
+
   return (
     <MarketDetailsTab
       positions={
@@ -47,21 +64,17 @@ export function ShortsTab({
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Short Positions</h5>
               {!isLoading ? (
-                <>
-                  {(openShorts?.length && activeOpenOrClosedTab === "Open") ||
-                  (closedShorts?.length &&
-                    activeOpenOrClosedTab === "Closed") ? (
-                    <p className="text-sm text-neutral-content">
-                      Total Value:{" "}
-                      {formatBalance({
-                        balance: totalShortsValue || 0n,
-                        decimals: baseToken.decimals,
-                        places: baseToken.places,
-                      })}{" "}
-                      {baseToken.symbol}
-                    </p>
-                  ) : undefined}
-                </>
+                shorts?.length ? (
+                  <p className="text-sm text-neutral-content">
+                    Total Value:{" "}
+                    {formatBalance({
+                      balance: totalValue || 0n,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}{" "}
+                    {baseToken.symbol}
+                  </p>
+                ) : undefined
               ) : (
                 <Skeleton width={100} />
               )}
@@ -73,7 +86,6 @@ export function ShortsTab({
                   hyperdrive={hyperdrive}
                 />
               ) : null}
-
               <OpenClosedFilter />
             </div>
           </div>

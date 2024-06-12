@@ -1,4 +1,4 @@
-import { ClosedShort, Short } from "@delvtech/hyperdrive-viem";
+import { Long } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -8,30 +8,22 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
 
-// Type guard for ClosedShort
-function isClosedShorts(
-  shorts: Short[] | ClosedShort[],
-): shorts is ClosedShort[] {
-  return (shorts as ClosedShort[])[0]?.baseAmountReceived !== undefined;
-}
-
-export function useTotalShortsValue({
+export function useTotalOpenLongsValue({
   hyperdrive,
   account,
-  shorts,
+  longs,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
-  shorts: Short[] | ClosedShort[] | undefined;
-}): { totalShortsValue: bigint | undefined; isLoading: boolean } {
+  longs: Long[] | undefined;
+}): { totalOpenLongsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
+  const queryEnabled = !!account && !!longs && !!readHyperdrive && !!poolInfo;
 
-  const queryEnabled = !!account && !!shorts && !!readHyperdrive && !!poolInfo;
-
-  const { data: totalShortsValue, isLoading } = useQuery({
-    queryKey: makeQueryKey("totalShortsValue", {
+  const { data: totalOpenLongsValue, isLoading } = useQuery({
+    queryKey: makeQueryKey("totalLongsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
       activeOpenOrClosedTab,
@@ -39,17 +31,12 @@ export function useTotalShortsValue({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          let totalShortsValue = 0n;
-          if (activeOpenOrClosedTab === "Closed" && isClosedShorts(shorts)) {
-            shorts.forEach((short) => {
-              totalShortsValue += short.baseAmountReceived;
-            });
-            return totalShortsValue;
-          }
-          const promises = shorts.map((short) =>
-            readHyperdrive.previewCloseShort({
-              maturityTime: short.maturity,
-              shortAmountIn: short.bondAmount,
+          let totalOpenLongsValue = 0n;
+
+          const promises = longs.map((long) =>
+            readHyperdrive.previewCloseLong({
+              maturityTime: long.maturity,
+              bondAmountIn: long.bondAmount,
               asBase: false,
             }),
           );
@@ -62,13 +49,13 @@ export function useTotalShortsValue({
               sharesAmount: result.amountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
-            totalShortsValue += amountOutInBase || 0n;
+            totalOpenLongsValue += amountOutInBase || 0n;
           });
 
-          return totalShortsValue;
+          return totalOpenLongsValue;
         }
       : undefined,
   });
 
-  return { totalShortsValue, isLoading };
+  return { totalOpenLongsValue, isLoading };
 }
