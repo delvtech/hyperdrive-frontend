@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { Short } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -7,53 +7,56 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-export function useTotalLongsValue({
+export function useTotalOpenShortsValue({
   hyperdrive,
   account,
-  openLongs,
+  shorts,
+  enabled,
 }: {
   hyperdrive: HyperdriveConfig;
   account: Address | undefined;
-  openLongs: Long[] | undefined;
-}): { totalLongsValue: bigint | undefined; isLoading: boolean } {
+  shorts: Short[] | undefined;
+  enabled: boolean;
+}): { totalOpenShortsValue: bigint | undefined; isLoading: boolean } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const queryEnabled =
-    !!account && !!openLongs && !!readHyperdrive && !!poolInfo;
+    !!account && !!shorts && !!readHyperdrive && !!poolInfo && enabled;
 
-  const { data: totalLongsValue, isLoading } = useQuery({
-    queryKey: makeQueryKey("totalLongsValue", {
+  const { data: totalOpenShortsValue, isLoading } = useQuery({
+    queryKey: makeQueryKey("totalOpenShortsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const promises = openLongs.map((long) =>
-            readHyperdrive.previewCloseLong({
-              maturityTime: long.maturity,
-              bondAmountIn: long.bondAmount,
+          let totalOpenShortsValue = 0n;
+
+          const promises = shorts.map((short) =>
+            readHyperdrive.previewCloseShort({
+              maturityTime: short.maturity,
+              shortAmountIn: short.bondAmount,
               asBase: false,
             }),
           );
 
           const results = await Promise.all(promises);
 
-          let totalLongsValue = 0n;
           results.forEach((result) => {
             const amountOutInBase = convertSharesToBase({
               decimals: hyperdrive.decimals,
               sharesAmount: result.amountOut,
               vaultSharePrice: poolInfo?.vaultSharePrice,
             });
-            totalLongsValue += amountOutInBase || 0n;
+            totalOpenShortsValue += amountOutInBase || 0n;
           });
 
-          return totalLongsValue;
+          return totalOpenShortsValue;
         }
       : undefined,
   });
 
-  return { totalLongsValue, isLoading };
+  return { totalOpenShortsValue, isLoading };
 }
