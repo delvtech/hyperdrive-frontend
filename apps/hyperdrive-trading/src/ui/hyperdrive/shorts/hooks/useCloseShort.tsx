@@ -6,8 +6,10 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
@@ -43,6 +45,7 @@ export function useCloseShort({
 }: UseCloseShortOptions): UseCloseShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
+  const appConfig = useAppConfig();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const isMutationEnabled =
@@ -56,37 +59,49 @@ export function useCloseShort({
 
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
-      if (isMutationEnabled) {
-        const hash = await readWriteHyperdrive.closeShort({
-          args: {
-            bondAmountIn,
-            asBase,
-            minAmountOut,
-            destination,
-            maturityTime,
-          },
-          onTransactionCompleted: (txHash: Hash) => {
-            queryClient.invalidateQueries();
-            toast.success(
-              <TransactionToast message="Short closed" txHash={txHash} />,
-              { id: txHash, duration: SUCCESS_TOAST_DURATION },
-            );
-            toastWarpcast();
-            onExecuted?.(txHash);
-          },
-        });
-
-        toast.loading(
-          <TransactionToast message="Closing Short..." txHash={hash} />,
-          { id: hash },
-        );
-        onSubmitted?.(hash);
-
-        addTransaction({
-          hash,
-          description: "Close Short",
-        });
+      if (!isMutationEnabled) {
+        return;
       }
+
+      // All shares from the UI need to be prepared for the SDK
+      const finalMinAmountOut = asBase
+        ? minAmountOut
+        : await prepareSharesIn({
+            appConfig,
+            hyperdriveAddress,
+            readHyperdrive: readWriteHyperdrive,
+            sharesAmount: minAmountOut,
+          });
+
+      const hash = await readWriteHyperdrive.closeShort({
+        args: {
+          bondAmountIn,
+          asBase,
+          minAmountOut: finalMinAmountOut,
+          destination,
+          maturityTime,
+        },
+        onTransactionCompleted: (txHash: Hash) => {
+          queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Short closed" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
+          toastWarpcast();
+          onExecuted?.(txHash);
+        },
+      });
+
+      toast.loading(
+        <TransactionToast message="Closing Short..." txHash={hash} />,
+        { id: hash },
+      );
+      onSubmitted?.(hash);
+
+      addTransaction({
+        hash,
+        description: "Close Short",
+      });
     },
     onError(error) {
       const message = parseError({
