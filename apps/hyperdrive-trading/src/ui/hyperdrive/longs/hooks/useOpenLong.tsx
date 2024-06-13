@@ -3,8 +3,10 @@ import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address } from "viem";
@@ -42,6 +44,7 @@ export function useOpenLong({
 }: UseOpenLongOptions): UseOpenLongResult {
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
+  const appConfig = useAppConfig();
   const queryClient = useQueryClient();
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
 
@@ -60,9 +63,20 @@ export function useOpenLong({
         return;
       }
 
+      // if opening with shares, make sure the shares in gets prepared before
+      // going into the sdk
+      const finalAmount = asBase
+        ? amount
+        : await prepareSharesIn({
+            appConfig,
+            hyperdriveAddress,
+            sharesAmount: amount,
+            readHyperdrive: readWriteHyperdrive,
+          });
+
       const hash = await readWriteHyperdrive.openLong({
         args: {
-          amount,
+          amount: finalAmount,
           minBondsOut,
           destination,
           minVaultSharePrice: minSharePrice,

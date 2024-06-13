@@ -1,6 +1,7 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useAccruedYield({
@@ -13,10 +14,11 @@ export function useAccruedYield({
   bondAmount: bigint;
 }): {
   accruedYield: bigint | undefined;
+  status: QueryStatusWithIdle;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive;
-  const { data: accruedYield } = useQuery({
+  const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("accruedYield", {
       hyperdriveAddress: hyperdrive.address,
       checkpointId: checkpointTime.toString(),
@@ -24,9 +26,16 @@ export function useAccruedYield({
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.getShortAccruedYield({ checkpointTime, bondAmount })
+          readHyperdrive.getShortAccruedYield({
+            checkpointTime,
+            bondAmount,
+          })
       : undefined,
     enabled: queryEnabled,
   });
-  return { accruedYield };
+
+  return {
+    accruedYield: data,
+    status: getStatus(status, fetchStatus),
+  };
 }

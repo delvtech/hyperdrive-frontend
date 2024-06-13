@@ -4,7 +4,6 @@ import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -27,40 +26,29 @@ export function CurrentValueCell({
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const {
-    amountOut: sharesAmountOut,
+    amountOut: baseAmountOut,
     previewCloseLongStatus,
     previewCloseLongError,
   } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
     bondAmountIn: row.bondAmount,
-    // Not all hyperdrives can close to base, but they can all close to
-    // shares! To make this component easy, we'll always preview to shares
-    // then do the conversion to base ourselves.
-    asBase: false,
-  });
-
-  // To get the base value of the shares, just do a simple conversion
-  const amountOutInBase = convertSharesToBase({
-    decimals: hyperdrive.decimals,
-    sharesAmount: sharesAmountOut,
-    vaultSharePrice: poolInfo?.vaultSharePrice,
   });
 
   const currentValueLabel = formatBalance({
-    balance: amountOutInBase || 0n,
+    balance: baseAmountOut || 0n,
     decimals: baseToken.decimals,
     places: baseToken.places,
   });
 
   const profitLoss = formatBalance({
-    balance: amountOutInBase - row.baseAmountPaid,
+    balance: (baseAmountOut || 0n) - row.baseAmountPaid,
     decimals: baseToken.decimals,
     places: baseToken.places,
   });
 
   const isPositiveChangeInValue =
-    amountOutInBase && amountOutInBase > row.baseAmountPaid;
+    baseAmountOut && baseAmountOut > row.baseAmountPaid;
 
   const cellClassName = classNames("daisy-stat flex flex-row p-0 xl:flex-col", {
     "flex w-32 flex-col items-end": !isTailwindSmallScreen,
@@ -103,7 +91,7 @@ export function CurrentValueCell({
         )}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
-        {amountOutInBase
+        {baseAmountOut
           ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
           : undefined}
       </div>

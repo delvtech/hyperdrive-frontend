@@ -2,7 +2,6 @@ import { Long } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
@@ -34,28 +33,22 @@ export function useTotalOpenLongsValue({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          let totalOpenLongsValue = 0n;
-
-          const promises = longs.map((long) =>
-            readHyperdrive.previewCloseLong({
-              maturityTime: long.maturity,
-              bondAmountIn: long.bondAmount,
-              asBase: false,
-            }),
+          const previews = await Promise.all(
+            longs.map((long) =>
+              readHyperdrive.previewCloseLong({
+                maturityTime: long.maturity,
+                bondAmountIn: long.bondAmount,
+                asBase: true,
+              }),
+            ),
           );
 
-          const results = await Promise.all(promises);
-
-          results.forEach((result) => {
-            const amountOutInBase = convertSharesToBase({
-              decimals: hyperdrive.decimals,
-              sharesAmount: result.amountOut,
-              vaultSharePrice: poolInfo?.vaultSharePrice,
-            });
-            totalOpenLongsValue += amountOutInBase || 0n;
+          let total = 0n;
+          previews.forEach((preview) => {
+            total += preview.amountOut || 0n;
           });
 
-          return totalOpenLongsValue;
+          return total;
         }
       : undefined,
   });
