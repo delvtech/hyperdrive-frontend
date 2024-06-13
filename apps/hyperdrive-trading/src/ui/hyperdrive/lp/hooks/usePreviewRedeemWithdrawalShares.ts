@@ -1,5 +1,7 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "viem";
 
@@ -27,6 +29,7 @@ export function usePreviewRedeemWithdrawalShares({
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const appConfig = useAppConfig();
   const queryEnabled =
     !!withdrawalSharesIn &&
     minOutputPerShare !== undefined &&
@@ -43,16 +46,29 @@ export function usePreviewRedeemWithdrawalShares({
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () =>
-          readWriteHyperdrive.previewRedeemWithdrawalShares({
-            withdrawalSharesIn,
-            minOutputPerShare,
-            destination,
-            // Some hyperdrives can only be exited to shares. So we'll always
-            // just set this to false. We'll get a preview amount for both
-            // shares and base from the sdk regardless
-            asBase: false,
-          })
+      ? async () => {
+          const result =
+            await readWriteHyperdrive.previewRedeemWithdrawalShares({
+              withdrawalSharesIn,
+              minOutputPerShare,
+              destination,
+              // Some hyperdrives can only be exited to shares. So we'll always
+              // just set this to false. We'll get a preview amount for both
+              // shares and base from the sdk regardless
+              asBase: false,
+            });
+
+          return {
+            ...result,
+            // The shares output need to be prepared before being returned
+            sharesProceeds: await prepareSharesOut({
+              appConfig,
+              hyperdriveAddress,
+              readHyperdrive: readWriteHyperdrive,
+              sharesAmount: result.sharesProceeds,
+            }),
+          };
+        }
       : undefined,
   });
 
