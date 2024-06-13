@@ -4,11 +4,9 @@ import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 
 export function CurrentValueCell({
@@ -26,23 +24,13 @@ export function CurrentValueCell({
   });
 
   const {
-    amountOut: currentValueInShares,
+    amountOut: currentValueInBase,
     previewCloseShortStatus,
     previewCloseShortError,
   } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
-    // Not all hyperdrives can close to base, but they can all close to
-    // shares! To make this component easy, we'll always preview to shares
-    // then do the conversion to base ourselves.
-    asBase: false,
-  });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const currentValueInBase = convertSharesToBase({
-    sharesAmount: currentValueInShares,
-    decimals: hyperdrive.decimals,
-    vaultSharePrice: poolInfo?.vaultSharePrice,
   });
 
   const currentValueLabel = formatBalance({
@@ -52,7 +40,7 @@ export function CurrentValueCell({
   });
 
   const profitLoss = formatBalance({
-    balance: currentValueInBase - openShort.baseAmountPaid,
+    balance: (currentValueInBase || 0n) - openShort.baseAmountPaid,
     decimals: baseToken.decimals,
     places: baseToken.places,
   });
