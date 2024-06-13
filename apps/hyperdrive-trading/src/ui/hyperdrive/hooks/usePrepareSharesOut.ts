@@ -62,6 +62,10 @@ export async function prepareSharesOut({
   sharesAmount: bigint;
   readHyperdrive: ReadHyperdrive;
 }): Promise<bigint> {
+  if (sharesAmount === 0n) {
+    return sharesAmount;
+  }
+
   const hyperdriveConfig = findHyperdriveConfig({
     hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress: hyperdriveAddress,
