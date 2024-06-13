@@ -8,6 +8,8 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -36,6 +38,7 @@ export function useRedeemWithdrawalShares({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
+  const appConfig = useAppConfig();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!withdrawalSharesIn &&
@@ -47,23 +50,36 @@ export function useRedeemWithdrawalShares({
 
   const { mutate: redeemWithdrawalShares, status } = useMutation({
     mutationFn: async () => {
-      if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.redeemWithdrawalShares({
-          args: {
-            withdrawalSharesIn,
-            minOutputPerShare,
-            destination,
-            asBase,
-          },
-          onTransactionCompleted: () => {
-            queryClient.invalidateQueries();
-          },
-        });
-        addTransaction({
-          hash,
-          description: "Redeem Withdrawal Shares",
-        });
+      if (!mutationEnabled) {
+        return;
       }
+
+      // if redeming to shares, make sure the minimum amount out gets prepared
+      // before going into the sdk
+      const finalMinOutputPerShare = asBase
+        ? minOutputPerShare
+        : await prepareSharesIn({
+            appConfig,
+            hyperdriveAddress,
+            readHyperdrive: readWriteHyperdrive,
+            sharesAmount: minOutputPerShare,
+          });
+
+      const hash = await readWriteHyperdrive.redeemWithdrawalShares({
+        args: {
+          withdrawalSharesIn,
+          minOutputPerShare: finalMinOutputPerShare,
+          destination,
+          asBase,
+        },
+        onTransactionCompleted: () => {
+          queryClient.invalidateQueries();
+        },
+      });
+      addTransaction({
+        hash,
+        description: "Redeem Withdrawal Shares",
+      });
     },
     onError(error) {
       const message = parseError({
