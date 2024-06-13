@@ -124,6 +124,8 @@ export function OpenShortPreview({
                 "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
                 {
                   "border-b border-dashed border-current": spotRateAfterOpen,
+                  "text-success": shortApr && shortApr.apr > 0n,
+                  "text-error": shortApr && shortApr.apr < 0n,
                 },
               )}
               data-tip="The annualized return on shorts assuming the current yield source rate stays the same for one year"
