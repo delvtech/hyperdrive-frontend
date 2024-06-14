@@ -6,7 +6,7 @@ use quote::{format_ident, quote};
 use syn::{parse_macro_input, Data, DeriveInput, Fields, Lit, Meta, NestedMeta};
 
 /// A non-exhaustive list of common types and their corresponding TypeScript types.
-/// This is used if no custom type is specified with the `ts_interface` attribute.
+/// This is used if no custom type is specified with the `typescript` attribute.
 fn to_ts_type(rust_type: &str) -> &str {
     match rust_type {
         "BigInt" => "bigint",
@@ -68,7 +68,7 @@ fn to_ts_type(rust_type: &str) -> &str {
 /// To nest structs, the `Typescript` derive must be applied to each struct
 /// individually. Then, the JS bindings can be used as fields in other structs.
 /// 
-/// The `ts_interface` attribute can be used to customize the TypeScript type
+/// The `typescript` attribute can be used to customize the TypeScript type
 /// and field name for a field. This is useful for fields that are not directly
 /// mappable to a TypeScript type, such as a nested struct.
 /// 
@@ -78,11 +78,11 @@ fn to_ts_type(rust_type: &str) -> &str {
 ///     account: String,
 ///     amount: BigInt,
 /// 
-///    #[ts_interface(type = "Token")]
+///    #[typescript(type = "Token")]
 ///     token: JsToken,
 /// }
-#[proc_macro_derive(Typescript, attributes(ts_interface))]
-pub fn ts_interface_derive(input: TokenStream) -> TokenStream {
+#[proc_macro_derive(Typescript, attributes(typescript))]
+pub fn typescript_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
     let struct_name = input.ident;
     let struct_name_str = struct_name.to_string();
@@ -113,11 +113,11 @@ pub fn ts_interface_derive(input: TokenStream) -> TokenStream {
             .to_lower_camel_case();
         let mut ts_field_type = to_ts_type(&format!("{}", quote! { #field_type })).to_string();
 
-        // Look for a `ts_interface` attribute on the field
+        // Look for a `typescript` attribute on the field
         field
             .attrs
             .iter()
-            .find(|attr| attr.path.is_ident("ts_interface"))
+            .find(|attr| attr.path.is_ident("typescript"))
             // If found, parse the attribute and extract the `type` and `name` values
             .map(|attr| {
                 let meta = attr.parse_meta().unwrap();
@@ -125,7 +125,7 @@ pub fn ts_interface_derive(input: TokenStream) -> TokenStream {
                 // Ensure the attribute is a list
                 let meta_list = match meta {
                     Meta::List(list) => list,
-                    _ => panic!("ts_interface attribute must be a list, e.g. #[ts_interface(type = \"PoolInfo\")]"),
+                    _ => panic!("typescript attribute must be a list, e.g. #[typescript(type = \"PoolInfo\")]"),
                 };
     
                 // Iterate over the name-value pairs in the list and extract the values
@@ -146,10 +146,10 @@ pub fn ts_interface_derive(input: TokenStream) -> TokenStream {
                                         _ => panic!("name must be a string literal"),
                                     };
                                 }
-                                unknown => panic!("Unknown ts_interface attribute: {}. Options are: type, name", unknown),
+                                unknown => panic!("Unknown typescript attribute: {}. Options are: type, name", unknown),
                             }
                         }
-                        _ => panic!("ts_interface attribute must be a list of name-value pairs, e.g. #[ts_interface(type = \"PoolInfo\")]"),
+                        _ => panic!("typescript attribute must be a list of name-value pairs, e.g. #[typescript(type = \"PoolInfo\")]"),
                     }
 
                 }
@@ -169,7 +169,7 @@ pub fn ts_interface_derive(input: TokenStream) -> TokenStream {
         field_conversions.push(field_conversion);
     }
 
-    let ts_interface_def = format!(
+    let typescript_def = format!(
 r#"interface {struct_name} {{
     {}
 }}"#,
@@ -178,7 +178,7 @@ r#"interface {struct_name} {{
 
     let expanded = quote! {
         #[wasm_bindgen(typescript_custom_section)]
-        const #const_name: &'static str = #ts_interface_def;
+        const #const_name: &'static str = #typescript_def;
 
         #[wasm_bindgen]
         extern "C" {
