@@ -1,4 +1,6 @@
 import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import {
   findBaseToken,
   findYieldSourceToken,
@@ -9,13 +11,11 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 interface OpenLongPreviewProps {
@@ -49,11 +49,10 @@ export function OpenLongPreview({
     tokens: appConfig.tokens,
   });
   const { fixedApr } = useFixedRate(hyperdrive.address);
-  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
-  const numDays = convertMillisecondsToDays(termLengthMS);
+
   const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3.5 px-2">
       <div className="flex flex-col gap-3">
         <LabelValue
           label="You spend"
@@ -100,17 +99,14 @@ export function OpenLongPreview({
             )
           }
         />
-      </div>
-      <div className="flex flex-col gap-3">
-        <h6 className="font-medium">Fixed Rate</h6>
         <LabelValue
-          label="Net fixed rate"
+          label="Fixed APR"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
+                className="gradient-text daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
                 data-tip="Your net fixed rate after pool fees and slippage are applied."
               >
                 {long.bondAmount > 0
@@ -130,61 +126,11 @@ export function OpenLongPreview({
                         bondAmount: long.bondAmount,
                       }),
                       baseToken.decimals,
-                    )}% APR`
-                  : "0% APR"}
+                    )}%`
+                  : `${fixedApr?.formatted}%`}
               </span>
             )
           }
-        />
-        <LabelValue
-          label="Market rate after open"
-          value={
-            openLongPreviewStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                  {
-                    "border-b border-dashed border-current": spotRateAfterOpen,
-                  },
-                )}
-                data-tip="The market fixed rate after opening the long."
-              >
-                {spotRateAfterOpen
-                  ? `${formatRate(spotRateAfterOpen)}% APR`
-                  : "-"}
-              </span>
-            )
-          }
-        />
-        <LabelValue
-          label="Fixed APR impact"
-          value={
-            openLongPreviewStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-                  {
-                    "border-b border-dashed border-error text-error":
-                      spotRateAfterOpen,
-                  },
-                )}
-                data-tip={`The net market impact on the fixed rate after opening the long.`}
-              >
-                {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
-              </span>
-            )
-          }
-        />
-      </div>
-      <div className="flex flex-col gap-3">
-        <h6 className="font-medium">Term</h6>
-        <LabelValue
-          label="Matures in"
-          value={`${numDays} days, ${formatDate(Date.now() + termLengthMS)}`}
         />
         <LabelValue
           label="Yield at maturity"
@@ -209,7 +155,8 @@ export function OpenLongPreview({
                       ? "+"
                       : ""}
                     {long.baseAmountPaid
-                      ? `${formatBalance({
+                      ? // TODO: Add ROI here in parenthesis after the yield amount
+                        `${formatBalance({
                           balance:
                             long.bondAmount -
                             (isBaseAmount
@@ -233,6 +180,57 @@ export function OpenLongPreview({
             )
           }
         />
+      </div>
+
+      <div className="daisy-collapse justify-normal rounded-none text-sm">
+        <input type="checkbox" className="min-h-0" />
+        <div className=" daisy-collapse-title mb-3 min-h-0 p-0 font-medium">
+          <div className="flex items-center gap-4">
+            <span>Market Impact</span>
+            <span className="text-xs">
+              {/* Click to expand */}
+              <ChevronDownIcon className="h-4 focus:rotate-180 focus:transition" />
+            </span>
+          </div>
+        </div>
+        <div className="daisy-collapse-content space-y-2 px-0">
+          <LabelValue
+            size="small"
+            label="Fixed APR after open"
+            value={
+              openLongPreviewStatus === "loading" ? (
+                <Skeleton width={100} />
+              ) : (
+                <span>
+                  {spotRateAfterOpen ? (
+                    <span className="flex gap-2">
+                      {`${fixedApr?.formatted}% `}
+                      <ArrowRightIcon className="h-4 text-neutral-content" />
+                      {formatRate(spotRateAfterOpen)}%
+                    </span>
+                  ) : (
+                    "-"
+                  )}
+                </span>
+              )
+            }
+          />
+          <LabelValue
+            label="Fixed APR impact"
+            size="small"
+            value={
+              openLongPreviewStatus === "loading" ? (
+                <Skeleton width={100} />
+              ) : (
+                <span
+                  className={classNames({ "text-error": spotRateAfterOpen })}
+                >
+                  {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
+                </span>
+              )
+            }
+          />
+        </div>
       </div>
     </div>
   );
