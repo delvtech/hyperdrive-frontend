@@ -23,10 +23,10 @@ use crate::{
 /// binary search for
 #[wasm_bindgen(skip_jsdoc)]
 pub fn maxLong(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    budget: &str,
-    checkpointExposure: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    budget: BigInt,
+    checkpointExposure: BigInt,
     maybeMaxIterations: Option<u8>,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {

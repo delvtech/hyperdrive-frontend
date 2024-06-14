@@ -27,8 +27,8 @@ pub fn initialize() {
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPrice(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
@@ -46,7 +46,10 @@ pub fn spotPrice(
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcHprGivenApr(
+    apr: BigInt,
+    positionDuration: BigInt,
+) -> Result<BigInt, HyperdriveWasmError> {
     let apr_fp = apr.to_fixed_point()?;
     let position_duration_fp = positionDuration.to_fixed_point()?;
     let result_fp = calculate_hpr_given_apr(apr_fp, position_duration_fp);
@@ -61,7 +64,10 @@ pub fn calcHprGivenApr(apr: &str, positionDuration: &str) -> Result<BigInt, Hype
 ///
 /// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcHprGivenApy(
+    apy: BigInt,
+    positionDuration: BigInt,
+) -> Result<BigInt, HyperdriveWasmError> {
     let apy_fp = apy.to_fixed_point()?;
     let position_duration_fp = positionDuration.to_fixed_point()?;
     let result_fp = calculate_hpr_given_apy(apy_fp, position_duration_fp).to_result()?;
@@ -76,8 +82,8 @@ pub fn calcHprGivenApy(apy: &str, positionDuration: &str) -> Result<BigInt, Hype
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
 pub fn idleShareReservesInBase(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
@@ -97,9 +103,9 @@ pub fn idleShareReservesInBase(
 /// @param currentTime - The time at which to grab the present value
 #[wasm_bindgen(skip_jsdoc)]
 pub fn presentValue(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         config: poolConfig.try_into()?,
@@ -119,8 +125,8 @@ pub fn presentValue(
 /// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotRate(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,

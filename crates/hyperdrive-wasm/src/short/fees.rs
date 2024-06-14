@@ -17,9 +17,9 @@ use crate::{
 /// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortCurveFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -41,9 +41,9 @@ pub fn openShortCurveFee(
 /// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortGovernanceFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -71,11 +71,11 @@ pub fn openShortGovernanceFee(
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeShortCurveFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    maturityTime: &str,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    maturityTime: BigInt,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -105,11 +105,11 @@ pub fn closeShortCurveFee(
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeShortFlatFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    maturityTime: &str,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    maturityTime: BigInt,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,

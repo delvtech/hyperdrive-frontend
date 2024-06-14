@@ -17,9 +17,9 @@ use crate::{
 /// @param baseAmount - The amount of base tokens to open a long for
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcOpenLong(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    baseAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    baseAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -41,9 +41,9 @@ pub fn calcOpenLong(
 /// @param baseAmount - The amount of base to spend
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPriceAfterLong(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    baseAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    baseAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,

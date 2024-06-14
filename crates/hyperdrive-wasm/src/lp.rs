@@ -1,5 +1,5 @@
 use ethers::types::U256;
-use fixed_point::{fixed, FixedPoint};
+use fixed_point::fixed;
 use hyperdrive_math::State;
 use js_sys::BigInt;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -33,14 +33,14 @@ use crate::{
 /// uint256.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcAddLiquidity(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    currentTime: &str,
-    contribution: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    currentTime: BigInt,
+    contribution: BigInt,
     asBase: Option<bool>,
-    minLpSharePrice: Option<String>,
-    minApr: Option<String>,
-    maxApr: Option<String>,
+    minLpSharePrice: Option<BigInt>,
+    minApr: Option<BigInt>,
+    maxApr: Option<BigInt>,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -62,7 +62,7 @@ pub fn calcAddLiquidity(
 
     let max_apr = match maxApr {
         Some(max_apr) => max_apr.to_fixed_point()?,
-        None => FixedPoint::from(U256::MAX),
+        None => U256::MAX.to_fixed_point()?,
     };
 
     let result_fp = state

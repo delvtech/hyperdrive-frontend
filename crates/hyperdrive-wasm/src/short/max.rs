@@ -29,12 +29,12 @@ use crate::{
 /// binary search for
 #[wasm_bindgen(skip_jsdoc)]
 pub fn maxShort(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    budget: &str,
-    openVaultSharePrice: &str,
-    checkpointExposure: &str,
-    maybeConservativePrice: Option<String>,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    budget: BigInt,
+    openVaultSharePrice: BigInt,
+    checkpointExposure: BigInt,
+    maybeConservativePrice: Option<BigInt>,
     maybeMaxIterations: Option<u8>,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
