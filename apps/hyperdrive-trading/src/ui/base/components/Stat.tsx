@@ -6,18 +6,33 @@ export interface StatProps {
   label: ReactNode;
   value: ReactNode;
   description?: string;
+  size?: "small" | "large";
+  horizontal?: boolean;
   tooltipPosition?: "top" | "bottom" | "left" | "right";
 }
 
 export function Stat({
   label,
   value,
+  size = "large",
   description,
+  horizontal,
   tooltipPosition = "bottom",
 }: StatProps): ReactElement {
   return (
-    <div className="flex w-full flex-col items-center whitespace-pre-wrap ease-in-out">
-      <div className="mb-1 whitespace-nowrap text-h5 font-bold lg:text-h4">
+    <div
+      className={classNames(
+        "flex w-full items-center whitespace-pre-wrap ease-in-out",
+        { "flex-col": !horizontal },
+        { "flex-row-reverse gap-2": horizontal },
+      )}
+    >
+      <div
+        className={classNames("whitespace-nowrap font-bold ", {
+          "mb-1 text-h5 lg:text-h4": size === "large",
+          "lg:text-sm": size === "small",
+        })}
+      >
         {value}
       </div>
       {description ? (
