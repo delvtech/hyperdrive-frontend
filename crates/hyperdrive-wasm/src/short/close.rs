@@ -63,7 +63,18 @@ pub fn calcCloseShort(
 }
 
 /// Calculates the market value of a short position using the equation:
-/// c / c0 * dy * (1 - p)
+/// market_estimate = yield_accrued + trading_proceeds - curve_fees_paid + flat_fees_returned
+///
+/// yield_accrued      = dy * (c-c0)/c0
+/// trading_proceeds   = dy * (1 - p) * t
+/// curve_fees_paid    = trading_proceeds * curve_fee
+/// flat_fees_returned = dy * t * flat_fee
+///
+/// dy = bond amount
+/// c  = closeVaultSharePrice (current if non-matured, or checkpoint's if matured)
+/// c0 = openVaultSharePrice
+/// p  = spotPrice
+/// t  = timeRemaining
 ///
 /// @param poolInfo - The current state of the pool
 ///
@@ -76,6 +87,10 @@ pub fn calcCloseShort(
 ///
 /// @param closeVaultSharePrice - The current vault share price, or if the
 /// position has matured, the vault share price from the closing checkpoint
+/// 
+/// @param maturityTime - The maturity timestamp of the short (in seconds)
+///
+/// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcShortMarketValue(
     poolInfo: &JsPoolInfo,
@@ -83,30 +98,16 @@ pub fn calcShortMarketValue(
     bondAmount: &str,
     openVaultSharePrice: &str,
     closeVaultSharePrice: &str,
+    maturityTime: &str,
+    currentTime: &str,
 ) -> Result<String, JsValue> {
     let state = State {
         info: poolInfo.try_into()?,
         config: poolConfig.try_into()?,
     };
-
-    // p is the current pool spot price
-    let spot_price = state
-        .calculate_spot_price()
-        .to_js_result()?
-        .to_fixed_point()?;
-
-    console::log_2(&"spot_price".into(), &format!("{:?}", spot_price).into());
-
     // dy is the bonds shorted
     let bond_amount = bondAmount.to_fixed_point()?;
     console::log_2(&"bond_amount".into(), &format!("{:?}", bond_amount).into());
-
-    // c0 is the open vault share price
-    let open_vault_share_price = openVaultSharePrice.to_fixed_point()?;
-    console::log_2(
-        &"open_vault_share_price".into(),
-        &format!("{:?}", open_vault_share_price).into(),
-    );
 
     // c is the closing vault share price
     let close_vault_share_price = closeVaultSharePrice.to_fixed_point()?;
@@ -115,18 +116,60 @@ pub fn calcShortMarketValue(
         &format!("{:?}", close_vault_share_price).into(),
     );
 
-    // account for variable interest accrued
-    //  (c/c0 * dy)
-    let interest = close_vault_share_price
-        .div(open_vault_share_price)
-        .mul(bond_amount);
-    console::log_2(&"interest".into(), &format!("{:?}", interest).into());
+    // c0 is the open vault share price
+    let open_vault_share_price = openVaultSharePrice.to_fixed_point()?;
+    console::log_2(
+        &"open_vault_share_price".into(),
+        &format!("{:?}", open_vault_share_price).into(),
+    );
 
-    // 1 - p
-    let one_minus_p = fixed!(1e18).sub(spot_price);
-    console::log_2(&"one_minus_p".into(), &format!("{:?}", one_minus_p).into());
+    let maturity_time = maturityTime.to_fixed_point()?;
+    let current_time = currentTime.to_fixed_point()?;
 
-    let result = interest.mul(one_minus_p);
+    // p is the current pool spot price
+    let spot_price = state
+        .calculate_spot_price()
+        .to_js_result()?
+        .to_fixed_point()?;
+    console::log_2(&"spot_price".into(), &format!("{:?}", spot_price).into());
+
+    // t is the time remaining
+    // (maturity_time - latest_checkpoint) / position_duration
+    let latest_checkpoint = state.to_checkpoint(current_time.into()).to_fixed_point()?;
+    let time_remaining = 
+        if maturity_time > latest_checkpoint {
+            // NOTE: Round down to underestimate the time remaining.
+            (maturity_time.sub(latest_checkpoint)).div_down(state.config.position_duration.to_fixed_point()?)
+        } else {
+            fixed!(0)
+        };
+
+    // yield accrued
+    // dy * (c-c0)/c0
+    let yield_accrued = bond_amount
+        .mul(close_vault_share_price.sub(open_vault_share_price))
+        .div(open_vault_share_price);
+    console::log_2(&"yield_accrued".into(), &format!("{:?}", yield_accrued).into());
+
+    // trading_proceeds
+    // dy * (1 - p) * t
+    let trading_proceeds = bond_amount
+        .mul(fixed!(1e18).sub(spot_price))
+        .mul(time_remaining);
+    console::log_2(&"trading_proceeds".into(), &format!("{:?}", trading_proceeds).into());
+
+    // curve_fees_paid = trading_proceeds * curve_fee
+    let curve_fees_paid = trading_proceeds
+        .mul(state.config.fees.curve.to_fixed_point()?);
+    console::log_2(&"curve_fees_paid".into(), &format!("{:?}", curve_fees_paid).into());
+
+    // flat_fees_returned = dy * t * flat_fee
+    let flat_fees_returned = bond_amount
+        .mul(time_remaining)
+        .mul(state.config.fees.flat.to_fixed_point()?);
+    console::log_2(&"flat_fees_returned".into(), &format!("{:?}", flat_fees_returned).into());
+
+    let result = yield_accrued + trading_proceeds - curve_fees_paid + flat_fees_returned;
     console::log_2(&"result".into(), &format!("{:?}", result).into());
 
     Ok(result.to_u256()?.to_string())

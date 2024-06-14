@@ -1899,6 +1899,8 @@ export class ReadHyperdrive extends ReadModel {
         shortAmountIn.toString(),
         openSharePrice.toString(),
         closeSharePrice.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
       ),
     );
     console.log("marketEstimate", marketEstimate);
