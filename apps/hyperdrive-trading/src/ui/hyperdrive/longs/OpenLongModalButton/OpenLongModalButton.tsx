@@ -3,6 +3,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { Stat } from "src/ui/base/components/Stat";
 import { WarningButton } from "src/ui/base/components/WarningButton";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -37,14 +38,11 @@ export function OpenLongModalButton({
     <Modal
       modalId={modalId}
       modalHeader={
-        <div className="flex w-full flex-col gap-6">
-          <div>
-            <h4 className="mb-1">Open a Long</h4>
-            <p className="text-neutral-content">
-              Secure a fixed rate and know your exact yield upfront.
-            </p>
-          </div>
-          <div className="flex w-full flex-wrap justify-between gap-4">
+        <ModalHeader
+          heading="Open a Long"
+          subHeading="Secure a fixed rate and know your exact yield upfront"
+        >
+          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
             <div className="daisy-badge daisy-badge-lg">
               <Stat
                 horizontal
@@ -62,7 +60,7 @@ export function OpenLongModalButton({
               />
             </div>
           </div>
-        </div>
+        </ModalHeader>
       }
       modalContent={
         <div>
