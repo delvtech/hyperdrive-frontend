@@ -58,6 +58,9 @@ root.render(
             config={{
               accessToken: import.meta.env.VITE_ROLLBAR_ACCESS_TOKEN as string,
               environment: import.meta.env.VITE_ROLLBAR_ENV as string,
+              captureIp: "anonymize",
+              captureUncaught: true,
+              captureUnhandledRejections: true,
             }}
           >
             <RollbarErrorBoundary>
