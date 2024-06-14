@@ -1,4 +1,4 @@
 [workspace]
 resolver = "2"
-members = ["crates/hyperdrive-wasm"]
+members = ["crates/hyperdrive-wasm", "crates/typescript-macro"]
 rust-version = "1.80.0"
