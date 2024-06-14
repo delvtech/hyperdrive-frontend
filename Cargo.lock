@@ -1475,7 +1475,6 @@ dependencies = [
  "serde-wasm-bindgen",
  "serde_json",
  "thiserror",
- "typescript-macro",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wasm-bindgen-test",
