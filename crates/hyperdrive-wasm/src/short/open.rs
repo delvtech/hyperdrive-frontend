@@ -21,10 +21,10 @@ use crate::{
 /// checkpoint
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcOpenShort(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    openVaultSharePrice: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    openVaultSharePrice: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -50,9 +50,9 @@ pub fn calcOpenShort(
 /// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPriceAfterShort(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -81,11 +81,11 @@ pub fn spotPriceAfterShort(
 /// @param variableApy - The variable apy
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcImpliedRate(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    openVaultSharePrice: &str,
-    variableApy: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    openVaultSharePrice: BigInt,
+    variableApy: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,

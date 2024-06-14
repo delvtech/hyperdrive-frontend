@@ -31,13 +31,13 @@ use crate::{
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcCloseShort(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    openVaultSharePrice: &str,
-    closeVaultSharePrice: &str,
-    maturityTime: &str,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    openVaultSharePrice: BigInt,
+    closeVaultSharePrice: BigInt,
+    maturityTime: BigInt,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,

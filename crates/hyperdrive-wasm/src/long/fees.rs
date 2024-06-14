@@ -17,9 +17,9 @@ use crate::{
 /// @param baseAmount - The amount of base tokens to spend
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openLongCurveFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    baseAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    baseAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -41,9 +41,9 @@ pub fn openLongCurveFee(
 /// @param baseAmount - The amount of base tokens to spend
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openLongGovernanceFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    baseAmount: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    baseAmount: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     let state = State {
         info: poolInfo.try_into()?,
@@ -72,11 +72,11 @@ pub fn openLongGovernanceFee(
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeLongCurveFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    maturityTime: &str,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    maturityTime: BigInt,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     set_panic_hook();
     let state = State {
@@ -108,11 +108,11 @@ pub fn closeLongCurveFee(
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeLongFlatFee(
-    poolInfo: &JsPoolInfo,
-    poolConfig: &JsPoolConfig,
-    bondAmount: &str,
-    maturityTime: &str,
-    currentTime: &str,
+    poolInfo: JsPoolInfo,
+    poolConfig: JsPoolConfig,
+    bondAmount: BigInt,
+    maturityTime: BigInt,
+    currentTime: BigInt,
 ) -> Result<BigInt, HyperdriveWasmError> {
     set_panic_hook();
     let state = State {

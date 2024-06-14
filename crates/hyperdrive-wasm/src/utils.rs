@@ -2,8 +2,12 @@ use ethers::types::{Address, I256, U256};
 use fixed_point::FixedPoint;
 use js_sys::BigInt;
 use std::{panic::Location, str::FromStr};
+use wasm_bindgen::{JsCast, JsValue};
 
-use crate::{error::HyperdriveWasmError, type_error_at};
+use crate::{
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
+    type_error_at,
+};
 
 pub fn set_panic_hook() {
     // When the `console_error_panic_hook` feature is enabled, we can call the
@@ -41,10 +45,29 @@ impl ToU256 for &str {
     }
 }
 
+impl ToU256 for JsValue {
+    fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
+        self.to_big_int()?.to_u256()
+    }
+}
+
+impl ToU256 for BigInt {
+    #[track_caller]
+    fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
+        let location = Location::caller();
+        let dec_str: String = self
+            .to_string(10)
+            .map_err(|_| type_error_at!(location, "Failed to parse BigInt: {:?}", self))?
+            .into();
+        U256::from_dec_str(&dec_str)
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
+    }
+}
+
 impl ToU256 for FixedPoint {
     #[track_caller]
     fn to_u256(&self) -> Result<U256, HyperdriveWasmError> {
-        Ok(self.to_owned().into())
+        Ok(U256::from(*self))
     }
 }
 
@@ -69,11 +92,30 @@ impl ToI256 for &str {
     }
 }
 
+impl ToI256 for JsValue {
+    fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
+        self.to_big_int()?.to_i256()
+    }
+}
+
+impl ToI256 for BigInt {
+    #[track_caller]
+    fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
+        let location = Location::caller();
+        let dec_str: String = self
+            .to_string(10)
+            .map_err(|_| type_error_at!(location, "Failed to parse BigInt: {:?}", self))?
+            .into();
+        I256::from_dec_str(&dec_str)
+            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+    }
+}
+
 impl ToI256 for FixedPoint {
     #[track_caller]
     fn to_i256(&self) -> Result<I256, HyperdriveWasmError> {
         let location = Location::caller();
-        I256::try_from(self.to_owned())
+        I256::try_from(*self)
             .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
     }
 }
@@ -101,6 +143,12 @@ where
     }
 }
 
+impl ToFixedPoint for U256 {
+    fn to_fixed_point(&self) -> Result<FixedPoint, HyperdriveWasmError> {
+        Ok(FixedPoint::from(*self))
+    }
+}
+
 /// Convert a value to a `Result<Address, HyperdriveWasmError>` via `.to_address()`
 pub trait ToAddress {
     fn to_address(&self) -> Result<Address, HyperdriveWasmError>;
@@ -123,6 +171,14 @@ impl ToAddress for &str {
     }
 }
 
+impl ToAddress for JsValue {
+    #[track_caller]
+    fn to_address(&self) -> Result<Address, HyperdriveWasmError> {
+        let location = Location::caller();
+        self.as_string().to_result_at(location)?.to_address()
+    }
+}
+
 /// Convert a value to a `Result<BigInt, HyperdriveWasmError>` via `.to_big_int()`
 pub trait ToBigInt {
     fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError>;
@@ -141,6 +197,13 @@ impl ToBigInt for &str {
     fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
         let location = Location::caller();
         BigInt::from_str(&self).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
+    }
+}
+
+impl ToBigInt for JsValue {
+    #[track_caller]
+    fn to_big_int(&self) -> Result<BigInt, HyperdriveWasmError> {
+        Ok(BigInt::unchecked_from_js(self.to_owned()))
     }
 }
 
