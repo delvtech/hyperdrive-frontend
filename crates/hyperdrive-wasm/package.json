@@ -5,7 +5,7 @@
   "license": "AGPL-3.0",
   "scripts": {
     "build": "ts-node scripts/build.ts ../../packages/hyperdrive-wasm",
-    "watch": "onchange 'src/**/*.rs' -- npm run build"
+    "watch": "npm run build && onchange 'src/**/*.rs' -- npm run build"
   },
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",
