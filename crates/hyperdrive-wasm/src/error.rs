@@ -51,6 +51,30 @@ impl From<HyperdriveWasmError> for JsValue {
     }
 }
 
+impl From<String> for HyperdriveWasmError {
+    #[track_caller]
+    fn from(value: String) -> Self {
+        let location = Location::caller();
+        value.to_error_at(location)
+    }
+}
+
+impl From<&str> for HyperdriveWasmError {
+    #[track_caller]
+    fn from(value: &str) -> Self {
+        let location = Location::caller();
+        value.to_error_at(location)
+    }
+}
+
+impl From<JsValue> for HyperdriveWasmError {
+    #[track_caller]
+    fn from(value: JsValue) -> Self {
+        let location = Location::caller();
+        value.as_string().to_error_at(location)
+    }
+}
+
 /// Convert a value to a `HyperdriveWasmError` via `.to_error()`
 pub trait ToHyperdriveWasmError {
     /// Convert a value to a `HyperdriveWasmError`, capturing the current location
@@ -60,18 +84,6 @@ pub trait ToHyperdriveWasmError {
     }
 
     fn to_error_at(&self, location: &Location) -> HyperdriveWasmError;
-}
-
-// If a value can `.into()` a String, it can `.into()` a HyperdriveWasmError
-impl<T> From<T> for HyperdriveWasmError
-where
-    T: Into<String>,
-{
-    #[track_caller]
-    fn from(t: T) -> Self {
-        let location = Location::caller();
-        t.into().to_error_at(location)
-    }
 }
 
 // If a value can `.fmt()` as Debug, it can `.to_error()`
