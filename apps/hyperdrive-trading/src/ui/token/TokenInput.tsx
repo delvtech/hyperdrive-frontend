@@ -78,7 +78,7 @@ export function TokenInput({
           name={name}
           disabled={disabled}
           className={classNames(
-            "daisy-input daisy-join-item daisy-input-bordered w-full",
+            "daisy-input daisy-join-item daisy-input-bordered w-full flex-1",
             HIDE_NUMERIC_INPUT_ARROWS_CLASS,
             {
               "daisy-input-error text-error": hasError,

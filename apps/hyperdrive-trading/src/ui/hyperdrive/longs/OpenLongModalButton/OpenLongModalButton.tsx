@@ -43,7 +43,7 @@ export function OpenLongModalButton({
           subHeading="Secure a fixed rate and know your exact yield upfront"
         >
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div className="daisy-badge daisy-badge-lg">
+            <div className="daisy-badge daisy-badge-lg p-4">
               <Stat
                 horizontal
                 size="small"
@@ -51,7 +51,7 @@ export function OpenLongModalButton({
                 value={`${numDays} days`}
               />
             </div>
-            <div className="daisy-badge daisy-badge-lg">
+            <div className="daisy-badge daisy-badge-lg p-4">
               <Stat
                 horizontal
                 size="small"
