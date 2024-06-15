@@ -27,7 +27,7 @@ export function TokenPicker({
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
-      <div className="flex">
+      <div>
         {label ? (
           <label className="daisy-label">
             <span className="daisy-label-text">{label}</span>
@@ -47,7 +47,7 @@ export function TokenPicker({
   );
 
   return (
-    <div className="flex">
+    <div>
       {label ? (
         <label className="daisy-label">
           <span className="daisy-label-text">{label}</span>

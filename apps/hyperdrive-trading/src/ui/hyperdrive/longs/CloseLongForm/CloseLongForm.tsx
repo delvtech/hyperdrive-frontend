@@ -49,12 +49,6 @@ export function CloseLongForm({
     decimals: baseToken.decimals,
   });
 
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
-  });
-
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
@@ -129,7 +123,7 @@ export function CloseLongForm({
     <TransactionView
       disclaimer={
         <>
-          <p className="text-center text-sm text-neutral-content">
+          <p className="text-center text-xs text-neutral-content">
             Note: 1 hy{baseToken.symbol} is always worth 1 {baseToken.symbol} at
             maturity, however its value may fluctuate before maturity based on
             market activity.
@@ -146,6 +140,7 @@ export function CloseLongForm({
       tokenInput={
         <TokenInput
           name={baseToken.symbol}
+          inputLabel="Amount to redeem"
           token={`hy${baseToken.symbol}`}
           value={bondAmount ?? ""}
           maxValue={
@@ -170,39 +165,41 @@ export function CloseLongForm({
         ) : undefined
       }
       transactionPreview={
-        <>
-          <LabelValue
-            label="You receive"
-            value={
-              <p className="font-bold">
-                {withdrawAmount
-                  ? `${formatBalance({
-                      balance: withdrawAmount,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
-                    })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </p>
-            }
-          />
-          <LabelValue
-            label="Pool fee"
-            value={
-              <p className="font-bold">
-                {flatPlusCurveFee
-                  ? `${formatBalance({
-                      balance: flatPlusCurveFee,
-                      decimals: 18,
-                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
-                      places: 4,
-                    })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </p>
-            }
-          />
-        </>
+        <div className="flex flex-col gap-6 px-2 pb-2">
+          <div className="flex flex-col gap-3">
+            <LabelValue
+              label="You receive"
+              value={
+                <p className="font-bold">
+                  {withdrawAmount
+                    ? `${formatBalance({
+                        balance: withdrawAmount,
+                        decimals: baseToken.decimals,
+                        places: baseToken.places,
+                      })}`
+                    : "0"}{" "}
+                  {activeWithdrawToken.symbol}
+                </p>
+              }
+            />
+            <LabelValue
+              label="Pool fee"
+              value={
+                <p>
+                  {flatPlusCurveFee
+                    ? `${formatBalance({
+                        balance: flatPlusCurveFee,
+                        decimals: 18,
+                        // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                        places: 4,
+                      })}`
+                    : "0"}{" "}
+                  {activeWithdrawToken.symbol}
+                </p>
+              }
+            />
+          </div>
+        </div>
       }
       actionButton={(() => {
         if (!account) {
