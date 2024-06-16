@@ -50,11 +50,6 @@ export function CloseShortForm({
     decimals: baseToken.decimals,
   });
 
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
-  });
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
@@ -127,10 +122,10 @@ export function CloseShortForm({
 
   return (
     <TransactionView
-      heading="Close short"
       tokenInput={
         <TokenInput
           name="shorts"
+          inputLabel="Amount to redeem"
           token={`hy${baseToken.symbol}`}
           value={amount ?? ""}
           maxValue={
@@ -159,7 +154,7 @@ export function CloseShortForm({
         ) : undefined
       }
       transactionPreview={
-        <>
+        <div className="flex flex-col gap-3 px-2 pb-2">
           <LabelValue
             label="You receive"
             value={
@@ -179,7 +174,7 @@ export function CloseShortForm({
           <LabelValue
             label="Pool fee"
             value={
-              <p className="font-bold">
+              <p>
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
@@ -192,7 +187,7 @@ export function CloseShortForm({
               </p>
             }
           />
-        </>
+        </div>
       }
       disclaimer={
         !!amountAsBigInt && isAmountLargerThanPositionSize ? (

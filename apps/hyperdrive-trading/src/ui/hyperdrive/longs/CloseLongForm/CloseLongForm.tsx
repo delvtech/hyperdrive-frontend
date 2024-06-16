@@ -165,40 +165,38 @@ export function CloseLongForm({
         ) : undefined
       }
       transactionPreview={
-        <div className="flex flex-col gap-6 px-2 pb-2">
-          <div className="flex flex-col gap-3">
-            <LabelValue
-              label="You receive"
-              value={
-                <p className="font-bold">
-                  {withdrawAmount
-                    ? `${formatBalance({
-                        balance: withdrawAmount,
-                        decimals: baseToken.decimals,
-                        places: baseToken.places,
-                      })}`
-                    : "0"}{" "}
-                  {activeWithdrawToken.symbol}
-                </p>
-              }
-            />
-            <LabelValue
-              label="Pool fee"
-              value={
-                <p>
-                  {flatPlusCurveFee
-                    ? `${formatBalance({
-                        balance: flatPlusCurveFee,
-                        decimals: 18,
-                        // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
-                        places: 4,
-                      })}`
-                    : "0"}{" "}
-                  {activeWithdrawToken.symbol}
-                </p>
-              }
-            />
-          </div>
+        <div className="flex flex-col gap-3 px-2 pb-2">
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {withdrawAmount
+                  ? `${formatBalance({
+                      balance: withdrawAmount,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+          <LabelValue
+            label="Pool fee"
+            value={
+              <p>
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: 18,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 4,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
         </div>
       }
       actionButton={(() => {
