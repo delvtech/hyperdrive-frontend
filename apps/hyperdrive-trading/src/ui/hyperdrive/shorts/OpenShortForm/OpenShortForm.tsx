@@ -283,6 +283,7 @@ export function OpenShortForm({
                     places: activeToken.places,
                   })
                 )}{" "}
+                {activeToken.symbol}
               </strong>{" "}
               in exchange for the yield on{" "}
               <strong>
@@ -309,11 +310,11 @@ export function OpenShortForm({
                 days.
               </strong>{" "}
             </p>
-            <p className="text-center text-sm text-neutral-content">
-              {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-                ? `When closing your Short position, you can choose to receive back either ${baseToken.symbol} or ${sharesToken.symbol}.`
-                : `When closing your Short position, you'll receive ${sharesToken.symbol}.`}
-            </p>
+            {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
+              <p className="text-center text-sm text-neutral-content">
+                {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+              </p>
+            )}
           </div>
         );
       })()}
