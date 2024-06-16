@@ -1,11 +1,10 @@
-import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
+import { Long, calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import {
-  findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
+  findBaseToken,
+  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -14,6 +13,7 @@ import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -182,56 +182,42 @@ export function OpenLongPreview({
         />
       </div>
 
-      <div className="daisy-collapse justify-normal rounded-none text-sm">
-        <input type="checkbox" className="min-h-0" />
-        <div className=" daisy-collapse-title mb-3 min-h-0 p-0 font-medium">
-          <div className="flex items-center gap-4">
-            <span>Market Impact</span>
-            <span className="text-xs">
-              {/* Click to expand */}
-              <ChevronDownIcon className="h-4 focus:rotate-180 focus:transition" />
-            </span>
-          </div>
-        </div>
-        <div className="daisy-collapse-content space-y-2 px-0">
-          <LabelValue
-            size="small"
-            label="Fixed APR after open"
-            value={
-              openLongPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span>
-                  {spotRateAfterOpen ? (
-                    <span className="flex gap-2">
-                      {`${fixedApr?.formatted}% `}
-                      <ArrowRightIcon className="h-4 text-neutral-content" />
-                      {formatRate(spotRateAfterOpen)}%
-                    </span>
-                  ) : (
-                    "-"
-                  )}
-                </span>
-              )
-            }
-          />
-          <LabelValue
-            label="Fixed APR impact"
-            size="small"
-            value={
-              openLongPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span
-                  className={classNames({ "text-error": spotRateAfterOpen })}
-                >
-                  {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
-                </span>
-              )
-            }
-          />
-        </div>
-      </div>
+      <CollapseSection heading="Market Impact">
+        <LabelValue
+          size="small"
+          label="Fixed APR after open"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span>
+                {spotRateAfterOpen ? (
+                  <span className="flex gap-2">
+                    {`${fixedApr?.formatted}% `}
+                    <ArrowRightIcon className="h-4 text-neutral-content" />
+                    {formatRate(spotRateAfterOpen)}%
+                  </span>
+                ) : (
+                  "-"
+                )}
+              </span>
+            )
+          }
+        />
+        <LabelValue
+          label="Fixed APR impact"
+          size="small"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span className={classNames({ "text-error": spotRateAfterOpen })}>
+                {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
+              </span>
+            )
+          }
+        />
+      </CollapseSection>
     </div>
   );
 }
