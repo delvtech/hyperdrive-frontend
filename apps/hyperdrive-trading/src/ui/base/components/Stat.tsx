@@ -58,7 +58,7 @@ export function Stat({
           <InformationCircleIcon className="group-hover:text-gray-500 ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
         </p>
       ) : (
-        <div className="text-xs text-neutral-content">{label}</div>
+        <div className="text-sm text-neutral-content">{label}</div>
       )}
     </div>
   );

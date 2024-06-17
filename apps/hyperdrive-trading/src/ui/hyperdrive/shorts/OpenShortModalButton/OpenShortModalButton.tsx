@@ -51,7 +51,7 @@ export function OpenShortModalButton({
           subHeading={`Buy exposure to ${sharesToken.extensions.shortName} with minimal upfront capital`}
         >
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div className="daisy-badge daisy-badge-lg p-4">
+            <div className="daisy-badge daisy-badge-lg">
               <Stat
                 horizontal
                 size="small"
@@ -59,7 +59,7 @@ export function OpenShortModalButton({
                 value={`${numDays} days`}
               />
             </div>
-            <div className="daisy-badge daisy-badge-lg p-4">
+            <div className="daisy-badge daisy-badge-lg">
               <Stat
                 horizontal
                 size="small"

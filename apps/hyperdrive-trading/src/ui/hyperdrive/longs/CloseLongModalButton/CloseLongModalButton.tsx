@@ -53,7 +53,7 @@ export function CloseLongModalButton({
         <ModalHeader heading="Close Long" subHeading={subHeading}>
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
             <div
-              className={classNames("daisy-badge daisy-badge-lg p-4", {
+              className={classNames("daisy-badge daisy-badge-lg", {
                 "text-success": isMature,
               })}
             >
@@ -64,7 +64,7 @@ export function CloseLongModalButton({
                 value={getRemainingTimeLabel(Number(long.maturity))}
               />
             </div>
-            <div className="daisy-badge daisy-badge-lg p-4">
+            <div className="daisy-badge daisy-badge-lg">
               <Stat
                 horizontal
                 size="small"
