@@ -58,7 +58,10 @@ export function CloseShortModalButton({
                 horizontal
                 size="small"
                 label={isMature ? undefined : "Term:"}
-                value={getRemainingTimeLabel(Number(short.maturity))}
+                value={getRemainingTimeLabel({
+                  maturitySeconds: Number(short.maturity),
+                  condensed: true,
+                })}
               />
             </div>
             <div className="daisy-badge daisy-badge-lg">
