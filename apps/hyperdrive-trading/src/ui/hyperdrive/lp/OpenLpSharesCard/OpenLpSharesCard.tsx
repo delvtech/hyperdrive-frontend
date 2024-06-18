@@ -1,5 +1,12 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  EmptyExtensions,
+  findBaseToken,
+  findYieldSourceToken,
+  HyperdriveConfig,
+  TokenConfig,
+  YieldSourceExtensions,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
@@ -8,6 +15,7 @@ import { calculateRatio } from "src/base/calculateRatio";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -33,6 +41,10 @@ export function OpenLpSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const sharesToken = findYieldSourceToken({
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+    tokens: appConfig.tokens,
+  });
 
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { lpShares, lpSharesStatus } = useLpShares({
@@ -43,6 +55,7 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
+  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,
@@ -74,6 +87,7 @@ export function OpenLpSharesCard({
         })
       : 0n;
 
+  const lpSharesSymbol = `${baseToken.symbol}-LP Shares`;
   return (
     <Well elevation="flat">
       <div className="flex h-full w-80 flex-col justify-center gap-4">
@@ -83,7 +97,7 @@ export function OpenLpSharesCard({
               Your Liquidity
             </span>
             <LabelValue
-              label={`${baseToken.symbol}-LP Shares`}
+              label={lpSharesSymbol}
               value={
                 <p>
                   {lpShares !== undefined ? (
@@ -194,9 +208,14 @@ export function OpenLpSharesCard({
             <div className="daisy-card-actions mt-4 w-full">
               <Modal
                 modalId="withdrawalLpModal"
+                modalHeader={
+                  <ModalHeader
+                    heading="Remove Liquidity"
+                    subHeading={subHeading}
+                  />
+                }
                 modalContent={
                   <div>
-                    <h5 className="mb-4">Remove Liquidity</h5>
                     <button
                       className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
                       onClick={() =>
@@ -238,4 +257,28 @@ export function OpenLpSharesCard({
       </div>
     </Well>
   );
+}
+
+function getSubHeadingLabel(
+  baseToken: TokenConfig<EmptyExtensions>,
+  hyperdrive: HyperdriveConfig,
+  sharesToken: TokenConfig<YieldSourceExtensions>,
+) {
+  if (
+    hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
+    hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
+  ) {
+    return `Redeem your LP shares for ${baseToken.symbol} or ${sharesToken.symbol}`;
+  }
+
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    return `Redeem your LP shares for ${baseToken.symbol}`;
+  }
+
+  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    return `Redeem your LP shares for ${sharesToken.symbol}`;
+  }
+
+  // This should never happen and is just to prevent typescript from complaining
+  return "";
 }

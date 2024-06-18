@@ -40,7 +40,7 @@ export function OpenLongModalButton({
       modalHeader={
         <ModalHeader
           heading="Open a Long"
-          subHeading="Secure a fixed rate and know your exact yield upfront"
+          subHeading="Buy the fixed rate and know your exact yield upfront"
         >
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
             <div className="daisy-badge daisy-badge-lg">
