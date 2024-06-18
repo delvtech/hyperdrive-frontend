@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
+import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -47,7 +47,7 @@ export function Navbar(): ReactElement {
           />
         </a>
         {import.meta.env.DEV && !isTailwindSmallScreen ? (
-          <FeatureFlagPicker />
+          <DevtoolsMenu />
         ) : null}
         <ConnectWalletButton />
       </div>
