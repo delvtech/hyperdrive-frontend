@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
-import DiscordIcon from "src/ui/base/icons/discord";
+import FarcasterIcon from "src/ui/base/icons/farcaster";
+import LinkedInIcon from "src/ui/base/icons/linkedin";
+import XIcon from "src/ui/base/icons/x";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 import { sepolia } from "viem/chains";
@@ -19,21 +21,40 @@ export default function Footer(): ReactElement {
         >
           <HyperdriveLogo />
         </Link>
-        <a
-          href="https://delv.tech/discord"
-          className="daisy-link-hover daisy-link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <DiscordIcon />
-        </a>
+        <span className="text-neutral-content">Yield, Your Way.</span>
+        <div className="mt-2 flex flex-row gap-3">
+          <a
+            href="https://x.com/delv_tech"
+            className="daisy-link-hover daisy-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <XIcon />
+          </a>
+          <a
+            href="https://warpcast.com/~/channel/delv"
+            className="daisy-link-hover daisy-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FarcasterIcon />
+          </a>
+          <a
+            href="https://linkedin.com/company/delv-tech"
+            className="daisy-link-hover daisy-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon />
+          </a>
+        </div>
       </aside>
       <nav>
-        <header className={footerTitleClassName}>Services</header>
+        <header className={footerTitleClassName}>Resources</header>
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://docs.hyperdrive.box"
+          href="https://hyperdrive.box/docs"
           className="daisy-link-hover daisy-link"
         >
           Documentation
@@ -45,6 +66,22 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
         >
           Analytics
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docs-delv.gitbook.io/hyperdrive/security/security-for-the-hyperdrive-protocol"
+          className="daisy-link-hover daisy-link"
+        >
+          Security
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-trading-bots/quickstart"
+          className="daisy-link-hover daisy-link"
+        >
+          Trading Bots
         </a>
         {chainId === sepolia.id ? (
           <a
@@ -58,13 +95,58 @@ export default function Footer(): ReactElement {
         ) : undefined}
       </nav>
       <nav>
-        {/* TODO: Determine if company information is needed here */}
-        <header className={footerTitleClassName}>Company</header>
+        <header className={footerTitleClassName}>Ecosystem</header>
         <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docs.hyperdrive.box/hyperdrive-for-developers/integrations"
+          className="daisy-link-hover daisy-link"
+        >
+          Integrations
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://delv.tech/discord"
+          className="daisy-link-hover daisy-link"
+        >
+          Community
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://governance.element.fi/"
+          className="daisy-link-hover daisy-link"
+        >
+          Governance
+        </a>
+      </nav>
+      <nav>
+        {/* TODO: Determine if company information is needed here */}
+        <header className={footerTitleClassName}>About Us</header>
+        <a
+          target="_blank"
+          rel="noreferrer"
           className="daisy-link-hover daisy-link"
           href="https://www.delv.tech/"
         >
-          About Us
+          Delv
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="daisy-link-hover daisy-link"
+          href="https://blog.delv.tech/"
+        >
+          Blog
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="daisy-link-hover daisy-link"
+          href="https://github.com/delvtech"
+        >
+          Github
         </a>
       </nav>
       <nav>
