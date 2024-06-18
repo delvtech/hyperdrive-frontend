@@ -118,5 +118,5 @@ function getSubHeadingLabel(
   }
 
   // This should never happen and is just to prevent typescript from complaining
-  return "";
+  throw new Error("Cannot create subheading label");
 }
