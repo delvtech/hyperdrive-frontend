@@ -87,7 +87,6 @@ export function OpenLpSharesCard({
         })
       : 0n;
 
-  const lpSharesSymbol = `${baseToken.symbol}-LP Shares`;
   return (
     <Well elevation="flat">
       <div className="flex h-full w-80 flex-col justify-center gap-4">
@@ -97,7 +96,7 @@ export function OpenLpSharesCard({
               Your Liquidity
             </span>
             <LabelValue
-              label={lpSharesSymbol}
+              label={`${baseToken.symbol}-LP Shares`}
               value={
                 <p>
                   {lpShares !== undefined ? (
