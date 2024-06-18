@@ -24,6 +24,11 @@ div[data-rk] {
   --tab-border-color: var(--fallback-nc, oklch(var(--nc) / 0.2));
 }
 
+.daisy-modal::backdrop {
+  /* Make the default backdrop darker since our modal headers are dark too */
+  background-color: #000000bb;
+}
+
 @layer base {
   h1 {
     @apply font-chakraPetch text-h1;

@@ -1,11 +1,16 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
+import { Stat } from "src/ui/base/components/Stat";
 import { WarningButton } from "src/ui/base/components/WarningButton";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function AddLiquidityModalButton({
   modalId,
@@ -15,6 +20,22 @@ export function AddLiquidityModalButton({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
+  const appConfig = useAppConfig();
+  const { lpApy } = useLpApy(hyperdrive.address);
+  // TODO: copied from YieldStats, this should be formalized in useLpApy
+  const lpApyLabel =
+    lpApy === undefined
+      ? "no data"
+      : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`;
+
+  const { vaultRate } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const yieldSourceToken = findYieldSourceToken({
+    tokens: appConfig.tokens,
+    yieldSourceTokenAddress: hyperdrive.sharesToken,
+  });
+
   function closeModal() {
     (window as any)[modalId].close();
   }
@@ -32,9 +53,37 @@ export function AddLiquidityModalButton({
   return (
     <Modal
       modalId={modalId}
+      modalHeader={
+        <ModalHeader
+          heading="Add Liquidity"
+          subHeading={`Earn yield by providing liquidity for Longs and
+          Shorts. Your liquidity also earns the ${yieldSourceToken.extensions.shortName}
+          rate when not in use.
+          `}
+        >
+          {" "}
+          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
+            <div className="gradient-text daisy-badge daisy-badge-lg">
+              <Stat
+                horizontal
+                size="small"
+                label={"LP APY:"}
+                value={lpApyLabel}
+              />
+            </div>
+            <div className="daisy-badge daisy-badge-lg">
+              <Stat
+                horizontal
+                size="small"
+                label={`${yieldSourceToken.extensions.shortName}:`}
+                value={`${vaultRate?.formatted || 0n}%`}
+              />
+            </div>
+          </div>
+        </ModalHeader>
+      }
       modalContent={
         <div>
-          <h5 className="mb-4">Add Liquidity</h5>
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}

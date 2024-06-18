@@ -6,6 +6,7 @@ import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalen
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -95,7 +96,15 @@ export function OpenWithdrawalSharesCard({
             </div>
             <div className="daisy-card-actions">
               <Modal
-                modalId="withdrawalLpModal"
+                modalId="redeemWithdrawalShares"
+                modalHeader={
+                  <ModalHeader
+                    heading="Confirm Withdraw"
+                    subHeading={
+                      "Remove liquidity that is queued for withdrawal"
+                    }
+                  />
+                }
                 modalContent={
                   <RedeemWithdrawalSharesForm hyperdrive={hyperdrive} />
                 }

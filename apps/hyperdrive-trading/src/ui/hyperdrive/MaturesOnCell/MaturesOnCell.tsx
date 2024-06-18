@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { calculateTimeLeft } from "src/base/calculateTimeLeft";
 import { formatDate } from "src/ui/base/formatting/formatDate";
+import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useBlock } from "wagmi";
 
 export function MaturesOnCell({
@@ -12,17 +12,8 @@ export function MaturesOnCell({
   const { data: currentBlock } = useBlock();
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
-  const { days, hours, minutes } = calculateTimeLeft(
-    Number(currentBlock?.timestamp || 0),
-    Number(maturity),
-  );
 
-  const remainingTime = getRemainingTimeLabel(
-    isTermComplete,
-    days,
-    hours,
-    minutes,
-  );
+  const remainingTime = getRemainingTimeLabel(Number(maturity));
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
@@ -38,29 +29,4 @@ export function MaturesOnCell({
       </div>
     </div>
   );
-}
-
-function getRemainingTimeLabel(
-  isTermComplete: boolean,
-  days: number,
-  hours: number,
-  minutes: number,
-): string {
-  if (isTermComplete) {
-    return "Term complete";
-  }
-
-  if (days > 0) {
-    return `${days} days left`;
-  }
-
-  if (hours > 0) {
-    return `${hours} hours, ${minutes} minutes left`;
-  }
-
-  if (minutes > 0) {
-    return `${minutes} minutes left`;
-  }
-
-  return "-";
 }

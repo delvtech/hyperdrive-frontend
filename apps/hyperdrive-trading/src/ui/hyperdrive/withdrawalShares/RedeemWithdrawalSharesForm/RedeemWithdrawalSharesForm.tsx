@@ -8,6 +8,7 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -107,7 +108,6 @@ export function RedeemWithdrawalSharesForm({
 
   return (
     <TransactionView
-      heading="Confirm Withdrawal"
       tokenInput={
         <TokenInput
           name="withdrawalShares"
@@ -141,21 +141,23 @@ export function RedeemWithdrawalSharesForm({
         />
       }
       transactionPreview={
-        <div className="flex flex-col gap-1">
-          <div className="flex justify-between">
-            <p>You receive</p>
-            <p className="font-bold">
-              {baseProceeds && sharesProceeds
-                ? `${formatBalance({
-                    balance: isBaseTokenWithdrawal
-                      ? baseProceeds
-                      : sharesProceeds,
-                    decimals: activeWithdrawToken.decimals,
-                    places: activeWithdrawToken.places,
-                  })} ${activeWithdrawToken.symbol}`
-                : ""}
-            </p>
-          </div>
+        <div className="flex flex-col gap-3 px-2 pb-2">
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {baseProceeds && sharesProceeds
+                  ? `${formatBalance({
+                      balance: isBaseTokenWithdrawal
+                        ? baseProceeds
+                        : sharesProceeds,
+                      decimals: activeWithdrawToken.decimals,
+                      places: activeWithdrawToken.places,
+                    })} ${activeWithdrawToken.symbol}`
+                  : ""}
+              </p>
+            }
+          />
         </div>
       }
       actionButton={

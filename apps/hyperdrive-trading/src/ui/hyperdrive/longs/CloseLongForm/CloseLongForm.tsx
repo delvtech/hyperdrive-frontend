@@ -49,12 +49,6 @@ export function CloseLongForm({
     decimals: baseToken.decimals,
   });
 
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
-  });
-
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
@@ -129,7 +123,7 @@ export function CloseLongForm({
     <TransactionView
       disclaimer={
         <>
-          <p className="text-center text-sm text-neutral-content">
+          <p className="text-center text-xs text-neutral-content">
             Note: 1 hy{baseToken.symbol} is always worth 1 {baseToken.symbol} at
             maturity, however its value may fluctuate before maturity based on
             market activity.
@@ -146,6 +140,7 @@ export function CloseLongForm({
       tokenInput={
         <TokenInput
           name={baseToken.symbol}
+          inputLabel="Amount to redeem"
           token={`hy${baseToken.symbol}`}
           value={bondAmount ?? ""}
           maxValue={
@@ -170,7 +165,7 @@ export function CloseLongForm({
         ) : undefined
       }
       transactionPreview={
-        <>
+        <div className="flex flex-col gap-3 px-2 pb-2">
           <LabelValue
             label="You receive"
             value={
@@ -189,7 +184,7 @@ export function CloseLongForm({
           <LabelValue
             label="Pool fee"
             value={
-              <p className="font-bold">
+              <p>
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
@@ -202,7 +197,7 @@ export function CloseLongForm({
               </p>
             }
           />
-        </>
+        </div>
       }
       actionButton={(() => {
         if (!account) {

@@ -1,8 +1,12 @@
 import { PauseCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
+import { Stat } from "src/ui/base/components/Stat";
 import { WarningButton } from "src/ui/base/components/WarningButton";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 
@@ -15,6 +19,8 @@ export function OpenLongModalButton({
   hyperdrive,
 }: OpenLongModalButtonProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
+  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
+  const numDays = convertMillisecondsToDays(termLengthMS);
   function closeModal() {
     (window as any)[modalId].close();
   }
@@ -31,9 +37,33 @@ export function OpenLongModalButton({
   return (
     <Modal
       modalId={modalId}
+      modalHeader={
+        <ModalHeader
+          heading="Open a Long"
+          subHeading="Buy the fixed rate and know your exact yield upfront"
+        >
+          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
+            <div className="daisy-badge daisy-badge-lg">
+              <Stat
+                horizontal
+                size="small"
+                label={"Term:"}
+                value={`${numDays} days`}
+              />
+            </div>
+            <div className="daisy-badge daisy-badge-lg">
+              <Stat
+                horizontal
+                size="small"
+                label="Maturity Date:"
+                value={formatDate(Date.now() + termLengthMS)}
+              />
+            </div>
+          </div>
+        </ModalHeader>
+      }
       modalContent={
         <div>
-          <h5 className="mb-4">Open a long</h5>
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}
