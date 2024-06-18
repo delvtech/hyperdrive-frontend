@@ -57,7 +57,7 @@ export function CloseShortModalButton({
               <Stat
                 horizontal
                 size="small"
-                label={isMature ? "" : "Term:"}
+                label={isMature ? undefined : "Term:"}
                 value={getRemainingTimeLabel(Number(short.maturity))}
               />
             </div>

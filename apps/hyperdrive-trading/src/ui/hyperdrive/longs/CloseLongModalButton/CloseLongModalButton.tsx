@@ -54,13 +54,13 @@ export function CloseLongModalButton({
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
             <div
               className={classNames("daisy-badge daisy-badge-lg", {
-                "text-success": isMature,
+                "daisy-badge-success daisy-badge-outline": isMature,
               })}
             >
               <Stat
                 horizontal
                 size="small"
-                label={isMature ? "" : "Term:"}
+                label={isMature ? undefined : "Term:"}
                 value={getRemainingTimeLabel(Number(long.maturity))}
               />
             </div>
