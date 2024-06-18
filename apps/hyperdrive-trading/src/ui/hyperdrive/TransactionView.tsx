@@ -20,13 +20,13 @@ export function TransactionView({
   actionButton,
 }: TransactionViewProps): ReactElement {
   return (
-    <div className="flex w-full flex-col gap-8">
+    <div className="flex w-full flex-col gap-4">
       {heading !== undefined && <h5>{heading}</h5>}
       <div>
         {tokenInput}
         {setting}
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8">
         <div>
           <h6 className="mb-4">Preview transaction</h6>
           {transactionPreview}
