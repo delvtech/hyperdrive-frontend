@@ -1,7 +1,16 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 
 export function Hero(): ReactElement {
+  const { isFlagEnabled } = useFeatureFlag("throw-error");
+
+  if (isFlagEnabled) {
+    throw new Error(
+      `Rollbar Test Error: Thrown in ${import.meta.env.VITE_ROLLBAR_ENV as string} environment on Rollbar.`,
+    );
+  }
+
   return (
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">

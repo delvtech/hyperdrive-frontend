@@ -16,6 +16,9 @@ export function FeatureFlagPicker(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
+        <FeatureFlagMenuItem flagName="throw-error">
+          Throw Test Error
+        </FeatureFlagMenuItem>
       </ul>
     </div>
   );
