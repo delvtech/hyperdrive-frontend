@@ -1,7 +1,7 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
-export function FeatureFlagPicker(): ReactElement {
+export function DevtoolsMenu(): ReactElement {
   return (
     <div className="daisy-dropdown daisy-dropdown-end">
       <label tabIndex={0} className="daisy-btn daisy-btn-ghost rounded-btn">
@@ -16,12 +16,20 @@ export function FeatureFlagPicker(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
+        <MenuItem
+          onClick={() => {
+            throw new Error(
+              `Rollbar Test Error: Thrown in ${import.meta.env.VITE_ROLLBAR_ENV as string} environment on Rollbar.`,
+            );
+          }}
+          title={"Throw Test Error"}
+        />
       </ul>
     </div>
   );
 }
 
-function FeatureFlagMenuItem({
+function DevtoolsMenuItem({
   flagName,
   children,
 }: {
@@ -43,6 +51,14 @@ function FeatureFlagMenuItem({
           </div>
         )}
       </button>
+    </li>
+  );
+}
+
+function MenuItem({ onClick, title }: { onClick?: () => void; title: string }) {
+  return (
+    <li>
+      <button onClick={onClick}>{title}</button>
     </li>
   );
 }
