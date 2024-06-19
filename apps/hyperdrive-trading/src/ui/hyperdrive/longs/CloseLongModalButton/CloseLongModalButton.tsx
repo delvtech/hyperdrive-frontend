@@ -1,5 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
   EmptyExtensions,
   HyperdriveConfig,
@@ -54,17 +54,26 @@ export function CloseLongModalButton({
           <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
             <div
               className={classNames("daisy-badge daisy-badge-lg", {
-                "daisy-badge-success daisy-badge-outline": isMature,
+                "daisy-badge-neutral text-success": isMature,
               })}
             >
               <Stat
                 horizontal
                 size="small"
                 label={isMature ? undefined : "Term:"}
-                value={getRemainingTimeLabel({
-                  maturitySeconds: Number(long.maturity),
-                  condensed: true,
-                })}
+                value={
+                  <span
+                    className={classNames("flex items-center", {
+                      "font-normal": isMature,
+                    })}
+                  >
+                    {isMature ? <CheckIcon className="mr-2 h-4" /> : undefined}
+                    {getRemainingTimeLabel({
+                      maturitySeconds: Number(long.maturity),
+                      condensed: true,
+                    })}
+                  </span>
+                }
               />
             </div>
             <div className="daisy-badge daisy-badge-lg">
