@@ -242,18 +242,8 @@ export function OpenLongForm({
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
           activeToken={activeToken}
-          long={{
-            bondAmount: bondsReceived || 0n,
-            assetId: 0n,
-            baseAmountPaid: depositAmountAsBigInt || 0n,
-            maturity: BigInt(
-              Math.round(
-                (Date.now() +
-                  Number(hyperdrive.poolConfig.positionDuration * 1000n)) /
-                  1000,
-              ),
-            ),
-          }}
+          amountPaid={depositAmountAsBigInt || 0n}
+          bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
