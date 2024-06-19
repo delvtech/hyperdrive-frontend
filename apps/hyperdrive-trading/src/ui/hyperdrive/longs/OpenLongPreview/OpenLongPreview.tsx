@@ -53,6 +53,15 @@ export function OpenLongPreview({
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
   const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const amountPaidInBase = isBaseAmount
+    ? amountPaid
+    : convertSharesToBase({
+        sharesAmount: amountPaid,
+        vaultSharePrice: vaultSharePrice,
+        decimals: baseToken.decimals,
+      });
+  const yieldAtMaturity = bondAmount - amountPaidInBase;
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <div className="flex flex-col gap-3">
@@ -116,15 +125,7 @@ export function OpenLongPreview({
                       calculateAprFromPrice({
                         positionDuration:
                           hyperdrive.poolConfig.positionDuration || 0n,
-                        baseAmount: isBaseAmount
-                          ? amountPaid
-                          : // TODO: move sharesAmountPaid into the sdk's Long interface
-                            // instead of converting here
-                            convertSharesToBase({
-                              sharesAmount: amountPaid,
-                              vaultSharePrice: vaultSharePrice,
-                              decimals: activeToken.decimals,
-                            }),
+                        baseAmount: amountPaidInBase,
                         bondAmount: bondAmount,
                       }),
                       baseToken.decimals,
@@ -146,28 +147,10 @@ export function OpenLongPreview({
               >
                 {bondAmount > 0 ? (
                   <span className="cursor-help border-b border-dashed border-success text-success">
-                    {bondAmount -
-                    (isBaseAmount
-                      ? amountPaid
-                      : convertSharesToBase({
-                          sharesAmount: amountPaid,
-                          vaultSharePrice: vaultSharePrice,
-                          decimals: baseToken.decimals,
-                        }))
-                      ? "+"
-                      : ""}
-                    {amountPaid
+                    {yieldAtMaturity
                       ? // TODO: Add ROI here in parenthesis after the yield amount
-                        `${formatBalance({
-                          balance:
-                            bondAmount -
-                            (isBaseAmount
-                              ? amountPaid
-                              : convertSharesToBase({
-                                  sharesAmount: amountPaid,
-                                  vaultSharePrice: vaultSharePrice,
-                                  decimals: baseToken.decimals,
-                                })),
+                        `+${formatBalance({
+                          balance: yieldAtMaturity,
                           decimals: baseToken.decimals,
                           places: baseToken.places,
                         })} ${baseToken.symbol}`
