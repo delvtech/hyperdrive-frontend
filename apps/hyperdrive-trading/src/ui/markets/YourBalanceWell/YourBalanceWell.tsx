@@ -5,6 +5,7 @@ import {
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { cloudChain } from "src/chains/cloudChain";
@@ -12,6 +13,7 @@ import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalButton";
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
@@ -62,6 +64,7 @@ function AvailableAsset({
   token: TokenConfig<any>;
 }) {
   const { address: account } = useAccount();
+  const { isFlagEnabled: isBridgeFlagEnabled } = useFeatureFlag("bridge");
   const isEth = token.address === ETH_MAGIC_NUMBER;
   const { balance: tokenBalance, status: tokenBalanceStatus } = useTokenBalance(
     {
@@ -157,6 +160,11 @@ function AvailableAsset({
                   token={token}
                   spender={spender}
                 />
+                {isBridgeFlagEnabled && (
+                  <li>
+                    <Link to="/bridge">Bridge</Link>
+                  </li>
+                )}
                 {isTestnetChain ? (
                   <li>
                     <button disabled={!mint} onClick={() => mint?.()}>
