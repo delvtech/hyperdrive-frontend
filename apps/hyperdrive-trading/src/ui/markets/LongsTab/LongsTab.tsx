@@ -1,3 +1,4 @@
+import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -31,13 +32,16 @@ export function LongsTab({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { totalOpenLongsValue, isLoading: isTotalOpenValueLoading } =
-    useTotalOpenLongsValue({
-      hyperdrive,
-      account,
-      longs: openLongs,
-      enabled: activeOpenOrClosedTab === "Open",
-    });
+  const {
+    totalOpenLongsValue,
+    isLoading: isTotalOpenValueLoading,
+    totalOpenLongsValueError,
+  } = useTotalOpenLongsValue({
+    hyperdrive,
+    account,
+    longs: openLongs,
+    enabled: activeOpenOrClosedTab === "Open",
+  });
   const { totalClosedLongsValue, isLoading: isTotalClosedLongsValueLoading } =
     useTotalClosedLongsValue({
       hyperdrive,
@@ -73,6 +77,14 @@ export function LongsTab({
                       places: baseToken.places,
                     })}{" "}
                     {baseToken.symbol}
+                    {totalOpenLongsValueError ? (
+                      <span
+                        className="daisy-tooltip before:font-normal"
+                        data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
+                      >
+                        <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
+                      </span>
+                    ) : undefined}
                   </p>
                 ) : undefined
               ) : (
