@@ -13,7 +13,9 @@ export function MaturesOnCell({
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
 
-  const remainingTime = getRemainingTimeLabel(Number(maturity));
+  const remainingTime = getRemainingTimeLabel({
+    maturitySeconds: Number(maturity),
+  });
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">

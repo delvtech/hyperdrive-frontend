@@ -1,4 +1,4 @@
-import { Long, calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
+import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
@@ -20,7 +20,8 @@ import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
-  long: Long;
+  bondAmount: bigint;
+  amountPaid: bigint;
   openLongPreviewStatus: "error" | "idle" | "loading" | "success";
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
@@ -31,8 +32,9 @@ interface OpenLongPreviewProps {
 
 export function OpenLongPreview({
   hyperdrive,
-  long,
   openLongPreviewStatus,
+  amountPaid,
+  bondAmount,
   spotRateAfterOpen,
   activeToken,
   curveFee,
@@ -51,6 +53,15 @@ export function OpenLongPreview({
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
   const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const amountPaidInBase = isBaseAmount
+    ? amountPaid
+    : convertSharesToBase({
+        sharesAmount: amountPaid,
+        vaultSharePrice: vaultSharePrice,
+        decimals: baseToken.decimals,
+      });
+  const yieldAtMaturity = bondAmount - amountPaidInBase;
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <div className="flex flex-col gap-3">
@@ -58,7 +69,7 @@ export function OpenLongPreview({
           label="You spend"
           value={
             <span>{`${formatBalance({
-              balance: long.baseAmountPaid,
+              balance: amountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
             })} ${activeToken.symbol}`}</span>
@@ -71,7 +82,7 @@ export function OpenLongPreview({
               <Skeleton width={100} />
             ) : (
               <span className="font-bold">{`${formatBalance({
-                balance: long.bondAmount,
+                balance: bondAmount,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })} hy${baseToken.symbol}`}</span>
@@ -109,21 +120,13 @@ export function OpenLongPreview({
                 className="gradient-text daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
                 data-tip="Your net fixed rate after pool fees and slippage are applied."
               >
-                {long.bondAmount > 0
+                {bondAmount > 0
                   ? `${formatRate(
                       calculateAprFromPrice({
                         positionDuration:
                           hyperdrive.poolConfig.positionDuration || 0n,
-                        baseAmount: isBaseAmount
-                          ? long.baseAmountPaid
-                          : // TODO: move sharesAmountPaid into the sdk's Long interface
-                            // instead of converting here
-                            convertSharesToBase({
-                              sharesAmount: long.baseAmountPaid,
-                              vaultSharePrice: vaultSharePrice,
-                              decimals: activeToken.decimals,
-                            }),
-                        bondAmount: long.bondAmount,
+                        baseAmount: amountPaidInBase,
+                        bondAmount: bondAmount,
                       }),
                       baseToken.decimals,
                     )}%`
@@ -142,30 +145,12 @@ export function OpenLongPreview({
                 className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
                 data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
               >
-                {long.bondAmount > 0 ? (
+                {bondAmount > 0 ? (
                   <span className="cursor-help border-b border-dashed border-success text-success">
-                    {long.bondAmount -
-                    (isBaseAmount
-                      ? long.baseAmountPaid
-                      : convertSharesToBase({
-                          sharesAmount: long.baseAmountPaid,
-                          vaultSharePrice: vaultSharePrice,
-                          decimals: baseToken.decimals,
-                        }))
-                      ? "+"
-                      : ""}
-                    {long.baseAmountPaid
+                    {yieldAtMaturity
                       ? // TODO: Add ROI here in parenthesis after the yield amount
-                        `${formatBalance({
-                          balance:
-                            long.bondAmount -
-                            (isBaseAmount
-                              ? long.baseAmountPaid
-                              : convertSharesToBase({
-                                  sharesAmount: long.baseAmountPaid,
-                                  vaultSharePrice: vaultSharePrice,
-                                  decimals: baseToken.decimals,
-                                })),
+                        `+${formatBalance({
+                          balance: yieldAtMaturity,
                           decimals: baseToken.decimals,
                           places: baseToken.places,
                         })} ${baseToken.symbol}`

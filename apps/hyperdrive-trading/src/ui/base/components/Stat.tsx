@@ -25,7 +25,8 @@ export function Stat({
         "flex w-full items-center whitespace-pre-wrap ease-in-out",
         {
           "flex-col": !horizontal,
-          "flex-row-reverse gap-2": horizontal,
+          "flex-row-reverse": horizontal,
+          "gap-2": horizontal && label,
           "gap-0.5": size === "xsmall",
         },
       )}
