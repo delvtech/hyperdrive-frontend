@@ -160,11 +160,11 @@ function AvailableAsset({
                   token={token}
                   spender={spender}
                 />
-                {isBridgeFlagEnabled && (
+                {isBridgeFlagEnabled ? (
                   <li>
                     <Link to="/bridge">Bridge</Link>
                   </li>
-                )}
+                ) : undefined}
                 {isTestnetChain ? (
                   <li>
                     <button disabled={!mint} onClick={() => mint?.()}>

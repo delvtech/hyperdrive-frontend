@@ -17,7 +17,7 @@ export function DevtoolsMenu(): ReactElement {
         Menu Item Name here
         </FeatureFlagMenuItem> */}
         <FeatureFlagMenuItem flagName="bridge">
-          A bridge too far.
+          Bridge Assets
         </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {

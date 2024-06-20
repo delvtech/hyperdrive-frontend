@@ -1,25 +1,24 @@
-# @delvtech/hyperdrive-viem
+# @delvtech/gopher
 
-A [Viem](https://viem.sh) implementation of the [Hyperdrive Typescript SDK](https://hyperdrive-js.delv.tech)
+A Typescript implementation of the [Gopher Swagger API](https://gopher.test.buildwithsygma.com/swagger/index.html)
 
 ### Installation
 
 ```bash
-npm install viem @delvtech/hyperdrive-viem
+npm install viem @delvtech/gopher
 ```
 
 ### Quick Start
 
 ```typescript
-import { createReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { publicClient } from "./client";
+import {
+  api,
+  ServerGetFungibleTokensByChainHandlerResponse,
+  EntityFungibleToken,
+} from "@delvtech/gopher";
 
-const hyperdrive = createReadHyperdrive({
-  address: "0x...", // hyperdrive contract address
-  publicClient,
-});
+let response: ServerGetFungibleTokensByChainHandlerResponse =
+  await api.assets.fungibleList().data;
 
-const myLongs = hyperdrive.getOpenLongs({
-  account: "0x..."
-});
+let tokens: EntityFungibleToken[] = response.data;
 ```
