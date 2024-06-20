@@ -16,6 +16,9 @@ export function DevtoolsMenu(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
+        <FeatureFlagMenuItem flagName="bridge">
+          Bridge Assets
+        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
@@ -29,7 +32,7 @@ export function DevtoolsMenu(): ReactElement {
   );
 }
 
-function DevtoolsMenuItem({
+function FeatureFlagMenuItem({
   flagName,
   children,
 }: {

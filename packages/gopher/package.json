@@ -1,0 +1,25 @@
+{
+  "name": "@delvtech/gopher",
+  "version": "0.0.1",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "gen": "npx swagger-typescript-api -p ./src/gopher.json -o ./out -n gopher.ts",
+    "build": "npm run gen && tsc --project tsconfig.build.json",
+    "watch": "npm run build -- --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "swagger-typescript-api": "^13.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  },
+  "main": "dist/gopher.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

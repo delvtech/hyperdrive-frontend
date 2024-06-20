@@ -1,0 +1,11 @@
+{
+  "include": ["out"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "declaration": true
+  }
+}
