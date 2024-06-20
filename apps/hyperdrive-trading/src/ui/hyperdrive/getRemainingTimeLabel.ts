@@ -1,5 +1,10 @@
 import { calculateTimeLeft } from "src/base/calculateTimeLeft";
 
+/**
+ * @param options.maturitySeconds The timestamp in seconds when time runs out
+ * @param options.condensed Show condensed labels when showing both hours and minutes
+ * @returns string
+ */
 export function getRemainingTimeLabel({
   maturitySeconds,
   condensed = false,
