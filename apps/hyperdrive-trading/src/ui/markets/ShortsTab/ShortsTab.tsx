@@ -1,3 +1,4 @@
+import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -38,13 +39,16 @@ export function ShortsTab({
       shorts: openShorts,
       enabled: activeOpenOrClosedTab === "Open",
     });
-  const { totalClosedShortsValue, isLoading: isTotalClosedValueLoading } =
-    useTotalClosedShortsValue({
-      hyperdrive,
-      account,
-      closedShorts,
-      enabled: activeOpenOrClosedTab === "Closed",
-    });
+  const {
+    totalClosedShortsValue,
+    isLoading: isTotalClosedValueLoading,
+    totalClosedShortsValueError,
+  } = useTotalClosedShortsValue({
+    hyperdrive,
+    account,
+    closedShorts,
+    enabled: activeOpenOrClosedTab === "Closed",
+  });
 
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -74,6 +78,14 @@ export function ShortsTab({
                       places: baseToken.places,
                     })}{" "}
                     {baseToken.symbol}
+                    {totalClosedShortsValueError ? (
+                      <span
+                        className="daisy-tooltip before:font-normal"
+                        data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
+                      >
+                        <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
+                      </span>
+                    ) : undefined}
                   </p>
                 ) : undefined
               ) : (

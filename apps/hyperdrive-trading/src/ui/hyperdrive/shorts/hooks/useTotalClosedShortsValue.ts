@@ -16,14 +16,22 @@ export function useTotalClosedShortsValue({
   account: Address | undefined;
   closedShorts: ClosedShort[] | undefined;
   enabled: boolean;
-}): { totalClosedShortsValue: bigint | undefined; isLoading: boolean } {
+}): {
+  totalClosedShortsValue: bigint | undefined;
+  isLoading: boolean;
+  totalClosedShortsValueError: Error;
+} {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const queryEnabled =
     !!account && !!closedShorts && !!readHyperdrive && enabled;
 
-  const { data: totalClosedShortsValue, isLoading } = useQuery({
+  const {
+    data: totalClosedShortsValue,
+    isLoading,
+    error: totalClosedShortsValueError,
+  } = useQuery({
     queryKey: makeQueryKey("totalClosedShortsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
@@ -41,5 +49,9 @@ export function useTotalClosedShortsValue({
       : undefined,
   });
 
-  return { totalClosedShortsValue, isLoading };
+  return {
+    totalClosedShortsValue,
+    isLoading,
+    totalClosedShortsValueError: totalClosedShortsValueError as Error,
+  };
 }
