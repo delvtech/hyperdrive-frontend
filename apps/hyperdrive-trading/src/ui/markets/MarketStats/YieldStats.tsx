@@ -43,10 +43,16 @@ export function YieldStats({
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
-            <FixedRateStat hyperdrive={hyperdrive} />
+            <FixedRateStat
+              isActive={position === "Longs"}
+              hyperdrive={hyperdrive}
+            />
           </Animated>
           <Animated isActive={position === "Shorts"}>
-            <ShortRateStat hyperdrive={hyperdrive} />
+            <ShortRateStat
+              isActive={position === "Shorts"}
+              hyperdrive={hyperdrive}
+            />
           </Animated>
           <Animated isActive={position === "LP"}>
             <Stat
@@ -79,7 +85,7 @@ function Animated({
   return (
     <div
       className={classNames("transition-all duration-200 ease-in-out", {
-        "gradient-text z-20 scale-105": isActive,
+        "z-20 scale-105": isActive,
       })}
     >
       {children}
