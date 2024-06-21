@@ -15,6 +15,7 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
     <Modal
       forceOpen={!isTermsOfServiceAndPrivacePolicyAccepted}
       modalId="tos-and-privacy-policy"
+      className="px-4 pt-8 lg:px-0"
       modalContent={
         <div className="flex flex-col gap-5">
           <h5 className="font-bold">Terms of Use and Privacy Policy</h5>
