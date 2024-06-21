@@ -18,7 +18,6 @@ interface UsePreviewCloseShortResult {
   previewCloseShortStatus: QueryStatusWithIdle;
   previewCloseShortError: Error;
   amountOut: bigint | undefined;
-  marketEstimate: bigint | undefined;
   flatPlusCurveFee: bigint | undefined;
 }
 
@@ -80,7 +79,6 @@ export function usePreviewCloseShort({
 
   return {
     amountOut: data?.amountOut,
-    marketEstimate: data?.marketEstimate,
     flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseShortStatus: getStatus(status, fetchStatus),
     previewCloseShortError: error as Error,

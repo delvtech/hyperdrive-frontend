@@ -1816,9 +1816,72 @@ export class ReadHyperdrive extends ReadModel {
       }),
     };
   }
+  /**
+   * Get a rough estimate of the market value of a short. This can be used to
+   * value a position that cannot be fully closed.
+   */
+  async estimateShortMarketValue({
+    maturityTime,
+    asBase,
+    shortAmountIn,
+    options,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    asBase: boolean;
+    extraData?: `0x${string}`;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    // The checkpoint in which this position was opened.
+    // This is always maturity time - position duration thanks to mint on demand
+    const openCheckpointTimestamp = maturityTime - poolConfig.positionDuration;
+    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+      timestamp: openCheckpointTimestamp,
+      options,
+    });
+
+    const currentTime = Math.floor(Date.now() / 1000);
+
+    // If the position is mature, we use the closing vault share price otherwise
+    // use the current vault share price
+    let closeSharePrice = poolInfo.vaultSharePrice;
+    if (maturityTime <= currentTime) {
+      const closingCheckpoint = await this.getCheckpoint({
+        timestamp: maturityTime,
+        options,
+      });
+      closeSharePrice = closingCheckpoint.vaultSharePrice;
+    }
+
+    const marketEstimateInShares = BigInt(
+      hyperwasm.calcShortMarketValue(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        openSharePrice.toString(),
+        closeSharePrice.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+
+    if (!asBase) {
+      return marketEstimateInShares;
+    }
+
+    return this.convertToBase({
+      sharesAmount: marketEstimateInShares,
+      options,
+    });
+  }
 
   /**
    * Predicts the amount of base asset a user will receive when closing a short.
+   * If closing the short would result in negative interest, an error will be
+   * thrown.
    */
   async previewCloseShort({
     maturityTime,
@@ -1834,7 +1897,6 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{
     amountOut: bigint;
     flatPlusCurveFee: bigint;
-    marketEstimate: bigint;
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
@@ -1892,22 +1954,9 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
-    const marketEstimate = BigInt(
-      hyperwasm.calcShortMarketValue(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        shortAmountIn.toString(),
-        openSharePrice.toString(),
-        closeSharePrice.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
-    );
-    console.log("marketEstimate", marketEstimate);
     if (!asBase) {
       return {
         amountOut: amountOutInShares,
-        marketEstimate: marketEstimate,
         flatPlusCurveFee,
       };
     }
@@ -1915,10 +1964,6 @@ export class ReadHyperdrive extends ReadModel {
     return {
       amountOut: await this.convertToBase({
         sharesAmount: amountOutInShares,
-        options,
-      }),
-      marketEstimate: await this.convertToBase({
-        sharesAmount: marketEstimate,
         options,
       }),
       flatPlusCurveFee: await this.convertToBase({
@@ -2099,4 +2144,8 @@ function calculateLpApy({
   );
 
   return lpApy;
+}
+
+function isNegativeInterestError(error: string) {
+  return error.includes("InsufficientLiquidity: Negative Interest");
 }
