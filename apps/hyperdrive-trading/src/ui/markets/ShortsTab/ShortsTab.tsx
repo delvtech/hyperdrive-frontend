@@ -50,6 +50,11 @@ export function ShortsTab({
     enabled: activeOpenOrClosedTab === "Closed",
   });
 
+  const isTotalValueLoading =
+    activeOpenOrClosedTab === "Open"
+      ? isTotalOpenValueLoading
+      : isTotalClosedValueLoading;
+
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -68,29 +73,27 @@ export function ShortsTab({
           <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Short Positions</h5>
-              {!isTotalOpenValueLoading || !isTotalClosedValueLoading ? (
-                shorts?.length ? (
-                  <p className="text-sm text-neutral-content">
-                    Total Value:{" "}
-                    {formatBalance({
-                      balance: totalValue || 0n,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
-                    })}{" "}
-                    {baseToken.symbol}
-                    {totalClosedShortsValueError ? (
-                      <span
-                        className="daisy-tooltip before:font-normal"
-                        data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
-                      >
-                        <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
-                      </span>
-                    ) : undefined}
-                  </p>
-                ) : undefined
-              ) : (
+              {isTotalValueLoading ? (
                 <Skeleton width={100} />
-              )}
+              ) : shorts?.length ? (
+                <p className="text-sm text-neutral-content">
+                  Total Value:{" "}
+                  {formatBalance({
+                    balance: totalValue || 0n,
+                    decimals: baseToken.decimals,
+                    places: baseToken.places,
+                  })}{" "}
+                  {baseToken.symbol}
+                  {totalClosedShortsValueError ? (
+                    <span
+                      className="daisy-tooltip before:font-normal"
+                      data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
+                    >
+                      <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
+                    </span>
+                  ) : undefined}
+                </p>
+              ) : undefined}
             </div>
             <div className="flex items-center gap-4">
               {account && openShorts?.length ? (

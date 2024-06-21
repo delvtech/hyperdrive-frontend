@@ -42,13 +42,18 @@ export function LongsTab({
     longs: openLongs,
     enabled: activeOpenOrClosedTab === "Open",
   });
-  const { totalClosedLongsValue, isLoading: isTotalClosedLongsValueLoading } =
+  const { totalClosedLongsValue, isLoading: isTotalClosedValueLoading } =
     useTotalClosedLongsValue({
       hyperdrive,
       account,
       closedLongs,
       enabled: activeOpenOrClosedTab === "Closed",
     });
+  const isTotalValueLoading =
+    activeOpenOrClosedTab === "Open"
+      ? isTotalOpenValueLoading
+      : isTotalClosedValueLoading;
+
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -67,29 +72,27 @@ export function LongsTab({
           <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Long Positions</h5>
-              {!isTotalOpenValueLoading || !isTotalClosedLongsValueLoading ? (
-                longs?.length ? (
-                  <p className="text-sm text-neutral-content">
-                    Total Value:{" "}
-                    {formatBalance({
-                      balance: totalValue || 0n,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
-                    })}{" "}
-                    {baseToken.symbol}
-                    {totalOpenLongsValueError ? (
-                      <span
-                        className="daisy-tooltip before:font-normal"
-                        data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
-                      >
-                        <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
-                      </span>
-                    ) : undefined}
-                  </p>
-                ) : undefined
-              ) : (
+              {isTotalValueLoading ? (
                 <Skeleton width={100} />
-              )}
+              ) : longs?.length ? (
+                <p className="text-sm text-neutral-content">
+                  Total Value:{" "}
+                  {formatBalance({
+                    balance: totalValue || 0n,
+                    decimals: baseToken.decimals,
+                    places: baseToken.places,
+                  })}{" "}
+                  {baseToken.symbol}
+                  {totalOpenLongsValueError ? (
+                    <span
+                      className="daisy-tooltip before:font-normal"
+                      data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
+                    >
+                      <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
+                    </span>
+                  ) : undefined}
+                </p>
+              ) : undefined}
             </div>
             <div className="flex items-center gap-4">
               {account && openLongs?.length ? (
