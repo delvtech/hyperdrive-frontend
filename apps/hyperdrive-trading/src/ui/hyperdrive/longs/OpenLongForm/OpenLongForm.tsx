@@ -250,13 +250,6 @@ export function OpenLongForm({
         />
       }
       disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
         if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
@@ -266,6 +259,13 @@ export function OpenLongForm({
                 decimals: baseToken.decimals,
               })}{" "}
               hy{baseToken.symbol}
+            </p>
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
             </p>
           );
         }
