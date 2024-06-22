@@ -82,7 +82,7 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className="font-bold">{`${formatBalance({
+              <span className="">{`${formatBalance({
                 balance: bondAmount,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
