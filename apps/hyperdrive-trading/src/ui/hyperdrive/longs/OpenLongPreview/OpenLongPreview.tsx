@@ -69,7 +69,11 @@ export function OpenLongPreview({
         <LabelValue
           label="You spend"
           value={
-            <span>{`${formatBalance({
+            <span
+              className={classNames({
+                "text-base-content/80": !amountPaid,
+              })}
+            >{`${formatBalance({
               balance: amountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
@@ -82,7 +86,11 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className="">{`${formatBalance({
+              <span
+                className={classNames({
+                  "text-base-content/80": !bondAmount,
+                })}
+              >{`${formatBalance({
                 balance: bondAmount,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
@@ -99,7 +107,11 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span>
+              <span
+                className={classNames({
+                  "text-base-content/80": !curveFee,
+                })}
+              >
                 {curveFee
                   ? `${formatBalance({
                       balance: curveFee,
@@ -156,7 +168,9 @@ export function OpenLongPreview({
                   : undefined}
               </span>
             ) : (
-              <span>0 {baseToken.symbol}</span>
+              <span className={"text-base-content/80"}>
+                0 {baseToken.symbol}
+              </span>
             )
           }
         />
@@ -170,7 +184,11 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span>
+              <span
+                className={classNames({
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2">
                     <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
@@ -191,7 +209,12 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className={classNames({ "text-error": spotRateAfterOpen })}>
+              <span
+                className={classNames({
+                  "text-error": spotRateAfterOpen,
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
                 {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
               </span>
             )
