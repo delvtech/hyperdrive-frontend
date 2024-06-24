@@ -16,6 +16,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { parseUnits } from "viem";
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
   tokenIn: TokenConfig<any>;
@@ -45,7 +46,9 @@ export function OpenShortPreview({
     hyperdriveAddress: hyperdrive.address,
   });
   const { shortApr, shortRateStatus } = useShortRate({
-    bondAmount: shortSize,
+    // show the market short rate (aka bond amount of 1) if the user hasn't
+    // already entered a short size
+    bondAmount: shortSize || parseUnits("1", 18),
     hyperdriveAddress: hyperdrive.address,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
     variableApy: vaultRate?.vaultRate,
