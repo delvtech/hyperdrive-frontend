@@ -1,8 +1,8 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import ExclamationTriangleIcon from "@heroicons/react/24/outline/ExclamationTriangleIcon";
 import classNames from "classnames";
 import { ReactElement } from "react";
 
-export function VpnDetectedMessage({
+export function RestrictedCountryMessage({
   className,
 }: {
   className?: string;
@@ -17,9 +17,11 @@ export function VpnDetectedMessage({
       <div className="space-y-3">
         <h2 className="flex items-center justify-center gap-4">
           <ExclamationTriangleIcon className="text-red-500 size-10 stroke-error" />{" "}
-          VPN detected
+          Restricted
         </h2>
-        <p>We&lsquo;re sorry but this app is not accessible for VPN users.</p>
+        <p>
+          We&lsquo;re sorry but access from restricted countries is prohibited.
+        </p>
       </div>
       <a href="https://hyperdrive.box" className="daisy-link-primary">
         Hyperdrive Website

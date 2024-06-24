@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './ui/routes/__root'
 import { Route as VpnImport } from './ui/routes/vpn'
 import { Route as VoidImport } from './ui/routes/void'
+import { Route as RestrictedcountriesImport } from './ui/routes/restricted_countries'
 import { Route as MarketsImport } from './ui/routes/markets'
 import { Route as BridgeImport } from './ui/routes/bridge'
 import { Route as IndexImport } from './ui/routes/index'
@@ -27,6 +28,11 @@ const VpnRoute = VpnImport.update({
 
 const VoidRoute = VoidImport.update({
   path: '/void',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const RestrictedcountriesRoute = RestrictedcountriesImport.update({
+  path: '/restricted_countries',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -66,6 +72,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketsImport
       parentRoute: typeof rootRoute
     }
+    '/restricted_countries': {
+      preLoaderRoute: typeof RestrictedcountriesImport
+      parentRoute: typeof rootRoute
+    }
     '/void': {
       preLoaderRoute: typeof VoidImport
       parentRoute: typeof rootRoute
@@ -87,6 +97,7 @@ export const routeTree = rootRoute.addChildren([
   IndexRoute,
   BridgeRoute,
   MarketsRoute,
+  RestrictedcountriesRoute,
   VoidRoute,
   VpnRoute,
   MarketAddressRoute,
