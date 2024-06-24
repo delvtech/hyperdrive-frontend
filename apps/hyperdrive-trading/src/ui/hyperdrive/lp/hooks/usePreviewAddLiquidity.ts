@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -19,7 +20,7 @@ interface UsePreviewAddLiquidityOptions {
 }
 
 interface UsePreviewAddLiquidityResult {
-  status: "error" | "idle" | "loading" | "success";
+  status: QueryStatusWithIdle;
   previewAddLiquidityError: string;
   lpSharesOut: bigint | undefined;
 }

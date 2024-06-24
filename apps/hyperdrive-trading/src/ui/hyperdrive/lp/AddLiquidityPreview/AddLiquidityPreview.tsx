@@ -3,6 +3,7 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +16,7 @@ interface AddLiquidityPreviewProps {
   depositTokenDecimals: number;
   depositTokenPlaces: number;
   depositTokenSymbol: string;
-  addLiquidityPreviewStatus: "error" | "idle" | "loading" | "success";
+  addLiquidityPreviewStatus: QueryStatusWithIdle;
 }
 
 export function AddLiquidityPreview({

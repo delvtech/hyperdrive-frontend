@@ -9,6 +9,7 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -24,7 +25,7 @@ interface OpenShortPreviewProps {
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
-  openShortPreviewStatus: "error" | "idle" | "loading" | "success";
+  openShortPreviewStatus: QueryStatusWithIdle;
 }
 
 export function OpenShortPreview({

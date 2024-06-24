@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getStatus } from "src/base/queryStatus";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -13,7 +13,7 @@ interface UsePreviewOpenLongOptions {
 }
 
 interface UsePreviewOpenLongResult {
-  status: "error" | "idle" | "loading" | "success";
+  status: QueryStatusWithIdle;
   bondsReceived: bigint | undefined;
   maturityTime: bigint | undefined;
   spotPriceAfterOpen: bigint | undefined;

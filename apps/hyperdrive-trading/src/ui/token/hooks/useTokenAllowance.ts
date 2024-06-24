@@ -1,3 +1,4 @@
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { Address, erc20Abi } from "viem";
 import { useReadContract } from "wagmi";
 
@@ -10,7 +11,7 @@ interface UseTokenAllowanceOptions {
 
 interface useTokenAllowanceResult {
   tokenAllowance: bigint | undefined;
-  status: "error" | "idle" | "loading" | "success";
+  status: QueryStatusWithIdle;
 }
 
 export function useTokenAllowance({
