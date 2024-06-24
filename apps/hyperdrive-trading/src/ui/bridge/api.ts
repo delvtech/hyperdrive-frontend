@@ -1,4 +1,4 @@
-import { Api } from "out/gopher";
+import { Api } from "@delvtech/gopher";
 
 export const BASE_URL = "https://gopher.test.buildwithsygma.com";
 export const SWAGGER_JSON_URL = `${BASE_URL}/swagger/doc.json`;
