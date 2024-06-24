@@ -59,7 +59,11 @@ export function YieldStats({
               label="LP APY (7d)"
               value={
                 lpApyStatus !== "loading" ? (
-                  <span className="flex items-center gap-1.5">
+                  <span
+                    className={classNames("flex items-center gap-1.5", {
+                      "gradient-text": position === "LP",
+                    })}
+                  >
                     {lpApy === undefined
                       ? "no data"
                       : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`}{" "}
