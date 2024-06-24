@@ -14,7 +14,7 @@
   "devDependencies": {
     "typescript": "^5.0.2"
   },
-  "main": "dist/gopher.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
