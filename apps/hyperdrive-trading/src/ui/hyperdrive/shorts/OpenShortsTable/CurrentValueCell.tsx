@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { useEstimateShortMarketValue } from "src/ui/hyperdrive/shorts/hooks/useEstimateShortMarketValue";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 
 export function CurrentValueCell({
@@ -33,8 +34,14 @@ export function CurrentValueCell({
     shortAmountIn: openShort.bondAmount,
   });
 
+  const { marketEstimate } = useEstimateShortMarketValue({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: openShort.maturity,
+    shortAmountIn: openShort.bondAmount,
+  });
+
   const currentValueLabel = formatBalance({
-    balance: currentValueInBase || 0n,
+    balance: currentValueInBase || marketEstimate || 0n,
     decimals: baseToken.decimals,
     places: baseToken.places,
   });
