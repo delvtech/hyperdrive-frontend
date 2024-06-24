@@ -1,10 +1,11 @@
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { useMatchRoute, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, useEffect } from "react";
 import { useAccount } from "wagmi";
 import useAddressScreen from "./hooks/useAddressScreen";
 
-export function IneligibleAccountMessage({
+export function VpnDetectedMessage({
   className,
   show,
 }: {
@@ -30,8 +31,11 @@ export function IneligibleAccountMessage({
         className,
       )}
     >
-      <h2>Ineligible Account</h2>
-      <p>This account is not eligible to use this website.</p>
+      <h2 className="flex items-center gap-4">
+        <ExclamationTriangleIcon className="text-red-500 size-10 stroke-error" />
+        VPN detected
+      </h2>
+      <p>We&lsquo;re sorry but this app is not accessible for VPN users.</p>
     </div>
   ) : undefined;
 }
