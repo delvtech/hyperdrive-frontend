@@ -9,8 +9,10 @@ import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
+  isActive,
   hyperdrive,
 }: {
+  isActive: boolean;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const [rateType, setRateType] = useLocalStorage<"shortApr" | "shortRoi">(
@@ -30,6 +32,13 @@ export function ShortRateStat({
   const isLoadingShortRate =
     shortRateStatus === "loading" && shortApr === undefined;
 
+  const isNegative = (shortApr?.apr || 0) < 0n;
+
+  const rateClassName = classNames("flex items-center gap-1.5", {
+    "gradient-text": isActive && shortRateStatus === "success" && !isNegative,
+    "text-error": isActive && isNegative,
+  });
+
   return (
     <MultiStat
       activeStatId={
@@ -46,7 +55,7 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <span className={classNames("flex items-center gap-1.5")}>
+            <span className={rateClassName}>
               {shortApr?.formatted ? `${shortApr.formatted}%` : "-"}
             </span>
           ),
@@ -60,7 +69,7 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <span className={classNames("flex items-center gap-1.5")}>
+            <span className={rateClassName}>
               {shortRoi?.formatted ? `${shortRoi.formatted}%` : "-"}
             </span>
           ),

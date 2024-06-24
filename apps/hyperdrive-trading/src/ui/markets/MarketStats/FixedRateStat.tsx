@@ -9,7 +9,9 @@ import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 export function FixedRateStat({
   hyperdrive,
+  isActive,
 }: {
+  isActive: boolean;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
@@ -22,6 +24,10 @@ export function FixedRateStat({
     "yield-stats-long-rate-type",
     "fixedApr",
   );
+  const rateClassName = classNames("flex items-center gap-1.5", {
+    "gradient-text": isActive,
+  });
+
   return (
     <MultiStat
       activeStatId={
@@ -36,7 +42,7 @@ export function FixedRateStat({
             fixedAprStatus === "loading" && fixedApr === undefined ? (
               <Skeleton className="w-20" />
             ) : (
-              <span className={classNames("flex items-center gap-1.5")}>
+              <span className={rateClassName}>
                 {fixedApr?.formatted || "0"}%
               </span>
             ),
@@ -52,7 +58,7 @@ export function FixedRateStat({
             fixedAprStatus === "loading" && fixedApr === undefined ? (
               <Skeleton className="w-20" />
             ) : (
-              <span className={classNames("flex items-center gap-1.5")}>
+              <span className={rateClassName}>
                 {fixedRoi?.formatted || "0"}%
               </span>
             ),
