@@ -1,16 +1,14 @@
-import { EntityFungibleToken, ServerErrorResponse } from "@delvtech/gopher";
-import { UseQueryResult } from "@tanstack/react-query";
+import { EntityFungibleToken } from "@delvtech/gopher";
+import { QueryStatus } from "@tanstack/react-query";
 import { useTokens } from "src/ui/bridge/hooks/useTokens";
 
 export const useToken = (
   tokenSymbol: string,
-): Omit<
-  UseQueryResult<EntityFungibleToken | undefined, ServerErrorResponse>,
-  "refetch"
-> => {
-  const result = useTokens();
-  const token = result?.data?.data?.find(
-    (token) => token.symbol === tokenSymbol,
-  );
-  return { ...result, data: token };
+): {
+  token: EntityFungibleToken | undefined;
+  status: QueryStatus;
+} => {
+  const { tokens, status } = useTokens();
+  const token = tokens?.find((token) => token.symbol === tokenSymbol);
+  return { token, status };
 };

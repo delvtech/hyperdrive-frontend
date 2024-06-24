@@ -3,11 +3,10 @@ import { Well } from "src/ui/base/components/Well/Well";
 import { useChains } from "src/ui/bridge/hooks/useChains";
 
 function Chains(): ReactNode {
-  const { data } = useChains();
-  if (!data) {
+  const { chains } = useChains();
+  if (!chains) {
     return <div>Loading...</div>;
   }
-  const { data: chains = [] } = data;
 
   const chainRows = chains.map((chain) => (
     <tr key={chain.chainID}>

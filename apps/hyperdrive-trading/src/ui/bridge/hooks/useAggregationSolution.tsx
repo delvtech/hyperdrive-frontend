@@ -1,5 +1,5 @@
-import { ServerAggregateBalanceSolutionHandlerResponse } from "@delvtech/gopher";
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { EntityTokenTransferQuote } from "@delvtech/gopher";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { gopher } from "src/ui/bridge/api";
 
 export interface AggregationSolutionParams {
@@ -13,15 +13,18 @@ export interface AggregationSolutionParams {
 
 export const useAggregationSolution = (
   params: AggregationSolutionParams,
-): UseQueryResult<ServerAggregateBalanceSolutionHandlerResponse, unknown> => {
-  const result = useQuery<ServerAggregateBalanceSolutionHandlerResponse>({
+): {
+  solution: EntityTokenTransferQuote[] | undefined;
+  status: QueryStatus;
+} => {
+  const { data, status } = useQuery({
     queryKey: ["aggregationSolution", params],
     queryFn: async () => {
       const response = await gopher.solutions.aggregationList(params);
       if (!response.ok) {
         throw new Error("Failed to fetch aggregation solution");
       }
-      return response.json();
+      return response;
     },
     enabled:
       !!params.account &&
@@ -30,5 +33,5 @@ export const useAggregationSolution = (
       !!params.destination,
   });
 
-  return result;
+  return { solution: data?.data?.data, status };
 };

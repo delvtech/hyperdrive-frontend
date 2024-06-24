@@ -1,15 +1,16 @@
 import {
+  EntityNetwork,
   ServerErrorResponse,
   ServerGetNetworksHandlerResponse,
 } from "@delvtech/gopher";
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { gopher } from "src/ui/bridge/api";
 
-export const useChains = (): UseQueryResult<
-  ServerGetNetworksHandlerResponse,
-  ServerErrorResponse
-> => {
-  const result = useQuery<
+export const useChains = (): {
+  chains: EntityNetwork[] | undefined;
+  status: QueryStatus;
+} => {
+  const { data, status } = useQuery<
     ServerGetNetworksHandlerResponse,
     ServerErrorResponse
   >({
@@ -20,5 +21,5 @@ export const useChains = (): UseQueryResult<
     },
   });
 
-  return result;
+  return { chains: data?.data, status };
 };

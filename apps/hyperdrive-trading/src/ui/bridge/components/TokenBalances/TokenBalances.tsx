@@ -7,21 +7,21 @@ import { useAccount } from "wagmi";
 function TokenBalances(): ReactNode {
   const { address } = useAccount();
   const tokenSymbols = ["USDT", "USDC", "DAI"];
-  const { data: tokenBalances } = useTokenBalances(address || "", tokenSymbols);
-  const { data: chains } = useChainsByChainId();
+  const { balances } = useTokenBalances(address || "", tokenSymbols);
+  const { chains } = useChainsByChainId();
 
   if (!address) {
     return <Well>Connect your wallet</Well>;
   }
-  if (!tokenBalances || !chains) {
+  if (!balances || !chains) {
     return <Well>Loading balances...</Well>;
   }
 
   return (
     <div className="flex-col-3 flex w-full space-x-6">
-      {tokenBalances.map(({ data }, index) => {
+      {balances.map((chainBalances, index) => {
         const totalBalance =
-          data?.reduce((total, token) => {
+          chainBalances?.reduce((total, token) => {
             return (
               total +
               parseFloat(token?.balance || "0") /
@@ -40,7 +40,7 @@ function TokenBalances(): ReactNode {
                 </tr>
               </thead>
               <tbody>
-                {data?.map((token) => (
+                {chainBalances?.map((token) => (
                   <tr key={token.chainId}>
                     <td>{chains[token.chainId!].name}</td>
                     <td>

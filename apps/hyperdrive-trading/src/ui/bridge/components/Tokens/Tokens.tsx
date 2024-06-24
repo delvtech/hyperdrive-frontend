@@ -3,12 +3,10 @@ import { Well } from "src/ui/base/components/Well/Well";
 import { useTokens } from "src/ui/bridge/hooks/useTokens";
 
 function Tokens(): ReactNode {
-  const { data } = useTokens();
-  if (!data) {
+  const { tokens = [] } = useTokens();
+  if (!tokens) {
     return <div>Loading...</div>;
   }
-
-  const { data: tokens = [] } = data;
 
   const tokenRows = tokens.map((token) => (
     <tr key={token.symbol}>
