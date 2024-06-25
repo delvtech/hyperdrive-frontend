@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getStatus } from "src/base/queryStatus";
+import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -14,7 +14,7 @@ export function useMaxLong({
   maxBaseIn: bigint | undefined;
   maxSharesIn: bigint | undefined;
   maxBondsOut: bigint | undefined;
-  status: "error" | "idle" | "loading" | "success";
+  status: QueryStatusWithIdle;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive;
