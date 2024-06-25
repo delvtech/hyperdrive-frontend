@@ -89,7 +89,7 @@ function Animated({
   return (
     <div
       className={classNames("transition-all duration-200 ease-in-out", {
-        "z-20 scale-105": isActive,
+        "scale-105": isActive,
       })}
     >
       {children}
