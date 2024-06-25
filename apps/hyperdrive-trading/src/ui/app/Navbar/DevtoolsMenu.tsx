@@ -19,14 +19,9 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="bridge">
           Bridge Assets
         </FeatureFlagMenuItem>
-        <MenuItem
-          onClick={() => {
-            throw new Error(
-              `Rollbar Test Error: Thrown in ${import.meta.env.VITE_ROLLBAR_ENV as string} environment on Rollbar.`,
-            );
-          }}
-          title={"Throw Test Error"}
-        />
+        <FeatureFlagMenuItem flagName="version-picker">
+          Show Version Picker
+        </FeatureFlagMenuItem>
       </ul>
     </div>
   );
@@ -54,14 +49,6 @@ function FeatureFlagMenuItem({
           </div>
         )}
       </button>
-    </li>
-  );
-}
-
-function MenuItem({ onClick, title }: { onClick?: () => void; title: string }) {
-  return (
-    <li>
-      <button onClick={onClick}>{title}</button>
     </li>
   );
 }

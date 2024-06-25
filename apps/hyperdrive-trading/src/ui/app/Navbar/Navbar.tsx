@@ -8,9 +8,11 @@ import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import VersionPicker from "src/ui/base/components/VersionPicker";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  const { isFlagEnabled: showVersionPicker } = useFeatureFlag("version-picker");
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
@@ -34,7 +36,7 @@ export function Navbar(): ReactElement {
           </span>
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
         </a>
-        <VersionPicker />
+        {showVersionPicker ? <VersionPicker /> : undefined}
 
         {import.meta.env.DEV && !isTailwindSmallScreen ? (
           <DevtoolsMenu />
