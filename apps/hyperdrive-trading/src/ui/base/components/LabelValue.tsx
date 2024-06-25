@@ -47,9 +47,9 @@ export function LabelValue({
         data-tip={tooltipContent}
       >
         {label}
-        {!tooltipContent ? undefined : (
+        {tooltipContent ? (
           <InformationCircleIcon className="ml-1.5 w-5 opacity-50 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
-        )}
+        ) : null}
       </div>
       <div>{value}</div>
     </div>
