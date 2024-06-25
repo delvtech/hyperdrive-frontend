@@ -40,15 +40,12 @@ export function ConnectWalletButton(): JSX.Element {
                 );
               }
               return (
-                <div className="daisy-join flex items-center">
+                <div className="daisy-join flex items-center rounded-full">
                   <button
                     className="daisy-btn daisy-btn-circle daisy-join-item flex size-12 bg-base-300"
                     onClick={openChainModal}
                   >
-                    <img
-                      className="w-auto hover:scale-105"
-                      src={chain.iconUrl}
-                    />
+                    <img className=" w-6 hover:scale-105" src={chain.iconUrl} />
                   </button>
                   <button
                     className="daisy-btn daisy-btn-circle daisy-join-item mx-0 w-24  md:w-32"
