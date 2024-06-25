@@ -12,33 +12,36 @@ export function TransactionAndFaqTabs({
 }): ReactElement {
   const { address: account } = useAccount();
   const [activeTab, setActiveTab] = useState<
-    "Transactions" | "YourTransactions"
-  >("Transactions");
+    "all-transactions" | "your-transactions"
+  >("all-transactions");
 
   const transactionTabs: Tab[] = [
     {
-      id: "Transactions",
+      id: "all-transactions",
       label: "All Transactions",
       content: <TransactionTable hyperdrive={hyperdrive} />,
       onClick: () => {
-        setActiveTab("Transactions");
+        setActiveTab("all-transactions");
       },
     },
   ];
 
   if (account) {
     transactionTabs.push({
-      id: "YourTransactions",
+      id: "your-transactions",
       label: "Your Transactions",
       content: <TransactionTable hyperdrive={hyperdrive} account={account} />,
       onClick: () => {
-        setActiveTab("YourTransactions");
+        setActiveTab("your-transactions");
       },
     });
   }
   return (
     <>
-      <Tabs activeTabId={activeTab} tabs={transactionTabs} />
+      <Tabs
+        activeTabId={account ? activeTab : "all-transactions"}
+        tabs={transactionTabs}
+      />
 
       <Tabs
         activeTabId="FAQ"
