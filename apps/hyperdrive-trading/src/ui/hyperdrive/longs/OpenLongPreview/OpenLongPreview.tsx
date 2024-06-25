@@ -11,6 +11,7 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
@@ -22,7 +23,7 @@ interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
   amountPaid: bigint;
-  openLongPreviewStatus: "error" | "idle" | "loading" | "success";
+  openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
@@ -68,7 +69,11 @@ export function OpenLongPreview({
         <LabelValue
           label="You spend"
           value={
-            <span>{`${formatBalance({
+            <span
+              className={classNames({
+                "text-base-content/80": !amountPaid,
+              })}
+            >{`${formatBalance({
               balance: amountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
@@ -81,7 +86,11 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className="font-bold">{`${formatBalance({
+              <span
+                className={classNames({
+                  "text-base-content/80": !bondAmount,
+                })}
+              >{`${formatBalance({
                 balance: bondAmount,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
@@ -91,13 +100,17 @@ export function OpenLongPreview({
         />
         <LabelValue
           label="Pool fee"
+          tooltipContent="Total combined fee paid to LPs and governance to open the long."
+          tooltipPosition="right"
+          tooltipSize="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-                data-tip="Total combined fee paid to LPs and governance to open the long."
+                className={classNames({
+                  "text-base-content/80": !curveFee,
+                })}
               >
                 {curveFee
                   ? `${formatBalance({
@@ -112,14 +125,14 @@ export function OpenLongPreview({
         />
         <LabelValue
           label="Fixed APR"
+          tooltipContent="Your net fixed rate after pool fees and slippage are applied."
+          tooltipPosition="right"
+          tooltipSize="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span
-                className="gradient-text daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-                data-tip="Your net fixed rate after pool fees and slippage are applied."
-              >
+              <span className="gradient-text">
                 {bondAmount > 0
                   ? `${formatRate(
                       calculateAprFromPrice({
@@ -137,31 +150,27 @@ export function OpenLongPreview({
         />
         <LabelValue
           label="Yield at maturity"
+          tooltipContent={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
+          tooltipPosition="right"
+          tooltipSize="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
+            ) : bondAmount > 0 ? (
+              <span className="text-success">
+                {yieldAtMaturity
+                  ? // TODO: Add ROI here in parenthesis after the yield amount
+                    `+${formatBalance({
+                      balance: yieldAtMaturity,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })} ${baseToken.symbol}`
+                  : undefined}
+              </span>
             ) : (
-              <div
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
-                data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
-              >
-                {bondAmount > 0 ? (
-                  <span className="cursor-help border-b border-dashed border-success text-success">
-                    {yieldAtMaturity
-                      ? // TODO: Add ROI here in parenthesis after the yield amount
-                        `+${formatBalance({
-                          balance: yieldAtMaturity,
-                          decimals: baseToken.decimals,
-                          places: baseToken.places,
-                        })} ${baseToken.symbol}`
-                      : undefined}
-                  </span>
-                ) : (
-                  <span className="cursor-help border-b border-dashed">
-                    0 {baseToken.symbol}
-                  </span>
-                )}
-              </div>
+              <span className={"text-base-content/80"}>
+                0 {baseToken.symbol}
+              </span>
             )
           }
         />
@@ -175,7 +184,11 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span>
+              <span
+                className={classNames({
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2">
                     <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
@@ -196,7 +209,12 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className={classNames({ "text-error": spotRateAfterOpen })}>
+              <span
+                className={classNames({
+                  "text-error": spotRateAfterOpen,
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
                 {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
               </span>
             )
