@@ -3,6 +3,7 @@ import {
   ServerHealthHandlerResponse,
 } from "@delvtech/gopher";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/ui/bridge/api";
 
 export const useChains = (): {
@@ -10,12 +11,14 @@ export const useChains = (): {
   status: QueryStatus;
 } => {
   const result = useQuery<ServerHealthHandlerResponse, ServerErrorResponse>({
-    queryKey: ["gopher", "health"],
+    queryKey: makeQueryKey("gopher", {
+      route: "health/healthList",
+    }),
     queryFn: async () => {
       const response = await gopher.health.healthList();
       return response.data;
     },
   });
 
-  return result;
+  return { health: result.data, status: result.status };
 };

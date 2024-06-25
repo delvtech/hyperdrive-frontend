@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
 import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
 import { useAccount } from "wagmi";
@@ -22,12 +23,8 @@ function TokenBalances(): ReactNode {
       {balances.map((chainBalances, index) => {
         const totalBalance =
           chainBalances?.reduce((total, token) => {
-            return (
-              total +
-              parseFloat(token?.balance || "0") /
-                Math.pow(10, token?.tokenDecimals || 18)
-            );
-          }, 0) || 0;
+            return total + BigInt(token.balance || "0");
+          }, 0n) || 0n;
 
         return (
           <Well key={tokenSymbols[index]}>
@@ -56,7 +53,13 @@ function TokenBalances(): ReactNode {
                     <strong>Total</strong>
                   </td>
                   <td>
-                    <strong>{totalBalance?.toFixed(2)}</strong>
+                    <strong>
+                      {formatBalance({
+                        balance: totalBalance,
+                        decimals: chainBalances[0].tokenDecimals || 18,
+                        places: 2,
+                      })}
+                    </strong>
                   </td>
                 </tr>
               </tbody>

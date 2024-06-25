@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import Chains from "src/ui/bridge/components/Chains/Chains";
-import TokenBalances from "src/ui/bridge/components/TokenBalances/TokenBalances";
-import Tokens from "src/ui/bridge/components/Tokens/Tokens";
+import Chains from "src/ui/bridge/Chains/Chains";
+import TokenBalances from "src/ui/bridge/TokenBalances/TokenBalances";
+import Tokens from "src/ui/bridge/Tokens/Tokens";
 
 export function Bridge(): ReactElement {
   return (

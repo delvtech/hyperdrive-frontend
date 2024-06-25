@@ -27,7 +27,7 @@ function Chains(): ReactNode {
 
   return (
     <Well>
-      <table className="table">
+      <table className="daisy-table">
         <thead>
           <tr>
             <th>Name</th>
