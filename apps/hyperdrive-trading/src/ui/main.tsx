@@ -29,6 +29,9 @@ if (import.meta.env.DEV) {
 
 logAppVersion();
 
+// TODO: remove this when we no longer need to stub the gopher API.  Currently
+// there is no support for any testnets so we have to stub out the responses for
+// now.
 if (import.meta.env.DEV) {
   worker.start().then(() => {
     root.render(<Root />);
