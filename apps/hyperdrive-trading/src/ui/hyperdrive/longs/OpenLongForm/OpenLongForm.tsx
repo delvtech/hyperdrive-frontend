@@ -43,7 +43,7 @@ export function OpenLongForm({
   onOpenBridge,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
-  const isBridgingEnabled = useFeatureFlag("bridge");
+  const { isFlagEnabled: isBridgingEnabled } = useFeatureFlag("bridge");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
