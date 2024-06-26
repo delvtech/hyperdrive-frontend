@@ -1,22 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* Calculates the max amount of base that can be used to open a long given a
-* budget.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param budget - The maximum amount of base tokens that can be spent.
-*
-* @param checkpointExposure - The exposure of the pool's current checkpoint
-*
-* @param maybeMaxIterations - The maximum number of iterations to run the
-* binary search for
-*/
-export function maxLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, checkpointExposure: string, maybeMaxIterations?: number): string;
-/**
 * Calculates the amount of shares the trader will receive after fees for
 * closing a short
 *
@@ -345,6 +329,22 @@ export function closeShortFlatFee(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig
 * binary search for
 */
 export function maxShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, openVaultSharePrice: string, checkpointExposure: string, maybeConservativePrice?: string, maybeMaxIterations?: number): string;
+/**
+* Calculates the max amount of base that can be used to open a long given a
+* budget.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param budget - The maximum amount of base tokens that can be spent.
+*
+* @param checkpointExposure - The exposure of the pool's current checkpoint
+*
+* @param maybeMaxIterations - The maximum number of iterations to run the
+* binary search for
+*/
+export function maxLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, checkpointExposure: string, maybeMaxIterations?: number): string;
 
 interface JsFees {
     curve: string;
@@ -361,6 +361,7 @@ interface JsPoolConfig {
     minimumTransactionAmount: string,
     positionDuration: string,
     checkpointDuration: string,
+    checkpointRewarder: String,
     timeStretch: string,
     governance: string,
     feeCollector: string,
@@ -396,7 +397,6 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly maxLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => void;
   readonly calcCloseShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
   readonly calcShortMarketValue: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
   readonly calcOpenLong: (a: number, b: number, c: number, d: number, e: number) => void;
@@ -422,6 +422,7 @@ export interface InitOutput {
   readonly closeShortCurveFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly closeShortFlatFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly maxShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number) => void;
+  readonly maxLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
