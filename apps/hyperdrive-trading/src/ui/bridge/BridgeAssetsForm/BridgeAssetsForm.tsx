@@ -12,7 +12,6 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -31,19 +30,16 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
-interface OpenLongFormProps {
+interface BridgeAssetsFormProps {
   hyperdrive: HyperdriveConfig;
-  onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
-  onOpenBridge?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onCloseBridgeUI?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function OpenLongForm({
-  hyperdrive: hyperdrive,
-  onOpenLong,
-  onOpenBridge,
-}: OpenLongFormProps): ReactElement {
+export function BridgeAssetsForm({
+  hyperdrive,
+  onCloseBridgeUI,
+}: BridgeAssetsFormProps): ReactElement {
   const { address: account } = useAccount();
-  const isBridgingEnabled = useFeatureFlag("bridge");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -193,9 +189,6 @@ export function OpenLongForm({
       activeToken.decimals,
     );
   }
-  const switchToBridgeUIButton = (
-    <button onClick={onOpenBridge}>Bridge DAI from L2s</button>
-  );
 
   return (
     <TransactionView
@@ -225,7 +218,7 @@ export function OpenLongForm({
           }
           value={depositAmount ?? ""}
           maxValue={maxButtonValue}
-          inputLabel="Amount to spend"
+          inputLabel="Amount to bridge"
           stat={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
               <span>
@@ -243,7 +236,7 @@ export function OpenLongForm({
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
-      setting={isBridgingEnabled ? switchToBridgeUIButton : null}
+      setting={<button onClick={onCloseBridgeUI}>{"<-- Back"}</button>}
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}
@@ -289,7 +282,7 @@ export function OpenLongForm({
               disabled
               className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             >
-              Open Long
+              Bridge Assets
             </button>
           );
         }
@@ -315,10 +308,10 @@ export function OpenLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               openLong?.();
-              onOpenLong?.(e);
+              onCloseBridgeUI?.(e);
             }}
           >
-            Open Long
+            Bridge Assets
           </button>
         );
       })()}
