@@ -12,6 +12,7 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -42,6 +43,7 @@ export function OpenLongForm({
   onOpenBridge,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
+  const isBridgingEnabled = useFeatureFlag("bridge");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -191,6 +193,9 @@ export function OpenLongForm({
       activeToken.decimals,
     );
   }
+  const switchToBridgeUIButton = (
+    <button onClick={onOpenBridge}>Bridge DAI from L2s</button>
+  );
 
   return (
     <TransactionView
@@ -238,7 +243,7 @@ export function OpenLongForm({
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
-      setting={<button onClick={onOpenBridge}>Bridge DAI from L2s</button>}
+      setting={isBridgingEnabled ? switchToBridgeUIButton : null}
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}
