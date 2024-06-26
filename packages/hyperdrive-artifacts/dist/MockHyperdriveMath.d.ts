@@ -1,615 +1,615 @@
 export declare const MockHyperdriveMath: {
     abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ExpInvalidExponent";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InsufficientLiquidity";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "LnInvalidInput";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToInt256";
-        readonly type: "error";
-    }, {
+        readonly type: "function";
+        readonly name: "calculateAbsoluteMaxLong";
         readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
             readonly name: "_params";
             readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
         }, {
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_spotPrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateAbsoluteMaxLong";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateCloseLong";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountIn";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_normalizedTimeRemaining";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateCloseLong";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateCloseShort";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountOut";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_normalizedTimeRemaining";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "calculateCloseShort";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateEffectiveShareReserves";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_shareReserves";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "int256";
             readonly name: "_shareAdjustment";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
-        readonly name: "calculateEffectiveShareReserves";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
-            readonly name: "_params";
-            readonly type: "tuple";
-        }, {
-            readonly internalType: "int256";
-            readonly name: "_checkpointExposure";
-            readonly type: "int256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_maxIterations";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "calculateMaxLong";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "shareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "int256";
-                readonly name: "shareAdjustment";
-                readonly type: "int256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "bondReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longsOutstanding";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "longExposure";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "vaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "curveFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flatFee";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLPFee";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
             readonly name: "_params";
             readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
         }, {
-            readonly internalType: "int256";
             readonly name: "_checkpointExposure";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_maxIterations";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateMaxShort";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateMaxShort";
         readonly inputs: readonly [{
+            readonly name: "_params";
+            readonly type: "tuple";
+            readonly internalType: "struct HyperdriveUtils.MaxTradeParams";
+            readonly components: readonly [{
+                readonly name: "shareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "shareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "bondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longsOutstanding";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "longExposure";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "vaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "curveFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flatFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLPFee";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }, {
+            readonly name: "_checkpointExposure";
+            readonly type: "int256";
+            readonly internalType: "int256";
+        }, {
+            readonly name: "_maxIterations";
+            readonly type: "uint256";
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateNegativeInterestOnClose";
+        readonly inputs: readonly [{
             readonly name: "_shareProceeds";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_shareReservesDelta";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_shareCurveDelta";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_totalGovernanceFee";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_openVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_closeVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "bool";
             readonly name: "_isLong";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "calculateNegativeInterestOnClose";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "int256";
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_effectiveShareReserves";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_bondReserves";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_amountIn";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_timeStretch";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_initialVaultSharePrice";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "calculateOpenLong";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_amountIn";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_vaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "calculateOpenShort";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_bondAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_openVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_closeVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_flatFee";
-            readonly type: "uint256";
-        }];
-        readonly name: "calculateShortProceedsDown";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_bondAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_openVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_closeVaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "_flatFee";
-            readonly type: "uint256";
-        }];
-        readonly name: "calculateShortProceedsUp";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_effectiveShareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
+            readonly name: "_amountIn";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_timeStretch";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateShortProceedsDown";
+        readonly inputs: readonly [{
+            readonly name: "_bondAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_openVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_closeVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_flatFee";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateShortProceedsUp";
+        readonly inputs: readonly [{
+            readonly name: "_bondAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_openVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_closeVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_flatFee";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "calculateSpotAPR";
+        readonly inputs: readonly [{
+            readonly name: "_effectiveShareReserves";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_bondReserves";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_initialVaultSharePrice";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
             readonly name: "_positionDuration";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateSpotAPR";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateSpotPrice";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_shareReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_bondReserves";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_initialVaultSharePrice";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretch";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateSpotPrice";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "calculateTimeStretch";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "apr";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "positionDuration";
             readonly type: "uint256";
-        }];
-        readonly name: "calculateTimeStretch";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "ExpInvalidExponent";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InsufficientLiquidity";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "LnInvalidInput";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToInt256";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

@@ -1,117 +1,482 @@
 export declare const HyperdriveRegistry: {
     abi: readonly [{
+        readonly type: "constructor";
         readonly inputs: readonly [{
-            readonly internalType: "string";
             readonly name: "_name";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "constructor";
     }, {
+        readonly type: "function";
+        readonly name: "admin";
         readonly inputs: readonly [];
-        readonly name: "Unauthorized";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "governance";
+        readonly outputs: readonly [{
+            readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "GovernanceUpdated";
-        readonly type: "event";
+        readonly stateMutability: "view";
     }, {
-        readonly anonymous: false;
+        readonly type: "function";
+        readonly name: "getFactoriesInRange";
         readonly inputs: readonly [{
+            readonly name: "_startIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_endIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "factories";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getFactoryAtIndex";
+        readonly inputs: readonly [{
+            readonly name: "_index";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getFactoryInfo";
+        readonly inputs: readonly [{
+            readonly name: "_factory";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdriveRegistry.FactoryInfo";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getFactoryInfoWithMetadata";
+        readonly inputs: readonly [{
+            readonly name: "_factory";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdriveRegistry.FactoryInfoWithMetadata";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "name";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "kind";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "version";
+                readonly type: "string";
+                readonly internalType: "string";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getFactoryInfos";
+        readonly inputs: readonly [{
+            readonly name: "__factories";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple[]";
+            readonly internalType: "struct IHyperdriveRegistry.FactoryInfo[]";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getFactoryInfosWithMetadata";
+        readonly inputs: readonly [{
+            readonly name: "__factories";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple[]";
+            readonly internalType: "struct IHyperdriveRegistry.FactoryInfoWithMetadata[]";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "name";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "kind";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "version";
+                readonly type: "string";
+                readonly internalType: "string";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceAtIndex";
+        readonly inputs: readonly [{
+            readonly name: "_index";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceInfo";
+        readonly inputs: readonly [{
+            readonly name: "_instance";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdriveRegistry.InstanceInfo";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "factory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceInfoWithMetadata";
+        readonly inputs: readonly [{
+            readonly name: "_instance";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdriveRegistry.InstanceInfoWithMetadata";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "factory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "name";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "kind";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "version";
+                readonly type: "string";
+                readonly internalType: "string";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceInfos";
+        readonly inputs: readonly [{
+            readonly name: "__instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple[]";
+            readonly internalType: "struct IHyperdriveRegistry.InstanceInfo[]";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "factory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceInfosWithMetadata";
+        readonly inputs: readonly [{
+            readonly name: "__instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "info";
+            readonly type: "tuple[]";
+            readonly internalType: "struct IHyperdriveRegistry.InstanceInfoWithMetadata[]";
+            readonly components: readonly [{
+                readonly name: "data";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "factory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "name";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "kind";
+                readonly type: "string";
+                readonly internalType: "string";
+            }, {
+                readonly name: "version";
+                readonly type: "string";
+                readonly internalType: "string";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstancesInRange";
+        readonly inputs: readonly [{
+            readonly name: "_startIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_endIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getNumberOfFactories";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getNumberOfInstances";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "kind";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "setFactoryInfo";
+        readonly inputs: readonly [{
+            readonly name: "__factories";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }, {
+            readonly name: "_data";
+            readonly type: "uint128[]";
+            readonly internalType: "uint128[]";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "setInstanceInfo";
+        readonly inputs: readonly [{
+            readonly name: "__instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }, {
+            readonly name: "_data";
+            readonly type: "uint128[]";
+            readonly internalType: "uint128[]";
+        }, {
+            readonly name: "__factories";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateAdmin";
+        readonly inputs: readonly [{
+            readonly name: "_admin";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "event";
+        readonly name: "AdminUpdated";
+        readonly inputs: readonly [{
+            readonly name: "admin";
+            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
-            readonly name: "hyperdrive";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "FactoryInfoUpdated";
+        readonly inputs: readonly [{
+            readonly name: "factory";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
             readonly name: "data";
             readonly type: "uint256";
+            readonly indexed: true;
+            readonly internalType: "uint256";
         }];
-        readonly name: "HyperdriveInfoUpdated";
+        readonly anonymous: false;
+    }, {
         readonly type: "event";
-    }, {
+        readonly name: "InstanceInfoUpdated";
         readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_hyperdriveInstance";
+            readonly name: "instance";
             readonly type: "address";
-        }];
-        readonly name: "getHyperdriveInfo";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "governance";
-        readonly outputs: readonly [{
+            readonly indexed: true;
             readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "name";
-        readonly outputs: readonly [{
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_hyperdriveInstance";
-            readonly type: "address";
         }, {
-            readonly internalType: "uint256";
-            readonly name: "_data";
+            readonly name: "data";
             readonly type: "uint256";
-        }];
-        readonly name: "setHyperdriveInfo";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_governance";
+            readonly indexed: true;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "factory";
             readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }];
-        readonly name: "updateGovernance";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
+        readonly anonymous: false;
     }, {
+        readonly type: "error";
+        readonly name: "EndIndexTooLarge";
         readonly inputs: readonly [];
-        readonly name: "version";
-        readonly outputs: readonly [{
-            readonly internalType: "string";
-            readonly name: "";
-            readonly type: "string";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "InputLengthMismatch";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidFactory";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidIndexes";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "Unauthorized";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "getHyperdriveInfo(address)": "32ddcb88";
-        readonly "governance()": "5aa6e675";
+        readonly "admin()": "f851a440";
+        readonly "getFactoriesInRange(uint256,uint256)": "716ba5f6";
+        readonly "getFactoryAtIndex(uint256)": "a587bbe1";
+        readonly "getFactoryInfo(address)": "9b724ad4";
+        readonly "getFactoryInfoWithMetadata(address)": "f32c9e34";
+        readonly "getFactoryInfos(address[])": "ea350321";
+        readonly "getFactoryInfosWithMetadata(address[])": "b73e3fab";
+        readonly "getInstanceAtIndex(uint256)": "daac24da";
+        readonly "getInstanceInfo(address)": "18bb3b54";
+        readonly "getInstanceInfoWithMetadata(address)": "2ad19de8";
+        readonly "getInstanceInfos(address[])": "4db6c0e0";
+        readonly "getInstanceInfosWithMetadata(address[])": "d2f72d52";
+        readonly "getInstancesInRange(uint256,uint256)": "bc30e7a1";
+        readonly "getNumberOfFactories()": "f59d00b9";
+        readonly "getNumberOfInstances()": "6e95d67c";
+        readonly "kind()": "04baa00b";
         readonly "name()": "06fdde03";
-        readonly "setHyperdriveInfo(address,uint256)": "be44e71a";
-        readonly "updateGovernance(address)": "b2561263";
+        readonly "setFactoryInfo(address[],uint128[])": "e967e388";
+        readonly "setInstanceInfo(address[],uint128[],address[])": "1ff30ad2";
+        readonly "updateAdmin(address)": "e2f273bd";
         readonly "version()": "54fd4d50";
     };
 };

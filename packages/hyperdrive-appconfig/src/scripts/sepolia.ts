@@ -14,8 +14,7 @@ const publicClient = createPublicClient({
 });
 
 fetchRegistryAddresses({
-  factoryAddress: "0x7b9e529c4949b97c95928b0da2e0144016f86d92",
-  registryAddress: "0x4ba58147e50e57e71177cfedb1fac0303f216104",
+  registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
   publicClient,
 }).then(async (addresses) => {
   const appConfig = await getAppConfigFromRegistryAddresses({

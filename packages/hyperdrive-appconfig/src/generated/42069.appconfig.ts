@@ -1,4 +1,5 @@
 import { AppConfig } from "src/appconfig/AppConfig";
+import { zeroAddress } from "viem";
 export const cloudChainAppConfig: AppConfig = {
   chainId: 42069,
   tags: [
@@ -90,6 +91,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         vaultSharesToken: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
@@ -129,6 +131,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         vaultSharesToken: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
@@ -168,6 +171,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
@@ -207,6 +211,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
@@ -246,6 +251,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae78736Cd615f374D3085123A210448E74Fc6393",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
@@ -285,6 +291,7 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
+        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae78736Cd615f374D3085123A210448E74Fc6393",
         linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",

@@ -370,7 +370,7 @@ export class ReadHyperdrive extends ReadModel {
 
     // The vault share price at the time the current checkpoint was minted is
     // the most accurate, however if there is no current checkpoint we should
-    // just use the current vualt share price.
+    // just use the current vault share price.
     let { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
       timestamp,
     });

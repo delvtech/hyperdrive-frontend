@@ -1,138 +1,138 @@
 export const IRocketNetworkBalances = {
     abi: [
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_block",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_totalEth",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_stakingEth",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_rethSupply",
-                    "type": "uint256"
-                }
-            ],
+            "type": "function",
             "name": "executeUpdateBalances",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getBalancesBlock",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getETHUtilizationRate",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getLatestReportableBlock",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getStakingETHBalance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getTotalETHBalance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "getTotalRETHSupply",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
                     "name": "_block",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_total",
-                    "type": "uint256"
+                    "name": "_totalEth",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_staking",
-                    "type": "uint256"
+                    "name": "_stakingEth",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "_rethSupply",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "name": "submitBalances",
             "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getBalancesBlock",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getETHUtilizationRate",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getLatestReportableBlock",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getStakingETHBalance",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getTotalETHBalance",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getTotalRETHSupply",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "submitBalances",
+            "inputs": [
+                {
+                    "name": "_block",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_total",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_staking",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_rethSupply",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
         }
     ],
     bytecode: '0x',

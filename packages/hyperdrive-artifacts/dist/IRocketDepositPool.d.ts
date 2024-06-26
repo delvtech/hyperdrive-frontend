@@ -1,124 +1,124 @@
 export declare const IRocketDepositPool: {
     abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "assignDeposits";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "deposit";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getBalance";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getExcessBalance";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getMaximumDepositAmount";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getNodeBalance";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getUserBalance";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "int256";
             readonly name: "";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "maybeAssignDeposits";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "nodeCreditWithdrawal";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "nodeCreditWithdrawal";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "nodeDeposit";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_totalAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "nodeDeposit";
-        readonly outputs: readonly [];
-        readonly stateMutability: "payable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "recycleDissolvedDeposit";
-        readonly outputs: readonly [];
-        readonly stateMutability: "payable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "recycleExcessCollateral";
-        readonly outputs: readonly [];
-        readonly stateMutability: "payable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "recycleLiquidatedStake";
-        readonly outputs: readonly [];
-        readonly stateMutability: "payable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "payable";
+    }, {
+        readonly type: "function";
+        readonly name: "recycleDissolvedDeposit";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "payable";
+    }, {
+        readonly type: "function";
+        readonly name: "recycleExcessCollateral";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "payable";
+    }, {
+        readonly type: "function";
+        readonly name: "recycleLiquidatedStake";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "payable";
+    }, {
+        readonly type: "function";
+        readonly name: "withdrawExcessBalance";
+        readonly inputs: readonly [{
             readonly name: "_amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "withdrawExcessBalance";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

@@ -1,38 +1,38 @@
 export const IERC721TokenReceiver = {
     abi: [
         {
+            "type": "function",
+            "name": "onERC721Received",
             "inputs": [
                 {
-                    "internalType": "address",
                     "name": "",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 },
                 {
-                    "internalType": "address",
                     "name": "",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "bytes",
                     "name": "",
-                    "type": "bytes"
+                    "type": "bytes",
+                    "internalType": "bytes"
                 }
             ],
-            "name": "onERC721Received",
             "outputs": [
                 {
-                    "internalType": "bytes4",
                     "name": "",
-                    "type": "bytes4"
+                    "type": "bytes4",
+                    "internalType": "bytes4"
                 }
             ],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "stateMutability": "nonpayable"
         }
     ],
     bytecode: '0x',

@@ -1,23 +1,23 @@
 export const IERC165 = {
     abi: [
         {
+            "type": "function",
+            "name": "supportsInterface",
             "inputs": [
                 {
-                    "internalType": "bytes4",
                     "name": "interfaceID",
-                    "type": "bytes4"
+                    "type": "bytes4",
+                    "internalType": "bytes4"
                 }
             ],
-            "name": "supportsInterface",
             "outputs": [
                 {
-                    "internalType": "bool",
                     "name": "",
-                    "type": "bool"
+                    "type": "bool",
+                    "internalType": "bool"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         }
     ],
     bytecode: '0x',

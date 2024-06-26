@@ -20,7 +20,6 @@ const publicClient = createPublicClient({
 fetchJson<AddressesJson>(localAddressesUrl)
   .then((addresses) =>
     fetchRegistryAddresses({
-      factoryAddress: addresses.factory,
       registryAddress: addresses.hyperdriveRegistry,
       publicClient,
     }),

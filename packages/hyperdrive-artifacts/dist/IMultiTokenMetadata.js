@@ -1,30 +1,30 @@
 export const IMultiTokenMetadata = {
     abi: [
         {
-            "inputs": [],
+            "type": "function",
             "name": "PERMIT_TYPEHASH",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "bytes32",
                     "name": "",
-                    "type": "bytes32"
+                    "type": "bytes32",
+                    "internalType": "bytes32"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "domainSeparator",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "bytes32",
                     "name": "",
-                    "type": "bytes32"
+                    "type": "bytes32",
+                    "internalType": "bytes32"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         }
     ],
     bytecode: '0x',

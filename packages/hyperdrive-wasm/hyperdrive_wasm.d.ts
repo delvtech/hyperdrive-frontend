@@ -1,118 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* Calculates the max amount of base that can be used to open a long given a
-* budget.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param budget - The maximum amount of base tokens that can be spent.
-*
-* @param checkpointExposure - The exposure of the pool's current checkpoint
-*
-* @param maybeMaxIterations - The maximum number of iterations to run the
-* binary search for
-*/
-export function maxLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, checkpointExposure: string, maybeMaxIterations?: number): string;
-/**
-*/
-export function initialize(): void;
-/**
-* Calculates the pool's spot price, i.e. the price to open a long of 1.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function spotPrice(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
-/**
-* Calculate the holding period return (HPR) given a non-compounding,
-* annualized rate (APR).
-*
-* @param apr - The annualized rate
-*
-* @param positionDuration - The position duration in seconds
-*/
-export function calcHprGivenApr(apr: string, positionDuration: string): string;
-/**
-* Calculate the holding period return (HPR) given a compounding, annualized
-* rate (APY).
-*
-* @param apy - The annualized rate
-*
-* @param positionDuration - The position duration in seconds
-*/
-export function calcHprGivenApy(apy: string, positionDuration: string): string;
-/**
-* Calculates the pool's idle liquidity in base
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function idleShareReservesInBase(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
-/**
-* Calculates the pool's present value in base
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param currentTime - The time at which to grab the present value
-*/
-export function presentValue(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string): string;
-/**
-* Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
-* they open a long.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*/
-export function spotRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
-/**
-* Calculates the amount of base the trader will need to deposit for a short of
-* a given size.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param bondAmount - The amount of bonds to short
-*
-* @param openVaultSharePrice - The vault share price at the start of the
-* checkpoint
-*/
-export function calcOpenShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, openVaultSharePrice: string): string;
-/**
-* Calculates the spot price after opening the short on the YieldSpace curve
-* and before calculating the fees.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param bondAmount - The number of bonds to short
-*/
-export function spotPriceAfterShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string): string;
-/**
-* Calculate the implied rate of opening a short at a given size. This rate
-* is calculated as an APY.
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param bondAmount - The amount of bonds to short
-*
-* @param openVaultSharePrice - The vault share price at the start of the
-* checkpoint
-*
-* @param variableApy - The variable apy
-*/
-export function calcImpliedRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, openVaultSharePrice: string, variableApy: string): string;
-/**
 * Calculates the amount of shares the trader will receive after fees for
 * closing a short
 *
@@ -201,6 +89,46 @@ export function spotPriceAfterLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfi
 */
 export function calcCloseLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, maturityTime: string, currentTime: string): string;
 /**
+* Calculates the amount of base the trader will need to deposit for a short of
+* a given size.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param bondAmount - The amount of bonds to short
+*
+* @param openVaultSharePrice - The vault share price at the start of the
+* checkpoint
+*/
+export function calcOpenShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, openVaultSharePrice: string): string;
+/**
+* Calculates the spot price after opening the short on the YieldSpace curve
+* and before calculating the fees.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param bondAmount - The number of bonds to short
+*/
+export function spotPriceAfterShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string): string;
+/**
+* Calculate the implied rate of opening a short at a given size. This rate
+* is calculated as an APY.
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param bondAmount - The amount of bonds to short
+*
+* @param openVaultSharePrice - The vault share price at the start of the
+* checkpoint
+*
+* @param variableApy - The variable apy
+*/
+export function calcImpliedRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bondAmount: string, openVaultSharePrice: string, variableApy: string): string;
+/**
 * Calculates the amount of lp shares the trader will receive after adding
 * liquidity.
 *
@@ -224,6 +152,62 @@ export function calcCloseLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, bo
 * uint256.
 */
 export function calcAddLiquidity(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string, contribution: string, asBase?: boolean, minLpSharePrice?: string, minApr?: string, maxApr?: string): string;
+/**
+*/
+export function initialize(): void;
+/**
+* Calculates the pool's spot price, i.e. the price to open a long of 1.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function spotPrice(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
+* Calculate the holding period return (HPR) given a non-compounding,
+* annualized rate (APR).
+*
+* @param apr - The annualized rate
+*
+* @param positionDuration - The position duration in seconds
+*/
+export function calcHprGivenApr(apr: string, positionDuration: string): string;
+/**
+* Calculate the holding period return (HPR) given a compounding, annualized
+* rate (APY).
+*
+* @param apy - The annualized rate
+*
+* @param positionDuration - The position duration in seconds
+*/
+export function calcHprGivenApy(apy: string, positionDuration: string): string;
+/**
+* Calculates the pool's idle liquidity in base
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function idleShareReservesInBase(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
+* Calculates the pool's present value in base
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param currentTime - The time at which to grab the present value
+*/
+export function presentValue(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string): string;
+/**
+* Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
+* they open a long.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*/
+export function spotRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
 /**
 * Calculates the curve fee paid in bonds by traders when they open a long.
 *
@@ -345,6 +329,22 @@ export function closeShortFlatFee(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig
 * binary search for
 */
 export function maxShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, openVaultSharePrice: string, checkpointExposure: string, maybeConservativePrice?: string, maybeMaxIterations?: number): string;
+/**
+* Calculates the max amount of base that can be used to open a long given a
+* budget.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param budget - The maximum amount of base tokens that can be spent.
+*
+* @param checkpointExposure - The exposure of the pool's current checkpoint
+*
+* @param maybeMaxIterations - The maximum number of iterations to run the
+* binary search for
+*/
+export function maxLong(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, checkpointExposure: string, maybeMaxIterations?: number): string;
 
 interface JsFees {
     curve: string;
@@ -361,6 +361,7 @@ interface JsPoolConfig {
     minimumTransactionAmount: string,
     positionDuration: string,
     checkpointDuration: string,
+    checkpointRewarder: String,
     timeStretch: string,
     governance: string,
     feeCollector: string,
@@ -396,7 +397,15 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly maxLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => void;
+  readonly calcCloseShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
+  readonly calcShortMarketValue: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
+  readonly calcOpenLong: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly spotPriceAfterLong: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly calcCloseLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
+  readonly calcOpenShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => void;
+  readonly spotPriceAfterShort: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly calcImpliedRate: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
+  readonly calcAddLiquidity: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => void;
   readonly spotPrice: (a: number, b: number, c: number) => void;
   readonly calcHprGivenApr: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly calcHprGivenApy: (a: number, b: number, c: number, d: number, e: number) => void;
@@ -404,15 +413,6 @@ export interface InitOutput {
   readonly presentValue: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly spotRate: (a: number, b: number, c: number) => void;
   readonly initialize: () => void;
-  readonly calcOpenShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => void;
-  readonly spotPriceAfterShort: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly calcImpliedRate: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
-  readonly calcCloseShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
-  readonly calcShortMarketValue: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number) => void;
-  readonly calcOpenLong: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly spotPriceAfterLong: (a: number, b: number, c: number, d: number, e: number) => void;
-  readonly calcCloseLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
-  readonly calcAddLiquidity: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => void;
   readonly openLongCurveFee: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly openLongGovernanceFee: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly closeLongCurveFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
@@ -422,6 +422,7 @@ export interface InitOutput {
   readonly closeShortCurveFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly closeShortFlatFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;
   readonly maxShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number) => void;
+  readonly maxLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
