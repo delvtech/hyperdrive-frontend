@@ -19,9 +19,6 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="bridge">
           Bridge Assets
         </FeatureFlagMenuItem>
-        <FeatureFlagMenuItem flagName="version-picker">
-          Show Version Picker
-        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
