@@ -52,5 +52,10 @@
   "dependencies": {
     "@changesets/cli": "^2.27.1"
   },
-  "packageManager": "yarn@1.22.18"
+  "packageManager": "yarn@1.22.18",
+  "msw": {
+    "workerDirectory": [
+      "apps/hyperdrive-trading/src/public"
+    ]
+  }
 }
