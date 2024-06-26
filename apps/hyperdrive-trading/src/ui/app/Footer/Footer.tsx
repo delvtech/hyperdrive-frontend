@@ -6,10 +6,7 @@ import LinkedInIcon from "src/ui/base/icons/linkedin";
 import XIcon from "src/ui/base/icons/x";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
-import { sepolia } from "viem/chains";
-import { useChainId } from "wagmi";
 export default function Footer(): ReactElement {
-  const chainId = useChainId();
   const footerTitleClassName =
     "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title
   return (
@@ -83,16 +80,6 @@ export default function Footer(): ReactElement {
         >
           Trading Bots
         </a>
-        {chainId === sepolia.id ? (
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://testnet-v1.hyperdrive.box"
-            className="daisy-link-hover daisy-link"
-          >
-            <span className="">V1 Pools</span>
-          </a>
-        ) : undefined}
       </nav>
       <nav>
         <header className={footerTitleClassName}>Ecosystem</header>

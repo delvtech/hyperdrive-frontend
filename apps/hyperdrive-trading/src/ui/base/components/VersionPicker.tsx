@@ -18,6 +18,15 @@ export default function VersionPicker(): JSX.Element {
           <a
             rel="noreferrer"
             target="_blank"
+            href="https://testnet-v1-0-6.hyperdrive.box/"
+          >
+            V1.0.6 Pools
+          </a>
+        </li>
+        <li>
+          <a
+            rel="noreferrer"
+            target="_blank"
             href="https://testnet-v1.hyperdrive.box/"
           >
             V1 Pools
