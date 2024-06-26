@@ -7,7 +7,7 @@ export default function VersionPicker(): JSX.Element {
         tabIndex={0}
         className="daisy-btn flex items-center justify-center rounded-full"
       >
-        v1.0.0
+        Latest Version
         <ChevronDownIcon className="hidden h-4 sm:inline" />
       </div>
       <ul
@@ -15,13 +15,13 @@ export default function VersionPicker(): JSX.Element {
         className="daisy-menu daisy-dropdown-content z-[1] w-auto gap-2 rounded-lg bg-base-100 p-4 shadow"
       >
         <li>
-          <a>v1.0.0</a>
-        </li>
-        <li>
-          <a>v1.0.1</a>
-        </li>
-        <li>
-          <a>v1.0.2</a>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://testnet-v1.hyperdrive.box/"
+          >
+            V1 Pools
+          </a>
         </li>
       </ul>
     </div>
