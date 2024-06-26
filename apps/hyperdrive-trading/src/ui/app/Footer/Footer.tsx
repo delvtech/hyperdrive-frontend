@@ -146,7 +146,7 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
           href="https://github.com/delvtech"
         >
-          Github
+          GitHub
         </a>
       </nav>
       <nav>
