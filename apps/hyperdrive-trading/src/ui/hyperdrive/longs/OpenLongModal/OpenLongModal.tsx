@@ -54,7 +54,7 @@ interface OpenLongModalHeaderProps {
   termLengthMS: number;
 }
 
-function OpenLongModalHeader({
+export function OpenLongModalHeader({
   numDays,
   termLengthMS,
 }: OpenLongModalHeaderProps): ReactElement {
