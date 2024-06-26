@@ -1,6 +1,7 @@
 import {
   AppConfig,
   cloudChainAppConfig,
+  mainnetAppConfig,
   sepoliaAppConfig,
 } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
@@ -19,8 +20,7 @@ export function useAppConfig(): AppConfig {
       return cloudChainAppConfig;
 
     case mainnet.id:
-      // Return mainnet config when available
-      return {} as AppConfig;
+      return mainnetAppConfig;
 
     case sepolia.id:
       return sepoliaAppConfig;
