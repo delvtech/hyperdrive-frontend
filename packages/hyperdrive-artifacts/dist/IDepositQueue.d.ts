@@ -1,24 +1,24 @@
 export declare const IDepositQueue: {
     abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "depositETHFromProtocol";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "totalEarned";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "tokenAddress";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "totalEarned";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

@@ -1,134 +1,134 @@
 export const IRenzoOracle = {
     abi: [
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_currentValueInProtocol",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_newValueAdded",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_existingEzETHSupply",
-                    "type": "uint256"
-                }
-            ],
+            "type": "function",
             "name": "calculateMintAmount",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "pure",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_ezETHBeingBurned",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_existingEzETHSupply",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
                     "name": "_currentValueInProtocol",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_newValueAdded",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_existingEzETHSupply",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
             "name": "calculateRedeemAmount",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "pure",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "contract IERC20",
-                    "name": "_token",
-                    "type": "address"
+                    "name": "_ezETHBeingBurned",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_value",
-                    "type": "uint256"
+                    "name": "_existingEzETHSupply",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_currentValueInProtocol",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
             "name": "lookupTokenAmountFromValue",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "contract IERC20",
                     "name": "_token",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "contract IERC20"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_balance",
-                    "type": "uint256"
+                    "name": "_value",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "name": "lookupTokenValue",
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
+            "type": "function",
+            "name": "lookupTokenValue",
             "inputs": [
                 {
-                    "internalType": "contract IERC20[]",
-                    "name": "_tokens",
-                    "type": "address[]"
+                    "name": "_token",
+                    "type": "address",
+                    "internalType": "contract IERC20"
                 },
                 {
-                    "internalType": "uint256[]",
-                    "name": "_balances",
-                    "type": "uint256[]"
+                    "name": "_balance",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "name": "lookupTokenValues",
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "lookupTokenValues",
+            "inputs": [
+                {
+                    "name": "_tokens",
+                    "type": "address[]",
+                    "internalType": "contract IERC20[]"
+                },
+                {
+                    "name": "_balances",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
         }
     ],
     bytecode: '0x',

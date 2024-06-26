@@ -1,90 +1,90 @@
 export declare const MockSafeCast: {
     abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToInt128";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToInt256";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToUint112";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "UnsafeCastToUint128";
-        readonly type: "error";
-    }, {
+        readonly type: "function";
+        readonly name: "toInt128";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "toInt128";
         readonly outputs: readonly [{
-            readonly internalType: "int128";
             readonly name: "y";
             readonly type: "int128";
+            readonly internalType: "int128";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "toInt128";
         readonly inputs: readonly [{
-            readonly internalType: "int256";
             readonly name: "x";
             readonly type: "int256";
+            readonly internalType: "int256";
         }];
-        readonly name: "toInt128";
         readonly outputs: readonly [{
-            readonly internalType: "int128";
             readonly name: "y";
             readonly type: "int128";
+            readonly internalType: "int128";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "x";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "toInt256";
-        readonly outputs: readonly [{
-            readonly internalType: "int256";
-            readonly name: "y";
-            readonly type: "int256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "toUint112";
         readonly outputs: readonly [{
-            readonly internalType: "uint112";
+            readonly name: "y";
+            readonly type: "int256";
+            readonly internalType: "int256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "toUint112";
+        readonly inputs: readonly [{
+            readonly name: "x";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "y";
             readonly type: "uint112";
+            readonly internalType: "uint112";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "toUint128";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "x";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "toUint128";
         readonly outputs: readonly [{
-            readonly internalType: "uint128";
             readonly name: "y";
             readonly type: "uint128";
+            readonly internalType: "uint128";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToInt128";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToInt256";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToUint112";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToUint128";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

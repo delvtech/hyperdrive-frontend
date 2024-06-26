@@ -1,9 +1,9 @@
 export const HyperdriveStorage = {
     abi: [
         {
-            "inputs": [],
+            "type": "error",
             "name": "ReentrancyGuardReentrantCall",
-            "type": "error"
+            "inputs": []
         }
     ],
     bytecode: '0x',
