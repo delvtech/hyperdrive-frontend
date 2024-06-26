@@ -33,11 +33,13 @@ import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onOpenBridge?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
+  onOpenBridge,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
@@ -236,6 +238,7 @@ export function OpenLongForm({
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
+      setting={<button onClick={onOpenBridge}>Bridge DAI from L2s</button>}
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}
