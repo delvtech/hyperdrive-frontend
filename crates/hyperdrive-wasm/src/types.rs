@@ -175,6 +175,7 @@ impl TryFrom<&JsPoolConfig> for PoolConfig {
                 .unwrap(),
             vault_shares_token: js_pool_config.vaultSharesToken.to_address()?,
             circuit_breaker_delta: js_pool_config.circuitBreakerDelta.to_u256()?,
+            checkpoint_rewarder: js_pool_config.checkpointDuration.to_address()?,
         })
     }
 }
