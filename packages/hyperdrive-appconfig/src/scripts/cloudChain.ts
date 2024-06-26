@@ -14,7 +14,6 @@ const publicClient = createPublicClient({
 });
 
 fetchRegistryAddresses({
-  factoryAddress: process.env.CLOUDCHAIN_FACTORY_ADDRESS as `0x${string}`,
   registryAddress: process.env.CLOUDCHAIN_REGISTRY_ADDRESS as `0x${string}`,
   publicClient,
 }).then(async (addresses) => {
