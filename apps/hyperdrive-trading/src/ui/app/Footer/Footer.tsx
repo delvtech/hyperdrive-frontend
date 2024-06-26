@@ -130,7 +130,7 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
           href="https://www.delv.tech/"
         >
-          Delv
+          DELV
         </a>
         <a
           target="_blank"
@@ -146,7 +146,7 @@ export default function Footer(): ReactElement {
           className="daisy-link-hover daisy-link"
           href="https://github.com/delvtech"
         >
-          Github
+          GitHub
         </a>
       </nav>
       <nav>
