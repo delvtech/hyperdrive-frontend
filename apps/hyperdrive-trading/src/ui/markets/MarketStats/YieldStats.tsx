@@ -1,3 +1,4 @@
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
@@ -64,9 +65,17 @@ export function YieldStats({
                       "gradient-text": position === "LP",
                     })}
                   >
-                    {lpApy === undefined
-                      ? "no data"
-                      : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`}{" "}
+                    {lpApy === undefined ? (
+                      <span className="gradient-text flex flex-row">
+                        <SparklesIcon
+                          width={24}
+                          className="fill-primary stroke-none"
+                        />
+                        New
+                      </span>
+                    ) : (
+                      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+                    )}{" "}
                   </span>
                 ) : (
                   <Skeleton className="w-20" />

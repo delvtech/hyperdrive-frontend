@@ -1,3 +1,4 @@
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -16,7 +17,12 @@ export function LpApyCell({
     return <Skeleton className="h-6 w-20" />;
   }
   if (!lpApy) {
-    return <span>no data</span>;
+    return (
+      <span className="gradient-text flex flex-row">
+        <SparklesIcon width={24} className="fill-primary stroke-none" />
+        New
+      </span>
+    );
   }
   return (
     <span
