@@ -1,5 +1,4 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-import { zeroAddress } from "viem";
 export const cloudChainAppConfig: AppConfig = {
   chainId: 42069,
   tags: [
@@ -34,21 +33,6 @@ export const cloudChainAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["yieldSource", "reth"],
-      extensions: {
-        shortName: "Rocket Pool ETH",
-        protocol: "rocketPool",
-        isSharesPeggedToBase: false,
-      },
-    },
-    {
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       decimals: 18,
       places: 2,
@@ -73,11 +57,26 @@ export const cloudChainAppConfig: AppConfig = {
       tags: [],
       extensions: {},
     },
+    {
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["yieldSource", "reth"],
+      extensions: {
+        shortName: "Rocket Pool ETH",
+        protocol: "rocketPool",
+        isSharesPeggedToBase: false,
+      },
+    },
   ],
   hyperdrives: [
     {
-      address: "0x930b41b8C03192B6cca51A15792302b816815A11",
-      version: "v1.0.8",
+      address: "0x6D3B7Cdc8959B399Ad8e1f8d830e2eBeCc82d4ad",
+      version: "v1.0.13",
       name: "14d DAI-Maker DSR",
       decimals: 18,
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -91,13 +90,12 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         vaultSharesToken: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1086822292078767677n,
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
+        initialVaultSharePrice: 1086822313297178622n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -107,6 +105,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 19230769230769n,
@@ -116,8 +115,8 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xE2Fda2D6aEd8ddAb5dDF4EF643a966ACca5752c0",
-      version: "v1.0.8",
+      address: "0xDE58fB12734C31750Ec1986bB2213b48e481D4B8",
+      version: "v1.0.13",
       name: "30d DAI-Maker DSR",
       decimals: 18,
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -131,13 +130,12 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         vaultSharesToken: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1086822313297178622n,
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
+        initialVaultSharePrice: 1086822339820192886n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -147,6 +145,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 41666666666666n,
@@ -156,8 +155,8 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x48C846fFFB016d6c6381fbE8d84BE31B138c33E5",
-      version: "v1.0.8",
+      address: "0x1206F17A51C0DF44b00e0009aCCd00612B31F44F",
+      version: "v1.0.13",
       name: "14d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -171,12 +170,11 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
         initialVaultSharePrice: 1168613038369911566n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -187,6 +185,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 19230769230769n,
@@ -196,8 +195,8 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x1b4eB5B744a7379Bd6FD35AC1f21b0343121E5FF",
-      version: "v1.0.8",
+      address: "0xA64aB68b31Bf3235190f02218B1eB8550Fcc9ba6",
+      version: "v1.0.13",
       name: "30d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -211,12 +210,11 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
         initialVaultSharePrice: 1168613038369911566n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -227,6 +225,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 41666666666666n,
@@ -236,8 +235,8 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xAD99e823c77BB01fae03C7A3717A4Cf0778E0312",
-      version: "v1.0.8",
+      address: "0x685a0f6cf0D18f5B637e06183e15880EcDe5c415",
+      version: "v1.0.13",
       name: "14d ETH-Rocket Pool ETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -251,12 +250,11 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
         initialVaultSharePrice: 1107744193853715386n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -267,6 +265,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 19230769230769n,
@@ -276,8 +275,8 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x2736aF8d4D5C9b5D4F75a69408cC928864532Ae1",
-      version: "v1.0.8",
+      address: "0xFf9f78428D23023F2fEbe5CeF6C757cca7680e39",
+      version: "v1.0.13",
       name: "30d ETH-Rocket Pool ETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -291,12 +290,11 @@ export const cloudChainAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        checkpointRewarder: zeroAddress,
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
         vaultSharesToken: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-        linkerFactory: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
+        linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
-          "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
+          "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
         initialVaultSharePrice: 1107744193853715386n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -307,6 +305,7 @@ export const cloudChainAppConfig: AppConfig = {
         governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
         sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x552bC815a988b5139dd915BDDBF1C68F4084430e",
         fees: {
           curve: 10000000000000000n,
           flat: 41666666666666n,
