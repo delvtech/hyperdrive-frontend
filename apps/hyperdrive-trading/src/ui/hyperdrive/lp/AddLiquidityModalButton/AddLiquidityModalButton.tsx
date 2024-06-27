@@ -1,4 +1,5 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
@@ -24,9 +25,14 @@ export function AddLiquidityModalButton({
   const { lpApy } = useLpApy(hyperdrive.address);
   // TODO: copied from YieldStats, this should be formalized in useLpApy
   const lpApyLabel =
-    lpApy === undefined
-      ? "no data"
-      : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`;
+    lpApy === undefined ? (
+      <span className="gradient-text flex flex-row items-center">
+        <SparklesIcon width={18} className="fill-primary stroke-none" />
+        New
+      </span>
+    ) : (
+      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+    );
 
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
