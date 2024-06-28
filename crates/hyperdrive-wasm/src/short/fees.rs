@@ -10,16 +10,11 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct OpenShortCurveFeeParams {
+    /// The number of bonds to short.
     bond_amount: BigInt,
 }
 
 /// Calculates the curve fee paid by the trader when they open a short.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortCurveFee(params: IOpenShortCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
@@ -32,16 +27,11 @@ pub fn openShortCurveFee(params: IOpenShortCurveFeeParams) -> Result<BigInt, Hyp
 
 #[ts(extends = IStateParams)]
 struct OpenShortFlatFeeParams {
+    /// The number of bonds to short.
     bond_amount: BigInt,
 }
 
 /// Calculates the governance fee paid by the trader when they open a short.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortGovernanceFee(
     params: IOpenShortFlatFeeParams,
@@ -56,29 +46,17 @@ pub fn openShortGovernanceFee(
     result_fp.to_bigint()
 }
 
-#[wasm_bindgen]
-struct Foo {
-    name: String,
-}
-
 #[ts(extends = IStateParams)]
 struct CloseShortCurveFeeParams {
+    /// The number of shorted bonds to close.
     bond_amount: BigInt,
+    /// The maturity timestamp of the short (in seconds).
     maturity_time: BigInt,
+    /// The current timestamp (in seconds).
     current_time: BigInt,
 }
 
 /// Calculates the curve fee paid by the trader when they close a short.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of shorted bonds to close
-///
-/// @param maturityTime - The maturity timestamp of the short (in seconds)
-///
-/// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeShortCurveFee(
     params: ICloseShortCurveFeeParams,
@@ -98,22 +76,15 @@ pub fn closeShortCurveFee(
 
 #[ts(extends = IStateParams)]
 struct CloseShortFlatFeeParams {
+    /// The number of shorted bonds to close.
     bond_amount: BigInt,
+    /// The maturity timestamp of the short (in seconds).
     maturity_time: BigInt,
+    /// The current timestamp (in seconds).
     current_time: BigInt,
 }
 
 /// Calculates the flat fee paid by the trader when they close a short.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of shorted bonds to close
-///
-/// @param maturityTime - The maturity timestamp of the short (in seconds)
-///
-/// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn closeShortFlatFee(params: ICloseShortFlatFeeParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;

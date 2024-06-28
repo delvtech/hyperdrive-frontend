@@ -10,21 +10,14 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct OpenShortParams {
+    /// The amount of bonds to short.
     bond_amount: BigInt,
+    /// The vault share price at the start of the checkpoint.
     open_vault_share_price: BigInt,
 }
 
 /// Calculates the amount of base the trader will need to deposit for a short of
 /// a given size.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The amount of bonds to short
-///
-/// @param openVaultSharePrice - The vault share price at the start of the
-/// checkpoint
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcOpenShort(params: IOpenShortParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
@@ -40,17 +33,12 @@ pub fn calcOpenShort(params: IOpenShortParams) -> Result<BigInt, HyperdriveWasmE
 
 #[ts(extends = IStateParams)]
 struct SpotPriceAfterShortParams {
+    /// The amount of bonds to short.
     bond_amount: BigInt,
 }
 
 /// Calculates the spot price after opening the short on the YieldSpace curve
 /// and before calculating the fees.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of bonds to short
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPriceAfterShort(
     params: ISpotPriceAfterShortParams,
@@ -67,23 +55,16 @@ pub fn spotPriceAfterShort(
 
 #[ts(extends = IStateParams)]
 struct ImpliedRateParams {
+    /// The amount of bonds to short.
     bond_amount: BigInt,
+    /// The vault share price at the start of the checkpoint.
     open_vault_share_price: BigInt,
+    /// The variable apy.
     variable_apy: BigInt,
 }
 
-/// Calculate the implied rate of opening a short at a given size. This rate
-/// is calculated as an APY.
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The amount of bonds to short
-///
-/// @param openVaultSharePrice - The vault share price at the start of the
-/// checkpoint
-///
-/// @param variableApy - The variable apy
+/// Calculate the implied rate of opening a short at a given size. This rate is
+/// calculated as an APY.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcImpliedRate(params: IImpliedRateParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;

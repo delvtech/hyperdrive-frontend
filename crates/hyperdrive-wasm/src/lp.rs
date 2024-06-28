@@ -12,35 +12,30 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct CalcAddLiquidityParams {
+    /// The current timestamp (in seconds).
     current_time: BigInt,
+    /// The amount of base or shares to contribute.
     contribution: BigInt,
+    /// True if the contribution is in base, false if it's in shares.
+    ///
+    /// Default: `true`
     as_base: Option<bool>,
+    /// The minimum share price the trader will accept.
+    ///
+    /// Default: `0`
     min_lp_share_price: Option<BigInt>,
+    /// The minimum APR the trader will accept.
+    ///
+    /// Default: `0`
     min_apr: Option<BigInt>,
+    /// The maximum APR the trader will accept.
+    ///
+    /// Default: max uint256
     max_apr: Option<BigInt>,
 }
 
 /// Calculates the amount of lp shares the trader will receive after adding
 /// liquidity.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param currentTime - The current timestamp (in seconds)
-///
-/// @param contribution - The amount of base or shares to contribute
-///
-/// @param asBase - True if the contribution is in base, false if it's in
-/// shares. Defaults to true
-///
-/// @param minLpSharePrice - The minimum share price the trader will accept.
-/// Defaults to 0.
-///
-/// @param minApr - The minimum APR the trader will accept. Defaults to 0.
-///
-/// @param maxApr - The maximum APR the trader will accept. Defaults to the max
-/// uint256.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcAddLiquidity(params: ICalcAddLiquidityParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;

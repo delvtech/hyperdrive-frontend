@@ -10,32 +10,23 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct MaxShortParams {
+    /// The maximum budget for the short.
     budget: BigInt,
+    /// The open share price of the pool's current checkpoint.
     open_vault_share_price: BigInt,
+    /// The exposure of the pool's current checkpoint.
     checkpoint_exposure: BigInt,
+    /// A lower bound on the realized price that the short will pay. This is
+    /// used to help the algorithm converge faster in real world situations. If
+    /// this is `None`, then we'll use the theoretical worst case realized
+    /// price.
     conservative_price: Option<BigInt>,
+    /// The maximum number of iterations to run the binary search for.
     max_iterations: Option<u8>,
 }
 
 /// Calculates the max amount of longs that can be shorted given the current
 /// state of the pool.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param openVaultSharePrice - The open share price of the pool's current
-/// checkpoint
-///
-/// @param checkpointExposure - The exposure of the pool's current checkpoint
-///
-/// @param maybeConservativePrice - A lower bound on the realized price that the
-/// short will pay. This is used to help the algorithm converge faster in real
-/// world situations. If this is `None`, then we'll use the theoretical worst
-/// case realized price.
-///
-/// @param maybeMaxIterations - The maximum number of iterations to run the
-/// binary search for
 #[wasm_bindgen(skip_jsdoc)]
 pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
