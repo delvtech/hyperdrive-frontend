@@ -5,23 +5,17 @@ use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
+    types::IClosePositionParams,
     utils::{ToBigInt, ToFixedPoint, ToU256},
 };
 
-#[ts(extends = IStateParams)]
+#[ts(extends = IClosePositionParams)]
 struct CloseShortParams {
-    /// The number of short bonds to close.
-    bond_amount: BigInt,
     /// The vault share price at the checkpoint when the position was opened.
     open_vault_share_price: BigInt,
     /// The current vault share price, or if the position has matured, the vault
     /// share price from the closing checkpoint.
     close_vault_share_price: BigInt,
-    /// The maturity timestamp of the short (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
 }
 
 /// Calculates the amount of shares the trader will receive after fees for
@@ -48,21 +42,6 @@ pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWas
     result_fp.to_bigint()
 }
 
-#[ts(extends = IStateParams)]
-struct ShortMarketValueParams {
-    /// The number of short bonds to close.
-    bond_amount: BigInt,
-    /// The vault share price at the checkpoint when the position was opened.
-    open_vault_share_price: BigInt,
-    /// The current vault share price, or if the position has matured, the vault
-    /// share price from the closing checkpoint.
-    close_vault_share_price: BigInt,
-    /// The maturity timestamp of the short (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
-}
-
 /// Calculates the market value of a short position using the equation:
 /// market_estimate = yield_accrued + trading_proceeds - curve_fees_paid +
 /// flat_fees_returned
@@ -75,9 +54,7 @@ struct ShortMarketValueParams {
 /// checkpoint's if matured) c0 = openVaultSharePrice p  = spotPrice t  =
 /// timeRemaining
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcShortMarketValue(
-    params: IShortMarketValueParams,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
     // dy is the bonds shorted
     let bond_amount = params.bond_amount().to_fixed()?;

@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
+    types::{IClosePositionParams, IStateParams},
     utils::{ToBigInt, ToFixedPoint, ToU256},
 };
 
@@ -46,21 +46,9 @@ pub fn openShortGovernanceFee(
     result_fp.to_bigint()
 }
 
-#[ts(extends = IStateParams)]
-struct CloseShortCurveFeeParams {
-    /// The number of shorted bonds to close.
-    bond_amount: BigInt,
-    /// The maturity timestamp of the short (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
-}
-
 /// Calculates the curve fee paid by the trader when they close a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeShortCurveFee(
-    params: ICloseShortCurveFeeParams,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeShortCurveFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
 
     let result_fp = state
@@ -74,19 +62,9 @@ pub fn closeShortCurveFee(
     result_fp.to_bigint()
 }
 
-#[ts(extends = IStateParams)]
-struct CloseShortFlatFeeParams {
-    /// The number of shorted bonds to close.
-    bond_amount: BigInt,
-    /// The maturity timestamp of the short (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
-}
-
 /// Calculates the flat fee paid by the trader when they close a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeShortFlatFee(params: ICloseShortFlatFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeShortFlatFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
 
     let result_fp = state.close_short_flat_fee(

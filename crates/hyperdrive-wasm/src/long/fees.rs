@@ -4,7 +4,7 @@ use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
+    types::{IClosePositionParams, IStateParams},
     utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToU256},
 };
 
@@ -46,20 +46,10 @@ pub fn openLongGovernanceFee(
     result_fp.to_bigint()
 }
 
-#[ts(extends = IStateParams)]
-struct CloseLongCurveFeeParams {
-    /// The amount of bonds to close.
-    bond_amount: BigInt,
-    /// The maturity timestamp of the long (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
-}
-
 /// Calculates the curve fee paid in shares or base by traders when they close a
 /// long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongCurveFee(params: ICloseLongCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeLongCurveFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
     set_panic_hook();
     let state = params.to_state()?;
 
@@ -74,20 +64,10 @@ pub fn closeLongCurveFee(params: ICloseLongCurveFeeParams) -> Result<BigInt, Hyp
     result_fp.to_bigint()
 }
 
-#[ts(extends = IStateParams)]
-struct CloseLongFlatFeeParams {
-    /// The amount of bonds to close.
-    bond_amount: BigInt,
-    /// The maturity timestamp of the long (in seconds).
-    maturity_time: BigInt,
-    /// The current timestamp (in seconds).
-    current_time: BigInt,
-}
-
 /// Calculates the flat fee paid in shares or base by traders when they close a
 /// long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongFlatFee(params: ICloseLongFlatFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeLongFlatFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
 
     let result_fp = state.close_long_flat_fee(
