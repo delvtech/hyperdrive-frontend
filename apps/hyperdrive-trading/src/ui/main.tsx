@@ -33,7 +33,7 @@ logAppVersion();
 // now.
 if (import.meta.env.DEV) {
   // worker.start().then(() => {
-  //   root.render(<Root />);
+  root.render(<Root />);
   // });
 } else {
   root.render(<Root />);
