@@ -14,6 +14,7 @@ import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
+import { worker } from "src/ui/bridge/api";
 import "src/ui/globals.css";
 import { logAppVersion } from "src/ui/version/logAppVersion";
 import { customRainbowTheme } from "src/ui/wallet/customTheme";
@@ -32,9 +33,9 @@ logAppVersion();
 // there is no support for any testnets so we have to stub out the responses for
 // now.
 if (import.meta.env.DEV) {
-  // worker.start().then(() => {
-  //   root.render(<Root />);
-  // });
+  worker.start().then(() => {
+    root.render(<Root />);
+  });
 } else {
   root.render(<Root />);
 }
