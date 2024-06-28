@@ -1067,8 +1067,8 @@ dependencies = [
 
 [[package]]
 name = "fixed-point"
-version = "0.15.7"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.15.7#a39a260f3d5957d27e65eabda6fc8396435cc403"
+version = "0.16.0"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
 dependencies = [
  "ethers",
  "eyre",
@@ -1449,8 +1449,8 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-math"
-version = "0.15.7"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.15.7#a39a260f3d5957d27e65eabda6fc8396435cc403"
+version = "0.16.0"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
 dependencies = [
  "ethers",
  "eyre",
@@ -1484,8 +1484,8 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wrappers"
-version = "0.15.7"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.15.7#a39a260f3d5957d27e65eabda6fc8396435cc403"
+version = "0.16.0"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
 dependencies = [
  "dotenv",
  "ethers",
