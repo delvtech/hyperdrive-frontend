@@ -254,14 +254,16 @@ impl TsType {
     pub fn contains(&self, other: &TsType) -> bool {
         match self {
             Self::Base(name) => match other {
+                // compare the names of 2 base types
                 Self::Base(other_name) => name == other_name,
+                // a base type can't contain anything other than itself
                 _ => false,
             },
             Self::Array(inner) => inner.contains(other),
             Self::Paren(inner) => inner.contains(other),
-            Self::IndexedAccess(object, key) => object.contains(other) || key.contains(other),
-            Self::Generic(name, args) => {
-                if name.contains(other) {
+            Self::IndexedAccess(base, key) => base.contains(other) || key.contains(other),
+            Self::Generic(base, args) => {
+                if base.contains(other) {
                     return true;
                 }
                 for arg in args {
