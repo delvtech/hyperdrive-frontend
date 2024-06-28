@@ -10,8 +10,11 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct CalcCloseLongParams {
+    /// The amount of bonds to close.
     bond_amount: BigInt,
+    /// The maturity timestamp of the long (in seconds).
     maturity_time: BigInt,
+    /// The current timestamp (in seconds).
     current_time: BigInt,
 }
 

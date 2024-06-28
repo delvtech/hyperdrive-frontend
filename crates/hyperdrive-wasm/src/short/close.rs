@@ -11,31 +11,21 @@ use crate::{
 
 #[ts(extends = IStateParams)]
 struct CloseShortParams {
+    /// The number of short bonds to close.
     bond_amount: BigInt,
+    /// The vault share price at the checkpoint when the position was opened.
     open_vault_share_price: BigInt,
+    /// The current vault share price, or if the position has matured, the vault
+    /// share price from the closing checkpoint.
     close_vault_share_price: BigInt,
+    /// The maturity timestamp of the short (in seconds).
     maturity_time: BigInt,
+    /// The current timestamp (in seconds).
     current_time: BigInt,
 }
 
 /// Calculates the amount of shares the trader will receive after fees for
 /// closing a short
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of short bonds to close
-///
-/// @param openVaultSharePrice - The vault share price at the checkpoint when
-/// the position was opened
-///
-/// @param closeVaultSharePrice - The current vault share price, or if the
-/// position has matured, the vault share price from the closing checkpoint
-///
-/// @param maturityTime - The maturity timestamp of the short (in seconds)
-///
-/// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWasmError> {
     let state = params.to_state()?;
@@ -60,42 +50,30 @@ pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWas
 
 #[ts(extends = IStateParams)]
 struct ShortMarketValueParams {
+    /// The number of short bonds to close.
     bond_amount: BigInt,
+    /// The vault share price at the checkpoint when the position was opened.
     open_vault_share_price: BigInt,
+    /// The current vault share price, or if the position has matured, the vault
+    /// share price from the closing checkpoint.
     close_vault_share_price: BigInt,
+    /// The maturity timestamp of the short (in seconds).
     maturity_time: BigInt,
+    /// The current timestamp (in seconds).
     current_time: BigInt,
 }
 
 /// Calculates the market value of a short position using the equation:
-/// market_estimate = yield_accrued + trading_proceeds - curve_fees_paid + flat_fees_returned
+/// market_estimate = yield_accrued + trading_proceeds - curve_fees_paid +
+/// flat_fees_returned
 ///
-/// yield_accrued      = dy * (c-c0)/c0
-/// trading_proceeds   = dy * (1 - p) * t
-/// curve_fees_paid    = trading_proceeds * curve_fee
-/// flat_fees_returned = dy * t * flat_fee
+/// yield_accrued      = dy * (c-c0)/c0 trading_proceeds   = dy * (1 - p) * t
+/// curve_fees_paid    = trading_proceeds * curve_fee flat_fees_returned = dy *
+/// t * flat_fee
 ///
-/// dy = bond amount
-/// c  = closeVaultSharePrice (current if non-matured, or checkpoint's if matured)
-/// c0 = openVaultSharePrice
-/// p  = spotPrice
-/// t  = timeRemaining
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param bondAmount - The number of short bonds to close
-///
-/// @param openVaultSharePrice - The vault share price at the checkpoint when
-/// the position was opened
-///
-/// @param closeVaultSharePrice - The current vault share price, or if the
-/// position has matured, the vault share price from the closing checkpoint
-///
-/// @param maturityTime - The maturity timestamp of the short (in seconds)
-///
-/// @param currentTime - The current timestamp (in seconds)
+/// dy = bond amount c  = closeVaultSharePrice (current if non-matured, or
+/// checkpoint's if matured) c0 = openVaultSharePrice p  = spotPrice t  =
+/// timeRemaining
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcShortMarketValue(
     params: IShortMarketValueParams,
@@ -116,8 +94,8 @@ pub fn calcShortMarketValue(
     // p is the current pool spot price
     let spot_price = state.calculate_spot_price().to_result()?.to_fixed()?;
 
-    // t is the time remaining
-    // (maturity_time - latest_checkpoint) / position_duration
+    // t is the time remaining (maturity_time - latest_checkpoint) /
+    // position_duration
     let latest_checkpoint = state.to_checkpoint(current_time.into()).to_fixed()?;
     let time_remaining = if maturity_time > latest_checkpoint {
         // NOTE: Round down to underestimate the time remaining.
@@ -126,13 +104,11 @@ pub fn calcShortMarketValue(
         fixed!(0)
     };
 
-    // yield accrued
-    // dy * (c-c0)/c0
+    // yield accrued dy * (c-c0)/c0
     let yield_accrued =
         bond_amount * (close_vault_share_price - open_vault_share_price) / open_vault_share_price;
 
-    // trading_proceeds
-    // dy * (1 - p) * t
+    // trading_proceeds dy * (1 - p) * t
     let trading_proceeds = bond_amount * (fixed!(1e18) - spot_price) * time_remaining;
 
     // curve_fees_paid = trading_proceeds * curve_fee

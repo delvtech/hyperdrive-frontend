@@ -67,15 +67,17 @@ struct PoolInfo {
     zombie_share_reserves: BigInt,
 }
 
-/// Base parameters that can be used to construct a State
+/// Base parameters that can be used to construct a State.
 #[ts]
 struct StateParams {
+    /// The current state of the pool.
     pub pool_info: IPoolInfo,
+    /// The pool's configuration.
     pub pool_config: IPoolConfig,
 }
 
 impl IStateParams {
-    /// Converts the parameters into a `ihyperdrive::State`
+    /// Converts the parameters into a `ihyperdrive::State`.
     pub fn to_state(&self) -> Result<State, HyperdriveWasmError> {
         self.parse().try_into()
     }

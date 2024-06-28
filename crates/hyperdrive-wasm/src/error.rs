@@ -83,7 +83,8 @@ impl From<JsValue> for HyperdriveWasmError {
 
 /// Convert a value to a `HyperdriveWasmError` via `.to_error()`
 pub trait ToHyperdriveWasmError {
-    /// Convert a value to a `HyperdriveWasmError`, capturing the current location
+    /// Convert a value to a `HyperdriveWasmError`, capturing the current
+    /// location
     #[track_caller]
     fn to_error(&self) -> HyperdriveWasmError {
         self.to_error_at(Location::caller())
@@ -107,7 +108,8 @@ where
 
 /// Convert a value to `Result<T, HyperdriveWasmError>` via `.to_result()`
 pub trait ToHyperdriveWasmResult<T> {
-    /// Convert a value to a `Result<T, HyperdriveWasmError>`, capturing the current location
+    /// Convert a value to a `Result<T, HyperdriveWasmError>`, capturing the
+    /// current location
     #[track_caller]
     fn to_result(self) -> Result<T, HyperdriveWasmError>
     where
@@ -116,11 +118,13 @@ pub trait ToHyperdriveWasmResult<T> {
         self.to_result_at(Location::caller())
     }
 
-    /// Convert a value to a `Result<T, HyperdriveWasmError>` with a provided location
+    /// Convert a value to a `Result<T, HyperdriveWasmError>` with a provided
+    /// location
     fn to_result_at(self, location: &Location) -> Result<T, HyperdriveWasmError>;
 }
 
-// If the error type of a Result can `.to_error()`, the Result can `.to_result()`
+// If the error type of a Result can `.to_error()`, the Result can
+// `.to_result()`
 impl<T, E> ToHyperdriveWasmResult<T> for Result<T, E>
 where
     E: ToHyperdriveWasmError,

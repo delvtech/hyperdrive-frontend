@@ -22,7 +22,8 @@ pub fn set_panic_hook() {
 
 // Address //
 
-/// Convert a value to a `Result<Address, HyperdriveWasmError>` via `.to_address()`
+/// Convert a value to a `Result<Address, HyperdriveWasmError>` via
+/// `.to_address()`
 pub trait ToAddress {
     fn to_address(&self) -> Result<Address, HyperdriveWasmError>;
 }
@@ -156,7 +157,8 @@ impl ToI256 for FixedPoint {
 
 // FixedPoint //
 
-/// Convert a value to a `Result<FixedPoint, HyperdriveWasmError>` via `.to_fixed_point()`
+/// Convert a value to a `Result<FixedPoint, HyperdriveWasmError>` via
+/// `.to_fixed_point()`
 pub trait ToFixedPoint {
     fn to_fixed(&self) -> Result<FixedPoint, HyperdriveWasmError>;
 }
@@ -198,7 +200,8 @@ macro_rules! bigint {
     };
 }
 
-/// Convert a value to a `Result<BigInt, HyperdriveWasmError>` via `.to_bigint()`
+/// Convert a value to a `Result<BigInt, HyperdriveWasmError>` via
+/// `.to_bigint()`
 pub trait ToBigInt {
     fn to_bigint(&self) -> Result<BigInt, HyperdriveWasmError>;
 }

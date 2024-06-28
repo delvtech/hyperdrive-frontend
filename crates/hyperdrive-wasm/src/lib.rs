@@ -22,10 +22,6 @@ pub fn initialize() {
 }
 
 /// Calculates the pool's spot price, i.e. the price to open a long of 1.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPrice(params: IStateParams) -> Result<BigInt, HyperdriveWasmError> {
     params
@@ -37,21 +33,15 @@ pub fn spotPrice(params: IStateParams) -> Result<BigInt, HyperdriveWasmError> {
 
 #[ts]
 struct CalcHprGivenAprParams {
-    /// The annualized rate
-    ///
-    /// Multiply by 10^18 to convert to fixed point
+    /// The annualized rate.
     apr: BigInt,
-    /// The position duration in seconds
+    /// The position duration in seconds.
     position_duration: BigInt,
     foo: Option<Number>,
 }
 
 /// Calculate the holding period return (HPR) given a non-compounding,
 /// annualized rate (APR).
-///
-/// @param apr - The annualized rate
-///
-/// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcHprGivenApr(params: ICalcHprGivenAprParams) -> Result<BigInt, HyperdriveWasmError> {
     calculate_hpr_given_apr(
@@ -64,16 +54,14 @@ pub fn calcHprGivenApr(params: ICalcHprGivenAprParams) -> Result<BigInt, Hyperdr
 
 #[ts]
 struct CalcHprGivenApyParams {
+    /// The annualized rate.
     apy: BigInt,
+    /// The position duration in seconds.
     position_duration: BigInt,
 }
 
 /// Calculate the holding period return (HPR) given a compounding, annualized
 /// rate (APY).
-///
-/// @param apy - The annualized rate
-///
-/// @param positionDuration - The position duration in seconds
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcHprGivenApy(params: ICalcHprGivenApyParams) -> Result<BigInt, HyperdriveWasmError> {
     calculate_hpr_given_apy(
@@ -84,11 +72,7 @@ pub fn calcHprGivenApy(params: ICalcHprGivenApyParams) -> Result<BigInt, Hyperdr
     .to_bigint()
 }
 
-/// Calculates the pool's idle liquidity in base
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
+/// Calculates the pool's idle liquidity in base.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn idleShareReservesInBase(params: IStateParams) -> Result<BigInt, HyperdriveWasmError> {
     params
@@ -99,16 +83,11 @@ pub fn idleShareReservesInBase(params: IStateParams) -> Result<BigInt, Hyperdriv
 
 #[ts(extends = IStateParams)]
 struct PresentValueParams {
+    /// The time at which to grab the present value.
     current_time: BigInt,
 }
 
 /// Calculates the pool's present value in shares
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
-///
-/// @param currentTime - The time at which to grab the present value
 #[wasm_bindgen(skip_jsdoc)]
 pub fn presentValue(params: IPresentValueParams) -> Result<BigInt, HyperdriveWasmError> {
     let current_time = params.current_time().to_u256()?;
@@ -121,10 +100,6 @@ pub fn presentValue(params: IPresentValueParams) -> Result<BigInt, HyperdriveWas
 
 /// Calculates the pool's fixed APR, i.e. the fixed rate a user locks in when
 /// they open a long.
-///
-/// @param poolInfo - The current state of the pool
-///
-/// @param poolConfig - The pool's configuration
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotRate(params: IStateParams) -> Result<BigInt, HyperdriveWasmError> {
     params
