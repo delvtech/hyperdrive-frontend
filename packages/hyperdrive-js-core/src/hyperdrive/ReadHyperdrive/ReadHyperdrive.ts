@@ -1811,26 +1811,24 @@ export class ReadHyperdrive extends ReadModel {
 
     // If the position is mature, we use the closing vault share price otherwise
     // use the current vault share price
-    let closeSharePrice = poolInfo.vaultSharePrice;
+    let closeVaultSharePrice = poolInfo.vaultSharePrice;
     if (maturityTime <= currentTime) {
       const closingCheckpoint = await this.getCheckpoint({
         timestamp: maturityTime,
         options,
       });
-      closeSharePrice = closingCheckpoint.vaultSharePrice;
+      closeVaultSharePrice = closingCheckpoint.vaultSharePrice;
     }
 
-    const marketEstimateInShares = BigInt(
-      hyperwasm.calcShortMarketValue(
-        convertBigIntsToStrings(poolInfo),
-        convertBigIntsToStrings(poolConfig),
-        shortAmountIn.toString(),
-        openSharePrice.toString(),
-        closeSharePrice.toString(),
-        maturityTime.toString(),
-        currentTime.toString(),
-      ),
-    );
+    const marketEstimateInShares = hyperwasm.calcShortMarketValue({
+      poolInfo,
+      poolConfig,
+      bondAmount: shortAmountIn,
+      openVaultSharePrice,
+      closeVaultSharePrice,
+      maturityTime,
+      currentTime,
+    });
 
     if (!asBase) {
       return marketEstimateInShares;
@@ -1868,22 +1866,22 @@ export class ReadHyperdrive extends ReadModel {
     // The checkpoint in which this position was opened.
     // This is always maturity time - position duration thanks to mint on demand
     const openCheckpointTimestamp = maturityTime - poolConfig.positionDuration;
-    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
       timestamp: openCheckpointTimestamp,
       options,
     });
 
-    const currentTime = Math.floor(Date.now() / 1000);
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
 
     // If the position is mature, we use the closing vault share price otherwise
     // use the current vault share price
-    let closeSharePrice = poolInfo.vaultSharePrice;
+    let closeVaultSharePrice = poolInfo.vaultSharePrice;
     if (maturityTime <= currentTime) {
       const closingCheckpoint = await this.getCheckpoint({
         timestamp: maturityTime,
         options,
       });
-      closeSharePrice = closingCheckpoint.vaultSharePrice;
+      closeVaultSharePrice = closingCheckpoint.vaultSharePrice;
     }
 
     const flatFeeInShares = hyperwasm.closeShortFlatFee({
@@ -1907,7 +1905,7 @@ export class ReadHyperdrive extends ReadModel {
       poolConfig,
       bondAmount: shortAmountIn,
       openVaultSharePrice,
-      closeVaultSharePrice: poolInfo.vaultSharePrice,
+      closeVaultSharePrice,
       maturityTime,
       currentTime,
     });
@@ -1983,7 +1981,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
+   * Predicts the amount of base asset and withdrawal shares a user will receive when removing liquidity.
    */
   async previewRemoveLiquidity({
     lpSharesIn,
@@ -2100,8 +2098,4 @@ function calculateLpApy({
   );
 
   return lpApy;
-}
-
-function isNegativeInterestError(error: string) {
-  return error.includes("InsufficientLiquidity: Negative Interest");
 }

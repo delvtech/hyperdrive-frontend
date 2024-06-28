@@ -12,7 +12,7 @@ use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy};
 use js_sys::{BigInt, Number};
 use ts_macro::ts;
 use types::IStateParams;
-use utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToU256};
+use utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToI256, ToU256};
 use wasm_bindgen::prelude::*;
 
 // Initialization function
@@ -55,9 +55,10 @@ struct CalcHprGivenAprParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcHprGivenApr(params: ICalcHprGivenAprParams) -> Result<BigInt, HyperdriveWasmError> {
     calculate_hpr_given_apr(
-        params.apr().to_fixed()?,
+        params.apr().to_i256()?,
         params.position_duration().to_fixed()?,
     )
+    .to_result()?
     .to_bigint()
 }
 
@@ -76,7 +77,7 @@ struct CalcHprGivenApyParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcHprGivenApy(params: ICalcHprGivenApyParams) -> Result<BigInt, HyperdriveWasmError> {
     calculate_hpr_given_apy(
-        params.apy().to_fixed()?,
+        params.apy().to_i256()?,
         params.position_duration().to_fixed()?,
     )
     .to_result()?

@@ -1,22 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* Calculates the max amount of base that can be used to open a long given a
-* budget.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param budget - The maximum amount of base tokens that can be spent.
-*
-* @param checkpointExposure - The exposure of the pool's current checkpoint
-*
-* @param maybeMaxIterations - The maximum number of iterations to run the
-* binary search for
-*/
-export function maxLong(params: IMaxLongParams): bigint;
-/**
 * Calculates the curve fee paid by the trader when they open a short.
 *
 * @param poolInfo - The current state of the pool
@@ -65,26 +49,41 @@ export function closeShortCurveFee(params: ICloseShortCurveFeeParams): bigint;
 */
 export function closeShortFlatFee(params: ICloseShortFlatFeeParams): bigint;
 /**
-* Calculates the amount of shares the trader will receive after fees for
-* closing a short
+* Calculates the max amount of base that can be used to open a long given a
+* budget.
 *
 * @param poolInfo - The current state of the pool
 *
 * @param poolConfig - The pool's configuration
 *
-* @param bondAmount - The number of short bonds to close
+* @param budget - The maximum amount of base tokens that can be spent.
 *
-* @param openVaultSharePrice - The vault share price at the checkpoint when
-* the position was opened
+* @param checkpointExposure - The exposure of the pool's current checkpoint
 *
-* @param closeVaultSharePrice - The current vault share price, or if the
-* position has matured, the vault share price from the closing checkpoint
-*
-* @param maturityTime - The maturity timestamp of the short (in seconds)
-*
-* @param currentTime - The current timestamp (in seconds)
+* @param maybeMaxIterations - The maximum number of iterations to run the
+* binary search for
 */
-export function calcCloseShort(params: ICloseShortParams): bigint;
+export function maxLong(params: IMaxLongParams): bigint;
+/**
+* Calculates the long amount that will be opened for a given base amount.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param baseAmount - The amount of base tokens to open a long for
+*/
+export function calcOpenLong(params: IOpenLongParams): bigint;
+/**
+* Calculates the spot price after opening a Hyperdrive long.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param baseAmount - The amount of base to spend
+*/
+export function spotPriceAfterLong(params: ISpotPriceAfterLongParams): bigint;
 /**
 */
 export function initialize(): void;
@@ -141,6 +140,59 @@ export function presentValue(params: IPresentValueParams): bigint;
 * @param poolConfig - The pool's configuration
 */
 export function spotRate(params: IStateParams): bigint;
+/**
+* Calculates the amount of shares the trader will receive after fees for
+* closing a short
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param bondAmount - The number of short bonds to close
+*
+* @param openVaultSharePrice - The vault share price at the checkpoint when
+* the position was opened
+*
+* @param closeVaultSharePrice - The current vault share price, or if the
+* position has matured, the vault share price from the closing checkpoint
+*
+* @param maturityTime - The maturity timestamp of the short (in seconds)
+*
+* @param currentTime - The current timestamp (in seconds)
+*/
+export function calcCloseShort(params: ICloseShortParams): bigint;
+/**
+* Calculates the market value of a short position using the equation:
+* market_estimate = yield_accrued + trading_proceeds - curve_fees_paid + flat_fees_returned
+*
+* yield_accrued      = dy * (c-c0)/c0
+* trading_proceeds   = dy * (1 - p) * t
+* curve_fees_paid    = trading_proceeds * curve_fee
+* flat_fees_returned = dy * t * flat_fee
+*
+* dy = bond amount
+* c  = closeVaultSharePrice (current if non-matured, or checkpoint's if matured)
+* c0 = openVaultSharePrice
+* p  = spotPrice
+* t  = timeRemaining
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param bondAmount - The number of short bonds to close
+*
+* @param openVaultSharePrice - The vault share price at the checkpoint when
+* the position was opened
+*
+* @param closeVaultSharePrice - The current vault share price, or if the
+* position has matured, the vault share price from the closing checkpoint
+*
+* @param maturityTime - The maturity timestamp of the short (in seconds)
+*
+* @param currentTime - The current timestamp (in seconds)
+*/
+export function calcShortMarketValue(params: IShortMarketValueParams): bigint;
 /**
 * Calculates the max amount of longs that can be shorted given the current
 * state of the pool.
@@ -204,6 +256,30 @@ export function spotPriceAfterShort(params: ISpotPriceAfterShortParams): bigint;
 */
 export function calcImpliedRate(params: IImpliedRateParams): bigint;
 /**
+* Calculates the amount of lp shares the trader will receive after adding
+* liquidity.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param currentTime - The current timestamp (in seconds)
+*
+* @param contribution - The amount of base or shares to contribute
+*
+* @param asBase - True if the contribution is in base, false if it's in
+* shares. Defaults to true
+*
+* @param minLpSharePrice - The minimum share price the trader will accept.
+* Defaults to 0.
+*
+* @param minApr - The minimum APR the trader will accept. Defaults to 0.
+*
+* @param maxApr - The maximum APR the trader will accept. Defaults to the max
+* uint256.
+*/
+export function calcAddLiquidity(params: ICalcAddLiquidityParams): bigint;
+/**
 */
 export function calcCloseLong(params: ICalcCloseLongParams): bigint;
 /**
@@ -257,56 +333,6 @@ export function closeLongCurveFee(params: ICloseLongCurveFeeParams): bigint;
 * @param currentTime - The current timestamp (in seconds)
 */
 export function closeLongFlatFee(params: ICloseLongFlatFeeParams): bigint;
-/**
-* Calculates the amount of lp shares the trader will receive after adding
-* liquidity.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param currentTime - The current timestamp (in seconds)
-*
-* @param contribution - The amount of base or shares to contribute
-*
-* @param asBase - True if the contribution is in base, false if it's in
-* shares. Defaults to true
-*
-* @param minLpSharePrice - The minimum share price the trader will accept.
-* Defaults to 0.
-*
-* @param minApr - The minimum APR the trader will accept. Defaults to 0.
-*
-* @param maxApr - The maximum APR the trader will accept. Defaults to the max
-* uint256.
-*/
-export function calcAddLiquidity(params: ICalcAddLiquidityParams): bigint;
-/**
-* Calculates the long amount that will be opened for a given base amount.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param baseAmount - The amount of base tokens to open a long for
-*/
-export function calcOpenLong(params: IOpenLongParams): bigint;
-/**
-* Calculates the spot price after opening a Hyperdrive long.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param baseAmount - The amount of base to spend
-*/
-export function spotPriceAfterLong(params: ISpotPriceAfterLongParams): bigint;
-interface IMaxLongParams extends IStateParams {
-  budget: bigint;
-  checkpointExposure: bigint;
-  maxIterations?: number | undefined;
-}
-
 interface IOpenShortCurveFeeParams extends IStateParams {
   bondAmount: bigint;
 }
@@ -327,12 +353,18 @@ interface ICloseShortFlatFeeParams extends IStateParams {
   currentTime: bigint;
 }
 
-interface ICloseShortParams extends IStateParams {
-  bondAmount: bigint;
-  openVaultSharePrice: bigint;
-  closeVaultSharePrice: bigint;
-  maturityTime: bigint;
-  currentTime: bigint;
+interface IMaxLongParams extends IStateParams {
+  budget: bigint;
+  checkpointExposure: bigint;
+  maxIterations?: number | undefined;
+}
+
+interface IOpenLongParams extends IStateParams {
+  baseAmount: bigint;
+}
+
+interface ISpotPriceAfterLongParams extends IStateParams {
+  baseAmount: bigint;
 }
 
 interface ICalcHprGivenAprParams {
@@ -358,55 +390,6 @@ interface IPresentValueParams extends IStateParams {
   currentTime: bigint;
 }
 
-interface IMaxShortParams extends IStateParams {
-  budget: bigint;
-  openVaultSharePrice: bigint;
-  checkpointExposure: bigint;
-  conservativePrice?: bigint | undefined;
-  maxIterations?: number | undefined;
-}
-
-interface IOpenShortParams extends IStateParams {
-  bondAmount: bigint;
-  openVaultSharePrice: bigint;
-}
-
-interface ISpotPriceAfterShortParams extends IStateParams {
-  bondAmount: bigint;
-}
-
-interface IImpliedRateParams extends IStateParams {
-  bondAmount: bigint;
-  openVaultSharePrice: bigint;
-  variableApy: bigint;
-}
-
-interface ICalcCloseLongParams extends IStateParams {
-  bondAmount: bigint;
-  maturityTime: bigint;
-  currentTime: bigint;
-}
-
-interface IOpenLongCurveFeeParams extends IStateParams {
-  baseAmount: bigint;
-}
-
-interface IOpenLongGovernanceFeeParams extends IStateParams {
-  baseAmount: bigint;
-}
-
-interface ICloseLongCurveFeeParams extends IStateParams {
-  bondAmount: bigint;
-  maturityTime: bigint;
-  currentTime: bigint;
-}
-
-interface ICloseLongFlatFeeParams extends IStateParams {
-  bondAmount: bigint;
-  maturityTime: bigint;
-  currentTime: bigint;
-}
-
 interface IFees {
   curve: bigint;
   flat: bigint;
@@ -423,6 +406,7 @@ interface IPoolConfig {
   checkpointDuration: bigint;
   timeStretch: bigint;
   fees: IFees;
+  checkpointRewarder: `0x${string}`;
   feeCollector: `0x${string}`;
   sweepCollector: `0x${string}`;
   governance: `0x${string}`;
@@ -455,6 +439,45 @@ interface IStateParams {
   poolConfig: IPoolConfig;
 }
 
+interface ICloseShortParams extends IStateParams {
+  bondAmount: bigint;
+  openVaultSharePrice: bigint;
+  closeVaultSharePrice: bigint;
+  maturityTime: bigint;
+  currentTime: bigint;
+}
+
+interface IShortMarketValueParams extends IStateParams {
+  bondAmount: bigint;
+  openVaultSharePrice: bigint;
+  closeVaultSharePrice: bigint;
+  maturityTime: bigint;
+  currentTime: bigint;
+}
+
+interface IMaxShortParams extends IStateParams {
+  budget: bigint;
+  openVaultSharePrice: bigint;
+  checkpointExposure: bigint;
+  conservativePrice?: bigint | undefined;
+  maxIterations?: number | undefined;
+}
+
+interface IOpenShortParams extends IStateParams {
+  bondAmount: bigint;
+  openVaultSharePrice: bigint;
+}
+
+interface ISpotPriceAfterShortParams extends IStateParams {
+  bondAmount: bigint;
+}
+
+interface IImpliedRateParams extends IStateParams {
+  bondAmount: bigint;
+  openVaultSharePrice: bigint;
+  variableApy: bigint;
+}
+
 interface ICalcAddLiquidityParams extends IStateParams {
   currentTime: bigint;
   contribution: bigint;
@@ -464,12 +487,30 @@ interface ICalcAddLiquidityParams extends IStateParams {
   maxApr?: bigint | undefined;
 }
 
-interface IOpenLongParams extends IStateParams {
+interface ICalcCloseLongParams extends IStateParams {
+  bondAmount: bigint;
+  maturityTime: bigint;
+  currentTime: bigint;
+}
+
+interface IOpenLongCurveFeeParams extends IStateParams {
   baseAmount: bigint;
 }
 
-interface ISpotPriceAfterLongParams extends IStateParams {
+interface IOpenLongGovernanceFeeParams extends IStateParams {
   baseAmount: bigint;
+}
+
+interface ICloseLongCurveFeeParams extends IStateParams {
+  bondAmount: bigint;
+  maturityTime: bigint;
+  currentTime: bigint;
+}
+
+interface ICloseLongFlatFeeParams extends IStateParams {
+  bondAmount: bigint;
+  maturityTime: bigint;
+  currentTime: bigint;
 }
 
 /**
@@ -482,13 +523,14 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly maxLong: (a: number, b: number) => void;
   readonly openShortCurveFee: (a: number, b: number) => void;
   readonly openShortGovernanceFee: (a: number, b: number) => void;
   readonly __wbg_foo_free: (a: number) => void;
   readonly closeShortCurveFee: (a: number, b: number) => void;
   readonly closeShortFlatFee: (a: number, b: number) => void;
-  readonly calcCloseShort: (a: number, b: number) => void;
+  readonly maxLong: (a: number, b: number) => void;
+  readonly calcOpenLong: (a: number, b: number) => void;
+  readonly spotPriceAfterLong: (a: number, b: number) => void;
   readonly spotPrice: (a: number, b: number) => void;
   readonly calcHprGivenApr: (a: number, b: number) => void;
   readonly calcHprGivenApy: (a: number, b: number) => void;
@@ -496,18 +538,18 @@ export interface InitOutput {
   readonly presentValue: (a: number, b: number) => void;
   readonly spotRate: (a: number, b: number) => void;
   readonly initialize: () => void;
+  readonly calcCloseShort: (a: number, b: number) => void;
+  readonly calcShortMarketValue: (a: number, b: number) => void;
   readonly maxShort: (a: number, b: number) => void;
   readonly calcOpenShort: (a: number, b: number) => void;
   readonly spotPriceAfterShort: (a: number, b: number) => void;
   readonly calcImpliedRate: (a: number, b: number) => void;
+  readonly calcAddLiquidity: (a: number, b: number) => void;
   readonly calcCloseLong: (a: number, b: number) => void;
   readonly openLongCurveFee: (a: number, b: number) => void;
   readonly openLongGovernanceFee: (a: number, b: number) => void;
   readonly closeLongCurveFee: (a: number, b: number) => void;
   readonly closeLongFlatFee: (a: number, b: number) => void;
-  readonly calcAddLiquidity: (a: number, b: number) => void;
-  readonly calcOpenLong: (a: number, b: number) => void;
-  readonly spotPriceAfterLong: (a: number, b: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;

@@ -31,6 +31,8 @@ struct PoolConfig {
     time_stretch: BigInt,
     fees: IFees,
     #[ts(type = "`0x${string}`")]
+    checkpoint_rewarder: String,
+    #[ts(type = "`0x${string}`")]
     fee_collector: String,
     #[ts(type = "`0x${string}`")]
     sweep_collector: String,
@@ -137,6 +139,7 @@ impl TryInto<ihyperdrive::PoolConfig> for PoolConfig {
             time_stretch: self.time_stretch.to_u256()?,
             position_duration: self.position_duration.to_u256()?,
             checkpoint_duration: self.checkpoint_duration.to_u256()?,
+            checkpoint_rewarder: self.checkpoint_rewarder.to_address()?,
             linker_factory: self.linker_factory.to_address()?,
             linker_code_hash: hex::decode(&self.linker_code_hash)
                 .to_result()?

@@ -38,9 +38,9 @@ console_error_panic_hook = { version = "0.1.7", optional = true }
 getrandom = { version = "0.2", features = ["js"] }
 
 # internal
-fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.7" }
-hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.7" }
-hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.7" }
+fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.16.0" }
+hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.16.0" }
+hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.16.0" }
 
 # workspace
 ts-macro = { path = "../ts-macro" }
