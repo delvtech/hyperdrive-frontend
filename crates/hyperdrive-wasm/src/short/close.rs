@@ -1,15 +1,21 @@
-use std::ops::{Div, Mul, Sub};
-
-use fixed_point::fixed;
-use hyperdrive_math::State;
 use js_sys::BigInt;
+use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{JsPoolConfig, JsPoolInfo},
-    utils::{ToFixedPoint, ToBigInt, ToU256},
+    types::IStateParams,
+    utils::{ToBigInt, ToU256},
 };
+
+#[ts(extends = IStateParams)]
+struct CloseShortParams {
+    bond_amount: BigInt,
+    open_vault_share_price: BigInt,
+    close_vault_share_price: BigInt,
+    maturity_time: BigInt,
+    current_time: BigInt,
+}
 
 /// Calculates the amount of shares the trader will receive after fees for
 /// closing a short
@@ -30,24 +36,13 @@ use crate::{
 ///
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcCloseShort(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    bondAmount: BigInt,
-    openVaultSharePrice: BigInt,
-    closeVaultSharePrice: BigInt,
-    maturityTime: BigInt,
-    currentTime: BigInt,
-) -> Result<BigInt, HyperdriveWasmError> {
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let bond_amount = bondAmount.to_u256()?;
-    let open_vault_share_price = openVaultSharePrice.to_u256()?;
-    let close_vault_share_price = closeVaultSharePrice.to_u256()?;
-    let maturity_time = maturityTime.to_u256()?;
-    let current_time = currentTime.to_u256()?;
+pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWasmError> {
+    let state = params.to_state()?;
+    let bond_amount = params.bond_amount().to_u256()?;
+    let open_vault_share_price = params.open_vault_share_price().to_u256()?;
+    let close_vault_share_price = params.close_vault_share_price().to_u256()?;
+    let maturity_time = params.maturity_time().to_u256()?;
+    let current_time = params.current_time().to_u256()?;
 
     let result_fp = state
         .calculate_close_short(
@@ -59,7 +54,7 @@ pub fn calcCloseShort(
         )
         .to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
 }
 
 /// Calculates the market value of a short position using the equation:

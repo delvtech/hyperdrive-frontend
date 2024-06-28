@@ -1,5 +1,5 @@
 [package]
-name = "typescript-macro"
+name = "ts-macro"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,9 +8,18 @@ edition = "2021"
 proc-macro = true
 
 [dependencies]
+
+# external
 heck = "0.5.0"
 js-sys = "0.3.64"
+lazy_static = "1.4.0"
 proc-macro2 = "1.0"
 quote = "1.0"
+regex = "1.10.5"
 syn = { version = "1.0", features = ["full"] }
+thiserror = "1.0"
 wasm-bindgen = "0.2.86"
+web-sys = { version = "0.3.63", features = ["console"] }
+
+# workspace
+ts-type = { path = "../ts-type" }
