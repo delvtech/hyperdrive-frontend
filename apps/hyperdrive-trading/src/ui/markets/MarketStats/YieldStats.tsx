@@ -1,3 +1,4 @@
+import { SparklesIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
@@ -43,20 +44,38 @@ export function YieldStats({
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "Longs"}>
-            <FixedRateStat hyperdrive={hyperdrive} />
+            <FixedRateStat
+              isActive={position === "Longs"}
+              hyperdrive={hyperdrive}
+            />
           </Animated>
           <Animated isActive={position === "Shorts"}>
-            <ShortRateStat hyperdrive={hyperdrive} />
+            <ShortRateStat
+              isActive={position === "Shorts"}
+              hyperdrive={hyperdrive}
+            />
           </Animated>
           <Animated isActive={position === "LP"}>
             <Stat
               label="LP APY (7d)"
               value={
                 lpApyStatus !== "loading" ? (
-                  <span className="flex items-center gap-1.5">
-                    {lpApy === undefined
-                      ? "no data"
-                      : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`}{" "}
+                  <span
+                    className={classNames("flex items-center gap-1.5", {
+                      "gradient-text": position === "LP",
+                    })}
+                  >
+                    {lpApy === undefined ? (
+                      <span className="gradient-text flex flex-row">
+                        <SparklesIcon
+                          width={24}
+                          className="fill-primary stroke-none"
+                        />
+                        New
+                      </span>
+                    ) : (
+                      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+                    )}{" "}
                   </span>
                 ) : (
                   <Skeleton className="w-20" />
@@ -79,7 +98,7 @@ function Animated({
   return (
     <div
       className={classNames("transition-all duration-200 ease-in-out", {
-        "gradient-text z-20 scale-105": isActive,
+        "scale-105": isActive,
       })}
     >
       {children}

@@ -1,68 +1,98 @@
 export declare const IERC20ForwarderFactory: {
     abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "InvalidForwarderAddress";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "ERC20LINK_HASH";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "create";
         readonly inputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "_token";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "create";
         readonly outputs: readonly [{
-            readonly internalType: "contract IERC20Forwarder";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IERC20Forwarder";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getDeployDetails";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getForwarder";
         readonly inputs: readonly [{
-            readonly internalType: "contract IMultiToken";
             readonly name: "_token";
             readonly type: "address";
+            readonly internalType: "contract IMultiToken";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_tokenId";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "getForwarder";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
         readonly type: "function";
+        readonly name: "kind";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidForwarderAddress";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
@@ -70,6 +100,9 @@ export declare const IERC20ForwarderFactory: {
         readonly "create(address,uint256)": "0ecaea73";
         readonly "getDeployDetails()": "600eb4ba";
         readonly "getForwarder(address,uint256)": "0710fd58";
+        readonly "kind()": "04baa00b";
+        readonly "name()": "06fdde03";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=IERC20ForwarderFactory.d.ts.map

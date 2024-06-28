@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
+import { Page } from "src/ui/app/Page";
 import { Market } from "src/ui/markets/Market";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { z } from "zod";
@@ -10,7 +10,11 @@ const marketRouteParams = z.object({
 });
 
 export const Route = createFileRoute(MARKET_DETAILS_ROUTE)({
-  component: () => <Market />,
+  component: () => (
+    <Page>
+      <Market />
+    </Page>
+  ),
   validateSearch: marketRouteParams,
   loaderDeps: ({ search: { position, openOrClosed } }) => {
     return {

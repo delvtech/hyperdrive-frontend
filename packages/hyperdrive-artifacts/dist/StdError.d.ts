@@ -1,94 +1,94 @@
 export declare const stdError: {
     abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "arithmeticError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "assertionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "divisionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "encodeStorageError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "enumConversionError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "indexOOBError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "memOverflowError";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "popError";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes";
-            readonly name: "";
-            readonly type: "bytes";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [];
-        readonly name: "zeroVarError";
         readonly outputs: readonly [{
-            readonly internalType: "bytes";
             readonly name: "";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }];
         readonly stateMutability: "view";
+    }, {
         readonly type: "function";
+        readonly name: "zeroVarError";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes";
+            readonly internalType: "bytes";
+        }];
+        readonly stateMutability: "view";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

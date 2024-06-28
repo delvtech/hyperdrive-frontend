@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
-interface Tab {
+export interface Tab {
   id: string;
   onClick: () => void;
   label: string;

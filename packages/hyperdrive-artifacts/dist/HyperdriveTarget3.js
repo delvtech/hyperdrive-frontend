@@ -1,1001 +1,1062 @@
 export const HyperdriveTarget3 = {
     abi: [
         {
-            "inputs": [],
-            "name": "BelowMinimumContribution",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "CircuitBreakerTriggered",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "DecreasedPresentValueWhenAddingLiquidity",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "DistributeExcessIdleFailed",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "ExpInvalidExponent",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InsufficientBalance",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InsufficientLiquidity",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InvalidApr",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InvalidCheckpointTime",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InvalidEffectiveShareReserves",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "InvalidTimestamp",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "LnInvalidInput",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "MinimumTransactionAmount",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "OutputLimit",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "PoolAlreadyInitialized",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "PoolIsPaused",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "ReentrancyGuardReentrantCall",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "RestrictedZeroAddress",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "TransferFailed",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "UnsafeCastToInt128",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "UnsafeCastToInt256",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "UnsafeCastToUint112",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "UnsafeCastToUint128",
-            "type": "error"
-        },
-        {
-            "inputs": [],
-            "name": "UpdateLiquidityFailed",
-            "type": "error"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "provider",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpSharePrice",
-                    "type": "uint256"
-                }
-            ],
-            "name": "AddLiquidity",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Approval",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "operator",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
-                }
-            ],
-            "name": "ApprovalForAll",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "trader",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "destination",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "assetId",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturityTime",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "bondAmount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "CloseLong",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "trader",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "destination",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "assetId",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturityTime",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "basePayment",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "bondAmount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "CloseShort",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "collector",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                }
-            ],
-            "name": "CollectGovernanceFee",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "checkpointTime",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "checkpointVaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturedShorts",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturedLongs",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpSharePrice",
-                    "type": "uint256"
-                }
-            ],
-            "name": "CreateCheckpoint",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newFeeCollector",
-                    "type": "address"
-                }
-            ],
-            "name": "FeeCollectorUpdated",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newGovernance",
-                    "type": "address"
-                }
-            ],
-            "name": "GovernanceUpdated",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "provider",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "apr",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Initialize",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "trader",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "assetId",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturityTime",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "bondAmount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "OpenLong",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "trader",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "assetId",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "maturityTime",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "baseProceeds",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "bondAmount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "OpenShort",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "isPaused",
-                    "type": "bool"
-                }
-            ],
-            "name": "PauseStatusUpdated",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newPauser",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "status",
-                    "type": "bool"
-                }
-            ],
-            "name": "PauserUpdated",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "provider",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "destination",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "withdrawalShareAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                }
-            ],
-            "name": "RedeemWithdrawalShares",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "provider",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "destination",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "vaultSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "asBase",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "withdrawalShareAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "lpSharePrice",
-                    "type": "uint256"
-                }
-            ],
-            "name": "RemoveLiquidity",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "collector",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "target",
-                    "type": "address"
-                }
-            ],
-            "name": "Sweep",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newSweepCollector",
-                    "type": "address"
-                }
-            ],
-            "name": "SweepCollectorUpdated",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "operator",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "id",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "TransferSingle",
-            "type": "event"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_contribution",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_minLpSharePrice",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_minApr",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_maxApr",
-                    "type": "uint256"
-                },
-                {
-                    "components": [
-                        {
-                            "internalType": "address",
-                            "name": "destination",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "bool",
-                            "name": "asBase",
-                            "type": "bool"
-                        },
-                        {
-                            "internalType": "bytes",
-                            "name": "extraData",
-                            "type": "bytes"
-                        }
-                    ],
-                    "internalType": "struct IHyperdrive.Options",
-                    "name": "_options",
-                    "type": "tuple"
-                }
-            ],
+            "type": "function",
             "name": "addLiquidity",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_checkpointTime",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "_maxIterations",
-                    "type": "uint256"
-                }
-            ],
-            "name": "checkpoint",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
                     "name": "_contribution",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_apr",
-                    "type": "uint256"
+                    "name": "_minLpSharePrice",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
+                    "name": "_minApr",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_maxApr",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_options",
+                    "type": "tuple",
+                    "internalType": "struct IHyperdrive.Options",
                     "components": [
                         {
-                            "internalType": "address",
                             "name": "destination",
-                            "type": "address"
+                            "type": "address",
+                            "internalType": "address"
                         },
                         {
-                            "internalType": "bool",
                             "name": "asBase",
-                            "type": "bool"
+                            "type": "bool",
+                            "internalType": "bool"
                         },
                         {
-                            "internalType": "bytes",
                             "name": "extraData",
-                            "type": "bytes"
+                            "type": "bytes",
+                            "internalType": "bytes"
                         }
-                    ],
-                    "internalType": "struct IHyperdrive.Options",
-                    "name": "_options",
-                    "type": "tuple"
+                    ]
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
+            "name": "checkpoint",
+            "inputs": [
+                {
+                    "name": "_checkpointTime",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_maxIterations",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "initialize",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_withdrawalShares",
-                    "type": "uint256"
+                    "name": "_contribution",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_minOutputPerShare",
-                    "type": "uint256"
+                    "name": "_apr",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
+                    "name": "_options",
+                    "type": "tuple",
+                    "internalType": "struct IHyperdrive.Options",
                     "components": [
                         {
-                            "internalType": "address",
                             "name": "destination",
-                            "type": "address"
+                            "type": "address",
+                            "internalType": "address"
                         },
                         {
-                            "internalType": "bool",
                             "name": "asBase",
-                            "type": "bool"
+                            "type": "bool",
+                            "internalType": "bool"
                         },
                         {
-                            "internalType": "bytes",
                             "name": "extraData",
-                            "type": "bytes"
+                            "type": "bytes",
+                            "internalType": "bytes"
                         }
-                    ],
-                    "internalType": "struct IHyperdrive.Options",
-                    "name": "_options",
-                    "type": "tuple"
+                    ]
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
             "name": "redeemWithdrawalShares",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_lpShares",
-                    "type": "uint256"
+                    "name": "_withdrawalShares",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "_minOutputPerShare",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
+                    "name": "_options",
+                    "type": "tuple",
+                    "internalType": "struct IHyperdrive.Options",
                     "components": [
                         {
-                            "internalType": "address",
                             "name": "destination",
-                            "type": "address"
+                            "type": "address",
+                            "internalType": "address"
                         },
                         {
-                            "internalType": "bool",
                             "name": "asBase",
-                            "type": "bool"
+                            "type": "bool",
+                            "internalType": "bool"
                         },
                         {
-                            "internalType": "bytes",
                             "name": "extraData",
-                            "type": "bytes"
+                            "type": "bytes",
+                            "internalType": "bytes"
                         }
-                    ],
-                    "internalType": "struct IHyperdrive.Options",
-                    "name": "_options",
-                    "type": "tuple"
+                    ]
                 }
             ],
-            "name": "removeLiquidity",
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "removeLiquidity",
+            "inputs": [
+                {
+                    "name": "_lpShares",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_minOutputPerShare",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_options",
+                    "type": "tuple",
+                    "internalType": "struct IHyperdrive.Options",
+                    "components": [
+                        {
+                            "name": "destination",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "asBase",
+                            "type": "bool",
+                            "internalType": "bool"
+                        },
+                        {
+                            "name": "extraData",
+                            "type": "bytes",
+                            "internalType": "bytes"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "event",
+            "name": "AddLiquidity",
+            "inputs": [
+                {
+                    "name": "provider",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "lpAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "lpSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Approval",
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "spender",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "value",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "ApprovalForAll",
+            "inputs": [
+                {
+                    "name": "account",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "operator",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "approved",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CheckpointRewarderUpdated",
+            "inputs": [
+                {
+                    "name": "newCheckpointRewarder",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CloseLong",
+            "inputs": [
+                {
+                    "name": "trader",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "destination",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "assetId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturityTime",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "bondAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CloseShort",
+            "inputs": [
+                {
+                    "name": "trader",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "destination",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "assetId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturityTime",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "basePayment",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "bondAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CollectGovernanceFee",
+            "inputs": [
+                {
+                    "name": "collector",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CreateCheckpoint",
+            "inputs": [
+                {
+                    "name": "checkpointTime",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "checkpointVaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturedShorts",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturedLongs",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "lpSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "FeeCollectorUpdated",
+            "inputs": [
+                {
+                    "name": "newFeeCollector",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "GovernanceUpdated",
+            "inputs": [
+                {
+                    "name": "newGovernance",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Initialize",
+            "inputs": [
+                {
+                    "name": "provider",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "lpAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "apr",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "OpenLong",
+            "inputs": [
+                {
+                    "name": "trader",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "assetId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturityTime",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "bondAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "OpenShort",
+            "inputs": [
+                {
+                    "name": "trader",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "assetId",
+                    "type": "uint256",
+                    "indexed": true,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "maturityTime",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "baseProceeds",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "bondAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "PauseStatusUpdated",
+            "inputs": [
+                {
+                    "name": "isPaused",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "PauserUpdated",
+            "inputs": [
+                {
+                    "name": "newPauser",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "status",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "RedeemWithdrawalShares",
+            "inputs": [
+                {
+                    "name": "provider",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "destination",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "withdrawalShareAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "RemoveLiquidity",
+            "inputs": [
+                {
+                    "name": "provider",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "destination",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "lpAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
+                },
+                {
+                    "name": "withdrawalShareAmount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "lpSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Sweep",
+            "inputs": [
+                {
+                    "name": "collector",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "target",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "SweepCollectorUpdated",
+            "inputs": [
+                {
+                    "name": "newSweepCollector",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "TransferSingle",
+            "inputs": [
+                {
+                    "name": "operator",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "to",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "id",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "value",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "BelowMinimumContribution",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "CircuitBreakerTriggered",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DecreasedPresentValueWhenAddingLiquidity",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DistributeExcessIdleFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "ExpInvalidExponent",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InsufficientBalance",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InsufficientLiquidity",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InvalidApr",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InvalidCheckpointTime",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InvalidEffectiveShareReserves",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InvalidTimestamp",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "LnInvalidInput",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "MinimumTransactionAmount",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "OutputLimit",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "PoolAlreadyInitialized",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "PoolIsPaused",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "ReentrancyGuardReentrantCall",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "RestrictedZeroAddress",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "TransferFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "UnsafeCastToInt128",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "UnsafeCastToInt256",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "UnsafeCastToUint112",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "UnsafeCastToUint128",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "UpdateLiquidityFailed",
+            "inputs": []
         }
     ],
     bytecode: '0x',

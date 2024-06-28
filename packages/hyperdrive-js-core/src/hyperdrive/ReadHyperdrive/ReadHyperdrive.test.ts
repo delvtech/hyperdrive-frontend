@@ -69,6 +69,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         amount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.3", 18)[0],
@@ -81,6 +82,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 2n,
         amount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.4", 18)[0],
@@ -96,6 +98,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     {
       eventName: "CloseLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: 123456789n,
         trader: BOB,
@@ -114,6 +117,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     {
       eventName: "OpenShort",
       args: {
+        extraData: "0x",
         assetId: 3n,
         amount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("100", 18)[0],
@@ -127,6 +131,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     {
       eventName: "OpenShort",
       args: {
+        extraData: "0x",
         assetId: 4n,
         amount: dnum.from("2", 18)[0],
         bondAmount: dnum.from("190", 18)[0],
@@ -288,6 +293,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -302,6 +308,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -344,6 +351,7 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in shares
         vaultSharePrice: dnum.from("1.15", 18)[0],
@@ -358,6 +366,7 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in shares
         vaultSharePrice: dnum.from("1.2", 18)[0],
@@ -400,6 +409,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -415,6 +425,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -431,6 +442,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
     {
       eventName: "CloseLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -476,6 +488,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -491,6 +504,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -507,6 +521,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "CloseLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -527,6 +542,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -542,6 +558,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("1", 18)[0],
@@ -559,6 +576,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     {
       eventName: "CloseLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -590,6 +608,7 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
   contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
     {
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId:
           452312848583266388373324160190187140051835877600158453279131187532625961856n,
@@ -607,6 +626,7 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
     },
     {
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId:
           452312848583266388373324160190187140051835877600158453279131187532625961856n,
@@ -627,6 +647,7 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
   contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
     {
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId:
@@ -674,6 +695,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         asBase: true,
@@ -692,6 +714,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
       eventName: "CloseLong",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -735,6 +758,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
     {
       eventName: "OpenLong",
       args: {
+        extraData: "0x",
         assetId: 1n,
         // paid for in base
         amount: dnum.from("2", 18)[0],
@@ -754,6 +778,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
       eventName: "CloseLong",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -789,6 +814,7 @@ test("getClosedLongs should account for closing out to base", async () => {
       eventName: "CloseLong",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -834,6 +860,7 @@ test("getClosedLongs should account for closing out to shares", async () => {
       eventName: "CloseLong",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         assetId: 1n,
         maturityTime: timestamp,
         trader: BOB,
@@ -882,6 +909,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -896,6 +924,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
       eventName: "OpenShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -950,6 +979,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -964,6 +994,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
       eventName: "OpenShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1019,6 +1050,7 @@ test("getOpenShorts should account for shorts partially closed to base", async (
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1033,6 +1065,7 @@ test("getOpenShorts should account for shorts partially closed to base", async (
       eventName: "CloseShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId: 1n,
@@ -1083,6 +1116,7 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1097,6 +1131,7 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
       eventName: "CloseShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId: 1n,
@@ -1136,6 +1171,7 @@ test("getOpenShorts should account for shorts partially closed to shares", async
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1150,6 +1186,7 @@ test("getOpenShorts should account for shorts partially closed to shares", async
       eventName: "CloseShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId: 1n,
@@ -1200,6 +1237,7 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1214,6 +1252,7 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
       eventName: "CloseShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId: 1n,
@@ -1269,6 +1308,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
       eventName: "OpenShort",
       blockNumber: 1n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1283,6 +1323,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
       eventName: "CloseShort",
       blockNumber: 2n,
       args: {
+        extraData: "0x",
         trader: BOB,
         destination: BOB,
         assetId: 1n,
@@ -1298,6 +1339,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
       eventName: "OpenShort",
       blockNumber: 3n,
       args: {
+        extraData: "0x",
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
@@ -1351,6 +1393,7 @@ test("getClosedShorts should account for shorts closed to base", async () => {
     {
       eventName: "CloseShort",
       args: {
+        extraData: "0x",
         assetId: 1n,
         asBase: true,
         amount: dnum.from("2", 18)[0], // closed out to base
@@ -1401,6 +1444,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
       eventName: "CloseShort",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         assetId: 1n,
         asBase: false,
         vaultSharePrice: dnum.from("1.1", 18)[0],
@@ -1453,6 +1497,7 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
       eventName: "AddLiquidity",
       blockNumber: 174n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("500", 18)[0],
         lpAmount: dnum.from("498", 18)[0],
@@ -1468,6 +1513,7 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
       eventName: "RemoveLiquidity",
       blockNumber: 175n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("499", 18)[0],
         lpAmount: dnum.from("498", 18)[0],
@@ -1512,6 +1558,7 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       eventName: "AddLiquidity",
       blockNumber: 174n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("500", 18)[0],
         lpAmount: dnum.from("498", 18)[0],
@@ -1524,6 +1571,7 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       eventName: "AddLiquidity",
       blockNumber: 176n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("100", 18)[0],
         lpAmount: dnum.from("99", 18)[0],
@@ -1539,6 +1587,7 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       eventName: "RemoveLiquidity",
       blockNumber: 175n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("499", 18)[0],
         lpAmount: dnum.from("498", 18)[0],
@@ -1571,6 +1620,7 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
       eventName: "RemoveLiquidity",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("10", 18)[0],
         vaultSharePrice: dnum.from("9", 18)[0],
@@ -1610,6 +1660,7 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
       eventName: "RemoveLiquidity",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         asBase: false,
         amount: dnum.from("9", 18)[0],
         vaultSharePrice: dnum.from("1.1", 18)[0],
@@ -1648,6 +1699,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       eventName: "RedeemWithdrawalShares",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         asBase: true,
         amount: dnum.from("10", 18)[0],
         vaultSharePrice: dnum.from("9.8", 18)[0],
@@ -1683,6 +1735,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       eventName: "RedeemWithdrawalShares",
       blockNumber: 5n,
       args: {
+        extraData: "0x",
         asBase: false,
         vaultSharePrice: dnum.from("1.25", 18)[0],
         amount: dnum.from("8", 18)[0],

@@ -59,11 +59,14 @@ const columnHelper = createColumnHelper<TransactionData>();
 
 export function TransactionTable({
   hyperdrive,
+  account,
 }: {
   hyperdrive: HyperdriveConfig;
+  account?: Address;
 }): JSX.Element {
   const { data: transactionData, isLoading } = useTransactionData({
     hyperdriveAddress: hyperdrive.address,
+    account,
   });
   const appConfig = useAppConfig();
   const isSmallScreenView = useIsTailwindSmallScreen();

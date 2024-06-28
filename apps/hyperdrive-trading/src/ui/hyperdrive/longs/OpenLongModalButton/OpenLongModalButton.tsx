@@ -1,10 +1,21 @@
-import { PauseCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { PauseCircleIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { WarningButton } from "src/ui/base/components/WarningButton";
+import {
+  BridgeAssetsModalForm,
+  BridgeAssetsModalHeader,
+} from "src/ui/bridge/BridgeAssetsModal/BridgeAssetsModal";
+import { useToken } from "src/ui/bridge/hooks/useToken";
+import { useTokens } from "src/ui/bridge/hooks/useTokens";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
+import {
+  OpenLongModalForm,
+  OpenLongModalHeader,
+} from "src/ui/hyperdrive/longs/OpenLongModal/OpenLongModal";
+import { mainnet } from "viem/chains";
 
 export interface OpenLongModalButtonProps {
   modalId: string;
@@ -15,6 +26,16 @@ export function OpenLongModalButton({
   hyperdrive,
 }: OpenLongModalButtonProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
+  const [showBridgeUI, setShowBridgeUI] = useState(false);
+  const { tokens } = useTokens();
+  let token = tokens?.find(
+    (token) => token.addresses?.[String(mainnet.id)] === hyperdrive.baseToken,
+  );
+  // TODO: remove this when stubs work
+  ({ token } = useToken("DAI"));
+
+  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
+  const numDays = convertMillisecondsToDays(termLengthMS);
   function closeModal() {
     (window as any)[modalId].close();
   }
@@ -28,28 +49,36 @@ export function OpenLongModalButton({
       />
     );
   }
+
   return (
     <Modal
       modalId={modalId}
-      modalContent={
-        <div>
-          <h5 className="mb-4">Open a long</h5>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6 " title="Close position" />
-          </button>
-          <OpenLongForm
-            hyperdrive={hyperdrive}
-            onOpenLong={(e) => {
-              // preventDefault since we don't want to close the modal while the
-              // tx is temporarily pending the user's signature in their wallet.
-              e.preventDefault();
-            }}
-          />
-        </div>
-      }
+      activeIndex={showBridgeUI ? 1 : 0}
+      modalHeader={[
+        <OpenLongModalHeader
+          key="long"
+          numDays={numDays}
+          termLengthMS={termLengthMS}
+        />,
+        <BridgeAssetsModalHeader
+          key="bridge"
+          tokenSymbol={token?.symbol || "DAI"}
+        />,
+      ]}
+      modalContent={[
+        <OpenLongModalForm
+          key="long"
+          hyperdrive={hyperdrive}
+          closeModal={closeModal}
+          setShowBridgeUI={setShowBridgeUI}
+        />,
+        <BridgeAssetsModalForm
+          key="bridge"
+          hyperdrive={hyperdrive}
+          closeModal={closeModal}
+          setShowBridgeUI={setShowBridgeUI}
+        />,
+      ]}
     >
       {({ showModal }) => (
         <button

@@ -11,6 +11,10 @@ export declare const NonPayableDeployer: {
             readonly type: "bytes32";
             readonly internalType: "bytes32";
         }, {
+            readonly name: "__name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }, {
             readonly name: "_deployerCoordinator";
             readonly type: "address";
             readonly internalType: "address";
@@ -43,6 +47,10 @@ export declare const NonPayableDeployer: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -64,6 +72,10 @@ export declare const NonPayableDeployer: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -172,6 +184,10 @@ export declare const NonPayableDeployer: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -193,6 +209,10 @@ export declare const NonPayableDeployer: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -243,8 +263,8 @@ export declare const NonPayableDeployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployAndInitialize(address,bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "9337dfbd";
-        readonly "deployTarget(address,bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "9d46d366";
+        readonly "deployAndInitialize(address,bytes32,string,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "606b5563";
+        readonly "deployTarget(address,bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "73c871b3";
     };
 };
 //# sourceMappingURL=NonPayableDeployer.d.ts.map

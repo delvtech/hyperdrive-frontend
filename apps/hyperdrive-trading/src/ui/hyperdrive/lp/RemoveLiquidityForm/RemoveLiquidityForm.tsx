@@ -21,7 +21,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -33,7 +33,6 @@ export function RemoveLiquidityForm({
   lpShares,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
-  const chainId = useChainId();
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -196,7 +195,7 @@ export function RemoveLiquidityForm({
         />
       }
       transactionPreview={
-        <>
+        <div className="flex flex-col gap-3 px-2 pb-2">
           <LabelValue
             label="Amount to withdraw"
             value={`${
@@ -232,7 +231,7 @@ export function RemoveLiquidityForm({
               </span>
             }
           />
-        </>
+        </div>
       }
       disclaimer={
         <>

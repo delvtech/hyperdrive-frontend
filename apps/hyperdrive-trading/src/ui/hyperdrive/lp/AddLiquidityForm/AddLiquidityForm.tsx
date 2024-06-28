@@ -160,8 +160,11 @@ export function AddLiquidityForm({
     enabled: hasEnoughAllowance && hasEnoughBalance,
   };
 
-  const { lpSharesOut, status: addLiquidityPreviewStatus } =
-    usePreviewAddLiquidity(addLiquidityParams);
+  const {
+    lpSharesOut,
+    status: addLiquidityPreviewStatus,
+    previewAddLiquidityError,
+  } = usePreviewAddLiquidity(addLiquidityParams);
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
@@ -243,11 +246,25 @@ export function AddLiquidityForm({
           addLiquidityPreviewStatus={addLiquidityPreviewStatus}
         />
       }
-      disclaimer={
-        !!depositAmountAsBigInt && !hasEnoughBalance ? (
-          <p className="text-center text-sm text-error">Insufficient balance</p>
-        ) : null
-      }
+      disclaimer={(() => {
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
+            </p>
+          );
+        }
+        if (
+          previewAddLiquidityError?.includes("Not enough lp shares minted.")
+        ) {
+          return (
+            <p className="text-center text-sm text-error">
+              Not enough LP shares minted. Please adjust your slippage to add
+              liquidity.
+            </p>
+          );
+        }
+      })()}
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;

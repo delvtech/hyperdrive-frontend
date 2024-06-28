@@ -1,18 +1,18 @@
 export declare const IERC165: {
     abi: readonly [{
+        readonly type: "function";
+        readonly name: "supportsInterface";
         readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "interfaceID";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "supportsInterface";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

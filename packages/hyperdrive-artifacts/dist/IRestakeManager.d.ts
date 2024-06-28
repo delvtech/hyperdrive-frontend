@@ -1,48 +1,48 @@
 export declare const IRestakeManager: {
     abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "calculateTVLs";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256[][]";
             readonly name: "";
             readonly type: "uint256[][]";
+            readonly internalType: "uint256[][]";
         }, {
-            readonly internalType: "uint256[]";
             readonly name: "";
             readonly type: "uint256[]";
+            readonly internalType: "uint256[]";
         }, {
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "depositETH";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "ezETH";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [];
-        readonly name: "renzoOracle";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
         readonly type: "function";
+        readonly name: "renzoOracle";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

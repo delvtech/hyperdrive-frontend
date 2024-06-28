@@ -1,60 +1,60 @@
 export const IRestakeManager = {
     abi: [
         {
-            "inputs": [],
+            "type": "function",
             "name": "calculateTVLs",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint256[][]",
                     "name": "",
-                    "type": "uint256[][]"
+                    "type": "uint256[][]",
+                    "internalType": "uint256[][]"
                 },
                 {
-                    "internalType": "uint256[]",
                     "name": "",
-                    "type": "uint256[]"
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "depositETH",
+            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
+            "stateMutability": "payable"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "ezETH",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "address",
                     "name": "",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "renzoOracle",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "address",
                     "name": "",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         }
     ],
     bytecode: '0x',

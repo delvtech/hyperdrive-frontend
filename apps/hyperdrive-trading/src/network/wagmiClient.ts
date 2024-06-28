@@ -12,7 +12,7 @@ import { cloudChain } from "src/chains/cloudChain";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Transport } from "viem";
-import { foundry, sepolia } from "wagmi/chains";
+import { foundry, mainnet, sepolia } from "wagmi/chains";
 
 const {
   VITE_LOCALHOST_NODE_RPC_URL,
@@ -21,6 +21,7 @@ const {
   VITE_CUSTOM_CHAIN_CHAIN_ID,
   VITE_WALLET_CONNECT_PROJECT_ID,
   VITE_SEPOLIA_RPC_URL,
+  VITE_MAINNET_RPC_URL,
 } = import.meta.env;
 
 export const chains: Chain[] = [];
@@ -55,6 +56,17 @@ if (VITE_CUSTOM_CHAIN_NODE_RPC_URL && VITE_CUSTOM_CHAIN_CHAIN_ID) {
 if (VITE_SEPOLIA_RPC_URL) {
   chains.push(sepolia);
   transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
+  // TODO: push this into the custom wallets for local and cloudchain once
+  // capsule support is verified
+  if (capsuleWallet) {
+    customWallets.push(capsuleWallet);
+  }
+}
+
+if (VITE_MAINNET_RPC_URL) {
+  chains.push(mainnet);
+  transports[mainnet.id] = http(VITE_MAINNET_RPC_URL);
+
   // TODO: push this into the custom wallets for local and cloudchain once
   // capsule support is verified
   if (capsuleWallet) {

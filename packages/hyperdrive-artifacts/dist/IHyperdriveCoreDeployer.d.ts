@@ -1,124 +1,132 @@
 export declare const IHyperdriveCoreDeployer: {
     abi: readonly [{
+        readonly type: "function";
+        readonly name: "deployHyperdrive";
         readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "contract IERC20";
-                readonly name: "baseToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "contract IERC20";
-                readonly name: "vaultSharesToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "linkerFactory";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes32";
-                readonly name: "linkerCodeHash";
-                readonly type: "bytes32";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "initialVaultSharePrice";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumTransactionAmount";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "circuitBreakerDelta";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "positionDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "checkpointDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "address";
-                readonly name: "governance";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "feeCollector";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "sweepCollector";
-                readonly type: "address";
-            }, {
-                readonly components: readonly [{
-                    readonly internalType: "uint256";
-                    readonly name: "curve";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "flat";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceLP";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceZombie";
-                    readonly type: "uint256";
-                }];
-                readonly internalType: "struct IHyperdrive.Fees";
-                readonly name: "fees";
-                readonly type: "tuple";
-            }];
-            readonly internalType: "struct IHyperdrive.PoolConfig";
+            readonly name: "__name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }, {
             readonly name: "_config";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.PoolConfig";
+            readonly components: readonly [{
+                readonly name: "baseToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "vaultSharesToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "linkerFactory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "linkerCodeHash";
+                readonly type: "bytes32";
+                readonly internalType: "bytes32";
+            }, {
+                readonly name: "initialVaultSharePrice";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumTransactionAmount";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "positionDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "checkpointDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governance";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "feeCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "fees";
+                readonly type: "tuple";
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly components: readonly [{
+                    readonly name: "curve";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "flat";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceLP";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceZombie";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }];
         }, {
-            readonly internalType: "bytes";
             readonly name: "_extraData";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }, {
-            readonly internalType: "address";
             readonly name: "_target0";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_target1";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_target2";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_target3";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bytes32";
             readonly name: "_salt";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "deployHyperdrive";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployHyperdrive((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "907d12e9";
+        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "6a462579";
     };
 };
 //# sourceMappingURL=IHyperdriveCoreDeployer.d.ts.map

@@ -6,5 +6,8 @@ export function formatRate(rate: bigint, decimals = 18): string {
   // the decimal, and format those to a percent, eg: 0.0499999999 * 100 = 4.99.
   const truncatedAPR = +formatUnits(rate, decimals).slice(0, 10);
   const formatted = `${Number((100 * truncatedAPR).toFixed(2)).toLocaleString()}`;
+  if (formatted.indexOf(".") === -1) {
+    return `${formatted}.00`;
+  }
   return formatted;
 }

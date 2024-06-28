@@ -1,24 +1,24 @@
 export declare const IMultiTokenMetadata: {
     abi: readonly [{
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "PERMIT_TYPEHASH";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [];
-        readonly name: "domainSeparator";
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
+    }, {
         readonly type: "function";
+        readonly name: "domainSeparator";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly stateMutability: "view";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

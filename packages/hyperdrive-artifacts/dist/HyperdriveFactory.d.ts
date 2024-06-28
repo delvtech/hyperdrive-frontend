@@ -10,6 +10,10 @@ export declare const HyperdriveFactory: {
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
+                readonly name: "deployerCoordinatorManager";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
                 readonly name: "hyperdriveGovernance";
                 readonly type: "address";
                 readonly internalType: "address";
@@ -23,6 +27,10 @@ export declare const HyperdriveFactory: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -43,6 +51,14 @@ export declare const HyperdriveFactory: {
                 readonly internalType: "uint256";
             }, {
                 readonly name: "maxPositionDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minCircuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "maxCircuitBreakerDelta";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
@@ -112,11 +128,29 @@ export declare const HyperdriveFactory: {
                 readonly type: "bytes32";
                 readonly internalType: "bytes32";
             }];
+        }, {
+            readonly name: "_name";
+            readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "receive";
         readonly stateMutability: "payable";
+    }, {
+        readonly type: "function";
+        readonly name: "_instancesToDeployerCoordinators";
+        readonly inputs: readonly [{
+            readonly name: "instance";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "deployCoordinator";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "function";
         readonly name: "addDeployerCoordinator";
@@ -135,6 +169,16 @@ export declare const HyperdriveFactory: {
             readonly name: "";
             readonly type: "uint256";
             readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "checkpointRewarder";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
     }, {
@@ -158,6 +202,10 @@ export declare const HyperdriveFactory: {
             readonly name: "_deployerCoordinator";
             readonly type: "address";
             readonly internalType: "address";
+        }, {
+            readonly name: "__name";
+            readonly type: "string";
+            readonly internalType: "string";
         }, {
             readonly name: "_config";
             readonly type: "tuple";
@@ -187,6 +235,10 @@ export declare const HyperdriveFactory: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -208,6 +260,10 @@ export declare const HyperdriveFactory: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -316,6 +372,10 @@ export declare const HyperdriveFactory: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -337,6 +397,10 @@ export declare const HyperdriveFactory: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -390,6 +454,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "deployerCoordinatorManager";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "feeCollector";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -402,7 +476,7 @@ export declare const HyperdriveFactory: {
         readonly type: "function";
         readonly name: "getDeployerCoordinatorAtIndex";
         readonly inputs: readonly [{
-            readonly name: "index";
+            readonly name: "_index";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -414,13 +488,27 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "getDeployerCoordinatorByInstances";
+        readonly inputs: readonly [{
+            readonly name: "__instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "coordinators";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "getDeployerCoordinatorsInRange";
         readonly inputs: readonly [{
-            readonly name: "startIndex";
+            readonly name: "_startIndex";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }, {
-            readonly name: "endIndex";
+            readonly name: "_endIndex";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -434,7 +522,7 @@ export declare const HyperdriveFactory: {
         readonly type: "function";
         readonly name: "getInstanceAtIndex";
         readonly inputs: readonly [{
-            readonly name: "index";
+            readonly name: "_index";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -448,11 +536,11 @@ export declare const HyperdriveFactory: {
         readonly type: "function";
         readonly name: "getInstancesInRange";
         readonly inputs: readonly [{
-            readonly name: "startIndex";
+            readonly name: "_startIndex";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }, {
-            readonly name: "endIndex";
+            readonly name: "_endIndex";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -504,20 +592,6 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
-        readonly name: "instancesToDeployerCoordinators";
-        readonly inputs: readonly [{
-            readonly name: "instance";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "deployCoordinator";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
         readonly name: "isDeployerCoordinator";
         readonly inputs: readonly [{
             readonly name: "";
@@ -546,6 +620,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "kind";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "linkerCodeHash";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -567,6 +651,16 @@ export declare const HyperdriveFactory: {
     }, {
         readonly type: "function";
         readonly name: "maxCheckpointDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxCircuitBreakerDelta";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
             readonly name: "";
@@ -643,6 +737,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "minCircuitBreakerDelta";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "minFees";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -700,6 +804,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "removeDeployerCoordinator";
         readonly inputs: readonly [{
             readonly name: "_deployerCoordinator";
@@ -734,11 +848,31 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "updateCheckpointRewarder";
+        readonly inputs: readonly [{
+            readonly name: "_checkpointRewarder";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "updateDefaultPausers";
         readonly inputs: readonly [{
             readonly name: "_defaultPausers_";
             readonly type: "address[]";
             readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateDeployerCoordinatorManager";
+        readonly inputs: readonly [{
+            readonly name: "_deployerCoordinatorManager";
+            readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -797,6 +931,16 @@ export declare const HyperdriveFactory: {
         readonly name: "updateMaxCheckpointDuration";
         readonly inputs: readonly [{
             readonly name: "_maxCheckpointDuration";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMaxCircuitBreakerDelta";
+        readonly inputs: readonly [{
+            readonly name: "_maxCircuitBreakerDelta";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -871,6 +1015,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "updateMinCircuitBreakerDelta";
+        readonly inputs: readonly [{
+            readonly name: "_minCircuitBreakerDelta";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "updateMinFees";
         readonly inputs: readonly [{
             readonly name: "__minFees";
@@ -937,6 +1091,16 @@ export declare const HyperdriveFactory: {
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
     }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
         readonly type: "event";
         readonly name: "CheckpointDurationResolutionUpdated";
         readonly inputs: readonly [{
@@ -944,6 +1108,16 @@ export declare const HyperdriveFactory: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CheckpointRewarderUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newCheckpointRewarder";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
         }];
         readonly anonymous: false;
     }, {
@@ -969,6 +1143,11 @@ export declare const HyperdriveFactory: {
             readonly type: "address";
             readonly indexed: false;
             readonly internalType: "address";
+        }, {
+            readonly name: "name";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
         }, {
             readonly name: "config";
             readonly type: "tuple";
@@ -999,6 +1178,10 @@ export declare const HyperdriveFactory: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -1020,6 +1203,10 @@ export declare const HyperdriveFactory: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -1056,6 +1243,16 @@ export declare const HyperdriveFactory: {
         readonly name: "DeployerCoordinatorAdded";
         readonly inputs: readonly [{
             readonly name: "deployerCoordinator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "DeployerCoordinatorManagerUpdated";
+        readonly inputs: readonly [{
+            readonly name: "deployerCoordinatorManager";
             readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
@@ -1133,6 +1330,16 @@ export declare const HyperdriveFactory: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
+        readonly name: "MaxCircuitBreakerDeltaUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxCircuitBreakerDelta";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
         readonly name: "MaxFeesUpdated";
         readonly inputs: readonly [{
             readonly name: "newMaxFees";
@@ -1193,6 +1400,16 @@ export declare const HyperdriveFactory: {
         readonly name: "MinCheckpointDurationUpdated";
         readonly inputs: readonly [{
             readonly name: "newMinCheckpointDuration";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinCircuitBreakerDeltaUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinCircuitBreakerDelta";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -1291,6 +1508,10 @@ export declare const HyperdriveFactory: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
+        readonly name: "InvalidCircuitBreakerDelta";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
         readonly name: "InvalidDeployConfig";
         readonly inputs: readonly [];
     }, {
@@ -1315,6 +1536,10 @@ export declare const HyperdriveFactory: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
+        readonly name: "InvalidMaxCircuitBreakerDelta";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
         readonly name: "InvalidMaxFees";
         readonly inputs: readonly [];
     }, {
@@ -1332,6 +1557,10 @@ export declare const HyperdriveFactory: {
     }, {
         readonly type: "error";
         readonly name: "InvalidMinCheckpointDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinCircuitBreakerDelta";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -1380,13 +1609,17 @@ export declare const HyperdriveFactory: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "_instancesToDeployerCoordinators(address)": "2b58f418";
         readonly "addDeployerCoordinator(address)": "421caba8";
         readonly "checkpointDurationResolution()": "d0f96b92";
+        readonly "checkpointRewarder()": "f2596458";
         readonly "defaultPausers()": "a64c90bf";
-        readonly "deployAndInitialize(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "06902494";
-        readonly "deployTarget(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "2facc519";
+        readonly "deployAndInitialize(bytes32,address,string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "2e7cd971";
+        readonly "deployTarget(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "49f13de7";
+        readonly "deployerCoordinatorManager()": "e4e7148f";
         readonly "feeCollector()": "c415b95c";
         readonly "getDeployerCoordinatorAtIndex(uint256)": "fe3d5aeb";
+        readonly "getDeployerCoordinatorByInstances(address[])": "1b59be0c";
         readonly "getDeployerCoordinatorsInRange(uint256,uint256)": "ec895f11";
         readonly "getInstanceAtIndex(uint256)": "daac24da";
         readonly "getInstancesInRange(uint256,uint256)": "bc30e7a1";
@@ -1394,41 +1627,49 @@ export declare const HyperdriveFactory: {
         readonly "getNumberOfInstances()": "6e95d67c";
         readonly "governance()": "5aa6e675";
         readonly "hyperdriveGovernance()": "e3331555";
-        readonly "instancesToDeployerCoordinators(address)": "6c8cc865";
         readonly "isDeployerCoordinator(address)": "f8c09e59";
         readonly "isInstance(address)": "6b44e6be";
+        readonly "kind()": "04baa00b";
         readonly "linkerCodeHash()": "c905a4b5";
         readonly "linkerFactory()": "99623bb1";
         readonly "maxCheckpointDuration()": "e0e2daaa";
+        readonly "maxCircuitBreakerDelta()": "4554f9a9";
         readonly "maxFees()": "e83e34b1";
         readonly "maxFixedAPR()": "bf9bd5cd";
         readonly "maxPositionDuration()": "8efc0986";
         readonly "maxTimeStretchAPR()": "48800760";
         readonly "minCheckpointDuration()": "5720c9d5";
+        readonly "minCircuitBreakerDelta()": "1ecda0fe";
         readonly "minFees()": "c1722563";
         readonly "minFixedAPR()": "d23d7ea3";
         readonly "minPositionDuration()": "daf012e6";
         readonly "minTimeStretchAPR()": "d6f50169";
+        readonly "name()": "06fdde03";
         readonly "removeDeployerCoordinator(address,uint256)": "411c3035";
         readonly "sweepCollector()": "10780f73";
         readonly "updateCheckpointDurationResolution(uint256)": "11e77bfe";
+        readonly "updateCheckpointRewarder(address)": "3e2d2014";
         readonly "updateDefaultPausers(address[])": "9af25262";
+        readonly "updateDeployerCoordinatorManager(address)": "a98a46db";
         readonly "updateFeeCollector(address)": "d2c35ce8";
         readonly "updateGovernance(address)": "b2561263";
         readonly "updateHyperdriveGovernance(address)": "dd2b8fbb";
         readonly "updateLinkerCodeHash(bytes32)": "4fbfee77";
         readonly "updateLinkerFactory(address)": "85229785";
         readonly "updateMaxCheckpointDuration(uint256)": "6f6d5c4a";
+        readonly "updateMaxCircuitBreakerDelta(uint256)": "84c19aab";
         readonly "updateMaxFees((uint256,uint256,uint256,uint256))": "2885e3ac";
         readonly "updateMaxFixedAPR(uint256)": "97b0e8ce";
         readonly "updateMaxPositionDuration(uint256)": "eb71f66c";
         readonly "updateMaxTimeStretchAPR(uint256)": "628027a3";
         readonly "updateMinCheckpointDuration(uint256)": "8e127cf5";
+        readonly "updateMinCircuitBreakerDelta(uint256)": "2907d3dd";
         readonly "updateMinFees((uint256,uint256,uint256,uint256))": "10d1dc3e";
         readonly "updateMinFixedAPR(uint256)": "1978ebcf";
         readonly "updateMinPositionDuration(uint256)": "e71f34b3";
         readonly "updateMinTimeStretchAPR(uint256)": "83b361e8";
         readonly "updateSweepCollector(address)": "8627a4f0";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=HyperdriveFactory.d.ts.map

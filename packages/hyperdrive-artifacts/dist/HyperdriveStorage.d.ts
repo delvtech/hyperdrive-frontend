@@ -1,8 +1,8 @@
 export declare const HyperdriveStorage: {
     abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "ReentrancyGuardReentrantCall";
         readonly type: "error";
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {};

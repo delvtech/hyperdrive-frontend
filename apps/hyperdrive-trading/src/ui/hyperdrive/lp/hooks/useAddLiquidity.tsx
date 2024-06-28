@@ -6,8 +6,10 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
@@ -48,6 +50,7 @@ export function useAddLiquidity({
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
 
+  const appConfig = useAppConfig();
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -64,39 +67,52 @@ export function useAddLiquidity({
 
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
-      if (mutationEnabled) {
-        const hash = await readWriteHyperdrive.addLiquidity({
-          args: {
-            contribution,
-            asBase,
-            minAPR,
-            minLpSharePrice,
-            maxAPR,
-            destination,
-          },
-          options: { value: ethValue },
-          onTransactionCompleted: (txHash: Hash) => {
-            queryClient.invalidateQueries();
-            toast.success(
-              <TransactionToast message="Liquidity added" txHash={txHash} />,
-              { id: txHash, duration: SUCCESS_TOAST_DURATION },
-            );
-            toastWarpcast();
-            onExecuted?.(txHash);
-          },
-        });
-
-        toast.loading(
-          <TransactionToast message="Adding liquidity..." txHash={hash} />,
-          { id: hash },
-        );
-        onSubmitted(hash);
-
-        addTransaction({
-          hash,
-          description: "Add Liquidity",
-        });
+      if (!mutationEnabled) {
+        return;
       }
+
+      // if you're adding shares as liquidity make sure they get prepared before
+      // going into the sdk
+      const finalContribution = asBase
+        ? contribution
+        : await prepareSharesIn({
+            appConfig,
+            hyperdriveAddress,
+            readHyperdrive: readWriteHyperdrive,
+            sharesAmount: contribution,
+          });
+
+      const hash = await readWriteHyperdrive.addLiquidity({
+        args: {
+          contribution: finalContribution,
+          asBase,
+          minAPR,
+          minLpSharePrice,
+          maxAPR,
+          destination,
+        },
+        options: { value: ethValue },
+        onTransactionCompleted: (txHash: Hash) => {
+          queryClient.invalidateQueries();
+          toast.success(
+            <TransactionToast message="Liquidity added" txHash={txHash} />,
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+          );
+          toastWarpcast();
+          onExecuted?.(txHash);
+        },
+      });
+
+      toast.loading(
+        <TransactionToast message="Adding liquidity..." txHash={hash} />,
+        { id: hash },
+      );
+      onSubmitted(hash);
+
+      addTransaction({
+        hash,
+        description: "Add Liquidity",
+      });
     },
     onError(error) {
       const message = parseError({

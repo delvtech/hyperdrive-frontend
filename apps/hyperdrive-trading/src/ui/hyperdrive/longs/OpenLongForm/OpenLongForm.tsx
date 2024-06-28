@@ -12,6 +12,7 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -33,13 +34,16 @@ import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onOpenBridge?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
+  onOpenBridge,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
+  const { isFlagEnabled: isBridgingEnabled } = useFeatureFlag("bridge");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -189,6 +193,9 @@ export function OpenLongForm({
       activeToken.decimals,
     );
   }
+  const switchToBridgeUIButton = (
+    <button onClick={onOpenBridge}>Bridge DAI from L2s</button>
+  );
 
   return (
     <TransactionView
@@ -236,37 +243,21 @@ export function OpenLongForm({
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
+      setting={isBridgingEnabled ? switchToBridgeUIButton : null}
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
           activeToken={activeToken}
-          long={{
-            bondAmount: bondsReceived || 0n,
-            assetId: 0n,
-            baseAmountPaid: depositAmountAsBigInt || 0n,
-            maturity: BigInt(
-              Math.round(
-                (Date.now() +
-                  Number(hyperdrive.poolConfig.positionDuration * 1000n)) /
-                  1000,
-              ),
-            ),
-          }}
+          amountPaid={depositAmountAsBigInt || 0n}
+          bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
       disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
         if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
             <p className="text-center text-sm text-error">
@@ -276,6 +267,13 @@ export function OpenLongForm({
                 decimals: baseToken.decimals,
               })}{" "}
               hy{baseToken.symbol}
+            </p>
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <p className="text-center text-sm text-error">
+              Insufficient balance
             </p>
           );
         }

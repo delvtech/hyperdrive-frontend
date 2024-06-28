@@ -1,5 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
@@ -17,7 +20,8 @@ interface UsePreviewAddLiquidityOptions {
 }
 
 interface UsePreviewAddLiquidityResult {
-  status: "error" | "idle" | "loading" | "success";
+  status: QueryStatusWithIdle;
+  previewAddLiquidityError: string;
   lpSharesOut: bigint | undefined;
 }
 
@@ -33,6 +37,7 @@ export function usePreviewAddLiquidity({
   ethValue,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
+  const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
@@ -50,7 +55,7 @@ export function usePreviewAddLiquidity({
     query: { enabled: queryEnabled },
   });
 
-  const { data, status, fetchStatus } = useQuery({
+  const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,
       destination,
@@ -63,10 +68,21 @@ export function usePreviewAddLiquidity({
       blockNumber: blockNumber?.toString(),
     }),
     queryFn: queryEnabled
-      ? () => {
+      ? async () => {
+          // if adding shares as liquidity, make sure the shares get prepared before
+          // going into the sdk
+          const finalContribution = asBase
+            ? contribution
+            : await prepareSharesIn({
+                appConfig,
+                hyperdriveAddress,
+                readHyperdrive,
+                sharesAmount: contribution,
+              });
+
           return readHyperdrive.previewAddLiquidity({
             destination,
-            contribution,
+            contribution: finalContribution,
             minAPR,
             minLpSharePrice,
             maxAPR,
@@ -84,6 +100,7 @@ export function usePreviewAddLiquidity({
 
   return {
     status: queryStatus,
+    previewAddLiquidityError: error as string,
     lpSharesOut: data?.lpSharesOut,
   };
 }

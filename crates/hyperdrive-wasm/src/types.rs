@@ -26,6 +26,7 @@ interface JsPoolConfig {
     minimumTransactionAmount: string,
     positionDuration: string,
     checkpointDuration: string,
+    checkpointRewarder: String,
     timeStretch: string,
     governance: string,
     feeCollector: string,
@@ -87,6 +88,7 @@ pub struct StringPoolConfig {
     pub minimumTransactionAmount: String,
     pub positionDuration: String,
     pub checkpointDuration: String,
+    pub checkpointRewarder: String,
     pub timeStretch: String,
     pub governance: String,
     pub feeCollector: String,
@@ -175,6 +177,7 @@ impl TryFrom<&JsPoolConfig> for PoolConfig {
                 .unwrap(),
             vault_shares_token: js_pool_config.vaultSharesToken.to_address()?,
             circuit_breaker_delta: js_pool_config.circuitBreakerDelta.to_u256()?,
+            checkpoint_rewarder: js_pool_config.checkpointRewarder.to_address()?,
         })
     }
 }

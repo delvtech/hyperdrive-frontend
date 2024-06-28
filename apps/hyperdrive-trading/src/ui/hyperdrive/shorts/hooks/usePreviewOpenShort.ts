@@ -1,5 +1,8 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { getStatus } from "src/base/queryStatus";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
@@ -24,6 +27,7 @@ export function usePreviewOpenShort({
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const appConfig = useAppConfig();
 
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
   const { data: blockNumber } = useBlockNumber({
@@ -40,22 +44,32 @@ export function usePreviewOpenShort({
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () =>
-          readHyperdrive.previewOpenShort({
+      ? async () => {
+          const result = await readHyperdrive.previewOpenShort({
             amountOfBondsToShort,
             asBase,
-          })
+          });
+
+          // All shares from the sdk need to be prepared for the UI
+          const finalTraderDeposit = asBase
+            ? result.traderDeposit
+            : await prepareSharesOut({
+                appConfig,
+                hyperdriveAddress,
+                readHyperdrive,
+                sharesAmount: result.traderDeposit,
+              });
+
+          return { ...result, traderDeposit: finalTraderDeposit };
+        }
       : undefined,
   });
-  let queryStatus: UsePreviewOpenShortResult["status"] = status;
-  if (fetchStatus === "idle" && status === "loading") {
-    queryStatus = "idle";
-  }
+
   return {
     traderDeposit: data?.traderDeposit,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    status: queryStatus,
+    status: getStatus(status, fetchStatus),
   };
 }

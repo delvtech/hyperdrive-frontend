@@ -48,6 +48,8 @@ cd apps/hyperdrive-trading
 
 ### Run locally
 
+First, copy the .env.sample to .env and you'll need to set the VITE_SEPOLIA_RPC_URL variable to an active rpc url.
+
 Serve with hot reload at <http://localhost:5173>.
 
 ```bash

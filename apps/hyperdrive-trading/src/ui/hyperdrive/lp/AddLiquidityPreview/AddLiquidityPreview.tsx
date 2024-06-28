@@ -3,6 +3,7 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -15,7 +16,7 @@ interface AddLiquidityPreviewProps {
   depositTokenDecimals: number;
   depositTokenPlaces: number;
   depositTokenSymbol: string;
-  addLiquidityPreviewStatus: "error" | "idle" | "loading" | "success";
+  addLiquidityPreviewStatus: QueryStatusWithIdle;
 }
 
 export function AddLiquidityPreview({
@@ -34,22 +35,20 @@ export function AddLiquidityPreview({
     tokens: appConfig.tokens,
   });
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3.5 px-2">
       <LabelValue
         label="Your pool share"
+        tooltipContent="Your share of the total liquidity in the pool"
+        tooltipPosition="right"
+        tooltipSize="small"
         value={
           addLiquidityPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                {
-                  "border-b border-dashed border-current":
-                    poolShareAfterDeposit,
-                },
-              )}
-              data-tip="Your share of the total liquidity in the pool"
+              className={classNames({
+                "text-base-content/80": !poolShareAfterDeposit,
+              })}
             >
               {poolShareAfterDeposit
                 ? `${dnum.format(
@@ -64,7 +63,11 @@ export function AddLiquidityPreview({
       <LabelValue
         label="You deposit"
         value={
-          <p>
+          <p
+            className={classNames({
+              "text-base-content/80": !depositAmount,
+            })}
+          >
             {depositAmount
               ? `${formatBalance({
                   balance: depositAmount,
@@ -81,7 +84,12 @@ export function AddLiquidityPreview({
           addLiquidityPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <p className="font-bold">
+            <p
+              className={classNames({
+                "text-base-content/80": !lpSharesOut,
+                "font-bold": lpSharesOut,
+              })}
+            >
               {lpSharesOut
                 ? `${formatBalance({
                     balance: lpSharesOut,

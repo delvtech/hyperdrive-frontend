@@ -1,1278 +1,1414 @@
 export declare const IHyperdriveFactory: {
     abi: readonly [{
-        readonly inputs: readonly [];
-        readonly name: "DeployerCoordinatorAlreadyAdded";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "DeployerCoordinatorIndexMismatch";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "DeployerCoordinatorNotAdded";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "EndIndexTooLarge";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidCheckpointDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidCheckpointDurationResolution";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidCircuitBreakerDelta";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidDeployConfig";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidDeployerCoordinator";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidFees";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidFixedAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidIndexes";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxCheckpointDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxCircuitBreakerDelta";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxFees";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxFixedAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxPositionDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMaxTimeStretchAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinCheckpointDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinCircuitBreakerDelta";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinFees";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinFixedAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinPositionDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidMinTimeStretchAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidPositionDuration";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "InvalidTimeStretchAPR";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "ReceiveLocked";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "TransferFailed";
-        readonly type: "error";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "Unauthorized";
-        readonly type: "error";
-    }, {
-        readonly anonymous: false;
+        readonly type: "function";
+        readonly name: "addDeployerCoordinator";
         readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newCheckpointDurationResolution";
-            readonly type: "uint256";
-        }];
-        readonly name: "CheckpointDurationResolutionUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "address[]";
-            readonly name: "newDefaultPausers";
-            readonly type: "address[]";
-        }];
-        readonly name: "DefaultPausersUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "deployerCoordinator";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "address";
-            readonly name: "hyperdrive";
-            readonly type: "address";
-        }, {
-            readonly components: readonly [{
-                readonly internalType: "contract IERC20";
-                readonly name: "baseToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "contract IERC20";
-                readonly name: "vaultSharesToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "linkerFactory";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes32";
-                readonly name: "linkerCodeHash";
-                readonly type: "bytes32";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumTransactionAmount";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "circuitBreakerDelta";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "positionDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "checkpointDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "address";
-                readonly name: "governance";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "feeCollector";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "sweepCollector";
-                readonly type: "address";
-            }, {
-                readonly components: readonly [{
-                    readonly internalType: "uint256";
-                    readonly name: "curve";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "flat";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceLP";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceZombie";
-                    readonly type: "uint256";
-                }];
-                readonly internalType: "struct IHyperdrive.Fees";
-                readonly name: "fees";
-                readonly type: "tuple";
-            }];
-            readonly indexed: false;
-            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
-            readonly name: "config";
-            readonly type: "tuple";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bytes";
-            readonly name: "extraData";
-            readonly type: "bytes";
-        }];
-        readonly name: "Deployed";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "deployerCoordinator";
-            readonly type: "address";
-        }];
-        readonly name: "DeployerCoordinatorAdded";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "deployerCoordinatorManager";
-            readonly type: "address";
-        }];
-        readonly name: "DeployerCoordinatorManagerUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "deployerCoordinator";
-            readonly type: "address";
-        }];
-        readonly name: "DeployerCoordinatorRemoved";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "newFeeCollector";
-            readonly type: "address";
-        }];
-        readonly name: "FeeCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "governance";
-            readonly type: "address";
-        }];
-        readonly name: "GovernanceUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "hyperdriveGovernance";
-            readonly type: "address";
-        }];
-        readonly name: "HyperdriveGovernanceUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "bytes32";
-            readonly name: "newLinkerCodeHash";
-            readonly type: "bytes32";
-        }];
-        readonly name: "LinkerCodeHashUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "newLinkerFactory";
-            readonly type: "address";
-        }];
-        readonly name: "LinkerFactoryUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMaxCheckpointDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "MaxCheckpointDurationUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMaxCircuitBreakerDelta";
-            readonly type: "uint256";
-        }];
-        readonly name: "MaxCircuitBreakerDeltaUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "curve";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flat";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLP";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceZombie";
-                readonly type: "uint256";
-            }];
-            readonly indexed: false;
-            readonly internalType: "struct IHyperdrive.Fees";
-            readonly name: "newMaxFees";
-            readonly type: "tuple";
-        }];
-        readonly name: "MaxFeesUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMaxFixedAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "MaxFixedAPRUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMaxPositionDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "MaxPositionDurationUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMaxTimeStretchAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "MaxTimeStretchAPRUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMinCheckpointDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "MinCheckpointDurationUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMinCircuitBreakerDelta";
-            readonly type: "uint256";
-        }];
-        readonly name: "MinCircuitBreakerDeltaUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "curve";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flat";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLP";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceZombie";
-                readonly type: "uint256";
-            }];
-            readonly indexed: false;
-            readonly internalType: "struct IHyperdrive.Fees";
-            readonly name: "newMinFees";
-            readonly type: "tuple";
-        }];
-        readonly name: "MinFeesUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMinFixedAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "MinFixedAPRUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMinPositionDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "MinPositionDurationUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "newMinTimeStretchAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "MinTimeStretchAPRUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "newSweepCollector";
-            readonly type: "address";
-        }];
-        readonly name: "SweepCollectorUpdated";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_deployerCoordinator";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "addDeployerCoordinator";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "checkpointDurationResolution";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "checkpointRewarder";
         readonly inputs: readonly [];
-        readonly name: "defaultPausers";
         readonly outputs: readonly [{
-            readonly internalType: "address[]";
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "defaultPausers";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "deployAndInitialize";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_deploymentId";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "address";
             readonly name: "_deployerCoordinator";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly components: readonly [{
-                readonly internalType: "contract IERC20";
-                readonly name: "baseToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "contract IERC20";
-                readonly name: "vaultSharesToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "linkerFactory";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes32";
-                readonly name: "linkerCodeHash";
-                readonly type: "bytes32";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumTransactionAmount";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "circuitBreakerDelta";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "positionDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "checkpointDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "address";
-                readonly name: "governance";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "feeCollector";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "sweepCollector";
-                readonly type: "address";
-            }, {
-                readonly components: readonly [{
-                    readonly internalType: "uint256";
-                    readonly name: "curve";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "flat";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceLP";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceZombie";
-                    readonly type: "uint256";
-                }];
-                readonly internalType: "struct IHyperdrive.Fees";
-                readonly name: "fees";
-                readonly type: "tuple";
-            }];
-            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
+            readonly name: "__name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }, {
             readonly name: "_config";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
+            readonly components: readonly [{
+                readonly name: "baseToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "vaultSharesToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "linkerFactory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "linkerCodeHash";
+                readonly type: "bytes32";
+                readonly internalType: "bytes32";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumTransactionAmount";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "positionDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "checkpointDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governance";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "feeCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "fees";
+                readonly type: "tuple";
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly components: readonly [{
+                    readonly name: "curve";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "flat";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceLP";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceZombie";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }];
         }, {
-            readonly internalType: "bytes";
             readonly name: "_extraData";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_contribution";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_fixedAPR";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretchAPR";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly components: readonly [{
-                readonly internalType: "address";
-                readonly name: "destination";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bool";
-                readonly name: "asBase";
-                readonly type: "bool";
-            }, {
-                readonly internalType: "bytes";
-                readonly name: "extraData";
-                readonly type: "bytes";
-            }];
-            readonly internalType: "struct IHyperdrive.Options";
             readonly name: "_options";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly components: readonly [{
+                readonly name: "destination";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "asBase";
+                readonly type: "bool";
+                readonly internalType: "bool";
+            }, {
+                readonly name: "extraData";
+                readonly type: "bytes";
+                readonly internalType: "bytes";
+            }];
         }, {
-            readonly internalType: "bytes32";
             readonly name: "_salt";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "deployAndInitialize";
         readonly outputs: readonly [{
-            readonly internalType: "contract IHyperdrive";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract IHyperdrive";
         }];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "deployTarget";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_deploymentId";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }, {
-            readonly internalType: "address";
             readonly name: "_deployerCoordinator";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly components: readonly [{
-                readonly internalType: "contract IERC20";
-                readonly name: "baseToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "contract IERC20";
-                readonly name: "vaultSharesToken";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "linkerFactory";
-                readonly type: "address";
-            }, {
-                readonly internalType: "bytes32";
-                readonly name: "linkerCodeHash";
-                readonly type: "bytes32";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumShareReserves";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "minimumTransactionAmount";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "circuitBreakerDelta";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "positionDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "checkpointDuration";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "timeStretch";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "address";
-                readonly name: "governance";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "feeCollector";
-                readonly type: "address";
-            }, {
-                readonly internalType: "address";
-                readonly name: "sweepCollector";
-                readonly type: "address";
-            }, {
-                readonly components: readonly [{
-                    readonly internalType: "uint256";
-                    readonly name: "curve";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "flat";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceLP";
-                    readonly type: "uint256";
-                }, {
-                    readonly internalType: "uint256";
-                    readonly name: "governanceZombie";
-                    readonly type: "uint256";
-                }];
-                readonly internalType: "struct IHyperdrive.Fees";
-                readonly name: "fees";
-                readonly type: "tuple";
-            }];
-            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
             readonly name: "_config";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
+            readonly components: readonly [{
+                readonly name: "baseToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "vaultSharesToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "linkerFactory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "linkerCodeHash";
+                readonly type: "bytes32";
+                readonly internalType: "bytes32";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumTransactionAmount";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "positionDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "checkpointDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governance";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "feeCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "fees";
+                readonly type: "tuple";
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly components: readonly [{
+                    readonly name: "curve";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "flat";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceLP";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceZombie";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }];
         }, {
-            readonly internalType: "bytes";
             readonly name: "_extraData";
             readonly type: "bytes";
+            readonly internalType: "bytes";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_fixedAPR";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_timeStretchAPR";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "_targetIndex";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "bytes32";
             readonly name: "_salt";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "deployTarget";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "deployerCoordinatorManager";
         readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "feeCollector";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "index";
-            readonly type: "uint256";
-        }];
+        readonly type: "function";
         readonly name: "getDeployerCoordinatorAtIndex";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "startIndex";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "endIndex";
-            readonly type: "uint256";
-        }];
-        readonly name: "getDeployerCoordinatorsInRange";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "range";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "index";
-            readonly type: "uint256";
-        }];
-        readonly name: "getInstanceAtIndex";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "startIndex";
-            readonly type: "uint256";
-        }, {
-            readonly internalType: "uint256";
-            readonly name: "endIndex";
-            readonly type: "uint256";
-        }];
-        readonly name: "getInstancesInRange";
-        readonly outputs: readonly [{
-            readonly internalType: "address[]";
-            readonly name: "range";
-            readonly type: "address[]";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "getNumberOfDeployerCoordinators";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "getNumberOfInstances";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "governance";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "hyperdriveGovernance";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "linkerCodeHash";
-        readonly outputs: readonly [{
-            readonly internalType: "bytes32";
-            readonly name: "";
-            readonly type: "bytes32";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "linkerFactory";
-        readonly outputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "maxCheckpointDuration";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "maxFees";
-        readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "curve";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flat";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLP";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceZombie";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct IHyperdrive.Fees";
-            readonly name: "";
-            readonly type: "tuple";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "maxFixedAPR";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "maxPositionDuration";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "maxTimeStretchAPR";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "minCheckpointDuration";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "minFees";
-        readonly outputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "curve";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flat";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLP";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceZombie";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct IHyperdrive.Fees";
-            readonly name: "";
-            readonly type: "tuple";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "minFixedAPR";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "minPositionDuration";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "minTimeStretchAPR";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_deployerCoordinator";
-            readonly type: "address";
-        }, {
-            readonly internalType: "uint256";
             readonly name: "_index";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "removeDeployerCoordinator";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "sweepCollector";
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getDeployerCoordinatorByInstances";
         readonly inputs: readonly [{
+            readonly name: "__instances";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "coordinators";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getDeployerCoordinatorsInRange";
+        readonly inputs: readonly [{
+            readonly name: "_startIndex";
+            readonly type: "uint256";
             readonly internalType: "uint256";
+        }, {
+            readonly name: "_endIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "range";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstanceAtIndex";
+        readonly inputs: readonly [{
+            readonly name: "_index";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getInstancesInRange";
+        readonly inputs: readonly [{
+            readonly name: "_startIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_endIndex";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "range";
+            readonly type: "address[]";
+            readonly internalType: "address[]";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getNumberOfDeployerCoordinators";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getNumberOfInstances";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "governance";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "hyperdriveGovernance";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "isDeployerCoordinator";
+        readonly inputs: readonly [{
+            readonly name: "_deployerCoordinator";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "isInstance";
+        readonly inputs: readonly [{
+            readonly name: "_instance";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "kind";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "linkerCodeHash";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bytes32";
+            readonly internalType: "bytes32";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "linkerFactory";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxCheckpointDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxFees";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Fees";
+            readonly components: readonly [{
+                readonly name: "curve";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flat";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLP";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceZombie";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxFixedAPR";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxPositionDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "maxTimeStretchAPR";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minCheckpointDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minFees";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Fees";
+            readonly components: readonly [{
+                readonly name: "curve";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flat";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLP";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceZombie";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minFixedAPR";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minPositionDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minTimeStretchAPR";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "removeDeployerCoordinator";
+        readonly inputs: readonly [{
+            readonly name: "_deployerCoordinator";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "_index";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "sweepCollector";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "updateCheckpointDurationResolution";
+        readonly inputs: readonly [{
             readonly name: "_checkpointDurationResolution";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "updateCheckpointDurationResolution";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateCheckpointRewarder";
         readonly inputs: readonly [{
-            readonly internalType: "address[]";
+            readonly name: "_checkpointRewarder";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateDefaultPausers";
+        readonly inputs: readonly [{
             readonly name: "_defaultPausers_";
             readonly type: "address[]";
+            readonly internalType: "address[]";
         }];
-        readonly name: "updateDefaultPausers";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateFeeCollector";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_feeCollector";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "updateFeeCollector";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateGovernance";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_governance";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "updateGovernance";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateHyperdriveGovernance";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_hyperdriveGovernance";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "updateHyperdriveGovernance";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateLinkerCodeHash";
         readonly inputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "_linkerCodeHash";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "updateLinkerCodeHash";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateLinkerFactory";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_linkerFactory";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "updateLinkerFactory";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateMaxCheckpointDuration";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_maxCheckpointDuration";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "updateMaxCheckpointDuration";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateMaxFees";
         readonly inputs: readonly [{
-            readonly components: readonly [{
-                readonly internalType: "uint256";
-                readonly name: "curve";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "flat";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceLP";
-                readonly type: "uint256";
-            }, {
-                readonly internalType: "uint256";
-                readonly name: "governanceZombie";
-                readonly type: "uint256";
-            }];
-            readonly internalType: "struct IHyperdrive.Fees";
             readonly name: "__maxFees";
             readonly type: "tuple";
-        }];
-        readonly name: "updateMaxFees";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_maxFixedAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "updateMaxFixedAPR";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_maxPositionDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "updateMaxPositionDuration";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_maxTimeStretchAPR";
-            readonly type: "uint256";
-        }];
-        readonly name: "updateMaxTimeStretchAPR";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_minCheckpointDuration";
-            readonly type: "uint256";
-        }];
-        readonly name: "updateMinCheckpointDuration";
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
+            readonly internalType: "struct IHyperdrive.Fees";
             readonly components: readonly [{
-                readonly internalType: "uint256";
                 readonly name: "curve";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "flat";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "governanceLP";
                 readonly type: "uint256";
-            }, {
                 readonly internalType: "uint256";
+            }, {
                 readonly name: "governanceZombie";
                 readonly type: "uint256";
+                readonly internalType: "uint256";
             }];
-            readonly internalType: "struct IHyperdrive.Fees";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMaxFixedAPR";
+        readonly inputs: readonly [{
+            readonly name: "_maxFixedAPR";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMaxPositionDuration";
+        readonly inputs: readonly [{
+            readonly name: "_maxPositionDuration";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMaxTimeStretchAPR";
+        readonly inputs: readonly [{
+            readonly name: "_maxTimeStretchAPR";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMinCheckpointDuration";
+        readonly inputs: readonly [{
+            readonly name: "_minCheckpointDuration";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMinFees";
+        readonly inputs: readonly [{
             readonly name: "__minFees";
             readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Fees";
+            readonly components: readonly [{
+                readonly name: "curve";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flat";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLP";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceZombie";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
         }];
-        readonly name: "updateMinFees";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateMinFixedAPR";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_minFixedAPR";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "updateMinFixedAPR";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateMinPositionDuration";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_minPositionDuration";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "updateMinPositionDuration";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateMinTimeStretchAPR";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_minTimeStretchAPR";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "updateMinTimeStretchAPR";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "updateSweepCollector";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_sweepCollector";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "updateSweepCollector";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
+    }, {
         readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "event";
+        readonly name: "CheckpointDurationResolutionUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newCheckpointDurationResolution";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "CheckpointRewarderUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newCheckpointRewarder";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "DefaultPausersUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newDefaultPausers";
+            readonly type: "address[]";
+            readonly indexed: false;
+            readonly internalType: "address[]";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Deployed";
+        readonly inputs: readonly [{
+            readonly name: "deployerCoordinator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "hyperdrive";
+            readonly type: "address";
+            readonly indexed: false;
+            readonly internalType: "address";
+        }, {
+            readonly name: "name";
+            readonly type: "string";
+            readonly indexed: false;
+            readonly internalType: "string";
+        }, {
+            readonly name: "config";
+            readonly type: "tuple";
+            readonly indexed: false;
+            readonly internalType: "struct IHyperdrive.PoolDeployConfig";
+            readonly components: readonly [{
+                readonly name: "baseToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "vaultSharesToken";
+                readonly type: "address";
+                readonly internalType: "contract IERC20";
+            }, {
+                readonly name: "linkerFactory";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "linkerCodeHash";
+                readonly type: "bytes32";
+                readonly internalType: "bytes32";
+            }, {
+                readonly name: "minimumShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "minimumTransactionAmount";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "positionDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "checkpointDuration";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "timeStretch";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governance";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "feeCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "fees";
+                readonly type: "tuple";
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly components: readonly [{
+                    readonly name: "curve";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "flat";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceLP";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "governanceZombie";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }];
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "DeployerCoordinatorAdded";
+        readonly inputs: readonly [{
+            readonly name: "deployerCoordinator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "DeployerCoordinatorManagerUpdated";
+        readonly inputs: readonly [{
+            readonly name: "deployerCoordinatorManager";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "DeployerCoordinatorRemoved";
+        readonly inputs: readonly [{
+            readonly name: "deployerCoordinator";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "FeeCollectorUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newFeeCollector";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "GovernanceUpdated";
+        readonly inputs: readonly [{
+            readonly name: "governance";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "HyperdriveGovernanceUpdated";
+        readonly inputs: readonly [{
+            readonly name: "hyperdriveGovernance";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "LinkerCodeHashUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newLinkerCodeHash";
+            readonly type: "bytes32";
+            readonly indexed: true;
+            readonly internalType: "bytes32";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "LinkerFactoryUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newLinkerFactory";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxCheckpointDurationUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxCheckpointDuration";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxCircuitBreakerDeltaUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxCircuitBreakerDelta";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxFeesUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxFees";
+            readonly type: "tuple";
+            readonly indexed: false;
+            readonly internalType: "struct IHyperdrive.Fees";
+            readonly components: readonly [{
+                readonly name: "curve";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flat";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLP";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceZombie";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxFixedAPRUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxFixedAPR";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxPositionDurationUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxPositionDuration";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MaxTimeStretchAPRUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMaxTimeStretchAPR";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinCheckpointDurationUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinCheckpointDuration";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinCircuitBreakerDeltaUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinCircuitBreakerDelta";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinFeesUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinFees";
+            readonly type: "tuple";
+            readonly indexed: false;
+            readonly internalType: "struct IHyperdrive.Fees";
+            readonly components: readonly [{
+                readonly name: "curve";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "flat";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceLP";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "governanceZombie";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinFixedAPRUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinFixedAPR";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinPositionDurationUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinPositionDuration";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "MinTimeStretchAPRUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newMinTimeStretchAPR";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "SweepCollectorUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newSweepCollector";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "DeployerCoordinatorAlreadyAdded";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "DeployerCoordinatorIndexMismatch";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "DeployerCoordinatorNotAdded";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "EndIndexTooLarge";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidCheckpointDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidCheckpointDurationResolution";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidCircuitBreakerDelta";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidDeployConfig";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidDeployerCoordinator";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidFees";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidFixedAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidIndexes";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxCheckpointDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxCircuitBreakerDelta";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxFees";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxFixedAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxPositionDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMaxTimeStretchAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinCheckpointDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinCircuitBreakerDelta";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinFees";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinFixedAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinPositionDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidMinTimeStretchAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidPositionDuration";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InvalidTimeStretchAPR";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "ReceiveLocked";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "TransferFailed";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "Unauthorized";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
         readonly "addDeployerCoordinator(address)": "421caba8";
         readonly "checkpointDurationResolution()": "d0f96b92";
+        readonly "checkpointRewarder()": "f2596458";
         readonly "defaultPausers()": "a64c90bf";
-        readonly "deployAndInitialize(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "b9fdb319";
-        readonly "deployTarget(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "fec45139";
+        readonly "deployAndInitialize(bytes32,address,string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,(address,bool,bytes),bytes32)": "2e7cd971";
+        readonly "deployTarget(bytes32,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,uint256,uint256,bytes32)": "49f13de7";
+        readonly "deployerCoordinatorManager()": "e4e7148f";
         readonly "feeCollector()": "c415b95c";
         readonly "getDeployerCoordinatorAtIndex(uint256)": "fe3d5aeb";
+        readonly "getDeployerCoordinatorByInstances(address[])": "1b59be0c";
         readonly "getDeployerCoordinatorsInRange(uint256,uint256)": "ec895f11";
         readonly "getInstanceAtIndex(uint256)": "daac24da";
         readonly "getInstancesInRange(uint256,uint256)": "bc30e7a1";
@@ -1280,6 +1416,9 @@ export declare const IHyperdriveFactory: {
         readonly "getNumberOfInstances()": "6e95d67c";
         readonly "governance()": "5aa6e675";
         readonly "hyperdriveGovernance()": "e3331555";
+        readonly "isDeployerCoordinator(address)": "f8c09e59";
+        readonly "isInstance(address)": "6b44e6be";
+        readonly "kind()": "04baa00b";
         readonly "linkerCodeHash()": "c905a4b5";
         readonly "linkerFactory()": "99623bb1";
         readonly "maxCheckpointDuration()": "e0e2daaa";
@@ -1292,9 +1431,11 @@ export declare const IHyperdriveFactory: {
         readonly "minFixedAPR()": "d23d7ea3";
         readonly "minPositionDuration()": "daf012e6";
         readonly "minTimeStretchAPR()": "d6f50169";
+        readonly "name()": "06fdde03";
         readonly "removeDeployerCoordinator(address,uint256)": "411c3035";
         readonly "sweepCollector()": "10780f73";
         readonly "updateCheckpointDurationResolution(uint256)": "11e77bfe";
+        readonly "updateCheckpointRewarder(address)": "3e2d2014";
         readonly "updateDefaultPausers(address[])": "9af25262";
         readonly "updateFeeCollector(address)": "d2c35ce8";
         readonly "updateGovernance(address)": "b2561263";
@@ -1312,6 +1453,7 @@ export declare const IHyperdriveFactory: {
         readonly "updateMinPositionDuration(uint256)": "e71f34b3";
         readonly "updateMinTimeStretchAPR(uint256)": "83b361e8";
         readonly "updateSweepCollector(address)": "8627a4f0";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=IHyperdriveFactory.d.ts.map

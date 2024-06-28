@@ -1,30 +1,30 @@
 export const IDepositQueue = {
     abi: [
         {
-            "inputs": [],
+            "type": "function",
             "name": "depositETHFromProtocol",
+            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
+            "stateMutability": "payable"
         },
         {
+            "type": "function",
+            "name": "totalEarned",
             "inputs": [
                 {
-                    "internalType": "address",
                     "name": "tokenAddress",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
-            "name": "totalEarned",
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         }
     ],
     bytecode: '0x',

@@ -1,27 +1,29 @@
-import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
+import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import {
-  findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
+  findBaseToken,
+  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
-  long: Long;
-  openLongPreviewStatus: "error" | "idle" | "loading" | "success";
+  bondAmount: bigint;
+  amountPaid: bigint;
+  openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
@@ -31,8 +33,9 @@ interface OpenLongPreviewProps {
 
 export function OpenLongPreview({
   hyperdrive,
-  long,
   openLongPreviewStatus,
+  amountPaid,
+  bondAmount,
   spotRateAfterOpen,
   activeToken,
   curveFee,
@@ -49,16 +52,29 @@ export function OpenLongPreview({
     tokens: appConfig.tokens,
   });
   const { fixedApr } = useFixedRate(hyperdrive.address);
-  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
-  const numDays = convertMillisecondsToDays(termLengthMS);
+
+  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const amountPaidInBase = isBaseAmount
+    ? amountPaid
+    : convertSharesToBase({
+        sharesAmount: amountPaid,
+        vaultSharePrice: vaultSharePrice,
+        decimals: baseToken.decimals,
+      });
+  const yieldAtMaturity = bondAmount - amountPaidInBase;
+
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3.5 px-2">
       <div className="flex flex-col gap-3">
         <LabelValue
           label="You spend"
           value={
-            <span>{`${formatBalance({
-              balance: long.baseAmountPaid,
+            <span
+              className={classNames({
+                "text-base-content/80": !amountPaid,
+              })}
+            >{`${formatBalance({
+              balance: amountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
             })} ${activeToken.symbol}`}</span>
@@ -70,8 +86,12 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span className="font-bold">{`${formatBalance({
-                balance: long.bondAmount,
+              <span
+                className={classNames({
+                  "text-base-content/80": !bondAmount,
+                })}
+              >{`${formatBalance({
+                balance: bondAmount,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })} hy${baseToken.symbol}`}</span>
@@ -80,13 +100,17 @@ export function OpenLongPreview({
         />
         <LabelValue
           label="Pool fee"
+          tooltipContent="Total combined fee paid to LPs and governance to open the long."
+          tooltipPosition="right"
+          tooltipSize="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-                data-tip="Total combined fee paid to LPs and governance to open the long."
+                className={classNames({
+                  "text-base-content/80": !curveFee,
+                })}
               >
                 {curveFee
                   ? `${formatBalance({
@@ -99,132 +123,104 @@ export function OpenLongPreview({
             )
           }
         />
-      </div>
-      <div className="flex flex-col gap-3">
-        <h6 className="font-medium">Fixed Rate</h6>
         <LabelValue
-          label="Net fixed rate"
+          label="Fixed APR"
+          tooltipContent="Your net fixed rate after pool fees and slippage are applied."
+          tooltipPosition="right"
+          tooltipSize="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help border-b border-dashed border-current before:border"
-                data-tip="Your net fixed rate after pool fees and slippage are applied."
-              >
-                {long.bondAmount > 0
+              <span className="gradient-text">
+                {bondAmount > 0
                   ? `${formatRate(
                       calculateAprFromPrice({
                         positionDuration:
                           hyperdrive.poolConfig.positionDuration || 0n,
-                        baseAmount:
-                          asBase || sharesToken.extensions.isSharesPeggedToBase
-                            ? long.baseAmountPaid
-                            : // TODO: move sharesAmountPaid into the sdk's Long interface
-                              // instead of converting here
-                              convertSharesToBase({
-                                sharesAmount: long.baseAmountPaid,
-                                vaultSharePrice: vaultSharePrice,
-                                decimals: activeToken.decimals,
-                              }),
-                        bondAmount: long.bondAmount,
+                        baseAmount: amountPaidInBase,
+                        bondAmount: bondAmount,
                       }),
                       baseToken.decimals,
-                    )}% APR`
-                  : "0% APR"}
+                    )}%`
+                  : `${fixedApr?.formatted}%`}
               </span>
             )
           }
         />
         <LabelValue
-          label="Market rate after open"
+          label="Yield at maturity"
+          tooltipContent={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
+          tooltipPosition="right"
+          tooltipSize="small"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : bondAmount > 0 ? (
+              <span className="text-success">
+                {yieldAtMaturity
+                  ? // TODO: Add ROI here in parenthesis after the yield amount
+                    `+${formatBalance({
+                      balance: yieldAtMaturity,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })} ${baseToken.symbol}`
+                  : undefined}
+              </span>
+            ) : (
+              <span className={"text-base-content/80"}>
+                0 {baseToken.symbol}
+              </span>
+            )
+          }
+        />
+      </div>
+
+      <CollapseSection heading="Market Impact">
+        <LabelValue
+          size="small"
+          label="Fixed APR after open"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-                  {
-                    "border-b border-dashed border-current": spotRateAfterOpen,
-                  },
-                )}
-                data-tip="The market fixed rate after opening the long."
+                className={classNames({
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
               >
-                {spotRateAfterOpen
-                  ? `${formatRate(spotRateAfterOpen)}% APR`
-                  : "-"}
+                {spotRateAfterOpen ? (
+                  <span className="flex gap-2">
+                    <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
+                    <ArrowRightIcon className="h-4 text-neutral-content" />
+                    {formatRate(spotRateAfterOpen)}%
+                  </span>
+                ) : (
+                  "-"
+                )}
               </span>
             )
           }
         />
         <LabelValue
           label="Fixed APR impact"
+          size="small"
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
               <span
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-                  {
-                    "border-b border-dashed border-error text-error":
-                      spotRateAfterOpen,
-                  },
-                )}
-                data-tip={`The net market impact on the fixed rate after opening the long.`}
+                className={classNames({
+                  "text-error": spotRateAfterOpen,
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
               >
                 {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
               </span>
             )
           }
         />
-      </div>
-      <div className="flex flex-col gap-3">
-        <h6 className="font-medium">Term</h6>
-        <LabelValue
-          label="Matures in"
-          value={`${numDays} days, ${formatDate(Date.now() + termLengthMS)}`}
-        />
-        <LabelValue
-          label="Yield at maturity"
-          value={
-            openLongPreviewStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <div
-                className="daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border"
-                data-tip={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
-              >
-                {long.bondAmount > 0 ? (
-                  <span className="cursor-help border-b border-dashed border-success text-success">
-                    {long.bondAmount > long.baseAmountPaid ? "+" : ""}
-                    {long.baseAmountPaid
-                      ? `${formatBalance({
-                          balance:
-                            long.bondAmount -
-                            (asBase
-                              ? long.baseAmountPaid
-                              : convertSharesToBase({
-                                  sharesAmount: long.baseAmountPaid,
-                                  vaultSharePrice: vaultSharePrice,
-                                  decimals: baseToken.decimals,
-                                })),
-                          decimals: baseToken.decimals,
-                          places: baseToken.places,
-                        })} ${baseToken.symbol}`
-                      : undefined}
-                  </span>
-                ) : (
-                  <span className="cursor-help border-b border-dashed">
-                    0 {baseToken.symbol}
-                  </span>
-                )}
-              </div>
-            )
-          }
-        />
-      </div>
+      </CollapseSection>
     </div>
   );
 }

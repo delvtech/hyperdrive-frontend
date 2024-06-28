@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -65,35 +64,6 @@ export function OpenShortsTableMobile({
         );
       })}
       <table className="daisy-table daisy-table-zebra daisy-table-lg">
-        <thead>
-          {tableInstance.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th
-                  className="sticky z-10 font-normal text-neutral-content"
-                  key={header.id}
-                >
-                  <div
-                    className={classNames({
-                      "flex cursor-pointer select-none items-center gap-2":
-                        header.column.getCanSort(),
-                    })}
-                    onClick={header.column.getToggleSortingHandler()}
-                  >
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext(),
-                    )}
-                    {{
-                      asc: <ChevronUpIcon height={15} />,
-                      desc: <ChevronDownIcon height={15} />,
-                    }[header.column.getIsSorted() as string] ?? null}
-                  </div>
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
         <tbody>
           {tableInstance.getRowModel().rows.map((row, index) => {
             const isLastRow =

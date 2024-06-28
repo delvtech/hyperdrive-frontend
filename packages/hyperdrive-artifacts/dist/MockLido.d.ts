@@ -1,822 +1,822 @@
 export declare const MockLido: {
     abi: readonly [{
+        readonly type: "constructor";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_initialRate";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "address";
             readonly name: "_admin";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bool";
             readonly name: "_isCompetitionMode";
             readonly type: "bool";
+            readonly internalType: "bool";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_maxMintAmount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "constructor";
     }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "owner";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "spender";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "amount";
-            readonly type: "uint256";
-        }];
-        readonly name: "Approval";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-            readonly name: "newAuthority";
-            readonly type: "address";
-        }];
-        readonly name: "AuthorityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "newOwner";
-            readonly type: "address";
-        }];
-        readonly name: "OwnershipTransferred";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "bytes4";
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "PublicCapabilityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "uint8";
-            readonly name: "role";
-            readonly type: "uint8";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "bytes4";
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "RoleCapabilityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "target";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-            readonly name: "authority";
-            readonly type: "address";
-        }];
-        readonly name: "TargetCustomAuthorityUpdated";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "from";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "to";
-            readonly type: "address";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "uint256";
-            readonly name: "amount";
-            readonly type: "uint256";
-        }];
-        readonly name: "Transfer";
-        readonly type: "event";
-    }, {
-        readonly anonymous: false;
-        readonly inputs: readonly [{
-            readonly indexed: true;
-            readonly internalType: "address";
-            readonly name: "user";
-            readonly type: "address";
-        }, {
-            readonly indexed: true;
-            readonly internalType: "uint8";
-            readonly name: "role";
-            readonly type: "uint8";
-        }, {
-            readonly indexed: false;
-            readonly internalType: "bool";
-            readonly name: "enabled";
-            readonly type: "bool";
-        }];
-        readonly name: "UserRoleUpdated";
-        readonly type: "event";
-    }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "DOMAIN_SEPARATOR";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }, {
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
+        readonly type: "function";
         readonly name: "allowance";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "approve";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "approve";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "authority";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "contract Authority";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "balanceOf";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "balanceOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "burn";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "burn";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "burn";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "destination";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "burn";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "canCall";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "target";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "canCall";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "decimals";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "doesRoleHaveCapability";
         readonly inputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "doesRoleHaveCapability";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "doesUserHaveRole";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }];
-        readonly name: "doesUserHaveRole";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getBufferedEther";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "pure";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getPooledEthByShares";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "getPooledEthByShares";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "getRate";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getRolesWithCapability";
         readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "getRolesWithCapability";
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "getSharesByPooledEth";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_ethAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "getSharesByPooledEth";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "";
-            readonly type: "address";
-        }];
+        readonly type: "function";
         readonly name: "getTargetCustomAuthority";
-        readonly outputs: readonly [{
-            readonly internalType: "contract Authority";
-            readonly name: "";
-            readonly type: "address";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "getTotalPooledEther";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [];
-        readonly name: "getTotalShares";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "getUserRoles";
         readonly outputs: readonly [{
-            readonly internalType: "bytes32";
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "contract Authority";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getTotalPooledEther";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getTotalShares";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getUserRoles";
+        readonly inputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "isCapabilityPublic";
         readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }];
-        readonly name: "isCapabilityPublic";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "isCompetitionMode";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "isUnrestricted";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "isUnrestricted";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "maxMintAmount";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "mint";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "destination";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "mint";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "mint";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "mint";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "name";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "nonces";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "nonces";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "owner";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "permit";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "spender";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "value";
             readonly type: "uint256";
-        }, {
             readonly internalType: "uint256";
+        }, {
             readonly name: "deadline";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }, {
-            readonly internalType: "uint8";
             readonly name: "v";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes32";
             readonly name: "r";
             readonly type: "bytes32";
-        }, {
             readonly internalType: "bytes32";
+        }, {
             readonly name: "s";
             readonly type: "bytes32";
+            readonly internalType: "bytes32";
         }];
-        readonly name: "permit";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setAuthority";
         readonly inputs: readonly [{
-            readonly internalType: "contract Authority";
             readonly name: "newAuthority";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
-        readonly name: "setAuthority";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setMaxMintAmount";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_maxMintAmount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "setMaxMintAmount";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setPublicCapability";
         readonly inputs: readonly [{
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setPublicCapability";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setRate";
         readonly inputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "_rate_";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "setRate";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setRoleCapability";
         readonly inputs: readonly [{
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
+            readonly internalType: "bytes4";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setRoleCapability";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setTargetCustomAuthority";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "target";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "contract Authority";
             readonly name: "customAuthority";
             readonly type: "address";
+            readonly internalType: "contract Authority";
         }];
-        readonly name: "setTargetCustomAuthority";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setUnrestrictedMintStatus";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_target";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "bool";
             readonly name: "_status";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setUnrestrictedMintStatus";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "setUserRole";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint8";
             readonly name: "role";
             readonly type: "uint8";
+            readonly internalType: "uint8";
         }, {
-            readonly internalType: "bool";
             readonly name: "enabled";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
-        readonly name: "setUserRole";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "sharesOf";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_account";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "sharesOf";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "submit";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "submit";
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "payable";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "symbol";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "string";
             readonly name: "";
             readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
-        readonly inputs: readonly [];
+        readonly type: "function";
         readonly name: "totalSupply";
+        readonly inputs: readonly [];
         readonly outputs: readonly [{
-            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transfer";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "transfer";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferFrom";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "from";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "to";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "amount";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
-        readonly name: "transferFrom";
         readonly outputs: readonly [{
-            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
+            readonly internalType: "bool";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferOwnership";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "newOwner";
             readonly type: "address";
+            readonly internalType: "address";
         }];
-        readonly name: "transferOwnership";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferShares";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_recipient";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "transferShares";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
     }, {
+        readonly type: "function";
+        readonly name: "transferSharesFrom";
         readonly inputs: readonly [{
-            readonly internalType: "address";
             readonly name: "_sender";
             readonly type: "address";
-        }, {
             readonly internalType: "address";
+        }, {
             readonly name: "_recipient";
             readonly type: "address";
+            readonly internalType: "address";
         }, {
-            readonly internalType: "uint256";
             readonly name: "_sharesAmount";
             readonly type: "uint256";
-        }];
-        readonly name: "transferSharesFrom";
-        readonly outputs: readonly [{
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
             readonly name: "";
             readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
+    }, {
+        readonly type: "event";
+        readonly name: "Approval";
+        readonly inputs: readonly [{
+            readonly name: "owner";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "spender";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "AuthorityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "newAuthority";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "OwnershipTransferred";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "newOwner";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "PublicCapabilityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+            readonly indexed: true;
+            readonly internalType: "bytes4";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "RoleCapabilityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "role";
+            readonly type: "uint8";
+            readonly indexed: true;
+            readonly internalType: "uint8";
+        }, {
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+            readonly indexed: true;
+            readonly internalType: "bytes4";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TargetCustomAuthorityUpdated";
+        readonly inputs: readonly [{
+            readonly name: "target";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "authority";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "Transfer";
+        readonly inputs: readonly [{
+            readonly name: "from";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "UserRoleUpdated";
+        readonly inputs: readonly [{
+            readonly name: "user";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "role";
+            readonly type: "uint8";
+            readonly indexed: true;
+            readonly internalType: "uint8";
+        }, {
+            readonly name: "enabled";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
+        }];
+        readonly anonymous: false;
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
