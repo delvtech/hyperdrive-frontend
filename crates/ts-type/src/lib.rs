@@ -969,6 +969,7 @@ mod tests {
         #[rustfmt::skip]
         let generic = ts_type!(Set< string,   number >);
         assert_eq!(generic.to_string(), "Set<string, number>");
+
         #[rustfmt::skip]
         let _union = ts_type!(
             | string
