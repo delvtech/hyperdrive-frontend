@@ -18,9 +18,9 @@ interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
   contribution: bigint | undefined;
-  minAPR: bigint | undefined;
+  minApr: bigint | undefined;
   minLpSharePrice: bigint | undefined;
-  maxAPR: bigint | undefined;
+  maxApr: bigint | undefined;
   asBase?: boolean;
   ethValue?: bigint;
   /** Controls whether or not an `addLiquidity` callback will be returned to the
@@ -39,9 +39,9 @@ export function useAddLiquidity({
   hyperdriveAddress,
   destination,
   contribution,
-  minAPR,
+  minApr,
   minLpSharePrice,
-  maxAPR,
+  maxApr,
   asBase = true,
   enabled,
   onSubmitted,
@@ -57,9 +57,9 @@ export function useAddLiquidity({
 
   const mutationEnabled =
     !!contribution &&
-    minAPR !== undefined &&
+    minApr !== undefined &&
     minLpSharePrice !== undefined &&
-    maxAPR !== undefined &&
+    maxApr !== undefined &&
     !!destination &&
     enabled &&
     !!publicClient &&
@@ -86,9 +86,9 @@ export function useAddLiquidity({
         args: {
           contribution: finalContribution,
           asBase,
-          minAPR,
+          minApr,
           minLpSharePrice,
-          maxAPR,
+          maxApr,
           destination,
         },
         options: { value: ethValue },
