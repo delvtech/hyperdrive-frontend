@@ -75,7 +75,7 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x6D3B7Cdc8959B399Ad8e1f8d830e2eBeCc82d4ad",
+      address: "0xB97A9e5ddDEc2Ccad502B02d40E759BF25cbd7db",
       version: "v1.0.13",
       name: "14d DAI-Maker DSR",
       decimals: 18,
@@ -95,7 +95,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
-        initialVaultSharePrice: 1086822313297178622n,
+        initialVaultSharePrice: 1086822353081700260n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -115,7 +115,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xDE58fB12734C31750Ec1986bB2213b48e481D4B8",
+      address: "0x2493801f7AD3CFF92fc8d9f966Aa3F13ECd899B7",
       version: "v1.0.13",
       name: "30d DAI-Maker DSR",
       decimals: 18,
@@ -135,7 +135,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x4d63914b6a33d8813a5654ae2dc977f37e398817df2519d374573ab851f9cb38",
-        initialVaultSharePrice: 1086822339820192886n,
+        initialVaultSharePrice: 1086822374300112396n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
