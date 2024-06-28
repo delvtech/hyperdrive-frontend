@@ -4,13 +4,18 @@ import { PropsWithChildren, ReactElement } from "react";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { IneligibleAccountMessage } from "src/ui/compliance/IneligibleAccountMessage";
+import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 
 export function Page({ children }: PropsWithChildren): ReactElement {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       <div className="flex w-full grow flex-col gap-9">
         <Navbar />
+
+        {/* compliance */}
+        <TermsOfUseAndPrivacyPolicyModal />
         <IneligibleAccountMessage className="grow" />
+
         {/* This let's us to reset the scroll position to the top of the page
         when linking to other pages. This is useful, for example,  when going
         from the the bottom of the All Markets page to a specific market details
