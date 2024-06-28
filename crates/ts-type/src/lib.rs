@@ -645,7 +645,13 @@ impl fmt::Display for TsType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             TsType::Base(name) => write!(f, "{}", name.trim()),
-            TsType::Array(ty) => write!(f, "{}[]", ty.to_string()),
+            TsType::Array(ty) => match ty.as_ref() {
+                // Wrap the inner type in parentheses if it's a union or intersection
+                // a | b[] -> (a | b)[]
+                TsType::Union(_) => write!(f, "({})[]", ty),
+                TsType::Intersection(_) => write!(f, "({})[]", ty),
+                _ => write!(f, "{}[]", ty.to_string()),
+            },
             TsType::Paren(ty) => write!(f, "({})", ty.to_string()),
             TsType::IndexedAccess(ty, key_ty) => {
                 write!(f, "{}[{}]", ty.to_string(), key_ty.to_string())
@@ -662,6 +668,8 @@ impl fmt::Display for TsType {
                 let types = types
                     .iter()
                     .map(|ty| match ty {
+                        // Wrap the inner type in parentheses if it's a intersection.
+                        // a & b | c -> (a & b) | c
                         TsType::Intersection(_) => format!("({})", ty),
                         _ => ty.to_string(),
                     })
