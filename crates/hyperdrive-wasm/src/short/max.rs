@@ -1,12 +1,21 @@
-use hyperdrive_math::State;
 use js_sys::BigInt;
+use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{JsPoolConfig, JsPoolInfo},
+    types::IStateParams,
     utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
 };
+
+#[ts(extends = IStateParams)]
+struct MaxShortParams {
+    budget: BigInt,
+    open_vault_share_price: BigInt,
+    checkpoint_exposure: BigInt,
+    conservative_price: Option<BigInt>,
+    max_iterations: Option<u8>,
+}
 
 /// Calculates the max amount of longs that can be shorted given the current
 /// state of the pool.
@@ -28,36 +37,21 @@ use crate::{
 /// @param maybeMaxIterations - The maximum number of iterations to run the
 /// binary search for
 #[wasm_bindgen(skip_jsdoc)]
-pub fn maxShort(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    budget: BigInt,
-    openVaultSharePrice: BigInt,
-    checkpointExposure: BigInt,
-    maybeConservativePrice: Option<BigInt>,
-    maybeMaxIterations: Option<u8>,
-) -> Result<BigInt, HyperdriveWasmError> {
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let _budget = budget.to_u256()?;
-    let checkpoint_exposure = checkpointExposure.to_i256()?;
-    let open_vault_share_price = openVaultSharePrice.to_u256()?;
-    let maybe_conservative_price = match maybeConservativePrice {
-        Some(price_str) => Some(price_str.to_fixed_point()?),
-        None => None,
-    };
+pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, HyperdriveWasmError> {
+    let state = params.to_state()?;
 
     let result_fp = state
         .calculate_max_short(
-            _budget,
-            open_vault_share_price,
-            checkpoint_exposure,
-            maybe_conservative_price,
-            maybeMaxIterations.map(|x| x.into()),
+            params.budget().to_u256()?,
+            params.open_vault_share_price().to_u256()?,
+            params.checkpoint_exposure().to_i256()?,
+            params
+                .conservative_price()
+                .map(|x| x.to_fixed())
+                .transpose()?,
+            params.max_iterations().map(|x| x.into()),
         )
         .to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
 }

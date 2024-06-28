@@ -1,12 +1,17 @@
-use hyperdrive_math::State;
 use js_sys::BigInt;
+use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{JsPoolConfig, JsPoolInfo},
+    types::IStateParams,
     utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToU256},
 };
+
+#[ts(extends = IStateParams)]
+struct OpenLongCurveFeeParams {
+    base_amount: BigInt,
+}
 
 /// Calculates the curve fee paid in bonds by traders when they open a long.
 ///
@@ -16,19 +21,17 @@ use crate::{
 ///
 /// @param baseAmount - The amount of base tokens to spend
 #[wasm_bindgen(skip_jsdoc)]
-pub fn openLongCurveFee(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    baseAmount: BigInt,
-) -> Result<BigInt, HyperdriveWasmError> {
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let base_amount = baseAmount.to_fixed_point()?;
+pub fn openLongCurveFee(params: IOpenLongCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+    let state = params.to_state()?;
+    let base_amount = params.base_amount().to_fixed()?;
     let result_fp = state.open_long_curve_fee(base_amount).to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
+}
+
+#[ts(extends = IStateParams)]
+struct OpenLongGovernanceFeeParams {
+    base_amount: BigInt,
 }
 
 /// Calculates the governance fee paid in bonds by traders when they open a
@@ -41,21 +44,23 @@ pub fn openLongCurveFee(
 /// @param baseAmount - The amount of base tokens to spend
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openLongGovernanceFee(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    baseAmount: BigInt,
+    params: IOpenLongGovernanceFeeParams,
 ) -> Result<BigInt, HyperdriveWasmError> {
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let base_amount = baseAmount.to_fixed_point()?;
+    let state = params.to_state()?;
+    let base_amount = params.base_amount().to_fixed()?;
 
     let result_fp = state
         .open_long_governance_fee(base_amount, None)
         .to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
+}
+
+#[ts(extends = IStateParams)]
+struct CloseLongCurveFeeParams {
+    bond_amount: BigInt,
+    maturity_time: BigInt,
+    current_time: BigInt,
 }
 
 /// Calculates the curve fee paid in shares or base by traders when they close a
@@ -71,27 +76,26 @@ pub fn openLongGovernanceFee(
 ///
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongCurveFee(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    bondAmount: BigInt,
-    maturityTime: BigInt,
-    currentTime: BigInt,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeLongCurveFee(params: ICloseLongCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
     set_panic_hook();
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let bond_amount = bondAmount.to_fixed_point()?;
-    let maturity_time = maturityTime.to_u256()?;
-    let current_time = currentTime.to_u256()?;
+    let state = params.to_state()?;
 
     let result_fp = state
-        .close_long_curve_fee(bond_amount, maturity_time, current_time)
+        .close_long_curve_fee(
+            params.bond_amount().to_fixed()?,
+            params.maturity_time().to_u256()?,
+            params.current_time().to_u256()?,
+        )
         .to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
+}
+
+#[ts(extends = IStateParams)]
+struct CloseLongFlatFeeParams {
+    bond_amount: BigInt,
+    maturity_time: BigInt,
+    current_time: BigInt,
 }
 
 /// Calculates the flat fee paid in shares or base by traders when they close a
@@ -107,24 +111,14 @@ pub fn closeLongCurveFee(
 ///
 /// @param currentTime - The current timestamp (in seconds)
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongFlatFee(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    bondAmount: BigInt,
-    maturityTime: BigInt,
-    currentTime: BigInt,
-) -> Result<BigInt, HyperdriveWasmError> {
-    set_panic_hook();
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
+pub fn closeLongFlatFee(params: ICloseLongFlatFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+    let state = params.to_state()?;
 
-    let bond_amount = bondAmount.to_fixed_point()?;
-    let maturity_time = maturityTime.to_u256()?;
-    let current_time = currentTime.to_u256()?;
+    let result_fp = state.close_long_flat_fee(
+        params.bond_amount().to_fixed()?,
+        params.maturity_time().to_u256()?,
+        params.current_time().to_u256()?,
+    );
 
-    let result_fp = state.close_long_flat_fee(bond_amount, maturity_time, current_time);
-
-    result_fp.to_big_int()
+    result_fp.to_bigint()
 }

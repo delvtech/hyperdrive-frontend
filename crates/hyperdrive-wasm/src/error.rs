@@ -6,10 +6,10 @@ use wasm_bindgen::JsValue;
 /// a JsValue for passing to JavaScript.
 #[derive(Error, Debug)]
 pub enum HyperdriveWasmError {
-    #[error("TypeError: {0}\n    Location: {1}")]
-    TypeError(String, String),
-    #[error("Error: {0}\n    Location: {1}")]
-    Generic(String, String),
+    #[error("TypeError: {message:?}\n    Location: {location:?}")]
+    TypeError { message: String, location: String },
+    #[error("Error: {message:?}\n    Location: {location:?}")]
+    Generic { message: String, location: String },
 }
 
 // Macros //
@@ -17,7 +17,10 @@ pub enum HyperdriveWasmError {
 #[macro_export]
 macro_rules! error_at {
     ($location:expr, $($arg:tt)*) => {
-        $crate::error::HyperdriveWasmError::Generic(format!($($arg)*), $location.to_string())
+        $crate::error::HyperdriveWasmError::Generic {
+            message: format!($($arg)*),
+            location: $location.to_string(),
+        }
     };
 }
 
@@ -31,7 +34,10 @@ macro_rules! error {
 #[macro_export]
 macro_rules! type_error_at {
     ($location:expr, $($arg:tt)*) => {
-        $crate::error::HyperdriveWasmError::TypeError(format!($($arg)*), $location.to_string())
+        $crate::error::HyperdriveWasmError::TypeError {
+            message: format!($($arg)*),
+            location: $location.to_string()
+        }
     };
 }
 
@@ -92,7 +98,10 @@ where
     T: Debug,
 {
     fn to_error_at(&self, location: &Location) -> HyperdriveWasmError {
-        HyperdriveWasmError::Generic(format!("{:?}", self), location.to_string())
+        HyperdriveWasmError::Generic {
+            message: format!("{:?}", self),
+            location: location.to_string(),
+        }
     }
 }
 

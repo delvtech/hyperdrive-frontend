@@ -1,14 +1,24 @@
 use ethers::types::U256;
 use fixed_point::fixed;
-use hyperdrive_math::State;
 use js_sys::BigInt;
+use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 use crate::{
     error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{JsPoolConfig, JsPoolInfo},
+    types::IStateParams,
     utils::{ToBigInt, ToFixedPoint, ToU256},
 };
+
+#[ts(extends = IStateParams)]
+struct CalcAddLiquidityParams {
+    current_time: BigInt,
+    contribution: BigInt,
+    as_base: Option<bool>,
+    min_lp_share_price: Option<BigInt>,
+    min_apr: Option<BigInt>,
+    max_apr: Option<BigInt>,
+}
 
 /// Calculates the amount of lp shares the trader will receive after adding
 /// liquidity.
@@ -32,49 +42,34 @@ use crate::{
 /// @param maxApr - The maximum APR the trader will accept. Defaults to the max
 /// uint256.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcAddLiquidity(
-    poolInfo: JsPoolInfo,
-    poolConfig: JsPoolConfig,
-    currentTime: BigInt,
-    contribution: BigInt,
-    asBase: Option<bool>,
-    minLpSharePrice: Option<BigInt>,
-    minApr: Option<BigInt>,
-    maxApr: Option<BigInt>,
-) -> Result<BigInt, HyperdriveWasmError> {
-    let state = State {
-        info: poolInfo.try_into()?,
-        config: poolConfig.try_into()?,
-    };
-    let current_time = currentTime.to_u256()?;
-    let contribution = contribution.to_fixed_point()?;
-    let as_base = asBase.unwrap_or(true);
+pub fn calcAddLiquidity(params: ICalcAddLiquidityParams) -> Result<BigInt, HyperdriveWasmError> {
+    let state = params.to_state()?;
 
-    let min_lp_share_price = match minLpSharePrice {
-        Some(min_lp_share_price) => min_lp_share_price.to_fixed_point()?,
+    let min_lp_share_price = match params.min_lp_share_price() {
+        Some(min_lp_share_price) => min_lp_share_price.to_fixed()?,
         None => fixed!(0),
     };
 
-    let min_apr = match minApr {
-        Some(min_apr) => min_apr.to_fixed_point()?,
+    let min_apr = match params.min_apr() {
+        Some(min_apr) => min_apr.to_fixed()?,
         None => fixed!(0),
     };
 
-    let max_apr = match maxApr {
-        Some(max_apr) => max_apr.to_fixed_point()?,
-        None => U256::MAX.to_fixed_point()?,
+    let max_apr = match params.max_apr() {
+        Some(max_apr) => max_apr.to_fixed()?,
+        None => U256::MAX.to_fixed()?,
     };
 
     let result_fp = state
         .calculate_add_liquidity(
-            current_time,
-            contribution,
+            params.current_time().to_u256()?,
+            params.contribution().to_fixed()?,
             min_lp_share_price,
             min_apr,
             max_apr,
-            as_base,
+            params.as_base().unwrap_or(true),
         )
         .to_result()?;
 
-    result_fp.to_big_int()
+    result_fp.to_bigint()
 }
