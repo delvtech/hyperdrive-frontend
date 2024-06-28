@@ -1042,28 +1042,28 @@ mod tests {
 
         // Intersections //
 
-        let start_union = ts_type!((#base) & true & false);
-        assert_eq!(start_union.to_string(), "string & true & false");
+        let start_intersection = ts_type!((#base) & true & false);
+        assert_eq!(start_intersection.to_string(), "string & true & false");
 
-        let mid_union = ts_type!(true & (#base) & false);
-        assert_eq!(mid_union.to_string(), "true & string & false");
+        let mid_intersection = ts_type!(true & (#base) & false);
+        assert_eq!(mid_intersection.to_string(), "true & string & false");
 
-        let end_union = ts_type!(true & false & (#base));
-        assert_eq!(end_union.to_string(), "true & false & string");
+        let end_intersection = ts_type!(true & false & (#base));
+        assert_eq!(end_intersection.to_string(), "true & false & string");
 
-        let start_union_pair = ts_type!((#base) & true);
-        assert_eq!(start_union_pair.to_string(), "string & true");
+        let start_intersection_pair = ts_type!((#base) & true);
+        assert_eq!(start_intersection_pair.to_string(), "string & true");
 
-        let end_union_pair = ts_type!(true & (#base));
-        assert_eq!(end_union_pair.to_string(), "true & string");
+        let end_intersection_pair = ts_type!(true & (#base));
+        assert_eq!(end_intersection_pair.to_string(), "true & string");
 
-        let var_union = ts_type!((#base) & (#generic) & (#group));
+        let var_intersection = ts_type!((#base) & (#generic) & (#group));
         assert_eq!(
-            var_union.to_string(),
+            var_intersection.to_string(),
             "string & Set<string> & (string | number)"
         );
 
-        let var_union_pair = ts_type!((#base) & (#generic));
-        assert_eq!(var_union_pair.to_string(), "string & Set<string>");
+        let var_intersection_pair = ts_type!((#base) & (#generic));
+        assert_eq!(var_intersection_pair.to_string(), "string & Set<string>");
     }
 }
