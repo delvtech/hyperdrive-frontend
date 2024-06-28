@@ -18,7 +18,7 @@ export function CommonHeadTags({
   const chainId = useChainId();
 
   const domain =
-    chainId === 1 ? "app.hyperdrive.box/" : "testnet.hyperdrive.box/";
+    chainId === 1 ? "app.hyperdrive.box" : "testnet.hyperdrive.box";
 
   useEffect(() => {
     const script = document.createElement("script");
