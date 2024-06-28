@@ -310,9 +310,9 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * Adds liquidity to the pool.
    * @param destination - The account adding liquidity
    * @param contribution - The amount of base to supply
-   * @param minAPR - The minimum APR to accept
+   * @param minApr - The minimum APR to accept
    * @param minLpSharePrice - The minimum LP share price to accept
-   * @param maxAPR - The maximum APR to accept
+   * @param maxApr - The maximum APR to accept
    * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
    * @return lpShares The number of LP tokens created
@@ -322,9 +322,9 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     args: {
       destination,
       contribution,
-      minAPR,
+      minApr,
       minLpSharePrice,
-      maxAPR,
+      maxApr,
       asBase = true,
       extraData = DEFAULT_EXTRA_DATA,
     },
@@ -332,9 +332,9 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   }: ReadWriteParams<{
     destination: `0x${string}`;
     contribution: bigint;
-    minAPR: bigint;
+    minApr: bigint;
     minLpSharePrice: bigint;
-    maxAPR: bigint;
+    maxApr: bigint;
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
@@ -343,8 +343,8 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       {
         _contribution: contribution,
         _minLpSharePrice: minLpSharePrice,
-        _minApr: minAPR,
-        _maxApr: maxAPR,
+        _minApr: minApr,
+        _maxApr: maxApr,
         _options: { destination, asBase, extraData },
       },
       options,
