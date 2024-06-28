@@ -257,10 +257,7 @@ impl TsType {
                 Self::Base(other_name) => name == other_name,
                 _ => false,
             },
-            Self::Array(elem) => match other {
-                Self::Array(other_elem) => elem.contains(other_elem),
-                _ => false,
-            },
+            Self::Array(inner) => inner.contains(other),
             Self::Paren(inner) => inner.contains(other),
             Self::IndexedAccess(object, key) => object.contains(other) || key.contains(other),
             Self::Generic(name, args) => {
