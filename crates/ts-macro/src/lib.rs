@@ -7,7 +7,7 @@ use syn::{
     parse::{Parse, ParseStream},
     parse_macro_input,
     punctuated::Punctuated,
-    Error, Fields, FieldsNamed, Ident, ItemStruct, Lit, LitStr, Meta, MetaNameValue, NestedMeta,
+    Error, Fields, FieldsNamed, Ident, ItemStruct, Lit, Meta, MetaNameValue, NestedMeta,
     Token,
 };
 use ts_type::{ts_type, ToTsType, TsType};
