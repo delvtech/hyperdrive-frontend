@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import Helmet from "react-helmet";
+import { useChainId } from "wagmi";
 
 interface CommonHeadTagsProps {
   title?: string;
@@ -13,6 +15,22 @@ export function CommonHeadTags({
   title = defaultTitle,
   description = defaultDescription,
 }: CommonHeadTagsProps): JSX.Element {
+  const chainId = useChainId();
+
+  const domain =
+    chainId === 1 ? "app.hyperdrive.box" : "testnet.hyperdrive.box";
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = "https://plausible.io/js/script.js";
+    script.dataset.domain = domain;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [domain]);
+
   return (
     <Helmet>
       <meta
@@ -25,7 +43,7 @@ export function CommonHeadTags({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://testnet.hyperdrive.trade/" />
+      <meta property="og:url" content={`https://${domain}`} />
       <meta property="og:image" content="/sepolia-banner.jpg" />
     </Helmet>
   );
