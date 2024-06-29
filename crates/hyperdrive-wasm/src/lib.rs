@@ -37,7 +37,6 @@ struct CalcHprGivenAprParams {
     apr: BigInt,
     /// The position duration in seconds.
     position_duration: BigInt,
-    foo: Option<Number>,
 }
 
 /// Calculate the holding period return (HPR) given a non-compounding,
