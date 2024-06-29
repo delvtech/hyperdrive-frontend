@@ -83,72 +83,72 @@ impl IStateParams {
     }
 }
 
-impl TryInto<State> for StateParams {
+impl TryFrom<StateParams> for State {
     type Error = HyperdriveWasmError;
 
-    fn try_into(self) -> Result<State, HyperdriveWasmError> {
+    fn try_from(params: StateParams) -> Result<Self, Self::Error> {
         Ok(State {
-            info: self.pool_info.parse().try_into()?,
-            config: self.pool_config.parse().try_into()?,
+            info: params.pool_info.parse().try_into()?,
+            config: params.pool_config.parse().try_into()?,
         })
     }
 }
 
-impl TryInto<ihyperdrive::PoolInfo> for PoolInfo {
+impl TryFrom<PoolInfo> for ihyperdrive::PoolInfo {
     type Error = HyperdriveWasmError;
 
-    fn try_into(self) -> Result<ihyperdrive::PoolInfo, HyperdriveWasmError> {
+    fn try_from(params: PoolInfo) -> Result<Self, Self::Error> {
         Ok(ihyperdrive::PoolInfo {
-            share_reserves: self.share_reserves.to_u256()?,
-            share_adjustment: self.share_adjustment.to_i256()?,
-            bond_reserves: self.bond_reserves.to_u256()?,
-            lp_total_supply: self.lp_total_supply.to_u256()?,
-            vault_share_price: self.vault_share_price.to_u256()?,
-            longs_outstanding: self.longs_outstanding.to_u256()?,
-            long_average_maturity_time: self.long_average_maturity_time.to_u256()?,
-            shorts_outstanding: self.shorts_outstanding.to_u256()?,
-            short_average_maturity_time: self.short_average_maturity_time.to_u256()?,
-            withdrawal_shares_ready_to_withdraw: self
+            share_reserves: params.share_reserves.to_u256()?,
+            share_adjustment: params.share_adjustment.to_i256()?,
+            bond_reserves: params.bond_reserves.to_u256()?,
+            lp_total_supply: params.lp_total_supply.to_u256()?,
+            vault_share_price: params.vault_share_price.to_u256()?,
+            longs_outstanding: params.longs_outstanding.to_u256()?,
+            long_average_maturity_time: params.long_average_maturity_time.to_u256()?,
+            shorts_outstanding: params.shorts_outstanding.to_u256()?,
+            short_average_maturity_time: params.short_average_maturity_time.to_u256()?,
+            withdrawal_shares_ready_to_withdraw: params
                 .withdrawal_shares_ready_to_withdraw
                 .to_u256()?,
-            withdrawal_shares_proceeds: self.withdrawal_shares_proceeds.to_u256()?,
-            lp_share_price: self.lp_share_price.to_u256()?,
-            long_exposure: self.long_exposure.to_u256()?,
-            zombie_base_proceeds: self.zombie_base_proceeds.to_u256()?,
-            zombie_share_reserves: self.zombie_share_reserves.to_u256()?,
+            withdrawal_shares_proceeds: params.withdrawal_shares_proceeds.to_u256()?,
+            lp_share_price: params.lp_share_price.to_u256()?,
+            long_exposure: params.long_exposure.to_u256()?,
+            zombie_base_proceeds: params.zombie_base_proceeds.to_u256()?,
+            zombie_share_reserves: params.zombie_share_reserves.to_u256()?,
         })
     }
 }
 
-impl TryInto<ihyperdrive::PoolConfig> for PoolConfig {
+impl TryFrom<PoolConfig> for ihyperdrive::PoolConfig {
     type Error = HyperdriveWasmError;
 
-    fn try_into(self) -> Result<ihyperdrive::PoolConfig, HyperdriveWasmError> {
+    fn try_from(params: PoolConfig) -> Result<Self, Self::Error> {
         Ok(ihyperdrive::PoolConfig {
-            base_token: self.base_token.to_address()?,
-            sweep_collector: self.sweep_collector.to_address()?,
-            governance: self.governance.to_address()?,
-            fee_collector: self.fee_collector.to_address()?,
+            base_token: params.base_token.to_address()?,
+            sweep_collector: params.sweep_collector.to_address()?,
+            governance: params.governance.to_address()?,
+            fee_collector: params.fee_collector.to_address()?,
             fees: ihyperdrive::Fees {
-                curve: self.fees.curve().to_u256()?,
-                flat: self.fees.flat().to_u256()?,
-                governance_lp: self.fees.governance_lp().to_u256()?,
-                governance_zombie: self.fees.governance_zombie().to_u256()?,
+                curve: params.fees.curve().to_u256()?,
+                flat: params.fees.flat().to_u256()?,
+                governance_lp: params.fees.governance_lp().to_u256()?,
+                governance_zombie: params.fees.governance_zombie().to_u256()?,
             },
-            initial_vault_share_price: self.initial_vault_share_price.to_u256()?,
-            minimum_share_reserves: self.minimum_share_reserves.to_u256()?,
-            minimum_transaction_amount: self.minimum_transaction_amount.to_u256()?,
-            time_stretch: self.time_stretch.to_u256()?,
-            position_duration: self.position_duration.to_u256()?,
-            checkpoint_duration: self.checkpoint_duration.to_u256()?,
-            checkpoint_rewarder: self.checkpoint_rewarder.to_address()?,
-            linker_factory: self.linker_factory.to_address()?,
-            linker_code_hash: hex::decode(&self.linker_code_hash)
+            initial_vault_share_price: params.initial_vault_share_price.to_u256()?,
+            minimum_share_reserves: params.minimum_share_reserves.to_u256()?,
+            minimum_transaction_amount: params.minimum_transaction_amount.to_u256()?,
+            time_stretch: params.time_stretch.to_u256()?,
+            position_duration: params.position_duration.to_u256()?,
+            checkpoint_duration: params.checkpoint_duration.to_u256()?,
+            checkpoint_rewarder: params.checkpoint_rewarder.to_address()?,
+            linker_factory: params.linker_factory.to_address()?,
+            linker_code_hash: hex::decode(&params.linker_code_hash)
                 .to_result()?
                 .try_into()
                 .to_result()?,
-            vault_shares_token: self.vault_shares_token.to_address()?,
-            circuit_breaker_delta: self.circuit_breaker_delta.to_u256()?,
+            vault_shares_token: params.vault_shares_token.to_address()?,
+            circuit_breaker_delta: params.circuit_breaker_delta.to_u256()?,
         })
     }
 }
@@ -157,7 +157,7 @@ impl TryInto<ihyperdrive::PoolConfig> for PoolConfig {
 struct ClosePositionParams {
     /// The amount of bonds to close.
     bond_amount: BigInt,
-    /// The maturity timestamp of the long (in seconds).
+    /// The maturity timestamp of the position (in seconds).
     maturity_time: BigInt,
     /// The current timestamp (in seconds).
     current_time: BigInt,
