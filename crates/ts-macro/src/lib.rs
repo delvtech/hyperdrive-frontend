@@ -243,10 +243,13 @@ pub fn ts(attr: TokenStream, input: TokenStream) -> TokenStream {
         // Convert the Rust type to a TypeScript type
         let mut ts_field_type = match field_type.to_ts_type() {
             Ok(ts_type) => {
-                // see if the type includes `undefined` to determine if it's optional
-                if ts_type.contains(&ts_type!(undefined)) {
+                // if the type is `undefined` or unioned with `undefined`, make
+                // it optional
+                let undefined = ts_type!(undefined);
+                if ts_type == undefined || ts_type.is_union_with(&undefined) {
                     is_optional = true;
                 }
+
                 ts_type
             }
             Err(err) => macro_panic!("{}", err),

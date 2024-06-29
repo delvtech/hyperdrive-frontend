@@ -255,9 +255,17 @@ macro_rules! ts_type {
 // Methods //
 
 impl TsType {
-    /// find out if a type contains another type
-    /// e.g. `string | number` contains `string`
-    pub fn contains(&self, other: &TsType) -> bool {
+    /// Find out if this type is a union with another type
+    pub fn is_union_with(&self, other: &Self) -> bool {
+        match self {
+            Self::Union(types) => types.iter().any(|ty| ty == other),
+            _ => false,
+        }
+    }
+
+    /// Find out if this type contains another type e.g. `(string | number)[]`
+    /// contains `string`
+    pub fn contains(&self, other: &Self) -> bool {
         match self {
             Self::Base(name) => match other {
                 // compare the names of 2 base types
@@ -285,8 +293,8 @@ impl TsType {
         }
     }
 
-    /// convert a type to a generic with arguments
-    pub fn as_generic(self, args: Vec<TsType>) -> Self {
+    /// convert this type to a generic with arguments
+    pub fn as_generic(self, args: Vec<Self>) -> Self {
         match self {
             Self::Base(_) => Self::Generic(Box::new(self), args),
             Self::IndexedAccess(_, _) => Self::Generic(Box::new(self), args),
@@ -294,17 +302,17 @@ impl TsType {
         }
     }
 
-    /// convert a type to an indexed access type with a key
+    /// convert this type to an indexed access type with a key
     pub fn property(self, key: Self) -> Self {
         Self::IndexedAccess(Box::new(self), Box::new(key))
     }
 
-    /// place a type in an array
+    /// place this type in an array
     pub fn in_array(self) -> Self {
         Self::Array(Box::new(self))
     }
 
-    /// place a type in parentheses
+    /// place this type in parentheses
     pub fn in_parens(self) -> Self {
         match self {
             Self::Intersection(_) => Self::Paren(Box::new(self)),
@@ -314,7 +322,7 @@ impl TsType {
         }
     }
 
-    /// union a type with another
+    /// union this type with another
     pub fn or(self, other: Self) -> Self {
         match self {
             Self::Union(mut types) => match other {
@@ -341,7 +349,7 @@ impl TsType {
         }
     }
 
-    /// intersect a type with another
+    /// intersect this type with another
     pub fn and(self, other: Self) -> Self {
         match self {
             Self::Intersection(mut types) => match other {
@@ -368,7 +376,7 @@ impl TsType {
         }
     }
 
-    /// Attempts to join a left hand type with a right hand type.
+    /// Attempts to join this type with a right hand type.
     /// This is used during parsing and may not be intuitive for general use.
     pub fn join(self, other: Self) -> Result<Self, &'static str> {
         match self {
