@@ -153,7 +153,9 @@ macro_rules! build_ts_type {
 
     // comma
     ($stack:ident $ty:ident , $next:tt $($rest:tt)*) => {{
-        let top: $crate::TsType = $stack.pop().unwrap();
+        let top: $crate::TsType = $stack.pop().unwrap_or_else(|| {
+            panic!("Unexpected `,` found.");
+        });
         $stack.push(top.join($ty).unwrap());
         let mut next = $crate::ts_tt!($next);
         build_ts_type!($stack next $($rest)*)
@@ -163,7 +165,9 @@ macro_rules! build_ts_type {
     ($stack:ident $arg:ident > $($rest:tt)*) => {{
         let mut ty = $arg;
         loop {
-            let top: $crate::TsType = $stack.pop().unwrap();
+            let top: $crate::TsType = $stack.pop().unwrap_or_else(|| {
+                panic!("Unmatched `>` found.");
+            });
             ty = top.join(ty).unwrap();
             if let $crate::TsType::Generic(_, _) = ty {
                 break;
@@ -179,7 +183,9 @@ macro_rules! build_ts_type {
         let mut ty = $arg;
         let mut count = 0;
         loop {
-            let top: $crate::TsType = $stack.pop().unwrap();
+            let top: $crate::TsType = $stack.pop().unwrap_or_else(|| {
+                panic!("Unmatched `>` found.");
+            });
             ty = top.join(ty).unwrap();
             if let $crate::TsType::Generic(_, _) = ty {
                 count += 1;
