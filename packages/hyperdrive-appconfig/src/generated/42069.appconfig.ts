@@ -75,7 +75,7 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0xDB98dCd1F935De341F3836BA9B2f9d9Fcd141658",
+      address: "0x602e3f5F2Aa79987a75Ddeb3A5d0DEfA2f0F581C",
       version: "v1.0.14",
       name: "14d DAI-Maker DSR",
       decimals: 18,
@@ -95,7 +95,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1086822315949480019n,
+        initialVaultSharePrice: 1093248104936518609n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -115,7 +115,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xA402E44E47059C098Ef44b938969988f292254a2",
+      address: "0x7c1c7b473C8b626F456A5C0f2E720B0188D275FD",
       version: "v1.0.14",
       name: "30d DAI-Maker DSR",
       decimals: 18,
@@ -135,7 +135,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1086822342472494347n,
+        initialVaultSharePrice: 1093248187643995218n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -155,7 +155,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xa464482Ecf75F58f4db04F7BC0F82C9bad85c79D",
+      address: "0x97d988b1e7F31f9B3ee18980c6032124C5EA2F1F",
       version: "v1.0.14",
       name: "14d ETH-Lido stETH",
       decimals: 18,
@@ -175,7 +175,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1168613038369911566n,
+        initialVaultSharePrice: 1171412657816191340n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -195,7 +195,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xBDE4C5e6F7C5238EB28A77553a695C41653600D0",
+      address: "0x3a6b12190193080F59aC82dafa132d69B1264b73",
       version: "v1.0.14",
       name: "30d ETH-Lido stETH",
       decimals: 18,
@@ -215,7 +215,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1168613038369911566n,
+        initialVaultSharePrice: 1171412657816191340n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -235,7 +235,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x559105cc30382DD6E84aB405D54981D8751C6Fb9",
+      address: "0x2Fa206E25FBBa88B2FcD9BC6Fb38bB0fd7e58D83",
       version: "v1.0.14",
       name: "14d ETH-Rocket Pool ETH",
       decimals: 18,
@@ -255,7 +255,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1107744193853715386n,
+        initialVaultSharePrice: 1110034259742203542n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -275,7 +275,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x9b3f02BBf57c05E0eC7DeF20Bd0bb3Cf8eFd80aE",
+      address: "0x13096f00F05151B44afA118EC4548811154015AA",
       version: "v1.0.14",
       name: "30d ETH-Rocket Pool ETH",
       decimals: 18,
@@ -295,7 +295,7 @@ export const cloudChainAppConfig: AppConfig = {
         linkerFactory: "0x8F4201187Fa6660649c9c91EFD4f40ff4F0eE2E8",
         linkerCodeHash:
           "0x45a2b243c2f9973f87f326ad7532e16af76ef681ee29ea6369d21db274605753",
-        initialVaultSharePrice: 1107744193853715386n,
+        initialVaultSharePrice: 1110034259742203542n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
