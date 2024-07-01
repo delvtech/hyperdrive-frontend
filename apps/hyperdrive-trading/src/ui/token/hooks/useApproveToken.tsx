@@ -37,10 +37,8 @@ export function useApproveToken({
   const chainId = useChainId() as SupportedChainId;
   // Pad the approval amount if on sepolia
   let finalAmount = amount;
-  if (amount > 0 && amount !== MAX_UINT256) {
-    if (chainId === sepolia.id) {
-      finalAmount += parseUnits("1", 18);
-    }
+  if (chainId === sepolia.id && amount > 0 && amount !== MAX_UINT256) {
+    finalAmount += parseUnits("1", 18);
   }
 
   const approve = queryEnabled
