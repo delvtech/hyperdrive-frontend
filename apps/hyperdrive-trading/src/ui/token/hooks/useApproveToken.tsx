@@ -2,14 +2,16 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { usePublicClient, useWriteContract } from "wagmi";
+import { useChainId, usePublicClient, useWriteContract } from "wagmi";
 
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { SupportedChainId } from "src/chains/supportedChains";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, erc20Abi, parseUnits } from "viem";
+import { sepolia } from "viem/chains";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
@@ -32,10 +34,10 @@ export function useApproveToken({
   const publicClient = usePublicClient();
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
-
-  // Pad the approval amount
+  const chainId = useChainId() as SupportedChainId;
+  // Pad the approval amount if on sepolia
   let finalAmount = amount;
-  if (amount > 0 && amount !== MAX_UINT256) {
+  if (chainId === sepolia.id && amount > 0 && amount !== MAX_UINT256) {
     finalAmount += parseUnits("1", 18);
   }
 
