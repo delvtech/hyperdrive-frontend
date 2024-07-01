@@ -139,14 +139,16 @@ export function AddLiquidityForm({
     slippageAsBigInt,
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
+  const isBaseActiveToken = activeToken.address === baseToken.address;
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
-    amount: poolInfo?.lpSharePrice || 0n,
+    amount: !isBaseActiveToken
+      ? (poolInfo?.lpSharePrice ?? 0n) / (poolInfo?.vaultSharePrice ?? 0n)
+      : poolInfo?.lpSharePrice || 0n,
     percentage: slippageAsBigInt,
     decimals: activeToken.decimals,
     direction: "down",
   });
 
-  const isBaseActiveToken = activeToken.address === baseToken.address;
   // Shared params with the preview and the write method
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,

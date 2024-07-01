@@ -29,7 +29,7 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
       githubUrl: "https://github.com/delvtech",
       linkedinUrl: "https://www.linkedin.com/company/delv-tech/",
       xUrl: "https://twitter.com/delv_tech",
-      homepageUrl: "https://testnet.hyperdrive.trade/",
+      homepageUrl: window.location.origin,
       supportUrl: "mailto:support@delv.tech",
     },
   },
