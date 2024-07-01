@@ -84,7 +84,7 @@ pub fn idleShareReservesInBase(
     Ok(result_fp.to_u256()?.to_string())
 }
 
-/// Calculates the pool's present value in base
+/// Calculates the pool's present value in shares
 ///
 /// @param poolInfo - The current state of the pool
 ///

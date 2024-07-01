@@ -405,7 +405,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Gets the total present value of the pool.
+   * Gets the total present value of the pool in base.
    * @param options
    * @returns
    */
@@ -413,13 +413,23 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const liquidityString = hyperwasm.presentValue(
+    const result = hyperwasm.presentValue(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
       Math.floor(Date.now() / 1000).toString(),
     );
 
-    return BigInt(liquidityString);
+    const presentValueInShares = BigInt(result);
+
+    // TODO: move this into hyperwasm so that it simply returns the result in
+    // base instead of us having to convert it here
+    const decimals = await this.getDecimals();
+    const presentValueInBase = dnum.multiply(
+      [presentValueInShares, decimals],
+      [poolInfo.vaultSharePrice, decimals],
+    )[0];
+
+    return presentValueInBase;
   }
 
   /**
