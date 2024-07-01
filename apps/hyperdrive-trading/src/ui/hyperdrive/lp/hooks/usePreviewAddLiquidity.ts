@@ -11,9 +11,9 @@ interface UsePreviewAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
   contribution: bigint | undefined;
-  minAPR: bigint | undefined;
+  minApr: bigint | undefined;
   minLpSharePrice: bigint | undefined;
-  maxAPR: bigint | undefined;
+  maxApr: bigint | undefined;
   asBase?: boolean;
   enabled?: boolean;
   ethValue?: bigint;
@@ -29,9 +29,9 @@ export function usePreviewAddLiquidity({
   hyperdriveAddress,
   destination,
   contribution,
-  minAPR,
+  minApr,
   minLpSharePrice,
-  maxAPR,
+  maxApr,
   asBase = true,
   enabled = true,
   ethValue,
@@ -41,9 +41,9 @@ export function usePreviewAddLiquidity({
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
-    minAPR !== undefined &&
+    minApr !== undefined &&
     minLpSharePrice !== undefined &&
-    !!maxAPR &&
+    !!maxApr &&
     !!contribution &&
     !!destination &&
     !!publicClient &&
@@ -60,8 +60,8 @@ export function usePreviewAddLiquidity({
       hyperdrive: hyperdriveAddress,
       destination,
       contribution: contribution?.toString(),
-      minAPR: minAPR?.toString(),
-      maxAPR: maxAPR?.toString(),
+      minApr: minApr?.toString(),
+      maxApr: maxApr?.toString(),
       minLpSharePrice: minLpSharePrice?.toString(),
       asBase,
       ethValue: ethValue?.toString(),
@@ -83,9 +83,9 @@ export function usePreviewAddLiquidity({
           return readHyperdrive.previewAddLiquidity({
             destination,
             contribution: finalContribution,
-            minAPR,
+            minApr,
             minLpSharePrice,
-            maxAPR,
+            maxApr,
             asBase,
           });
         }

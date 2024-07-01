@@ -32,8 +32,7 @@ export function useRowData(
       ? async () => {
           const hyperdrives = findYieldSourceHyperdrives({
             yieldSourceId: protocol.id,
-            hyperdrives: appConfig.hyperdrives,
-            tokens: appConfig.tokens,
+            appConfig,
           });
           const rows = await Promise.all(
             hyperdrives.map(

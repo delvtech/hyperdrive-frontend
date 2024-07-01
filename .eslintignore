@@ -5,3 +5,6 @@ packages/hyperdrive-artifacts
 
 # generated files
 packages/hyperdrive-wasm
+
+# sandbox
+apps/sdk-sandbox

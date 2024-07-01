@@ -4,7 +4,7 @@ import { BlockNotFoundError } from "src/evm-client/errors/BlockNotFoundError";
 /**
  * A utility that tries to fetch a block from a given network and throws an
  * error if no block is found. Useful for unified error handling when fetching
- * blocks that may or may not exist.
+ * blocks that may not exist.
  * @throws `BlockNotFoundError`
  */
 export async function getBlockOrThrow(
