@@ -423,9 +423,10 @@ export class ReadHyperdrive extends ReadModel {
 
     // TODO: move this into hyperwasm so that it simply returns the result in
     // base instead of us having to convert it here
+    const decimals = await this.getDecimals();
     const presentValueInBase = dnum.multiply(
-      [presentValueInShares, 18],
-      [poolInfo.vaultSharePrice, 18],
+      [presentValueInShares, decimals],
+      [poolInfo.vaultSharePrice, decimals],
     )[0];
 
     return presentValueInBase;
