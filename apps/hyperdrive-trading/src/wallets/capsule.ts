@@ -1,7 +1,6 @@
 import {
   GetCapsuleOpts,
   OAuthMethod,
-  Theme,
   getCapsuleWallet,
 } from "@usecapsule/rainbowkit-wallet";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
@@ -17,10 +16,7 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
     apiKey: VITE_CAPSULE_API_KEY, // get one at usecapsule.com/beta
     constructorOpts: {
       // passkey configs
-      portalBackgroundColor: "#202F36",
-      portalPrimaryButtonColor: "#15FFAB",
-      portalTextColor: "#EFF4F6",
-      portalPrimaryButtonTextColor: "#202F36",
+      portalTheme: { backgroundColor: "#202F36", foregroundColor: "#EFF4F6" },
 
       // email configs
       // @ts-expect-error The enum for this type is not exported
@@ -33,10 +29,12 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
       supportUrl: "mailto:support@delv.tech",
     },
   },
+  theme: {
+    backgroundColor: "#00ff00",
+    foregroundColor: "#ff00ff",
+  },
   appName: "Hyperdrive",
-  theme: Theme.dark,
   logo: "/capsule-wordmark.png",
-
   oAuthMethods: [
     OAuthMethod.GOOGLE,
     OAuthMethod.TWITTER,
