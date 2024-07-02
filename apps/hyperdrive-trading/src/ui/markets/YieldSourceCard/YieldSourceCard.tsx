@@ -24,8 +24,7 @@ export function YieldSourceCard({
   // Extract the list of pools that have this yield source
   const pools = findYieldSourceHyperdrives({
     yieldSourceId: yieldSourceProtocol.id,
-    hyperdrives: appConfig.hyperdrives,
-    tokens: appConfig.tokens,
+    appConfig,
   });
 
   if (!pools.length) {
