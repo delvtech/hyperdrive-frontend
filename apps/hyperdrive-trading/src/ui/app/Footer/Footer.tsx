@@ -153,7 +153,6 @@ export default function Footer(): ReactElement {
         </a>
       </nav>
       <nav>
-        {/* TODO: Determine if company information is needed here */}
         <header className={footerTitleClassName}>About Us</header>
         <a
           target="_blank"
@@ -173,7 +172,6 @@ export default function Footer(): ReactElement {
         </a>
       </nav>
       <nav>
-        {/* TODO: Add links to legal pages */}
         <header className={footerTitleClassName}>Legal</header>
         <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
           Terms of Use
