@@ -115,14 +115,15 @@ export default function Footer(): ReactElement {
         >
           SDK
         </a>
-        <a
+        {/* TODO: Add this when the bug bounty program goes live */}
+        {/* <a
           target="_blank"
           rel="noreferrer"
           href="https://cantina.xyz/bounties/7fa99194-3a19-476d-92dd-f66289baf95e"
           className="daisy-link-hover daisy-link"
         >
           Bug Bounty
-        </a>
+        </a> */}
       </nav>
       <nav>
         <header className={footerTitleClassName}>Ecosystem</header>
