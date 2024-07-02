@@ -51,7 +51,7 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://hyperdrive.box/docs"
+          href="https://docs.hyperdrive.box"
           className="daisy-link-hover daisy-link"
         >
           Documentation
@@ -67,7 +67,7 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://docs-delv.gitbook.io/hyperdrive/security/security-for-the-hyperdrive-protocol"
+          href="https://docs.hyperdrive.box/security/security-for-the-hyperdrive-protocol"
           className="daisy-link-hover daisy-link"
         >
           Security
@@ -75,7 +75,7 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/delvtech/hyperdrive/blob/main/docs/Hyperdrive_Whitepaper.pdf"
+          href="https://arxiv.org/pdf/2404.05036"
           className="daisy-link-hover daisy-link"
         >
           Whitepaper
@@ -102,7 +102,7 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-trading-bots/quickstart"
+          href="https://docs.hyperdrive.box/hyperdrive-trading-bots/quickstart"
           className="daisy-link-hover daisy-link"
         >
           Trading Bots
