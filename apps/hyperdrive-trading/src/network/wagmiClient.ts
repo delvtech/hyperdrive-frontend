@@ -83,7 +83,7 @@ if (VITE_MAINNET_RPC_URL) {
 
   // TODO: push this into the custom wallets for local and cloudchain once
   // capsule support is verified
-  if (capsuleWallet) {
+  if (capsuleWallet && !customWallets.includes(capsuleWallet)) {
     customWallets.push(capsuleWallet);
   }
 }
