@@ -1,183 +1,164 @@
-use hyperdrive_wrappers::wrappers::ihyperdrive::{Fees, PoolConfig, PoolInfo};
-use serde::{Deserialize, Serialize};
+use hyperdrive_math::State;
+use hyperdrive_wrappers::wrappers::ihyperdrive;
+use js_sys::BigInt;
+use ts_macro::ts;
 use wasm_bindgen::prelude::*;
 
 use crate::{
-    error::HyperdriveWasmError,
+    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
     utils::{ToAddress, ToI256, ToU256},
 };
 
-// Add typescript types to the generated JS bindings
-#[wasm_bindgen(typescript_custom_section)]
-const JS_FEES: &'static str = r#"
-interface JsFees {
-    curve: string;
-    flat: string;
-    governanceLP: string;
-    governanceZombie: string;
-}"#;
+// Create wasm_bindgen compatible versions of the ihyperdrive types
 
-#[wasm_bindgen(typescript_custom_section)]
-const JS_POOL_CONFIG: &'static str = r#"
-interface JsPoolConfig {
-    baseToken: string,
-    initialVaultSharePrice: string,
-    minimumShareReserves: string,
-    minimumTransactionAmount: string,
-    positionDuration: string,
-    checkpointDuration: string,
-    checkpointRewarder: String,
-    timeStretch: string,
-    governance: string,
-    feeCollector: string,
-    sweepCollector: string,
-    fees: Fees,
-    linkerFactory: string,
-    linkerCodeHash: string,
-    vaultSharesToken: string,
-}"#;
-
-#[wasm_bindgen(typescript_custom_section)]
-const JS_POOL_INFO: &'static str = r#"
-interface JsPoolInfo {
-    shareReserves: string,
-    shareAdjustment: string,
-    bondReserves: string,
-    lpTotalSupply: string,
-    vaultSharePrice: string,
-    longsOutstanding: string,
-    longAverageMaturityTime: string,
-    shortsOutstanding: string,
-    shortAverageMaturityTime: string,
-    withdrawalSharesReadyToWithdraw: string,
-    withdrawalSharesProceeds: string,
-    lpSharePrice: string,
-    longExposure: string,
-    zombieBaseProceeds: string,
-    zombieShareReserves: string,
-}
-"#;
-
-// Reference the generated typescript types for argument types
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(typescript_type = "JsFees")]
-    pub type JsFees;
-
-    #[wasm_bindgen(typescript_type = "JsPoolConfig")]
-    pub type JsPoolConfig;
-
-    #[wasm_bindgen(typescript_type = "JsPoolInfo")]
-    pub type JsPoolInfo;
+#[ts]
+struct Fees {
+    curve: BigInt,
+    flat: BigInt,
+    #[ts(name = "governanceLP")]
+    governance_lp: BigInt,
+    governance_zombie: BigInt,
 }
 
-// Create serde-compatible structs for the generated typescript types
-#[derive(Serialize, Deserialize)]
-pub struct StringFees {
-    pub curve: String,
-    pub flat: String,
-    pub governanceLP: String,
-    pub governanceZombie: String,
+#[ts]
+struct PoolConfig {
+    initial_vault_share_price: BigInt,
+    minimum_share_reserves: BigInt,
+    minimum_transaction_amount: BigInt,
+    circuit_breaker_delta: BigInt,
+    position_duration: BigInt,
+    checkpoint_duration: BigInt,
+    time_stretch: BigInt,
+    fees: IFees,
+    #[ts(type = "`0x${string}`")]
+    checkpoint_rewarder: String,
+    #[ts(type = "`0x${string}`")]
+    fee_collector: String,
+    #[ts(type = "`0x${string}`")]
+    sweep_collector: String,
+    #[ts(type = "`0x${string}`")]
+    governance: String,
+    #[ts(type = "`0x${string}`")]
+    base_token: String,
+    #[ts(type = "`0x${string}`")]
+    vault_shares_token: String,
+    #[ts(type = "`0x${string}`")]
+    linker_factory: String,
+    #[ts(type = "`0x${string}`")]
+    linker_code_hash: String,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct StringPoolConfig {
-    pub baseToken: String,
-    pub initialVaultSharePrice: String,
-    pub minimumShareReserves: String,
-    pub minimumTransactionAmount: String,
-    pub positionDuration: String,
-    pub checkpointDuration: String,
-    pub checkpointRewarder: String,
-    pub timeStretch: String,
-    pub governance: String,
-    pub feeCollector: String,
-    pub sweepCollector: String,
-    pub fees: StringFees,
-    pub linkerFactory: String,
-    pub linkerCodeHash: String,
-    pub vaultSharesToken: String,
-    pub circuitBreakerDelta: String,
+#[ts]
+struct PoolInfo {
+    lp_total_supply: BigInt,
+    lp_share_price: BigInt,
+    bond_reserves: BigInt,
+    share_reserves: BigInt,
+    share_adjustment: BigInt,
+    vault_share_price: BigInt,
+    long_exposure: BigInt,
+    longs_outstanding: BigInt,
+    long_average_maturity_time: BigInt,
+    shorts_outstanding: BigInt,
+    short_average_maturity_time: BigInt,
+    withdrawal_shares_ready_to_withdraw: BigInt,
+    withdrawal_shares_proceeds: BigInt,
+    zombie_base_proceeds: BigInt,
+    zombie_share_reserves: BigInt,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct StringPoolInfo {
-    pub shareReserves: String,
-    pub shareAdjustment: String,
-    pub bondReserves: String,
-    pub lpTotalSupply: String,
-    pub vaultSharePrice: String,
-    pub longsOutstanding: String,
-    pub longAverageMaturityTime: String,
-    pub shortsOutstanding: String,
-    pub shortAverageMaturityTime: String,
-    pub withdrawalSharesReadyToWithdraw: String,
-    pub withdrawalSharesProceeds: String,
-    pub lpSharePrice: String,
-    pub longExposure: String,
-    pub zombieBaseProceeds: String,
-    pub zombieShareReserves: String,
+/// Base parameters that can be used to construct a State.
+#[ts]
+struct StateParams {
+    /// The current state of the pool.
+    pub pool_info: IPoolInfo,
+    /// The pool's configuration.
+    pub pool_config: IPoolConfig,
 }
 
-impl TryFrom<&JsPoolInfo> for PoolInfo {
+impl IStateParams {
+    /// Converts the parameters into a `ihyperdrive::State`.
+    pub fn to_state(&self) -> Result<State, HyperdriveWasmError> {
+        self.parse().try_into()
+    }
+}
+
+impl TryFrom<StateParams> for State {
     type Error = HyperdriveWasmError;
 
-    fn try_from(pool_info: &JsPoolInfo) -> Result<Self, HyperdriveWasmError> {
-        let js_pool_info: StringPoolInfo =
-            serde_wasm_bindgen::from_value(pool_info.into()).unwrap();
-        Ok(PoolInfo {
-            share_reserves: js_pool_info.shareReserves.to_u256()?,
-            share_adjustment: js_pool_info.shareAdjustment.to_i256()?,
-            bond_reserves: js_pool_info.bondReserves.to_u256()?,
-            long_exposure: js_pool_info.longExposure.to_u256()?,
-            vault_share_price: js_pool_info.vaultSharePrice.to_u256()?,
-            longs_outstanding: js_pool_info.longsOutstanding.to_u256()?,
-            shorts_outstanding: js_pool_info.shortsOutstanding.to_u256()?,
-            long_average_maturity_time: js_pool_info.longAverageMaturityTime.to_u256()?,
-            short_average_maturity_time: js_pool_info.shortAverageMaturityTime.to_u256()?,
-            lp_total_supply: js_pool_info.lpTotalSupply.to_u256()?,
-            lp_share_price: js_pool_info.lpSharePrice.to_u256()?,
-            withdrawal_shares_proceeds: js_pool_info.withdrawalSharesProceeds.to_u256()?,
-            withdrawal_shares_ready_to_withdraw: js_pool_info
-                .withdrawalSharesReadyToWithdraw
+    fn try_from(params: StateParams) -> Result<Self, Self::Error> {
+        Ok(State {
+            info: params.pool_info.parse().try_into()?,
+            config: params.pool_config.parse().try_into()?,
+        })
+    }
+}
+
+impl TryFrom<PoolInfo> for ihyperdrive::PoolInfo {
+    type Error = HyperdriveWasmError;
+
+    fn try_from(params: PoolInfo) -> Result<Self, Self::Error> {
+        Ok(ihyperdrive::PoolInfo {
+            share_reserves: params.share_reserves.to_u256()?,
+            share_adjustment: params.share_adjustment.to_i256()?,
+            bond_reserves: params.bond_reserves.to_u256()?,
+            lp_total_supply: params.lp_total_supply.to_u256()?,
+            vault_share_price: params.vault_share_price.to_u256()?,
+            longs_outstanding: params.longs_outstanding.to_u256()?,
+            long_average_maturity_time: params.long_average_maturity_time.to_u256()?,
+            shorts_outstanding: params.shorts_outstanding.to_u256()?,
+            short_average_maturity_time: params.short_average_maturity_time.to_u256()?,
+            withdrawal_shares_ready_to_withdraw: params
+                .withdrawal_shares_ready_to_withdraw
                 .to_u256()?,
-            zombie_base_proceeds: js_pool_info.zombieBaseProceeds.to_u256()?,
-            zombie_share_reserves: js_pool_info.zombieShareReserves.to_u256()?,
+            withdrawal_shares_proceeds: params.withdrawal_shares_proceeds.to_u256()?,
+            lp_share_price: params.lp_share_price.to_u256()?,
+            long_exposure: params.long_exposure.to_u256()?,
+            zombie_base_proceeds: params.zombie_base_proceeds.to_u256()?,
+            zombie_share_reserves: params.zombie_share_reserves.to_u256()?,
         })
     }
 }
 
-impl TryFrom<&JsPoolConfig> for PoolConfig {
+impl TryFrom<PoolConfig> for ihyperdrive::PoolConfig {
     type Error = HyperdriveWasmError;
 
-    fn try_from(pool_config: &JsPoolConfig) -> Result<Self, HyperdriveWasmError> {
-        let js_pool_config: StringPoolConfig =
-            serde_wasm_bindgen::from_value(pool_config.into()).unwrap();
-        Ok(PoolConfig {
-            base_token: js_pool_config.baseToken.to_address()?,
-            sweep_collector: js_pool_config.sweepCollector.to_address()?,
-            governance: js_pool_config.governance.to_address()?,
-            fee_collector: js_pool_config.feeCollector.to_address()?,
-            fees: Fees {
-                curve: js_pool_config.fees.curve.to_u256()?,
-                flat: js_pool_config.fees.flat.to_u256()?,
-                governance_lp: js_pool_config.fees.governanceLP.to_u256()?,
-                governance_zombie: js_pool_config.fees.governanceZombie.to_u256()?,
+    fn try_from(params: PoolConfig) -> Result<Self, Self::Error> {
+        Ok(ihyperdrive::PoolConfig {
+            base_token: params.base_token.to_address()?,
+            sweep_collector: params.sweep_collector.to_address()?,
+            governance: params.governance.to_address()?,
+            fee_collector: params.fee_collector.to_address()?,
+            fees: ihyperdrive::Fees {
+                curve: params.fees.curve().to_u256()?,
+                flat: params.fees.flat().to_u256()?,
+                governance_lp: params.fees.governance_lp().to_u256()?,
+                governance_zombie: params.fees.governance_zombie().to_u256()?,
             },
-            initial_vault_share_price: js_pool_config.initialVaultSharePrice.to_u256()?,
-            minimum_share_reserves: js_pool_config.minimumShareReserves.to_u256()?,
-            minimum_transaction_amount: js_pool_config.minimumTransactionAmount.to_u256()?,
-            time_stretch: js_pool_config.timeStretch.to_u256()?,
-            position_duration: js_pool_config.positionDuration.to_u256()?,
-            checkpoint_duration: js_pool_config.checkpointDuration.to_u256()?,
-            linker_factory: js_pool_config.linkerFactory.to_address()?,
-            linker_code_hash: hex::decode(&js_pool_config.linkerCodeHash)
-                .unwrap()
+            initial_vault_share_price: params.initial_vault_share_price.to_u256()?,
+            minimum_share_reserves: params.minimum_share_reserves.to_u256()?,
+            minimum_transaction_amount: params.minimum_transaction_amount.to_u256()?,
+            time_stretch: params.time_stretch.to_u256()?,
+            position_duration: params.position_duration.to_u256()?,
+            checkpoint_duration: params.checkpoint_duration.to_u256()?,
+            checkpoint_rewarder: params.checkpoint_rewarder.to_address()?,
+            linker_factory: params.linker_factory.to_address()?,
+            linker_code_hash: hex::decode(&params.linker_code_hash)
+                .to_result()?
                 .try_into()
-                .unwrap(),
-            vault_shares_token: js_pool_config.vaultSharesToken.to_address()?,
-            circuit_breaker_delta: js_pool_config.circuitBreakerDelta.to_u256()?,
-            checkpoint_rewarder: js_pool_config.checkpointRewarder.to_address()?,
+                .to_result()?,
+            vault_shares_token: params.vault_shares_token.to_address()?,
+            circuit_breaker_delta: params.circuit_breaker_delta.to_u256()?,
         })
     }
+}
+
+#[ts(extends = IStateParams)]
+struct ClosePositionParams {
+    /// The amount of bonds to close.
+    bond_amount: BigInt,
+    /// The maturity timestamp of the position (in seconds).
+    maturity_time: BigInt,
+    /// The current timestamp (in seconds).
+    current_time: BigInt,
 }

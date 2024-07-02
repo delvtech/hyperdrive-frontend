@@ -153,8 +153,8 @@ export function AddLiquidityForm({
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
     contribution: depositAmountAsBigInt,
-    minAPR: parseUnits("0", baseToken.decimals),
-    maxAPR: parseUnits("999", baseToken.decimals),
+    minApr: parseUnits("0", baseToken.decimals),
+    maxApr: parseUnits("999", baseToken.decimals),
     minLpSharePrice: minLpSharePriceAfterSlippage,
     asBase: isBaseActiveToken,
     destination: account,
