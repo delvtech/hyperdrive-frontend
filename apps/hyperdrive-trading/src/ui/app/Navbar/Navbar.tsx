@@ -4,6 +4,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { getChainName } from "src/chains/chainNames";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -42,7 +43,7 @@ export function Navbar(): ReactElement {
           <a
             target="_blank"
             rel="noreferrer"
-            href={`https://hyperdrive.blockanalitica.com/mainnet/wallets/${address}`}
+            href={`https://hyperdrive.blockanalitica.com/${getChainName(chainId)}/wallets/${address}`}
             className="daisy-btn rounded-full"
           >
             <span className="hidden sm:inline">My Portfolio</span>
