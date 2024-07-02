@@ -404,11 +404,11 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const presentValueInShares = hyperwasm.presentValue(
+    const presentValueInShares = hyperwasm.presentValue({
       poolInfo,
       poolConfig,
-      BigInt(Math.floor(Date.now() / 1000).toString()),
-    );
+      currentTime: BigInt(Math.floor(Date.now() / 1000).toString()),
+    });
 
     // TODO: move this into hyperwasm so that it simply returns the result in
     // base instead of us having to convert it here
