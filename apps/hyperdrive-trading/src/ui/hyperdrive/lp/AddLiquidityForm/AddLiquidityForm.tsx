@@ -140,10 +140,18 @@ export function AddLiquidityForm({
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const isBaseActiveToken = activeToken.address === baseToken.address;
+
+  // if depositing in shares, we need to also convert the minLpSharePrice to be
+  // priced in terms of shares
+  const lpSharePrice = !isBaseActiveToken
+    ? dnum.div(
+        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
+        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
+      )[0]
+    : poolInfo?.lpSharePrice || 0n;
+
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
-    amount: !isBaseActiveToken
-      ? (poolInfo?.lpSharePrice ?? 0n) / (poolInfo?.vaultSharePrice ?? 0n)
-      : poolInfo?.lpSharePrice || 0n,
+    amount: lpSharePrice,
     percentage: slippageAsBigInt,
     decimals: activeToken.decimals,
     direction: "down",

@@ -1,9 +1,11 @@
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -93,6 +95,25 @@ export function RemoveLiquidityForm({
 
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
+
+  // if withdrawingin shares, we need to also convert the minLpSharePrice to be
+  // priced in terms of shares
+  const isBaseActiveToken = activeWithdrawToken.address === baseToken.address;
+  const lpSharePrice = !isBaseActiveToken
+    ? dnum.div(
+        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
+        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
+      )[0]
+    : poolInfo?.lpSharePrice || 0n;
+
+  // TODO: Make a slippage component for this
+  const minOutputPerShare = adjustAmountByPercentage({
+    amount: lpSharePrice,
+    percentage: dnum.from("0.005", 18)[0],
+    decimals: 18,
+    direction: "down",
+  });
+
   const {
     proceeds: actualValueOut,
     previewRemoveLiquidityStatus,
@@ -101,7 +122,7 @@ export function RemoveLiquidityForm({
     destination: account,
     lpSharesIn,
     hyperdriveAddress: hyperdrive.address,
-    minOutputPerShare: 1n,
+    minOutputPerShare,
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
@@ -109,7 +130,7 @@ export function RemoveLiquidityForm({
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn,
-    minOutputPerShare: 1n,
+    minOutputPerShare,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
     asBase:

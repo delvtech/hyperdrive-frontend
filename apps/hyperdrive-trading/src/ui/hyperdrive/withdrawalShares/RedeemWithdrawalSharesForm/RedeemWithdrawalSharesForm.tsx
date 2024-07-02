@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   findYieldSourceToken,
@@ -80,17 +81,34 @@ export function RedeemWithdrawalSharesForm({
   const convertedAmountToWithdrawalShares = convertAmountToWithdrawalShares({
     maxRedeemableBaseProceeds,
     decimals: activeWithdrawToken.decimals,
-    maxWithdrawalSharesRedeemable: maxWithdrawalSharesRedeemable,
+    maxWithdrawalSharesRedeemable,
     amount: amountAsBigInt,
     asBase: isBaseTokenWithdrawal,
     vaultSharePrice: poolInfo?.vaultSharePrice,
+  });
+
+  // if withdrawing in shares, we need to also convert the minLpSharePrice to be
+  // priced in terms of shares
+  const lpSharePrice = !isBaseTokenWithdrawal
+    ? dnum.div(
+        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
+        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
+      )[0]
+    : poolInfo?.lpSharePrice || 0n;
+
+  // TODO: Make a slippage component for this
+  const minOutputPerShare = adjustAmountByPercentage({
+    amount: lpSharePrice,
+    percentage: dnum.from("0.02", 18)[0],
+    decimals: 18,
+    direction: "down",
   });
 
   const { baseProceeds, sharesProceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: convertedAmountToWithdrawalShares,
-      minOutputPerShare: 0n,
+      minOutputPerShare,
       destination: account,
     });
 
@@ -98,7 +116,7 @@ export function RedeemWithdrawalSharesForm({
     useRedeemWithdrawalShares({
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: convertedAmountToWithdrawalShares,
-      minOutputPerShare: 0n,
+      minOutputPerShare,
       destination: account,
       asBase:
         hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
