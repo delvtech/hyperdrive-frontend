@@ -9,11 +9,12 @@ import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { sepolia } from "viem/chains";
-import { useChainId } from "wagmi";
+import { mainnet, sepolia } from "viem/chains";
+import { useAccount, useChainId } from "wagmi";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const chainId = useChainId();
+  const { address } = useAccount();
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
@@ -37,7 +38,20 @@ export function Navbar(): ReactElement {
           </span>
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
         </a>
-
+        {chainId === mainnet.id && address ? (
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`https://hyperdrive.blockanalitica.com/mainnet/wallets/${address}`}
+            className="daisy-btn rounded-full"
+          >
+            <span className="hidden sm:inline">My Portfolio</span>
+            <span className="inline sm:hidden">
+              <ChartBarIcon className="inline h-6" />
+            </span>
+            <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
+          </a>
+        ) : null}
         {chainId === sepolia.id ? <VersionPicker /> : null}
 
         {import.meta.env.DEV && !isTailwindSmallScreen ? (
