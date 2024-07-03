@@ -83,9 +83,9 @@ export function usePreviewAddLiquidity({
           return readHyperdrive.previewAddLiquidity({
             destination,
             contribution: finalContribution,
-            minAPR: minApr,
+            minApr,
             minLpSharePrice,
-            maxAPR: maxApr,
+            maxApr,
             asBase,
           });
         }
