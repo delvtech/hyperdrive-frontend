@@ -159,14 +159,14 @@ export function AddLiquidityForm({
     direction: "down",
   });
 
-  // We can set the minAPR and maxAPR to +/- 2% of the current spot rate.
+  // We can set the minAPR and maxAPR to +/- 5% of the current spot rate.
   // For example, if the fixed rate is at 10%, the minApr would be set to 9.5%
   // and the maxApr would be set to 10.5%.
   // fixed rate @ 10% = .1
   // rate gaurd @ 5% = 0.05
   // minApr = .1 * (1 - .05)
   // maxApr = .1 * (1 + .05)
-  const rateGuard = dnum.from(0.05, 18); // 2% as an 18 digit number
+  const rateGuard = dnum.from(0.05, 18); // 5% as an 18 digit number
   const minApr = fixedApr
     ? dnum.mul([fixedApr.apr, 18], dnum.sub([BigInt(1e18), 18], rateGuard))[0]
     : undefined;
