@@ -18,8 +18,8 @@ export function LpApyCell({
   }
   if (!lpApy) {
     return (
-      <span className="gradient-text flex flex-row">
-        <SparklesIcon width={24} className="fill-primary stroke-none" />
+      <span className="flex flex-row">
+        <SparklesIcon width={24} className="fill-base-content stroke-none" />
         New
       </span>
     );

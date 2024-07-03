@@ -66,10 +66,10 @@ export function YieldStats({
                     })}
                   >
                     {lpApy === undefined ? (
-                      <span className="gradient-text flex flex-row">
+                      <span className="flex flex-row">
                         <SparklesIcon
                           width={24}
-                          className="fill-primary stroke-none"
+                          className="fill-base-content stroke-none"
                         />
                         New
                       </span>
