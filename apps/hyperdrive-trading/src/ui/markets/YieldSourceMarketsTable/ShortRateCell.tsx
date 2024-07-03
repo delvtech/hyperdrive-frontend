@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { parseUnits } from "viem";
 
 export function ShortRateCell({
   hyperdrive,
@@ -15,7 +14,7 @@ export function ShortRateCell({
   });
   const { shortApr } = useShortRate({
     hyperdriveAddress: hyperdrive.address,
-    bondAmount: parseUnits("1", hyperdrive.decimals),
+    bondAmount: BigInt(1e15),
     variableApy: vaultRate?.vaultRate,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
   });
