@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.3.1
+
+### Patch Changes
+
+- 5913c54: Change "APR" to "Apr"
+- Updated dependencies [5913c54]
+  - @delvtech/hyperdrive-wasm@0.15.0
+
 ## 2.3.0
 
 ### Minor Changes
