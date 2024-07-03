@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
-import { parseUnits } from "src/base/parseUnits";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
@@ -24,7 +23,7 @@ export function ShortRateStat({
   });
 
   const { shortApr, shortRoi, shortRateStatus } = useShortRate({
-    bondAmount: parseUnits("1", 18),
+    bondAmount: BigInt(1e15),
     hyperdriveAddress: hyperdrive.address,
     variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
