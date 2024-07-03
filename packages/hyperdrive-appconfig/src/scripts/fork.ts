@@ -2,30 +2,30 @@ import "dotenv/config";
 
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { cloudChain } from "src/chains/cloudChain";
+import { fork } from "src/chains/fork";
 import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 
-const cloudChainNodeRpcUrl = process.env.CLOUDCHAIN_NODE_RPC_URL as string;
+const forkNodeRpcUrl = process.env.FORK_NODE_RPC_URL as string;
 
 const publicClient = createPublicClient({
-  chain: cloudChain,
-  transport: http(cloudChainNodeRpcUrl),
+  chain: fork,
+  transport: http(forkNodeRpcUrl),
 });
 
 fetchRegistryAddresses({
-  registryAddress: process.env.CLOUDCHAIN_REGISTRY_ADDRESS as `0x${string}`,
+  registryAddress: process.env.FORK_REGISTRY_ADDRESS as `0x${string}`,
   publicClient,
 }).then(async (addresses) => {
   const appConfig = await getAppConfigFromRegistryAddresses({
     addresses,
-    chainId: cloudChain.id,
+    chainId: fork.id,
     publicClient,
   });
 
   writeAppConfigToFile({
-    filename: `./src/generated/${cloudChain.id}.appconfig.ts`,
+    filename: `./src/generated/${fork.id}.appconfig.ts`,
     appConfig,
-    appConfigName: "cloudChainAppConfig",
+    appConfigName: "forkAppConfig",
   });
 });

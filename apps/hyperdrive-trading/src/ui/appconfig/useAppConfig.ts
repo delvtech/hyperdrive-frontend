@@ -1,6 +1,6 @@
 import {
   AppConfig,
-  cloudChainAppConfig,
+  forkAppConfig,
   mainnetAppConfig,
   sepoliaAppConfig,
 } from "@hyperdrive/appconfig";
@@ -16,8 +16,8 @@ export function useAppConfig(): AppConfig {
       // Return local config when available
       return {} as AppConfig;
 
-    case 42069: // cloudchain
-      return cloudChainAppConfig;
+    case 42069: // fork
+      return forkAppConfig;
 
     case mainnet.id:
       return mainnetAppConfig;

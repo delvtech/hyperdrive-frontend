@@ -5,14 +5,14 @@ Pre-generated metadata for applications that use Hyperdrive.
 # Example Usage
 
 ```ts
-import { cloudChainAppConfig } from "@hyperdrive/appconfig";
+import { forkAppConfig } from "@hyperdrive/appconfig";
 
 // 1. Grab the first hyperdrive in the app config
 const { poolConfig, baseToken: baseTokenAddress } =
-  cloudChainAppConfig.hyperdrives[0];
+  forkAppConfig.hyperdrives[0];
 
 // 2. Lookup its base token
-const baseToken = cloudChainAppConfig.tokens.find(
+const baseToken = forkAppConfig.tokens.find(
   (token) => token.address === baseTokenAddress,
 );
 
@@ -23,7 +23,7 @@ const { name, symbol, decimals, iconUrl } = baseToken;
 # Building the package
 
 1. Add .env variables for chains where Hyperdrive is deployed
-2. Run the appropriate `gen:local` or `gen:cloudchain` script (see package.json)
+2. Run the appropriate `gen:local` or `gen:fork` script (see package.json)
 3. Run the `build` script.
 
 Note: The `generated/` folder is checked into the repo. You'll want to

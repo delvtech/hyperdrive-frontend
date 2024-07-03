@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "gen:local": "npx tsx ./src/scripts/local.ts",
-    "gen:cloudchain": "npx tsx ./src/scripts/cloudChain.ts",
+    "gen:fork": "npx tsx ./src/scripts/fork.ts",
+    "gen:clone": "npx tsx ./src/scripts/clone.ts",
     "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
     "gen:mainnet": "npx tsx ./src/scripts/mainnet.ts",
     "build": "tsup src/index.ts --minify --format esm --clean --dts",

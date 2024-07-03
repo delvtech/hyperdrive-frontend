@@ -8,7 +8,7 @@ import {
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { cloudChain } from "src/chains/cloudChain";
+import { fork } from "src/chains/fork";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -98,9 +98,7 @@ function AvailableAsset({
   });
 
   const chainId = useChainId() as SupportedChainId;
-  const isTestnetChain = [cloudChain.id, sepolia.id, foundry.id].includes(
-    chainId,
-  );
+  const isTestnetChain = [fork.id, sepolia.id, foundry.id].includes(chainId);
   const hasFaucet = chainId === sepolia.id;
 
   return (

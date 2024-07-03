@@ -1,7 +1,7 @@
 import { foundry, mainnet, sepolia } from "viem/chains";
 
 export const supportedChainIds = [
-  42069, // cloud chain
+  42069, // fork
   foundry.id,
   mainnet.id,
   sepolia.id,

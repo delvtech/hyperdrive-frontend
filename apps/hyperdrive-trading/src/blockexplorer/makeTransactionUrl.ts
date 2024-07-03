@@ -13,7 +13,7 @@ export function makeTransactionURL(
       return `https://sepolia.etherscan.io/tx/${transactionHash}`;
     case foundry.id:
       return `#`;
-    case 42069: // cloud chain
+    case 42069: // Fork
       return `#`;
     default:
       assertNever(chainId);
