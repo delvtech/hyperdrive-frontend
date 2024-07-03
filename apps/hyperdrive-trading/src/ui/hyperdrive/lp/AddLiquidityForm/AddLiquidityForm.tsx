@@ -183,7 +183,6 @@ export function AddLiquidityForm({
     asBase: isBaseActiveToken,
     destination: account,
     ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
-    enabled: hasEnoughAllowance && hasEnoughBalance,
   };
 
   const {
@@ -206,7 +205,9 @@ export function AddLiquidityForm({
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
     enabled:
-      addLiquidityParams.enabled && addLiquidityPreviewStatus === "success",
+      hasEnoughAllowance &&
+      hasEnoughBalance &&
+      addLiquidityPreviewStatus === "success",
     onSubmitted: () => {
       (window as any)["add-lp"].close();
     },
