@@ -4,7 +4,7 @@ interface AdjustAmountByPercentageOptions {
    */
   amount: bigint;
   /**
-   * The percentage to adjust it by, eg: 1n for 1%
+   * The percentage to adjust it by, eg: 1e18 for 1%
    */
   percentage: bigint;
 
@@ -24,7 +24,7 @@ interface AdjustAmountByPercentageOptions {
  * adjustAmountByPercentage({
  *   amount: parseUnits("100", 18),
  *   decimals: 18,
- *   percentage: 1n
+ *   percentage: BigInt(1e18),
  *   direction: "down",
  * }) === parseUnits("99")
  * ```
@@ -33,7 +33,7 @@ interface AdjustAmountByPercentageOptions {
  * adjustAmountByPercentage({
  *   amount: parseUnits("100", 18),
  *   decimals: 18,
- *   percentage: 1n
+ *   percentage: BigInt(1e18),
  *   direction: "up",
  * }) === parseUnits("101")
  * ```
