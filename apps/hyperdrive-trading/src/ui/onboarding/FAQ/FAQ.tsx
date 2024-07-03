@@ -43,10 +43,10 @@ export function FAQEntries(): JSX.Element {
               key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
-                "daisy-btn-md justify-start text-left text-md hover:opacity-100",
+                "daisy-btn-md justify-start text-left text-md hover:opacity-100 ",
                 {
-                  "font-normal opacity-80 ": selectedFAQKey !== key,
-                  "font-medium": selectedFAQKey === key,
+                  "daisy-link font-normal opacity-80 ": selectedFAQKey !== key,
+                  "font-medium ": selectedFAQKey === key,
                 },
               )}
             >
@@ -57,7 +57,7 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h4 className="mb-4 ">{selectedFAQ?.question}</h4>
+          <h4 className="mb-4 font-medium">{selectedFAQ?.question}</h4>
           <div className="opacity-80">{selectedFAQ?.answer}</div>
         </div>
       </div>
