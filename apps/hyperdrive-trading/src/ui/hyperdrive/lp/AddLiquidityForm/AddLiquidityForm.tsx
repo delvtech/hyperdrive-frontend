@@ -9,7 +9,6 @@ import {
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateRatio } from "src/base/calculateRatio";
-import { parseUnits } from "src/base/parseUnits";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -18,6 +17,7 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -72,6 +72,8 @@ export function AddLiquidityForm({
   const shareTokenDepositsEnabled =
     hyperdrive.depositOptions.isShareTokenDepositsEnabled;
   const tokenOptions = [];
+
+  const { fixedApr } = useFixedRate(hyperdrive.address);
 
   if (baseTokenDepositEnabled) {
     tokenOptions.push({
@@ -157,12 +159,26 @@ export function AddLiquidityForm({
     direction: "down",
   });
 
-  // Shared params with the preview and the write method
+  // We can set the minAPR and maxAPR to +/- 5% of the current spot rate.
+  // For example, if the fixed rate is at 10%, the minApr would be set to 9.5%
+  // and the maxApr would be set to 10.5%.
+  // fixed rate @ 10% = .1
+  // rate gaurd @ 5% = 0.05
+  // minApr = .1 * (1 - .05)
+  // maxApr = .1 * (1 + .05)
+  const rateGuard = dnum.from(0.05, 18); // 5% as an 18 digit number
+  const minApr = fixedApr
+    ? dnum.mul([fixedApr.apr, 18], dnum.sub([BigInt(1e18), 18], rateGuard))[0]
+    : undefined;
+  const maxApr = fixedApr
+    ? dnum.mul([fixedApr.apr, 18], dnum.add([BigInt(1e18), 18], rateGuard))[0]
+    : undefined;
+
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
     contribution: depositAmountAsBigInt,
-    minApr: parseUnits("0", baseToken.decimals),
-    maxApr: parseUnits("999", baseToken.decimals),
+    minApr,
+    maxApr,
     minLpSharePrice: minLpSharePriceAfterSlippage,
     asBase: isBaseActiveToken,
     destination: account,
