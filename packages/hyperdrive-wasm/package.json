@@ -4,7 +4,7 @@
     "Ryan Goree <ryan@delv.tech>",
     "Danny Delott <dannyd@delv.tech>"
   ],
-  "version": "0.14.4",
+  "version": "0.15.0",
   "license": "AGPL-3.0",
   "files": [
     "hyperdrive_wasm.js",

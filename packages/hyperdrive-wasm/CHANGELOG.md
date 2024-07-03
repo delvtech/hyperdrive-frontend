@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.15.0
+
+### Minor Changes
+
+- 5913c54: Refactored all inputs and outputs to use proper types
+
 ## 0.14.4
 
 ### Patch Changes
