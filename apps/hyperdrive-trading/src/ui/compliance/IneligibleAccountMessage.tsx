@@ -30,8 +30,8 @@ export function IneligibleAccountMessage({
         className,
       )}
     >
-      <h2>Ineligible Account</h2>
-      <p>This account is not eligible to use this website.</p>
+      <h2>Ineligible Wallet Address</h2>
+      <p>This wallet address is not eligible to use this website.</p>
     </div>
   ) : undefined;
 }
