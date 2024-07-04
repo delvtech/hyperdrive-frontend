@@ -48,12 +48,12 @@
     ]
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1"
   },
-  "packageManager": "yarn@1.22.18",
+  "packageManager": "yarn@1.22.19",
   "msw": {
     "workerDirectory": [
       "apps/hyperdrive-trading/src/public"
