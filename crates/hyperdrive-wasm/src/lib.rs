@@ -21,6 +21,11 @@ pub fn initialize() {
     set_panic_hook();
 }
 
+#[wasm_bindgen(skip_jsdoc)]
+pub fn getVersion() -> String {
+    env!("CARGO_PKG_VERSION").to_string()
+}
+
 /// Calculates the pool's spot price, i.e. the price to open a long of 1.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPrice(params: IStateParams) -> Result<BigInt, HyperdriveWasmError> {
