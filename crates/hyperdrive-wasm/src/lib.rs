@@ -9,7 +9,7 @@ mod utils;
 
 use error::{HyperdriveWasmError, ToHyperdriveWasmResult};
 use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy};
-use js_sys::{BigInt, Number};
+use js_sys::BigInt;
 use ts_macro::ts;
 use types::IStateParams;
 use utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToI256, ToU256};
