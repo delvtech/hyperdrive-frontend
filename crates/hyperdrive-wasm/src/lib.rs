@@ -9,7 +9,7 @@ mod utils;
 
 use error::{HyperdriveWasmError, ToHyperdriveWasmResult};
 use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy};
-use js_sys::{BigInt, Number};
+use js_sys::BigInt;
 use ts_macro::ts;
 use types::IStateParams;
 use utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToI256, ToU256};
@@ -19,6 +19,11 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen(start)]
 pub fn initialize() {
     set_panic_hook();
+}
+
+#[wasm_bindgen(skip_jsdoc)]
+pub fn getVersion() -> String {
+    env!("CARGO_PKG_VERSION").to_string()
 }
 
 /// Calculates the pool's spot price, i.e. the price to open a long of 1.
