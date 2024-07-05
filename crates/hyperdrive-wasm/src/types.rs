@@ -142,7 +142,7 @@ impl TryFrom<PoolConfig> for ihyperdrive::PoolConfig {
             checkpoint_duration: params.checkpoint_duration.to_u256()?,
             checkpoint_rewarder: params.checkpoint_rewarder.to_address()?,
             linker_factory: params.linker_factory.to_address()?,
-            linker_code_hash: hex::decode(&params.linker_code_hash)
+            linker_code_hash: const_hex::decode(&params.linker_code_hash)
                 .to_result()?
                 .try_into()
                 .to_result()?,

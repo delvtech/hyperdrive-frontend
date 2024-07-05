@@ -14,18 +14,12 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-
 # external
-ethers = { version = "2.0", features = ["abigen", "ws"] }
-hex = { package = "const-hex", version = "1.6", features = ["hex"] }
-js-sys = "0.3.64"
-wasm-bindgen = { version = "0.2.86" }
-
-# The `console_error_panic_hook` crate provides better debugging of panics by
-# logging them with `console.error`. This is great for development, but requires
-# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
-# code size when deploying.
 console_error_panic_hook = { version = "0.1.7", optional = true }
+const-hex = "1.12.0"
+ethers = "2.0.14"
+js-sys = "0.3.64"
+wasm-bindgen = "0.2.86"
 
 # needed to enable the "js" feature for compatibility with wasm,
 # see https://docs.rs/getrandom/#webassembly-support
@@ -37,8 +31,8 @@ hyperdrive-math = "0.16.8"
 hyperdrive-wrappers = "0.16.8"
 
 # workspace
-ts-macro = { path = "../ts-macro" }
 delv-core = { path = "../delv-core" }
+ts-macro = { path = "../ts-macro" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.36"
