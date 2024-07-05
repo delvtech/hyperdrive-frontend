@@ -1,6 +1,6 @@
 use delv_core::{
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
-    utils::{ToBigInt, ToU256},
 };
 use js_sys::BigInt;
 use wasm_bindgen::prelude::wasm_bindgen;

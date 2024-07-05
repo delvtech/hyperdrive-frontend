@@ -1,6 +1,6 @@
 use delv_core::{
+    conversions::{ToAddress, ToI256, ToU256},
     error::{Error, ToResult},
-    utils::{ToAddress, ToI256, ToU256},
 };
 use hyperdrive_math::State;
 use hyperdrive_wrappers::wrappers::ihyperdrive;

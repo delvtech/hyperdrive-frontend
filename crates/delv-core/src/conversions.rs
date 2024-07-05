@@ -11,7 +11,7 @@ use crate::{
 
 // Address //
 
-/// Convert a value to a `Result<Address, HyperdriveWasmError>` via
+/// Convert a value to a `Result<Address, Error>` via
 /// `.to_address()`
 pub trait ToAddress {
     fn to_address(&self) -> Result<Address, Error>;
@@ -44,7 +44,7 @@ impl ToAddress for JsValue {
 
 // U256 //
 
-/// Convert a value to a `Result<U256, HyperdriveWasmError>` via `.to_u256()`
+/// Convert a value to a `Result<U256, Error>` via `.to_u256()`
 pub trait ToU256 {
     fn to_u256(&self) -> Result<U256, Error>;
 }
@@ -95,7 +95,7 @@ impl ToU256 for FixedPoint {
 
 // I256 //
 
-/// Convert a value to a `Result<I256, HyperdriveWasmError>` via `.to_i256()`
+/// Convert a value to a `Result<I256, Error>` via `.to_i256()`
 pub trait ToI256 {
     fn to_i256(&self) -> Result<I256, Error>;
 }
@@ -146,13 +146,13 @@ impl ToI256 for FixedPoint {
 
 // FixedPoint //
 
-/// Convert a value to a `Result<FixedPoint, HyperdriveWasmError>` via
-/// `.to_fixed_point()`
+/// Convert a value to a `Result<FixedPoint, Error>` via
+/// `.to_fixed()`
 pub trait ToFixedPoint {
     fn to_fixed(&self) -> Result<FixedPoint, Error>;
 }
 
-// If a value can `.to_u256()`, it can `.to_fixed_point()`
+// If a value can `.to_u256()`, it can `.to_fixed()`
 impl<T> ToFixedPoint for T
 where
     T: ToU256,
@@ -189,7 +189,7 @@ macro_rules! bigint {
     };
 }
 
-/// Convert a value to a `Result<BigInt, HyperdriveWasmError>` via
+/// Convert a value to a `Result<BigInt, Error>` via
 /// `.to_bigint()`
 pub trait ToBigInt {
     fn to_bigint(&self) -> Result<BigInt, Error>;
@@ -280,7 +280,7 @@ mod tests {
     }
 
     #[test]
-    fn test_to_fixed_point() {
+    fn test_to_fixed() {
         assert_eq!("0".to_fixed().unwrap(), fixed!(0));
         assert_eq!("1".to_fixed().unwrap(), fixed!(1));
         assert_eq!(

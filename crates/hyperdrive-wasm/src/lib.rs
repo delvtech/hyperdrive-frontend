@@ -6,8 +6,8 @@ mod short;
 mod types;
 
 use delv_core::{
+    conversions::{ToBigInt, ToFixedPoint, ToI256, ToU256},
     error::{Error, ToResult},
-    utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
 };
 use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy};
 use js_sys::BigInt;

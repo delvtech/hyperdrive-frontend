@@ -1,6 +1,6 @@
 use delv_core::{
+    conversions::{ToBigInt, ToFixedPoint, ToI256, ToU256},
     error::{Error, ToResult},
-    utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
 };
 use js_sys::BigInt;
 use ts_macro::ts;
