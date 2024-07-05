@@ -518,7 +518,6 @@ dependencies = [
  "js-sys",
  "thiserror",
  "wasm-bindgen",
- "wasm-bindgen-futures",
 ]
 
 [[package]]

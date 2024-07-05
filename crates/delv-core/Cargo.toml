@@ -5,11 +5,10 @@ edition = "2021"
 
 [dependencies]
 # external
-ethers = { version = "2.0" }
+ethers = "2.0.14"
 js-sys = "0.3.64"
 thiserror = "1.0"
-wasm-bindgen = { version = "0.2.86" }
-wasm-bindgen-futures = "0.4.36"
+wasm-bindgen = "0.2.86"
 
 # internal
 fixedpointmath = "0.16.8"
