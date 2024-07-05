@@ -157,6 +157,7 @@ macro_rules! build_ts_type {
             panic!("Unexpected `,` found.");
         });
         $stack.push(top.join($ty).unwrap());
+        #[allow(unused_mut)]
         let mut next = $crate::ts_tt!($next);
         build_ts_type!($stack next $($rest)*)
     }};
@@ -225,6 +226,7 @@ macro_rules! ts_type {
     // array
     ($elem:tt [] $($rest:tt)*) => {{
         let mut stack = vec![];
+        #[allow(unused_mut)]
         let mut array = $crate::TsType::Array(Box::new($crate::ts_tt!($elem)));
         $crate::build_ts_type!(stack array $($rest)*)
     }};
@@ -240,6 +242,7 @@ macro_rules! ts_type {
     ($generic:tt < $arg:tt $($rest:tt)*) => {{
         let generic = $crate::TsType::Generic(Box::new(ts_tt!($generic)), vec![]);
         let mut stack = vec![generic];
+        #[allow(unused_mut)]
         let mut arg = ts_tt!($arg);
         build_ts_type!(stack arg $($rest)*)
     }};
@@ -247,6 +250,7 @@ macro_rules! ts_type {
     // base
     ($base:tt $($rest:tt)*) => {{
         let mut stack = vec![];
+        #[allow(unused_mut)]
         let mut base = $crate::ts_tt!($base);
         $crate::build_ts_type!(stack base $($rest)*)
     }};
