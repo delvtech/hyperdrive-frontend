@@ -17,8 +17,8 @@ default = ["console_error_panic_hook"]
 # external
 console_error_panic_hook = { version = "0.1.7", optional = true }
 const-hex = "1.12.0"
-ethers = "2.0.14"
-js-sys = "0.3.64"
+ethers = { version = "2.0.14", default-features = false }
+js-sys = "0.3.69"
 wasm-bindgen = "0.2.86"
 
 # needed to enable the "js" feature for compatibility with wasm,

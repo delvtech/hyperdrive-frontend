@@ -3210,16 +3210,10 @@ name = "ts-macro"
 version = "0.1.0"
 dependencies = [
  "heck 0.5.0",
- "js-sys",
- "lazy_static",
- "proc-macro2",
  "quote",
- "regex",
  "syn 1.0.109",
- "thiserror",
  "ts-type",
  "wasm-bindgen",
- "web-sys",
 ]
 
 [[package]]
