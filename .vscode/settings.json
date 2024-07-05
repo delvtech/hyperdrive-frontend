@@ -4,13 +4,16 @@
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
+    "delv",
     "delvtech",
     "dnum",
+    "fixedpointmath",
     "hyperwasm",
     "ihyperdrive",
     "Mintable",
     "Reimagined",
     "signale",
+    "thiserror",
     "viem"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"

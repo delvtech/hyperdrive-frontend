@@ -1,14 +1,14 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToBigInt, ToU256},
+};
 use js_sys::BigInt;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IClosePositionParams,
-    utils::{ToBigInt, ToU256},
-};
+use crate::types::IClosePositionParams;
 
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcCloseLong(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcCloseLong(params: IClosePositionParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state

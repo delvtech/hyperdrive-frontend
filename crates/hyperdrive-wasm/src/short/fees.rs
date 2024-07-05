@@ -1,12 +1,12 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToBigInt, ToFixedPoint, ToU256},
+};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{IClosePositionParams, IStateParams},
-    utils::{ToBigInt, ToFixedPoint, ToU256},
-};
+use crate::types::{IClosePositionParams, IStateParams};
 
 #[ts(extends = IStateParams)]
 struct OpenShortCurveFeeParams {
@@ -16,7 +16,7 @@ struct OpenShortCurveFeeParams {
 
 /// Calculates the curve fee paid by the trader when they open a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn openShortCurveFee(params: IOpenShortCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn openShortCurveFee(params: IOpenShortCurveFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let bond_amount = params.bond_amount().to_fixed()?;
 
@@ -33,9 +33,7 @@ struct OpenShortFlatFeeParams {
 
 /// Calculates the governance fee paid by the trader when they open a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn openShortGovernanceFee(
-    params: IOpenShortFlatFeeParams,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn openShortGovernanceFee(params: IOpenShortFlatFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let bond_amount = params.bond_amount().to_fixed()?;
 
@@ -48,7 +46,7 @@ pub fn openShortGovernanceFee(
 
 /// Calculates the curve fee paid by the trader when they close a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeShortCurveFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeShortCurveFee(params: IClosePositionParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state
@@ -64,7 +62,7 @@ pub fn closeShortCurveFee(params: IClosePositionParams) -> Result<BigInt, Hyperd
 
 /// Calculates the flat fee paid by the trader when they close a short.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeShortFlatFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeShortFlatFee(params: IClosePositionParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state.close_short_flat_fee(

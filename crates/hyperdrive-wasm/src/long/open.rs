@@ -1,12 +1,12 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToBigInt, ToFixedPoint},
+};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
-    utils::{ToBigInt, ToFixedPoint},
-};
+use crate::types::IStateParams;
 
 #[ts(extends = IStateParams)]
 struct OpenLongParams {
@@ -16,7 +16,7 @@ struct OpenLongParams {
 
 /// Calculates the long amount that will be opened for a given base amount.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcOpenLong(params: IOpenLongParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcOpenLong(params: IOpenLongParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let base_amount = params.base_amount().to_fixed()?;
 
@@ -33,9 +33,7 @@ struct SpotPriceAfterLongParams {
 
 /// Calculates the spot price after opening a Hyperdrive long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn spotPriceAfterLong(
-    params: ISpotPriceAfterLongParams,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn spotPriceAfterLong(params: ISpotPriceAfterLongParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let base_amount = params.base_amount().to_fixed()?;
 

@@ -1,12 +1,12 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
+};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
-    utils::{ToBigInt, ToFixedPoint, ToI256, ToU256},
-};
+use crate::types::IStateParams;
 
 #[ts(extends = IStateParams)]
 struct MaxShortParams {
@@ -28,7 +28,7 @@ struct MaxShortParams {
 /// Calculates the max amount of longs that can be shorted given the current
 /// state of the pool.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state

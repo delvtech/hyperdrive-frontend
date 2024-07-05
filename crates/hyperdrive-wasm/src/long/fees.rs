@@ -1,12 +1,12 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToBigInt, ToFixedPoint, ToU256},
+};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::{IClosePositionParams, IStateParams},
-    utils::{set_panic_hook, ToBigInt, ToFixedPoint, ToU256},
-};
+use crate::types::{IClosePositionParams, IStateParams};
 
 #[ts(extends = IStateParams)]
 struct OpenLongCurveFeeParams {
@@ -16,7 +16,7 @@ struct OpenLongCurveFeeParams {
 
 /// Calculates the curve fee paid in bonds by traders when they open a long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn openLongCurveFee(params: IOpenLongCurveFeeParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn openLongCurveFee(params: IOpenLongCurveFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let base_amount = params.base_amount().to_fixed()?;
     let result_fp = state.open_long_curve_fee(base_amount).to_result()?;
@@ -33,9 +33,7 @@ struct OpenLongGovernanceFeeParams {
 /// Calculates the governance fee paid in bonds by traders when they open a
 /// long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn openLongGovernanceFee(
-    params: IOpenLongGovernanceFeeParams,
-) -> Result<BigInt, HyperdriveWasmError> {
+pub fn openLongGovernanceFee(params: IOpenLongGovernanceFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let base_amount = params.base_amount().to_fixed()?;
 
@@ -49,8 +47,7 @@ pub fn openLongGovernanceFee(
 /// Calculates the curve fee paid in shares or base by traders when they close a
 /// long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongCurveFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
-    set_panic_hook();
+pub fn closeLongCurveFee(params: IClosePositionParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state
@@ -67,7 +64,7 @@ pub fn closeLongCurveFee(params: IClosePositionParams) -> Result<BigInt, Hyperdr
 /// Calculates the flat fee paid in shares or base by traders when they close a
 /// long.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn closeLongFlatFee(params: IClosePositionParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn closeLongFlatFee(params: IClosePositionParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
 
     let result_fp = state.close_long_flat_fee(

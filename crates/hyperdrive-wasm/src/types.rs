@@ -1,13 +1,12 @@
+use delv_core::{
+    error::{Error, ToResult},
+    utils::{ToAddress, ToI256, ToU256},
+};
 use hyperdrive_math::State;
 use hyperdrive_wrappers::wrappers::ihyperdrive;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::*;
-
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    utils::{ToAddress, ToI256, ToU256},
-};
 
 // Create wasm_bindgen compatible versions of the ihyperdrive types
 
@@ -78,13 +77,13 @@ struct StateParams {
 
 impl IStateParams {
     /// Converts the parameters into a `ihyperdrive::State`.
-    pub fn to_state(&self) -> Result<State, HyperdriveWasmError> {
+    pub fn to_state(&self) -> Result<State, Error> {
         self.parse().try_into()
     }
 }
 
 impl TryFrom<StateParams> for State {
-    type Error = HyperdriveWasmError;
+    type Error = Error;
 
     fn try_from(params: StateParams) -> Result<Self, Self::Error> {
         Ok(State {
@@ -95,7 +94,7 @@ impl TryFrom<StateParams> for State {
 }
 
 impl TryFrom<PoolInfo> for ihyperdrive::PoolInfo {
-    type Error = HyperdriveWasmError;
+    type Error = Error;
 
     fn try_from(params: PoolInfo) -> Result<Self, Self::Error> {
         Ok(ihyperdrive::PoolInfo {
@@ -121,7 +120,7 @@ impl TryFrom<PoolInfo> for ihyperdrive::PoolInfo {
 }
 
 impl TryFrom<PoolConfig> for ihyperdrive::PoolConfig {
-    type Error = HyperdriveWasmError;
+    type Error = Error;
 
     fn try_from(params: PoolConfig) -> Result<Self, Self::Error> {
         Ok(ihyperdrive::PoolConfig {
