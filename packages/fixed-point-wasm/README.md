@@ -17,13 +17,30 @@ npm i @delvtech/fixed-point-wasm
 ## Usage
 
 ```ts
-import { initSync, wasmBuffer, fixed } from "@delvtech/fixed-point-wasm";
+import {
+  fixed,
+  initSync,
+  parseFixed,
+  wasmBuffer,
+} from "@delvtech/fixed-point-wasm";
 
-fixed.initSync(fixed.wasmBuffer);
+// Initialize the WASM module
+initSync(wasmBuffer);
 
-const amount = fixed("1_000.123456789012345678");
-const fee = fixed("0.025e18");
-const feeAmount = amount.mul(fee);
+// Use `fixed` with bigints
+const amount = fixed(1_000123456789012345678e18n);
+
+// Use `parseFixed` with strings
+const fee = parseFixed("0.025e18");
+
+// Perform fixed-point arithmetic
+const feeAmount = amount.mulUp(fee);
+
+console.log(feeAmount.toString());
+// => 25.003086419725308642
+
+console.log(feeAmount.raw);
+// => 25003086419725308642n
 ```
 
 ## Building
