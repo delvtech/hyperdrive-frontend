@@ -1,14 +1,13 @@
+use delv_core::{
+    conversions::{ToBigInt, ToFixedPoint, ToU256},
+    error::{Error, ToResult},
+};
 use ethers::types::U256;
-use fixed_point::fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IStateParams,
-    utils::{ToBigInt, ToFixedPoint, ToU256},
-};
+use crate::types::IStateParams;
 
 #[ts(extends = IStateParams)]
 struct CalcAddLiquidityParams {
@@ -37,18 +36,10 @@ struct CalcAddLiquidityParams {
 /// Calculates the amount of lp shares the trader will receive after adding
 /// liquidity.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcAddLiquidity(params: ICalcAddLiquidityParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcAddLiquidity(params: ICalcAddLiquidityParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-
-    let min_lp_share_price = match params.min_lp_share_price() {
-        Some(min_lp_share_price) => min_lp_share_price.to_fixed()?,
-        None => fixed!(0),
-    };
-
-    let min_apr = match params.min_apr() {
-        Some(min_apr) => min_apr.to_fixed()?,
-        None => fixed!(0),
-    };
+    let min_lp_share_price = params.min_lp_share_price().to_fixed()?;
+    let min_apr = params.min_apr().to_fixed()?;
 
     let max_apr = match params.max_apr() {
         Some(max_apr) => max_apr.to_fixed()?,

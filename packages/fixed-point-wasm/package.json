@@ -1,0 +1,19 @@
+{
+  "name": "@delvtech/fixed-point-wasm",
+  "version": "0.0.0",
+  "license": "AGPL-3.0",
+  "files": [
+    "fixed_point_wasm.js",
+    "fixed_point_wasm.d.ts"
+  ],
+  "module": "fixed_point_wasm.js",
+  "types": "fixed_point_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "type": "module",
+  "main": "fixed_point_wasm.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}

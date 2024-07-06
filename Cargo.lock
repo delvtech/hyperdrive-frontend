@@ -510,6 +510,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e8566979429cf69b49a5c740c60791108e86440e8be149bbea4fe54d2c32d6e2"
 
 [[package]]
+name = "delv-core"
+version = "0.1.0"
+dependencies = [
+ "ethers",
+ "fixedpointmath",
+ "js-sys",
+ "thiserror",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "der"
 version = "0.7.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -939,7 +950,6 @@ dependencies = [
  "const-hex",
  "enr",
  "ethers-core",
- "futures-channel",
  "futures-core",
  "futures-timer",
  "futures-util",
@@ -1066,13 +1076,17 @@ dependencies = [
 ]
 
 [[package]]
-name = "fixed-point"
-version = "0.16.0"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
+name = "fixed-point-wasm"
+version = "0.0.0"
 dependencies = [
- "ethers",
- "eyre",
+ "console_error_panic_hook",
+ "delv-core",
+ "fixedpointmath",
+ "getrandom",
+ "js-sys",
  "rand",
+ "ts-macro",
+ "wasm-bindgen",
 ]
 
 [[package]]
@@ -1080,6 +1094,17 @@ name = "fixedbitset"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
+
+[[package]]
+name = "fixedpointmath"
+version = "0.16.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a9cd911bb3723334921510350a230dd6e037f474393c47fd20de324678a8bc32"
+dependencies = [
+ "ethers",
+ "eyre",
+ "rand",
+]
 
 [[package]]
 name = "flate2"
@@ -1449,12 +1474,13 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-math"
-version = "0.16.0"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
+version = "0.16.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "33e932a2733958802466235c1dc49b8646be23d2c11ec3d20e1709ba631a8a13"
 dependencies = [
  "ethers",
  "eyre",
- "fixed-point",
+ "fixedpointmath",
  "hyperdrive-wrappers",
  "rand",
 ]
@@ -1465,27 +1491,23 @@ version = "0.15.0"
 dependencies = [
  "console_error_panic_hook",
  "const-hex",
+ "delv-core",
  "ethers",
- "fixed-point",
+ "fixedpointmath",
  "getrandom",
  "hyperdrive-math",
  "hyperdrive-wrappers",
  "js-sys",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror",
  "ts-macro",
  "wasm-bindgen",
- "wasm-bindgen-futures",
  "wasm-bindgen-test",
- "web-sys",
 ]
 
 [[package]]
 name = "hyperdrive-wrappers"
-version = "0.16.0"
-source = "git+https://github.com/delvtech/hyperdrive-rs.git?rev=v0.16.0#705a65f2d0c0669042481aa63f000da3fab41791"
+version = "0.16.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c8646de8244036370663575806f53b4418db971d9292a0198fc5a142f7eba88"
 dependencies = [
  "dotenv",
  "ethers",
@@ -2639,17 +2661,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde-wasm-bindgen"
-version = "0.6.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8302e169f0eddcc139c70f139d19d6467353af16f9fce27e8c30158036a1e16b"
-dependencies = [
- "js-sys",
- "serde",
- "wasm-bindgen",
-]
-
-[[package]]
 name = "serde_derive"
 version = "1.0.203"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3213,16 +3224,10 @@ name = "ts-macro"
 version = "0.1.0"
 dependencies = [
  "heck 0.5.0",
- "js-sys",
- "lazy_static",
- "proc-macro2",
  "quote",
- "regex",
  "syn 1.0.109",
- "thiserror",
  "ts-type",
  "wasm-bindgen",
- "web-sys",
 ]
 
 [[package]]
@@ -3382,8 +3387,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4be2531df63900aeb2bca0daaaddec08491ee64ceecbee5076636a3b026795a8"
 dependencies = [
  "cfg-if",
- "serde",
- "serde_json",
  "wasm-bindgen-macro",
 ]
 

@@ -34,7 +34,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "3.2.5",
     "prettier-plugin-organize-imports": "3.2.4",
-    "turbo": "latest",
+    "turbo": "^2.0.6",
     "typescript": "^5.0.2"
   },
   "resolutions": {
@@ -48,12 +48,12 @@
     ]
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1"
   },
-  "packageManager": "yarn@1.22.18",
+  "packageManager": "yarn@1.22.19",
   "msw": {
     "workerDirectory": [
       "apps/hyperdrive-trading/src/public"

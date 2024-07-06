@@ -5,11 +5,13 @@
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
-    "example": "tesm-node -r dotenv/config scripts/example.ts"
+    "example": "tesm-node -r dotenv/config scripts/example.ts",
+    "fixed-point": "tesm-node -r dotenv/config scripts/fixed-point.ts"
   },
   "dependencies": {
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
+    "@delvtech/fixed-point-wasm": "*",
     "@hyperdrive/appconfig": "*",
     "viem": "^2.9.2"
   },

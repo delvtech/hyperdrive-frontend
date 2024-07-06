@@ -1,13 +1,13 @@
-use fixed_point::fixed;
+use delv_core::{
+    conversions::{ToBigInt, ToFixedPoint, ToU256},
+    error::{Error, ToResult},
+};
+use fixedpointmath::fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
 
-use crate::{
-    error::{HyperdriveWasmError, ToHyperdriveWasmResult},
-    types::IClosePositionParams,
-    utils::{ToBigInt, ToFixedPoint, ToU256},
-};
+use crate::types::IClosePositionParams;
 
 #[ts(extends = IClosePositionParams)]
 struct CloseShortParams {
@@ -21,7 +21,7 @@ struct CloseShortParams {
 /// Calculates the amount of shares the trader will receive after fees for
 /// closing a short
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     let bond_amount = params.bond_amount().to_u256()?;
     let open_vault_share_price = params.open_vault_share_price().to_u256()?;
@@ -54,7 +54,7 @@ pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, HyperdriveWas
 /// checkpoint's if matured) c0 = openVaultSharePrice p  = spotPrice t  =
 /// timeRemaining
 #[wasm_bindgen(skip_jsdoc)]
-pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, HyperdriveWasmError> {
+pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     // dy is the bonds shorted
     let bond_amount = params.bond_amount().to_fixed()?;

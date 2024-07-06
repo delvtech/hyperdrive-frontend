@@ -1,10 +1,9 @@
 [package]
-name = "hyperdrive-wasm"
+name = "fixed-point-wasm"
 # This version will be overwritten by the build script to match the version in
 # the crate's package.json which is managed by changesets.
-version = "0.15.0"
+version = "0.0.0"
 edition = "2021"
-authors = ["Ryan Goree <ryan@delv.tech>", "Danny Delott <dannyd@delv.tech>"]
 license = "AGPL-3.0"
 
 [lib]
@@ -16,23 +15,17 @@ default = ["console_error_panic_hook"]
 [dependencies]
 # external
 console_error_panic_hook = { version = "0.1.7", optional = true }
-const-hex = "1.12.0"
-ethers = { version = "2.0.14", default-features = false }
 js-sys = "0.3.69"
 wasm-bindgen = "0.2.92"
 
 # needed to enable the "js" feature for compatibility with wasm,
 # see https://docs.rs/getrandom/#webassembly-support
 getrandom = { version = "0.2", features = ["js"] }
+rand = "0.8.5"
 
 # internal
 fixedpointmath = "0.16.9"
-hyperdrive-math = "0.16.9"
-hyperdrive-wrappers = "0.16.9"
 
 # workspace
-delv-core = { path = "../delv-core" }
 ts-macro = { path = "../ts-macro" }
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3.36"
+delv-core = { path = "../delv-core" }
