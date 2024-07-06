@@ -149,6 +149,7 @@ impl ToI256 for FixedPoint {
 /// Convert a value to a `Result<FixedPoint, Error>` via
 /// `.to_fixed()`
 pub trait ToFixedPoint {
+    /// Convert a value to a `Result<FixedPoint, Error>`
     fn to_fixed(&self) -> Result<FixedPoint, Error>;
 }
 
@@ -166,6 +167,21 @@ where
 impl ToFixedPoint for U256 {
     fn to_fixed(&self) -> Result<FixedPoint, Error> {
         Ok(FixedPoint::from(*self))
+    }
+}
+
+impl<T> ToFixedPoint for Option<T>
+where
+    T: ToFixedPoint,
+{
+    /// Convert an optional value to a `Result<FixedPoint, Error>`, using the
+    /// default value if `None`.
+    #[track_caller]
+    fn to_fixed(&self) -> Result<FixedPoint, Error> {
+        match self {
+            Some(value) => value.to_fixed(),
+            None => Ok(FixedPoint::default()),
+        }
     }
 }
 
