@@ -1083,9 +1083,9 @@ checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
 name = "fixedpointmath"
-version = "0.16.8"
+version = "0.16.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0cf75ea10081088e1b354e5e3679eec934cfdacebbd0cdcf4ffb96222171d4f2"
+checksum = "a9cd911bb3723334921510350a230dd6e037f474393c47fd20de324678a8bc32"
 dependencies = [
  "ethers",
  "eyre",
@@ -1460,9 +1460,9 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-math"
-version = "0.16.8"
+version = "0.16.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f6b419757a1939f44a292eabbed82d4a0d423676f1059a21659441945aad8d8"
+checksum = "33e932a2733958802466235c1dc49b8646be23d2c11ec3d20e1709ba631a8a13"
 dependencies = [
  "ethers",
  "eyre",
@@ -1491,9 +1491,9 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wrappers"
-version = "0.16.8"
+version = "0.16.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c331309ae8b1932664e3664aa287e900dbd86626a59742b7ff7f6edd1574ea4"
+checksum = "0c8646de8244036370663575806f53b4418db971d9292a0198fc5a142f7eba88"
 dependencies = [
  "dotenv",
  "ethers",
