@@ -136,7 +136,7 @@ pub fn fixed(raw: Option<BigInt>) -> Result<Fixed, Error> {
     Fixed::new(raw)
 }
 
-/// Parses a scaled string a into a [`Fixed`] instance.
+/// Parses a scaled string into a [`Fixed`] instance.
 ///
 /// ## Example
 ///
