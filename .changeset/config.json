@@ -2,7 +2,10 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [["@delvtech/hyperdrive-wasm", "hyperdrive-wasm"]],
+  "fixed": [
+    ["@delvtech/hyperdrive-wasm", "hyperdrive-wasm"],
+    ["@delvtech/fixed-point-wasm", "fixed-point-wasm"]
+  ],
   "linked": [["@delvtech/hyperdrive-viem", "@delvtech/hyperdrive-js-core"]],
   "access": "restricted",
   "baseBranch": "main",

@@ -12,20 +12,25 @@ Powered by [TurboRepo](https://turbo.build).
 
 Apps
 
-- [hyperdrive-trading](apps/hyperdrive-trading/) - A simple frontend for interacting with Hyperdrive
-- [hyperdrive-sdk-docs](apps/hyperdrive-sdk-docs/) - Docs site for the Hyperdrive SDK
+- [hyperdrive-trading](apps/hyperdrive-trading/) - A simple frontend for interacting with Hyperdrive.
+- [hyperdrive-sdk-docs](apps/hyperdrive-sdk-docs/) - Docs site for the Hyperdrive SDK.
 
 Packages
 
-- [@delvtech/hyperdrive-js-core](packages/hyperdrive-js-core/) - Hyperdrive SDK core logic
-- [@delvtech/hyperdrive-viem](packages/hyperdrive-viem/) - Viem bindings for `@delvtech/hyperdrive-js-core`
-- [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts
-- [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs)
+- [@delvtech/hyperdrive-js-core](packages/hyperdrive-js-core/) - Hyperdrive SDK core logic.
+- [@delvtech/hyperdrive-viem](packages/hyperdrive-viem/) - Viem bindings for `@delvtech/hyperdrive-js-core`.
+- [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts.
+- [@delvtech/fixed-point-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [fixedpointmath](https://github.com/delvtech/hyperdrive-rs/tree/main/crates/fixedpointmath) Rust crate.
+- [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs).
 - [@hyperdrive/appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
 
 Crates
 
-- [hyperdrive-wasm](crates/hyperdrive-wasm/) - The Rust crate that compiles to the `@delvtech/hyperdrive-wasm` package
+- [delv-core](crates/delv-core/) - Core utilities shared across the other crates.
+- [fixed-point-wasm](crates/fixed-point-wasm/) - The Rust crate that compiles to the `@delvtech/fixed-point-wasm` package.
+- [hyperdrive-wasm](crates/hyperdrive-wasm/) - The Rust crate that compiles to the `@delvtech/hyperdrive-wasm` package.
+- [ts-macro](crates/ts-macro/) - An attribute macro for generating TypeScript bindings from Rust structs.
+- [ts-type](crates/ts-type/) - A library for generating minimal ASTs for TypeScript types from Rust types and/or TypeScript type strings.
 
 ### Installation
 

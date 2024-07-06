@@ -3,7 +3,7 @@
   "tasks": {
     "build:crates": {
       "dependsOn": ["^build"],
-      "outputs": ["packages/hyperdrive-wasm/**"]
+      "outputs": ["packages/hyperdrive-wasm/**", "packages/fixed-point-wasm/**"]
     },
     "build": {
       "dependsOn": ["build:crates", "^build"],
