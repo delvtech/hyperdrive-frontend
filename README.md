@@ -14,6 +14,7 @@ Apps
 
 - [hyperdrive-trading](apps/hyperdrive-trading/) - A simple frontend for interacting with Hyperdrive.
 - [hyperdrive-sdk-docs](apps/hyperdrive-sdk-docs/) - Docs site for the Hyperdrive SDK.
+- [sdk-sandbox](apps/sdk-sandbox/) - A sandbox for trying out the Hyperdrive SDK.
 
 Packages
 
