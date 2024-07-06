@@ -7,20 +7,36 @@ export function initialize(): void;
 */
 export function getVersion(): string;
 /**
-* Creates a new [`Fixed`] instance from a scaled string.
+* Create a new [`Fixed`] instance from a bigint.
+*
+* ## Example
+* ```js
+* import { fixed } from 'fixed-point-wasm';
+*
+* const x = fixed(1_123456789012345678);
+* console.log(x.toString());
+* // => 1.500000000000000000
+* ```
+* @param {bigint | undefined} [raw]
+* @returns {Fixed}
+*/
+export function fixed(raw?: bigint): Fixed;
+/**
+* Parses a scaled string a into a [`Fixed`] instance.
 *
 * ## Example
 *
 * ```js
-* import { fromString } from 'fixed-point-wasm';
+* import { parseFixed } from 'fixed-point-wasm';
 *
-* const fixed = fromString('1.5e18');
-* console.log(fixed.value.toString());
+* const x = parseFixed('1.5e18');
+* console.log(x.toString());
+* // => 1.500000000000000000
 * ```
 * @param {string} string
 * @returns {Fixed}
 */
-export function fixed(string: string): Fixed;
+export function parseFixed(string: string): Fixed;
 /**
 * @param {bigint} x
 * @returns {bigint}
@@ -142,7 +158,8 @@ export interface InitOutput {
   readonly fixed_divDown: (a: number, b: number) => number;
   readonly fixed_divUp: (a: number, b: number) => number;
   readonly fixed_pow: (a: number, b: number, c: number) => void;
-  readonly fixed: (a: number, b: number, c: number) => void;
+  readonly fixed: (a: number, b: number) => void;
+  readonly parseFixed: (a: number, b: number, c: number) => void;
   readonly ln: (a: number, b: number) => void;
   readonly randInRange: (a: number, b: number, c: number) => void;
   readonly initialize: () => void;
