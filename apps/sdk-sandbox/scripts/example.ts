@@ -1,13 +1,13 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
   findYieldSourceHyperdrives,
-  sepoliaAppConfig,
+  mainnetAppConfig,
 } from "@hyperdrive/appconfig";
 import { formatEther } from "viem";
 import { publicClient } from "../client";
 
 const makerDeployments = findYieldSourceHyperdrives({
-  appConfig: sepoliaAppConfig,
+  appConfig: mainnetAppConfig,
   yieldSourceId: "maker",
 });
 
