@@ -127,7 +127,7 @@ impl Fixed {
 /// ```js
 /// import { fixed } from 'fixed-point-wasm';
 ///
-/// const x = fixed(1_123456789012345678);
+/// const x = fixed(BigInt(15e17));
 /// console.log(x.toString());
 /// // => 1.500000000000000000
 /// ```
