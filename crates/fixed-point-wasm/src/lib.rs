@@ -153,12 +153,13 @@ pub fn parseFixed(string: &str) -> Result<Fixed, Error> {
 }
 
 #[wasm_bindgen]
-pub fn ln(x: BigInt) -> Result<BigInt, Error> {
-    FixedPoint::ln(x.to_i256()?).to_result()?.to_bigint()
+pub fn ln(x: BigInt) -> Result<Fixed, Error> {
+    let int = FixedPoint::ln(x.to_i256()?).to_result()?;
+    Ok(Fixed(FixedPoint::try_from(int).to_result()?))
 }
 
 #[wasm_bindgen]
-pub fn randInRange(min: BigInt, max: BigInt) -> Result<BigInt, Error> {
+pub fn randInRange(min: BigInt, max: BigInt) -> Result<Fixed, Error> {
     let mut rng = thread_rng();
-    rng.gen_range(min.to_fixed()?..max.to_fixed()?).to_bigint()
+    Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
 }
