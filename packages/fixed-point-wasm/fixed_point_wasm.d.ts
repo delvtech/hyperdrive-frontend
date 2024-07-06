@@ -22,7 +22,7 @@ export function getVersion(): string;
 */
 export function fixed(raw?: bigint): Fixed;
 /**
-* Parses a scaled string a into a [`Fixed`] instance.
+* Parses a scaled string into a [`Fixed`] instance.
 *
 * ## Example
 *
@@ -39,15 +39,15 @@ export function fixed(raw?: bigint): Fixed;
 export function parseFixed(string: string): Fixed;
 /**
 * @param {bigint} x
-* @returns {bigint}
+* @returns {Fixed}
 */
-export function ln(x: bigint): bigint;
+export function ln(x: bigint): Fixed;
 /**
 * @param {bigint} min
 * @param {bigint} max
-* @returns {bigint}
+* @returns {Fixed}
 */
-export function randInRange(min: bigint, max: bigint): bigint;
+export function randInRange(min: bigint, max: bigint): Fixed;
 /**
 * A fixed-point number.
 */
