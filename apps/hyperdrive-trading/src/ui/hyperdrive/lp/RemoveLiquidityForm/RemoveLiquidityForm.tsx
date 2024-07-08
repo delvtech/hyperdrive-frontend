@@ -19,7 +19,9 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -105,11 +107,17 @@ export function RemoveLiquidityForm({
         [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
       )[0]
     : poolInfo?.lpSharePrice || 0n;
+  const {
+    setSlippage,
+    slippage,
+    slippageAsBigInt,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
+  } = useSlippageSettings({ decimals: activeWithdrawToken.decimals });
 
-  // TODO: Make a slippage component for this
   const minOutputPerShare = adjustAmountByPercentage({
     amount: lpSharePrice,
-    percentage: dnum.from("0.005", 18)[0],
+    percentage: slippageAsBigInt,
     decimals: 18,
     direction: "down",
   });
@@ -200,6 +208,15 @@ export function RemoveLiquidityForm({
                 {baseToken.symbol}-LP
               </span>
             </div>
+          }
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+            />
           }
           value={amount ?? ""}
           maxValue={formatUnits(lpShares, baseToken.decimals)}
