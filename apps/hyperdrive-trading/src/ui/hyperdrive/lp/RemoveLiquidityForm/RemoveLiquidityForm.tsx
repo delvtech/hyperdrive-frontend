@@ -221,13 +221,18 @@ export function RemoveLiquidityForm({
           value={amount ?? ""}
           maxValue={formatUnits(lpShares, baseToken.decimals)}
           stat={
-            lpShares && !!poolInfo
-              ? `Withdrawable: ${formatBalance({
-                  balance: lpShares,
-                  decimals: hyperdrive.decimals,
-                  places: baseToken.places,
-                })} ${baseToken.symbol}-LP`
-              : undefined
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {lpShares && !!poolInfo
+                  ? `Withdrawable: ${formatBalance({
+                      balance: lpShares,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken.places,
+                    })} ${baseToken.symbol}-LP`
+                  : undefined}
+              </span>
+              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
+            </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
