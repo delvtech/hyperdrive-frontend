@@ -5,17 +5,17 @@ import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/Transaction
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 import { useAccount } from "wagmi";
 
+type TabId = "all-transactions" | "your-transactions";
+
 export function TransactionAndFaqTabs({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const [activeTab, setActiveTab] = useState<
-    "all-transactions" | "your-transactions"
-  >("all-transactions");
+  const [activeTab, setActiveTab] = useState<TabId>("all-transactions");
 
-  const transactionTabs: Tab[] = [
+  const transactionTabs: Tab<TabId>[] = [
     {
       id: "all-transactions",
       label: "All Transactions",
