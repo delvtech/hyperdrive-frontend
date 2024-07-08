@@ -118,7 +118,7 @@ export function RemoveLiquidityForm({
   const minOutputPerShare = adjustAmountByPercentage({
     amount: lpSharePrice,
     percentage: slippageAsBigInt,
-    decimals: 18,
+    decimals: activeWithdrawToken.decimals,
     direction: "down",
   });
 
