@@ -120,14 +120,12 @@ impl Fixed {
 
 // Utils //
 
-/// Create a new [`Fixed`] instance from a bigint.
+/// Create a new `Fixed` instance from a bigint.
 ///
-/// ## Example
+/// @example
 //
 /// ```js
-/// import { fixed } from 'fixed-point-wasm';
-///
-/// const x = fixed(1_123456789012345678);
+/// const x = fixed(BigInt(15e17));
 /// console.log(x.toString());
 /// // => 1.500000000000000000
 /// ```
@@ -136,13 +134,11 @@ pub fn fixed(raw: Option<BigInt>) -> Result<Fixed, Error> {
     Fixed::new(raw)
 }
 
-/// Parses a scaled string into a [`Fixed`] instance.
+/// Parses a scaled string into a `Fixed` instance.
 ///
-/// ## Example
+/// @example
 ///
 /// ```js
-/// import { parseFixed } from 'fixed-point-wasm';
-///
 /// const x = parseFixed('1.5e18');
 /// console.log(x.toString());
 /// // => 1.500000000000000000
