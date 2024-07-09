@@ -19,6 +19,8 @@ import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemW
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -56,6 +58,13 @@ export function RedeemWithdrawalSharesForm({
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: activeWithdrawToken.decimals,
   });
+  const {
+    setSlippage,
+    slippage,
+    slippageAsBigInt,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
+  } = useSlippageSettings({ decimals: activeWithdrawToken.decimals });
 
   // The max button is wired up to this
   const { withdrawalShares } = useWithdrawalShares({
@@ -96,11 +105,10 @@ export function RedeemWithdrawalSharesForm({
       )[0]
     : poolInfo?.lpSharePrice || 0n;
 
-  // TODO: Make a slippage component for this
   const minOutputPerShare = adjustAmountByPercentage({
     amount: lpSharePrice,
-    percentage: dnum.from("0.02", 18)[0],
-    decimals: 18,
+    percentage: slippageAsBigInt,
+    decimals: activeWithdrawToken.decimals,
     direction: "down",
   });
 
@@ -142,13 +150,20 @@ export function RedeemWithdrawalSharesForm({
             />
           }
           value={amount ?? ""}
-          stat={`Withdrawable: ${formatBalance({
-            balance: isBaseTokenWithdrawal
-              ? maxRedeemableBaseProceeds || 0n
-              : maxRedeemableSharesProceeds || 0n,
-            decimals: activeWithdrawToken.decimals,
-            places: activeWithdrawToken.places,
-          })} ${activeWithdrawToken.symbol}`}
+          stat={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {`Withdrawable: ${formatBalance({
+                  balance: isBaseTokenWithdrawal
+                    ? maxRedeemableBaseProceeds || 0n
+                    : maxRedeemableSharesProceeds || 0n,
+                  decimals: activeWithdrawToken.decimals,
+                  places: activeWithdrawToken.places,
+                })} ${activeWithdrawToken.symbol}`}
+              </span>
+              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
+            </div>
+          }
           maxValue={formatUnits(
             isBaseTokenWithdrawal
               ? maxRedeemableBaseProceeds || 0n
@@ -156,6 +171,15 @@ export function RedeemWithdrawalSharesForm({
             activeWithdrawToken.decimals,
           )}
           onChange={(newAmount) => setAmount(newAmount)}
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+            />
+          }
         />
       }
       transactionPreview={
