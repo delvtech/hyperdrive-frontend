@@ -21,10 +21,6 @@
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
 
-    // Some stricter flags
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-
     "composite": false,
     "declaration": true,
     "declarationMap": true,
