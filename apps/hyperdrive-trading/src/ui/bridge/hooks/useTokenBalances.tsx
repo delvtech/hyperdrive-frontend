@@ -1,10 +1,10 @@
 import { ServerChainBalance } from "@delvtech/gopher";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { gopher } from "src/ui/bridge/api";
+import { gopher } from "src/ui/bridge/api/api";
 
 export const useTokenBalances = (
-  account: string,
+  account: `0x${string}` | undefined,
   tokenSymbols: string[],
 ): {
   balances: ServerChainBalance[][] | undefined;
@@ -19,7 +19,7 @@ export const useTokenBalances = (
     queryFn: async () => {
       const responses = await Promise.all(
         tokenSymbols.map((tokenSymbol) =>
-          gopher.accounts.assetsFungibleDetail(tokenSymbol, account),
+          gopher.accounts.assetsFungibleDetail(tokenSymbol, account!),
         ),
       );
       const data = await Promise.all(
@@ -27,6 +27,7 @@ export const useTokenBalances = (
       );
       return data.filter((list) => list !== undefined);
     },
+    enabled: !!account,
   });
 
   // turbo typecheck is failing here, so we typecast.

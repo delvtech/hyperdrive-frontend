@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
@@ -8,7 +9,7 @@ import { useAccount } from "wagmi";
 function TokenBalances(): ReactNode {
   const { address } = useAccount();
   const tokenSymbols = ["USDT", "USDC", "DAI"];
-  const { balances } = useTokenBalances(address || "", tokenSymbols);
+  const { balances } = useTokenBalances(address, tokenSymbols);
   const { chains } = useChainsByChainId();
 
   if (!address) {
@@ -23,7 +24,10 @@ function TokenBalances(): ReactNode {
       {balances.map((chainBalances, index) => {
         const totalBalance =
           chainBalances?.reduce((total, token) => {
-            return total + BigInt(token.balance || "0");
+            return (
+              total +
+              parseUnits(token.balance || "0", token?.tokenDecimals || 18)
+            );
           }, 0n) || 0n;
 
         return (
@@ -39,7 +43,7 @@ function TokenBalances(): ReactNode {
               <tbody>
                 {chainBalances?.map((token) => (
                   <tr key={token.chainId}>
-                    <td>{chains[token.chainId!].name}</td>
+                    <td>{chains[token.chainId!]?.name}</td>
                     <td>
                       {(
                         parseFloat(token?.balance || "0") /
