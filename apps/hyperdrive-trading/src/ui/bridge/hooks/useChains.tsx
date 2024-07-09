@@ -3,10 +3,10 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/ui/bridge/api";
 
-export const useChains = (): {
+export function useChains(): {
   chains: EntityNetwork[] | undefined;
   status: QueryStatus;
-} => {
+} {
   const { data, status } = useQuery({
     queryKey: makeQueryKey("gopher", { route: "networks/networksList" }),
     queryFn: async () => {
@@ -16,4 +16,4 @@ export const useChains = (): {
   });
 
   return { chains: data?.data, status };
-};
+}

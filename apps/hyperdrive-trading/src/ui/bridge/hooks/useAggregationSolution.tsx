@@ -8,12 +8,10 @@ type AggregationListQueryParams = Parameters<
   (typeof gopher)["solutions"]["aggregationList"]
 >[0];
 
-export const useAggregationSolution = (
-  params: AggregationListQueryParams,
-): {
+export function useAggregationSolution(params: AggregationListQueryParams): {
   solution: EntityTokenTransferQuote[] | undefined;
   status: QueryStatus;
-} => {
+} {
   const { data, status } = useQuery({
     queryKey: makeQueryKey("gopher", {
       route: "solutions/aggregationList",
@@ -34,4 +32,4 @@ export const useAggregationSolution = (
   });
 
   return { solution: data?.data?.data, status };
-};
+}

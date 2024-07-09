@@ -3,13 +3,13 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/ui/bridge/api";
 
-export const useTokenBalances = (
+export function useTokenBalances(
   account: string,
   tokenSymbols: string[],
 ): {
   balances: ServerChainBalance[][] | undefined;
   status: QueryStatus;
-} => {
+} {
   const { data = [], status } = useQuery({
     queryKey: makeQueryKey("gopher", {
       route: "accounts/assetsFungibleDetail",
@@ -31,4 +31,4 @@ export const useTokenBalances = (
 
   // turbo typecheck is failing here, so we typecast.
   return { balances: data as ServerChainBalance[][], status };
-};
+}
