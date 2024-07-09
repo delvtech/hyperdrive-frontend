@@ -1,19 +1,10 @@
-import {
-  Api,
-  ServerGetSupportedFungibleTokensResponse,
-} from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, http } from "msw";
-import { setupWorker } from "msw/browser";
+import { ServerGetSupportedFungibleTokensResponse } from "@delvtech/gopher";
+import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
 
-export const BASE_URL = "https://gopher.test.buildwithsygma.com";
-export const SWAGGER_JSON_URL = `${BASE_URL}/swagger/doc.json`;
-
-export const gopher = new Api({
-  baseUrl: BASE_URL,
-});
-
-export const worker = setupWorker(
-  http.get(`${BASE_URL}/assets/fungible`, ({ request, params, cookies }) => {
+export function getSupportedFungibleTokensStub(
+  baseUrl: string,
+): RequestHandler {
+  return http.get(`${baseUrl}/assets/fungible`, () => {
     const response: ServerGetSupportedFungibleTokensResponse = {
       data: [
         {
@@ -79,5 +70,5 @@ export const worker = setupWorker(
     };
 
     return HttpResponseMSW.json(response, status);
-  }),
-);
+  });
+}

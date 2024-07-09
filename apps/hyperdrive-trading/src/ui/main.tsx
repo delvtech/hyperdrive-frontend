@@ -14,7 +14,7 @@ import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
-import { worker } from "src/ui/bridge/api";
+import { worker } from "src/ui/bridge/api/api";
 import "src/ui/globals.css";
 import { logAppVersion } from "src/ui/version/logAppVersion";
 import { customRainbowTheme } from "src/ui/wallet/customTheme";
