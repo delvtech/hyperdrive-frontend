@@ -111,7 +111,6 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
-      const hyperdriveAddress = hyperdrive.address;
       const token = await hyperdrive.getSharesToken();
       const tokenSymbol = (
         await token.getSymbol()
@@ -128,8 +127,7 @@ export async function getAppConfig({
       if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress,
+            hyperdrive,
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: true,
@@ -151,8 +149,7 @@ export async function getAppConfig({
       if (tokenSymbol === "STETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
-            publicClient,
-            hyperdriveAddress,
+            hyperdrive,
             chainId,
             ...hyperdriveMetadata,
           });
@@ -167,8 +164,7 @@ export async function getAppConfig({
       if (tokenSymbol === "RETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress,
+            hyperdrive,
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -192,8 +188,7 @@ export async function getAppConfig({
       if (tokenSymbol === "EZETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress,
+            hyperdrive,
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -217,8 +212,7 @@ export async function getAppConfig({
       if (metaMorphoSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress,
+            hyperdrive,
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: false,
@@ -237,7 +231,7 @@ export async function getAppConfig({
       }
 
       throw new Error(
-        `Missing Hyperdrive config implementation for address: ${hyperdriveAddress}`,
+        `Missing Hyperdrive config implementation for address: ${hyperdrive.address}`,
       );
     }),
   );

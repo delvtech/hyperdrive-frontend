@@ -1,20 +1,17 @@
-import { ReadStEthHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
 import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
-import { Address, PublicClient } from "viem";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
-  publicClient,
-  hyperdriveAddress,
+  hyperdrive,
   sharesTokenExtensions,
   chainId,
 }: {
-  publicClient: PublicClient;
-  hyperdriveAddress: Address;
+  hyperdrive: ReadHyperdrive;
   sharesTokenExtensions: YieldSourceExtensions;
   chainId: number;
 }): Promise<{
@@ -22,14 +19,10 @@ export async function getStethHyperdrive({
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const readHyperdrive = new ReadStEthHyperdrive({
-    address: hyperdriveAddress,
-    publicClient,
-  });
-  const version = await readHyperdrive.getVersion();
-  const poolConfig = await readHyperdrive.getPoolConfig();
+  const version = await hyperdrive.getVersion();
+  const poolConfig = await hyperdrive.getPoolConfig();
 
-  const sharesToken = await readHyperdrive.getSharesToken();
+  const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getStethHyperdriveSharesToken({
     sharesToken,
     extensions: sharesTokenExtensions,
@@ -53,7 +46,7 @@ export async function getStethHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
-    address: hyperdriveAddress,
+    address: hyperdrive.address,
     version,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
