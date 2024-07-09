@@ -8,12 +8,12 @@ import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
-import { ReadRegistry } from "src/registry/ReadRegistry";
+import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
 import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
 export interface ReadWriteRegistryOptions
-  extends Overwrite<ReadRegistry, ReadWriteContractModelOptions> {}
+  extends Overwrite<ReadRegistryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteRegistry extends ReadRegistry {
   declare contract: CachedReadWriteContract<RegistryAbi>;
