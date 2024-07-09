@@ -1,3 +1,4 @@
+import { Address } from "abitype";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
@@ -11,7 +12,7 @@ type SomeProtocols = Partial<typeof protocols>;
 export interface AppConfig {
   chainId: number;
   tags: Tag[];
-  registryAddress: string;
+  registryAddress: Address;
   hyperdrives: HyperdriveConfig[];
   tokens: TokenConfig<KnownTokenExtensions>[];
   protocols: SomeProtocols;
