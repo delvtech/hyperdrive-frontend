@@ -27,7 +27,7 @@ export type ReadInstanceInfoWithMetadata = Overwrite<
   FunctionReturn<RegistryAbi, "getInstanceInfoWithMetadata">,
   {
     /**
-     * Data about the factory. Different registries can utilize different
+     * Data about the instance. Different registries can utilize different
      * schemas for these values.
      */
     data: `0x${string}`;
