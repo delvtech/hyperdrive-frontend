@@ -1,11 +1,9 @@
 import "dotenv/config";
 import { AddressesJson } from "src/addresses/AddressesJson";
-
-import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
+import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
 import { localChain } from "src/chains/local";
-import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 
 const localChainId = +(process.env.LOCAL_CHAIN_ID as string);
@@ -16,24 +14,15 @@ const publicClient = createPublicClient({
   chain: localChain,
   transport: http(localNodeRpcUrl),
 });
+const addresses = await fetchJson<AddressesJson>(localAddressesUrl);
+const appConfig = await getAppConfig({
+  registryAddress: addresses.hyperdriveRegistry,
+  chainId: localChainId,
+  publicClient,
+});
 
-fetchJson<AddressesJson>(localAddressesUrl)
-  .then((addresses) =>
-    fetchRegistryAddresses({
-      registryAddress: addresses.hyperdriveRegistry,
-      publicClient,
-    }),
-  )
-  .then(async (registryAddresses) => {
-    const appConfig = await getAppConfigFromRegistryAddresses({
-      addresses: registryAddresses,
-      chainId: localChainId,
-      publicClient,
-    });
-
-    writeAppConfigToFile({
-      filename: `./src/generated/${localChainId}.appconfig.ts`,
-      appConfig,
-      appConfigName: "localChainAppConfig",
-    });
-  });
+writeAppConfigToFile({
+  filename: `./src/generated/${localChainId}.appconfig.ts`,
+  appConfig,
+  appConfigName: "localChainAppConfig",
+});

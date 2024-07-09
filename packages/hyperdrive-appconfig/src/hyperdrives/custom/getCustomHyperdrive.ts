@@ -7,14 +7,12 @@ import {
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
-import { Address, PublicClient } from "viem";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
 
 interface GetHyperdriveConfigParams {
-  publicClient: PublicClient;
-  hyperdriveAddress: Address;
+  hyperdrive: ReadHyperdrive;
   sharesTokenExtensions: YieldSourceExtensions;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
@@ -31,8 +29,7 @@ interface GetCustomHyperdriveResult {
 }
 
 export async function getCustomHyperdrive({
-  publicClient,
-  hyperdriveAddress,
+  hyperdrive,
   sharesTokenExtensions,
   baseTokenIconUrl,
   sharesTokenIconUrl,
@@ -41,14 +38,9 @@ export async function getCustomHyperdrive({
   tokenPlaces,
   tags = [],
 }: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
-  const readHyperdrive = new ReadHyperdrive({
-    address: hyperdriveAddress,
-    publicClient,
-  });
-
-  const version = await readHyperdrive.getVersion();
-  const poolConfig = await readHyperdrive.getPoolConfig();
-  const sharesToken = await readHyperdrive.getSharesToken();
+  const version = await hyperdrive.getVersion();
+  const poolConfig = await hyperdrive.getPoolConfig();
+  const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
     tags: ["yieldSource", ...tags],
@@ -57,7 +49,7 @@ export async function getCustomHyperdrive({
     places: tokenPlaces,
   });
 
-  const baseToken = await readHyperdrive.getBaseToken();
+  const baseToken = await hyperdrive.getBaseToken();
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
     extensions: {},
@@ -73,10 +65,10 @@ export async function getCustomHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
-    address: hyperdriveAddress,
+    address: hyperdrive.address,
     version,
     name: hyperdriveName,
-    decimals: await readHyperdrive.getDecimals(),
+    decimals: await hyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
     depositOptions: depositOptions,

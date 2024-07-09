@@ -1,4 +1,4 @@
-import { ReadErc20, ReadEth } from "@delvtech/hyperdrive-viem";
+import { ReadToken } from "@delvtech/hyperdrive-viem";
 import { Address } from "viem";
 
 export type EmptyExtensions = Record<string, never>;
@@ -25,7 +25,7 @@ export async function getTokenConfig<
   tags,
   extensions,
 }: {
-  token: ReadErc20 | ReadEth;
+  token: ReadToken;
   tags: string[];
   iconUrl: string;
   places: number;

@@ -4,6 +4,11 @@
 export * from "@delvtech/evm-client-viem";
 // Re-export all of hyperdrive-js-core
 export * from "@delvtech/hyperdrive-js-core";
+export { ReadFactory, type ReadFactoryOptions } from "src/factory/ReadFactory";
+export {
+  ReadWriteFactory,
+  type ReadWriteFactoryOptions,
+} from "src/factory/ReadWriteFactory";
 export {
   ReadHyperdrive,
   type ReadHyperdriveOptions,
@@ -31,3 +36,11 @@ export {
   ReadWriteStEthHyperdrive,
   type ReadWriteStEthHyperdriveOptions,
 } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
+export {
+  ReadRegistry,
+  type ReadRegistryOptions,
+} from "src/registry/ReadRegistry";
+export {
+  ReadWriteRegistry,
+  type ReadWriteRegistryOptions,
+} from "src/registry/ReadWriteRegistry";

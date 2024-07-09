@@ -1,4 +1,4 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
@@ -24,7 +24,7 @@ import {
   stethExtensions,
 } from "src/yieldSources/extensions";
 import { yieldSourceTag } from "src/yieldSources/tags";
-import { Address, PublicClient, erc20Abi } from "viem";
+import { Address, PublicClient } from "viem";
 import { YieldSourceExtensions } from "..";
 
 // Token Symbols
@@ -91,31 +91,29 @@ const knownHyperdriveMetadata: Record<
   },
 };
 
-export async function getAppConfigFromRegistryAddresses({
+export async function getAppConfig({
   chainId,
-  addresses,
+  registryAddress,
   publicClient,
 }: {
   chainId: number;
-  addresses: Address[];
+  registryAddress: Address;
   publicClient: PublicClient;
 }): Promise<AppConfig> {
   const tags: Tag[] = [yieldSourceTag];
   const tokens: TokenConfig<KnownTokenExtensions>[] = [];
 
-  const hyperdrives: HyperdriveConfig[] = await Promise.all(
-    addresses.map(async (address) => {
-      const hyperdrive = new ReadHyperdrive({
-        address,
-        publicClient,
-      });
-      const { vaultSharesToken } = await hyperdrive.getPoolConfig();
+  const registry = new ReadRegistry({
+    address: registryAddress,
+    publicClient,
+  });
+  const hyperdrives = await registry.getInstances();
+
+  const configs: HyperdriveConfig[] = await Promise.all(
+    hyperdrives.map(async (hyperdrive) => {
+      const token = await hyperdrive.getSharesToken();
       const tokenSymbol = (
-        await publicClient.readContract({
-          address: vaultSharesToken,
-          abi: erc20Abi,
-          functionName: "symbol",
-        })
+        await token.getSymbol()
       ).toUpperCase() as Uppercase<string>;
 
       const hyperdriveMetadata = knownHyperdriveMetadata[tokenSymbol];
@@ -129,8 +127,7 @@ export async function getAppConfigFromRegistryAddresses({
       if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress: address,
+            hyperdrive,
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: true,
@@ -152,8 +149,7 @@ export async function getAppConfigFromRegistryAddresses({
       if (tokenSymbol === "STETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
-            publicClient,
-            hyperdriveAddress: address,
+            hyperdrive,
             chainId,
             ...hyperdriveMetadata,
           });
@@ -168,8 +164,7 @@ export async function getAppConfigFromRegistryAddresses({
       if (tokenSymbol === "RETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress: address,
+            hyperdrive,
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -193,8 +188,7 @@ export async function getAppConfigFromRegistryAddresses({
       if (tokenSymbol === "EZETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress: address,
+            hyperdrive,
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -218,8 +212,7 @@ export async function getAppConfigFromRegistryAddresses({
       if (metaMorphoSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
-            publicClient,
-            hyperdriveAddress: address,
+            hyperdrive,
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: false,
@@ -238,7 +231,7 @@ export async function getAppConfigFromRegistryAddresses({
       }
 
       throw new Error(
-        `Missing Hyperdrive config implementation for address: ${address}`,
+        `Missing Hyperdrive config implementation for address: ${hyperdrive.address}`,
       );
     }),
   );
@@ -247,7 +240,8 @@ export async function getAppConfigFromRegistryAddresses({
     chainId,
     tags: uniqBy(tags, "id"),
     tokens: uniqBy(tokens, "address"),
-    hyperdrives,
+    registryAddress,
+    hyperdrives: configs,
     protocols,
   };
 

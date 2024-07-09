@@ -88,6 +88,7 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
   ],
+  registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
   hyperdrives: [
     {
       address: "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",

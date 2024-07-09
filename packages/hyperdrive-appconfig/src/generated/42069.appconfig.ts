@@ -73,6 +73,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
   ],
+  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   hyperdrives: [
     {
       address: "0x6D3B7Cdc8959B399Ad8e1f8d830e2eBeCc82d4ad",

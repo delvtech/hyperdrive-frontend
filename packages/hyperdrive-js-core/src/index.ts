@@ -27,6 +27,25 @@ export {
   type ReadWriteStEthHyperdriveOptions,
 } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
 
+// Registry
+export {
+  ReadRegistry,
+  type ReadRegistryOptions,
+} from "src/registry/ReadRegistry";
+export {
+  ReadWriteRegistry,
+  type ReadWriteRegistryOptions,
+} from "src/registry/ReadWriteRegistry";
+export { registryAbi, type RegistryAbi } from "src/registry/abi";
+
+// Factory
+export { ReadFactory, type ReadFactoryOptions } from "src/factory/ReadFactory";
+export {
+  ReadWriteFactory,
+  type ReadWriteFactoryOptions,
+} from "src/factory/ReadWriteFactory";
+export { factoryAbi, type FactoryAbi } from "src/factory/abi";
+
 // Token
 export type { ReadToken } from "src/token/ReadToken";
 export type { ReadWriteToken } from "src/token/ReadWriteToken";

@@ -58,6 +58,7 @@ export const mainnetAppConfig: AppConfig = {
       extensions: {},
     },
   ],
+  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   hyperdrives: [
     {
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
