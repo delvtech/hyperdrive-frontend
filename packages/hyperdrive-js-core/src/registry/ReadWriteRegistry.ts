@@ -3,7 +3,6 @@ import {
   ContractReadOptions,
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
-import { hexToUtf8 } from "src/base/hexToUtf8";
 import { Overwrite } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
@@ -78,7 +77,7 @@ export class ReadWriteRegistry extends ReadRegistry {
     );
     return {
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
@@ -103,7 +102,7 @@ export class ReadWriteRegistry extends ReadRegistry {
     );
     return infos.map(({ kind, name, version, data, factory }) => ({
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
