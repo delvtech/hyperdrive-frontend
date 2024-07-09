@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode, useRef } from "react";
+import { ReactElement, ReactNode, useEffect, useRef } from "react";
 
 interface ModalProps {
   modalId: string;
@@ -9,6 +9,7 @@ interface ModalProps {
   className?: string;
   forceOpen?: boolean;
   activeIndex?: number;
+  onClose?: () => void;
 }
 
 interface ModalChildrenOptions {
@@ -23,11 +24,18 @@ export function Modal({
   className,
   forceOpen = false,
   activeIndex,
+  onClose,
 }: ModalProps): ReactElement {
   const modalRef = useRef<HTMLDialogElement>(null);
   const showModal = () => modalRef.current?.showModal();
 
   const isMultiModal = getIsMultiModal(modalContent, modalHeader, activeIndex);
+
+  useEffect(() => {
+    if (onClose) {
+      modalRef.current?.addEventListener("close", onClose);
+    }
+  }, [onClose]);
 
   return (
     <>
