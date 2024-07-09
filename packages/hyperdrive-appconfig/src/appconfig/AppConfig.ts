@@ -11,6 +11,7 @@ type SomeProtocols = Partial<typeof protocols>;
 export interface AppConfig {
   chainId: number;
   tags: Tag[];
+  registryAddress: string;
   hyperdrives: HyperdriveConfig[];
   tokens: TokenConfig<KnownTokenExtensions>[];
   protocols: SomeProtocols;

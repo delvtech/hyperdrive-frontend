@@ -1,8 +1,6 @@
 import "dotenv/config";
-
-import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
+import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
 
@@ -13,19 +11,14 @@ const publicClient = createPublicClient({
   transport: http(mainnetNodeRpcUrl),
 });
 
-fetchRegistryAddresses({
+const appConfig = await getAppConfig({
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  chainId: mainnet.id,
   publicClient,
-}).then(async (addresses) => {
-  const appConfig = await getAppConfigFromRegistryAddresses({
-    addresses,
-    chainId: mainnet.id,
-    publicClient,
-  });
+});
 
-  writeAppConfigToFile({
-    filename: `./src/generated/${mainnet.id}.appconfig.ts`,
-    appConfig,
-    appConfigName: "mainnetAppConfig",
-  });
+writeAppConfigToFile({
+  filename: `./src/generated/${mainnet.id}.appconfig.ts`,
+  appConfig,
+  appConfigName: "mainnetAppConfig",
 });

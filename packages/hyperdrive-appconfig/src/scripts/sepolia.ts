@@ -1,8 +1,6 @@
 import "dotenv/config";
-
-import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
+import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
@@ -13,19 +11,14 @@ const publicClient = createPublicClient({
   transport: http(sepoliaNodeRpcUrl),
 });
 
-fetchRegistryAddresses({
+const appConfig = await getAppConfig({
   registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+  chainId: sepolia.id,
   publicClient,
-}).then(async (addresses) => {
-  const appConfig = await getAppConfigFromRegistryAddresses({
-    addresses,
-    chainId: sepolia.id,
-    publicClient,
-  });
+});
 
-  writeAppConfigToFile({
-    filename: `./src/generated/${sepolia.id}.appconfig.ts`,
-    appConfig,
-    appConfigName: "sepoliaAppConfig",
-  });
+writeAppConfigToFile({
+  filename: `./src/generated/${sepolia.id}.appconfig.ts`,
+  appConfig,
+  appConfigName: "sepoliaAppConfig",
 });
