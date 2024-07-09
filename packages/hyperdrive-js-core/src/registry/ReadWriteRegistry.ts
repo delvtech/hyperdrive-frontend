@@ -27,7 +27,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    * Get a {@linkcode ReadWriteFactory} instance for each registered factory.
    */
   async getFactories(
-    options: ContractReadOptions,
+    options?: ContractReadOptions,
   ): Promise<ReadWriteFactory[]> {
     const factoryAddresses = await this.getFactoryAddresses(options);
     return factoryAddresses.map(
@@ -45,7 +45,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    * registered in the registry.
    */
   async getInstances(
-    options: ContractReadOptions,
+    options?: ContractReadOptions,
   ): Promise<ReadWriteHyperdrive[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
     const hyperdriveAddresses = await this.contract.read(
@@ -68,7 +68,7 @@ export class ReadWriteRegistry extends ReadRegistry {
 
   async getInstanceInfo(
     instanceAddress: Address,
-    options: ContractReadOptions,
+    options?: ContractReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata> {
     const { kind, name, version, data, factory } = await this.contract.read(
       "getInstanceInfoWithMetadata",
@@ -93,7 +93,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    */
   async getInstanceInfos(
     instanceAddresses: Address[],
-    options: ContractReadOptions,
+    options?: ContractReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(
       "getInstanceInfosWithMetadata",
