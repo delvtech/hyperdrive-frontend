@@ -12,6 +12,7 @@ import {
 export interface ReadRegistryOptions extends ReadContractModelOptions {}
 
 export class ReadRegistry extends ReadModel {
+  address: Address;
   contract: CachedReadContract<RegistryAbi>;
 
   constructor({
@@ -23,6 +24,7 @@ export class ReadRegistry extends ReadModel {
     namespace,
   }: ReadRegistryOptions) {
     super({ name, network, contractFactory });
+    this.address = address;
     this.contract = contractFactory({
       abi: registryAbi,
       address,
