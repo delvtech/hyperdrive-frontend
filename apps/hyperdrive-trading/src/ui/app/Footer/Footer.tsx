@@ -80,8 +80,8 @@ export default function Footer(): ReactElement {
         >
           Whitepaper
         </a>
-        <Link to="/changelog" className="daisy-link-hover daisy-link">
-          Changelog
+        <Link to="/chainlog" className="daisy-link-hover daisy-link">
+          Chainlog
         </Link>
         <a
           target="_blank"
