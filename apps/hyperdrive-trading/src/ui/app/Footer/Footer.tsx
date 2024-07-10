@@ -80,6 +80,9 @@ export default function Footer(): ReactElement {
         >
           Whitepaper
         </a>
+        <Link to="/changelog" className="daisy-link-hover daisy-link">
+          Changelog
+        </Link>
         <a
           target="_blank"
           rel="noreferrer"
