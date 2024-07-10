@@ -12,7 +12,7 @@
 
 import { Route as rootRoute } from "./ui/routes/__root";
 import { Route as BridgeImport } from "./ui/routes/bridge";
-import { Route as ChangelogImport } from "./ui/routes/changelog";
+import { Route as ChainlogImport } from "./ui/routes/chainlog";
 import { Route as IndexImport } from "./ui/routes/index";
 import { Route as MarketAddressImport } from "./ui/routes/market.$address";
 import { Route as MarketsImport } from "./ui/routes/markets";
@@ -42,8 +42,8 @@ const MarketsRoute = MarketsImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
-const ChangelogRoute = ChangelogImport.update({
-  path: "/changelog",
+const ChainlogRoute = ChainlogImport.update({
+  path: "/chainlog",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -74,8 +74,8 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof BridgeImport;
       parentRoute: typeof rootRoute;
     };
-    "/changelog": {
-      preLoaderRoute: typeof ChangelogImport;
+    "/chainlog": {
+      preLoaderRoute: typeof ChainlogImport;
       parentRoute: typeof rootRoute;
     };
     "/markets": {
@@ -106,7 +106,7 @@ declare module "@tanstack/react-router" {
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
   BridgeRoute,
-  ChangelogRoute,
+  ChainlogRoute,
   MarketsRoute,
   RestrictedcountriesRoute,
   VoidRoute,

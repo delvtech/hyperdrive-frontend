@@ -4,6 +4,7 @@
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
+    "Chainlog",
     "delv",
     "delvtech",
     "dnum",
@@ -13,6 +14,7 @@
     "Mintable",
     "Reimagined",
     "signale",
+    "tanstack",
     "thiserror",
     "viem"
   ],

@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "src/ui/app/Page";
-import { Changelog } from "src/ui/changelog/Changelog";
+import { Chainlog } from "src/ui/chainlog/Chainlog";
 import { z } from "zod";
 
-export const Route = createFileRoute("/changelog")({
+export const Route = createFileRoute("/chainlog")({
   component: () => (
     <Page>
-      <Changelog />
+      <Chainlog />
     </Page>
   ),
   validateSearch: z.object({
