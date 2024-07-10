@@ -10,24 +10,16 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
 import { Address } from "viem";
-import { useChainId } from "wagmi";
+import { useChainId, usePublicClient } from "wagmi";
 
 export function Changelog(): ReactElement {
-  const { tab = "pools", version } = useSearch({
-    from: "/changelog",
-  });
   const navigate = useNavigate();
-  const appConfig = useAppConfig();
-
-  if (!appConfig?.hyperdrives.length) {
-    return <div>No contracts found.</div>;
-  }
+  const { tab = "pools", version } = useSearch({ from: "/changelog" });
 
   return (
     <div className="flex justify-center">
@@ -81,10 +73,8 @@ type Pool = {
   name: string;
   version: string;
   isPaused: boolean;
-  status: "active" | "sunset";
   factoryAddress: Address;
-  // TODO: What is this?
-  dcAddress: Address;
+  deployerCoordinatorAddress: Address;
   baseToken: Address;
   vaultToken: Address;
 };
@@ -106,14 +96,11 @@ const poolsColumns = [
   poolsColHelper.accessor((row) => row.isPaused, {
     header: "Paused",
   }),
-  poolsColHelper.accessor((row) => row.status, {
-    header: "Status",
-  }),
   poolsColHelper.accessor((row) => row.factoryAddress, {
     header: "Factory",
     cell: ({ getValue }) => <AddressCell address={getValue()} />,
   }),
-  poolsColHelper.accessor((row) => row.dcAddress, {
+  poolsColHelper.accessor((row) => row.deployerCoordinatorAddress, {
     header: "Deployer Coordinator",
     cell: ({ getValue }) => <AddressCell address={getValue()} />,
   }),
@@ -128,7 +115,7 @@ const poolsColumns = [
 ];
 
 function PoolsTable(): ReactElement {
-  const { data = [], isFetching } = usePoolsData();
+  const { data = [], isFetching } = useRegistryPoolsQuery();
   const tableInstance = useReactTable({
     columns: poolsColumns,
     data,
@@ -143,7 +130,12 @@ function PoolsTable(): ReactElement {
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky top-0 z-10 h-10 rounded-box text-sm"
+                  className={classNames(
+                    "sticky top-0 z-10 h-10 rounded-box text-sm",
+                    {
+                      "min-w-52": header.id === "name",
+                    },
+                  )}
                   key={header.id}
                 >
                   <div
@@ -207,13 +199,14 @@ function AddressCell({ address }: { address: Address }) {
   );
 }
 
-function usePoolsData(): UseQueryResult<Pool[], any> {
+function useRegistryPoolsQuery(): UseQueryResult<Pool[], any> {
   const chainId = useChainId();
+  const publicClient = usePublicClient();
   const registry = useReadRegistry();
-  const queryEnabled = !!registry;
+  const queryEnabled = !!registry && !!publicClient;
 
   return useQuery({
-    queryKey: ["changelogPools", registry?.address, chainId],
+    queryKey: ["registryPools", registry?.address, chainId],
     enabled: queryEnabled,
     placeholderData: [],
     queryFn: queryEnabled
@@ -225,20 +218,27 @@ function usePoolsData(): UseQueryResult<Pool[], any> {
 
           return Promise.all(
             pools.map(async (pool, i): Promise<Pool> => {
-              const meta = metas[i];
+              const { factory, name, version } = metas[i];
               const baseToken = await pool.getBaseToken();
               const vaultToken = await pool.getSharesToken();
               const marketState = await pool.getMarketState();
+              const [deployerCoordinator] =
+                await factory.getDeployerCoordinatorAddresses({
+                  instances: [pool.address],
+                });
+
               return {
                 address: pool.address,
-                name: meta.name,
-                version: meta.version,
+                name: name,
+                version: version,
                 baseToken: baseToken.address,
                 vaultToken: vaultToken.address,
-                dcAddress: "0xTODO",
-                factoryAddress: meta.factory.address,
+                deployerCoordinatorAddress: deployerCoordinator,
+                factoryAddress: factory.address,
                 isPaused: marketState.isPaused,
-                status: "active",
+                // TODO: When we're ready to sunset pools, we'll need to
+                // implement a data schema that can be used to determine this.
+                // status: "active",
               };
             }),
           );
