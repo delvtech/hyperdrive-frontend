@@ -131,19 +131,17 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
     placeholderData: [],
     queryFn: queryEnabled
       ? async () => {
-          const factories = await registry.getFactories();
-          const metas = await registry.getFactoryInfos(
-            factories.map((factory) => factory.address),
-          );
+          const factoryAddresses = await registry.getFactoryAddresses();
+          const metas = await registry.getFactoryInfos(factoryAddresses);
 
           return Promise.all(
-            factories.map(async (factory, i): Promise<Factory> => {
+            factoryAddresses.map(async (address, i): Promise<Factory> => {
               const { name, version } = metas[i];
 
               return {
-                name: name,
-                address: factory.address,
-                version: version,
+                name,
+                address,
+                version,
               };
             }),
           );
