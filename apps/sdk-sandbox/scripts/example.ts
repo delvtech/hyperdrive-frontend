@@ -25,20 +25,13 @@ const hyperdrive = new ReadHyperdrive({
   publicClient,
 });
 
-// const rate = await hyperdrive.getFixedApr();
-
-// const bondAmountForShorting = await hyperwasm.console.log(
-//   `Current pool info for ${hyperdrive.address}:\n`,
-//   info,
-// );
-// console.log(`Current Fixed Rate: ${formatEther(rate)}`);
-
 const poolInfo = await hyperdrive.getPoolInfo();
 const poolConfig = await hyperdrive.getPoolConfig();
 const { vaultSharePrice } = await hyperdrive.getCheckpoint();
 const checkpointExposure = await hyperdrive.getCheckpointExposure();
+const spotPrice = await hyperdrive.getLongPrice();
 
-const budget = BigInt(157e18);
+const budget = BigInt(140e18);
 
 // user types in amount of base to calc the amount of bonds to short
 const expectedBonds = maxShort({
@@ -47,6 +40,8 @@ const expectedBonds = maxShort({
   openVaultSharePrice: vaultSharePrice,
   poolConfig,
   poolInfo,
+  conservativePrice: spotPrice,
+  // maxIterations: 7,
 });
 
 // Feed the bond amount from maxShort into calcOpenShort to see if the trader
