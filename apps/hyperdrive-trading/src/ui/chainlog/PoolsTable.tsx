@@ -11,7 +11,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
 import { Address } from "viem";
-import { useChainId, usePublicClient } from "wagmi";
+import { useChainId } from "wagmi";
 import { AddressCell } from "./AddressCell";
 
 export function PoolsTable(): ReactElement {
@@ -145,9 +145,8 @@ type Pool = {
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
   const chainId = useChainId();
-  const publicClient = usePublicClient();
   const registry = useReadRegistry();
-  const queryEnabled = !!registry && !!publicClient;
+  const queryEnabled = !!registry;
 
   return useQuery({
     queryKey: ["chainlog", "pools", registry?.address, chainId],
