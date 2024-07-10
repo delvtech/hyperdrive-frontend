@@ -1214,11 +1214,9 @@ export class ReadHyperdrive extends ReadModel {
       options,
     });
 
-    const maxBondsOut = hyperwasm.maxShort({
+    const maxBondsOut = hyperwasm.absoluteMaxShort({
       poolInfo,
       poolConfig,
-      budget: MAX_UINT256,
-      openVaultSharePrice,
       checkpointExposure,
     });
     const maxBaseIn = hyperwasm.calcOpenShort({
