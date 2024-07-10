@@ -10,7 +10,7 @@ export const Route = createFileRoute("/changelog")({
     </Page>
   ),
   validateSearch: z.object({
-    tab: z.enum(["pools", "factories"]).catch("pools").optional(),
+    tab: z.enum(["pools", "factories"]).optional(),
     version: z.coerce
       .string()
       .regex(/^v\d+(\.\d+\.\d+)?$/)
