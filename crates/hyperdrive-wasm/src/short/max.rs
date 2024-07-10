@@ -46,3 +46,29 @@ pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
 
     result_fp.to_bigint()
 }
+
+///////////////////////////////////
+#[ts(extends = IStateParams)]
+struct AbsoluteMaxShortParams {
+    /// The exposure of the pool's current checkpoint.
+    checkpoint_exposure: BigInt,
+    /// The maximum number of iterations to run the binary search for.
+    max_iterations: Option<usize>,
+}
+
+/// Calculates the max amount of longs that can be shorted given the current
+/// state of the pool.
+#[wasm_bindgen(skip_jsdoc)]
+pub fn absoluteMaxShort(params: IAbsoluteMaxShortParams) -> Result<BigInt, Error> {
+    let state = params.to_state()?;
+
+    let result_fp = state
+        .calculate_absolute_max_short(
+            state.calculate_spot_price().to_result()?,
+            params.checkpoint_exposure().to_i256()?,
+            params.max_iterations(),
+        )
+        .to_result()?;
+
+    result_fp.to_bigint()
+}
