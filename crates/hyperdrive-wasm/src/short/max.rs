@@ -47,7 +47,6 @@ pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
     result_fp.to_bigint()
 }
 
-///////////////////////////////////
 #[ts(extends = IStateParams)]
 struct AbsoluteMaxShortParams {
     /// The exposure of the pool's current checkpoint.
