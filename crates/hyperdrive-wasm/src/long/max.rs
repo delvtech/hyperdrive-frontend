@@ -14,7 +14,7 @@ struct MaxLongParams {
     budget: BigInt,
     /// The exposure of the pool's current checkpoint.
     checkpoint_exposure: BigInt,
-    /// The maximum number of iterations to run the binary search for.
+    /// The maximum number of iterations to run the Netwon's method for.
     max_iterations: Option<u8>,
 }
 

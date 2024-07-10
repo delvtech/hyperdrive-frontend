@@ -242,7 +242,7 @@ interface IMaxLongParams extends IStateParams {
    */
   checkpointExposure: bigint;
   /**
-   *  The maximum number of iterations to run the binary search for.
+   *  The maximum number of iterations to run the Netwon's method for.
    */
   maxIterations?: number | undefined;
 }
@@ -357,7 +357,7 @@ interface IMaxShortParams extends IStateParams {
    */
   conservativePrice?: bigint | undefined;
   /**
-   *  The maximum number of iterations to run the binary search for.
+   *  The maximum number of iterations to run the Newton's method for.
    */
   maxIterations?: number | undefined;
 }
@@ -368,7 +368,7 @@ interface IAbsoluteMaxShortParams extends IStateParams {
    */
   checkpointExposure: bigint;
   /**
-   *  The maximum number of iterations to run the binary search for.
+   *  The maximum number of iterations to run the Newton's method for.
    */
   maxIterations?: usize | undefined;
 }
