@@ -14,5 +14,11 @@
     // Disable ordering in favor of prettier plugin
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": "off",
+    // Exported functions should be written as function declarations for easier
+    // scanning. Arrow functions can still be used as anonymous functions.
+    "func-style": [
+      "error",
+      "declaration",
+    ]
   },
 }

@@ -25,7 +25,9 @@ export function Modal({
   activeIndex,
 }: ModalProps): ReactElement {
   const modalRef = useRef<HTMLDialogElement>(null);
-  const showModal = () => modalRef.current?.showModal();
+  function showModal() {
+    return modalRef.current?.showModal();
+  }
 
   const isMultiModal = getIsMultiModal(modalContent, modalHeader, activeIndex);
 

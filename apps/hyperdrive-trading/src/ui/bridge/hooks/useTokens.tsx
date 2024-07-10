@@ -3,10 +3,10 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/ui/bridge/api";
 
-export const useTokens = (): {
+export function useTokens(): {
   tokens: EntityFungibleToken[] | undefined;
   status: QueryStatus;
-} => {
+} {
   const { data, status } = useQuery({
     queryKey: makeQueryKey("gopher", { route: "assets/fungibleList" }),
     queryFn: async () => {
@@ -16,4 +16,4 @@ export const useTokens = (): {
   });
 
   return { tokens: data?.data, status };
-};
+}
