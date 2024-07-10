@@ -1,4 +1,3 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import {
@@ -15,8 +14,9 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
+import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
 import { Address } from "viem";
-import { useChainId, usePublicClient } from "wagmi";
+import { useChainId } from "wagmi";
 
 export function Changelog(): ReactElement {
   const { tab = "pools", version } = useSearch({
@@ -125,8 +125,7 @@ const poolsColumns = [
 ];
 
 function PoolsTable(): ReactElement {
-  const { registryAddress } = useAppConfig();
-  const { data = [], isFetching } = usePoolsData(registryAddress);
+  const { data = [], isFetching } = usePoolsData();
   const tableInstance = useReactTable({
     columns: poolsColumns,
     data,
@@ -205,22 +204,17 @@ function AddressCell({ address }: { address: Address }) {
   );
 }
 
-function usePoolsData(registryAddress: Address): UseQueryResult<Pool[], any> {
+function usePoolsData(): UseQueryResult<Pool[], any> {
   const chainId = useChainId();
-  const publicClient = usePublicClient();
-  const queryEnabled = !!publicClient;
+  const registry = useReadRegistry();
+  const queryEnabled = !!registry;
 
   return useQuery({
-    queryKey: ["changelogPools", registryAddress, chainId],
+    queryKey: ["changelogPools", registry?.address, chainId],
     enabled: queryEnabled,
     placeholderData: [],
     queryFn: queryEnabled
       ? async () => {
-          const registry = new ReadRegistry({
-            address: registryAddress,
-            publicClient,
-          });
-
           const pools = await registry.getInstances();
           const metas = await registry.getInstanceInfos(
             pools.map((pool) => pool.address),
