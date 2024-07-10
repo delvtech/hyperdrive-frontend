@@ -134,9 +134,12 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
           const factoryAddresses = await registry.getFactoryAddresses();
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
-          return factoryAddresses.map((address, i): Factory => {
-            const { name, version } = metas[i];
-            return { name, address, version };
+          return metas.map(({ name, version }, i): Factory => {
+            return {
+              name,
+              address: factoryAddresses[i],
+              version,
+            };
           });
         }
       : undefined,
