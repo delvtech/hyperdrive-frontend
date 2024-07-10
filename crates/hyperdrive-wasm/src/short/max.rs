@@ -25,8 +25,8 @@ struct MaxShortParams {
     max_iterations: Option<u8>,
 }
 
-/// Calculates the max amount of longs that can be shorted given the current
-/// state of the pool.
+/// Calculates the max amount of bonds that can be shorted given a budget and
+/// the current state of the pool.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
@@ -56,7 +56,7 @@ struct AbsoluteMaxShortParams {
     max_iterations: Option<usize>,
 }
 
-/// Calculates the max amount of longs that can be shorted given the current
+/// Calculates the max amount of bonds that can be shorted given the current
 /// state of the pool.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn absoluteMaxShort(params: IAbsoluteMaxShortParams) -> Result<BigInt, Error> {

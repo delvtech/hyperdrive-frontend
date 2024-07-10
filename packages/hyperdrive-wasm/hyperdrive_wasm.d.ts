@@ -109,12 +109,12 @@ export function closeShortCurveFee(params: IClosePositionParams): bigint;
 */
 export function closeShortFlatFee(params: IClosePositionParams): bigint;
 /**
-* Calculates the max amount of longs that can be shorted given the current
-* state of the pool.
+* Calculates the max amount of bonds that can be shorted given a budget and
+* the current state of the pool.
 */
 export function maxShort(params: IMaxShortParams): bigint;
 /**
-* Calculates the max amount of longs that can be shorted given the current
+* Calculates the max amount of bonds that can be shorted given the current
 * state of the pool.
 */
 export function absoluteMaxShort(params: IAbsoluteMaxShortParams): bigint;
