@@ -30,46 +30,48 @@ export function Changelog(): ReactElement {
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl">
-      {/* Header */}
-      <div className="mb-16 max-w-3xl text-center lg:text-left">
-        <h1 className="gradient-text mb-4 text-h2 font-bold">Changelog</h1>
-        <p className="text-neutral-content">
-          Find the latest addresses and versions of the Hyperdrive smart
-          contracts.
-        </p>
-      </div>
+    <div className="flex justify-center">
+      <div className="mx-[4vw] max-w-screen-2xl">
+        {/* Header */}
+        <div className="mb-12 max-w-3xl text-center lg:text-left">
+          <h1 className="gradient-text mb-4 text-h2 font-bold">Changelog</h1>
+          <p className="text-neutral-content">
+            Find the latest addresses and versions of the Hyperdrive smart
+            contracts.
+          </p>
+        </div>
 
-      {/* Changelog */}
-      <Tabs
-        activeTabId={tab}
-        tabs={[
-          {
-            content: <PoolsTable />,
-            id: "pools",
-            label: "Pools",
-            onClick: () => {
-              navigate({
-                search: () => ({ tab: "pools", version }),
-              });
+        {/* Changelog Tabs */}
+        <Tabs
+          activeTabId={tab}
+          tabs={[
+            {
+              content: <PoolsTable />,
+              id: "pools",
+              label: "Pools",
+              onClick: () => {
+                navigate({
+                  search: () => ({ tab: "pools", version }),
+                });
+              },
             },
-          },
-          {
-            content: (
-              <>
-                <h1>Factories</h1>
-              </>
-            ),
-            id: "factories",
-            label: "Factories",
-            onClick: () => {
-              navigate({
-                search: () => ({ tab: "factories", version }),
-              });
+            {
+              content: (
+                <>
+                  <h1>Factories</h1>
+                </>
+              ),
+              id: "factories",
+              label: "Factories",
+              onClick: () => {
+                navigate({
+                  search: () => ({ tab: "factories", version }),
+                });
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      </div>
     </div>
   );
 }
@@ -90,12 +92,13 @@ type Pool = {
 const poolsColHelper = createColumnHelper<Pool>();
 
 const poolsColumns = [
+  poolsColHelper.accessor((row) => row.name, {
+    id: "name",
+    header: "Name",
+  }),
   poolsColHelper.accessor((row) => row.address, {
     header: "Pool Address",
     cell: ({ getValue }) => <AddressCell address={getValue()} />,
-  }),
-  poolsColHelper.accessor((row) => row.name, {
-    header: "Name",
   }),
   poolsColHelper.accessor((row) => row.version, {
     header: "Version",
@@ -107,11 +110,11 @@ const poolsColumns = [
     header: "Status",
   }),
   poolsColHelper.accessor((row) => row.factoryAddress, {
-    header: "Factory Address",
+    header: "Factory",
     cell: ({ getValue }) => <AddressCell address={getValue()} />,
   }),
   poolsColHelper.accessor((row) => row.dcAddress, {
-    header: "DC Address",
+    header: "Deployer Coordinator",
     cell: ({ getValue }) => <AddressCell address={getValue()} />,
   }),
   poolsColHelper.accessor((row) => row.baseToken, {
