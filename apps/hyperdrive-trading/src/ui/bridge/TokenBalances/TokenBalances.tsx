@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
@@ -22,8 +23,11 @@ function TokenBalances(): ReactNode {
     <div className="flex-col-3 flex w-full space-x-6">
       {balances.map((chainBalances, index) => {
         const totalBalance =
-          chainBalances?.reduce((total, token) => {
-            return total + BigInt(token.balance || "0");
+          chainBalances?.reduce((total, { balance, tokenDecimals }) => {
+            if (!balance || !tokenDecimals) {
+              return total;
+            }
+            return total + parseUnits(balance, tokenDecimals);
           }, 0n) || 0n;
 
         return (
@@ -39,7 +43,7 @@ function TokenBalances(): ReactNode {
               <tbody>
                 {chainBalances?.map((token) => (
                   <tr key={token.chainId}>
-                    <td>{chains[token.chainId!].name}</td>
+                    <td>{chains[token.chainId!]?.name}</td>
                     <td>
                       {(
                         parseFloat(token?.balance || "0") /
