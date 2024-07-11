@@ -10,6 +10,7 @@ export function getSupportedNetworksStub(baseUrl: string): RequestHandler {
       data: [
         {
           chainType: "evm",
+          blockTime: 12,
           name: "Sepolia",
           chainID: 11155111 as EntityChainID,
           rpcURLs: ["https://rpc.sepolia.org"],
@@ -17,6 +18,7 @@ export function getSupportedNetworksStub(baseUrl: string): RequestHandler {
         },
         {
           chainType: "evm",
+          blockTime: 12,
           name: "B3Sepolia",
           chainID: 1993 as EntityChainID,
           rpcURLs: ["https://b3sepolia-rpc.publicnode.com"],
@@ -24,6 +26,7 @@ export function getSupportedNetworksStub(baseUrl: string): RequestHandler {
         },
         {
           chainType: "evm",
+          blockTime: 12,
           name: "BaseSepolia",
           chainID: 84532 as EntityChainID,
           rpcURLs: ["https://sepolia.base.org"],
