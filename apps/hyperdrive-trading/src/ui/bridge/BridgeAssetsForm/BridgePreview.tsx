@@ -74,7 +74,6 @@ export function BridgePreview({
     );
   } else if (solutionStatus === "loading") {
     return <div>Loading...</div>;
-  } else {
-    return <div>Something went wrong</div>;
   }
+  return <div>Something went wrong</div>;
 }
