@@ -27,6 +27,7 @@ import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPicker } from "src/ui/token/TokenPicker";
@@ -207,7 +208,7 @@ export function OpenLongForm({
         isNewOpenLongFormEnabled ? (
           <TokenInputTwo
             settings={
-              <SlippageSettings
+              <SlippageSettingsTwo
                 onSlippageChange={setSlippage}
                 slippage={slippage}
                 activeOption={activeSlippageOption}
@@ -242,7 +243,6 @@ export function OpenLongForm({
                       })} ${activeToken.symbol}`
                     : undefined}
                 </span>
-                <span>{`Slippage: ${slippage || "0.5"}%`}</span>
               </div>
             }
             onChange={(newAmount) => setAmount(newAmount)}

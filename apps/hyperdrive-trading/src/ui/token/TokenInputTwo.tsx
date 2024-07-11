@@ -1,4 +1,3 @@
-import { Cog8ToothIcon } from "@heroicons/react/16/solid";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
@@ -44,10 +43,8 @@ export function TokenInputTwo({
 }: TokenInputProps): ReactElement {
   return (
     <div className="flex w-full flex-col">
-      <label className="my-2 flex flex-row items-center justify-end gap-2 text-xs text-neutral-content">
-        0.5% slippage
-        <Cog8ToothIcon className="h-4 text-base-content" />
-      </label>
+      {settings ? settings : null}
+
       <div className="flex flex-col rounded-md bg-base-100 p-4">
         <label className="text-sm text-neutral-content">You spend</label>
         <div className="flex flex-row">
@@ -99,11 +96,15 @@ export function TokenInputTwo({
             token
           )}
         </div>
-        <div className="mt-2 flex justify-between">
-          <label className="text-sm text-neutral-content">$1000.04</label>
-          <label className=" text-sm text-neutral-content">
-            Balance: 1000 Max
-          </label>
+        <div className="mt-2 flex justify-end">
+          {/* TODO: Implement USD Stat here */}
+
+          {stat ? (
+            <label className="text-sm text-neutral-content">
+              {stat}
+              {/* TODO: Add max button here */}
+            </label>
+          ) : null}
         </div>
       </div>
     </div>
