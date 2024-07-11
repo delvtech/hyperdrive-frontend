@@ -1,4 +1,5 @@
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -100,6 +101,21 @@ const poolCols = [
   poolColHelper.accessor((row) => row.name, {
     id: "name",
     header: "Name",
+    cell: ({ getValue, row }) => (
+      <Link
+        className="daisy-link-hover daisy-link"
+        to={`/market/$address`}
+        params={{
+          address: row.original.address,
+        }}
+        search={{
+          openOrClosed: "Open",
+          position: "Longs",
+        }}
+      >
+        {getValue()}
+      </Link>
+    ),
   }),
   poolColHelper.accessor((row) => row.address, {
     header: "Address",
