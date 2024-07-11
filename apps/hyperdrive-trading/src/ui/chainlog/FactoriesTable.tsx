@@ -8,12 +8,14 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { Status, decodeFactoryData } from "src/registry/data";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
+import { AddressCell } from "src/ui/chainlog/AddressCell";
+import { StatusCell } from "src/ui/chainlog/StatusCell";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
 import { Address } from "viem";
 import { useChainId } from "wagmi";
-import { AddressCell } from "./AddressCell";
 
 export function FactoriesTable(): ReactElement {
   const { data = [], isFetching } = useFactoriesQuery();
@@ -109,15 +111,17 @@ const factoryCols = [
   factoryColHelper.accessor((row) => row.version, {
     header: "Version",
   }),
+  factoryColHelper.accessor((row) => row.status, {
+    header: "Status",
+    cell: ({ getValue }) => <StatusCell status={getValue()} />,
+  }),
 ];
 
 interface Factory {
   name: string;
   address: Address;
   version: string;
-  // TODO: When we're ready to sunset pools, we'll need to implement a meta data
-  // schema that can be used to determine status.
-  // status: "active" | "sunset",
+  status: Status;
 }
 
 function useFactoriesQuery(): UseQueryResult<Factory[], any> {
@@ -138,11 +142,13 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
           const factoryAddresses = await registry.getFactoryAddresses();
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
-          return metas.map(({ name, version }, i): Factory => {
+          return metas.map(({ data, name, version }, i): Factory => {
+            const { status } = decodeFactoryData(data);
             return {
               name,
               address: factoryAddresses[i],
               version,
+              status,
             };
           });
         }
