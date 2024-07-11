@@ -28,6 +28,8 @@ export function getServerAggregateBalanceSolutionHandlerStub(
       const url = new URL(request.url);
       const sampleResponseData: EntityTokenTransferQuote = {
         amount: "1",
+        tool: { logoURI: "https://gopher.finance/logo.png", name: "Gopher" },
+        approvals: [],
         destinationChain: 115511 as EntityChainID,
         destinationTokenAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         duration: 300,
@@ -43,6 +45,7 @@ export function getServerAggregateBalanceSolutionHandlerStub(
         sourceChain: 84532 as EntityChainID,
         sourceTokenAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
         transaction: {
+          chainId: 84532,
           to: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
           data: "0x38ed1739000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000de0b6b3a76400000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000742d35cc6634c0532925a3b844bc454e4438f44e0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
           value: "0",
@@ -101,10 +104,11 @@ export function postServerAggregateBalanceSolutionHandlerStub(
 ): RequestHandler {
   return http.post<AggregationQueryParams>(
     `${baseUrl}/solutions/aggregation`,
-    async ({ request }) => {
-      const solution = await request.json();
+    async () => {
       const sampleResponseData: EntityTokenTransferQuote = {
         amount: "1",
+        approvals: [],
+        tool: { logoURI: "https://gopher.finance/logo.png", name: "Gopher" },
         destinationChain: 115511 as EntityChainID,
         destinationTokenAddress: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
         duration: 300,
@@ -120,6 +124,7 @@ export function postServerAggregateBalanceSolutionHandlerStub(
         sourceChain: 137,
         sourceTokenAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
         transaction: {
+          chainId: 84532,
           to: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
           data: "0x38ed1739000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000de0b6b3a76400000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000742d35cc6634c0532925a3b844bc454e4438f44e0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
           value: "0",
