@@ -7,28 +7,40 @@ import { gopher } from "src/bridge/api";
 type AggregationListQueryParams = Parameters<
   (typeof gopher)["solutions"]["aggregationList"]
 >[0];
+type OptionalAggregationListQueryParams = {
+  [P in keyof AggregationListQueryParams]?: AggregationListQueryParams[P];
+};
 
-export function useAggregationSolution(params: AggregationListQueryParams): {
+export function useAggregationSolution(
+  params: OptionalAggregationListQueryParams,
+): {
   solution: EntityTokenTransferQuote[] | undefined;
   status: QueryStatus;
 } {
+  const enabled =
+    !!params.account &&
+    !!params.token &&
+    !!params.amount &&
+    !!params.destination;
+
   const { data, status } = useQuery({
     queryKey: makeQueryKey("gopher", {
       route: "solutions/aggregationList",
       params,
     }),
-    queryFn: async () => {
-      const response = await gopher.solutions.aggregationList(params);
-      if (!response.ok) {
-        throw new Error("Failed to fetch aggregation solution");
-      }
-      return response;
-    },
-    enabled:
-      !!params.account &&
-      !!params.token &&
-      !!params.amount &&
-      !!params.destination,
+    queryFn: enabled
+      ? async () => {
+          const response = await gopher.solutions.aggregationList(
+            // cast is OK because we've already checked all the required params are present in 'enabled'.
+            params as AggregationListQueryParams,
+          );
+          if (!response.ok) {
+            throw new Error("Failed to fetch aggregation solution");
+          }
+          return response;
+        }
+      : undefined,
+    enabled,
   });
 
   return { solution: data?.data?.data, status };
