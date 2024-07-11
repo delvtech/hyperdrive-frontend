@@ -168,7 +168,7 @@ function calculateMaxButtonValue(
         Number(chainBalance.balance) > 0 && chainBalance.chainId !== chainId,
     ) || [];
   chainBalances.forEach(({ balance, tokenDecimals, chainId }) => {
-    const isActive = activated[String(chainId)];
+    const isActive = activated[String(chainId)] ?? true;
     if (balance && tokenDecimals && isActive) {
       maxButtonValue += parseUnits(balance, tokenDecimals);
     }

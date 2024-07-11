@@ -1,5 +1,4 @@
-import { EntityNetwork } from "@delvtech/gopher";
-import { Dispatch, ReactElement, SetStateAction, useEffect } from "react";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
 import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
@@ -19,10 +18,8 @@ export function BridgeAssetsPicker({
 }: BridgeAssetsPickerProps): ReactElement {
   const account = useAccount();
   const { balances } = useTokenBalances(account.address, [tokenSymbol]);
-  const { chains, status: chainsStatus } = useChainsByChainId();
+  const { chains } = useChainsByChainId();
   const activeChainId = useChainId();
-
-  useInitializeItems(chainsStatus, setActiveBridgeChains, chains);
 
   const filteredBalances =
     balances?.[0]?.filter(
@@ -57,7 +54,9 @@ export function BridgeAssetsPicker({
               <td>
                 <input
                   type="checkbox"
-                  checked={activeBridgeChains[String(chainBalance.chainId)]}
+                  checked={
+                    activeBridgeChains[String(chainBalance.chainId)] ?? true
+                  }
                   onChange={(e) => {
                     const value = e.target.checked;
                     setActiveBridgeChains((prevActivated) => {
@@ -76,23 +75,4 @@ export function BridgeAssetsPicker({
       </tbody>
     </table>
   );
-}
-function useInitializeItems(
-  chainsStatus: string,
-  setActiveBridgeChains: Dispatch<SetStateAction<Record<string, boolean>>>,
-  chains: Record<string, EntityNetwork> | undefined,
-) {
-  useEffect(() => {
-    if (chainsStatus === "success") {
-      setActiveBridgeChains(() => {
-        const defaultState: Record<string, boolean> = {};
-        Object.keys(chains || {}).forEach((chainId) => {
-          defaultState[chainId] = true;
-        });
-        return defaultState;
-      });
-    }
-    // We only want this to run once, when the chain data is available.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chainsStatus]);
 }
