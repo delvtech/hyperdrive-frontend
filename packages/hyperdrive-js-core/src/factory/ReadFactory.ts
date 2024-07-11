@@ -40,7 +40,9 @@ export class ReadFactory extends ReadModel {
    * factory.
    */
   async getIsDeployerCoordinator(address: Address): Promise<boolean> {
-    return this.contract.read("isInstance", { _instance: address });
+    return this.contract.read("isDeployerCoordinator", {
+      _deployerCoordinator: address,
+    });
   }
 
   /**
