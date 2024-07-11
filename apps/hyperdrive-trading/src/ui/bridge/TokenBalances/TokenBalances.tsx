@@ -8,7 +8,7 @@ import { useAccount } from "wagmi";
 function TokenBalances(): ReactNode {
   const { address } = useAccount();
   const tokenSymbols = ["USDT", "USDC", "DAI"];
-  const { balances } = useTokenBalances(address || "", tokenSymbols);
+  const { balances } = useTokenBalances(address, tokenSymbols);
   const { chains } = useChainsByChainId();
 
   if (!address) {
