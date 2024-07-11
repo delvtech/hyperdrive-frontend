@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
@@ -165,7 +166,11 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
   const queryEnabled = !!registry;
 
   return useQuery({
-    queryKey: ["chainlog", "pools", registry?.address, chainId],
+    queryKey: makeQueryKey("chainlog", {
+      tab: "pools",
+      registry: registry?.address,
+      chainId,
+    }),
     enabled: queryEnabled,
     placeholderData: [],
     queryFn: queryEnabled

@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
@@ -125,7 +126,11 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
   const queryEnabled = !!registry;
 
   return useQuery({
-    queryKey: ["chainlog", "factories", registry?.address, chainId],
+    queryKey: makeQueryKey("chainlog", {
+      tab: "factories",
+      registry: registry?.address,
+      chainId,
+    }),
     enabled: queryEnabled,
     placeholderData: [],
     queryFn: queryEnabled
