@@ -9,12 +9,15 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { Status, decodeInstanceData } from "src/registry/data";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
+import { AddressCell } from "src/ui/chainlog/AddressCell";
+import { PausedCell } from "src/ui/chainlog/PausedCell";
+import { StatusCell } from "src/ui/chainlog/StatusCell";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
 import { Address } from "viem";
 import { useChainId } from "wagmi";
-import { AddressCell } from "./AddressCell";
 
 export function PoolsTable(): ReactElement {
   const { data = [], isFetching } = usePoolsQuery();
@@ -127,6 +130,11 @@ const poolCols = [
   }),
   poolColHelper.accessor((row) => row.isPaused, {
     header: "Paused",
+    cell: ({ getValue }) => <PausedCell isPaused={getValue()} />,
+  }),
+  poolColHelper.accessor((row) => row.status, {
+    header: "Status",
+    cell: ({ getValue }) => <StatusCell status={getValue()} />,
   }),
   poolColHelper.accessor((row) => row.factoryAddress, {
     header: "Factory",
@@ -151,13 +159,11 @@ interface Pool {
   address: Address;
   version: string;
   isPaused: boolean;
+  status: Status;
   factoryAddress: Address;
   deployerCoordinatorAddress: Address;
   baseToken: Address;
   vaultToken: Address;
-  // TODO: When we're ready to sunset pools, we'll need to implement a meta data
-  // schema that can be used to determine status.
-  // status: "active" | "sunset",
 }
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
@@ -182,22 +188,24 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
 
           return Promise.all(
             pools.map(async (pool, i): Promise<Pool> => {
-              const { factory, name, version } = metas[i];
+              const { data, factory, name, version } = metas[i];
               const baseToken = await pool.getBaseToken();
               const vaultToken = await pool.getSharesToken();
-              const marketState = await pool.getMarketState();
-              const [deployerCoordinator] =
+              const { isPaused } = await pool.getMarketState();
+              const { status } = decodeInstanceData(data);
+              const [deployerCoordinatorAddress] =
                 await factory.getDeployerCoordinatorAddresses({
                   instances: [pool.address],
                 });
 
               return {
-                name: name,
+                name,
                 address: pool.address,
-                version: version,
-                isPaused: marketState.isPaused,
+                version,
+                isPaused,
+                status,
                 factoryAddress: factory.address,
-                deployerCoordinatorAddress: deployerCoordinator,
+                deployerCoordinatorAddress,
                 baseToken: baseToken.address,
                 vaultToken: vaultToken.address,
               };
