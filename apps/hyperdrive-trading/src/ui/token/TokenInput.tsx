@@ -126,7 +126,7 @@ export function TokenInput({
             >
               <Cog6ToothIcon className="h-4" />
             </button>
-            <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] w-64 justify-evenly rounded-lg bg-base-100 p-4 shadow">
+            <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg bg-base-100 p-4 shadow">
               {settings}
             </div>
           </div>

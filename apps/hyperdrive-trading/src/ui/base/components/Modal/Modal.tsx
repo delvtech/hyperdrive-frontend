@@ -9,7 +9,7 @@ interface ModalProps {
   className?: string;
   forceOpen?: boolean;
   activeIndex?: number;
-  onClose?: EventListener;
+  onClose?: () => void;
 }
 
 interface ModalChildrenOptions {
