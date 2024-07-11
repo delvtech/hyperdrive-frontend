@@ -110,14 +110,14 @@ const factoryCols = [
   }),
 ];
 
-type Factory = {
+interface Factory {
   name: string;
   address: Address;
   version: string;
   // TODO: When we're ready to sunset pools, we'll need to implement a meta data
   // schema that can be used to determine status.
   // status: "active" | "sunset",
-};
+}
 
 function useFactoriesQuery(): UseQueryResult<Factory[], any> {
   const chainId = useChainId();

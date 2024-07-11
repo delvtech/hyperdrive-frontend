@@ -145,7 +145,7 @@ const poolCols = [
   }),
 ];
 
-type Pool = {
+interface Pool {
   name: string;
   address: Address;
   version: string;
@@ -157,7 +157,7 @@ type Pool = {
   // TODO: When we're ready to sunset pools, we'll need to implement a meta data
   // schema that can be used to determine status.
   // status: "active" | "sunset",
-};
+}
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
   const chainId = useChainId();
