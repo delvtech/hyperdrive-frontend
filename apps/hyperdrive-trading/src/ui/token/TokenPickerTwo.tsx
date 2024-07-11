@@ -60,15 +60,15 @@ export function TokenPickerTwo({
       >
         <button
           className={classNames(
-            "daisy-btn flex h-8 items-center rounded-box border  bg-neutral px-4",
+            "daisy-btn daisy-btn-md flex items-center rounded-box bg-neutral text-lg",
           )}
           onClick={(e) => {
             e.preventDefault();
           }}
         >
-          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5 " />{" "}
+          <img src={activeToken?.tokenConfig?.iconUrl} className="h-6" />{" "}
           {activeToken?.tokenConfig?.symbol}
-          <ChevronDownIcon className="ml-2 h-5" />
+          <ChevronDownIcon className="h-7" />
         </button>
         <ul
           className={classNames(
