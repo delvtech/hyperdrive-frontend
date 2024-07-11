@@ -19,6 +19,9 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="bridge">
           Bridge Assets
         </FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName="new-open-long-form">
+          New Open Long Form
+        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
