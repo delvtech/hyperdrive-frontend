@@ -1,18 +1,18 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
-export interface Tab<TId extends string> {
-  id: TId;
+export interface Tab<TabId extends string> {
+  id: TabId;
   onClick: () => void;
   label: string;
   content: ReactNode;
 }
-export function Tabs<TId extends string>({
+export function Tabs<TabId extends string>({
   tabs,
   activeTabId,
 }: {
-  tabs: Tab<TId>[];
-  activeTabId: TId;
+  tabs: Tab<TabId>[];
+  activeTabId: TabId;
 }): ReactElement {
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
