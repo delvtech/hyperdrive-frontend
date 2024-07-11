@@ -1,7 +1,7 @@
 import { Dispatch, ReactElement, SetStateAction } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
-import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -17,8 +17,8 @@ export function BridgeAssetsPicker({
   setActiveBridgeChains,
 }: BridgeAssetsPickerProps): ReactElement {
   const account = useAccount();
-  const { balances } = useTokenBalances(account.address, [tokenSymbol]);
-  const { chains } = useChainsByChainId();
+  const { balances } = useBridgeTokenBalances(account.address, [tokenSymbol]);
+  const { chains } = useBridgeChainsByChainId();
   const activeChainId = useChainId();
 
   const filteredBalances =

@@ -2,15 +2,15 @@ import { ReactNode } from "react";
 import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
-import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { useAccount } from "wagmi";
 
 function TokenBalances(): ReactNode {
   const { address } = useAccount();
   const tokenSymbols = ["USDT", "USDC", "DAI"];
-  const { balances } = useTokenBalances(address, tokenSymbols);
-  const { chains } = useChainsByChainId();
+  const { balances } = useBridgeTokenBalances(address, tokenSymbols);
+  const { chains } = useBridgeChainsByChainId();
 
   if (!address) {
     return <Well>Connect your wallet</Well>;

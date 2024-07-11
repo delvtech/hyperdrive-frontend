@@ -3,9 +3,9 @@ import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { BridgeAssetsForm } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetsForm";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
-import { useToken } from "src/ui/bridge/hooks/useToken";
-import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
+import { useBridgeToken } from "src/ui/bridge/hooks/useBridgeToken";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { useAccount, useChainId } from "wagmi";
 
 interface BridgeAssetsModalProps {
@@ -53,8 +53,8 @@ export function BridgeAssetsModalHeader({
 }: BridgeAssetsHeaderProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId();
-  const { chains } = useChainsByChainId();
-  const { balances } = useTokenBalances(account, [tokenSymbol || ""]);
+  const { chains } = useBridgeChainsByChainId();
+  const { balances } = useBridgeTokenBalances(account, [tokenSymbol || ""]);
   const tokenBalance = balances?.[0]?.find(
     (chainBalance) => chainBalance.chainId === chainId,
   );
@@ -85,7 +85,7 @@ export function BridgeAssetsModalForm({
   closeModal,
   setShowBridgeUI,
 }: BridgeAssetsModalFormProps): ReactElement {
-  const { token } = useToken(tokenSymbol);
+  const { token } = useBridgeToken(tokenSymbol);
 
   if (!token) {
     return <div>Loading token information...</div>;
