@@ -172,7 +172,7 @@
         "description": "Endpoint will calculate best combination of single-hop transfers to",
         "consumes": ["application/json"],
         "produces": ["application/json"],
-        "summary": "Returns solution to aggregate fungible token balance on desination",
+        "summary": "Returns solution to aggregate fungible token balance on destination",
         "parameters": [
           {
             "type": "string",
@@ -241,12 +241,56 @@
             }
           }
         }
+      },
+      "post": {
+        "description": "Endpoint will calculate best combination of single-hop transfers to",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "summary": "Returns solution to aggregate fungible token balance on destination and invoking contract call",
+        "parameters": [
+          {
+            "description": "request",
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/server.AggregateWithHookSolutionHandler.request"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/server.AggregateWithHookSolutionHandler.response"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/server.ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/server.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/server.ErrorResponse"
+            }
+          }
+        }
       }
     }
   },
   "definitions": {
     "entity.Amount": {
       "type": "object",
+      "required": ["amount", "amountUSD"],
       "properties": {
         "amount": {
           "description": "amount in lowest denomination",
@@ -260,7 +304,7 @@
     },
     "entity.ChainID": {
       "type": "integer",
-      "enum": [1, 42161, 10, 137, 8453, 43114, 100],
+      "enum": [1, 42161, 10, 137, 8453, 43114, 100, 11155111, 1993, 84532],
       "x-enum-varnames": [
         "Ethereum",
         "Arbitrum",
@@ -268,11 +312,15 @@
         "Polygon",
         "Base",
         "Avalanche",
-        "Gnosis"
+        "Gnosis",
+        "Sepolia",
+        "B3Sepolia",
+        "BaseSepolia"
       ]
     },
     "entity.FungibleToken": {
       "type": "object",
+      "required": ["addresses", "decimals", "logoURI", "name", "symbol"],
       "properties": {
         "addresses": {
           "description": "Maps chain id to token address on that chain",
@@ -300,30 +348,67 @@
     },
     "entity.Network": {
       "type": "object",
+      "required": [
+        "blockTime",
+        "chainID",
+        "chainType",
+        "logoURI",
+        "name",
+        "rpcURLs"
+      ],
       "properties": {
+        "blockTime": {
+          "type": "integer"
+        },
         "chainID": {
           "$ref": "#/definitions/entity.ChainID"
         },
         "chainType": {
           "type": "string"
         },
+        "logoURI": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
         },
-        "rpcurls": {
+        "rpcURLs": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "logoURI": {
-          "type": "string"
         }
       }
     },
     "entity.TokenTransferQuote": {
       "type": "object",
+      "required": [
+        "amount",
+        "approvals",
+        "destinationChain",
+        "destinationTokenAddress",
+        "duration",
+        "fee",
+        "gasCost",
+        "senderAddress",
+        "sourceChain",
+        "sourceTokenAddress",
+        "tool",
+        "transaction"
+      ],
       "properties": {
+        "amount": {
+          "description": "amount of tokens in lowest denomination",
+          "type": "string",
+          "example": ""
+        },
+        "approvals": {
+          "description": "approvals that need to be executed before transaction",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entity.Transaction"
+          }
+        },
         "destinationChain": {
           "$ref": "#/definitions/entity.ChainID"
         },
@@ -364,6 +449,7 @@
     },
     "entity.Tool": {
       "type": "object",
+      "required": ["logoURI", "name"],
       "properties": {
         "logoURI": {
           "type": "string"
@@ -375,6 +461,15 @@
     },
     "entity.Transaction": {
       "type": "object",
+      "required": [
+        "chainId",
+        "data",
+        "from",
+        "gasLimit",
+        "gasPrice",
+        "to",
+        "value"
+      ],
       "properties": {
         "chainId": {
           "$ref": "#/definitions/entity.ChainID"
@@ -401,6 +496,7 @@
     },
     "server.AccountFungibleBalanceHandler.response": {
       "type": "object",
+      "required": ["data"],
       "properties": {
         "data": {
           "type": "array",
@@ -412,6 +508,85 @@
     },
     "server.AggregateBalanceSolutionHandler.response": {
       "type": "object",
+      "required": ["data"],
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entity.TokenTransferQuote"
+          }
+        }
+      }
+    },
+    "server.AggregateWithHookSolutionHandler.request": {
+      "type": "object",
+      "required": [
+        "account",
+        "amount",
+        "destination",
+        "destinationContractCall",
+        "threshold",
+        "token",
+        "type",
+        "whitelistedSourceChains"
+      ],
+      "properties": {
+        "account": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "destination": {
+          "$ref": "#/definitions/entity.ChainID"
+        },
+        "destinationContractCall": {
+          "type": "object",
+          "required": [
+            "approvalAddress",
+            "callData",
+            "contractAddress",
+            "gasLimit",
+            "outputTokenAddress"
+          ],
+          "properties": {
+            "approvalAddress": {
+              "type": "string",
+              "example": ""
+            },
+            "callData": {
+              "type": "string"
+            },
+            "contractAddress": {
+              "type": "string"
+            },
+            "gasLimit": {
+              "type": "integer"
+            },
+            "outputTokenAddress": {
+              "type": "string",
+              "example": ""
+            }
+          }
+        },
+        "threshold": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["fungible"]
+        },
+        "whitelistedSourceChains": {
+          "type": "string"
+        }
+      }
+    },
+    "server.AggregateWithHookSolutionHandler.response": {
+      "type": "object",
+      "required": ["data"],
       "properties": {
         "data": {
           "type": "array",
@@ -423,6 +598,7 @@
     },
     "server.ErrorResponse": {
       "type": "object",
+      "required": ["error"],
       "properties": {
         "error": {
           "type": "string"
@@ -431,6 +607,7 @@
     },
     "server.GetFungibleTokensByChainHandler.response": {
       "type": "object",
+      "required": ["data"],
       "properties": {
         "data": {
           "type": "array",
@@ -442,6 +619,7 @@
     },
     "server.GetNetworksHandler.response": {
       "type": "object",
+      "required": ["data"],
       "properties": {
         "data": {
           "type": "array",
@@ -453,6 +631,7 @@
     },
     "server.GetSupportedFungibleTokens.response": {
       "type": "object",
+      "required": ["data"],
       "properties": {
         "data": {
           "type": "array",
@@ -464,6 +643,7 @@
     },
     "server.HealthHandler.response": {
       "type": "object",
+      "required": ["status"],
       "properties": {
         "status": {
           "type": "string"
@@ -472,6 +652,7 @@
     },
     "server.chainBalance": {
       "type": "object",
+      "required": ["balance", "chainId", "tokenDecimals"],
       "properties": {
         "balance": {
           "description": "token balance in lowest denomination",
