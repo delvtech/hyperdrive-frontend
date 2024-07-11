@@ -48,22 +48,22 @@ export function BridgeAssetsPicker({
               <td>
                 {formatBalance({
                   balance: parseUnits(
-                    chainBalance.balance!,
-                    chainBalance.tokenDecimals!,
+                    chainBalance.balance,
+                    chainBalance.tokenDecimals,
                   ),
-                  decimals: chainBalance.tokenDecimals!,
+                  decimals: chainBalance.tokenDecimals,
                 })}
               </td>
               <td>
                 <input
                   type="checkbox"
-                  checked={activeBridgeChains[String(chainBalance.chainId!)]}
+                  checked={activeBridgeChains[String(chainBalance.chainId)]}
                   onChange={(e) => {
                     const value = e.target.checked;
                     setActiveBridgeChains((prevActivated) => {
                       return {
                         ...prevActivated,
-                        [chainBalance.chainId!]: value,
+                        [chainBalance.chainId]: value,
                       };
                     });
                   }}

@@ -24,7 +24,7 @@ export function BridgeAssetsForm({
   const { address: account } = useAccount();
   const { chains = {} } = useChainsByChainId();
   const activeChainId = useChainId();
-  const { balances } = useTokenBalances(account, [token.symbol!]);
+  const { balances } = useTokenBalances(account, [token.symbol]);
 
   // Keep track of the value from TokenInput.
   const { amount: bridgeAmount, setAmount } = useNumericInput({
@@ -52,7 +52,7 @@ export function BridgeAssetsForm({
   // Fetch a quote based on the user's input.
   const { solution, status: quoteStatus } = useQuote({
     account,
-    token: token.symbol!,
+    token: token.symbol,
     amount: bridgeAmount || "",
     activated: activeBridgeChains,
   });
@@ -74,10 +74,10 @@ export function BridgeAssetsForm({
               <BridgeAssetsPicker
                 activeBridgeChains={activeBridgeChains}
                 setActiveBridgeChains={setActiveBridgeChains}
-                tokenSymbol={token.symbol!}
+                tokenSymbol={token.symbol}
               />
             }
-            name={token.symbol!}
+            name={token.symbol}
             token={
               <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
                 <img src={token?.logoURI} className="h-5 " />{" "}
@@ -85,7 +85,7 @@ export function BridgeAssetsForm({
               </div>
             }
             value={bridgeAmount ?? ""}
-            maxValue={formatUnits(maxButtonValue, token.decimals!)}
+            maxValue={formatUnits(maxButtonValue, token.decimals)}
             inputLabel="Amount to bridge"
             onChange={(newAmount) => setAmount(newAmount)}
           />

@@ -29,12 +29,12 @@ export function BridgePreview({
   let destinationBalance = 0n;
   balances?.forEach((balance) => {
     if (balance.chainId === chainId) {
-      destinationBalance = parseUnits(balance.balance!, token.decimals!) || 0n;
+      destinationBalance = parseUnits(balance.balance, token.decimals) || 0n;
     }
   });
   let destinationBalanceAfter = destinationBalance;
   solution?.forEach((quote) => {
-    destinationBalanceAfter += parseUnits(quote.amount!, token.decimals!);
+    destinationBalanceAfter += parseUnits(quote.amount, token.decimals);
   });
 
   if (solutionStatus === "success" && !!solution) {
@@ -42,10 +42,10 @@ export function BridgePreview({
       <table className="daisy-table">
         <tr>
           <td>Mainnet Balance</td>
-          <td>{formatUnits(destinationBalance, token.decimals!)}</td>
+          <td>{formatUnits(destinationBalance, token.decimals)}</td>
           <td>{"-->"}</td>
           <td className="text-success">
-            {formatUnits(destinationBalanceAfter, token.decimals!)}
+            {formatUnits(destinationBalanceAfter, token.decimals)}
           </td>
         </tr>
         {solution.map((quote) => {
@@ -54,18 +54,18 @@ export function BridgePreview({
           );
           const chainBalanceBefore = parseUnits(
             chainBalance?.balance || "0",
-            token.decimals!,
+            token.decimals,
           );
           const chainBalanceAfter =
-            chainBalanceBefore - parseUnits(quote.amount!, token.decimals!);
+            chainBalanceBefore - parseUnits(quote.amount, token.decimals);
 
           return (
             <tr key={quote.sourceChain}>
               <td>{chains?.[String(quote.sourceChain)]?.name} Balance</td>
-              <td>{formatUnits(chainBalanceBefore || 0n, token.decimals!)}</td>
+              <td>{formatUnits(chainBalanceBefore || 0n, token.decimals)}</td>
               <td>{"-->"}</td>
               <td className="text-error">
-                {formatUnits(chainBalanceAfter || 0n, token.decimals!)}
+                {formatUnits(chainBalanceAfter || 0n, token.decimals)}
               </td>
             </tr>
           );
