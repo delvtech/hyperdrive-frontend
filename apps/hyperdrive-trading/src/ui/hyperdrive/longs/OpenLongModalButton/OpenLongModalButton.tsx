@@ -52,6 +52,7 @@ export function OpenLongModalButton({
 
   return (
     <Modal
+      onClose={() => setShowBridgeUI(false)}
       modalId={modalId}
       activeIndex={showBridgeUI ? 1 : 0}
       modalHeader={[
@@ -60,10 +61,7 @@ export function OpenLongModalButton({
           numDays={numDays}
           termLengthMS={termLengthMS}
         />,
-        <BridgeAssetsModalHeader
-          key="bridge"
-          tokenSymbol={token?.symbol || "DAI"}
-        />,
+        <BridgeAssetsModalHeader key="bridge" tokenSymbol={token?.symbol} />,
       ]}
       modalContent={[
         <OpenLongModalForm
@@ -74,7 +72,7 @@ export function OpenLongModalButton({
         />,
         <BridgeAssetsModalForm
           key="bridge"
-          hyperdrive={hyperdrive}
+          tokenSymbol={token?.symbol}
           closeModal={closeModal}
           setShowBridgeUI={setShowBridgeUI}
         />,
