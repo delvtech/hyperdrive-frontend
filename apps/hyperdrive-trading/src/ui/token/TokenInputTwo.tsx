@@ -48,9 +48,9 @@ export function TokenInputTwo({
         0.5% slippage
         <Cog8ToothIcon className="h-4 text-base-content" />
       </label>
-      <div className="flex flex-row rounded-md bg-base-100 p-4">
-        <div className="">
-          <label className="text-sm text-neutral-content">You spend</label>
+      <div className="flex flex-col rounded-md bg-base-100 p-4">
+        <label className="text-sm text-neutral-content">You spend</label>
+        <div className="flex flex-row">
           <input
             type="number"
             // Setting step to `any` allows any number between min and max to be
@@ -83,9 +83,6 @@ export function TokenInputTwo({
               onChange(event.target.value);
             }}
           />
-          <label className="text-sm text-neutral-content">$1000.04</label>
-        </div>
-        <div className="flex w-72 flex-col items-end justify-center">
           {typeof token === "string" ? (
             <div
               className={classNames(
@@ -101,6 +98,9 @@ export function TokenInputTwo({
           ) : (
             token
           )}
+        </div>
+        <div className="mt-2 flex justify-between">
+          <label className="text-sm text-neutral-content">$1000.04</label>
           <label className=" text-sm text-neutral-content">
             Balance: 1000 Max
           </label>

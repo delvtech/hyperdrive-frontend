@@ -55,7 +55,7 @@ export function TokenPickerTwo({
       ) : undefined}
       <div
         className={
-          "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
+          "daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom daisy-join-item shrink-0"
         }
       >
         <button
