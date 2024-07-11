@@ -4,15 +4,17 @@
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
+    "chainlog",
     "delv",
     "delvtech",
     "dnum",
     "fixedpointmath",
     "hyperwasm",
     "ihyperdrive",
-    "Mintable",
+    "mintable",
     "Reimagined",
     "signale",
+    "tanstack",
     "thiserror",
     "viem"
   ],

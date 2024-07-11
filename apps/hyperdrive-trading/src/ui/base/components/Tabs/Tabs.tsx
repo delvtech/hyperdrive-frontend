@@ -1,18 +1,18 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
-export interface Tab {
-  id: string;
+export interface Tab<TabId extends string> {
+  id: TabId;
   onClick: () => void;
   label: string;
   content: ReactNode;
 }
-export function Tabs({
+export function Tabs<TabId extends string>({
   tabs,
   activeTabId,
 }: {
-  tabs: Tab[];
-  activeTabId: string;
+  tabs: Tab<TabId>[];
+  activeTabId: TabId;
 }): ReactElement {
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
@@ -37,7 +37,7 @@ export function Tabs({
       <div
         role="tabpanel"
         className={classNames(
-          "daisy-tab-content flex rounded-b-box rounded-tr-box border-neutral-content/20 bg-base-100",
+          "daisy-tab-content flex max-w-full overflow-x-auto rounded-b-box rounded-tr-box border-neutral-content/20 bg-base-100",
           {
             // The Longs tab is first, and the tabby bit is connected to the
             // tab content, so don't put a round border on it

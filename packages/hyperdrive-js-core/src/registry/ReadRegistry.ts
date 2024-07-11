@@ -1,6 +1,5 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Address } from "abitype";
-import { hexToUtf8 } from "src/base/hexToUtf8";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
@@ -79,7 +78,7 @@ export class ReadRegistry extends ReadModel {
     );
     return {
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
     };
@@ -100,7 +99,7 @@ export class ReadRegistry extends ReadModel {
     );
     return infos.map(({ kind, name, version, data }) => ({
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
     }));
@@ -154,7 +153,7 @@ export class ReadRegistry extends ReadModel {
     );
     return {
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
       factory: new ReadFactory({
@@ -179,7 +178,7 @@ export class ReadRegistry extends ReadModel {
     );
     return infos.map(({ kind, name, version, data, factory }) => ({
       kind,
-      name: hexToUtf8(name as `0x${string}`),
+      name,
       version,
       data: `0x${data.toString(16)}`,
       factory: new ReadFactory({
