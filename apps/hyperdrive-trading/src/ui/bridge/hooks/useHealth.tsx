@@ -4,7 +4,7 @@ import {
 } from "@delvtech/gopher";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { gopher } from "src/ui/bridge/api";
+import { gopher } from "src/bridge/api";
 
 export function useChains(): {
   health: ServerHealthHandlerResponse | undefined;
