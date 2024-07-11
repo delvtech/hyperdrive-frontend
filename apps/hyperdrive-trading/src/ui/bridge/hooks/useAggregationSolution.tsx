@@ -1,7 +1,7 @@
 import { EntityTokenTransferQuote } from "@delvtech/gopher";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { gopher } from "src/ui/bridge/api";
+import { gopher } from "src/bridge/api";
 
 // Extract the type of the response from the `aggregationList` method
 type AggregationListQueryParams = Parameters<
