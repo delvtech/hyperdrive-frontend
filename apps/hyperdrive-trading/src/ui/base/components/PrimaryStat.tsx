@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { ReactNode } from "react";
 
 export function PrimaryStat({
@@ -6,24 +5,22 @@ export function PrimaryStat({
   value,
   valueUnit,
   subValue,
-  valueStyle,
+  valueClassName,
 }: {
   label: string;
   value: ReactNode;
   valueUnit: string;
   subValue?: ReactNode;
-  valueStyle?: string;
+  valueClassName?: string;
 }): JSX.Element {
   return (
     <div className="flex flex-col gap-1">
-      <p className="text-neutral-content">{label}</p>
-      <div className={classNames("flex flex-row items-end")}>
-        <div className={classNames("flex items-end", valueStyle)}>
-          <p className="text-h3 font-bold">{value}</p>
-          <p className="ml-2">{valueUnit}</p>
-        </div>
+      <p className="text-sm text-neutral-content">{label}</p>
+      <div className={valueClassName}>
+        <p className="text-h3 font-bold">{value}</p>
+        <p className="ml-1">{valueUnit}</p>
       </div>
-      {subValue && <p className="text-neutral-content">{subValue}</p>}
+      {subValue && <p className="text-sm text-neutral-content">{subValue}</p>}
     </div>
   );
 }

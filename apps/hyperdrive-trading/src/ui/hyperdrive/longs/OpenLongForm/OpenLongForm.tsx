@@ -245,11 +245,11 @@ export function OpenLongForm({
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
                 <span>
                   {activeTokenBalance
-                    ? `Balance: ${formatBalance({
+                    ? `balance: ${formatBalance({
                         balance: activeTokenBalance?.value,
                         decimals: activeToken.decimals,
                         places: activeToken.places,
-                      })} ${activeToken.symbol}`
+                      })}`
                     : undefined}
                 </span>
               </div>

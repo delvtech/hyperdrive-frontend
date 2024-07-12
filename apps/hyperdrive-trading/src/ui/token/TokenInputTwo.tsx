@@ -44,7 +44,7 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-      <div className="flex flex-col rounded-md bg-base-100 p-4">
+      <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
         <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row">
           <input
@@ -61,7 +61,7 @@ export function TokenInputTwo({
             name={name}
             disabled={disabled}
             className={classNames(
-              "daisy-input mr-2 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
+              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
@@ -95,10 +95,10 @@ export function TokenInputTwo({
             token
           )}
         </div>
-        <div className="mt-2 flex justify-end">
+        <div className="flex justify-end">
           {/* TODO: Implement USD Stat here */}
           {stat ? (
-            <label className="flex flex-row items-center text-sm text-neutral-content">
+            <label className="flex items-center text-sm text-neutral-content">
               {stat}
               {maxValue !== undefined && !disabled ? (
                 <div className="text-base-content">
@@ -106,6 +106,7 @@ export function TokenInputTwo({
                     className={classNames("ml-2 font-semibold", {
                       "daisy-btn-error": hasError,
                     })}
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       onChange(maxValue);

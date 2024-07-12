@@ -56,14 +56,14 @@ export function OpenLongPrimaryStats({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (
-    <div className="flex flex-row justify-evenly">
+    <div className="flex flex-row justify-between px-4">
       <PrimaryStat
         label="Your Fixed Rate"
         value={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <span>
+            <>
               {bondAmount > 0
                 ? `${formatRate(
                     calculateAprFromPrice({
@@ -75,7 +75,7 @@ export function OpenLongPrimaryStats({
                     baseToken.decimals,
                   )}%`
                 : `${fixedApr?.formatted}%`}
-            </span>
+            </>
           )
         }
         valueUnit="APR"
@@ -83,20 +83,16 @@ export function OpenLongPrimaryStats({
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <span
-              className={classNames({
-                "text-base-content/80": !bondAmount,
-              })}
-            >{`${formatBalance({
+            <>{`${formatBalance({
               balance: bondAmount,
               decimals: baseToken.decimals,
               places: baseToken.places,
-            })} hy${baseToken.symbol}`}</span>
+            })} hy${baseToken.symbol}`}</>
           )
         }
-        valueStyle="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent"
+        valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
       />
-      <div className="daisy-divider daisy-divider-horizontal" />
+      <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
         label="Value at Maturity"
         value={
@@ -104,7 +100,7 @@ export function OpenLongPrimaryStats({
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames("flex flex-row", {
+              className={classNames("flex", {
                 "text-base-content/80": !amountPaid,
               })}
             >
@@ -121,7 +117,7 @@ export function OpenLongPrimaryStats({
           )
         }
         valueUnit={`${activeToken.symbol}`}
-        valueStyle="text-base-content"
+        valueClassName="text-base-content flex items-end"
         subValue={`Term: ${numDays} days`}
       />
     </div>
