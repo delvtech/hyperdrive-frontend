@@ -144,7 +144,7 @@ function ApproveButton({
       className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
       onClick={onApprove}
     >
-      Approve
+      {isConnectedToSourceChain ? "Approve" : "Switch Network"}
     </button>
   );
 }
