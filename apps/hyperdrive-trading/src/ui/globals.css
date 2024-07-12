@@ -55,4 +55,7 @@ div[data-rk] {
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
+  .gradient-text-reversed {
+    @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+  }
 }

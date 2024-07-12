@@ -21,6 +21,7 @@ import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
+import { OpenLongPrimaryStats } from "src/ui/hyperdrive/longs/OpenLongPreview/PrimaryStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -236,7 +237,6 @@ export function OpenLongForm({
                   setActiveToken(tokenAddress);
                   setAmount("0");
                 }}
-                joined={true}
               />
             }
             value={depositAmount ?? ""}
@@ -306,6 +306,19 @@ export function OpenLongForm({
         isBridgingEnabled && hasBridgeableBalance
           ? switchToBridgeUIButton
           : null
+      }
+      primaryStats={
+        <OpenLongPrimaryStats
+          hyperdrive={hyperdrive}
+          spotRateAfterOpen={spotRateAfterOpen}
+          curveFee={curveFee}
+          activeToken={activeToken}
+          amountPaid={depositAmountAsBigInt || 0n}
+          bondAmount={bondsReceived || 0n}
+          openLongPreviewStatus={openLongPreviewStatus}
+          asBase={activeToken.address === baseToken.address}
+          vaultSharePrice={poolInfo?.vaultSharePrice}
+        />
       }
       transactionPreview={
         <OpenLongPreview

@@ -16,13 +16,11 @@ export function TokenPickerTwo({
   activeTokenAddress,
   onChange,
   label,
-  joined,
 }: {
   tokens: TokenChoice[];
   activeTokenAddress: Address;
   onChange: (tokenAddress: Address) => void;
   label?: string;
-  joined?: boolean;
 }): ReactElement {
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
@@ -33,8 +31,8 @@ export function TokenPickerTwo({
             <span className="daisy-label-text">{label}</span>
           </label>
         ) : undefined}
-        <div className="daisy-join-item flex h-8 w-32 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-          <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
+        <div className="daisy-btn daisy-btn-md flex items-center rounded-box bg-neutral text-lg">
+          <img src={tokens[0].tokenConfig.iconUrl} className="h-5" />
           <span className="text-sm font-semibold">
             {tokens[0].tokenConfig.symbol}
           </span>
