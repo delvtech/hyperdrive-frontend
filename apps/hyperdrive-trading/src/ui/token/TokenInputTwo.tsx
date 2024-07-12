@@ -44,9 +44,8 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-
       <div className="flex flex-col rounded-md bg-base-100 p-4">
-        <label className="text-sm text-neutral-content">You spend</label>
+        <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row">
           <input
             type="number"
@@ -62,7 +61,7 @@ export function TokenInputTwo({
             name={name}
             disabled={disabled}
             className={classNames(
-              "daisy-input daisy-join-item mr-2 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
+              "daisy-input mr-2 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
@@ -83,7 +82,7 @@ export function TokenInputTwo({
           {typeof token === "string" ? (
             <div
               className={classNames(
-                "daisy-join-item flex h-12 items-center border-neutral-content/30 px-4",
+                "flex h-12 items-center border-neutral-content/30 px-4",
                 {
                   "bg-base-100": !disabled,
                   "border-none opacity-20": disabled,
@@ -98,7 +97,6 @@ export function TokenInputTwo({
         </div>
         <div className="mt-2 flex justify-end">
           {/* TODO: Implement USD Stat here */}
-
           {stat ? (
             <label className="flex flex-row items-center text-sm text-neutral-content">
               {stat}

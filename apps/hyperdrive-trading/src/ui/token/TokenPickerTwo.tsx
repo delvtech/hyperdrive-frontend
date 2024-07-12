@@ -52,9 +52,7 @@ export function TokenPickerTwo({
         </label>
       ) : undefined}
       <div
-        className={
-          "daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom daisy-join-item shrink-0"
-        }
+        className={"daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom"}
       >
         <button
           className={classNames(
@@ -66,11 +64,11 @@ export function TokenPickerTwo({
         >
           <img src={activeToken?.tokenConfig?.iconUrl} className="h-6" />{" "}
           {activeToken?.tokenConfig?.symbol}
-          <ChevronDownIcon className="h-7" />
+          <ChevronDownIcon className="h-7 text-neutral-content" />
         </button>
         <ul
           className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow",
+            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow-md",
           )}
         >
           {[
@@ -93,7 +91,6 @@ export function TokenPickerTwo({
                         decimals: tokenConfig?.decimals,
                         places: tokenConfig?.places,
                       })}
-                      {` `}
                     </span>
                   </label>
                 </button>

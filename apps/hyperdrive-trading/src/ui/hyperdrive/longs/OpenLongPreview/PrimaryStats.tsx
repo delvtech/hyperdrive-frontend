@@ -94,7 +94,7 @@ export function OpenLongPrimaryStats({
             })} hy${baseToken.symbol}`}</span>
           )
         }
-        valueStyle="gradient-text-reversed"
+        valueStyle="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent"
       />
       <div className="daisy-divider daisy-divider-horizontal" />
       <PrimaryStat

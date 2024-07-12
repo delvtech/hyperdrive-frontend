@@ -241,7 +241,7 @@ export function OpenLongForm({
             }
             value={depositAmount ?? ""}
             maxValue={maxButtonValue}
-            inputLabel="Amount to spend"
+            inputLabel="You spend"
             stat={
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
                 <span>
