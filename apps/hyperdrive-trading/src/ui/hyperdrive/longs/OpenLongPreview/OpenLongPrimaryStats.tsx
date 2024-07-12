@@ -15,7 +15,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-interface OpenLongPrimaryStatsProps {
+interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
   amountPaid: bigint;
@@ -24,7 +24,7 @@ interface OpenLongPrimaryStatsProps {
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }
-export function OpenLongPrimaryStats({
+export function OpenLongStats({
   hyperdrive,
   openLongPreviewStatus,
   amountPaid,
@@ -32,7 +32,7 @@ export function OpenLongPrimaryStats({
   activeToken,
   asBase,
   vaultSharePrice,
-}: OpenLongPrimaryStatsProps): JSX.Element {
+}: OpenLongStatsProps): JSX.Element {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,

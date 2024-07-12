@@ -3,6 +3,7 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
+import { ReactElement } from "react";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
 export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
@@ -19,7 +20,7 @@ export function SlippageSettingsTwo({
   activeOption: "auto" | "custom";
   onActiveOptionChange: (activeTab: "auto" | "custom") => void;
   tooltip?: string;
-}): JSX.Element {
+}): ReactElement {
   return (
     <div className="daisy-dropdown daisy-dropdown-bottom flex justify-end">
       <button

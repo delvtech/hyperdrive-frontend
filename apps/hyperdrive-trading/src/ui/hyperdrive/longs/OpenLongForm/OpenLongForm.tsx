@@ -21,7 +21,7 @@ import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
-import { OpenLongPrimaryStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPrimaryStats";
+import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPrimaryStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -308,7 +308,7 @@ export function OpenLongForm({
       }
       primaryStats={
         isNewOpenLongFormEnabled ? (
-          <OpenLongPrimaryStats
+          <OpenLongStats
             hyperdrive={hyperdrive}
             activeToken={activeToken}
             amountPaid={depositAmountAsBigInt || 0n}
