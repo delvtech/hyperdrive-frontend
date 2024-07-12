@@ -112,9 +112,29 @@ the first word, for instance, 'View all' instead of 'View All'.
 
 Note: Proper nouns should still be capitalized, e.g.: "Dai Savings Rate"
 
-### **4. Functions should have verbs**
+### **5. Functions should have verbs**
 
 Function names should begin with verbs to enhance readability and express the
 action they perform. This convention aids in conveying the function's purpose,
 such as `calculateSum()`, `formatLabel()`, `setIsDisabled()`,
 `convertInchesToFeet`, etc.
+
+### **6. List required fields first in interfaces/object types**
+
+When defining interfaces or object types, always list required fields first. This improves readability and ensures that the most critical information is immediately visible.
+
+```typescript
+// ❌ Instead of this
+interface User {
+  optionalField?: string;
+  id: number;
+  name: string;
+}
+
+// ✅ Use this
+interface User {
+  id: number;
+  name: string;
+  optionalField?: string;
+}
+```
