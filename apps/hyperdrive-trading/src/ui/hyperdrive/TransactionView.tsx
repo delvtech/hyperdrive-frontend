@@ -5,6 +5,7 @@ interface TransactionViewProps {
   tokenInput: ReactNode;
 
   setting?: ReactNode;
+  primaryStats?: ReactNode;
   transactionPreview: ReactNode;
   disclaimer?: ReactNode;
 
@@ -15,6 +16,7 @@ export function TransactionView({
   heading,
   tokenInput,
   setting,
+  primaryStats,
   transactionPreview,
   disclaimer,
   actionButton,
@@ -27,11 +29,11 @@ export function TransactionView({
         {setting}
       </div>
       <div className="flex flex-col gap-8">
+        {primaryStats}
         <div>
           <h6 className="mb-4">Preview transaction</h6>
           {transactionPreview}
         </div>
-
         <div className="text-center">{actionButton}</div>
         {disclaimer ? <div>{disclaimer}</div> : null}
       </div>

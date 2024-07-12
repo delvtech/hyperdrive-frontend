@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { Stat } from "src/ui/base/components/Stat";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 
@@ -58,6 +59,16 @@ export function OpenLongModalHeader({
   numDays,
   termLengthMS,
 }: OpenLongModalHeaderProps): ReactElement {
+  const { isFlagEnabled: isNewOpenLongFormEnabled } =
+    useFeatureFlag("new-open-long-form");
+  if (isNewOpenLongFormEnabled) {
+    return (
+      <ModalHeader
+        heading="Open a Long"
+        subHeading="Lock in a fixed rate and know your exact yield upfront"
+      />
+    );
+  }
   return (
     <ModalHeader
       heading="Open a Long"
