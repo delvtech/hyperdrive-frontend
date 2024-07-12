@@ -3,8 +3,6 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
-import { Stat } from "src/ui/base/components/Stat";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 
 interface OpenLongModalProps {
@@ -61,27 +59,8 @@ export function OpenLongModalHeader({
   return (
     <ModalHeader
       heading="Open a Long"
-      subHeading="Buy the fixed rate and know your exact yield upfront"
-    >
-      <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-        <div className="daisy-badge daisy-badge-lg">
-          <Stat
-            horizontal
-            size="small"
-            label={"Term:"}
-            value={`${numDays} days`}
-          />
-        </div>
-        <div className="daisy-badge daisy-badge-lg">
-          <Stat
-            horizontal
-            size="small"
-            label="Maturity Date:"
-            value={formatDate(Date.now() + termLengthMS)}
-          />
-        </div>
-      </div>
-    </ModalHeader>
+      subHeading="Lock in a fixed rate and know your exact yield upfront"
+    />
   );
 }
 

@@ -62,7 +62,7 @@ export function TokenInputTwo({
             name={name}
             disabled={disabled}
             className={classNames(
-              "daisy-input daisy-join-item w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
+              "daisy-input daisy-join-item mr-2 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
@@ -100,9 +100,23 @@ export function TokenInputTwo({
           {/* TODO: Implement USD Stat here */}
 
           {stat ? (
-            <label className="text-sm text-neutral-content">
+            <label className="flex flex-row items-center text-sm text-neutral-content">
               {stat}
-              {/* TODO: Add max button here */}
+              {maxValue !== undefined && !disabled ? (
+                <div className="text-base-content">
+                  <button
+                    className={classNames("ml-2 font-semibold", {
+                      "daisy-btn-error": hasError,
+                    })}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onChange(maxValue);
+                    }}
+                  >
+                    Max
+                  </button>
+                </div>
+              ) : null}
             </label>
           ) : null}
         </div>
