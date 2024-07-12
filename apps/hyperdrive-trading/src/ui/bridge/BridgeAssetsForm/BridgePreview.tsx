@@ -6,7 +6,7 @@ import {
 
 import { ReactElement } from "react";
 
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { formatUnits, parseUnits } from "viem";
 import { useChainId } from "wagmi";
 
@@ -24,7 +24,7 @@ export function BridgePreview({
   balances,
 }: BridgePreviewProps): ReactElement {
   const chainId = useChainId();
-  const { chains } = useChainsByChainId();
+  const { chains } = useBridgeChainsByChainId();
 
   let destinationBalance = 0n;
   balances?.forEach((balance) => {

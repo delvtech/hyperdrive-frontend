@@ -4,7 +4,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/bridge/api";
 import { Address } from "viem";
 
-export function useTokenBalances(
+export function useBridgeTokenBalances(
   account: Address | undefined,
   tokenSymbols: string[],
 ): {

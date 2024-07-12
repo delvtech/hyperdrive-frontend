@@ -5,8 +5,8 @@ import { BridgeAssetsPicker } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetPi
 import { BridgeAssetsActionButtons } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetsActionButtons";
 import { BridgePreview } from "src/ui/bridge/BridgeAssetsForm/BridgePreview";
 import { useAggregationSolution } from "src/ui/bridge/hooks/useAggregationSolution";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
-import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { Address, formatUnits, parseUnits } from "viem";
@@ -22,9 +22,9 @@ export function BridgeAssetsForm({
   onCloseBridgeUI,
 }: BridgeAssetsFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { chains = {} } = useChainsByChainId();
+  const { chains = {} } = useBridgeChainsByChainId();
   const activeChainId = useChainId();
-  const { balances } = useTokenBalances(account, [token.symbol]);
+  const { balances } = useBridgeTokenBalances(account, [token.symbol]);
 
   // Keep track of the value from TokenInput.
   const { amount: bridgeAmount, setAmount } = useNumericInput({

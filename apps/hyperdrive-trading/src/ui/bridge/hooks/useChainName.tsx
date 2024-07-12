@@ -1,5 +1,5 @@
 import { QueryStatus } from "@tanstack/react-query";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useChainId } from "wagmi";
 
 export function useChainName(): {
@@ -7,7 +7,7 @@ export function useChainName(): {
   status: QueryStatus;
 } {
   const chainId = useChainId();
-  const { chains, status } = useChainsByChainId();
+  const { chains, status } = useBridgeChainsByChainId();
   const name = chains?.[String(chainId)]?.name;
 
   return { name, status };

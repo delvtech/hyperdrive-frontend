@@ -8,14 +8,13 @@ import {
   BridgeAssetsModalForm,
   BridgeAssetsModalHeader,
 } from "src/ui/bridge/BridgeAssetsModal/BridgeAssetsModal";
-import { useToken } from "src/ui/bridge/hooks/useToken";
-import { useTokens } from "src/ui/bridge/hooks/useTokens";
+import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import {
   OpenLongModalForm,
   OpenLongModalHeader,
 } from "src/ui/hyperdrive/longs/OpenLongModal/OpenLongModal";
-import { mainnet } from "viem/chains";
+import { useChainId } from "wagmi";
 
 export interface OpenLongModalButtonProps {
   modalId: string;
@@ -27,12 +26,11 @@ export function OpenLongModalButton({
 }: OpenLongModalButtonProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
   const [showBridgeUI, setShowBridgeUI] = useState(false);
-  const { tokens } = useTokens();
-  let token = tokens?.find(
-    (token) => token.addresses?.[String(mainnet.id)] === hyperdrive.baseToken,
+  const { tokens } = useBridgeTokens();
+  const chainId = useChainId();
+  const token = tokens?.find(
+    (token) => token.addresses[String(chainId)] === hyperdrive.baseToken,
   );
-  // TODO: remove this when stubs work
-  ({ token } = useToken("DAI"));
 
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
