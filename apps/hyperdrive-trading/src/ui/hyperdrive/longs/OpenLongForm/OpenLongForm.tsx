@@ -245,7 +245,7 @@ export function OpenLongForm({
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
                 <span>
                   {activeTokenBalance
-                    ? `balance: ${formatBalance({
+                    ? `Balance: ${formatBalance({
                         balance: activeTokenBalance?.value,
                         decimals: activeToken.decimals,
                         places: activeToken.places,

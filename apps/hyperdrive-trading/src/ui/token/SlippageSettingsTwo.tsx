@@ -1,5 +1,7 @@
-import { Cog8ToothIcon } from "@heroicons/react/16/solid";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import {
+  Cog6ToothIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
@@ -24,10 +26,10 @@ export function SlippageSettingsTwo({
         onClick={(e) => {
           e.preventDefault();
         }}
-        className="daisy-btn daisy-btn-ghost daisy-btn-sm flex flex-row items-center justify-end gap-2 text-xs text-neutral-content"
+        className="daisy-btn daisy-btn-ghost daisy-btn-sm flex flex-row items-center justify-end gap-2 text-xs font-light text-neutral-content"
       >
         {`${slippage || DEFAULT_SLIPPAGE_AMOUNT}%`} slippage
-        <Cog8ToothIcon className="h-4 text-base-content" />
+        <Cog6ToothIcon className="h-4 stroke-2 text-base-content" />
       </button>
       <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg border bg-base-100 p-4 shadow">
         <div className="flex items-center">
