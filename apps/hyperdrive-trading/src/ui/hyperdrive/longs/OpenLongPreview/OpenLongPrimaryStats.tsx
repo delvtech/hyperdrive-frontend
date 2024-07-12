@@ -110,7 +110,7 @@ export function OpenLongPrimaryStats({
             >
               <img
                 src={activeToken.iconUrl}
-                className="mr-1 h-9 rounded-full  p-1"
+                className="mr-1 h-9 rounded-full p-1"
               />
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
