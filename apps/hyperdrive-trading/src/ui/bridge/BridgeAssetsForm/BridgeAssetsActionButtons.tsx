@@ -10,6 +10,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { Address, parseUnits } from "viem";
 import { useChainId } from "wagmi";
 
@@ -27,7 +28,6 @@ export function BridgeAssetsActionButtons({
   balances,
 }: BridgeAssetsActionButtonProps): ReactElement {
   const chainId = useChainId();
-  const { openChainModal } = useChainModal();
 
   if (!account) {
     return <ConnectWalletButton />;
@@ -39,20 +39,17 @@ export function BridgeAssetsActionButtons({
         const chainBalance = balances?.find(
           (b) => b.chainId === quote.sourceChain,
         );
+
+        if (!chainBalance) {
+          return null;
+        }
+
         const chainBalanceBefore = parseUnits(
           chainBalance?.balance || "0",
           token.decimals!,
         );
         const chainBalanceAfter =
           chainBalanceBefore - parseUnits(quote.amount!, token.decimals!);
-
-        const isConnectedToSourceChain = chainBalance?.chainId === chainId;
-
-        function onApprove() {
-          if (!isConnectedToSourceChain && openChainModal) {
-            openChainModal();
-          }
-        }
 
         return (
           <Well key={quote.sourceChain}>
@@ -88,13 +85,12 @@ export function BridgeAssetsActionButtons({
                 }
               />
               <div className="flex justify-between">
-                <button
-                  type="button"
-                  className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-                  onClick={onApprove}
-                >
-                  Approve
-                </button>
+                <ApproveButton
+                  chainId={chainId}
+                  token={token}
+                  quote={quote}
+                  balance={chainBalance}
+                />
                 <button
                   type="button"
                   className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
@@ -107,6 +103,49 @@ export function BridgeAssetsActionButtons({
         );
       })}
     </div>
+  );
+}
+
+interface ApproveButtonProps {
+  chainId: number;
+  token: EntityFungibleToken;
+  quote: EntityTokenTransferQuote;
+  balance: ServerChainBalance;
+}
+
+function ApproveButton({
+  chainId,
+  token,
+  quote,
+  balance,
+}: ApproveButtonProps): ReactElement {
+  const { openChainModal } = useChainModal();
+  const isConnectedToSourceChain = balance.chainId === chainId;
+
+  const { approve } = useApproveToken({
+    tokenAddress: token.addresses[chainId] as Address,
+    spender: quote.transaction.to as Address,
+    amount: parseUnits(quote.amount, token.decimals),
+  });
+
+  function onApprove() {
+    if (!isConnectedToSourceChain && openChainModal) {
+      openChainModal();
+    }
+
+    if (isConnectedToSourceChain && approve) {
+      approve();
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+      onClick={onApprove}
+    >
+      Approve
+    </button>
   );
 }
 
