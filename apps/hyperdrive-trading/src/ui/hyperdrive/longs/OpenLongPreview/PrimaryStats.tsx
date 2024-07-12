@@ -6,13 +6,13 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 interface OpenLongPrimaryStatsProps {
@@ -20,9 +20,7 @@ interface OpenLongPrimaryStatsProps {
   bondAmount: bigint;
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
-  spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
-  curveFee: bigint | undefined;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }
@@ -31,9 +29,7 @@ export function OpenLongPrimaryStats({
   openLongPreviewStatus,
   amountPaid,
   bondAmount,
-  spotRateAfterOpen,
   activeToken,
-  curveFee,
   asBase,
   vaultSharePrice,
 }: OpenLongPrimaryStatsProps): JSX.Element {
@@ -128,33 +124,6 @@ export function OpenLongPrimaryStats({
         valueStyle="text-base-content"
         subValue={`Term: ${numDays} days`}
       />
-    </div>
-  );
-}
-
-function PrimaryStat({
-  label,
-  value,
-  valueUnit,
-  subValue,
-  valueStyle,
-}: {
-  label: string;
-  value: ReactNode;
-  valueUnit: string;
-  subValue?: ReactNode;
-  valueStyle?: string;
-}) {
-  return (
-    <div className="flex flex-col gap-1">
-      <p className="text-neutral-content">{label}</p>
-      <div className={classNames("flex flex-row items-end")}>
-        <div className={classNames("flex items-end", valueStyle)}>
-          <p className="text-h3 font-bold">{value}</p>
-          <p className="ml-2">{valueUnit}</p>
-        </div>
-      </div>
-      {subValue && <p className="text-neutral-content">{subValue}</p>}
     </div>
   );
 }

@@ -308,17 +308,17 @@ export function OpenLongForm({
           : null
       }
       primaryStats={
-        <OpenLongPrimaryStats
-          hyperdrive={hyperdrive}
-          spotRateAfterOpen={spotRateAfterOpen}
-          curveFee={curveFee}
-          activeToken={activeToken}
-          amountPaid={depositAmountAsBigInt || 0n}
-          bondAmount={bondsReceived || 0n}
-          openLongPreviewStatus={openLongPreviewStatus}
-          asBase={activeToken.address === baseToken.address}
-          vaultSharePrice={poolInfo?.vaultSharePrice}
-        />
+        isNewOpenLongFormEnabled ? (
+          <OpenLongPrimaryStats
+            hyperdrive={hyperdrive}
+            activeToken={activeToken}
+            amountPaid={depositAmountAsBigInt || 0n}
+            bondAmount={bondsReceived || 0n}
+            openLongPreviewStatus={openLongPreviewStatus}
+            asBase={activeToken.address === baseToken.address}
+            vaultSharePrice={poolInfo?.vaultSharePrice}
+          />
+        ) : null
       }
       transactionPreview={
         <OpenLongPreview
