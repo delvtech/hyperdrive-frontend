@@ -15,6 +15,7 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -56,6 +57,15 @@ export function OpenLongForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+
+  const tokenSymbol = baseToken.symbol;
+  const { balances = [[]] } = useBridgeTokenBalances(account, [tokenSymbol]);
+  console.log("balances", balances);
+  const hasBridgeableBalance = balances[0]?.some(
+    ({ balance }) => Number(balance) > 0,
+  );
+  console.log("hasBridgeableBalance", hasBridgeableBalance);
+
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
@@ -199,7 +209,7 @@ export function OpenLongForm({
     );
   }
   const switchToBridgeUIButton = (
-    <button onClick={onOpenBridge}>Bridge DAI from L2s</button>
+    <button onClick={onOpenBridge}>{`Bridge ${tokenSymbol} from L2s`}</button>
   );
 
   return (
@@ -292,7 +302,11 @@ export function OpenLongForm({
           />
         )
       }
-      setting={isBridgingEnabled ? switchToBridgeUIButton : null}
+      setting={
+        isBridgingEnabled && hasBridgeableBalance
+          ? switchToBridgeUIButton
+          : null
+      }
       transactionPreview={
         <OpenLongPreview
           hyperdrive={hyperdrive}

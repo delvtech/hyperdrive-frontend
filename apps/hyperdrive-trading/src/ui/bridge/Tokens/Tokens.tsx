@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useTokens } from "src/ui/bridge/hooks/useTokens";
+import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 
 function Tokens(): ReactNode {
-  const { tokens = [] } = useTokens();
+  const { tokens = [] } = useBridgeTokens();
   if (!tokens) {
     return <div>Loading...</div>;
   }

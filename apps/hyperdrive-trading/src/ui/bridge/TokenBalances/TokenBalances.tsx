@@ -1,15 +1,16 @@
 import { ReactNode } from "react";
+import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useChainsByChainId } from "src/ui/bridge/hooks/useChainsByChainId";
-import { useTokenBalances } from "src/ui/bridge/hooks/useTokenBalances";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
+import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { useAccount } from "wagmi";
 
 function TokenBalances(): ReactNode {
   const { address } = useAccount();
   const tokenSymbols = ["USDT", "USDC", "DAI"];
-  const { balances } = useTokenBalances(address, tokenSymbols);
-  const { chains } = useChainsByChainId();
+  const { balances } = useBridgeTokenBalances(address, tokenSymbols);
+  const { chains } = useBridgeChainsByChainId();
 
   if (!address) {
     return <Well>Connect your wallet</Well>;
@@ -22,8 +23,11 @@ function TokenBalances(): ReactNode {
     <div className="flex-col-3 flex w-full space-x-6">
       {balances.map((chainBalances, index) => {
         const totalBalance =
-          chainBalances?.reduce((total, token) => {
-            return total + BigInt(token.balance || "0");
+          chainBalances?.reduce((total, { balance, tokenDecimals }) => {
+            if (!balance || !tokenDecimals) {
+              return total;
+            }
+            return total + parseUnits(balance, tokenDecimals);
           }, 0n) || 0n;
 
         return (
@@ -39,7 +43,7 @@ function TokenBalances(): ReactNode {
               <tbody>
                 {chainBalances?.map((token) => (
                   <tr key={token.chainId}>
-                    <td>{chains[token.chainId!].name}</td>
+                    <td>{chains[token.chainId!]?.name}</td>
                     <td>
                       {(
                         parseFloat(token?.balance || "0") /

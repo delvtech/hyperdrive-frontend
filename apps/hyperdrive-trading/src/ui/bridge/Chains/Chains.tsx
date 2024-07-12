@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useChains } from "src/ui/bridge/hooks/useChains";
+import { useBridgeChains } from "src/ui/bridge/hooks/useBridgeChains";
 
 function Chains(): ReactNode {
-  const { chains } = useChains();
+  const { chains } = useBridgeChains();
   if (!chains) {
     return <div>Loading...</div>;
   }

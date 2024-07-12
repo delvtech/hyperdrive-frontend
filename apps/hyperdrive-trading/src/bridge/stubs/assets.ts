@@ -60,6 +60,8 @@ export function getSupportedFungibleTokensStub(
             "8453": "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
             "42161": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
             "43114": "0xd586e7f844cea2f87f50152665bcbc2c279d8d70",
+            "11155111": "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+            "1993": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
           },
         },
       ],
