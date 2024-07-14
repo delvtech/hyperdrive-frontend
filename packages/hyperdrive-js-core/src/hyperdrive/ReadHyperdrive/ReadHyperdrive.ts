@@ -12,7 +12,6 @@ import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
 import { MAX_UINT256 } from "src/base/constants";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
-import { sumBigInt } from "src/base/sumBigInt";
 import { MergeKeys } from "src/base/types";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
 import {
@@ -486,41 +485,27 @@ export class ReadHyperdrive extends ReadModel {
     shortVolume: bigint;
   }> {
     const { fromBlock, toBlock } = options || {};
-    const openLongEvents = await this.getOpenLongEvents({
+    const longEvents = await this.getLongEvents({
       fromBlock,
       toBlock,
     });
-    const closeLongEvents = await this.getClosedLongEvents({
-      fromBlock,
-      toBlock,
-    });
-    const openShortEvents = await this.getOpenShortEvents({
-      fromBlock,
-      toBlock,
-    });
-    const closeShortEvents = await this.getClosedShortEvents({
+    const shortEvents = await this.getShortEvents({
       fromBlock,
       toBlock,
     });
 
-    const openLongVolume = sumBigInt(
-      openLongEvents.map((event) => event.args.bondAmount),
+    const longVolume = longEvents.reduce(
+      (sum, { bondAmount }) => sum + bondAmount,
+      0n,
     );
-    const closeLongVolume = sumBigInt(
-      closeLongEvents.map((event) => event.args.bondAmount),
-    );
-
-    const openShortVolume = sumBigInt(
-      openShortEvents.map((event) => event.args.bondAmount),
-    );
-    const closeShortVolume = sumBigInt(
-      closeShortEvents.map((event) => event.args.bondAmount),
+    const shortVolume = shortEvents.reduce(
+      (sum, { bondAmount }) => sum + bondAmount,
+      0n,
     );
     return {
-      totalVolume:
-        openLongVolume + closeLongVolume + openShortVolume + closeShortVolume,
-      longVolume: openLongVolume + closeLongVolume,
-      shortVolume: openShortVolume + closeShortVolume,
+      longVolume,
+      shortVolume,
+      totalVolume: longVolume + shortVolume,
     };
   }
 
