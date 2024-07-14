@@ -1,4 +1,4 @@
-import { MethodNotImplementedError } from "src/base/errors/MethodNotImplementedError";
+import { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
