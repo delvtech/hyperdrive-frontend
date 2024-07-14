@@ -12,9 +12,9 @@ export type Prettify<T> = {
 export type Constructor<TInstanceType> = new (...args: any[]) => TInstanceType;
 
 /**
- * Overwrites properties of `T` with properties of `U`.
+ * Overrides properties of `T` with properties of `U`.
  */
-export type Overwrite<T, U> = Prettify<Omit<T, keyof U> & U>;
+export type Override<T, U> = Prettify<Omit<T, keyof U> & U>;
 
 /**
  * Convert members of a union to an intersection.

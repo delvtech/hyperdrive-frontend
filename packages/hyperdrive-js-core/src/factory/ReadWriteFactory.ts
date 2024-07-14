@@ -2,7 +2,7 @@ import {
   CachedReadWriteContract,
   ContractReadOptions,
 } from "@delvtech/evm-client";
-import { Overwrite } from "src/base/types";
+import { Override } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
@@ -10,7 +10,7 @@ import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 
 export interface ReadWriteFactoryOptions
-  extends Overwrite<ReadFactoryOptions, ReadWriteContractModelOptions> {}
+  extends Override<ReadFactoryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteFactory extends ReadFactory {
   declare contract: CachedReadWriteContract<FactoryAbi>;
