@@ -1,11 +1,14 @@
-const SECONDS_PER_DAY = BigInt(24 * 60 * 60);
+const SECONDS_PER_DAY = 86400n;
 
-function convertSecondsToDays(seconds: bigint): bigint {
-  const days = seconds / SECONDS_PER_DAY; // Calculate the number of whole days
-  return days;
-}
-
+/**
+ * Converts seconds to a year fraction.
+ *
+ * @param seconds - The number of seconds to convert.
+ * @returns The number of years represented by the given number of seconds.
+ *
+ * @internal
+ */
 export function convertSecondsToYearFraction(seconds: bigint): number {
-  const days = convertSecondsToDays(seconds);
+  const days = seconds / SECONDS_PER_DAY;
   return Number(days) / 365;
 }
