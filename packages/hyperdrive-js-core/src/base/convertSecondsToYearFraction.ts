@@ -1,4 +1,4 @@
-const SECONDS_PER_DAY = 86400n;
+const SECONDS_PER_YEAR = 31536000;
 
 /**
  * Converts seconds to a year fraction.
@@ -8,7 +8,6 @@ const SECONDS_PER_DAY = 86400n;
  *
  * @internal
  */
-export function convertSecondsToYearFraction(seconds: bigint): number {
-  const days = seconds / SECONDS_PER_DAY;
-  return Number(days) / 365;
+export function convertSecondsToYearFraction(seconds: bigint | number): number {
+  return Number(seconds) / SECONDS_PER_YEAR;
 }
