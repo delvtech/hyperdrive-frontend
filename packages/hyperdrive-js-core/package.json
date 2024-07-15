@@ -14,6 +14,7 @@
     "@delvtech/evm-client": "^0.5.1"
   },
   "dependencies": {
+    "@delvtech/fixed-point-wasm": "^0.0.0",
     "@delvtech/hyperdrive-artifacts": "^0.3.0",
     "@delvtech/hyperdrive-wasm": "^0.15.0",
     "lodash.groupby": "^4.6.0",
