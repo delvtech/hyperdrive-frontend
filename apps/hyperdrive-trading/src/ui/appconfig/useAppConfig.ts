@@ -22,12 +22,12 @@ const emptyAppConfig: AppConfig = {
 
 const baseSepoliaAppConfig: AppConfig = {
   ...emptyAppConfig,
-  chainId: 84532,
+  chainId: baseSepolia.id,
 };
 
 const b3SepoliaAppConfig: AppConfig = {
   ...emptyAppConfig,
-  chainId: 1993,
+  chainId: b3Sepolia.id,
 };
 
 export function useAppConfig(): AppConfig {

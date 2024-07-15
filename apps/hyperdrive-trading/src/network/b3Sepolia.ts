@@ -1,8 +1,8 @@
 import { defineChain } from "viem";
 import { chainConfig } from "viem/op-stack";
 
-export const sourceId = 1155111;
-export const b3Sepolia = /*#__PURE__*/ defineChain({
+const sourceId = 11155111;
+export const b3Sepolia = defineChain({
   ...chainConfig,
   id: 1993,
   network: "b3-sepolia",
