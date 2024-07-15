@@ -1,5 +1,5 @@
 import { CachedReadWriteContract } from "@delvtech/evm-client";
-import { Overwrite } from "src/base/types";
+import { Override } from "src/base/types";
 import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
@@ -13,7 +13,7 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
 export interface ReadWriteStEthHyperdriveOptions
-  extends Overwrite<ReadWriteHyperdriveOptions, ReadStEthHyperdriveOptions> {}
+  extends Override<ReadWriteHyperdriveOptions, ReadStEthHyperdriveOptions> {}
 
 export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadWriteHyperdrive,
