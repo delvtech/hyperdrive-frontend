@@ -50,6 +50,10 @@ impl Fixed {
         Ok(Fixed(raw.to_fixed()?))
     }
 
+    pub fn valueOf(&self) -> Result<BigInt, Error> {
+        self.0.to_bigint()
+    }
+
     /// Get the 18-decimal scaled bigint representation of this fixed-point number.
     #[wasm_bindgen(getter)]
     pub fn bigint(&self) -> Result<BigInt, Error> {
@@ -62,60 +66,64 @@ impl Fixed {
     }
 
     /// Add a fixed-point number to this one.
-    pub fn add(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 + other.0)
+    pub fn add(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 + other.to_fixed()?))
     }
 
     /// Subtract a fixed-point number from this one.
-    pub fn sub(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 - other.0)
+    pub fn sub(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 - other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another.
-    pub fn mul(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 * other.0)
+    pub fn mul(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 * other.to_fixed()?))
     }
 
     /// Divide this fixed-point number by another.
-    pub fn div(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 / other.0)
+    pub fn div(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 / other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding down.
-    pub fn mulDivDown(&self, other: &Fixed, divisor: &Fixed) -> Fixed {
-        Fixed(self.0.mul_div_down(other.0, divisor.0))
+    pub fn mulDivDown(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(
+            self.0.mul_div_down(other.to_fixed()?, divisor.to_fixed()?),
+        ))
     }
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding up.
-    pub fn mulDivUp(&self, other: &Fixed, divisor: &Fixed) -> Fixed {
-        Fixed(self.0.mul_div_up(other.0, divisor.0))
+    pub fn mulDivUp(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(
+            self.0.mul_div_up(other.to_fixed()?, divisor.to_fixed()?),
+        ))
     }
 
     /// Multiply this fixed-point number by another, rounding down.
-    pub fn mulDown(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.mul_down(other.0))
+    pub fn mulDown(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.mul_down(other.to_fixed()?)))
     }
 
     /// Multiply this fixed-point number by another, rounding up.
-    pub fn mulUp(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.mul_up(other.0))
+    pub fn mulUp(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.mul_up(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding down.
-    pub fn divDown(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.div_down(other.0))
+    pub fn divDown(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.div_down(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding up.
-    pub fn divUp(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.div_up(other.0))
+    pub fn divUp(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.div_up(other.to_fixed()?)))
     }
 
     /// Raise this fixed-point number to the power of another.
-    pub fn pow(&self, other: &Fixed) -> Result<Fixed, Error> {
-        Ok(Fixed(self.0.pow(other.0).to_result()?))
+    pub fn pow(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.pow(other.to_fixed()?).to_result()?))
     }
 }
 
@@ -159,4 +167,21 @@ pub fn ln(x: BigInt) -> Result<Fixed, Error> {
 pub fn randInRange(min: BigInt, max: BigInt) -> Result<Fixed, Error> {
     let mut rng = thread_rng();
     Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
+}
+
+// Types //
+
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(typescript_type = "Fixed | bigint")]
+    pub type Other;
+
+    #[wasm_bindgen(method)]
+    fn valueOf(this: &Other) -> BigInt;
+}
+
+impl ToFixedPoint for &Other {
+    fn to_fixed(&self) -> Result<FixedPoint, Error> {
+        self.valueOf().to_fixed()
+    }
 }

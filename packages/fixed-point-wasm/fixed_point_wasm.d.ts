@@ -55,80 +55,84 @@ export class Fixed {
 */
   constructor(raw?: bigint);
 /**
+* @returns {bigint}
+*/
+  valueOf(): bigint;
+/**
 * Get the formatted string representation of this fixed-point number.
 * @returns {string}
 */
   toString(): string;
 /**
 * Add a fixed-point number to this one.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  add(other: Fixed): Fixed;
+  add(other: Fixed | bigint): Fixed;
 /**
 * Subtract a fixed-point number from this one.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  sub(other: Fixed): Fixed;
+  sub(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  mul(other: Fixed): Fixed;
+  mul(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  div(other: Fixed): Fixed;
+  div(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding down.
-* @param {Fixed} other
-* @param {Fixed} divisor
+* @param {Fixed | bigint} other
+* @param {Fixed | bigint} divisor
 * @returns {Fixed}
 */
-  mulDivDown(other: Fixed, divisor: Fixed): Fixed;
+  mulDivDown(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding up.
-* @param {Fixed} other
-* @param {Fixed} divisor
+* @param {Fixed | bigint} other
+* @param {Fixed | bigint} divisor
 * @returns {Fixed}
 */
-  mulDivUp(other: Fixed, divisor: Fixed): Fixed;
+  mulDivUp(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding down.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  mulDown(other: Fixed): Fixed;
+  mulDown(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding up.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  mulUp(other: Fixed): Fixed;
+  mulUp(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding down.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  divDown(other: Fixed): Fixed;
+  divDown(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding up.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  divUp(other: Fixed): Fixed;
+  divUp(other: Fixed | bigint): Fixed;
 /**
 * Raise this fixed-point number to the power of another.
-* @param {Fixed} other
+* @param {Fixed | bigint} other
 * @returns {Fixed}
 */
-  pow(other: Fixed): Fixed;
+  pow(other: Fixed | bigint): Fixed;
 /**
 * Get the 18-decimal scaled bigint representation of this fixed-point number.
 */
@@ -142,18 +146,19 @@ export interface InitOutput {
   readonly getVersion: (a: number) => void;
   readonly __wbg_fixed_free: (a: number) => void;
   readonly fixed_new: (a: number, b: number) => void;
+  readonly fixed_valueOf: (a: number, b: number) => void;
   readonly fixed_bigint: (a: number, b: number) => void;
   readonly fixed_toString: (a: number, b: number) => void;
-  readonly fixed_add: (a: number, b: number) => number;
-  readonly fixed_sub: (a: number, b: number) => number;
-  readonly fixed_mul: (a: number, b: number) => number;
-  readonly fixed_div: (a: number, b: number) => number;
-  readonly fixed_mulDivDown: (a: number, b: number, c: number) => number;
-  readonly fixed_mulDivUp: (a: number, b: number, c: number) => number;
-  readonly fixed_mulDown: (a: number, b: number) => number;
-  readonly fixed_mulUp: (a: number, b: number) => number;
-  readonly fixed_divDown: (a: number, b: number) => number;
-  readonly fixed_divUp: (a: number, b: number) => number;
+  readonly fixed_add: (a: number, b: number, c: number) => void;
+  readonly fixed_sub: (a: number, b: number, c: number) => void;
+  readonly fixed_mul: (a: number, b: number, c: number) => void;
+  readonly fixed_div: (a: number, b: number, c: number) => void;
+  readonly fixed_mulDivDown: (a: number, b: number, c: number, d: number) => void;
+  readonly fixed_mulDivUp: (a: number, b: number, c: number, d: number) => void;
+  readonly fixed_mulDown: (a: number, b: number, c: number) => void;
+  readonly fixed_mulUp: (a: number, b: number, c: number) => void;
+  readonly fixed_divDown: (a: number, b: number, c: number) => void;
+  readonly fixed_divUp: (a: number, b: number, c: number) => void;
   readonly fixed_pow: (a: number, b: number, c: number) => void;
   readonly fixed: (a: number, b: number) => void;
   readonly parseFixed: (a: number, b: number, c: number) => void;

@@ -10,9 +10,9 @@ initSync(wasmBuffer);
 
 // BigInt
 
-const totalSupply = fixed(22950342684077248430458n);
-const sharePrice = fixed(1094205545459194143n);
-const totalSupplyInBase = totalSupply.mulDown(sharePrice);
+const totalSupply = 22950342684077248430458n;
+const sharePrice = 1094205545459194143n;
+const totalSupplyInBase = fixed(totalSupply).mulDown(sharePrice);
 
 console.log("Total supply in base:", totalSupplyInBase.toString());
 // => 25112.392235106171381320
