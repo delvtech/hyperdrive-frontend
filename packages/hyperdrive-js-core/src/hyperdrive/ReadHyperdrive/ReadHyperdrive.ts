@@ -521,29 +521,6 @@ export class ReadHyperdrive extends ReadModel {
     return hyperwasm.spotPrice({ poolConfig, poolInfo });
   }
 
-  private async getOpenLongEvents(
-    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenLong">,
-  ): Promise<Event<HyperdriveAbi, "OpenLong">[]> {
-    return this.contract.getEvents("OpenLong", options);
-  }
-
-  private async getClosedLongEvents(
-    options?: ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
-  ): Promise<Event<HyperdriveAbi, "CloseLong">[]> {
-    return this.contract.getEvents("CloseLong", options);
-  }
-
-  private async getOpenShortEvents(
-    options?: ContractGetEventsOptions<HyperdriveAbi, "OpenShort">,
-  ): Promise<Event<HyperdriveAbi, "OpenShort">[]> {
-    return this.contract.getEvents("OpenShort", options);
-  }
-
-  private async getClosedShortEvents(
-    options?: ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
-  ): Promise<Event<HyperdriveAbi, "CloseShort">[]> {
-    return this.contract.getEvents("CloseShort", options);
-  }
   async getLongEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "OpenLong"> &
       ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
