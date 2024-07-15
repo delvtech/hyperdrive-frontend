@@ -51,7 +51,7 @@ macro_rules! type_error {
 // Convert a Error to a JsValue via `.into()` or `::from()`
 impl From<Error> for JsValue {
     fn from(error: Error) -> JsValue {
-        error.to_string().into()
+        js_sys::Error::new(&error.to_string()).into()
     }
 }
 
