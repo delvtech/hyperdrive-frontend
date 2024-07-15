@@ -1,5 +1,6 @@
-import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
@@ -16,9 +17,9 @@ import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -62,10 +63,96 @@ export function OpenLongPreview({
         decimals: baseToken.decimals,
       });
   const yieldAtMaturity = bondAmount - amountPaidInBase;
-
+  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
+  const { isFlagEnabled: isNewOpenLongFormEnabled } =
+    useFeatureFlag("new-open-long-form");
+  // if (isNewOpenLongFormEnabled) {
   return (
     <div className="flex flex-col gap-3.5 px-2">
-      <div className="flex flex-col gap-3">
+      <CollapseSection
+        heading={
+          <div className="flex w-full justify-between text-neutral-content">
+            <p>Transaction Details</p>
+            <div className="flex items-center gap-1">
+              <ClockIcon className="size-5 text-[#4E6A77]" />
+              <p>{formatDate(Date.now() + termLengthMS)}</p>
+              <ChevronDownIcon className="ml-1 size-6" />
+            </div>
+          </div>
+        }
+      >
+        <LabelValue
+          size="small"
+          label="Fixed APR after open"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames({
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
+                {spotRateAfterOpen ? (
+                  <span className="flex gap-2">
+                    <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
+                    <ArrowRightIcon className="h-4 text-neutral-content" />
+                    {formatRate(spotRateAfterOpen)}%
+                  </span>
+                ) : (
+                  "-"
+                )}
+              </span>
+            )
+          }
+        />
+        <LabelValue
+          label="Fixed APR impact"
+          size="small"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames({
+                  "text-error": spotRateAfterOpen,
+                  "text-base-content/80": !spotRateAfterOpen,
+                })}
+              >
+                {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
+              </span>
+            )
+          }
+        />
+      </CollapseSection>
+    </div>
+  );
+  // }
+}
+
+function getMarketImpactLabel(
+  currentFixedRate: bigint | undefined,
+  spotRateAfterOpenLong: bigint | undefined,
+) {
+  if (spotRateAfterOpenLong === undefined || currentFixedRate === undefined) {
+    return "-";
+  }
+  const changeInFixedApr = dnum.subtract(
+    [currentFixedRate, 18],
+    [spotRateAfterOpenLong, 18],
+  )[0];
+
+  const isChangeInFixedAprLessThanOneBasisPoint =
+    changeInFixedApr < dnum.from("0.0001", 18)[0]; // .01% === .0001
+
+  if (isChangeInFixedAprLessThanOneBasisPoint) {
+    return "-<0.01%";
+  }
+  return `-${formatRate(changeInFixedApr)}%`;
+}
+
+{
+  /* <div className="flex flex-col gap-3">
         <LabelValue
           label="You spend"
           value={
@@ -174,74 +261,5 @@ export function OpenLongPreview({
             )
           }
         />
-      </div>
-
-      <CollapseSection heading="Market Impact">
-        <LabelValue
-          size="small"
-          label="Fixed APR after open"
-          value={
-            openLongPreviewStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames({
-                  "text-base-content/80": !spotRateAfterOpen,
-                })}
-              >
-                {spotRateAfterOpen ? (
-                  <span className="flex gap-2">
-                    <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
-                    <ArrowRightIcon className="h-4 text-neutral-content" />
-                    {formatRate(spotRateAfterOpen)}%
-                  </span>
-                ) : (
-                  "-"
-                )}
-              </span>
-            )
-          }
-        />
-        <LabelValue
-          label="Fixed APR impact"
-          size="small"
-          value={
-            openLongPreviewStatus === "loading" ? (
-              <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames({
-                  "text-error": spotRateAfterOpen,
-                  "text-base-content/80": !spotRateAfterOpen,
-                })}
-              >
-                {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
-              </span>
-            )
-          }
-        />
-      </CollapseSection>
-    </div>
-  );
-}
-
-function getMarketImpactLabel(
-  currentFixedRate: bigint | undefined,
-  spotRateAfterOpenLong: bigint | undefined,
-) {
-  if (spotRateAfterOpenLong === undefined || currentFixedRate === undefined) {
-    return "-";
-  }
-  const changeInFixedApr = dnum.subtract(
-    [currentFixedRate, 18],
-    [spotRateAfterOpenLong, 18],
-  )[0];
-
-  const isChangeInFixedAprLessThanOneBasisPoint =
-    changeInFixedApr < dnum.from("0.0001", 18)[0]; // .01% === .0001
-
-  if (isChangeInFixedAprLessThanOneBasisPoint) {
-    return "-<0.01%";
-  }
-  return `-${formatRate(changeInFixedApr)}%`;
+      </div> */
 }
