@@ -1,10 +1,10 @@
-import { PropsWithChildren, ReactElement } from "react";
+import { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 export function CollapseSection({
   heading,
   children,
 }: PropsWithChildren<{
-  heading: ReactElement | string;
+  heading: ReactNode;
 }>): ReactElement {
   return (
     <div className="daisy-collapse justify-normal rounded-none text-sm">

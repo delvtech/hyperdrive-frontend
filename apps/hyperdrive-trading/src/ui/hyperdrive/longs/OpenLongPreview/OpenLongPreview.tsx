@@ -76,7 +76,7 @@ export function OpenLongPreview({
             <div className="flex w-full items-center justify-between text-neutral-content">
               <p>Transaction Details</p>
               <div className="flex items-center gap-1">
-                <ClockIcon className="size-5 text-[#4E6A77]" />
+                <ClockIcon className="size-5 text-gray-500" />
                 <p>{formatDate(Date.now() + termLengthMS)}</p>
                 <ChevronDownIcon className="ml-1 size-6" />
               </div>
