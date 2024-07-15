@@ -34,7 +34,12 @@ export function TransactionView({
       <div className="flex flex-col gap-8">
         {primaryStats}
         {/* If the new open long form is not enabled, show the transaction preview above the action button */}
-        {!isNewOpenLongFormEnabled ? transactionPreview : null}
+        {!isNewOpenLongFormEnabled ? (
+          <div>
+            <h6 className="mb-4">Preview transaction</h6>
+            {transactionPreview}
+          </div>
+        ) : null}
         <div className="text-center">{actionButton}</div>
         {disclaimer ? <div>{disclaimer}</div> : null}
         {/* If the new open long form is enabled, show the transaction preview below the action button */}

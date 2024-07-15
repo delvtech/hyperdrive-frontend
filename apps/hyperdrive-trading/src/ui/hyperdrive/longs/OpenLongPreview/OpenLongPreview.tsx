@@ -84,40 +84,6 @@ export function OpenLongPreview({
           }
         >
           <LabelValue
-            label="You spend"
-            size="small"
-            value={
-              <span
-                className={classNames({
-                  "text-base-content/80": !amountPaid,
-                })}
-              >{`${formatBalance({
-                balance: amountPaid,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
-              })} ${activeToken.symbol}`}</span>
-            }
-          />
-          <LabelValue
-            label="You receive"
-            size="small"
-            value={
-              openLongPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span
-                  className={classNames({
-                    "text-base-content/80": !bondAmount,
-                  })}
-                >{`${formatBalance({
-                  balance: bondAmount,
-                  decimals: baseToken.decimals,
-                  places: baseToken.places,
-                })} hy${baseToken.symbol}`}</span>
-              )
-            }
-          />
-          <LabelValue
             label="Pool fee"
             tooltipContent="Total combined fee paid to LPs and governance to open the long."
             tooltipPosition="right"
@@ -139,59 +105,6 @@ export function OpenLongPreview({
                         places: baseToken.places,
                       })} hy${baseToken.symbol}`
                     : `0 hy${baseToken.symbol}`}
-                </span>
-              )
-            }
-          />
-          <LabelValue
-            label="Fixed APR"
-            tooltipContent="Your net fixed rate after pool fees and slippage are applied."
-            tooltipPosition="right"
-            tooltipSize="small"
-            size="small"
-            value={
-              openLongPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span className="gradient-text">
-                  {bondAmount > 0
-                    ? `${formatRate(
-                        calculateAprFromPrice({
-                          positionDuration:
-                            hyperdrive.poolConfig.positionDuration || 0n,
-                          baseAmount: amountPaidInBase,
-                          bondAmount: bondAmount,
-                        }),
-                        baseToken.decimals,
-                      )}%`
-                    : `${fixedApr?.formatted}%`}
-                </span>
-              )
-            }
-          />
-          <LabelValue
-            label="Yield at maturity"
-            tooltipContent={`Total ${baseToken.symbol} expected in return at the end of the term, excluding fees.`}
-            tooltipPosition="right"
-            tooltipSize="small"
-            size="small"
-            value={
-              openLongPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : bondAmount > 0 ? (
-                <span className="text-success">
-                  {yieldAtMaturity
-                    ? // TODO: Add ROI here in parenthesis after the yield amount
-                      `+${formatBalance({
-                        balance: yieldAtMaturity,
-                        decimals: baseToken.decimals,
-                        places: baseToken.places,
-                      })} ${baseToken.symbol}`
-                    : undefined}
-                </span>
-              ) : (
-                <span className={"text-base-content/80"}>
-                  0 {baseToken.symbol}
                 </span>
               )
             }
