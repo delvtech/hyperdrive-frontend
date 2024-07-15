@@ -14,8 +14,8 @@ const totalSupply = 22950342684077248430458n;
 const sharePrice = 1094205545459194143n;
 const totalSupplyInBase = fixed(totalSupply).mulDown(sharePrice);
 
-console.log("Total supply in base:", totalSupplyInBase.toString());
-// => 25112.392235106171381320
+console.log(`Total supply in base: ${totalSupplyInBase.bigint}`);
+// => 25112392235106171381320
 
 // String
 
