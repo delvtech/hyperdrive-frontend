@@ -271,9 +271,12 @@ export function OpenLongPreview({
 
       <CollapseSection
         heading={
-          <div className="flex">
-            <p>Market Impact</p>
-            <ChevronDownIcon className="ml-1 size-4" />
+          <div className="flex items-center gap-4">
+            <span>Market Impact</span>
+            <span className="text-xs">
+              {/* Click to expand */}
+              <ChevronDownIcon className="h-4 focus:rotate-180 focus:transition" />
+            </span>
           </div>
         }
       >
