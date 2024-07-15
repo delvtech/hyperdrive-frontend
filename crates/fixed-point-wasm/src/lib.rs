@@ -50,9 +50,9 @@ impl Fixed {
         Ok(Fixed(raw.to_fixed()?))
     }
 
-    /// Get the scaled bigint representation of this fixed-point number.
+    /// Get the 18-decimal scaled bigint representation of this fixed-point number.
     #[wasm_bindgen(getter)]
-    pub fn raw(&self) -> Result<BigInt, Error> {
+    pub fn bigint(&self) -> Result<BigInt, Error> {
         self.0.to_bigint()
     }
 

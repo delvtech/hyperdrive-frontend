@@ -130,9 +130,9 @@ export class Fixed {
 */
   pow(other: Fixed): Fixed;
 /**
-* Get the scaled bigint representation of this fixed-point number.
+* Get the 18-decimal scaled bigint representation of this fixed-point number.
 */
-  readonly raw: bigint;
+  readonly bigint: bigint;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
@@ -142,7 +142,7 @@ export interface InitOutput {
   readonly getVersion: (a: number) => void;
   readonly __wbg_fixed_free: (a: number) => void;
   readonly fixed_new: (a: number, b: number) => void;
-  readonly fixed_raw: (a: number, b: number) => void;
+  readonly fixed_bigint: (a: number, b: number) => void;
   readonly fixed_toString: (a: number, b: number) => void;
   readonly fixed_add: (a: number, b: number) => number;
   readonly fixed_sub: (a: number, b: number) => number;
