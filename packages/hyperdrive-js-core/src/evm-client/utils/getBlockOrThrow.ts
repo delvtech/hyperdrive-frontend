@@ -1,5 +1,5 @@
 import { Block, Network, NetworkGetBlockOptions } from "@delvtech/evm-client";
-import { BlockNotFoundError } from "src/evm-client/errors/BlockNotFoundError";
+import { BlockNotFoundError } from "src/errors/BlockNotFoundError";
 
 /**
  * A utility that tries to fetch a block from a given network and throws an

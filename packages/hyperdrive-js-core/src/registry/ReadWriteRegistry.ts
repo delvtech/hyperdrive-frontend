@@ -3,7 +3,7 @@ import {
   ContractReadOptions,
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
-import { Overwrite } from "src/base/types";
+import { Override } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
@@ -13,7 +13,7 @@ import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
 export interface ReadWriteRegistryOptions
-  extends Overwrite<ReadRegistryOptions, ReadWriteContractModelOptions> {}
+  extends Override<ReadRegistryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteRegistry extends ReadRegistry {
   declare contract: CachedReadWriteContract<RegistryAbi>;
