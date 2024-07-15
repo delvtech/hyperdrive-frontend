@@ -61,11 +61,9 @@ export function OpenLongForm({
 
   const tokenSymbol = baseToken.symbol;
   const { balances = [[]] } = useBridgeTokenBalances(account, [tokenSymbol]);
-  console.log("balances", balances);
   const hasBridgeableBalance = balances[0]?.some(
     ({ balance }) => Number(balance) > 0,
   );
-  console.log("hasBridgeableBalance", hasBridgeableBalance);
 
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
