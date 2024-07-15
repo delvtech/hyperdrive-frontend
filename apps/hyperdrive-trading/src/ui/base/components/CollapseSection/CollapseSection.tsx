@@ -4,7 +4,7 @@ export function CollapseSection({
   heading,
   children,
 }: PropsWithChildren<{
-  heading: ReactElement;
+  heading: ReactElement | string;
 }>): ReactElement {
   return (
     <div className="daisy-collapse justify-normal rounded-none text-sm">
