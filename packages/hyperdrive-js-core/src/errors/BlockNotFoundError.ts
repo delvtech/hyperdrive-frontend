@@ -1,6 +1,7 @@
 import { NetworkGetBlockOptions } from "@delvtech/evm-client";
+import { HyperdriveSdkError } from "./HyperdriveSdkError";
 
-export class BlockNotFoundError extends Error {
+export class BlockNotFoundError extends HyperdriveSdkError {
   constructor(options?: NetworkGetBlockOptions) {
     const block =
       options?.blockHash ?? options?.blockNumber ?? options?.blockTag;

@@ -104,6 +104,11 @@ export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { getHprFromApr } from "src/base/getHprFromApr";
 export { getHprFromApy } from "src/base/getHprFromApy";
 
+// Errors
+export { BlockNotFoundError } from "src/errors/BlockNotFoundError";
+export { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+export { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
+
 // Model
 export {
   ReadModel,
