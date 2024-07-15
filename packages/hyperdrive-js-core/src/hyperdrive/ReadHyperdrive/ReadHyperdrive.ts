@@ -45,6 +45,7 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
+import { fixed, parseFixed } from "src/fixedpoint";
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
 export class ReadHyperdrive extends ReadModel {
@@ -209,20 +210,24 @@ export class ReadHyperdrive extends ReadModel {
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo(options);
 
-    const timeRange = currentBlock.timestamp - startBlock.timestamp;
+    const timeRange = currentBlock.timestamp - startBlock.timestamp; // bigint
 
-    // Calculate the annualized rate of return
-    // using dnum for division here, as dividing two 18-decimals numbers causes
-    // problems, (ie: rateOfReturn is 0 when using normal js division operator)
-    const decimals = await this.getDecimals();
-    const rateOfReturn = dnum.divide(
-      [currentVaultSharePrice - startVaultSharePrice, decimals],
-      [startVaultSharePrice, decimals],
-    )[0];
-    const annualizedRateOfReturn =
-      (rateOfReturn * BigInt(60 * 60 * 24 * 365)) / timeRange;
+    // Convert values to Fixed type, to perform fixed point math
+    const fixedTimeRange = fixed(timeRange * BigInt(1e18));
+    const fixedYear = fixed(BigInt(60 * 60 * 24 * 365) * BigInt(1e18));
+    const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
 
-    return annualizedRateOfReturn;
+    // Calculate the annualized rate of return:
+    // apy = (1 + hpr) ^ t - 1
+    // using fixedpointmath here, as we need to use exponents
+    const rateOfReturn = fixed(currentVaultSharePrice).div(
+      fixed(startVaultSharePrice),
+    ); // this is (1 + hpr)
+    const annualizedRateOfReturn = rateOfReturn
+      .pow(parseFixed("1e18").div(fixedTimeRangeInYears))
+      .sub(parseFixed("1e18"));
+
+    return annualizedRateOfReturn.raw;
   }
 
   /**
