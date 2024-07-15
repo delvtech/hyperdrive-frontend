@@ -5,9 +5,30 @@ import {
   sepoliaAppConfig,
 } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { SupportedChainId } from "src/chains/supportedChains";
-import { foundry, mainnet, sepolia } from "viem/chains";
+import { b3Sepolia } from "src/network/b3Sepolia";
+import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
+
+const emptyAppConfig: AppConfig = {
+  chainId: 0,
+  tags: [],
+  registryAddress: ZERO_ADDRESS,
+  hyperdrives: [],
+  tokens: [],
+  protocols: {},
+};
+
+const baseSepoliaAppConfig: AppConfig = {
+  ...emptyAppConfig,
+  chainId: baseSepolia.id,
+};
+
+const b3SepoliaAppConfig: AppConfig = {
+  ...emptyAppConfig,
+  chainId: b3Sepolia.id,
+};
 
 export function useAppConfig(): AppConfig {
   const chainId = useChainId() as SupportedChainId;
@@ -24,6 +45,12 @@ export function useAppConfig(): AppConfig {
 
     case sepolia.id:
       return sepoliaAppConfig;
+
+    case baseSepolia.id:
+      return baseSepoliaAppConfig;
+
+    case b3Sepolia.id:
+      return b3SepoliaAppConfig;
 
     default:
       assertNever(chainId);

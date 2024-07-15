@@ -9,18 +9,20 @@ import {
 import { http } from "@wagmi/core";
 import { Chain } from "@wagmi/core/chains";
 import { cloudChain } from "src/chains/cloudChain";
+import { b3Sepolia } from "src/network/b3Sepolia";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Transport } from "viem";
-import { foundry, mainnet, sepolia } from "wagmi/chains";
+import { baseSepolia, foundry, mainnet, sepolia } from "wagmi/chains";
 
 const {
   VITE_LOCALHOST_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-  VITE_CUSTOM_CHAIN_ADDRESSES_URL,
   VITE_CUSTOM_CHAIN_CHAIN_ID,
   VITE_WALLET_CONNECT_PROJECT_ID,
   VITE_SEPOLIA_RPC_URL,
+  VITE_BASE_SEPOLIA_RPC_URL,
+  VITE_B3_SEPOLIA_RPC_URL,
   VITE_MAINNET_RPC_URL,
 } = import.meta.env;
 
@@ -61,6 +63,18 @@ if (VITE_SEPOLIA_RPC_URL) {
   if (capsuleWallet) {
     customWallets.push(capsuleWallet);
   }
+}
+
+// Base Sepolia
+if (VITE_BASE_SEPOLIA_RPC_URL) {
+  chains.push(baseSepolia);
+  transports[baseSepolia.id] = http(VITE_BASE_SEPOLIA_RPC_URL);
+}
+
+// B3 Sepolia
+if (VITE_B3_SEPOLIA_RPC_URL) {
+  chains.push(b3Sepolia);
+  transports[b3Sepolia.id] = http(VITE_B3_SEPOLIA_RPC_URL);
 }
 
 if (VITE_MAINNET_RPC_URL) {
