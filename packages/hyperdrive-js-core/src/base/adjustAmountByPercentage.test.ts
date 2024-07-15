@@ -1,5 +1,6 @@
 import * as dnum from "dnum";
 import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
+import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { expect, test } from "vitest";
 
 test("should return adjusted amount down when given a basic input", () => {
@@ -72,5 +73,5 @@ test("should throw an error when given a negative input amount", () => {
       decimals: 18,
       direction: "down",
     });
-  }).toThrow(Error("Negative amounts are not allowed"));
+  }).toThrow(new HyperdriveSdkError("Negative amounts are not allowed"));
 });

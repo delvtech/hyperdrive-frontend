@@ -20,6 +20,7 @@ import {
   GetCheckpointParams,
   GetCheckpointTimeParams,
 } from "src/checkpoint/types";
+import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { fixed } from "src/fixed-point";
@@ -158,7 +159,9 @@ export class ReadHyperdrive extends ReadModel {
     const events = await this.contract.getEvents("Initialize");
 
     if (!events.length || events[0].blockNumber === undefined) {
-      throw new Error("Pool has not been initialized, no block found.");
+      throw new HyperdriveSdkError(
+        "Pool has not been initialized, no block found.",
+      );
     }
     const blockNumber = events[0].blockNumber;
 
@@ -196,8 +199,8 @@ export class ReadHyperdrive extends ReadModel {
     const { blockNumber: initializationBlock } =
       await this.getInitializationBlock();
     if (initializationBlock && startBlockNumber < initializationBlock) {
-      throw new Error(
-        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initilized at block ${initializationBlock}.`,
+      throw new HyperdriveSdkError(
+        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initialized at block ${initializationBlock}.`,
       );
     }
 
@@ -854,7 +857,7 @@ export class ReadHyperdrive extends ReadModel {
     const longPosition = allLongPositions.find((p) => p.assetId === assetId);
 
     if (!longPosition) {
-      throw new Error(
+      throw new HyperdriveSdkError(
         `No position with asset id: ${assetId} found for account ${account}`,
       );
     }
