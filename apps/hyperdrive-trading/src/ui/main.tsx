@@ -1,5 +1,6 @@
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
+import "@usecapsule/react-sdk/styles.css";
 
 import {
   ErrorBoundary as RollbarErrorBoundary,
