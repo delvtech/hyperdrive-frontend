@@ -73,7 +73,7 @@ export function OpenLongPreview({
       <div className="flex flex-col gap-3.5 px-2">
         <CollapseSection
           heading={
-            <div className="flex w-full justify-between text-neutral-content">
+            <div className="flex w-full items-center justify-between text-neutral-content">
               <p>Transaction Details</p>
               <div className="flex items-center gap-1">
                 <ClockIcon className="size-5 text-[#4E6A77]" />

@@ -43,8 +43,8 @@ export function TransactionView({
         <div className="text-center">{actionButton}</div>
         {disclaimer ? <div>{disclaimer}</div> : null}
         {/* If the new open long form is enabled, show the transaction preview below the action button */}
-        {isNewOpenLongFormEnabled ? transactionPreview : null}
       </div>
+      {isNewOpenLongFormEnabled ? transactionPreview : null}
     </div>
   );
 }
