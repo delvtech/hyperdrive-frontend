@@ -45,11 +45,12 @@ export function ln(x: bigint): Fixed;
 */
 export function randInRange(min: bigint, max: bigint): Fixed;
 /**
-* A fixed-point number.
+* An 18-decimal fixed-point number.
 */
 export class Fixed {
   free(): void;
 /**
+* Create a new `Fixed` instance from an 18-decimal scaled bigint.
 * @param {bigint | undefined} [raw]
 */
   constructor(raw?: bigint);

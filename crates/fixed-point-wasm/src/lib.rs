@@ -30,7 +30,7 @@ pub fn getVersion() -> String {
     env!("CARGO_PKG_VERSION").to_string()
 }
 
-/// A fixed-point number.
+/// An 18-decimal fixed-point number.
 #[wasm_bindgen]
 pub struct Fixed(FixedPoint);
 
@@ -44,6 +44,7 @@ impl fmt::Display for Fixed {
 
 #[wasm_bindgen]
 impl Fixed {
+    /// Create a new `Fixed` instance from an 18-decimal scaled bigint.
     #[wasm_bindgen(constructor)]
     pub fn new(raw: Option<BigInt>) -> Result<Fixed, Error> {
         Ok(Fixed(raw.to_fixed()?))
