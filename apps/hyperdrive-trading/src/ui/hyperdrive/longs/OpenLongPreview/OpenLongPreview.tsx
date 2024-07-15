@@ -271,9 +271,9 @@ export function OpenLongPreview({
 
       <CollapseSection
         heading={
-          <div className="flex w-full justify-between">
+          <div className="flex">
             <p>Market Impact</p>
-            <ChevronDownIcon className="ml-1 size-6" />
+            <ChevronDownIcon className="ml-1 size-4" />
           </div>
         }
       >
