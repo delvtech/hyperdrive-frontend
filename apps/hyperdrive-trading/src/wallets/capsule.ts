@@ -15,13 +15,7 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
 
     apiKey: VITE_CAPSULE_API_KEY, // get one at usecapsule.com/beta
     constructorOpts: {
-      // passkey configs
-      portalTheme: { backgroundColor: "#202F36", foregroundColor: "#EFF4F6" },
-
       // email configs
-      // @ts-expect-error The enum for this type is not exported
-      emailTheme: "dark",
-      emailPrimaryColor: "#15FFAB",
       githubUrl: "https://github.com/delvtech",
       linkedinUrl: "https://www.linkedin.com/company/delv-tech/",
       xUrl: "https://twitter.com/delv_tech",
@@ -30,8 +24,19 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
     },
   },
   theme: {
-    backgroundColor: "#00ff00",
-    foregroundColor: "#ff00ff",
+    backgroundColor: "#141414",
+    foregroundColor: "#FFFFFF",
+    customPalette: {
+      tileButton: {
+        surface: { default: "#141414" },
+      },
+      input: { surface: { default: "#141414" } },
+    },
+  },
+  onRampConfig: {
+    asset: "ETHEREUM",
+    providers: [{ id: "STRIPE" }],
+    testMode: true,
   },
   appName: "Hyperdrive",
   logo: "/capsule-wordmark.png",

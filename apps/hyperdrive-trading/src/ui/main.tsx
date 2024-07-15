@@ -65,7 +65,7 @@ function Root() {
             ),
           }}
           showRecentTransactions
-          theme={customRainbowTheme()}
+          theme={customRainbowTheme}
         >
           <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
             <RollbarProvider
