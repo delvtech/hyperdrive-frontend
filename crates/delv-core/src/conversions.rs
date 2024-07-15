@@ -68,6 +68,7 @@ impl ToU256 for &str {
 }
 
 impl ToU256 for JsValue {
+    #[track_caller]
     fn to_u256(&self) -> Result<U256, Error> {
         self.to_bigint()?.to_u256()
     }
