@@ -21,7 +21,8 @@ export function useVpnScreen(): VpnScreenResult {
     queryKey: ["vpn-screen"],
     staleTime: Infinity,
     enabled,
-    retry: 6,
+    retry: 2,
+    retryDelay: 1000,
     queryFn: () => fetch(url, { method: "POST" }).then((res) => res.json()),
   });
   return {
