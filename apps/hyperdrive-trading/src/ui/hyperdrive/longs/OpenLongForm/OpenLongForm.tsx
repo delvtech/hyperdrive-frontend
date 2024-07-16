@@ -4,6 +4,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -35,19 +36,19 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
+
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
-  onOpenBridge?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
-  onOpenBridge,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
+  const chainId = useChainId();
   const { isFlagEnabled: isBridgingEnabled } = useFeatureFlag("bridge");
   const { isFlagEnabled: isNewOpenLongFormEnabled } =
     useFeatureFlag("new-open-long-form");
@@ -207,8 +208,20 @@ export function OpenLongForm({
       activeToken.decimals,
     );
   }
-  const switchToBridgeUIButton = (
-    <button onClick={onOpenBridge}>{`Bridge ${tokenSymbol} from L2s`}</button>
+
+  const switchToBridgeUILink = (
+    <Link
+      to="/bridge"
+      search={{
+        token: activeToken.symbol,
+        destination: chainId,
+      }}
+      className="daisy-btn daisy-btn-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {`Bridge ${tokenSymbol} from L2s`}
+    </Link>
   );
 
   return (
@@ -300,9 +313,7 @@ export function OpenLongForm({
         )
       }
       setting={
-        isBridgingEnabled && hasBridgeableBalance
-          ? switchToBridgeUIButton
-          : null
+        isBridgingEnabled && hasBridgeableBalance ? switchToBridgeUILink : null
       }
       primaryStats={
         isNewOpenLongFormEnabled ? (
