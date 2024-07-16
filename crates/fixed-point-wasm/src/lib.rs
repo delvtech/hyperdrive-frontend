@@ -8,7 +8,7 @@ use delv_core::{
     error::{Error, ToResult},
 };
 use fixedpointmath::FixedPoint;
-use js_sys::{BigInt, JsString};
+use js_sys::{parse_float, BigInt, JsString};
 use rand::{thread_rng, Rng};
 use wasm_bindgen::prelude::*;
 
@@ -61,6 +61,13 @@ impl Fixed {
     #[wasm_bindgen(getter)]
     pub fn bigint(&self) -> Result<BigInt, Error> {
         self.0.to_bigint()
+    }
+
+    /// Get the float representation of this fixed-point number.
+    ///
+    /// __Caution__: This method may lose precision.
+    pub fn toNumber(&self) -> f64 {
+        parse_float(&self.0.to_string())
     }
 
     /// Get the formatted string representation of this fixed-point number.
