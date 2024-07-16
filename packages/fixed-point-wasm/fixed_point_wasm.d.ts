@@ -7,43 +7,38 @@ export function initialize(): void;
 */
 export function getVersion(): string;
 /**
-* Create a new `Fixed` instance from a bigint.
+* Create a new `Fixed` instance from a raw value.
 *
 * @example
 * ```js
-* const x = fixed(BigInt(15e17));
-* console.log(x.toString());
+* const fromBigint = fixed(1500000000000000000n);
+* const fromNumber = fixed(1.5e18);
+* const fromString = fixed('1.5e18');
+*
+* console.log(fromBigint.toString());
+* // => 1.500000000000000000
+*
+* console.log(fromNumber.toString());
+* // => 1.500000000000000000
+*
+* console.log(fromString.toString());
 * // => 1.500000000000000000
 * ```
-* @param {bigint | undefined} [raw]
+* @param {bigint | number | string | undefined} [raw]
 * @returns {Fixed}
 */
-export function fixed(raw?: bigint): Fixed;
+export function fixed(raw?: bigint | number | string): Fixed;
 /**
-* Parses a scaled string into a `Fixed` instance.
-*
-* @example
-*
-* ```js
-* const x = parseFixed('1.5e18');
-* console.log(x.toString());
-* // => 1.500000000000000000
-* ```
-* @param {string} string
+* @param {bigint | number | string} min
+* @param {bigint | number | string} max
 * @returns {Fixed}
 */
-export function parseFixed(string: string): Fixed;
+export function randInRange(min: bigint | number | string, max: bigint | number | string): Fixed;
 /**
-* @param {bigint} x
+* @param {Fixed | bigint} x
 * @returns {Fixed}
 */
-export function ln(x: bigint): Fixed;
-/**
-* @param {bigint} min
-* @param {bigint} max
-* @returns {Fixed}
-*/
-export function randInRange(min: bigint, max: bigint): Fixed;
+export function ln(x: Fixed | bigint): Fixed;
 /**
 * An 18-decimal fixed-point number.
 */
@@ -51,13 +46,20 @@ export class Fixed {
   free(): void;
 /**
 * Create a new `Fixed` instance from an 18-decimal scaled bigint.
-* @param {bigint | undefined} [raw]
+* @param {bigint | number | string | undefined} [value]
 */
-  constructor(raw?: bigint);
+  constructor(value?: bigint | number | string);
 /**
 * @returns {bigint}
 */
   valueOf(): bigint;
+/**
+* Get the float representation of this fixed-point number.
+*
+* __Caution__: This method may lose precision.
+* @returns {number}
+*/
+  toNumber(): number;
 /**
 * Get the formatted string representation of this fixed-point number.
 * @returns {string}
@@ -148,6 +150,7 @@ export interface InitOutput {
   readonly fixed_new: (a: number, b: number) => void;
   readonly fixed_valueOf: (a: number, b: number) => void;
   readonly fixed_bigint: (a: number, b: number) => void;
+  readonly fixed_toNumber: (a: number) => number;
   readonly fixed_toString: (a: number, b: number) => void;
   readonly fixed_add: (a: number, b: number, c: number) => void;
   readonly fixed_sub: (a: number, b: number, c: number) => void;
@@ -161,9 +164,8 @@ export interface InitOutput {
   readonly fixed_divUp: (a: number, b: number, c: number) => void;
   readonly fixed_pow: (a: number, b: number, c: number) => void;
   readonly fixed: (a: number, b: number) => void;
-  readonly parseFixed: (a: number, b: number, c: number) => void;
-  readonly ln: (a: number, b: number) => void;
   readonly randInRange: (a: number, b: number, c: number) => void;
+  readonly ln: (a: number, b: number) => void;
   readonly initialize: () => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
