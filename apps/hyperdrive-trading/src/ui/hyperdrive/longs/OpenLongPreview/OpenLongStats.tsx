@@ -105,18 +105,18 @@ export function OpenLongStats({
               })}
             >
               <img
-                src={activeToken.iconUrl}
+                src={baseToken.iconUrl}
                 className="mr-1 h-9 rounded-full p-1"
               />
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
-              })} `}
+              })}`}
             </span>
           )
         }
-        valueUnit={`${activeToken.symbol}`}
+        valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={`Term: ${numDays} days`}
       />
