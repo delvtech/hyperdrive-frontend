@@ -10,7 +10,7 @@ import {
 import { Address } from "abitype";
 import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
-import { MAX_UINT256 } from "src/base/constants";
+import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MergeKeys } from "src/base/types";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
@@ -36,7 +36,6 @@ import {
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { MarketState, PoolConfig, PoolInfo } from "src/pool/types";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
@@ -46,7 +45,6 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
-import { fixed, parseFixed } from "src/fixedpoint";
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
 export class ReadHyperdrive extends ReadModel {
@@ -217,20 +215,20 @@ export class ReadHyperdrive extends ReadModel {
 
     // Convert values to Fixed type, to perform fixed point math
     const fixedTimeRange = fixed(timeRange * BigInt(1e18));
-    const fixedYear = fixed(BigInt(60 * 60 * 24 * 365) * BigInt(1e18));
+    const fixedYear = fixed(BigInt(SECONDS_PER_YEAR) * BigInt(1e18));
     const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
 
     // Calculate the annualized rate of return:
     // apy = (1 + hpr) ^ t - 1
     // using fixedpointmath here, as we need to use exponents
     const rateOfReturn = fixed(currentVaultSharePrice).div(
-      fixed(startVaultSharePrice),
+      startVaultSharePrice,
     ); // this is (1 + hpr)
     const annualizedRateOfReturn = rateOfReturn
-      .pow(parseFixed("1e18").div(fixedTimeRangeInYears))
-      .sub(parseFixed("1e18"));
+      .pow(fixed(1e18).div(fixedTimeRangeInYears))
+      .sub(fixed(1e18));
 
-    return annualizedRateOfReturn.raw;
+    return annualizedRateOfReturn.bigint;
   }
 
   /**
