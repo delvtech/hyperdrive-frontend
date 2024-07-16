@@ -125,14 +125,13 @@ export function OpenLongStats({
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={`$${formatBalance({
-          // Adjust the multiplication to account for base token price in the correct units
           balance: baseTokenPrice
-            ? ((amountPaidInBase + yieldAtMaturity) * BigInt(baseTokenPrice)) /
-              BigInt(10 ** baseToken.decimals)
+            ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
+              10n ** 18n
             : 0n,
           decimals: baseToken.decimals,
-          places: baseToken.places,
-        })} USD`}
+          places: 2,
+        })}`}
       />
     </div>
   );

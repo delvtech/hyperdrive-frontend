@@ -2,7 +2,9 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
 import { useChainId, useChains } from "wagmi";
-const WAD = 10n ** 18n;
+// TODO: Turn this into a helper function that takes in a custom decimal value
+const shiftDecimals = 10n ** BigInt(18);
+
 export function useTokenPrices(
   addresses: Address[],
 ): UseQueryResult<Record<`0x${string}`, bigint>> {
@@ -16,6 +18,7 @@ export function useTokenPrices(
   //   });
   const coins = addresses.map((address) => `${chainName}:${address}`).join(",");
   const queryEnabled = !!coins;
+
   return useQuery({
     queryKey: makeQueryKey("tokenPrices", { coins }),
     enabled: queryEnabled,
@@ -29,7 +32,7 @@ export function useTokenPrices(
           for (const [coin, info] of Object.entries(data.coins)) {
             const address = coin.split(":")[1];
             prices[address.toLowerCase() as Address] = BigInt(
-              Number(WAD) * (info as any).price,
+              Math.round((info as any).price * Number(shiftDecimals)),
             );
           }
           return prices;
