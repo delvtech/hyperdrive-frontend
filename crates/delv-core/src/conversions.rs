@@ -194,7 +194,8 @@ macro_rules! try_bigint {
     ($value:expr) => {{
         let location = std::panic::Location::caller();
         let string = stringify!($value);
-        BigInt::from_str(string).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", string))
+        BigInt::from_str(string)
+            .map_err(|_| $crate::type_error_at!(location, "Invalid BigInt: {}", string))
     }};
 }
 
@@ -202,7 +203,7 @@ macro_rules! try_bigint {
 #[macro_export]
 macro_rules! bigint {
     ($value:expr) => {
-        try_bigint!($value).unwrap()
+        $crate::try_bigint!($value).unwrap()
     };
 }
 
