@@ -9,10 +9,14 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  const response = useVpnScreen();
+  const { enabled, screenResult } = useVpnScreen();
 
-  if (response?.error) {
-    console.error(response.error);
+  if (!enabled) {
+    return <Outlet />;
+  }
+
+  if (screenResult?.error) {
+    console.error(screenResult.error);
     return (
       <EmptyContainer>
         <UnexpectedErrorMessage />
@@ -20,7 +24,7 @@ function RootComponent() {
     );
   }
 
-  if (response?.isBlocked) {
+  if (screenResult?.isBlocked) {
     return (
       <EmptyContainer>
         <VpnDetectedMessage />
@@ -28,5 +32,5 @@ function RootComponent() {
     );
   }
 
-  return response && <Outlet />;
+  return screenResult && <Outlet />;
 }
