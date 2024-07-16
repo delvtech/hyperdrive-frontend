@@ -9,14 +9,15 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-  const { enabled, screenResult } = useVpnScreen();
+  const { enabled, screenResult, queryError } = useVpnScreen();
 
   if (!enabled) {
     return <Outlet />;
   }
 
-  if (screenResult?.error) {
-    console.error(screenResult.error);
+  const error = screenResult?.error || queryError;
+  if (error) {
+    console.error(error);
     return (
       <EmptyContainer>
         <UnexpectedErrorMessage />

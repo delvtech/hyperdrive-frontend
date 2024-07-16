@@ -4,6 +4,7 @@ const url = import.meta.env.VITE_VPN_SCREEN_URL;
 
 interface VpnScreenResult {
   enabled: boolean;
+  queryError?: unknown;
   screenResult?:
     | {
         isBlocked: boolean;
@@ -17,7 +18,7 @@ interface VpnScreenResult {
 
 export function useVpnScreen(): VpnScreenResult {
   const enabled = !!url;
-  const { data } = useQuery<VpnScreenResult["screenResult"]>({
+  const { data, error } = useQuery<VpnScreenResult["screenResult"]>({
     queryKey: ["vpn-screen"],
     staleTime: Infinity,
     enabled,
@@ -27,6 +28,7 @@ export function useVpnScreen(): VpnScreenResult {
   });
   return {
     enabled,
+    queryError: error,
     screenResult: data,
   };
 }
