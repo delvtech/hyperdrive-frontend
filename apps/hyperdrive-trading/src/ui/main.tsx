@@ -33,7 +33,7 @@ logAppVersion();
 // there is no support for any testnets so we have to stub out the responses for
 // now.
 if (import.meta.env.DEV) {
-  worker.start().then(() => {
+  worker.start({ onUnhandledRequest: "bypass" }).then(() => {
     root.render(<Root />);
   });
 } else {
