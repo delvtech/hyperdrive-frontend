@@ -8,7 +8,7 @@ use delv_core::{
     error::{Error, ToResult},
 };
 use fixedpointmath::FixedPoint;
-use js_sys::BigInt;
+use js_sys::{BigInt, JsString};
 use rand::{thread_rng, Rng};
 use wasm_bindgen::prelude::*;
 
@@ -46,8 +46,11 @@ impl fmt::Display for Fixed {
 impl Fixed {
     /// Create a new `Fixed` instance from an 18-decimal scaled bigint.
     #[wasm_bindgen(constructor)]
-    pub fn new(raw: Option<BigInt>) -> Result<Fixed, Error> {
-        Ok(Fixed(raw.to_fixed()?))
+    pub fn new(value: Option<RawValue>) -> Result<Fixed, Error> {
+        Ok(Fixed(match value {
+            Some(value) => value.to_fixed()?,
+            None => FixedPoint::default(),
+        }))
     }
 
     pub fn valueOf(&self) -> Result<BigInt, Error> {
@@ -129,55 +132,70 @@ impl Fixed {
 
 // Utils //
 
-/// Create a new `Fixed` instance from a bigint.
+/// Create a new `Fixed` instance from a raw value.
 ///
 /// @example
 //
 /// ```js
-/// const x = fixed(BigInt(15e17));
-/// console.log(x.toString());
+/// const fromBigint = fixed(1500000000000000000n);
+/// const fromNumber = fixed(1.5e18);
+/// const fromString = fixed('1.5e18');
+///
+/// console.log(fromBigint.toString());
+/// // => 1.500000000000000000
+///
+/// console.log(fromNumber.toString());
+/// // => 1.500000000000000000
+///
+/// console.log(fromString.toString());
 /// // => 1.500000000000000000
 /// ```
 #[wasm_bindgen]
-pub fn fixed(raw: Option<BigInt>) -> Result<Fixed, Error> {
+pub fn fixed(raw: Option<RawValue>) -> Result<Fixed, Error> {
     Fixed::new(raw)
 }
 
-/// Parses a scaled string into a `Fixed` instance.
-///
-/// @example
-///
-/// ```js
-/// const x = parseFixed('1.5e18');
-/// console.log(x.toString());
-/// // => 1.500000000000000000
-/// ```
 #[wasm_bindgen]
-pub fn parseFixed(string: &str) -> Result<Fixed, Error> {
-    Ok(Fixed(FixedPoint::from_str(string).to_result()?))
-}
-
-#[wasm_bindgen]
-pub fn ln(x: BigInt) -> Result<Fixed, Error> {
-    let int = FixedPoint::ln(x.to_i256()?).to_result()?;
-    Ok(Fixed(FixedPoint::try_from(int).to_result()?))
-}
-
-#[wasm_bindgen]
-pub fn randInRange(min: BigInt, max: BigInt) -> Result<Fixed, Error> {
+pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
     let mut rng = thread_rng();
     Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
+}
+
+#[wasm_bindgen]
+pub fn ln(x: Other) -> Result<Fixed, Error> {
+    let int = FixedPoint::ln(x.to_i256()?).to_result()?;
+    Ok(Fixed(FixedPoint::try_from(int).to_result()?))
 }
 
 // Types //
 
 #[wasm_bindgen]
 extern "C" {
+    #[wasm_bindgen(typescript_type = "bigint | number | string")]
+    pub type RawValue;
+
+    #[wasm_bindgen(method)]
+    fn toString(this: &RawValue) -> JsString;
+
+    #[wasm_bindgen(method)]
+    fn valueOf(this: &RawValue) -> BigInt;
+
     #[wasm_bindgen(typescript_type = "Fixed | bigint")]
     pub type Other;
 
     #[wasm_bindgen(method)]
     fn valueOf(this: &Other) -> BigInt;
+}
+
+impl ToFixedPoint for RawValue {
+    fn to_fixed(&self) -> Result<FixedPoint, Error> {
+        let str = self.toString().as_string().unwrap_or_default();
+        if self.js_typeof() == "string" || self.js_typeof() == "number" {
+            FixedPoint::from_str(&str).to_result()
+        } else {
+            str.to_fixed()
+        }
+    }
 }
 
 impl ToFixedPoint for &Other {
