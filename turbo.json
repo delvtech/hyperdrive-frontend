@@ -2,28 +2,15 @@
   "$schema": "https://turborepo.org/schema.json",
   "tasks": {
     "build:crates": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "packages/hyperdrive-wasm/**",
-        "packages/fixed-point-wasm/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["packages/hyperdrive-wasm/**", "packages/fixed-point-wasm/**"]
     },
     "build": {
-      "dependsOn": [
-        "build:crates",
-        "^build"
-      ],
-      "outputs": [
-        "dist/**",
-        ".next/**"
-      ]
+      "dependsOn": ["build:crates", "^build"],
+      "outputs": ["dist/**", ".next/**"]
     },
     "hyperdrive-trading#build": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "env": [
         "DEV",
         "VITE_CUSTOM_CHAIN_NODE_RPC_URL",
@@ -38,24 +25,18 @@
         "VITE_CAPSULE_API_KEY",
         "VITE_CAPSULE_ENV",
         "VITE_ADDRESS_SCREEN_URL",
+        "VITE_VPN_SCREEN_URL",
         "VITE_ROLLBAR_ACCESS_TOKEN",
         "VITE_ROLLBAR_ENV"
       ],
-      "outputs": [
-        "dist/**",
-        ".next/**"
-      ]
+      "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "typecheck": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "dev": {
@@ -68,22 +49,12 @@
       "outputs": []
     },
     "test": {
-      "dependsOn": [
-        "build"
-      ],
-      "inputs": [
-        "test/**/*.ts",
-        "test/**/*.tsx"
-      ]
+      "dependsOn": ["build"],
+      "inputs": ["test/**/*.ts", "test/**/*.tsx"]
     },
     "test:run": {
-      "dependsOn": [
-        "build"
-      ],
-      "inputs": [
-        "test/**/*.ts",
-        "test/**/*.tsx"
-      ]
+      "dependsOn": ["build"],
+      "inputs": ["test/**/*.ts", "test/**/*.tsx"]
     }
   }
 }
