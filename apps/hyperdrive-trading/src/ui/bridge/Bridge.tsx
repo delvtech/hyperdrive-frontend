@@ -1,10 +1,15 @@
+import { ServerChainBalance } from "@delvtech/gopher";
 import { ReactElement } from "react";
 import { BridgeAssetsForm } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetsForm";
+import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
+import { Route } from "src/ui/routes/bridge";
 import { useAccount } from "wagmi";
 
 export function Bridge(): ReactElement {
+  const { token, destination } = Route.useSearch();
+  const { chains } = useBridgeChainsByChainId();
   const { address: accountAddress } = useAccount();
   const { tokens } = useBridgeTokens();
   const { balances = [[]] } = useBridgeTokenBalances(
@@ -12,23 +17,29 @@ export function Bridge(): ReactElement {
     tokens?.map((t) => t.symbol) || [],
   );
 
-  const firstTokenWithBalance = tokens?.find((token, index) => {
-    return balances[index]?.some(
-      (chainBalance) => Number(chainBalance.balance) > 0,
+  const balancesByTokens: Record<string, ServerChainBalance[]> = {};
+  tokens?.forEach((token, index) => {
+    balancesByTokens[token.symbol] = balances[index];
+  });
+
+  // Double check the default token has a balance.
+  const tokenWithBalance = tokens?.find((t, index) => {
+    return (
+      t.symbol === token &&
+      balances[index]?.some((balance) => Number(balance.balance) > 0)
     );
   });
 
-  if (!firstTokenWithBalance) {
-    return <div>No tokens to bridge</div>;
+  if (!tokenWithBalance) {
+    return <div>No token balances to bridge</div>;
   }
 
   return (
     <div className="m-6 flex flex-col space-y-6">
-      {/* TODO: Remove hardcoded Sepolia chain id */}
-      <div>{"Destination Chain: Sepolia"}</div>
+      <div>{`Destination Chain: ${chains?.[destination]?.name}`}</div>
       <BridgeAssetsForm
-        destinationChainId={11155111}
-        token={firstTokenWithBalance}
+        destinationChainId={destination}
+        token={tokenWithBalance}
       />
     </div>
   );

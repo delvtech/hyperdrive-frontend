@@ -14,7 +14,6 @@ interface OpenLongModalProps {
   termLengthMS: number;
   hyperdrive: HyperdriveConfig;
   closeModal: () => void;
-  setShowBridgeUI: (showBridgeUI: boolean) => void;
 }
 export function OpenLongModal({
   modalId,
@@ -22,7 +21,6 @@ export function OpenLongModal({
   termLengthMS,
   hyperdrive,
   closeModal,
-  setShowBridgeUI,
 }: OpenLongModalProps): ReactElement {
   return (
     <Modal
@@ -31,11 +29,7 @@ export function OpenLongModal({
         <OpenLongModalHeader numDays={numDays} termLengthMS={termLengthMS} />
       }
       modalContent={
-        <OpenLongModalForm
-          hyperdrive={hyperdrive}
-          setShowBridgeUI={setShowBridgeUI}
-          closeModal={closeModal}
-        />
+        <OpenLongModalForm hyperdrive={hyperdrive} closeModal={closeModal} />
       }
     >
       {({ showModal }) => (
@@ -99,13 +93,11 @@ export function OpenLongModalHeader({
 interface OpenLongModalFormProps {
   hyperdrive: HyperdriveConfig;
   closeModal: () => void;
-  setShowBridgeUI: (showBridgeUI: boolean) => void;
 }
 
 export function OpenLongModalForm({
   hyperdrive,
   closeModal,
-  setShowBridgeUI,
 }: OpenLongModalFormProps): ReactElement {
   return (
     <div>
@@ -121,12 +113,6 @@ export function OpenLongModalForm({
           // preventDefault since we don't want to close the modal while the
           // tx is temporarily pending the user's signature in their wallet.
           e.preventDefault();
-        }}
-        onOpenBridge={(e) => {
-          // preventDefault since we don't want to close the modal while the
-          // tx is temporarily pending the user's signature in their wallet.
-          e.preventDefault();
-          setShowBridgeUI(true);
         }}
       />
     </div>
