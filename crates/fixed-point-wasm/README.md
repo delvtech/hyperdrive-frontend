@@ -27,20 +27,21 @@ import {
 // Initialize the WASM module
 initSync(wasmBuffer);
 
-// Use `fixed` with bigints
-const amount = fixed(1_000123456789012345678e18n);
-
-// Use `parseFixed` with strings
-const fee = parseFixed("0.025e18");
+// Use `fixed` with bigints, numbers, or strings
+const amount = fixed(1_000123456789012345678n);
+const fee = fixed(0.025e18);
 
 // Perform fixed-point arithmetic
 const feeAmount = amount.mulUp(fee);
 
-console.log(feeAmount.toString());
-// => 25.003086419725308642
-
-console.log(feeAmount.raw);
+console.log(feeAmount.bigint);
 // => 25003086419725308642n
+
+console.log(feeAmount.toString());
+// => "25.003086419725308642"
+
+console.log(feeAmount.toNumber());
+// => 25.00308641972531
 ```
 
 ## Building
