@@ -15,6 +15,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+import { useTokenPrices } from "src/ui/token/hooks/useTokenPrice";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -38,6 +39,10 @@ export function OpenLongStats({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const { data: prices, isFetching } = useTokenPrices([baseToken.address]);
+  const baseTokenPrice =
+    prices?.[baseToken.address.toLowerCase() as `0x${string}`];
+  console.log(baseTokenPrice, "baseTokenPrice");
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
@@ -55,6 +60,7 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
+
   return (
     <div className="flex flex-row justify-between px-4">
       <PrimaryStat
@@ -118,7 +124,15 @@ export function OpenLongStats({
         }
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
-        subValue={`Term: ${numDays} days`}
+        subValue={`$${formatBalance({
+          // Adjust the multiplication to account for base token price in the correct units
+          balance: baseTokenPrice
+            ? ((amountPaidInBase + yieldAtMaturity) * BigInt(baseTokenPrice)) /
+              BigInt(10 ** baseToken.decimals)
+            : 0n,
+          decimals: baseToken.decimals,
+          places: baseToken.places,
+        })} USD`}
       />
     </div>
   );
