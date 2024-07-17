@@ -7,7 +7,6 @@ import {
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
-import { SHIFT_DECIMALS } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
@@ -135,7 +134,7 @@ export function OpenLongStats({
                 // Use the baseTokenPrice directly
                 balance: baseTokenPrice
                   ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
-                    SHIFT_DECIMALS
+                    10n ** 18n
                   : 0n,
                 decimals: baseToken.decimals,
                 places: 2,

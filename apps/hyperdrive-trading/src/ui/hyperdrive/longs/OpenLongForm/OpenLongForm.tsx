@@ -7,7 +7,6 @@ import {
 import { Link } from "@tanstack/react-router";
 
 import { MouseEvent, ReactElement } from "react";
-import { SHIFT_DECIMALS } from "src/base/constants";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { isTestnetChain } from "src/network/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -267,9 +266,9 @@ export function OpenLongForm({
                     balance:
                       activeTokenPrice && depositAmount
                         ? (BigInt(depositAmount) *
-                            SHIFT_DECIMALS *
+                            10n ** 18n *
                             activeTokenPrice) /
-                          SHIFT_DECIMALS
+                          10n ** 18n
                         : 0n,
                     decimals: 18,
                     places: 2,

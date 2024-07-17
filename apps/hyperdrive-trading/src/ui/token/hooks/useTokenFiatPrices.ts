@@ -1,5 +1,4 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { SHIFT_DECIMALS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
 import { useChainId, useChains } from "wagmi";
@@ -34,7 +33,7 @@ export function useTokenFiatPrices(
           for (const [coin, info] of Object.entries(data.coins)) {
             const [, address] = coin.split(":");
             prices[address.toLowerCase() as Address] = BigInt(
-              (info as any).price * Number(SHIFT_DECIMALS),
+              (info as any).price * Number(10n ** 18n),
             );
           }
           return prices;
