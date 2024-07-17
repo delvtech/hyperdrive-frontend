@@ -12,11 +12,13 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
+import { isTestnetChain } from "src/network/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -40,6 +42,7 @@ export function OpenLongStats({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const chainId = useChainId();
   const { data: prices, isFetching } = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
     prices?.[baseToken.address.toLowerCase() as `0x${string}`];
@@ -124,15 +127,20 @@ export function OpenLongStats({
         }
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
-        subValue={`$${formatBalance({
-          // Use the baseTokenPrice directly
-          balance: baseTokenPrice
-            ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
-              SHIFT_DECIMALS
-            : 0n,
-          decimals: baseToken.decimals,
-          places: 2,
-        })}`}
+        subValue={
+          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched and we will display the term length instead.
+          isTestnetChain(chainId)
+            ? `Term: ${numDays} days`
+            : `$${formatBalance({
+                // Use the baseTokenPrice directly
+                balance: baseTokenPrice
+                  ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
+                    SHIFT_DECIMALS
+                  : 0n,
+                decimals: baseToken.decimals,
+                places: 2,
+              })}`
+        }
       />
     </div>
   );
