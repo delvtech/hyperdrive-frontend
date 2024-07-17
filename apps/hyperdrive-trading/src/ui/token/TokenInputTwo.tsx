@@ -97,10 +97,10 @@ export function TokenInputTwo({
             token
           )}
         </div>
-        <div className="flex justify-between">
+        <div className="flex w-full justify-between">
           {bottomLeftStatistic}
-          <div className="flex items-center text-sm">
-            <label className="text-neutral-content">
+          <div className="flex w-full items-center justify-end text-sm">
+            <label className="items-end text-neutral-content">
               {bottomRightStatistic ? bottomRightStatistic : null}
             </label>
             {maxValue !== undefined && !disabled ? (

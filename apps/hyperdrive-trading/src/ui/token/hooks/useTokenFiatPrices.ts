@@ -1,10 +1,15 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { SHIFT_DECIMALS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
 import { useChainId, useChains } from "wagmi";
 
-const SHIFT_DECIMALS = 10n ** BigInt(18);
-// TODO Add docblock to only use ERC20 tokens here
+/**
+ * Fetches the fiat prices of ERC20 tokens.
+ * This hook is specifically for ERC20 tokens and should not be used with other token standards.
+ * @param addresses - An array of ERC20 token addresses.
+ * @returns A useQuery result containing a record of token addresses and their corresponding fiat prices.
+ */
 export function useTokenFiatPrices(
   addresses: Address[],
 ): UseQueryResult<Record<Address, bigint>> {

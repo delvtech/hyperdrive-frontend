@@ -6,7 +6,9 @@ import {
 } from "@hyperdrive/appconfig";
 
 import { MouseEvent, ReactElement } from "react";
+import { SHIFT_DECIMALS } from "src/base/constants";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
+import { isTestnetChain } from "src/network/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -36,7 +38,7 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -54,7 +56,7 @@ export function OpenLongForm({
     useFeatureFlag("new-open-long-form");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-
+  const chainId = useChainId();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -246,20 +248,22 @@ export function OpenLongForm({
             maxValue={maxButtonValue}
             inputLabel="You spend"
             bottomLeftStatistic={
-              <label className="text-sm text-neutral-content">
-                {`$${formatBalance({
-                  // Use the baseTokenPrice directly
-                  balance:
-                    activeTokenPrice && depositAmount
-                      ? (BigInt(depositAmount) *
-                          10n ** 18n *
-                          activeTokenPrice) /
-                        10n ** 18n
-                      : 0n,
-                  decimals: 18,
-                  places: 2,
-                })}`}
-              </label>
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    // Use the baseTokenPrice directly
+                    balance:
+                      activeTokenPrice && depositAmount
+                        ? (BigInt(depositAmount) *
+                            SHIFT_DECIMALS *
+                            activeTokenPrice) /
+                          SHIFT_DECIMALS
+                        : 0n,
+                    decimals: 18,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
             }
             bottomRightStatistic={
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
