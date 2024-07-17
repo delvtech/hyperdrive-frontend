@@ -1,3 +1,5 @@
+import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+
 export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 export function parseAssetType(identifier: number): AssetType {
   if (identifier === 0) {
@@ -13,7 +15,7 @@ export function parseAssetType(identifier: number): AssetType {
     return "WITHDRAWAL_SHARE";
   }
 
-  throw Error(
+  throw new HyperdriveSdkError(
     `parseAssetType(${identifier}) did not match a valid asset type.`,
   );
 }

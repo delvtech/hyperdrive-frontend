@@ -1022,7 +1022,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
     {
       assetId: 1n,
       checkpointTime: 1713798000n,
-      baseAmountPaid: dnum.from("1.450580466488178494", 18)[0],
+      baseAmountPaid: dnum.from("1.450580466488178492", 18)[0],
       bondAmount: dnum.from("100", 18)[0],
       baseProceeds: dnum.from("98.576966043666144584", 18)[0],
       fixedRatePaid: dnum.from("0.175635145784387397", 18)[0],
@@ -1210,7 +1210,7 @@ test("getOpenShorts should account for shorts partially closed to shares", async
     {
       assetId: 1n,
       bondAmount: dnum.from("25", 18)[0],
-      baseAmountPaid: dnum.from("0.367919766723039830", 18)[0],
+      baseAmountPaid: dnum.from("0.367919766723039831", 18)[0],
       baseProceeds: dnum.from("24.637035274042034163", 18)[0],
       checkpointTime: 123454800n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",

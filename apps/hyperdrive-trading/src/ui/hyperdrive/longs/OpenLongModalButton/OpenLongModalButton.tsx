@@ -1,20 +1,14 @@
 import { PauseCircleIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { WarningButton } from "src/ui/base/components/WarningButton";
-import {
-  BridgeAssetsModalForm,
-  BridgeAssetsModalHeader,
-} from "src/ui/bridge/BridgeAssetsModal/BridgeAssetsModal";
-import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import {
   OpenLongModalForm,
   OpenLongModalHeader,
 } from "src/ui/hyperdrive/longs/OpenLongModal/OpenLongModal";
-import { useChainId } from "wagmi";
 
 export interface OpenLongModalButtonProps {
   modalId: string;
@@ -25,12 +19,6 @@ export function OpenLongModalButton({
   hyperdrive,
 }: OpenLongModalButtonProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
-  const [showBridgeUI, setShowBridgeUI] = useState(false);
-  const { tokens } = useBridgeTokens();
-  const chainId = useChainId();
-  const token = tokens?.find(
-    (token) => token.addresses[String(chainId)] === hyperdrive.baseToken,
-  );
 
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
@@ -50,31 +38,21 @@ export function OpenLongModalButton({
 
   return (
     <Modal
-      onClose={() => setShowBridgeUI(false)}
       modalId={modalId}
-      activeIndex={showBridgeUI ? 1 : 0}
-      modalHeader={[
+      modalHeader={
         <OpenLongModalHeader
           key="long"
           numDays={numDays}
           termLengthMS={termLengthMS}
-        />,
-        <BridgeAssetsModalHeader key="bridge" tokenSymbol={token?.symbol} />,
-      ]}
-      modalContent={[
+        />
+      }
+      modalContent={
         <OpenLongModalForm
           key="long"
           hyperdrive={hyperdrive}
           closeModal={closeModal}
-          setShowBridgeUI={setShowBridgeUI}
-        />,
-        <BridgeAssetsModalForm
-          key="bridge"
-          tokenSymbol={token?.symbol}
-          closeModal={closeModal}
-          setShowBridgeUI={setShowBridgeUI}
-        />,
-      ]}
+        />
+      }
     >
       {({ showModal }) => (
         <button

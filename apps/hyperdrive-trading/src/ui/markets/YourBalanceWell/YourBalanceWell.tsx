@@ -5,7 +5,6 @@ import {
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { cloudChain } from "src/chains/cloudChain";
@@ -160,11 +159,6 @@ function AvailableAsset({
                   token={token}
                   spender={spender}
                 />
-                {isBridgeFlagEnabled ? (
-                  <li>
-                    <Link to="/bridge">Bridge</Link>
-                  </li>
-                ) : undefined}
                 {isTestnetChain ? (
                   <li>
                     <button disabled={!mint} onClick={() => mint?.()}>

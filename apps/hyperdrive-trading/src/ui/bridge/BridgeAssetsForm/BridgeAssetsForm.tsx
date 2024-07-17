@@ -1,5 +1,7 @@
 import { EntityFungibleToken, ServerChainBalance } from "@delvtech/gopher";
-import { MouseEvent, ReactElement, useEffect, useState } from "react";
+import { TokenConfig } from "@hyperdrive/appconfig";
+import { MouseEvent, ReactElement, useState } from "react";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { BridgeAssetsPicker } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetPicker";
 import { BridgeAssetsActionButtons } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetsActionButtons";
@@ -7,24 +9,28 @@ import { BridgePreview } from "src/ui/bridge/BridgeAssetsForm/BridgePreview";
 import { useAggregationSolution } from "src/ui/bridge/hooks/useAggregationSolution";
 import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
+import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { Address, formatUnits, parseUnits } from "viem";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { Address, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface BridgeAssetsFormProps {
+  destinationChainId: number;
   token: EntityFungibleToken;
   onCloseBridgeUI?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function BridgeAssetsForm({
   token,
+  destinationChainId,
   onCloseBridgeUI,
 }: BridgeAssetsFormProps): ReactElement {
   const { address: account } = useAccount();
   const { chains = {} } = useBridgeChainsByChainId();
-  const activeChainId = useChainId();
-  const { balances } = useBridgeTokenBalances(account, [token.symbol]);
+  const [activeToken, setActiveToken] = useState<EntityFungibleToken>(token);
+  const { balances } = useBridgeTokenBalances(account, [activeToken.symbol]);
 
   // Keep track of the value from TokenInput.
   const { amount: bridgeAmount, setAmount } = useNumericInput({
@@ -44,11 +50,12 @@ export function BridgeAssetsForm({
 
   // Calculates the sum of balances for the active chains.
   const maxButtonValue = calculateMaxButtonValue(
-    activeChainId,
+    destinationChainId,
     balances,
     activeBridgeChains,
   );
 
+  console.log("maxButtonValue", maxButtonValue);
   // Fetch a quote based on the user's input.
   const { solution, status: quoteStatus } = useQuote({
     account,
@@ -60,11 +67,36 @@ export function BridgeAssetsForm({
   // Keep track of whether we're showing the preview and bridge buttons.
   const [showPreview, setShowPreview] = useState(false);
 
-  // Hide preview when we fetch a new quote.
-  useEffect(() => {
-    setShowPreview(false);
-  }, [quoteStatus]);
+  const { tokens } = useBridgeTokens();
+  const tokensWithBalances =
+    tokens?.filter((token) => {
+      const hasBalance = balances?.[0]?.some(
+        (chainBalance) => Number(chainBalance.balance) > 0,
+      );
+      return hasBalance;
+    }) ?? [];
+  const tokenChoices: TokenChoice[] =
+    tokens?.map((token) => {
+      return {
+        tokenConfig: {
+          address: token.addresses[destinationChainId],
+          name: token.name,
+          symbol: token.symbol,
+          decimals: token.decimals,
+          places: token.decimals,
+          tags: [],
+          iconUrl: token.logoURI,
+          extensions: {},
+        } as TokenConfig,
+      };
+    }) || [];
 
+  const maxValue = formatBalance({
+    balance: maxButtonValue,
+    decimals: token.decimals,
+    places: token.decimals,
+    includeCommas: false,
+  });
   return (
     <TransactionView
       tokenInput={
@@ -79,13 +111,28 @@ export function BridgeAssetsForm({
             }
             name={token.symbol}
             token={
-              <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-                <img src={token?.logoURI} className="h-5 " />{" "}
-                <span className="text-sm font-semibold">{token.symbol}</span>
-              </div>
+              <TokenPicker
+                tokens={tokenChoices}
+                activeTokenAddress={
+                  activeToken.addresses[destinationChainId] as Address
+                }
+                onChange={(tokenAddress) => {
+                  const token = tokens?.find(
+                    (t) => t.addresses[destinationChainId] === tokenAddress,
+                  );
+                  if (token) {
+                    setActiveToken(token);
+                  }
+                }}
+                joined={true}
+              />
             }
             value={bridgeAmount ?? ""}
-            maxValue={formatUnits(maxButtonValue, token.decimals)}
+            maxValue={formatBalance({
+              balance: maxButtonValue,
+              decimals: token.decimals,
+              includeCommas: false,
+            })}
             inputLabel="Amount to bridge"
             onChange={(newAmount) => setAmount(newAmount)}
           />

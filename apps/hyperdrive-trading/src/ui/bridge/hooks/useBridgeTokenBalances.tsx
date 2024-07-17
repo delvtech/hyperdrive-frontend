@@ -11,6 +11,7 @@ export function useBridgeTokenBalances(
   balances: ServerChainBalance[][] | undefined;
   status: QueryStatus;
 } {
+  console.log("tokenSymbols", tokenSymbols);
   const enabled = !!account;
   const { data = [], status } = useQuery({
     queryKey: makeQueryKey("gopher", {
