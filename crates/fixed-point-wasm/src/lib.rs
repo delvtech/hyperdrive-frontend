@@ -44,7 +44,7 @@ impl fmt::Display for Fixed {
 
 #[wasm_bindgen]
 impl Fixed {
-    /// Create a new `Fixed` instance from an 18-decimal scaled bigint.
+    /// Create a new `Fixed` instance from an 18-decimal scaled raw value.
     #[wasm_bindgen(constructor)]
     pub fn new(value: Option<RawValue>) -> Result<Fixed, Error> {
         Ok(Fixed(match value {
@@ -139,7 +139,7 @@ impl Fixed {
 
 // Utils //
 
-/// Create a new `Fixed` instance from a raw value.
+/// Create a new `Fixed` instance from an 18-decimal scaled raw value.
 ///
 /// @example
 //
