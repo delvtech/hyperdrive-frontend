@@ -113,9 +113,7 @@ export function OpenLongForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
-  const { data: tokenPrices, isFetching } = useTokenFiatPrices([
-    activeToken.address,
-  ]);
+  const { data: tokenPrices } = useTokenFiatPrices([activeToken.address]);
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({

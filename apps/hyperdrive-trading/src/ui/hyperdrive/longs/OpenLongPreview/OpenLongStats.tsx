@@ -42,7 +42,7 @@ export function OpenLongStats({
     tokens: appConfig.tokens,
   });
   const chainId = useChainId();
-  const { data: prices, isFetching } = useTokenFiatPrices([baseToken.address]);
+  const { data: prices } = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
     prices?.[baseToken.address.toLowerCase() as `0x${string}`];
   const sharesToken = findYieldSourceToken({
