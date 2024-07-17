@@ -1,3 +1,5 @@
+import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+
 /**
  * Helper function for exhaustive checks of discriminated unions.
  * https://basarat.gitbooks.io/typescript/docs/types/discriminated-unions.html
@@ -27,7 +29,7 @@
     return value;
   }
 
-  throw new Error(
+  throw new HyperdriveSdkError(
     `Unhandled discriminated union member: ${JSON.stringify(value)}`,
   );
 }

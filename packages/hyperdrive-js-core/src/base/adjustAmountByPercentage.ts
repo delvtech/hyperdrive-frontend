@@ -1,3 +1,5 @@
+import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+
 interface AdjustAmountByPercentageOptions {
   /**
    * The amount to adjust
@@ -46,7 +48,7 @@ export function adjustAmountByPercentage({
 }: AdjustAmountByPercentageOptions): bigint {
   // Check if the input amount is negative and throw an error if true
   if (amount < 0n) {
-    throw new Error("Negative amounts are not allowed");
+    throw new HyperdriveSdkError("Negative amounts are not allowed");
   }
 
   // Convert the amountOut to a "decimal-based" bigint by shifting the decimal places

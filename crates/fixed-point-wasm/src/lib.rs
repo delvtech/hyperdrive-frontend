@@ -8,7 +8,7 @@ use delv_core::{
     error::{Error, ToResult},
 };
 use fixedpointmath::FixedPoint;
-use js_sys::BigInt;
+use js_sys::{parse_float, BigInt, JsString};
 use rand::{thread_rng, Rng};
 use wasm_bindgen::prelude::*;
 
@@ -30,7 +30,7 @@ pub fn getVersion() -> String {
     env!("CARGO_PKG_VERSION").to_string()
 }
 
-/// A fixed-point number.
+/// An 18-decimal fixed-point number.
 #[wasm_bindgen]
 pub struct Fixed(FixedPoint);
 
@@ -44,15 +44,30 @@ impl fmt::Display for Fixed {
 
 #[wasm_bindgen]
 impl Fixed {
+    /// Create a new `Fixed` instance from an 18-decimal scaled bigint.
     #[wasm_bindgen(constructor)]
-    pub fn new(raw: Option<BigInt>) -> Result<Fixed, Error> {
-        Ok(Fixed(raw.to_fixed()?))
+    pub fn new(value: Option<RawValue>) -> Result<Fixed, Error> {
+        Ok(Fixed(match value {
+            Some(value) => value.to_fixed()?,
+            None => FixedPoint::default(),
+        }))
     }
 
-    /// Get the scaled bigint representation of this fixed-point number.
-    #[wasm_bindgen(getter)]
-    pub fn raw(&self) -> Result<BigInt, Error> {
+    pub fn valueOf(&self) -> Result<BigInt, Error> {
         self.0.to_bigint()
+    }
+
+    /// Get the 18-decimal scaled bigint representation of this fixed-point number.
+    #[wasm_bindgen(getter)]
+    pub fn bigint(&self) -> Result<BigInt, Error> {
+        self.0.to_bigint()
+    }
+
+    /// Get the float representation of this fixed-point number.
+    ///
+    /// __Caution__: This method may lose precision.
+    pub fn toNumber(&self) -> f64 {
+        parse_float(&self.0.to_string())
     }
 
     /// Get the formatted string representation of this fixed-point number.
@@ -61,101 +76,137 @@ impl Fixed {
     }
 
     /// Add a fixed-point number to this one.
-    pub fn add(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 + other.0)
+    pub fn add(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 + other.to_fixed()?))
     }
 
     /// Subtract a fixed-point number from this one.
-    pub fn sub(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 - other.0)
+    pub fn sub(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 - other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another.
-    pub fn mul(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 * other.0)
+    pub fn mul(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 * other.to_fixed()?))
     }
 
     /// Divide this fixed-point number by another.
-    pub fn div(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0 / other.0)
+    pub fn div(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0 / other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding down.
-    pub fn mulDivDown(&self, other: &Fixed, divisor: &Fixed) -> Fixed {
-        Fixed(self.0.mul_div_down(other.0, divisor.0))
+    pub fn mulDivDown(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(
+            self.0.mul_div_down(other.to_fixed()?, divisor.to_fixed()?),
+        ))
     }
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding up.
-    pub fn mulDivUp(&self, other: &Fixed, divisor: &Fixed) -> Fixed {
-        Fixed(self.0.mul_div_up(other.0, divisor.0))
+    pub fn mulDivUp(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(
+            self.0.mul_div_up(other.to_fixed()?, divisor.to_fixed()?),
+        ))
     }
 
     /// Multiply this fixed-point number by another, rounding down.
-    pub fn mulDown(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.mul_down(other.0))
+    pub fn mulDown(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.mul_down(other.to_fixed()?)))
     }
 
     /// Multiply this fixed-point number by another, rounding up.
-    pub fn mulUp(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.mul_up(other.0))
+    pub fn mulUp(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.mul_up(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding down.
-    pub fn divDown(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.div_down(other.0))
+    pub fn divDown(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.div_down(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding up.
-    pub fn divUp(&self, other: &Fixed) -> Fixed {
-        Fixed(self.0.div_up(other.0))
+    pub fn divUp(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.div_up(other.to_fixed()?)))
     }
 
     /// Raise this fixed-point number to the power of another.
-    pub fn pow(&self, other: &Fixed) -> Result<Fixed, Error> {
-        Ok(Fixed(self.0.pow(other.0).to_result()?))
+    pub fn pow(&self, other: &Other) -> Result<Fixed, Error> {
+        Ok(Fixed(self.0.pow(other.to_fixed()?).to_result()?))
     }
 }
 
 // Utils //
 
-/// Create a new `Fixed` instance from a bigint.
+/// Create a new `Fixed` instance from a raw value.
 ///
 /// @example
 //
 /// ```js
-/// const x = fixed(BigInt(15e17));
-/// console.log(x.toString());
+/// const fromBigint = fixed(1500000000000000000n);
+/// const fromNumber = fixed(1.5e18);
+/// const fromString = fixed('1.5e18');
+///
+/// console.log(fromBigint.toString());
+/// // => 1.500000000000000000
+///
+/// console.log(fromNumber.toString());
+/// // => 1.500000000000000000
+///
+/// console.log(fromString.toString());
 /// // => 1.500000000000000000
 /// ```
 #[wasm_bindgen]
-pub fn fixed(raw: Option<BigInt>) -> Result<Fixed, Error> {
-    Fixed::new(raw)
-}
-
-/// Parses a scaled string into a `Fixed` instance.
-///
-/// @example
-///
-/// ```js
-/// const x = parseFixed('1.5e18');
-/// console.log(x.toString());
-/// // => 1.500000000000000000
-/// ```
-#[wasm_bindgen]
-pub fn parseFixed(string: &str) -> Result<Fixed, Error> {
-    Ok(Fixed(FixedPoint::from_str(string).to_result()?))
+pub fn fixed(raw: RawValue) -> Result<Fixed, Error> {
+    Fixed::new(Some(raw))
 }
 
 #[wasm_bindgen]
-pub fn ln(x: BigInt) -> Result<Fixed, Error> {
+pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
+    let mut rng = thread_rng();
+    Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
+}
+
+#[wasm_bindgen]
+pub fn ln(x: Other) -> Result<Fixed, Error> {
     let int = FixedPoint::ln(x.to_i256()?).to_result()?;
     Ok(Fixed(FixedPoint::try_from(int).to_result()?))
 }
 
+// Types //
+
 #[wasm_bindgen]
-pub fn randInRange(min: BigInt, max: BigInt) -> Result<Fixed, Error> {
-    let mut rng = thread_rng();
-    Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
+extern "C" {
+    #[wasm_bindgen(typescript_type = "bigint | number | string")]
+    pub type RawValue;
+
+    #[wasm_bindgen(method)]
+    fn toString(this: &RawValue) -> JsString;
+
+    #[wasm_bindgen(method)]
+    fn valueOf(this: &RawValue) -> BigInt;
+
+    #[wasm_bindgen(typescript_type = "Fixed | bigint")]
+    pub type Other;
+
+    #[wasm_bindgen(method)]
+    fn valueOf(this: &Other) -> BigInt;
+}
+
+impl ToFixedPoint for RawValue {
+    fn to_fixed(&self) -> Result<FixedPoint, Error> {
+        let str = self.toString().as_string().unwrap_or_default();
+        if self.js_typeof() == "string" || self.js_typeof() == "number" {
+            FixedPoint::from_str(&str).to_result()
+        } else {
+            str.to_fixed()
+        }
+    }
+}
+
+impl ToFixedPoint for &Other {
+    fn to_fixed(&self) -> Result<FixedPoint, Error> {
+        self.valueOf().to_fixed()
+    }
 }
