@@ -169,9 +169,10 @@ pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
 }
 
 #[wasm_bindgen]
-pub fn ln(x: Other) -> Result<Fixed, Error> {
-    let int = FixedPoint::ln(x.to_i256()?).to_result()?;
-    Ok(Fixed(FixedPoint::try_from(int).to_result()?))
+pub fn ln(x: RawValue) -> Result<Fixed, Error> {
+    let int = x.to_fixed()?.to_i256()?;
+    let result = FixedPoint::ln(int).to_result()?;
+    Ok(Fixed(FixedPoint::try_from(result).to_result()?))
 }
 
 // Types //
