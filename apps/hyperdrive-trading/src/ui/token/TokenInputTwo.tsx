@@ -1,9 +1,11 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: ReactNode;
+  activeTokenPrice: bigint;
   name: string;
   value: string;
   onChange: (newAmount: string) => void;
@@ -34,6 +36,7 @@ export function TokenInputTwo({
   name,
   onChange,
   maxValue,
+  activeTokenPrice,
   inputLabel = "Enter amount",
   stat,
   settings,
@@ -41,6 +44,8 @@ export function TokenInputTwo({
   disabled = false,
   autoFocus = false,
 }: TokenInputProps): ReactElement {
+  console.log(activeTokenPrice, "activeTokenPrice");
+  console.log(BigInt(value), "bigint value");
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
@@ -95,8 +100,18 @@ export function TokenInputTwo({
             token
           )}
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-between">
           {/* TODO: Implement USD Stat here */}
+          <label className="text-sm text-neutral-content">
+            {`$${formatBalance({
+              // Use the baseTokenPrice directly
+              balance: activeTokenPrice
+                ? (BigInt(value) * 10n ** 18n * activeTokenPrice) / 10n ** 18n
+                : 0n,
+              decimals: 18,
+              places: 2,
+            })}`}
+          </label>
           {stat ? (
             <label className="flex items-center text-sm text-neutral-content">
               {stat}

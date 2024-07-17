@@ -2,20 +2,17 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
 import { useChainId, useChains } from "wagmi";
-// TODO: Turn this into a helper function that takes in a custom decimal value
-const shiftDecimals = 10n ** BigInt(18);
 
-export function useTokenPrices(
+const SHIFT_DECIMALS = 10n ** BigInt(18);
+// TODO Add docblock to only use ERC20 tokens here
+export function useTokenFiatPrices(
   addresses: Address[],
-): UseQueryResult<Record<`0x${string}`, bigint>> {
+): UseQueryResult<Record<Address, bigint>> {
   const chainId = useChainId();
   const chains = useChains();
-  const chainName = "Ethereum";
-  //   chains?.forEach((network) => {
-  //     if (network.id === chainId) {
-  //       chainName = network.name!;
-  //     }
-  //   });
+  // If on testnet, look up the mainnet price.
+  const chainName =
+    chains?.find((network) => network.id === chainId)?.name ?? "";
   const coins = addresses.map((address) => `${chainName}:${address}`).join(",");
   const queryEnabled = !!coins;
 
@@ -30,9 +27,9 @@ export function useTokenPrices(
           const data = await response.json();
           const prices: Record<Address, bigint> = {};
           for (const [coin, info] of Object.entries(data.coins)) {
-            const address = coin.split(":")[1];
+            const [, address] = coin.split(":");
             prices[address.toLowerCase() as Address] = BigInt(
-              Math.round((info as any).price * Number(shiftDecimals)),
+              (info as any).price * Number(SHIFT_DECIMALS),
             );
           }
           return prices;

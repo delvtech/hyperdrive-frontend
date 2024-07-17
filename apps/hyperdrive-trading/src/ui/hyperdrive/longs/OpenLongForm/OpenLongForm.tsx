@@ -28,6 +28,7 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -112,7 +113,10 @@ export function OpenLongForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
-
+  const { data: activeTokenPrice, isFetching } = useTokenFiatPrices([
+    activeToken.address,
+  ]);
+  console.log(activeTokenPrice, "active token price in openlong form");
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
@@ -226,6 +230,11 @@ export function OpenLongForm({
               />
             }
             name={activeToken.symbol}
+            activeTokenPrice={
+              activeTokenPrice?.[
+                activeToken.address.toLowerCase() as `0x${string}`
+              ] ?? 0n
+            }
             token={
               <TokenPickerTwo
                 tokens={tokenOptions}
