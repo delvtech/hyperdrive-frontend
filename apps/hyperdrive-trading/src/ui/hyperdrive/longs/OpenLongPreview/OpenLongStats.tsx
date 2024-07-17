@@ -62,7 +62,6 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
-
   return (
     <div className="flex flex-row justify-between px-4">
       <PrimaryStat

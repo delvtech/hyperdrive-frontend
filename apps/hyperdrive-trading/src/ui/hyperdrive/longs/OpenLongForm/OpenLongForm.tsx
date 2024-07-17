@@ -262,15 +262,12 @@ export function OpenLongForm({
               !isTestnetChain(chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
-                    // Use the baseTokenPrice directly
                     balance:
-                      activeTokenPrice && depositAmount
-                        ? (BigInt(depositAmount) *
-                            10n ** 18n *
-                            activeTokenPrice) /
+                      activeTokenPrice && depositAmountAsBigInt
+                        ? (depositAmountAsBigInt * activeTokenPrice) /
                           10n ** 18n
                         : 0n,
-                    decimals: 18,
+                    decimals: activeToken.decimals,
                     places: 2,
                   })}`}
                 </label>
