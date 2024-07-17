@@ -113,10 +113,9 @@ export function OpenLongForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
-  const { data: activeTokenPrice, isFetching } = useTokenFiatPrices([
+  const { data: tokenPrices, isFetching } = useTokenFiatPrices([
     activeToken.address,
   ]);
-  console.log(activeTokenPrice, "active token price in openlong form");
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
@@ -215,6 +214,9 @@ export function OpenLongForm({
     <button onClick={onOpenBridge}>{`Bridge ${tokenSymbol} from L2s`}</button>
   );
 
+  const activeTokenPrice =
+    tokenPrices?.[activeToken.address.toLowerCase() as `0x${string}`] ?? 0n;
+
   return (
     <TransactionView
       tokenInput={
@@ -230,11 +232,6 @@ export function OpenLongForm({
               />
             }
             name={activeToken.symbol}
-            activeTokenPrice={
-              activeTokenPrice?.[
-                activeToken.address.toLowerCase() as `0x${string}`
-              ] ?? 0n
-            }
             token={
               <TokenPickerTwo
                 tokens={tokenOptions}
@@ -248,7 +245,23 @@ export function OpenLongForm({
             value={depositAmount ?? ""}
             maxValue={maxButtonValue}
             inputLabel="You spend"
-            stat={
+            bottomLeftStatistic={
+              <label className="text-sm text-neutral-content">
+                {`$${formatBalance({
+                  // Use the baseTokenPrice directly
+                  balance:
+                    activeTokenPrice && depositAmount
+                      ? (BigInt(depositAmount) *
+                          10n ** 18n *
+                          activeTokenPrice) /
+                        10n ** 18n
+                      : 0n,
+                  decimals: 18,
+                  places: 2,
+                })}`}
+              </label>
+            }
+            bottomRightStatistic={
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
                 <span>
                   {activeTokenBalance

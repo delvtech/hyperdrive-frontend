@@ -1,11 +1,9 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: ReactNode;
-  activeTokenPrice: bigint;
   name: string;
   value: string;
   onChange: (newAmount: string) => void;
@@ -18,9 +16,10 @@ interface TokenInputProps {
    */
   inputLabel?: string;
   /**
-   * Optional stat to show, useful for things like wallet balances
+   * Optional stats to show, useful for things like wallet balances
    */
-  stat?: ReactNode;
+  bottomLeftStatistic?: ReactNode;
+  bottomRightStatistic?: ReactNode;
   settings?: ReactNode;
   disabled?: boolean;
   /**
@@ -36,16 +35,14 @@ export function TokenInputTwo({
   name,
   onChange,
   maxValue,
-  activeTokenPrice,
   inputLabel = "Enter amount",
-  stat,
+  bottomLeftStatistic,
+  bottomRightStatistic,
   settings,
   hasError = false,
   disabled = false,
   autoFocus = false,
 }: TokenInputProps): ReactElement {
-  console.log(activeTokenPrice, "activeTokenPrice");
-  console.log(BigInt(value), "bigint value");
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
@@ -101,38 +98,28 @@ export function TokenInputTwo({
           )}
         </div>
         <div className="flex justify-between">
-          {/* TODO: Implement USD Stat here */}
-          <label className="text-sm text-neutral-content">
-            {`$${formatBalance({
-              // Use the baseTokenPrice directly
-              balance: activeTokenPrice
-                ? (BigInt(value) * 10n ** 18n * activeTokenPrice) / 10n ** 18n
-                : 0n,
-              decimals: 18,
-              places: 2,
-            })}`}
-          </label>
-          {stat ? (
-            <label className="flex items-center text-sm text-neutral-content">
-              {stat}
-              {maxValue !== undefined && !disabled ? (
-                <div className="text-base-content">
-                  <button
-                    className={classNames("ml-2 font-semibold", {
-                      "daisy-btn-error": hasError,
-                    })}
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onChange(maxValue);
-                    }}
-                  >
-                    Max
-                  </button>
-                </div>
-              ) : null}
+          {bottomLeftStatistic}
+          <div className="flex items-center text-sm">
+            <label className="text-neutral-content">
+              {bottomRightStatistic ? bottomRightStatistic : null}
             </label>
-          ) : null}
+            {maxValue !== undefined && !disabled ? (
+              <div className="text-base-content">
+                <button
+                  className={classNames("ml-2 font-semibold", {
+                    "daisy-btn-error": hasError,
+                  })}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onChange(maxValue);
+                  }}
+                >
+                  Max
+                </button>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
