@@ -3,8 +3,11 @@ import { parseUnits } from "viem";
 import { expect, test } from "vitest";
 
 test("formatRate should return positive bigints formatted as a percent", async () => {
-  const value = formatRate(parseUnits("1", 18), 18);
+  const value = formatRate(BigInt(1e18), 18);
   expect(value).toEqual("100.00");
+
+  const valueWithCommas = formatRate(BigInt(10e18), 18);
+  expect(valueWithCommas).toEqual("1,000.00");
 
   // rounds down
   const value2 = formatRate(parseUnits("0.056721", 18), 18);
@@ -16,8 +19,11 @@ test("formatRate should return positive bigints formatted as a percent", async (
 });
 
 test("formatRate should return negative bigints formatted as a percent", async () => {
-  const value = formatRate(parseUnits("-1", 18), 18);
+  const value = formatRate(BigInt(-1e18), 18);
   expect(value).toEqual("-100.00");
+
+  const valueWithCommas = formatRate(BigInt(-10e18), 18);
+  expect(valueWithCommas).toEqual("-1,000.00");
 
   // rounds down
   const value2 = formatRate(parseUnits("-1.0281219", 18), 18);
