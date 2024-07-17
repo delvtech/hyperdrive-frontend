@@ -2,36 +2,21 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["scripts/**/*.ts", "client.ts"],
   "compilerOptions": {
-    // Enable latest features
+    "noEmit": true,
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
-
-    // Bundler mode
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "allowJs": true,
 
-    // Best practices
-    "strict": true,
+    // Rules
     "skipLibCheck": true,
+    "strict": true,
     "noFallthroughCasesInSwitch": true,
-
-    // Some stricter flags
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
-    "composite": false,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "isolatedModules": true,
-    "preserveWatchOutput": true
+    "forceConsistentCasingInFileNames": true
   }
 }
