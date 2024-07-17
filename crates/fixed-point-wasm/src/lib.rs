@@ -158,8 +158,8 @@ impl Fixed {
 /// // => 1.500000000000000000
 /// ```
 #[wasm_bindgen]
-pub fn fixed(raw: Option<RawValue>) -> Result<Fixed, Error> {
-    Fixed::new(raw)
+pub fn fixed(raw: RawValue) -> Result<Fixed, Error> {
+    Fixed::new(Some(raw))
 }
 
 #[wasm_bindgen]
