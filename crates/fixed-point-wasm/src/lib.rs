@@ -25,6 +25,7 @@ pub fn initialize() {
     console_error_panic_hook::set_once();
 }
 
+/// Get the version of this package.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn getVersion() -> String {
     env!("CARGO_PKG_VERSION").to_string()
@@ -57,7 +58,8 @@ impl Fixed {
         self.0.to_bigint()
     }
 
-    /// Get the 18-decimal scaled bigint representation of this fixed-point number.
+    /// Get the 18-decimal scaled bigint representation of this fixed-point
+    /// number.
     #[wasm_bindgen(getter)]
     pub fn bigint(&self) -> Result<BigInt, Error> {
         self.0.to_bigint()
@@ -157,17 +159,30 @@ impl Fixed {
 /// console.log(fromString.toString());
 /// // => 1.500000000000000000
 /// ```
+///
+/// @param value - An 18-decimal scaled raw value.
 #[wasm_bindgen]
 pub fn fixed(raw: RawValue) -> Result<Fixed, Error> {
     Fixed::new(Some(raw))
 }
 
+/// Create a random `Fixed` instance within a given range.
+///
+/// @param min - The minimum value of the range as an 18-decimal scaled raw
+/// value.
+///
+/// @param max - The maximum value of the range as an 18-decimal scaled raw
+/// value.
 #[wasm_bindgen]
 pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
     let mut rng = thread_rng();
     Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
 }
 
+/// Get the natural logarithm of a fixed-point number.
+///
+/// @param x - The number to calculate the natural logarithm of as an 18-decimal
+/// scaled raw value.
 #[wasm_bindgen]
 pub fn ln(x: RawValue) -> Result<Fixed, Error> {
     let int = x.to_fixed()?.to_i256()?;
