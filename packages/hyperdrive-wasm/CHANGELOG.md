@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.15.1
+
+### Patch Changes
+
+- b1188b3: Throw `Error` instances instead of strings
+- b87f8c2: Add `getVersion` function
+- 60bbc40: Add absoluteMaxShort to hypedrive-wasm bindings
+
 ## 0.15.0
 
 ### Minor Changes

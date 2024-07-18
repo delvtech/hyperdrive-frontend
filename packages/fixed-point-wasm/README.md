@@ -28,7 +28,7 @@ import {
 initSync(wasmBuffer);
 
 // Use `fixed` with bigints, numbers, or strings
-const amount = fixed(1_000123456789012345678n);
+const amount = fixed(1_000_123456789012345678n);
 const fee = fixed(0.025e18);
 
 // Perform fixed-point arithmetic
@@ -42,26 +42,4 @@ console.log(feeAmount.toString());
 
 console.log(feeAmount.toNumber());
 // => 25.00308641972531
-```
-
-## Building
-
-[Install wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) then run:
-
-```sh
-npm build
-```
-
-This will create the node package at `./pkg/`, add a couple exports so the
-package can be used in apps without any extra work on the app developer to
-enable wasm support, then create a tarball for installation.
-
-## Running the Example
-
-A boilerplate wasm-pack app can be found at `./example`. To run it, first build
-then:
-
-```sh
-npm install
-npm start
 ```
