@@ -256,7 +256,7 @@ export function OpenLongForm({
             maxValue={maxButtonValue}
             inputLabel="You spend"
             bottomLeftStatistic={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched, the price display is removed on testnet.
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({

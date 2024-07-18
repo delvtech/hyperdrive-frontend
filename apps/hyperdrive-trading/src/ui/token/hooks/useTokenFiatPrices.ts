@@ -15,7 +15,7 @@ export function useTokenFiatPrices(
   const chainId = useChainId();
   const chains = useChains();
   const chainName =
-    chains?.find((network) => network.id === chainId)?.name ?? "";
+    chains?.find((network) => network.id === chainId)?.name ?? "Ethereum";
   const coins = addresses.map((address) => `${chainName}:${address}`).join(",");
   const queryEnabled = !!coins;
 

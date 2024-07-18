@@ -127,7 +127,7 @@ export function OpenLongStats({
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={
-          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched and the term length is displayed instead.
+          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
           isTestnetChain(chainId)
             ? `Term: ${numDays} days`
             : `$${formatBalance({
