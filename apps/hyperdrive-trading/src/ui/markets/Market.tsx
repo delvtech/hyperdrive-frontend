@@ -1,6 +1,6 @@
 import { useLoaderData } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
+import { Helmet } from "react-helmet";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
@@ -13,10 +13,13 @@ export function Market(): ReactElement {
     (hyperdrive) => hyperdrive.address === address,
   );
 
-  const title = market ? `${market?.name} - Hyperdrive` : "Pool not found";
   return (
     <div className="flex justify-center bg-base-100 px-4 py-8">
-      <CommonHeadTags title={title} />
+      <Helmet>
+        <title>
+          {market ? `${market?.name} - Hyperdrive` : "Pool not found"}
+        </title>
+      </Helmet>
       {appConfig ? (
         <MarketDetailsBody hyperdrive={market ?? appConfig?.hyperdrives[0]} />
       ) : null}
