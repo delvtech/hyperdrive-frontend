@@ -37,8 +37,9 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits } from "viem";
+import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
+
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -113,7 +114,9 @@ export function OpenLongForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
-  const { data: tokenPrices } = useTokenFiatPrices([activeToken.address]);
+  const tokenPrices = useTokenFiatPrices([activeToken.address]);
+  const activeTokenPrice =
+    tokenPrices?.[activeToken.address.toLowerCase() as Address];
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
@@ -224,9 +227,6 @@ export function OpenLongForm({
     </Link>
   );
 
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as `0x${string}`] ?? 0n;
-
   return (
     <TransactionView
       tokenInput={
@@ -256,7 +256,7 @@ export function OpenLongForm({
             maxValue={maxButtonValue}
             inputLabel="You spend"
             bottomLeftStatistic={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched and we remove the price display.
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched, the price display is removed on testnet.
               !isTestnetChain(chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({

@@ -17,6 +17,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { Address } from "viem";
 import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
@@ -42,9 +43,9 @@ export function OpenLongStats({
     tokens: appConfig.tokens,
   });
   const chainId = useChainId();
-  const { data: prices } = useTokenFiatPrices([baseToken.address]);
+  const tokenPrices = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
-    prices?.[baseToken.address.toLowerCase() as `0x${string}`];
+    tokenPrices?.[baseToken.address.toLowerCase() as Address];
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
@@ -126,11 +127,10 @@ export function OpenLongStats({
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={
-          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched and we will display the term length instead.
+          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the deployed token address on testnet is different from mainnet, the price is unable to be fetched and the term length is displayed instead.
           isTestnetChain(chainId)
             ? `Term: ${numDays} days`
             : `$${formatBalance({
-                // Use the baseTokenPrice directly
                 balance: baseTokenPrice
                   ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
                     10n ** 18n
