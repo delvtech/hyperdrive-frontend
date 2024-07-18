@@ -4,10 +4,11 @@
 */
 export function initialize(): void;
 /**
+* Get the version of this package.
 */
 export function getVersion(): string;
 /**
-* Create a new `Fixed` instance from a raw value.
+* Create a new `Fixed` instance from an 18-decimal scaled raw value.
 *
 * @example
 * ```js
@@ -24,28 +25,41 @@ export function getVersion(): string;
 * console.log(fromString.toString());
 * // => 1.500000000000000000
 * ```
-* @param {bigint | number | string | undefined} [raw]
+*
+* @param value - An 18-decimal scaled raw value.
+* @param {bigint | number | string} raw
 * @returns {Fixed}
 */
-export function fixed(raw?: bigint | number | string): Fixed;
+export function fixed(raw: bigint | number | string): Fixed;
 /**
+* Create a random `Fixed` instance within a given range.
+*
+* @param min - The minimum value of the range as an 18-decimal scaled raw
+* value.
+*
+* @param max - The maximum value of the range as an 18-decimal scaled raw
+* value.
 * @param {bigint | number | string} min
 * @param {bigint | number | string} max
 * @returns {Fixed}
 */
 export function randInRange(min: bigint | number | string, max: bigint | number | string): Fixed;
 /**
-* @param {Fixed | bigint} x
+* Get the natural logarithm of a fixed-point number.
+*
+* @param x - The number to calculate the natural logarithm of as an 18-decimal
+* scaled raw value.
+* @param {bigint | number | string} x
 * @returns {Fixed}
 */
-export function ln(x: Fixed | bigint): Fixed;
+export function ln(x: bigint | number | string): Fixed;
 /**
 * An 18-decimal fixed-point number.
 */
 export class Fixed {
   free(): void;
 /**
-* Create a new `Fixed` instance from an 18-decimal scaled bigint.
+* Create a new `Fixed` instance from an 18-decimal scaled raw value.
 * @param {bigint | number | string | undefined} [value]
 */
   constructor(value?: bigint | number | string);
@@ -136,7 +150,8 @@ export class Fixed {
 */
   pow(other: Fixed | bigint): Fixed;
 /**
-* Get the 18-decimal scaled bigint representation of this fixed-point number.
+* Get the 18-decimal scaled bigint representation of this fixed-point
+* number.
 */
   readonly bigint: bigint;
 }
