@@ -32,7 +32,7 @@ pub fn getVersion() -> String {
 }
 
 /// An 18-decimal fixed-point number.
-#[wasm_bindgen]
+#[wasm_bindgen(skip_jsdoc)]
 pub struct Fixed(FixedPoint);
 
 impl fmt::Display for Fixed {
@@ -60,7 +60,7 @@ impl Fixed {
 
     /// Get the 18-decimal scaled bigint representation of this fixed-point
     /// number.
-    #[wasm_bindgen(getter)]
+    #[wasm_bindgen(skip_jsdoc, getter)]
     pub fn bigint(&self) -> Result<BigInt, Error> {
         self.0.to_bigint()
     }
@@ -68,37 +68,44 @@ impl Fixed {
     /// Get the float representation of this fixed-point number.
     ///
     /// __Caution__: This method may lose precision.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn toNumber(&self) -> f64 {
         parse_float(&self.0.to_string())
     }
 
     /// Get the formatted string representation of this fixed-point number.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn toString(&self) -> String {
         self.0.to_string()
     }
 
     /// Add a fixed-point number to this one.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn add(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0 + other.to_fixed()?))
     }
 
     /// Subtract a fixed-point number from this one.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn sub(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0 - other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn mul(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0 * other.to_fixed()?))
     }
 
     /// Divide this fixed-point number by another.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn div(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0 / other.to_fixed()?))
     }
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding down.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn mulDivDown(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(
             self.0.mul_div_down(other.to_fixed()?, divisor.to_fixed()?),
@@ -107,6 +114,7 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding up.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn mulDivUp(&self, other: &Other, divisor: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(
             self.0.mul_div_up(other.to_fixed()?, divisor.to_fixed()?),
@@ -114,26 +122,31 @@ impl Fixed {
     }
 
     /// Multiply this fixed-point number by another, rounding down.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn mulDown(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0.mul_down(other.to_fixed()?)))
     }
 
     /// Multiply this fixed-point number by another, rounding up.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn mulUp(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0.mul_up(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding down.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn divDown(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0.div_down(other.to_fixed()?)))
     }
 
     /// Divide this fixed-point number by another, rounding up.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn divUp(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0.div_up(other.to_fixed()?)))
     }
 
     /// Raise this fixed-point number to the power of another.
+    #[wasm_bindgen(skip_jsdoc)]
     pub fn pow(&self, other: &Other) -> Result<Fixed, Error> {
         Ok(Fixed(self.0.pow(other.to_fixed()?).to_result()?))
     }
@@ -161,7 +174,7 @@ impl Fixed {
 /// ```
 ///
 /// @param value - An 18-decimal scaled raw value.
-#[wasm_bindgen]
+#[wasm_bindgen(skip_jsdoc)]
 pub fn fixed(raw: RawValue) -> Result<Fixed, Error> {
     Fixed::new(Some(raw))
 }
@@ -173,7 +186,7 @@ pub fn fixed(raw: RawValue) -> Result<Fixed, Error> {
 ///
 /// @param max - The maximum value of the range as an 18-decimal scaled raw
 /// value.
-#[wasm_bindgen]
+#[wasm_bindgen(skip_jsdoc)]
 pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
     let mut rng = thread_rng();
     Ok(Fixed(rng.gen_range(min.to_fixed()?..max.to_fixed()?)))
@@ -183,7 +196,7 @@ pub fn randInRange(min: RawValue, max: RawValue) -> Result<Fixed, Error> {
 ///
 /// @param x - The number to calculate the natural logarithm of as an 18-decimal
 /// scaled raw value.
-#[wasm_bindgen]
+#[wasm_bindgen(skip_jsdoc)]
 pub fn ln(x: RawValue) -> Result<Fixed, Error> {
     let int = x.to_fixed()?.to_i256()?;
     let result = FixedPoint::ln(int).to_result()?;

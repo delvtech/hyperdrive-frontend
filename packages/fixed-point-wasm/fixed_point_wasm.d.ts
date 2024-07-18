@@ -27,8 +27,6 @@ export function getVersion(): string;
 * ```
 *
 * @param value - An 18-decimal scaled raw value.
-* @param {bigint | number | string} raw
-* @returns {Fixed}
 */
 export function fixed(raw: bigint | number | string): Fixed;
 /**
@@ -39,9 +37,6 @@ export function fixed(raw: bigint | number | string): Fixed;
 *
 * @param max - The maximum value of the range as an 18-decimal scaled raw
 * value.
-* @param {bigint | number | string} min
-* @param {bigint | number | string} max
-* @returns {Fixed}
 */
 export function randInRange(min: bigint | number | string, max: bigint | number | string): Fixed;
 /**
@@ -49,8 +44,6 @@ export function randInRange(min: bigint | number | string, max: bigint | number 
 *
 * @param x - The number to calculate the natural logarithm of as an 18-decimal
 * scaled raw value.
-* @param {bigint | number | string} x
-* @returns {Fixed}
 */
 export function ln(x: bigint | number | string): Fixed;
 /**
@@ -71,82 +64,56 @@ export class Fixed {
 * Get the float representation of this fixed-point number.
 *
 * __Caution__: This method may lose precision.
-* @returns {number}
 */
   toNumber(): number;
 /**
 * Get the formatted string representation of this fixed-point number.
-* @returns {string}
 */
   toString(): string;
 /**
 * Add a fixed-point number to this one.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   add(other: Fixed | bigint): Fixed;
 /**
 * Subtract a fixed-point number from this one.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   sub(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mul(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   div(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding down.
-* @param {Fixed | bigint} other
-* @param {Fixed | bigint} divisor
-* @returns {Fixed}
 */
   mulDivDown(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding up.
-* @param {Fixed | bigint} other
-* @param {Fixed | bigint} divisor
-* @returns {Fixed}
 */
   mulDivUp(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding down.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mulDown(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding up.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mulUp(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding down.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   divDown(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding up.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   divUp(other: Fixed | bigint): Fixed;
 /**
 * Raise this fixed-point number to the power of another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   pow(other: Fixed | bigint): Fixed;
 /**
