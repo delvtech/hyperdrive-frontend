@@ -5,10 +5,10 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
-
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
-import { isTestnetChain } from "src/network/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -262,8 +262,11 @@ export function OpenLongForm({
                   {`$${formatBalance({
                     balance:
                       activeTokenPrice && depositAmountAsBigInt
-                        ? (depositAmountAsBigInt * activeTokenPrice) /
-                          10n ** 18n
+                        ? dnum.multiply(
+                            [activeTokenPrice, activeToken.decimals],
+                            [depositAmountAsBigInt, activeToken.decimals],
+                            activeToken.decimals,
+                          )[0]
                         : 0n,
                     decimals: activeToken.decimals,
                     places: 2,

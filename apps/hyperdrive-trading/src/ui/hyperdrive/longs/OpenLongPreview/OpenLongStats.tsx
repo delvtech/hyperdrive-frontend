@@ -6,12 +6,13 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
-import { isTestnetChain } from "src/network/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -128,12 +129,16 @@ export function OpenLongStats({
         valueClassName="text-base-content flex items-end"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
+
           isTestnetChain(chainId)
             ? `Term: ${numDays} days`
             : `$${formatBalance({
                 balance: baseTokenPrice
-                  ? ((amountPaidInBase + yieldAtMaturity) * baseTokenPrice) /
-                    10n ** 18n
+                  ? dnum.multiply(
+                      [amountPaidInBase + yieldAtMaturity, baseToken.decimals],
+                      [baseTokenPrice, baseToken.decimals],
+                      baseToken.decimals,
+                    )[0]
                   : 0n,
                 decimals: baseToken.decimals,
                 places: 2,
