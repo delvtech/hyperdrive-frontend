@@ -1,5 +1,20 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.4.0
+
+### Minor Changes
+
+- fc33e22: Add MVP Registry and Factory models.
+
+### Patch Changes
+
+- f8f4078: Add errors to exports
+- Updated dependencies [b87f8c2]
+- Updated dependencies [ff9e8a7]
+- Updated dependencies [60bbc40]
+  - @delvtech/hyperdrive-wasm@0.15.1
+  - @delvtech/fixed-point-wasm@0.0.1
+
 ## 2.3.1
 
 ### Patch Changes
