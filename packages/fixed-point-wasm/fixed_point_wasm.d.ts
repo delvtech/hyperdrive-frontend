@@ -4,10 +4,11 @@
 */
 export function initialize(): void;
 /**
+* Get the version of this package.
 */
 export function getVersion(): string;
 /**
-* Create a new `Fixed` instance from a raw value.
+* Create a new `Fixed` instance from an 18-decimal scaled raw value.
 *
 * @example
 * ```js
@@ -24,28 +25,34 @@ export function getVersion(): string;
 * console.log(fromString.toString());
 * // => 1.500000000000000000
 * ```
-* @param {bigint | number | string | undefined} [raw]
-* @returns {Fixed}
+*
+* @param value - An 18-decimal scaled raw value.
 */
-export function fixed(raw?: bigint | number | string): Fixed;
+export function fixed(raw: bigint | number | string): Fixed;
 /**
-* @param {bigint | number | string} min
-* @param {bigint | number | string} max
-* @returns {Fixed}
+* Create a random `Fixed` instance within a given range.
+*
+* @param min - The minimum value of the range as an 18-decimal scaled raw
+* value.
+*
+* @param max - The maximum value of the range as an 18-decimal scaled raw
+* value.
 */
 export function randInRange(min: bigint | number | string, max: bigint | number | string): Fixed;
 /**
-* @param {Fixed | bigint} x
-* @returns {Fixed}
+* Get the natural logarithm of a fixed-point number.
+*
+* @param x - The number to calculate the natural logarithm of as an 18-decimal
+* scaled raw value.
 */
-export function ln(x: Fixed | bigint): Fixed;
+export function ln(x: bigint | number | string): Fixed;
 /**
 * An 18-decimal fixed-point number.
 */
 export class Fixed {
   free(): void;
 /**
-* Create a new `Fixed` instance from an 18-decimal scaled bigint.
+* Create a new `Fixed` instance from an 18-decimal scaled raw value.
 * @param {bigint | number | string | undefined} [value]
 */
   constructor(value?: bigint | number | string);
@@ -57,86 +64,61 @@ export class Fixed {
 * Get the float representation of this fixed-point number.
 *
 * __Caution__: This method may lose precision.
-* @returns {number}
 */
   toNumber(): number;
 /**
 * Get the formatted string representation of this fixed-point number.
-* @returns {string}
 */
   toString(): string;
 /**
 * Add a fixed-point number to this one.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   add(other: Fixed | bigint): Fixed;
 /**
 * Subtract a fixed-point number from this one.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   sub(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mul(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   div(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding down.
-* @param {Fixed | bigint} other
-* @param {Fixed | bigint} divisor
-* @returns {Fixed}
 */
   mulDivDown(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding up.
-* @param {Fixed | bigint} other
-* @param {Fixed | bigint} divisor
-* @returns {Fixed}
 */
   mulDivUp(other: Fixed | bigint, divisor: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding down.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mulDown(other: Fixed | bigint): Fixed;
 /**
 * Multiply this fixed-point number by another, rounding up.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   mulUp(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding down.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   divDown(other: Fixed | bigint): Fixed;
 /**
 * Divide this fixed-point number by another, rounding up.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   divUp(other: Fixed | bigint): Fixed;
 /**
 * Raise this fixed-point number to the power of another.
-* @param {Fixed | bigint} other
-* @returns {Fixed}
 */
   pow(other: Fixed | bigint): Fixed;
 /**
-* Get the 18-decimal scaled bigint representation of this fixed-point number.
+* Get the 18-decimal scaled bigint representation of this fixed-point
+* number.
 */
   readonly bigint: bigint;
 }
