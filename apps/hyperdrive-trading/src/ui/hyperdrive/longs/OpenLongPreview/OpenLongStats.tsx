@@ -6,15 +6,20 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { Address } from "viem";
+import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -38,6 +43,10 @@ export function OpenLongStats({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+  const chainId = useChainId();
+  const tokenPrices = useTokenFiatPrices([baseToken.address]);
+  const baseTokenPrice =
+    tokenPrices?.[baseToken.address.toLowerCase() as Address];
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
@@ -118,7 +127,23 @@ export function OpenLongStats({
         }
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
-        subValue={`Term: ${numDays} days`}
+        subValue={
+          // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
+
+          isTestnetChain(chainId)
+            ? `Term: ${numDays} days`
+            : `$${formatBalance({
+                balance: baseTokenPrice
+                  ? dnum.multiply(
+                      [amountPaidInBase + yieldAtMaturity, baseToken.decimals],
+                      [baseTokenPrice, baseToken.decimals],
+                      baseToken.decimals,
+                    )[0]
+                  : 0n,
+                decimals: baseToken.decimals,
+                places: 2,
+              })}`
+        }
       />
     </div>
   );

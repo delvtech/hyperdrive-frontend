@@ -16,9 +16,10 @@ interface TokenInputProps {
    */
   inputLabel?: string;
   /**
-   * Optional stat to show, useful for things like wallet balances
+   * Optional stats to show, useful for things like wallet balances
    */
-  stat?: ReactNode;
+  bottomLeftStatistic?: ReactNode;
+  bottomRightStatistic?: ReactNode;
   settings?: ReactNode;
   disabled?: boolean;
   /**
@@ -35,7 +36,8 @@ export function TokenInputTwo({
   onChange,
   maxValue,
   inputLabel = "Enter amount",
-  stat,
+  bottomLeftStatistic,
+  bottomRightStatistic,
   settings,
   hasError = false,
   disabled = false,
@@ -95,29 +97,29 @@ export function TokenInputTwo({
             token
           )}
         </div>
-        <div className="flex justify-end">
-          {/* TODO: Implement USD Stat here */}
-          {stat ? (
-            <label className="flex items-center text-sm text-neutral-content">
-              {stat}
-              {maxValue !== undefined && !disabled ? (
-                <div className="text-base-content">
-                  <button
-                    className={classNames("ml-2 font-semibold", {
-                      "daisy-btn-error": hasError,
-                    })}
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onChange(maxValue);
-                    }}
-                  >
-                    Max
-                  </button>
-                </div>
-              ) : null}
+        <div className="flex w-full justify-between">
+          {bottomLeftStatistic}
+          <div className="flex w-full items-center justify-end text-sm">
+            <label className="items-end text-neutral-content">
+              {bottomRightStatistic ? bottomRightStatistic : null}
             </label>
-          ) : null}
+            {maxValue !== undefined && !disabled ? (
+              <div className="text-base-content">
+                <button
+                  className={classNames("ml-2 font-semibold", {
+                    "daisy-btn-error": hasError,
+                  })}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onChange(maxValue);
+                  }}
+                >
+                  Max
+                </button>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

@@ -5,8 +5,9 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
-
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -29,13 +30,14 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits } from "viem";
+import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
@@ -54,7 +56,6 @@ export function OpenLongForm({
     useFeatureFlag("new-open-long-form");
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -113,7 +114,9 @@ export function OpenLongForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
-
+  const tokenPrices = useTokenFiatPrices([activeToken.address]);
+  const activeTokenPrice =
+    tokenPrices?.[activeToken.address.toLowerCase() as Address];
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
@@ -252,7 +255,26 @@ export function OpenLongForm({
             value={depositAmount ?? ""}
             maxValue={maxButtonValue}
             inputLabel="You spend"
-            stat={
+            bottomLeftStatistic={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeTokenPrice && depositAmountAsBigInt
+                        ? dnum.multiply(
+                            [activeTokenPrice, activeToken.decimals],
+                            [depositAmountAsBigInt, activeToken.decimals],
+                            activeToken.decimals,
+                          )[0]
+                        : 0n,
+                    decimals: activeToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            bottomRightStatistic={
               <div className="flex flex-col gap-1 text-xs text-neutral-content">
                 <span>
                   {activeTokenBalance
