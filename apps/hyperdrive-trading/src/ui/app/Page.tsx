@@ -2,6 +2,7 @@ import { ScrollRestoration } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { PropsWithChildren, ReactElement } from "react";
 import Footer from "src/ui/app/Footer/Footer";
+import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { IneligibleAccountMessage } from "src/ui/compliance/IneligibleAccountMessage";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
@@ -10,6 +11,7 @@ export function Page({ children }: PropsWithChildren): ReactElement {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       <div className="flex w-full grow flex-col gap-9">
+        <CommonHeadTags />
         <Navbar />
 
         {/* compliance */}
