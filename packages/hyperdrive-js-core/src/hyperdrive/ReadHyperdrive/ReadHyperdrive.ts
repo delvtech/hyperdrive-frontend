@@ -1260,7 +1260,6 @@ export class ReadHyperdrive extends ReadModel {
       },
     );
 
-    const decimals = await this.getDecimals();
     const { lpShareBalance, baseAmountPaid } = this._calcOpenLpPosition({
       addLiquidityEvents,
       removeLiquidityEvents,
