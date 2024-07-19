@@ -9,7 +9,9 @@ use delv_core::{
     conversions::{ToBigInt, ToFixedPoint, ToI256, ToU256},
     error::{Error, ToResult},
 };
-use hyperdrive_math::{calculate_hpr_given_apr, calculate_hpr_given_apy};
+use hyperdrive_math::{
+    calculate_hpr_given_apr, calculate_hpr_given_apy, calculate_rate_given_fixed_price,
+};
 use js_sys::BigInt;
 use ts_macro::ts;
 use types::IStateParams;
@@ -98,7 +100,7 @@ struct PresentValueParams {
     current_time: BigInt,
 }
 
-/// Calculates the pool's present value in shares
+/// Calculates the present value in shares of LP's capital in the pool.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn presentValue(params: IPresentValueParams) -> Result<BigInt, Error> {
     let current_time = params.current_time().to_u256()?;
@@ -118,4 +120,22 @@ pub fn spotRate(params: IStateParams) -> Result<BigInt, Error> {
         .calculate_spot_rate()
         .to_result()?
         .to_bigint()
+}
+
+#[ts]
+struct CalcAprGivenPriceParams {
+    /// The fixed price.
+    price: BigInt,
+    /// The position duration in seconds.
+    position_duration: BigInt,
+}
+
+/// Calculate an APR from a fixed price.
+#[wasm_bindgen(skip_jsdoc)]
+pub fn calcAprGivenFixedPrice(params: ICalcAprGivenPriceParams) -> Result<BigInt, Error> {
+    calculate_rate_given_fixed_price(
+        params.price().to_fixed()?,
+        params.position_duration().to_fixed()?,
+    )
+    .to_bigint()
 }
