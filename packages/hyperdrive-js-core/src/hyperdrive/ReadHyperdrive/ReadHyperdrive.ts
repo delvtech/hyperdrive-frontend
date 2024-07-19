@@ -11,7 +11,6 @@ import { Address } from "abitype";
 import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
 import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
-import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MergeKeys } from "src/base/types";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
 import {
@@ -1515,18 +1514,10 @@ export class ReadHyperdrive extends ReadModel {
       baseAmount: depositAmountConvertedToBase,
     });
 
-    // See for spot rate calc:
-    // https://github.com/delvtech/hyperdrive/blob/main/crates/hyperdrive-math/src/lib.rs#L120
-    const termLengthInYearFractions = convertSecondsToYearFraction(
-      poolConfig.positionDuration,
-    );
-    const spotRateAfterOpen = dnum.divide(
-      [BigInt(1e18) - spotPriceAfterOpen, 18],
-      dnum.multiply(
-        [spotPriceAfterOpen, 18],
-        dnum.from(termLengthInYearFractions, 18),
-      ),
-    )[0];
+    const spotRateAfterOpen = hyperwasm.calcAprGivenFixedPrice({
+      price: spotPriceAfterOpen,
+      positionDuration: poolConfig.positionDuration,
+    });
 
     const bondProceeds = hyperwasm.calcOpenLong({
       poolInfo,
@@ -1587,18 +1578,10 @@ export class ReadHyperdrive extends ReadModel {
       bondAmount: amountOfBondsToShort,
     });
 
-    // See for spot rate calc:
-    // https://github.com/delvtech/hyperdrive/blob/main/crates/hyperdrive-math/src/lib.rs#L120
-    const termLengthInYearFractions = convertSecondsToYearFraction(
-      poolConfig.positionDuration,
-    );
-    const spotRateAfterOpen = dnum.divide(
-      [BigInt(1e18) - spotPriceAfterOpen, 18],
-      dnum.multiply(
-        [spotPriceAfterOpen, 18],
-        dnum.from(termLengthInYearFractions, 18),
-      ),
-    )[0];
+    const spotRateAfterOpen = hyperwasm.calcAprGivenFixedPrice({
+      price: spotPriceAfterOpen,
+      positionDuration: poolConfig.positionDuration,
+    });
 
     const curveFeeInBase = hyperwasm.openShortCurveFee({
       poolInfo,
