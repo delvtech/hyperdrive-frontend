@@ -219,7 +219,7 @@ export function idleShareReservesInBase(params) {
 }
 
 /**
-* Calculates the pool's present value in shares
+* Calculates the present value in shares of LP's capital in the pool.
 */
 export function presentValue(params) {
     try {
@@ -245,6 +245,25 @@ export function spotRate(params) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         wasm.spotRate(retptr, addHeapObject(params));
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        var r2 = getInt32Memory0()[retptr / 4 + 2];
+        if (r2) {
+            throw takeObject(r1);
+        }
+        return takeObject(r0);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+    }
+}
+
+/**
+* Calculate an APR from a fixed price.
+*/
+export function calcAprGivenFixedPrice(params) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        wasm.calcAprGivenFixedPrice(retptr, addHeapObject(params));
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         var r2 = getInt32Memory0()[retptr / 4 + 2];
