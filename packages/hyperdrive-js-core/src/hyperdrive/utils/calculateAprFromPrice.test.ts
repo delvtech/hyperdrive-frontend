@@ -8,5 +8,5 @@ test("calculateAprFromPrice should return fixed rate an open long position is cu
     bondAmount: 100086217686058270990n,
   });
 
-  expect(rate).toEqual(44956364873241305n);
+  expect(rate).toEqual(44956364873241333n);
 });

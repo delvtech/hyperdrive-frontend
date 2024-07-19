@@ -1,34 +1,30 @@
-import * as dnum from "dnum";
-import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
+import { fixed } from "src/fixed-point";
+import { hyperwasm } from "src/hyperwasm";
+
 /**
- * From alex:
- *
- * APR (fixed rate)
- * t = term length in year fractions (0.5 = 6 months)
- * p0 = base amount
- * p1 = bond amount
- * r = ((p1 / p0) - 1) / t
+ * Calculate the APR of a position given the position duration, the amount paid
+ * in base, and the amount of bonds received.
  */
 export function calculateAprFromPrice({
   positionDuration,
   baseAmount,
   bondAmount,
 }: {
+  /**
+   * The position duration in seconds.
+   */
   positionDuration: bigint;
+  /**
+   * The amount paid in base.
+   */
   baseAmount: bigint;
+  /**
+   * The amount of bonds received.
+   */
   bondAmount: bigint;
 }): bigint {
-  const bondsOverBase = dnum.divide([bondAmount, 18], [baseAmount, 18]);
-
-  const bondsOverBaseMinusOne = dnum.subtract(
-    bondsOverBase,
-    dnum.from("1", 18),
-  );
-
-  const termLengthInYearFractions =
-    convertSecondsToYearFraction(positionDuration);
-
-  const rate = dnum.divide(bondsOverBaseMinusOne, termLengthInYearFractions);
-
-  return rate[0];
+  return hyperwasm.calcAprGivenFixedPrice({
+    positionDuration,
+    price: fixed(baseAmount).div(bondAmount).bigint,
+  });
 }
