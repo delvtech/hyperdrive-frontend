@@ -1,8 +1,12 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { Helmet } from "react-helmet";
 import { EmptyContainer } from "src/ui/app/EmptyContainer";
 import { UnexpectedErrorMessage } from "src/ui/base/components/UnexpectedErrorMessage";
 import { useVpnScreen } from "src/ui/compliance/hooks/useVpnScreen";
 import { VpnDetectedMessage } from "src/ui/compliance/VpnDetectedMessage";
+
+// Set in the `index.html` file
+const defaultTitle = document.title;
 
 export const Route = createRootRoute({
   component: () => <RootComponent />,
@@ -11,17 +15,25 @@ export const Route = createRootRoute({
 function RootComponent() {
   const { enabled, screenResult, queryError } = useVpnScreen();
 
-  if (!enabled) {
-    return <Outlet />;
-  }
-
-  const error = screenResult?.error || queryError;
-  if (error) {
-    console.error(error);
+  if (!enabled || !screenResult?.isBlocked) {
     return (
-      <EmptyContainer>
-        <UnexpectedErrorMessage />
-      </EmptyContainer>
+      <>
+        <Helmet>
+          {/* Ensures the title is reset on route change. */}
+          <title>{defaultTitle}</title>
+
+          {/**
+           * Analytics
+           * @see https://plausible.io/docs/plausible-script
+           */}
+          <script
+            defer={true}
+            src="https://plausible.io/js/script.js"
+            data-domain={location.host}
+          ></script>
+        </Helmet>
+        <Outlet />
+      </>
     );
   }
 
@@ -33,5 +45,11 @@ function RootComponent() {
     );
   }
 
-  return screenResult && <Outlet />;
+  if (screenResult?.error || queryError) {
+    return (
+      <EmptyContainer>
+        <UnexpectedErrorMessage />
+      </EmptyContainer>
+    );
+  }
 }
