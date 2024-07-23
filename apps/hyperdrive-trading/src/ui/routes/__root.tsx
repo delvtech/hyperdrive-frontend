@@ -1,5 +1,6 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { Helmet } from "react-helmet";
+import { Plausible } from "src/ui/analytics/Plausible";
 import { EmptyContainer } from "src/ui/app/EmptyContainer";
 import { UnexpectedErrorMessage } from "src/ui/base/components/UnexpectedErrorMessage";
 import { useVpnScreen } from "src/ui/compliance/hooks/useVpnScreen";
@@ -21,17 +22,8 @@ function RootComponent() {
         <Helmet>
           {/* Ensures the title is reset on route change. */}
           <title>{defaultTitle}</title>
-
-          {/**
-           * Analytics
-           * @see https://plausible.io/docs/plausible-script
-           */}
-          <script
-            defer={true}
-            src="https://plausible.io/js/script.js"
-            data-domain={location.host}
-          ></script>
         </Helmet>
+        <Plausible />
         <Outlet />
       </>
     );
@@ -40,6 +32,7 @@ function RootComponent() {
   if (screenResult?.isBlocked) {
     return (
       <EmptyContainer>
+        <Plausible location="/vpn" />
         <VpnDetectedMessage />
       </EmptyContainer>
     );
@@ -48,6 +41,7 @@ function RootComponent() {
   if (screenResult?.error || queryError) {
     return (
       <EmptyContainer>
+        <Plausible location="/error" />
         <UnexpectedErrorMessage />
       </EmptyContainer>
     );
