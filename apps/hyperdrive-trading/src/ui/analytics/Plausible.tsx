@@ -31,7 +31,8 @@ export function Plausible({ page }: PlausibleProps): ReactElement {
 }
 
 /**
- * Triggers a new pageview event when the pathname or custom location changes.
+ * Triggers a new `"pageview"` event when the provided page or the window's pathname
+ * change.
  *
  * @see https://plausible.io/docs/script-extensions#scriptmanualjs
  */
