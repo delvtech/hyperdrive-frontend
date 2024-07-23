@@ -1,4 +1,9 @@
-import { fixed, initSync, wasmBuffer } from "@delvtech/fixed-point-wasm";
+import {
+  fixed,
+  initSync,
+  randomFixed,
+  wasmBuffer,
+} from "@delvtech/fixed-point-wasm";
 
 // Initialize the WASM module
 initSync(wasmBuffer);
@@ -20,3 +25,9 @@ const feeAmount = fixed(amount).mulUp(fee);
 
 console.log(`Fee amount: ${feeAmount}`);
 // => Fee amount: 25.003086419725308642
+
+let rand = randomFixed({
+  min: 1e18,
+  max: 100e18,
+});
+console.log(`Random: ${rand}`);

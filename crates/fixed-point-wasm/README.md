@@ -40,3 +40,11 @@ console.log(feeAmount.toString());
 console.log(feeAmount.toNumber());
 // => 25.00308641972531
 ```
+
+## Custom decimal places
+
+```ts
+const amount = fixed(1.5e6, 6);
+console.log(amount.toString());
+// => "1.500000"
+```
