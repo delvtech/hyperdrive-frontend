@@ -15,7 +15,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   const { enabled, screenResult, queryError } = useVpnScreen();
 
-  if (!enabled || !screenResult?.isBlocked) {
+  if (!enabled || screenResult?.isBlocked === false) {
     return (
       <>
         <Helmet>
