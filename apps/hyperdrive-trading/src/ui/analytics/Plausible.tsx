@@ -49,7 +49,7 @@ function usePageview(page?: string) {
     window.plausible =
       window.plausible ||
       function (...args) {
-        (window.plausible.q = window.plausible.q || []).push(...args);
+        (window.plausible.q = window.plausible.q || []).push(args);
       };
   }, []);
 
@@ -74,7 +74,7 @@ interface PlausibleFunction {
       [key: string]: unknown;
     },
   ): void;
-  q?: unknown[];
+  q?: unknown[][];
 }
 
 // Augment the global `window` object to include the `plausible` function.
