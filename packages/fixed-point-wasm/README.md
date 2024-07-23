@@ -27,12 +27,9 @@ import {
 // Initialize the WASM module
 initSync(wasmBuffer);
 
-// Use `fixed` with bigints, numbers, or strings
-const amount = fixed(1_000_123456789012345678n);
-const fee = fixed(0.025e18);
-
-// Perform fixed-point arithmetic
-const feeAmount = amount.mulUp(fee);
+const amount = 1_000_123456789012345678n;
+const fee = 0.025e18;
+const feeAmount = fixed(amount).mulUp(fee);
 
 console.log(feeAmount.bigint);
 // => 25003086419725308642n
