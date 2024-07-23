@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
 import { useLocation } from "react-use";
 
@@ -40,6 +40,10 @@ function usePageview(page?: string) {
   // track the current location to trigger new pageviews when the path changes
   const location = useLocation();
 
+  // track the previous pageview in a ref to avoid duplicate events, even if the
+  // parent component re-renders.
+  const previousPage = useRef<string | undefined>();
+
   // define the `plausible` function to manually trigger events
   useEffect(() => {
     window.plausible =
@@ -50,13 +54,10 @@ function usePageview(page?: string) {
   }, []);
 
   useEffect(() => {
-    if (page) {
-      window.plausible("pageview", {
-        u: page,
-      });
-    } else {
-      // Fallback to the default behavior
-      window.plausible("pageview");
+    const _page = page || location.pathname;
+    if (_page !== previousPage.current) {
+      window.plausible("pageview", { u: _page });
+      previousPage.current = _page;
     }
   }, [page, location.pathname]);
 }
