@@ -49,7 +49,7 @@ function usePageview(page?: string) {
     window.plausible =
       window.plausible ||
       function (...args) {
-        (window.plausible.q = window.plausible.q || []).push(...args);
+        (window.plausible.q = window.plausible.q || []).push(args);
       };
   }, []);
 
