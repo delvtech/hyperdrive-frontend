@@ -3,4 +3,4 @@
 "@delvtech/hyperdrive-wasm": patch
 ---
 
-Fix wasm error formatting
+Fixed wasm error formatting.
