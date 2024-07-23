@@ -4,9 +4,9 @@ use wasm_bindgen::JsValue;
 /// A simple error that can be converted to a JsValue for passing to JavaScript.
 #[derive(thiserror::Error, Debug)]
 pub enum Error {
-    #[error("TypeError: {message:?}\n    Location: {location:?}")]
+    #[error("TypeError: {message}\n    Location: {location}")]
     TypeError { message: String, location: String },
-    #[error("Error: {message:?}\n    Location: {location:?}")]
+    #[error("Error: {message}\n    Location: {location}")]
     Generic { message: String, location: String },
 }
 
