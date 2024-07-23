@@ -9,9 +9,9 @@
     "fixed-point": "tesm-node -r dotenv/config scripts/fixed-point.ts"
   },
   "dependencies": {
+    "@delvtech/fixed-point-wasm": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
-    "@delvtech/fixed-point-wasm": "*",
     "@hyperdrive/appconfig": "*",
     "viem": "^2.9.2"
   },
