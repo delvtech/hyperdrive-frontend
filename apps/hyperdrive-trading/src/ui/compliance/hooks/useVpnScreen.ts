@@ -9,10 +9,10 @@ interface VpnScreenResult {
   screenResult?:
     | {
         isBlocked: boolean;
-        error: undefined;
+        error?: undefined;
       }
     | {
-        isBlocked: undefined;
+        isBlocked?: undefined;
         error: string;
       };
 }
