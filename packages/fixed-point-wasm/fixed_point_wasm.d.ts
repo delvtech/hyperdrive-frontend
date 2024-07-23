@@ -218,8 +218,8 @@ export interface InitOutput {
   readonly __wbg_set_fixedpoint_decimals: (a: number, b: number) => void;
   readonly fixedpoint_new: (a: number, b: number, c: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
-  readonly fixedpoint_valueOf: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
+  readonly fixedpoint_valueOf: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_toString: (a: number, b: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number) => void;

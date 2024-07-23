@@ -108,17 +108,16 @@ impl Fixed {
     }
 
     /// Get the scaled bigint representation of this fixed-point number.
-    #[wasm_bindgen(skip_jsdoc, js_name = valueOf)]
-    pub fn value_of(&self) -> Result<BigInt, Error> {
+    #[wasm_bindgen(skip_jsdoc, getter)]
+    pub fn bigint(&self) -> Result<BigInt, Error> {
         let adjusted = self.inner / Fixed::scale_adjustment(self.decimals);
         adjusted.to_bigint()
     }
 
     /// Get the scaled bigint representation of this fixed-point number.
-    #[wasm_bindgen(skip_jsdoc, getter)]
-    pub fn bigint(&self) -> Result<BigInt, Error> {
-        let adjusted = self.inner / Fixed::scale_adjustment(self.decimals);
-        adjusted.to_bigint()
+    #[wasm_bindgen(skip_jsdoc, js_name = valueOf)]
+    pub fn value_of(&self) -> Result<BigInt, Error> {
+        self.bigint()
     }
 
     /// Get the float representation of this fixed-point number.
