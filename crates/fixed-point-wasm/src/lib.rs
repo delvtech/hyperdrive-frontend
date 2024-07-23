@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use core::fmt;
 use std::str::FromStr;
 
@@ -29,8 +27,8 @@ pub fn initialize() {
 }
 
 /// Get the version of this package.
-#[wasm_bindgen(skip_jsdoc)]
-pub fn getVersion() -> String {
+#[wasm_bindgen(skip_jsdoc, js_name = getVersion)]
+pub fn get_version() -> String {
     env!("CARGO_PKG_VERSION").to_string()
 }
 
@@ -108,8 +106,8 @@ impl Fixed {
     }
 
     /// Get the scaled bigint representation of this fixed-point number.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn valueOf(&self) -> Result<BigInt, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = valueOf)]
+    pub fn value_of(&self) -> Result<BigInt, Error> {
         let adjusted = self.inner / Fixed::scale_adjustment(self.decimals);
         adjusted.to_bigint()
     }
@@ -132,14 +130,14 @@ impl Fixed {
     /// console.log(fixed.toNumber());
     /// // 1.1234567890123457
     /// ```
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn toNumber(&self) -> f64 {
+    #[wasm_bindgen(skip_jsdoc, js_name = toNumber)]
+    pub fn to_number(&self) -> f64 {
         parse_float(&self.inner.to_string())
     }
 
     /// Get the formatted string representation of this fixed-point number.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn toString(&self) -> String {
+    #[wasm_bindgen(skip_jsdoc, js_name = toString)]
+    pub fn to_string(&self) -> String {
         let decimals_delta = 18 - self.decimals;
         let str = self.inner.to_string();
         str[..str.len() - decimals_delta as usize].to_string()
@@ -187,8 +185,8 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding down.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn mulDivDown(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = mulDivDown)]
+    pub fn mul_div_down(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self
                 .inner
@@ -200,8 +198,8 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding up.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn mulDivUp(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = mulDivUp)]
+    pub fn mul_div_up(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self
                 .inner
@@ -212,8 +210,8 @@ impl Fixed {
     }
 
     /// Multiply this fixed-point number by another, rounding down.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn mulDown(&self, other: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = mulDown)]
+    pub fn mul_down(&self, other: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self.inner.mul_down(other.to_fixed()?),
             decimals: self.decimals,
@@ -222,8 +220,8 @@ impl Fixed {
     }
 
     /// Multiply this fixed-point number by another, rounding up.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn mulUp(&self, other: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = mulUp)]
+    pub fn mul_up(&self, other: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self.inner.mul_up(other.to_fixed()?),
             decimals: self.decimals,
@@ -232,8 +230,8 @@ impl Fixed {
     }
 
     /// Divide this fixed-point number by another, rounding down.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn divDown(&self, other: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = divDown)]
+    pub fn div_down(&self, other: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self.inner.div_down(other.to_fixed()?),
             decimals: self.decimals,
@@ -242,8 +240,8 @@ impl Fixed {
     }
 
     /// Divide this fixed-point number by another, rounding up.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn divUp(&self, other: &Numberish) -> Result<Fixed, Error> {
+    #[wasm_bindgen(skip_jsdoc, js_name = divUp)]
+    pub fn div_up(&self, other: &Numberish) -> Result<Fixed, Error> {
         let result = Fixed {
             inner: self.inner.div_up(other.to_fixed()?),
             decimals: self.decimals,
@@ -312,8 +310,8 @@ pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
 /// console.log(random.toString());
 /// // => 0.472987274007185487
 /// ```
-#[wasm_bindgen(skip_jsdoc)]
-pub fn randomFixed(params: Option<IGenerateRandomParams>) -> Result<Fixed, Error> {
+#[wasm_bindgen(skip_jsdoc, js_name = randomFixed)]
+pub fn random_fixed(params: Option<IGenerateRandomParams>) -> Result<Fixed, Error> {
     Fixed::random(params)
 }
 
@@ -357,11 +355,11 @@ extern "C" {
     #[wasm_bindgen(typescript_type = Numberish)]
     pub type Numberish;
 
-    #[wasm_bindgen(method)]
-    fn valueOf(this: &Numberish) -> Numberish;
+    #[wasm_bindgen(js_name = valueOf, method)]
+    fn value_of(this: &Numberish) -> Numberish;
 
-    #[wasm_bindgen(method)]
-    fn toString(this: &Numberish) -> JsString;
+    #[wasm_bindgen(js_name = toString, method)]
+    fn to_string(this: &Numberish) -> JsString;
 }
 
 impl ToFixedPoint for Fixed {
@@ -375,12 +373,12 @@ impl ToFixedPoint for Numberish {
     fn to_fixed(&self) -> Result<FixedPoint, Error> {
         let type_of = self.js_typeof();
         if type_of == "bigint" {
-            self.toString().to_fixed()
+            self.to_string().to_fixed()
         } else if type_of == "string" || type_of == "number" {
-            let str = self.valueOf().toString().as_string().unwrap_or_default();
+            let str = self.value_of().to_string().as_string().unwrap_or_default();
             FixedPoint::from_str(&str).to_result()
         } else {
-            let str = format!("{}e18", self.toString().as_string().unwrap_or_default());
+            let str = format!("{}e18", self.to_string().as_string().unwrap_or_default());
             FixedPoint::from_str(&str).to_result()
         }
     }
