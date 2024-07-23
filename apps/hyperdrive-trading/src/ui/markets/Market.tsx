@@ -1,4 +1,4 @@
-import { useLoaderData } from "@tanstack/react-router";
+import { useParams } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -6,7 +6,7 @@ import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetail
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
 export function Market(): ReactElement {
-  const { market: address } = useLoaderData({ from: MARKET_DETAILS_ROUTE });
+  const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
 
   const market = appConfig?.hyperdrives.find(

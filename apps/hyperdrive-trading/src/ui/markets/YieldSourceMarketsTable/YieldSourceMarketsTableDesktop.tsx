@@ -95,10 +95,6 @@ export function YieldSourceMarketsTableDesktop({
                 navigate({
                   params: { address: row.original.market.address },
                   resetScroll: true,
-                  search: {
-                    openOrClosed: "Open",
-                    position: "Longs",
-                  },
                   to: MARKET_DETAILS_ROUTE,
                 });
               }}
@@ -140,10 +136,6 @@ function GoToMarketButton({
     <Link
       from={MARKET_DETAILS_ROUTE}
       resetScroll
-      search={() => ({
-        position: "Longs" as const,
-        openOrClosed: "Open" as const,
-      })}
       params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >

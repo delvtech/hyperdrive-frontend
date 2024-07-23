@@ -40,17 +40,17 @@ export function LongsTab({
     hyperdrive,
     account,
     longs: openLongs,
-    enabled: activeOpenOrClosedTab === "Open",
+    enabled: activeOpenOrClosedTab === "open",
   });
   const { totalClosedLongsValue, isLoading: isTotalClosedValueLoading } =
     useTotalClosedLongsValue({
       hyperdrive,
       account,
       closedLongs,
-      enabled: activeOpenOrClosedTab === "Closed",
+      enabled: activeOpenOrClosedTab === "open",
     });
   const isTotalValueLoading =
-    activeOpenOrClosedTab === "Open"
+    activeOpenOrClosedTab === "open"
       ? isTotalOpenValueLoading
       : isTotalClosedValueLoading;
 
@@ -60,10 +60,10 @@ export function LongsTab({
   });
 
   const totalValue =
-    activeOpenOrClosedTab === "Open"
+    activeOpenOrClosedTab === "open"
       ? totalOpenLongsValue
       : totalClosedLongsValue;
-  const longs = activeOpenOrClosedTab === "Open" ? openLongs : closedLongs;
+  const longs = activeOpenOrClosedTab === "open" ? openLongs : closedLongs;
 
   return (
     <MarketDetailsTab
@@ -104,7 +104,7 @@ export function LongsTab({
               <OpenClosedFilter />
             </div>
           </div>
-          {activeOpenOrClosedTab === "Open" ? (
+          {activeOpenOrClosedTab === "open" ? (
             <OpenLongsTable hyperdrive={hyperdrive} />
           ) : (
             <ClosedLongsTable hyperdrive={hyperdrive} />

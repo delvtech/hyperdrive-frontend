@@ -43,26 +43,26 @@ export function YieldStats({
           </div>
         </div>
         <div className="flex flex-wrap gap-8 lg:gap-16">
-          <Animated isActive={position === "Longs"}>
+          <Animated isActive={position === "longs"}>
             <FixedRateStat
-              isActive={position === "Longs"}
+              isActive={position === "longs"}
               hyperdrive={hyperdrive}
             />
           </Animated>
-          <Animated isActive={position === "Shorts"}>
+          <Animated isActive={position === "shorts"}>
             <ShortRateStat
-              isActive={position === "Shorts"}
+              isActive={position === "shorts"}
               hyperdrive={hyperdrive}
             />
           </Animated>
-          <Animated isActive={position === "LP"}>
+          <Animated isActive={position === "lp"}>
             <Stat
               label="LP APY (7d)"
               value={
                 lpApyStatus !== "loading" ? (
                   <span
                     className={classNames("flex items-center gap-1.5", {
-                      "gradient-text": position === "LP",
+                      "gradient-text": position === "lp",
                     })}
                   >
                     {lpApy === undefined ? (

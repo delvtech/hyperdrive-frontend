@@ -109,13 +109,7 @@ const poolCols = [
       <Link
         className="daisy-link-hover daisy-link"
         to={`/market/$address`}
-        params={{
-          address: row.original.address,
-        }}
-        search={{
-          openOrClosed: "Open",
-          position: "Longs",
-        }}
+        params={{ address: row.original.address }}
       >
         {getValue()}
       </Link>
