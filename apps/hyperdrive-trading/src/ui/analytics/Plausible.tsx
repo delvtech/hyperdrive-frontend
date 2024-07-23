@@ -12,7 +12,7 @@ interface PlausibleProps {
 }
 
 /**
- * Adds the Plausible analytics script to the `<head>`.
+ * Adds the Plausible analytics script to the `<head>` and triggers pageviews.
  *
  * @see https://plausible.io/docs/plausible-script
  */
