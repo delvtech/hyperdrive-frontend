@@ -45,12 +45,10 @@ function usePageview(location?: string) {
 
   useEffect(() => {
     if (location) {
-      console.log("location", location);
       window.plausible("pageview", {
         u: location,
       });
     } else {
-      console.log("windowLocation.pathname", windowLocation.pathname);
       // Fallback to the default behavior
       window.plausible("pageview");
     }
