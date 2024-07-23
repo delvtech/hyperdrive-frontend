@@ -100,11 +100,10 @@ impl Fixed {
             Some(max) => max.to_fixed()?,
             None => fixed_min + fixedpointmath::fixed!(1e18),
         };
-        let instance = Fixed {
+        Ok(Fixed {
             inner: thread_rng().gen_range(fixed_min..fixed_max),
             decimals: _params.decimals.unwrap_or(18),
-        };
-        Ok(instance)
+        })
     }
 
     /// Get the scaled bigint representation of this fixed-point number.
