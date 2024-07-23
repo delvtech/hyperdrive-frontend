@@ -1,4 +1,4 @@
-mod utils;
+pub mod utils;
 
 use core::fmt;
 use std::str::FromStr;
@@ -13,7 +13,6 @@ use fixedpointmath::{uint256, FixedPoint};
 use js_sys::{parse_float, BigInt, JsString};
 use rand::{thread_rng, Rng};
 use ts_macro::ts;
-pub use utils::*;
 use wasm_bindgen::prelude::*;
 
 // Initialization function

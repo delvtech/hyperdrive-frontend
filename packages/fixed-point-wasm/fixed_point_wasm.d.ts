@@ -8,7 +8,7 @@ export function initialize(): void;
 */
 export function getVersion(): string;
 /**
-* Create a new fixed-point number from a scaled value.
+* Create a new fixed-point number by parsing a scaled value.
 *
 * @param value - A scaled value.
 *
@@ -37,6 +37,32 @@ export function getVersion(): string;
 */
 export function fixed(value: Numberish, decimals?: number): FixedPoint;
 /**
+* Create a fixed-point number by parsing a decimal value and scaling it by a
+* given number of decimal places.
+*
+* @param value - A value to parse and scale.
+*
+* @param decimals - The number of decimal places to use. Max is `18`. Defaults
+* to `18`.
+*
+* @example
+* ```js
+* const fromNumber = parseFixed(1.5);
+* const fromString = parseFixed('1.5');
+* const withDecimals = parseFixed('1.5', 6);
+*
+* console.log(fromNumber.toString());
+* // => 1.500000000000000000
+*
+* console.log(fromString.toString());
+* // => 1.500000000000000000
+*
+* console.log(withDecimals.toString());
+* // => 1.500000
+* ```
+*/
+export function parseFixed(value: Numberish, decimals?: number): FixedPoint;
+/**
 * Create a random fixed-point number with an optional min and max.
 *
 * @example
@@ -56,6 +82,13 @@ export function randomFixed(params?: IGenerateRandomParams): FixedPoint;
 * scaled raw value.
 */
 export function ln(x: Numberish): FixedPoint;
+
+/**
+ * An 18-decimal fixed-point number.
+ */
+export type Numberish = FixedPoint | bigint | number | string;
+
+
 interface IGenerateRandomParams {
   /**
    *  The minimum value to generate. Defaults to `0`.
@@ -70,13 +103,6 @@ interface IGenerateRandomParams {
    */
   decimals?: number | undefined;
 }
-
-
-/**
- * An 18-decimal fixed-point number.
- */
-export type Numberish = FixedPoint | bigint | number | string;
-
 
 /**
 * A number with a fixed number of decimal places.
@@ -207,10 +233,11 @@ export interface InitOutput {
   readonly fixedpoint_divDown: (a: number, b: number, c: number) => void;
   readonly fixedpoint_divUp: (a: number, b: number, c: number) => void;
   readonly fixedpoint_pow: (a: number, b: number, c: number) => void;
-  readonly fixed: (a: number, b: number, c: number) => void;
-  readonly ln: (a: number, b: number) => void;
-  readonly randomFixed: (a: number, b: number) => void;
   readonly initialize: () => void;
+  readonly fixed: (a: number, b: number, c: number) => void;
+  readonly parseFixed: (a: number, b: number, c: number) => void;
+  readonly randomFixed: (a: number, b: number) => void;
+  readonly ln: (a: number, b: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
