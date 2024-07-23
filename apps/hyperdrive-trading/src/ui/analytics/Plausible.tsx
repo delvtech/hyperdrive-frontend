@@ -4,7 +4,7 @@ import { useLocation } from "react-use";
 
 interface PlausibleProps {
   /**
-   * A custom location to associate with the event.
+   * A custom page to associate with the event, e.g., `/error`.
    *
    * @see https://plausible.io/docs/custom-locations
    */
