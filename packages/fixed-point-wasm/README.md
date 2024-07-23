@@ -47,7 +47,7 @@ console.log(feeAmount.toNumber());
 By default, all fixed-point numbers are created with 18 decimal places, but this can be changed by passing a second argument to the `fixed` and `parseFixed` functions.
 
 ```ts
-const amount = fixed(1.5e6, 6);
+const amount = fixed(1500000n, 6);
 console.log(amount.bigint, amount.toString());
 // => 1500000n "1.500000"
 
@@ -125,4 +125,5 @@ let rand = randomFixed({
   max: 100e18,
 });
 console.log(`Random: ${rand}`);
+// => Random: 69.357623681464768420
 ```
