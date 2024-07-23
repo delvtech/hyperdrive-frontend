@@ -74,7 +74,7 @@ interface PlausibleFunction {
       [key: string]: unknown;
     },
   ): void;
-  q?: unknown[];
+  q?: unknown[][];
 }
 
 // Augment the global `window` object to include the `plausible` function.
