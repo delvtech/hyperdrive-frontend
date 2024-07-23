@@ -32,7 +32,7 @@ function RootComponent() {
   if (screenResult?.isBlocked) {
     return (
       <EmptyContainer>
-        <Plausible location="/vpn" />
+        <Plausible page="/vpn" />
         <VpnDetectedMessage />
       </EmptyContainer>
     );
@@ -41,7 +41,7 @@ function RootComponent() {
   if (screenResult?.error || queryError) {
     return (
       <EmptyContainer>
-        <Plausible location="/error" />
+        <Plausible page="/error" />
         <UnexpectedErrorMessage />
       </EmptyContainer>
     );

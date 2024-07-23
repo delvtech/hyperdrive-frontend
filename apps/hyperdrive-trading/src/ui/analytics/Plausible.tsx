@@ -8,7 +8,7 @@ interface PlausibleProps {
    *
    * @see https://plausible.io/docs/custom-locations
    */
-  location?: string;
+  page?: string;
 }
 
 /**
@@ -16,8 +16,8 @@ interface PlausibleProps {
  *
  * @see https://plausible.io/docs/plausible-script
  */
-export function Plausible({ location }: PlausibleProps): ReactElement {
-  usePageview(location);
+export function Plausible({ page }: PlausibleProps): ReactElement {
+  usePageview(page);
 
   return (
     <Helmet>
@@ -35,7 +35,7 @@ export function Plausible({ location }: PlausibleProps): ReactElement {
  *
  * @see https://plausible.io/docs/script-extensions#scriptmanualjs
  */
-function usePageview(customLocation?: string) {
+function usePageview(page?: string) {
   // track the current location to trigger new pageviews when the path changes
   const location = useLocation();
 
@@ -49,15 +49,15 @@ function usePageview(customLocation?: string) {
   }, []);
 
   useEffect(() => {
-    if (customLocation) {
+    if (page) {
       window.plausible("pageview", {
-        u: customLocation,
+        u: page,
       });
     } else {
       // Fallback to the default behavior
       window.plausible("pageview");
     }
-  }, [customLocation, location.pathname]);
+  }, [page, location.pathname]);
 }
 
 type PlausibleEvent = "pageview";
