@@ -261,8 +261,7 @@ impl Fixed {
     }
 
     fn scale_adjustment(decimals: u8) -> FixedPoint {
-        let decimals_delta = U256::from(18 - decimals);
-        let adjustment = uint256!(10).pow(decimals_delta) * uint256!(1e18);
+        let adjustment = uint256!(10).pow(U256::from(18 + 18 - decimals));
         FixedPoint::from(adjustment)
     }
 }
