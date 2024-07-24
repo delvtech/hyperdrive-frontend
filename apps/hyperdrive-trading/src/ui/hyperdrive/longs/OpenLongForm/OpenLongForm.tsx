@@ -31,11 +31,8 @@ import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPicker } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -52,8 +49,7 @@ export function OpenLongForm({
   const { address: account } = useAccount();
   const chainId = useChainId();
   const { isFlagEnabled: isBridgingEnabled } = useFeatureFlag("bridge");
-  const { isFlagEnabled: isNewOpenLongFormEnabled } =
-    useFeatureFlag("new-open-long-form");
+
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
@@ -230,125 +226,78 @@ export function OpenLongForm({
   return (
     <TransactionView
       tokenInput={
-        isNewOpenLongFormEnabled ? (
-          <TokenInputTwo
-            settings={
-              <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
-                slippage={slippage}
-                activeOption={activeSlippageOption}
-                onActiveOptionChange={setActiveSlippageOption}
-                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-              />
-            }
-            name={activeToken.symbol}
-            token={
-              <TokenPickerTwo
-                tokens={tokenOptions}
-                activeTokenAddress={activeToken.address}
-                onChange={(tokenAddress) => {
-                  setActiveToken(tokenAddress);
-                  setAmount("0");
-                }}
-              />
-            }
-            value={depositAmount ?? ""}
-            maxValue={maxButtonValue}
-            inputLabel="You spend"
-            bottomLeftStatistic={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-              !isTestnetChain(chainId) ? (
-                <label className="text-sm text-neutral-content">
-                  {`$${formatBalance({
-                    balance:
-                      activeTokenPrice && depositAmountAsBigInt
-                        ? dnum.multiply(
-                            [activeTokenPrice, activeToken.decimals],
-                            [depositAmountAsBigInt, activeToken.decimals],
-                            activeToken.decimals,
-                          )[0]
-                        : 0n,
-                    decimals: activeToken.decimals,
-                    places: 2,
-                  })}`}
-                </label>
-              ) : null
-            }
-            bottomRightStatistic={
-              <div className="flex flex-col gap-1 text-xs text-neutral-content">
-                <span>
-                  {activeTokenBalance
-                    ? `Balance: ${formatBalance({
-                        balance: activeTokenBalance?.value,
-                        decimals: activeToken.decimals,
-                        places: activeToken.places,
-                      })}`
-                    : undefined}
-                </span>
-              </div>
-            }
-            onChange={(newAmount) => setAmount(newAmount)}
-          />
-        ) : (
-          <TokenInput
-            settings={
-              <SlippageSettings
-                onSlippageChange={setSlippage}
-                slippage={slippage}
-                activeOption={activeSlippageOption}
-                onActiveOptionChange={setActiveSlippageOption}
-                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-              />
-            }
-            name={activeToken.symbol}
-            token={
-              <TokenPicker
-                // TODO: Remove check for Sepolia chain after testnet period.
-                tokens={tokenOptions}
-                activeTokenAddress={activeToken.address}
-                onChange={(tokenAddress) => {
-                  setActiveToken(tokenAddress);
-                  setAmount("0");
-                }}
-                joined={true}
-              />
-            }
-            value={depositAmount ?? ""}
-            maxValue={maxButtonValue}
-            inputLabel="Amount to spend"
-            stat={
-              <div className="flex flex-col gap-1 text-xs text-neutral-content">
-                <span>
-                  {activeTokenBalance
-                    ? `Balance: ${formatBalance({
-                        balance: activeTokenBalance?.value,
-                        decimals: activeToken.decimals,
-                        places: activeToken.places,
-                      })} ${activeToken.symbol}`
-                    : undefined}
-                </span>
-                <span>{`Slippage: ${slippage || "0.5"}%`}</span>
-              </div>
-            }
-            onChange={(newAmount) => setAmount(newAmount)}
-          />
-        )
+        <TokenInputTwo
+          settings={
+            <SlippageSettingsTwo
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+            />
+          }
+          name={activeToken.symbol}
+          token={
+            <TokenPickerTwo
+              tokens={tokenOptions}
+              activeTokenAddress={activeToken.address}
+              onChange={(tokenAddress) => {
+                setActiveToken(tokenAddress);
+                setAmount("0");
+              }}
+            />
+          }
+          value={depositAmount ?? ""}
+          maxValue={maxButtonValue}
+          inputLabel="You spend"
+          bottomLeftStatistic={
+            // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+            !isTestnetChain(chainId) ? (
+              <label className="text-sm text-neutral-content">
+                {`$${formatBalance({
+                  balance:
+                    activeTokenPrice && depositAmountAsBigInt
+                      ? dnum.multiply(
+                          [activeTokenPrice, activeToken.decimals],
+                          [depositAmountAsBigInt, activeToken.decimals],
+                          activeToken.decimals,
+                        )[0]
+                      : 0n,
+                  decimals: activeToken.decimals,
+                  places: 2,
+                })}`}
+              </label>
+            ) : null
+          }
+          bottomRightStatistic={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })}`
+                  : undefined}
+              </span>
+            </div>
+          }
+          onChange={(newAmount) => setAmount(newAmount)}
+        />
       }
       setting={
         isBridgingEnabled && hasBridgeableBalance ? switchToBridgeUILink : null
       }
       primaryStats={
-        isNewOpenLongFormEnabled ? (
-          <OpenLongStats
-            hyperdrive={hyperdrive}
-            activeToken={activeToken}
-            amountPaid={depositAmountAsBigInt || 0n}
-            bondAmount={bondsReceived || 0n}
-            openLongPreviewStatus={openLongPreviewStatus}
-            asBase={activeToken.address === baseToken.address}
-            vaultSharePrice={poolInfo?.vaultSharePrice}
-          />
-        ) : null
+        <OpenLongStats
+          hyperdrive={hyperdrive}
+          activeToken={activeToken}
+          amountPaid={depositAmountAsBigInt || 0n}
+          bondAmount={bondsReceived || 0n}
+          openLongPreviewStatus={openLongPreviewStatus}
+          asBase={activeToken.address === baseToken.address}
+          vaultSharePrice={poolInfo?.vaultSharePrice}
+        />
       }
       transactionPreview={
         <OpenLongPreview
