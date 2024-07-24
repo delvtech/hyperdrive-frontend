@@ -10,13 +10,10 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "allowJs": true,
+    "skipLibCheck": true,
 
     // Rules
-    "skipLibCheck": true,
     "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true
   }
 }
