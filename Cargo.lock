@@ -1077,10 +1077,11 @@ dependencies = [
 
 [[package]]
 name = "fixed-point-wasm"
-version = "0.0.0"
+version = "0.0.1"
 dependencies = [
  "console_error_panic_hook",
  "delv-core",
+ "ethers",
  "fixedpointmath",
  "getrandom",
  "js-sys",
@@ -1487,7 +1488,7 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wasm"
-version = "0.15.0"
+version = "0.15.1"
 dependencies = [
  "console_error_panic_hook",
  "const-hex",

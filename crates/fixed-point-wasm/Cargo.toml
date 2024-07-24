@@ -2,7 +2,7 @@
 name = "fixed-point-wasm"
 # This version will be overwritten by the build script to match the version in
 # the crate's package.json which is managed by changesets.
-version = "0.0.0"
+version = "0.0.1"
 edition = "2021"
 license = "AGPL-3.0"
 
@@ -15,6 +15,7 @@ default = ["console_error_panic_hook"]
 [dependencies]
 # external
 console_error_panic_hook = { version = "0.1.7", optional = true }
+ethers = { version = "2.0.14", default-features = false }
 js-sys = "0.3.69"
 wasm-bindgen = "0.2.92"
 
