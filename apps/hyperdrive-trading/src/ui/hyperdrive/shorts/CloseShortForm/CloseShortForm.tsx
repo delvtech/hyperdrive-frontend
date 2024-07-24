@@ -14,7 +14,7 @@ import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
@@ -121,7 +121,7 @@ export function CloseShortForm({
   }
 
   return (
-    <TransactionView
+    <TransactionViewOld
       tokenInput={
         <TokenInput
           name="shorts"

@@ -17,7 +17,7 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
@@ -133,7 +133,7 @@ export function RedeemWithdrawalSharesForm({
     });
 
   return (
-    <TransactionView
+    <TransactionViewOld
       tokenInput={
         <TokenInput
           name="withdrawalShares"

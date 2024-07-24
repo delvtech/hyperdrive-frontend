@@ -20,7 +20,7 @@ import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
@@ -193,7 +193,7 @@ export function OpenShortForm({
   });
 
   return (
-    <TransactionView
+    <TransactionViewOld
       tokenInput={
         <TokenInput
           name={`${baseToken.symbol}-input`}

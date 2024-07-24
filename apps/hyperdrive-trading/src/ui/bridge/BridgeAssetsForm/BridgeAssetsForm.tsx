@@ -10,7 +10,7 @@ import { useAggregationSolution } from "src/ui/bridge/hooks/useAggregationSoluti
 import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { Address, parseUnits } from "viem";
@@ -98,7 +98,7 @@ export function BridgeAssetsForm({
     includeCommas: false,
   });
   return (
-    <TransactionView
+    <TransactionViewOld
       tokenInput={
         <div className="flex">
           <TokenInput
