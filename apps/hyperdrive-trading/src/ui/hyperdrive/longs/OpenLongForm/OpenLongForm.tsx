@@ -250,7 +250,7 @@ export function OpenLongForm({
           value={depositAmount ?? ""}
           maxValue={maxButtonValue}
           inputLabel="You spend"
-          bottomLeftStatistic={
+          bottomLeftElement={
             // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
             !isTestnetChain(chainId) ? (
               <label className="text-sm text-neutral-content">
@@ -269,7 +269,7 @@ export function OpenLongForm({
               </label>
             ) : null
           }
-          bottomRightStatistic={
+          bottomRightElement={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
               <span>
                 {activeTokenBalance

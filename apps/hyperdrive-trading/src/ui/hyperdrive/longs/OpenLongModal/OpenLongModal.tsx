@@ -41,7 +41,7 @@ export function OpenLongModalHeader(): ReactElement {
   return (
     <ModalHeader
       heading="Open a Long"
-      subHeading="Lock in a fixed rate and know your exact yield upfront"
+      subHeading="Buy the fixed rate and know your exact yield up front"
     />
   );
 }
