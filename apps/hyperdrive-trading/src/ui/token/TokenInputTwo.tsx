@@ -18,8 +18,8 @@ interface TokenInputProps {
   /**
    * Optional stats to show, useful for things like wallet balances
    */
-  bottomLeftStatistic?: ReactNode;
-  bottomRightStatistic?: ReactNode;
+  bottomLeftElement?: ReactNode;
+  bottomRightElement?: ReactNode;
   settings?: ReactNode;
   disabled?: boolean;
   /**
@@ -36,8 +36,8 @@ export function TokenInputTwo({
   onChange,
   maxValue,
   inputLabel = "Enter amount",
-  bottomLeftStatistic,
-  bottomRightStatistic,
+  bottomLeftElement: bottomLeftStatistic,
+  bottomRightElement: bottomRightStatistic,
   settings,
   hasError = false,
   disabled = false,

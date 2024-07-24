@@ -14,7 +14,7 @@ import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
@@ -120,7 +120,7 @@ export function CloseLongForm({
   }
 
   return (
-    <TransactionView
+    <TransactionViewOld
       disclaimer={
         <>
           <p className="text-center text-xs text-neutral-content">

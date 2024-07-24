@@ -18,7 +18,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
@@ -185,7 +185,7 @@ export function RemoveLiquidityForm({
   }
 
   return (
-    <TransactionView
+    <TransactionViewOld
       setting={
         <TokenPicker
           label={
