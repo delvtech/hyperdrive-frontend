@@ -202,10 +202,6 @@ export function AllMarketsTableDesktop(): ReactElement {
               onClick={() => {
                 navigate({
                   params: { address: row.original.market.address },
-                  search: {
-                    openOrClosed: "Open",
-                    position: "Longs",
-                  },
                   to: MARKET_DETAILS_ROUTE,
                 });
               }}
@@ -244,10 +240,6 @@ function GoToMarketButton({
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
-      search={() => ({
-        position: "Longs" as const,
-        openOrClosed: "Open" as const,
-      })}
       params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >

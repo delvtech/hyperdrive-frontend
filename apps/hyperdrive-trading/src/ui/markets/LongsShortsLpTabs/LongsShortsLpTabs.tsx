@@ -15,42 +15,42 @@ export function LongsShortsLpTabs({
   const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
   const { position } = useSearch({ from: MARKET_DETAILS_ROUTE });
   const navigate = useNavigate({ from: MARKET_DETAILS_ROUTE });
-  const activeTab = position ?? "Longs";
+  const activeTab = position ?? "longs";
 
   return (
     <Tabs
       activeTabId={activeTab}
       tabs={[
         {
-          id: "Longs",
+          id: "longs",
           content: <LongsTab hyperdrive={hyperdrive} />,
           label: "Long",
           onClick: () => {
             navigate({
               params: { address },
-              search: () => ({ position: "Longs", openOrClosed: "Open" }),
+              search: () => ({ position: "longs" }),
             });
           },
         },
         {
-          id: "Shorts",
+          id: "shorts",
           content: <ShortsTab hyperdrive={hyperdrive} />,
           label: "Short",
           onClick: () => {
             navigate({
               params: { address },
-              search: () => ({ position: "Shorts", openOrClosed: "Open" }),
+              search: () => ({ position: "shorts" }),
             });
           },
         },
         {
-          id: "LP",
+          id: "lp",
           content: <LpTab hyperdrive={hyperdrive} />,
           label: "LP",
           onClick: () => {
             navigate({
               params: { address },
-              search: () => ({ position: "LP", openOrClosed: "Open" }),
+              search: () => ({ position: "lp" }),
             });
           },
         },

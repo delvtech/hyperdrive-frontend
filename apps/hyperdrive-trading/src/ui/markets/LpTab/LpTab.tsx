@@ -53,7 +53,7 @@ export function LpTab({
             </div>
           </div>
 
-          {activeOpenOrClosedTab === "Open" ? (
+          {activeOpenOrClosedTab === "open" ? (
             <>
               {(() => {
                 if (!account) {

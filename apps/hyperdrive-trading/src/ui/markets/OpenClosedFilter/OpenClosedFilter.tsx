@@ -4,12 +4,12 @@ import { ReactElement } from "react";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useAccount } from "wagmi";
 
-type OpenOrClosedTab = "Open" | "Closed";
 export function OpenClosedFilter(): ReactElement {
-  const { openOrClosed, position } = useSearch({ from: MARKET_DETAILS_ROUTE });
+  const { openOrClosed = "open", position } = useSearch({
+    from: MARKET_DETAILS_ROUTE,
+  });
   const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
   const { isConnected } = useAccount();
-  const activeOpenOrClosedTab = (openOrClosed as OpenOrClosedTab) || "Open";
 
   return (
     <div
@@ -19,13 +19,13 @@ export function OpenClosedFilter(): ReactElement {
     >
       <Link
         className={classNames("daisy-tab text-md ", {
-          "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Open",
-          "font-bold": activeOpenOrClosedTab === "Open" && isConnected,
+          "opacity-80 hover:opacity-100": openOrClosed !== "open",
+          "font-bold": openOrClosed === "open" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
             !isConnected,
         })}
         params={{ address }}
-        search={{ openOrClosed: "Open", position }}
+        search={{ openOrClosed: "open", position }}
         to={MARKET_DETAILS_ROUTE}
         disabled={!isConnected}
       >
@@ -34,13 +34,13 @@ export function OpenClosedFilter(): ReactElement {
 
       <Link
         className={classNames("daisy-tab text-md", {
-          "opacity-80 hover:opacity-100": activeOpenOrClosedTab !== "Closed",
-          "font-bold ": activeOpenOrClosedTab === "Closed" && isConnected,
+          "opacity-80 hover:opacity-100": openOrClosed !== "closed",
+          "font-bold ": openOrClosed === "closed" && isConnected,
           "daisy-link-secondary daisy-tab-disabled cursor-not-allowed":
             !isConnected,
         })}
         params={{ address }}
-        search={{ openOrClosed: "Closed", position }}
+        search={{ openOrClosed: "closed", position }}
         to={MARKET_DETAILS_ROUTE}
         disabled={!isConnected}
       >

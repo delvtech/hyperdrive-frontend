@@ -37,7 +37,7 @@ export function ShortsTab({
       hyperdrive,
       account,
       shorts: openShorts,
-      enabled: activeOpenOrClosedTab === "Open",
+      enabled: activeOpenOrClosedTab === "open",
     });
   const {
     totalClosedShortsValue,
@@ -47,11 +47,11 @@ export function ShortsTab({
     hyperdrive,
     account,
     closedShorts,
-    enabled: activeOpenOrClosedTab === "Closed",
+    enabled: activeOpenOrClosedTab === "closed",
   });
 
   const isTotalValueLoading =
-    activeOpenOrClosedTab === "Open"
+    activeOpenOrClosedTab === "open"
       ? isTotalOpenValueLoading
       : isTotalClosedValueLoading;
 
@@ -61,10 +61,10 @@ export function ShortsTab({
   });
 
   const totalValue =
-    activeOpenOrClosedTab === "Open"
+    activeOpenOrClosedTab === "open"
       ? totalOpenShortsValue
       : totalClosedShortsValue;
-  const shorts = activeOpenOrClosedTab === "Open" ? openShorts : closedShorts;
+  const shorts = activeOpenOrClosedTab === "open" ? openShorts : closedShorts;
 
   return (
     <MarketDetailsTab
@@ -105,7 +105,7 @@ export function ShortsTab({
               <OpenClosedFilter />
             </div>
           </div>
-          {activeOpenOrClosedTab === "Open" ? (
+          {activeOpenOrClosedTab === "open" ? (
             <OpenShortsTable hyperdrive={hyperdrive} />
           ) : (
             <ClosedShortsTable hyperdrive={hyperdrive} />

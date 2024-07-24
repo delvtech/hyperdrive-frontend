@@ -131,10 +131,6 @@ export function AllMarketsTableMobile(): ReactElement {
               onClick={() => {
                 navigate({
                   params: { address: row.original.market.address },
-                  search: {
-                    openOrClosed: "Open",
-                    position: "Longs",
-                  },
                   to: MARKET_DETAILS_ROUTE,
                 });
               }}
@@ -167,7 +163,6 @@ function GoToMarketButton({
   return (
     <Link
       from={MARKET_DETAILS_ROUTE}
-      search={{ position: "Longs", openOrClosed: "Open" }}
       params={{ address: hyperdriveAddress }}
       className="daisy-btn-circle daisy-btn-xs flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
