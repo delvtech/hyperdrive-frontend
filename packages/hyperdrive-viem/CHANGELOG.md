@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-viem
 
+## 2.4.1
+
+### Patch Changes
+
+- @delvtech/hyperdrive-js-core@2.4.1
+
 ## 2.4.0
 
 ### Patch Changes
