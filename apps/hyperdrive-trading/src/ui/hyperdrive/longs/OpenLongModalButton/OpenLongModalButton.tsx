@@ -1,7 +1,6 @@
 import { PauseCircleIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { WarningButton } from "src/ui/base/components/WarningButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -20,8 +19,6 @@ export function OpenLongModalButton({
 }: OpenLongModalButtonProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
 
-  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
-  const numDays = convertMillisecondsToDays(termLengthMS);
   function closeModal() {
     (window as any)[modalId].close();
   }
@@ -39,13 +36,7 @@ export function OpenLongModalButton({
   return (
     <Modal
       modalId={modalId}
-      modalHeader={
-        <OpenLongModalHeader
-          key="long"
-          numDays={numDays}
-          termLengthMS={termLengthMS}
-        />
-      }
+      modalHeader={<OpenLongModalHeader key="long" />}
       modalContent={
         <OpenLongModalForm
           key="long"
