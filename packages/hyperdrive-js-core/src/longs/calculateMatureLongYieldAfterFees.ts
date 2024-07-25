@@ -1,4 +1,4 @@
-import * as dnum from "dnum";
+import { fixed } from "src/fixed-point";
 export function calculateMatureLongYieldAfterFees({
   flatFee,
   bondAmount,
@@ -10,11 +10,8 @@ export function calculateMatureLongYieldAfterFees({
   baseAmountPaid: bigint;
   decimals: number;
 }): bigint {
-  const poolFee = dnum.mul([bondAmount, decimals], [flatFee, decimals]);
-  const yieldAmount = dnum.subtract(
-    [bondAmount, decimals],
-    [baseAmountPaid, decimals],
-  );
-
-  return dnum.subtract(yieldAmount, poolFee)[0];
+  const poolFee = fixed(bondAmount, decimals).mul(
+    fixed(flatFee, decimals),
+  ).bigint;
+  return bondAmount - baseAmountPaid - poolFee;
 }
