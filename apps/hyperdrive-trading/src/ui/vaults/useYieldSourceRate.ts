@@ -4,7 +4,6 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
 
 interface UseVaultRateOptions {
   hyperdriveAddress: Address | undefined;
@@ -16,10 +15,8 @@ export function useYieldSourceRate({
   vaultRate: { vaultRate: bigint; formatted: string } | undefined;
   vaultRateStatus: "error" | "success" | "loading";
 } {
-  const publicClient = usePublicClient();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled =
-    !!hyperdriveAddress && !!publicClient && !!readHyperdrive;
+  const queryEnabled = !!hyperdriveAddress && !!readHyperdrive;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("vaultRate", {
