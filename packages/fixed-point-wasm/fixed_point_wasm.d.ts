@@ -83,9 +83,6 @@ export function randomFixed(params?: IGenerateRandomParams): FixedPoint;
 */
 export function ln(x: Numberish): FixedPoint;
 
-/**
- * An 18-decimal fixed-point number.
- */
 export type Numberish = FixedPoint | bigint | number | string;
 
 
