@@ -10,15 +10,14 @@
     // @hyperdrive/eslint-config needs to be the last config extended because it includes prettier
     "@hyperdrive/eslint-config",
   ],
+  "plugins": ["react-refresh"],
   "rules": {
     // Disable ordering in favor of prettier plugin
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": "off",
     // Exported functions should be written as function declarations for easier
     // scanning. Arrow functions can still be used as anonymous functions.
-    "func-style": [
-      "error",
-      "declaration",
-    ]
+    "func-style": ["error", "declaration"],
+    "react-refresh/only-export-components": "warn",
   },
 }
