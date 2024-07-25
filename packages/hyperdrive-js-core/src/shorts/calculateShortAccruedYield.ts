@@ -1,4 +1,4 @@
-import * as dnum from "dnum";
+import { fixed } from "src/fixed-point";
 
 export function calculateShortAccruedYield({
   openVaultSharePrice,
@@ -13,8 +13,8 @@ export function calculateShortAccruedYield({
 }): bigint {
   // Current Accrued yield = (current share price - checkpoint share price) x
   // number of bonds
-  return dnum.multiply(
-    [endingVaultSharePrice - openVaultSharePrice, decimals],
-    [bondAmount, decimals],
-  )[0];
+  return fixed(endingVaultSharePrice - openVaultSharePrice, decimals).mul(
+    bondAmount,
+    decimals,
+  ).bigint;
 }
