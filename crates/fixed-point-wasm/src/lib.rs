@@ -269,9 +269,6 @@ impl Fixed {
 
 #[wasm_bindgen(typescript_custom_section)]
 const _: &'static str = r#"
-/**
- * An 18-decimal fixed-point number.
- */
 export type Numberish = FixedPoint | bigint | number | string;
 "#;
 
