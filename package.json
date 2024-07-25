@@ -24,7 +24,6 @@
     "postinstall": "npx husky",
     "typecheck": "turbo run typecheck",
     "reset-node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && yarn cache clean && yarn",
-    "new-hyperwasm-just-dropped": "yarn run reset-node-modules && rm -rf packages/{hyperdrive-js-core,hyperdrive-viem}/dist && yarn workspace @delvtech/hyperdrive-js-core run build && yarn workspace @delvtech/hyperdrive-viem run build",
     "release": "yarn build:packages && changeset publish"
   },
   "devDependencies": {
