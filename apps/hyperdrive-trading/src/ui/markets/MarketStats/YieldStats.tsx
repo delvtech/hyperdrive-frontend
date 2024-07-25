@@ -19,7 +19,7 @@ export function YieldStats({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { position } = useSearch({ from: MARKET_DETAILS_ROUTE });
+  const { position = "longs" } = useSearch({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
