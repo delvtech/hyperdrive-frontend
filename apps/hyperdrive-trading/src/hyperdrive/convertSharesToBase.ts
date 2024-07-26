@@ -1,16 +1,13 @@
-import * as dnum from "dnum";
+import { fixed } from "@delvtech/fixed-point-wasm";
 
 export function convertSharesToBase({
-  sharesAmount,
-  vaultSharePrice,
+  sharesAmount = 0n,
+  vaultSharePrice = 0n,
   decimals,
 }: {
   sharesAmount: bigint | undefined;
   vaultSharePrice: bigint | undefined;
   decimals: number;
 }): bigint {
-  return dnum.multiply(
-    [sharesAmount || 0n, decimals],
-    [vaultSharePrice || 0n, decimals],
-  )[0];
+  return fixed(sharesAmount, decimals).mul(vaultSharePrice, decimals).bigint;
 }
