@@ -229,6 +229,7 @@ export interface InitOutput {
   readonly fixedpoint_divDown: (a: number, b: number, c: number) => void;
   readonly fixedpoint_divUp: (a: number, b: number, c: number) => void;
   readonly fixedpoint_pow: (a: number, b: number, c: number) => void;
+  readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
   readonly fixed: (a: number, b: number, c: number) => void;

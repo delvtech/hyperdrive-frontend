@@ -67,7 +67,16 @@ impl Fixed {
             ));
         }
         let inner = match value {
-            Some(value) => value.to_fixed()?,
+            Some(value) => {
+                let mut fixed_value = value.to_fixed()?;
+                // If the value is already a fixed-point number, divide by the
+                // scale adjustment to truncate any extra decimals before
+                // scaling it back up.
+                if value.is_fixed_point() == Some(true) {
+                    fixed_value /= Fixed::scale_adjustment(_decimals)
+                }
+                fixed_value
+            }
             None => FixedPoint::default(),
         };
         Ok(Fixed {
@@ -259,6 +268,11 @@ impl Fixed {
         Ok(result)
     }
 
+    #[wasm_bindgen(skip_jsdoc, skip_typescript)]
+    pub fn is_fixed_point(&self) -> bool {
+        true
+    }
+
     fn scale_adjustment(decimals: u8) -> FixedPoint {
         let adjustment = uint256!(10).pow(U256::from(18 + 18 - decimals));
         FixedPoint::from(adjustment)
@@ -282,6 +296,9 @@ extern "C" {
 
     #[wasm_bindgen(js_name = toString, method)]
     fn to_string(this: &Numberish) -> JsString;
+
+    #[wasm_bindgen(getter, method)]
+    fn is_fixed_point(this: &Numberish) -> Option<bool>;
 }
 
 impl ToFixedPoint for Fixed {
