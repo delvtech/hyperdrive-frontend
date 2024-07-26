@@ -55,7 +55,6 @@ export function BridgeAssetsForm({
     activeBridgeChains,
   );
 
-  console.log("maxButtonValue", maxButtonValue);
   // Fetch a quote based on the user's input.
   const { solution, status: quoteStatus } = useQuote({
     account,
