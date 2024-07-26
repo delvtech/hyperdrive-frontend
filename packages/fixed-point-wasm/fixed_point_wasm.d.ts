@@ -88,17 +88,108 @@ export type Numberish = FixedPoint | bigint | number | string;
 
 interface IGenerateRandomParams {
   /**
-   *  The minimum value to generate. Defaults to `0`.
+   * The minimum value to generate. Defaults to `0`.
    */
   min?: Numberish | undefined;
   /**
-   *  The maximum value to generate. Defaults to 1.0 (scaled) more than `min`.
+   * The maximum value to generate. Defaults to 1.0 (scaled) more than `min`.
    */
   max?: Numberish | undefined;
   /**
-   *  The number of decimal places to use. Max is `18`. Defaults to `18`.
+   * The number of decimal places to use. Max is `18`. Defaults to `18`.
    */
   decimals?: number | undefined;
+}
+
+interface IFormatOptions {
+  /**
+   * The number of decimal places to display. Defaults to the number of
+   * decimal places in the fixed-point number, or `0` if compact display is
+   * enabled.
+   */
+  decimals?: number | undefined;
+  /**
+   * Whether to include trailing zeros. Defaults to `false`.
+   */
+  trailingZeros?: boolean | undefined;
+  /**
+   * The rounding mode to use.
+   *
+   * `"ceil"`:
+   *
+   * Round toward +∞. Positive values round up. Negative values round "more
+   * positive".
+   *
+   * `"floor"`:
+   *
+   * Round toward -∞. Positive values round down. Negative values round "more
+   * negative".
+   *
+   * `"expand"`:
+   *
+   * round away from 0. The magnitude of the value is always increased by
+   * rounding. Positive values round up. Negative values round "more
+   * negative".
+   *
+   * `"trunc"`:
+   *
+   * Round toward 0. This magnitude of the value is always reduced by
+   * rounding. Positive values round down. Negative values round "less
+   * negative".
+   *
+   * `"halfCeil"`:
+   *
+   * ties toward +∞. Values above the half-increment round like `ceil`
+   * (towards +∞), and below like `floor` (towards -∞). On the
+   * half-increment, values round like `ceil`.
+   *
+   * `"halfFloor"`:
+   *
+   * Ties toward -∞. Values above the half-increment round like `ceil`
+   * (towards +∞), and below like `floor` (towards -∞). On the
+   * half-increment, values round like `floor`.
+   *
+   * `"halfExpand"`:
+   *
+   * Ties away from 0. Values above the half-increment round like `expand`
+   * (away from zero), and below like `trunc` (towards 0). On the
+   * half-increment, values round like `expand`.
+   *
+   * `"halfTrunc"`:
+   *
+   * Ties toward 0. Values above the half-increment round like `expand` (away
+   * from zero), and below like `trunc` (towards 0). On the half-increment,
+   * values round like `trunc`.
+   *
+   * `"halfEven"`:
+   *
+   * Ties towards the nearest even integer. Values above the half-increment
+   * round like `expand` (away from zero), and below like `trunc` (towards
+   * 0). On the half-increment values round towards the nearest even digit.
+   *
+   * @default "halfExpand"
+   *
+   * @see [MDN - NumberFormat - roundingMode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#roundingmode)
+   */
+  rounding?: 'ceil' | 'floor' | 'expand' | 'trunc' | 'halfCeil' | 'halfFloor' | 'halfExpand' | 'halfTrunc' | 'halfEven';
+  /**
+   * The locale to use for formatting. Defaults to `"en-US"`.
+   *
+   * @see [Unicode BCP 47 Locale Identifier](https://unicode.org/reports/tr35/#Unicode_locale_identifier)
+   */
+  locale?: Intl.UnicodeBCP47LocaleIdentifier;
+  /**
+   * Whether to use grouping separators, i.e. commas. Defaults to `true`.
+   *
+   * @see [MDN - NumberFormat - useGrouping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#usegrouping)
+   */
+  group?: boolean | undefined;
+  /**
+   * The compact display mode to use, if any. Defaults to `undefined`.
+   *
+   * @see [MDN - NumberFormat - compactDisplay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#compactdisplay)
+   */
+  compactDisplay?: Intl.NumberFormatOptions['compactDisplay'];
 }
 
 /**
@@ -146,9 +237,13 @@ export class FixedPoint {
 */
   toNumber(): number;
 /**
-* Get the formatted string representation of this fixed-point number.
+* Get the decimal string representation of this fixed-point number.
 */
   toString(): string;
+/**
+* Format this fixed-point number for display.
+*/
+  format(options?: IFormatOptions): string;
 /**
 * Add a fixed-point number to this one.
 */
@@ -254,6 +349,7 @@ export interface InitOutput {
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_toString: (a: number, b: number) => void;
+  readonly fixedpoint_format: (a: number, b: number, c: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
