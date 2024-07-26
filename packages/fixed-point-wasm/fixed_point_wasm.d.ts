@@ -88,28 +88,36 @@ export type Numberish = FixedPoint | bigint | number | string;
 
 interface IGenerateRandomParams {
   /**
-   * The minimum value to generate. Defaults to `0`.
+   * The minimum value to generate.
+   *
+   * @default 0
    */
   min?: Numberish | undefined;
   /**
-   * The maximum value to generate. Defaults to 1.0 (scaled) more than `min`.
+   * The maximum value to generate.
+   *
+   * @default min + parseFixed(1.0, decimals)
    */
   max?: Numberish | undefined;
   /**
-   * The number of decimal places to use. Max is `18`. Defaults to `18`.
+   * The number of decimal places to use. Max is `18`.
+   *
+   * @default 18
    */
   decimals?: number | undefined;
 }
 
-interface IFormatOptions {
+interface IBaseFormatOptions {
   /**
-   * The number of decimal places to display. Defaults to the number of
-   * decimal places in the fixed-point number, or `0` if compact display is
-   * enabled.
+   * The number of decimal places to display.
+   *
+   * @default compactDisplay ? 0 : this.decimals
    */
   decimals?: number | undefined;
   /**
-   * Whether to include trailing zeros. Defaults to `false`.
+   * Whether to include trailing zeros.
+   *
+   * @default `false`
    */
   trailingZeros?: boolean | undefined;
   /**
@@ -173,23 +181,64 @@ interface IFormatOptions {
    */
   rounding?: 'ceil' | 'floor' | 'expand' | 'trunc' | 'halfCeil' | 'halfFloor' | 'halfExpand' | 'halfTrunc' | 'halfEven';
   /**
-   * The locale to use for formatting. Defaults to `"en-US"`.
+   * The locale to use for formatting.
+   *
+   * @default "en-US"
    *
    * @see [Unicode BCP 47 Locale Identifier](https://unicode.org/reports/tr35/#Unicode_locale_identifier)
    */
   locale?: Intl.UnicodeBCP47LocaleIdentifier;
   /**
-   * Whether to use grouping separators, i.e. commas. Defaults to `true`.
+   * Whether to use grouping separators, i.e. commas.
+   *
+   * @default true
    *
    * @see [MDN - NumberFormat - useGrouping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#usegrouping)
    */
   group?: boolean | undefined;
+}
+
+interface IFormatOptions extends IBaseFormatOptions {
   /**
-   * The compact display mode to use, if any. Defaults to `undefined`.
+   * The compact display mode to use, if any.
+   *
+   * @default undefined
    *
    * @see [MDN - NumberFormat - compactDisplay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#compactdisplay)
    */
   compactDisplay?: Intl.NumberFormatOptions['compactDisplay'];
+  /**
+   * Whether to format the number as a percentage.
+   *
+   * @example
+   * ```ts
+   * const rate = parseFixed(0.1325);
+   * console.log(`Rate: ${rate.format({ percent: true, decimals: 2 })}`);
+   * // => Rate: 13.25%
+   * ```
+   */
+  percent?: boolean | undefined;
+}
+
+interface ICurrencyFormatOptions extends IBaseFormatOptions {
+  /**
+   * The currency to use for formatting.
+   *
+   * @default "USD"
+   *
+   * @see [ISO 4217 Currency Codes](https://en.wikipedia.org//wiki/ISO_4217#List_of_ISO_4217_currency_codes)
+   */
+  currency?: string | undefined;
+  /**
+   * How to display the currency in currency formatting.
+   *
+   * @see [MDN - NumberFormat - currencydisplay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#currencydisplay)
+   */
+  display?: 'symbol' | 'narrowSymbol' | 'code' | 'name';
+  /**
+   * Whether to use compact notation for currency formatting.
+   */
+  compact?: boolean | undefined;
 }
 
 /**
@@ -206,6 +255,13 @@ export class FixedPoint {
 * Defaults to `18`.
 */
   constructor(value?: Numberish, decimals?: number);
+/**
+* Create a fixed-point number representing one unit.
+*
+* @param decimals - The number of decimal places to use. Max is `18`.
+* Defaults to `18`.
+*/
+  static one(decimals?: number): FixedPoint;
 /**
 * Create a random fixed-point number with and optional min and max.
 *
@@ -240,10 +296,6 @@ export class FixedPoint {
 * Get the decimal string representation of this fixed-point number.
 */
   toString(): string;
-/**
-* Format this fixed-point number for display.
-*/
-  format(options?: IFormatOptions): string;
 /**
 * Add a fixed-point number to this one.
 */
@@ -327,6 +379,14 @@ export class FixedPoint {
 */
   clamp(min: Numberish, max: Numberish, decimals?: number): FixedPoint;
 /**
+* Format this fixed-point number for display.
+*/
+  format(options?: IFormatOptions): string;
+/**
+* Format this fixed-point number as a currency.
+*/
+  formatCurrency(options?: ICurrencyFormatOptions): string;
+/**
 * Get the scaled bigint representation of this fixed-point number.
 */
   readonly bigint: bigint;
@@ -340,16 +400,15 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly getVersion: (a: number) => void;
   readonly __wbg_fixedpoint_free: (a: number) => void;
   readonly __wbg_get_fixedpoint_decimals: (a: number) => number;
   readonly __wbg_set_fixedpoint_decimals: (a: number, b: number) => void;
   readonly fixedpoint_new: (a: number, b: number, c: number) => void;
+  readonly fixedpoint_one: (a: number, b: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_toString: (a: number, b: number) => void;
-  readonly fixedpoint_format: (a: number, b: number, c: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
@@ -373,10 +432,13 @@ export interface InitOutput {
   readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
+  readonly getVersion: (a: number) => void;
   readonly fixed: (a: number, b: number, c: number) => void;
   readonly parseFixed: (a: number, b: number, c: number) => void;
   readonly randomFixed: (a: number, b: number) => void;
   readonly ln: (a: number, b: number) => void;
+  readonly fixedpoint_format: (a: number, b: number, c: number) => void;
+  readonly fixedpoint_formatCurrency: (a: number, b: number, c: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
