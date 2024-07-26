@@ -5,7 +5,13 @@ use delv_core::{
 use fixedpointmath::FixedPoint;
 use wasm_bindgen::prelude::*;
 
-use crate::{Fixed, IGenerateRandomParams, Numberish};
+use crate::{Fixed, IGenerateRandomParams, Numberish, INNER_DECIMALS};
+
+/// Get the version of this package.
+#[wasm_bindgen(skip_jsdoc, js_name = getVersion)]
+pub fn get_version() -> String {
+    env!("CARGO_PKG_VERSION").to_string()
+}
 
 /// Create a new fixed-point number by parsing a scaled value.
 ///
@@ -71,7 +77,7 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Erro
     }
 
     // Scale the value by the number of decimals.
-    let decimals = decimals.unwrap_or(18);
+    let decimals = decimals.unwrap_or(INNER_DECIMALS);
     let scaled_str = format!(
         "{}e{}",
         value.to_string().as_string().unwrap_or_default(),

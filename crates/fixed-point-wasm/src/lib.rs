@@ -1,3 +1,4 @@
+pub mod formatting;
 pub mod utils;
 
 use core::fmt;
@@ -10,7 +11,7 @@ use delv_core::{
 };
 use ethers::types::U256;
 use fixedpointmath::{uint256, FixedPoint};
-use js_sys::{parse_float, Array, BigInt, Intl, JsString, Object, Reflect};
+use js_sys::{parse_float, BigInt, JsString};
 use rand::{thread_rng, Rng};
 use ts_macro::ts;
 use utils::fixed;
@@ -29,11 +30,7 @@ pub fn initialize() {
     console_error_panic_hook::set_once();
 }
 
-/// Get the version of this package.
-#[wasm_bindgen(skip_jsdoc, js_name = getVersion)]
-pub fn get_version() -> String {
-    env!("CARGO_PKG_VERSION").to_string()
-}
+const INNER_DECIMALS: u8 = 18;
 
 /// A number with a fixed number of decimal places.
 #[wasm_bindgen(js_name = FixedPoint)]
@@ -61,10 +58,10 @@ impl Fixed {
     /// Defaults to `18`.
     #[wasm_bindgen(constructor, skip_jsdoc)]
     pub fn new(value: Option<Numberish>, decimals: Option<u8>) -> Result<Fixed, Error> {
-        let _decimals = decimals.unwrap_or(18);
-        if _decimals > 18 {
+        let decimals = decimals.unwrap_or(INNER_DECIMALS);
+        if decimals > INNER_DECIMALS {
             return Err(error!(
-                "Invalid fixed point decimals: {_decimals}. Max is 18."
+                "Invalid fixed point decimals: {decimals}. Max is {INNER_DECIMALS}."
             ));
         }
         let inner = match value {
@@ -74,15 +71,28 @@ impl Fixed {
                 // scale adjustment to truncate any extra decimals before
                 // scaling it back up.
                 if value.is_fixed_point() == Some(true) {
-                    fixed_value /= Fixed::scale_adjustment(_decimals)
+                    fixed_value /= Fixed::scale_adjustment(decimals)
                 }
                 fixed_value
             }
             None => FixedPoint::default(),
         };
         Ok(Fixed {
-            inner: inner * Fixed::scale_adjustment(_decimals),
-            decimals: _decimals,
+            inner: inner * Fixed::scale_adjustment(decimals),
+            decimals,
+        })
+    }
+
+    /// Create a fixed-point number representing one unit.
+    ///
+    /// @param decimals - The number of decimal places to use. Max is `18`.
+    /// Defaults to `18`.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn one(decimals: Option<u8>) -> Result<Fixed, Error> {
+        let decimals = decimals.unwrap_or(INNER_DECIMALS);
+        Ok(Fixed {
+            inner: FixedPoint::from(uint256!(10).pow(U256::from(decimals))),
+            decimals,
         })
     }
 
@@ -108,11 +118,11 @@ impl Fixed {
         let fixed_min = _params.min.to_fixed()?;
         let fixed_max = match _params.max {
             Some(max) => max.to_fixed()?,
-            None => fixed_min + fixedpointmath::fixed!(1e18),
+            None => fixed_min + Fixed::one(None)?.inner,
         };
         Ok(Fixed {
             inner: thread_rng().gen_range(fixed_min..fixed_max),
-            decimals: _params.decimals.unwrap_or(18),
+            decimals: _params.decimals.unwrap_or(INNER_DECIMALS),
         })
     }
 
@@ -148,61 +158,9 @@ impl Fixed {
     /// Get the decimal string representation of this fixed-point number.
     #[wasm_bindgen(skip_jsdoc, js_name = toString)]
     pub fn to_string(&self) -> String {
-        let decimals_delta = 18 - self.decimals;
+        let decimals_delta = INNER_DECIMALS - self.decimals;
         let str = self.inner.to_string();
         str[..str.len() - decimals_delta as usize].to_string()
-    }
-
-    /// Format this fixed-point number for display.
-    #[wasm_bindgen(skip_jsdoc)]
-    pub fn format(&self, options: Option<IFormatOptions>) -> Result<JsString, Error> {
-        let options = options.unwrap_or_default();
-        let options_obj = Object::new();
-
-        if let Some(display) = options.compact_display() {
-            Reflect::set(&options_obj, &"notation".into(), &"compact".into())?;
-            Reflect::set(&options_obj, &"compactDisplay".into(), &display.into())?;
-        }
-
-        let has_decimals = options.decimals().is_some();
-        if options.compact_display().is_none() || has_decimals {
-            Reflect::set(
-                &options_obj,
-                &"maximumFractionDigits".into(),
-                &options.decimals().unwrap_or(self.decimals).into(),
-            )?;
-        }
-
-        if options.trailing_zeros() == Some(true)
-            || (has_decimals && options.trailing_zeros() != Some(false))
-        {
-            Reflect::set(
-                &options_obj,
-                &"minimumFractionDigits".into(),
-                &options.decimals().unwrap_or(self.decimals).into(),
-            )?;
-        }
-
-        if let Some(mode) = options.rounding() {
-            Reflect::set(&options_obj, &"roundingMode".into(), &mode.into())?;
-        }
-
-        if let Some(group) = options.group() {
-            Reflect::set(&options_obj, &"useGrouping".into(), &group.into())?;
-        }
-
-        let locales_str = match options.locale() {
-            Some(locale) => locale,
-            _ => "en-US".to_string(),
-        };
-        let locales_arr = Array::of1(&locales_str.into());
-
-        let formatter = Intl::NumberFormat::new(&locales_arr, &options_obj);
-        Ok(formatter
-            .format()
-            .call1(&JsValue::NULL, &self.to_string().into())
-            .to_result()?
-            .into())
     }
 
     /// Add a fixed-point number to this one.
@@ -422,7 +380,7 @@ impl Fixed {
     }
 
     fn scale_adjustment(decimals: u8) -> FixedPoint {
-        let adjustment = uint256!(10).pow(U256::from(18 + 18 - decimals));
+        let adjustment = uint256!(10).pow(U256::from(INNER_DECIMALS + INNER_DECIMALS - decimals));
         FixedPoint::from(adjustment)
     }
 }
@@ -466,7 +424,11 @@ impl ToFixedPoint for Numberish {
             let str = self.value_of().to_string().as_string().unwrap_or_default();
             FixedPoint::from_str(&str).to_result()
         } else {
-            let str = format!("{}e18", self.to_string().as_string().unwrap_or_default());
+            let str = format!(
+                "{}e{}",
+                self.to_string().as_string().unwrap_or_default(),
+                INNER_DECIMALS
+            );
             FixedPoint::from_str(&str).to_result()
         }
     }
@@ -474,108 +436,18 @@ impl ToFixedPoint for Numberish {
 
 #[ts]
 struct GenerateRandomParams {
-    /// The minimum value to generate. Defaults to `0`.
+    /// The minimum value to generate.
+    ///
+    /// @default 0
     min: Option<Numberish>,
-    /// The maximum value to generate. Defaults to 1.0 (scaled) more than `min`.
+
+    /// The maximum value to generate.
+    ///
+    /// @default min + parseFixed(1.0, decimals)
     max: Option<Numberish>,
-    /// The number of decimal places to use. Max is `18`. Defaults to `18`.
+
+    /// The number of decimal places to use. Max is `18`.
+    ///
+    /// @default 18
     decimals: Option<u8>,
-}
-
-#[ts]
-struct FormatOptions {
-    /// The number of decimal places to display. Defaults to the number of
-    /// decimal places in the fixed-point number, or `0` if compact display is
-    /// enabled.
-    decimals: Option<u8>,
-
-    /// Whether to include trailing zeros. Defaults to `false`.
-    trailing_zeros: Option<bool>,
-
-    /// The rounding mode to use.
-    ///
-    /// `"ceil"`:
-    ///
-    /// Round toward +∞. Positive values round up. Negative values round "more
-    /// positive".
-    ///
-    /// `"floor"`:
-    ///
-    /// Round toward -∞. Positive values round down. Negative values round "more
-    /// negative".
-    ///
-    /// `"expand"`:
-    ///
-    /// round away from 0. The magnitude of the value is always increased by
-    /// rounding. Positive values round up. Negative values round "more
-    /// negative".
-    ///
-    /// `"trunc"`:
-    ///
-    /// Round toward 0. This magnitude of the value is always reduced by
-    /// rounding. Positive values round down. Negative values round "less
-    /// negative".
-    ///
-    /// `"halfCeil"`:
-    ///
-    /// ties toward +∞. Values above the half-increment round like `ceil`
-    /// (towards +∞), and below like `floor` (towards -∞). On the
-    /// half-increment, values round like `ceil`.
-    ///
-    /// `"halfFloor"`:
-    ///
-    /// Ties toward -∞. Values above the half-increment round like `ceil`
-    /// (towards +∞), and below like `floor` (towards -∞). On the
-    /// half-increment, values round like `floor`.
-    ///
-    /// `"halfExpand"`:
-    ///
-    /// Ties away from 0. Values above the half-increment round like `expand`
-    /// (away from zero), and below like `trunc` (towards 0). On the
-    /// half-increment, values round like `expand`.
-    ///
-    /// `"halfTrunc"`:
-    ///
-    /// Ties toward 0. Values above the half-increment round like `expand` (away
-    /// from zero), and below like `trunc` (towards 0). On the half-increment,
-    /// values round like `trunc`.
-    ///
-    /// `"halfEven"`:
-    ///
-    /// Ties towards the nearest even integer. Values above the half-increment
-    /// round like `expand` (away from zero), and below like `trunc` (towards
-    /// 0). On the half-increment values round towards the nearest even digit.
-    ///
-    /// @default "halfExpand"
-    ///
-    /// @see [MDN - NumberFormat - roundingMode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#roundingmode)
-    #[ts(
-        type = "'ceil' | 'floor' | 'expand' | 'trunc' | 'halfCeil' | 'halfFloor' | 'halfExpand' | 'halfTrunc' | 'halfEven'"
-    )]
-    rounding: Option<String>,
-
-    /// The locale to use for formatting. Defaults to `"en-US"`.
-    ///
-    /// @see [Unicode BCP 47 Locale Identifier](https://unicode.org/reports/tr35/#Unicode_locale_identifier)
-    #[ts(type = "Intl.UnicodeBCP47LocaleIdentifier")]
-    locale: Option<String>,
-
-    /// Whether to use grouping separators, i.e. commas. Defaults to `true`.
-    ///
-    /// @see [MDN - NumberFormat - useGrouping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#usegrouping)
-    group: Option<bool>,
-
-    /// The compact display mode to use, if any. Defaults to `undefined`.
-    ///
-    /// @see [MDN - NumberFormat - compactDisplay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#compactdisplay)
-    #[ts(type = "Intl.NumberFormatOptions['compactDisplay']")]
-    compact_display: Option<String>,
-}
-
-impl Default for IFormatOptions {
-    fn default() -> Self {
-        IFormatOptions {
-            obj: Object::new().into(),
-        }
-    }
 }
