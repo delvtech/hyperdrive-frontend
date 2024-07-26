@@ -35,8 +35,8 @@ use crate::{Fixed, IGenerateRandomParams, Numberish};
 /// // => 1.500000
 /// ```
 #[wasm_bindgen(skip_jsdoc)]
-pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
-    Fixed::new(Some(value), decimals)
+pub fn fixed(value: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+    Fixed::new(Some(value.clone()), decimals)
 }
 
 /// Create a fixed-point number by parsing a decimal value and scaling it by a

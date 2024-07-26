@@ -13,6 +13,7 @@ use fixedpointmath::{uint256, FixedPoint};
 use js_sys::{parse_float, BigInt, JsString};
 use rand::{thread_rng, Rng};
 use ts_macro::ts;
+use utils::fixed;
 use wasm_bindgen::prelude::*;
 
 // Initialization function
@@ -35,7 +36,7 @@ pub fn get_version() -> String {
 }
 
 /// A number with a fixed number of decimal places.
-#[wasm_bindgen(js_name = FixedPoint, skip_jsdoc)]
+#[wasm_bindgen(js_name = FixedPoint)]
 pub struct Fixed {
     inner: FixedPoint,
     /// The number of decimal places in the fixed-point number.
@@ -154,9 +155,9 @@ impl Fixed {
 
     /// Add a fixed-point number to this one.
     #[wasm_bindgen(skip_jsdoc)]
-    pub fn add(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn add(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner + other.to_fixed()?,
+            inner: self.inner + fixed(other, Some(decimals.unwrap_or(self.decimals)))?.inner,
             decimals: self.decimals,
         };
         Ok(result)
@@ -164,9 +165,9 @@ impl Fixed {
 
     /// Subtract a fixed-point number from this one.
     #[wasm_bindgen(skip_jsdoc)]
-    pub fn sub(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn sub(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner - other.to_fixed()?,
+            inner: self.inner - fixed(other, decimals)?.inner,
             decimals: self.decimals,
         };
         Ok(result)
@@ -174,9 +175,9 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another.
     #[wasm_bindgen(skip_jsdoc)]
-    pub fn mul(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn mul(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner * other.to_fixed()?,
+            inner: self.inner * fixed(other, decimals)?.inner,
             decimals: self.decimals,
         };
         Ok(result)
@@ -184,9 +185,9 @@ impl Fixed {
 
     /// Divide this fixed-point number by another.
     #[wasm_bindgen(skip_jsdoc)]
-    pub fn div(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn div(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner / other.to_fixed()?,
+            inner: self.inner / fixed(other, decimals)?.inner,
             decimals: self.decimals,
         };
         Ok(result)
@@ -195,11 +196,17 @@ impl Fixed {
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding down.
     #[wasm_bindgen(skip_jsdoc, js_name = mulDivDown)]
-    pub fn mul_div_down(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
+    pub fn mul_div_down(
+        &self,
+        other: &Numberish,
+        divisor: &Numberish,
+        decimals: Option<u8>,
+    ) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self
-                .inner
-                .mul_div_down(other.to_fixed()?, divisor.to_fixed()?),
+            inner: self.inner.mul_div_down(
+                fixed(other, decimals)?.inner,
+                fixed(divisor, decimals)?.inner,
+            ),
             decimals: self.decimals,
         };
         Ok(result)
@@ -208,11 +215,17 @@ impl Fixed {
     /// Multiply this fixed-point number by another, then divide by a divisor,
     /// rounding up.
     #[wasm_bindgen(skip_jsdoc, js_name = mulDivUp)]
-    pub fn mul_div_up(&self, other: &Numberish, divisor: &Numberish) -> Result<Fixed, Error> {
+    pub fn mul_div_up(
+        &self,
+        other: &Numberish,
+        divisor: &Numberish,
+        decimals: Option<u8>,
+    ) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self
-                .inner
-                .mul_div_up(other.to_fixed()?, divisor.to_fixed()?),
+            inner: self.inner.mul_div_up(
+                fixed(other, decimals)?.inner,
+                fixed(divisor, decimals)?.inner,
+            ),
             decimals: self.decimals,
         };
         Ok(result)
@@ -220,9 +233,9 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another, rounding down.
     #[wasm_bindgen(skip_jsdoc, js_name = mulDown)]
-    pub fn mul_down(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn mul_down(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner.mul_down(other.to_fixed()?),
+            inner: self.inner.mul_down(fixed(other, decimals)?.inner),
             decimals: self.decimals,
         };
         Ok(result)
@@ -230,9 +243,11 @@ impl Fixed {
 
     /// Multiply this fixed-point number by another, rounding up.
     #[wasm_bindgen(skip_jsdoc, js_name = mulUp)]
-    pub fn mul_up(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn mul_up(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner.mul_up(other.to_fixed()?),
+            inner: self
+                .inner
+                .mul_up(fixed(other, Some(decimals.unwrap_or(self.decimals)))?.inner),
             decimals: self.decimals,
         };
         Ok(result)
@@ -240,9 +255,9 @@ impl Fixed {
 
     /// Divide this fixed-point number by another, rounding down.
     #[wasm_bindgen(skip_jsdoc, js_name = divDown)]
-    pub fn div_down(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn div_down(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner.div_down(other.to_fixed()?),
+            inner: self.inner.div_down(fixed(other, decimals)?.inner),
             decimals: self.decimals,
         };
         Ok(result)
@@ -250,9 +265,9 @@ impl Fixed {
 
     /// Divide this fixed-point number by another, rounding up.
     #[wasm_bindgen(skip_jsdoc, js_name = divUp)]
-    pub fn div_up(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn div_up(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner.div_up(other.to_fixed()?),
+            inner: self.inner.div_up(fixed(other, decimals)?.inner),
             decimals: self.decimals,
         };
         Ok(result)
@@ -260,9 +275,9 @@ impl Fixed {
 
     /// Raise this fixed-point number to the power of another.
     #[wasm_bindgen(skip_jsdoc)]
-    pub fn pow(&self, other: &Numberish) -> Result<Fixed, Error> {
+    pub fn pow(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
         let result = Fixed {
-            inner: self.inner.pow(other.to_fixed()?).to_result()?,
+            inner: self.inner.pow(fixed(other, decimals)?.inner).to_result()?,
             decimals: self.decimals,
         };
         Ok(result)
@@ -288,6 +303,7 @@ export type Numberish = FixedPoint | bigint | number | string;
 
 #[wasm_bindgen]
 extern "C" {
+    #[derive(Clone)]
     #[wasm_bindgen(typescript_type = Numberish)]
     pub type Numberish;
 
