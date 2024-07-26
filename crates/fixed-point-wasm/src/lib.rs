@@ -283,6 +283,87 @@ impl Fixed {
         Ok(result)
     }
 
+    /// Find out if this number is equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn eq(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.eq(&other_inner));
+    }
+
+    /// Find out if this number is not equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn ne(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.ne(&other_inner));
+    }
+
+    /// Find out if this number is greater than another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn gt(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.gt(&other_inner));
+    }
+
+    /// Find out if this number is greater than or equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn gte(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.ge(&other_inner));
+    }
+
+    /// Find out if this number is less than another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn lt(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.lt(&other_inner));
+    }
+
+    /// Find out if this number is less than or equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn lte(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.le(&other_inner));
+    }
+
+    /// Get the minimum of this number and another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn min(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.min(other_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
+    /// Get the maximum of this number and another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn max(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.max(other_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
+    /// Clamp this number to a range.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn clamp(
+        &self,
+        min: &Numberish,
+        max: &Numberish,
+        decimals: Option<u8>,
+    ) -> Result<Fixed, Error> {
+        let min_inner = fixed(min, decimals)?.inner;
+        let max_inner = fixed(max, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.clamp(min_inner, max_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
     #[wasm_bindgen(skip_jsdoc, skip_typescript)]
     pub fn is_fixed_point(&self) -> bool {
         true

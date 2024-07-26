@@ -196,6 +196,42 @@ export class FixedPoint {
 */
   pow(other: Numberish, decimals?: number): FixedPoint;
 /**
+* Find out if this number is equal to another.
+*/
+  eq(other: Numberish, decimals?: number): boolean;
+/**
+* Find out if this number is not equal to another.
+*/
+  ne(other: Numberish, decimals?: number): boolean;
+/**
+* Find out if this number is greater than another.
+*/
+  gt(other: Numberish, decimals?: number): boolean;
+/**
+* Find out if this number is greater than or equal to another.
+*/
+  gte(other: Numberish, decimals?: number): boolean;
+/**
+* Find out if this number is less than another.
+*/
+  lt(other: Numberish, decimals?: number): boolean;
+/**
+* Find out if this number is less than or equal to another.
+*/
+  lte(other: Numberish, decimals?: number): boolean;
+/**
+* Get the minimum of this number and another.
+*/
+  min(other: Numberish, decimals?: number): FixedPoint;
+/**
+* Get the maximum of this number and another.
+*/
+  max(other: Numberish, decimals?: number): FixedPoint;
+/**
+* Clamp this number to a range.
+*/
+  clamp(min: Numberish, max: Numberish, decimals?: number): FixedPoint;
+/**
 * Get the scaled bigint representation of this fixed-point number.
 */
   readonly bigint: bigint;
@@ -229,6 +265,15 @@ export interface InitOutput {
   readonly fixedpoint_divDown: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_divUp: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_pow: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_eq: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_ne: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_gt: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_gte: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_lt: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_lte: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_min: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_max: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_clamp: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
