@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
@@ -5,7 +6,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -257,11 +257,10 @@ export function OpenLongForm({
                 {`$${formatBalance({
                   balance:
                     activeTokenPrice && depositAmountAsBigInt
-                      ? dnum.multiply(
-                          [activeTokenPrice, activeToken.decimals],
-                          [depositAmountAsBigInt, activeToken.decimals],
+                      ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
+                          activeTokenPrice,
                           activeToken.decimals,
-                        )[0]
+                        ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
                   places: 2,
