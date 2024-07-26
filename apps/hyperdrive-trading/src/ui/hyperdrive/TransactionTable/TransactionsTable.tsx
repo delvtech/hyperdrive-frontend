@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -240,10 +241,10 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           row.original.withdrawalShares &&
           row.original.lpSharePrice
         ) {
-          const baseQueuedForWithdrawal = dnum.multiply(
-            [row.original.withdrawalShares, hyperdrive.decimals],
-            [row.original.lpSharePrice, hyperdrive.decimals],
-          )[0];
+          const baseQueuedForWithdrawal = fixed(
+            row.original.withdrawalShares,
+            hyperdrive.decimals,
+          ).mul(row.original.lpSharePrice, hyperdrive.decimals).bigint;
 
           const baseQueuedForWithdrawalLabel =
             formatBaseQueuedForWithdrawalLabel(
@@ -312,10 +313,10 @@ function formatTransactionTableMobileData(
     row.withdrawalShares &&
     row.lpSharePrice
   ) {
-    const baseQueuedForWithdrawal = dnum.multiply(
-      [row.withdrawalShares, hyperdrive.decimals],
-      [row.lpSharePrice, hyperdrive.decimals],
-    )[0];
+    const baseQueuedForWithdrawal = fixed(
+      row.withdrawalShares,
+      hyperdrive.decimals,
+    ).mul(row.lpSharePrice, hyperdrive.decimals).bigint;
 
     baseQueuedForWithdrawalLabel = formatBaseQueuedForWithdrawalLabel(
       baseQueuedForWithdrawal,
