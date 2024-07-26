@@ -280,10 +280,10 @@ pub fn ts(attr: TokenStream, input: TokenStream) -> TokenStream {
             }
 
             // Ensure the attribute is a list
-            let args_list = match attr.parse_meta().unwrap() {
-                Meta::List(list) => list,
+            let args_list = match attr.parse_meta() {
+                Ok(Meta::List(list)) => list,
                 _ => macro_panic!(
-                    "`ts` attribute for field `{}` must be a list, e.g. `#[ts(type = \"{}\")]`.",
+                    "`ts` attribute for field `{}` must be a list, e.g. `#[ts(type = \"Js{}\")]`.",
                     field_name.to_string(),
                     field_name.to_string().to_pascal_case(),
                 ),
