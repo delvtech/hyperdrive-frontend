@@ -294,6 +294,11 @@ impl TsType {
         let chars = str.trim().chars();
 
         for char in chars {
+            if ambiguous_bracket && char != ']' {
+                pending_stack.push(pending_type.unwrap().property(TsType::Base("".to_string())));
+                pending_type = None;
+                ambiguous_bracket = false;
+            }
             match char {
                 ' ' => continue,
                 '|' => {
@@ -758,7 +763,7 @@ fn match_simple_type(rust_type: &str) -> Option<TsType> {
 
         // ethers types
         "U256" | "I256" => ts_type!(bigint),
-        "Address" => ts_type!("`0x${string}`"),
+        "Address" => TsType::from_ts_str("`0x${string}`").unwrap(),
 
         // js_sys types
         "BigInt" => ts_type!(bigint),
