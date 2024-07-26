@@ -152,49 +152,49 @@ export class FixedPoint {
 /**
 * Add a fixed-point number to this one.
 */
-  add(other: Numberish): FixedPoint;
+  add(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Subtract a fixed-point number from this one.
 */
-  sub(other: Numberish): FixedPoint;
+  sub(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another.
 */
-  mul(other: Numberish): FixedPoint;
+  mul(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Divide this fixed-point number by another.
 */
-  div(other: Numberish): FixedPoint;
+  div(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding down.
 */
-  mulDivDown(other: Numberish, divisor: Numberish): FixedPoint;
+  mulDivDown(other: Numberish, divisor: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding up.
 */
-  mulDivUp(other: Numberish, divisor: Numberish): FixedPoint;
+  mulDivUp(other: Numberish, divisor: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another, rounding down.
 */
-  mulDown(other: Numberish): FixedPoint;
+  mulDown(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another, rounding up.
 */
-  mulUp(other: Numberish): FixedPoint;
+  mulUp(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Divide this fixed-point number by another, rounding down.
 */
-  divDown(other: Numberish): FixedPoint;
+  divDown(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Divide this fixed-point number by another, rounding up.
 */
-  divUp(other: Numberish): FixedPoint;
+  divUp(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Raise this fixed-point number to the power of another.
 */
-  pow(other: Numberish): FixedPoint;
+  pow(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Get the scaled bigint representation of this fixed-point number.
 */
@@ -218,17 +218,17 @@ export interface InitOutput {
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_toString: (a: number, b: number) => void;
-  readonly fixedpoint_add: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_sub: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_mul: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_div: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number) => void;
-  readonly fixedpoint_mulDivUp: (a: number, b: number, c: number, d: number) => void;
-  readonly fixedpoint_mulDown: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_mulUp: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_divDown: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_divUp: (a: number, b: number, c: number) => void;
-  readonly fixedpoint_pow: (a: number, b: number, c: number) => void;
+  readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_div: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly fixedpoint_mulDivUp: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly fixedpoint_mulDown: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_mulUp: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_divDown: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_divUp: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_pow: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
