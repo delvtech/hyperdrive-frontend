@@ -1,4 +1,5 @@
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+import { fixed } from "src/fixed-point";
 
 interface AdjustAmountByPercentageOptions {
   /**
@@ -50,26 +51,10 @@ export function adjustAmountByPercentage({
   if (amount < 0n) {
     throw new HyperdriveSdkError("Negative amounts are not allowed");
   }
-
-  // Convert the amountOut to a "decimal-based" bigint by shifting the decimal places
-  const shiftDecimals = 10n ** BigInt(decimals);
-  const amountWithDecimals = amount * shiftDecimals;
-
-  // Calculate the slippage amount
-  const slippageAmount =
-    (amountWithDecimals * percentage) / (100n * shiftDecimals);
-
-  // Subtract the slippage from the amountOut if "down", or add it if "up"
-  let minOutput = amountWithDecimals - slippageAmount;
-  if (direction === "up") {
-    minOutput = amountWithDecimals + slippageAmount;
-  }
-
-  // Handle small values to ensure proper rounding
-  if (minOutput < shiftDecimals && minOutput > 0n) {
-    return 0n;
-  }
-
-  // Convert back to the original decimal places by dividing through with rounding
-  return (minOutput + shiftDecimals / 2n) / shiftDecimals;
+  const slippageAmount = fixed(amount, decimals)
+    .mul(percentage, decimals)
+    .div(100, 0);
+  return direction === "down"
+    ? amount - slippageAmount.bigint
+    : amount + slippageAmount.bigint;
 }
