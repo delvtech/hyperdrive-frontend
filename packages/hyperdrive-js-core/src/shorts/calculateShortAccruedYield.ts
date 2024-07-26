@@ -14,6 +14,7 @@ export function calculateShortAccruedYield({
   // Current Accrued yield = (current share price - checkpoint share price) x
   // number of bonds
   return fixed(endingVaultSharePrice - openVaultSharePrice, decimals).mul(
-    fixed(bondAmount, decimals),
+    bondAmount,
+    decimals,
   ).bigint;
 }
