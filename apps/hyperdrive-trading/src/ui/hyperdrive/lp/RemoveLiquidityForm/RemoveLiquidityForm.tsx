@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
@@ -5,7 +6,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -102,10 +102,10 @@ export function RemoveLiquidityForm({
   // priced in terms of shares
   const isBaseActiveToken = activeWithdrawToken.address === baseToken.address;
   const lpSharePrice = !isBaseActiveToken
-    ? dnum.div(
-        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
-        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
-      )[0]
+    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+        poolInfo?.vaultSharePrice || 0n,
+        baseToken.decimals,
+      ).bigint
     : poolInfo?.lpSharePrice || 0n;
   const {
     setSlippage,

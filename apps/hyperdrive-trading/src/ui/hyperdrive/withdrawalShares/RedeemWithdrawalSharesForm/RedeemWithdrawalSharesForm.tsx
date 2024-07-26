@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
@@ -5,7 +6,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -99,10 +99,10 @@ export function RedeemWithdrawalSharesForm({
   // if withdrawing in shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
   const lpSharePrice = !isBaseTokenWithdrawal
-    ? dnum.div(
-        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
-        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
-      )[0]
+    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+        poolInfo?.vaultSharePrice || 0n,
+        baseToken.decimals,
+      ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
   const minOutputPerShare = adjustAmountByPercentage({
@@ -248,10 +248,10 @@ function convertAmountToWithdrawalShares({
     return;
   }
   // 1 withdrawal share is worth 2 base
-  const unitPriceOfRedeemedWithdrawalShare = dnum.divide(
-    [maxRedeemableBaseProceeds, decimals],
-    [maxWithdrawalSharesRedeemable, decimals],
-  )[0];
+  const unitPriceOfRedeemedWithdrawalShare = fixed(
+    maxRedeemableBaseProceeds,
+    decimals,
+  ).div(maxWithdrawalSharesRedeemable, decimals).bigint;
 
   // convert amount to base if it's not in base
   const finalAmount = asBase
@@ -259,10 +259,10 @@ function convertAmountToWithdrawalShares({
     : convertSharesToBase({ sharesAmount: amount, vaultSharePrice, decimals });
 
   // Therefore, user would be redeeming 5 withdrawal shares
-  const convertedAmountToWithdrawalShares = dnum.divide(
-    [finalAmount, decimals],
-    [unitPriceOfRedeemedWithdrawalShare, decimals],
-  )[0];
+  const convertedAmountToWithdrawalShares = fixed(finalAmount, decimals).div(
+    unitPriceOfRedeemedWithdrawalShare,
+    decimals,
+  ).bigint;
 
   return convertedAmountToWithdrawalShares;
 }
