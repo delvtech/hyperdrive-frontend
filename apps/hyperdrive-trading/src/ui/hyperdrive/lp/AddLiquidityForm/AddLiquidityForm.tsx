@@ -1,3 +1,4 @@
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
@@ -6,7 +7,6 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { calculateRatio } from "src/base/calculateRatio";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -146,10 +146,9 @@ export function AddLiquidityForm({
   // if depositing in shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
   const lpSharePrice = !isBaseActiveToken
-    ? dnum.div(
-        [poolInfo?.lpSharePrice || 0n, baseToken.decimals],
-        [poolInfo?.vaultSharePrice || 0n, baseToken.decimals],
-      )[0]
+    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+        fixed(poolInfo?.vaultSharePrice || 0n, baseToken.decimals),
+      ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
@@ -166,12 +165,12 @@ export function AddLiquidityForm({
   // rate gaurd @ 5% = 0.05
   // minApr = .1 * (1 - .05)
   // maxApr = .1 * (1 + .05)
-  const rateGuard = dnum.from(0.05, 18); // 5% as an 18 digit number
+  const rateGuard = parseFixed(0.05).bigint; // 5% as an 18 digit number
   const minApr = fixedApr
-    ? dnum.mul([fixedApr.apr, 18], dnum.sub([BigInt(1e18), 18], rateGuard))[0]
+    ? fixed(fixedApr.apr).mul(BigInt(1e18) - rateGuard).bigint
     : undefined;
   const maxApr = fixedApr
-    ? dnum.mul([fixedApr.apr, 18], dnum.add([BigInt(1e18), 18], rateGuard))[0]
+    ? fixed(fixedApr.apr, 18).mul(BigInt(1e18) + rateGuard).bigint
     : undefined;
 
   const addLiquidityParams = {
@@ -349,18 +348,9 @@ function calculatePoolShareAfterDeposit(
   if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
     return;
   }
-
-  const newTotalSupplyAfterOpen = dnum.add(
-    [lpSharesOut, hyperdrive.decimals],
-    [lpSharesTotalSupply, hyperdrive.decimals],
-  )[0];
-
   return calculateRatio({
-    a: dnum.add(
-      [lpSharesBalanceOf, hyperdrive.decimals],
-      [lpSharesOut, hyperdrive.decimals],
-    )[0],
-    b: newTotalSupplyAfterOpen,
+    a: lpSharesBalanceOf + lpSharesOut,
+    b: lpSharesTotalSupply + lpSharesOut,
     decimals: baseToken.decimals,
   });
 }
