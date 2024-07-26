@@ -1,3 +1,4 @@
+import * as fixedPoint from "@delvtech/fixed-point-wasm";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import "@usecapsule/react-sdk/styles.css";
@@ -20,6 +21,8 @@ import "src/ui/globals.css";
 import { logAppVersion } from "src/ui/version/logAppVersion";
 import { customRainbowTheme } from "src/ui/wallet/customTheme";
 import { WagmiProvider } from "wagmi";
+
+fixedPoint.initSync(fixedPoint.wasmBuffer);
 
 const container = document.getElementById("root") as HTMLDivElement;
 const root = createRoot(container);
