@@ -1,4 +1,4 @@
-import * as dnum from "dnum";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 
 /**
@@ -25,10 +25,10 @@ export function calculateEquivalentShareValue({
   totalReferenceValue: bigint;
   decimals: number;
 }): bigint {
-  const referenceSharePrice = dnum.divide(
-    [totalReferenceValue, decimals],
-    [referenceShares, decimals],
-  )[0];
+  const referenceSharePrice = fixed(totalReferenceValue, decimals).div(
+    referenceShares,
+    decimals,
+  ).bigint;
 
   return calculateValueFromPrice({
     decimals,
