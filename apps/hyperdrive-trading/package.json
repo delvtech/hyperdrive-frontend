@@ -26,6 +26,7 @@
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
+    "@delvtech/fixed-point-wasm": "^0.0.2",
     "@delvtech/gopher": "*",
     "@delvtech/hyperdrive-viem": "^2.3.0",
     "@heroicons/react": "^2.0.16",
@@ -82,10 +83,10 @@
     "prettier-plugin-tailwindcss": "^0.5.13",
     "tailwindcss": "^3.4.3",
     "tailwindcss-debug-screens": "2.2.1",
-    "typescript": "^5.0.2",
-    "vite": "^4.1.0",
-    "vite-plugin-node-polyfills": "^0.21.0",
-    "vite-tsconfig-paths": "^4.0.5",
-    "vitest": "^0.28.5"
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.4"
   }
 }
