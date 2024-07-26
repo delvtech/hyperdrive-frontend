@@ -1,5 +1,5 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { format } from "d3-format";
-import * as dnum from "dnum";
 
 /**
  * Formats a number to a short scale representation, eg: 99,830,500 becomes "99.83M"
@@ -15,7 +15,7 @@ export function formatCompact({
   value: bigint;
   decimals: number;
 }): string {
-  const convertedToNumber = dnum.toNumber([value, decimals], decimals);
+  const convertedToNumber = fixed(value, decimals).toNumber();
   let formatter = format(".3s");
 
   if (convertedToNumber < 1) {
