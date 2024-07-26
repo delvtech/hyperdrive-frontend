@@ -351,7 +351,7 @@ pub fn ts(attr: TokenStream, input: TokenStream) -> TokenStream {
         };
         let ts_doc_comment = match doc_lines.is_empty() {
             true => "".to_string(),
-            false => format!("/**\n   * {}\n   */\n  ", doc_lines.join("\n   * ")),
+            false => format!("/**\n   *{}\n   */\n  ", doc_lines.join("\n   *")),
         };
         ts_fields.push(format!(
             "{ts_doc_comment}{ts_field_name}{optional_char}: {ts_field_type};"

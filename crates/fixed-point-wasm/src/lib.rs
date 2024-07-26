@@ -10,7 +10,7 @@ use delv_core::{
 };
 use ethers::types::U256;
 use fixedpointmath::{uint256, FixedPoint};
-use js_sys::{parse_float, BigInt, JsString};
+use js_sys::{parse_float, Array, BigInt, Intl, JsString, Object, Reflect};
 use rand::{thread_rng, Rng};
 use ts_macro::ts;
 use utils::fixed;
@@ -145,12 +145,64 @@ impl Fixed {
         parse_float(&self.inner.to_string())
     }
 
-    /// Get the formatted string representation of this fixed-point number.
+    /// Get the decimal string representation of this fixed-point number.
     #[wasm_bindgen(skip_jsdoc, js_name = toString)]
     pub fn to_string(&self) -> String {
         let decimals_delta = 18 - self.decimals;
         let str = self.inner.to_string();
         str[..str.len() - decimals_delta as usize].to_string()
+    }
+
+    /// Format this fixed-point number for display.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn format(&self, options: Option<IFormatOptions>) -> Result<JsString, Error> {
+        let options = options.unwrap_or_default();
+        let options_obj = Object::new();
+
+        if let Some(display) = options.compact_display() {
+            Reflect::set(&options_obj, &"notation".into(), &"compact".into())?;
+            Reflect::set(&options_obj, &"compactDisplay".into(), &display.into())?;
+        }
+
+        let has_decimals = options.decimals().is_some();
+        if options.compact_display().is_none() || has_decimals {
+            Reflect::set(
+                &options_obj,
+                &"maximumFractionDigits".into(),
+                &options.decimals().unwrap_or(self.decimals).into(),
+            )?;
+        }
+
+        if options.trailing_zeros() == Some(true)
+            || (has_decimals && options.trailing_zeros() != Some(false))
+        {
+            Reflect::set(
+                &options_obj,
+                &"minimumFractionDigits".into(),
+                &options.decimals().unwrap_or(self.decimals).into(),
+            )?;
+        }
+
+        if let Some(mode) = options.rounding() {
+            Reflect::set(&options_obj, &"roundingMode".into(), &mode.into())?;
+        }
+
+        if let Some(group) = options.group() {
+            Reflect::set(&options_obj, &"useGrouping".into(), &group.into())?;
+        }
+
+        let locales_str = match options.locale() {
+            Some(locale) => locale,
+            _ => "en-US".to_string(),
+        };
+        let locales_arr = Array::of1(&locales_str.into());
+
+        let formatter = Intl::NumberFormat::new(&locales_arr, &options_obj);
+        Ok(formatter
+            .format()
+            .call1(&JsValue::NULL, &self.to_string().into())
+            .to_result()?
+            .into())
     }
 
     /// Add a fixed-point number to this one.
@@ -428,4 +480,102 @@ struct GenerateRandomParams {
     max: Option<Numberish>,
     /// The number of decimal places to use. Max is `18`. Defaults to `18`.
     decimals: Option<u8>,
+}
+
+#[ts]
+struct FormatOptions {
+    /// The number of decimal places to display. Defaults to the number of
+    /// decimal places in the fixed-point number, or `0` if compact display is
+    /// enabled.
+    decimals: Option<u8>,
+
+    /// Whether to include trailing zeros. Defaults to `false`.
+    trailing_zeros: Option<bool>,
+
+    /// The rounding mode to use.
+    ///
+    /// `"ceil"`:
+    ///
+    /// Round toward +∞. Positive values round up. Negative values round "more
+    /// positive".
+    ///
+    /// `"floor"`:
+    ///
+    /// Round toward -∞. Positive values round down. Negative values round "more
+    /// negative".
+    ///
+    /// `"expand"`:
+    ///
+    /// round away from 0. The magnitude of the value is always increased by
+    /// rounding. Positive values round up. Negative values round "more
+    /// negative".
+    ///
+    /// `"trunc"`:
+    ///
+    /// Round toward 0. This magnitude of the value is always reduced by
+    /// rounding. Positive values round down. Negative values round "less
+    /// negative".
+    ///
+    /// `"halfCeil"`:
+    ///
+    /// ties toward +∞. Values above the half-increment round like `ceil`
+    /// (towards +∞), and below like `floor` (towards -∞). On the
+    /// half-increment, values round like `ceil`.
+    ///
+    /// `"halfFloor"`:
+    ///
+    /// Ties toward -∞. Values above the half-increment round like `ceil`
+    /// (towards +∞), and below like `floor` (towards -∞). On the
+    /// half-increment, values round like `floor`.
+    ///
+    /// `"halfExpand"`:
+    ///
+    /// Ties away from 0. Values above the half-increment round like `expand`
+    /// (away from zero), and below like `trunc` (towards 0). On the
+    /// half-increment, values round like `expand`.
+    ///
+    /// `"halfTrunc"`:
+    ///
+    /// Ties toward 0. Values above the half-increment round like `expand` (away
+    /// from zero), and below like `trunc` (towards 0). On the half-increment,
+    /// values round like `trunc`.
+    ///
+    /// `"halfEven"`:
+    ///
+    /// Ties towards the nearest even integer. Values above the half-increment
+    /// round like `expand` (away from zero), and below like `trunc` (towards
+    /// 0). On the half-increment values round towards the nearest even digit.
+    ///
+    /// @default "halfExpand"
+    ///
+    /// @see [MDN - NumberFormat - roundingMode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#roundingmode)
+    #[ts(
+        type = "'ceil' | 'floor' | 'expand' | 'trunc' | 'halfCeil' | 'halfFloor' | 'halfExpand' | 'halfTrunc' | 'halfEven'"
+    )]
+    rounding: Option<String>,
+
+    /// The locale to use for formatting. Defaults to `"en-US"`.
+    ///
+    /// @see [Unicode BCP 47 Locale Identifier](https://unicode.org/reports/tr35/#Unicode_locale_identifier)
+    #[ts(type = "Intl.UnicodeBCP47LocaleIdentifier")]
+    locale: Option<String>,
+
+    /// Whether to use grouping separators, i.e. commas. Defaults to `true`.
+    ///
+    /// @see [MDN - NumberFormat - useGrouping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#usegrouping)
+    group: Option<bool>,
+
+    /// The compact display mode to use, if any. Defaults to `undefined`.
+    ///
+    /// @see [MDN - NumberFormat - compactDisplay](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#compactdisplay)
+    #[ts(type = "Intl.NumberFormatOptions['compactDisplay']")]
+    compact_display: Option<String>,
+}
+
+impl Default for IFormatOptions {
+    fn default() -> Self {
+        IFormatOptions {
+            obj: Object::new().into(),
+        }
+    }
 }
