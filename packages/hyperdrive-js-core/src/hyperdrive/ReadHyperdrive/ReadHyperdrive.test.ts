@@ -1,6 +1,6 @@
-import * as dnum from "dnum";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/checkpoint/types";
+import { parseFixed } from "src/fixed-point";
 import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
@@ -71,8 +71,8 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
       args: {
         extraData: "0x",
         assetId: 1n,
-        amount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("1.3", 18)[0],
+        amount: parseFixed("1").bigint,
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: 1729209600n,
         vaultSharePrice: 1n,
         asBase: false,
@@ -84,8 +84,8 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
       args: {
         extraData: "0x",
         assetId: 2n,
-        amount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("1.4", 18)[0],
+        amount: parseFixed("1").bigint,
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: 1733961600n,
         asBase: false,
         trader: ALICE,
@@ -105,10 +105,10 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
         destination: BOB,
         // received back 1 base
         asBase: true,
-        amount: dnum.from("1", 18)[0],
+        amount: parseFixed("1").bigint,
         vaultSharePrice: 0n,
         // closed out 0.9 bonds
-        bondAmount: dnum.from("0.9", 18)[0],
+        bondAmount: parseFixed("0.9").bigint,
       },
     },
   ]);
@@ -119,12 +119,12 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
       args: {
         extraData: "0x",
         assetId: 3n,
-        amount: dnum.from("1", 18)[0],
-        bondAmount: dnum.from("100", 18)[0],
+        amount: parseFixed("1").bigint,
+        bondAmount: parseFixed("100").bigint,
         maturityTime: 1729296000n,
         vaultSharePrice: 1n,
         asBase: false,
-        baseProceeds: dnum.from("100", 18)[0],
+        baseProceeds: parseFixed("100").bigint,
         trader: BOB,
       },
     },
@@ -133,12 +133,12 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
       args: {
         extraData: "0x",
         assetId: 4n,
-        amount: dnum.from("2", 18)[0],
-        bondAmount: dnum.from("190", 18)[0],
+        amount: parseFixed("2").bigint,
+        bondAmount: parseFixed("190").bigint,
         maturityTime: 1729296000n,
         vaultSharePrice: 1n,
         asBase: false,
-        baseProceeds: dnum.from("190", 18)[0],
+        baseProceeds: parseFixed("190").bigint,
         trader: BOB,
       },
     },
@@ -149,9 +149,9 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
   const value = await readHyperdrive.getTradingVolume();
 
   expect(value).toEqual({
-    shortVolume: dnum.from("290", 18)[0], // sum of bondAmount in short events
-    longVolume: dnum.from("3.6", 18)[0], // sum of bondAmount in long events
-    totalVolume: dnum.from("293.6", 18)[0],
+    shortVolume: parseFixed("290").bigint, // sum of bondAmount in short events
+    longVolume: parseFixed("3.6").bigint, // sum of bondAmount in long events
+    totalVolume: parseFixed("293.6").bigint,
   });
 });
 
@@ -174,14 +174,14 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
   // The pool info gives us the current price
   contract.stubRead({
     functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.01", 18)[0] },
+    value: { ...simplePoolInfo, vaultSharePrice: parseFixed("1.01").bigint },
   });
 
   // The checkpoint gives us the price when the bond was opened
   contract.stubRead({
     functionName: "getCheckpoint",
     value: {
-      vaultSharePrice: dnum.from("1.008", 18)[0],
+      vaultSharePrice: parseFixed("1.008").bigint,
       weightedSpotPrice: 0n,
       lastWeightedSpotPriceUpdateTime: 0n,
     },
@@ -189,13 +189,13 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: 0n,
-    bondAmount: dnum.from("100", 18)[0],
+    bondAmount: parseFixed("100").bigint,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
   // of 1.008 and the current price is 1.01, your accrued profit would
   // be 0.20.
-  expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
+  expect(accruedYield).toEqual(parseFixed("0.20").bigint);
 });
 
 test("getShortAccruedYield should return the amount of yield a mature position has earned", async () => {
@@ -218,7 +218,7 @@ test("getShortAccruedYield should return the amount of yield a mature position h
     functionName: "getCheckpoint",
     args: { _checkpointTime: 1n },
     value: {
-      vaultSharePrice: dnum.from("1.008", 18)[0],
+      vaultSharePrice: parseFixed("1.008").bigint,
       weightedSpotPrice: 0n,
       lastWeightedSpotPriceUpdateTime: 0n,
     },
@@ -229,7 +229,7 @@ test("getShortAccruedYield should return the amount of yield a mature position h
     functionName: "getCheckpoint",
     args: { _checkpointTime: 86401n },
     value: {
-      vaultSharePrice: dnum.from("1.01", 18)[0],
+      vaultSharePrice: parseFixed("1.01").bigint,
       weightedSpotPrice: 0n,
       lastWeightedSpotPriceUpdateTime: 0n,
     },
@@ -237,13 +237,13 @@ test("getShortAccruedYield should return the amount of yield a mature position h
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: 1n,
-    bondAmount: dnum.from("100", 18)[0],
+    bondAmount: parseFixed("100").bigint,
   });
 
   // If you opened a short position on 100 bonds at a previous checkpoint price
   // of 1.008 and the price was 1.01 at maturity, your accrued profit would
   // be 0.20.
-  expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
+  expect(accruedYield).toEqual(parseFixed("0.20").bigint);
 });
 
 test("getCheckpointEvents should return an array of CheckpointEvents", async () => {
@@ -296,10 +296,10 @@ test("getOpenLongs should account for longs opened with base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.3", 18)[0],
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -311,10 +311,10 @@ test("getOpenLongs should account for longs opened with base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
+        amount: parseFixed("1").bigint,
         vaultSharePrice: 1n,
         // received bonds
-        bondAmount: dnum.from("1.4", 18)[0],
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -354,10 +354,10 @@ test("getOpenLongs should account for longs opened with shares", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in shares
-        vaultSharePrice: dnum.from("1.15", 18)[0],
-        amount: dnum.from("1", 18)[0],
+        vaultSharePrice: parseFixed("1.15").bigint,
+        amount: parseFixed("1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.3", 18)[0],
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: timestamp,
         asBase: false,
         trader: BOB,
@@ -369,10 +369,10 @@ test("getOpenLongs should account for longs opened with shares", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in shares
-        vaultSharePrice: dnum.from("1.2", 18)[0],
-        amount: dnum.from("1", 18)[0],
+        vaultSharePrice: parseFixed("1.2").bigint,
+        amount: parseFixed("1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.4", 18)[0],
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: timestamp,
         asBase: false,
         trader: BOB,
@@ -387,8 +387,8 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountPaid: dnum.from("2.35", 18)[0], // Bob paid in shares, for the equivalent cost of 2.35 base
-      bondAmount: dnum.from("2.7", 18)[0], // Bob received a total of 2.7 bond
+      baseAmountPaid: parseFixed("2.35").bigint, // Bob paid in shares, for the equivalent cost of 2.35 base
+      bondAmount: parseFixed("2.7").bigint, // Bob received a total of 2.7 bond
       maturity: 1708545600n,
     },
   ]);
@@ -412,11 +412,11 @@ test("getOpenLongs should account for longs partially closed to base", async () 
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // received bonds
-        bondAmount: dnum.from("1.3", 18)[0],
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -428,10 +428,10 @@ test("getOpenLongs should account for longs partially closed to base", async () 
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.4", 18)[0],
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -450,11 +450,11 @@ test("getOpenLongs should account for longs partially closed to base", async () 
 
         // received back 1 base
         asBase: true,
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // closed out 0.9 bonds
-        bondAmount: dnum.from("0.9", 18)[0],
+        bondAmount: parseFixed("0.9").bigint,
       },
     },
   ]);
@@ -491,11 +491,11 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // received bonds
-        bondAmount: dnum.from("1.3", 18)[0],
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -507,10 +507,10 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.4", 18)[0],
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -529,11 +529,11 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
 
         // received back 1 base
         asBase: true,
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // closed out 0.9 bonds
-        bondAmount: dnum.from("0.9", 18)[0],
+        bondAmount: parseFixed("0.9").bigint,
       },
     },
   ]);
@@ -545,11 +545,11 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // received bonds
-        bondAmount: dnum.from("1.3", 18)[0],
+        bondAmount: parseFixed("1.3").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -561,10 +561,10 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("1", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("1").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         // received bonds
-        bondAmount: dnum.from("1.4", 18)[0],
+        bondAmount: parseFixed("1.4").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -584,11 +584,11 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
 
         // received back 2.5 base
         asBase: true,
-        amount: dnum.from("2.5", 18)[0],
-        vaultSharePrice: dnum.from("1.19", 18)[0],
+        amount: parseFixed("2.5").bigint,
+        vaultSharePrice: parseFixed("1.19").bigint,
 
         // closed out 2.7 bonds
-        bondAmount: dnum.from("2.7", 18)[0],
+        bondAmount: parseFixed("2.7").bigint,
       },
     },
   ]);
@@ -613,10 +613,10 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
         assetId:
           452312848583266388373324160190187140051835877600158453279131187532625961856n,
         maturityTime: 1715299200n,
-        amount: dnum.from("2000", 18)[0],
-        vaultSharePrice: dnum.from("1.0002871459674", 18)[0],
+        amount: parseFixed("2000").bigint,
+        vaultSharePrice: parseFixed("1.0002871459674").bigint,
         asBase: true,
-        bondAmount: dnum.from("2020.518819362004558105", 18)[0],
+        bondAmount: parseFixed("2020.518819362004558105").bigint,
       },
       blockNumber: 1n,
       data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c6b935b8bbd40000000000000000000000000000000000000000000000000006c639ba602f70a9a7f000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
@@ -631,10 +631,10 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
         assetId:
           452312848583266388373324160190187140051835877600158453279131187532625961856n,
         maturityTime: 1715299200n,
-        amount: dnum.from("9.0931", 18)[0],
-        vaultSharePrice: dnum.from("1.0003519789758", 18)[0],
+        amount: parseFixed("9.0931").bigint,
+        vaultSharePrice: parseFixed("1.0003519789758").bigint,
         asBase: true,
-        bondAmount: dnum.from("9.196435772384927298", 18)[0],
+        bondAmount: parseFixed("9.196435772384927298").bigint,
       },
       blockNumber: 3n,
       data: "0x00000000000000000000000000000000000000000000000000000000663d63800000000000000000000000000000000000000000000000007e312e45cf1ac0000000000000000000000000000000000000000000000000007e25d062e6d4586900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000007fa04d9c34b2de42",
@@ -653,10 +653,10 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
         assetId:
           452312848583266388373324160190187140051835877600158453279131187532625961856n,
         maturityTime: 1715299200n,
-        amount: dnum.from("1998.524066158245200112", 18)[0],
-        vaultSharePrice: dnum.from("1.0002973144644", 18)[0],
+        amount: parseFixed("1998.524066158245200112").bigint,
+        vaultSharePrice: parseFixed("1.0002973144644").bigint,
         asBase: true,
-        bondAmount: dnum.from("2020.518819362004558105", 18)[0],
+        bondAmount: parseFixed("2020.518819362004558105").bigint,
       },
       blockNumber: 2n,
       data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c5717c9895f7a40f000000000000000000000000000000000000000000000006c4ed96d6708a25d07000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
@@ -672,8 +672,8 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
     {
       assetId:
         452312848583266388373324160190187140051835877600158453279131187532625961856n,
-      baseAmountPaid: dnum.from("9.0931", 18)[0],
-      bondAmount: dnum.from("9.196435772384927298", 18)[0],
+      baseAmountPaid: parseFixed("9.0931").bigint,
+      bondAmount: parseFixed("9.196435772384927298").bigint,
       maturity: 1715299200n,
     },
   ]);
@@ -699,10 +699,10 @@ test("getOpenLongs should account for longs partially closed to shares", async (
         assetId: 1n,
         // paid for in base
         asBase: true,
-        amount: dnum.from("2", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("2").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         // received bonds
-        bondAmount: dnum.from("2.2", 18)[0],
+        bondAmount: parseFixed("2.2").bigint,
         maturityTime: timestamp,
         trader: BOB,
       },
@@ -722,11 +722,11 @@ test("getOpenLongs should account for longs partially closed to shares", async (
 
         // received back 0.8 shares
         asBase: false,
-        amount: dnum.from("0.88", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("0.88").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // closed out 1.1 bonds
-        bondAmount: dnum.from("1.1", 18)[0],
+        bondAmount: parseFixed("1.1").bigint,
       },
     },
   ]);
@@ -736,8 +736,8 @@ test("getOpenLongs should account for longs partially closed to shares", async (
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountPaid: dnum.from("1.032", 18)[0],
-      bondAmount: dnum.from("1.1", 18)[0],
+      baseAmountPaid: parseFixed("1.032").bigint,
+      bondAmount: parseFixed("1.1").bigint,
       maturity: 1708545600n,
     },
   ]);
@@ -761,11 +761,11 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
         extraData: "0x",
         assetId: 1n,
         // paid for in base
-        amount: dnum.from("2", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("2").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // received bonds
-        bondAmount: dnum.from("2.2", 18)[0],
+        bondAmount: parseFixed("2.2").bigint,
         maturityTime: timestamp,
         asBase: true,
         trader: BOB,
@@ -786,11 +786,11 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
 
         // received back 2 shares, and no base
         asBase: false,
-        amount: dnum.from("2.2", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("2.2").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
 
         // closed out 2.2 bonds
-        bondAmount: dnum.from("2.2", 18)[0],
+        bondAmount: parseFixed("2.2").bigint,
       },
     },
   ]);
@@ -822,11 +822,11 @@ test("getClosedLongs should account for closing out to base", async () => {
 
         // received back 2.2 base, and no shares
         asBase: true,
-        amount: dnum.from("2.2", 18)[0],
-        vaultSharePrice: dnum.from("2.0", 18)[0],
+        amount: parseFixed("2.2").bigint,
+        vaultSharePrice: parseFixed("2.0").bigint,
 
         // closed out 2.0 bonds
-        bondAmount: dnum.from("2.0", 18)[0],
+        bondAmount: parseFixed("2.0").bigint,
       },
     },
   ]);
@@ -835,9 +835,9 @@ test("getClosedLongs should account for closing out to base", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmount: dnum.from("2.2", 18)[0],
+      baseAmount: parseFixed("2.2").bigint,
       baseAmountPaid: 0n,
-      bondAmount: dnum.from("2.0", 18)[0],
+      bondAmount: parseFixed("2.0").bigint,
       closedTimestamp: 123456789n,
       maturity: 1708545600n,
     },
@@ -868,11 +868,11 @@ test("getClosedLongs should account for closing out to shares", async () => {
 
         // received back 1.9 shares, and no base
         asBase: false,
-        vaultSharePrice: dnum.from("1.1", 18)[0],
-        amount: dnum.from("1.9", 18)[0],
+        vaultSharePrice: parseFixed("1.1").bigint,
+        amount: parseFixed("1.9").bigint,
 
         // closed out 2 bonds
-        bondAmount: dnum.from("2.0", 18)[0],
+        bondAmount: parseFixed("2.0").bigint,
       },
     },
   ]);
@@ -884,9 +884,9 @@ test("getClosedLongs should account for closing out to shares", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmount: dnum.from("2.09", 18)[0],
+      baseAmount: parseFixed("2.09").bigint,
       baseAmountPaid: 0n,
-      bondAmount: dnum.from("2.0", 18)[0],
+      bondAmount: parseFixed("2.0").bigint,
       closedTimestamp: 123456789n,
       maturity: 1708545600n,
     },
@@ -913,11 +913,11 @@ test("getOpenShorts should account for shorts opened with base", async () => {
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("0.721996107012129147", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -928,11 +928,11 @@ test("getOpenShorts should account for shorts opened with base", async () => {
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.72527013345635719", 18)[0],
-        vaultSharePrice: dnum.from("0.721952948135251528", 18)[0],
+        amount: parseFixed("0.72527013345635719").bigint,
+        vaultSharePrice: parseFixed("0.721952948135251528").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288611983218631127", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288611983218631127").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
   ]);
@@ -952,10 +952,10 @@ test("getOpenShorts should account for shorts opened with base", async () => {
     {
       assetId: 1n,
       checkpointTime: 1713798000n,
-      baseAmountPaid: dnum.from("1.450580466488873595", 18)[0],
-      bondAmount: dnum.from("100", 18)[0],
-      baseProceeds: dnum.from("98.576966043666144584", 18)[0],
-      fixedRatePaid: dnum.from("0.175635145784387390", 18)[0],
+      baseAmountPaid: parseFixed("1.450580466488873595").bigint,
+      bondAmount: parseFixed("100").bigint,
+      baseProceeds: parseFixed("98.576966043666144584").bigint,
+      fixedRatePaid: parseFixed("0.175635145784387390").bigint,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       maturity: 1716336000n,
       openedTimestamp: 1713801432n,
@@ -983,11 +983,11 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.721996107012129147", 18)[0],
-        vaultSharePrice: dnum.from("1.004590365499", 18)[0],
+        amount: parseFixed("0.721996107012129147").bigint,
+        vaultSharePrice: parseFixed("1.004590365499").bigint,
         asBase: false,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -998,11 +998,11 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.721952948135251528", 18)[0],
-        vaultSharePrice: dnum.from("1.004594738936", 18)[0],
+        amount: parseFixed("0.721952948135251528").bigint,
+        vaultSharePrice: parseFixed("1.004594738936").bigint,
         asBase: false,
-        baseProceeds: dnum.from("49.288611983218631127", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288611983218631127").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
   ]);
@@ -1022,10 +1022,10 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
     {
       assetId: 1n,
       checkpointTime: 1713798000n,
-      baseAmountPaid: dnum.from("1.450580466488178492", 18)[0],
-      bondAmount: dnum.from("100", 18)[0],
-      baseProceeds: dnum.from("98.576966043666144584", 18)[0],
-      fixedRatePaid: dnum.from("0.175635145784387390", 18)[0],
+      baseAmountPaid: parseFixed("1.450580466488178492").bigint,
+      bondAmount: parseFixed("100").bigint,
+      baseProceeds: parseFixed("98.576966043666144584").bigint,
+      fixedRatePaid: parseFixed("0.175635145784387390").bigint,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
       maturity: 1716336000n,
       openedTimestamp: 1713801432n,
@@ -1054,11 +1054,11 @@ test("getOpenShorts should account for shorts partially closed to base", async (
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("0.721996107012129147", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1070,11 +1070,11 @@ test("getOpenShorts should account for shorts partially closed to base", async (
         destination: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.357390566309610627", 18)[0],
-        vaultSharePrice: dnum.from("0.355730805024955393", 18)[0],
+        amount: parseFixed("0.357390566309610627").bigint,
+        vaultSharePrice: parseFixed("0.355730805024955393").bigint,
         asBase: true,
-        basePayment: dnum.from("24.651318786405479294", 18)[0],
-        bondAmount: dnum.from("25", 18)[0],
+        basePayment: parseFixed("24.651318786405479294").bigint,
+        bondAmount: parseFixed("25").bigint,
       },
     },
   ] as const;
@@ -1088,12 +1088,12 @@ test("getOpenShorts should account for shorts partially closed to base", async (
   expect(value).toEqual([
     {
       assetId: 1n,
-      bondAmount: dnum.from("25", 18)[0],
-      baseAmountPaid: dnum.from("0.367919766722905778", 18)[0],
-      baseProceeds: dnum.from("24.637035274042034163", 18)[0],
+      bondAmount: parseFixed("25").bigint,
+      baseAmountPaid: parseFixed("0.367919766722905778").bigint,
+      baseProceeds: parseFixed("24.637035274042034163").bigint,
       checkpointTime: 123454800n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
-      fixedRatePaid: dnum.from("0.179245221000329770", 18)[0],
+      fixedRatePaid: parseFixed("0.179245221000329770").bigint,
       maturity: 1716336000n,
       openedTimestamp: 123456789n,
     },
@@ -1120,11 +1120,11 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("0.721996107012129147", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1136,11 +1136,11 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
         destination: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.357390566309610627", 18)[0],
-        vaultSharePrice: dnum.from("0.355730805024955393", 18)[0],
+        amount: parseFixed("0.357390566309610627").bigint,
+        vaultSharePrice: parseFixed("0.355730805024955393").bigint,
         asBase: true,
-        basePayment: dnum.from("24.651318786405479294", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        basePayment: parseFixed("24.651318786405479294").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
   ] as const;
@@ -1175,11 +1175,11 @@ test("getOpenShorts should account for shorts partially closed to shares", async
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("1.004590365499", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("1.004590365499").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1191,11 +1191,11 @@ test("getOpenShorts should account for shorts partially closed to shares", async
         destination: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.355730805024955393", 18)[0],
-        vaultSharePrice: dnum.from("1.004665778901", 18)[0],
+        amount: parseFixed("0.355730805024955393").bigint,
+        vaultSharePrice: parseFixed("1.004665778901").bigint,
         asBase: false,
-        basePayment: dnum.from("24.651318786405479294", 18)[0],
-        bondAmount: dnum.from("25", 18)[0],
+        basePayment: parseFixed("24.651318786405479294").bigint,
+        bondAmount: parseFixed("25").bigint,
       },
     },
   ] as const;
@@ -1209,12 +1209,12 @@ test("getOpenShorts should account for shorts partially closed to shares", async
   expect(value).toEqual([
     {
       assetId: 1n,
-      bondAmount: dnum.from("25", 18)[0],
-      baseAmountPaid: dnum.from("0.367919766723039831", 18)[0],
-      baseProceeds: dnum.from("24.637035274042034163", 18)[0],
+      bondAmount: parseFixed("25").bigint,
+      baseAmountPaid: parseFixed("0.367919766723039831").bigint,
+      baseProceeds: parseFixed("24.637035274042034163").bigint,
       checkpointTime: 123454800n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
-      fixedRatePaid: dnum.from("0.179245221000329770", 18)[0],
+      fixedRatePaid: parseFixed("0.179245221000329770").bigint,
       maturity: 1716336000n,
       openedTimestamp: 123456789n,
     },
@@ -1241,11 +1241,11 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("1.004590365499", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("1.004590365499").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1257,11 +1257,11 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
         destination: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        vaultSharePrice: dnum.from("1.004665778901", 18)[0],
-        amount: dnum.from("0.355730805024955393", 18)[0],
+        vaultSharePrice: parseFixed("1.004665778901").bigint,
+        amount: parseFixed("0.355730805024955393").bigint,
         asBase: false,
-        basePayment: dnum.from("24.651318786405479294", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        basePayment: parseFixed("24.651318786405479294").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
   ] as const;
@@ -1289,7 +1289,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
   // pool info to get the price of shares at the time he closes the short
   contract.stubRead({
     functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    value: { ...simplePoolInfo, vaultSharePrice: parseFixed("1.1").bigint },
     options: { blockNumber: 5n },
   });
 
@@ -1312,11 +1312,11 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("1.004590365499", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("1.004590365499").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1328,11 +1328,11 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
         destination: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.355730805024955393", 18)[0],
-        vaultSharePrice: dnum.from("1.004665778901", 18)[0],
+        amount: parseFixed("0.355730805024955393").bigint,
+        vaultSharePrice: parseFixed("1.004665778901").bigint,
         asBase: false,
-        basePayment: dnum.from("24.651318786405479294", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        basePayment: parseFixed("24.651318786405479294").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
     {
@@ -1343,11 +1343,11 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
         trader: BOB,
         assetId: 1n,
         maturityTime: 1716336000n,
-        amount: dnum.from("0.725310333032516405", 18)[0],
-        vaultSharePrice: dnum.from("1.004590365499", 18)[0],
+        amount: parseFixed("0.725310333032516405").bigint,
+        vaultSharePrice: parseFixed("1.004590365499").bigint,
         asBase: true,
-        baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-        bondAmount: dnum.from("50", 18)[0],
+        baseProceeds: parseFixed("49.288354060447513457").bigint,
+        bondAmount: parseFixed("50").bigint,
       },
     },
   ] as const;
@@ -1364,10 +1364,10 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountPaid: dnum.from("0.725310333032516405", 18)[0],
-      bondAmount: dnum.from("50", 18)[0],
-      baseProceeds: dnum.from("49.288354060447513457", 18)[0],
-      fixedRatePaid: dnum.from("0.175667439018216348", 18)[0],
+      baseAmountPaid: parseFixed("0.725310333032516405").bigint,
+      bondAmount: parseFixed("50").bigint,
+      baseProceeds: parseFixed("49.288354060447513457").bigint,
+      fixedRatePaid: parseFixed("0.175667439018216348").bigint,
       maturity: 1716336000n,
       checkpointTime: 123454800n,
       openedTimestamp: 123456789n,
@@ -1396,13 +1396,13 @@ test("getClosedShorts should account for shorts closed to base", async () => {
         extraData: "0x",
         assetId: 1n,
         asBase: true,
-        amount: dnum.from("2", 18)[0], // closed out to base
-        vaultSharePrice: dnum.from("1.8", 18)[0], // did not close out to shares
-        bondAmount: dnum.from("100", 18)[0],
+        amount: parseFixed("2").bigint, // closed out to base
+        vaultSharePrice: parseFixed("1.8").bigint, // did not close out to shares
+        bondAmount: parseFixed("100").bigint,
         maturityTime: timestamp,
         trader: BOB,
         destination: BOB,
-        basePayment: dnum.from("2", 18)[0], // did not close out to base
+        basePayment: parseFixed("2").bigint, // did not close out to base
       },
     },
   ]);
@@ -1414,8 +1414,8 @@ test("getClosedShorts should account for shorts closed to base", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountReceived: dnum.from("2", 18)[0],
-      bondAmount: dnum.from("100", 18)[0],
+      baseAmountReceived: parseFixed("2").bigint,
+      bondAmount: parseFixed("100").bigint,
       checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
@@ -1447,13 +1447,13 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
         extraData: "0x",
         assetId: 1n,
         asBase: false,
-        vaultSharePrice: dnum.from("1.1", 18)[0],
-        amount: dnum.from("1.1", 18)[0], // closed out to shares
-        bondAmount: dnum.from("100", 18)[0],
+        vaultSharePrice: parseFixed("1.1").bigint,
+        amount: parseFixed("1.1").bigint, // closed out to shares
+        bondAmount: parseFixed("100").bigint,
         maturityTime: timestamp,
         trader: BOB,
         destination: BOB,
-        basePayment: dnum.from("1.21", 18)[0],
+        basePayment: parseFixed("1.21").bigint,
       },
     },
   ]);
@@ -1465,8 +1465,8 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   expect(value).toEqual([
     {
       assetId: 1n,
-      baseAmountReceived: dnum.from("1.21", 18)[0],
-      bondAmount: dnum.from("100", 18)[0],
+      baseAmountReceived: parseFixed("1.21").bigint,
+      bondAmount: parseFixed("100").bigint,
       checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
@@ -1488,7 +1488,7 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
     value: simplePoolInfo,
   });
   contract.stubSimulateWrite("removeLiquidity", {
-    proceeds: dnum.from("100", 18)[0],
+    proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
@@ -1499,11 +1499,11 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("500", 18)[0],
-        lpAmount: dnum.from("498", 18)[0],
-        lpSharePrice: dnum.from("1.000000590811771717", 18)[0],
+        amount: parseFixed("500").bigint,
+        lpAmount: parseFixed("498").bigint,
+        lpSharePrice: parseFixed("1.000000590811771717").bigint,
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: dnum.from("498.570512905658351934", 18)[0],
+        vaultSharePrice: parseFixed("498.570512905658351934").bigint,
       },
     },
   ]);
@@ -1515,11 +1515,11 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("499", 18)[0],
-        lpAmount: dnum.from("498", 18)[0],
-        lpSharePrice: dnum.from("1.002867781011873985", 18)[0],
+        amount: parseFixed("499").bigint,
+        lpAmount: parseFixed("498").bigint,
+        lpSharePrice: parseFixed("1.002867781011873985").bigint,
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: dnum.from("498.567723245858722697", 18)[0],
+        vaultSharePrice: parseFixed("498.567723245858722697").bigint,
         withdrawalShareAmount: 0n,
         destination: BOB,
       },
@@ -1528,10 +1528,10 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
 
   const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
   expect(value).toEqual({
-    lpShareBalance: dnum.from("0", 18)[0],
-    baseAmountPaid: dnum.from("0", 18)[0],
-    baseValue: dnum.from("0", 18)[0],
-    sharesValue: dnum.from("0", 18)[0],
+    lpShareBalance: parseFixed("0").bigint,
+    baseAmountPaid: parseFixed("0").bigint,
+    baseValue: parseFixed("0").bigint,
+    sharesValue: parseFixed("0").bigint,
   });
 });
 
@@ -1546,7 +1546,7 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
   const { contract, readHyperdrive, network } = setupReadHyperdrive();
   network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
   contract.stubSimulateWrite("removeLiquidity", {
-    proceeds: dnum.from("100", 18)[0],
+    proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
   contract.stubRead({
@@ -1560,11 +1560,11 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("500", 18)[0],
-        lpAmount: dnum.from("498", 18)[0],
-        lpSharePrice: dnum.from("1.000000590811771717", 18)[0],
+        amount: parseFixed("500").bigint,
+        lpAmount: parseFixed("498").bigint,
+        lpSharePrice: parseFixed("1.000000590811771717").bigint,
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: dnum.from("1.002867171358", 18)[0],
+        vaultSharePrice: parseFixed("1.002867171358").bigint,
       },
     },
     {
@@ -1573,11 +1573,11 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("100", 18)[0],
-        lpAmount: dnum.from("99", 18)[0],
-        lpSharePrice: dnum.from("1.000000576182752684", 18)[0],
+        amount: parseFixed("100").bigint,
+        lpAmount: parseFixed("99").bigint,
+        lpSharePrice: parseFixed("1.000000576182752684").bigint,
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: dnum.from("1.002867314461", 18)[0],
+        vaultSharePrice: parseFixed("1.002867314461").bigint,
       },
     },
   ]);
@@ -1589,11 +1589,11 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("499", 18)[0],
-        lpAmount: dnum.from("498", 18)[0],
-        lpSharePrice: dnum.from("1.002867781011873985", 18)[0],
+        amount: parseFixed("499").bigint,
+        lpAmount: parseFixed("498").bigint,
+        lpSharePrice: parseFixed("1.002867781011873985").bigint,
         provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: dnum.from("1.0008670371827", 18)[0],
+        vaultSharePrice: parseFixed("1.0008670371827").bigint,
         withdrawalShareAmount: 0n,
         destination: BOB,
       },
@@ -1602,10 +1602,10 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
 
   const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
   expect(value).toEqual({
-    lpShareBalance: dnum.from("99", 18)[0],
-    baseAmountPaid: dnum.from("100", 18)[0],
-    baseValue: dnum.from("100", 18)[0],
-    sharesValue: dnum.from("100", 18)[0],
+    lpShareBalance: parseFixed("99").bigint,
+    baseAmountPaid: parseFixed("100").bigint,
+    baseValue: parseFixed("100").bigint,
+    sharesValue: parseFixed("100").bigint,
   });
 });
 
@@ -1622,12 +1622,12 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("10", 18)[0],
-        vaultSharePrice: dnum.from("9", 18)[0],
+        amount: parseFixed("10").bigint,
+        vaultSharePrice: parseFixed("9").bigint,
         provider: BOB,
         withdrawalShareAmount: 0n,
-        lpAmount: dnum.from("5", 18)[0],
-        lpSharePrice: dnum.from("2", 18)[0],
+        lpAmount: parseFixed("5").bigint,
+        lpSharePrice: parseFixed("2").bigint,
         destination: BOB,
       },
     },
@@ -1640,9 +1640,9 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
   });
   expect(closedLpShares).toEqual([
     {
-      lpAmount: dnum.from("5", 18)[0],
-      baseAmount: dnum.from("10", 18)[0],
-      lpSharePrice: dnum.from("2", 18)[0],
+      lpAmount: parseFixed("5").bigint,
+      baseAmount: parseFixed("10").bigint,
+      lpSharePrice: parseFixed("2").bigint,
       withdrawalShareAmount: 0n,
       closedTimestamp: 123456789n,
     },
@@ -1662,12 +1662,12 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
       args: {
         extraData: "0x",
         asBase: false,
-        amount: dnum.from("9", 18)[0],
-        vaultSharePrice: dnum.from("1.1", 18)[0],
+        amount: parseFixed("9").bigint,
+        vaultSharePrice: parseFixed("1.1").bigint,
         provider: BOB,
         withdrawalShareAmount: 0n,
-        lpAmount: dnum.from("5", 18)[0],
-        lpSharePrice: dnum.from("2", 18)[0],
+        lpAmount: parseFixed("5").bigint,
+        lpSharePrice: parseFixed("2").bigint,
         destination: BOB,
       },
     },
@@ -1680,10 +1680,10 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
   });
   expect(closedLpShares).toEqual([
     {
-      lpAmount: dnum.from("5", 18)[0],
-      baseAmount: dnum.from("9.9", 18)[0],
+      lpAmount: parseFixed("5").bigint,
+      baseAmount: parseFixed("9.9").bigint,
       withdrawalShareAmount: 0n,
-      lpSharePrice: dnum.from("2", 18)[0],
+      lpSharePrice: parseFixed("2").bigint,
       closedTimestamp: 123456789n,
     },
   ]);
@@ -1701,10 +1701,10 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       args: {
         extraData: "0x",
         asBase: true,
-        amount: dnum.from("10", 18)[0],
-        vaultSharePrice: dnum.from("9.8", 18)[0],
+        amount: parseFixed("10").bigint,
+        vaultSharePrice: parseFixed("9.8").bigint,
         provider: BOB,
-        withdrawalShareAmount: dnum.from("5", 18)[0],
+        withdrawalShareAmount: parseFixed("5").bigint,
         destination: BOB,
       },
     },
@@ -1719,8 +1719,8 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
   expect(redeemedWithdrawalShares).toEqual([
     {
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
-      baseAmount: dnum.from("10", 18)[0],
-      withdrawalShareAmount: dnum.from("5", 18)[0],
+      baseAmount: parseFixed("10").bigint,
+      withdrawalShareAmount: parseFixed("5").bigint,
       redeemedTimestamp: 123456789n,
     },
   ]);
@@ -1737,10 +1737,10 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
       args: {
         extraData: "0x",
         asBase: false,
-        vaultSharePrice: dnum.from("1.25", 18)[0],
-        amount: dnum.from("8", 18)[0],
+        vaultSharePrice: parseFixed("1.25").bigint,
+        amount: parseFixed("8").bigint,
         provider: BOB,
-        withdrawalShareAmount: dnum.from("5", 18)[0],
+        withdrawalShareAmount: parseFixed("5").bigint,
         destination: BOB,
       },
     },
@@ -1755,8 +1755,8 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
   expect(redeemedWithdrawalShares).toEqual([
     {
       hyperdriveAddress: "0x0000000000000000000000000000000000000000",
-      baseAmount: dnum.from("10", 18)[0],
-      withdrawalShareAmount: dnum.from("5", 18)[0],
+      baseAmount: parseFixed("10").bigint,
+      withdrawalShareAmount: parseFixed("5").bigint,
       redeemedTimestamp: 123456789n,
     },
   ]);
