@@ -35,8 +35,8 @@ use crate::{Fixed, IGenerateRandomParams, Numberish};
 /// // => 1.500000
 /// ```
 #[wasm_bindgen(skip_jsdoc)]
-pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
-    Fixed::new(Some(value), decimals)
+pub fn fixed(value: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+    Fixed::new(Some(value.clone()), decimals)
 }
 
 /// Create a fixed-point number by parsing a decimal value and scaling it by a
@@ -65,6 +65,12 @@ pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
 /// ```
 #[wasm_bindgen(skip_jsdoc, js_name = parseFixed)]
 pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+    // If the value is already a fixed-point number, it's already scaled.
+    if value.is_fixed_point() == Some(true) {
+        return Fixed::new(Some(value), decimals);
+    }
+
+    // Scale the value by the number of decimals.
     let decimals = decimals.unwrap_or(18);
     let scaled_str = format!(
         "{}e{}",
@@ -72,6 +78,7 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Erro
         decimals,
     );
     let scaled_value: Numberish = JsValue::from_str(&scaled_str).into();
+
     Fixed::new(Some(scaled_value), Some(decimals))
 }
 

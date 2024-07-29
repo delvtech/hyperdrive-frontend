@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "example": "tesm-node -r dotenv/config scripts/example.ts",
-    "fixed-point": "tesm-node -r dotenv/config scripts/fixed-point.ts"
+    "example:watch": "tesm-node -r dotenv/config --watch scripts/example.ts",
+    "fixed-point": "tesm-node -r dotenv/config scripts/fixed-point.ts",
+    "fixed-point:watch": "tesm-node -r dotenv/config --watch scripts/fixed-point.ts"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "*",

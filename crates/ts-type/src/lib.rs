@@ -294,6 +294,11 @@ impl TsType {
         let chars = str.trim().chars();
 
         for char in chars {
+            if ambiguous_bracket && char != ']' {
+                pending_stack.push(pending_type.unwrap().property(TsType::Base("".to_string())));
+                pending_type = None;
+                ambiguous_bracket = false;
+            }
             match char {
                 ' ' => continue,
                 '|' => {
@@ -663,13 +668,6 @@ impl ToTsType for String {
     }
 }
 
-impl ToTsType for &String {
-    #[track_caller]
-    fn to_ts_type(&self) -> Result<TsType, TsTypeError> {
-        TsType::from_str(self.as_str())
-    }
-}
-
 // Internal helpers //
 
 /// Strips references, pointers, and paths to get the base type string of a Rust type.
@@ -758,7 +756,7 @@ fn match_simple_type(rust_type: &str) -> Option<TsType> {
 
         // ethers types
         "U256" | "I256" => ts_type!(bigint),
-        "Address" => ts_type!("`0x${string}`"),
+        "Address" => TsType::from_ts_str("`0x${string}`").unwrap(),
 
         // js_sys types
         "BigInt" => ts_type!(bigint),
