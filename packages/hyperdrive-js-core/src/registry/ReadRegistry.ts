@@ -1,10 +1,13 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Address } from "abitype";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Address } from "abitype";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { RegistryAbi, registryAbi } from "src/registry/abi";
-import {
+import { ReadModel, type ReadContractModelOptions } from "src/model/ReadModel";
+import { registryAbi, type RegistryAbi } from "src/registry/abi";
+import type {
   FactoryInfoWithMetadata,
   ReadInstanceInfoWithMetadata,
 } from "src/registry/types";

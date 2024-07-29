@@ -698,7 +698,7 @@ export class ReadHyperdrive extends ReadModel {
 
     const openLongs: Record<string, Long> = {};
 
-    orderedLongEvents.forEach((event) => {
+    for (const event of orderedLongEvents) {
       const assetId = event.args.assetId.toString();
 
       const long: Long = openLongs[assetId] || {
@@ -712,33 +712,31 @@ export class ReadHyperdrive extends ReadModel {
         ? event.args.amount
         : fixed(event.args.amount).mul(event.args.vaultSharePrice).bigint;
 
-      if (event.eventName === "OpenLong") {
-        const updatedLong: Long = {
-          ...long,
-          baseAmountPaid: long.baseAmountPaid + baseAmount,
-          bondAmount: long.bondAmount + event.args.bondAmount,
-        };
-        openLongs[assetId] = updatedLong;
-        return;
-      }
+      switch (event.eventName) {
+        case "OpenLong":
+          openLongs[assetId] = {
+            ...long,
+            baseAmountPaid: long.baseAmountPaid + baseAmount,
+            bondAmount: long.bondAmount + event.args.bondAmount,
+          };
+          break;
 
-      if (event.eventName === "CloseLong") {
-        // If a user closes their whole position, we should remove the whole
-        // position since it's basically starting over
-        if (event.args.bondAmount === long.bondAmount) {
-          delete openLongs[assetId];
-          return;
-        }
-        // otherwise just subtract the amount of bonds they closed and baseAmount
-        // they received back from the running total
-        const updatedLong: Long = {
-          ...long,
-          baseAmountPaid: long.baseAmountPaid - baseAmount,
-          bondAmount: long.bondAmount - event.args.bondAmount,
-        };
-        openLongs[assetId] = updatedLong;
+        case "CloseLong":
+          // If a user closes their whole position, we should remove the whole
+          // position since it's basically starting over
+          if (event.args.bondAmount === long.bondAmount) {
+            delete openLongs[assetId];
+          } else {
+            // otherwise just subtract the amount of bonds they closed and baseAmount
+            // they received back from the running total
+            openLongs[assetId] = {
+              ...long,
+              baseAmountPaid: long.baseAmountPaid - baseAmount,
+              bondAmount: long.bondAmount - event.args.bondAmount,
+            };
+          }
       }
-    });
+    }
 
     return Object.values(openLongs).filter((long) => long.bondAmount);
   }
@@ -1338,7 +1336,7 @@ export class ReadHyperdrive extends ReadModel {
 
     let baseAmountPaid = 0n;
     let lpShareBalance = 0n;
-    combinedEventsInOrder.forEach((event) => {
+    for (const event of combinedEventsInOrder) {
       const baseAmount = event.args.asBase
         ? event.args.amount
         : fixed(event.args.amount).mul(event.args.vaultSharePrice).bigint;
@@ -1349,19 +1347,14 @@ export class ReadHyperdrive extends ReadModel {
       }
 
       if (event.eventName === "RemoveLiquidity") {
+        lpShareBalance -= event.args.lpAmount;
+
         // If a user removes all their lp shares, we should zero out
         // baseAmountPaid, since it's basically starting over
-        if (event.args.lpAmount === lpShareBalance) {
-          lpShareBalance = 0n;
-          baseAmountPaid = 0n;
-          return;
-        }
-        // otherwise just subtract the amount of lp shares they closed and baseAmount
-        // they received back from the running total
-        lpShareBalance -= event.args.lpAmount;
-        baseAmountPaid -= baseAmount;
+        baseAmountPaid =
+          lpShareBalance === 0n ? 0n : baseAmountPaid - baseAmount;
       }
-    });
+    }
 
     return { lpShareBalance, baseAmountPaid };
   }

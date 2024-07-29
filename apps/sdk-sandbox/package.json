@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "*",
+    "@delvtech/hyperdrive-artifacts": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
     "@hyperdrive/appconfig": "*",

@@ -22,7 +22,7 @@ impl ToAddress for String {
     fn to_address(&self) -> Result<Address, Error> {
         let location = Location::caller();
         Address::from_str(&self.to_string())
-            .map_err(|e| type_error_at!(location, "Invalid address: {}\n    {e}", self.to_string()))
+            .map_err(|e| type_error_at!(location, "Invalid address: {self}\n    {e}"))
     }
 }
 
@@ -30,7 +30,7 @@ impl ToAddress for &str {
     fn to_address(&self) -> Result<Address, Error> {
         let location = Location::caller();
         Address::from_str(self)
-            .map_err(|e| type_error_at!(location, "Invalid address: {}\n    {e}", self))
+            .map_err(|e| type_error_at!(location, "Invalid address: {self}\n    {e}"))
     }
 }
 
@@ -54,7 +54,7 @@ impl ToU256 for String {
     fn to_u256(&self) -> Result<U256, Error> {
         let location = Location::caller();
         U256::from_dec_str(self)
-            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {self}\n    {error}"))
     }
 }
 
@@ -63,7 +63,7 @@ impl ToU256 for &str {
     fn to_u256(&self) -> Result<U256, Error> {
         let location = Location::caller();
         U256::from_dec_str(self)
-            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {self}\n    {error}"))
     }
 }
 
@@ -80,10 +80,12 @@ impl ToU256 for BigInt {
         let location = Location::caller();
         let dec_str: String = self
             .to_string(10)
-            .map_err(|_| type_error_at!(location, "Failed to parse BigInt: {:?}", self))?
+            .map_err(|error| {
+                type_error_at!(location, "Failed to parse BigInt: {self}\n    {:?}", error)
+            })?
             .into();
         U256::from_dec_str(&dec_str)
-            .map_err(|error| type_error_at!(location, "Invalid uint256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid uint256: {self}\n    {error}"))
     }
 }
 
@@ -106,14 +108,14 @@ impl ToI256 for String {
     fn to_i256(&self) -> Result<I256, Error> {
         let location = Location::caller();
         I256::from_dec_str(self)
-            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {self}\n    {error}"))
     }
 }
 impl ToI256 for &str {
     fn to_i256(&self) -> Result<I256, Error> {
         let location = Location::caller();
         I256::from_dec_str(self)
-            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {self}\n    {error}"))
     }
 }
 
@@ -129,10 +131,12 @@ impl ToI256 for BigInt {
         let location = Location::caller();
         let dec_str: String = self
             .to_string(10)
-            .map_err(|_| type_error_at!(location, "Failed to parse BigInt: {:?}", self))?
+            .map_err(|error| {
+                type_error_at!(location, "Failed to parse BigInt: {self}\n    {:?}", error)
+            })?
             .into();
         I256::from_dec_str(&dec_str)
-            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {self}\n    {error}"))
     }
 }
 
@@ -141,7 +145,7 @@ impl ToI256 for FixedPoint {
     fn to_i256(&self) -> Result<I256, Error> {
         let location = Location::caller();
         I256::try_from(*self)
-            .map_err(|error| type_error_at!(location, "Invalid int256: {}\n    {error}", self))
+            .map_err(|error| type_error_at!(location, "Invalid int256: {self}\n    {error}"))
     }
 }
 

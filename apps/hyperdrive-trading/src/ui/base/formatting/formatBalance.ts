@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   format as dnFormat,
   from as dnFrom,
@@ -22,8 +23,32 @@ export function formatBalance({
   includeCommas?: boolean;
 }): string {
   const dn = dnFrom([balance, decimals]);
+  let result: string = "";
   if (includeCommas) {
-    return dnFormat(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
+    result = dnFormat(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
+  } else {
+    result = dnToString(dn, {
+      digits: places,
+      decimalsRounding: "ROUND_DOWN",
+    });
   }
-  return dnToString(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
+  if (balance < 0n) {
+    console.log(`
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Negative balance: ${balance}
+                  ${result}
+`);
+    console.log(`
+fixed format: -${fixed(-balance, decimals).format({
+      decimals: places,
+      group: includeCommas,
+      rounding: "floor",
+      trailingZeros: false,
+    })}
+dn format:    ${result}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+`);
+    return "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+  }
+  return result;
 }

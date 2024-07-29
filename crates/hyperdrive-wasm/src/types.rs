@@ -161,3 +161,15 @@ struct ClosePositionParams {
     /// The current timestamp (in seconds).
     current_time: BigInt,
 }
+
+#[cfg(test)]
+mod tests {
+    use ethers::types::I256;
+
+    #[test]
+    fn test() {
+        let u = I256::zero();
+
+        println!("{}", u);
+    }
+}
