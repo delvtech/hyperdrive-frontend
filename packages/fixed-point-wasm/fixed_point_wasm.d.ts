@@ -387,13 +387,13 @@ export class FixedPoint {
 */
   formatCurrency(options?: ICurrencyFormatOptions): string;
 /**
-* The scaled bigint representation of this fixed-point number.
+* Get the scaled bigint representation of this fixed-point number.
 */
   readonly bigint: bigint;
 /**
 * The number of decimal places in the fixed-point number.
 */
-  readonly decimals: number;
+  decimals: number;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
@@ -401,10 +401,11 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly __wbg_fixedpoint_free: (a: number) => void;
+  readonly __wbg_get_fixedpoint_decimals: (a: number) => number;
+  readonly __wbg_set_fixedpoint_decimals: (a: number, b: number) => void;
   readonly fixedpoint_new: (a: number, b: number, c: number) => void;
   readonly fixedpoint_one: (a: number, b: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
-  readonly fixedpoint_decimals: (a: number) => number;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_toString: (a: number, b: number) => void;
