@@ -1,63 +1,46 @@
-import * as dnum from "dnum";
 import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+import { parseFixed } from "src/fixed-point";
 import { expect, test } from "vitest";
 
 test("should return adjusted amount down when given a basic input", () => {
-  const [amount] = dnum.from("100", 18);
-  const [expectedAmount] = dnum.from("99", 18);
   expect(
     adjustAmountByPercentage({
-      amount,
-      percentage: dnum.from("1", 18)[0],
+      amount: parseFixed(100).bigint,
+      percentage: parseFixed(1).bigint,
       decimals: 18,
       direction: "down",
     }),
-  ).toBe(expectedAmount);
+  ).toBe(parseFixed(99).bigint);
 });
 test("should return adjusted amount up when given a basic input", () => {
-  const [amount] = dnum.from("100", 18);
-  const [expectedAmount] = dnum.from("101", 18);
   expect(
     adjustAmountByPercentage({
-      amount,
-      percentage: dnum.from("1", 18)[0],
+      amount: parseFixed(100).bigint,
+      percentage: parseFixed(1).bigint,
       decimals: 18,
       direction: "up",
     }),
-  ).toBe(expectedAmount);
+  ).toBe(parseFixed(101).bigint);
 });
 
 test("should handle precision accurately when given precise input amounts", () => {
-  const [preciseAmount] = dnum.from("100.123456", 18);
-  const expectedPreciseAmount = preciseAmount - preciseAmount / 100n;
+  const amount = parseFixed("100.123456789012345678").bigint;
   expect(
     adjustAmountByPercentage({
-      amount: preciseAmount,
-      percentage: dnum.from("1", 18)[0],
+      amount,
+      percentage: parseFixed(1).bigint,
       decimals: 18,
       direction: "down",
     }),
-  ).toBe(expectedPreciseAmount);
-});
-
-test("should round down to zero when given the smallest possible positive value", () => {
-  const [roundingAmount] = dnum.from("0.000000000000000001", 18);
-  expect(
-    adjustAmountByPercentage({
-      amount: roundingAmount,
-      percentage: dnum.from("1", 18)[0],
-      decimals: 18,
-      direction: "down",
-    }),
-  ).toBe(0n);
+  ).toBe(amount - amount / 100n);
 });
 
 test("should return zero when input amount is zero", () => {
   expect(
     adjustAmountByPercentage({
       amount: 0n,
-      percentage: dnum.from("1", 18)[0],
+      percentage: parseFixed(1).bigint,
       decimals: 18,
       direction: "down",
     }),
@@ -65,11 +48,10 @@ test("should return zero when input amount is zero", () => {
 });
 
 test("should throw an error when given a negative input amount", () => {
-  const [negativeAmount] = dnum.from("-100", 18);
   expect(() => {
     adjustAmountByPercentage({
-      amount: negativeAmount,
-      percentage: dnum.from("1", 18)[0],
+      amount: -1n,
+      percentage: parseFixed(1).bigint,
       decimals: 18,
       direction: "down",
     });

@@ -8,7 +8,6 @@ import {
   Event,
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
-import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
 import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
 import { MergeKeys } from "src/base/types";
@@ -22,7 +21,7 @@ import {
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
-import { fixed } from "src/fixed-point";
+import { fixed, ln } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
@@ -131,10 +130,7 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<bigint> {
     const { vaultSharePrice } = await this.getPoolInfo(options);
     const decimals = await this.getDecimals();
-    return dnum.multiply(
-      [sharesAmount, decimals],
-      [vaultSharePrice, decimals],
-    )[0];
+    return fixed(sharesAmount, decimals).mul(vaultSharePrice, decimals).bigint;
   }
 
   /**
@@ -149,7 +145,7 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<bigint> {
     const { vaultSharePrice } = await this.getPoolInfo(options);
     const decimals = await this.getDecimals();
-    return dnum.divide([baseAmount, decimals], [vaultSharePrice, decimals])[0];
+    return fixed(baseAmount, decimals).mul(vaultSharePrice).bigint;
   }
 
   async getInitializationBlock(): Promise<Block> {
@@ -411,18 +407,13 @@ export class ReadHyperdrive extends ReadModel {
     const presentValueInShares = hyperwasm.presentValue({
       poolInfo,
       poolConfig,
-      currentTime: BigInt(Math.floor(Date.now() / 1000).toString()),
+      currentTime: BigInt(Date.now()) / 1000n,
     });
 
-    // TODO: move this into hyperwasm so that it simply returns the result in
-    // base instead of us having to convert it here
-    const decimals = await this.getDecimals();
-    const presentValueInBase = dnum.multiply(
-      [presentValueInShares, decimals],
-      [poolInfo.vaultSharePrice, decimals],
-    )[0];
-
-    return presentValueInBase;
+    return this.convertToBase({
+      sharesAmount: presentValueInShares,
+      options,
+    });
   }
 
   /**
@@ -1295,10 +1286,10 @@ export class ReadHyperdrive extends ReadModel {
 
     // convert the withdrawal shares into base using lpSharePrice
     const { lpSharePrice } = await this.getPoolInfo();
-    const withdrawalSharesBaseValue = dnum.multiply(
-      [lpSharePrice, decimals],
-      [withdrawalShares, decimals],
-    )[0];
+    const withdrawalSharesBaseValue = fixed(lpSharePrice, decimals).mul(
+      withdrawalShares,
+      decimals,
+    ).bigint;
     const withdrawalSharesSharesValue = await this.convertToShares({
       baseAmount: withdrawalSharesBaseValue,
     });
@@ -1859,10 +1850,10 @@ export class ReadHyperdrive extends ReadModel {
       maxApr: maxApr,
     });
     const decimals = await this.getDecimals();
-    const lpSharesOutInBase = dnum.multiply(
-      [lpSharesOut, decimals],
-      [poolInfo.lpSharePrice, decimals],
-    )[0];
+    const lpSharesOutInBase = fixed(lpSharesOut, decimals).mul(
+      poolInfo.lpSharePrice,
+      decimals,
+    ).bigint;
     const valueOfLpShares = asBase
       ? lpSharesOutInBase
       : await this.convertToShares({
@@ -1963,7 +1954,7 @@ export class ReadHyperdrive extends ReadModel {
 }
 
 /*
- * This  returns the LP APY using the following formula for continuous compounding:
+ * This returns the LP APY using the following formula for continuous compounding:
 
  * r = rate of return
  * p_0 = from lpSharePrice
@@ -1981,17 +1972,7 @@ function calculateLpApy({
   endingLpSharePrice: bigint;
   timeFrame: bigint;
 }): number {
-  const priceRatio = dnum.toNumber(
-    dnum.div([endingLpSharePrice, 18], [startingLpSharePrice, 18]),
-    18,
-  );
-  const logOfPriceRatio = dnum.from(Math.log(priceRatio), 18);
-
-  const timeFrameInDays = timeFrame / (24n * 60n * 60n);
-  const yearFraction = dnum.div([timeFrameInDays, 18], [365n, 18]);
-  const lpApy = Number(
-    dnum.format(dnum.div(logOfPriceRatio, yearFraction, 18)),
-  );
-
-  return lpApy;
+  const priceRatio = fixed(endingLpSharePrice).div(startingLpSharePrice);
+  const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
+  return ln(priceRatio).div(yearFraction).toNumber();
 }
