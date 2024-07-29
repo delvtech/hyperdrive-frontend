@@ -25,7 +25,7 @@ export function calcHprGivenApy(params: ICalcHprGivenApyParams): bigint;
 */
 export function idleShareReservesInBase(params: IStateParams): bigint;
 /**
-* Calculates the pool's present value in shares
+* Calculates the present value in shares of LP's capital in the pool.
 */
 export function presentValue(params: IPresentValueParams): bigint;
 /**
@@ -33,6 +33,10 @@ export function presentValue(params: IPresentValueParams): bigint;
 * they open a long.
 */
 export function spotRate(params: IStateParams): bigint;
+/**
+* Calculate an APR from a fixed price.
+*/
+export function calcAprGivenFixedPrice(params: ICalcAprGivenPriceParams): bigint;
 /**
 * Calculates the max amount of base that can be used to open a long given a
 * budget.
@@ -160,6 +164,17 @@ interface IPresentValueParams extends IStateParams {
    *  The time at which to grab the present value.
    */
   currentTime: bigint;
+}
+
+interface ICalcAprGivenPriceParams {
+  /**
+   *  The fixed price.
+   */
+  price: bigint;
+  /**
+   *  The position duration in seconds.
+   */
+  positionDuration: bigint;
 }
 
 interface IFees {
@@ -418,6 +433,7 @@ export interface InitOutput {
   readonly idleShareReservesInBase: (a: number, b: number) => void;
   readonly presentValue: (a: number, b: number) => void;
   readonly spotRate: (a: number, b: number) => void;
+  readonly calcAprGivenFixedPrice: (a: number, b: number) => void;
   readonly initialize: () => void;
   readonly maxLong: (a: number, b: number) => void;
   readonly calcOpenLong: (a: number, b: number) => void;
