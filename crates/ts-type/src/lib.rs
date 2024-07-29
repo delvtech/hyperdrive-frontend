@@ -668,13 +668,6 @@ impl ToTsType for String {
     }
 }
 
-impl ToTsType for &String {
-    #[track_caller]
-    fn to_ts_type(&self) -> Result<TsType, TsTypeError> {
-        TsType::from_str(self.as_str())
-    }
-}
-
 // Internal helpers //
 
 /// Strips references, pointers, and paths to get the base type string of a Rust type.
