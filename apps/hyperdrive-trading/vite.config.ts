@@ -19,7 +19,4 @@ export default defineConfig({
     }),
   ],
   publicDir: "src/public",
-  define: {
-    global: {},
-  },
 });

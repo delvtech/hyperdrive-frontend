@@ -1,5 +1,6 @@
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
+import "@usecapsule/react-sdk/styles.css";
 
 import {
   ErrorBoundary as RollbarErrorBoundary,
@@ -64,7 +65,7 @@ function Root() {
             ),
           }}
           showRecentTransactions
-          theme={customRainbowTheme()}
+          theme={customRainbowTheme}
         >
           <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
             <RollbarProvider
