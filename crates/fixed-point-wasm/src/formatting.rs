@@ -19,7 +19,7 @@ impl Fixed {
 
         // modify base options if necessary
         if options.compact_display().is_none() && options.percent() != Some(true) {
-            base_options.decimals = Some(options.decimals().unwrap_or(self.decimals));
+            base_options.decimals = options.decimals().or(Some(self.decimals));
         }
 
         // get base format args
@@ -68,7 +68,7 @@ impl Fixed {
         Reflect::set(
             &options_obj,
             &"currency".into(),
-            &options.currency().unwrap_or("USD".to_string()).into(),
+            &options.currency().unwrap_or("USD".into()).into(),
         )?;
         if options.compact() == Some(true) {
             Reflect::set(&options_obj, &"notation".into(), &"compact".into())?;
