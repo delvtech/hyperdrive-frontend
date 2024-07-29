@@ -1,8 +1,4 @@
-import {
-  format as dnFormat,
-  from as dnFrom,
-  toString as dnToString,
-} from "dnum";
+import { fixed } from "@delvtech/fixed-point-wasm";
 /**
  * Used for final balance presentation since it cuts off decimals
  * @param balance bigint representation of the balance
@@ -21,9 +17,11 @@ export function formatBalance({
   places?: number;
   includeCommas?: boolean;
 }): string {
-  const dn = dnFrom([balance, decimals]);
-  if (includeCommas) {
-    return dnFormat(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
-  }
-  return dnToString(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
+  const [sign, abs] = balance >= 0n ? ["", balance] : ["-", -balance];
+
+  return `${sign}${fixed(abs, decimals).format({
+    decimals: places,
+    rounding: "trunc",
+    group: includeCommas,
+  })}`;
 }
