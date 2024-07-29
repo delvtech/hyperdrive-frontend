@@ -1,5 +1,4 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { format } from "d3-format";
 
 /**
  * Formats a number to a short scale representation, eg: 99,830,500 becomes "99.83M"
@@ -15,11 +14,10 @@ export function formatCompact({
   value: bigint;
   decimals: number;
 }): string {
-  const convertedToNumber = fixed(value, decimals).toNumber();
-  let formatter = format(".3s");
+  const [sign, abs] = value >= 0n ? ["", value] : ["-", -value];
 
-  if (convertedToNumber < 1) {
-    formatter = format(".3f");
-  }
-  return formatter(convertedToNumber).toUpperCase().replace(/G$/, "B"); // ensure billion-scale numbers use 'B' instead of 'G', which is the default suffix used by d3-format for giga (billion).
+  return `${sign}${fixed(abs, decimals).format({
+    compactDisplay: "short",
+    decimals: 2,
+  })}`;
 }
