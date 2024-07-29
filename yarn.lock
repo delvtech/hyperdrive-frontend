@@ -4687,13 +4687,13 @@
     ethereumjs-util "7.1.5"
     node-forge "^1.3.1"
 
-"@usecapsule/core-sdk@1.19.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/core-sdk/-/core-sdk-1.19.0.tgz#95b78cc0017688c3d4bfeaea58c53dbea33a0477"
-  integrity sha512-AYRw4PJse4isai5E8D0cJUT4vqCR/TpfaLlqKSwoY8/CcYH83zR6RkTVEWZJjz9ZR2cfZSCpkbUqMJTGdPoa1g==
+"@usecapsule/core-sdk@1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@usecapsule/core-sdk/-/core-sdk-1.21.0.tgz#f792fe57093e472461c22c6be0fcbb0643d2983c"
+  integrity sha512-zblf/9A5jyVhB2gEdUkkJsq9JLZ5EwsaSH+vWCJL+SqOFk2xD4TgfQoWymxtxtrbSbChrqLB68rrBtsevQNuuw==
   dependencies:
     "@celo/utils" "^3.2.0"
-    "@usecapsule/user-management-client" "1.16.0"
+    "@usecapsule/user-management-client" "1.18.0"
     base64url "^3.0.1"
     buffer "6.0.3"
     ethereumjs-util "7.1.5"
@@ -4715,7 +4715,7 @@
   dependencies:
     "@usecapsule/core-components" "^2.0.10"
 
-"@usecapsule/react-components@^3.1.2":
+"@usecapsule/react-components@^3.1.3":
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/@usecapsule/react-components/-/react-components-3.1.3.tgz#7d71dbba9eee525c3c8564c2a3428d97a1024f9d"
   integrity sha512-DDTApV13h6cJXTqVwF9x+Mk4eqMaFy67IvJlpsXcpnzJp4/FSE1Q0WkqO6oF/9VaoUoPk8SHZZok5axZeEub7w==
@@ -4738,17 +4738,17 @@
     styled-components "^6.1.8"
     zustand "^4.5.2"
 
-"@usecapsule/react-sdk@^3.15.0":
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-3.15.0.tgz#30621d7f990fd999411e3557dba07ccccd0e0274"
-  integrity sha512-tn7sU+qGHsilMKvUd2VAX7Esi4D3b+Tzdt9Sx1tuz/w7Fypyjt63gAX+F+350mW75f4zU1/FHTp/pFqMGW277Q==
+"@usecapsule/react-sdk@^3.17.0":
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-3.17.0.tgz#9db376dd80b321a41e15219d5285355deeee525c"
+  integrity sha512-KpweheO9/1Y0HUBOXCdcaiWtzDsbkaSfLeQ+ukBu2rJyApSP1igPxosmJnv2WZJqDtd279iKchJa2aNc5U7P2g==
   dependencies:
     "@gsap/react" "^2.1.0"
     "@ramp-network/ramp-instant-sdk" "^4.0.2"
     "@stripe/crypto" "^0.0.4"
     "@stripe/stripe-js" "^3.4.0"
-    "@usecapsule/react-components" "^3.1.2"
-    "@usecapsule/web-sdk" "1.21.0"
+    "@usecapsule/react-components" "^3.1.3"
+    "@usecapsule/web-sdk" "1.23.0"
     gsap "^3.12.5"
     libphonenumber-js "^1.11.1"
     styled-components "^6.1.8"
@@ -4762,10 +4762,10 @@
     axios "^1.6.3"
     qs "^6.12.0"
 
-"@usecapsule/user-management-client@1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/user-management-client/-/user-management-client-1.16.0.tgz#f71b7423ad03af033694722e3ab17d8f9cd28f15"
-  integrity sha512-dDR1T/0jx9BuVTFOLL76mhJ6DzFsZ9uFQhdVxhuEQyPbB5hU6Vlw1LMF4UDmNvrDab5mpyMZZSXyCycnuyWvjw==
+"@usecapsule/user-management-client@1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@usecapsule/user-management-client/-/user-management-client-1.18.0.tgz#54d58150538b2608afe32ba8e7985665374c2252"
+  integrity sha512-F0q5OQV2GiXQ0US8hnEPaCQ3fITSaubodalhw83wLlYUnC9BY0Xd1hXfGh2lcru17TKQYWIoImWf3aZnwN3LnA==
   dependencies:
     axios "^1.6.3"
     qs "^6.12.0"
@@ -4798,13 +4798,13 @@
     cbor-web "8.1.0"
     node-forge "1.3.1"
 
-"@usecapsule/web-sdk@1.21.0":
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/web-sdk/-/web-sdk-1.21.0.tgz#3707b416ebe6e628ae0bad48f71f6a68bd7739c9"
-  integrity sha512-4kP3TF4iWpqVjhVvfZg5StBpauf+v6cZYDJwbXXuNfJK+fs0QsbPIhUrl5JSrnB1mkGLHw7Vwf19hmIBmIZabg==
+"@usecapsule/web-sdk@1.23.0":
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/@usecapsule/web-sdk/-/web-sdk-1.23.0.tgz#b359653892300299b1898acf5241a4537d787da8"
+  integrity sha512-d0gG/CZR/zuJlpyGBNidfHrkQI1B7PRwRDkXFJrJEOBGX4oOUUUtRvhGxeK9l2fIdWjNO7hZ01V5hkm1u00YFw==
   dependencies:
-    "@usecapsule/core-sdk" "1.19.0"
-    "@usecapsule/user-management-client" "1.16.0"
+    "@usecapsule/core-sdk" "1.21.0"
+    "@usecapsule/user-management-client" "1.18.0"
     assert "^2.1.0"
     base64url "3.0.1"
     buffer "6.0.3"
