@@ -34,60 +34,54 @@ logAppVersion();
 // there is no support for any testnets so we have to stub out the responses for
 // now.
 if (import.meta.env.DEV) {
-  worker.start({ onUnhandledRequest: "bypass" }).then(() => {
-    root.render(<Root />);
-  });
-} else {
-  root.render(<Root />);
+  await worker.start({ onUnhandledRequest: "bypass" });
 }
 
-function Root() {
-  return (
-    <WagmiProvider config={wagmiConfig}>
-      <ToastProvider />
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider
-          appInfo={{
-            appName: "Hyperdrive",
-            disclaimer: () => (
-              <span className="text-xs text-neutral-content">
-                Note: If you choose to log in with Capsule, please review their{" "}
-                <a
-                  href="https://capsule-org.notion.site/Capsule-Labs-Inc-Privacy-Policy-7421971b985d4320abfe8454c4ba185c"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline"
-                >
-                  privacy
-                </a>{" "}
-                policy.{" "}
-              </span>
-            ),
-          }}
-          showRecentTransactions
-          theme={customRainbowTheme}
-        >
-          <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
-            <RollbarProvider
-              config={{
-                accessToken: import.meta.env
-                  .VITE_ROLLBAR_ACCESS_TOKEN as string,
-                environment: import.meta.env.VITE_ROLLBAR_ENV as string,
-                captureIp: "anonymize",
-                captureUncaught: true,
-                captureUnhandledRejections: true,
-              }}
-            >
-              <RollbarErrorBoundary>
-                <App />
-              </RollbarErrorBoundary>
-            </RollbarProvider>
-          </SkeletonTheme>
-        </RainbowKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
-  );
-}
+root.render(
+  <WagmiProvider config={wagmiConfig}>
+    <ToastProvider />
+    <QueryClientProvider client={queryClient}>
+      <RainbowKitProvider
+        appInfo={{
+          appName: "Hyperdrive",
+          disclaimer: () => (
+            <span className="text-xs text-neutral-content">
+              Note: If you choose to log in with Capsule, please review their{" "}
+              <a
+                href="https://capsule-org.notion.site/Capsule-Labs-Inc-Privacy-Policy-7421971b985d4320abfe8454c4ba185c"
+                target="_blank"
+                rel="noreferrer"
+                className="underline"
+              >
+                privacy
+              </a>{" "}
+              policy.{" "}
+            </span>
+          ),
+        }}
+        showRecentTransactions
+        theme={customRainbowTheme}
+      >
+        <SkeletonTheme baseColor="#202F36" highlightColor="#243942">
+          <RollbarProvider
+            config={{
+              accessToken: import.meta.env.VITE_ROLLBAR_ACCESS_TOKEN as string,
+              environment: import.meta.env.VITE_ROLLBAR_ENV as string,
+              captureIp: "anonymize",
+              captureUncaught: true,
+              captureUnhandledRejections: true,
+            }}
+          >
+            <RollbarErrorBoundary>
+              <App />
+            </RollbarErrorBoundary>
+          </RollbarProvider>
+        </SkeletonTheme>
+      </RainbowKitProvider>
+    </QueryClientProvider>
+  </WagmiProvider>,
+);
+
 /**
  * Enable Tailwind Debug Screens plugin in development mode for showing active
  * breakpoints in bottom left corner, ie: 'screen: sm', 'screen: 2xl', etc..
