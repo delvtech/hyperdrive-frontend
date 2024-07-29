@@ -24,7 +24,7 @@ test("should return adjusted amount up when given a basic input", () => {
   ).toBe(parseFixed(101).bigint);
 });
 
-test.only("should handle precision accurately when given precise input amounts", () => {
+test("should handle precision accurately when given precise input amounts", () => {
   const amount = parseFixed("100.123456789012345678").bigint;
   expect(
     adjustAmountByPercentage({
