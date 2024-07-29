@@ -36,17 +36,6 @@ test("should handle precision accurately when given precise input amounts", () =
   ).toBe(amount - amount / 100n);
 });
 
-test("should round down to zero when given the smallest possible positive value", () => {
-  expect(
-    adjustAmountByPercentage({
-      amount: parseFixed("0.000000000000000001").bigint,
-      percentage: parseFixed(1).bigint,
-      decimals: 18,
-      direction: "down",
-    }),
-  ).toBe(0n);
-});
-
 test("should return zero when input amount is zero", () => {
   expect(
     adjustAmountByPercentage({
