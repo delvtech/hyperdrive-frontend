@@ -65,7 +65,7 @@ export function OpenLongStats({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   return (
-    <div className="flex flex-row justify-between px-4">
+    <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
         label="Your Fixed Rate"
         value={

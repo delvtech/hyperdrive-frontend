@@ -22,18 +22,20 @@ export function TransactionView({
   actionButton,
 }: TransactionViewProps): ReactElement {
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex w-full flex-col">
       {heading !== undefined && <h5>{heading}</h5>}
       <div>
         {tokenInput}
         {setting}
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col">
         {primaryStats}
-        <div className="text-center">{actionButton}</div>
-        {disclaimer ? <div>{disclaimer}</div> : null}
+        <div className="flex flex-col gap-4">
+          <div className="text-center">{actionButton}</div>
+          {disclaimer ? <div>{disclaimer}</div> : null}
+          {transactionPreview}
+        </div>
       </div>
-      {transactionPreview}
     </div>
   );
 }
