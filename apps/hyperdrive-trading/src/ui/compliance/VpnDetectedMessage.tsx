@@ -10,7 +10,7 @@ export function VpnDetectedMessage({
   return (
     <div
       className={classNames(
-        "flex w-screen flex-col items-center justify-center gap-8",
+        "flex w-screen grow flex-col items-center justify-center gap-8",
         className,
       )}
     >

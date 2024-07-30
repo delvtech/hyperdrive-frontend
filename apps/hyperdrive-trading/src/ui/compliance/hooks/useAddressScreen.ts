@@ -1,14 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
+import { useMatchRoute, useNavigate } from "@tanstack/react-router";
+import { useAccount } from "wagmi";
 
 const url = import.meta.env.VITE_ADDRESS_SCREEN_URL;
 
-export default function useAddressScreen(address: string | undefined): {
-  isIneligible: boolean | null | undefined;
-  error: unknown;
+type AddressScreenResult = {
+  isBlocked?: boolean;
+  error?: string;
+};
+
+export function useAddressScreen(): AddressScreenResult & {
+  enabled: boolean;
 } {
-  const { data: result, error } = useQuery<APIResponse>({
+  const matchRoute = useMatchRoute();
+  const { address } = useAccount();
+  const navigate = useNavigate();
+  const enabled = !!url && !!address;
+  const { data: result, error: queryError } = useQuery<APIResponse>({
     queryKey: ["address-screen", address],
-    enabled: !!url && !!address,
+    enabled,
     staleTime: Infinity,
     retry: 6,
     queryFn: () =>
@@ -18,16 +28,30 @@ export default function useAddressScreen(address: string | undefined): {
       }).then((res) => res.json()),
   });
 
-  const eligibleStatus = result?.data;
+  const isBlocked = result?.data === false;
+  if (isBlocked && !matchRoute({ to: "/ineligible" })) {
+    navigate({ to: "/ineligible" });
+  }
+
+  const error = result?.error || queryError;
+  if (error && !matchRoute({ to: "/error" })) {
+    if (import.meta.env.DEV) {
+      console.error(error);
+    }
+    navigate({ to: "/error" });
+  }
 
   return {
-    isIneligible:
-      typeof eligibleStatus === "boolean" ? !eligibleStatus : eligibleStatus,
-    error: result?.error ?? error,
+    enabled,
+    error: error ? String(error) : undefined,
+    isBlocked,
   };
 }
 
 interface APIResponse {
+  /**
+   * false if the address is ineligible
+   */
   status: number;
   data: boolean | null;
   error: string | null;

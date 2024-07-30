@@ -13,16 +13,18 @@
 import { Route as rootRoute } from "./ui/routes/__root";
 import { Route as BridgeImport } from "./ui/routes/bridge";
 import { Route as ChainlogImport } from "./ui/routes/chainlog";
+import { Route as ErrorImport } from "./ui/routes/error";
 import { Route as IndexImport } from "./ui/routes/index";
+import { Route as IneligibleImport } from "./ui/routes/ineligible";
 import { Route as MarketAddressImport } from "./ui/routes/market.$address";
 import { Route as MarketsImport } from "./ui/routes/markets";
 import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
-import { Route as VoidImport } from "./ui/routes/void";
+import { Route as VpnImport } from "./ui/routes/vpn";
 
 // Create/Update Routes
 
-const VoidRoute = VoidImport.update({
-  path: "/void",
+const VpnRoute = VpnImport.update({
+  path: "/vpn",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -33,6 +35,16 @@ const RestrictedcountriesRoute = RestrictedcountriesImport.update({
 
 const MarketsRoute = MarketsImport.update({
   path: "/markets",
+  getParentRoute: () => rootRoute,
+} as any);
+
+const IneligibleRoute = IneligibleImport.update({
+  path: "/ineligible",
+  getParentRoute: () => rootRoute,
+} as any);
+
+const ErrorRoute = ErrorImport.update({
+  path: "/error",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -72,6 +84,14 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ChainlogImport;
       parentRoute: typeof rootRoute;
     };
+    "/error": {
+      preLoaderRoute: typeof ErrorImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/ineligible": {
+      preLoaderRoute: typeof IneligibleImport;
+      parentRoute: typeof rootRoute;
+    };
     "/markets": {
       preLoaderRoute: typeof MarketsImport;
       parentRoute: typeof rootRoute;
@@ -80,8 +100,8 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof RestrictedcountriesImport;
       parentRoute: typeof rootRoute;
     };
-    "/void": {
-      preLoaderRoute: typeof VoidImport;
+    "/vpn": {
+      preLoaderRoute: typeof VpnImport;
       parentRoute: typeof rootRoute;
     };
     "/market/$address": {
@@ -97,9 +117,11 @@ export const routeTree = rootRoute.addChildren([
   IndexRoute,
   BridgeRoute,
   ChainlogRoute,
+  ErrorRoute,
+  IneligibleRoute,
   MarketsRoute,
   RestrictedcountriesRoute,
-  VoidRoute,
+  VpnRoute,
   MarketAddressRoute,
 ]);
 
