@@ -1,5 +1,12 @@
 # @delvtech/hyperdrive-js-core
 
+## 2.4.3
+
+### Patch Changes
+
+- Updated dependencies [e4f7227]
+  - @delvtech/hyperdrive-artifacts@0.4.0
+
 ## 2.4.2
 
 ### Patch Changes

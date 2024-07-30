@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-js-core",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.3",
-    "@delvtech/hyperdrive-artifacts": "^0.3.0",
+    "@delvtech/hyperdrive-artifacts": "^0.4.0",
     "@delvtech/hyperdrive-wasm": "^0.15.2",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0"
