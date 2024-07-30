@@ -7,11 +7,10 @@ const url = import.meta.env.VITE_ADDRESS_SCREEN_URL;
 type AddressScreenResult = {
   isBlocked?: boolean;
   error?: string;
+  enabled: boolean;
 };
 
-export function useAddressScreen(): AddressScreenResult & {
-  enabled: boolean;
-} {
+export function useAddressScreen(): AddressScreenResult {
   const matchRoute = useMatchRoute();
   const { address } = useAccount();
   const navigate = useNavigate();
@@ -29,12 +28,11 @@ export function useAddressScreen(): AddressScreenResult & {
   });
 
   const isBlocked = result?.data === false;
+  const error = result?.error || queryError;
+
   if (isBlocked && !matchRoute({ to: "/ineligible" })) {
     navigate({ to: "/ineligible" });
-  }
-
-  const error = result?.error || queryError;
-  if (error && !matchRoute({ to: "/error" })) {
+  } else if (error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
       console.error(error);
     }
@@ -49,10 +47,10 @@ export function useAddressScreen(): AddressScreenResult & {
 }
 
 interface APIResponse {
+  status: number;
   /**
    * false if the address is ineligible
    */
-  status: number;
   data: boolean | null;
   error: string | null;
 }
