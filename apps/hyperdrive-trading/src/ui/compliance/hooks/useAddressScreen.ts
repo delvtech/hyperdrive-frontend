@@ -12,6 +12,7 @@ type AddressScreenResult = {
 export function useAddressScreen(): AddressScreenResult & {
   enabled: boolean;
 } {
+  const matchRoute = useMatchRoute();
   const { address } = useAccount();
   const navigate = useNavigate();
   const enabled = !!url && !!address;
@@ -28,14 +29,12 @@ export function useAddressScreen(): AddressScreenResult & {
   });
 
   const isBlocked = result?.data === false;
-  const isIneligibleRoute = !!useMatchRoute()({ to: "/ineligible" });
-  if (isBlocked && !isIneligibleRoute) {
+  if (isBlocked && !matchRoute({ to: "/ineligible" })) {
     navigate({ to: "/ineligible" });
   }
 
   const error = result?.error || queryError;
-  const isErrorRoute = !!useMatchRoute()({ to: "/error" });
-  if (error && !isErrorRoute) {
+  if (error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
       console.error(error);
     }

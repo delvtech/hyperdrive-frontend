@@ -12,6 +12,7 @@ type VpnScreenResult = {
 export function useVpnScreen(): VpnScreenResult & {
   enabled: boolean;
 } {
+  const matchRoute = useMatchRoute();
   const navigate = useNavigate();
   const enabled = !!url;
   const { data: result, error: queryError } = useQuery<VpnScreenResult>({
@@ -23,14 +24,12 @@ export function useVpnScreen(): VpnScreenResult & {
     queryFn: () => fetch(url, { method: "POST" }).then((res) => res.json()),
   });
 
-  const isVpnRoute = !!useMatchRoute()({ to: "/vpn" });
-  if (result?.isBlocked === true && !isVpnRoute) {
+  if (result?.isBlocked === true && !matchRoute({ to: "/vpn" })) {
     navigate({ to: "/vpn" });
   }
 
   const error = result?.error || queryError;
-  const isErrorRoute = !!useMatchRoute()({ to: "/error" });
-  if (error && !isErrorRoute) {
+  if (error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
       console.error(error);
     }
