@@ -26,7 +26,7 @@
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
-    "@delvtech/fixed-point-wasm": "^0.0.2",
+    "@delvtech/fixed-point-wasm": "^0.0.3",
     "@delvtech/gopher": "*",
     "@delvtech/hyperdrive-viem": "^2.3.0",
     "@heroicons/react": "^2.0.16",

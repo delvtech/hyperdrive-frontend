@@ -4,18 +4,15 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 
 const url = import.meta.env.VITE_VPN_SCREEN_URL;
 
-type VpnScreenResult = {
-  isBlocked?: boolean;
-  error?: string;
-};
-
-export function useVpnScreen(): VpnScreenResult & {
+interface VpnScreenResult extends ApiResponse {
   enabled: boolean;
-} {
+}
+
+export function useVpnScreen(): VpnScreenResult {
   const matchRoute = useMatchRoute();
   const navigate = useNavigate();
   const enabled = !!url;
-  const { data: result, error: queryError } = useQuery<VpnScreenResult>({
+  const { data: result, error: queryError } = useQuery<ApiResponse>({
     queryKey: makeQueryKey("vpn-screen", url),
     staleTime: Infinity,
     enabled,
@@ -24,12 +21,11 @@ export function useVpnScreen(): VpnScreenResult & {
     queryFn: () => fetch(url, { method: "POST" }).then((res) => res.json()),
   });
 
-  if (result?.isBlocked === true && !matchRoute({ to: "/vpn" })) {
-    navigate({ to: "/vpn" });
-  }
-
   const error = result?.error || queryError;
-  if (error && !matchRoute({ to: "/error" })) {
+
+  if (result?.isBlocked && !matchRoute({ to: "/vpn" })) {
+    navigate({ to: "/vpn" });
+  } else if (error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
       console.error(error);
     }
@@ -42,3 +38,8 @@ export function useVpnScreen(): VpnScreenResult & {
     isBlocked: result?.isBlocked,
   };
 }
+
+type ApiResponse = {
+  isBlocked?: boolean;
+  error?: string;
+};
