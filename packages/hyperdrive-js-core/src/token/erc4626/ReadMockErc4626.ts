@@ -28,7 +28,7 @@ export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
 
     constructor(...[options]: any[]) {
       const {
-        name = "Mock ERC-4626 Tokenized Vault",
+        debugName: name = "Mock ERC-4626 Tokenized Vault",
         address,
         contractFactory,
         network,

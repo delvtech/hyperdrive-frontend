@@ -29,7 +29,7 @@ export function readErc4626HyperdriveMixin<
   return class extends Base {
     constructor(...[options]: any[]) {
       const {
-        name = "ERC-4626 Hyperdrive",
+        debugName: name = "ERC-4626 Hyperdrive",
         address,
         contractFactory,
         network,

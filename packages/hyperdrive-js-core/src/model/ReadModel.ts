@@ -17,7 +17,7 @@ export interface ReadModelOptions {
    * use as a display name or in logging) and has no affect on the model's
    * behavior.
    */
-  name?: string;
+  debugName?: string;
 }
 
 /**
@@ -28,7 +28,7 @@ export class ReadModel {
   network: Network;
   contractFactory: ReadContractFactory;
 
-  constructor({ name, network, contractFactory }: ReadModelOptions) {
+  constructor({ debugName: name, network, contractFactory }: ReadModelOptions) {
     this.name = name ?? this.constructor.name;
     this.network = network;
     this.contractFactory = contractFactory;

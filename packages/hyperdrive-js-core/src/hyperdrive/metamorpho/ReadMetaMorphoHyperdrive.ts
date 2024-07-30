@@ -28,7 +28,7 @@ export function readMetaMorphoHyperdriveMixin<
     metaMorphoContract: ReadContract<typeof MetaMorphoSnippetsABI>;
     constructor(...[options]: any[]) {
       const {
-        name = "MetaMorpho Hyperdrive",
+        debugName: name = "MetaMorpho Hyperdrive",
         address,
         contractFactory,
         network,

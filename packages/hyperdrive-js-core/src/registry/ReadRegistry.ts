@@ -16,14 +16,14 @@ export class ReadRegistry extends ReadModel {
   contract: CachedReadContract<RegistryAbi>;
 
   constructor({
-    name = "Hyperdrive Registry",
+    debugName: name = "Hyperdrive Registry",
     address,
     contractFactory,
     network,
     cache,
     namespace,
   }: ReadRegistryOptions) {
-    super({ name, network, contractFactory });
+    super({ debugName: name, network, contractFactory });
     this.address = address;
     this.contract = contractFactory({
       abi: registryAbi,

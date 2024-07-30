@@ -11,14 +11,14 @@ export class ReadFactory extends ReadModel {
   contract: CachedReadContract<FactoryAbi>;
 
   constructor({
-    name = "Hyperdrive Factory",
+    debugName: name = "Hyperdrive Factory",
     address,
     contractFactory,
     network,
     cache,
     namespace,
   }: ReadFactoryOptions) {
-    super({ name, network, contractFactory });
+    super({ debugName: name, network, contractFactory });
     this.address = address;
     this.contract = contractFactory({
       abi: factoryAbi,

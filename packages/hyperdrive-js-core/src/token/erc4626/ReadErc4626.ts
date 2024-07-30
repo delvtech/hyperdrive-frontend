@@ -50,7 +50,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
 
     constructor(...[options]: any[]) {
       const {
-        name = "ERC-4626 Tokenized Vault",
+        debugName: name = "ERC-4626 Tokenized Vault",
         contractFactory,
         address,
         cache,

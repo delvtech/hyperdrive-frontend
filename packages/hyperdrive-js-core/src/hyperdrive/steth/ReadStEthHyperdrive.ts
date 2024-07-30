@@ -57,7 +57,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   return class extends Base implements ReadStEthHyperdriveMixin {
     constructor(...[options]: any[]) {
       const {
-        name = "stETH Hyperdrive",
+        debugName: name = "stETH Hyperdrive",
         address,
         contractFactory,
         network,

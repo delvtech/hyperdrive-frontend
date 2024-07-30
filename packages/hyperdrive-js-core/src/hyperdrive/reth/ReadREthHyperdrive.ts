@@ -41,7 +41,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     constructor(...[options]: any[]) {
       const {
-        name = "rETH Hyperdrive",
+        debugName: name = "rETH Hyperdrive",
         address,
         contractFactory,
         network,
