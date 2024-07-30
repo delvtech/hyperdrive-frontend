@@ -15,6 +15,12 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: true
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
