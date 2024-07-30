@@ -1,4 +1,3 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -41,7 +40,7 @@ export function OpenLongModalHeader(): ReactElement {
   return (
     <ModalHeader
       heading="Open a Long"
-      subHeading="Buy the fixed rate and know your exact yield up front"
+      subHeading="Lock in a fixed rate and know your exact yield upfront"
     />
   );
 }
@@ -53,16 +52,9 @@ interface OpenLongModalFormProps {
 
 export function OpenLongModalForm({
   hyperdrive,
-  closeModal,
 }: OpenLongModalFormProps): ReactElement {
   return (
     <div>
-      <button
-        className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-        onClick={closeModal}
-      >
-        <XMarkIcon className="w-6 " title="Close position" />
-      </button>
       <OpenLongForm
         hyperdrive={hyperdrive}
         onOpenLong={(e) => {
