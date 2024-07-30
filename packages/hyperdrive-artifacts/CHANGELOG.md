@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 0.4.0
+
+### Minor Changes
+
+- e4f7227: Bumped contracts to 1.0.12
+
 ## 0.3.0
 
 ### Minor Changes
