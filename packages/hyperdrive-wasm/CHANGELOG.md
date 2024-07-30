@@ -1,5 +1,12 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.15.2
+
+### Patch Changes
+
+- e50602e: Fixed error formatting
+- 09ef9ec: Added `calcAprGivenFixedPrice`.
+
 ## 0.15.1
 
 ### Patch Changes
