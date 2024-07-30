@@ -88,6 +88,7 @@ export function OpenLongStats({
           )
         }
         valueUnit="APR"
+        alignment="left"
         subValue={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
@@ -127,6 +128,7 @@ export function OpenLongStats({
         }
         valueUnit={`${baseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
+        alignment="right"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 
