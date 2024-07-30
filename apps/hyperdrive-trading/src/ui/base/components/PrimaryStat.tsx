@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { ReactNode } from "react";
 
 export function PrimaryStat({
@@ -15,7 +14,7 @@ export function PrimaryStat({
   valueClassName?: string;
 }): JSX.Element {
   return (
-    <div className={classNames("flex flex-col gap-1")}>
+    <div className="flex flex-col gap-1">
       <p className="text-sm text-neutral-content">{label}</p>
       <div className={valueClassName}>
         <p className="text-h3 font-bold">{value}</p>
