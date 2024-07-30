@@ -1,3 +1,4 @@
+pub mod formatting;
 pub mod utils;
 
 use core::fmt;
@@ -29,11 +30,7 @@ pub fn initialize() {
     console_error_panic_hook::set_once();
 }
 
-/// Get the version of this package.
-#[wasm_bindgen(skip_jsdoc, js_name = getVersion)]
-pub fn get_version() -> String {
-    env!("CARGO_PKG_VERSION").to_string()
-}
+const INNER_DECIMALS: u8 = 18;
 
 /// A number with a fixed number of decimal places.
 #[wasm_bindgen(js_name = FixedPoint)]
@@ -61,10 +58,10 @@ impl Fixed {
     /// Defaults to `18`.
     #[wasm_bindgen(constructor, skip_jsdoc)]
     pub fn new(value: Option<Numberish>, decimals: Option<u8>) -> Result<Fixed, Error> {
-        let _decimals = decimals.unwrap_or(18);
-        if _decimals > 18 {
+        let decimals = decimals.unwrap_or(INNER_DECIMALS);
+        if decimals > INNER_DECIMALS {
             return Err(error!(
-                "Invalid fixed point decimals: {_decimals}. Max is 18."
+                "Invalid fixed point decimals: {decimals}. Max is {INNER_DECIMALS}."
             ));
         }
         let inner = match value {
@@ -74,15 +71,28 @@ impl Fixed {
                 // scale adjustment to truncate any extra decimals before
                 // scaling it back up.
                 if value.is_fixed_point() == Some(true) {
-                    fixed_value /= Fixed::scale_adjustment(_decimals)
+                    fixed_value /= Fixed::scale_adjustment(decimals)
                 }
                 fixed_value
             }
             None => FixedPoint::default(),
         };
         Ok(Fixed {
-            inner: inner * Fixed::scale_adjustment(_decimals),
-            decimals: _decimals,
+            inner: inner * Fixed::scale_adjustment(decimals),
+            decimals,
+        })
+    }
+
+    /// Create a fixed-point number representing one unit.
+    ///
+    /// @param decimals - The number of decimal places to use. Max is `18`.
+    /// Defaults to `18`.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn one(decimals: Option<u8>) -> Result<Fixed, Error> {
+        let decimals = decimals.unwrap_or(INNER_DECIMALS);
+        Ok(Fixed {
+            inner: FixedPoint::from(uint256!(10).pow(U256::from(decimals))),
+            decimals,
         })
     }
 
@@ -108,11 +118,11 @@ impl Fixed {
         let fixed_min = _params.min.to_fixed()?;
         let fixed_max = match _params.max {
             Some(max) => max.to_fixed()?,
-            None => fixed_min + fixedpointmath::fixed!(1e18),
+            None => fixed_min + Fixed::one(None)?.inner,
         };
         Ok(Fixed {
             inner: thread_rng().gen_range(fixed_min..fixed_max),
-            decimals: _params.decimals.unwrap_or(18),
+            decimals: _params.decimals.unwrap_or(INNER_DECIMALS),
         })
     }
 
@@ -145,10 +155,10 @@ impl Fixed {
         parse_float(&self.inner.to_string())
     }
 
-    /// Get the formatted string representation of this fixed-point number.
+    /// Get the decimal string representation of this fixed-point number.
     #[wasm_bindgen(skip_jsdoc, js_name = toString)]
     pub fn to_string(&self) -> String {
-        let decimals_delta = 18 - self.decimals;
+        let decimals_delta = INNER_DECIMALS - self.decimals;
         let str = self.inner.to_string();
         str[..str.len() - decimals_delta as usize].to_string()
     }
@@ -283,13 +293,94 @@ impl Fixed {
         Ok(result)
     }
 
+    /// Find out if this number is equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn eq(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.eq(&other_inner));
+    }
+
+    /// Find out if this number is not equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn ne(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.ne(&other_inner));
+    }
+
+    /// Find out if this number is greater than another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn gt(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.gt(&other_inner));
+    }
+
+    /// Find out if this number is greater than or equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn gte(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.ge(&other_inner));
+    }
+
+    /// Find out if this number is less than another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn lt(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.lt(&other_inner));
+    }
+
+    /// Find out if this number is less than or equal to another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn lte(&self, other: &Numberish, decimals: Option<u8>) -> Result<bool, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        return Ok(self.inner.le(&other_inner));
+    }
+
+    /// Get the minimum of this number and another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn min(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.min(other_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
+    /// Get the maximum of this number and another.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn max(&self, other: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+        let other_inner = fixed(other, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.max(other_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
+    /// Clamp this number to a range.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn clamp(
+        &self,
+        min: &Numberish,
+        max: &Numberish,
+        decimals: Option<u8>,
+    ) -> Result<Fixed, Error> {
+        let min_inner = fixed(min, decimals)?.inner;
+        let max_inner = fixed(max, decimals)?.inner;
+        let result = Fixed {
+            inner: self.inner.clamp(min_inner, max_inner),
+            decimals: self.decimals,
+        };
+        Ok(result)
+    }
+
     #[wasm_bindgen(skip_jsdoc, skip_typescript)]
     pub fn is_fixed_point(&self) -> bool {
         true
     }
 
     fn scale_adjustment(decimals: u8) -> FixedPoint {
-        let adjustment = uint256!(10).pow(U256::from(18 + 18 - decimals));
+        let adjustment = uint256!(10).pow(U256::from(INNER_DECIMALS + INNER_DECIMALS - decimals));
         FixedPoint::from(adjustment)
     }
 }
@@ -333,7 +424,11 @@ impl ToFixedPoint for Numberish {
             let str = self.value_of().to_string().as_string().unwrap_or_default();
             FixedPoint::from_str(&str).to_result()
         } else {
-            let str = format!("{}e18", self.to_string().as_string().unwrap_or_default());
+            let str = format!(
+                "{}e{}",
+                self.to_string().as_string().unwrap_or_default(),
+                INNER_DECIMALS
+            );
             FixedPoint::from_str(&str).to_result()
         }
     }
@@ -341,10 +436,18 @@ impl ToFixedPoint for Numberish {
 
 #[ts]
 struct GenerateRandomParams {
-    /// The minimum value to generate. Defaults to `0`.
+    /// The minimum value to generate.
+    ///
+    /// @default 0
     min: Option<Numberish>,
-    /// The maximum value to generate. Defaults to 1.0 (scaled) more than `min`.
+
+    /// The maximum value to generate.
+    ///
+    /// @default min + parseFixed(1.0, decimals)
     max: Option<Numberish>,
-    /// The number of decimal places to use. Max is `18`. Defaults to `18`.
+
+    /// The number of decimal places to use. Max is `18`.
+    ///
+    /// @default 18
     decimals: Option<u8>,
 }

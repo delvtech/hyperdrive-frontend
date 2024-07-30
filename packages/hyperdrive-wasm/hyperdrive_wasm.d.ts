@@ -139,40 +139,40 @@ export function spotPriceAfterShort(params: ISpotPriceAfterShortParams): bigint;
 export function calcImpliedRate(params: IImpliedRateParams): bigint;
 interface ICalcHprGivenAprParams {
   /**
-   *  The annualized rate.
+   * The annualized rate.
    */
   apr: bigint;
   /**
-   *  The position duration in seconds.
+   * The position duration in seconds.
    */
   positionDuration: bigint;
 }
 
 interface ICalcHprGivenApyParams {
   /**
-   *  The annualized rate.
+   * The annualized rate.
    */
   apy: bigint;
   /**
-   *  The position duration in seconds.
+   * The position duration in seconds.
    */
   positionDuration: bigint;
 }
 
 interface IPresentValueParams extends IStateParams {
   /**
-   *  The time at which to grab the present value.
+   * The time at which to grab the present value.
    */
   currentTime: bigint;
 }
 
 interface ICalcAprGivenPriceParams {
   /**
-   *  The fixed price.
+   * The fixed price.
    */
   price: bigint;
   /**
-   *  The position duration in seconds.
+   * The position duration in seconds.
    */
   positionDuration: bigint;
 }
@@ -223,200 +223,200 @@ interface IPoolInfo {
 
 interface IStateParams {
   /**
-   *  The current state of the pool.
+   * The current state of the pool.
    */
   poolInfo: IPoolInfo;
   /**
-   *  The pool's configuration.
+   * The pool's configuration.
    */
   poolConfig: IPoolConfig;
 }
 
 interface IClosePositionParams extends IStateParams {
   /**
-   *  The amount of bonds to close.
+   * The amount of bonds to close.
    */
   bondAmount: bigint;
   /**
-   *  The maturity timestamp of the position (in seconds).
+   * The maturity timestamp of the position (in seconds).
    */
   maturityTime: bigint;
   /**
-   *  The current timestamp (in seconds).
+   * The current timestamp (in seconds).
    */
   currentTime: bigint;
 }
 
 interface IMaxLongParams extends IStateParams {
   /**
-   *  The maximum amount of base tokens that can be spent.
+   * The maximum amount of base tokens that can be spent.
    */
   budget: bigint;
   /**
-   *  The exposure of the pool's current checkpoint.
+   * The exposure of the pool's current checkpoint.
    */
   checkpointExposure: bigint;
   /**
-   *  The maximum number of iterations to run the Netwon's method for.
+   * The maximum number of iterations to run the Netwon's method for.
    */
   maxIterations?: number | undefined;
 }
 
 interface IOpenLongParams extends IStateParams {
   /**
-   *  The amount of base tokens to open a long for.
+   * The amount of base tokens to open a long for.
    */
   baseAmount: bigint;
 }
 
 interface ISpotPriceAfterLongParams extends IStateParams {
   /**
-   *  The amount of base tokens to open a long for.
+   * The amount of base tokens to open a long for.
    */
   baseAmount: bigint;
 }
 
 interface ICloseShortParams extends IClosePositionParams {
   /**
-   *  The vault share price at the checkpoint when the position was opened.
+   * The vault share price at the checkpoint when the position was opened.
    */
   openVaultSharePrice: bigint;
   /**
-   *  The current vault share price, or if the position has matured, the vault
-   *  share price from the closing checkpoint.
+   * The current vault share price, or if the position has matured, the vault
+   * share price from the closing checkpoint.
    */
   closeVaultSharePrice: bigint;
 }
 
 interface ICalcAddLiquidityParams extends IStateParams {
   /**
-   *  The current timestamp (in seconds).
+   * The current timestamp (in seconds).
    */
   currentTime: bigint;
   /**
-   *  The amount of base or shares to contribute.
+   * The amount of base or shares to contribute.
    */
   contribution: bigint;
   /**
-   *  True if the contribution is in base, false if it's in shares.
-   * 
-   *  Default: `true`
+   * True if the contribution is in base, false if it's in shares.
+   *
+   * Default: `true`
    */
   asBase?: boolean | undefined;
   /**
-   *  The minimum share price the trader will accept.
-   * 
-   *  Default: `0`
+   * The minimum share price the trader will accept.
+   *
+   * Default: `0`
    */
   minLpSharePrice?: bigint | undefined;
   /**
-   *  The minimum APR the trader will accept.
-   * 
-   *  Default: `0`
+   * The minimum APR the trader will accept.
+   *
+   * Default: `0`
    */
   minApr?: bigint | undefined;
   /**
-   *  The maximum APR the trader will accept.
-   * 
-   *  Default: max uint256
+   * The maximum APR the trader will accept.
+   *
+   * Default: max uint256
    */
   maxApr?: bigint | undefined;
 }
 
 interface IOpenLongCurveFeeParams extends IStateParams {
   /**
-   *  The amount of base tokens to spend.
+   * The amount of base tokens to spend.
    */
   baseAmount: bigint;
 }
 
 interface IOpenLongGovernanceFeeParams extends IStateParams {
   /**
-   *  The amount of base tokens to spend.
+   * The amount of base tokens to spend.
    */
   baseAmount: bigint;
 }
 
 interface IOpenShortCurveFeeParams extends IStateParams {
   /**
-   *  The number of bonds to short.
+   * The number of bonds to short.
    */
   bondAmount: bigint;
 }
 
 interface IOpenShortFlatFeeParams extends IStateParams {
   /**
-   *  The number of bonds to short.
+   * The number of bonds to short.
    */
   bondAmount: bigint;
 }
 
 interface IMaxShortParams extends IStateParams {
   /**
-   *  The maximum budget for the short.
+   * The maximum budget for the short.
    */
   budget: bigint;
   /**
-   *  The open share price of the pool's current checkpoint.
+   * The open share price of the pool's current checkpoint.
    */
   openVaultSharePrice: bigint;
   /**
-   *  The exposure of the pool's current checkpoint.
+   * The exposure of the pool's current checkpoint.
    */
   checkpointExposure: bigint;
   /**
-   *  A lower bound on the realized price that the short will pay. This is
-   *  used to help the algorithm converge faster in real world situations. If
-   *  this is `None`, then we'll use the theoretical worst case realized
-   *  price.
+   * A lower bound on the realized price that the short will pay. This is
+   * used to help the algorithm converge faster in real world situations. If
+   * this is `None`, then we'll use the theoretical worst case realized
+   * price.
    */
   conservativePrice?: bigint | undefined;
   /**
-   *  The maximum number of iterations to run the Newton's method for.
+   * The maximum number of iterations to run the Newton's method for.
    */
   maxIterations?: number | undefined;
 }
 
 interface IAbsoluteMaxShortParams extends IStateParams {
   /**
-   *  The exposure of the pool's current checkpoint.
+   * The exposure of the pool's current checkpoint.
    */
   checkpointExposure: bigint;
   /**
-   *  The maximum number of iterations to run the Newton's method for.
+   * The maximum number of iterations to run the Newton's method for.
    */
   maxIterations?: usize | undefined;
 }
 
 interface IOpenShortParams extends IStateParams {
   /**
-   *  The amount of bonds to short.
+   * The amount of bonds to short.
    */
   bondAmount: bigint;
   /**
-   *  The vault share price at the start of the checkpoint.
+   * The vault share price at the start of the checkpoint.
    */
   openVaultSharePrice: bigint;
 }
 
 interface ISpotPriceAfterShortParams extends IStateParams {
   /**
-   *  The amount of bonds to short.
+   * The amount of bonds to short.
    */
   bondAmount: bigint;
 }
 
 interface IImpliedRateParams extends IStateParams {
   /**
-   *  The amount of bonds to short.
+   * The amount of bonds to short.
    */
   bondAmount: bigint;
   /**
-   *  The vault share price at the start of the checkpoint.
+   * The vault share price at the start of the checkpoint.
    */
   openVaultSharePrice: bigint;
   /**
-   *  The variable apy.
+   * The variable apy.
    */
   variableApy: bigint;
 }

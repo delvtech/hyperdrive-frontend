@@ -19,4 +19,12 @@ const fee = parseFixed(0.025);
 const feeAmount = parseFixed("1_000.123456789012345678").mulUp(fee);
 
 console.log(`Fee amount: ${feeAmount}`);
-// => Fee amount: 25.003086419725308642
+// // => Fee amount: 25.003086419725308642
+
+console.log(
+  `Fee amount: ${feeAmount.formatCurrency({
+    decimals: 4,
+    rounding: "ceil",
+  })}`,
+);
+// // => Fee amount: $25.0031
