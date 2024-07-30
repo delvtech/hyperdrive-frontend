@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
@@ -6,7 +7,6 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import * as dnum from "dnum";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
@@ -134,11 +134,10 @@ export function OpenLongStats({
             ? `Term: ${numDays} days`
             : `$${formatBalance({
                 balance: baseTokenPrice
-                  ? dnum.multiply(
-                      [amountPaidInBase + yieldAtMaturity, baseToken.decimals],
-                      [baseTokenPrice, baseToken.decimals],
+                  ? fixed(
+                      amountPaidInBase + yieldAtMaturity,
                       baseToken.decimals,
-                    )[0]
+                    ).mul(baseTokenPrice, baseToken.decimals).bigint
                   : 0n,
                 decimals: baseToken.decimals,
                 places: 2,

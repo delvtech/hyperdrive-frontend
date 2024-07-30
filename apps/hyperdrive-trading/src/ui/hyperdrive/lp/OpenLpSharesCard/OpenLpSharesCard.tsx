@@ -65,7 +65,7 @@ export function OpenLpSharesCard({
 
   const isFetchingLpShares =
     lpSharesStatus === "loading" || openLpPositionStatus === "loading";
-  const profit = dnum.subtract([baseValue, 18], [baseAmountPaid, 18])[0];
+  const profit = baseValue - baseAmountPaid;
   const isPositiveChangeInValue = profit > 0n;
   const formattedProfit = formatBalance({
     balance: profit,

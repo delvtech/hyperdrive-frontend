@@ -1,3 +1,4 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import {
   HyperdriveConfig,
@@ -5,7 +6,6 @@ import {
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
@@ -201,13 +201,10 @@ function getMarketImpactLabel(
   if (spotRateAfterOpenShort === undefined || currentFixedRate === undefined) {
     return "-";
   }
-  const changeInFixedApr = dnum.subtract(
-    [spotRateAfterOpenShort, 18],
-    [currentFixedRate, 18],
-  )[0];
+  const changeInFixedApr = spotRateAfterOpenShort - currentFixedRate;
 
   const isChangeInFixedAprLessThanOneBasisPoint =
-    changeInFixedApr < dnum.from("0.0001", 18)[0]; // .01% === .0001
+    parseFixed("0.0001").gt(changeInFixedApr);
 
   if (isChangeInFixedAprLessThanOneBasisPoint) {
     return "+<0.01%";

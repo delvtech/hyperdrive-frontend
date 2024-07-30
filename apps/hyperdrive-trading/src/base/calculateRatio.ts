@@ -1,4 +1,4 @@
-import * as dnum from "dnum";
+import { fixed } from "@delvtech/fixed-point-wasm";
 
 export function calculateRatio({
   a,
@@ -9,8 +9,5 @@ export function calculateRatio({
   b: bigint;
   decimals: number;
 }): bigint {
-  return dnum.multiply(
-    dnum.divide([a, decimals], [b, decimals], decimals),
-    dnum.from("100", decimals),
-  )[0];
+  return fixed(a, decimals).div(b, decimals).mul(100, 0).bigint;
 }

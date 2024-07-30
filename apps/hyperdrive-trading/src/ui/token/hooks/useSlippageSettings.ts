@@ -1,6 +1,7 @@
-import * as dnum from "dnum";
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { useState } from "react";
 import { DEFAULT_SLIPPAGE_AMOUNT } from "src/ui/token/SlippageSettings";
+
 export function useSlippageSettings({ decimals }: { decimals: number }): {
   slippage: string;
   slippageAsBigInt: bigint;
@@ -10,8 +11,8 @@ export function useSlippageSettings({ decimals }: { decimals: number }): {
 } {
   const [slippage, setSlippage] = useState<string>(DEFAULT_SLIPPAGE_AMOUNT);
   const slippageAsBigInt = slippage
-    ? dnum.from(slippage, decimals)[0]
-    : dnum.from(DEFAULT_SLIPPAGE_AMOUNT, decimals)[0];
+    ? parseFixed(slippage, decimals).bigint
+    : parseFixed(DEFAULT_SLIPPAGE_AMOUNT, decimals).bigint;
   const [activeOption, setActiveOption] = useState<"auto" | "custom">("auto");
 
   return {

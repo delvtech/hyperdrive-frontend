@@ -1,4 +1,4 @@
-import * as dnum from "dnum";
+import { fixed } from "@delvtech/fixed-point-wasm";
 
 /**
  * Calculates how much an amount is worth, give the price per unit, example:
@@ -18,5 +18,5 @@ export function calculateValueFromPrice({
   unitPrice: bigint;
   decimals: number;
 }): bigint {
-  return dnum.multiply([amount, decimals], [unitPrice, decimals], decimals)[0];
+  return fixed(amount, decimals).mul(unitPrice, decimals).bigint;
 }
