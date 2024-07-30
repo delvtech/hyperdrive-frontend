@@ -121,6 +121,10 @@ export declare const EzETHHyperdriveCoreDeployer: {
             readonly type: "address";
             readonly internalType: "address";
         }, {
+            readonly name: "target4";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
             readonly name: "_salt";
             readonly type: "bytes32";
             readonly internalType: "bytes32";
@@ -144,7 +148,7 @@ export declare const EzETHHyperdriveCoreDeployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "6a462579";
+        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "285fd401";
         readonly "restakeManager()": "ff0996b5";
     };
 };

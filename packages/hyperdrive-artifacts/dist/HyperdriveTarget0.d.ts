@@ -78,6 +78,34 @@ export declare const HyperdriveTarget0: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "convertToBase";
+        readonly inputs: readonly [{
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "convertToShares";
+        readonly inputs: readonly [{
+            readonly name: "_baseAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "decimals";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -1427,6 +1455,8 @@ export declare const HyperdriveTarget0: {
         readonly "baseToken()": "c55dae63";
         readonly "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc";
         readonly "collectGovernanceFee((address,bool,bytes))": "3e691db9";
+        readonly "convertToBase(uint256)": "b88fed9f";
+        readonly "convertToShares(uint256)": "c6e6f592";
         readonly "decimals()": "313ce567";
         readonly "getCheckpoint(uint256)": "20fc4881";
         readonly "getCheckpointExposure(uint256)": "cf210e65";

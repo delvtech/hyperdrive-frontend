@@ -58,24 +58,6 @@ export const HyperdriveTarget3 = {
         },
         {
             "type": "function",
-            "name": "checkpoint",
-            "inputs": [
-                {
-                    "name": "_checkpointTime",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_maxIterations",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
             "name": "initialize",
             "inputs": [
                 {
@@ -119,108 +101,6 @@ export const HyperdriveTarget3 = {
                 }
             ],
             "stateMutability": "payable"
-        },
-        {
-            "type": "function",
-            "name": "redeemWithdrawalShares",
-            "inputs": [
-                {
-                    "name": "_withdrawalShares",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_minOutputPerShare",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_options",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "removeLiquidity",
-            "inputs": [
-                {
-                    "name": "_lpShares",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_minOutputPerShare",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_options",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
         },
         {
             "type": "event",
@@ -965,22 +845,12 @@ export const HyperdriveTarget3 = {
         },
         {
             "type": "error",
-            "name": "InsufficientBalance",
-            "inputs": []
-        },
-        {
-            "type": "error",
             "name": "InsufficientLiquidity",
             "inputs": []
         },
         {
             "type": "error",
             "name": "InvalidApr",
-            "inputs": []
-        },
-        {
-            "type": "error",
-            "name": "InvalidCheckpointTime",
             "inputs": []
         },
         {
@@ -1062,9 +932,6 @@ export const HyperdriveTarget3 = {
     bytecode: '0x',
     methodIdentifiers: {
         "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9",
-        "checkpoint(uint256,uint256)": "414f826d",
-        "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4",
-        "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9",
-        "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434"
+        "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4"
     }
 };

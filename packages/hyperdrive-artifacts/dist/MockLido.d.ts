@@ -21,23 +21,13 @@ export declare const MockLido: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "DOMAIN_SEPARATOR";
-        readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
         readonly name: "allowance";
         readonly inputs: readonly [{
-            readonly name: "";
+            readonly name: "owner";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "";
+            readonly name: "spender";
             readonly type: "address";
             readonly internalType: "address";
         }];
@@ -55,7 +45,7 @@ export declare const MockLido: {
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "value";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -79,7 +69,7 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "balanceOf";
         readonly inputs: readonly [{
-            readonly name: "";
+            readonly name: "_owner";
             readonly type: "address";
             readonly internalType: "address";
         }];
@@ -103,11 +93,11 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "burn";
         readonly inputs: readonly [{
-            readonly name: "destination";
+            readonly name: "_target";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "_amount";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -343,11 +333,11 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "mint";
         readonly inputs: readonly [{
-            readonly name: "destination";
+            readonly name: "_recipient";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "_amount";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -357,7 +347,7 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "mint";
         readonly inputs: readonly [{
-            readonly name: "amount";
+            readonly name: "_amount";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -375,20 +365,6 @@ export declare const MockLido: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
-        readonly name: "nonces";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
         readonly name: "owner";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -397,40 +373,6 @@ export declare const MockLido: {
             readonly internalType: "address";
         }];
         readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "permit";
-        readonly inputs: readonly [{
-            readonly name: "owner";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "spender";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "value";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "deadline";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "v";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }, {
-            readonly name: "r";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }, {
-            readonly name: "s";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
         readonly name: "setAuthority";
@@ -543,7 +485,7 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "sharesOf";
         readonly inputs: readonly [{
-            readonly name: "_account";
+            readonly name: "";
             readonly type: "address";
             readonly internalType: "address";
         }];
@@ -591,11 +533,11 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "transfer";
         readonly inputs: readonly [{
-            readonly name: "to";
+            readonly name: "_recipient";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "_amount";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -609,15 +551,15 @@ export declare const MockLido: {
         readonly type: "function";
         readonly name: "transferFrom";
         readonly inputs: readonly [{
-            readonly name: "from";
+            readonly name: "_sender";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "to";
+            readonly name: "_recipient";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "_amount";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -691,7 +633,7 @@ export declare const MockLido: {
             readonly indexed: true;
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "value";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -791,7 +733,27 @@ export declare const MockLido: {
             readonly indexed: true;
             readonly internalType: "address";
         }, {
-            readonly name: "amount";
+            readonly name: "value";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
+        readonly name: "TransferShares";
+        readonly inputs: readonly [{
+            readonly name: "from";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }, {
+            readonly name: "sharesValue";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -817,10 +779,73 @@ export declare const MockLido: {
             readonly internalType: "bool";
         }];
         readonly anonymous: false;
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InsufficientAllowance";
+        readonly inputs: readonly [{
+            readonly name: "spender";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "allowance";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "needed";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InsufficientBalance";
+        readonly inputs: readonly [{
+            readonly name: "sender";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "balance";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "needed";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InvalidApprover";
+        readonly inputs: readonly [{
+            readonly name: "approver";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InvalidReceiver";
+        readonly inputs: readonly [{
+            readonly name: "receiver";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InvalidSender";
+        readonly inputs: readonly [{
+            readonly name: "sender";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+    }, {
+        readonly type: "error";
+        readonly name: "ERC20InvalidSpender";
+        readonly inputs: readonly [{
+            readonly name: "spender";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "DOMAIN_SEPARATOR()": "3644e515";
         readonly "allowance(address,address)": "dd62ed3e";
         readonly "approve(address,uint256)": "095ea7b3";
         readonly "authority()": "bf7e214f";
@@ -847,9 +872,7 @@ export declare const MockLido: {
         readonly "mint(address,uint256)": "40c10f19";
         readonly "mint(uint256)": "a0712d68";
         readonly "name()": "06fdde03";
-        readonly "nonces(address)": "7ecebe00";
         readonly "owner()": "8da5cb5b";
-        readonly "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": "d505accf";
         readonly "setAuthority(address)": "7a9e5e4b";
         readonly "setMaxMintAmount(uint256)": "088a4ed0";
         readonly "setPublicCapability(bytes4,bool)": "4b5159da";

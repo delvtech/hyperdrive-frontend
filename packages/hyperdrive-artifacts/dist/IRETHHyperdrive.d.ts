@@ -223,6 +223,34 @@ export declare const IRETHHyperdrive: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "convertToBase";
+        readonly inputs: readonly [{
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "convertToShares";
+        readonly inputs: readonly [{
+            readonly name: "_baseAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "decimals";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -1076,6 +1104,16 @@ export declare const IRETHHyperdrive: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "target4";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "totalSupply";
         readonly inputs: readonly [{
             readonly name: "tokenId";
@@ -1904,6 +1942,8 @@ export declare const IRETHHyperdrive: {
         readonly "closeLong(uint256,uint256,uint256,(address,bool,bytes))": "ded06231";
         readonly "closeShort(uint256,uint256,uint256,(address,bool,bytes))": "29b23fc1";
         readonly "collectGovernanceFee((address,bool,bytes))": "3e691db9";
+        readonly "convertToBase(uint256)": "b88fed9f";
+        readonly "convertToShares(uint256)": "c6e6f592";
         readonly "decimals()": "313ce567";
         readonly "domainSeparator()": "f698da25";
         readonly "getCheckpoint(uint256)": "20fc4881";
@@ -1943,6 +1983,7 @@ export declare const IRETHHyperdrive: {
         readonly "target1()": "eac3e799";
         readonly "target2()": "a6e8a859";
         readonly "target3()": "d899e112";
+        readonly "target4()": "f3f70707";
         readonly "totalSupply(uint256)": "bd85b039";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";

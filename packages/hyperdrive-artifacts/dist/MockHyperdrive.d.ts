@@ -1042,6 +1042,16 @@ export declare const MockHyperdrive: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "target4";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "transferFrom";
         readonly inputs: readonly [{
             readonly name: "";
@@ -1770,6 +1780,7 @@ export declare const MockHyperdrive: {
         readonly "target1()": "eac3e799";
         readonly "target2()": "a6e8a859";
         readonly "target3()": "d899e112";
+        readonly "target4()": "f3f70707";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";
         readonly "updateLiquidity(int256)": "8120a3e2";
