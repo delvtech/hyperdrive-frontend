@@ -34,6 +34,10 @@ export declare const EzETHTarget4: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -55,6 +59,10 @@ export declare const EzETHTarget4: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -87,60 +95,27 @@ export declare const EzETHTarget4: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "addLiquidity";
+        readonly name: "checkpoint";
         readonly inputs: readonly [{
-            readonly name: "_contribution";
+            readonly name: "_checkpointTime";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }, {
-            readonly name: "_minLpSharePrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_minApr";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_maxApr";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_options";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
+            readonly name: "_maxIterations";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
-        readonly stateMutability: "payable";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "openShort";
+        readonly name: "redeemWithdrawalShares";
         readonly inputs: readonly [{
-            readonly name: "_bondAmount";
+            readonly name: "_withdrawalShares";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }, {
-            readonly name: "_maxDeposit";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_minVaultSharePrice";
+            readonly name: "_minOutputPerShare";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }, {
@@ -170,7 +145,46 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
-        readonly stateMutability: "payable";
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "removeLiquidity";
+        readonly inputs: readonly [{
+            readonly name: "_lpShares";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_minOutputPerShare";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_options";
+            readonly type: "tuple";
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly components: readonly [{
+                readonly name: "destination";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "asBase";
+                readonly type: "bool";
+                readonly internalType: "bool";
+            }, {
+                readonly name: "extraData";
+                readonly type: "bytes";
+                readonly internalType: "bytes";
+            }];
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "event";
         readonly name: "AddLiquidity";
@@ -185,12 +199,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -204,6 +218,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -248,6 +267,16 @@ export declare const EzETHTarget4: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
+        readonly name: "CheckpointRewarderUpdated";
+        readonly inputs: readonly [{
+            readonly name: "newCheckpointRewarder";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
         readonly name: "CloseLong";
         readonly inputs: readonly [{
             readonly name: "trader";
@@ -270,12 +299,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -289,6 +318,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -315,12 +349,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -339,6 +373,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -350,10 +389,20 @@ export declare const EzETHTarget4: {
             readonly indexed: true;
             readonly internalType: "address";
         }, {
-            readonly name: "fees";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "vaultSharePrice";
+            readonly type: "uint256";
+            readonly indexed: false;
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "asBase";
+            readonly type: "bool";
+            readonly indexed: false;
+            readonly internalType: "bool";
         }];
         readonly anonymous: false;
     }, {
@@ -425,12 +474,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -444,6 +493,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -465,12 +519,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -484,6 +538,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -505,12 +564,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -529,6 +588,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -575,12 +639,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -589,6 +653,11 @@ export declare const EzETHTarget4: {
             readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -610,12 +679,12 @@ export declare const EzETHTarget4: {
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
         }, {
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
@@ -634,6 +703,11 @@ export declare const EzETHTarget4: {
             readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+        }, {
+            readonly name: "extraData";
+            readonly type: "bytes";
+            readonly indexed: false;
+            readonly internalType: "bytes";
         }];
         readonly anonymous: false;
     }, {
@@ -693,15 +767,11 @@ export declare const EzETHTarget4: {
         readonly anonymous: false;
     }, {
         readonly type: "error";
-        readonly name: "DecreasedPresentValueWhenAddingLiquidity";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "DistributeExcessIdleFailed";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
         readonly name: "ExpInvalidExponent";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "InsufficientBalance";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -709,11 +779,7 @@ export declare const EzETHTarget4: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
-        readonly name: "InvalidApr";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "InvalidPresentValue";
+        readonly name: "InvalidCheckpointTime";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -725,23 +791,11 @@ export declare const EzETHTarget4: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
-        readonly name: "MinimumSharePrice";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
         readonly name: "MinimumTransactionAmount";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
-        readonly name: "NotPayable";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
         readonly name: "OutputLimit";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "PoolIsPaused";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -750,10 +804,6 @@ export declare const EzETHTarget4: {
     }, {
         readonly type: "error";
         readonly name: "RestrictedZeroAddress";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "TransferFailed";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -775,15 +825,12 @@ export declare const EzETHTarget4: {
         readonly type: "error";
         readonly name: "UnsupportedToken";
         readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "UpdateLiquidityFailed";
-        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9";
-        readonly "openShort(uint256,uint256,uint256,(address,bool,bytes))": "dbbe8070";
+        readonly "checkpoint(uint256,uint256)": "414f826d";
+        readonly "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9";
+        readonly "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434";
     };
 };
 //# sourceMappingURL=EzETHTarget4.d.ts.map

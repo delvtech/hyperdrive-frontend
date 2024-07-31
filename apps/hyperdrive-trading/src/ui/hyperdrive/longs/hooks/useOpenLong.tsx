@@ -1,3 +1,4 @@
+import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-js-core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -63,6 +64,11 @@ export function useOpenLong({
         return;
       }
 
+      console.log({
+        name: readWriteHyperdrive.debugName,
+        isWrite: readWriteHyperdrive instanceof ReadWriteHyperdrive,
+      });
+
       // if opening with shares, make sure the shares in gets prepared before
       // going into the sdk
       const finalAmount = asBase
@@ -89,7 +95,7 @@ export function useOpenLong({
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Long opened" txHash={txHash} />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
+            { id: txHash, duration: SUCCESS_TOAST_DURATION }
           );
           setTimeout(() => {
             toastWarpcast();
@@ -100,7 +106,7 @@ export function useOpenLong({
 
       toast.loading(
         <TransactionToast txHash={hash} message="Opening a Long..." />,
-        { id: hash },
+        { id: hash }
       );
 
       onSubmitted?.(hash);

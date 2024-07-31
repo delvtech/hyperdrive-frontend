@@ -4,7 +4,7 @@
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "build": "tsup",
     "watch": "npm run build -- --watch",
     "test": "vitest run",
     "test:watch": "vitest --reporter=verbose",
@@ -25,25 +25,72 @@
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
-    "@types/lodash.groupby": "^4.6.7",
-    "@types/lodash.mapvalues": "^4.6.7",
-    "@types/sinon": "^10.0.16",
-    "abitype": "^1.0.2",
-    "dotenv": "^16.0.3",
-    "prettier": "3.2.5",
-    "prettier-plugin-organize-imports": "3.2.4",
-    "sinon": "^15.2.0",
-    "tsconfig-paths": "^4.1.0",
-    "tsup": "^7.2.0",
-    "typescript": "^5.0.2",
-    "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.28.5"
+    "@types/lodash.groupby": "^4.6.9",
+    "@types/lodash.mapvalues": "^4.6.9",
+    "@types/sinon": "^17.0.3",
+    "abitype": "^1.0.5",
+    "dotenv": "^16.4.5",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "4.0.0",
+    "sinon": "^18.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.4"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./factory/*": {
+      "types": "./dist/factory/*.d.ts",
+      "default": "./dist/factory/*.js"
+    },
+    "./hyperdrive/*": {
+      "types": "./dist/hyperdrive/*.d.ts",
+      "default": "./dist/hyperdrive/*.js"
+    },
+    "./registry/*": {
+      "types": "./dist/registry/*.d.ts",
+      "default": "./dist/registry/*.js"
+    },
+    "./token/*": {
+      "types": "./dist/token/*.d.ts",
+      "default": "./dist/token/*.js"
+    },
+    "./contract": {
+      "types": "./dist/contract.d.ts",
+      "default": "./dist/contract.js"
+    },
+    "./errors": {
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
+    },
+    "./model": {
+      "types": "./dist/model.d.ts",
+      "default": "./dist/model.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
+    },
+    "./v1.0.14": {
+      "types": "./dist/v1.0.14/index.d.ts",
+      "default": "./dist/v1.0.14/index.js"
+    },
+    "./v1.0.14/*": {
+      "types": "./dist/v1.0.14/*.d.ts",
+      "default": "./dist/v1.0.14/*.js"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   }

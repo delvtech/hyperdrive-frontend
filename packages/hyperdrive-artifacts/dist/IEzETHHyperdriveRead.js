@@ -39,6 +39,44 @@ export const IEzETHHyperdriveRead = {
         },
         {
             "type": "function",
+            "name": "convertToBase",
+            "inputs": [
+                {
+                    "name": "_shareAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "convertToShares",
+            "inputs": [
+                {
+                    "name": "_baseAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "decimals",
             "inputs": [],
             "outputs": [
@@ -675,6 +713,8 @@ export const IEzETHHyperdriveRead = {
     methodIdentifiers: {
         "balanceOf(uint256,address)": "3656eec2",
         "baseToken()": "c55dae63",
+        "convertToBase(uint256)": "b88fed9f",
+        "convertToShares(uint256)": "c6e6f592",
         "decimals()": "313ce567",
         "getCheckpoint(uint256)": "20fc4881",
         "getCheckpointExposure(uint256)": "cf210e65",

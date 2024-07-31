@@ -2,76 +2,33 @@ export const HyperdriveTarget4 = {
     abi: [
         {
             "type": "function",
-            "name": "addLiquidity",
+            "name": "checkpoint",
             "inputs": [
                 {
-                    "name": "_contribution",
+                    "name": "_checkpointTime",
                     "type": "uint256",
                     "internalType": "uint256"
                 },
                 {
-                    "name": "_minLpSharePrice",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_minApr",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_maxApr",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_options",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
+                    "name": "_maxIterations",
                     "type": "uint256",
                     "internalType": "uint256"
                 }
             ],
-            "stateMutability": "payable"
+            "outputs": [],
+            "stateMutability": "nonpayable"
         },
         {
             "type": "function",
-            "name": "openShort",
+            "name": "redeemWithdrawalShares",
             "inputs": [
                 {
-                    "name": "_bondAmount",
+                    "name": "_withdrawalShares",
                     "type": "uint256",
                     "internalType": "uint256"
                 },
                 {
-                    "name": "_maxDeposit",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_minVaultSharePrice",
+                    "name": "_minOutputPerShare",
                     "type": "uint256",
                     "internalType": "uint256"
                 },
@@ -110,7 +67,58 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 }
             ],
-            "stateMutability": "payable"
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "removeLiquidity",
+            "inputs": [
+                {
+                    "name": "_lpShares",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_minOutputPerShare",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "_options",
+                    "type": "tuple",
+                    "internalType": "struct IHyperdrive.Options",
+                    "components": [
+                        {
+                            "name": "destination",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "asBase",
+                            "type": "bool",
+                            "internalType": "bool"
+                        },
+                        {
+                            "name": "extraData",
+                            "type": "bytes",
+                            "internalType": "bytes"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
         },
         {
             "type": "event",
@@ -129,13 +137,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -151,6 +159,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -207,6 +221,19 @@ export const HyperdriveTarget4 = {
         },
         {
             "type": "event",
+            "name": "CheckpointRewarderUpdated",
+            "inputs": [
+                {
+                    "name": "newCheckpointRewarder",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
             "name": "CloseLong",
             "inputs": [
                 {
@@ -234,13 +261,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -256,6 +283,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -289,13 +322,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -317,6 +350,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -332,10 +371,22 @@ export const HyperdriveTarget4 = {
                     "internalType": "address"
                 },
                 {
-                    "name": "fees",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "vaultSharePrice",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "asBase",
+                    "type": "bool",
+                    "indexed": false,
+                    "internalType": "bool"
                 }
             ],
             "anonymous": false
@@ -426,13 +477,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -448,6 +499,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -475,13 +532,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -497,6 +554,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -524,13 +587,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -552,6 +615,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -611,13 +680,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -627,6 +696,12 @@ export const HyperdriveTarget4 = {
                     "type": "bool",
                     "indexed": false,
                     "internalType": "bool"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -654,13 +729,13 @@ export const HyperdriveTarget4 = {
                     "internalType": "uint256"
                 },
                 {
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
                 },
                 {
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
@@ -682,6 +757,12 @@ export const HyperdriveTarget4 = {
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                },
+                {
+                    "name": "extraData",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
@@ -757,17 +838,12 @@ export const HyperdriveTarget4 = {
         },
         {
             "type": "error",
-            "name": "DecreasedPresentValueWhenAddingLiquidity",
-            "inputs": []
-        },
-        {
-            "type": "error",
-            "name": "DistributeExcessIdleFailed",
-            "inputs": []
-        },
-        {
-            "type": "error",
             "name": "ExpInvalidExponent",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "InsufficientBalance",
             "inputs": []
         },
         {
@@ -777,12 +853,7 @@ export const HyperdriveTarget4 = {
         },
         {
             "type": "error",
-            "name": "InvalidApr",
-            "inputs": []
-        },
-        {
-            "type": "error",
-            "name": "InvalidPresentValue",
+            "name": "InvalidCheckpointTime",
             "inputs": []
         },
         {
@@ -797,11 +868,6 @@ export const HyperdriveTarget4 = {
         },
         {
             "type": "error",
-            "name": "MinimumSharePrice",
-            "inputs": []
-        },
-        {
-            "type": "error",
             "name": "MinimumTransactionAmount",
             "inputs": []
         },
@@ -812,22 +878,12 @@ export const HyperdriveTarget4 = {
         },
         {
             "type": "error",
-            "name": "PoolIsPaused",
-            "inputs": []
-        },
-        {
-            "type": "error",
             "name": "ReentrancyGuardReentrantCall",
             "inputs": []
         },
         {
             "type": "error",
             "name": "RestrictedZeroAddress",
-            "inputs": []
-        },
-        {
-            "type": "error",
-            "name": "TransferFailed",
             "inputs": []
         },
         {
@@ -849,16 +905,12 @@ export const HyperdriveTarget4 = {
             "type": "error",
             "name": "UnsafeCastToUint128",
             "inputs": []
-        },
-        {
-            "type": "error",
-            "name": "UpdateLiquidityFailed",
-            "inputs": []
         }
     ],
     bytecode: '0x',
     methodIdentifiers: {
-        "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9",
-        "openShort(uint256,uint256,uint256,(address,bool,bytes))": "dbbe8070"
+        "checkpoint(uint256,uint256)": "414f826d",
+        "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9",
+        "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434"
     }
 };

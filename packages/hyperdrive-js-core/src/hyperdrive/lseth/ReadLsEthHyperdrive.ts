@@ -3,12 +3,12 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadLsEth } from "src/token/lseth/ReadLsEth";
 
 export class ReadLsEthHyperdrive extends readLsEthHyperdriveMixin(
-  ReadHyperdrive,
+  ReadHyperdrive
 ) {}
 
 /**
@@ -30,19 +30,19 @@ export interface ReadLsEthHyperdriveMixin {
  * @internal
  */
 export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T,
+  Base: T
 ): Constructor<ReadLsEthHyperdriveMixin> & T {
-  return class extends Base implements ReadLsEthHyperdriveMixin {
+  return class extends Base {
     constructor(...[options]: any[]) {
       const {
-        name = "lsETH Hyperdrive",
+        debugName = "lsETH Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
     }
 
     async getBaseToken(): Promise<ReadEth> {

@@ -134,20 +134,6 @@ export declare const LsETHTarget3: {
         readonly stateMutability: "payable";
     }, {
         readonly type: "function";
-        readonly name: "checkpoint";
-        readonly inputs: readonly [{
-            readonly name: "_checkpointTime";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_maxIterations";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
         readonly name: "initialize";
         readonly inputs: readonly [{
             readonly name: "_contribution";
@@ -181,84 +167,6 @@ export declare const LsETHTarget3: {
             readonly internalType: "uint256";
         }];
         readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "redeemWithdrawalShares";
-        readonly inputs: readonly [{
-            readonly name: "_withdrawalShares";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_minOutputPerShare";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_options";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "removeLiquidity";
-        readonly inputs: readonly [{
-            readonly name: "_lpShares";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_minOutputPerShare";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_options";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "event";
         readonly name: "AddLiquidity";
@@ -881,19 +789,11 @@ export declare const LsETHTarget3: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
-        readonly name: "InsufficientBalance";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
         readonly name: "InsufficientLiquidity";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
         readonly name: "InvalidApr";
-        readonly inputs: readonly [];
-    }, {
-        readonly type: "error";
-        readonly name: "InvalidCheckpointTime";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -975,10 +875,7 @@ export declare const LsETHTarget3: {
     bytecode: `0x${string}`;
     methodIdentifiers: {
         readonly "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9";
-        readonly "checkpoint(uint256,uint256)": "414f826d";
         readonly "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4";
-        readonly "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9";
-        readonly "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434";
     };
 };
 //# sourceMappingURL=LsETHTarget3.d.ts.map

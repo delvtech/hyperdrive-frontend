@@ -144,6 +144,11 @@ export const IHyperdriveCoreDeployer = {
                     "internalType": "address"
                 },
                 {
+                    "name": "_target4",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
                     "name": "_salt",
                     "type": "bytes32",
                     "internalType": "bytes32"
@@ -161,6 +166,6 @@ export const IHyperdriveCoreDeployer = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
-        "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "6a462579"
+        "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "285fd401"
     }
 };

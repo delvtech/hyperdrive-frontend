@@ -1,7 +1,7 @@
 export declare const ERC4626Target4Deployer: {
     abi: readonly [{
         readonly type: "function";
-        readonly name: "deploy";
+        readonly name: "deployTarget";
         readonly inputs: readonly [{
             readonly name: "_config";
             readonly type: "tuple";
@@ -35,6 +35,10 @@ export declare const ERC4626Target4Deployer: {
                 readonly type: "uint256";
                 readonly internalType: "uint256";
             }, {
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
                 readonly name: "positionDuration";
                 readonly type: "uint256";
                 readonly internalType: "uint256";
@@ -56,6 +60,10 @@ export declare const ERC4626Target4Deployer: {
                 readonly internalType: "address";
             }, {
                 readonly name: "sweepCollector";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "checkpointRewarder";
                 readonly type: "address";
                 readonly internalType: "address";
             }, {
@@ -98,7 +106,7 @@ export declare const ERC4626Target4Deployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deploy((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "195d4bfc";
+        readonly "deployTarget((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "6b323707";
     };
 };
 //# sourceMappingURL=ERC4626Target4Deployer.d.ts.map

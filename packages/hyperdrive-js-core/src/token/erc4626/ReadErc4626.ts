@@ -43,14 +43,14 @@ export interface ReadErc4626Mixin {
  * @internal
  */
 export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
-  Base: T,
+  Base: T
 ): Constructor<ReadErc4626Mixin> & T {
   return class extends Base implements ReadErc4626Mixin {
     erc4626Contract: CachedReadContract<Erc4626Abi>;
 
     constructor(...[options]: any[]) {
       const {
-        name = "ERC-4626 Tokenized Vault",
+        debugName = "ERC-4626 Tokenized Vault",
         contractFactory,
         address,
         cache,
@@ -58,7 +58,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
         network,
       } = options as ReadErc20Options;
       super({
-        name,
+        debugName,
         contractFactory,
         address,
         cache,
@@ -87,7 +87,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       return this.erc4626Contract.read(
         "convertToAssets",
         { shares: sharesAmount },
-        options,
+        options
       );
     }
 
@@ -101,7 +101,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       return this.erc4626Contract.read(
         "convertToShares",
         { assets: assetsAmount },
-        options,
+        options
       );
     }
   };

@@ -29,6 +29,34 @@ export declare const IHyperdriveRead: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "convertToBase";
+        readonly inputs: readonly [{
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "convertToShares";
+        readonly inputs: readonly [{
+            readonly name: "_baseAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "decimals";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -498,6 +526,8 @@ export declare const IHyperdriveRead: {
     methodIdentifiers: {
         readonly "balanceOf(uint256,address)": "3656eec2";
         readonly "baseToken()": "c55dae63";
+        readonly "convertToBase(uint256)": "b88fed9f";
+        readonly "convertToShares(uint256)": "c6e6f592";
         readonly "decimals()": "313ce567";
         readonly "getCheckpoint(uint256)": "20fc4881";
         readonly "getCheckpointExposure(uint256)": "cf210e65";

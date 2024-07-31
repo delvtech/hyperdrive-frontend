@@ -1098,9 +1098,9 @@ checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
 name = "fixedpointmath"
-version = "0.16.9"
+version = "0.16.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a9cd911bb3723334921510350a230dd6e037f474393c47fd20de324678a8bc32"
+checksum = "342d49c786594047d4104a80d0591131d96ea997fe3253c200601806d9614d13"
 dependencies = [
  "ethers",
  "eyre",
@@ -1475,9 +1475,9 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-math"
-version = "0.16.9"
+version = "0.16.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33e932a2733958802466235c1dc49b8646be23d2c11ec3d20e1709ba631a8a13"
+checksum = "d95327004290efa0265c6735119a882d5a0d38bf58c31926277c2f7790fa75d0"
 dependencies = [
  "ethers",
  "eyre",
@@ -1488,7 +1488,7 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wasm"
-version = "0.15.1"
+version = "0.15.2"
 dependencies = [
  "console_error_panic_hook",
  "const-hex",
@@ -1506,9 +1506,9 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wrappers"
-version = "0.16.9"
+version = "0.16.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c8646de8244036370663575806f53b4418db971d9292a0198fc5a142f7eba88"
+checksum = "df972f03cb566ad301db4c71113c449b32c843f89d28cd9804d0e2326576358e"
 dependencies = [
  "dotenv",
  "ethers",

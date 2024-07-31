@@ -1,7 +1,7 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 
 export interface ReadFactoryOptions extends ReadContractModelOptions {}
@@ -11,14 +11,14 @@ export class ReadFactory extends ReadModel {
   contract: CachedReadContract<FactoryAbi>;
 
   constructor({
-    name = "Hyperdrive Factory",
+    debugName = "Hyperdrive Factory",
     address,
     contractFactory,
     network,
     cache,
     namespace,
   }: ReadFactoryOptions) {
-    super({ name, network, contractFactory });
+    super({ debugName, network, contractFactory });
     this.address = address;
     this.contract = contractFactory({
       abi: factoryAbi,
@@ -63,7 +63,7 @@ export class ReadFactory extends ReadModel {
         "getDeployerCoordinatorByInstances",
         {
           __instances: instances,
-        },
+        }
       );
       return readOnlyAddresses.slice();
     }
@@ -71,7 +71,7 @@ export class ReadFactory extends ReadModel {
     const count = await this.contract.read(
       "getNumberOfDeployerCoordinators",
       {},
-      options,
+      options
     );
     const readOnlyAddresses = await this.contract.read(
       "getDeployerCoordinatorsInRange",
@@ -79,7 +79,7 @@ export class ReadFactory extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options,
+      options
     );
     return readOnlyAddresses.slice();
   }
@@ -96,7 +96,7 @@ export class ReadFactory extends ReadModel {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        }),
+        })
     );
   }
 
@@ -104,7 +104,7 @@ export class ReadFactory extends ReadModel {
    * Get the address of all Hyperdrive instances deployed by the factory.
    */
   async getInstanceAddresses(
-    options?: ContractReadOptions,
+    options?: ContractReadOptions
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
     const readOnlyAddresses = await this.contract.read(
@@ -113,7 +113,7 @@ export class ReadFactory extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options,
+      options
     );
     return readOnlyAddresses.slice();
   }

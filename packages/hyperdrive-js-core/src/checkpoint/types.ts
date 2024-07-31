@@ -4,7 +4,7 @@ import {
   FunctionReturn,
 } from "@delvtech/evm-client";
 import { Prettify } from "src/base/types";
-import { HyperdriveAbi } from "src/hyperdrive/abi";
+import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 
 export type Checkpoint = Prettify<
   {

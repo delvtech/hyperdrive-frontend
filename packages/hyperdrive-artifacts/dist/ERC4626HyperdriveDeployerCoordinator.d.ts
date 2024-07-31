@@ -29,8 +29,48 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
             readonly name: "_target3Deployer";
             readonly type: "address";
             readonly internalType: "address";
+        }, {
+            readonly name: "_target4Deployer";
+            readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "convertToBase";
+        readonly inputs: readonly [{
+            readonly name: "_vaultSharesToken";
+            readonly type: "address";
+            readonly internalType: "contract IERC20";
+        }, {
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "convertToShares";
+        readonly inputs: readonly [{
+            readonly name: "_vaultSharesToken";
+            readonly type: "address";
+            readonly internalType: "contract IERC20";
+        }, {
+            readonly name: "_baseAmount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "function";
         readonly name: "coreDeployer";
@@ -301,6 +341,10 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
                 readonly name: "target3";
                 readonly type: "address";
                 readonly internalType: "address";
+            }, {
+                readonly name: "target4";
+                readonly type: "address";
+                readonly internalType: "address";
             }];
         }];
         readonly stateMutability: "view";
@@ -429,6 +473,16 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "target4Deployer";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "version";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -548,6 +602,8 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "convertToBase(address,uint256)": "251f6c42";
+        readonly "convertToShares(address,uint256)": "3e5541f1";
         readonly "coreDeployer()": "c83e1f51";
         readonly "deployHyperdrive(bytes32,string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "e990eba8";
         readonly "deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)": "c1510618";
@@ -561,6 +617,7 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
         readonly "target1Deployer()": "a085fa30";
         readonly "target2Deployer()": "b6cb1118";
         readonly "target3Deployer()": "aa8cd6c4";
+        readonly "target4Deployer()": "966ecd1c";
         readonly "version()": "54fd4d50";
     };
 };

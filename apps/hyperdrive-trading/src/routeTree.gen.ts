@@ -11,15 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from "./ui/routes/__root";
-import { Route as BridgeImport } from "./ui/routes/bridge";
-import { Route as ChainlogImport } from "./ui/routes/chainlog";
-import { Route as ErrorImport } from "./ui/routes/error";
-import { Route as IndexImport } from "./ui/routes/index";
-import { Route as IneligibleImport } from "./ui/routes/ineligible";
-import { Route as MarketAddressImport } from "./ui/routes/market.$address";
-import { Route as MarketsImport } from "./ui/routes/markets";
-import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
 import { Route as VpnImport } from "./ui/routes/vpn";
+import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
+import { Route as MarketsImport } from "./ui/routes/markets";
+import { Route as IneligibleImport } from "./ui/routes/ineligible";
+import { Route as ErrorImport } from "./ui/routes/error";
+import { Route as ChainlogImport } from "./ui/routes/chainlog";
+import { Route as BridgeImport } from "./ui/routes/bridge";
+import { Route as IndexImport } from "./ui/routes/index";
+import { Route as MarketAddressImport } from "./ui/routes/market.$address";
 
 // Create/Update Routes
 

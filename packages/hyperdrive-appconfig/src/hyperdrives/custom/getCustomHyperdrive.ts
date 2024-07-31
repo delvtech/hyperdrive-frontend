@@ -66,7 +66,7 @@ export async function getCustomHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdrive.address,
-    version,
+    version: version.string,
     name: hyperdriveName,
     decimals: await hyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,

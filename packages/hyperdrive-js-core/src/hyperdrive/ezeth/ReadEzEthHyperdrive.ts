@@ -1,6 +1,6 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import {
   EzEthHyperdriveAbi,
   ezEthHyperdriveAbi,
@@ -9,7 +9,7 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
-  ReadHyperdrive,
+  ReadHyperdrive
 ) {}
 
 /**
@@ -33,21 +33,21 @@ export interface ReadEzEthHyperdriveMixin {
  * @internal
  */
 export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T,
+  Base: T
 ): Constructor<ReadEzEthHyperdriveMixin> & T {
-  return class extends Base implements ReadEzEthHyperdriveMixin {
+  return class extends Base {
     ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
-        name = "EzETH Hyperdrive",
+        debugName = "EzETH Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as any;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
       this.ezEthHyperdriveContract = contractFactory({
         abi: ezEthHyperdriveAbi,
         address,

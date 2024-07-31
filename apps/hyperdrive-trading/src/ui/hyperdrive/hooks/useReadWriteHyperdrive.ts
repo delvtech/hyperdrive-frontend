@@ -1,22 +1,18 @@
-import {
-  ReadWriteHyperdrive,
-  ReadWriteStEthHyperdrive,
-} from "@delvtech/hyperdrive-viem";
+import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
   findHyperdriveConfig,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { useMemo } from "react";
-import { sdkCache } from "src/sdk/sdkCache";
+import { useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { getIsSteth } from "src/vaults/isSteth";
 import { Address } from "viem";
-import { useChainId, usePublicClient, useWalletClient } from "wagmi";
+import { usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive(
-  address: Address | undefined,
+  address: Address | undefined
 ): ReadWriteHyperdrive | undefined {
-  const chainId = useChainId();
   const publicClient = usePublicClient();
   const { data: walletClient } = useWalletClient();
 
@@ -35,34 +31,25 @@ export function useReadWriteHyperdrive(
       })
     : undefined;
 
-  return useMemo(() => {
-    if (
-      !walletClient ||
-      !address ||
-      !publicClient ||
-      !walletClient ||
-      !sharesToken
-    ) {
-      return undefined;
-    }
+  const enabled =
+    !!address && !!publicClient && !!walletClient && !!sharesToken;
 
-    const isSteth = getIsSteth(sharesToken);
-    if (isSteth) {
-      return new ReadWriteStEthHyperdrive({
-        address,
-        publicClient,
-        walletClient,
-        cache: sdkCache,
-        namespace: chainId.toString(),
-      });
-    }
-
-    return new ReadWriteHyperdrive({
+  const { data } = useQuery({
+    queryKey: makeQueryKey("getReadWriteHyperdrive", {
       address,
-      publicClient,
-      walletClient,
-      cache: sdkCache,
-      namespace: chainId.toString(),
-    });
-  }, [address, chainId, publicClient, sharesToken, walletClient]);
+      sharesToken: sharesToken?.address,
+    }),
+    enabled,
+    queryFn: enabled
+      ? () =>
+          getReadWriteHyperdrive({
+            hyperdriveAddress: address,
+            publicClient,
+            walletClient,
+            sharesToken,
+          })
+      : undefined,
+  });
+
+  return data;
 }
