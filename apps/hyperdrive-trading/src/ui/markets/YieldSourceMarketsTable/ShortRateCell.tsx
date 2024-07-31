@@ -27,7 +27,7 @@ export function ShortRateCell({
           "text-error": (shortApr?.apr || 0n) < 0n,
         })}
       >
-        {shortApr ? `${shortApr.formatted}%` : "-"}
+        {shortApr ? `${shortApr.formatted}` : "-"}
       </span>
     </div>
   );

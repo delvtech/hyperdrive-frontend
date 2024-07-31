@@ -175,7 +175,7 @@ function getColumns(appConfig: AppConfig) {
         const fixedRate = getValue();
         return (
           <span key="fixed-rate" className="lg:flex lg:w-20 lg:justify-end">
-            {formatRate(fixedRate)}%
+            {formatRate(fixedRate)}
           </span>
         );
       },

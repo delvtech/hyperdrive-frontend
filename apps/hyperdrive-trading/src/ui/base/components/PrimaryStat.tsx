@@ -18,7 +18,7 @@ export function PrimaryStat({
       <p className="text-sm text-neutral-content">{label}</p>
       <div className={valueClassName}>
         <p className="text-h3 font-bold">{value}</p>
-        <p className="ml-1">{valueUnit}</p>
+        <p>{valueUnit}</p>
       </div>
       {subValue && <p className="text-sm text-neutral-content">{subValue}</p>}
     </div>

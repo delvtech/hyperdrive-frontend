@@ -40,7 +40,7 @@ export function YieldSourceRateBadge({
         ) : (
           <>
             Variable APY @{" "}
-            <span className="text-base-content">{vaultRate?.formatted}%</span>
+            <span className="text-base-content">{vaultRate?.formatted}</span>
           </>
         )}
       </span>

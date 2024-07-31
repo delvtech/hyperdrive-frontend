@@ -43,7 +43,7 @@ export function FixedRateStat({
               <Skeleton className="w-20" />
             ) : (
               <span className={rateClassName}>
-                {fixedApr?.formatted || "0"}%
+                {fixedApr?.formatted || "0"}
               </span>
             ),
 
@@ -59,7 +59,7 @@ export function FixedRateStat({
               <Skeleton className="w-20" />
             ) : (
               <span className={rateClassName}>
-                {fixedRoi?.formatted || "0"}%
+                {fixedRoi?.formatted || "0"}
               </span>
             ),
 

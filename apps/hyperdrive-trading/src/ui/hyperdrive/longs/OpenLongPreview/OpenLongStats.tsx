@@ -82,8 +82,8 @@ export function OpenLongStats({
                       bondAmount: bondAmount,
                     }),
                     baseToken.decimals,
-                  )}%`
-                : `${fixedApr?.formatted}%`}
+                  )}`
+                : `${fixedApr?.formatted}`}
             </>
           )
         }
