@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
@@ -7,6 +8,7 @@ import {
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -20,17 +22,18 @@ import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { Address, formatUnits } from "viem";
+import { useAccount, useChainId } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -43,6 +46,7 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -95,6 +99,10 @@ export function OpenShortForm({
         ? [baseToken, sharesToken]
         : [sharesToken],
     });
+
+  const tokenPrices = useTokenFiatPrices([activeToken.address]);
+  const activeTokenPrice =
+    tokenPrices?.[activeToken.address.toLowerCase() as Address];
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -192,42 +200,105 @@ export function OpenShortForm({
     },
   });
 
+  // Max button is wired up to the user's balance, or the pool's max long.
+  // Whichever is smallest.
+  let maxButtonValue = "0";
+  if (activeTokenBalance && maxBondsOut) {
+    maxButtonValue = formatUnits(
+      activeTokenBalance.value > maxBondsOut
+        ? maxBondsOut
+        : activeTokenBalance?.value,
+      activeToken.decimals,
+    );
+  }
+
   return (
-    <TransactionViewOld
+    <TransactionView
       tokenInput={
-        <TokenInput
-          name={`${baseToken.symbol}-input`}
-          token={`hy${baseToken.symbol}`}
-          inputLabel="Amount to short"
-          value={amountOfBondsToShort ?? ""}
-          onChange={(newAmount) => setAmount(newAmount)}
-          stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
-            </div>
-          }
-          settings={
-            <SlippageSettings
-              onSlippageChange={setSlippage}
-              slippage={slippage}
-              activeOption={activeSlippageOption}
-              onActiveOptionChange={setActiveSlippageOption}
-              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-            />
-          }
-        />
-      }
-      setting={
-        <TokenPicker
-          label={
-            baseTokenDepositEnabled
-              ? "Choose asset for deposit"
-              : "Asset for deposit"
-          }
-          onChange={(tokenAddress) => setActiveToken(tokenAddress)}
-          activeTokenAddress={activeToken.address}
-          tokens={tokenOptions}
-        />
+        <div className="flex flex-col gap-3">
+          <TokenInputTwo
+            name={`${baseToken.symbol}-input`}
+            token={
+              <TokenPickerTwo
+                tokens={tokenOptions}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setAmount("0");
+                }}
+              />
+            }
+            inputLabel="You pay"
+            value={amountOfBondsToShort ?? ""}
+            maxValue={maxButtonValue}
+            onChange={(newAmount) => setAmount(newAmount)}
+            settings={
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
+            }
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeTokenPrice && traderDeposit
+                        ? fixed(traderDeposit, activeToken.decimals).mul(
+                            activeTokenPrice,
+                            activeToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            bottomRightElement={
+              <div className="flex flex-col gap-1 text-xs text-neutral-content">
+                <span>
+                  {activeTokenBalance
+                    ? `Balance: ${formatBalance({
+                        balance: activeTokenBalance?.value,
+                        decimals: activeToken.decimals,
+                        places: activeToken.places,
+                      })}`
+                    : undefined}
+                </span>
+              </div>
+            }
+          />
+          <TokenInputTwo
+            name={`${baseToken.symbol}-input`}
+            token={`hy${baseToken.symbol}`}
+            inputLabel="Earn yield on"
+            value={amountOfBondsToShort ?? ""}
+            onChange={(newAmount) => setAmount(newAmount)}
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeTokenPrice && traderDeposit
+                        ? fixed(traderDeposit, activeToken.decimals).mul(
+                            activeTokenPrice,
+                            activeToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+          />
+        </div>
       }
       transactionPreview={
         <OpenShortPreview
