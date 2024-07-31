@@ -1,4 +1,4 @@
-import * as core from "@delvtech/hyperdrive-js-core";
+import * as core from "@delvtech/hyperdrive-js-core/hyperdrive/model";
 import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 

@@ -28,6 +28,7 @@ export { ReadWriteLsEthHyperdrive } from "src/hyperdrive/lseth/ReadWriteLsEthHyp
 
 // morpho
 export { ReadMetaMorphoHyperdrive } from "src/hyperdrive/metamorpho/ReadMetaMorphoHyperdrive";
+export { ReadWriteMetaMorphoHyperdrive } from "src/hyperdrive/metamorpho/ReadWriteMetaMorphoHyperdrive";
 
 // reth
 export { ReadREthHyperdrive } from "src/hyperdrive/reth/ReadREthHyperdrive";

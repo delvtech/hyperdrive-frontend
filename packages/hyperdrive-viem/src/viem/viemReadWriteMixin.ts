@@ -11,11 +11,12 @@ import {
 import { PublicClient, WalletClient } from "viem";
 import { Prettify } from "viem/chains";
 
-export type ViemReadWriteMixin<T extends ReadContractModelConstructor> = new (
-  options: ViemReadWriteModelOptions<ConstructorParameters<T>[0]>
-) => InstanceType<T>;
+export type ViemReadWriteMixin<T extends ReadWriteContractModelConstructor> =
+  new (
+    options: ViemReadWriteModelOptions<ConstructorParameters<T>[0]>
+  ) => InstanceType<T>;
 
-export function viemReadWriteMixin<T extends ReadContractModelConstructor>(
+export function viemReadWriteMixin<T extends ReadWriteContractModelConstructor>(
   Base: T
 ): ViemReadWriteMixin<T> {
   return class extends (Base as Constructor) {
@@ -42,7 +43,7 @@ export function viemReadWriteMixin<T extends ReadContractModelConstructor>(
   } as ViemReadWriteMixin<T>;
 }
 
-export type ReadContractModelConstructor = new (
+export type ReadWriteContractModelConstructor = new (
   ...args: [options: ReadWriteContractModelOptions, ...any[]]
 ) => any;
 
