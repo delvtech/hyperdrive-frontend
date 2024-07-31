@@ -4,7 +4,7 @@
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "build": "tsup",
     "watch": "npm run build -- --watch",
     "typecheck": "tsc --noEmit"
   },
@@ -29,6 +29,36 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./factory": {
+      "import": "./dist/factory.js",
+      "require": "./dist/factory.js"
+    },
+    "./hyperdrive": {
+      "import": "./dist/hyperdrive.js",
+      "require": "./dist/hyperdrive.js"
+    },
+    "./registry": {
+      "import": "./dist/registry.js",
+      "require": "./dist/registry.js"
+    },
+    "./token": {
+      "import": "./dist/token.js",
+      "require": "./dist/token.js"
+    },
+    "./v1.0.14": {
+      "import": "./dist/v1.0.14/index.js",
+      "require": "./dist/v1.0.14/index.js"
+    },
+    "./v1.0.14/*": {
+      "import": "./dist/v1.0.14/*.js",
+      "require": "./dist/v1.0.14/*.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   }
