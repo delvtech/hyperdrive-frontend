@@ -128,9 +128,13 @@ export class ReadHyperdrive extends ReadModel {
     sharesAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    const { vaultSharePrice } = await this.getPoolInfo(options);
-    const decimals = await this.getDecimals();
-    return fixed(sharesAmount, decimals).mul(vaultSharePrice, decimals).bigint;
+    return this.contract.read(
+      "convertToBase",
+      {
+        _shareAmount: sharesAmount,
+      },
+      options,
+    );
   }
 
   /**
@@ -143,9 +147,13 @@ export class ReadHyperdrive extends ReadModel {
     baseAmount: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    const { vaultSharePrice } = await this.getPoolInfo(options);
-    const decimals = await this.getDecimals();
-    return fixed(baseAmount, decimals).mul(vaultSharePrice).bigint;
+    return this.contract.read(
+      "convertToShares",
+      {
+        _baseAmount: baseAmount,
+      },
+      options,
+    );
   }
 
   async getInitializationBlock(): Promise<Block> {
