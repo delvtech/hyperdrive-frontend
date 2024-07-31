@@ -1,7 +1,8 @@
-// registry
+// models
 export * from "./factory";
 export * from "./hyperdrive";
 export * from "./registry";
+export * from "./token";
 
 // re-exports
 export * from "@delvtech/hyperdrive-js-core/contract";
