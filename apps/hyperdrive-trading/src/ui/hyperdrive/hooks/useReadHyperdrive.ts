@@ -3,19 +3,18 @@ import {
   findHyperdriveConfig,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 export function useReadHyperdrive(
-  address: Address | undefined,
+  address: Address | undefined
 ): ReadHyperdrive | undefined {
-  const publicClient = usePublicClient();
+  const [readHyperdrive, setReadHyperdrive] = useState<ReadHyperdrive>();
 
   const appConfig = useAppConfig();
-
   const hyperdriveConfig = address
     ? findHyperdriveConfig({
         hyperdriveAddress: address,
@@ -29,15 +28,17 @@ export function useReadHyperdrive(
       })
     : undefined;
 
-  return useMemo(() => {
+  const publicClient = usePublicClient();
+  useEffect(() => {
     if (!address || !publicClient || !sharesToken) {
       return undefined;
     }
-
-    return getReadHyperdrive({
+    getReadHyperdrive({
       hyperdriveAddress: address,
       publicClient,
       sharesToken,
-    });
+    }).then(setReadHyperdrive);
   }, [address, publicClient, sharesToken]);
+
+  return readHyperdrive;
 }

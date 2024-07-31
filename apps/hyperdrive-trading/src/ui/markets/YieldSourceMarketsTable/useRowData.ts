@@ -18,7 +18,7 @@ export interface YieldSourceMarketsTableRowData {
 }
 
 export function useRowData(
-  protocol: Protocol,
+  protocol: Protocol
 ): UseQueryResult<YieldSourceMarketsTableRowData[]> {
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
@@ -41,7 +41,7 @@ export function useRowData(
                   yieldSourceTokenAddress: hyperdrive.sharesToken,
                   tokens: appConfig.tokens,
                 });
-                const readHyperdrive = getReadHyperdrive({
+                const readHyperdrive = await getReadHyperdrive({
                   hyperdriveAddress: hyperdrive.address,
                   publicClient,
                   sharesToken,
@@ -55,8 +55,8 @@ export function useRowData(
                   liquidity,
                   fixedApr,
                 };
-              },
-            ),
+              }
+            )
           );
           return sortBy(rows, "market.poolConfig.positionDuration");
         }
