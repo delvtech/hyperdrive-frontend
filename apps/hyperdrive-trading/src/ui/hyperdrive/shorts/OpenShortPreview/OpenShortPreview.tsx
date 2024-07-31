@@ -140,7 +140,7 @@ export function OpenShortPreview({
                 "text-error": shortApr && shortApr.apr < 0n,
               })}
             >
-              {shortApr ? `${shortApr.formatted}%` : "-"}
+              {shortApr ? `${shortApr.formatted}` : "-"}
             </span>
           )
         }
@@ -160,9 +160,9 @@ export function OpenShortPreview({
               >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2 text-base-content">
-                    <span className="text-base-content/80">{`${fixedApr?.formatted}% `}</span>
+                    <span className="text-base-content/80">{`${fixedApr?.formatted} `}</span>
                     <ArrowRightIcon className="h-4 text-neutral-content" />
-                    {formatRate(spotRateAfterOpen)}%
+                    {formatRate(spotRateAfterOpen)}
                   </span>
                 ) : (
                   "-"

@@ -55,7 +55,7 @@ export function ShortRateStat({
             <Skeleton className="w-20" />
           ) : (
             <span className={rateClassName}>
-              {shortApr?.formatted ? `${shortApr.formatted}%` : "-"}
+              {shortApr?.formatted ? `${shortApr.formatted}` : "-"}
             </span>
           ),
         },
@@ -69,7 +69,7 @@ export function ShortRateStat({
             <Skeleton className="w-20" />
           ) : (
             <span className={rateClassName}>
-              {shortRoi?.formatted ? `${shortRoi.formatted}%` : "-"}
+              {shortRoi?.formatted ? `${shortRoi.formatted}` : "-"}
             </span>
           ),
         },

@@ -37,7 +37,7 @@ export function YieldStats({
             <YieldSourceRateBadge
               hyperdriveAddress={hyperdrive.address}
               labelRenderer={(vaultRate) =>
-                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} % APY`
+                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} APY`
               }
             />
           </div>
