@@ -3,42 +3,45 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 
 // See: https://www.notion.so/delv-tech/Testnet-Addresses-911a0f422f374059afa5c40d76373de6
 const SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS =
   "0xf5461A30b3723085F8E702fCc7461db85481c173";
 
 export class ReadMetaMorphoHyperdrive extends readMetaMorphoHyperdriveMixin(
-  ReadHyperdrive,
+  ReadHyperdrive
 ) {}
 
 /**
  * @internal
  */
-export interface ReadMetaMorphoHyperdriveMixin {}
+export interface ReadMetaMorphoHyperdriveMixin {
+  metaMorphoContract: ReadContract<MetaMorphoSnippetsABI>;
+}
 
 /**
  * @internal
  */
 export function readMetaMorphoHyperdriveMixin<
-  T extends Constructor<ReadHyperdrive>,
+  T extends Constructor<ReadHyperdrive>
 >(Base: T): Constructor<ReadMetaMorphoHyperdriveMixin> & T {
-  return class extends Base implements ReadMetaMorphoHyperdriveMixin {
-    metaMorphoContract: ReadContract<typeof MetaMorphoSnippetsABI>;
+  return class extends Base {
+    metaMorphoContract: ReadContract<MetaMorphoSnippetsABI>;
+
     constructor(...[options]: any[]) {
       const {
-        debugName: name = "MetaMorpho Hyperdrive",
+        debugName = "MetaMorpho Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
 
       this.metaMorphoContract = this.contractFactory({
-        abi: MetaMorphoSnippetsABI,
+        abi: metaMorphoSnippetsABI,
         // TODO: Refactor to a switch/case on chainId once evm-client has chainId
         // support on the Network interface
         address: SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS,
@@ -49,7 +52,8 @@ export function readMetaMorphoHyperdriveMixin<
   };
 }
 
-const MetaMorphoSnippetsABI = [
+type MetaMorphoSnippetsABI = typeof metaMorphoSnippetsABI;
+const metaMorphoSnippetsABI = [
   {
     inputs: [
       {

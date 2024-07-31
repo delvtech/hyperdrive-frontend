@@ -24,12 +24,12 @@ export interface ReadModelOptions {
  * A base class for read-only models.
  */
 export class ReadModel {
-  name: string;
+  debugName: string;
   network: Network;
   contractFactory: ReadContractFactory;
 
-  constructor({ debugName: name, network, contractFactory }: ReadModelOptions) {
-    this.name = name ?? this.constructor.name;
+  constructor({ debugName, network, contractFactory }: ReadModelOptions) {
+    this.debugName = debugName ?? this.constructor.name;
     this.network = network;
     this.contractFactory = contractFactory;
   }

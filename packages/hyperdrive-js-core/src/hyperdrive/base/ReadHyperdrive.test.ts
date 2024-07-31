@@ -1,7 +1,7 @@
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/checkpoint/types";
 import { parseFixed } from "src/fixed-point";
-import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
+import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
   simplePoolConfig30Days,
@@ -9,6 +9,23 @@ import {
 } from "src/pool/testing/PoolConfig";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { expect, test } from "vitest";
+
+test("getVersion should return the parsed version of the contract", async () => {
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+
+  contract.stubRead({
+    functionName: "version",
+    value: "v1.0.14",
+  });
+
+  const value = await readHyperdrive.getVersion();
+  expect(value).toEqual({
+    major: 1,
+    minor: 0,
+    patch: 14,
+    string: "v1.0.14",
+  });
+});
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,

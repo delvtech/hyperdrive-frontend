@@ -4,13 +4,13 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 import { REthHyperdriveAbi, rEthHyperdriveAbi } from "src/hyperdrive/reth/abi";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadREth } from "src/token/reth/ReadREth";
 
 export class ReadREthHyperdrive extends readREthHyperdriveMixin(
-  ReadHyperdrive,
+  ReadHyperdrive
 ) {}
 
 /**
@@ -34,21 +34,21 @@ export interface ReadREthHyperdriveMixin {
  * @internal
  */
 export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T,
+  Base: T
 ): Constructor<ReadREthHyperdriveMixin> & T {
-  return class extends Base implements ReadREthHyperdriveMixin {
+  return class extends Base {
     rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
-        debugName: name = "rETH Hyperdrive",
+        debugName = "rETH Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
       this.rEthHyperdriveContract = contractFactory({
         abi: rEthHyperdriveAbi,
         address,
@@ -77,7 +77,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     // Calculations
 
     async getMaxShort(
-      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0]
     ): ReturnType<ReadHyperdrive["getMaxShort"]> {
       const result = await super.getMaxShort(options);
       const decimals = await this.getDecimals();
@@ -93,7 +93,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getMaxLong(
-      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0]
     ): ReturnType<ReadHyperdrive["getMaxLong"]> {
       const result = await super.getMaxLong(options);
       const decimals = await this.getDecimals();

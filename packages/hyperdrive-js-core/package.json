@@ -4,7 +4,7 @@
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "build": "tsup",
     "watch": "npm run build -- --watch",
     "test": "vitest run",
     "test:watch": "vitest --reporter=verbose",
@@ -34,6 +34,7 @@
     "prettier-plugin-organize-imports": "4.0.0",
     "sinon": "^18.0.0",
     "tsconfig-paths": "^4.2.0",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.4"
@@ -43,6 +44,53 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./factory/*": {
+      "types": "./dist/factory/*.d.ts",
+      "default": "./dist/factory/*.js"
+    },
+    "./hyperdrive/*": {
+      "types": "./dist/hyperdrive/*.d.ts",
+      "default": "./dist/hyperdrive/*.js"
+    },
+    "./registry/*": {
+      "types": "./dist/registry/*.d.ts",
+      "default": "./dist/registry/*.js"
+    },
+    "./token/*": {
+      "types": "./dist/token/*.d.ts",
+      "default": "./dist/token/*.js"
+    },
+    "./contract": {
+      "types": "./dist/contract.d.ts",
+      "default": "./dist/contract.js"
+    },
+    "./errors": {
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
+    },
+    "./model": {
+      "types": "./dist/model.d.ts",
+      "default": "./dist/model.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
+    },
+    "./v1.0.14": {
+      "types": "./dist/v1.0.14/index.d.ts",
+      "default": "./dist/v1.0.14/index.js"
+    },
+    "./v1.0.14/*": {
+      "types": "./dist/v1.0.14/*.d.ts",
+      "default": "./dist/v1.0.14/*.js"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   }
