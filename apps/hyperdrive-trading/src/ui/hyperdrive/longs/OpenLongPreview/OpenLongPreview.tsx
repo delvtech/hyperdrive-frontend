@@ -119,7 +119,7 @@ export function OpenLongPreview({
               >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2">
-                    <span className="text-base-content/80">{`${fixedApr?.formatted} `}</span>
+                    <span className="text-base-content/80">{`${fixedApr?.formatted}`}</span>
                     <ArrowRightIcon className="h-4 text-neutral-content" />
                     {formatRate(spotRateAfterOpen)}
                   </span>

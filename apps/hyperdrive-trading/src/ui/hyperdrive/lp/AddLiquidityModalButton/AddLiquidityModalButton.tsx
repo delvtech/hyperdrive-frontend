@@ -82,7 +82,7 @@ export function AddLiquidityModalButton({
                 horizontal
                 size="small"
                 label={`${yieldSourceToken.extensions.shortName}:`}
-                value={`${vaultRate?.formatted || 0n}s`}
+                value={`${vaultRate?.formatted || 0n}`}
               />
             </div>
           </div>
