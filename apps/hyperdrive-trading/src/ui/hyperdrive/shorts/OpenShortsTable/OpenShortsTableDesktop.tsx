@@ -202,7 +202,7 @@ function getColumns(
                 "daisy-stat-desc mt-1 flex w-16 justify-end text-xs",
               )}
             >
-              <span>{formatRate(fixedRate)}% APR</span>
+              <span>{formatRate(fixedRate)} APR</span>
             </div>
           </div>
         );
