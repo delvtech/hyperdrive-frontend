@@ -183,7 +183,7 @@ function formatOpenShortMobileColumnData(
     },
     {
       name: `Rate shorted`,
-      value: `${formatRate(openShort.fixedRatePaid)}% APR`,
+      value: `${formatRate(openShort.fixedRatePaid)} APR`,
     },
     {
       name: `Yield (${baseToken.symbol})`,
