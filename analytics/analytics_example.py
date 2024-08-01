@@ -8,6 +8,7 @@ import json
 import os
 
 import matplotlib as mpl
+import numpy as np
 import requests
 from dotenv import load_dotenv
 from matplotlib import pyplot as plt
@@ -137,5 +138,37 @@ fig.legend(
 )
 
 plt.show()
+
+# %%
+## Average time spent per page on each domain
+metric = "visit_duration"
+property = "event:page"
+data = {
+  domain: get_breakdown_data(domain=domain, property=property, period=period, metrics=metric)
+  for domain in domains
+}
+
+fig, axs = plt.subplots(len(domains), 1, figsize=(5, len(domains)*5))
+for idx, domain in enumerate(domains):
+  ax = axs[idx]
+  x_labels = []; y_data=[]
+  for datapoint in data[domain]:
+    if datapoint["visit_duration"] > 0:
+      label = datapoint["page"]
+      if label == "/":
+        x_labels.append(label)
+      else:
+        x_labels.append(label.split("/")[-1])
+      y_data.append(datapoint["visit_duration"])
+  x_data = np.arange(len(x_labels))
+  ax.bar(x_data, y_data, color="black", width=0.4)
+  ax.autoscale(enable=True, axis='x', tight=True)
+  ax.set_title(f"{domain}")
+  ax.tick_params(axis="x", labelrotation=0)
+  ax.set_xticks(x_data)
+  ax.set_xticklabels(x_labels)
+axs[0].set_ylabel("page visit durations")
+fig.suptitle("page visit duraitons per domain")
+fig.tight_layout()
 
 # %%
