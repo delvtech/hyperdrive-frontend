@@ -172,12 +172,27 @@ export function OpenShortForm({
     budget: MAX_UINT256,
   });
 
+  const { traderDeposit: maxTraderDeposit } = usePreviewOpenShort({
+    hyperdriveAddress: hyperdrive.address,
+    amountOfBondsToShort: maxBondsOut,
+    asBase: activeToken.address === baseToken.address,
+  });
+  console.log(
+    "maxTraderDeposit",
+    formatUnits(maxTraderDeposit || 0n, baseToken.decimals),
+  );
+
   // The amount you earn yield on from the given budget
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
     budget: amountToPayAsBigInt || 0n,
     enabled: !!amountToPayAsBigInt,
   });
+
+  console.log(
+    "maxBondsOutFromPayment",
+    formatUnits(maxBondsOutFromPayment || 0n, baseToken.decimals),
+  );
 
   const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: amountOfBondsToShortAsBigInt,
@@ -224,10 +239,10 @@ export function OpenShortForm({
   // Max button is wired up to the user's balance, or the pool's max long.
   // Whichever is smallest.
   let maxButtonValue = "0";
-  if (activeTokenBalance && maxBondsOut) {
+  if (activeTokenBalance && maxTraderDeposit) {
     maxButtonValue = formatUnits(
-      activeTokenBalance.value > maxBondsOut
-        ? maxBondsOut
+      activeTokenBalance.value > maxTraderDeposit
+        ? maxTraderDeposit
         : activeTokenBalance?.value,
       activeToken.decimals,
     );
@@ -252,8 +267,10 @@ export function OpenShortForm({
             inputLabel="You pay"
             value={
               activeInput === "budget"
-                ? amountToPay || "0"
-                : formatUnits(traderDeposit || 0n, activeToken.decimals)
+                ? amountToPay || ""
+                : traderDeposit
+                  ? formatUnits(traderDeposit, activeToken.decimals)
+                  : ""
             }
             maxValue={maxButtonValue}
             onChange={(newAmount) => {

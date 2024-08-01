@@ -24,7 +24,7 @@ export function useMaxShort({
 }): UseMaxShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const appConfig = useAppConfig();
-  const queryEnabled = !!readHyperdrive && enabled;
+  const queryEnabled = !!readHyperdrive && !!budget && enabled;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", {
@@ -35,6 +35,11 @@ export function useMaxShort({
     queryFn: queryEnabled
       ? async () => {
           const result = await readHyperdrive.getMaxShort({ budget });
+          console.log(
+            "query result for max bonds out given budget",
+            budget,
+            result,
+          );
 
           // All shares coming from the sdk need to be prepared for the UI
           const finalMaxSharesIn = await prepareSharesOut({

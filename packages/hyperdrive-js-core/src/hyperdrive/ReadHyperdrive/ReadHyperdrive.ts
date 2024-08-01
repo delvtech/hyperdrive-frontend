@@ -1148,8 +1148,8 @@ export class ReadHyperdrive extends ReadModel {
       budget,
       poolInfo,
       poolConfig,
-      // TODO Store thsi 14 value in a constant. Default iterations is 7 but doubling it gets us more accurate estimations for larger budget values
-      maxIterations: 7,
+      // TODO Store this 14 value in a constant. Default iterations is 7 but doubling it gets us more accurate estimations for larger budget values
+      maxIterations: 14,
       openVaultSharePrice,
       checkpointExposure,
     });
