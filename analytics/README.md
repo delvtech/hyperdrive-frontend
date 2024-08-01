@@ -18,4 +18,7 @@ Install the rqeuirements:
 pip install -r analytics/requirements.txt
 ```
 
+Copy `analytics/.env.example` to `analytics/.env` and assign the plausible API
+key to the `PLAUSIBLE_TOKEN` variable.
+
 Now you can open `analytics/analytics_example.py` in VSCode and run the cells.
