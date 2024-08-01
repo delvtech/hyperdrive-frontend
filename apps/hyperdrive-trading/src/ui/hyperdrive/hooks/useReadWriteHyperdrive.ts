@@ -51,7 +51,6 @@ export function useReadWriteHyperdrive(
       return new ReadWriteStEthHyperdrive({
         address,
         publicClient,
-        walletClient,
         cache: sdkCache,
         namespace: chainId.toString(),
       });

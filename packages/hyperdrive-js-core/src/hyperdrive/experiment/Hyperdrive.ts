@@ -11,7 +11,6 @@ import {
   ReadContractFactory,
 } from "src/evm-client/contractFactory";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
-import { Erc20 } from "src/hyperdrive/experiment/Erc20";
 import { WriteContract } from "src/hyperdrive/experiment/WriteContract";
 import { PoolConfig, PoolInfo } from "src/pool/types";
 
@@ -98,9 +97,9 @@ export class Hyperdrive {
   // Model getters return models with the same semantics as this Hyperdrive //
   // class                                                                  //
   ////////////////////////////////////////////////////////////////////////////
-  async getSharesToken(options?: ContractReadOptions): Promise<Erc20> {
+  async getSharesToken(options?: ContractReadOptions): Promise<Token> {
     const { vaultSharesToken } = await this.getPoolConfig(options);
-    return new Erc20({
+    return new Token({
       address: vaultSharesToken,
       readContractFactory: this.readContractFactory,
       writeContractFactory: this.writeContractFactory,
@@ -112,6 +111,7 @@ export class Hyperdrive {
   ///////////////////////////////////////////////////////////////////////
   // Write methods check for a writeContract instance before executing //
   ///////////////////////////////////////////////////////////////////////
+
   async checkpoint({
     args: { time },
     options,
