@@ -5,7 +5,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -116,7 +116,14 @@ export function OpenShortForm({
   const {
     amount: amountOfBondsToShort,
     amountAsBigInt: amountOfBondsToShortAsBigInt,
-    setAmount,
+    setAmount: setShortAmount,
+  } = useNumericInput({
+    decimals: hyperdrive.decimals,
+  });
+  const {
+    amount: amountOfBondsToPay,
+    amountAsBigInt: amountOfBondsToPayAsBigInt,
+    setAmount: setPaymentAmount,
   } = useNumericInput({
     decimals: hyperdrive.decimals,
   });
@@ -131,6 +138,8 @@ export function OpenShortForm({
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
+
+  // TODO: I think I need to trigger the above usePreviewOpenShort to handle the other input here.
 
   const hasEnoughBalance = getHasEnoughBalance({
     amount: traderDeposit,
@@ -196,7 +205,8 @@ export function OpenShortForm({
       (window as any)["open-short"].close();
     },
     onExecuted: () => {
-      setAmount("");
+      setShortAmount("");
+      setPaymentAmount("");
     },
   });
 
@@ -212,6 +222,13 @@ export function OpenShortForm({
     );
   }
 
+  useEffect(() => {
+    console.log(traderDeposit, "traderDeposit");
+    if (traderDeposit) {
+      setShortAmount(formatUnits(traderDeposit, activeToken.decimals));
+    }
+  }, [traderDeposit, activeToken.decimals]);
+
   return (
     <TransactionView
       tokenInput={
@@ -224,14 +241,21 @@ export function OpenShortForm({
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);
-                  setAmount("0");
+                  setPaymentAmount("0");
                 }}
               />
             }
             inputLabel="You pay"
-            value={amountOfBondsToShort ?? ""}
+            value={amountOfBondsToPay ?? ""}
             maxValue={maxButtonValue}
-            onChange={(newAmount) => setAmount(newAmount)}
+            onChange={(newAmount) => {
+              setPaymentAmount(newAmount);
+              console.log(
+                traderDeposit &&
+                  formatUnits(traderDeposit, activeToken.decimals),
+                "traderDeposit",
+              );
+            }}
             settings={
               <SlippageSettingsTwo
                 onSlippageChange={setSlippage}
@@ -275,10 +299,24 @@ export function OpenShortForm({
           />
           <TokenInputTwo
             name={`${baseToken.symbol}-input`}
-            token={`hy${baseToken.symbol}`}
+            token={
+              <TokenPickerTwo
+                tokens={[
+                  {
+                    tokenConfig: baseToken,
+                    tokenBalance: baseTokenBalance?.value,
+                  },
+                ]}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setPaymentAmount("0");
+                }}
+              />
+            }
             inputLabel="Earn yield on"
             value={amountOfBondsToShort ?? ""}
-            onChange={(newAmount) => setAmount(newAmount)}
+            onChange={(newAmount) => setShortAmount(newAmount)}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(chainId) ? (
