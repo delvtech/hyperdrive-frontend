@@ -1126,7 +1126,13 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  async getMaxShort(options?: ContractReadOptions): Promise<{
+  async getMaxShort({
+    budget,
+    options,
+  }: {
+    budget: bigint;
+    options?: ContractReadOptions;
+  }): Promise<{
     maxBaseIn: bigint;
     maxSharesIn: bigint;
     maxBondsOut: bigint;
@@ -1138,11 +1144,16 @@ export class ReadHyperdrive extends ReadModel {
       options,
     });
 
-    const maxBondsOut = hyperwasm.absoluteMaxShort({
+    const maxBondsOut = hyperwasm.maxShort({
+      budget,
       poolInfo,
       poolConfig,
+      // TODO Store thsi 14 value in a constant. Default iterations is 7 but doubling it gets us more accurate estimations for larger budget values
+      maxIterations: 7,
+      openVaultSharePrice,
       checkpointExposure,
     });
+
     const maxBaseIn = hyperwasm.calcOpenShort({
       poolInfo,
       poolConfig,
@@ -1176,6 +1187,7 @@ export class ReadHyperdrive extends ReadModel {
     const maxBaseIn = hyperwasm.maxLong({
       poolInfo,
       poolConfig,
+      // TODO: Make budge a call param, don't hardcode a max budget here
       budget: MAX_UINT256,
       checkpointExposure,
     });

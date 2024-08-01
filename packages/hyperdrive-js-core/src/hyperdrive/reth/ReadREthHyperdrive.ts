@@ -76,10 +76,14 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     // Calculations
 
-    async getMaxShort(
-      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
-    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
-      const result = await super.getMaxShort(options);
+    async getMaxShort({
+      budget,
+      options,
+    }: {
+      budget: bigint;
+      options: Parameters<ReadHyperdrive["getMaxShort"]>[0]["options"];
+    }): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort({ budget, options });
       const decimals = await this.getDecimals();
       return {
         ...result,

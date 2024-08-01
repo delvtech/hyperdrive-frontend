@@ -5,8 +5,9 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement, useEffect } from "react";
+import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -113,6 +114,8 @@ export function OpenShortForm({
     tokenAddress: activeToken.address,
   });
 
+  const [activeInput, setActiveInput] = useState<"bonds" | "budget">("bonds");
+
   const {
     amount: amountOfBondsToShort,
     amountAsBigInt: amountOfBondsToShortAsBigInt,
@@ -121,8 +124,8 @@ export function OpenShortForm({
     decimals: hyperdrive.decimals,
   });
   const {
-    amount: amountOfBondsToPay,
-    amountAsBigInt: amountOfBondsToPayAsBigInt,
+    amount: amountToPay,
+    amountAsBigInt: amountToPayAsBigInt,
     setAmount: setPaymentAmount,
   } = useNumericInput({
     decimals: hyperdrive.decimals,
@@ -166,6 +169,14 @@ export function OpenShortForm({
 
   const { maxBondsOut } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
+    budget: MAX_UINT256,
+  });
+
+  // The amount you earn yield on from the given budget
+  const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
+    hyperdriveAddress: hyperdrive.address,
+    budget: amountToPayAsBigInt || 0n,
+    enabled: !!amountToPayAsBigInt,
   });
 
   const hasEnoughLiquidity = getIsValidTradeSize({
@@ -222,13 +233,6 @@ export function OpenShortForm({
     );
   }
 
-  useEffect(() => {
-    console.log(traderDeposit, "traderDeposit");
-    if (traderDeposit) {
-      setShortAmount(formatUnits(traderDeposit, activeToken.decimals));
-    }
-  }, [traderDeposit, activeToken.decimals]);
-
   return (
     <TransactionView
       tokenInput={
@@ -246,15 +250,16 @@ export function OpenShortForm({
               />
             }
             inputLabel="You pay"
-            value={amountOfBondsToPay ?? ""}
+            value={
+              activeInput === "budget"
+                ? amountToPay || "0"
+                : formatUnits(traderDeposit || 0n, activeToken.decimals)
+            }
             maxValue={maxButtonValue}
             onChange={(newAmount) => {
+              console.log("newAmount", newAmount);
+              setActiveInput("budget");
               setPaymentAmount(newAmount);
-              console.log(
-                traderDeposit &&
-                  formatUnits(traderDeposit, activeToken.decimals),
-                "traderDeposit",
-              );
             }}
             settings={
               <SlippageSettingsTwo
@@ -299,6 +304,7 @@ export function OpenShortForm({
           />
           <TokenInputTwo
             name={`${baseToken.symbol}-input`}
+            inputLabel="Earn yield on"
             token={
               <TokenPickerTwo
                 tokens={[
@@ -310,13 +316,23 @@ export function OpenShortForm({
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);
+
+                  // TODO: Determin if there is a bug here.
                   setPaymentAmount("0");
                 }}
               />
             }
-            inputLabel="Earn yield on"
-            value={amountOfBondsToShort ?? ""}
-            onChange={(newAmount) => setShortAmount(newAmount)}
+            value={
+              activeInput === "bonds"
+                ? amountOfBondsToShort || ""
+                : maxBondsOutFromPayment
+                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
+                  : ""
+            }
+            onChange={(newAmount) => {
+              setShortAmount(newAmount);
+              setActiveInput("bonds");
+            }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(chainId) ? (

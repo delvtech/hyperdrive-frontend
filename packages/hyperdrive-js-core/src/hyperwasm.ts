@@ -3,7 +3,8 @@
 // invalidated and the latest version of the wasm package will be loaded.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import * as hyperwasm from "@delvtech/hyperdrive-wasm?v0.14.2";
+// import * as hyperwasm from "@delvtech/hyperdrive-wasm?v0.14.2";
+import * as hyperwasm from "@delvtech/hyperdrive-wasm";
 
 hyperwasm.initSync(hyperwasm.wasmBuffer);
 
