@@ -8,7 +8,6 @@ import {
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -251,6 +250,14 @@ export function OpenShortForm({
           .format({ decimals: 2, rounding: "trunc" })
       : "0";
 
+  // Possible Variables to use in Rate you pay calculation:
+  // const amountOfBondsShorted = amountOfBondsToShortAsBigInt || 0n;
+  // const spotPriceAtCheckpoint = spotPriceAfterOpen || 0n;
+  // const currentSharePrice = poolInfo?.vaultSharePrice || 0n;
+  // const outputOfPreviewShort = traderDeposit || 0n;
+  // const fee = curveFee || 0n;
+  // const termLength = hyperdrive.poolConfig.positionDuration || 0n; // in days
+
   return (
     <TransactionView
       tokenInput={
@@ -314,67 +321,6 @@ export function OpenShortForm({
               ) : null
             }
           />
-          {/* <TokenInputTwo
-            name={`${baseToken.symbol}-input`}
-            token={
-              <TokenPickerTwo
-                tokens={tokenOptions}
-                activeTokenAddress={activeToken.address}
-                onChange={(tokenAddress) => {
-                  setActiveToken(tokenAddress);
-                  setPaymentAmount("0");
-                }}
-              />
-            }
-            inputLabel="You pay"
-            value={
-              activeInput === "budget"
-                ? amountToPay || ""
-                : traderDeposit
-                  ? formatUnits(traderDeposit, activeToken.decimals)
-                  : ""
-            }
-            disabled={true}
-            maxValue={maxButtonValue}
-            onChange={(newAmount) => {
-              console.log("newAmount", newAmount);
-              setActiveInput("budget");
-              setPaymentAmount(newAmount);
-            }}
-            bottomLeftElement={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-              !isTestnetChain(chainId) ? (
-                <label className="text-sm text-neutral-content">
-                  {`$${formatBalance({
-                    balance:
-                      activeTokenPrice && traderDeposit
-                        ? fixed(traderDeposit, activeToken.decimals).mul(
-                            activeTokenPrice,
-                            activeToken.decimals,
-                          ).bigint
-                        : 0n,
-                    decimals: activeToken.decimals,
-                    places: 2,
-                  })}`}
-                </label>
-              ) : null
-            }
-
-            // TODO: Add the balance back in once the bidirectional token input is fixed. ie. getMaxShort is fixed in the sdk.
-            // bottomRightElement={
-            //   <div className="flex flex-col gap-1 text-xs text-neutral-content">
-            //     <span>
-            //       {activeTokenBalance
-            //         ? `Balance: ${formatBalance({
-            //             balance: activeTokenBalance?.value,
-            //             decimals: activeToken.decimals,
-            //             places: activeToken.places,
-            //           })}`
-            //         : undefined}
-            //     </span>
-            //   </div>
-            // }
-          /> */}
         </div>
       }
       transactionPreview={
@@ -468,53 +414,6 @@ export function OpenShortForm({
                 Insufficient balance
               </p>
             ) : null}
-            <p className="text-center text-sm text-neutral-content">
-              You pay{" "}
-              <strong>
-                {openShortPreviewStatus === "loading" ? (
-                  <span className="inline-block">
-                    <Skeleton width={50} />
-                  </span>
-                ) : (
-                  formatBalance({
-                    balance: traderDeposit || 0n,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })
-                )}{" "}
-                {activeToken.symbol}
-              </strong>{" "}
-              in exchange for the yield on{" "}
-              <strong>
-                {openShortPreviewStatus === "loading" ? (
-                  <span className="inline-block">
-                    <Skeleton width={50} />
-                  </span>
-                ) : (
-                  formatBalance({
-                    balance: amountOfBondsToShortAsBigInt,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })
-                )}{" "}
-                {baseToken.symbol}
-              </strong>{" "}
-              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
-              for{" "}
-              <strong>
-                {convertMillisecondsToDays(
-                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
-                )}{" "}
-                days.
-              </strong>{" "}
-            </p>
-            {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
-              <p className="text-center text-sm text-neutral-content">
-                {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
-              </p>
-            )}
           </div>
         );
       })()}
