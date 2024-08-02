@@ -9,7 +9,7 @@ export function PrimaryStat({
 }: {
   label: string;
   value: ReactNode;
-  valueUnit: string;
+  valueUnit: ReactNode;
   subValue?: ReactNode;
   valueClassName?: string;
 }): JSX.Element {
@@ -20,7 +20,7 @@ export function PrimaryStat({
         <p className="text-h3 font-bold">{value}</p>
         <p>{valueUnit}</p>
       </div>
-      {subValue && <p className="text-sm text-neutral-content">{subValue}</p>}
+      {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
     </div>
   );
 }

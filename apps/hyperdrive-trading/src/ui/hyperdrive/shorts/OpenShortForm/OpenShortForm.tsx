@@ -16,6 +16,7 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -33,6 +34,7 @@ import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -113,7 +115,9 @@ export function OpenShortForm({
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
   });
-
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
   const [activeInput, setActiveInput] = useState<"bonds" | "budget">("bonds");
 
   const {
@@ -134,6 +138,7 @@ export function OpenShortForm({
   const {
     traderDeposit,
     spotRateAfterOpen,
+    spotPriceAfterOpen,
     curveFee,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
@@ -177,10 +182,6 @@ export function OpenShortForm({
     amountOfBondsToShort: maxBondsOut,
     asBase: activeToken.address === baseToken.address,
   });
-  console.log(
-    "maxTraderDeposit",
-    formatUnits(maxTraderDeposit || 0n, baseToken.decimals),
-  );
 
   // The amount you earn yield on from the given budget
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
@@ -188,11 +189,6 @@ export function OpenShortForm({
     budget: amountToPayAsBigInt || 0n,
     enabled: !!amountToPayAsBigInt,
   });
-
-  console.log(
-    "maxBondsOutFromPayment",
-    formatUnits(maxBondsOutFromPayment || 0n, baseToken.decimals),
-  );
 
   const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: amountOfBondsToShortAsBigInt,
@@ -248,77 +244,17 @@ export function OpenShortForm({
     );
   }
 
+  const exposureMultiplier =
+    amountOfBondsToShortAsBigInt && traderDeposit
+      ? fixed(amountOfBondsToShortAsBigInt, 18)
+          .div(traderDeposit, 18)
+          .format({ decimals: 2, rounding: "trunc" })
+      : "0";
+
   return (
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
-            name={`${baseToken.symbol}-input`}
-            token={
-              <TokenPickerTwo
-                tokens={tokenOptions}
-                activeTokenAddress={activeToken.address}
-                onChange={(tokenAddress) => {
-                  setActiveToken(tokenAddress);
-                  setPaymentAmount("0");
-                }}
-              />
-            }
-            inputLabel="You pay"
-            value={
-              activeInput === "budget"
-                ? amountToPay || ""
-                : traderDeposit
-                  ? formatUnits(traderDeposit, activeToken.decimals)
-                  : ""
-            }
-            maxValue={maxButtonValue}
-            onChange={(newAmount) => {
-              console.log("newAmount", newAmount);
-              setActiveInput("budget");
-              setPaymentAmount(newAmount);
-            }}
-            settings={
-              <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
-                slippage={slippage}
-                activeOption={activeSlippageOption}
-                onActiveOptionChange={setActiveSlippageOption}
-                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-              />
-            }
-            bottomLeftElement={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-              !isTestnetChain(chainId) ? (
-                <label className="text-sm text-neutral-content">
-                  {`$${formatBalance({
-                    balance:
-                      activeTokenPrice && traderDeposit
-                        ? fixed(traderDeposit, activeToken.decimals).mul(
-                            activeTokenPrice,
-                            activeToken.decimals,
-                          ).bigint
-                        : 0n,
-                    decimals: activeToken.decimals,
-                    places: 2,
-                  })}`}
-                </label>
-              ) : null
-            }
-            bottomRightElement={
-              <div className="flex flex-col gap-1 text-xs text-neutral-content">
-                <span>
-                  {activeTokenBalance
-                    ? `Balance: ${formatBalance({
-                        balance: activeTokenBalance?.value,
-                        decimals: activeToken.decimals,
-                        places: activeToken.places,
-                      })}`
-                    : undefined}
-                </span>
-              </div>
-            }
-          />
           <TokenInputTwo
             name={`${baseToken.symbol}-input`}
             inputLabel="Earn yield on"
@@ -337,6 +273,15 @@ export function OpenShortForm({
                   // TODO: Determin if there is a bug here.
                   setPaymentAmount("0");
                 }}
+              />
+            }
+            settings={
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
               />
             }
             value={
@@ -369,6 +314,67 @@ export function OpenShortForm({
               ) : null
             }
           />
+          {/* <TokenInputTwo
+            name={`${baseToken.symbol}-input`}
+            token={
+              <TokenPickerTwo
+                tokens={tokenOptions}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setPaymentAmount("0");
+                }}
+              />
+            }
+            inputLabel="You pay"
+            value={
+              activeInput === "budget"
+                ? amountToPay || ""
+                : traderDeposit
+                  ? formatUnits(traderDeposit, activeToken.decimals)
+                  : ""
+            }
+            disabled={true}
+            maxValue={maxButtonValue}
+            onChange={(newAmount) => {
+              console.log("newAmount", newAmount);
+              setActiveInput("budget");
+              setPaymentAmount(newAmount);
+            }}
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeTokenPrice && traderDeposit
+                        ? fixed(traderDeposit, activeToken.decimals).mul(
+                            activeTokenPrice,
+                            activeToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+
+            // TODO: Add the balance back in once the bidirectional token input is fixed. ie. getMaxShort is fixed in the sdk.
+            // bottomRightElement={
+            //   <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            //     <span>
+            //       {activeTokenBalance
+            //         ? `Balance: ${formatBalance({
+            //             balance: activeTokenBalance?.value,
+            //             decimals: activeToken.decimals,
+            //             places: activeToken.places,
+            //           })}`
+            //         : undefined}
+            //     </span>
+            //   </div>
+            // }
+          /> */}
         </div>
       }
       transactionPreview={
@@ -381,6 +387,58 @@ export function OpenShortForm({
           curveFee={curveFee}
           openShortPreviewStatus={openShortPreviewStatus}
         />
+      }
+      primaryStats={
+        <div className="flex flex-row justify-between py-8">
+          <PrimaryStat
+            label="Exposure Multiplier"
+            value={exposureMultiplier}
+            valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end font-bold text-h5"
+            valueUnit="X"
+            subValue={
+              vaultRateStatus === "loading" && !vaultRate ? (
+                <Skeleton className="w-42 h-8" />
+              ) : (
+                <>
+                  {sharesToken.extensions.shortName} @{" "}
+                  {vaultRate?.formatted || 0} APY
+                </>
+              )
+            }
+          />
+
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+
+          <PrimaryStat
+            label="You pay"
+            value={
+              traderDeposit
+                ? formatBalance({
+                    balance: traderDeposit,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: activeToken.places,
+                  })
+                : "0"
+              // activeInput === "budget"
+              //   ? amountToPay || ""
+              //   : traderDeposit
+              //     ? formatUnits(traderDeposit, activeToken.decimals)
+              //     : ""
+            }
+            valueClassName="flex items-center"
+            valueUnit={
+              <TokenPickerTwo
+                tokens={tokenOptions}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setPaymentAmount("0");
+                }}
+              />
+            }
+          />
+        </div>
       }
       disclaimer={(() => {
         // If the user has not input a short amount, don't show the disclaimer
