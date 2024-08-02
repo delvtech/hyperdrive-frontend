@@ -744,7 +744,7 @@ export class ReadHyperdrive extends ReadModel {
             baseAmountPaid: long.baseAmountPaid + baseAmount,
             bondAmount: long.bondAmount + event.args.bondAmount,
           };
-          break;
+          return;
 
         case "CloseLong":
           // If a user closes their whole position, we should remove the whole
@@ -760,7 +760,7 @@ export class ReadHyperdrive extends ReadModel {
               bondAmount: long.bondAmount - event.args.bondAmount,
             };
           }
-          break;
+          return;
 
         default:
           assertNever(event, true);
@@ -1375,7 +1375,7 @@ export class ReadHyperdrive extends ReadModel {
         case "AddLiquidity":
           lpShareBalance += event.args.lpAmount;
           baseAmountPaid += baseAmount;
-          break;
+          return;
 
         case "RemoveLiquidity":
           lpShareBalance -= event.args.lpAmount;
@@ -1384,7 +1384,7 @@ export class ReadHyperdrive extends ReadModel {
           // baseAmountPaid, since it's basically starting over
           baseAmountPaid =
             lpShareBalance <= 0n ? 0n : baseAmountPaid - baseAmount;
-          break;
+          return;
 
         default:
           assertNever(event, true);
