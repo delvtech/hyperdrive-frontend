@@ -1,0 +1,167 @@
+// https://biomejs.dev/reference/configuration/
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "ignore": [
+      "*.gen.*",
+      "*.generated.*",
+      "build",
+      "public",
+
+      // contains no src files
+      "packages/hyperdrive-artifacts",
+
+      // generated packages
+      "packages/hyperdrive-wasm",
+      "packages/fixed-point-wasm",
+
+      // docs
+      ".docusaurus",
+      "docs/sdk/api-reference"
+    ]
+  },
+
+  "organizeImports": {
+    "enabled": true
+  },
+
+  // global formatting
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+
+  // global linting
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noUselessConstructor": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "warn"
+      },
+      "style": {
+        "noNonNullAssertion": "warn",
+        "useBlockStatements": "error",
+        "useNodejsImportProtocol": "warn",
+        "useNumberNamespace": "off"
+      },
+      "suspicious": {
+        // Empty arrow functions are fine for noops when passed to components.
+        // Empty interfaces for component props should be allowed.
+        "noEmptyBlockStatements": "off",
+
+        // Explicit `any` types should be avoided, but do have their place.
+        "noExplicitAny": "warn",
+        "noImplicitAnyLet": "info"
+      },
+      "a11y": {
+        // Ideally we could follow these rules, but daisy-ui currently depends
+        // on these patterns.
+        "noAutofocus": "off",
+        "noNoninteractiveTabindex": "off"
+      },
+
+      // New rules that are still under development.
+      // https://biomejs.dev/linter/rules/#nursery
+      "nursery": {
+        "useSortedClasses": {
+          "level": "info",
+          "fix": "unsafe",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["classNames"]
+          }
+        },
+
+        // Disallow relative imports to other parts of the file tree, e.g.,
+        // `./foo/bar`, `../foo/bar`.
+        "useImportRestrictions": "warn"
+      }
+    }
+  },
+
+  // json specific options
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+
+  // js specific options
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+
+  "overrides": [
+    // app overrides
+    {
+      "include": ["apps/*"],
+      "linter": {
+        "rules": {
+          "nursery": {
+            "noConsole": "warn"
+          }
+        }
+      }
+    },
+
+    // script overrides
+    {
+      "include": ["scripts/*"],
+      "linter": {
+        "rules": {
+          "nursery": {
+            "noConsole": "off"
+          }
+        }
+      }
+    }
+  ]
+}
+
+// Unable to find direct equivalents for the following from eslint:
+
+// Global:
+//   // exported functions must have return types
+//   "@typescript-eslint/explicit-module-boundary-types": "error",
+
+//   // vscode auto-import does a good job of naming a default exports after the
+//   // package, whereas this rule requires us to name our imports after the
+//   // files they live in, i.e.: "index" when dealing with npm packages.
+//   "import/no-named-as-default": "off",
+
+//   "no-console": [
+//     "warn",
+//     {
+//       "allow": ["warn", "error", "info", "assert"],
+//     },
+//   ],
+
+//   // const func = new Function()
+//   "no-new-func": "error",
+
+// hyperdrive-trading:
+//   "plugin:@tanstack/eslint-plugin-query/recommended",
+
+//   // Exported functions should be written as function declarations for easier
+//   // scanning. Arrow functions can still be used as anonymous functions.
+//   "func-style": ["error", "declaration"],
+
+//   "react-refresh/only-export-components": "warn",

@@ -11,8 +11,6 @@ This project uses many tools like:
 - [TypeScript](https://www.typescriptlang.org)
 - [Vitest](https://vitest.dev)
 - [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
 
 #### Monorepo dependencies:
 

@@ -1,12 +1,8 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "tasks": {
-    "build:crates": {
-      "dependsOn": ["^build"],
-      "outputs": ["packages/hyperdrive-wasm/**", "packages/fixed-point-wasm/**"]
-    },
     "build": {
-      "dependsOn": ["build:crates", "^build"],
+      "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
     "hyperdrive-trading#build": {
@@ -31,22 +27,12 @@
       ],
       "outputs": ["dist/**", ".next/**"]
     },
-    "lint": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
     "typecheck": {
       "dependsOn": ["^build"],
       "outputs": []
     },
     "dev": {
       "cache": false
-    },
-    "format": {
-      "outputs": []
-    },
-    "format:check": {
-      "outputs": []
     },
     "test": {
       "dependsOn": ["build"],

@@ -4,36 +4,29 @@
   "private": true,
   "type": "module",
   "license": "AGPL-3.0",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "crates/*"
-  ],
+  "workspaces": ["apps/*", "packages/*", "crates/*"],
   "scripts": {
     "build": "turbo run build",
     "build:crates": "turbo run build --filter=./crates/*",
     "build:packages": "turbo run build --filter=./packages/*",
     "build:docs": "yarn build:packages && turbo run build --filter={./apps/hyperdrive-sdk-docs}",
     "dev": "turbo run dev --parallel --filter=./apps/*",
-    "lint": "turbo run lint",
-    "lint:packages": "turbo run lint --filter=./packages/*",
     "test": "turbo run test --filter=./packages/*",
     "test:run": "turbo run test:run --filter=./packages/*",
-    "format": "turbo run format",
-    "format:check": "turbo run format:check",
     "postinstall": "npx husky",
+    "lint-and-format": "biome check --config-path biome.jsonc --diagnostic-level error .",
+    "lint-and-format:fix": "yarn lint-and-format --fix",
+    "lint-and-format:fix:unsafe": "yarn lint-and-format:fix --unsafe",
     "typecheck": "turbo run typecheck",
     "reset-node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && yarn cache clean && yarn",
     "release": "yarn build:packages && changeset publish"
   },
   "devDependencies": {
-    "@hyperdrive/prettier-config": "*",
-    "eslint": "^8.57.0",
+    "@biomejs/biome": "^1.8.3",
+    "@changesets/cli": "^2.27.1",
     "husky": "^9.0.11",
     "lint-staged": "^13.0.3",
-    "prettier": "3.3.3",
-    "prettier-plugin-organize-imports": "4.0.0",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier": "^3.3.3",
     "turbo": "^2.0.6",
     "typescript": "^5.5.4"
   },
@@ -43,8 +36,7 @@
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [
-      "eslint --fix",
-      "prettier --write"
+      "biome check --config-path biome.jsonc --diagnostic-level error --staged --write"
     ]
   },
   "engines": {
@@ -55,8 +47,6 @@
   },
   "packageManager": "yarn@1.22.19",
   "msw": {
-    "workerDirectory": [
-      "apps/hyperdrive-trading/src/public"
-    ]
+    "workerDirectory": ["apps/hyperdrive-trading/src/public"]
   }
 }

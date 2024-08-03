@@ -1,5 +1,7 @@
+build
 dist
 dist-ssr
+out
 *.local
 
 # dependencies

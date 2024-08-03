@@ -27,24 +27,16 @@
     "sass": "^1.72.0"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.2.1",
     "@docusaurus/module-type-aliases": "3.1.0",
     "@docusaurus/tsconfig": "3.1.0",
     "@docusaurus/types": "3.1.0",
-    "@hyperdrive/eslint-config": "*",
-    "@hyperdrive/prettier-config": "*",
     "docusaurus-plugin-typedoc": "^0.22.0",
-    "eslint-plugin-react": "^7.34.1",
     "typedoc": "^0.25.7",
     "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "~5.2.2"
   },
   "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.5%", "not dead", "not op_mini all"],
     "development": [
       "last 3 chrome version",
       "last 3 firefox version",
