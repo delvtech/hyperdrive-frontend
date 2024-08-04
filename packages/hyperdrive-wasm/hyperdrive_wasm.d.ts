@@ -483,5 +483,5 @@ export function initSync(module: SyncInitInput): InitOutput;
 * @returns {Promise<InitOutput>}
 */
 export default function __wbg_init (module_or_path?: InitInput | Promise<InitInput>): Promise<InitOutput>;
-export const wasmBase64: string;
-export const wasmBuffer: ArrayBuffer;
+declare const wasmBase64: string;
+declare const wasmBuffer: ArrayBuffer;
