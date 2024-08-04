@@ -2,67 +2,39 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import {
-  type HyperdriveConfig,
-  type TokenConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import type { QueryStatusWithIdle } from "src/base/queryStatus";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
-  bondAmount: bigint;
-  amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
-  activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
-  asBase: boolean;
-  vaultSharePrice: bigint | undefined;
 }
 
 export function OpenLongPreview({
   hyperdrive,
   openLongPreviewStatus,
-  amountPaid,
-  bondAmount,
   spotRateAfterOpen,
-  activeToken,
   curveFee,
-  asBase,
-  vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
-  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
-  const amountPaidInBase = isBaseAmount
-    ? amountPaid
-    : convertSharesToBase({
-        sharesAmount: amountPaid,
-        vaultSharePrice: vaultSharePrice,
-        decimals: baseToken.decimals,
-      });
-  const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   return (

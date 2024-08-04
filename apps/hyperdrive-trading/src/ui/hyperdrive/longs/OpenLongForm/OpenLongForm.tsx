@@ -303,12 +303,7 @@ export function OpenLongForm({
           hyperdrive={hyperdrive}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
-          activeToken={activeToken}
-          amountPaid={depositAmountAsBigInt || 0n}
-          bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
-          asBase={activeToken.address === baseToken.address}
-          vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
       disclaimer={(() => {
