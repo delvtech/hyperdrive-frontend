@@ -74,7 +74,7 @@ impl Parse for TsArgs {
 /// struct Token {
 ///     symbol: String,
 ///     /// Defaults to 18
-///     decimals: Option<Number>,
+///     decimals: Option<u8>,
 ///     total_supply: BigInt,
 /// }
 ///
