@@ -198,7 +198,6 @@ export function AddLiquidityForm({
     lpSharesBalanceOf,
     lpSharesOut,
     lpSharesTotalSupply,
-    hyperdrive,
     baseToken,
   );
 
@@ -343,7 +342,6 @@ function calculatePoolShareAfterDeposit(
   lpSharesBalanceOf: bigint | undefined,
   lpSharesOut: bigint | undefined,
   lpSharesTotalSupply: bigint | undefined,
-  hyperdrive: HyperdriveConfig,
   baseToken: TokenConfig<EmptyExtensions>,
 ) {
   if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
