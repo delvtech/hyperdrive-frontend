@@ -118,8 +118,8 @@ lockfile
     // Add type definitions for the added exports
     appendFileSync(
       resolve(outDir, "fixed_point_wasm.d.ts"),
-      `export const wasmBase64: string;
-export const wasmBuffer: ArrayBuffer;`,
+      `declare const wasmBase64: string;
+declare const wasmBuffer: ArrayBuffer;`,
     );
 
     // Remove the wasm binary
