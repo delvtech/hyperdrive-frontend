@@ -71,7 +71,8 @@ export function getServerAggregateBalanceSolutionHandlerStub(
         };
 
         return HttpResponseMSW.json(response, status);
-      } else if (amount > 100 && amount <= 200) {
+      }
+      if (amount > 100 && amount <= 200) {
         const status = {
           status: 200,
           statusText: "Mocked status",

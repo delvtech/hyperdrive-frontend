@@ -17,9 +17,9 @@ export function makeAddressUrl(
     case b3Sepolia.id:
       return `https://sepolia.explorer.b3.fun/address/${address}`;
     case foundry.id:
-      return `#`;
+      return "#";
     case 42069: // Cloudchain
-      return `#`;
+      return "#";
     default:
       assertNever(chainId);
   }

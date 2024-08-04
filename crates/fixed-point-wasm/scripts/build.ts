@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { spawnSync } from "child_process";
+import { spawnSync } from "node:child_process";
 import {
   appendFileSync,
   existsSync,
@@ -7,9 +7,9 @@ import {
   renameSync,
   rmSync,
   writeFileSync,
-} from "fs";
-import { basename, resolve } from "path";
-import { readFile } from "fs/promises";
+} from "node:fs";
+import { readFile } from "node:fs/promises";
+import { basename, resolve } from "node:path";
 import lockfile from "proper-lockfile";
 import { version } from "../package.json";
 

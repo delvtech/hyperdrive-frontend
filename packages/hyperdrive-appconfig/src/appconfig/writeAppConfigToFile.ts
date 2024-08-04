@@ -1,8 +1,8 @@
-import fs from "fs";
+import fs from "node:fs";
 import type { AppConfig } from "src/appconfig/AppConfig";
 
 // Custom replacer function to handle bigint
-function replaceBigIntsWithStrings(key: string, value: any) {
+function replaceBigIntsWithStrings(_key: string, value: any) {
   if (typeof value === "bigint") {
     // Convert bigint to a string (or another identifiable format)
     return `${value.toString()}n`; // Adding 'n' to differentiate from normal numbers

@@ -15,12 +15,12 @@ export function PrimaryStat({
 }): JSX.Element {
   return (
     <div className="flex flex-col gap-1">
-      <p className="text-sm text-neutral-content">{label}</p>
+      <p className="text-neutral-content text-sm">{label}</p>
       <div className={valueClassName}>
-        <p className="text-h3 font-bold">{value}</p>
+        <p className="font-bold text-h3">{value}</p>
         <p>{valueUnit}</p>
       </div>
-      {subValue && <p className="text-sm text-neutral-content">{subValue}</p>}
+      {subValue && <p className="text-neutral-content text-sm">{subValue}</p>}
     </div>
   );
 }

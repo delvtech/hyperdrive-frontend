@@ -1,4 +1,3 @@
-import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-js-core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import type { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -63,11 +62,6 @@ export function useOpenLong({
       if (!mutationEnabled) {
         return;
       }
-
-      console.log({
-        name: readWriteHyperdrive.debugName,
-        isWrite: readWriteHyperdrive instanceof ReadWriteHyperdrive,
-      });
 
       // if opening with shares, make sure the shares in gets prepared before
       // going into the sdk

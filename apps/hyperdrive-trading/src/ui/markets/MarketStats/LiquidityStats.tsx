@@ -138,7 +138,7 @@ function AmountLabel({
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
-      {icon ? <img src={icon} className="h-7 rounded-full  p-1" /> : undefined}
+      {icon ? <img src={icon} className="h-7 rounded-full p-1" /> : undefined}
       {value}
     </p>
   );

@@ -77,7 +77,7 @@ export function OpenShortsTableDesktop({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 font-normal text-neutral-content text-sm"
                   key={header.id}
                 >
                   <div
@@ -155,7 +155,7 @@ function getColumns(
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures On`,
+      header: "Matures On",
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -189,7 +189,7 @@ function getColumns(
         const amountPaid = baseAmountPaid.getValue();
         return (
           <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-            <span className="daisy-stat-value flex w-16 justify-end text-md font-normal">
+            <span className="daisy-stat-value flex w-16 justify-end font-normal text-md">
               {formatBalance({
                 balance: amountPaid,
                 decimals: baseToken.decimals,

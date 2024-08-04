@@ -145,7 +145,7 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: () => {
-      (window as any)["withdrawalLpModal"].close();
+      (window as any).withdrawalLpModal.close();
     },
     onExecuted: () => {
       setAmount("");
@@ -204,7 +204,7 @@ export function RemoveLiquidityForm({
           token={
             <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
               <img src={baseToken.iconUrl} className="h-5 " />{" "}
-              <span className="text-sm font-semibold">
+              <span className="font-semibold text-sm">
                 {baseToken.symbol}-LP
               </span>
             </div>
@@ -221,7 +221,7 @@ export function RemoveLiquidityForm({
           value={amount ?? ""}
           maxValue={formatUnits(lpShares, baseToken.decimals)}
           stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>
                 {lpShares && !!poolInfo
                   ? `Withdrawable: ${formatBalance({
@@ -279,12 +279,12 @@ export function RemoveLiquidityForm({
       disclaimer={
         <>
           {lpSharesIn && !hasEnoughBalance ? (
-            <p className="mb-2 text-center text-sm text-error">
+            <p className="mb-2 text-center text-error text-sm">
               Insufficient balance
             </p>
           ) : null}
 
-          <p className="text-center text-sm text-neutral-content">
+          <p className="text-center text-neutral-content text-sm">
             You can withdraw liquidity at any time. The utilized portion may be
             queued for delayed withdrawal.
           </p>

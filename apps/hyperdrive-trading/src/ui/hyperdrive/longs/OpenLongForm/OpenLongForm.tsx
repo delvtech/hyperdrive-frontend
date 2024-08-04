@@ -253,7 +253,7 @@ export function OpenLongForm({
           bottomLeftElement={
             // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
             !isTestnetChain(chainId) ? (
-              <label className="text-sm text-neutral-content">
+              <label className="text-neutral-content text-sm">
                 {`$${formatBalance({
                   balance:
                     activeTokenPrice && depositAmountAsBigInt
@@ -269,7 +269,7 @@ export function OpenLongForm({
             ) : null
           }
           bottomRightElement={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>
                 {activeTokenBalance
                   ? `Balance: ${formatBalance({
@@ -314,7 +314,7 @@ export function OpenLongForm({
       disclaimer={(() => {
         if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Pool limit exceeded. Max long size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
@@ -326,7 +326,7 @@ export function OpenLongForm({
         }
         if (!!depositAmountAsBigInt && !hasEnoughBalance) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Insufficient balance
             </p>
           );

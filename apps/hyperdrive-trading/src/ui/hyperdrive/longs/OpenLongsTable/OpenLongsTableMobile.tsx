@@ -204,7 +204,7 @@ function formatOpenLongMobileColumnData(
       ),
     },
     {
-      name: `Current value`,
+      name: "Current value",
       value: <CurrentValueCell hyperdrive={hyperdrive} row={row} />,
     },
   ];

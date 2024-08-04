@@ -16,7 +16,7 @@ export function VpnDetectedMessage({
     >
       <div className="space-y-3">
         <h2 className="flex items-center justify-center gap-4">
-          <ExclamationTriangleIcon className="text-red-500 size-10 stroke-error" />{" "}
+          <ExclamationTriangleIcon className="size-10 stroke-error text-red-500" />{" "}
           VPN detected
         </h2>
         <p>We&lsquo;re sorry but this app is not accessible for VPN users.</p>

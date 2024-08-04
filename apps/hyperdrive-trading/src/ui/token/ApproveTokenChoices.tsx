@@ -43,7 +43,7 @@ export function ApproveTokenChoices({
         <div className="flex items-center justify-between">
           <div className="flex flex-col items-start">
             <h5 className="mb-2 font-bold">Approve {token.symbol}</h5>
-            <p className="flex text-left text-sm text-neutral-content">
+            <p className="flex text-left text-neutral-content text-sm">
               Approve this market to spend your {token.symbol}
             </p>
           </div>
@@ -60,7 +60,7 @@ export function ApproveTokenChoices({
                   setSelectedOption("Unlimited");
                 }}
               />
-              <span className="daisy-label-text ml-2 flex flex-1  text-left">
+              <span className="daisy-label-text ml-2 flex flex-1 text-left">
                 Unlimited {token.symbol}
               </span>
             </label>
@@ -76,7 +76,7 @@ export function ApproveTokenChoices({
                   setSelectedOption("FixedAmount");
                 }}
               />
-              <span className="daisy-label-text ml-2 flex flex-1  text-left">
+              <span className="daisy-label-text ml-2 flex flex-1 text-left">
                 {amount} {token.symbol}
               </span>
             </label>

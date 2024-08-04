@@ -100,7 +100,7 @@ export function TokenInput({
           <div className="flex justify-around">
             <button
               className={classNames(
-                "daisy-btn daisy-join-item border-b-neutral-content/30 border-l-base-100 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-base-100 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline active:hover:border-l-base-100",
+                "daisy-btn daisy-join-item border-t-neutral-content/30 border-r-neutral-content/30 border-b-neutral-content/30 border-l-base-100 bg-base-100 hover:border-t-neutral-content/30 hover:border-r-neutral-content/30 hover:border-b-neutral-content/30 hover:border-l-base-100 hover:bg-base-100 hover:underline active:hover:border-l-base-100",
                 {
                   "daisy-btn-error": hasError,
                 },
@@ -120,9 +120,7 @@ export function TokenInput({
               onClick={(e) => {
                 e.preventDefault();
               }}
-              className="daisy-btn daisy-join-item border-b-neutral-content/30  border-l-neutral-content/30 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-neutral-content/30 hover:border-r-neutral-content/30
-              hover:border-t-neutral-content/30
-              hover:bg-base-100 hover:underline"
+              className="daisy-btn daisy-join-item border-t-neutral-content/30 border-r-neutral-content/30 border-b-neutral-content/30 border-l-neutral-content/30 bg-base-100 hover:border-t-neutral-content/30 hover:border-r-neutral-content/30 hover:border-b-neutral-content/30 hover:border-l-neutral-content/30 hover:bg-base-100 hover:underline"
             >
               <Cog6ToothIcon className="h-4" />
             </button>

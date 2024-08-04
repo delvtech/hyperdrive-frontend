@@ -202,7 +202,7 @@ export function OpenShortForm({
           value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
           stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>{`Slippage: ${slippage || "0.5"}%`}</span>
             </div>
           }
@@ -246,9 +246,9 @@ export function OpenShortForm({
           return null;
         }
         // If the user has input an amount, but that amount makes the hasEnoughLiquidity become falsy, show the pool limit exceeded note
-        else if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Pool limit exceeded. Max short size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
@@ -264,11 +264,11 @@ export function OpenShortForm({
         return (
           <div className="flex flex-col gap-4">
             {!hasEnoughBalance && openShortPreviewStatus !== "loading" ? (
-              <p className="text-center text-sm text-error">
+              <p className="text-center text-error text-sm">
                 Insufficient balance
               </p>
             ) : null}
-            <p className="text-center text-sm text-neutral-content">
+            <p className="text-center text-neutral-content text-sm">
               You pay{" "}
               <strong>
                 {openShortPreviewStatus === "loading" ? (
@@ -311,7 +311,7 @@ export function OpenShortForm({
               </strong>{" "}
             </p>
             {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
-              <p className="text-center text-sm text-neutral-content">
+              <p className="text-center text-neutral-content text-sm">
                 {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
               </p>
             )}

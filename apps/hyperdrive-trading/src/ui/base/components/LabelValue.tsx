@@ -25,7 +25,7 @@ export function LabelValue({
   return (
     <div
       className={classNames(
-        "flex w-full justify-between border-b border-dotted border-neutral-content/30 pb-2 ",
+        "flex w-full justify-between border-neutral-content/30 border-b border-dotted pb-2 ",
         {
           "text-md": size === "medium",
           "text-sm": size === "small",

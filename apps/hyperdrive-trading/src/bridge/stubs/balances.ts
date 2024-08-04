@@ -11,7 +11,7 @@ export function getServerAccountFungibleBalanceHandlerStub(
   return http.get(
     `${baseUrl}/accounts/:account/assets/fungible/:token`,
     ({ params }) => {
-      const token = params["token"];
+      const token = params.token;
       const response: ServerAccountFungibleBalanceHandlerResponse = {
         data: [
           {

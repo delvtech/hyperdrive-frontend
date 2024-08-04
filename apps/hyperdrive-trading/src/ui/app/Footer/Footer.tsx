@@ -14,7 +14,7 @@ export default function Footer(): ReactElement {
       <aside>
         <Link
           to="/"
-          className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
+          className="inline-flex items-center gap-2 font-extrabold text-h6 uppercase tracking-widest"
         >
           <HyperdriveLogo />
         </Link>

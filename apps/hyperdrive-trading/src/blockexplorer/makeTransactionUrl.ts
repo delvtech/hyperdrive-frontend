@@ -17,9 +17,9 @@ export function makeTransactionURL(
     case b3Sepolia.id:
       return `https://sepolia.explorer.b3.fun/tx/${transactionHash}`;
     case foundry.id:
-      return `#`;
+      return "#";
     case 42069: // cloud chain
-      return `#`;
+      return "#";
     default:
       assertNever(chainId);
   }

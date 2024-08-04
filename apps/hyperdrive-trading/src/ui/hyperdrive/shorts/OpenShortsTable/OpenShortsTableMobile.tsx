@@ -181,7 +181,7 @@ function formatOpenShortMobileColumnData(
       }),
     },
     {
-      name: `Rate shorted`,
+      name: "Rate shorted",
       value: `${formatRate(openShort.fixedRatePaid)} APR`,
     },
     {
@@ -189,7 +189,7 @@ function formatOpenShortMobileColumnData(
       value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
     {
-      name: `Current Value`,
+      name: "Current Value",
       value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
   ];

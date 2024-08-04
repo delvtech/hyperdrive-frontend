@@ -123,7 +123,7 @@ export function CloseLongForm({
     <TransactionViewOld
       disclaimer={
         <>
-          <p className="text-center text-xs text-neutral-content">
+          <p className="text-center text-neutral-content text-xs">
             Note: 1 hy{baseToken.symbol} is always worth 1 {baseToken.symbol} at
             maturity, however its value may fluctuate before maturity based on
             market activity.

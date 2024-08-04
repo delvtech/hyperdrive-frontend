@@ -35,7 +35,7 @@ export function TokenPicker({
         ) : undefined}
         <div className="daisy-join-item flex h-12 w-32 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
           <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
-          <span className="text-sm font-semibold">
+          <span className="font-semibold text-sm">
             {tokens[0].tokenConfig.symbol}
           </span>
         </div>
@@ -61,7 +61,7 @@ export function TokenPicker({
         <button
           className={classNames(
             "daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30",
-            { "border-r-none rounded-r-none": joined },
+            { "rounded-r-none border-r-none": joined },
           )}
           onClick={(e) => {
             e.preventDefault();
@@ -90,13 +90,12 @@ export function TokenPicker({
                   {tokenConfig?.symbol}
                   <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
                     <span>
-                      Balance: {` `}
+                      Balance:{" "}
                       {formatBalance({
                         balance: tokenBalance || 0n,
                         decimals: tokenConfig?.decimals,
                         places: tokenConfig?.places,
-                      })}
-                      {` `}
+                      })}{" "}
                     </span>
                   </label>
                 </button>

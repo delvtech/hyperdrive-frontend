@@ -118,7 +118,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
   return [
     columnHelper.accessor((row) => formatDate(Number(row.maturity * 1000n)), {
-      header: `Matures On`,
+      header: "Matures On",
       cell: ({ row }) => {
         const maturity = formatDate(Number(row.original.maturity * 1000n));
         return <span>{maturity}</span>;
@@ -155,7 +155,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("closedTimestamp", {
-      header: `Closed On`,
+      header: "Closed On",
       cell: (closedTimestamp) => {
         return (
           <span>{formatDate(Number(closedTimestamp.getValue() * 1000n))}</span>
@@ -230,7 +230,7 @@ export function ClosedShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 font-normal text-neutral-content text-sm"
                   key={header.id}
                 >
                   <div

@@ -25,7 +25,7 @@ export function Plausible({ page }: PlausibleProps): ReactElement {
         defer={true}
         src="https://plausible.io/js/script.manual.js"
         data-domain={window.location.host}
-      ></script>
+      />
     </Helmet>
   );
 }

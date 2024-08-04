@@ -76,7 +76,7 @@ export function ShortsTab({
               {isTotalValueLoading ? (
                 <Skeleton width={100} />
               ) : shorts?.length ? (
-                <p className="text-sm text-neutral-content">
+                <p className="text-neutral-content text-sm">
                   Total Value:{" "}
                   {formatBalance({
                     balance: totalValue || 0n,

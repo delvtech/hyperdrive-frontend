@@ -76,7 +76,7 @@ export function OpenShortModalButton({
       modalContent={
         <div>
           <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
+            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute top-4 right-4"
             onClick={closeModal}
           >
             <XMarkIcon className="w-6 " title="Close position" />

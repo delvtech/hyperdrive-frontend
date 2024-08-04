@@ -245,7 +245,7 @@ export function AddLiquidityForm({
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to deposit"
           stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>
                 {activeTokenBalance
                   ? `Balance: ${formatBalance({
@@ -276,7 +276,7 @@ export function AddLiquidityForm({
       disclaimer={(() => {
         if (!!depositAmountAsBigInt && !hasEnoughBalance) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Insufficient balance
             </p>
           );
@@ -285,7 +285,7 @@ export function AddLiquidityForm({
           previewAddLiquidityError?.includes("Not enough lp shares minted.")
         ) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Not enough LP shares minted. Please adjust your slippage to add
               liquidity.
             </p>

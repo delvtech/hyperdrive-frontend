@@ -21,7 +21,7 @@ function TokenBalances(): ReactNode {
   }
 
   return (
-    <div className="flex-col-3 flex w-full space-x-6">
+    <div className="flex w-full flex-col-3 space-x-6">
       {balances.map((chainBalances, index) => {
         const totalBalance =
           chainBalances?.reduce((total, { balance, tokenDecimals }) => {

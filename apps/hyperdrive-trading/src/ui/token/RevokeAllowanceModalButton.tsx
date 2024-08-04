@@ -62,7 +62,7 @@ export function RevokeAllowanceModalButton({
     spender,
     enabled: !isEth,
   });
-  const modalId = `revoke_token`;
+  const modalId = "revoke_token";
   function closeModal() {
     (window as any)[modalId].close();
   }
@@ -73,14 +73,14 @@ export function RevokeAllowanceModalButton({
         <div>
           <div className="flex items-center justify-between">
             <button
-              className="daisy-btn daisy-btn-circle daisy-btn-ghost no-animation daisy-btn-sm absolute right-4 top-4 animate-none"
+              className="daisy-btn daisy-btn-circle daisy-btn-ghost no-animation daisy-btn-sm absolute top-4 right-4 animate-none"
               onClick={closeModal}
             >
               <XMarkIcon className="w-6" />
             </button>
             <div className="flex flex-col items-start">
               <h5 className="mb-2 font-bold">Revoke {token.symbol}</h5>
-              <p className="flex max-w-[250px] text-left text-sm text-neutral-content">
+              <p className="flex max-w-[250px] text-left text-neutral-content text-sm">
                 Revoke {token.symbol} allowance for this account
               </p>
             </div>
@@ -97,7 +97,7 @@ export function RevokeAllowanceModalButton({
                     setSelectedOption("All");
                   }}
                 />
-                <span className="daisy-label-text ml-2 flex flex-1  text-left">
+                <span className="daisy-label-text ml-2 flex flex-1 text-left">
                   Revoke all {token.symbol}
                 </span>
               </label>
@@ -157,7 +157,7 @@ export function RevokeAllowanceModalButton({
             <h5>
               {selectedOption === "All"
                 ? `Revoke all ${token.symbol}`
-                : `Set spending cap`}
+                : "Set spending cap"}
             </h5>
           </button>
         </div>

@@ -21,12 +21,12 @@ export function Well({
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
-    "daisy-card p-7 border border-1 border-neutral-content/20",
+    "daisy-card border border-1 border-neutral-content/20 p-7",
     {
       "shadow-md": elevation === "elevated",
       "bg-base-200": !transparent,
       "w-full": block,
-      "hover:-translate-y-0.5 hover:scale-[1.01] transition duration-300 hover:shadow-xl ease-in-out hover:shadow-primary/5":
+      "hover:-translate-y-0.5 transition duration-300 ease-in-out hover:scale-[1.01] hover:shadow-primary/5 hover:shadow-xl":
         isInteractive,
       "hover:cursor-pointer": onClick,
     },

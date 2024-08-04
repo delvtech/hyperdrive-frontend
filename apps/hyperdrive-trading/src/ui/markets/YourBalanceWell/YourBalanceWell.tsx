@@ -104,12 +104,12 @@ function AvailableAsset({
 
   return (
     <div className="flex whitespace-nowrap ">
-      <div className="flex items-center gap-1 text-h5 font-bold">
+      <div className="flex items-center gap-1 font-bold text-h5">
         {tokenBalanceStatus === "loading" || tokenBalance === undefined ? (
           <Skeleton className="w-52" />
         ) : (
           <>
-            <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
+            <img src={token.iconUrl} className="h-8 rounded-full p-1" />
             {formatBalance({
               balance: tokenBalance.value || 0n,
               decimals: token.decimals,
@@ -142,7 +142,7 @@ function AvailableAsset({
             ) : undefined}
             {!isEth && tokenBalance ? (
               <>
-                <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
+                <li className="daisy-menu-title flex-row justify-between text-neutral-content text-xs">
                   <span>Allowance</span>
                   <span className="font-normal">
                     {isUnlimited

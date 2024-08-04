@@ -49,7 +49,7 @@ function getColumns() {
     }),
     columnHelper.accessor("market.name", {
       header: () => (
-        <p className="text-sm text-neutral-content">Yield Source</p>
+        <p className="text-neutral-content text-sm">Yield Source</p>
       ),
       cell: ({ row }) => {
         return (

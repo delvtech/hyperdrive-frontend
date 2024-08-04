@@ -119,7 +119,7 @@ export function OpenWithdrawalSharesCard({
                   </button>
                 )}
               </Modal>
-              <p className="mt-2 text-center text-xs text-neutral-content">
+              <p className="mt-2 text-center text-neutral-content text-xs">
                 Note: Liquidity that is queued for withdraw is considered idle
                 capital and is not used to back new positions. It continues to
                 earn the yield source APY.

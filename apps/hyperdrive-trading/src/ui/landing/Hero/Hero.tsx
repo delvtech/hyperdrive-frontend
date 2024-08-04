@@ -6,7 +6,7 @@ export function Hero(): ReactElement {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-4xl">
-          <h1 className="gradient-text mb-5 text-h3 font-medium md:text-h1">
+          <h1 className="gradient-text mb-5 font-medium text-h3 md:text-h1">
             Fixed and variable yields at your control.
           </h1>
           <h5 className="mb-5 font-inter text-neutral-content">

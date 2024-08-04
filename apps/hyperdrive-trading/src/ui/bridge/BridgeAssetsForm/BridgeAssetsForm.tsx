@@ -67,8 +67,8 @@ export function BridgeAssetsForm({
   const [showPreview, setShowPreview] = useState(false);
 
   const { tokens } = useBridgeTokens();
-  const tokensWithBalances =
-    tokens?.filter((token) => {
+  const _tokensWithBalances =
+    tokens?.filter((_token) => {
       const hasBalance = balances?.[0]?.some(
         (chainBalance) => Number(chainBalance.balance) > 0,
       );
@@ -90,7 +90,7 @@ export function BridgeAssetsForm({
       };
     }) || [];
 
-  const maxValue = formatBalance({
+  const _maxValue = formatBalance({
     balance: maxButtonValue,
     decimals: token.decimals,
     places: token.decimals,

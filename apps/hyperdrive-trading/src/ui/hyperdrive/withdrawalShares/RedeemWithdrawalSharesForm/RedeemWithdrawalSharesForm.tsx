@@ -151,7 +151,7 @@ export function RedeemWithdrawalSharesForm({
           }
           value={amount ?? ""}
           stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>
                 {`Withdrawable: ${formatBalance({
                   balance: isBaseTokenWithdrawal

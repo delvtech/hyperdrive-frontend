@@ -67,7 +67,7 @@ export function BridgeAssetsPicker({
                     });
                   }}
                   className="daisy-toggle"
-                ></input>
+                />
               </td>
             </tr>
           );

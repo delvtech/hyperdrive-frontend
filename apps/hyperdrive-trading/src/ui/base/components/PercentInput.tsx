@@ -22,7 +22,7 @@ export function PercentInput({
           HIDE_NUMERIC_INPUT_ARROWS_CLASS,
         )}
       />
-      <span className="absolute right-2 top-2 text-neutral-content">%</span>
+      <span className="absolute top-2 right-2 text-neutral-content">%</span>
     </div>
   );
 }

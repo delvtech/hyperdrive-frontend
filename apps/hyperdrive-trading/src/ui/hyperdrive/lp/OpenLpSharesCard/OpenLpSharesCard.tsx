@@ -135,7 +135,7 @@ export function OpenLpSharesCard({
                     "Profit or loss on your LP position since you opened it."
                   }
                   className={classNames(
-                    "daisy-tooltip flex cursor-help items-center border-b border-dashed border-current before:border",
+                    "daisy-tooltip flex cursor-help items-center border-current border-b border-dashed before:border",
                     { "text-success": isPositiveChangeInValue },
                     {
                       "text-error":
@@ -158,7 +158,7 @@ export function OpenLpSharesCard({
               label="Pool Share"
               value={
                 <p
-                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current before:border"
+                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-current border-b border-dashed before:border"
                   data-tip="Your share of the total liquidity in the pool"
                 >
                   {!!lpShares && !!lpSharesTotalSupply ? (
@@ -173,13 +173,13 @@ export function OpenLpSharesCard({
               <div className="flex flex-col">
                 <div className="flex justify-between">
                   <p
-                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current text-neutral-content before:border"
+                    className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-current border-b border-dashed text-neutral-content before:border"
                     data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts."
                   >
                     Utilization Ratio
                   </p>
                   <p>
-                    {!!utilizationRatio
+                    {utilizationRatio
                       ? `${dnum.format(
                           [utilizationRatio, baseToken.decimals],
                           2,
@@ -202,7 +202,7 @@ export function OpenLpSharesCard({
                   )
                 }
                 max="100"
-              ></progress>
+              />
             </div>
             <div className="daisy-card-actions mt-4 w-full">
               <Modal
@@ -216,10 +216,8 @@ export function OpenLpSharesCard({
                 modalContent={
                   <div>
                     <button
-                      className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-                      onClick={() =>
-                        (window as any)["withdrawalLpModal"].close()
-                      }
+                      className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute top-4 right-4"
+                      onClick={() => (window as any).withdrawalLpModal.close()}
                     >
                       <XMarkIcon className="w-6 " title="Close" />
                     </button>
@@ -241,7 +239,7 @@ export function OpenLpSharesCard({
                   </button>
                 )}
               </Modal>
-              <p className="mt-2 text-center text-xs text-neutral-content">
+              <p className="mt-2 text-center text-neutral-content text-xs">
                 Liquidity is used to back open Long and Short positions. Any
                 idle liquidity earns the Yield Source APY.
               </p>

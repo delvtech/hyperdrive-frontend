@@ -41,8 +41,8 @@ export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
   }[];
 }) {
   return (
-    target: any,
-    propertyKey: string,
+    _target: any,
+    _propertyKey: string,
     descriptor: PropertyDescriptor,
   ): void => {
     const originalMethod = descriptor.value;

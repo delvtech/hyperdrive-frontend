@@ -75,7 +75,7 @@ export function LongsTab({
               {isTotalValueLoading ? (
                 <Skeleton width={100} />
               ) : longs?.length ? (
-                <p className="text-sm text-neutral-content">
+                <p className="text-neutral-content text-sm">
                   Total Value:{" "}
                   {formatBalance({
                     balance: totalValue || 0n,

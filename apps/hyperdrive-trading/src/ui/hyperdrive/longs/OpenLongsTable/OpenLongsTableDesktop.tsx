@@ -127,7 +127,7 @@ export function OpenLongsTableDesktop({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 font-normal text-neutral-content text-sm"
                   key={header.id}
                 >
                   <div
@@ -210,7 +210,7 @@ function getColumns({
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures On`,
+      header: "Matures On",
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -248,7 +248,7 @@ function getColumns({
     }),
     columnHelper.accessor("assetId", {
       id: "fixedRate",
-      header: `Fixed APR`,
+      header: "Fixed APR",
       cell: ({ row }) => {
         return (
           <FixedRateCell

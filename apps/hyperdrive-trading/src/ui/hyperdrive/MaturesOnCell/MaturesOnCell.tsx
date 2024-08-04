@@ -19,7 +19,7 @@ export function MaturesOnCell({
 
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-      <span className="daisy-stat-value text-xs font-normal lg:text-md">
+      <span className="daisy-stat-value font-normal text-xs lg:text-md">
         {formatDate(Number(maturityDateMS))}
       </span>
       <div

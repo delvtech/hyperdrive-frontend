@@ -69,7 +69,7 @@ export function CurrentValueCell({
 
   return (
     <div className={cellClassName}>
-      <span className="daisy-stat-value flex items-center gap-2 text-md font-bold">
+      <span className="daisy-stat-value flex items-center gap-2 font-bold text-md">
         {/* warning icon with tooltip for liquidity issues
          TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
          have calcMaxCloseShort */}

@@ -19,7 +19,7 @@ export function YieldSourceRateBadge({
   });
 
   if (vaultRateStatus === "loading" && !vaultRate) {
-    return <Skeleton className="w-42 h-8" />;
+    return <Skeleton className="h-8 w-42" />;
   }
 
   if (!vaultRate?.vaultRate) {
@@ -34,7 +34,7 @@ export function YieldSourceRateBadge({
 
   return (
     <Badge>
-      <span className="font-dmMono text-sm text-neutral-content lg:text-md">
+      <span className="font-dmMono text-neutral-content text-sm lg:text-md">
         {labelRenderer ? (
           labelRenderer(vaultRate)
         ) : (

@@ -217,7 +217,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     }),
     columnHelper.accessor("bondAmount", {
       id: "bondAmount",
-      header: `Size`,
+      header: "Size",
       cell: ({ getValue, row }) => {
         const bondAmount = getValue();
         const size = dnum.format(
@@ -471,7 +471,7 @@ function FilterSelect({
             header.column.getFilterValue() === filter ||
             (!header.column.getFilterValue() && filter === "All")
               ? "daisy-tab daisy-tab-active text-sm md:text-lg"
-              : "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
+              : "daisy-tab font-normal text-sm opacity-80 hover:opacity-100 md:text-lg"
           }`}
           onClick={() => header.column.setFilterValue(filter)}
         >
