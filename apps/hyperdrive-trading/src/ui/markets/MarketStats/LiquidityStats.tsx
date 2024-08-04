@@ -64,7 +64,7 @@ export function LiquidityStats({
                 />
               )
             }
-            description={`The present value in the pool`}
+            description="The present value in the pool"
             tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
           />
           <Stat

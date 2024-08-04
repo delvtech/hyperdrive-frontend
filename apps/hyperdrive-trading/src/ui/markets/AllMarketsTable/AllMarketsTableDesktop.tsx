@@ -92,7 +92,7 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="Fixed Rate"
-          tooltip={`Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied`}
+          tooltip="Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied"
         />
       ),
       cell: ({ getValue }) => {

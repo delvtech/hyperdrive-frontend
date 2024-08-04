@@ -172,7 +172,7 @@ function getColumns(appConfig: AppConfig) {
       header: () => (
         <TextWithTooltip
           label="Fixed APR"
-          tooltip={`Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied`}
+          tooltip="Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied"
         />
       ),
       cell: ({ getValue }) => {

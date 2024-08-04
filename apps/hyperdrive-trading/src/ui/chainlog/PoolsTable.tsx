@@ -108,7 +108,7 @@ const poolCols = [
     cell: ({ getValue, row }) => (
       <Link
         className="daisy-link-hover daisy-link"
-        to={`/market/$address`}
+        to="/market/$address"
         params={{ address: row.original.address }}
       >
         {getValue()}

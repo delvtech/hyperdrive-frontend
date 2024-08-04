@@ -251,7 +251,7 @@ function getColumns(
               >
                 <CalendarLinkMenu
                   date={maturityDate}
-                  title={`Hyperdrive - Short position has matured`}
+                  title="Hyperdrive - Short position has matured"
                   description={`Your Short position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
                 />
                 <PositionActionsMenu position={row.original} />
