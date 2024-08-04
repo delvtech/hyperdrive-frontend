@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import type { ReactElement } from "react";

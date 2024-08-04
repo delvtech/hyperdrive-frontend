@@ -34,6 +34,7 @@ export function useAddressScreen(): AddressScreenResult {
     navigate({ to: "/ineligible" });
   } else if (error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
+      // biome-ignore lint/nursery/noConsole:
       console.error(error);
     }
     navigate({ to: "/error" });

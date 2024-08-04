@@ -5,8 +5,8 @@ export function logAppVersion(): void {
   const versionUrl = `${repoUrl}/commit/${APP_VERSION}`;
   const unreleasedUrl = `${repoUrl}/compare/${APP_VERSION}...main`;
 
-  // eslint-disable-next-line no-console
+  // biome-ignore lint/nursery/noConsole:
   console.log(`App version: ${versionUrl}`);
-  // eslint-disable-next-line no-console
+  // biome-ignore lint/nursery/noConsole:
   console.log(`Unreleased commits: ${unreleasedUrl}`);
 }

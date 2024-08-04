@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";

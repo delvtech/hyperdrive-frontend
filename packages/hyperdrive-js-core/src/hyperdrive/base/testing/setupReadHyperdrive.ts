@@ -8,7 +8,6 @@ import { ReadHyperdrive_v1_0_14 } from "src/exports/v1.0.14";
 import type { HyperdriveAbi } from "src/hyperdrive/base/abi";
 
 // No need to explicitly set return types as they are already set in the Stubs
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function setupReadHyperdrive() {
   const network = new NetworkStub();
 

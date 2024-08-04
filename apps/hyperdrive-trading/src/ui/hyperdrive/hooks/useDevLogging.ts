@@ -12,7 +12,9 @@ export function useDevLogging(market: HyperdriveConfig): void {
   });
   useEffect(() => {
     if (import.meta.env.DEV) {
+      // biome-ignore lint/nursery/noConsole:
       console.log("Pool Config:");
+      // biome-ignore lint/nursery/noConsole:
       console.table(bigIntsToString(market.poolConfig, baseToken.decimals));
     }
   }, [baseToken.decimals, market.poolConfig]);
@@ -20,7 +22,9 @@ export function useDevLogging(market: HyperdriveConfig): void {
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: market.address });
   useEffect(() => {
     if (import.meta.env.DEV) {
+      // biome-ignore lint/nursery/noConsole:
       console.log("Pool Info:");
+      // biome-ignore lint/nursery/noConsole:
       console.table(
         poolInfo ? bigIntsToString(poolInfo, baseToken.decimals) : undefined,
       );

@@ -41,7 +41,6 @@ export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
   }[];
 }) {
   return (
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
     target: any,
     propertyKey: string,
     descriptor: PropertyDescriptor,
@@ -50,7 +49,6 @@ export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
 
     // Wrap the original method in a function that does the transaction
     // side-effects we want after the tx completes
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     descriptor.value = async function (...args: any[]) {
       // Access the target class instance from within a decorator
       // @ts-expect-error The `this` keyword will be the target class instance
