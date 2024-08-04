@@ -394,6 +394,7 @@ export type Numberish = FixedPoint | bigint | number | string;
 
 #[wasm_bindgen]
 extern "C" {
+    /// `FixedPoint | bigint | number | string`
     #[derive(Clone)]
     #[wasm_bindgen(typescript_type = Numberish)]
     pub type Numberish;
