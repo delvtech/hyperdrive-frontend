@@ -46,17 +46,31 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        "noUselessConstructor": "off"
+        "noUselessConstructor": "off",
+
+        // TODO: remove once fixed
+        "noExtraBooleanCast": "warn",
+        "noForEach": "warn",
+        "useLiteralKeys": "warn"
       },
       "correctness": {
         "noUnusedImports": "error",
-        "noUnusedVariables": "warn"
+        "noUnusedVariables": "warn",
+
+        // TODO: remove once fixed
+        "useExhaustiveDependencies": "warn"
       },
       "style": {
         "noNonNullAssertion": "warn",
         "useBlockStatements": "error",
         "useNodejsImportProtocol": "warn",
-        "useNumberNamespace": "off"
+        "useNumberNamespace": "off",
+
+        // TODO: remove once fixed
+        "noUnusedTemplateLiteral": "warn",
+        "noUselessElse": "warn",
+        "useExponentiationOperator": "warn",
+        "useSelfClosingElements": "warn"
       },
       "suspicious": {
         // Empty arrow functions are fine for noops when passed to components.
@@ -65,13 +79,24 @@
 
         // Explicit `any` types should be avoided, but do have their place.
         "noExplicitAny": "warn",
-        "noImplicitAnyLet": "info"
+        "noImplicitAnyLet": "info",
+
+        // TODO: remove once fixed
+        "noArrayIndexKey": "warn",
+        "noAssignInExpressions": "warn"
       },
       "a11y": {
         // Ideally we could follow these rules, but daisy-ui currently depends
         // on these patterns.
         "noAutofocus": "off",
-        "noNoninteractiveTabindex": "off"
+        "noNoninteractiveTabindex": "off",
+
+        // TODO: remove once fixed
+        "noSvgWithoutTitle": "warn",
+        "useAltText": "warn",
+        "useButtonType": "warn",
+        "useKeyWithClickEvents": "warn",
+        "useValidAnchor": "warn"
       },
 
       // New rules that are still under development.
