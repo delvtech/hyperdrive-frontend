@@ -1,7 +1,7 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement } from "react";
-import { Stat, StatProps } from "src/ui/base/components/Stat";
+import type { ReactElement } from "react";
+import { Stat, type StatProps } from "src/ui/base/components/Stat";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 
 export interface MultiStatProps extends StatProps {

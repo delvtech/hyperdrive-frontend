@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Well } from "src/ui/base/components/Well/Well";
 

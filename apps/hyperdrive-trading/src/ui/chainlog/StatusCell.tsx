@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { ReactElement } from "react";
-import { Status } from "src/registry/data";
+import type { ReactElement } from "react";
+import type { Status } from "src/registry/data";
 
 export function StatusCell({ status }: { status: Status }): ReactElement {
   return (

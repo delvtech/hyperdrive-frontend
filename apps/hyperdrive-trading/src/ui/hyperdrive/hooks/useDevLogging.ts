@@ -1,4 +1,4 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { useEffect } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";

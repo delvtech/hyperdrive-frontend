@@ -1,10 +1,10 @@
-import { ClosedLong } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ClosedLong } from "@delvtech/hyperdrive-viem";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useTotalClosedLongsValue({
   hyperdrive,

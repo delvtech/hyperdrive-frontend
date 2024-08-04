@@ -1,15 +1,15 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
+  type YieldSourceExtensions,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -20,11 +20,11 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { useUtilizationRatio } from "src/ui/hyperdrive/lp/hooks/useUtilizationRatio";
-import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 

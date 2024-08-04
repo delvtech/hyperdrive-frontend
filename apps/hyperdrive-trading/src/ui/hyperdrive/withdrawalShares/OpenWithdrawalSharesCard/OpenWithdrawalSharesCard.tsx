@@ -1,5 +1,5 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalentShareValue";

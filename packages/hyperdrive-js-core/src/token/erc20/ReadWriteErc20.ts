@@ -1,13 +1,13 @@
-import {
+import type {
   CachedReadWriteContract,
   ContractWriteOptions,
 } from "@delvtech/evm-client";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
+import type { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { syncCacheWithTransaction } from "src/evm-client/syncCacheWithTransaction";
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
-import { ReadWriteToken } from "src/token/ReadWriteToken";
+import type { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
+import type { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
-import { Erc20Abi } from "src/token/erc20/abi";
+import type { Erc20Abi } from "src/token/erc20/abi";
 
 export interface ReadWriteErc20Options extends ReadWriteContractModelOptions {}
 

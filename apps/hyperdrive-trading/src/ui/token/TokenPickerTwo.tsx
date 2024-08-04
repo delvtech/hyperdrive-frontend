@@ -1,9 +1,9 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export interface TokenChoice {
   tokenConfig: TokenConfig<any>;

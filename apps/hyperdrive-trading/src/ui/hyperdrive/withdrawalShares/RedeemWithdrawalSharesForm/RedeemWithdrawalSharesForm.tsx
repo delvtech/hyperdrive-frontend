@@ -1,27 +1,27 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
-import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
-import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RedeemWithdrawalSharesFormProps {

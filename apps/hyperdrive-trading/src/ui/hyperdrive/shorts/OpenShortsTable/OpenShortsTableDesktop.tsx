@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -17,7 +17,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";

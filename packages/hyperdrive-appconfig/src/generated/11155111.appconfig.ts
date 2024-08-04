@@ -1,4 +1,4 @@
-import { AppConfig } from "src/appconfig/AppConfig";
+import type { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   chainId: 11155111,
   tags: [

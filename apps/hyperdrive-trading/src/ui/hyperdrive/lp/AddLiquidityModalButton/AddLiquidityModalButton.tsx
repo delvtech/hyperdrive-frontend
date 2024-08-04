@@ -1,8 +1,11 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import {
+  type HyperdriveConfig,
+  findYieldSourceToken,
+} from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";

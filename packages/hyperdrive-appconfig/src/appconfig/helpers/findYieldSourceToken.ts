@@ -1,7 +1,7 @@
-import { KnownTokenExtensions } from "src/appconfig/AppConfig";
-import { TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
-import { Address } from "viem";
+import type { KnownTokenExtensions } from "src/appconfig/AppConfig";
+import type { TokenConfig } from "src/tokens/getTokenConfig";
+import type { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import type { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the yield source token.

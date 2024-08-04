@@ -3,7 +3,7 @@ import {
   ClockIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { PositionCard } from "src/ui/landing/PositionCards/PositionCard";
 
 export function PositionCards(): ReactElement {

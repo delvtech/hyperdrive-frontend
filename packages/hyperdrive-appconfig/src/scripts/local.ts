@@ -1,10 +1,10 @@
 import "dotenv/config";
-import { AddressesJson } from "src/addresses/AddressesJson";
+import type { AddressesJson } from "src/addresses/AddressesJson";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
 import { localChain } from "src/chains/local";
-import { createPublicClient, http } from "viem";
+import { http, createPublicClient } from "viem";
 
 const localChainId = +(process.env.LOCAL_CHAIN_ID as string);
 const localAddressesUrl = process.env.LOCAL_ADDRESSES_URL as string;

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

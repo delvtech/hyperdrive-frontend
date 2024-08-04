@@ -1,4 +1,4 @@
-import { FetchStatus, QueryStatus } from "@tanstack/react-query";
+import type { FetchStatus, QueryStatus } from "@tanstack/react-query";
 export type QueryStatusWithIdle = QueryStatus | "idle";
 
 export function getStatus(

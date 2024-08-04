@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
-import { Hash } from "viem";
+import type { SupportedChainId } from "src/chains/supportedChains";
+import type { Hash } from "viem";
 import { useChainId } from "wagmi";
 
 export default function TransactionToast({

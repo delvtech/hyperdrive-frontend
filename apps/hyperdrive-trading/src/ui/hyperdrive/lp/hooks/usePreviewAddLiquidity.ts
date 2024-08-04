@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {

@@ -1,12 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -18,23 +18,23 @@ import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
+import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
-import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
-import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { Address, formatUnits } from "viem";
+import { type Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
@@ -43,7 +43,7 @@ interface OpenLongFormProps {
 }
 
 export function OpenLongForm({
-  hyperdrive: hyperdrive,
+  hyperdrive,
   onOpenLong,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();

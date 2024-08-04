@@ -1,15 +1,15 @@
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
+  type YieldSourceExtensions,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";

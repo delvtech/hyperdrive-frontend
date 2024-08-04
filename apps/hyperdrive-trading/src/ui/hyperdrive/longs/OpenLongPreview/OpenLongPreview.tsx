@@ -3,16 +3,16 @@ import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import {
-  HyperdriveConfig,
-  TokenConfig,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";

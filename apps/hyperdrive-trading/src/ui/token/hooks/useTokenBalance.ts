@@ -1,7 +1,7 @@
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { getIsSteth } from "src/vaults/isSteth";
-import { Address, erc20Abi, formatUnits } from "viem";
+import { type Address, erc20Abi, formatUnits } from "viem";
 import { useBalance, useChainId, useReadContract } from "wagmi";
 
 /**

@@ -1,4 +1,4 @@
-import { PoolInfo } from "src/pool/types";
+import type { PoolInfo } from "src/pool/types";
 
 export const simplePoolInfo: PoolInfo = {
   shareReserves: 10000000000000000000000000n,

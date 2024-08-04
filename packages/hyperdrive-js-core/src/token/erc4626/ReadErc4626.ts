@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
-import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
-import { Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
+import { ReadErc20, type ReadErc20Options } from "src/token/erc20/ReadErc20";
+import { type Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
 
 export class ReadErc4626 extends readErc4626Mixin(ReadErc20) {}
 
@@ -43,7 +46,7 @@ export interface ReadErc4626Mixin {
  * @internal
  */
 export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadErc4626Mixin> & T {
   return class extends Base implements ReadErc4626Mixin {
     erc4626Contract: CachedReadContract<Erc4626Abi>;
@@ -87,7 +90,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       return this.erc4626Contract.read(
         "convertToAssets",
         { shares: sharesAmount },
-        options
+        options,
       );
     }
 
@@ -101,7 +104,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       return this.erc4626Contract.read(
         "convertToShares",
         { assets: assetsAmount },
-        options
+        options,
       );
     }
   };

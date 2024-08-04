@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode, useState } from "react";
+import { type ReactElement, type ReactNode, useState } from "react";
 
 interface DisclosureProps {
   title: ReactNode;

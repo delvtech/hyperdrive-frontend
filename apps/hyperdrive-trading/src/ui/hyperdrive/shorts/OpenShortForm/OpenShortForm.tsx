@@ -1,10 +1,10 @@
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -15,20 +15,20 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
-import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 

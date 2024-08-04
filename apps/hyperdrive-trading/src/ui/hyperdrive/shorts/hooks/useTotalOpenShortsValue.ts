@@ -1,10 +1,10 @@
-import { Short } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { Short } from "@delvtech/hyperdrive-viem";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useTotalOpenShortsValue({
   hyperdrive,

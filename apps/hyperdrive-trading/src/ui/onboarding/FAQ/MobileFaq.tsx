@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
 import { faqData } from "src/ui/onboarding/FAQ/faqData";
 export function MobileFaq(): ReactElement {

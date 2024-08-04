@@ -1,8 +1,8 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";

@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/hooks/useTermsOfUseAndPrivacyPolicyAccepted";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";

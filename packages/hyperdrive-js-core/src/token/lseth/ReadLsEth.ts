@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
-import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
-import { LsEthAbi, lsEthAbi } from "src/token/lseth/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
+import { ReadErc20, type ReadErc20Options } from "src/token/erc20/ReadErc20";
+import { type LsEthAbi, lsEthAbi } from "src/token/lseth/abi";
 
 export class ReadLsEth extends readLsEthMixin(ReadErc20) {}
 

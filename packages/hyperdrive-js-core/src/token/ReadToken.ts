@@ -1,5 +1,5 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { ReadModel } from "src/model/ReadModel";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { ReadModel } from "src/model/ReadModel";
 
 export interface ReadToken extends ReadModel {
   address: `0x${string}`;

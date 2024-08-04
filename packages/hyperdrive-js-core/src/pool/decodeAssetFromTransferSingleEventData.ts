@@ -1,4 +1,4 @@
-import { AssetType, parseAssetType } from "src/pool/parseAssetType";
+import { type AssetType, parseAssetType } from "src/pool/parseAssetType";
 
 export function decodeAssetFromTransferSingleEventData(
   eventData: `0x${string}`,

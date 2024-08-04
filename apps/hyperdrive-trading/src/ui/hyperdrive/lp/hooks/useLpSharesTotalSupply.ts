@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 interface UseLpSharesTotalSupplyOptions {
   hyperdriveAddress: Address | undefined;
 }

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useBlockNumber, useChainId } from "wagmi";
 
 export function useLpApy(hyperdriveAddress: Address): {

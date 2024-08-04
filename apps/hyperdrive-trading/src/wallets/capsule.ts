@@ -1,9 +1,9 @@
 import {
-  GetCapsuleOpts,
+  type GetCapsuleOpts,
   OAuthMethod,
   getCapsuleWallet,
 } from "@usecapsule/rainbowkit-wallet";
-import { CreateWalletFn } from "src/wallets/CreateWalletFn";
+import type { CreateWalletFn } from "src/wallets/CreateWalletFn";
 
 const { VITE_CAPSULE_API_KEY, VITE_CAPSULE_ENV } = import.meta.env;
 

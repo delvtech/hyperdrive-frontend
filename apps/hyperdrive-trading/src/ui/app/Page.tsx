@@ -1,6 +1,6 @@
 import { ScrollRestoration } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-import { PropsWithChildren, ReactElement } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 import { Plausible } from "src/ui/analytics/Plausible";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";

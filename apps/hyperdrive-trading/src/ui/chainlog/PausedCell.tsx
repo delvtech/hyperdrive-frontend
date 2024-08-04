@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 export function PausedCell({ isPaused }: { isPaused: boolean }): ReactElement {
   return (

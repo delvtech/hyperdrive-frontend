@@ -1,5 +1,5 @@
 import fs from "fs";
-import { AppConfig } from "src/appconfig/AppConfig";
+import type { AppConfig } from "src/appconfig/AppConfig";
 
 // Custom replacer function to handle bigint
 function replaceBigIntsWithStrings(key: string, value: any) {

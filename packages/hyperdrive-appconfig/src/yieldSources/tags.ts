@@ -1,4 +1,4 @@
-import { Tag } from "src/tags";
+import type { Tag } from "src/tags";
 
 export const yieldSourceTag: Tag = {
   id: "yieldSource",

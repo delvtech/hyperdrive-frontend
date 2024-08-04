@@ -1,9 +1,9 @@
-import {
+import type {
   CachedReadContract,
   CachedReadWriteContract,
   SimpleCache,
 } from "@delvtech/evm-client";
-import { Abi } from "abitype";
+import type { Abi } from "abitype";
 
 export interface ContractFactoryOptions<TAbi extends Abi = Abi> {
   abi: TAbi;

@@ -6,11 +6,11 @@ import { useChainId, usePublicClient, useWriteContract } from "wagmi";
 
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { Address, erc20Abi, parseUnits } from "viem";
+import { type Address, erc20Abi, parseUnits } from "viem";
 import { sepolia } from "viem/chains";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;

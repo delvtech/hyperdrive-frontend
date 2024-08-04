@@ -6,7 +6,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 interface UseImpliedRateOptions {
   hyperdriveAddress: Address | undefined;
   bondAmount: bigint | undefined;

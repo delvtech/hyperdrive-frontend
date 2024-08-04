@@ -1,23 +1,23 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
-  ReadHyperdriveOptions,
+  type ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
 
 /**
  * A Hyperdrive instance that is compatible with Hyperdrive <= v1.0.14.
  */
 export class ReadHyperdrive_v1_0_14 extends readHyperdriveMixin_v1_0_14(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
  * Overrides for compatibility with Hyperdrive <= v1.0.14.
  */
 export function readHyperdriveMixin_v1_0_14<
-  T extends Constructor<ReadHyperdrive>
+  T extends Constructor<ReadHyperdrive>,
 >(Base: T): T {
   return class extends Base {
     /**

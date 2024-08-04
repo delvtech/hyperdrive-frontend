@@ -1,11 +1,11 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export function LabelValue({
   size = "medium",
-  label: label,
-  value: value,
+  label,
+  value,
   tooltipContent,
   tooltipPosition,
   tooltipSize,

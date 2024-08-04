@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useChainId } from "wagmi";
 
 export function AddressCell({ address }: { address: Address }): ReactElement {

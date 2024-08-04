@@ -1,10 +1,10 @@
-import { ClosedLong } from "@delvtech/hyperdrive-viem";
+import type { ClosedLong } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
-  AppConfig,
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
+  type AppConfig,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -16,7 +16,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement, useMemo } from "react";
+import { type ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";

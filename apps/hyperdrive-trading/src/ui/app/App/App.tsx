@@ -1,6 +1,6 @@
-import { ReactElement, StrictMode } from "react";
+import { type ReactElement, StrictMode } from "react";
 
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";

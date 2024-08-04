@@ -1,6 +1,6 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

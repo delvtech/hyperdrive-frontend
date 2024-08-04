@@ -1,5 +1,5 @@
-import { EntityFungibleToken } from "@delvtech/gopher";
-import { QueryStatus } from "@tanstack/react-query";
+import type { EntityFungibleToken } from "@delvtech/gopher";
+import type { QueryStatus } from "@tanstack/react-query";
 import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 
 export function useBridgeToken(tokenSymbol: string | undefined): {

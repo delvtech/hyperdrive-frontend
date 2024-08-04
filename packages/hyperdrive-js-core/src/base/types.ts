@@ -11,7 +11,7 @@ export type Prettify<T> = {
  */
 export type Constructor<
   TInstanceType = any,
-  TArgs extends any[] = any[]
+  TArgs extends any[] = any[],
 > = new (...args: TArgs) => TInstanceType;
 
 /**
@@ -46,7 +46,9 @@ export type Override<T, U> = Prettify<Omit<T, keyof U> & U>;
  * argument type that satisfies all members of the function type union.
  */
 type UnionToIntersection<T> = (
-  T extends any ? (member: T) => any : never
+  T extends any
+    ? (member: T) => any
+    : never
 ) extends (member: infer R) => any
   ? R
   : never;

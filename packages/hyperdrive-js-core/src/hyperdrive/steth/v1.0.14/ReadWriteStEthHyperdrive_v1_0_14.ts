@@ -2,5 +2,5 @@ import { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadWri
 import { readWriteStEthHyperdriveMixin } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
 
 export class ReadWriteStEthHyperdrive_v1_0_14 extends readWriteStEthHyperdriveMixin(
-  ReadWriteHyperdrive_v1_0_14
+  ReadWriteHyperdrive_v1_0_14,
 ) {}

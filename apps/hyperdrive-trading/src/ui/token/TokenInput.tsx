@@ -1,6 +1,6 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {

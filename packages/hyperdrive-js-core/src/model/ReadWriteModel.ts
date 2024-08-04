@@ -1,9 +1,9 @@
-import { Prettify } from "src/base/types";
-import {
+import type { Prettify } from "src/base/types";
+import type {
   ContractFactoryOptions,
   ReadWriteContractFactory,
 } from "src/evm-client/contractFactory";
-import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
+import { ReadModel, type ReadModelOptions } from "src/model/ReadModel";
 
 /**
  * The base options required for all read-write models.

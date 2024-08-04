@@ -7,12 +7,12 @@ import {
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import { http } from "@wagmi/core";
-import { Chain } from "@wagmi/core/chains";
+import type { Chain } from "@wagmi/core/chains";
 import { cloudChain } from "src/chains/cloudChain";
 import { b3Sepolia } from "src/network/b3Sepolia";
-import { CreateWalletFn } from "src/wallets/CreateWalletFn";
+import type { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
-import { Transport } from "viem";
+import type { Transport } from "viem";
 import { baseSepolia, foundry, mainnet, sepolia } from "wagmi/chains";
 
 const {

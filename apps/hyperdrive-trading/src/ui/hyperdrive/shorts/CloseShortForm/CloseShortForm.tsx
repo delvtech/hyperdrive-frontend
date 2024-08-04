@@ -1,23 +1,26 @@
-import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import {
+  type OpenShort,
+  adjustAmountByPercentage,
+} from "@delvtech/hyperdrive-viem";
+import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { type TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 

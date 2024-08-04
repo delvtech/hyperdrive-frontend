@@ -1,4 +1,4 @@
-import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import type { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 
 export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,

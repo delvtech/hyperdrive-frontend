@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode, useEffect, useRef } from "react";
+import { type ReactElement, type ReactNode, useEffect, useRef } from "react";
 
 interface ModalProps {
   modalId: string;

@@ -1,4 +1,4 @@
-import { Address } from "viem";
+import type { Address } from "viem";
 import { sepolia } from "viem/chains";
 
 export function getAnalyticsUrl({

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useBlock } from "wagmi";

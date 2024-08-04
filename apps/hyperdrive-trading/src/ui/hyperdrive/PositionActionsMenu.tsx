@@ -1,4 +1,4 @@
-import { Long, OpenShort } from "@delvtech/hyperdrive-viem";
+import type { Long, OpenShort } from "@delvtech/hyperdrive-viem";
 import { DocumentDuplicateIcon } from "@heroicons/react/16/solid";
 import { formatAssetId } from "src/ui/base/formatting/formatAssetId";
 

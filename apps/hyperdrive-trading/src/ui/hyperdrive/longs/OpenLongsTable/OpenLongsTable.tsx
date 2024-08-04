@@ -1,5 +1,5 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { OpenLongsTableDesktop } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktop";
 import { OpenLongsTableMobile } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableMobile";

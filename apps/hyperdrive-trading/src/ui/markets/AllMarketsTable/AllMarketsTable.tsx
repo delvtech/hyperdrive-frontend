@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { AllMarketsTableDesktop } from "src/ui/markets/AllMarketsTable/AllMarketsTableDesktop";
 import { AllMarketsTableMobile } from "src/ui/markets/AllMarketsTable/AllMarketsTableMobile";

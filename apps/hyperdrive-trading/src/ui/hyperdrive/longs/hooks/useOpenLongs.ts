@@ -1,8 +1,8 @@
-import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
+import type { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 interface UseOpenLongsOptions {
   account: Address | undefined;

@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
-import { mockErc4626Abi, MockErc4626Abi } from "src/token/erc4626/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
+import { type MockErc4626Abi, mockErc4626Abi } from "src/token/erc4626/abi";
 
 export class ReadMockErc4626 extends readMockErc4626Mixin(ReadErc4626) {}
 
@@ -21,7 +24,7 @@ export interface ReadMockErc4626Mixin {
  * @internal
  */
 export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
-  BaseReadErc4626: T
+  BaseReadErc4626: T,
 ): Constructor<ReadMockErc4626Mixin> & T {
   return class extends BaseReadErc4626 implements ReadMockErc4626Mixin {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;

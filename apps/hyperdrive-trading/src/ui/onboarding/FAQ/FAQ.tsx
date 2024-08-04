@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, useState } from "react";
+import { type ReactElement, useState } from "react";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { faqData } from "src/ui/onboarding/FAQ/faqData";

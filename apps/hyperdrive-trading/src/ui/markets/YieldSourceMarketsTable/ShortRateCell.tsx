@@ -1,6 +1,6 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 

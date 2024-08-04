@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Badge } from "src/ui/base/components/Badge";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function YieldSourceRateBadge({
   hyperdriveAddress,

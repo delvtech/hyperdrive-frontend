@@ -1,5 +1,5 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";

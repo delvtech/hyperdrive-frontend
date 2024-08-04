@@ -1,5 +1,5 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";

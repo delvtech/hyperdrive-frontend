@@ -6,18 +6,18 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
-  MarketTableRowData,
+  type MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 function formatMobileColumnData(row: MarketTableRowData) {
   return [

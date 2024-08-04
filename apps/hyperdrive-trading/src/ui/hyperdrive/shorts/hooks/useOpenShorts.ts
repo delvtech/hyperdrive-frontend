@@ -1,8 +1,8 @@
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 interface UseOpenShortsOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;

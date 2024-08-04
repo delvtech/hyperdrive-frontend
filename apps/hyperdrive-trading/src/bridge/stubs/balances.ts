@@ -1,5 +1,9 @@
-import { ServerAccountFungibleBalanceHandlerResponse } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import type { ServerAccountFungibleBalanceHandlerResponse } from "@delvtech/gopher";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 export function getServerAccountFungibleBalanceHandlerStub(
   baseUrl: string,

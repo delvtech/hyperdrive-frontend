@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import {
-  AppConfig,
-  HyperdriveConfig,
+  type AppConfig,
+  type HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -14,7 +14,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Pagination } from "src/ui/base/components/Pagination";

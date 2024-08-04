@@ -1,14 +1,14 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
-  ReadHyperdriveOptions,
+  type ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadLsEth } from "src/token/lseth/ReadLsEth";
 
 export class ReadLsEthHyperdrive extends readLsEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -30,7 +30,7 @@ export interface ReadLsEthHyperdriveMixin {
  * @internal
  */
 export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadLsEthHyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {

@@ -4,10 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { type QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useFixedRate(hyperdriveAddress: Address): {
   fixedApr: { apr: bigint; formatted: string } | undefined;

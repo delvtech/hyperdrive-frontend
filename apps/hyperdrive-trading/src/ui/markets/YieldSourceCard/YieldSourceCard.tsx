@@ -1,10 +1,10 @@
 import {
-  Protocol,
+  type Protocol,
   findBaseToken,
   findYieldSourceHyperdrives,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindLessThanSm } from "src/ui/base/mediaBreakpoints";

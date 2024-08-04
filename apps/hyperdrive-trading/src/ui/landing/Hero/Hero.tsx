@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 export function Hero(): ReactElement {
   return (

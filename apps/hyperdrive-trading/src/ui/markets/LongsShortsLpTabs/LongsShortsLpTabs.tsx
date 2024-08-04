@@ -1,6 +1,6 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useNavigate, useParams, useSearch } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";

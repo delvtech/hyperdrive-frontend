@@ -1,10 +1,10 @@
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
-import { Address } from "viem";
+import type { Address } from "viem";
 export function ApproveTokenChoices({
   spender,
   amountAsBigInt,

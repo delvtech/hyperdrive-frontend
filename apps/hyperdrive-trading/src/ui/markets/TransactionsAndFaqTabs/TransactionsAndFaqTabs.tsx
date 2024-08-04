@@ -1,6 +1,6 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement, useState } from "react";
-import { Tab, Tabs } from "src/ui/base/components/Tabs/Tabs";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { type ReactElement, useState } from "react";
+import { type Tab, Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 import { useAccount } from "wagmi";

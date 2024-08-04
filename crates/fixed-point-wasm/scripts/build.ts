@@ -8,8 +8,8 @@ import {
   rmSync,
   writeFileSync,
 } from "fs";
-import { readFile } from "fs/promises";
 import { basename, resolve } from "path";
+import { readFile } from "fs/promises";
 import lockfile from "proper-lockfile";
 import { version } from "../package.json";
 

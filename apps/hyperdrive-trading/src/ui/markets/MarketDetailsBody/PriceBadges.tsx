@@ -1,5 +1,5 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";

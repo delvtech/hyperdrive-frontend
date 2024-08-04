@@ -1,6 +1,6 @@
 import { PauseCircleIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { WarningButton } from "src/ui/base/components/WarningButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";

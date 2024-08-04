@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { PropsWithChildren, ReactElement } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 
 interface WellProps {
   interactive?: boolean;

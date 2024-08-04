@@ -1,16 +1,16 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
-  TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -18,7 +18,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;

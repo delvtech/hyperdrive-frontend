@@ -1,12 +1,12 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import type { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import {
-  EmptyExtensions,
-  TokenConfig,
+  type EmptyExtensions,
+  type TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import type { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];

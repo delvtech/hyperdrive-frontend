@@ -1,4 +1,4 @@
-import { QueryKey } from "@tanstack/query-core";
+import type { QueryKey } from "@tanstack/query-core";
 /**
  * This is a factory function for generating application-level query keys. By
  * using this function, we enforce a consistent namespacing across our app's

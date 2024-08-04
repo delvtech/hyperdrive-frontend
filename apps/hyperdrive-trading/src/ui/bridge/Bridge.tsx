@@ -1,5 +1,5 @@
-import { ServerChainBalance } from "@delvtech/gopher";
-import { ReactElement } from "react";
+import type { ServerChainBalance } from "@delvtech/gopher";
+import type { ReactElement } from "react";
 import { BridgeAssetsForm } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetsForm";
 import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";

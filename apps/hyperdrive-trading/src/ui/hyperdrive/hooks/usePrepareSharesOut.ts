@@ -1,15 +1,15 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import type { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
-  AppConfig,
+  type AppConfig,
   findHyperdriveConfig,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { type QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function usePrepareSharesOut({
   sharesAmount,

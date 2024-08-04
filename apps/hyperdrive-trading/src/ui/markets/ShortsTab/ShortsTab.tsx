@@ -1,19 +1,19 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ClosedShortsTable } from "src/ui/hyperdrive/shorts/ClosedShortsTable/ClosedShortsTable";
+import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
+import { OpenShortsTable } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTable";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalClosedShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalClosedShortsValue";
 import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
-import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
-import { OpenShortsTable } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTable";
-import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { useAccount } from "wagmi";
 
 export function ShortsTab({

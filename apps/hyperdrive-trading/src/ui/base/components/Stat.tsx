@@ -1,6 +1,6 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 export interface StatProps {
   label: ReactNode;

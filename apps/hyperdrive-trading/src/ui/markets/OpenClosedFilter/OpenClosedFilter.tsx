@@ -1,6 +1,6 @@
 import { Link, useParams, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useAccount } from "wagmi";
 

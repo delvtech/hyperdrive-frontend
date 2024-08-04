@@ -1,4 +1,4 @@
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -7,16 +7,16 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Status, decodeInstanceData } from "src/registry/data";
+import { type Status, decodeInstanceData } from "src/registry/data";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
 import { PausedCell } from "src/ui/chainlog/PausedCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useChainId } from "wagmi";
 
 export function PoolsTable(): ReactElement {

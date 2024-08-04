@@ -1,9 +1,9 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

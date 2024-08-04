@@ -1,9 +1,13 @@
-import {
+import type {
   EntityChainID,
   EntityTokenTransferQuote,
   ServerAggregateBalanceSolutionHandlerResponse,
 } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 interface AggregationQueryParams {
   account: string;

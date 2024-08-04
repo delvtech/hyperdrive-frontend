@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
-import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
-import { StEthAbi, stEthAbi } from "src/token/steth/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
+import { ReadErc20, type ReadErc20Options } from "src/token/erc20/ReadErc20";
+import { type StEthAbi, stEthAbi } from "src/token/steth/abi";
 
 export class ReadStEth extends readStEthMixin(ReadErc20) {}
 
@@ -51,7 +54,7 @@ export interface ReadStEthMixin {
  * @internal
  */
 export function readStEthMixin<T extends Constructor<ReadErc20>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadStEthMixin> & T {
   return class extends Base implements ReadStEthMixin {
     stEthContract: CachedReadContract<StEthAbi>;
@@ -91,7 +94,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "sharesOf",
         { _account: account },
-        options
+        options,
       );
     }
 
@@ -105,7 +108,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "getPooledEthByShares",
         { _sharesAmount: sharesAmount },
-        options
+        options,
       );
     }
 
@@ -119,7 +122,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "getSharesByPooledEth",
         { _ethAmount: ethAmount },
-        options
+        options,
       );
     }
   };

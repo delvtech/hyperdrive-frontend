@@ -1,5 +1,9 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { AppConfig, Protocol, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  type AppConfig,
+  type Protocol,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -9,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -20,11 +24,11 @@ import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { ShortRateCell } from "src/ui/markets/YieldSourceMarketsTable/ShortRateCell";
 import {
-  YieldSourceMarketsTableRowData,
+  type YieldSourceMarketsTableRowData,
   useRowData,
 } from "src/ui/markets/YieldSourceMarketsTable/useRowData";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 

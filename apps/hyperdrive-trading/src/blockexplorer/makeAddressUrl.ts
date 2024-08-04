@@ -1,5 +1,5 @@
 import assertNever from "assert-never";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { b3Sepolia } from "src/network/b3Sepolia";
 import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
 

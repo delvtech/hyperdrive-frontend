@@ -1,8 +1,11 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Address } from "abitype";
-import { FactoryAbi, factoryAbi } from "src/factory/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Address } from "abitype";
+import { type FactoryAbi, factoryAbi } from "src/factory/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+import { type ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 
 export interface ReadFactoryOptions extends ReadContractModelOptions {}
 
@@ -63,7 +66,7 @@ export class ReadFactory extends ReadModel {
         "getDeployerCoordinatorByInstances",
         {
           __instances: instances,
-        }
+        },
       );
       return readOnlyAddresses.slice();
     }
@@ -71,7 +74,7 @@ export class ReadFactory extends ReadModel {
     const count = await this.contract.read(
       "getNumberOfDeployerCoordinators",
       {},
-      options
+      options,
     );
     const readOnlyAddresses = await this.contract.read(
       "getDeployerCoordinatorsInRange",
@@ -79,7 +82,7 @@ export class ReadFactory extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }
@@ -96,7 +99,7 @@ export class ReadFactory extends ReadModel {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
@@ -104,7 +107,7 @@ export class ReadFactory extends ReadModel {
    * Get the address of all Hyperdrive instances deployed by the factory.
    */
   async getInstanceAddresses(
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
     const readOnlyAddresses = await this.contract.read(
@@ -113,7 +116,7 @@ export class ReadFactory extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }

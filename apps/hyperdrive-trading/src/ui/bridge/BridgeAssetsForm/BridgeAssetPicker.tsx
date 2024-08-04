@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, SetStateAction } from "react";
+import type { Dispatch, ReactElement, SetStateAction } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";

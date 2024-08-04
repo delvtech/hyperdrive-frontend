@@ -1,11 +1,11 @@
-import { ReadContract } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ReadContract } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
-  ReadHyperdriveOptions,
+  type ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
 import {
-  MetaMorphoSnippetsABI,
+  type MetaMorphoSnippetsABI,
   metaMorphoSnippetsABI,
 } from "src/hyperdrive/metamorpho/abi";
 
@@ -14,7 +14,7 @@ const SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS =
   "0xf5461A30b3723085F8E702fCc7461db85481c173";
 
 export class ReadMetaMorphoHyperdrive extends readMetaMorphoHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -28,7 +28,7 @@ export interface ReadMetaMorphoHyperdriveMixin {
  * @internal
  */
 export function readMetaMorphoHyperdriveMixin<
-  T extends Constructor<ReadHyperdrive>
+  T extends Constructor<ReadHyperdrive>,
 >(Base: T): Constructor<ReadMetaMorphoHyperdriveMixin> & T {
   return class extends Base {
     metaMorphoContract: ReadContract<MetaMorphoSnippetsABI>;

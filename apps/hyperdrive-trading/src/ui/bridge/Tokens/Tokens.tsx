@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 

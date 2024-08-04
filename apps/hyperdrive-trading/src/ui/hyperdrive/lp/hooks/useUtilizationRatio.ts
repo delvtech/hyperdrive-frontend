@@ -1,8 +1,8 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { calculateRatio } from "src/base/calculateRatio";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useUtilizationRatio({
   hyperdrive,

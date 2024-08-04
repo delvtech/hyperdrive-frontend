@@ -1,12 +1,12 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
-import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import type { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
+import type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
-import { Tag } from "src/tags";
-import { TokenConfig } from "src/tokens/getTokenConfig";
+import type { Tag } from "src/tags";
+import type { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
   ETH_ICON_URL,
@@ -24,8 +24,8 @@ import {
   stethExtensions,
 } from "src/yieldSources/extensions";
 import { yieldSourceTag } from "src/yieldSources/tags";
-import { Address, PublicClient } from "viem";
-import { YieldSourceExtensions } from "..";
+import type { Address, PublicClient } from "viem";
+import type { YieldSourceExtensions } from "..";
 
 // Token Symbols
 const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [

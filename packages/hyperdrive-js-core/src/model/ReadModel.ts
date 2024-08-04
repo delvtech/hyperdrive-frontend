@@ -1,6 +1,6 @@
-import { Network } from "@delvtech/evm-client";
-import { Prettify } from "src/base/types";
-import {
+import type { Network } from "@delvtech/evm-client";
+import type { Prettify } from "src/base/types";
+import type {
   ContractFactoryOptions,
   ReadContractFactory,
 } from "src/evm-client/contractFactory";

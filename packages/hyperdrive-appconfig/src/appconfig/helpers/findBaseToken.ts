@@ -1,6 +1,6 @@
-import { KnownTokenExtensions } from "src/appconfig/AppConfig";
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { Address } from "viem";
+import type { KnownTokenExtensions } from "src/appconfig/AppConfig";
+import type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+import type { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the baseToken

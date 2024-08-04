@@ -1,10 +1,10 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import type { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+import type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import type { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   hyperdrive,

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import ErrFace from "src/ui/base/icons/ErrFace";
 
 export function UnexpectedErrorMessage({

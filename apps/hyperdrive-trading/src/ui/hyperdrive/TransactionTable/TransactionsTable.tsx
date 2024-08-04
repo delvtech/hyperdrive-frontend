@@ -1,13 +1,13 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  AppConfig,
-  HyperdriveConfig,
+  type AppConfig,
+  type HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
-  ColumnFiltersState,
-  Header,
+  type ColumnFiltersState,
+  type Header,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -23,7 +23,7 @@ import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -32,10 +32,10 @@ import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import {
-  TransactionData,
+  type TransactionData,
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
-import { Address, Hash, parseUnits } from "viem";
+import { type Address, type Hash, parseUnits } from "viem";
 import { useBlock, useChainId } from "wagmi";
 
 export interface Transaction {
@@ -419,7 +419,7 @@ function formatBaseQueuedForWithdrawalLabel(
   baseQueuedForWithdrawal: bigint,
   decimals: number,
   baseSymbol: string,
-  places: number = 2,
+  places = 2,
 ) {
   const baseQueuedForWithdrawalLabel = formatBalance({
     balance: baseQueuedForWithdrawal,

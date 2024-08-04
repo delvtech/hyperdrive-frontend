@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef } from "react";
+import { type ReactElement, useEffect, useRef } from "react";
 import Helmet from "react-helmet";
 import { useLocation } from "react-use";
 
@@ -48,9 +48,9 @@ function usePageview(page?: string) {
   useEffect(() => {
     window.plausible =
       window.plausible ||
-      function (...args) {
+      ((...args) => {
         (window.plausible.q = window.plausible.q || []).push(args);
-      };
+      });
   }, []);
 
   useEffect(() => {

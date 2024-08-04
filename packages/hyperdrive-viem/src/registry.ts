@@ -1,5 +1,8 @@
 import * as core from "@delvtech/hyperdrive-js-core/registry/model";
-import { viemReadMixin, ViemReadModelOptions } from "src/viem/viemReadMixin";
+import {
+  type ViemReadModelOptions,
+  viemReadMixin,
+} from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 
 export type ReadRegistryOptions =
@@ -11,5 +14,5 @@ export type ReadWriteRegistryOptions =
   ViemReadModelOptions<core.ReadWriteRegistryOptions>;
 
 export class ReadWriteRegistry extends viemReadWriteMixin(
-  core.ReadWriteRegistry
+  core.ReadWriteRegistry,
 ) {}

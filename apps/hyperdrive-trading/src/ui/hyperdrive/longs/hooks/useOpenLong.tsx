@@ -1,6 +1,6 @@
 import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-js-core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/query-core";
+import type { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
@@ -10,7 +10,7 @@ import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
@@ -95,7 +95,7 @@ export function useOpenLong({
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Long opened" txHash={txHash} />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION }
+            { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           setTimeout(() => {
             toastWarpcast();
@@ -106,7 +106,7 @@ export function useOpenLong({
 
       toast.loading(
         <TransactionToast txHash={hash} message="Opening a Long..." />,
-        { id: hash }
+        { id: hash },
       );
 
       onSubmitted?.(hash);

@@ -1,13 +1,13 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
-  ReadHyperdriveOptions,
+  type ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
 export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -24,7 +24,7 @@ export interface ReadErc4626HyperdriveMixin {
  * @internal
  */
 export function readErc4626HyperdriveMixin<
-  T extends Constructor<ReadHyperdrive>
+  T extends Constructor<ReadHyperdrive>,
 >(Base: T): Constructor<ReadErc4626HyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {

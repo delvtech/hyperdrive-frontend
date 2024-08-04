@@ -1,8 +1,11 @@
 import * as core from "@delvtech/hyperdrive-js-core/factory/model";
-import { viemReadMixin, ViemReadModelOptions } from "src/viem/viemReadMixin";
 import {
+  type ViemReadModelOptions,
+  viemReadMixin,
+} from "src/viem/viemReadMixin";
+import {
+  type ViemReadWriteModelOptions,
   viemReadWriteMixin,
-  ViemReadWriteModelOptions,
 } from "src/viem/viemReadWriteMixin";
 
 export interface ReadFactoryOptions
@@ -14,5 +17,5 @@ export interface ReadWriteFactoryOptions
   extends ViemReadWriteModelOptions<core.ReadWriteFactoryOptions> {}
 
 export class ReadWriteFactory extends viemReadWriteMixin(
-  core.ReadWriteFactory
+  core.ReadWriteFactory,
 ) {}

@@ -1,4 +1,4 @@
-import { Hex } from "viem";
+import type { Hex } from "viem";
 
 export const statusById = {
   "1": "active",

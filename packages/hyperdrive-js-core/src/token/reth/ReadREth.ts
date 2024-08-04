@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
-import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
-import { REthAbi, rEthAbi } from "src/token/reth/abi";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
+import { ReadErc20, type ReadErc20Options } from "src/token/erc20/ReadErc20";
+import { type REthAbi, rEthAbi } from "src/token/reth/abi";
 
 export class ReadREth extends readREthMixin(ReadErc20) {}
 

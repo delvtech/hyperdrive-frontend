@@ -1,6 +1,6 @@
 import ExclamationTriangleIcon from "@heroicons/react/24/outline/ExclamationTriangleIcon";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 export function RestrictedCountryMessage({
   className,

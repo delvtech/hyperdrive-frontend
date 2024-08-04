@@ -1,14 +1,14 @@
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import {
-  HyperdriveConfig,
-  TokenConfig,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { cloudChain } from "src/chains/cloudChain";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -18,7 +18,7 @@ import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalBut
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { Address, erc20Abi, parseUnits } from "viem";
+import { type Address, erc20Abi, parseUnits } from "viem";
 import { foundry, sepolia } from "viem/chains";
 import { useAccount, useChainId, useReadContract } from "wagmi";
 

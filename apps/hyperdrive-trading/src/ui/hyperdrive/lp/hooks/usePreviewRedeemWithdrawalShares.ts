@@ -1,9 +1,9 @@
-import { MutationStatus, useQuery } from "@tanstack/react-query";
+import { type MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 interface UsePreviewRedeemWithdrawalSharesOptions {
   hyperdriveAddress: Address;

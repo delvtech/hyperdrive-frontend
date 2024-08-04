@@ -1,5 +1,5 @@
-import { EntityNetwork } from "@delvtech/gopher";
-import { QueryStatus } from "@tanstack/react-query";
+import type { EntityNetwork } from "@delvtech/gopher";
+import type { QueryStatus } from "@tanstack/react-query";
 import { useBridgeChains } from "src/ui/bridge/hooks/useBridgeChains";
 
 export function useBridgeChainsByChainId(): {

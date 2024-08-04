@@ -2,9 +2,9 @@ import {
   calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
 } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

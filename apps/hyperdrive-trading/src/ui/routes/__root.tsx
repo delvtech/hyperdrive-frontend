@@ -1,4 +1,4 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet";
 
 // Set in the `index.html` file

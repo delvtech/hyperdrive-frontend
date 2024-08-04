@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function YieldSourceApy({
   hyperdriveAddress,

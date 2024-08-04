@@ -1,5 +1,9 @@
-import { ServerGetSupportedFungibleTokensResponse } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import type { ServerGetSupportedFungibleTokensResponse } from "@delvtech/gopher";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 export function getSupportedFungibleTokensStub(
   baseUrl: string,

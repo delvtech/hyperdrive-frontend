@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
 

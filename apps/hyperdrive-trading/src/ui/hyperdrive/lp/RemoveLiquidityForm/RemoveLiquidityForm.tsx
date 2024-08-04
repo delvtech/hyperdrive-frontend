@@ -1,12 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -15,15 +15,15 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
-import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { type TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {

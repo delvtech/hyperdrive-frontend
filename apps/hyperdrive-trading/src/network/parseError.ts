@@ -1,4 +1,7 @@
-import { BaseError as BaseViemError, DecodeErrorResultReturnType } from "viem";
+import {
+  BaseError as BaseViemError,
+  type DecodeErrorResultReturnType,
+} from "viem";
 
 /**
  * Parses an viem/wagmi error to get a displayable string

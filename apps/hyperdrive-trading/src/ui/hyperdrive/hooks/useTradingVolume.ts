@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address, BlockTag } from "viem";
+import type { Address, BlockTag } from "viem";
 export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint | undefined,

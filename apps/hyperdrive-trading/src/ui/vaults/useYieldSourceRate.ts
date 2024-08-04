@@ -3,7 +3,7 @@ import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 interface UseVaultRateOptions {
   hyperdriveAddress: Address | undefined;

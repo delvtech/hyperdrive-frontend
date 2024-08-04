@@ -1,9 +1,9 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import type { Long } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  AppConfig,
-  HyperdriveConfig,
+  type AppConfig,
+  type HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -15,7 +15,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";

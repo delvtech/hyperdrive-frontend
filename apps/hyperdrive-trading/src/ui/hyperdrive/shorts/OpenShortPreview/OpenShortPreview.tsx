@@ -1,15 +1,15 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import {
-  HyperdriveConfig,
-  TokenConfig,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
-import { QueryStatusWithIdle } from "src/base/queryStatus";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";

@@ -1,13 +1,13 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
-  EmptyExtensions,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
-  TokenConfig,
 } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import { calculateRatio } from "src/base/calculateRatio";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -16,6 +16,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -23,15 +24,14 @@ import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {

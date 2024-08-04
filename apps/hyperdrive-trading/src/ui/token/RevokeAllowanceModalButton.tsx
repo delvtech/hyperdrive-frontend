@@ -1,5 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Modal } from "src/ui/base/components/Modal/Modal";

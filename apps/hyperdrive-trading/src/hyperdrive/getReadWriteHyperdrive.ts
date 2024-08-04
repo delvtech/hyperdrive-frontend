@@ -1,6 +1,6 @@
 import {
   ReadWriteHyperdrive,
-  ReadWriteHyperdriveOptions,
+  type ReadWriteHyperdriveOptions,
   ReadWriteMetaMorphoHyperdrive,
   ReadWriteStEthHyperdrive,
 } from "@delvtech/hyperdrive-viem";
@@ -8,12 +8,12 @@ import {
   ReadWriteHyperdrive_v1_0_14,
   ReadWriteStEthHyperdrive_v1_0_14,
 } from "@delvtech/hyperdrive-viem/v1.0.14";
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import semver from "semver";
 import { sdkCache } from "src/sdk/sdkCache";
 import { getIsMetaMorpho } from "src/vaults/isMetaMorpho";
 import { getIsSteth } from "src/vaults/isSteth";
-import { Address, PublicClient, WalletClient } from "viem";
+import type { Address, PublicClient, WalletClient } from "viem";
 
 export async function getReadWriteHyperdrive({
   hyperdriveAddress,

@@ -1,10 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import {
-  HyperdriveConfig,
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
