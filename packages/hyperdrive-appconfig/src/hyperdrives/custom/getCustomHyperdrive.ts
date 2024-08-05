@@ -6,38 +6,38 @@ import {
   TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import { YieldSource, yieldSources } from "src/yieldSources/extensions";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
 
 interface GetHyperdriveConfigParams {
   hyperdrive: ReadHyperdrive;
-  sharesTokenExtensions: YieldSourceExtensions;
+  sharesTokenExtensions: YieldSource;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
+  yieldSource: keyof typeof yieldSources;
   depositOptions: DepositOptions;
   withdrawalOptions: WithdrawalOptions;
   tokenPlaces: number;
   tags?: string[];
 }
 
-interface GetCustomHyperdriveResult {
-  sharesToken: TokenConfig<YieldSourceExtensions>;
-  baseToken: TokenConfig<EmptyExtensions>;
-  hyperdriveConfig: HyperdriveConfig;
-}
-
 export async function getCustomHyperdrive({
   hyperdrive,
   sharesTokenExtensions,
   baseTokenIconUrl,
+  yieldSource,
   sharesTokenIconUrl,
   depositOptions,
   withdrawalOptions,
   tokenPlaces,
   tags = [],
-}: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
+}: GetHyperdriveConfigParams): Promise<{
+  sharesToken: TokenConfig<YieldSource>;
+  baseToken: TokenConfig<EmptyExtensions>;
+  hyperdriveConfig: HyperdriveConfig;
+}> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
   const sharesToken = await hyperdrive.getSharesToken();
@@ -69,6 +69,7 @@ export async function getCustomHyperdrive({
     version: version.string,
     name: hyperdriveName,
     decimals: await hyperdrive.getDecimals(),
+    yieldSource,
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
     depositOptions: depositOptions,

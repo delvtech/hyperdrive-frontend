@@ -1,6 +1,6 @@
 import { KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import { YieldSource } from "src/yieldSources/extensions";
 import { Address } from "viem";
 
 /**
@@ -12,7 +12,7 @@ export function findYieldSourceToken({
 }: {
   yieldSourceTokenAddress: Address;
   tokens: TokenConfig<KnownTokenExtensions>[];
-}): TokenConfig<YieldSourceExtensions> {
+}): TokenConfig<YieldSource> {
   const yieldSourceToken = tokens.find(
     (token) => yieldSourceTokenAddress === token.address,
   );
@@ -34,6 +34,6 @@ export function findYieldSourceToken({
 
 function isYieldSourceToken(
   token: TokenConfig<KnownTokenExtensions>,
-): token is TokenConfig<YieldSourceExtensions> {
+): token is TokenConfig<YieldSource> {
   return token.tags.includes("yieldSource");
 }

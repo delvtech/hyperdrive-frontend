@@ -3,11 +3,9 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
 import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import { YieldSource, yieldSources } from "src/yieldSources/extensions";
 
-export type KnownTokenExtensions = YieldSourceExtensions | EmptyExtensions;
-
-type SomeProtocols = Partial<typeof protocols>;
+export type KnownTokenExtensions = YieldSource | EmptyExtensions;
 
 export interface AppConfig {
   chainId: number;
@@ -15,5 +13,6 @@ export interface AppConfig {
   registryAddress: Address;
   hyperdrives: HyperdriveConfig[];
   tokens: TokenConfig<KnownTokenExtensions>[];
-  protocols: SomeProtocols;
+  protocols: Partial<typeof protocols>;
+  yieldSources: Partial<typeof yieldSources>;
 }

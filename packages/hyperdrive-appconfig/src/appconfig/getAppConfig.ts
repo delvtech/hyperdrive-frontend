@@ -17,23 +17,9 @@ import {
   SDAI_ICON_URL,
   STETH_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
-import {
-  ezethExtensions,
-  metaMorphoExtensions,
-  rethExtensions,
-  sdaiExtensions,
-  stethExtensions,
-} from "src/yieldSources/extensions";
+import { YieldSource, yieldSources } from "src/yieldSources/extensions";
 import { yieldSourceTag } from "src/yieldSources/tags";
 import { Address, PublicClient } from "viem";
-import { YieldSourceExtensions } from "..";
-
-// Token Symbols
-const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
-  "DELV",
-  "SDAI",
-];
-const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["HYPERDRIVEDAI"];
 
 // Tags
 const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
@@ -41,7 +27,7 @@ const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
 type KnownHyperdriveMetadata = {
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
-  sharesTokenExtensions: YieldSourceExtensions;
+  sharesTokenExtensions: YieldSource;
   tags?: string[];
   tokenPlaces: number;
 };
@@ -51,40 +37,40 @@ const knownHyperdriveMetadata: Record<
   KnownHyperdriveMetadata
 > = {
   DELV: {
-    sharesTokenExtensions: sdaiExtensions,
+    sharesTokenExtensions: yieldSources.makerDsr,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: SDAI_ICON_URL,
     tokenPlaces: 4,
   },
   SDAI: {
-    sharesTokenExtensions: sdaiExtensions,
+    sharesTokenExtensions: yieldSources.makerDsr,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: SDAI_ICON_URL,
     tags: ERC4626_SHARE_TOKEN_TAGS,
     tokenPlaces: 2,
   },
   HYPERDRIVEDAI: {
-    sharesTokenExtensions: metaMorphoExtensions,
+    sharesTokenExtensions: yieldSources.metaMorpho,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: MORPHO_ICON_URL,
     tags: ERC4626_SHARE_TOKEN_TAGS,
     tokenPlaces: 2,
   },
   STETH: {
-    sharesTokenExtensions: stethExtensions,
+    sharesTokenExtensions: yieldSources.lidoSteth,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: STETH_ICON_URL,
     tokenPlaces: 4,
   },
   RETH: {
-    sharesTokenExtensions: rethExtensions,
+    sharesTokenExtensions: yieldSources.reth,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: RETH_ICON_URL,
     tags: ["reth"],
     tokenPlaces: 4,
   },
   EZETH: {
-    sharesTokenExtensions: ezethExtensions,
+    sharesTokenExtensions: yieldSources.ezEth,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: EZETH_ICON_URL,
     tags: ["ezeth"],
@@ -145,12 +131,12 @@ export async function getAppConfig({
         );
       }
 
-      // Generic ERC-4626
-      if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
-        console.log("hackName", hackName);
+      if (["DELV", "SDAI"].includes(tokenSymbol)) {
+        console.log("234098uas0d9fjas fasd0f90uhackName", hackName);
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "makerDsr",
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: true,
@@ -188,6 +174,7 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "reth",
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -212,6 +199,7 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "ezEth",
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -221,28 +209,6 @@ export async function getAppConfig({
               // you can't withdraw eth from staking protocols
               isBaseTokenWithdrawalEnabled: false,
               isShareTokenWithdrawalEnabled: true,
-            },
-            ...hyperdriveMetadata,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      // MetaMorpho
-      if (metaMorphoSharesTokenSymbols.includes(tokenSymbol)) {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getCustomHyperdrive({
-            hyperdrive,
-            depositOptions: {
-              isBaseTokenDepositEnabled: true,
-              isShareTokenDepositsEnabled: false,
-            },
-            withdrawalOptions: {
-              isBaseTokenWithdrawalEnabled: true,
-              isShareTokenWithdrawalEnabled: false,
             },
             ...hyperdriveMetadata,
           });
@@ -266,6 +232,7 @@ export async function getAppConfig({
     registryAddress,
     hyperdrives: configs,
     protocols,
+    yieldSources,
   };
 
   return config;
