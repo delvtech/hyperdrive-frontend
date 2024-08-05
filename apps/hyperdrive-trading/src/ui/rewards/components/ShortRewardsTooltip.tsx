@@ -1,6 +1,6 @@
 import { SparklesIcon } from "@heroicons/react/16/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { PropsWithChildren, ReactElement } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 import { useShortRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
@@ -10,10 +10,14 @@ interface ShortRewardsTooltipProps extends PropsWithChildren {
 
 export function ShortRewardsTooltip(
   props: ShortRewardsTooltipProps
-): ReactElement {
+): ReactNode {
   const rewards = useShortRewards(props.hyperdriveAddress);
 
-  return (
+  if (!rewards) {
+    return props.children;
+  }
+
+  return rewards.length > 0 ? (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
@@ -22,7 +26,6 @@ export function ShortRewardsTooltip(
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            avoidCollisions
             className="h-fit w-64 rounded-lg bg-base-200"
             sideOffset={5}
           >
@@ -43,5 +46,7 @@ export function ShortRewardsTooltip(
         </Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
+  ) : (
+    props.children
   );
 }
