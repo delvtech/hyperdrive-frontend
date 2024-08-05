@@ -8,6 +8,7 @@ import {
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -18,6 +19,7 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -58,7 +60,9 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -114,9 +118,7 @@ export function OpenShortForm({
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
   });
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-  });
+
   const [activeInput, setActiveInput] = useState<"bonds" | "budget">("bonds");
 
   const {
@@ -146,6 +148,67 @@ export function OpenShortForm({
     asBase: activeToken.address === baseToken.address,
   });
 
+  const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
+    hyperdrive,
+    bondAmount: amountOfBondsToShortAsBigInt || 0n,
+    checkpointTime: BigInt(Date.now()) / 1000n,
+  });
+
+  const backpaidInterest =
+    accruedYieldStatus === "success"
+      ? (accruedYield || 0n) - (amountOfBondsToShortAsBigInt || 0n)
+      : 0n;
+  const baseAmount = (amountOfBondsToShortAsBigInt || 0n) - backpaidInterest;
+  const shortAprFromDeposit =
+    baseAmount !== 0n
+      ? (amountOfBondsToShortAsBigInt || 0n) - baseAmount / baseAmount
+      : 0n;
+  // console.log(
+  //   formatBalance({
+  //     balance: baseAmount,
+  //     decimals: baseToken.decimals,
+  //     includeCommas: true,
+  //     places: baseToken.places,
+  //   }),
+  //   "baseAmount",
+  // );
+  // console.log(
+  //   formatBalance({
+  //     balance: backpaidInterest,
+  //     decimals: baseToken.decimals,
+  //     includeCommas: true,
+  //     places: baseToken.places,
+  //   }),
+  //   "backpaidInterest",
+  // );
+
+  // console.log(
+  //   fixed(shortAprFromDeposit || 0n).format({ decimals: 18 }),
+  //   "shortAprFromDeposit",
+  // );
+
+  // console.log(amountOfBondsToShortAsBigInt, "amountOfBondsToShortAsBigInt");
+
+  // const baseAmount = fixed(amountOfBondsToShortAsBigInt || 0n).min(
+  //   backpaidInterest || 0n,
+  // );
+  // // .format({ decimals: baseToken.decimals });
+  // const bondAmountMinusBaseAmount = fixed(
+  //   amountOfBondsToShortAsBigInt || 0n,
+  // ).min(baseAmount || 0n);
+
+  // console.log(baseAmount, "baseAmount");
+
+  // console.log(
+  //   amountOfBondsToShortAsBigInt - baseAmount,
+  //   "bondAmountMinusBaseAmount",
+  // );
+  // const shortAprFromDeposit = fixed(bondAmountMinusBaseAmount, 18).div(
+  //   baseAmount,
+  //   18,
+  // );
+  // console.log(shortAprFromDeposit, "shortAprFromDeposit");
+
   // TODO: I think I need to trigger the above usePreviewOpenShort to handle the other input here.
 
   const hasEnoughBalance = getHasEnoughBalance({
@@ -174,12 +237,6 @@ export function OpenShortForm({
   const { maxBondsOut } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
     budget: MAX_UINT256,
-  });
-
-  const { traderDeposit: maxTraderDeposit } = usePreviewOpenShort({
-    hyperdriveAddress: hyperdrive.address,
-    amountOfBondsToShort: maxBondsOut,
-    asBase: activeToken.address === baseToken.address,
   });
 
   // The amount you earn yield on from the given budget
@@ -234,10 +291,10 @@ export function OpenShortForm({
   // Max button is wired up to the user's balance, or the pool's max long.
   // Whichever is smallest.
   let maxButtonValue = "0";
-  if (activeTokenBalance && maxTraderDeposit) {
+  if (activeTokenBalance && maxBondsOut) {
     maxButtonValue = formatUnits(
-      activeTokenBalance.value > maxTraderDeposit
-        ? maxTraderDeposit
+      activeTokenBalance.value > maxBondsOut
+        ? maxBondsOut
         : activeTokenBalance?.value,
       activeToken.decimals,
     );
@@ -250,13 +307,10 @@ export function OpenShortForm({
           .format({ decimals: 2, rounding: "trunc" })
       : "0";
 
-  // Possible Variables to use in Rate you pay calculation:
-  // const amountOfBondsShorted = amountOfBondsToShortAsBigInt || 0n;
-  // const spotPriceAtCheckpoint = spotPriceAfterOpen || 0n;
-  // const currentSharePrice = poolInfo?.vaultSharePrice || 0n;
-  // const outputOfPreviewShort = traderDeposit || 0n;
-  // const fee = curveFee || 0n;
-  // const termLength = hyperdrive.poolConfig.positionDuration || 0n; // in days
+  // console.log({
+  //   bondAmount: amountOfBondsToShortAsBigInt,
+  //   vaultSharePrice: poolInfo?.vaultSharePrice,
+  // });
 
   return (
     <TransactionView
@@ -282,6 +336,13 @@ export function OpenShortForm({
                 }}
               />
             }
+            value={
+              activeInput === "bonds"
+                ? amountOfBondsToShort || ""
+                : maxBondsOutFromPayment
+                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
+                  : ""
+            }
             settings={
               <SlippageSettingsTwo
                 onSlippageChange={setSlippage}
@@ -290,13 +351,6 @@ export function OpenShortForm({
                 onActiveOptionChange={setActiveSlippageOption}
                 tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
               />
-            }
-            value={
-              activeInput === "bonds"
-                ? amountOfBondsToShort || ""
-                : maxBondsOutFromPayment
-                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
-                  : ""
             }
             onChange={(newAmount) => {
               setShortAmount(newAmount);
@@ -321,18 +375,65 @@ export function OpenShortForm({
               ) : null
             }
           />
+          <TokenInputTwo
+            name={`${baseToken.symbol}-input`}
+            // This input is disabled until the getMaxShort is fixed on the sdk.
+            disabled
+            token={
+              <TokenPickerTwo
+                tokens={tokenOptions}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setPaymentAmount("0");
+                }}
+              />
+            }
+            inputLabel="You pay"
+            value={
+              activeInput === "budget"
+                ? amountToPay || "0"
+                : formatUnits(traderDeposit || 0n, activeToken.decimals)
+            }
+            maxValue={maxButtonValue}
+            onChange={(newAmount) => {
+              console.log("newAmount", newAmount);
+              setActiveInput("budget");
+              setPaymentAmount(newAmount);
+            }}
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeTokenPrice && traderDeposit
+                        ? fixed(traderDeposit, activeToken.decimals).mul(
+                            activeTokenPrice,
+                            activeToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            bottomRightElement={
+              <div className="flex flex-col gap-1 text-xs text-neutral-content">
+                <span>
+                  {activeTokenBalance
+                    ? `Balance: ${formatBalance({
+                        balance: activeTokenBalance?.value,
+                        decimals: activeToken.decimals,
+                        places: activeToken.places,
+                      })}`
+                    : undefined}
+                </span>
+              </div>
+            }
+          />
         </div>
-      }
-      transactionPreview={
-        <OpenShortPreview
-          hyperdrive={hyperdrive}
-          tokenIn={activeToken}
-          costBasis={traderDeposit}
-          shortSize={amountOfBondsToShortAsBigInt}
-          spotRateAfterOpen={spotRateAfterOpen}
-          curveFee={curveFee}
-          openShortPreviewStatus={openShortPreviewStatus}
-        />
       }
       primaryStats={
         <div className="flex flex-row justify-between py-8">
@@ -352,39 +453,18 @@ export function OpenShortForm({
               )
             }
           />
-
-          <div className="daisy-divider daisy-divider-horizontal mx-0" />
-
-          <PrimaryStat
-            label="You pay"
-            value={
-              traderDeposit
-                ? formatBalance({
-                    balance: traderDeposit,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })
-                : "0"
-              // activeInput === "budget"
-              //   ? amountToPay || ""
-              //   : traderDeposit
-              //     ? formatUnits(traderDeposit, activeToken.decimals)
-              //     : ""
-            }
-            valueClassName="flex items-center"
-            valueUnit={
-              <TokenPickerTwo
-                tokens={tokenOptions}
-                activeTokenAddress={activeToken.address}
-                onChange={(tokenAddress) => {
-                  setActiveToken(tokenAddress);
-                  setPaymentAmount("0");
-                }}
-              />
-            }
-          />
         </div>
+      }
+      transactionPreview={
+        <OpenShortPreview
+          hyperdrive={hyperdrive}
+          tokenIn={activeToken}
+          costBasis={traderDeposit}
+          shortSize={amountOfBondsToShortAsBigInt}
+          spotRateAfterOpen={spotRateAfterOpen}
+          curveFee={curveFee}
+          openShortPreviewStatus={openShortPreviewStatus}
+        />
       }
       disclaimer={(() => {
         // If the user has not input a short amount, don't show the disclaimer
@@ -414,6 +494,53 @@ export function OpenShortForm({
                 Insufficient balance
               </p>
             ) : null}
+            <p className="text-center text-sm text-neutral-content">
+              You pay{" "}
+              <strong>
+                {openShortPreviewStatus === "loading" ? (
+                  <span className="inline-block">
+                    <Skeleton width={50} />
+                  </span>
+                ) : (
+                  formatBalance({
+                    balance: traderDeposit || 0n,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: activeToken.places,
+                  })
+                )}{" "}
+                {activeToken.symbol}
+              </strong>{" "}
+              in exchange for the yield on{" "}
+              <strong>
+                {openShortPreviewStatus === "loading" ? (
+                  <span className="inline-block">
+                    <Skeleton width={50} />
+                  </span>
+                ) : (
+                  formatBalance({
+                    balance: amountOfBondsToShortAsBigInt,
+                    decimals: activeToken.decimals,
+                    includeCommas: true,
+                    places: activeToken.places,
+                  })
+                )}{" "}
+                {baseToken.symbol}
+              </strong>{" "}
+              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
+              for{" "}
+              <strong>
+                {convertMillisecondsToDays(
+                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                )}{" "}
+                days.
+              </strong>{" "}
+            </p>
+            {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
+              <p className="text-center text-sm text-neutral-content">
+                {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+              </p>
+            )}
           </div>
         );
       })()}
