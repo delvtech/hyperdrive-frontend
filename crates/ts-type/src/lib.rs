@@ -414,7 +414,7 @@ impl TsType {
                             }
 
                             if pending_stack.is_empty() {
-                                return Err(type_error_at!(location, "Unexpected `,` found."));
+                                return Err(type_error_at!(location, "Unexpected `]` found."));
                             }
                         }
                         pending_type = Some(ty);

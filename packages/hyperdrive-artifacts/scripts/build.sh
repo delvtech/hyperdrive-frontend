@@ -4,14 +4,7 @@ set -e
 # SETTINGS
 default_branch="main"
 default_repo_url="git@github.com:delvtech/hyperdrive.git"
-src_dir_name="src"
 max_file_size=1000000 # 1MB
-
-# Skip the build if the src directory already exists
-if [ -d "$src_dir_name" ]; then
-  echo "Src path ($src_dir_name) already exists. Skipping src build."
-  exit 0
-fi
 
 # Check if forge is installed
 if ! command -v forge &>/dev/null; then
@@ -23,7 +16,8 @@ fi
 echo ""
 echo "+"
 echo "|  $0"
-echo "|  Builds typescript src files from the hyperdrive repo."
+echo "|  Clones the hyperdrive repo, compiles the contracts with forge, then creates and compiles"
+echo "|  typescript files from the contract artifacts."
 echo "|"
 echo "|  Usage: $0 [branch] [repo_url]"
 echo "|"
@@ -35,11 +29,12 @@ echo ""
 branch=${1:-$default_branch}
 repo_url=${2:-$default_repo_url}
 temp_dir=$(mktemp -d "hyperdrive-temp.XXXXXX")
+src_dir="src"
+dist_dir="dist"
 
 # Echo settings
 echo "Branch: $branch"
 echo "Repo URL: $repo_url"
-echo "Source directory: $src_dir_name"
 echo "Max file size: $max_file_size bytes"
 echo ""
 
@@ -54,9 +49,11 @@ echo "Compiling contracts..."
 
 echo "Creating typescript files..."
 
-# Reset the src directory
-rm -rf "$src_dir_name"
-mkdir "$src_dir_name"
+# Reset the directories
+rm -rf "$src_dir"
+rm -rf "$dist_dir"
+mkdir "$src_dir"
+mkdir "$dist_dir"
 
 function processOutDir() {
   local dir=$1
@@ -98,7 +95,7 @@ function processOutDir() {
       local methodIdentifiers=$(jq -r '.methodIdentifiers // "{}"' <"$entry")
 
       # Write the contract to a typescript file as a named export.
-      local out_file="$src_dir_name/$contract_name.ts"
+      local out_file="$src_dir/$contract_name.ts"
       {
         echo "export const $contract_name = {"
         echo "  abi: $abi as const,"
@@ -112,5 +109,9 @@ function processOutDir() {
 
 processOutDir "$temp_dir/out"
 
+echo "Compiling typescript files..."
+tsc --outDir "$dist_dir"
+
 echo "Cleaning up..."
 rm -rf "$temp_dir"
+rm -rf "$src_dir"
