@@ -3,6 +3,7 @@ import uniqBy from "lodash.uniqby";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
+import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
@@ -103,6 +104,8 @@ export async function getAppConfig({
   const tags: Tag[] = [yieldSourceTag];
   const tokens: TokenConfig<KnownTokenExtensions>[] = [];
 
+  // Get ReadHyperdrive instances from the registry to ensure
+  // that only registered pools are delivered to the frontend
   const registry = new ReadRegistry({
     address: registryAddress,
     publicClient,
@@ -111,12 +114,31 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
+      // TODO: Replace this with a call to hyperdrive.getName() once evm-client
+      // is updated
+      const hackName = await publicClient.readContract({
+        address: hyperdrive.address,
+        abi: hyperdrive.contract.abi,
+        functionName: "name",
+      });
+
+      if (["MORPHO_BLUE_DAI_14_DAY"].includes(hackName)) {
+        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
+          hyperdrive,
+        });
+
+        tokens.push(baseToken);
+
+        return hyperdriveConfig;
+      }
+
       const token = await hyperdrive.getSharesToken();
       const tokenSymbol = (
         await token.getSymbol()
       ).toUpperCase() as Uppercase<string>;
 
       const hyperdriveMetadata = knownHyperdriveMetadata[tokenSymbol];
+
       if (!hyperdriveMetadata) {
         throw new Error(
           `Yield source metadata not configured: Missing entry for ${tokenSymbol}`,
@@ -125,6 +147,7 @@ export async function getAppConfig({
 
       // Generic ERC-4626
       if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+        console.log("hackName", hackName);
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,

@@ -1,0 +1,61 @@
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
+import {
+  EmptyExtensions,
+  getTokenConfig,
+  TokenConfig,
+} from "src/tokens/getTokenConfig";
+import { DAI_ICON_URL } from "src/tokens/tokenIconsUrls";
+
+export async function getMorphoHyperdrive({
+  hyperdrive,
+}: {
+  hyperdrive: ReadHyperdrive;
+}): Promise<{
+  baseToken: TokenConfig<EmptyExtensions>;
+  hyperdriveConfig: HyperdriveConfig;
+}> {
+  const version = await hyperdrive.getVersion();
+  const poolConfig = await hyperdrive.getPoolConfig();
+
+  const baseToken = await hyperdrive.getBaseToken();
+  const baseTokenConfig = await getTokenConfig({
+    token: baseToken,
+    extensions: {},
+    tags: [],
+    iconUrl: DAI_ICON_URL,
+    places: 2,
+  });
+
+  const hyperdriveName = formatHyperdriveName({
+    baseTokenSymbol: baseTokenConfig.symbol,
+    termLengthMS: Number(poolConfig.positionDuration) * 1000,
+    yieldSourceShortName: "MetaMorpho",
+  });
+
+  const hyperdriveConfig: HyperdriveConfig = {
+    address: hyperdrive.address,
+    version: version.string,
+    name: hyperdriveName,
+    decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
+    baseToken: baseTokenConfig.address,
+    sharesToken: poolConfig.vaultSharesToken, // This will be the 0x address because there is no shares token for morpho
+    depositOptions: {
+      isBaseTokenDepositEnabled: true,
+      // No shares token for morpho, turn off deposits
+      isShareTokenDepositsEnabled: false,
+    },
+    withdrawOptions: {
+      isBaseTokenWithdrawalEnabled: true,
+      // No shares token for morpho, turn off withdrawals
+      isShareTokenWithdrawalEnabled: false,
+    },
+    poolConfig,
+  };
+
+  return {
+    baseToken: baseTokenConfig,
+    hyperdriveConfig: hyperdriveConfig,
+  };
+}
