@@ -70,6 +70,9 @@ export class ReadHyperdrive extends ReadModel {
     });
   }
 
+  async getName(): Promise<string> {
+    return this.contract.read("name", {});
+  }
   async getVersion(): Promise<{
     major: number;
     minor: number;
