@@ -1,6 +1,6 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
-import { ReadToken } from "src/token/ReadToken";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import { ReadModel, type ReadModelOptions } from "src/model/ReadModel";
+import type { ReadToken } from "src/token/ReadToken";
 
 export interface ReadEthOptions extends ReadModelOptions {}
 

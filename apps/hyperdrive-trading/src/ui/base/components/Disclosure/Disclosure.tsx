@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode, useState } from "react";
+import { type ReactElement, type ReactNode, useState } from "react";
 
 interface DisclosureProps {
   title: ReactNode;
@@ -21,7 +21,7 @@ export function Disclosure({
       />
       <div
         className={classNames(
-          "text-xl daisy-collapse-title font-medium text-neutral-content group-hover:opacity-100",
+          "daisy-collapse-title font-medium text-neutral-content text-xl group-hover:opacity-100",
           isOpen ? "opacity-100" : "opacity-80",
         )}
       >

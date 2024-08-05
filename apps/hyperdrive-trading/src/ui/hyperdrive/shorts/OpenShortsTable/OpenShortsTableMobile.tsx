@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import {
-  AppConfig,
-  HyperdriveConfig,
+  type AppConfig,
+  type HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -14,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -182,7 +181,7 @@ function formatOpenShortMobileColumnData(
       }),
     },
     {
-      name: `Rate shorted`,
+      name: "Rate shorted",
       value: `${formatRate(openShort.fixedRatePaid)} APR`,
     },
     {
@@ -190,7 +189,7 @@ function formatOpenShortMobileColumnData(
       value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
     {
-      name: `Current Value`,
+      name: "Current Value",
       value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
   ];

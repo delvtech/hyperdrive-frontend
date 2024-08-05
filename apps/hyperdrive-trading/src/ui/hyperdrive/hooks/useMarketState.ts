@@ -1,8 +1,8 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import type { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
+import { type QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import type { Address } from "viem";
 export function useMarketState(hyperdrive: Address): {
   marketState:
     | Awaited<ReturnType<ReadHyperdrive["getMarketState"]>>

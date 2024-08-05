@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        task: [format, lint, typecheck, test]
+        task: [lint-and-format, typecheck, test]
     steps:
       - name: Check out code
         uses: actions/checkout@v4

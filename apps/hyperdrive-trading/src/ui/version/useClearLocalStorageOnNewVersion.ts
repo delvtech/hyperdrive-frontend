@@ -16,7 +16,7 @@ export function useClearLocalStorageOnNewVersion(): void {
         "font-size: 18px",
       ].join(";");
 
-      // eslint-disable-next-line no-console
+      // biome-ignore lint/nursery/noConsole:
       console.log("%cNew app version detected, clearing local storage", styles);
       // Blow away everything in local storage when the app version changes,
       // since we don't know what changed in the new version.

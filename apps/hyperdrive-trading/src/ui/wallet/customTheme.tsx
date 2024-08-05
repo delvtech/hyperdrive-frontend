@@ -1,4 +1,4 @@
-import { darkTheme, type Theme } from "@rainbow-me/rainbowkit";
+import { type Theme, darkTheme } from "@rainbow-me/rainbowkit";
 
 const darkThemePresets = darkTheme();
 export const customRainbowTheme: Theme = {

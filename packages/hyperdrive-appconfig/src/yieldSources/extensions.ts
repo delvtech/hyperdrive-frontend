@@ -1,4 +1,4 @@
-import { YieldSourceExtensions } from "src/index";
+import type { YieldSourceExtensions } from "src/index";
 
 export const sdaiExtensions: YieldSourceExtensions = {
   shortName: "Maker DSR",

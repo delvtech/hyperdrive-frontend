@@ -48,7 +48,7 @@ root.render(
         appInfo={{
           appName: "Hyperdrive",
           disclaimer: () => (
-            <span className="text-xs text-neutral-content">
+            <span className="text-neutral-content text-xs">
               Note: If you choose to log in with Capsule, please review their{" "}
               <a
                 href="https://capsule-org.notion.site/Capsule-Labs-Inc-Privacy-Policy-7421971b985d4320abfe8454c4ba185c"

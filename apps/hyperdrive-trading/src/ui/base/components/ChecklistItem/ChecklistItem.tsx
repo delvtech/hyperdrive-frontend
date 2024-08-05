@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 interface ChecklistItemProps {
   readOnly?: boolean;

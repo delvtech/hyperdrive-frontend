@@ -1,6 +1,6 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
-  MutationStatus,
+  type MutationStatus,
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
@@ -12,7 +12,7 @@ import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
-import { Address, Hash } from "viem";
+import type { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseCloseShortOptions {

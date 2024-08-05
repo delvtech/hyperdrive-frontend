@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 interface CellWithTooltipProps {
   label: ReactNode;
@@ -18,7 +18,7 @@ export function TextWithTooltip({
         "daisy-tooltip flex items-center transition duration-150 ease-in-out before:whitespace-normal",
       )}
     >
-      <p className="text-sm text-neutral-content">{label}</p>
+      <p className="text-neutral-content text-sm">{label}</p>
     </div>
   );
 }

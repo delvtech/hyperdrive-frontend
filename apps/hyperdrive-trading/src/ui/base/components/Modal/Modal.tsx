@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode, useEffect, useRef } from "react";
+import { type ReactElement, type ReactNode, useEffect, useRef } from "react";
 
 interface ModalProps {
   modalId: string;
@@ -66,7 +66,7 @@ export function Modal({
             {isMultiModal && Array.isArray(modalHeader)
               ? modalHeader[activeIndex!]
               : modalHeader}
-            <div className="px-2 pb-8 pt-0 sm:px-10">
+            <div className="px-2 pt-0 pb-8 sm:px-10">
               {isMultiModal && Array.isArray(modalContent)
                 ? modalContent[activeIndex!]
                 : modalContent}

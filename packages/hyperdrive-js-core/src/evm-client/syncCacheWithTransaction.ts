@@ -1,10 +1,10 @@
-import {
+import type {
   CachedReadWriteContract,
   ContractReadOptions,
   FunctionArgs,
   FunctionName,
 } from "@delvtech/evm-client";
-import { Abi } from "abitype";
+import type { Abi } from "abitype";
 
 /**
  * Clears the cache and calls the transaction handlers provided to a "Write"
@@ -40,17 +40,15 @@ export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
     options?: ContractReadOptions;
   }[];
 }) {
-  return function (
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
-    target: any,
-    propertyKey: string,
+  return (
+    _target: any,
+    _propertyKey: string,
     descriptor: PropertyDescriptor,
-  ): void {
+  ): void => {
     const originalMethod = descriptor.value;
 
     // Wrap the original method in a function that does the transaction
     // side-effects we want after the tx completes
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     descriptor.value = async function (...args: any[]) {
       // Access the target class instance from within a decorator
       // @ts-expect-error The `this` keyword will be the target class instance

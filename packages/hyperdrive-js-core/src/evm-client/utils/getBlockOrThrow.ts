@@ -1,4 +1,8 @@
-import { Block, Network, NetworkGetBlockOptions } from "@delvtech/evm-client";
+import type {
+  Block,
+  Network,
+  NetworkGetBlockOptions,
+} from "@delvtech/evm-client";
 import { BlockNotFoundError } from "src/errors/BlockNotFoundError";
 
 /**

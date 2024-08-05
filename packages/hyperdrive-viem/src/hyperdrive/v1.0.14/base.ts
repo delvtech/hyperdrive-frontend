@@ -3,9 +3,9 @@ import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 
 export class ReadHyperdrive_v1_0_14 extends viemReadMixin(
-  core.ReadHyperdrive_v1_0_14
+  core.ReadHyperdrive_v1_0_14,
 ) {}
 
 export class ReadWriteHyperdrive_v1_0_14 extends viemReadWriteMixin(
-  core.ReadWriteHyperdrive_v1_0_14
+  core.ReadWriteHyperdrive_v1_0_14,
 ) {}

@@ -1,10 +1,10 @@
-import {
+import type {
   ContractReadOptions,
   Event,
   FunctionReturn,
 } from "@delvtech/evm-client";
-import { Prettify } from "src/base/types";
-import { HyperdriveAbi } from "src/hyperdrive/base/abi";
+import type { Prettify } from "src/base/types";
+import type { HyperdriveAbi } from "src/hyperdrive/base/abi";
 
 export type Checkpoint = Prettify<
   {

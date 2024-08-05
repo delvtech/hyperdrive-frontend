@@ -1,6 +1,6 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -75,7 +75,7 @@ export function LongsTab({
               {isTotalValueLoading ? (
                 <Skeleton width={100} />
               ) : longs?.length ? (
-                <p className="text-sm text-neutral-content">
+                <p className="text-neutral-content text-sm">
                   Total Value:{" "}
                   {formatBalance({
                     balance: totalValue || 0n,

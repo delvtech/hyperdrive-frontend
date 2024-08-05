@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, ReactNode } from "react";
+import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 export function CollapseSection({
   heading,

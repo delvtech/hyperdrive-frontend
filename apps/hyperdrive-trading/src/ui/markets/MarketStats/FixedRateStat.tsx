@@ -1,9 +1,12 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
-import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
+import {
+  MultiStat,
+  type MultiStatProps,
+} from "src/ui/base/components/MultiStat";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 

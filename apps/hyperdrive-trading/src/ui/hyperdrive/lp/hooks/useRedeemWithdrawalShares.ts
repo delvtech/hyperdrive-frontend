@@ -2,7 +2,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
-  MutationStatus,
+  type MutationStatus,
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseRedeemWithdrawalSharesOptions {

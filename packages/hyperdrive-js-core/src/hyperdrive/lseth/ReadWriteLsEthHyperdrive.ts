@@ -1,15 +1,15 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import {
-  ReadLsEthHyperdriveMixin,
+  type ReadLsEthHyperdriveMixin,
   readLsEthHyperdriveMixin,
 } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 import { ReadWriteLsEth } from "src/token/lseth/ReadWriteLsEth";
 
 export class ReadWriteLsEthHyperdrive extends readWriteLsEthHyperdriveMixin(
-  ReadWriteHyperdrive
+  ReadWriteHyperdrive,
 ) {}
 
 export interface ReadWriteLsEthHyperdriveMixin
@@ -19,11 +19,11 @@ export interface ReadWriteLsEthHyperdriveMixin
 }
 
 export function readWriteLsEthHyperdriveMixin<
-  T extends Constructor<ReadWriteHyperdrive>
+  T extends Constructor<ReadWriteHyperdrive>,
 >(Base: T): Constructor<ReadWriteLsEthHyperdriveMixin> & T {
   return class extends readLsEthHyperdriveMixin(Base) {
     async getSharesToken(
-      options?: ContractReadOptions
+      options?: ContractReadOptions,
     ): Promise<ReadWriteLsEth> {
       const { vaultSharesToken } = await this.getPoolConfig(options);
       return new ReadWriteLsEth({

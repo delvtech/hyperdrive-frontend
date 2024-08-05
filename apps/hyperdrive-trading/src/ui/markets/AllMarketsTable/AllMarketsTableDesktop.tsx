@@ -7,7 +7,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
@@ -15,11 +15,11 @@ import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { YieldSourceApy } from "src/ui/markets/AllMarketsTable/YieldSourceApy";
 import {
-  MarketTableRowData,
+  type MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 function getColumns() {
@@ -49,7 +49,7 @@ function getColumns() {
     }),
     columnHelper.accessor("market.name", {
       header: () => (
-        <p className="text-sm text-neutral-content">Yield Source</p>
+        <p className="text-neutral-content text-sm">Yield Source</p>
       ),
       cell: ({ row }) => {
         return (
@@ -92,7 +92,7 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="Fixed Rate"
-          tooltip={`Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied`}
+          tooltip="Fixed rate (Annual Percentage Rate) earned from opening a long, before fees and slippage are applied"
         />
       ),
       cell: ({ getValue }) => {

@@ -1,9 +1,9 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export interface TokenChoice {
   tokenConfig: TokenConfig<any>;
@@ -33,7 +33,7 @@ export function TokenPickerTwo({
         ) : undefined}
         <div className="daisy-btn daisy-btn-md flex items-center rounded-box bg-neutral text-lg">
           <img src={tokens[0].tokenConfig.iconUrl} className="h-5" />
-          <span className="text-sm font-semibold">
+          <span className="font-semibold text-sm">
             {tokens[0].tokenConfig.symbol}
           </span>
         </div>
@@ -56,7 +56,7 @@ export function TokenPickerTwo({
       >
         <button
           className={classNames(
-            "daisy-btn daisy-btn-md flex h-9 min-h-9 items-center rounded-box bg-neutral pl-3 pr-1",
+            "daisy-btn daisy-btn-md flex h-9 min-h-9 items-center rounded-box bg-neutral pr-1 pl-3",
           )}
           onClick={(e) => {
             e.preventDefault();
@@ -85,7 +85,7 @@ export function TokenPickerTwo({
                   {tokenConfig?.symbol}
                   <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
                     <span>
-                      Balance: {` `}
+                      Balance:{" "}
                       {formatBalance({
                         balance: tokenBalance || 0n,
                         decimals: tokenConfig?.decimals,

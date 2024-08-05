@@ -1,10 +1,10 @@
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function LpApyCell({
   hyperdriveAddress,

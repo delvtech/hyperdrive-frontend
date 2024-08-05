@@ -1,8 +1,8 @@
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useActiveToken<T1, T2>({
   account,

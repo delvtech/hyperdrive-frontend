@@ -2,9 +2,9 @@ import {
   calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
 } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -52,12 +52,12 @@ export function FixedRateCell({
         },
       )}
     >
-      <span className="daisy-stat-value text-md font-bold">
+      <span className="daisy-stat-value font-bold text-md">
         {formatRate(fixedRate)}
       </span>
       <div
         data-tip={"Yield after fees if held to maturity"}
-        className="daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success"
+        className="daisy-stat-desc daisy-tooltip mt-1 inline-flex text-success text-xs"
       >
         <span>{"+"}</span>
         {formatBalance({

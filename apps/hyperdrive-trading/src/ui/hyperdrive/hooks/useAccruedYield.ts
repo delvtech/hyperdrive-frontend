@@ -1,7 +1,7 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { type QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useAccruedYield({

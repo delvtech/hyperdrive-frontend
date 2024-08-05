@@ -1,6 +1,7 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.organizeImports.biome": "explicit",
+    "source.removeUnusedImports": "explicit"
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
@@ -9,6 +10,7 @@
     "delvtech",
     "dnum",
     "fixedpointmath",
+    "hyperdrive",
     "hyperwasm",
     "ihyperdrive",
     "mintable",
@@ -21,5 +23,25 @@
     "thiserror",
     "viem"
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "prettier.configPath": ".prettierrc.mjs",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "biome.lspBin": "./node_modules/.bin/biome",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

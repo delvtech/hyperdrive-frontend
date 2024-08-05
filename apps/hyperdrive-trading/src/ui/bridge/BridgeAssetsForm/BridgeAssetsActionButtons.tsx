@@ -1,17 +1,17 @@
-import {
+import type {
   EntityFungibleToken,
   EntityTokenTransferQuote,
   ServerChainBalance,
 } from "@delvtech/gopher";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useChainModal } from "@rainbow-me/rainbowkit";
-import { PropsWithChildren, ReactElement } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
-import { Address, parseUnits } from "viem";
+import { type Address, parseUnits } from "viem";
 import { useChainId } from "wagmi";
 
 interface BridgeAssetsActionButtonProps {

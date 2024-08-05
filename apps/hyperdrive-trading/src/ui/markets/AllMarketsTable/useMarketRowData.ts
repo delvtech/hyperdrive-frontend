@@ -1,14 +1,14 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  Protocol,
-  TokenConfig,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type Protocol,
+  type TokenConfig,
   findBaseToken,
   findYieldSourceToken,
   protocols,
 } from "@hyperdrive/appconfig";
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { sdkCache } from "src/sdk/sdkCache";

@@ -1,10 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import {
-  HyperdriveConfig,
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
@@ -32,7 +32,7 @@ export function MarketHeader({
     <div className="my-2 flex items-center gap-2 md:my-0">
       <div className="flex w-full flex-col items-start gap-1">
         <h1 className="gradient-text items-center md:my-0">
-          <div className="daisy-avatar-group mr-1 inline -space-x-6 rtl:space-x-reverse">
+          <div className="daisy-avatar-group -space-x-6 mr-1 inline rtl:space-x-reverse">
             <div className="daisy-avatar">
               <div className="w-12">
                 <img src={baseToken.iconUrl} />

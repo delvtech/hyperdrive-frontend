@@ -24,13 +24,13 @@ export function formatTimeDifference({
   if (timeDifference < SECONDS_PER_HOUR) {
     const minutes = Math.floor(timeDifference / SECONDS_PER_MINUTE);
     return `${minutes} minutes ago`;
-  } else if (timeDifference < SECONDS_PER_DAY) {
+  }
+  if (timeDifference < SECONDS_PER_DAY) {
     const hours = Math.floor(timeDifference / SECONDS_PER_HOUR);
     const hourText = hours === 1 ? "hour" : "hours";
     return `${hours} ${hourText} ago`;
-  } else {
-    const days = Math.floor(timeDifference / SECONDS_PER_DAY);
-    const dayText = days === 1 ? "day" : "days";
-    return `${days} ${dayText} ago`;
   }
+  const days = Math.floor(timeDifference / SECONDS_PER_DAY);
+  const dayText = days === 1 ? "day" : "days";
+  return `${days} ${dayText} ago`;
 }

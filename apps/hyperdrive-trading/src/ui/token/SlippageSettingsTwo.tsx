@@ -3,7 +3,7 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement, useState } from "react";
+import { type ReactElement, useState } from "react";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
 export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
@@ -32,7 +32,7 @@ export function SlippageSettingsTwo({
           e.preventDefault();
           setIsDropdownOpen((prevState) => !prevState);
         }}
-        className="daisy-btn daisy-btn-ghost daisy-btn-sm flex flex-row items-center justify-end gap-2 text-xs font-light text-neutral-content"
+        className="daisy-btn daisy-btn-ghost daisy-btn-sm flex flex-row items-center justify-end gap-2 font-light text-neutral-content text-xs"
       >
         {`${slippage || DEFAULT_SLIPPAGE_AMOUNT}%`} slippage
         <Cog6ToothIcon className="h-4 stroke-2 text-base-content" />

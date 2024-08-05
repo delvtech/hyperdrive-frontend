@@ -1,5 +1,5 @@
-import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { Address, erc20Abi } from "viem";
+import type { QueryStatusWithIdle } from "src/base/queryStatus";
+import { type Address, erc20Abi } from "viem";
 import { useReadContract } from "wagmi";
 
 interface UseTokenAllowanceOptions {

@@ -1,9 +1,9 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type { ContractReadOptions } from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
-  ReadHyperdriveOptions,
+  type ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
@@ -26,7 +26,7 @@ export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
 }
 
 export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {
   constructor(options: ReadStEthHyperdriveOptions) {
     super(options);
@@ -52,7 +52,7 @@ export interface ReadStEthHyperdriveMixin {
  * @internal
  */
 export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadStEthHyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
@@ -87,7 +87,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     // Calculations
 
     async getMaxShort(
-      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0]
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0],
     ): ReturnType<ReadHyperdrive["getMaxShort"]> {
       const result = await super.getMaxShort(options);
       const decimals = await this.getDecimals();
@@ -103,7 +103,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getMaxLong(
-      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0]
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
     ): ReturnType<ReadHyperdrive["getMaxLong"]> {
       const result = await super.getMaxLong(options);
       const decimals = await this.getDecimals();

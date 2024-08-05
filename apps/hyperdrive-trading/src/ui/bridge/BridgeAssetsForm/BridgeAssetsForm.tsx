@@ -1,6 +1,6 @@
-import { EntityFungibleToken, ServerChainBalance } from "@delvtech/gopher";
-import { TokenConfig } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement, useState } from "react";
+import type { EntityFungibleToken, ServerChainBalance } from "@delvtech/gopher";
+import type { TokenConfig } from "@hyperdrive/appconfig";
+import { type MouseEvent, type ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { BridgeAssetsPicker } from "src/ui/bridge/BridgeAssetsForm/BridgeAssetPicker";
@@ -12,8 +12,8 @@ import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalanc
 import { useBridgeTokens } from "src/ui/bridge/hooks/useBridgeTokens";
 import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
-import { Address, parseUnits } from "viem";
+import { type TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { type Address, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface BridgeAssetsFormProps {
@@ -67,8 +67,8 @@ export function BridgeAssetsForm({
   const [showPreview, setShowPreview] = useState(false);
 
   const { tokens } = useBridgeTokens();
-  const tokensWithBalances =
-    tokens?.filter((token) => {
+  const _tokensWithBalances =
+    tokens?.filter((_token) => {
       const hasBalance = balances?.[0]?.some(
         (chainBalance) => Number(chainBalance.balance) > 0,
       );
@@ -90,7 +90,7 @@ export function BridgeAssetsForm({
       };
     }) || [];
 
-  const maxValue = formatBalance({
+  const _maxValue = formatBalance({
     balance: maxButtonValue,
     decimals: token.decimals,
     places: token.decimals,

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Address } from "viem";
+import type { Address } from "viem";
 import { useChainId, useChains } from "wagmi";
 
 /**

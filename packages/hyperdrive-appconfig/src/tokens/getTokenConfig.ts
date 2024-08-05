@@ -1,5 +1,5 @@
-import { ReadToken } from "@delvtech/hyperdrive-viem";
-import { Address } from "viem";
+import type { ReadToken } from "@delvtech/hyperdrive-viem";
+import type { Address } from "viem";
 
 export type EmptyExtensions = Record<string, never>;
 

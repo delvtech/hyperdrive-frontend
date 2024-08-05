@@ -1,9 +1,9 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import type { Long } from "@delvtech/hyperdrive-viem";
 import {
-  AppConfig,
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
+  type AppConfig,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -15,7 +15,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -204,7 +204,7 @@ function formatOpenLongMobileColumnData(
       ),
     },
     {
-      name: `Current value`,
+      name: "Current value",
       value: <CurrentValueCell hyperdrive={hyperdrive} row={row} />,
     },
   ];

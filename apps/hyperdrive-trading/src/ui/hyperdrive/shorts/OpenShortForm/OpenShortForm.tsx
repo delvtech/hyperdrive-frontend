@@ -1,10 +1,10 @@
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
+  type HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import { MouseEvent, ReactElement } from "react";
+import type { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -15,20 +15,20 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
-import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -202,7 +202,7 @@ export function OpenShortForm({
           value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
           stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-neutral-content text-xs">
               <span>{`Slippage: ${slippage || "0.5"}%`}</span>
             </div>
           }
@@ -246,9 +246,9 @@ export function OpenShortForm({
           return null;
         }
         // If the user has input an amount, but that amount makes the hasEnoughLiquidity become falsy, show the pool limit exceeded note
-        else if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
           return (
-            <p className="text-center text-sm text-error">
+            <p className="text-center text-error text-sm">
               Pool limit exceeded. Max short size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
@@ -264,11 +264,11 @@ export function OpenShortForm({
         return (
           <div className="flex flex-col gap-4">
             {!hasEnoughBalance && openShortPreviewStatus !== "loading" ? (
-              <p className="text-center text-sm text-error">
+              <p className="text-center text-error text-sm">
                 Insufficient balance
               </p>
             ) : null}
-            <p className="text-center text-sm text-neutral-content">
+            <p className="text-center text-neutral-content text-sm">
               You pay{" "}
               <strong>
                 {openShortPreviewStatus === "loading" ? (
@@ -311,7 +311,7 @@ export function OpenShortForm({
               </strong>{" "}
             </p>
             {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
-              <p className="text-center text-sm text-neutral-content">
+              <p className="text-center text-neutral-content text-sm">
                 {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
               </p>
             )}

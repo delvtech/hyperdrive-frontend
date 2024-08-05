@@ -1,5 +1,5 @@
 import assertNever from "assert-never";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { b3Sepolia } from "src/network/b3Sepolia";
 import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
 
@@ -17,9 +17,9 @@ export function makeTransactionURL(
     case b3Sepolia.id:
       return `https://sepolia.explorer.b3.fun/tx/${transactionHash}`;
     case foundry.id:
-      return `#`;
+      return "#";
     case 42069: // cloud chain
-      return `#`;
+      return "#";
     default:
       assertNever(chainId);
   }

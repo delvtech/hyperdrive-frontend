@@ -1,15 +1,18 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Constructor } from "src/base/types";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Constructor } from "src/base/types";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import {
-  EzEthHyperdriveAbi,
+  type EzEthHyperdriveAbi,
   ezEthHyperdriveAbi,
 } from "src/hyperdrive/ezeth/abi";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -33,7 +36,7 @@ export interface ReadEzEthHyperdriveMixin {
  * @internal
  */
 export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadEzEthHyperdriveMixin> & T {
   return class extends Base {
     ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;

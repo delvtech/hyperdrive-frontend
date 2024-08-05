@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Well } from "src/ui/base/components/Well/Well";
 
@@ -22,7 +22,7 @@ export function PositionCard({
           {icon}
         </div>
         <h4 className="mb-6 font-medium">{title}</h4>
-        <p className="text-p2 mb-8 opacity-80">{subtitle}</p>
+        <p className="mb-8 text-p2 opacity-80">{subtitle}</p>
         <div className="flex flex-col gap-6 opacity-80">
           {checklist.map((item, idx) => (
             <ChecklistItem key={idx} checked readOnly variant="success">

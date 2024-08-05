@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
@@ -47,7 +47,7 @@ export function TokenInputTwo({
     <div className="flex w-full flex-col">
       {settings ? settings : null}
       <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
-        <label className="text-sm text-neutral-content">{inputLabel}</label>
+        <label className="text-neutral-content text-sm">{inputLabel}</label>
         <div className="flex flex-row">
           <input
             type="number"

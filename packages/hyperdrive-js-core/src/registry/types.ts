@@ -1,8 +1,8 @@
-import { FunctionReturn } from "@delvtech/evm-client";
-import { Override } from "src/base/types";
-import { ReadFactory } from "src/factory/ReadFactory";
-import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
-import { RegistryAbi } from "src/registry/abi";
+import type { FunctionReturn } from "@delvtech/evm-client";
+import type { Override } from "src/base/types";
+import type { ReadFactory } from "src/factory/ReadFactory";
+import type { ReadWriteFactory } from "src/factory/ReadWriteFactory";
+import type { RegistryAbi } from "src/registry/abi";
 
 /**
  * The info collected for each Hyperdrive factory along with the metadata

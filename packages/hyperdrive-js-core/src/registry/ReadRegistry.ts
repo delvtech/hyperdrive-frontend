@@ -1,10 +1,13 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { Address } from "abitype";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import type { Address } from "abitype";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { RegistryAbi, registryAbi } from "src/registry/abi";
-import {
+import { type ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+import { type RegistryAbi, registryAbi } from "src/registry/abi";
+import type {
   FactoryInfoWithMetadata,
   ReadInstanceInfoWithMetadata,
 } from "src/registry/types";
@@ -44,7 +47,7 @@ export class ReadRegistry extends ReadModel {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
@@ -59,7 +62,7 @@ export class ReadRegistry extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }
@@ -69,12 +72,12 @@ export class ReadRegistry extends ReadModel {
    */
   async getFactoryInfo(
     factoryAddress: Address,
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<FactoryInfoWithMetadata> {
     const { kind, name, version, data } = await this.contract.read(
       "getFactoryInfoWithMetadata",
       { _factory: factoryAddress },
-      options
+      options,
     );
     return {
       kind,
@@ -90,12 +93,12 @@ export class ReadRegistry extends ReadModel {
    */
   async getFactoryInfos(
     factoryAddresses: Address[],
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<FactoryInfoWithMetadata[]> {
     const infos = await this.contract.read(
       "getFactoryInfosWithMetadata",
       { __factories: factoryAddresses },
-      options
+      options,
     );
     return infos.map(({ kind, name, version, data }) => ({
       kind,
@@ -117,7 +120,7 @@ export class ReadRegistry extends ReadModel {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
@@ -125,7 +128,7 @@ export class ReadRegistry extends ReadModel {
    * Get the address of all Hyperdrive instances registered in the registry.
    */
   async getInstanceAddresses(
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
     const readOnlyAddresses = await this.contract.read(
@@ -134,7 +137,7 @@ export class ReadRegistry extends ReadModel {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }
@@ -144,12 +147,12 @@ export class ReadRegistry extends ReadModel {
    */
   async getInstanceInfo(
     instanceAddress: Address,
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata> {
     const { kind, name, version, data, factory } = await this.contract.read(
       "getInstanceInfoWithMetadata",
       { _instance: instanceAddress },
-      options
+      options,
     );
     return {
       kind,
@@ -169,12 +172,12 @@ export class ReadRegistry extends ReadModel {
    */
   async getInstanceInfos(
     instanceAddresses: Address[],
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(
       "getInstanceInfosWithMetadata",
       { __instances: instanceAddresses },
-      options
+      options,
     );
     return infos.map(({ kind, name, version, data, factory }) => ({
       kind,

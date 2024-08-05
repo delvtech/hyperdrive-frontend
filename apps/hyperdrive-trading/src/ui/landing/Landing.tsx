@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { Hero } from "src/ui/landing/Hero/Hero";

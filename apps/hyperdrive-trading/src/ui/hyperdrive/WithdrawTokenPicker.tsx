@@ -1,11 +1,11 @@
-import {
+import type {
   EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import type { ReactElement } from "react";
+import { type TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 
 export function WithdrawTokenPicker({
   sharesToken,

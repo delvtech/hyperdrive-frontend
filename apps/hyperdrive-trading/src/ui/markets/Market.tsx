@@ -1,5 +1,5 @@
 import { useParams } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";

@@ -1,5 +1,5 @@
-import { HyperdriveConfig } from "src/index";
-import { Address } from "viem";
+import type { HyperdriveConfig } from "src/index";
+import type { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the yield source token.

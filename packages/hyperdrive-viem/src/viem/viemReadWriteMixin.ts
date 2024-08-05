@@ -2,22 +2,22 @@ import {
   createCachedReadWriteContract,
   createNetwork,
 } from "@delvtech/evm-client-viem";
-import {
+import type {
   Constructor,
   ContractFactoryOptions,
   ReadWriteContractModelOptions,
   ReadWriteModelOptions,
 } from "@delvtech/hyperdrive-js-core";
-import { PublicClient, WalletClient } from "viem";
-import { Prettify } from "viem/chains";
+import type { PublicClient, WalletClient } from "viem";
+import type { Prettify } from "viem/chains";
 
 export type ViemReadWriteMixin<T extends ReadWriteContractModelConstructor> =
   new (
-    options: ViemReadWriteModelOptions<ConstructorParameters<T>[0]>
+    options: ViemReadWriteModelOptions<ConstructorParameters<T>[0]>,
   ) => InstanceType<T>;
 
 export function viemReadWriteMixin<T extends ReadWriteContractModelConstructor>(
-  Base: T
+  Base: T,
 ): ViemReadWriteMixin<T> {
   return class extends (Base as Constructor) {
     constructor(...[options, ...restArgs]: any[]) {
@@ -37,7 +37,7 @@ export function viemReadWriteMixin<T extends ReadWriteContractModelConstructor>(
           network: createNetwork(publicClient),
           ...restOptions,
         },
-        ...restArgs
+        ...restArgs,
       );
     }
   } as ViemReadWriteMixin<T>;

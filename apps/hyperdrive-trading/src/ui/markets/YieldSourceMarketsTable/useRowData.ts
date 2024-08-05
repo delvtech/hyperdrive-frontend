@@ -1,10 +1,10 @@
 import {
-  HyperdriveConfig,
-  Protocol,
+  type HyperdriveConfig,
+  type Protocol,
   findYieldSourceHyperdrives,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import sortBy from "lodash.sortby";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
@@ -18,7 +18,7 @@ export interface YieldSourceMarketsTableRowData {
 }
 
 export function useRowData(
-  protocol: Protocol
+  protocol: Protocol,
 ): UseQueryResult<YieldSourceMarketsTableRowData[]> {
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
@@ -55,8 +55,8 @@ export function useRowData(
                   liquidity,
                   fixedApr,
                 };
-              }
-            )
+              },
+            ),
           );
           return sortBy(rows, "market.poolConfig.positionDuration");
         }

@@ -1,9 +1,9 @@
-import { Address } from "abitype";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { protocols } from "src/protocols/protocols";
-import { Tag } from "src/tags";
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import type { Address } from "abitype";
+import type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import type { protocols } from "src/protocols/protocols";
+import type { Tag } from "src/tags";
+import type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+import type { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 
 export type KnownTokenExtensions = YieldSourceExtensions | EmptyExtensions;
 

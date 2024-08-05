@@ -1,10 +1,10 @@
-import {
+import type {
   EntityFungibleToken,
   EntityTokenTransferQuote,
   ServerChainBalance,
 } from "@delvtech/gopher";
 
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import { useBridgeChainsByChainId } from "src/ui/bridge/hooks/useBridgeChainsByChainId";
 import { formatUnits, parseUnits } from "viem";
@@ -72,7 +72,8 @@ export function BridgePreview({
         })}
       </table>
     );
-  } else if (solutionStatus === "loading") {
+  }
+  if (solutionStatus === "loading") {
     return <div>Loading...</div>;
   }
   return <div>Something went wrong</div>;

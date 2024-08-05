@@ -1,5 +1,5 @@
-import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { Address } from "viem";
+import type { PoolConfig } from "@delvtech/hyperdrive-viem";
+import type { Address } from "viem";
 
 export interface HyperdriveConfig {
   address: Address;

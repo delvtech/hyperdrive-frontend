@@ -1,4 +1,4 @@
-import { NetworkGetBlockOptions } from "@delvtech/evm-client";
+import type { NetworkGetBlockOptions } from "@delvtech/evm-client";
 import { HyperdriveSdkError } from "./HyperdriveSdkError";
 
 export class BlockNotFoundError extends HyperdriveSdkError {

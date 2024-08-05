@@ -1,5 +1,5 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
@@ -64,7 +64,7 @@ export function LiquidityStats({
                 />
               )
             }
-            description={`The present value in the pool`}
+            description="The present value in the pool"
             tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
           />
           <Stat
@@ -138,7 +138,7 @@ function AmountLabel({
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
-      {icon ? <img src={icon} className="h-7 rounded-full  p-1" /> : undefined}
+      {icon ? <img src={icon} className="h-7 rounded-full p-1" /> : undefined}
       {value}
     </p>
   );

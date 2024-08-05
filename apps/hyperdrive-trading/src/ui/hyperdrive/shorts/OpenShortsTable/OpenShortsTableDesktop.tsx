@@ -1,11 +1,10 @@
-/* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import type { OpenShort } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
+  type EmptyExtensions,
+  type HyperdriveConfig,
+  type TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -17,7 +16,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
@@ -78,7 +77,7 @@ export function OpenShortsTableDesktop({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 font-normal text-neutral-content text-sm"
                   key={header.id}
                 >
                   <div
@@ -156,7 +155,7 @@ function getColumns(
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures On`,
+      header: "Matures On",
       cell: ({ row }) => {
         return <MaturesOnCell maturity={row.original.maturity} />;
       },
@@ -190,7 +189,7 @@ function getColumns(
         const amountPaid = baseAmountPaid.getValue();
         return (
           <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-            <span className="daisy-stat-value flex w-16 justify-end text-md font-normal">
+            <span className="daisy-stat-value flex w-16 justify-end font-normal text-md">
               {formatBalance({
                 balance: amountPaid,
                 decimals: baseToken.decimals,
@@ -252,7 +251,7 @@ function getColumns(
               >
                 <CalendarLinkMenu
                   date={maturityDate}
-                  title={`Hyperdrive - Short position has matured`}
+                  title="Hyperdrive - Short position has matured"
                   description={`Your Short position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
                 />
                 <PositionActionsMenu position={row.original} />

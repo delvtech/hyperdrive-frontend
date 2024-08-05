@@ -1,8 +1,8 @@
-import { ServerChainBalance } from "@delvtech/gopher";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import type { ServerChainBalance } from "@delvtech/gopher";
+import { type QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { gopher } from "src/bridge/api";
-import { Address } from "viem";
+import type { Address } from "viem";
 
 export function useBridgeTokenBalances(
   account: Address | undefined,

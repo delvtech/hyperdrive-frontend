@@ -1,4 +1,4 @@
-import { Chain } from "viem";
+import type { Chain } from "viem";
 
 export const localChain: Chain = {
   id: +(process.env.LOCAL_CHAIN_ID as string),

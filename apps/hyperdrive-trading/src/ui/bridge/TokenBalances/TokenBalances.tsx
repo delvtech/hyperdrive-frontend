@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { fixed } from "@delvtech/fixed-point-wasm";
+import type { ReactNode } from "react";
 import { parseUnits } from "src/base/parseUnits";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -20,7 +21,7 @@ function TokenBalances(): ReactNode {
   }
 
   return (
-    <div className="flex-col-3 flex w-full space-x-6">
+    <div className="flex w-full flex-col-3 space-x-6">
       {balances.map((chainBalances, index) => {
         const totalBalance =
           chainBalances?.reduce((total, { balance, tokenDecimals }) => {
@@ -45,10 +46,10 @@ function TokenBalances(): ReactNode {
                   <tr key={token.chainId}>
                     <td>{chains[token.chainId!]?.name}</td>
                     <td>
-                      {(
-                        parseFloat(token?.balance || "0") /
-                        Math.pow(10, token?.tokenDecimals || 18)
-                      ).toFixed(2)}
+                      {fixed(
+                        token?.balance || 0,
+                        token?.tokenDecimals || 18,
+                      ).format({ decimals: 2 })}
                     </td>
                   </tr>
                 ))}

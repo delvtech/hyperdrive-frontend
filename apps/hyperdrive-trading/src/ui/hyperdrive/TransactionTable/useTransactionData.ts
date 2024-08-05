@@ -5,7 +5,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address, Hash } from "viem";
+import type { Address, Hash } from "viem";
 export type TransactionData = {
   assetId?: bigint;
   baseAmount: bigint;

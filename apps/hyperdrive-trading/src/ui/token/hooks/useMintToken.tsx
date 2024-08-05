@@ -1,13 +1,13 @@
-import { TokenConfig } from "@hyperdrive/appconfig";
+import type { TokenConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { Address, formatUnits, parseAbi } from "viem";
+import { type Address, formatUnits, parseAbi } from "viem";
 import { sepolia } from "viem/chains";
 import {
   useChainId,

@@ -1,11 +1,11 @@
 import { ALICE, BOB } from "src/base/testing/accounts";
-import { CheckpointEvent } from "src/checkpoint/types";
+import type { CheckpointEvent } from "src/checkpoint/types";
 import { parseFixed } from "src/fixed-point";
 import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
-  simplePoolConfig30Days,
   simplePoolConfig7Days,
+  simplePoolConfig30Days,
 } from "src/pool/testing/PoolConfig";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { expect, test } from "vitest";

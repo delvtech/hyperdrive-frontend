@@ -1,4 +1,4 @@
-import { AppConfig } from "src/appconfig/AppConfig";
+import type { AppConfig } from "src/appconfig/AppConfig";
 export const cloudChainAppConfig: AppConfig = {
   chainId: 42069,
   tags: [

@@ -1,5 +1,5 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { HyperdriveConfig } from "@hyperdrive/appconfig";
+import type { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";

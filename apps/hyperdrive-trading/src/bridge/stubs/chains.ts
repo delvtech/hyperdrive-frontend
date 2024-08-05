@@ -1,8 +1,12 @@
-import {
+import type {
   EntityChainID,
   ServerGetNetworksHandlerResponse,
 } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 export function getSupportedNetworksStub(baseUrl: string): RequestHandler {
   return http.get(`${baseUrl}/networks`, () => {

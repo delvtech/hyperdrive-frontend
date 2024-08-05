@@ -1,8 +1,8 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import type { Long } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { type HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -64,7 +64,7 @@ export function CurrentValueCell({
 
   return (
     <div className={cellClassName}>
-      <span className="daisy-stat-value flex items-center gap-2 text-md font-bold">
+      <span className="daisy-stat-value flex items-center gap-2 font-bold text-md">
         {/* warning icon with tooltip for liquidity issues
          TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
          have calcMaxCloseLong */}

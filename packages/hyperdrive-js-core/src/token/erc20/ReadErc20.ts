@@ -1,7 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
-import { erc20Abi, Erc20Abi } from "src/token/erc20/abi";
-import { ReadToken } from "src/token/ReadToken";
+import type {
+  CachedReadContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
+import { type ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+import type { ReadToken } from "src/token/ReadToken";
+import { type Erc20Abi, erc20Abi } from "src/token/erc20/abi";
 
 export interface ReadErc20Options extends ReadContractModelOptions {}
 

@@ -1,8 +1,8 @@
-import { ClosedShort } from "@delvtech/hyperdrive-viem";
+import type { ClosedShort } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
-  AppConfig,
-  HyperdriveConfig,
+  type AppConfig,
+  type HyperdriveConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -14,7 +14,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement, useMemo } from "react";
+import { type ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -118,7 +118,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
   return [
     columnHelper.accessor((row) => formatDate(Number(row.maturity * 1000n)), {
-      header: `Matures On`,
+      header: "Matures On",
       cell: ({ row }) => {
         const maturity = formatDate(Number(row.original.maturity * 1000n));
         return <span>{maturity}</span>;
@@ -155,7 +155,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("closedTimestamp", {
-      header: `Closed On`,
+      header: "Closed On",
       cell: (closedTimestamp) => {
         return (
           <span>{formatDate(Number(closedTimestamp.getValue() * 1000n))}</span>
@@ -230,7 +230,7 @@ export function ClosedShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 font-normal text-neutral-content text-sm"
                   key={header.id}
                 >
                   <div

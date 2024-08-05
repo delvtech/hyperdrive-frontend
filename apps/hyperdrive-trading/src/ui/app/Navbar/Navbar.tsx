@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Link } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";

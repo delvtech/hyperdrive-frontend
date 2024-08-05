@@ -1,8 +1,8 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
+import type { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
@@ -20,7 +20,7 @@ export function Chainlog(): ReactElement {
       <div className="mx-[4vw] w-full max-w-screen-xl">
         {/* Header */}
         <div className="mb-12 max-w-4xl text-center lg:text-left">
-          <h1 className="gradient-text mb-4 text-h2 font-bold">Chainlog</h1>
+          <h1 className="gradient-text mb-4 font-bold text-h2">Chainlog</h1>
           <p className="text-neutral-content">
             Find the latest information on pools and factories from the{" "}
             <a

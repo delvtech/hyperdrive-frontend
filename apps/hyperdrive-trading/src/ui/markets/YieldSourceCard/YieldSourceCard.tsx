@@ -1,10 +1,10 @@
 import {
-  Protocol,
+  type Protocol,
   findBaseToken,
   findYieldSourceHyperdrives,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindLessThanSm } from "src/ui/base/mediaBreakpoints";
@@ -69,7 +69,7 @@ export function YieldSourceCard({
           <div className="flex items-center justify-center gap-2 text-neutral-content sm:flex-col">
             <span>Deposit assets</span>
             {/* DaisyUI note: overflow-visible enables tooltips to be shown in the daisy-avatar-group */}
-            <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
+            <div className="daisy-avatar-group -space-x-6 inline-flex justify-center overflow-visible rtl:space-x-reverse">
               {isBaseTokenDepositEnabled ? (
                 <div
                   className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"

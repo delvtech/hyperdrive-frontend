@@ -1,5 +1,9 @@
-import { ServerAccountFungibleBalanceHandlerResponse } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import type { ServerAccountFungibleBalanceHandlerResponse } from "@delvtech/gopher";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 export function getServerAccountFungibleBalanceHandlerStub(
   baseUrl: string,
@@ -7,7 +11,7 @@ export function getServerAccountFungibleBalanceHandlerStub(
   return http.get(
     `${baseUrl}/accounts/:account/assets/fungible/:token`,
     ({ params }) => {
-      const token = params["token"];
+      const token = params.token;
       const response: ServerAccountFungibleBalanceHandlerResponse = {
         data: [
           {

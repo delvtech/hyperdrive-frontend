@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { createPublicClient, http } from "viem";
+import { http, createPublicClient } from "viem";
 import { mainnet } from "viem/chains";
 
 const mainnetNodeRpcUrl = process.env.MAINNET_NODE_RPC_URL as string;

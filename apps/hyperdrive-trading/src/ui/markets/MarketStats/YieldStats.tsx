@@ -1,8 +1,11 @@
 import { SparklesIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
+import {
+  type HyperdriveConfig,
+  findYieldSourceToken,
+} from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
-import { PropsWithChildren, ReactElement } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";

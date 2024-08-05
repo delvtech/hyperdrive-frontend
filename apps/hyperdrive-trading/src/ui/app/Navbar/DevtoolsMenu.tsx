@@ -1,5 +1,5 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 export function DevtoolsMenu(): ReactElement {
   return (

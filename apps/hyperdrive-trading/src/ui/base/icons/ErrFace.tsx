@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
 
 interface ErrFaceProps extends SVGProps<SVGSVGElement> {
   accentClassName?: string;

@@ -1,7 +1,7 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import { ReactElement } from "react";
-import { Stat, StatProps } from "src/ui/base/components/Stat";
+import type { ReactElement } from "react";
+import { Stat, type StatProps } from "src/ui/base/components/Stat";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 
 export interface MultiStatProps extends StatProps {
@@ -48,7 +48,7 @@ export function MultiStat({
               <p
                 data-tip={activeItem.description}
                 className={classNames(
-                  `group daisy-tooltip cursor-help text-start text-sm text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start`,
+                  "group daisy-tooltip cursor-help text-start text-neutral-content text-sm before:z-40 before:max-w-56 before:p-2 before:text-start",
                   {
                     "daisy-tooltip-top": activeItem.tooltipPosition === "top",
                     "daisy-tooltip-bottom":
@@ -60,10 +60,10 @@ export function MultiStat({
                 )}
               >
                 {activeItem.label}
-                <InformationCircleIcon className="group-hover:text-gray-500 ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
+                <InformationCircleIcon className="ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:text-gray-500 group-hover:opacity-100 lg:inline-block" />
               </p>
             ) : (
-              <p className="self-start text-sm text-neutral-content">
+              <p className="self-start text-neutral-content text-sm">
                 {activeItem.label}
               </p>
             )}

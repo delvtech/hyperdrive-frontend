@@ -1,9 +1,13 @@
-import {
+import type {
   EntityChainID,
   EntityTokenTransferQuote,
   ServerAggregateBalanceSolutionHandlerResponse,
 } from "@delvtech/gopher";
-import { HttpResponse as HttpResponseMSW, RequestHandler, http } from "msw";
+import {
+  http,
+  HttpResponse as HttpResponseMSW,
+  type RequestHandler,
+} from "msw";
 
 interface AggregationQueryParams {
   account: string;
@@ -67,7 +71,8 @@ export function getServerAggregateBalanceSolutionHandlerStub(
         };
 
         return HttpResponseMSW.json(response, status);
-      } else if (amount > 100 && amount <= 200) {
+      }
+      if (amount > 100 && amount <= 200) {
         const status = {
           status: 200,
           statusText: "Mocked status",

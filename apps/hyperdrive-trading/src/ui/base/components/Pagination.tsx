@@ -1,5 +1,5 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Table } from "@tanstack/react-table";
+import type { Table } from "@tanstack/react-table";
 
 export function Pagination<T>({
   tableInstance,
