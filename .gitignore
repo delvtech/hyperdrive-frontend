@@ -37,3 +37,7 @@ yarn-error.log*
 
 # rust
 target
+
+# python
+.python-version
+.venv
