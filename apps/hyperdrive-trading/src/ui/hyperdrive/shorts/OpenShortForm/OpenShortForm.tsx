@@ -183,15 +183,15 @@ export function OpenShortForm({
   const baseDividedByBondsMinusBase = dnum.divide(
     [baseAmount || 1n, 18],
     [bondsMinusBase || 1n, 18],
-  )[0];
-  console.log(
-    "baseDividedByBondsMinusBase",
-    formatBalance({
-      balance: baseDividedByBondsMinusBase,
-      decimals: 18,
-      places: 10,
-    }),
   );
+  // console.log(
+  //   "baseDividedByBondsMinusBase",
+  //   formatBalance({
+  //     balance: baseDividedByBondsMinusBase,
+  //     decimals: 18,
+  //     places: 10,
+  //   }),
+  // );
 
   // const baseDividedByBondsMinusBase = fixed(baseAmount || 1n, 18).div(
   //   bondsMinusBase || 1n,
@@ -211,6 +211,32 @@ export function OpenShortForm({
   const fixedYear = fixed(BigInt(31536000n) * BigInt(1e18));
   const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
 
+  const baseDividedByBondsMinusBaseScaled = dnum.divide(
+    baseDividedByBondsMinusBase,
+    [fixedTimeRangeInYears.bigint, 18],
+  );
+
+  // console.log(
+  //   formatBalance({
+  //     balance: baseDividedByBondsMinusBase[0] || 0n,
+  //     decimals: 18,
+  //     places: 10,
+  //   }),
+  //   "baseDividedByBondsMinusBase",
+  // );
+  // console.log(
+  //   fixedTimeRangeInYears.format({ decimals: 18 }),
+  //   "fixedTimeRangeInYears",
+  // );
+
+  console.log(
+    "baseDividedByBondsMinusBaseScaled",
+    formatBalance({
+      balance: baseDividedByBondsMinusBaseScaled[0],
+      decimals: 18,
+      places: 10,
+    }),
+  );
   // console.log(
   //   formatBalance({ balance: baseAmount, decimals: 18, places: 10 }),
   //   "baseAmount",
