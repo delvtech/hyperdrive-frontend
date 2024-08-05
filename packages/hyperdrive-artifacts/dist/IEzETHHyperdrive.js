@@ -292,6 +292,44 @@ export const IEzETHHyperdrive = {
         },
         {
             "type": "function",
+            "name": "convertToBase",
+            "inputs": [
+                {
+                    "name": "_shareAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "convertToShares",
+            "inputs": [
+                {
+                    "name": "_baseAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "decimals",
             "inputs": [],
             "outputs": [
@@ -1413,6 +1451,19 @@ export const IEzETHHyperdrive = {
         },
         {
             "type": "function",
+            "name": "target4",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "totalSupply",
             "inputs": [
                 {
@@ -2441,6 +2492,8 @@ export const IEzETHHyperdrive = {
         "closeLong(uint256,uint256,uint256,(address,bool,bytes))": "ded06231",
         "closeShort(uint256,uint256,uint256,(address,bool,bytes))": "29b23fc1",
         "collectGovernanceFee((address,bool,bytes))": "3e691db9",
+        "convertToBase(uint256)": "b88fed9f",
+        "convertToShares(uint256)": "c6e6f592",
         "decimals()": "313ce567",
         "domainSeparator()": "f698da25",
         "getCheckpoint(uint256)": "20fc4881",
@@ -2481,6 +2534,7 @@ export const IEzETHHyperdrive = {
         "target1()": "eac3e799",
         "target2()": "a6e8a859",
         "target3()": "d899e112",
+        "target4()": "f3f70707",
         "totalSupply(uint256)": "bd85b039",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc",

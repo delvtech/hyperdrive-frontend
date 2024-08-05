@@ -17,19 +17,19 @@ export interface ReadModelOptions {
    * use as a display name or in logging) and has no affect on the model's
    * behavior.
    */
-  name?: string;
+  debugName?: string;
 }
 
 /**
  * A base class for read-only models.
  */
 export class ReadModel {
-  name: string;
+  debugName: string;
   network: Network;
   contractFactory: ReadContractFactory;
 
-  constructor({ name, network, contractFactory }: ReadModelOptions) {
-    this.name = name ?? this.constructor.name;
+  constructor({ debugName, network, contractFactory }: ReadModelOptions) {
+    this.debugName = debugName ?? this.constructor.name;
     this.network = network;
     this.contractFactory = contractFactory;
   }

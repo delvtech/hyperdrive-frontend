@@ -6,7 +6,7 @@ import { Override } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
-import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 
 export interface ReadWriteFactoryOptions

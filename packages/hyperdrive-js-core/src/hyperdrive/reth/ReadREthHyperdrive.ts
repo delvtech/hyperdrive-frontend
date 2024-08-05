@@ -4,7 +4,7 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 import { REthHyperdriveAbi, rEthHyperdriveAbi } from "src/hyperdrive/reth/abi";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadREth } from "src/token/reth/ReadREth";
@@ -36,19 +36,19 @@ export interface ReadREthHyperdriveMixin {
 export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadREthHyperdriveMixin> & T {
-  return class extends Base implements ReadREthHyperdriveMixin {
+  return class extends Base {
     rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
-        name = "rETH Hyperdrive",
+        debugName = "rETH Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
       this.rEthHyperdriveContract = contractFactory({
         abi: rEthHyperdriveAbi,
         address,

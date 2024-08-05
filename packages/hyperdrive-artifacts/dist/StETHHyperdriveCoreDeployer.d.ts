@@ -113,6 +113,10 @@ export declare const StETHHyperdriveCoreDeployer: {
             readonly type: "address";
             readonly internalType: "address";
         }, {
+            readonly name: "_target4";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
             readonly name: "_salt";
             readonly type: "bytes32";
             readonly internalType: "bytes32";
@@ -126,7 +130,7 @@ export declare const StETHHyperdriveCoreDeployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "6a462579";
+        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "285fd401";
     };
 };
 //# sourceMappingURL=StETHHyperdriveCoreDeployer.d.ts.map

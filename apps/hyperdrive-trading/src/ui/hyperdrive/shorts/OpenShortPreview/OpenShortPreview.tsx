@@ -332,5 +332,5 @@ function getMarketImpactLabel(
   if (isChangeInFixedAprLessThanOneBasisPoint) {
     return "+<0.01%";
   }
-  return `+${formatRate(changeInFixedApr)}%`;
+  return `+${formatRate(changeInFixedApr)}`;
 }

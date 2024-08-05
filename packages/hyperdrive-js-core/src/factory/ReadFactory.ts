@@ -1,7 +1,7 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 
 export interface ReadFactoryOptions extends ReadContractModelOptions {}
@@ -11,14 +11,14 @@ export class ReadFactory extends ReadModel {
   contract: CachedReadContract<FactoryAbi>;
 
   constructor({
-    name = "Hyperdrive Factory",
+    debugName = "Hyperdrive Factory",
     address,
     contractFactory,
     network,
     cache,
     namespace,
   }: ReadFactoryOptions) {
-    super({ name, network, contractFactory });
+    super({ debugName, network, contractFactory });
     this.address = address;
     this.contract = contractFactory({
       abi: factoryAbi,

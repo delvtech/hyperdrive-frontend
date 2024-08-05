@@ -4,7 +4,7 @@ import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
 
@@ -54,17 +54,17 @@ export interface ReadStEthHyperdriveMixin {
 export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadStEthHyperdriveMixin> & T {
-  return class extends Base implements ReadStEthHyperdriveMixin {
+  return class extends Base {
     constructor(...[options]: any[]) {
       const {
-        name = "stETH Hyperdrive",
+        debugName = "stETH Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadStEthHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
     }
 
     async getBaseToken(): Promise<ReadEth> {

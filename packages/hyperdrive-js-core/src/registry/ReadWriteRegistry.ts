@@ -6,7 +6,7 @@ import { Address } from "abitype";
 import { Override } from "src/base/types";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
-import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
 import { RegistryAbi } from "src/registry/abi";

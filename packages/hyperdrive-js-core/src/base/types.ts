@@ -9,7 +9,10 @@ export type Prettify<T> = {
 /**
  * A generic constructor type.
  */
-export type Constructor<TInstanceType> = new (...args: any[]) => TInstanceType;
+export type Constructor<
+  TInstanceType = any,
+  TArgs extends any[] = any[],
+> = new (...args: TArgs) => TInstanceType;
 
 /**
  * Overrides properties of `T` with properties of `U`.

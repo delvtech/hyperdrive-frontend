@@ -58,7 +58,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
 
     constructor(...[options]: any[]) {
       const {
-        name = "stETH Token",
+        debugName = "stETH Token",
         address,
         contractFactory,
         network,
@@ -70,7 +70,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
         contractFactory,
         network,
         cache,
-        name,
+        debugName,
         namespace,
       });
       this.stEthContract = contractFactory({

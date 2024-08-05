@@ -269,6 +269,10 @@ export declare const HyperdriveDeployerCoordinator: {
                 readonly name: "target3";
                 readonly type: "address";
                 readonly internalType: "address";
+            }, {
+                readonly name: "target4";
+                readonly type: "address";
+                readonly internalType: "address";
             }];
         }];
         readonly stateMutability: "view";
@@ -397,6 +401,16 @@ export declare const HyperdriveDeployerCoordinator: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "target4Deployer";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "version";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -501,6 +515,7 @@ export declare const HyperdriveDeployerCoordinator: {
         readonly "target1Deployer()": "a085fa30";
         readonly "target2Deployer()": "b6cb1118";
         readonly "target3Deployer()": "aa8cd6c4";
+        readonly "target4Deployer()": "966ecd1c";
         readonly "version()": "54fd4d50";
     };
 };

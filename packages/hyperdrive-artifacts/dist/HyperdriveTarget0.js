@@ -103,6 +103,44 @@ export const HyperdriveTarget0 = {
         },
         {
             "type": "function",
+            "name": "convertToBase",
+            "inputs": [
+                {
+                    "name": "_shareAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "convertToShares",
+            "inputs": [
+                {
+                    "name": "_baseAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "decimals",
             "inputs": [],
             "outputs": [
@@ -1814,6 +1852,8 @@ export const HyperdriveTarget0 = {
         "baseToken()": "c55dae63",
         "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc",
         "collectGovernanceFee((address,bool,bytes))": "3e691db9",
+        "convertToBase(uint256)": "b88fed9f",
+        "convertToShares(uint256)": "c6e6f592",
         "decimals()": "313ce567",
         "getCheckpoint(uint256)": "20fc4881",
         "getCheckpointExposure(uint256)": "cf210e65",

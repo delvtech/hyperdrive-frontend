@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-artifacts",
-  "version": "0.4.0",
+  "version": "1.0.16",
   "license": "AGPL-3.0",
   "type": "module",
   "files": [
@@ -18,9 +18,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build:src": "sh scripts/build_src.sh v1.0.12",
-    "build:dist": "npm run build:src && tsc --build --force",
-    "build:new": "rm -rf src && npm run build:dist"
+    "clone-and-build": "sh scripts/build.sh v1.0.16"
   },
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",

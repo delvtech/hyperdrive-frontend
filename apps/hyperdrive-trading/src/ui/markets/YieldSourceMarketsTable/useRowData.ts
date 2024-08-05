@@ -41,7 +41,7 @@ export function useRowData(
                   yieldSourceTokenAddress: hyperdrive.sharesToken,
                   tokens: appConfig.tokens,
                 });
-                const readHyperdrive = getReadHyperdrive({
+                const readHyperdrive = await getReadHyperdrive({
                   hyperdriveAddress: hyperdrive.address,
                   publicClient,
                   sharesToken,

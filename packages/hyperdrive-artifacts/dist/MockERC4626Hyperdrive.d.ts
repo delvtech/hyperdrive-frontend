@@ -107,6 +107,10 @@ export declare const MockERC4626Hyperdrive: {
             readonly name: "_target3";
             readonly type: "address";
             readonly internalType: "address";
+        }, {
+            readonly name: "_target4";
+            readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly stateMutability: "nonpayable";
     }, {
@@ -755,6 +759,16 @@ export declare const MockERC4626Hyperdrive: {
     }, {
         readonly type: "function";
         readonly name: "target3";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "target4";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
             readonly name: "";
@@ -1498,6 +1512,7 @@ export declare const MockERC4626Hyperdrive: {
         readonly "target1()": "eac3e799";
         readonly "target2()": "a6e8a859";
         readonly "target3()": "d899e112";
+        readonly "target4()": "f3f70707";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";
         readonly "withdraw(uint256,uint256,(address,bool,bytes))": "a3144531";

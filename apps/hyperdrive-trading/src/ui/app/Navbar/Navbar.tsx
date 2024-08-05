@@ -2,11 +2,11 @@ import {
   ArrowTopRightOnSquareIcon,
   ChartBarIcon,
 } from "@heroicons/react/16/solid";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
-import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { sepolia } from "viem/chains";
@@ -43,7 +43,7 @@ export function Navbar(): ReactElement {
         {import.meta.env.DEV && !isTailwindSmallScreen ? (
           <DevtoolsMenu />
         ) : null}
-        <ConnectWalletButton />
+        <ConnectButton showBalance={false} />
       </div>
     </div>
   );

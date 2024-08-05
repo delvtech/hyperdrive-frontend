@@ -3,7 +3,7 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
 export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
@@ -29,14 +29,14 @@ export function readErc4626HyperdriveMixin<
   return class extends Base {
     constructor(...[options]: any[]) {
       const {
-        name = "ERC-4626 Hyperdrive",
+        debugName = "ERC-4626 Hyperdrive",
         address,
         contractFactory,
         network,
         cache,
         namespace,
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, name, namespace });
+      super({ address, contractFactory, network, cache, debugName, namespace });
     }
 
     async getSharesToken(options?: ContractReadOptions): Promise<ReadErc4626> {

@@ -47,7 +47,7 @@ export async function getStethHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdrive.address,
-    version,
+    version: version.string,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseTokenConfig.address,

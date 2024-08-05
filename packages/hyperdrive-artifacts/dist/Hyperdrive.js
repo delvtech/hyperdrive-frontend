@@ -792,6 +792,19 @@ export const Hyperdrive = {
         },
         {
             "type": "function",
+            "name": "target4",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "transferFrom",
             "inputs": [
                 {
@@ -1608,6 +1621,7 @@ export const Hyperdrive = {
         "target1()": "eac3e799",
         "target2()": "a6e8a859",
         "target3()": "d899e112",
+        "target4()": "f3f70707",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
     }

@@ -1,8 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  adjustAmountByPercentage,
-  getCheckpointTime,
-} from "@delvtech/hyperdrive-js-core";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   HyperdriveConfig,
   findBaseToken,
@@ -24,6 +21,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
+import { useCheckpointTime } from "src/ui/hyperdrive/hooks/useCheckpointTime";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -157,18 +155,16 @@ export function OpenShortForm({
 
   // Fetch current block data
   const { data: currentBlockData } = useBlock();
-
-  // Calculate checkpoint time
-  const checkpointTime = getCheckpointTime(
-    currentBlockData?.timestamp || 0n,
-    hyperdrive.poolConfig.checkpointDuration,
-  );
+  const { checkpointTime } = useCheckpointTime({
+    hyperdrive,
+    timestamp: currentBlockData?.timestamp || 0n,
+  });
 
   // Fetch accrued yield
   const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
     hyperdrive,
     bondAmount: amountOfBondsToShortAsBigInt || 0n,
-    checkpointTime,
+    checkpointTime: checkpointTime || 0n,
   });
 
   // Calculate backpaid interest

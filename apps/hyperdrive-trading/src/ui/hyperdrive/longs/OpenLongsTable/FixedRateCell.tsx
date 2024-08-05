@@ -53,7 +53,7 @@ export function FixedRateCell({
       )}
     >
       <span className="daisy-stat-value text-md font-bold">
-        {formatRate(fixedRate)}%
+        {formatRate(fixedRate)}
       </span>
       <div
         data-tip={"Yield after fees if held to maturity"}

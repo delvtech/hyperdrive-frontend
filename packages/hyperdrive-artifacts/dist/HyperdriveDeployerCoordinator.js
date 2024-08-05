@@ -344,6 +344,11 @@ export const HyperdriveDeployerCoordinator = {
                             "name": "target3",
                             "type": "address",
                             "internalType": "address"
+                        },
+                        {
+                            "name": "target4",
+                            "type": "address",
+                            "internalType": "address"
                         }
                     ]
                 }
@@ -512,6 +517,19 @@ export const HyperdriveDeployerCoordinator = {
         },
         {
             "type": "function",
+            "name": "target4Deployer",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "version",
             "inputs": [],
             "outputs": [
@@ -639,6 +657,7 @@ export const HyperdriveDeployerCoordinator = {
         "target1Deployer()": "a085fa30",
         "target2Deployer()": "b6cb1118",
         "target3Deployer()": "aa8cd6c4",
+        "target4Deployer()": "966ecd1c",
         "version()": "54fd4d50"
     }
 };

@@ -19,7 +19,7 @@ export class ReadWriteEth extends ReadEth implements ReadWriteToken {
    */
   async approve(): Promise<`0x${string}`> {
     throw new MethodNotImplementedError({
-      objectName: this.name,
+      objectName: this.debugName,
       methodName: "approve",
     });
   }

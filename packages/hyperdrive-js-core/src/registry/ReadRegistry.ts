@@ -1,7 +1,7 @@
 import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import { ReadFactory } from "src/factory/ReadFactory";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { RegistryAbi, registryAbi } from "src/registry/abi";
 import {
@@ -16,14 +16,14 @@ export class ReadRegistry extends ReadModel {
   contract: CachedReadContract<RegistryAbi>;
 
   constructor({
-    name = "Hyperdrive Registry",
+    debugName = "Hyperdrive Registry",
     address,
     contractFactory,
     network,
     cache,
     namespace,
   }: ReadRegistryOptions) {
-    super({ name, network, contractFactory });
+    super({ debugName, network, contractFactory });
     this.address = address;
     this.contract = contractFactory({
       abi: registryAbi,
