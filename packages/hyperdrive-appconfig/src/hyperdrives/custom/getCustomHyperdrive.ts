@@ -6,35 +6,35 @@ import {
   TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { YieldSource, yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources/extensions";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
 
 interface GetHyperdriveConfigParams {
   hyperdrive: ReadHyperdrive;
-  sharesTokenExtensions: YieldSource;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
   yieldSource: keyof typeof yieldSources;
   depositOptions: DepositOptions;
   withdrawalOptions: WithdrawalOptions;
   tokenPlaces: number;
-  tags?: string[];
+  sharesTokenTags?: string[];
+  baseTokenTags?: string[];
 }
 
 export async function getCustomHyperdrive({
   hyperdrive,
-  sharesTokenExtensions,
   baseTokenIconUrl,
   yieldSource,
   sharesTokenIconUrl,
   depositOptions,
   withdrawalOptions,
   tokenPlaces,
-  tags = [],
+  sharesTokenTags = [],
+  baseTokenTags = [],
 }: GetHyperdriveConfigParams): Promise<{
-  sharesToken: TokenConfig<YieldSource>;
+  sharesToken: TokenConfig<EmptyExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
@@ -43,8 +43,8 @@ export async function getCustomHyperdrive({
   const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
-    tags: ["yieldSource", ...tags],
-    extensions: sharesTokenExtensions,
+    tags: sharesTokenTags,
+    extensions: {},
     iconUrl: sharesTokenIconUrl,
     places: tokenPlaces,
   });
@@ -53,7 +53,7 @@ export async function getCustomHyperdrive({
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
     extensions: {},
-    tags: [],
+    tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: tokenPlaces,
   });
@@ -61,7 +61,7 @@ export async function getCustomHyperdrive({
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
+    yieldSourceShortName: yieldSources[yieldSource].shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {

@@ -1,12 +1,6 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   chainId: 11155111,
-  tags: [
-    {
-      id: "yieldSource",
-      description: "A hyperdrive market's yield source",
-    },
-  ],
   tokens: [
     {
       address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
@@ -16,7 +10,7 @@ export const sepoliaAppConfig: AppConfig = {
       symbol: "DAI",
       iconUrl:
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: [],
+      tags: ["stablecoin"],
       extensions: {},
     },
     {
@@ -26,13 +20,8 @@ export const sepoliaAppConfig: AppConfig = {
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
       iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
-      tags: ["yieldSource", "steth"],
-      extensions: {
-        id: "lidoSteth",
-        shortName: "Lido stETH",
-        protocol: "lido",
-        isSharesPeggedToBase: true,
-      },
+      tags: ["liquidStakingToken"],
+      extensions: {},
     },
     {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -52,13 +41,8 @@ export const sepoliaAppConfig: AppConfig = {
       symbol: "ezETH",
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMiIgdmlld0JveD0iMCAwIDIwMCAyMDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTk4LjM2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyKSIgZmlsbD0iIzA4MEIxQiIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9kZF83N180MykiPgo8cGF0aCBkPSJNMTAwLjExMSA0NC4xMjA0TDk5LjM0ODMgNDYuNzEzMUw5OS4zNDgzIDEyMS45NDFMMTAwLjExMSAxMjIuNzAyTDEzNC45NzggMTAyLjA2MUwxMDAuMTExIDQ0LjEyMDRaIiBmaWxsPSIjNkI2QjZCIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDQ0LjEyMDRMNjUuMjQxNyAxMDIuMDYxTDEwMC4xMTEgMTIyLjcwMkwxMDAuMTExIDg2LjE4ODlMMTAwLjExMSA0NC4xMjA0WiIgZmlsbD0iI0EyQTJBMiIvPgo8cGF0aCBkPSJNMTAwLjExMSAxMjkuMzE0TDk5LjY4MDkgMTI5LjgzOEw5OS42ODA5IDE1Ni42MzZMMTAwLjExMSAxNTcuODkyTDEzNSAxMDguNjgzTDEwMC4xMTEgMTI5LjMxNFoiIGZpbGw9IiM0RjRFNEUiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTU3Ljg5MkwxMDAuMTExIDEyOS4zMTRMNjUuMjQxNyAxMDguNjgzTDEwMC4xMTEgMTU3Ljg5MloiIGZpbGw9IiNBMkEyQTIiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExMSA4Ni4xODg5TDEwMC4xMTEgMTIyLjcwMloiIGZpbGw9IiM3OTc5NzkiLz4KPHBhdGggZD0iTTY1LjI0MTcgMTAyLjA2MUwxMDAuMTExIDEyMi43MDJMMTAwLjExMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNENEQ0RDQiLz4KPGcgc3R5bGU9Im1peC1ibGVuZC1tb2RlOm92ZXJsYXkiPgo8cGF0aCBkPSJNMTAwLjExIDQ0LjEyMDRMOTkuMzQ4MyA0Ni43MTMxTDk5LjM0ODMgMTIxLjk0MUwxMDAuMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTEgNDQuMTIwNEw2NS4yNDE3IDEwMi4wNjFMMTAwLjExIDEyMi43MDJMMTAwLjExIDg2LjE4ODlMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDEyOS4zMTRMOTkuNjgwOSAxMjkuODM4TDk5LjY4MDkgMTU2LjYzNkwxMDAuMTExIDE1Ny44OTJMMTM1IDEwOC42ODNMMTAwLjExMSAxMjkuMzE0WiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExMSAxNTcuODkyTDEwMC4xMTEgMTI5LjMxNEw2NS4yNDE3IDEwOC42ODNMMTAwLjExMSAxNTcuODkyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExIDEyMi43MDJMMTM0Ljk3OCAxMDIuMDYxTDEwMC4xMSA4Ni4xODg5TDEwMC4xMSAxMjIuNzAyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNNjUuMjQxNyAxMDIuMDYxTDEwMC4xMSAxMjIuNzAyTDEwMC4xMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNBQ0U3MzAiLz4KPC9nPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RkXzc3XzQzIiB4PSIyMS4yMTMxIiB5PSIwLjA5MTgwMDciIHdpZHRoPSIxNTcuODE1IiBoZWlnaHQ9IjIwMS44MjgiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEwLjY3MjUiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0ib3V0Ii8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuNjc0NTEgMCAwIDAgMCAwLjkwNTg4MiAwIDAgMCAwIDAuMTg4MjM1IDAgMCAwIDAuNSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93Xzc3XzQzIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMi4wMTQzIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9Im91dCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjY3NDUxIDAgMCAwIDAgMC45MDU4ODIgMCAwIDAgMCAwLjE4ODIzNSAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd183N180MyIgcmVzdWx0PSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiIHJlc3VsdD0ic2hhcGUiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg==",
-      tags: ["yieldSource", "ezeth"],
-      extensions: {
-        id: "ezEth",
-        shortName: "Renzo ezETH",
-        protocol: "renzo",
-        isSharesPeggedToBase: false,
-      },
+      tags: ["liquidStakingToken"],
+      extensions: {},
     },
     {
       address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
@@ -68,13 +52,8 @@ export const sepoliaAppConfig: AppConfig = {
       symbol: "RETH",
       iconUrl:
         "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["yieldSource", "reth"],
-      extensions: {
-        id: "reth",
-        shortName: "Rocket Pool ETH",
-        protocol: "rocketPool",
-        isSharesPeggedToBase: false,
-      },
+      tags: ["liquidStakingToken"],
+      extensions: {},
     },
     {
       address: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
@@ -83,13 +62,8 @@ export const sepoliaAppConfig: AppConfig = {
       name: "Savings DAI",
       symbol: "SDAI",
       iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: ["yieldSource", "erc4626"],
-      extensions: {
-        id: "makerDsr",
-        shortName: "Maker DSR",
-        protocol: "maker",
-        isSharesPeggedToBase: false,
-      },
+      tags: [],
+      extensions: {},
     },
   ],
   registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",

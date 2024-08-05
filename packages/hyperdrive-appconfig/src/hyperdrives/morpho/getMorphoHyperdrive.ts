@@ -23,7 +23,7 @@ export async function getMorphoHyperdrive({
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
     extensions: {},
-    tags: [],
+    tags: ["stablecoin"],
     iconUrl: DAI_ICON_URL,
     places: 2,
   });
