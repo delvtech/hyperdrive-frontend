@@ -12,7 +12,9 @@ import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { LpRewardsTooltip } from "src/ui/rewards/components/LpRewardsTooltip";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
+
 export function YieldStats({
   hyperdrive,
 }: {
@@ -37,7 +39,9 @@ export function YieldStats({
             <YieldSourceRateBadge
               hyperdriveAddress={hyperdrive.address}
               labelRenderer={(vaultRate) =>
-                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} APY`
+                `${sharesToken.extensions.shortName} @ ${
+                  vaultRate.formatted || 0
+                } APY`
               }
             />
           </div>
@@ -59,27 +63,33 @@ export function YieldStats({
             <Stat
               label="LP APY (7d)"
               value={
-                lpApyStatus !== "loading" ? (
-                  <span
-                    className={classNames("flex items-center gap-1.5", {
-                      "gradient-text": position === "lp",
-                    })}
-                  >
-                    {lpApy === undefined ? (
-                      <span className="flex flex-row">
-                        <SparklesIcon
-                          width={24}
-                          className="fill-base-content stroke-none"
-                        />
-                        New
-                      </span>
-                    ) : (
-                      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
-                    )}{" "}
-                  </span>
-                ) : (
-                  <Skeleton className="w-20" />
-                )
+                <LpRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+                  {lpApyStatus !== "loading" ? (
+                    <span
+                      className={classNames("gap-1-5 flex items-center", {
+                        "gradient-text": position === "lp",
+                      })}
+                    >
+                      {lpApy === undefined ? (
+                        <span className="flex flex-row">
+                          <SparklesIcon
+                            width={24}
+                            className="fill-base-content stroke-none"
+                          />
+                          New
+                        </span>
+                      ) : (
+                        `${
+                          (lpApy * 100).toFixed(2) === "-0.00"
+                            ? "0.00"
+                            : (lpApy * 100).toFixed(2)
+                        }%`
+                      )}{" "}
+                    </span>
+                  ) : (
+                    <Skeleton className="w-20" />
+                  )}
+                </LpRewardsTooltip>
               }
               description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
               tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}

@@ -5,6 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
+import { ShortRewardsTooltip } from "src/ui/rewards/components/ShortRewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
@@ -16,7 +17,7 @@ export function ShortRateStat({
 }): ReactElement {
   const [rateType, setRateType] = useLocalStorage<"shortApr" | "shortRoi">(
     "yield-stats-short-rate-type",
-    "shortApr",
+    "shortApr"
   );
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
@@ -54,9 +55,11 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <span className={rateClassName}>
-              {shortApr?.formatted ? `${shortApr.formatted}` : "-"}
-            </span>
+            <ShortRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+              <span className={rateClassName}>
+                {shortApr?.formatted ? `${shortApr.formatted}` : "-"}
+              </span>
+            </ShortRewardsTooltip>
           ),
         },
         {
@@ -68,9 +71,11 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <span className={rateClassName}>
-              {shortRoi?.formatted ? `${shortRoi.formatted}` : "-"}
-            </span>
+            <ShortRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+              <span className={rateClassName}>
+                {shortRoi?.formatted ? `${shortRoi.formatted}` : "-"}
+              </span>
+            </ShortRewardsTooltip>
           ),
         },
       ]}
