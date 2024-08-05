@@ -8,7 +8,6 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -153,7 +152,6 @@ export function OpenShortForm({
   });
 
   const { data: currentBlockData } = useBlock();
-  // console.log(currentBlockData, "currentBlockData");
   const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
     hyperdrive,
     bondAmount: amountOfBondsToShortAsBigInt || 0n,
@@ -165,168 +163,39 @@ export function OpenShortForm({
 
   const backpaidInterest =
     accruedYieldStatus === "success" ? accruedYield || 0n : 0n;
-  const baseAmount = (traderDeposit || 0n) - backpaidInterest;
-  // console.log(
-  //   "baseAmount",
-  //   formatBalance({ balance: baseAmount, decimals: 18 }),
-  // );
-  // const solvedShortAprFromDeposit = fixed(baseAmount, 18).div(
-  //   amountOfBondsToShortAsBigInt || 0n,
-  //   18,
-  // );
 
-  const bondsMinusBase = dnum.sub(
-    [amountOfBondsToShortAsBigInt || 0n, 18],
-    [baseAmount, 18],
-  )[0];
+  const baseAmount =
+    openShortPreviewStatus === "success"
+      ? (traderDeposit || 0n) - backpaidInterest || 0n
+      : 1n;
 
-  const baseDividedByBondsMinusBase = dnum.divide(
-    [baseAmount || 1n, 18],
-    [bondsMinusBase || 1n, 18],
-  );
-  // console.log(
-  //   "baseDividedByBondsMinusBase",
-  //   formatBalance({
-  //     balance: baseDividedByBondsMinusBase,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  // );
+  const bondsMinusBase = amountOfBondsToShortAsBigInt || 0n - baseAmount || 0n;
 
-  // const baseDividedByBondsMinusBase = fixed(baseAmount || 1n, 18).div(
-  //   bondsMinusBase || 1n,
-  //   18,
-  // ).bigint;
-  // const baseDividedByBondsMinusBase = dnum.divide(
-  //   [baseAmount, 18],
-  //   bondsMinusBase || 1n,
-  // )[0];
+  const baseDividedByBondsMinusBase = amountOfBondsToShortAsBigInt
+    ? fixed(baseAmount, baseToken.decimals).div(
+        bondsMinusBase,
+        baseToken.decimals,
+      )
+    : fixed(0n, baseToken.decimals);
 
-  // const timeRange = currentBlock.timestamp - startBlock.timestamp; // bigint
-
-  // Convert values to Fixed type, to perform fixed point math
   const fixedTimeRange = fixed(
     hyperdrive.poolConfig.positionDuration * BigInt(1e18),
   );
   const fixedYear = fixed(BigInt(31536000n) * BigInt(1e18));
   const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
 
-  const baseDividedByBondsMinusBaseScaled = dnum.divide(
-    baseDividedByBondsMinusBase,
-    [fixedTimeRangeInYears.bigint, 18],
+  const baseDividedByBondsMinusBaseScaled = baseDividedByBondsMinusBase.div(
+    fixedTimeRangeInYears,
   );
-
-  // console.log(
-  //   formatBalance({
-  //     balance: baseDividedByBondsMinusBase[0] || 0n,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  //   "baseDividedByBondsMinusBase",
-  // );
-  // console.log(
-  //   fixedTimeRangeInYears.format({ decimals: 18 }),
-  //   "fixedTimeRangeInYears",
-  // );
 
   console.log(
     "baseDividedByBondsMinusBaseScaled",
     formatBalance({
-      balance: baseDividedByBondsMinusBaseScaled[0],
+      balance: baseDividedByBondsMinusBaseScaled.bigint,
       decimals: 18,
       places: 10,
     }),
   );
-  // console.log(
-  //   formatBalance({ balance: baseAmount, decimals: 18, places: 10 }),
-  //   "baseAmount",
-  // );
-  // console.log(
-  //   formatBalance({ balance: bondsMinusBase, decimals: 18, places: 10 }),
-  //   "bondsMinusBase",
-  // );
-
-  // console.log(
-  //   formatBalance({
-  //     balance: baseDividedByBondsMinusBase,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  //   "baseDividedByBondsMinusBase",
-  // ); //
-
-  // console.log(baseAmountMinusBonds, "baseAmountMinusBonds");
-
-  // const shortAprFromDeposit = baseDividedByBondsMinusBase
-  //   ? baseDividedByBondsMinusBase - baseAmount
-  //   : 0n;
-
-  // console.log(shortAprFromDeposit, "shortAprFromDeposit");
-  // console.log(
-  //   formatBalance({
-  //     balance: shortAprFromDeposit || 0n,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  //   "shortAprFromDeposit",
-  // );
-
-  // console.log(
-  //   formatBalance({
-  //     balance: baseAmount || 0n,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  //   "baseAmount",
-  // );
-  // console.log(
-  //   formatBalance({
-  //     balance: amountOfBondsToShortAsBigInt || 0n,
-  //     decimals: 18,
-  //     places: 10,
-  //   }),
-  //   "amountOfBondsToShortAsBigInt",
-  // );
-
-  // console.log(
-  //   formatBalance({
-  //     balance: traderDeposit || 0n,
-  //     decimals: baseToken.decimals,
-  //     includeCommas: true,
-  //     places: baseToken.places,
-  //   }),
-  //   "tradeDeposit",
-  // );
-
-  // console.log(
-  //   fixed(shortAprFromDeposit || 0n).format({ decimals: 18 }),
-  //   "shortAprFromDeposit",
-  // );
-
-  // console.log(amountOfBondsToShortAsBigInt, "amountOfBondsToShortAsBigInt");
-
-  // const baseAmount = fixed(amountOfBondsToShortAsBigInt || 0n).min(
-  //   backpaidInterest || 0n,
-  // );
-  // // .format({ decimals: baseToken.decimals });
-  // const bondAmountMinusBaseAmount = fixed(
-  //   amountOfBondsToShortAsBigInt || 0n,
-  // ).min(baseAmount || 0n);
-
-  // console.log(baseAmount, "baseAmount");
-
-  // console.log(
-  //   amountOfBondsToShortAsBigInt - baseAmount,
-  //   "bondAmountMinusBaseAmount",
-  // );
-  // const shortAprFromDeposit = fixed(bondAmountMinusBaseAmount, 18).div(
-  //   baseAmount,
-  //   18,
-  // );
-  // console.log(shortAprFromDeposit, "shortAprFromDeposit");
-
-  // TODO: I think I need to trigger the above usePreviewOpenShort to handle the other input here.
-
   const hasEnoughBalance = getHasEnoughBalance({
     amount: traderDeposit,
     balance: activeTokenBalance?.value,
