@@ -33,6 +33,10 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
       input: { surface: { default: "#141414" } },
     },
   },
+  onRampConfig: {
+    asset: "ETH",
+    providers: [{ id: "STRIPE" }],
+  },
   appName: "Hyperdrive",
   logo: "/capsule-wordmark.png",
   oAuthMethods: [
