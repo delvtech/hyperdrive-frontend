@@ -1,10 +1,14 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
+import {
+  adjustAmountByPercentage,
+  getCheckpointTime,
+} from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -37,7 +41,7 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount, useBlock, useChainId } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -148,38 +152,124 @@ export function OpenShortForm({
     asBase: activeToken.address === baseToken.address,
   });
 
+  const { data: currentBlockData } = useBlock();
+  // console.log(currentBlockData, "currentBlockData");
   const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
     hyperdrive,
     bondAmount: amountOfBondsToShortAsBigInt || 0n,
-    checkpointTime: BigInt(Date.now()) / 1000n,
+    checkpointTime: getCheckpointTime(
+      currentBlockData?.timestamp || 0n,
+      hyperdrive.poolConfig.checkpointDuration,
+    ),
   });
 
   const backpaidInterest =
-    accruedYieldStatus === "success"
-      ? (accruedYield || 0n) - (amountOfBondsToShortAsBigInt || 0n)
-      : 0n;
-  const baseAmount = (amountOfBondsToShortAsBigInt || 0n) - backpaidInterest;
-  const shortAprFromDeposit =
-    baseAmount !== 0n
-      ? (amountOfBondsToShortAsBigInt || 0n) - baseAmount / baseAmount
-      : 0n;
+    accruedYieldStatus === "success" ? accruedYield || 0n : 0n;
+  const baseAmount = (traderDeposit || 0n) - backpaidInterest;
+  // console.log(
+  //   "baseAmount",
+  //   formatBalance({ balance: baseAmount, decimals: 18 }),
+  // );
+  // const solvedShortAprFromDeposit = fixed(baseAmount, 18).div(
+  //   amountOfBondsToShortAsBigInt || 0n,
+  //   18,
+  // );
+
+  const bondsMinusBase = dnum.sub(
+    [amountOfBondsToShortAsBigInt || 0n, 18],
+    [baseAmount, 18],
+  )[0];
+
+  const baseDividedByBondsMinusBase = dnum.divide(
+    [baseAmount || 1n, 18],
+    [bondsMinusBase || 1n, 18],
+  )[0];
+  console.log(
+    "baseDividedByBondsMinusBase",
+    formatBalance({
+      balance: baseDividedByBondsMinusBase,
+      decimals: 18,
+      places: 10,
+    }),
+  );
+
+  // const baseDividedByBondsMinusBase = fixed(baseAmount || 1n, 18).div(
+  //   bondsMinusBase || 1n,
+  //   18,
+  // ).bigint;
+  // const baseDividedByBondsMinusBase = dnum.divide(
+  //   [baseAmount, 18],
+  //   bondsMinusBase || 1n,
+  // )[0];
+
+  // const timeRange = currentBlock.timestamp - startBlock.timestamp; // bigint
+
+  // Convert values to Fixed type, to perform fixed point math
+  const fixedTimeRange = fixed(
+    hyperdrive.poolConfig.positionDuration * BigInt(1e18),
+  );
+  const fixedYear = fixed(BigInt(31536000n) * BigInt(1e18));
+  const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
+
+  // console.log(
+  //   formatBalance({ balance: baseAmount, decimals: 18, places: 10 }),
+  //   "baseAmount",
+  // );
+  // console.log(
+  //   formatBalance({ balance: bondsMinusBase, decimals: 18, places: 10 }),
+  //   "bondsMinusBase",
+  // );
+
   // console.log(
   //   formatBalance({
-  //     balance: baseAmount,
-  //     decimals: baseToken.decimals,
-  //     includeCommas: true,
-  //     places: baseToken.places,
+  //     balance: baseDividedByBondsMinusBase,
+  //     decimals: 18,
+  //     places: 10,
+  //   }),
+  //   "baseDividedByBondsMinusBase",
+  // ); //
+
+  // console.log(baseAmountMinusBonds, "baseAmountMinusBonds");
+
+  // const shortAprFromDeposit = baseDividedByBondsMinusBase
+  //   ? baseDividedByBondsMinusBase - baseAmount
+  //   : 0n;
+
+  // console.log(shortAprFromDeposit, "shortAprFromDeposit");
+  // console.log(
+  //   formatBalance({
+  //     balance: shortAprFromDeposit || 0n,
+  //     decimals: 18,
+  //     places: 10,
+  //   }),
+  //   "shortAprFromDeposit",
+  // );
+
+  // console.log(
+  //   formatBalance({
+  //     balance: baseAmount || 0n,
+  //     decimals: 18,
+  //     places: 10,
   //   }),
   //   "baseAmount",
   // );
   // console.log(
   //   formatBalance({
-  //     balance: backpaidInterest,
+  //     balance: amountOfBondsToShortAsBigInt || 0n,
+  //     decimals: 18,
+  //     places: 10,
+  //   }),
+  //   "amountOfBondsToShortAsBigInt",
+  // );
+
+  // console.log(
+  //   formatBalance({
+  //     balance: traderDeposit || 0n,
   //     decimals: baseToken.decimals,
   //     includeCommas: true,
   //     places: baseToken.places,
   //   }),
-  //   "backpaidInterest",
+  //   "tradeDeposit",
   // );
 
   // console.log(
