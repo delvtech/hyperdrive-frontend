@@ -4,14 +4,14 @@ import {
   getCheckpointTime,
 } from "@delvtech/hyperdrive-js-core";
 import {
+  HyperdriveConfig,
   findBaseToken,
   findYieldSourceToken,
-  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -22,22 +22,23 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
-import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
 import { useAccount, useBlock, useChainId } from "wagmi";
@@ -71,6 +72,9 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
+  const { longPrice, longPriceStatus } = useCurrentLongPrice(
+    hyperdrive.address,
+  );
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
@@ -151,26 +155,36 @@ export function OpenShortForm({
     asBase: activeToken.address === baseToken.address,
   });
 
+  // Fetch current block data
   const { data: currentBlockData } = useBlock();
+
+  // Calculate checkpoint time
+  const checkpointTime = getCheckpointTime(
+    currentBlockData?.timestamp || 0n,
+    hyperdrive.poolConfig.checkpointDuration,
+  );
+
+  // Fetch accrued yield
   const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
     hyperdrive,
     bondAmount: amountOfBondsToShortAsBigInt || 0n,
-    checkpointTime: getCheckpointTime(
-      currentBlockData?.timestamp || 0n,
-      hyperdrive.poolConfig.checkpointDuration,
-    ),
+    checkpointTime,
   });
 
+  // Calculate backpaid interest
   const backpaidInterest =
     accruedYieldStatus === "success" ? accruedYield || 0n : 0n;
 
+  // Calculate base amount
   const baseAmount =
     openShortPreviewStatus === "success"
       ? (traderDeposit || 0n) - backpaidInterest || 0n
       : 1n;
 
-  const bondsMinusBase = amountOfBondsToShortAsBigInt || 0n - baseAmount || 0n;
+  // Calculate bonds minus base
+  const bondsMinusBase = (amountOfBondsToShortAsBigInt || 0n) - baseAmount;
 
+  // Calculate base divided by bonds minus base
   const baseDividedByBondsMinusBase = amountOfBondsToShortAsBigInt
     ? fixed(baseAmount, baseToken.decimals).div(
         bondsMinusBase,
@@ -178,24 +192,20 @@ export function OpenShortForm({
       )
     : fixed(0n, baseToken.decimals);
 
+  // Calculate fixed time range and fixed year
   const fixedTimeRange = fixed(
     hyperdrive.poolConfig.positionDuration * BigInt(1e18),
   );
   const fixedYear = fixed(BigInt(31536000n) * BigInt(1e18));
+
+  // Calculate fixed time range in years
   const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
 
+  // Calculate base divided by bonds minus base scaled
   const baseDividedByBondsMinusBaseScaled = baseDividedByBondsMinusBase.div(
     fixedTimeRangeInYears,
   );
 
-  console.log(
-    "baseDividedByBondsMinusBaseScaled",
-    formatBalance({
-      balance: baseDividedByBondsMinusBaseScaled.bigint,
-      decimals: 18,
-      places: 10,
-    }),
-  );
   const hasEnoughBalance = getHasEnoughBalance({
     amount: traderDeposit,
     balance: activeTokenBalance?.value,
@@ -382,7 +392,6 @@ export function OpenShortForm({
             }
             maxValue={maxButtonValue}
             onChange={(newAmount) => {
-              console.log("newAmount", newAmount);
               setActiveInput("budget");
               setPaymentAmount(newAmount);
             }}
@@ -438,6 +447,31 @@ export function OpenShortForm({
               )
             }
           />
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <PrimaryStat
+            label="Rate you pay"
+            value={formatRate(
+              baseDividedByBondsMinusBaseScaled.bigint,
+              baseToken.decimals,
+            )}
+            valueClassName="flex items-end font-bold text-h5"
+            valueUnit="APR"
+            subValue={
+              vaultRateStatus === "loading" && !vaultRate ? (
+                <Skeleton className="w-42 h-8" />
+              ) : (
+                <>
+                  1 hy{baseToken.symbol} ≈{" "}
+                  {formatBalance({
+                    balance: longPrice ?? 0n,
+                    decimals: baseToken.decimals,
+                    places: baseToken.places,
+                  })}{" "}
+                  {baseToken.symbol}
+                </>
+              )
+            }
+          />
         </div>
       }
       transactionPreview={
@@ -479,48 +513,6 @@ export function OpenShortForm({
                 Insufficient balance
               </p>
             ) : null}
-            <p className="text-center text-sm text-neutral-content">
-              You pay{" "}
-              <strong>
-                {openShortPreviewStatus === "loading" ? (
-                  <span className="inline-block">
-                    <Skeleton width={50} />
-                  </span>
-                ) : (
-                  formatBalance({
-                    balance: traderDeposit || 0n,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })
-                )}{" "}
-                {activeToken.symbol}
-              </strong>{" "}
-              in exchange for the yield on{" "}
-              <strong>
-                {openShortPreviewStatus === "loading" ? (
-                  <span className="inline-block">
-                    <Skeleton width={50} />
-                  </span>
-                ) : (
-                  formatBalance({
-                    balance: amountOfBondsToShortAsBigInt,
-                    decimals: activeToken.decimals,
-                    includeCommas: true,
-                    places: activeToken.places,
-                  })
-                )}{" "}
-                {baseToken.symbol}
-              </strong>{" "}
-              deposited into <strong>{sharesToken.extensions.shortName}</strong>{" "}
-              for{" "}
-              <strong>
-                {convertMillisecondsToDays(
-                  Number(hyperdrive.poolConfig.positionDuration * 1000n),
-                )}{" "}
-                days.
-              </strong>{" "}
-            </p>
             {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
               <p className="text-center text-sm text-neutral-content">
                 {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
