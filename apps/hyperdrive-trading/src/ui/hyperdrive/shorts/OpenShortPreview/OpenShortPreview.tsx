@@ -61,18 +61,20 @@ export function OpenShortPreview({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   return (
-    <div className="flex flex-col gap-3.5 px-2">
+    <div tabIndex={0} className="flex flex-col gap-3.5 px-2">
       <CollapseSection
         heading={
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
             <div className="flex items-center gap-1">
+              <ClockIcon className="size-5 text-gray-500" />
+              <p>{formatDate(Date.now() + termLengthMS)}</p>
               <ChevronDownIcon className="ml-1 size-6" />
             </div>
           </div>
         }
       >
-        <LabelValue
+        {/* <LabelValue
           label="Maturity"
           size="small"
           value={
@@ -81,12 +83,9 @@ export function OpenShortPreview({
               <p>{formatDate(Date.now() + termLengthMS)}</p>
             </div>
           }
-        />
+        /> */}
         <LabelValue
           label="Pool fee"
-          tooltipContent="Total combined fee paid to LPs and governance to open the short."
-          tooltipPosition="right"
-          tooltipSize="small"
           size="small"
           value={
             openShortPreviewStatus === "loading" ? (
@@ -176,145 +175,6 @@ export function OpenShortPreview({
       </CollapseSection>
     </div>
   );
-
-  // return (
-  //   <div className="flex flex-col gap-3 px-2">
-  //     <LabelValue
-  //       label="You pay"
-  //       value={
-  //         openShortPreviewStatus === "loading" ? (
-  //           <Skeleton width={100} />
-  //         ) : (
-  //           <span
-  //             className={classNames({
-  //               "text-base-content/80": !costBasis,
-  //             })}
-  //           >
-  //             {costBasis
-  //               ? `${formatBalance({
-  //                   balance: costBasis,
-  //                   decimals: tokenIn.decimals,
-  //                   places: tokenIn.places,
-  //                 })} ${tokenIn.symbol}`
-  //               : `0 ${tokenIn.symbol}`}
-  //           </span>
-  //         )
-  //       }
-  //     />
-  //     <LabelValue
-  //       label="Short size"
-  //       tooltipContent="The amount of pool liquidity deposited into the yield source."
-  //       tooltipPosition="right"
-  //       tooltipSize="small"
-  //       value={
-  //         <span
-  //           className={classNames({
-  //             "text-base-content/80": !shortSize,
-  //           })}
-  //         >
-  //           {shortSize
-  //             ? `${formatBalance({
-  //                 balance: shortSize,
-  //                 decimals: baseToken.decimals,
-  //                 places: baseToken.places,
-  //               })} hy${baseToken.symbol}`
-  //             : `0 hy${baseToken.symbol}`}
-  //         </span>
-  //       }
-  //     />
-  //     <LabelValue
-  //       label="Pool fee"
-  //       tooltipContent="Total combined fee paid to LPs and governance to open the short."
-  //       tooltipPosition="right"
-  //       tooltipSize="small"
-  //       value={
-  //         openShortPreviewStatus === "loading" ? (
-  //           <Skeleton width={100} />
-  //         ) : (
-  //           <span
-  //             className={classNames({
-  //               "text-base-content/80": !shortSize,
-  //             })}
-  //           >
-  //             {curveFee
-  //               ? `${formatBalance({
-  //                   balance: curveFee,
-  //                   decimals: tokenIn.decimals,
-  //                   places: tokenIn.places,
-  //                 })} ${tokenIn.symbol}`
-  //               : `0 ${tokenIn.symbol}`}
-  //           </span>
-  //         )
-  //       }
-  //     />
-  //     <LabelValue
-  //       label="Short APR"
-  //       tooltipContent="Your annualized return on this position assuming the current yield source rate stays the same for one year"
-  //       tooltipPosition="right"
-  //       tooltipSize="small"
-  //       value={
-  //         shortRateStatus === "loading" ? (
-  //           <Skeleton width={100} />
-  //         ) : (
-  //           <span
-  //             className={classNames({
-  //               "text-base-content/80": !shortApr,
-  //               "text-success": shortApr && shortApr.apr > 0n,
-  //               "text-error": shortApr && shortApr.apr < 0n,
-  //             })}
-  //           >
-  //             {shortApr ? `${shortApr.formatted}` : "-"}
-  //           </span>
-  //         )
-  //       }
-  //     />
-  //     <CollapseSection heading="Market Impact">
-  //       <LabelValue
-  //         size="small"
-  //         label="Fixed APR after open"
-  //         value={
-  //           openShortPreviewStatus === "loading" ? (
-  //             <Skeleton width={100} />
-  //           ) : (
-  //             <span
-  //               className={classNames({
-  //                 "text-base-content/80": !shortSize,
-  //               })}
-  //             >
-  //               {spotRateAfterOpen ? (
-  //                 <span className="flex gap-2 text-base-content">
-  //                   <span className="text-base-content/80">{`${fixedApr?.formatted} `}</span>
-  //                   <ArrowRightIcon className="h-4 text-neutral-content" />
-  //                   {formatRate(spotRateAfterOpen)}
-  //                 </span>
-  //               ) : (
-  //                 "-"
-  //               )}
-  //             </span>
-  //           )
-  //         }
-  //       />
-  //       <LabelValue
-  //         size="small"
-  //         label="Fixed APR impact"
-  //         value={
-  //           openShortPreviewStatus === "loading" ? (
-  //             <Skeleton width={100} />
-  //           ) : (
-  //             <span
-  //               className={classNames({
-  //                 "text-base-content/80": !spotRateAfterOpen,
-  //                 "text-success": spotRateAfterOpen,
-  //               })}
-  //             >
-  //               {getMarketImpactLabel(fixedApr?.apr, spotRateAfterOpen)}
-  //             </span>
-  //           )
-  //         }
-  //       />
-  //     </CollapseSection>
-  //   </div>
-  // );
 }
 
 function getMarketImpactLabel(

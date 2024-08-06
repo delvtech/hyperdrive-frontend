@@ -24,13 +24,10 @@ export function LabelValue({
 }): JSX.Element {
   return (
     <div
-      className={classNames(
-        "flex w-full justify-between border-b border-dotted border-neutral-content/30 pb-2 ",
-        {
-          "text-md": size === "medium",
-          "text-sm": size === "small",
-        },
-      )}
+      className={classNames("flex w-full justify-between pb-2 ", {
+        "text-md": size === "medium",
+        "text-sm": size === "small",
+      })}
     >
       <div
         className={classNames(
@@ -48,7 +45,7 @@ export function LabelValue({
       >
         {label}
         {tooltipContent ? (
-          <InformationCircleIcon className="ml-1.5 w-5 opacity-50 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
+          <InformationCircleIcon className="ml-1.5 size-4 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
         ) : null}
       </div>
       <div>{value}</div>
