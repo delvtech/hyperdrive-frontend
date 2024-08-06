@@ -61,7 +61,7 @@ export function OpenShortPreview({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   return (
-    <div tabIndex={0} className="flex flex-col gap-3.5 px-2">
+    <div className="flex flex-col gap-3.5 px-2">
       <CollapseSection
         heading={
           <div className="flex w-full items-center justify-between text-neutral-content">
@@ -74,16 +74,6 @@ export function OpenShortPreview({
           </div>
         }
       >
-        {/* <LabelValue
-          label="Maturity"
-          size="small"
-          value={
-            <div className="flex gap-2">
-              <ClockIcon className="size-5 text-gray-500" />
-              <p>{formatDate(Date.now() + termLengthMS)}</p>
-            </div>
-          }
-        /> */}
         <LabelValue
           label="Pool fee"
           size="small"

@@ -341,10 +341,10 @@ export function OpenShortForm({
                   {`$${formatBalance({
                     balance:
                       activeTokenPrice && traderDeposit
-                        ? fixed(traderDeposit, activeToken.decimals).mul(
-                            activeTokenPrice,
+                        ? fixed(
+                            amountOfBondsToShortAsBigInt || 0n,
                             activeToken.decimals,
-                          ).bigint
+                          ).mul(activeTokenPrice, activeToken.decimals).bigint
                         : 0n,
                     decimals: activeToken.decimals,
                     places: 2,
@@ -413,7 +413,7 @@ export function OpenShortForm({
         </div>
       }
       primaryStats={
-        <div className="flex flex-row justify-between py-8">
+        <div className="flex flex-row justify-between px-4 py-8">
           <PrimaryStat
             label="Exposure Multiplier"
             value={exposureMultiplier}
