@@ -62,7 +62,7 @@ export function Modal({
           method="dialog"
           className={classNames("daisy-modal-box bg-base-200 p-0", className)}
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-6">
             {isMultiModal && Array.isArray(modalHeader)
               ? modalHeader[activeIndex!]
               : modalHeader}

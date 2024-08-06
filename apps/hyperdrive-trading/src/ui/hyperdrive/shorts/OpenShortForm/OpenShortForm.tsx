@@ -21,8 +21,6 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
-import { useCheckpointTime } from "src/ui/hyperdrive/hooks/useCheckpointTime";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -40,7 +38,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
-import { useAccount, useBlock, useChainId } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -153,52 +151,13 @@ export function OpenShortForm({
     spotRateAfterOpen,
     spotPriceAfterOpen,
     curveFee,
+    shortApr,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
-
-  // Fetch current block data
-  const { data: currentBlockData } = useBlock();
-  const { checkpointTime } = useCheckpointTime({
-    hyperdrive,
-    timestamp: currentBlockData?.timestamp || 0n,
-  });
-  // Fetch accrued yield
-  const { accruedYield } = useAccruedYield({
-    hyperdrive,
-    bondAmount: amountOfBondsToShortAsBigInt || 0n,
-    checkpointTime: checkpointTime || 0n,
-  });
-
-  // Calculate base amount
-  const baseAmount =
-    openShortPreviewStatus === "success"
-      ? (traderDeposit || 0n) - (accruedYield || 0n)
-      : 0n;
-
-  // Calculate bonds minus base
-  const bondsMinusBase = (amountOfBondsToShortAsBigInt || 0n) - baseAmount;
-
-  // Calculate base divided by bonds minus base
-  const baseDividedByBondsMinusBase = amountOfBondsToShortAsBigInt
-    ? fixed(baseAmount, baseToken.decimals).div(
-        bondsMinusBase,
-        baseToken.decimals,
-      )
-    : fixed(0n, baseToken.decimals);
-
-  // Calculate fixed time range in years
-  const fixedTimeRangeInYears = fixed(
-    hyperdrive.poolConfig.positionDuration,
-  ).div(31536000n);
-
-  // Calculate base divided by bonds minus base scaled
-  const baseDividedByBondsMinusBaseScaled = baseDividedByBondsMinusBase.div(
-    fixedTimeRangeInYears,
-  );
 
   const hasEnoughBalance = getHasEnoughBalance({
     amount: traderDeposit,
@@ -425,7 +384,8 @@ export function OpenShortForm({
             tooltipContent="Reflects the leverage effect of your short position."
             value={exposureMultiplier}
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end font-bold text-h5"
-            valueUnit="X"
+            valueUnit="x"
+            unitClassName="text-h3"
             subValue={
               vaultRateStatus === "loading" && !vaultRate ? (
                 <Skeleton className="w-42 h-8" />
@@ -440,12 +400,10 @@ export function OpenShortForm({
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
             label="Rate you pay"
-            value={formatRate(
-              baseDividedByBondsMinusBaseScaled.bigint,
-              baseToken.decimals,
-            )}
+            value={formatRate(shortApr || 0n, baseToken.decimals)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"
+            unitClassName="text-xs"
             subValue={
               vaultRateStatus === "loading" && !vaultRate ? (
                 <Skeleton className="w-42 h-8" />

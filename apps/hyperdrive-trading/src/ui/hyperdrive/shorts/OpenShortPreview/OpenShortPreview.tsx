@@ -1,9 +1,7 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
-import {
-  ArrowRightIcon,
-  ChevronDownIcon,
-  ClockIcon,
-} from "@heroicons/react/16/solid";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,

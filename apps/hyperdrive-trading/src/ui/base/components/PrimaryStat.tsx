@@ -8,6 +8,7 @@ export function PrimaryStat({
   subValue,
   tooltipContent,
   valueClassName,
+  unitClassName,
 }: {
   label: string;
   value: ReactNode;
@@ -15,6 +16,7 @@ export function PrimaryStat({
   subValue?: ReactNode;
   tooltipContent?: string;
   valueClassName?: string;
+  unitClassName?: string;
 }): JSX.Element {
   return (
     <div className="flex flex-col gap-1">
@@ -31,7 +33,7 @@ export function PrimaryStat({
       </div>
       <div className={valueClassName}>
         <p className="text-h3 font-bold">{value}</p>
-        <p>{valueUnit}</p>
+        <p className={unitClassName}>{valueUnit}</p>
       </div>
       {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
     </div>

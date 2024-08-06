@@ -1586,10 +1586,16 @@ export class ReadHyperdrive extends ReadModel {
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
     curveFee: bigint;
+    shortApr: bigint;
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
     const latestCheckpoint = await this.getCheckpoint({ options });
+    const accruedYield = await this.getShortAccruedYield({
+      checkpointTime: latestCheckpoint.checkpointTime,
+      bondAmount: amountOfBondsToShort,
+      options,
+    });
 
     const baseDepositAmount = hyperwasm.calcOpenShort({
       poolInfo,
@@ -1597,6 +1603,18 @@ export class ReadHyperdrive extends ReadModel {
       bondAmount: amountOfBondsToShort,
       openVaultSharePrice: latestCheckpoint.vaultSharePrice,
     });
+
+    // Calculation for short APR. This is the rate the user pays upfront to open a short.
+    const baseAmountMinusYield = baseDepositAmount - accruedYield;
+    const bondsMinusBaseAmount = amountOfBondsToShort - baseAmountMinusYield;
+    const shortApr = fixed(baseAmountMinusYield, 18).div(
+      bondsMinusBaseAmount,
+      18,
+    );
+    const fixedTimeRangeInYears = fixed(poolConfig.positionDuration).div(
+      SECONDS_PER_YEAR,
+    );
+    const shortAprScaled = shortApr.div(fixedTimeRangeInYears).bigint;
 
     const spotPriceAfterOpen = hyperwasm.spotPriceAfterShort({
       poolInfo,
@@ -1623,6 +1641,7 @@ export class ReadHyperdrive extends ReadModel {
         spotPriceAfterOpen,
         spotRateAfterOpen,
         curveFee: curveFeeInBase,
+        shortApr: shortAprScaled,
       };
     }
 
@@ -1639,6 +1658,7 @@ export class ReadHyperdrive extends ReadModel {
         baseAmount: curveFeeInBase,
         options,
       }),
+      shortApr: shortAprScaled,
     };
   }
 
