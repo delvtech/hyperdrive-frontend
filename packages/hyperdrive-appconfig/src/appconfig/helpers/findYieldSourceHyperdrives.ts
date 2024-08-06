@@ -1,20 +1,15 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-import { findYieldSourceToken } from "src/appconfig/helpers/findYieldSourceToken";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { YieldSource } from "src/yieldSources/extensions";
 
 export function findYieldSourceHyperdrives({
   yieldSourceId,
-  appConfig: { hyperdrives, tokens },
+  appConfig: { hyperdrives, yieldSources },
 }: {
-  yieldSourceId: YieldSource["protocol"];
+  yieldSourceId: keyof typeof yieldSources;
   appConfig: AppConfig;
 }): HyperdriveConfig[] {
   return hyperdrives.filter((hyperdrive) => {
-    const sharesToken = findYieldSourceToken({
-      tokens,
-      yieldSourceTokenAddress: hyperdrive.sharesToken,
-    });
-    return sharesToken.extensions.protocol === yieldSourceId;
+    const yieldSource = yieldSources[hyperdrive.yieldSource];
+    return yieldSource?.id === yieldSourceId;
   });
 }

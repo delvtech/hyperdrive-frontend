@@ -1,12 +1,6 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 export const cloudChainAppConfig: AppConfig = {
   chainId: 42069,
-  tags: [
-    {
-      id: "yieldSource",
-      description: "A hyperdrive market's yield source",
-    },
-  ],
   tokens: [],
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   hyperdrives: [],

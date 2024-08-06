@@ -1,7 +1,7 @@
 import { protocols } from "src/protocols/protocols";
 
 export interface YieldSource {
-  id: string;
+  id: keyof typeof yieldSources;
   shortName: string;
   protocol: keyof typeof protocols;
   isSharesPeggedToBase: boolean;

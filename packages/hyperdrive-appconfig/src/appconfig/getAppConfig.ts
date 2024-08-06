@@ -46,7 +46,12 @@ export async function getAppConfig({
         functionName: "name",
       });
 
-      if (["MORPHO_BLUE_DAI_14_DAY"].includes(hackName)) {
+      if (
+        [
+          "MORPHO_BLUE_DAI_14_DAY", // sepolia
+          "ElementDAO 182 Day sUSDe/DAI Hyperdrive", // mainnet
+        ].includes(hackName)
+      ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
           hyperdrive,
         });
@@ -61,7 +66,12 @@ export async function getAppConfig({
         await token.getSymbol()
       ).toUpperCase() as Uppercase<string>;
 
-      if (["DELV", "SDAI"].includes(tokenSymbol)) {
+      if (
+        [
+          "DELV", // cloudchain
+          "SDAI", // sepolia and mainnet
+        ].includes(tokenSymbol)
+      ) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
