@@ -66,7 +66,7 @@ export function Modal({
             {isMultiModal && Array.isArray(modalHeader)
               ? modalHeader[activeIndex!]
               : modalHeader}
-            <div className="px-2 pb-8 pt-0 sm:px-10">
+            <div className="px-8 pb-6 pt-0">
               {isMultiModal && Array.isArray(modalContent)
                 ? modalContent[activeIndex!]
                 : modalContent}

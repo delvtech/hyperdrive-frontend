@@ -10,7 +10,7 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadREth } from "src/token/reth/ReadREth";
 
 export class ReadREthHyperdrive extends readREthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -34,7 +34,7 @@ export interface ReadREthHyperdriveMixin {
  * @internal
  */
 export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadREthHyperdriveMixin> & T {
   return class extends Base {
     rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
@@ -76,10 +76,14 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     // Calculations
 
-    async getMaxShort(
-      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0]
-    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
-      const result = await super.getMaxShort(options);
+    async getMaxShort({
+      budget,
+      options,
+    }: {
+      budget: bigint;
+      options: Parameters<ReadHyperdrive["getMaxShort"]>[0]["options"];
+    }): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort({ budget, options });
       const decimals = await this.getDecimals();
       return {
         ...result,
@@ -93,7 +97,7 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getMaxLong(
-      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0]
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
     ): ReturnType<ReadHyperdrive["getMaxLong"]> {
       const result = await super.getMaxLong(options);
       const decimals = await this.getDecimals();

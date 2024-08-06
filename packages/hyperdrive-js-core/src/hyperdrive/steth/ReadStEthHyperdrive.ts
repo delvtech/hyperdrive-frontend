@@ -26,7 +26,7 @@ export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
 }
 
 export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {
   constructor(options: ReadStEthHyperdriveOptions) {
     super(options);
@@ -52,7 +52,7 @@ export interface ReadStEthHyperdriveMixin {
  * @internal
  */
 export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadStEthHyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
@@ -86,10 +86,14 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     // Calculations
 
-    async getMaxShort(
-      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0]
-    ): ReturnType<ReadHyperdrive["getMaxShort"]> {
-      const result = await super.getMaxShort(options);
+    async getMaxShort({
+      budget,
+      options,
+    }: {
+      budget: bigint;
+      options?: Parameters<ReadHyperdrive["getMaxShort"]>[0]["options"];
+    }): ReturnType<ReadHyperdrive["getMaxShort"]> {
+      const result = await super.getMaxShort({ budget, options });
       const decimals = await this.getDecimals();
       return {
         ...result,
@@ -103,7 +107,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
     }
 
     async getMaxLong(
-      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0]
+      options?: Parameters<ReadHyperdrive["getMaxLong"]>[0],
     ): ReturnType<ReadHyperdrive["getMaxLong"]> {
       const result = await super.getMaxLong(options);
       const decimals = await this.getDecimals();

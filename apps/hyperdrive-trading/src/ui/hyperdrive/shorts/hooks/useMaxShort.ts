@@ -15,21 +15,26 @@ interface UseMaxShortResult {
 
 export function useMaxShort({
   hyperdriveAddress,
+  budget,
+  enabled = true,
 }: {
   hyperdriveAddress: Address;
+  budget: bigint;
+  enabled?: boolean;
 }): UseMaxShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const appConfig = useAppConfig();
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && !!budget && enabled;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", {
       market: hyperdriveAddress,
+      budget: budget.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const result = await readHyperdrive.getMaxShort();
+          const result = await readHyperdrive.getMaxShort({ budget });
 
           // All shares coming from the sdk need to be prepared for the UI
           const finalMaxSharesIn = await prepareSharesOut({

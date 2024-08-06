@@ -1,6 +1,7 @@
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { MAX_UINT256 } from "src/base/constants";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -37,6 +38,7 @@ export function LiquidityStats({
   });
   const { maxBondsOut: maxShort } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
+    budget: MAX_UINT256,
   });
 
   const { idleLiquidity, idleLiquidityStatus } = useIdleLiquidity({

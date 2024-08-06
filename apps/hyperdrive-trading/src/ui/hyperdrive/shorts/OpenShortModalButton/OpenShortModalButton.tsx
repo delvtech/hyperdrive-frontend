@@ -1,13 +1,11 @@
-import { PauseCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { PauseCircleIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
-import { Stat } from "src/ui/base/components/Stat";
 import { WarningButton } from "src/ui/base/components/WarningButton";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 
@@ -49,35 +47,10 @@ export function OpenShortModalButton({
         <ModalHeader
           heading="Open a Short"
           subHeading={`Buy exposure to ${sharesToken.extensions.shortName} with minimal upfront capital`}
-        >
-          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div className="daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label={"Term:"}
-                value={`${numDays} days`}
-              />
-            </div>
-            <div className="daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label="Maturity Date:"
-                value={formatDate(Date.now() + termLengthMS)}
-              />
-            </div>
-          </div>
-        </ModalHeader>
+        ></ModalHeader>
       }
       modalContent={
         <div>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6 " title="Close position" />
-          </button>
           <OpenShortForm
             hyperdrive={hyperdrive}
             onOpenShort={(e) => {

@@ -149,7 +149,7 @@ export class ReadHyperdrive extends ReadModel {
       {
         _shareAmount: sharesAmount,
       },
-      options
+      options,
     );
   }
 
@@ -168,7 +168,7 @@ export class ReadHyperdrive extends ReadModel {
       {
         _baseAmount: baseAmount,
       },
-      options
+      options,
     );
   }
 
@@ -177,7 +177,7 @@ export class ReadHyperdrive extends ReadModel {
 
     if (!events.length || events[0].blockNumber === undefined) {
       throw new HyperdriveSdkError(
-        "Pool has not been initialized, no block found."
+        "Pool has not been initialized, no block found.",
       );
     }
     const blockNumber = events[0].blockNumber;
@@ -217,7 +217,7 @@ export class ReadHyperdrive extends ReadModel {
       await this.getInitializationBlock();
     if (initializationBlock && startBlockNumber < initializationBlock) {
       throw new HyperdriveSdkError(
-        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initialized at block ${initializationBlock}.`
+        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initialized at block ${initializationBlock}.`,
       );
     }
 
@@ -227,9 +227,8 @@ export class ReadHyperdrive extends ReadModel {
     });
 
     // Get the current vaultSharePrice from the latest pool info
-    const { vaultSharePrice: currentVaultSharePrice } = await this.getPoolInfo(
-      options
-    );
+    const { vaultSharePrice: currentVaultSharePrice } =
+      await this.getPoolInfo(options);
 
     const timeRange = currentBlock.timestamp - startBlock.timestamp; // bigint
 
@@ -242,7 +241,7 @@ export class ReadHyperdrive extends ReadModel {
     // apy = (1 + hpr) ^ t - 1
     // using fixedpointmath here, as we need to use exponents
     const rateOfReturn = fixed(currentVaultSharePrice).div(
-      startVaultSharePrice
+      startVaultSharePrice,
     ); // this is (1 + hpr)
     const annualizedRateOfReturn = rateOfReturn
       .pow(fixed(1e18).div(fixedTimeRangeInYears))
@@ -306,7 +305,7 @@ export class ReadHyperdrive extends ReadModel {
     } = await this.contract.read(
       "getCheckpoint",
       { _checkpointTime: checkpointTime },
-      options
+      options,
     );
 
     return {
@@ -334,7 +333,7 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read(
       "getCheckpointExposure",
       { _checkpointTime: checkpointTime },
-      options
+      options,
     );
   }
 
@@ -517,11 +516,11 @@ export class ReadHyperdrive extends ReadModel {
 
     const longVolume = longEvents.reduce(
       (sum, { bondAmount }) => sum + bondAmount,
-      0n
+      0n,
     );
     const shortVolume = shortEvents.reduce(
       (sum, { bondAmount }) => sum + bondAmount,
-      0n
+      0n,
     );
     return {
       longVolume,
@@ -544,7 +543,7 @@ export class ReadHyperdrive extends ReadModel {
 
   async getLongEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "OpenLong"> &
-      ContractGetEventsOptions<HyperdriveAbi, "CloseLong">
+      ContractGetEventsOptions<HyperdriveAbi, "CloseLong">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -578,7 +577,7 @@ export class ReadHyperdrive extends ReadModel {
 
   async getShortEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "OpenShort"> &
-      ContractGetEventsOptions<HyperdriveAbi, "CloseShort">
+      ContractGetEventsOptions<HyperdriveAbi, "CloseShort">,
   ): Promise<
     {
       trader: `0x${string}`;
@@ -593,7 +592,7 @@ export class ReadHyperdrive extends ReadModel {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
     const closeShortEvents = await this.contract.getEvents(
       "CloseShort",
-      options
+      options,
     );
     return [...openShortEvents, ...closeShortEvents]
       .map(({ args, eventName, blockNumber, transactionHash }) => {
@@ -616,7 +615,7 @@ export class ReadHyperdrive extends ReadModel {
   async getLpEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "AddLiquidity"> &
       ContractGetEventsOptions<HyperdriveAbi, "RemoveLiquidity"> &
-      ContractGetEventsOptions<HyperdriveAbi, "RedeemWithdrawalShares">
+      ContractGetEventsOptions<HyperdriveAbi, "RedeemWithdrawalShares">,
   ): Promise<{
     addLiquidity: Event<HyperdriveAbi, "AddLiquidity">[];
     removeLiquidity: Event<HyperdriveAbi, "RemoveLiquidity">[];
@@ -624,15 +623,15 @@ export class ReadHyperdrive extends ReadModel {
   }> {
     const addLiquidityEvents = await this.contract.getEvents(
       "AddLiquidity",
-      options
+      options,
     );
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
-      options
+      options,
     );
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
-      options
+      options,
     );
 
     return {
@@ -699,11 +698,11 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   async getCheckpointEvents(
-    options?: ContractGetEventsOptions<HyperdriveAbi, "CreateCheckpoint">
+    options?: ContractGetEventsOptions<HyperdriveAbi, "CreateCheckpoint">,
   ): Promise<CheckpointEvent[]> {
     const checkPointEvents = await this.contract.getEvents(
       "CreateCheckpoint",
-      options
+      options,
     );
     return checkPointEvents;
   }
@@ -718,7 +717,7 @@ export class ReadHyperdrive extends ReadModel {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
     const orderedLongEvents = [...openLongEvents, ...closeLongEvents].sort(
-      (a, b) => Number(a.blockNumber) - Number(b.blockNumber)
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
     const openLongs: Record<string, Long> = {};
@@ -791,14 +790,14 @@ export class ReadHyperdrive extends ReadModel {
 
     const longsReceived = transfersReceived.filter((event) => {
       const { assetType } = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`
+        event.data as `0x${string}`,
       );
       return assetType === "LONG";
     });
 
     const longsSent = transfersSent.filter((event) => {
       const { assetType } = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`
+        event.data as `0x${string}`,
       );
       return assetType === "LONG";
     });
@@ -806,7 +805,7 @@ export class ReadHyperdrive extends ReadModel {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
     const orderedLongEvents = [...longsReceived, ...longsSent].sort(
-      (a, b) => Number(a.blockNumber) - Number(b.blockNumber)
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
     const openLongs: Record<string, OpenLongPositionReceivedWithoutDetails> =
@@ -820,7 +819,7 @@ export class ReadHyperdrive extends ReadModel {
       ] || {
         assetId,
         maturity: decodeAssetFromTransferSingleEventData(
-          event.data as `0x${string}`
+          event.data as `0x${string}`,
         ).timestamp,
         value: 0n,
       };
@@ -873,7 +872,7 @@ export class ReadHyperdrive extends ReadModel {
 
     if (!longPosition) {
       throw new HyperdriveSdkError(
-        `No position with asset id: ${assetId} found for account ${account}`
+        `No position with asset id: ${assetId} found for account ${account}`,
       );
     }
 
@@ -892,7 +891,7 @@ export class ReadHyperdrive extends ReadModel {
 
     const openLongDetails = allOpenLongDetails.find(
       (details) =>
-        details.assetId.toString() === longPosition.assetId.toString()
+        details.assetId.toString() === longPosition.assetId.toString(),
     );
     // If no details exists for the position, the user must have just received
     // some longs via transfer but never opened them themselves.
@@ -951,9 +950,8 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<OpenShort[]> {
     const toBlock = getBlockFromReadOptions(options);
 
-    const { checkpointDuration, positionDuration } = await this.getPoolConfig(
-      options
-    );
+    const { checkpointDuration, positionDuration } =
+      await this.getPoolConfig(options);
 
     const openShortEvents = await this.contract.getEvents("OpenShort", {
       filter: { trader: account },
@@ -989,7 +987,7 @@ export class ReadHyperdrive extends ReadModel {
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
     const orderedShortEvents = [...openShortEvents, ...closeShortEvents].sort(
-      (a, b) => Number(a.blockNumber) - Number(b.blockNumber)
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
     const openShorts: Record<string, OpenShort> = {};
@@ -1101,7 +1099,7 @@ export class ReadHyperdrive extends ReadModel {
             })
           ).timestamp,
         };
-      })
+      }),
     );
     return closedLongsList.filter((long) => long.bondAmount);
   }
@@ -1143,16 +1141,21 @@ export class ReadHyperdrive extends ReadModel {
           closedTimestamp: timestamp,
           checkpointTime: getCheckpointTime(timestamp, checkpointDuration),
         };
-      })
+      }),
     );
 
     return closedShortsList.filter((short) => short.bondAmount);
   }
-
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  async getMaxShort(options?: ContractReadOptions): Promise<{
+  async getMaxShort({
+    budget,
+    options,
+  }: {
+    budget: bigint;
+    options?: ContractReadOptions;
+  }): Promise<{
     maxBaseIn: bigint;
     maxSharesIn: bigint;
     maxBondsOut: bigint;
@@ -1164,11 +1167,16 @@ export class ReadHyperdrive extends ReadModel {
       options,
     });
 
-    const maxBondsOut = hyperwasm.absoluteMaxShort({
+    const maxBondsOut = hyperwasm.maxShort({
+      budget,
       poolInfo,
       poolConfig,
+      // TODO Store this 14 value in a constant. Default iterations is 7 but doubling it gets us more accurate estimations for larger budget values
+      maxIterations: 14,
+      openVaultSharePrice,
       checkpointExposure,
     });
+
     const maxBaseIn = hyperwasm.calcOpenShort({
       poolInfo,
       poolConfig,
@@ -1186,7 +1194,6 @@ export class ReadHyperdrive extends ReadModel {
       maxBondsOut,
     };
   }
-
   /**
    * Gets the maximum amount of bonds a user can open a long for.
    */
@@ -1230,7 +1237,7 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read(
       "totalSupply",
       { tokenId: LP_ASSET_ID },
-      args?.options
+      args?.options,
     );
   }
 
@@ -1247,7 +1254,7 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read(
       "balanceOf",
       { tokenId: LP_ASSET_ID, owner: account },
-      options
+      options,
     );
   }
 
@@ -1276,7 +1283,7 @@ export class ReadHyperdrive extends ReadModel {
       {
         filter: { provider: account },
         toBlock,
-      }
+      },
     );
 
     const decimals = await this.getDecimals();
@@ -1316,7 +1323,7 @@ export class ReadHyperdrive extends ReadModel {
     const { lpSharePrice } = await this.getPoolInfo();
     const withdrawalSharesBaseValue = fixed(lpSharePrice, decimals).mul(
       withdrawalShares,
-      decimals
+      decimals,
     ).bigint;
     const withdrawalSharesSharesValue = await this.convertToShares({
       baseAmount: withdrawalSharesBaseValue,
@@ -1409,7 +1416,7 @@ export class ReadHyperdrive extends ReadModel {
       {
         filter: { provider: account },
         toBlock: getBlockFromReadOptions(options),
-      }
+      },
     );
     return Promise.all(
       removeLiquidityEvents.map(async ({ blockNumber, args }) => {
@@ -1436,7 +1443,7 @@ export class ReadHyperdrive extends ReadModel {
             })
           ).timestamp,
         };
-      })
+      }),
     );
   }
 
@@ -1453,7 +1460,7 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read(
       "balanceOf",
       { tokenId: WITHDRAW_SHARES_ASSET_ID, owner: account },
-      options
+      options,
     );
   }
 
@@ -1472,7 +1479,7 @@ export class ReadHyperdrive extends ReadModel {
       {
         filter: { provider: account },
         toBlock: getBlockFromReadOptions(options),
-      }
+      },
     );
 
     return Promise.all(
@@ -1490,7 +1497,7 @@ export class ReadHyperdrive extends ReadModel {
             await getBlockOrThrow(this.network, { blockNumber })
           ).timestamp,
         };
-      })
+      }),
     );
   }
 
@@ -1880,7 +1887,7 @@ export class ReadHyperdrive extends ReadModel {
     const decimals = await this.getDecimals();
     const lpSharesOutInBase = fixed(lpSharesOut, decimals).mul(
       poolInfo.lpSharePrice,
-      decimals
+      decimals,
     ).bigint;
     const valueOfLpShares = asBase
       ? lpSharesOutInBase
@@ -1925,7 +1932,7 @@ export class ReadHyperdrive extends ReadModel {
         // since this is calling a write method in view mode, we must specify
         // the `from` in order to have an account to preview with
         from: destination,
-      }
+      },
     );
 
     return {
@@ -1965,7 +1972,7 @@ export class ReadHyperdrive extends ReadModel {
           _minOutputPerShare: minOutputPerShare,
           _options: { destination, asBase, extraData },
         },
-        options
+        options,
       );
 
     return {
