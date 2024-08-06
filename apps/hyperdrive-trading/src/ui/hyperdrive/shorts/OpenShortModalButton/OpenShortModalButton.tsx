@@ -47,7 +47,7 @@ export function OpenShortModalButton({
         <ModalHeader
           heading="Open a Short"
           subHeading={`Buy exposure to ${sharesToken.extensions.shortName} with minimal upfront capital`}
-        ></ModalHeader>
+        />
       }
       modalContent={
         <div>

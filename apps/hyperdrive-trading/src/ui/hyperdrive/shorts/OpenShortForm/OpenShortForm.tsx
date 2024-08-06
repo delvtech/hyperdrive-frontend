@@ -69,9 +69,7 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
-  const { longPrice, longPriceStatus } = useCurrentLongPrice(
-    hyperdrive.address,
-  );
+  const { longPrice } = useCurrentLongPrice(hyperdrive.address);
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
@@ -129,6 +127,7 @@ export function OpenShortForm({
     tokenAddress: activeToken.address,
   });
 
+  // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
   const [activeInput, setActiveInput] = useState<"bonds" | "budget">("bonds");
 
   const {
@@ -187,7 +186,6 @@ export function OpenShortForm({
     budget: MAX_UINT256,
   });
 
-  // The amount you earn yield on from the given budget
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
     budget: amountToPayAsBigInt || 0n,
@@ -250,8 +248,8 @@ export function OpenShortForm({
 
   const exposureMultiplier =
     amountOfBondsToShortAsBigInt && traderDeposit
-      ? fixed(amountOfBondsToShortAsBigInt, 18)
-          .div(traderDeposit, 18)
+      ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
+          .div(traderDeposit, activeToken.decimals)
           .format({ decimals: 2, rounding: "trunc" })
       : "0";
 
@@ -362,7 +360,7 @@ export function OpenShortForm({
               ) : null
             }
             bottomRightElement={
-              <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <div className="flex flex-col text-xs text-neutral-content">
                 <span>
                   {activeTokenBalance
                     ? `Balance: ${formatBalance({
@@ -378,7 +376,7 @@ export function OpenShortForm({
         </div>
       }
       primaryStats={
-        <div className="flex flex-row justify-between px-4 py-8">
+        <div className="flex justify-between px-4 py-8">
           <PrimaryStat
             label="Exposure Multiplier"
             tooltipContent="Reflects the leverage effect of your short position."
@@ -387,17 +385,17 @@ export function OpenShortForm({
             valueUnit="x"
             unitClassName="text-h3"
             subValue={
-              vaultRateStatus === "loading" && !vaultRate ? (
-                <Skeleton className="w-42 h-8" />
-              ) : (
+              vaultRateStatus === "success" && vaultRate ? (
                 <>
                   {sharesToken.extensions.shortName} @{" "}
-                  {vaultRate?.formatted || 0} APY
+                  {vaultRate.formatted || 0} APY
                 </>
+              ) : (
+                <Skeleton className="w-42 h-8" />
               )
             }
           />
-          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
             label="Rate you pay"
             value={formatRate(shortApr || 0n, baseToken.decimals)}
@@ -405,19 +403,15 @@ export function OpenShortForm({
             valueUnit="APR"
             unitClassName="text-xs"
             subValue={
-              vaultRateStatus === "loading" && !vaultRate ? (
-                <Skeleton className="w-42 h-8" />
-              ) : (
-                <>
-                  1 hy{baseToken.symbol} ≈{" "}
-                  {formatBalance({
-                    balance: longPrice ?? 0n,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })}{" "}
-                  {baseToken.symbol}
-                </>
-              )
+              <>
+                1 hy{baseToken.symbol} ≈{" "}
+                {formatBalance({
+                  balance: longPrice ?? 0n,
+                  decimals: baseToken.decimals,
+                  places: baseToken.places,
+                })}{" "}
+                {baseToken.symbol}
+              </>
             }
           />
         </div>
