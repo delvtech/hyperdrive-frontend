@@ -1,8 +1,7 @@
 import {
+  AppConfig,
   HyperdriveConfig,
-  Protocol,
   findYieldSourceHyperdrives,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import sortBy from "lodash.sortby";
@@ -18,33 +17,29 @@ export interface YieldSourceMarketsTableRowData {
 }
 
 export function useRowData(
-  protocol: Protocol
+  yieldSource: keyof AppConfig["yieldSources"],
 ): UseQueryResult<YieldSourceMarketsTableRowData[]> {
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
   const queryEnabled = !!appConfig && !!publicClient;
   return useQuery<YieldSourceMarketsTableRowData[]>({
     queryKey: makeQueryKey("yield-source-markets", {
-      protocol: protocol.id,
+      yieldSource,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const hyperdrives = findYieldSourceHyperdrives({
-            yieldSourceId: protocol.id,
+            yieldSourceId: yieldSource,
             appConfig,
           });
           const rows = await Promise.all(
             hyperdrives.map(
               async (hyperdrive): Promise<YieldSourceMarketsTableRowData> => {
-                const sharesToken = findYieldSourceToken({
-                  yieldSourceTokenAddress: hyperdrive.sharesToken,
-                  tokens: appConfig.tokens,
-                });
                 const readHyperdrive = await getReadHyperdrive({
                   hyperdriveAddress: hyperdrive.address,
                   publicClient,
-                  sharesToken,
+                  appConfig,
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
@@ -55,8 +50,8 @@ export function useRowData(
                   liquidity,
                   fixedApr,
                 };
-              }
-            )
+              },
+            ),
           );
           return sortBy(rows, "market.poolConfig.positionDuration");
         }

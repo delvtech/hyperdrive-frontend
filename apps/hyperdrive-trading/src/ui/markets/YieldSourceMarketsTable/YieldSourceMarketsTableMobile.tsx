@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { AppConfig, Protocol, findBaseToken } from "@hyperdrive/appconfig";
+import { AppConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -27,12 +27,12 @@ const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 const EMPTY_ARRAY: YieldSourceMarketsTableRowData[] = [];
 
 export function YieldSourceMarketsTableMobile({
-  protocol,
+  yieldSource: yieldSource,
 }: {
-  protocol: Protocol;
+  yieldSource: keyof AppConfig["yieldSources"];
 }): ReactElement {
   const navigate = useNavigate();
-  const { data: rowData, status } = useRowData(protocol);
+  const { data: rowData, status } = useRowData(yieldSource);
   const appConfig = useAppConfig();
 
   const tableInstance = useReactTable({
@@ -63,7 +63,7 @@ export function YieldSourceMarketsTableMobile({
               <>
                 {row.getVisibleCells().map((cell) => {
                   return (
-                    <td key={cell.id} className="py-10 last:w-5 ">
+                    <td key={cell.id} className="py-10 last:w-5">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
