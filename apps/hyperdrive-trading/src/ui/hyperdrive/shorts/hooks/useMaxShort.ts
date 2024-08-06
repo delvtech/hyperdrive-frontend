@@ -16,15 +16,13 @@ interface UseMaxShortResult {
 export function useMaxShort({
   hyperdriveAddress,
   budget,
-  enabled = true,
 }: {
   hyperdriveAddress: Address;
   budget: bigint;
-  enabled?: boolean;
 }): UseMaxShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const appConfig = useAppConfig();
-  const queryEnabled = !!readHyperdrive && !!budget && enabled;
+  const queryEnabled = !!readHyperdrive && !!budget;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", {

@@ -189,7 +189,6 @@ export function OpenShortForm({
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
     hyperdriveAddress: hyperdrive.address,
     budget: amountToPayAsBigInt || 0n,
-    enabled: !!amountToPayAsBigInt,
   });
 
   const hasEnoughLiquidity = getIsValidTradeSize({

@@ -9,7 +9,11 @@ import {
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import { assertNever } from "src/base/assertNever";
-import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
+import {
+  MAX_ITERATIONS,
+  MAX_UINT256,
+  SECONDS_PER_YEAR,
+} from "src/base/constants";
 import { MergeKeys } from "src/base/types";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
 import {
@@ -1171,8 +1175,7 @@ export class ReadHyperdrive extends ReadModel {
       budget,
       poolInfo,
       poolConfig,
-      // TODO Store this 14 value in a constant. Default iterations is 7 but doubling it gets us more accurate estimations for larger budget values
-      maxIterations: 14,
+      maxIterations: MAX_ITERATIONS,
       openVaultSharePrice,
       checkpointExposure,
     });
