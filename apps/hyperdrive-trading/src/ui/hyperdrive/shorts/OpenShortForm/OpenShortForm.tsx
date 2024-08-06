@@ -112,9 +112,15 @@ export function OpenShortForm({
         : [sharesToken],
     });
 
-  const tokenPrices = useTokenFiatPrices([activeToken.address]);
+  const tokenPrices = useTokenFiatPrices([
+    activeToken.address,
+    baseToken.address,
+  ]);
   const activeTokenPrice =
     tokenPrices?.[activeToken.address.toLowerCase() as Address];
+
+  const baseTokenPrice =
+    tokenPrices?.[baseToken.address.toLowerCase() as Address];
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -340,13 +346,13 @@ export function OpenShortForm({
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
                     balance:
-                      activeTokenPrice && traderDeposit
+                      baseTokenPrice && traderDeposit
                         ? fixed(
                             amountOfBondsToShortAsBigInt || 0n,
-                            activeToken.decimals,
-                          ).mul(activeTokenPrice, activeToken.decimals).bigint
+                            baseToken.decimals,
+                          ).mul(baseTokenPrice, baseToken.decimals).bigint
                         : 0n,
-                    decimals: activeToken.decimals,
+                    decimals: baseToken.decimals,
                     places: 2,
                   })}`}
                 </label>
