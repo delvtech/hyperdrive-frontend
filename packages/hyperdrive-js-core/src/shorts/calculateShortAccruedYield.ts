@@ -13,8 +13,8 @@ export function calculateShortAccruedYield({
 }): bigint {
   // Current Accrued yield = (current share price - checkpoint share price) x
   // number of bonds
-  return fixed(endingVaultSharePrice - openVaultSharePrice, decimals).mul(
-    bondAmount,
-    decimals,
-  ).bigint;
+  // TODO: Remove this once `fixed` supports negative numbers
+  const subbed = endingVaultSharePrice - openVaultSharePrice;
+  const [sign, abs] = subbed < 0 ? [-1n, -subbed] : [1n, subbed];
+  return fixed(abs, decimals).mul(bondAmount, decimals).bigint * sign;
 }

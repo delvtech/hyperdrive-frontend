@@ -21,6 +21,7 @@ export function AccruedYieldCell({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
+
   const { accruedYield } = useAccruedYield({
     hyperdrive,
     bondAmount,

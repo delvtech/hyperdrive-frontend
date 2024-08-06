@@ -35,11 +35,6 @@ export function useMaxShort({
     queryFn: queryEnabled
       ? async () => {
           const result = await readHyperdrive.getMaxShort({ budget });
-          console.log(
-            "query result for max bonds out given budget",
-            budget,
-            result,
-          );
 
           // All shares coming from the sdk need to be prepared for the UI
           const finalMaxSharesIn = await prepareSharesOut({

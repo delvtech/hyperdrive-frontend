@@ -298,6 +298,8 @@ export class ReadHyperdrive extends ReadModel {
       });
     }
 
+    console.log(checkpointTime, "checkpointTime in getCheckpoint");
+
     const {
       lastWeightedSpotPriceUpdateTime,
       vaultSharePrice,
@@ -306,6 +308,15 @@ export class ReadHyperdrive extends ReadModel {
       "getCheckpoint",
       { _checkpointTime: checkpointTime },
       options,
+    );
+
+    console.log(
+      {
+        lastWeightedSpotPriceUpdateTime,
+        vaultSharePrice,
+        weightedSpotPrice,
+      },
+      "data from get checkpoint",
     );
 
     return {
@@ -481,6 +492,16 @@ export class ReadHyperdrive extends ReadModel {
       const poolInfo = await this.getPoolInfo(options);
       endingVaultSharePrice = poolInfo.vaultSharePrice;
     }
+
+    // console.log(
+    //   {
+    //     openVaultSharePrice,
+    //     endingVaultSharePrice,
+    //     bondAmount,
+    //     decimals: await this.getDecimals(),
+    //   },
+    //   "openVaultSharePrice, endingVaultSharePrice, bondAmount, decimals",
+    // );
 
     return calculateShortAccruedYield({
       openVaultSharePrice,

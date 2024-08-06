@@ -1,5 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
+
 import {
   HyperdriveConfig,
   findBaseToken,
@@ -159,23 +160,18 @@ export function OpenShortForm({
     hyperdrive,
     timestamp: currentBlockData?.timestamp || 0n,
   });
-
   // Fetch accrued yield
-  const { accruedYield, status: accruedYieldStatus } = useAccruedYield({
+  const { accruedYield } = useAccruedYield({
     hyperdrive,
     bondAmount: amountOfBondsToShortAsBigInt || 0n,
     checkpointTime: checkpointTime || 0n,
   });
 
-  // Calculate backpaid interest
-  const backpaidInterest =
-    accruedYieldStatus === "success" ? accruedYield || 0n : 0n;
-
   // Calculate base amount
   const baseAmount =
     openShortPreviewStatus === "success"
-      ? (traderDeposit || 0n) - backpaidInterest || 0n
-      : 1n;
+      ? (traderDeposit || 0n) - (accruedYield || 0n)
+      : 0n;
 
   // Calculate bonds minus base
   const bondsMinusBase = (amountOfBondsToShortAsBigInt || 0n) - baseAmount;
@@ -188,14 +184,10 @@ export function OpenShortForm({
       )
     : fixed(0n, baseToken.decimals);
 
-  // Calculate fixed time range and fixed year
-  const fixedTimeRange = fixed(
-    hyperdrive.poolConfig.positionDuration * BigInt(1e18),
-  );
-  const fixedYear = fixed(BigInt(31536000n) * BigInt(1e18));
-
   // Calculate fixed time range in years
-  const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
+  const fixedTimeRangeInYears = fixed(
+    hyperdrive.poolConfig.positionDuration,
+  ).div(31536000n);
 
   // Calculate base divided by bonds minus base scaled
   const baseDividedByBondsMinusBaseScaled = baseDividedByBondsMinusBase.div(
@@ -297,11 +289,6 @@ export function OpenShortForm({
           .div(traderDeposit, 18)
           .format({ decimals: 2, rounding: "trunc" })
       : "0";
-
-  // console.log({
-  //   bondAmount: amountOfBondsToShortAsBigInt,
-  //   vaultSharePrice: poolInfo?.vaultSharePrice,
-  // });
 
   return (
     <TransactionView
