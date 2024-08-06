@@ -1,4 +1,4 @@
-import { PauseCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { PauseCircleIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -51,12 +51,6 @@ export function OpenShortModalButton({
       }
       modalContent={
         <div>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6" title="Close position" />
-          </button>
           <OpenShortForm
             hyperdrive={hyperdrive}
             onOpenShort={(e) => {

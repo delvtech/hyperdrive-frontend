@@ -422,6 +422,7 @@ export function OpenShortForm({
         <div className="flex flex-row justify-between px-4 py-8">
           <PrimaryStat
             label="Exposure Multiplier"
+            tooltipContent="Reflects the leverage effect of your short position."
             value={exposureMultiplier}
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end font-bold text-h5"
             valueUnit="X"
