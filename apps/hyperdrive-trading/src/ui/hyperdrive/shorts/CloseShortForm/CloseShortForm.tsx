@@ -1,9 +1,5 @@
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
-import {
-  findBaseToken,
-  findYieldSourceToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -35,34 +31,39 @@ export function CloseShortForm({
   const appConfig = useAppConfig();
 
   const { address: account } = useAccount();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const defaultItems = [];
+  const baseToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
+  if (baseToken) {
+    defaultItems.push(baseToken);
+  }
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
+  if (sharesToken) {
+    defaultItems.push(sharesToken);
+  }
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
 
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: [baseToken, sharesToken],
+    items: defaultItems,
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-      ? baseToken.address
-      : sharesToken.address,
+      ? hyperdrive.poolConfig.baseToken
+      : hyperdrive.poolConfig.vaultSharesToken,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: baseToken.decimals,
+    decimals: hyperdrive.decimals,
   });
 
   // You can't close an amount that's larger than the position size
@@ -74,7 +75,7 @@ export function CloseShortForm({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: short.maturity,
       shortAmountIn: amountAsBigInt,
-      asBase: activeWithdrawToken.address === baseToken.address,
+      asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
       enabled: !isAmountLargerThanPositionSize,
     });
 
@@ -97,7 +98,7 @@ export function CloseShortForm({
       previewCloseShortStatus === "success" && !isAmountLargerThanPositionSize,
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-      activeWithdrawToken.address === baseToken.address,
+      activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     onSubmitted: (hash) => {
       (window as any)[`${short.assetId}`].close();
     },
@@ -107,14 +108,14 @@ export function CloseShortForm({
   });
 
   const withdrawTokenChoices: TokenChoice[] = [];
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
 
-  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: sharesToken,
     });
@@ -126,17 +127,17 @@ export function CloseShortForm({
         <TokenInput
           name="shorts"
           inputLabel="Amount to redeem"
-          token={`hy${baseToken.symbol}`}
+          token={`hy${baseToken?.symbol}`}
           value={amount ?? ""}
           maxValue={
-            short ? formatUnits(short.bondAmount, baseToken.decimals) : ""
+            short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
           }
           stat={
             short
               ? `Balance: ${formatBalance({
                   balance: short.bondAmount,
                   decimals: hyperdrive.decimals,
-                  places: baseToken.places,
+                  places: baseToken?.places,
                 })}`
               : undefined
           }
@@ -162,8 +163,8 @@ export function CloseShortForm({
                 {amountOut
                   ? `${formatBalance({
                       balance: amountOut,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken?.places,
                     })}`
                   : "0"}{" "}
                 {activeWithdrawToken.symbol}
@@ -178,7 +179,7 @@ export function CloseShortForm({
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
-                      decimals: baseToken.decimals,
+                      decimals: hyperdrive.decimals,
                       // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
                       places: 6,
                     })}`

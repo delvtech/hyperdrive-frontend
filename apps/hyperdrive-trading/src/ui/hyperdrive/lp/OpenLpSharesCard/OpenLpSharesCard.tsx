@@ -1,7 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -39,10 +38,9 @@ export function OpenLpSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { lpShares, lpSharesStatus } = useLpShares({
@@ -53,7 +51,9 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
+  const subHeading = sharesToken
+    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    : "";
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,

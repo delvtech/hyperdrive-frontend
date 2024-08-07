@@ -1543,7 +1543,10 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
     },
   ]);
 
-  const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
+  const value = await readHyperdrive.getOpenLpPosition({
+    account: BOB,
+    asBase: false,
+  });
   expect(value).toEqual({
     lpShareBalance: parseFixed("0").bigint,
     baseAmountPaid: parseFixed("0").bigint,
@@ -1617,7 +1620,10 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
     },
   ]);
 
-  const value = await readHyperdrive.getOpenLpPosition({ account: BOB });
+  const value = await readHyperdrive.getOpenLpPosition({
+    account: BOB,
+    asBase: false,
+  });
   expect(value).toEqual({
     lpShareBalance: parseFixed("99").bigint,
     baseAmountPaid: parseFixed("100").bigint,

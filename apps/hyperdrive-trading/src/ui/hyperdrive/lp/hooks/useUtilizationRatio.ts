@@ -20,9 +20,7 @@ export function useUtilizationRatio({
     lpSharesIn: lpShares,
     minOutputPerShare: 1n,
     destination: account,
-    // Set asBase to false because we just need the withdrawal shares amount and
-    // it should always be possible to withdraw as shares
-    asBase: false,
+    asBase: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
   });
   const utilizationRatio =
     !!withdrawalShares && !!lpShares

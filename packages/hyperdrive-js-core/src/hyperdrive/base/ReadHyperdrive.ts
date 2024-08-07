@@ -43,6 +43,8 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
+(window as any).fixed = fixed;
+
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
 export class ReadHyperdrive extends ReadModel {
@@ -1265,8 +1267,12 @@ export class ReadHyperdrive extends ReadModel {
    */
   async getOpenLpPosition({
     account,
+    // TODO: Remove asBase parameter when we can use hyperwasm to calculate the
+    // preview remove liquidity
+    asBase,
     options,
   }: {
+    asBase: boolean;
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<{
@@ -1308,18 +1314,21 @@ export class ReadHyperdrive extends ReadModel {
     // calculated value of the position will always be based on the current
     // state of the pool, even if the lp balance and amount paid were
     // calculated using past events via the block in options.
+
     const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
       lpSharesIn: lpShareBalance,
       minOutputPerShare: 1n,
-      asBase: false,
+      asBase,
       destination: account,
     });
 
     // Note: we don't pass in the options here because we want the current
     // prices that were used in the previewRemoveLiquidity call.
-    const proceedsBaseValue = await this.convertToBase({
-      sharesAmount: proceeds,
-    });
+    const proceedsBaseValue = asBase
+      ? proceeds
+      : await this.convertToBase({
+          sharesAmount: proceeds,
+        });
 
     // convert the withdrawal shares into base using lpSharePrice
     const { lpSharePrice } = await this.getPoolInfo();
@@ -1907,6 +1916,7 @@ export class ReadHyperdrive extends ReadModel {
       maxApr: maxApr,
     });
     const decimals = await this.getDecimals();
+
     const lpSharesOutInBase = fixed(lpSharesOut, decimals).mul(
       poolInfo.lpSharePrice,
       decimals,
