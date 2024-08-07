@@ -10,14 +10,14 @@ import {
  * A Hyperdrive instance that is compatible with Hyperdrive <= v1.0.14.
  */
 export class ReadHyperdrive_v1_0_14 extends readHyperdriveMixin_v1_0_14(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
  * Overrides for compatibility with Hyperdrive <= v1.0.14.
  */
 export function readHyperdriveMixin_v1_0_14<
-  T extends Constructor<ReadHyperdrive>
+  T extends Constructor<ReadHyperdrive>,
 >(Base: T): T {
   return class extends Base {
     /**
@@ -64,7 +64,7 @@ export function readHyperdriveMixin_v1_0_14<
     }): Promise<bigint> {
       const { vaultSharePrice } = await this.getPoolInfo(options);
       const decimals = await this.getDecimals();
-      return fixed(baseAmount, decimals).mul(vaultSharePrice).bigint;
+      return fixed(baseAmount, decimals).div(vaultSharePrice).bigint;
     }
   };
 }
