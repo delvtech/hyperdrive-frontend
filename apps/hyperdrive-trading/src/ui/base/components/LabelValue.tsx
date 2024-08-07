@@ -24,13 +24,10 @@ export function LabelValue({
 }): JSX.Element {
   return (
     <div
-      className={classNames(
-        "flex w-full justify-between border-b border-dotted border-neutral-content/30 pb-2 ",
-        {
-          "text-md": size === "medium",
-          "text-sm": size === "small",
-        },
-      )}
+      className={classNames("flex w-full justify-between pb-2 ", {
+        "text-md": size === "medium",
+        "text-sm": size === "small",
+      })}
     >
       <div
         className={classNames(

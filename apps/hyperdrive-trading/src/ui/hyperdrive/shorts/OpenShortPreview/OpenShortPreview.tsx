@@ -1,12 +1,14 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
@@ -14,6 +16,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
@@ -36,6 +39,7 @@ export function OpenShortPreview({
   curveFee,
   openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -53,99 +57,78 @@ export function OpenShortPreview({
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
     variableApy: vaultRate?.vaultRate,
   });
+  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   return (
-    <div className="flex flex-col gap-3 px-2">
-      <LabelValue
-        label="You pay"
-        value={
-          openShortPreviewStatus === "loading" ? (
-            <Skeleton width={100} />
-          ) : (
-            <span
-              className={classNames({
-                "text-base-content/80": !costBasis,
-              })}
-            >
-              {costBasis
-                ? `${formatBalance({
-                    balance: costBasis,
-                    decimals: tokenIn.decimals,
-                    places: tokenIn.places,
-                  })} ${tokenIn.symbol}`
-                : `0 ${tokenIn.symbol}`}
-            </span>
-          )
+    <div className="flex flex-col gap-3.5 px-2">
+      <CollapseSection
+        heading={
+          <div className="flex w-full items-center justify-between text-neutral-content">
+            <p>Transaction Details</p>
+            <div className="flex items-center gap-1">
+              {!detailsOpen ? (
+                <>
+                  <ClockIcon className="size-5 text-gray-500" />
+                  <p>{formatDate(Date.now() + termLengthMS)}</p>
+                </>
+              ) : undefined}
+              <ChevronDownIcon className="ml-1 size-6" />
+            </div>
+          </div>
         }
-      />
-      <LabelValue
-        label="Short size"
-        tooltipContent="The amount of pool liquidity deposited into the yield source."
-        tooltipPosition="right"
-        tooltipSize="small"
-        value={
-          <span
-            className={classNames({
-              "text-base-content/80": !shortSize,
-            })}
-          >
-            {shortSize
-              ? `${formatBalance({
-                  balance: shortSize,
-                  decimals: baseToken.decimals,
-                  places: baseToken.places,
-                })} hy${baseToken.symbol}`
-              : `0 hy${baseToken.symbol}`}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Pool fee"
-        tooltipContent="Total combined fee paid to LPs and governance to open the short."
-        tooltipPosition="right"
-        tooltipSize="small"
-        value={
-          openShortPreviewStatus === "loading" ? (
-            <Skeleton width={100} />
-          ) : (
-            <span
-              className={classNames({
-                "text-base-content/80": !shortSize,
-              })}
-            >
-              {curveFee
-                ? `${formatBalance({
-                    balance: curveFee,
-                    decimals: tokenIn.decimals,
-                    places: tokenIn.places,
-                  })} ${tokenIn.symbol}`
-                : `0 ${tokenIn.symbol}`}
-            </span>
-          )
-        }
-      />
-      <LabelValue
-        label="Short APR"
-        tooltipContent="Your annualized return on this position assuming the current yield source rate stays the same for one year"
-        tooltipPosition="right"
-        tooltipSize="small"
-        value={
-          shortRateStatus === "loading" ? (
-            <Skeleton width={100} />
-          ) : (
-            <span
-              className={classNames({
-                "text-base-content/80": !shortApr,
-                "text-success": shortApr && shortApr.apr > 0n,
-                "text-error": shortApr && shortApr.apr < 0n,
-              })}
-            >
-              {shortApr ? `${shortApr.formatted}` : "-"}
-            </span>
-          )
-        }
-      />
-      <CollapseSection heading="Market Impact">
+        onClick={() => setDetailsOpen(!detailsOpen)}
+      >
+        <LabelValue
+          label="Maturity"
+          size="small"
+          value={
+            <div className="flex gap-1">
+              <ClockIcon className="size-5 text-gray-500" />
+              <p className="text-neutral-content">
+                {formatDate(Date.now() + termLengthMS)}
+              </p>
+            </div>
+          }
+        />
+        <LabelValue
+          label="Pool fee"
+          size="small"
+          value={
+            openShortPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span
+                className={classNames({
+                  "text-base-content/80": !curveFee,
+                })}
+              >
+                {curveFee
+                  ? `${formatBalance({
+                      balance: curveFee,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })} hy${baseToken.symbol}`
+                  : `0 hy${baseToken.symbol}`}
+              </span>
+            )
+          }
+        />
+        <LabelValue
+          label="Short APR"
+          tooltipContent="Your annualized return on this position assuming the current yield source rate stays the same for one year"
+          tooltipPosition="right"
+          tooltipSize="small"
+          size="small"
+          value={
+            shortRateStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : (
+              <span className="text-base-content">
+                {shortApr ? `${shortApr.formatted}` : "-"}
+              </span>
+            )
+          }
+        />
         <LabelValue
           size="small"
           label="Fixed APR after open"
@@ -160,7 +143,7 @@ export function OpenShortPreview({
               >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2 text-base-content">
-                    <span className="text-base-content/80">{`${fixedApr?.formatted} `}</span>
+                    <span className="text-neutral-content">{`${fixedApr?.formatted} `}</span>
                     <ArrowRightIcon className="h-4 text-neutral-content" />
                     {formatRate(spotRateAfterOpen)}
                   </span>
