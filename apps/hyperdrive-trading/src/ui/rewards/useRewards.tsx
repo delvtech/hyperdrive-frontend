@@ -1,6 +1,6 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
@@ -13,42 +13,15 @@ const eligibleMarketsForMorphoRewards: Address[] = [
 const MorphoFlatRatePerDay = 1.45e-4;
 const MorphoFlatRatePerYear = parseFixed(MorphoFlatRatePerDay * 365 * 1000);
 
+type RewardType = "MorphoFlatRate";
+
 type UseRewardsReturn =
   | {
-      key: string;
-      name: ReactNode;
-      amount: ReactNode;
+      key: RewardType;
+      name: string;
+      amount: string;
     }[]
   | undefined;
-
-export function useShortRewards(hyperdriveAddress: Address): UseRewardsReturn {
-  const rate = parseFixed(MorphoFlatRatePerYear, 18);
-  if (eligibleMarketsForMorphoRewards.includes(hyperdriveAddress)) {
-    return [
-      {
-        key: "MorphoFlatRateRewards",
-        name: (
-          <p className="flex items-center gap-1 text-neutral-content">MORPHO</p>
-        ),
-        amount: (
-          <div>
-            <p className="flex items-center gap-1">
-              {rate?.format({
-                decimals: 2,
-              })}{" "}
-              <img
-                src="https://cdn.morpho.org/assets/logos/morpho.svg"
-                className="h-4"
-              />
-            </p>
-
-            <p className="text-2xs text-neutral-content">per $1000 / yr</p>
-          </div>
-        ),
-      },
-    ];
-  }
-}
 
 export function useRewards(
   hyperdrive: HyperdriveConfig,
@@ -83,25 +56,11 @@ export function useRewards(
 
     return [
       {
-        key: "MorphoFlatRateRewards",
-        name: (
-          <p className="flex items-center gap-1 text-neutral-content">MORPHO</p>
-        ),
-        amount: (
-          <div>
-            <p className="flex items-center gap-1">
-              {morphoRate.format({
-                decimals: 2,
-              })}{" "}
-              <img
-                src="https://cdn.morpho.org/assets/logos/morpho.svg"
-                className="inline h-4"
-              />
-            </p>
-
-            <p className="text-2xs text-neutral-content">per $1000 / yr</p>
-          </div>
-        ),
+        key: "MorphoFlatRate",
+        name: "MORPHO",
+        amount: morphoRate.format({
+          decimals: 2,
+        }),
       },
     ];
   }
