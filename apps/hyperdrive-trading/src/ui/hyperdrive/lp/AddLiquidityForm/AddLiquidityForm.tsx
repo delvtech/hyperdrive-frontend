@@ -69,10 +69,10 @@ export function AddLiquidityForm({
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
   const shareTokenDepositsEnabled =
     hyperdrive.depositOptions.isShareTokenDepositsEnabled;
-  const tokenOptions = [];
 
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
+  const tokenOptions = [];
   if (baseTokenDepositEnabled) {
     tokenOptions.push({
       tokenConfig: baseToken,
@@ -80,7 +80,7 @@ export function AddLiquidityForm({
     });
   }
 
-  if (shareTokenDepositsEnabled) {
+  if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
@@ -97,10 +97,8 @@ export function AddLiquidityForm({
       account,
       defaultActiveToken: baseTokenDepositEnabled
         ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
+        : hyperdrive.poolConfig.vaultSharesToken,
+      tokens: tokenOptions.map((token) => token.tokenConfig),
     });
 
   const {
