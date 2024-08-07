@@ -275,9 +275,9 @@ export function AddLiquidityForm({
               )
             }
           />
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
-            label="You receive"
-            valueUnit={`${baseToken.symbol}-LP`}
+            label="LP APY"
             value={
               addLiquidityPreviewStatus === "loading" ? (
                 <Skeleton width={100} />
@@ -293,11 +293,12 @@ export function AddLiquidityForm({
                         balance: lpSharesOut,
                         decimals: hyperdrive.decimals,
                         places: baseToken.places,
-                      })}`
+                      })}%`
                     : "-"}
                 </p>
               )
             }
+            valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
           />
         </div>
       }

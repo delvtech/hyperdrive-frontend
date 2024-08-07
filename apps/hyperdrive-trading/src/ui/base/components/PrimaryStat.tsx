@@ -12,7 +12,7 @@ export function PrimaryStat({
 }: {
   label: string;
   value: ReactNode;
-  valueUnit: ReactNode;
+  valueUnit?: ReactNode;
   subValue?: ReactNode;
   tooltipContent?: string;
   valueClassName?: string;
@@ -33,7 +33,9 @@ export function PrimaryStat({
       </div>
       <div className={valueClassName}>
         <div className="text-h3 font-bold">{value}</div>
-        <div className={unitClassName}>{valueUnit}</div>
+        {valueUnit ? (
+          <div className={unitClassName}> {valueUnit}</div>
+        ) : undefined}
       </div>
       {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
     </div>
