@@ -8,7 +8,7 @@ import {
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
@@ -39,6 +39,7 @@ export function OpenShortPreview({
   curveFee,
   openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -65,13 +66,30 @@ export function OpenShortPreview({
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
             <div className="flex items-center gap-1">
-              <ClockIcon className="size-5 text-gray-500" />
-              <p>{formatDate(Date.now() + termLengthMS)}</p>
+              {!detailsOpen ? (
+                <>
+                  <ClockIcon className="size-5 text-gray-500" />
+                  <p>{formatDate(Date.now() + termLengthMS)}</p>
+                </>
+              ) : undefined}
               <ChevronDownIcon className="ml-1 size-6" />
             </div>
           </div>
         }
+        onClick={() => setDetailsOpen(!detailsOpen)}
       >
+        <LabelValue
+          label="Maturity"
+          size="small"
+          value={
+            <div className="flex gap-1">
+              <ClockIcon className="size-5 text-gray-500" />
+              <p className="text-neutral-content">
+                {formatDate(Date.now() + termLengthMS)}
+              </p>
+            </div>
+          }
+        />
         <LabelValue
           label="Pool fee"
           size="small"
@@ -105,13 +123,7 @@ export function OpenShortPreview({
             shortRateStatus === "loading" ? (
               <Skeleton width={100} />
             ) : (
-              <span
-                className={classNames({
-                  "text-base-content/80": !shortApr,
-                  "text-success": shortApr && shortApr.apr > 0n,
-                  "text-error": shortApr && shortApr.apr < 0n,
-                })}
-              >
+              <span className="text-base-content">
                 {shortApr ? `${shortApr.formatted}` : "-"}
               </span>
             )
@@ -131,7 +143,7 @@ export function OpenShortPreview({
               >
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2 text-base-content">
-                    <span className="text-base-content/80">{`${fixedApr?.formatted} `}</span>
+                    <span className="text-neutral-content">{`${fixedApr?.formatted} `}</span>
                     <ArrowRightIcon className="h-4 text-neutral-content" />
                     {formatRate(spotRateAfterOpen)}
                   </span>
