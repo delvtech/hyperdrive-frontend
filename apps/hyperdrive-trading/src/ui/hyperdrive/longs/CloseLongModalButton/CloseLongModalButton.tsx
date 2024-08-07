@@ -5,7 +5,6 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -36,12 +35,13 @@ export function CloseLongModalButton({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
-  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
+  const subHeading = sharesToken
+    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    : "";
   const maturityMilliseconds = Number(long.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
 
