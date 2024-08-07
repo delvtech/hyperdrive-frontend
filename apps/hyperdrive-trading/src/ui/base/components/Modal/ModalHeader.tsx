@@ -13,7 +13,7 @@ export function ModalHeader({
       <div className="flex w-full flex-col">
         <div>
           <h4 className="mb-1">{heading}</h4>
-          <p className="text-neutral-content">{subHeading}</p>
+          <p className="text-sm text-neutral-content">{subHeading}</p>
         </div>
         {children}
       </div>

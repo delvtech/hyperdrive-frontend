@@ -11,6 +11,7 @@ import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -31,11 +32,13 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
+import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -47,6 +50,7 @@ export function AddLiquidityForm({
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
+  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -207,7 +211,9 @@ export function AddLiquidityForm({
     hyperdrive,
     baseToken,
   );
-
+  const tokenPrices = useTokenFiatPrices([activeToken.address]);
+  const activeTokenPrice =
+    tokenPrices?.[activeToken.address.toLowerCase() as Address];
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
     enabled:
@@ -230,6 +236,24 @@ export function AddLiquidityForm({
           value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="You deposit"
+          bottomLeftElement={
+            // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+            !isTestnetChain(chainId) ? (
+              <label className="text-sm text-neutral-content">
+                {`$${formatBalance({
+                  balance:
+                    activeTokenPrice && depositAmountAsBigInt
+                      ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
+                          activeTokenPrice,
+                          activeToken.decimals,
+                        ).bigint
+                      : 0n,
+                  decimals: activeToken.decimals,
+                  places: 2,
+                })}`}
+              </label>
+            ) : null
+          }
           token={
             <TokenPickerTwo
               tokens={tokenOptions}
@@ -337,6 +361,7 @@ export function AddLiquidityForm({
                 </p>
               )
             }
+            tooltipContent="The annual percentage yield projection for providing liquidity."
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
             subValue={
               vaultRateStatus === "success" && vaultRate ? (

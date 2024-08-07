@@ -1,12 +1,10 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { SparklesIcon } from "@heroicons/react/24/outline";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
-import { Stat } from "src/ui/base/components/Stat";
 import { WarningButton } from "src/ui/base/components/WarningButton";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -66,36 +64,10 @@ export function AddLiquidityModalButton({
           Shorts. Your liquidity also earns the ${yieldSourceToken.extensions.shortName}
           rate when not in use.
           `}
-        >
-          {" "}
-          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div className="gradient-text daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label={"LP APY:"}
-                value={lpApyLabel}
-              />
-            </div>
-            <div className="daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label={`${yieldSourceToken.extensions.shortName}:`}
-                value={`${vaultRate?.formatted || 0n}`}
-              />
-            </div>
-          </div>
-        </ModalHeader>
+        />
       }
       modalContent={
         <div>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6 " title="Close position" />
-          </button>
           <AddLiquidityForm
             hyperdrive={hyperdrive}
             onAddLiquidity={(e) => {
