@@ -99,16 +99,19 @@ export function TokenInputTwo({
         </div>
         <div className="flex w-full justify-between">
           {bottomLeftStatistic}
-          <div className="flex w-full items-center justify-end text-sm">
+          <div className="flex w-full items-end justify-end text-sm">
             <label className="items-end text-neutral-content">
               {bottomRightStatistic ? bottomRightStatistic : null}
             </label>
             {maxValue !== undefined && !disabled ? (
               <div className="text-base-content">
                 <button
-                  className={classNames("ml-2 font-semibold", {
-                    "daisy-btn-error": hasError,
-                  })}
+                  className={classNames(
+                    "ml-1 flex items-end text-xs font-semibold",
+                    {
+                      "daisy-btn-error": hasError,
+                    },
+                  )}
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();

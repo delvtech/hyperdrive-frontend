@@ -21,7 +21,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
@@ -35,6 +34,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -58,6 +58,9 @@ export function AddLiquidityForm({
     tokens: appConfig.tokens,
   });
 
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -246,6 +249,19 @@ export function AddLiquidityForm({
               tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
             />
           }
+          bottomRightElement={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })}`
+                  : undefined}
+              </span>
+            </div>
+          }
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
@@ -253,7 +269,30 @@ export function AddLiquidityForm({
         <div className="flex flex-row justify-between px-4 py-8">
           <PrimaryStat
             label="You receive"
+            subValue={
+              addLiquidityPreviewStatus === "loading" ? (
+                <Skeleton width={100} />
+              ) : (
+                <span
+                  className={classNames({
+                    "text-base-content/80": !poolShareAfterDeposit,
+                  })}
+                >
+                  {poolShareAfterDeposit
+                    ? `${fixed(
+                        poolShareAfterDeposit,
+                        activeToken.decimals,
+                      ).format({
+                        decimals: 4,
+                        rounding: "trunc",
+                      })}% of total liquidity`
+                    : undefined}
+                </span>
+              )
+            }
             valueUnit={`${baseToken.symbol}-LP`}
+            valueClassName="flex items-end"
+            unitClassName="text-xs"
             value={
               addLiquidityPreviewStatus === "loading" ? (
                 <Skeleton width={100} />
@@ -270,7 +309,7 @@ export function AddLiquidityForm({
                         decimals: hyperdrive.decimals,
                         places: baseToken.places,
                       })}`
-                    : "-"}
+                    : "0"}
                 </p>
               )
             }
@@ -294,68 +333,27 @@ export function AddLiquidityForm({
                         decimals: hyperdrive.decimals,
                         places: baseToken.places,
                       })}%`
-                    : "-"}
+                    : "0"}
                 </p>
               )
             }
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
+            subValue={
+              vaultRateStatus === "success" && vaultRate ? (
+                <div>
+                  {depositAmountAsBigInt ? (
+                    <>
+                      {sharesToken.extensions.shortName} @{" "}
+                      {vaultRate.formatted || 0} APY
+                    </>
+                  ) : undefined}
+                </div>
+              ) : (
+                <Skeleton className="w-42 h-8" />
+              )
+            }
           />
         </div>
-      }
-      // tokenInput={
-      //   <TokenInput
-      //     settings={
-      //       <SlippageSettings
-      //         onSlippageChange={setSlippage}
-      //         slippage={slippage}
-      //         activeOption={activeOption}
-      //         onActiveOptionChange={setActiveOption}
-      //         tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
-      //       />
-      //     }
-      //     name={activeToken.symbol}
-      //     token={
-      //       <TokenPicker
-      //         joined={true}
-      //         tokens={tokenOptions}
-      //         activeTokenAddress={activeToken.address}
-      //         onChange={(tokenAddress) => {
-      //           setActiveToken(tokenAddress);
-      //           setAmount("0");
-      //         }}
-      //       />
-      //     }
-      //     value={depositAmount ?? ""}
-      //     maxValue={activeTokenBalance?.formatted}
-      //     inputLabel="Amount to deposit"
-      //     stat={
-      //       <div className="flex flex-col gap-1 text-xs text-neutral-content">
-      //         <span>
-      //           {activeTokenBalance
-      //             ? `Balance: ${formatBalance({
-      //                 balance: activeTokenBalance?.value,
-      //                 decimals: activeToken.decimals,
-      //                 places: activeToken.places,
-      //               })} ${activeToken.symbol}`
-      //             : undefined}
-      //         </span>
-      //         <span>{`Slippage: ${slippage || "0.5"}%`}</span>
-      //       </div>
-      //     }
-      //     onChange={(newAmount) => setAmount(newAmount)}
-      //   />
-      // }
-      transactionPreview={
-        <AddLiquidityPreview
-          hyperdrive={hyperdrive}
-          lpSharesOut={lpSharesOut}
-          depositAmount={depositAmountAsBigInt}
-          depositTokenDecimals={activeToken.decimals}
-          depositTokenPlaces={activeToken.places}
-          depositTokenSymbol={activeToken.symbol}
-          poolShareAfterDeposit={poolShareAfterDeposit}
-          addLiquidityPreviewStatus={addLiquidityPreviewStatus}
-        />
       }
       disclaimer={(() => {
         if (!!depositAmountAsBigInt && !hasEnoughBalance) {

@@ -6,7 +6,7 @@ interface TransactionViewProps {
 
   setting?: ReactNode;
   primaryStats?: ReactNode;
-  transactionPreview: ReactNode;
+  transactionPreview?: ReactNode;
   disclaimer?: ReactNode;
 
   actionButton: ReactNode;

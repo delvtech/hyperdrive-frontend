@@ -31,11 +31,11 @@ export function PrimaryStat({
           </div>
         )}
       </div>
-      <div className={valueClassName}>
-        <div className="text-h3 font-bold">{value}</div>
+      <div className={`flex items-end ${valueClassName}`}>
+        <div className="text-h3 font-bold leading-none">{value}</div>
         {valueUnit ? (
-          <div className={unitClassName}> {valueUnit}</div>
-        ) : undefined}
+          <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
+        ) : null}
       </div>
       {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
     </div>
