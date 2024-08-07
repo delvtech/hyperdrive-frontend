@@ -13,8 +13,8 @@ export function calculateShortAccruedYield({
 }): bigint {
   // Current Accrued yield = (current share price - checkpoint share price) x
   // number of bonds
-  return fixed(endingVaultSharePrice - openVaultSharePrice, decimals).mul(
-    bondAmount,
-    decimals,
-  ).bigint;
+  const subbed = endingVaultSharePrice - openVaultSharePrice;
+  // TODO: Remove absoluteDifference once fixed-point-wasm supports negative numbers
+  const absoluteDifference = subbed < 0 ? -subbed : subbed;
+  return fixed(absoluteDifference, decimals).mul(bondAmount, decimals).bigint;
 }
