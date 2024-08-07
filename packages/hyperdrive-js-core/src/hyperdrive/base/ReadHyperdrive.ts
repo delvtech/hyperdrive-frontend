@@ -9,11 +9,7 @@ import {
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import { assertNever } from "src/base/assertNever";
-import {
-  MAX_ITERATIONS,
-  MAX_UINT256,
-  SECONDS_PER_YEAR,
-} from "src/base/constants";
+import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
 import { MergeKeys } from "src/base/types";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
 import {
@@ -27,7 +23,7 @@ import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOp
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { fixed, ln } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
-import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { DEFAULT_EXTRA_DATA, MAX_ITERATIONS } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { hyperwasm } from "src/hyperwasm";
 import {
@@ -1589,7 +1585,7 @@ export class ReadHyperdrive extends ReadModel {
     spotPriceAfterOpen: bigint;
     spotRateAfterOpen: bigint;
     curveFee: bigint;
-    shortApr: bigint;
+    fixedRatePaid: bigint;
   }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
@@ -1607,17 +1603,17 @@ export class ReadHyperdrive extends ReadModel {
       openVaultSharePrice: latestCheckpoint.vaultSharePrice,
     });
 
-    // Calculation for short APR. This is the rate the user pays upfront to open a short.
+    // Calculation for fixed rate paid. This is the rate the user pays upfront to open a short.
     const baseAmountMinusYield = baseDepositAmount - accruedYield;
     const bondsMinusBaseAmount = amountOfBondsToShort - baseAmountMinusYield;
-    const shortApr = fixed(baseAmountMinusYield, 18).div(
+    const fixedRatePaid = fixed(baseAmountMinusYield, 18).div(
       bondsMinusBaseAmount,
       18,
     );
     const fixedTimeRangeInYears = fixed(poolConfig.positionDuration).div(
       SECONDS_PER_YEAR,
     );
-    const shortAprScaled = shortApr.div(fixedTimeRangeInYears).bigint;
+    const fixedRatePaidScaled = fixedRatePaid.div(fixedTimeRangeInYears).bigint;
 
     const spotPriceAfterOpen = hyperwasm.spotPriceAfterShort({
       poolInfo,
@@ -1644,7 +1640,7 @@ export class ReadHyperdrive extends ReadModel {
         spotPriceAfterOpen,
         spotRateAfterOpen,
         curveFee: curveFeeInBase,
-        shortApr: shortAprScaled,
+        fixedRatePaid: fixedRatePaidScaled,
       };
     }
 
@@ -1661,7 +1657,7 @@ export class ReadHyperdrive extends ReadModel {
         baseAmount: curveFeeInBase,
         options,
       }),
-      shortApr: shortAprScaled,
+      fixedRatePaid: fixedRatePaidScaled,
     };
   }
 

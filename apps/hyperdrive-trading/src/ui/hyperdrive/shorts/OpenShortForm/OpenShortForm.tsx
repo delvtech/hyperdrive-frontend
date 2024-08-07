@@ -150,7 +150,7 @@ export function OpenShortForm({
     spotRateAfterOpen,
     spotPriceAfterOpen,
     curveFee,
-    shortApr,
+    fixedRatePaid,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
     hyperdriveAddress: hyperdrive.address,
@@ -397,7 +397,7 @@ export function OpenShortForm({
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
             label="Rate you pay"
-            value={formatRate(shortApr || 0n, baseToken.decimals)}
+            value={formatRate(fixedRatePaid || 0n, baseToken.decimals)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"
             unitClassName="text-xs"

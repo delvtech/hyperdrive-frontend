@@ -19,7 +19,7 @@ interface UsePreviewOpenShortResult {
   spotPriceAfterOpen: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
-  shortApr: bigint | undefined;
+  fixedRatePaid: bigint | undefined;
 }
 
 export function usePreviewOpenShort({
@@ -70,7 +70,7 @@ export function usePreviewOpenShort({
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,
-    shortApr: data?.shortApr,
+    fixedRatePaid: data?.fixedRatePaid,
     status: getStatus(status, fetchStatus),
   };
 }
