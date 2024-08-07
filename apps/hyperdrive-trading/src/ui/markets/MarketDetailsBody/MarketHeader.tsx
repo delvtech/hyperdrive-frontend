@@ -33,11 +33,13 @@ export function MarketHeader({
                 <img src={baseToken.iconUrl} />
               </div>
             </div>
-            <div className="daisy-avatar">
-              <div className="w-12">
-                <img src={sharesToken?.iconUrl} />
+            {sharesToken ? (
+              <div className="daisy-avatar">
+                <div className="w-12">
+                  <img src={sharesToken.iconUrl} />
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
           {hyperdrive.name}
         </h1>{" "}
