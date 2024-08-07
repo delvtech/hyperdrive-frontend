@@ -23,7 +23,7 @@ import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOp
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { fixed, ln } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
-import { DEFAULT_EXTRA_DATA, MAX_ITERATIONS } from "src/hyperdrive/constants";
+import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { hyperwasm } from "src/hyperwasm";
 import {
@@ -1932,7 +1932,7 @@ export class ReadHyperdrive extends ReadModel {
     minOutputPerShare,
     destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
+    extraData = NULL_BYTES,
     options,
   }: {
     lpSharesIn: bigint;
@@ -1971,7 +1971,7 @@ export class ReadHyperdrive extends ReadModel {
     minOutputPerShare,
     destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
+    extraData = NULL_BYTES,
     options,
   }: {
     withdrawalSharesIn: bigint;
