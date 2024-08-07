@@ -7,13 +7,16 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -23,15 +26,15 @@ import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -134,11 +137,11 @@ export function AddLiquidityForm({
   });
 
   const {
-    activeOption,
-    setActiveOption,
     setSlippage,
     slippage,
     slippageAsBigInt,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const isBaseActiveToken = activeToken.address === baseToken.address;
@@ -217,22 +220,15 @@ export function AddLiquidityForm({
   });
 
   return (
-    <TransactionViewOld
+    <TransactionView
       tokenInput={
-        <TokenInput
-          settings={
-            <SlippageSettings
-              onSlippageChange={setSlippage}
-              slippage={slippage}
-              activeOption={activeOption}
-              onActiveOptionChange={setActiveOption}
-              tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
-            />
-          }
+        <TokenInputTwo
           name={activeToken.symbol}
+          value={depositAmount ?? ""}
+          maxValue={activeTokenBalance?.formatted}
+          inputLabel="You deposit"
           token={
-            <TokenPicker
-              joined={true}
+            <TokenPickerTwo
               tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
@@ -241,26 +237,113 @@ export function AddLiquidityForm({
               }}
             />
           }
-          value={depositAmount ?? ""}
-          maxValue={activeTokenBalance?.formatted}
-          inputLabel="Amount to deposit"
-          stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              <span>
-                {activeTokenBalance
-                  ? `Balance: ${formatBalance({
-                      balance: activeTokenBalance?.value,
-                      decimals: activeToken.decimals,
-                      places: activeToken.places,
-                    })} ${activeToken.symbol}`
-                  : undefined}
-              </span>
-              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
-            </div>
+          settings={
+            <SlippageSettingsTwo
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+            />
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
+      primaryStats={
+        <div className="flex flex-row justify-between px-4 py-8">
+          <PrimaryStat
+            label="You receive"
+            valueUnit={`${baseToken.symbol}-LP`}
+            value={
+              addLiquidityPreviewStatus === "loading" ? (
+                <Skeleton width={100} />
+              ) : (
+                <p
+                  className={classNames({
+                    "text-base-content/80": !lpSharesOut,
+                    "font-bold": lpSharesOut,
+                  })}
+                >
+                  {lpSharesOut
+                    ? `${formatBalance({
+                        balance: lpSharesOut,
+                        decimals: hyperdrive.decimals,
+                        places: baseToken.places,
+                      })}`
+                    : "-"}
+                </p>
+              )
+            }
+          />
+          <PrimaryStat
+            label="You receive"
+            valueUnit={`${baseToken.symbol}-LP`}
+            value={
+              addLiquidityPreviewStatus === "loading" ? (
+                <Skeleton width={100} />
+              ) : (
+                <p
+                  className={classNames({
+                    "text-base-content/80": !lpSharesOut,
+                    "font-bold": lpSharesOut,
+                  })}
+                >
+                  {lpSharesOut
+                    ? `${formatBalance({
+                        balance: lpSharesOut,
+                        decimals: hyperdrive.decimals,
+                        places: baseToken.places,
+                      })}`
+                    : "-"}
+                </p>
+              )
+            }
+          />
+        </div>
+      }
+      // tokenInput={
+      //   <TokenInput
+      //     settings={
+      //       <SlippageSettings
+      //         onSlippageChange={setSlippage}
+      //         slippage={slippage}
+      //         activeOption={activeOption}
+      //         onActiveOptionChange={setActiveOption}
+      //         tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
+      //       />
+      //     }
+      //     name={activeToken.symbol}
+      //     token={
+      //       <TokenPicker
+      //         joined={true}
+      //         tokens={tokenOptions}
+      //         activeTokenAddress={activeToken.address}
+      //         onChange={(tokenAddress) => {
+      //           setActiveToken(tokenAddress);
+      //           setAmount("0");
+      //         }}
+      //       />
+      //     }
+      //     value={depositAmount ?? ""}
+      //     maxValue={activeTokenBalance?.formatted}
+      //     inputLabel="Amount to deposit"
+      //     stat={
+      //       <div className="flex flex-col gap-1 text-xs text-neutral-content">
+      //         <span>
+      //           {activeTokenBalance
+      //             ? `Balance: ${formatBalance({
+      //                 balance: activeTokenBalance?.value,
+      //                 decimals: activeToken.decimals,
+      //                 places: activeToken.places,
+      //               })} ${activeToken.symbol}`
+      //             : undefined}
+      //         </span>
+      //         <span>{`Slippage: ${slippage || "0.5"}%`}</span>
+      //       </div>
+      //     }
+      //     onChange={(newAmount) => setAmount(newAmount)}
+      //   />
+      // }
       transactionPreview={
         <AddLiquidityPreview
           hyperdrive={hyperdrive}
