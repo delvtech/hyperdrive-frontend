@@ -32,8 +32,8 @@ export function PrimaryStat({
         )}
       </div>
       <div className={valueClassName}>
-        <p className="text-h3 font-bold">{value}</p>
-        <p className={unitClassName}>{valueUnit}</p>
+        <div className="text-h3 font-bold">{value}</div>
+        <div className={unitClassName}>{valueUnit}</div>
       </div>
       {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
     </div>
