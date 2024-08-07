@@ -2,7 +2,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
-import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateCell({
@@ -27,7 +27,7 @@ export function ShortRateCell({
           "items-center gap-1 lg:flex lg:w-24 lg:justify-end",
           {
             "text-neutral-content": !shortApr,
-            "text-success ": (shortApr?.apr || 0n) > 0n,
+            "text-success": (shortApr?.apr || 0n) > 0n,
             "text-error": (shortApr?.apr || 0n) < 0n,
           }
         )}

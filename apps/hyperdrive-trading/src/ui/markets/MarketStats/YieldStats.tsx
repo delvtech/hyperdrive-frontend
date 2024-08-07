@@ -12,7 +12,7 @@ import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
 export function YieldStats({

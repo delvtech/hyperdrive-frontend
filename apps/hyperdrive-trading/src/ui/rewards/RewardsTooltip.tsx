@@ -19,11 +19,11 @@ export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
 
   const rewards = useRewards(hyperdrive, props.positionType);
 
-  if (!rewards) {
+  if (!rewards || (rewards && rewards.length === 0)) {
     return props.children;
   }
 
-  return rewards.length > 0 ? (
+  return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
@@ -40,10 +40,10 @@ export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
             </div>
 
             {rewards?.map((reward) => {
-              if (reward.key === "MorphoFlatRate") {
+              if (reward.id === "MorphoFlatRate") {
                 return (
                   <div
-                    key={reward.key}
+                    key={reward.id}
                     className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-1">
@@ -71,7 +71,5 @@ export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
         </Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
-  ) : (
-    props.children
   );
 }

@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
-import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
