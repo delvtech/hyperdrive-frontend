@@ -1,9 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import {
-  HyperdriveConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -19,10 +15,9 @@ export function MarketHeader({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.sharesToken,
+  );
   const analyticsUrl = getAnalyticsUrl({
     chainId: appConfig.chainId,
     hyperdrive: hyperdrive.address,
@@ -40,7 +35,7 @@ export function MarketHeader({
             </div>
             <div className="daisy-avatar">
               <div className="w-12">
-                <img src={sharesToken.iconUrl} />
+                <img src={sharesToken?.iconUrl} />
               </div>
             </div>
           </div>

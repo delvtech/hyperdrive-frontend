@@ -1,18 +1,22 @@
-import { KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSource } from "src/yieldSources/extensions";
 import { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the yield source token.
+ * @deprecated This method is too shallow to be useful, use this instead:
+ * ```
+ * // Find the yield source token
+ * appConfig.tokens.find(token => token.address === yieldSourceTokenAddress);
+ * ```
+ *
  */
 export function findYieldSourceToken({
   yieldSourceTokenAddress,
   tokens,
 }: {
   yieldSourceTokenAddress: Address;
-  tokens: TokenConfig<KnownTokenExtensions>[];
-}): TokenConfig<YieldSource> {
+  tokens: TokenConfig[];
+}): TokenConfig {
   const yieldSourceToken = tokens.find(
     (token) => yieldSourceTokenAddress === token.address,
   );
@@ -23,17 +27,5 @@ export function findYieldSourceToken({
     );
   }
 
-  if (!isYieldSourceToken(yieldSourceToken)) {
-    throw new Error(
-      `Misconfigured token ${yieldSourceTokenAddress}. Yield source tokens must contain the "yieldSource" tag.`,
-    );
-  }
-
   return yieldSourceToken;
-}
-
-function isYieldSourceToken(
-  token: TokenConfig<KnownTokenExtensions>,
-): token is TokenConfig<YieldSource> {
-  return token.tags.includes("yieldSource");
 }

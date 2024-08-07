@@ -1,9 +1,4 @@
-import {
-  EmptyExtensions,
-  HyperdriveConfig,
-  TokenConfig,
-  YieldSourceExtensions,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, TokenConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 
@@ -14,9 +9,9 @@ export function WithdrawTokenPicker({
   activeWithdrawToken,
   onChange,
 }: {
-  sharesToken: TokenConfig<YieldSourceExtensions>;
+  sharesToken: TokenConfig;
   hyperdrive: HyperdriveConfig;
-  baseToken: TokenConfig<EmptyExtensions>;
+  baseToken: TokenConfig;
   activeWithdrawToken: TokenConfig<any>;
   onChange: (tokenAddress: string) => void;
 }): ReactElement {

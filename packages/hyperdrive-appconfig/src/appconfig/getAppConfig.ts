@@ -1,6 +1,6 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
-import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
+import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
@@ -26,7 +26,7 @@ export async function getAppConfig({
   registryAddress: Address;
   publicClient: PublicClient;
 }): Promise<AppConfig> {
-  const tokens: TokenConfig<KnownTokenExtensions>[] = [];
+  const tokens: TokenConfig[] = [];
 
   // Get ReadHyperdrive instances from the registry to ensure
   // that only registered pools are delivered to the frontend
@@ -38,7 +38,7 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
-      // TODO: Replace this with a call to hyperdrive.getName() once evm-client
+      // TODO: Replace this with a call to hyperdrive.getKind() once evm-client
       // is updated
       const hackName = await publicClient.readContract({
         address: hyperdrive.address,

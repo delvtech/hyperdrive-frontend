@@ -4,16 +4,16 @@ import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address } from "viem";
 
-export function useActiveToken<T1, T2>({
+export function useActiveToken({
   account,
   tokens,
   defaultActiveToken,
 }: {
   account: Address | undefined;
-  tokens: [TokenConfig<T1>, TokenConfig<T2>] | [TokenConfig<any>]; // Remove TokenConfig<any> to after Sepolia. Temporary fix to avoid users losing their testnet ETH to Lido.
+  tokens: TokenConfig[];
   defaultActiveToken: Address;
 }): {
-  activeToken: TokenConfig<T1 | T2>;
+  activeToken: TokenConfig;
   activeTokenBalance:
     | {
         formatted: string;
@@ -27,7 +27,7 @@ export function useActiveToken<T1, T2>({
 
   const activeToken = tokens.find(
     ({ address }) => address === activeTokenAddress,
-  ) as TokenConfig<T1 | T2>;
+  ) as TokenConfig;
 
   const { balance: activeTokenBalance } = useTokenBalance({
     account,

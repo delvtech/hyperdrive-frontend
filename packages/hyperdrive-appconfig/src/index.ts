@@ -1,5 +1,5 @@
 // appconfigs
-export type { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
+export type { AppConfig } from "src/appconfig/AppConfig";
 export { mainnetAppConfig } from "src/generated/1.appconfig";
 export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
 export { cloudChainAppConfig } from "src/generated/42069.appconfig";

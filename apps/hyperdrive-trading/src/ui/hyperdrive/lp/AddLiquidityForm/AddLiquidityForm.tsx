@@ -3,7 +3,6 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -50,10 +49,9 @@ export function AddLiquidityForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -63,8 +61,8 @@ export function AddLiquidityForm({
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    decimals: hyperdrive.decimals,
   });
 
   const baseTokenDepositEnabled =

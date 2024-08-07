@@ -1,9 +1,5 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import {
-  AppConfig,
-  findHyperdriveConfig,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
@@ -71,17 +67,14 @@ export async function prepareSharesOut({
     hyperdriveAddress: hyperdriveAddress,
   });
 
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdriveConfig.sharesToken,
-    tokens: appConfig.tokens,
-  });
-
   // If the shares token is pegged to its base token (e.g., stETH to ETH), then
   // we need to treat the shares amount out as base. To get the actual shares
   // amount then, we convert to base. For example, when preparing lido shares
   // received back from a steth hyperdrive, this will convert lido shares to
   // eth, and since 1 eth = 1 steth we return this as the shares value.
-  if (sharesToken.extensions.isSharesPeggedToBase) {
+  if (
+    appConfig.yieldSources[hyperdriveConfig.yieldSource].isSharesPeggedToBase
+  ) {
     return readHyperdrive.convertToBase({
       sharesAmount,
     });

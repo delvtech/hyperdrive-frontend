@@ -4,7 +4,6 @@ import {
   EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
@@ -93,7 +92,7 @@ export function CloseLongModalButton({
             className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}
           >
-            <XMarkIcon className="w-6 " title="Close position" />
+            <XMarkIcon className="w-6" title="Close position" />
           </button>
           <CloseLongForm
             hyperdrive={hyperdrive}
@@ -112,7 +111,7 @@ export function CloseLongModalButton({
 function getSubHeadingLabel(
   baseToken: TokenConfig<EmptyExtensions>,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

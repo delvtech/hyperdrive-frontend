@@ -1,5 +1,5 @@
 import { SparklesIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
@@ -23,10 +23,7 @@ export function YieldStats({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { position = "longs" } = useSearch({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
 
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
@@ -39,9 +36,7 @@ export function YieldStats({
             <YieldSourceRateBadge
               hyperdriveAddress={hyperdrive.address}
               labelRenderer={(vaultRate) =>
-                `${sharesToken.extensions.shortName} @ ${
-                  vaultRate.formatted || 0
-                } APY`
+                `${yieldSource?.shortName} @ ${vaultRate.formatted || 0} APY`
               }
             />
           </div>

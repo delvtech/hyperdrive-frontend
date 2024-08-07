@@ -2,7 +2,6 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -18,7 +17,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address } from "viem";
+import { Address, formatUnits } from "viem";
 import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
@@ -47,13 +46,11 @@ export function OpenLongStats({
   const tokenPrices = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
     tokenPrices?.[baseToken.address.toLowerCase() as Address];
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
-  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const isBaseAmount =
+    asBase ||
+    appConfig.yieldSources[hyperdrive.yieldSource].isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
     ? amountPaid
     : convertSharesToBase({
@@ -64,6 +61,22 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
+  console.log(
+    "bondAmount",
+    bondAmount,
+    "amountPaidInBase",
+    amountPaidInBase,
+    !!bondAmount && !!amountPaidInBase
+      ? formatUnits(
+          calculateAprFromPrice({
+            positionDuration: hyperdrive.poolConfig.positionDuration || 0n,
+            baseAmount: amountPaidInBase,
+            bondAmount: bondAmount,
+          }),
+          18,
+        )
+      : null,
+  );
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat

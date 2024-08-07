@@ -5,8 +5,6 @@ import {
   Protocol,
   TokenConfig,
   findBaseToken,
-  findYieldSourceToken,
-  protocols,
 } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
@@ -53,18 +51,17 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
 
                 const longApr = await readHyperdrive.getFixedApr();
 
-                const yieldSource = findYieldSourceToken({
-                  yieldSourceTokenAddress: hyperdrive.sharesToken,
-                  tokens: appConfig.tokens,
-                });
+                const yieldSource =
+                  appConfig.yieldSources[hyperdrive.yieldSource];
+
                 return {
                   market: hyperdrive,
                   baseToken,
                   liquidity,
                   longAPR: formatRate(longApr),
-                  yieldSourceShortName: yieldSource.extensions.shortName,
+                  yieldSourceShortName: yieldSource.shortName,
                   yieldSourceProtocol:
-                    protocols[yieldSource.extensions.protocol],
+                    appConfig.protocols[yieldSource.protocol],
                 };
               },
             ),

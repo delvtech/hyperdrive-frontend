@@ -1,5 +1,5 @@
 import { PauseCircleIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -20,10 +20,6 @@ export function OpenShortModalButton({
   const { marketState } = useMarketState(hyperdrive.address);
 
   const appConfig = useAppConfig();
-  const sharesToken = findYieldSourceToken({
-    tokens: appConfig.tokens,
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-  });
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   function closeModal() {
@@ -46,7 +42,7 @@ export function OpenShortModalButton({
       modalHeader={
         <ModalHeader
           heading="Open a Short"
-          subHeading={`Buy exposure to ${sharesToken.extensions.shortName} with minimal upfront capital`}
+          subHeading={`Buy exposure to ${appConfig.yieldSources[hyperdrive.yieldSource].shortName}} with minimal upfront capital`}
         />
       }
       modalContent={

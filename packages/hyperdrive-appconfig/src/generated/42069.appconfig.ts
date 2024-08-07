@@ -4,7 +4,38 @@ export const cloudChainAppConfig: AppConfig = {
   tokens: [],
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   hyperdrives: [],
-  yieldSources: {},
+  yieldSources: {
+    makerDsr: {
+      id: "makerDsr",
+      shortName: "Maker DSR",
+      protocol: "maker",
+      isSharesPeggedToBase: false,
+    },
+    lidoSteth: {
+      id: "lidoSteth",
+      shortName: "Lido stETH",
+      protocol: "lido",
+      isSharesPeggedToBase: true,
+    },
+    metaMorpho: {
+      id: "metaMorpho",
+      shortName: "MetaMorpho",
+      protocol: "morpho",
+      isSharesPeggedToBase: false,
+    },
+    reth: {
+      id: "reth",
+      shortName: "Rocket Pool ETH",
+      protocol: "rocketPool",
+      isSharesPeggedToBase: false,
+    },
+    ezEth: {
+      id: "ezEth",
+      shortName: "Renzo ezETH",
+      protocol: "renzo",
+      isSharesPeggedToBase: false,
+    },
+  },
   protocols: {
     maker: {
       id: "maker",

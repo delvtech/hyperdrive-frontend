@@ -4,7 +4,6 @@ import {
   EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
@@ -111,7 +110,7 @@ export function CloseShortModalButton({
 function getSubHeadingLabel(
   baseToken: TokenConfig<EmptyExtensions>,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

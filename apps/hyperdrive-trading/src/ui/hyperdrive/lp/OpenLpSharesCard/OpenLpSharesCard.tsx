@@ -1,11 +1,9 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -221,7 +219,7 @@ export function OpenLpSharesCard({
                         (window as any)["withdrawalLpModal"].close()
                       }
                     >
-                      <XMarkIcon className="w-6 " title="Close" />
+                      <XMarkIcon className="w-6" title="Close" />
                     </button>
                     <RemoveLiquidityForm
                       hyperdrive={hyperdrive}
@@ -259,9 +257,9 @@ export function OpenLpSharesCard({
 }
 
 function getSubHeadingLabel(
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

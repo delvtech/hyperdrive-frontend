@@ -6,7 +6,6 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -48,13 +47,10 @@ export function OpenLongPreview({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
-  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const isBaseAmount = asBase || yieldSource.isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
     ? amountPaid
     : convertSharesToBase({
