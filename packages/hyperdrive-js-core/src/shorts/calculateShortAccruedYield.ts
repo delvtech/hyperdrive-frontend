@@ -15,6 +15,10 @@ export function calculateShortAccruedYield({
   // number of bonds
   const subbed = endingVaultSharePrice - openVaultSharePrice;
   // TODO: Remove absoluteDifference once fixed-point-wasm supports negative numbers
-  const absoluteDifference = subbed < 0 ? -subbed : subbed;
-  return fixed(absoluteDifference, decimals).mul(bondAmount, decimals).bigint;
+  const [sign_factor, absoluteDifference] =
+    subbed < 0n ? [-1n, -subbed] : [1n, subbed];
+  return (
+    fixed(absoluteDifference, decimals).mul(bondAmount, decimals).bigint *
+    sign_factor
+  );
 }
