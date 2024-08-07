@@ -1,15 +1,24 @@
 import { SparklesIcon } from "@heroicons/react/16/solid";
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
-import { useLpRewards } from "src/ui/rewards/useRewards";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
-interface LpRewardsTooltipProps extends PropsWithChildren {
+interface RewardsTooltipProps extends PropsWithChildren {
   hyperdriveAddress: Address;
+  positionType: "lp" | "short";
 }
 
-export function LpRewardsTooltip(props: LpRewardsTooltipProps): ReactNode {
-  const rewards = useLpRewards(props.hyperdriveAddress);
+export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
+  const { hyperdrives } = useAppConfig();
+  const hyperdrive = findHyperdriveConfig({
+    hyperdrives,
+    hyperdriveAddress: props.hyperdriveAddress,
+  });
+
+  const rewards = useRewards(hyperdrive, props.positionType);
 
   if (!rewards) {
     return props.children;

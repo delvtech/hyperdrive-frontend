@@ -2,7 +2,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
-import { ShortRewardsTooltip } from "src/ui/rewards/components/ShortRewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateCell({
@@ -32,9 +32,12 @@ export function ShortRateCell({
           }
         )}
       >
-        <ShortRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+        <RewardsTooltip
+          hyperdriveAddress={hyperdrive.address}
+          positionType="short"
+        >
           <span>{shortApr ? `${shortApr.formatted}` : "-"} </span>
-        </ShortRewardsTooltip>
+        </RewardsTooltip>
       </span>
     </div>
   );

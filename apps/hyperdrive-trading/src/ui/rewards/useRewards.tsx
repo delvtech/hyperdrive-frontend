@@ -1,11 +1,9 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactNode, useMemo } from "react";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
-
-// warning  Fast refresh only works when a file only exports components. Move your component(s) to a separate file
-// react-refresh/only-export-components
 
 const eligibleMarketsForMorphoRewards: Address[] = [
   "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",
@@ -13,7 +11,7 @@ const eligibleMarketsForMorphoRewards: Address[] = [
 ];
 
 const MorphoFlatRatePerDay = 1.45e-4;
-const MorphoFlatRatePerYear = MorphoFlatRatePerDay * 365 * 1000;
+const MorphoFlatRatePerYear = parseFixed(MorphoFlatRatePerDay * 365 * 1000);
 
 type UseRewardsReturn =
   | {
@@ -52,27 +50,37 @@ export function useShortRewards(hyperdriveAddress: Address): UseRewardsReturn {
   }
 }
 
-export function useLpRewards(hyperdriveAddress: Address): UseRewardsReturn {
+export function useRewards(
+  hyperdrive: HyperdriveConfig,
+  positionType: "short" | "lp"
+): UseRewardsReturn {
   const { poolInfo } = usePoolInfo({
-    hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
   });
 
   const { presentValue } = usePresentValue({
-    hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
   });
 
-  const rate = useMemo(() => {
+  const weight = useMemo(() => {
     if (!poolInfo || !presentValue) {
-      return;
+      return parseFixed(0);
     }
 
-    const weight = fixed(poolInfo.shareReserves, 18).div(presentValue, 18);
-    const morphoFlatRate = parseFixed(MorphoFlatRatePerYear, 18);
+    if (positionType === "short") {
+      return parseFixed(1, 18);
+    }
 
-    return morphoFlatRate.mul(weight);
-  }, [poolInfo, presentValue]);
+    const shareReserves = fixed(poolInfo.shareReserves);
+    const minShareReserves = fixed(hyperdrive.poolConfig.minimumShareReserves);
+    const netShareReserves = shareReserves.sub(minShareReserves);
 
-  if (eligibleMarketsForMorphoRewards.includes(hyperdriveAddress)) {
+    return netShareReserves.div(presentValue);
+  }, [poolInfo, presentValue, positionType]);
+
+  if (eligibleMarketsForMorphoRewards.includes(hyperdrive.address)) {
+    const morphoRate = MorphoFlatRatePerYear.mul(weight);
+
     return [
       {
         key: "MorphoFlatRateRewards",
@@ -82,7 +90,7 @@ export function useLpRewards(hyperdriveAddress: Address): UseRewardsReturn {
         amount: (
           <div>
             <p className="flex items-center gap-1">
-              {rate?.format({
+              {morphoRate.format({
                 decimals: 2,
               })}{" "}
               <img

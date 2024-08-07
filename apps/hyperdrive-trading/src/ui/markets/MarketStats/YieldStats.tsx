@@ -12,7 +12,7 @@ import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { LpRewardsTooltip } from "src/ui/rewards/components/LpRewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
 export function YieldStats({
@@ -63,7 +63,10 @@ export function YieldStats({
             <Stat
               label="LP APY (7d)"
               value={
-                <LpRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+                <RewardsTooltip
+                  hyperdriveAddress={hyperdrive.address}
+                  positionType="lp"
+                >
                   {lpApyStatus !== "loading" ? (
                     <span
                       className={classNames("gap-1-5 flex items-center", {
@@ -89,7 +92,7 @@ export function YieldStats({
                   ) : (
                     <Skeleton className="w-20" />
                   )}
-                </LpRewardsTooltip>
+                </RewardsTooltip>
               }
               description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
               tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}

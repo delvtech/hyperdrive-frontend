@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { useLocalStorage } from "react-use";
 import { MultiStat, MultiStatProps } from "src/ui/base/components/MultiStat";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
-import { ShortRewardsTooltip } from "src/ui/rewards/components/ShortRewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function ShortRateStat({
@@ -55,11 +55,14 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <ShortRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+            <RewardsTooltip
+              hyperdriveAddress={hyperdrive.address}
+              positionType="short"
+            >
               <span className={rateClassName}>
                 {shortApr?.formatted ? `${shortApr.formatted}` : "-"}
               </span>
-            </ShortRewardsTooltip>
+            </RewardsTooltip>
           ),
         },
         {
@@ -71,11 +74,14 @@ export function ShortRateStat({
           value: isLoadingShortRate ? (
             <Skeleton className="w-20" />
           ) : (
-            <ShortRewardsTooltip hyperdriveAddress={hyperdrive.address}>
+            <RewardsTooltip
+              hyperdriveAddress={hyperdrive.address}
+              positionType="short"
+            >
               <span className={rateClassName}>
                 {shortRoi?.formatted ? `${shortRoi.formatted}` : "-"}
               </span>
-            </ShortRewardsTooltip>
+            </RewardsTooltip>
           ),
         },
       ]}

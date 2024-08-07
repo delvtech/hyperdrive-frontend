@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { RewardsTooltip } from "src/ui/rewards/components/RewardsTooltip";
 import { Address } from "viem";
 
 export function LpApyCell({
@@ -30,7 +31,9 @@ export function LpApyCell({
         "flex w-14 justify-end": !isTailwindSmallScreen,
       })}
     >
-      {(lpApy * 100).toFixed(2)}%
+      <RewardsTooltip hyperdriveAddress={hyperdriveAddress} positionType="lp">
+        {(lpApy * 100).toFixed(2)}%
+      </RewardsTooltip>
     </span>
   );
 }
