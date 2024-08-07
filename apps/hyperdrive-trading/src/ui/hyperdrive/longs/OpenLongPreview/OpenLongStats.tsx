@@ -17,7 +17,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address, formatUnits } from "viem";
+import { Address } from "viem";
 import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
@@ -61,22 +61,6 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
-  console.log(
-    "bondAmount",
-    bondAmount,
-    "amountPaidInBase",
-    amountPaidInBase,
-    !!bondAmount && !!amountPaidInBase
-      ? formatUnits(
-          calculateAprFromPrice({
-            positionDuration: hyperdrive.poolConfig.positionDuration || 0n,
-            baseAmount: amountPaidInBase,
-            bondAmount: bondAmount,
-          }),
-          18,
-        )
-      : null,
-  );
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
