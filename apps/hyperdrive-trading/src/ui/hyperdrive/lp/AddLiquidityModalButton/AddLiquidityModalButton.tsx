@@ -1,15 +1,12 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
-import { SparklesIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { WarningButton } from "src/ui/base/components/WarningButton";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function AddLiquidityModalButton({
   modalId,
@@ -20,29 +17,8 @@ export function AddLiquidityModalButton({
 }): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
   const appConfig = useAppConfig();
-  const { lpApy } = useLpApy(hyperdrive.address);
-  // TODO: copied from YieldStats, this should be formalized in useLpApy
-  const lpApyLabel =
-    lpApy === undefined ? (
-      <span className="gradient-text flex flex-row items-center">
-        <SparklesIcon width={18} className="fill-primary stroke-none" />
-        New
-      </span>
-    ) : (
-      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
-    );
 
-  const { vaultRate } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const yieldSourceToken = findYieldSourceToken({
-    tokens: appConfig.tokens,
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-  });
-
-  function closeModal() {
-    (window as any)[modalId].close();
-  }
+  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
 
   if (marketState?.isPaused) {
     return (
@@ -61,7 +37,7 @@ export function AddLiquidityModalButton({
         <ModalHeader
           heading="Add Liquidity"
           subHeading={`Earn yield by providing liquidity for Longs and
-          Shorts. Your liquidity also earns the ${yieldSourceToken.extensions.shortName}
+          Shorts. Your liquidity also earns the ${yieldSource.shortName}
           rate when not in use.
           `}
         />

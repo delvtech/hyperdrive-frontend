@@ -1,95 +1,21 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
-import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
+import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
+import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
-import { protocols } from "src/protocols/protocols";
-import { Tag } from "src/tags";
+import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
   ETH_ICON_URL,
   EZETH_ICON_URL,
-  MORPHO_ICON_URL,
   RETH_ICON_URL,
   SDAI_ICON_URL,
-  STETH_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
-import {
-  ezethExtensions,
-  metaMorphoExtensions,
-  rethExtensions,
-  sdaiExtensions,
-  stethExtensions,
-} from "src/yieldSources/extensions";
-import { yieldSourceTag } from "src/yieldSources/tags";
+import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
-import { YieldSourceExtensions } from "..";
-
-// Token Symbols
-const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
-  "DELV",
-  "SDAI",
-];
-const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["HYPERDRIVEDAI"];
-
-// Tags
-const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
-
-type KnownHyperdriveMetadata = {
-  baseTokenIconUrl: string;
-  sharesTokenIconUrl: string;
-  sharesTokenExtensions: YieldSourceExtensions;
-  tags?: string[];
-  tokenPlaces: number;
-};
-
-const knownHyperdriveMetadata: Record<
-  Uppercase<string>,
-  KnownHyperdriveMetadata
-> = {
-  DELV: {
-    sharesTokenExtensions: sdaiExtensions,
-    baseTokenIconUrl: DAI_ICON_URL,
-    sharesTokenIconUrl: SDAI_ICON_URL,
-    tokenPlaces: 4,
-  },
-  SDAI: {
-    sharesTokenExtensions: sdaiExtensions,
-    baseTokenIconUrl: DAI_ICON_URL,
-    sharesTokenIconUrl: SDAI_ICON_URL,
-    tags: ERC4626_SHARE_TOKEN_TAGS,
-    tokenPlaces: 2,
-  },
-  HYPERDRIVEDAI: {
-    sharesTokenExtensions: metaMorphoExtensions,
-    baseTokenIconUrl: DAI_ICON_URL,
-    sharesTokenIconUrl: MORPHO_ICON_URL,
-    tags: ERC4626_SHARE_TOKEN_TAGS,
-    tokenPlaces: 2,
-  },
-  STETH: {
-    sharesTokenExtensions: stethExtensions,
-    baseTokenIconUrl: ETH_ICON_URL,
-    sharesTokenIconUrl: STETH_ICON_URL,
-    tokenPlaces: 4,
-  },
-  RETH: {
-    sharesTokenExtensions: rethExtensions,
-    baseTokenIconUrl: ETH_ICON_URL,
-    sharesTokenIconUrl: RETH_ICON_URL,
-    tags: ["reth"],
-    tokenPlaces: 4,
-  },
-  EZETH: {
-    sharesTokenExtensions: ezethExtensions,
-    baseTokenIconUrl: ETH_ICON_URL,
-    sharesTokenIconUrl: EZETH_ICON_URL,
-    tags: ["ezeth"],
-    tokenPlaces: 4,
-  },
-};
 
 export async function getAppConfig({
   chainId,
@@ -100,9 +26,10 @@ export async function getAppConfig({
   registryAddress: Address;
   publicClient: PublicClient;
 }): Promise<AppConfig> {
-  const tags: Tag[] = [yieldSourceTag];
-  const tokens: TokenConfig<KnownTokenExtensions>[] = [];
+  const tokens: TokenConfig[] = [];
 
+  // Get ReadHyperdrive instances from the registry to ensure
+  // that only registered pools are delivered to the frontend
   const registry = new ReadRegistry({
     address: registryAddress,
     publicClient,
@@ -111,23 +38,48 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
+      // TODO: Replace this with a call to hyperdrive.getKind()
+      const hackName = await publicClient.readContract({
+        address: hyperdrive.address,
+        abi: hyperdrive.contract.abi,
+        functionName: "name",
+      });
+      console.log("Hyperdrive Name: ", hackName);
+
+      if (
+        [
+          "MORPHO_BLUE_DAI_14_DAY", // sepolia
+          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
+        ].includes(hackName)
+      ) {
+        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
+          hyperdrive,
+          baseTokenTags: ["stablecoin"],
+          baseTokenIconUrl: DAI_ICON_URL,
+          baseTokenPlaces: 2,
+          yieldSourceId: "morphoBlueSusdeDai",
+        });
+
+        tokens.push(baseToken);
+
+        return hyperdriveConfig;
+      }
+
       const token = await hyperdrive.getSharesToken();
       const tokenSymbol = (
         await token.getSymbol()
       ).toUpperCase() as Uppercase<string>;
 
-      const hyperdriveMetadata = knownHyperdriveMetadata[tokenSymbol];
-      if (!hyperdriveMetadata) {
-        throw new Error(
-          `Yield source metadata not configured: Missing entry for ${tokenSymbol}`,
-        );
-      }
-
-      // Generic ERC-4626
-      if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+      if (
+        [
+          "DELV", // cloudchain
+          "SDAI", // sepolia and mainnet
+        ].includes(tokenSymbol)
+      ) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "makerDsr",
             depositOptions: {
               isBaseTokenDepositEnabled: true,
               isShareTokenDepositsEnabled: true,
@@ -136,7 +88,10 @@ export async function getAppConfig({
               isBaseTokenWithdrawalEnabled: true,
               isShareTokenWithdrawalEnabled: true,
             },
-            ...hyperdriveMetadata,
+            baseTokenIconUrl: DAI_ICON_URL,
+            baseTokenTags: ["stablecoin"],
+            sharesTokenIconUrl: SDAI_ICON_URL,
+            tokenPlaces: 2,
           });
 
         tokens.push(sharesToken);
@@ -151,7 +106,6 @@ export async function getAppConfig({
           await getStethHyperdrive({
             hyperdrive,
             chainId,
-            ...hyperdriveMetadata,
           });
 
         tokens.push(sharesToken);
@@ -165,6 +119,7 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "reth",
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -175,7 +130,10 @@ export async function getAppConfig({
               isBaseTokenWithdrawalEnabled: false,
               isShareTokenWithdrawalEnabled: true,
             },
-            ...hyperdriveMetadata,
+            baseTokenIconUrl: ETH_ICON_URL,
+            sharesTokenIconUrl: RETH_ICON_URL,
+            sharesTokenTags: ["liquidStakingToken"],
+            tokenPlaces: 4,
           });
 
         tokens.push(sharesToken);
@@ -189,6 +147,7 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
             hyperdrive,
+            yieldSource: "ezEth",
             depositOptions: {
               // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
@@ -199,29 +158,10 @@ export async function getAppConfig({
               isBaseTokenWithdrawalEnabled: false,
               isShareTokenWithdrawalEnabled: true,
             },
-            ...hyperdriveMetadata,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      // MetaMorpho
-      if (metaMorphoSharesTokenSymbols.includes(tokenSymbol)) {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getCustomHyperdrive({
-            hyperdrive,
-            depositOptions: {
-              isBaseTokenDepositEnabled: true,
-              isShareTokenDepositsEnabled: false,
-            },
-            withdrawalOptions: {
-              isBaseTokenWithdrawalEnabled: true,
-              isShareTokenWithdrawalEnabled: false,
-            },
-            ...hyperdriveMetadata,
+            baseTokenIconUrl: ETH_ICON_URL,
+            sharesTokenIconUrl: EZETH_ICON_URL,
+            sharesTokenTags: ["liquidStakingToken"],
+            tokenPlaces: 4,
           });
 
         tokens.push(sharesToken);
@@ -238,11 +178,11 @@ export async function getAppConfig({
 
   const config: AppConfig = {
     chainId,
-    tags: uniqBy(tags, "id"),
     tokens: uniqBy(tokens, "address"),
     registryAddress,
     hyperdrives: configs,
     protocols,
+    yieldSources,
   };
 
   return config;

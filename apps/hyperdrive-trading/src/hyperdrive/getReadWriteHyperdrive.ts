@@ -8,23 +8,21 @@ import {
   ReadWriteHyperdrive_v1_0_14,
   ReadWriteStEthHyperdrive_v1_0_14,
 } from "@delvtech/hyperdrive-viem/v1.0.14";
-import { TokenConfig } from "@hyperdrive/appconfig";
+import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import semver from "semver";
 import { sdkCache } from "src/sdk/sdkCache";
-import { getIsMetaMorpho } from "src/vaults/isMetaMorpho";
-import { getIsSteth } from "src/vaults/isSteth";
 import { Address, PublicClient, WalletClient } from "viem";
 
 export async function getReadWriteHyperdrive({
   hyperdriveAddress,
   publicClient,
   walletClient,
-  sharesToken,
+  appConfig,
 }: {
   hyperdriveAddress: Address;
   publicClient: PublicClient;
   walletClient: WalletClient;
-  sharesToken: TokenConfig<any>;
+  appConfig: AppConfig;
 }): Promise<ReadWriteHyperdrive> {
   let hyperdrive: ReadWriteHyperdrive;
 
@@ -38,8 +36,11 @@ export async function getReadWriteHyperdrive({
 
   // steth
 
-  const isSteth = getIsSteth(sharesToken);
-  if (isSteth) {
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
+  if (hyperdriveConfig.yieldSource === "lidoSteth") {
     hyperdrive = new ReadWriteStEthHyperdrive(options);
 
     // <= v1.0.14
@@ -51,9 +52,7 @@ export async function getReadWriteHyperdrive({
   }
 
   // morpho
-
-  const isMetaMorpho = getIsMetaMorpho(sharesToken);
-  if (isMetaMorpho) {
+  if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
     hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
 
     return hyperdrive;

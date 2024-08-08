@@ -3,7 +3,6 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -36,10 +35,9 @@ export function YourBalanceWell({
   });
 
   // shares token
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.sharesToken,
+  );
 
   return (
     <Well elevation="flat">
@@ -47,9 +45,13 @@ export function YourBalanceWell({
         <h5 className="mb-2 text-neutral-content">Available Assets</h5>
         <div className="flex flex-col gap-2 px-2">
           <AvailableAsset token={baseToken} spender={hyperdrive.address} />
-          {hyperdrive.depositOptions.isShareTokenDepositsEnabled && (
-            <AvailableAsset token={sharesToken} spender={hyperdrive.address} />
-          )}
+          {sharesToken &&
+            hyperdrive.depositOptions.isShareTokenDepositsEnabled && (
+              <AvailableAsset
+                token={sharesToken}
+                spender={hyperdrive.address}
+              />
+            )}
         </div>
       </div>
     </Well>
@@ -103,13 +105,13 @@ function AvailableAsset({
   const hasFaucet = chainId === sepolia.id;
 
   return (
-    <div className="flex whitespace-nowrap ">
+    <div className="flex whitespace-nowrap">
       <div className="flex items-center gap-1 text-h5 font-bold">
         {tokenBalanceStatus === "loading" || tokenBalance === undefined ? (
           <Skeleton className="w-52" />
         ) : (
           <>
-            <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
+            <img src={token.iconUrl} className="h-8 rounded-full p-1" />
             {formatBalance({
               balance: tokenBalance.value || 0n,
               decimals: token.decimals,

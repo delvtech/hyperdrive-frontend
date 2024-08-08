@@ -2,7 +2,6 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -47,13 +46,11 @@ export function OpenLongStats({
   const tokenPrices = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
     tokenPrices?.[baseToken.address.toLowerCase() as Address];
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
-  const isBaseAmount = asBase || sharesToken.extensions.isSharesPeggedToBase;
+  const isBaseAmount =
+    asBase ||
+    appConfig.yieldSources[hyperdrive.yieldSource].isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
     ? amountPaid
     : convertSharesToBase({

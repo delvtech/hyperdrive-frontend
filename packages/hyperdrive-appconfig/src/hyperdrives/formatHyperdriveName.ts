@@ -12,14 +12,10 @@ function formatDaysLabel(timeMS: number): string {
 
 export function formatHyperdriveName({
   termLengthMS,
-  baseTokenSymbol,
   yieldSourceShortName,
 }: {
   termLengthMS: number;
-  baseTokenSymbol: string;
   yieldSourceShortName: string;
 }): string {
-  return `${formatDaysLabel(
-    termLengthMS,
-  )} ${baseTokenSymbol}-${yieldSourceShortName}`;
+  return `${formatDaysLabel(termLengthMS)} ${yieldSourceShortName}`;
 }

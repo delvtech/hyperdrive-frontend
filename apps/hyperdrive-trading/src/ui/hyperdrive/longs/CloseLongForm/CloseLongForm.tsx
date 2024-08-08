@@ -1,9 +1,5 @@
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import {
-  findBaseToken,
-  findYieldSourceToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -34,30 +30,36 @@ export function CloseLongForm({
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+
+  const defaultItems = [];
+  const baseToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
+  if (baseToken) {
+    defaultItems.push(baseToken);
+  }
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
+  if (sharesToken) {
+    defaultItems.push(sharesToken);
+  }
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
 
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: [baseToken, sharesToken],
+    items: defaultItems,
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-      ? baseToken.address
-      : sharesToken.address,
+      ? hyperdrive.poolConfig.baseToken
+      : hyperdrive.poolConfig.vaultSharesToken,
   });
 
   const {
@@ -77,7 +79,7 @@ export function CloseLongForm({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
-    asBase: activeWithdrawToken.address === baseToken.address,
+    asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
   });
 
   const minAmountOutAfterSlippage =
@@ -95,7 +97,7 @@ export function CloseLongForm({
     bondAmountIn: bondAmountAsBigInt,
     minAmountOut: minAmountOutAfterSlippage,
     destination: account,
-    asBase: activeWithdrawToken.address === baseToken.address,
+    asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     enabled: previewCloseLongStatus === "success",
     onSubmitted: () => {
       (window as any)[`${long.assetId}`].close();
@@ -106,14 +108,14 @@ export function CloseLongForm({
   });
 
   const withdrawTokenChoices: TokenChoice[] = [];
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
 
-  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: sharesToken,
     });
@@ -124,9 +126,9 @@ export function CloseLongForm({
       disclaimer={
         <>
           <p className="text-center text-xs text-neutral-content">
-            Note: 1 hy{baseToken.symbol} is always worth 1 {baseToken.symbol} at
-            maturity, however its value may fluctuate before maturity based on
-            market activity.
+            Note: 1 hy{baseToken?.symbol} is always worth 1 {baseToken?.symbol}{" "}
+            at maturity, however its value may fluctuate before maturity based
+            on market activity.
           </p>
           {previewCloseLongStatus === "error" ? (
             <p className="text-center text-error">
@@ -138,21 +140,23 @@ export function CloseLongForm({
         </>
       }
       tokenInput={
-        <TokenInput
-          name={baseToken.symbol}
-          inputLabel="Amount to redeem"
-          token={`hy${baseToken.symbol}`}
-          value={bondAmount ?? ""}
-          maxValue={
-            long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
-          }
-          stat={`Balance: ${formatBalance({
-            balance: long.bondAmount,
-            decimals: hyperdrive.decimals,
-            places: baseToken.places,
-          })}`}
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
+        baseToken ? (
+          <TokenInput
+            name={baseToken.symbol}
+            inputLabel="Amount to redeem"
+            token={`hy${baseToken.symbol}`}
+            value={bondAmount ?? ""}
+            maxValue={
+              long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+            }
+            stat={`Balance: ${formatBalance({
+              balance: long.bondAmount,
+              decimals: hyperdrive.decimals,
+              places: baseToken.places,
+            })}`}
+            onChange={(newAmount) => setAmount(newAmount)}
+          />
+        ) : null
       }
       setting={
         withdrawTokenChoices.length > 1 ? (
@@ -173,8 +177,8 @@ export function CloseLongForm({
                 {withdrawAmount
                   ? `${formatBalance({
                       balance: withdrawAmount,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken?.places,
                     })}`
                   : "0"}{" "}
                 {activeWithdrawToken.symbol}

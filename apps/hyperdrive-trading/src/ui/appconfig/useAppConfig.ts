@@ -2,6 +2,7 @@ import {
   AppConfig,
   cloudChainAppConfig,
   mainnetAppConfig,
+  protocols,
   sepoliaAppConfig,
 } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
@@ -11,23 +12,22 @@ import { b3Sepolia } from "src/network/b3Sepolia";
 import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
-const emptyAppConfig: AppConfig = {
-  chainId: 0,
-  tags: [],
+const baseSepoliaAppConfig: AppConfig = {
+  chainId: baseSepolia.id,
   registryAddress: ZERO_ADDRESS,
   hyperdrives: [],
   tokens: [],
-  protocols: {},
-};
-
-const baseSepoliaAppConfig: AppConfig = {
-  ...emptyAppConfig,
-  chainId: baseSepolia.id,
+  protocols: protocols,
+  yieldSources: {} as any,
 };
 
 const b3SepoliaAppConfig: AppConfig = {
-  ...emptyAppConfig,
   chainId: b3Sepolia.id,
+  registryAddress: ZERO_ADDRESS,
+  hyperdrives: [],
+  tokens: [],
+  protocols: protocols,
+  yieldSources: {} as any,
 };
 
 export function useAppConfig(): AppConfig {

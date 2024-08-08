@@ -1,19 +1,14 @@
 import { Address } from "abitype";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { protocols } from "src/protocols/protocols";
-import { Tag } from "src/tags";
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
-
-export type KnownTokenExtensions = YieldSourceExtensions | EmptyExtensions;
-
-type SomeProtocols = Partial<typeof protocols>;
+import { protocols } from "src/protocols";
+import { TokenConfig } from "src/tokens/getTokenConfig";
+import { yieldSources } from "src/yieldSources";
 
 export interface AppConfig {
   chainId: number;
-  tags: Tag[];
   registryAddress: Address;
   hyperdrives: HyperdriveConfig[];
-  tokens: TokenConfig<KnownTokenExtensions>[];
-  protocols: SomeProtocols;
+  tokens: TokenConfig[];
+  protocols: typeof protocols;
+  yieldSources: typeof yieldSources;
 }

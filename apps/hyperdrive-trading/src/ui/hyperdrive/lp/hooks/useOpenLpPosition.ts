@@ -1,5 +1,7 @@
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseOpenLpPositionOptions {
@@ -17,11 +19,22 @@ export function useOpenLpPosition({
   openLpPositionStatus: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive && !!account;
+  const appConfig = useAppConfig();
+  const queryEnabled = !!hyperdriveAddress && !!readHyperdrive && !!account;
   const { data, status: openLpPositionStatus } = useQuery({
     queryKey: makeQueryKey("openLpPosition", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? () => readHyperdrive.getOpenLpPosition({ account })
+      ? () => {
+          const hyperdriveConfig = findHyperdriveConfig({
+            hyperdrives: appConfig.hyperdrives,
+            hyperdriveAddress,
+          });
+          return readHyperdrive.getOpenLpPosition({
+            account,
+            asBase:
+              hyperdriveConfig.withdrawOptions.isBaseTokenWithdrawalEnabled,
+          });
+        }
       : undefined,
     enabled: queryEnabled,
   });

@@ -2,8 +2,8 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
+  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
@@ -36,10 +36,13 @@ export function RedeemWithdrawalSharesForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.sharesToken,
+  );
+  const items: TokenConfig[] = [baseToken];
+  if (sharesToken) {
+    items.push(sharesToken);
+  }
 
   const { address: account } = useAccount();
 
@@ -47,11 +50,11 @@ export function RedeemWithdrawalSharesForm({
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: [baseToken, sharesToken],
+    items,
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? baseToken.address
-      : sharesToken.address,
+      : hyperdrive.poolConfig.vaultSharesToken,
   });
 
   // where the user types in an amount of base or shares to redeem
@@ -138,16 +141,18 @@ export function RedeemWithdrawalSharesForm({
         <TokenInput
           name="withdrawalShares"
           token={
-            <WithdrawTokenPicker
-              sharesToken={sharesToken}
-              hyperdrive={hyperdrive}
-              baseToken={baseToken}
-              onChange={(tokenAddress) => {
-                setActiveWithdrawToken(tokenAddress);
-                setAmount("0");
-              }}
-              activeWithdrawToken={activeWithdrawToken}
-            />
+            sharesToken ? (
+              <WithdrawTokenPicker
+                sharesToken={sharesToken}
+                hyperdrive={hyperdrive}
+                baseToken={baseToken}
+                onChange={(tokenAddress) => {
+                  setActiveWithdrawToken(tokenAddress);
+                  setAmount("0");
+                }}
+                activeWithdrawToken={activeWithdrawToken}
+              />
+            ) : undefined
           }
           value={amount ?? ""}
           stat={

@@ -1,10 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
-import {
-  findBaseToken,
-  findYieldSourceToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -33,7 +29,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -63,11 +59,6 @@ export function OpenLongForm({
     ({ balance }) => Number(balance) > 0,
   );
 
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
-
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -76,25 +67,24 @@ export function OpenLongForm({
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    decimals: hyperdrive.decimals,
   });
 
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-  const shareTokenDepositsEnabled =
-    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
-  const tokenOptions = [];
-
-  if (baseTokenDepositEnabled) {
-    tokenOptions.push({
+  const tokenChoices: TokenChoice[] = [];
+  if (baseToken && hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+    tokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
 
-  if (shareTokenDepositsEnabled) {
-    tokenOptions.push({
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
+
+  if (sharesToken && hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+    tokenChoices.push({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
     });
@@ -103,12 +93,10 @@ export function OpenLongForm({
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      defaultActiveToken: baseTokenDepositEnabled
+      defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
         ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
+        : hyperdrive.poolConfig.vaultSharesToken,
+      tokens: tokenChoices.map((token) => token.tokenConfig),
     });
   const tokenPrices = useTokenFiatPrices([activeToken.address]);
   const activeTokenPrice =
@@ -239,7 +227,7 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPickerTwo
-              tokens={tokenOptions}
+              tokens={tokenChoices}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

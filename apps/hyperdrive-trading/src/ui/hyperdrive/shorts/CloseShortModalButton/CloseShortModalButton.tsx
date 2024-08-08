@@ -4,9 +4,7 @@ import {
   EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
   findBaseToken,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -33,11 +31,13 @@ export function CloseShortModalButton({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
-  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
+  const subHeading = sharesToken
+    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    : "";
+
   const maturityMilliseconds = Number(short.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
   function closeModal() {
@@ -111,7 +111,7 @@ export function CloseShortModalButton({
 function getSubHeadingLabel(
   baseToken: TokenConfig<EmptyExtensions>,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

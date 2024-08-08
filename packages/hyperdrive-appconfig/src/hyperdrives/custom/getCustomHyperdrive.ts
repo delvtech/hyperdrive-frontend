@@ -6,45 +6,45 @@ import {
   TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import { yieldSources } from "src/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
 
 interface GetHyperdriveConfigParams {
   hyperdrive: ReadHyperdrive;
-  sharesTokenExtensions: YieldSourceExtensions;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
+  yieldSource: keyof typeof yieldSources;
   depositOptions: DepositOptions;
   withdrawalOptions: WithdrawalOptions;
   tokenPlaces: number;
-  tags?: string[];
-}
-
-interface GetCustomHyperdriveResult {
-  sharesToken: TokenConfig<YieldSourceExtensions>;
-  baseToken: TokenConfig<EmptyExtensions>;
-  hyperdriveConfig: HyperdriveConfig;
+  sharesTokenTags?: string[];
+  baseTokenTags?: string[];
 }
 
 export async function getCustomHyperdrive({
   hyperdrive,
-  sharesTokenExtensions,
   baseTokenIconUrl,
+  yieldSource,
   sharesTokenIconUrl,
   depositOptions,
   withdrawalOptions,
   tokenPlaces,
-  tags = [],
-}: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
+  sharesTokenTags = [],
+  baseTokenTags = [],
+}: GetHyperdriveConfigParams): Promise<{
+  sharesToken: TokenConfig<EmptyExtensions>;
+  baseToken: TokenConfig<EmptyExtensions>;
+  hyperdriveConfig: HyperdriveConfig;
+}> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
   const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
-    tags: ["yieldSource", ...tags],
-    extensions: sharesTokenExtensions,
+    tags: sharesTokenTags,
+    extensions: {},
     iconUrl: sharesTokenIconUrl,
     places: tokenPlaces,
   });
@@ -53,15 +53,14 @@ export async function getCustomHyperdrive({
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
     extensions: {},
-    tags: [],
+    tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: tokenPlaces,
   });
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
+    yieldSourceShortName: yieldSources[yieldSource].shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
@@ -69,6 +68,7 @@ export async function getCustomHyperdrive({
     version: version.string,
     name: hyperdriveName,
     decimals: await hyperdrive.getDecimals(),
+    yieldSource,
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
     depositOptions: depositOptions,

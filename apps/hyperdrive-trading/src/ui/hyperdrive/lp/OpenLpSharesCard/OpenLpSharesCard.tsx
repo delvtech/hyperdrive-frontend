@@ -1,11 +1,8 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -41,10 +38,9 @@ export function OpenLpSharesCard({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { lpShares, lpSharesStatus } = useLpShares({
@@ -55,7 +51,9 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
+  const subHeading = sharesToken
+    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    : "";
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,
@@ -221,7 +219,7 @@ export function OpenLpSharesCard({
                         (window as any)["withdrawalLpModal"].close()
                       }
                     >
-                      <XMarkIcon className="w-6 " title="Close" />
+                      <XMarkIcon className="w-6" title="Close" />
                     </button>
                     <RemoveLiquidityForm
                       hyperdrive={hyperdrive}
@@ -259,9 +257,9 @@ export function OpenLpSharesCard({
 }
 
 function getSubHeadingLabel(
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

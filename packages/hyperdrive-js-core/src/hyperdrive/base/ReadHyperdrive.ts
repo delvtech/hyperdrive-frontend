@@ -23,7 +23,7 @@ import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOp
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { fixed, ln } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
-import { DEFAULT_EXTRA_DATA, MAX_ITERATIONS } from "src/hyperdrive/constants";
+import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { hyperwasm } from "src/hyperwasm";
 import {
@@ -1262,8 +1262,12 @@ export class ReadHyperdrive extends ReadModel {
    */
   async getOpenLpPosition({
     account,
+    // TODO: Remove asBase parameter when we can use hyperwasm to calculate the
+    // preview remove liquidity
+    asBase,
     options,
   }: {
+    asBase: boolean;
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<{
@@ -1305,18 +1309,21 @@ export class ReadHyperdrive extends ReadModel {
     // calculated value of the position will always be based on the current
     // state of the pool, even if the lp balance and amount paid were
     // calculated using past events via the block in options.
+
     const { proceeds, withdrawalShares } = await this.previewRemoveLiquidity({
       lpSharesIn: lpShareBalance,
       minOutputPerShare: 1n,
-      asBase: false,
+      asBase,
       destination: account,
     });
 
     // Note: we don't pass in the options here because we want the current
     // prices that were used in the previewRemoveLiquidity call.
-    const proceedsBaseValue = await this.convertToBase({
-      sharesAmount: proceeds,
-    });
+    const proceedsBaseValue = asBase
+      ? proceeds
+      : await this.convertToBase({
+          sharesAmount: proceeds,
+        });
 
     // convert the withdrawal shares into base using lpSharePrice
     const { lpSharePrice } = await this.getPoolInfo();
@@ -1904,6 +1911,7 @@ export class ReadHyperdrive extends ReadModel {
       maxApr: maxApr,
     });
     const decimals = await this.getDecimals();
+
     const lpSharesOutInBase = fixed(lpSharesOut, decimals).mul(
       poolInfo.lpSharePrice,
       decimals,
@@ -1929,7 +1937,7 @@ export class ReadHyperdrive extends ReadModel {
     minOutputPerShare,
     destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
+    extraData = NULL_BYTES,
     options,
   }: {
     lpSharesIn: bigint;
@@ -1968,7 +1976,7 @@ export class ReadHyperdrive extends ReadModel {
     minOutputPerShare,
     destination,
     asBase,
-    extraData = DEFAULT_EXTRA_DATA,
+    extraData = NULL_BYTES,
     options,
   }: {
     withdrawalSharesIn: bigint;

@@ -1,10 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import {
-  findBaseToken,
-  findYieldSourceToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -44,10 +40,9 @@ export function RemoveLiquidityForm({
     tokens: appConfig.tokens,
   });
 
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -57,16 +52,20 @@ export function RemoveLiquidityForm({
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    decimals: hyperdrive.decimals,
   });
 
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
-  const tokens: TokenChoice[] = [
-    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
-  ];
+  const tokens: TokenChoice[] = [];
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    tokens.push({
+      tokenConfig: sharesToken,
+      tokenBalance: sharesTokenBalance?.value,
+    });
+  }
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
     tokens.unshift({
@@ -78,11 +77,11 @@ export function RemoveLiquidityForm({
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: [baseToken, sharesToken],
+    items: tokens.map(({ tokenConfig }) => tokenConfig),
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? baseToken.address
-      : sharesToken.address,
+      : hyperdrive.poolConfig.vaultSharesToken,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -178,7 +177,7 @@ export function RemoveLiquidityForm({
     });
   }
 
-  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: sharesToken,
     });
@@ -203,7 +202,7 @@ export function RemoveLiquidityForm({
           name="Input LP shares"
           token={
             <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-              <img src={baseToken.iconUrl} className="h-5 " />{" "}
+              <img src={baseToken.iconUrl} className="h-5" />{" "}
               <span className="text-sm font-semibold">
                 {baseToken.symbol}-LP
               </span>

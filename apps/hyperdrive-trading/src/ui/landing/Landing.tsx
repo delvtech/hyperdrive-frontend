@@ -24,12 +24,12 @@ export function Landing(): ReactElement | null {
 }
 
 function YieldSourceCards() {
-  const { protocols } = useAppConfig();
+  const { yieldSources } = useAppConfig();
 
   return (
     <div className="flex max-w-[1610px] flex-wrap justify-center gap-16">
-      {Object.entries(protocols).map(([key, protocol]) => (
-        <YieldSourceCard key={key} yieldSourceProtocol={protocol} />
+      {Object.entries(yieldSources).map(([key, yieldSource]) => (
+        <YieldSourceCard key={key} yieldSource={yieldSource} />
       ))}
     </div>
   );

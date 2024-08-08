@@ -1,4 +1,5 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
+import { yieldSources } from "src/yieldSources";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {
@@ -16,6 +17,11 @@ export interface HyperdriveConfig {
    * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
    */
   sharesToken: Address;
+
+  /**
+   * The yield source backing the pool,
+   */
+  yieldSource: keyof typeof yieldSources;
 
   depositOptions: {
     /**
