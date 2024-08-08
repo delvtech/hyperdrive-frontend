@@ -43,7 +43,7 @@ export function PrimaryStat({
         )}
       </div>
       <div className={valueClassName}>
-        <div className="text-h3 font-bold leading-none">{value}</div>
+        <div className="text-h3 font-bold">{value}</div>
         {valueUnit ? (
           <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
         ) : null}

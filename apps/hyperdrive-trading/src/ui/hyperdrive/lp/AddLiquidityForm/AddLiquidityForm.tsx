@@ -161,16 +161,6 @@ export function AddLiquidityForm({
     : poolInfo?.lpSharePrice || 0n;
 
   const { lpApy } = useLpApy(hyperdrive.address);
-  // TODO: copied from YieldStats, this should be formalized in useLpApy
-  const lpApyLabel =
-    lpApy == undefined ? (
-      <span className="gradient-text flex flex-row items-center">
-        <SparklesIcon width={18} className="fill-primary stroke-none" />
-        New
-      </span>
-    ) : (
-      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
-    );
 
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
     amount: lpSharePrice,
@@ -351,7 +341,19 @@ export function AddLiquidityForm({
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
             label="LP APY"
-            value={lpApyLabel}
+            value={
+              lpApy == undefined ? (
+                <span className="gradient-text flex flex-row items-center">
+                  <SparklesIcon
+                    width={18}
+                    className="fill-primary stroke-none"
+                  />
+                  New
+                </span>
+              ) : (
+                `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+              )
+            }
             tooltipContent="The annual percentage yield projection for providing liquidity."
             tooltipPosition="left"
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
