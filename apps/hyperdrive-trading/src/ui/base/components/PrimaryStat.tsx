@@ -42,7 +42,7 @@ export function PrimaryStat({
           </div>
         )}
       </div>
-      <div className={`flex items-end ${valueClassName}`}>
+      <div className={valueClassName}>
         <div className="text-h3 font-bold leading-none">{value}</div>
         {valueUnit ? (
           <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
