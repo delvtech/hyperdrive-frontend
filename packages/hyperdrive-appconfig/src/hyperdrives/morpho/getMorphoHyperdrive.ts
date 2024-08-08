@@ -37,7 +37,6 @@ export async function getMorphoHyperdrive({
   });
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
     yieldSourceShortName: yieldSources[yieldSourceId].shortName,
   });

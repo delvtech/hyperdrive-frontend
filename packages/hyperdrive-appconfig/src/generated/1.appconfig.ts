@@ -3,17 +3,6 @@ export const mainnetAppConfig: AppConfig = {
   chainId: 1,
   tokens: [
     {
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      decimals: 18,
-      places: 2,
-      name: "Dai Stablecoin",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-      extensions: {},
-    },
-    {
       address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       decimals: 18,
       places: 4,
@@ -32,6 +21,17 @@ export const mainnetAppConfig: AppConfig = {
       tags: [],
       extensions: {},
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+    },
+    {
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      decimals: 18,
+      places: 2,
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+      extensions: {},
     },
     {
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
