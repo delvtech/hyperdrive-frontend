@@ -204,13 +204,13 @@ export function AddLiquidityForm({
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
   });
-  const poolShare = calculatePoolShare(
+  const poolShare = calculatePoolShare({
     lpSharesBalanceOf,
-    depositAmountAsBigInt,
+    depositAmount: depositAmountAsBigInt,
     lpSharesTotalSupply,
     hyperdrive,
     baseToken,
-  );
+  });
   const tokenPrices = useTokenFiatPrices([activeToken.address]);
   const activeTokenPrice =
     tokenPrices?.[activeToken.address.toLowerCase() as Address];
@@ -433,13 +433,19 @@ export function AddLiquidityForm({
     />
   );
 }
-function calculatePoolShare(
-  lpSharesBalanceOf: bigint | undefined,
-  depositAmount: bigint | undefined,
-  lpSharesTotalSupply: bigint | undefined,
-  hyperdrive: HyperdriveConfig,
-  baseToken: TokenConfig<EmptyExtensions>,
-) {
+function calculatePoolShare({
+  lpSharesBalanceOf,
+  depositAmount,
+  lpSharesTotalSupply,
+  hyperdrive,
+  baseToken,
+}: {
+  lpSharesBalanceOf: bigint | undefined;
+  depositAmount: bigint | undefined;
+  lpSharesTotalSupply: bigint | undefined;
+  hyperdrive: HyperdriveConfig;
+  baseToken: TokenConfig<EmptyExtensions>;
+}) {
   if (
     !depositAmount ||
     !lpSharesTotalSupply ||
