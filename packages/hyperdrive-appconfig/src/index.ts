@@ -17,9 +17,9 @@ export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 export type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 
 // yield sources
-export { yieldSources } from "src/yieldSources/extensions";
-export type { YieldSource, YieldSourceId } from "src/yieldSources/extensions";
+export { yieldSources } from "src/yieldSources";
+export type { YieldSource, YieldSourceId } from "src/yieldSources";
 
 // protocols
-export { protocols } from "src/protocols/protocols";
-export type { Protocol } from "src/protocols/protocols";
+export { protocols } from "src/protocols";
+export type { Protocol, ProtocolId } from "src/protocols";

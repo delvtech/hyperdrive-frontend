@@ -5,7 +5,7 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
-import { protocols } from "src/protocols/protocols";
+import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
@@ -14,7 +14,7 @@ import {
   RETH_ICON_URL,
   SDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
 
 export async function getAppConfig({
@@ -44,11 +44,12 @@ export async function getAppConfig({
         abi: hyperdrive.contract.abi,
         functionName: "name",
       });
+      console.log("Hyperdrive Name: ", hackName);
 
       if (
         [
           "MORPHO_BLUE_DAI_14_DAY", // sepolia
-          "ElementDAO 182 Day sUSDe/DAI Hyperdrive", // mainnet
+          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
         ].includes(hackName)
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
@@ -56,6 +57,7 @@ export async function getAppConfig({
           baseTokenTags: ["stablecoin"],
           baseTokenIconUrl: DAI_ICON_URL,
           baseTokenPlaces: 2,
+          yieldSourceId: "morphoBlueSusdeDai",
         });
 
         tokens.push(baseToken);

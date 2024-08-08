@@ -1,9 +1,10 @@
-import { protocols } from "src/protocols/protocols";
+import { ProtocolId } from "src/protocols";
 
+export type YieldSourceId = keyof typeof yieldSources;
 export interface YieldSource {
-  id: keyof typeof yieldSources;
+  id: YieldSourceId;
   shortName: string;
-  protocol: keyof typeof protocols;
+  protocol: ProtocolId;
   isSharesPeggedToBase: boolean;
 }
 
@@ -21,9 +22,9 @@ const lidoSteth: YieldSource = {
   isSharesPeggedToBase: true,
 };
 
-const metaMorpho: YieldSource = {
-  id: "metaMorpho",
-  shortName: "MetaMorpho",
+const morphoBlueSusdeDai: YieldSource = {
+  id: "morphoBlueSusdeDai",
+  shortName: "Morpho Blue sUSDe/DAI",
   protocol: "morpho",
   isSharesPeggedToBase: false,
 };
@@ -45,9 +46,7 @@ const ezEth: YieldSource = {
 export const yieldSources = {
   makerDsr,
   lidoSteth,
-  metaMorpho,
+  morphoBlueSusdeDai,
   reth,
   ezEth,
 } as const;
-
-export type YieldSourceId = keyof typeof yieldSources;

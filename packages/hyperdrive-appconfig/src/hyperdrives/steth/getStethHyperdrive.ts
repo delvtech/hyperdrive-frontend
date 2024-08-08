@@ -7,7 +7,7 @@ import {
   TokenConfig,
 } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   hyperdrive,
@@ -44,7 +44,6 @@ export async function getStethHyperdrive({
   };
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
     yieldSourceShortName: yieldSources.lidoSteth.shortName,
   });

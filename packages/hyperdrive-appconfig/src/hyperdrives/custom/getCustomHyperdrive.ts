@@ -6,7 +6,7 @@ import {
   TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
@@ -59,7 +59,6 @@ export async function getCustomHyperdrive({
   });
 
   const hyperdriveName = formatHyperdriveName({
-    baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
     yieldSourceShortName: yieldSources[yieldSource].shortName,
   });

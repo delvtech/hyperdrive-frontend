@@ -52,7 +52,7 @@ export async function getReadWriteHyperdrive({
   }
 
   // morpho
-  if (hyperdriveConfig.yieldSource === "metaMorpho") {
+  if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
     hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
 
     return hyperdrive;

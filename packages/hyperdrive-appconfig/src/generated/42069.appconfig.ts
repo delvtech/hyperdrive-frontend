@@ -17,9 +17,9 @@ export const cloudChainAppConfig: AppConfig = {
       protocol: "lido",
       isSharesPeggedToBase: true,
     },
-    metaMorpho: {
-      id: "metaMorpho",
-      shortName: "MetaMorpho",
+    morphoBlueSusdeDai: {
+      id: "morphoBlueSusdeDai",
+      shortName: "Morpho Blue sUSDe/DAI",
       protocol: "morpho",
       isSharesPeggedToBase: false,
     },
