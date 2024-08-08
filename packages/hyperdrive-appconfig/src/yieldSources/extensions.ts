@@ -49,3 +49,5 @@ export const yieldSources = {
   reth,
   ezEth,
 } as const;
+
+export type YieldSourceId = keyof typeof yieldSources;

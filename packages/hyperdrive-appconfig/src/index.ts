@@ -18,7 +18,7 @@ export type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 
 // yield sources
 export { yieldSources } from "src/yieldSources/extensions";
-export type { YieldSource } from "src/yieldSources/extensions";
+export type { YieldSource, YieldSourceId } from "src/yieldSources/extensions";
 
 // protocols
 export { protocols } from "src/protocols/protocols";

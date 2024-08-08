@@ -38,8 +38,7 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
-      // TODO: Replace this with a call to hyperdrive.getKind() once evm-client
-      // is updated
+      // TODO: Replace this with a call to hyperdrive.getKind()
       const hackName = await publicClient.readContract({
         address: hyperdrive.address,
         abi: hyperdrive.contract.abi,
