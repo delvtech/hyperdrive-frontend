@@ -1,10 +1,11 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   EmptyExtensions,
-  findBaseToken,
   HyperdriveConfig,
   TokenConfig,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
@@ -19,22 +20,23 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
-import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -157,6 +159,18 @@ export function AddLiquidityForm({
         baseToken.decimals,
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
+
+  const { lpApy } = useLpApy(hyperdrive.address);
+  // TODO: copied from YieldStats, this should be formalized in useLpApy
+  const lpApyLabel =
+    lpApy == undefined ? (
+      <span className="gradient-text flex flex-row items-center">
+        <SparklesIcon width={18} className="fill-primary stroke-none" />
+        New
+      </span>
+    ) : (
+      `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+    );
 
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
     amount: lpSharePrice,
@@ -337,38 +351,15 @@ export function AddLiquidityForm({
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
             label="LP APY"
-            value={
-              addLiquidityPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <p
-                  className={classNames({
-                    "text-base-content/80": !lpSharesOut,
-                    "font-bold": lpSharesOut,
-                  })}
-                >
-                  {lpSharesOut
-                    ? `${formatBalance({
-                        balance: lpSharesOut,
-                        decimals: hyperdrive.decimals,
-                        places: baseToken.places,
-                      })}%`
-                    : "0"}
-                </p>
-              )
-            }
+            value={lpApyLabel}
             tooltipContent="The annual percentage yield projection for providing liquidity."
             tooltipPosition="left"
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
             subValue={
               vaultRateStatus === "success" && vaultRate ? (
                 <div>
-                  {depositAmountAsBigInt ? (
-                    <>
-                      {appConfig.yieldSources[hyperdrive.yieldSource].shortName}{" "}
-                      @ {vaultRate.formatted || 0} APY
-                    </>
-                  ) : undefined}
+                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
+                  {vaultRate.formatted || 0} APY
                 </div>
               ) : (
                 <Skeleton className="w-42 h-8" />
