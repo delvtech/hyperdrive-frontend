@@ -44,11 +44,12 @@ export async function getAppConfig({
         abi: hyperdrive.contract.abi,
         functionName: "name",
       });
+      console.log("Hyperdrive Name: ", hackName);
 
       if (
         [
           "MORPHO_BLUE_DAI_14_DAY", // sepolia
-          "ElementDAO 182 Day sUSDe/DAI Hyperdrive", // mainnet
+          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
         ].includes(hackName)
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
