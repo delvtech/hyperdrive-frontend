@@ -204,9 +204,9 @@ export function AddLiquidityForm({
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
   });
-  const poolShareAfterDeposit = calculatePoolShareAfterDeposit(
+  const poolShare = calculatePoolShare(
     lpSharesBalanceOf,
-    lpSharesOut,
+    depositAmountAsBigInt,
     lpSharesTotalSupply,
     hyperdrive,
     baseToken,
@@ -299,14 +299,11 @@ export function AddLiquidityForm({
               ) : (
                 <span
                   className={classNames({
-                    "text-base-content/80": !poolShareAfterDeposit,
+                    "text-base-content/80": !poolShare,
                   })}
                 >
-                  {poolShareAfterDeposit
-                    ? `${fixed(
-                        poolShareAfterDeposit,
-                        activeToken.decimals,
-                      ).format({
+                  {poolShare
+                    ? `${fixed(poolShare, activeToken.decimals).format({
                         decimals: 4,
                         rounding: "trunc",
                       })}% of total liquidity`
@@ -436,19 +433,23 @@ export function AddLiquidityForm({
     />
   );
 }
-function calculatePoolShareAfterDeposit(
+function calculatePoolShare(
   lpSharesBalanceOf: bigint | undefined,
-  lpSharesOut: bigint | undefined,
+  depositAmount: bigint | undefined,
   lpSharesTotalSupply: bigint | undefined,
   hyperdrive: HyperdriveConfig,
   baseToken: TokenConfig<EmptyExtensions>,
 ) {
-  if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
+  if (
+    !depositAmount ||
+    !lpSharesTotalSupply ||
+    lpSharesBalanceOf === undefined
+  ) {
     return;
   }
   return calculateRatio({
-    a: lpSharesBalanceOf + lpSharesOut,
-    b: lpSharesTotalSupply + lpSharesOut,
+    a: lpSharesBalanceOf + depositAmount,
+    b: lpSharesTotalSupply + depositAmount,
     decimals: baseToken.decimals,
   });
 }
