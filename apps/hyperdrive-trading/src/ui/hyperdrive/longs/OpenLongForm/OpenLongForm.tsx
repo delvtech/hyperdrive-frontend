@@ -307,6 +307,7 @@ export function OpenLongForm({
               {formatBalance({
                 balance: maxBondsOut || 0n,
                 decimals: baseToken.decimals,
+                places: baseToken.places,
               })}{" "}
               hy{baseToken.symbol}
             </p>
