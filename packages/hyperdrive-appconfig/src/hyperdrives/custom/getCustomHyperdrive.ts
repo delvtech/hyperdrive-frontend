@@ -6,7 +6,7 @@ import {
   TokenConfig,
   getTokenConfig,
 } from "src/tokens/getTokenConfig";
-import { yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];

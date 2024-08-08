@@ -5,7 +5,7 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
-import { protocols } from "src/protocols/protocols";
+import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
@@ -14,7 +14,7 @@ import {
   RETH_ICON_URL,
   SDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources/extensions";
+import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
 
 export async function getAppConfig({

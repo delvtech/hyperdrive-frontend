@@ -1,7 +1,10 @@
+export type ProtocolId = keyof typeof protocols;
 export interface Protocol {
-  id: keyof typeof protocols;
+  id: ProtocolId;
   name: string;
   iconUrl: string;
+
+  // TODO: Include a list of yield source ids deployed by this protocol.
 }
 
 const lido: Protocol = {
