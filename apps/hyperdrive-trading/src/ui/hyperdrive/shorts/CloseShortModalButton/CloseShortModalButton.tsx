@@ -36,7 +36,7 @@ export function CloseShortModalButton({
   );
   const subHeading = sharesToken
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
-    : undefined;
+    : "";
 
   const maturityMilliseconds = Number(short.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
