@@ -121,7 +121,9 @@ export async function getAppConfig({
             hyperdrive,
             yieldSource: "reth",
             depositOptions: {
-              // don't let users deposit sepolia eth into the testnet
+              // you can't deposit eth into reth hyperdrive due to how the reth
+              // contract works (it does not queue deposits the same way steth
+              // does)
               isBaseTokenDepositEnabled: false,
               isShareTokenDepositsEnabled: true,
             },
