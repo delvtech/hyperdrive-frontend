@@ -6,12 +6,17 @@ import {
   getTokenConfig,
   TokenConfig,
 } from "src/tokens/getTokenConfig";
-import { DAI_ICON_URL } from "src/tokens/tokenIconsUrls";
 
 export async function getMorphoHyperdrive({
   hyperdrive,
+  baseTokenTags,
+  baseTokenIconUrl,
+  baseTokenPlaces,
 }: {
   hyperdrive: ReadHyperdrive;
+  baseTokenTags: string[];
+  baseTokenIconUrl: string;
+  baseTokenPlaces: number;
 }): Promise<{
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
@@ -23,9 +28,9 @@ export async function getMorphoHyperdrive({
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
     extensions: {},
-    tags: ["stablecoin"],
-    iconUrl: DAI_ICON_URL,
-    places: 2,
+    tags: baseTokenTags,
+    iconUrl: baseTokenIconUrl,
+    places: baseTokenPlaces,
   });
 
   const hyperdriveName = formatHyperdriveName({

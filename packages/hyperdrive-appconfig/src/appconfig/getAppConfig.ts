@@ -53,6 +53,9 @@ export async function getAppConfig({
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
           hyperdrive,
+          baseTokenTags: ["stablecoin"],
+          baseTokenIconUrl: DAI_ICON_URL,
+          baseTokenPlaces: 2,
         });
 
         tokens.push(baseToken);
