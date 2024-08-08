@@ -1,4 +1,5 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import { ReactNode } from "react";
 
 export function PrimaryStat({
@@ -7,6 +8,7 @@ export function PrimaryStat({
   valueUnit,
   subValue,
   tooltipContent,
+  tooltipPosition = "top",
   valueClassName,
   unitClassName,
 }: {
@@ -15,6 +17,7 @@ export function PrimaryStat({
   valueUnit?: ReactNode;
   subValue?: ReactNode;
   tooltipContent?: string;
+  tooltipPosition?: "top" | "bottom" | "left" | "right";
   valueClassName?: string;
   unitClassName?: string;
 }): JSX.Element {
@@ -24,7 +27,15 @@ export function PrimaryStat({
         <p className="text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
           <div
-            className="daisy-tooltip daisy-tooltip-top before:border"
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-top before:border",
+              {
+                "daisy-tooltip-top": tooltipPosition === "top",
+                "daisy-tooltip-bottom": tooltipPosition === "bottom",
+                "daisy-tooltip-left": tooltipPosition === "left",
+                "daisy-tooltip-right": tooltipPosition === "right",
+              },
+            )}
             data-tip={tooltipContent}
           >
             <InformationCircleIcon className="size-4 text-neutral-content" />
