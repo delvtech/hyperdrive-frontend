@@ -249,7 +249,7 @@ export function AddLiquidityForm({
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
-                  places: 2,
+                  places: activeToken.places,
                 })}`}
               </label>
             ) : null
