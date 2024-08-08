@@ -36,7 +36,7 @@ export async function getMorphoHyperdrive({
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: "MetaMorpho",
+    yieldSourceShortName: "Morpho Blue",
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
@@ -44,7 +44,7 @@ export async function getMorphoHyperdrive({
     version: version.string,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
-    yieldSource: "metaMorpho",
+    yieldSource: "morphoBlueSusdeDai",
     baseToken: baseTokenConfig.address,
     sharesToken: poolConfig.vaultSharesToken, // This will be the 0x address because there is no shares token for morpho
     depositOptions: {
