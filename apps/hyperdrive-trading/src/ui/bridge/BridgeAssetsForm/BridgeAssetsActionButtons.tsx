@@ -5,14 +5,17 @@ import {
 } from "@delvtech/gopher";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useChainModal } from "@rainbow-me/rainbowkit";
+import { MutationStatus, useMutation } from "@tanstack/react-query";
 import { PropsWithChildren, ReactElement } from "react";
+import toast from "react-hot-toast";
+import { parseError } from "src/network/parseError";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
-import { Address, parseUnits } from "viem";
-import { useChainId } from "wagmi";
+import { Address, Hash, parseUnits } from "viem";
+import { useChainId, useSendTransaction } from "wagmi";
 
 interface BridgeAssetsActionButtonProps {
   account: Address | undefined;
@@ -91,12 +94,7 @@ export function BridgeAssetsActionButtons({
                   quote={quote}
                   balance={chainBalance}
                 />
-                <button
-                  type="button"
-                  className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-                >
-                  Bridge
-                </button>
+                {BridgeButton()}
               </div>
             </CollapseSection>
           </Well>
@@ -147,6 +145,64 @@ function ApproveButton({
       {isConnectedToSourceChain ? "Approve" : "Switch Network"}
     </button>
   );
+}
+
+interface BridgeButtonProps {
+  solution: EntityTokenTransferQuote;
+}
+
+function BridgeButton({ solution }: BridgeButtonProps): ReactElement {
+  const { sendBridgeTransaction, bridgeTransactionStatus } =
+    useSendBridgeTransaction(solution);
+
+  return (
+    <button
+      type="button"
+      onClick={sendBridgeTransaction}
+      className="daisy-btn daisy-btn-circle daisy-btn-primary w-32 disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
+    >
+      {bridgeTransactionStatus === "loading" ? (
+        <div className="daisy-loading daisy-loading-spinner" />
+      ) : (
+        "Bridge"
+      )}
+    </button>
+  );
+}
+
+function useSendBridgeTransaction(
+  solution: EntityTokenTransferQuote | undefined,
+): {
+  sendBridgeTransaction: (() => void) | undefined;
+  bridgeTransactionStatus: MutationStatus;
+} {
+  const { sendTransaction } = useSendTransaction();
+
+  const isMutationEnabled = !!solution;
+
+  const { mutate, status } = useMutation({
+    mutationFn: async () => {
+      if (!isMutationEnabled) {
+        return;
+      }
+
+      return sendTransaction({
+        to: solution.transaction.to as Address,
+        data: solution.transaction.data as Hash,
+      });
+    },
+    onError(error) {
+      const message = parseError({
+        error,
+      });
+      toast.error(message);
+    },
+  });
+
+  return {
+    sendBridgeTransaction: isMutationEnabled ? mutate : undefined,
+    bridgeTransactionStatus: status,
+  };
 }
 
 export function CollapseSection({
