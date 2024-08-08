@@ -43,8 +43,6 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
-(window as any).fixed = fixed;
-
 export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
 
 export class ReadHyperdrive extends ReadModel {
