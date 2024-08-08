@@ -71,7 +71,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",
       version: "v1.0.12",
-      name: "14d DAI-Maker DSR",
+      name: "14d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
       baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
@@ -112,7 +112,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2",
       version: "v1.0.12",
-      name: "30d DAI-Maker DSR",
+      name: "30d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
       baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
@@ -153,7 +153,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0x54A93937EE00838d659795b9bbbe904a00DdF278",
       version: "v1.0.12",
-      name: "14d ETH-Renzo ezETH",
+      name: "14d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -194,7 +194,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0x87621c072B1967730b70F4c0536D739c2053d34c",
       version: "v1.0.12",
-      name: "30d ETH-Renzo ezETH",
+      name: "30d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -235,7 +235,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8",
       version: "v1.0.12",
-      name: "14d ETH-Rocket Pool ETH",
+      name: "14d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -276,7 +276,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D",
       version: "v1.0.12",
-      name: "30d ETH-Rocket Pool ETH",
+      name: "30d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -317,7 +317,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91",
       version: "v1.0.12",
-      name: "14d ETH-Lido stETH",
+      name: "14d Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
@@ -358,7 +358,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0x51C054F75b2c4b53E8E5114430C3ded4572473D8",
       version: "v1.0.12",
-      name: "30d ETH-Lido stETH",
+      name: "30d Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
@@ -399,7 +399,7 @@ export const sepoliaAppConfig: AppConfig = {
     {
       address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
       version: "v1.0.15",
-      name: "14d DAI-Morpho Blue sUSDe/DAI",
+      name: "14d Morpho Blue sUSDe/DAI",
       decimals: 18,
       yieldSource: "morphoBlueSusdeDai",
       baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",

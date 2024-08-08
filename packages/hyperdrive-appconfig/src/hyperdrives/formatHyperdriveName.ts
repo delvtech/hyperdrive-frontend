@@ -19,7 +19,5 @@ export function formatHyperdriveName({
   baseTokenSymbol: string;
   yieldSourceShortName: string;
 }): string {
-  return `${formatDaysLabel(
-    termLengthMS,
-  )} ${baseTokenSymbol}-${yieldSourceShortName}`;
+  return `${formatDaysLabel(termLengthMS)} ${yieldSourceShortName}`;
 }

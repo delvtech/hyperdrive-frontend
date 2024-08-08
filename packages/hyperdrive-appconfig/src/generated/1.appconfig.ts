@@ -49,7 +49,7 @@ export const mainnetAppConfig: AppConfig = {
     {
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
-      name: "182d ETH-Lido stETH",
+      name: "182d Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
@@ -90,7 +90,7 @@ export const mainnetAppConfig: AppConfig = {
     {
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
-      name: "182d DAI-Maker DSR",
+      name: "182d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -131,7 +131,7 @@ export const mainnetAppConfig: AppConfig = {
     {
       address: "0x3F104Cd9C793d01AE450b8eC6F143c5924aFDfb9",
       version: "v1.0.16",
-      name: "182d DAI-Morpho Blue sUSDe/DAI",
+      name: "182d Morpho Blue sUSDe/DAI",
       decimals: 18,
       yieldSource: "morphoBlueSusdeDai",
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
