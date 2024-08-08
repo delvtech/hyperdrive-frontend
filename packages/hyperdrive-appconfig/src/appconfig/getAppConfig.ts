@@ -48,7 +48,7 @@ export async function getAppConfig({
       if (
         [
           "MORPHO_BLUE_DAI_14_DAY", // sepolia
-          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
+          "ElementDAO 182 Day sUSDe/DAI Hyperdrive", // mainnet
         ].includes(hackName)
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
@@ -56,6 +56,7 @@ export async function getAppConfig({
           baseTokenTags: ["stablecoin"],
           baseTokenIconUrl: DAI_ICON_URL,
           baseTokenPlaces: 2,
+          yieldSourceId: "morphoBlueSusdeDai",
         });
 
         tokens.push(baseToken);

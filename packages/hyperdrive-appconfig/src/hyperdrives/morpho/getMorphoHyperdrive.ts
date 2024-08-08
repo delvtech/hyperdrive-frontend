@@ -6,14 +6,17 @@ import {
   getTokenConfig,
   TokenConfig,
 } from "src/tokens/getTokenConfig";
+import { YieldSourceId, yieldSources } from "src/yieldSources";
 
 export async function getMorphoHyperdrive({
   hyperdrive,
+  yieldSourceId,
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
 }: {
   hyperdrive: ReadHyperdrive;
+  yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
@@ -36,7 +39,7 @@ export async function getMorphoHyperdrive({
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: "Morpho Blue",
+    yieldSourceShortName: yieldSources[yieldSourceId].shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {

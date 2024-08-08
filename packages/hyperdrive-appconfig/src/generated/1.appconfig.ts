@@ -131,9 +131,9 @@ export const mainnetAppConfig: AppConfig = {
     {
       address: "0x3F104Cd9C793d01AE450b8eC6F143c5924aFDfb9",
       version: "v1.0.16",
-      name: "182d DAI-MetaMorpho",
+      name: "182d DAI-Morpho Blue sUSDe/DAI",
       decimals: 18,
-      yieldSource: "metaMorpho",
+      yieldSource: "morphoBlueSusdeDai",
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
@@ -213,9 +213,9 @@ export const mainnetAppConfig: AppConfig = {
       protocol: "lido",
       isSharesPeggedToBase: true,
     },
-    metaMorpho: {
-      id: "metaMorpho",
-      shortName: "MetaMorpho",
+    morphoBlueSusdeDai: {
+      id: "morphoBlueSusdeDai",
+      shortName: "Morpho Blue sUSDe/DAI",
       protocol: "morpho",
       isSharesPeggedToBase: false,
     },

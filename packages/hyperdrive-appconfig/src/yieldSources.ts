@@ -24,7 +24,7 @@ const lidoSteth: YieldSource = {
 
 const morphoBlueSusdeDai: YieldSource = {
   id: "morphoBlueSusdeDai",
-  shortName: "MetaMorpho",
+  shortName: "Morpho Blue sUSDe/DAI",
   protocol: "morpho",
   isSharesPeggedToBase: false,
 };
