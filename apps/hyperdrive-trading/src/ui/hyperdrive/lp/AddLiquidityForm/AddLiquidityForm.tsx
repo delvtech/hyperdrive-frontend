@@ -343,13 +343,13 @@ export function AddLiquidityForm({
             label="LP APY"
             value={
               lpApy == undefined ? (
-                <span className="gradient-text flex flex-row items-center">
+                <div className="flex gap-2">
                   <SparklesIcon
                     width={18}
                     className="fill-primary stroke-none"
                   />
                   New
-                </span>
+                </div>
               ) : (
                 `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
               )
