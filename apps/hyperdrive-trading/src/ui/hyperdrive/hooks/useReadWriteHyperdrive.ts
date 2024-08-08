@@ -1,8 +1,4 @@
 import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
-import {
-  findHyperdriveConfig,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";
@@ -11,33 +7,18 @@ import { Address } from "viem";
 import { usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive(
-  address: Address | undefined
+  address: Address | undefined,
 ): ReadWriteHyperdrive | undefined {
   const publicClient = usePublicClient();
   const { data: walletClient } = useWalletClient();
 
   const appConfig = useAppConfig();
 
-  const hyperdriveConfig = address
-    ? findHyperdriveConfig({
-        hyperdriveAddress: address,
-        hyperdrives: appConfig.hyperdrives,
-      })
-    : undefined;
-  const sharesToken = hyperdriveConfig
-    ? findYieldSourceToken({
-        yieldSourceTokenAddress: hyperdriveConfig.sharesToken,
-        tokens: appConfig.tokens,
-      })
-    : undefined;
-
-  const enabled =
-    !!address && !!publicClient && !!walletClient && !!sharesToken;
+  const enabled = !!address && !!publicClient && !!walletClient;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadWriteHyperdrive", {
       address,
-      sharesToken: sharesToken?.address,
     }),
     enabled,
     queryFn: enabled
@@ -46,7 +27,7 @@ export function useReadWriteHyperdrive(
             hyperdriveAddress: address,
             publicClient,
             walletClient,
-            sharesToken,
+            appConfig,
           })
       : undefined,
   });

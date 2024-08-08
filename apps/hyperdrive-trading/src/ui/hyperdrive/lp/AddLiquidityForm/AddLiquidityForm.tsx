@@ -3,7 +3,6 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
   findBaseToken,
-  findYieldSourceToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -50,10 +49,9 @@ export function AddLiquidityForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -63,18 +61,18 @@ export function AddLiquidityForm({
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    decimals: hyperdrive.decimals,
   });
 
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
   const shareTokenDepositsEnabled =
     hyperdrive.depositOptions.isShareTokenDepositsEnabled;
-  const tokenOptions = [];
 
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
+  const tokenOptions = [];
   if (baseTokenDepositEnabled) {
     tokenOptions.push({
       tokenConfig: baseToken,
@@ -82,7 +80,7 @@ export function AddLiquidityForm({
     });
   }
 
-  if (shareTokenDepositsEnabled) {
+  if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
@@ -99,10 +97,8 @@ export function AddLiquidityForm({
       account,
       defaultActiveToken: baseTokenDepositEnabled
         ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
+        : hyperdrive.poolConfig.vaultSharesToken,
+      tokens: tokenOptions.map((token) => token.tokenConfig),
     });
 
   const {

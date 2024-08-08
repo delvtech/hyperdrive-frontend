@@ -1,21 +1,22 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { getStethHyperdriveSharesToken } from "src/hyperdrives/steth/getStethHyperdriveSharesToken";
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
-import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
+import {
+  EmptyExtensions,
+  getTokenConfig,
+  TokenConfig,
+} from "src/tokens/getTokenConfig";
+import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { yieldSources } from "src/yieldSources/extensions";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   hyperdrive,
-  sharesTokenExtensions,
   chainId,
 }: {
   hyperdrive: ReadHyperdrive;
-  sharesTokenExtensions: YieldSourceExtensions;
   chainId: number;
 }): Promise<{
-  sharesToken: TokenConfig<YieldSourceExtensions>;
+  sharesToken: TokenConfig<EmptyExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
@@ -23,9 +24,12 @@ export async function getStethHyperdrive({
   const poolConfig = await hyperdrive.getPoolConfig();
 
   const sharesToken = await hyperdrive.getSharesToken();
-  const sharesTokenConfig = await getStethHyperdriveSharesToken({
-    sharesToken,
-    extensions: sharesTokenExtensions,
+  const sharesTokenConfig = await getTokenConfig({
+    token: sharesToken,
+    tags: ["liquidStakingToken"],
+    extensions: {},
+    iconUrl: STETH_ICON_URL,
+    places: 4,
   });
 
   const baseTokenConfig: TokenConfig<EmptyExtensions> = {
@@ -42,7 +46,7 @@ export async function getStethHyperdrive({
   const hyperdriveName = formatHyperdriveName({
     baseTokenSymbol: baseTokenConfig.symbol,
     termLengthMS: Number(poolConfig.positionDuration) * 1000,
-    yieldSourceShortName: sharesTokenConfig.extensions.shortName,
+    yieldSourceShortName: yieldSources.lidoSteth.shortName,
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
@@ -51,6 +55,7 @@ export async function getStethHyperdrive({
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseTokenConfig.address,
+    yieldSource: "lidoSteth",
     sharesToken: sharesToken.address,
     depositOptions: {
       // Turn off sepolia eth deposits so users aren't risking their eth.

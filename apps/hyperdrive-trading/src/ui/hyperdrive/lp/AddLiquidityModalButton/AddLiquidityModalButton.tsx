@@ -1,7 +1,7 @@
 import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -37,10 +37,7 @@ export function AddLiquidityModalButton({
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
-  const yieldSourceToken = findYieldSourceToken({
-    tokens: appConfig.tokens,
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-  });
+  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
 
   function closeModal() {
     (window as any)[modalId].close();
@@ -63,7 +60,7 @@ export function AddLiquidityModalButton({
         <ModalHeader
           heading="Add Liquidity"
           subHeading={`Earn yield by providing liquidity for Longs and
-          Shorts. Your liquidity also earns the ${yieldSourceToken.extensions.shortName}
+          Shorts. Your liquidity also earns the ${yieldSource.shortName}
           rate when not in use.
           `}
         >
@@ -81,7 +78,7 @@ export function AddLiquidityModalButton({
               <Stat
                 horizontal
                 size="small"
-                label={`${yieldSourceToken.extensions.shortName}:`}
+                label={`${yieldSource.shortName}:`}
                 value={`${vaultRate?.formatted || 0n}`}
               />
             </div>
@@ -94,7 +91,7 @@ export function AddLiquidityModalButton({
             className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}
           >
-            <XMarkIcon className="w-6 " title="Close position" />
+            <XMarkIcon className="w-6" title="Close position" />
           </button>
           <AddLiquidityForm
             hyperdrive={hyperdrive}

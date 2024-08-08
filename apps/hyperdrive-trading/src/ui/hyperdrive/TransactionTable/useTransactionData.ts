@@ -37,25 +37,34 @@ export function useTransactionData({
 
   const { data: longs, status: longEventsStatus } = useQuery({
     queryKey: makeQueryKey("longEvents", { hyperdriveAddress, account }),
-    queryFn: async () =>
-      readHyperdrive?.getLongEvents({
-        filter: { trader: account },
-      }),
+    enabled: !!readHyperdrive,
+    queryFn: !!readHyperdrive
+      ? async () =>
+          readHyperdrive.getLongEvents({
+            filter: { trader: account },
+          })
+      : undefined,
   });
 
   const { data: shorts, status: shortEventsStatus } = useQuery({
     queryKey: makeQueryKey("shortEvents", { hyperdriveAddress, account }),
-    queryFn: async () =>
-      readHyperdrive?.getShortEvents({
-        filter: { trader: account },
-      }),
+    enabled: !!readHyperdrive,
+    queryFn: !!readHyperdrive
+      ? async () =>
+          readHyperdrive.getShortEvents({
+            filter: { trader: account },
+          })
+      : undefined,
   });
   const { data: lpEvents, status: lpEventsStatus } = useQuery({
     queryKey: makeQueryKey("lpEvents", { hyperdriveAddress, account }),
-    queryFn: async () =>
-      readHyperdrive?.getLpEvents({
-        filter: { provider: account },
-      }),
+    enabled: !!readHyperdrive,
+    queryFn: !!readHyperdrive
+      ? async () =>
+          readHyperdrive.getLpEvents({
+            filter: { provider: account },
+          })
+      : undefined,
   });
 
   // It's important to memoize this table data because creating new arrays of

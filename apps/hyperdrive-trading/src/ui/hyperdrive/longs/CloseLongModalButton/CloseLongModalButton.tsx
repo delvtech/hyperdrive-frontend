@@ -4,9 +4,7 @@ import {
   EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
-  YieldSourceExtensions,
   findBaseToken,
-  findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -37,12 +35,13 @@ export function CloseLongModalButton({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
+  );
 
-  const subHeading = getSubHeadingLabel(baseToken, hyperdrive, sharesToken);
+  const subHeading = sharesToken
+    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    : "";
   const maturityMilliseconds = Number(long.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
 
@@ -93,7 +92,7 @@ export function CloseLongModalButton({
             className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
             onClick={closeModal}
           >
-            <XMarkIcon className="w-6 " title="Close position" />
+            <XMarkIcon className="w-6" title="Close position" />
           </button>
           <CloseLongForm
             hyperdrive={hyperdrive}
@@ -112,7 +111,7 @@ export function CloseLongModalButton({
 function getSubHeadingLabel(
   baseToken: TokenConfig<EmptyExtensions>,
   hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig<YieldSourceExtensions>,
+  sharesToken: TokenConfig,
 ) {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&

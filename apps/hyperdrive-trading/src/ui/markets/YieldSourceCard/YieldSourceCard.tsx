@@ -1,9 +1,4 @@
-import {
-  Protocol,
-  findBaseToken,
-  findYieldSourceHyperdrives,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { YieldSource } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -13,18 +8,17 @@ import { YieldSourceMarketsTableMobile } from "src/ui/markets/YieldSourceMarkets
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
 export function YieldSourceCard({
-  yieldSourceProtocol,
+  yieldSource,
 }: {
-  yieldSourceProtocol: Protocol;
+  yieldSource: YieldSource;
 }): ReactElement | null {
   const appConfig = useAppConfig();
 
   const isSmallScreen = useIsTailwindLessThanSm();
 
   // Extract the list of pools that have this yield source
-  const pools = findYieldSourceHyperdrives({
-    yieldSourceId: yieldSourceProtocol.id,
-    appConfig,
+  const pools = appConfig.hyperdrives.filter((hyperdrive) => {
+    return hyperdrive.yieldSource === yieldSource.id;
   });
 
   if (!pools.length) {
@@ -38,14 +32,12 @@ export function YieldSourceCard({
     depositOptions: { isBaseTokenDepositEnabled, isShareTokenDepositsEnabled },
   } = firstPool;
 
-  const baseToken = findBaseToken({
-    baseTokenAddress: firstPool.baseToken,
-    tokens: appConfig.tokens,
-  });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: firstPool.sharesToken,
-    tokens: appConfig.tokens,
-  });
+  const baseToken = appConfig.tokens.find(
+    (token) => firstPool.poolConfig.baseToken === token.address,
+  );
+  const sharesToken = appConfig.tokens.find(
+    (token) => firstPool.poolConfig.vaultSharesToken === token.address,
+  );
 
   return (
     <Well transparent interactive block={isSmallScreen}>
@@ -55,12 +47,12 @@ export function YieldSourceCard({
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-5">
             <div>
               <img
-                src={yieldSourceProtocol.iconUrl}
+                src={appConfig.protocols[yieldSource.protocol]?.iconUrl}
                 className="h-20 scale-75 sm:scale-100"
               />
             </div>
             <div className="text-center md:text-left">
-              <h3 className="mb-1">{sharesToken.extensions.shortName}</h3>
+              <h3 className="mb-1">{yieldSource.shortName}</h3>
               <YieldSourceRateBadge hyperdriveAddress={firstPool.address} />
             </div>
           </div>
@@ -70,7 +62,7 @@ export function YieldSourceCard({
             <span>Deposit assets</span>
             {/* DaisyUI note: overflow-visible enables tooltips to be shown in the daisy-avatar-group */}
             <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-              {isBaseTokenDepositEnabled ? (
+              {baseToken && isBaseTokenDepositEnabled ? (
                 <div
                   className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
                   data-tip={baseToken.symbol}
@@ -78,7 +70,7 @@ export function YieldSourceCard({
                   <img src={baseToken.iconUrl} />
                 </div>
               ) : null}
-              {isShareTokenDepositsEnabled ? (
+              {sharesToken && isShareTokenDepositsEnabled ? (
                 <div
                   className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
                   data-tip={sharesToken.symbol}
@@ -93,10 +85,10 @@ export function YieldSourceCard({
         {isSmallScreen ? (
           <div className="flex flex-col items-center justify-center text-neutral-content">
             <span>Markets</span>
-            <YieldSourceMarketsTableMobile protocol={yieldSourceProtocol} />
+            <YieldSourceMarketsTableMobile yieldSource={yieldSource.id} />
           </div>
         ) : (
-          <YieldSourceMarketsTableDesktop protocol={yieldSourceProtocol} />
+          <YieldSourceMarketsTableDesktop yieldSource={yieldSource.id} />
         )}{" "}
       </div>
     </Well>

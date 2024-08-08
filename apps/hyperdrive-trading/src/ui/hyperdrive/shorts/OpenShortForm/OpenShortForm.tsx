@@ -1,11 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
-import {
-  HyperdriveConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -57,10 +53,6 @@ export function OpenShortForm({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: hyperdrive.sharesToken,
-    tokens: appConfig.tokens,
-  });
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
@@ -73,8 +65,8 @@ export function OpenShortForm({
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    decimals: hyperdrive.decimals,
   });
 
   const baseTokenDepositEnabled =
@@ -90,7 +82,10 @@ export function OpenShortForm({
     });
   }
 
-  if (shareTokenDepositsEnabled) {
+  const sharesToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.sharesToken,
+  );
+  if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
@@ -102,10 +97,8 @@ export function OpenShortForm({
       account,
       defaultActiveToken: baseTokenDepositEnabled
         ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
+        : hyperdrive.poolConfig.vaultSharesToken,
+      tokens: tokenOptions.map((token) => token.tokenConfig),
     });
 
   const tokenPrices = useTokenFiatPrices([
@@ -386,7 +379,7 @@ export function OpenShortForm({
             subValue={
               vaultRateStatus === "success" && vaultRate ? (
                 <>
-                  {sharesToken.extensions.shortName} @{" "}
+                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
                   {vaultRate.formatted || 0} APY
                 </>
               ) : (
@@ -456,7 +449,7 @@ export function OpenShortForm({
             ) : null}
             {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
               <p className="text-center text-sm text-neutral-content">
-                {`When closing your Short position, you'll receive ${sharesToken.symbol}.`}
+                {`When closing your Short position, you'll receive ${sharesToken?.symbol}.`}
               </p>
             )}
           </div>

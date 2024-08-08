@@ -1,8 +1,4 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import {
-  findHyperdriveConfig,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
@@ -11,29 +7,16 @@ import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 export function useReadHyperdrive(
-  address: Address | undefined
+  address: Address | undefined,
 ): ReadHyperdrive | undefined {
   const appConfig = useAppConfig();
   const publicClient = usePublicClient();
-  const hyperdriveConfig = address
-    ? findHyperdriveConfig({
-        hyperdriveAddress: address,
-        hyperdrives: appConfig.hyperdrives,
-      })
-    : undefined;
-  const sharesToken = hyperdriveConfig
-    ? findYieldSourceToken({
-        yieldSourceTokenAddress: hyperdriveConfig.sharesToken,
-        tokens: appConfig.tokens,
-      })
-    : undefined;
 
-  const enabled = !!address && !!publicClient && !!sharesToken;
+  const enabled = !!address && !!publicClient;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadHyperdrive", {
       address,
-      sharesToken: sharesToken?.address,
     }),
     enabled,
     queryFn: enabled
@@ -41,7 +24,7 @@ export function useReadHyperdrive(
           getReadHyperdrive({
             hyperdriveAddress: address,
             publicClient,
-            sharesToken,
+            appConfig,
           })
       : undefined,
   });

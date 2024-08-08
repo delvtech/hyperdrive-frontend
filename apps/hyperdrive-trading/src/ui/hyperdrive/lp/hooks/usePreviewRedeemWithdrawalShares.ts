@@ -1,3 +1,4 @@
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -30,6 +31,10 @@ export function usePreviewRedeemWithdrawalShares({
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const appConfig = useAppConfig();
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdrives: appConfig.hyperdrives,
+    hyperdriveAddress,
+  });
   const queryEnabled =
     !!withdrawalSharesIn &&
     minOutputPerShare !== undefined &&
@@ -52,10 +57,8 @@ export function usePreviewRedeemWithdrawalShares({
               withdrawalSharesIn,
               minOutputPerShare,
               destination,
-              // Some hyperdrives can only be exited to shares. So we'll always
-              // just set this to false. We'll get a preview amount for both
-              // shares and base from the sdk regardless
-              asBase: false,
+              asBase:
+                hyperdriveConfig.withdrawOptions.isBaseTokenWithdrawalEnabled,
             });
 
           return {

@@ -1,6 +1,6 @@
+import { ZERO_ADDRESS } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { getIsSteth } from "src/vaults/isSteth";
 import { Address, erc20Abi, formatUnits } from "viem";
 import { useBalance, useChainId, useReadContract } from "wagmi";
 
@@ -26,7 +26,8 @@ export function useTokenBalance({
   status: "error" | "success" | "loading";
 } {
   const isEth = tokenAddress === ETH_MAGIC_NUMBER;
-  const config = useAppConfig();
+  const isZeroAddress = tokenAddress === ZERO_ADDRESS;
+  const appConfig = useAppConfig();
   const chainId = useChainId();
 
   const { data: ethBalance, status: ethBalanceStatus } = useBalance({
@@ -42,7 +43,7 @@ export function useTokenBalance({
     functionName: "balanceOf",
     args: account ? [account] : undefined,
     query: {
-      enabled: account && !isEth,
+      enabled: account && !isEth && !isZeroAddress,
     },
   });
 
@@ -74,15 +75,12 @@ export function useTokenBalance({
    * submitted since the price will have changed. To accommodate this, the
    * balance is truncated to the nearest .0001 base.
    */
-  const tokenConfig = config.tokens.find(
-    ({ address }) => address === tokenAddress,
+  const isSteth = appConfig.hyperdrives.find(
+    (hyperdrive) =>
+      hyperdrive.yieldSource === "lidoSteth" &&
+      hyperdrive.poolConfig.vaultSharesToken === tokenAddress,
   );
-  if (
-    tokenConfig &&
-    tokenBalance &&
-    (chainId === 42069 || chainId === 11155111) &&
-    getIsSteth(tokenConfig)
-  ) {
+  if (tokenBalance && (chainId === 42069 || chainId === 11155111) && isSteth) {
     const truncatedBalance = tokenBalance - (tokenBalance % BigInt(1e14));
     return {
       balance: {

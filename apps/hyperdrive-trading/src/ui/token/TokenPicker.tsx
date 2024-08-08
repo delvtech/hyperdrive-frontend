@@ -7,7 +7,7 @@ import { Address } from "viem";
 
 export interface TokenChoice {
   disabled?: boolean;
-  tokenConfig: TokenConfig<any>;
+  tokenConfig: TokenConfig;
   tokenBalance?: bigint;
 }
 
@@ -34,7 +34,7 @@ export function TokenPicker({
           </label>
         ) : undefined}
         <div className="daisy-join-item flex h-12 w-32 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-          <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
+          <img src={tokens[0].tokenConfig.iconUrl} className="h-5" />{" "}
           <span className="text-sm font-semibold">
             {tokens[0].tokenConfig.symbol}
           </span>
@@ -67,7 +67,7 @@ export function TokenPicker({
             e.preventDefault();
           }}
         >
-          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5 " />{" "}
+          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5" />{" "}
           {activeToken?.tokenConfig?.symbol}
           <ChevronDownIcon className="ml-2 h-3" />
         </button>

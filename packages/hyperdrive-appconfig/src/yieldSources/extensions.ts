@@ -1,31 +1,53 @@
-import { YieldSourceExtensions } from "src/index";
+import { protocols } from "src/protocols/protocols";
 
-export const sdaiExtensions: YieldSourceExtensions = {
+export interface YieldSource {
+  id: keyof typeof yieldSources;
+  shortName: string;
+  protocol: keyof typeof protocols;
+  isSharesPeggedToBase: boolean;
+}
+
+const makerDsr: YieldSource = {
+  id: "makerDsr",
   shortName: "Maker DSR",
   protocol: "maker",
   isSharesPeggedToBase: false,
 };
 
-export const stethExtensions: YieldSourceExtensions = {
+const lidoSteth: YieldSource = {
+  id: "lidoSteth",
   shortName: "Lido stETH",
   protocol: "lido",
   isSharesPeggedToBase: true,
 };
 
-export const metaMorphoExtensions: YieldSourceExtensions = {
+const metaMorpho: YieldSource = {
+  id: "metaMorpho",
   shortName: "MetaMorpho",
   protocol: "morpho",
   isSharesPeggedToBase: false,
 };
 
-export const rethExtensions: YieldSourceExtensions = {
+const reth: YieldSource = {
+  id: "reth",
   shortName: "Rocket Pool ETH",
   protocol: "rocketPool",
   isSharesPeggedToBase: false,
 };
 
-export const ezethExtensions: YieldSourceExtensions = {
+const ezEth: YieldSource = {
+  id: "ezEth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
   isSharesPeggedToBase: false,
 };
+
+export const yieldSources = {
+  makerDsr,
+  lidoSteth,
+  metaMorpho,
+  reth,
+  ezEth,
+} as const;
+
+export type YieldSourceId = keyof typeof yieldSources;

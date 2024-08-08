@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { AppConfig, Protocol, findBaseToken } from "@hyperdrive/appconfig";
+import { AppConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -31,12 +31,12 @@ const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 const EMPTY_ARRAY: YieldSourceMarketsTableRowData[] = [];
 
 export function YieldSourceMarketsTableDesktop({
-  protocol,
+  yieldSource,
 }: {
-  protocol: Protocol;
+  yieldSource: keyof AppConfig["yieldSources"];
 }): ReactElement {
   const navigate = useNavigate();
-  const { data: rowData, status } = useRowData(protocol);
+  const { data: rowData, status } = useRowData(yieldSource);
   const appConfig = useAppConfig();
 
   const tableInstance = useReactTable({
@@ -107,7 +107,7 @@ export function YieldSourceMarketsTableDesktop({
                       className={classNames({
                         "rounded-l-lg": cell.column.id.includes("term"),
                         "rounded-r-lg": cell.column.id.includes("go-to-market"),
-                        "gradient-text ": cell.column.id.includes("fixed-apr"),
+                        "gradient-text": cell.column.id.includes("fixed-apr"),
                       })}
                       key={cell.id}
                     >

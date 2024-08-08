@@ -1,16 +1,20 @@
-import { KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the baseToken
+ * @deprecated This method is too shallow to be useful, use this instead:
+ * ```
+ * // Find the yield source token
+ * appConfig.tokens.find(token => token.address === baseTokenAddress);
+ * ```
  */
 export function findBaseToken({
   baseTokenAddress,
   tokens,
 }: {
   baseTokenAddress: Address;
-  tokens: TokenConfig<KnownTokenExtensions>[];
+  tokens: TokenConfig[];
 }): TokenConfig<EmptyExtensions> {
   const baseToken = tokens.find((token) => baseTokenAddress === token.address);
 
@@ -30,7 +34,7 @@ export function findBaseToken({
 }
 
 function isBaseToken(
-  token: TokenConfig<KnownTokenExtensions>,
+  token: TokenConfig,
 ): token is TokenConfig<EmptyExtensions> {
   return !Object.keys(token.extensions).length;
 }
