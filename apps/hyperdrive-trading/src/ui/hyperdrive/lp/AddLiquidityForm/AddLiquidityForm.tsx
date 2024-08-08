@@ -358,14 +358,15 @@ export function AddLiquidityForm({
               )
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."
+            tooltipPosition="left"
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
             subValue={
               vaultRateStatus === "success" && vaultRate ? (
                 <div>
                   {depositAmountAsBigInt ? (
                     <>
-                      {sharesToken.extensions.shortName} @{" "}
-                      {vaultRate.formatted || 0} APY
+                      {appConfig.yieldSources[hyperdrive.yieldSource].shortName}{" "}
+                      @ {vaultRate.formatted || 0} APY
                     </>
                   ) : undefined}
                 </div>
