@@ -71,7 +71,7 @@ export function LiquidityStats({
           />
           <Stat
             label={`Idle (${baseToken.symbol})`}
-            description={`The idle liquidity available for opening Longs and Shorts, and exiting LP positions\n\nMax Long: ${formatBalance({ balance: maxLong || 0n, decimals: baseToken.decimals })} hy${baseToken.symbol}\nMax Short: ${formatBalance({ balance: maxShort || 0n, decimals: baseToken.decimals })} hy${baseToken.symbol}`}
+            description={`The idle liquidity available for opening Longs and Shorts, and exiting LP positions\n\nMax Long: ${formatBalance({ balance: maxLong || 0n, decimals: baseToken.decimals, places: baseToken.places })} hy${baseToken.symbol}\nMax Short: ${formatBalance({ balance: maxShort || 0n, decimals: baseToken.decimals, places: baseToken.places })} hy${baseToken.symbol}`}
             value={
               idleLiquidityStatus === "loading" &&
               idleLiquidity === undefined ? (
@@ -140,7 +140,7 @@ function AmountLabel({
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
-      {icon ? <img src={icon} className="h-7 rounded-full  p-1" /> : undefined}
+      {icon ? <img src={icon} className="h-7 rounded-full p-1" /> : undefined}
       {value}
     </p>
   );
