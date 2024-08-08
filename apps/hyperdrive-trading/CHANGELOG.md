@@ -1,5 +1,12 @@
 # hyperdrive-trading
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [b26e00b]
+  - @delvtech/hyperdrive-viem@3.0.0
+
 ## 0.0.7
 
 ### Patch Changes
