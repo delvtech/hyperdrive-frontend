@@ -33,7 +33,7 @@ function getWeight(
   poolConfig: PoolConfig,
   positionType: "short" | "lp",
   poolInfo?: PoolInfo,
-  presentValue?: bigint
+  presentValue?: bigint,
 ): FixedPoint {
   if (!poolInfo || !presentValue) {
     return parseFixed(0);
@@ -52,7 +52,7 @@ function getWeight(
 
 export function useRewards(
   hyperdrive: HyperdriveConfig,
-  positionType: "short" | "lp"
+  positionType: "short" | "lp",
 ): UseRewardsReturn {
   const chainId = useChainId();
 
@@ -65,7 +65,7 @@ export function useRewards(
 
   if (eligibleMarketsForMorphoRewards[chainId]?.includes(hyperdrive.address)) {
     const morphoRate = MorphoFlatRatePerYear.mul(
-      getWeight(hyperdrive.poolConfig, positionType, poolInfo, presentValue)
+      getWeight(hyperdrive.poolConfig, positionType, poolInfo, presentValue),
     );
 
     return [

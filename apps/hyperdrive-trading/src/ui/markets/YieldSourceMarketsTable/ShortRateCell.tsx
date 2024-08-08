@@ -29,7 +29,7 @@ export function ShortRateCell({
             "text-neutral-content": !shortApr,
             "text-success": (shortApr?.apr || 0n) > 0n,
             "text-error": (shortApr?.apr || 0n) < 0n,
-          }
+          },
         )}
       >
         <RewardsTooltip

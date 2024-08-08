@@ -46,9 +46,9 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-      <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
+      <div className="flex flex-col gap-3 rounded-md bg-base-100 px-4 py-3">
         <label className="text-sm text-neutral-content">{inputLabel}</label>
-        <div className="flex flex-row">
+        <div className="flex flex-row items-center">
           <input
             type="number"
             // Setting step to `any` allows any number between min and max to be
@@ -99,16 +99,19 @@ export function TokenInputTwo({
         </div>
         <div className="flex w-full justify-between">
           {bottomLeftStatistic}
-          <div className="flex w-full items-center justify-end text-sm">
+          <div className="flex w-full items-end justify-end text-sm">
             <label className="items-end text-neutral-content">
               {bottomRightStatistic ? bottomRightStatistic : null}
             </label>
             {maxValue !== undefined && !disabled ? (
               <div className="text-base-content">
                 <button
-                  className={classNames("ml-2 font-semibold", {
-                    "daisy-btn-error": hasError,
-                  })}
+                  className={classNames(
+                    "ml-1 flex items-end text-xs font-semibold",
+                    {
+                      "daisy-btn-error": hasError,
+                    },
+                  )}
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
