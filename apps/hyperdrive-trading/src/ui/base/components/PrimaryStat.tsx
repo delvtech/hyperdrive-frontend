@@ -11,6 +11,7 @@ export function PrimaryStat({
   tooltipPosition = "top",
   valueClassName,
   unitClassName,
+  containerClassName,
 }: {
   label: string;
   value: ReactNode;
@@ -20,9 +21,10 @@ export function PrimaryStat({
   tooltipPosition?: "top" | "bottom" | "left" | "right";
   valueClassName?: string;
   unitClassName?: string;
+  containerClassName?: string;
 }): JSX.Element {
   return (
-    <div className="flex flex-col gap-1">
+    <div className={classNames("flex flex-col gap-1", containerClassName)}>
       <div className="flex gap-1">
         <p className="text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
