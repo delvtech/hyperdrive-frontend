@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMatchRoute, useNavigate } from "@tanstack/react-router";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { failedRequestToast } from "src/ui/base/components/Toaster/failedRequestToast";
 
 const url = import.meta.env.VITE_VPN_SCREEN_URL;
 
@@ -12,7 +13,7 @@ export function useVpnScreen(): VpnScreenResult {
   const matchRoute = useMatchRoute();
   const navigate = useNavigate();
   const enabled = !!url;
-  const { data: result, error: queryError } = useQuery<ApiResponse>({
+  const { data: result, error } = useQuery<ApiResponse>({
     queryKey: makeQueryKey("vpn-screen", url),
     staleTime: Infinity,
     enabled,
@@ -21,20 +22,22 @@ export function useVpnScreen(): VpnScreenResult {
     queryFn: () => fetch(url, { method: "POST" }).then((res) => res.json()),
   });
 
-  const error = result?.error || queryError;
+  if (error) {
+    failedRequestToast();
+  }
 
   if (result?.isBlocked && !matchRoute({ to: "/vpn" })) {
     navigate({ to: "/vpn" });
-  } else if (error && !matchRoute({ to: "/error" })) {
+  } else if (result?.error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
-      console.error(error);
+      console.error(result?.error);
     }
     navigate({ to: "/error" });
   }
 
   return {
     enabled,
-    error: error ? String(error) : undefined,
+    error: result?.error ? String(result?.error) : undefined,
     isBlocked: result?.isBlocked,
   };
 }

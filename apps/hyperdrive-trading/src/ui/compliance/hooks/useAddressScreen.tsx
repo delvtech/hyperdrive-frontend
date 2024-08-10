@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMatchRoute, useNavigate } from "@tanstack/react-router";
+import { failedRequestToast } from "src/ui/base/components/Toaster/failedRequestToast";
 import { useAccount } from "wagmi";
 
 const url = import.meta.env.VITE_ADDRESS_SCREEN_URL;
@@ -15,7 +16,7 @@ export function useAddressScreen(): AddressScreenResult {
   const { address } = useAccount();
   const navigate = useNavigate();
   const enabled = !!url && !!address;
-  const { data: result, error: queryError } = useQuery<APIResponse>({
+  const { data: result, error } = useQuery<APIResponse>({
     queryKey: ["address-screen", address],
     enabled,
     staleTime: Infinity,
@@ -27,21 +28,24 @@ export function useAddressScreen(): AddressScreenResult {
       }).then((res) => res.json()),
   });
 
+  if (error) {
+    failedRequestToast();
+  }
+
   const isBlocked = result?.data === false;
-  const error = result?.error || queryError;
 
   if (isBlocked && !matchRoute({ to: "/ineligible" })) {
     navigate({ to: "/ineligible" });
-  } else if (error && !matchRoute({ to: "/error" })) {
+  } else if (result?.error && !matchRoute({ to: "/error" })) {
     if (import.meta.env.DEV) {
-      console.error(error);
+      console.error(result?.error);
     }
     navigate({ to: "/error" });
   }
 
   return {
     enabled,
-    error: error ? String(error) : undefined,
+    error: result?.error ? String(result?.error) : undefined,
     isBlocked,
   };
 }
