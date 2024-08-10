@@ -1,22 +1,6 @@
 import toast from "react-hot-toast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 
-export default function WarpcastToast(): JSX.Element {
-  return (
-    <span className="flex flex-col">
-      <span className="gradient-text">Share your trade!</span>
-      <a
-        href="https://warpcast.com/~/compose?text=Hello%20world!&embeds[]=https://frames.hyperdrive.trade"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="daisy-link-hover daisy-link mt-1 flex cursor-pointer flex-row items-center text-sm"
-      >
-        Warp on Warpcast
-      </a>
-    </span>
-  );
-}
-
 export function toastWarpcast(waitMs = SUCCESS_TOAST_DURATION): void {
   setTimeout(() => {
     toast.success(
