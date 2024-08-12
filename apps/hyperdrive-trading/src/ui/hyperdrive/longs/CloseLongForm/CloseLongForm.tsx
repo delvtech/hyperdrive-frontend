@@ -1,16 +1,16 @@
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { CheckIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -124,99 +124,96 @@ export function CloseLongForm({
       tokenConfig: sharesToken,
     });
   }
-
-  const profitLoss = formatBalance({
-    balance: (long.bondAmount || 0n) - (withdrawAmount || 0n),
-    decimals: baseToken?.decimals || 18,
-    places: 4,
-  });
-
-  const isPositiveChangeInValue =
-    withdrawAmount && withdrawAmount > long.bondAmount;
+  const maturityMilliseconds = Number(long.maturity * 1000n);
+  const isMature = Date.now() > maturityMilliseconds;
   return (
     <TransactionView
       tokenInput={
         baseToken ? (
-          <TokenInputTwo
-            name={baseToken.symbol}
-            inputLabel="Amount to redeem"
-            token={`hy${baseToken.symbol}`}
-            value={bondAmount ?? ""}
-            maxValue={
-              long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
-            }
-            onChange={(newAmount) => setAmount(newAmount)}
-            bottomRightElement={`Balance: ${formatBalance({
-              balance: long.bondAmount,
-              decimals: hyperdrive.decimals,
-              places: baseToken.places,
-            })}`}
-          />
-        ) : null
-      }
-      primaryStats={
-        <div className="flex flex-row justify-between px-4 py-8">
-          <PrimaryStat
-            label="You receive"
-            value={
-              <div>
-                {withdrawAmount
+          <div className="flex flex-col gap-3">
+            <TokenInputTwo
+              name={baseToken.symbol}
+              inputLabel="Amount to redeem"
+              token={`hy${baseToken.symbol}`}
+              value={bondAmount ?? ""}
+              maxValue={
+                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+              }
+              onChange={(newAmount) => setAmount(newAmount)}
+              bottomRightElement={`Balance: ${formatBalance({
+                balance: long.bondAmount,
+                decimals: hyperdrive.decimals,
+                places: baseToken.places,
+              })}`}
+            />
+            <TokenInputTwo
+              name={baseToken.symbol}
+              inputLabel="You receive"
+              token={
+                <TokenPickerTwo
+                  tokens={withdrawTokenChoices}
+                  activeTokenAddress={activeWithdrawToken.address}
+                  onChange={(tokenAddress) =>
+                    setActiveWithdrawToken(tokenAddress)
+                  }
+                />
+              }
+              value={
+                withdrawAmount
                   ? `${formatBalance({
                       balance: withdrawAmount,
                       decimals: hyperdrive.decimals,
                       places: baseToken?.places,
                     })}`
-                  : "0"}{" "}
-              </div>
+                  : "0"
+              }
+              maxValue={
+                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+              }
+              disabled
+              onChange={(newAmount) => setAmount(newAmount)}
+            />
+          </div>
+        ) : null
+      }
+      primaryStats={
+        <div className="flex flex-row justify-between px-4 py-8">
+          <PrimaryStat
+            label="Time remaining"
+            value={
+              <span
+                className={classNames("flex items-center", {
+                  "font-normal": isMature,
+                })}
+              >
+                {isMature ? <CheckIcon className="mr-2 h-4" /> : undefined}
+                {getRemainingTimeLabel({
+                  maturitySeconds: Number(long.maturity),
+                  condensed: true,
+                  showLeftSuffix: false,
+                })}
+              </span>
             }
             valueClassName="flex items-end"
-            valueUnit={
-              <TokenPickerTwo
-                tokens={withdrawTokenChoices}
-                activeTokenAddress={activeWithdrawToken.address}
-                onChange={(tokenAddress) =>
-                  setActiveWithdrawToken(tokenAddress)
-                }
-              />
-            }
-            subValue="Select withdrawal asset"
           />
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
-            label="Profit/Loss"
-            tooltipContent="Profit/Loss since open, after closing fees."
-            tooltipPosition="left"
+            label="Pool fee"
             value={
-              <div
-                className={classNames("flex", {
-                  "text-success": isPositiveChangeInValue,
-                  // "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
-                })}
-              >
-                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-                {withdrawAmount
-                  ? `${profitLoss === "-0" ? "0" : profitLoss}`
-                  : undefined}
-              </div>
+              <p>
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: 18,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 4,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
             }
-            valueUnit={activeWithdrawToken.symbol}
             valueClassName="flex items-end"
-            containerClassName="flex-1 items-end"
           />
-        </div>
-      }
-      transactionPreview={
-        <div className="flex flex-col gap-3.5 px-2">
-          <CollapseSection
-            heading={
-              <div className="flex w-full items-center justify-between text-neutral-content">
-                <p>Transaction Details</p>
-                <div className="flex items-center gap-1">
-                  <ChevronDownIcon className="ml-1 size-6" />
-                </div>
-              </div>
-            }
-          ></CollapseSection>
         </div>
       }
       actionButton={(() => {
