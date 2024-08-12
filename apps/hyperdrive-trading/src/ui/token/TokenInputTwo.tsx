@@ -46,7 +46,7 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-      <div className="flex flex-col gap-3 rounded-md bg-base-100 px-4 py-3">
+      <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
         <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row items-center">
           <input

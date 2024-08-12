@@ -1,9 +1,11 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -15,11 +17,12 @@ import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useAccount, useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -34,6 +37,7 @@ export function CloseLongForm({
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
+  const chainId = useChainId();
 
   const defaultItems = [];
   const baseToken = appConfig.tokens.find(
@@ -65,6 +69,11 @@ export function CloseLongForm({
       ? hyperdrive.poolConfig.baseToken
       : hyperdrive.poolConfig.vaultSharesToken,
   });
+
+  const tokenPrices = useTokenFiatPrices([activeWithdrawToken.address]);
+
+  const activeWithdrawTokenPrice =
+    tokenPrices?.[activeWithdrawToken.address.toLowerCase() as Address];
 
   const {
     amount: bondAmount,
@@ -140,11 +149,15 @@ export function CloseLongForm({
                 long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
               }
               onChange={(newAmount) => setAmount(newAmount)}
-              bottomRightElement={`Balance: ${formatBalance({
-                balance: long.bondAmount,
-                decimals: hyperdrive.decimals,
-                places: baseToken.places,
-              })}`}
+              bottomRightElement={
+                <div className="flex flex-col gap-1 text-xs text-neutral-content">
+                  {`Balance: ${formatBalance({
+                    balance: long.bondAmount,
+                    decimals: hyperdrive.decimals,
+                    places: baseToken.places,
+                  })}`}
+                </div>
+              }
             />
             <TokenInputTwo
               name={baseToken.symbol}
@@ -171,6 +184,27 @@ export function CloseLongForm({
                 long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
               }
               disabled
+              bottomLeftElement={
+                // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+                !isTestnetChain(chainId) ? (
+                  <label className="text-sm text-neutral-content">
+                    {`$${formatBalance({
+                      balance:
+                        activeWithdrawTokenPrice && bondAmountAsBigInt
+                          ? fixed(
+                              bondAmountAsBigInt,
+                              activeWithdrawToken.decimals,
+                            ).mul(
+                              activeWithdrawTokenPrice,
+                              activeWithdrawToken.decimals,
+                            ).bigint
+                          : 0n,
+                      decimals: activeWithdrawToken.decimals,
+                      places: 2,
+                    })}`}
+                  </label>
+                ) : null
+              }
               onChange={(newAmount) => setAmount(newAmount)}
             />
           </div>
@@ -208,10 +242,10 @@ export function CloseLongForm({
                       // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
                       places: 4,
                     })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
+                  : "0"}
               </p>
             }
+            valueUnit={activeWithdrawToken.symbol}
             valueClassName="flex items-end"
           />
         </div>
