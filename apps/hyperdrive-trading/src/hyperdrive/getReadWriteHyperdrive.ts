@@ -11,6 +11,7 @@ import {
 import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import semver from "semver";
 import { sdkCache } from "src/sdk/sdkCache";
+import { failedRequestToast } from "src/ui/base/components/Toaster/failedRequestToast";
 import { Address, PublicClient, WalletClient } from "viem";
 
 export async function getReadWriteHyperdrive({
@@ -34,40 +35,46 @@ export async function getReadWriteHyperdrive({
     namespace: publicClient.chain?.id.toString(),
   };
 
-  // steth
+  try {
+    // steth
 
-  const hyperdriveConfig = findHyperdriveConfig({
-    hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
-  });
-  if (hyperdriveConfig.yieldSource === "lidoSteth") {
-    hyperdrive = new ReadWriteStEthHyperdrive(options);
+    const hyperdriveConfig = findHyperdriveConfig({
+      hyperdriveAddress,
+      hyperdrives: appConfig.hyperdrives,
+    });
+    if (hyperdriveConfig.yieldSource === "lidoSteth") {
+      hyperdrive = new ReadWriteStEthHyperdrive(options);
+
+      // <= v1.0.14
+      if (await isV1_0_14(hyperdrive)) {
+        return new ReadWriteStEthHyperdrive_v1_0_14(options);
+      }
+
+      return hyperdrive;
+    }
+
+    // morpho
+    if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
+      hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
+
+      return hyperdrive;
+    }
+
+    // base
+
+    hyperdrive = new ReadWriteHyperdrive(options);
 
     // <= v1.0.14
     if (await isV1_0_14(hyperdrive)) {
-      return new ReadWriteStEthHyperdrive_v1_0_14(options);
+      return new ReadWriteHyperdrive_v1_0_14(options);
     }
 
     return hyperdrive;
+  } catch (error) {
+    failedRequestToast();
+    console.error(error);
+    return new ReadWriteHyperdrive(options);
   }
-
-  // morpho
-  if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
-    hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
-
-    return hyperdrive;
-  }
-
-  // base
-
-  hyperdrive = new ReadWriteHyperdrive(options);
-
-  // <= v1.0.14
-  if (await isV1_0_14(hyperdrive)) {
-    return new ReadWriteHyperdrive_v1_0_14(options);
-  }
-
-  return hyperdrive;
 }
 
 async function isV1_0_14(hyperdrive: ReadWriteHyperdrive): Promise<boolean> {
