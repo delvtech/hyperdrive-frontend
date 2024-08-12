@@ -21,10 +21,6 @@ export function CloseLongModalButton({
   long,
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
-  function closeModal() {
-    (window as any)[modalId].close();
-  }
-
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -37,15 +33,11 @@ export function CloseLongModalButton({
   const subHeading = sharesToken
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
     : "";
-  const maturityMilliseconds = Number(long.maturity * 1000n);
-  const isMature = Date.now() > maturityMilliseconds;
 
   return (
     <Modal
       modalId={modalId}
-      modalHeader={
-        <ModalHeader heading="Close Long" subHeading={subHeading}></ModalHeader>
-      }
+      modalHeader={<ModalHeader heading="Close Long" subHeading={subHeading} />}
       modalContent={
         <div>
           <CloseLongForm

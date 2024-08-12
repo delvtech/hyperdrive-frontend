@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import { CheckIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
@@ -176,7 +175,7 @@ export function CloseLongForm({
                   ? `${formatBalance({
                       balance: withdrawAmount,
                       decimals: hyperdrive.decimals,
-                      places: baseToken?.places,
+                      places: activeWithdrawToken?.places,
                     })}`
                   : "0"
               }
@@ -220,7 +219,6 @@ export function CloseLongForm({
                   "font-normal": isMature,
                 })}
               >
-                {isMature ? <CheckIcon className="mr-2 h-4" /> : undefined}
                 {getRemainingTimeLabel({
                   maturitySeconds: Number(long.maturity),
                   condensed: true,
