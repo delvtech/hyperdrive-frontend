@@ -12,6 +12,7 @@ import {
 import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import semver from "semver";
 import { sdkCache } from "src/sdk/sdkCache";
+import { failedRequestToast } from "src/ui/base/components/Toaster/failedRequestToast";
 import { Address, PublicClient } from "viem";
 
 export async function getReadHyperdrive({
@@ -32,47 +33,53 @@ export async function getReadHyperdrive({
     namespace: publicClient.chain?.id.toString(),
   };
 
-  // steth
+  try {
+    // steth
 
-  const hyperdriveConfig = findHyperdriveConfig({
-    hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
-  });
+    const hyperdriveConfig = findHyperdriveConfig({
+      hyperdriveAddress,
+      hyperdrives: appConfig.hyperdrives,
+    });
 
-  if (hyperdriveConfig.yieldSource === "lidoSteth") {
-    hyperdrive = new ReadStEthHyperdrive(options);
+    if (hyperdriveConfig.yieldSource === "lidoSteth") {
+      hyperdrive = new ReadStEthHyperdrive(options);
+
+      // <= v1.0.14
+      if (await isV1_0_14(hyperdrive)) {
+        return new ReadStEthHyperdrive_v1_0_14(options);
+      }
+
+      return hyperdrive;
+    }
+
+    // morpho
+
+    if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
+      hyperdrive = new ReadMetaMorphoHyperdrive(options);
+
+      // <= v1.0.14
+      if (await isV1_0_14(hyperdrive)) {
+        return new ReadMetaMorphoHyperdrive_v1_0_14(options);
+      }
+
+      return hyperdrive;
+    }
+
+    // base
+
+    hyperdrive = new ReadHyperdrive(options);
 
     // <= v1.0.14
     if (await isV1_0_14(hyperdrive)) {
-      return new ReadStEthHyperdrive_v1_0_14(options);
+      return new ReadHyperdrive_v1_0_14(options);
     }
 
     return hyperdrive;
+  } catch (error) {
+    failedRequestToast();
+    console.error(error);
+    return new ReadHyperdrive(options);
   }
-
-  // morpho
-
-  if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
-    hyperdrive = new ReadMetaMorphoHyperdrive(options);
-
-    // <= v1.0.14
-    if (await isV1_0_14(hyperdrive)) {
-      return new ReadMetaMorphoHyperdrive_v1_0_14(options);
-    }
-
-    return hyperdrive;
-  }
-
-  // base
-
-  hyperdrive = new ReadHyperdrive(options);
-
-  // <= v1.0.14
-  if (await isV1_0_14(hyperdrive)) {
-    return new ReadHyperdrive_v1_0_14(options);
-  }
-
-  return hyperdrive;
 }
 
 async function isV1_0_14(hyperdrive: ReadHyperdrive): Promise<boolean> {
