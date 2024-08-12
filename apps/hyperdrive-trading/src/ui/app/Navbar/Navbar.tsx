@@ -3,7 +3,8 @@ import {
   ChartBarIcon,
 } from "@heroicons/react/16/solid";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
@@ -13,6 +14,7 @@ import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  const { location } = useRouterState();
   const chainId = useChainId();
   return (
     <div className="daisy-navbar">
@@ -23,6 +25,30 @@ export function Navbar(): ReactElement {
         <Link to={"/"} className="inline-flex items-center sm:hidden">
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
+        <div className="ml-16 flex gap-8">
+          <Link to={"/"} className="hidden sm:inline">
+            <span
+              className={classNames("text-md", {
+                "text-white border-b-2 border-b-primary/20 pb-1":
+                  location.pathname === "/",
+                "text-neutral-content": location.pathname !== "/",
+              })}
+            >
+              All Pools
+            </span>
+          </Link>
+          <Link to={"/portfolio"}>
+            <span
+              className={classNames("text-md", {
+                "text-white border-b-2 border-b-primary/20 pb-1":
+                  location.pathname === "/portfolio",
+                "text-neutral-content": location.pathname !== "/portfolio",
+              })}
+            >
+              Portfolio
+            </span>
+          </Link>
+        </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">
         <a
