@@ -262,7 +262,8 @@ export function CloseLongForm({
         if (previewCloseLongError) {
           return (
             <div className="text-center text-error">
-              This position cannot be fully closed at this time
+              Your position cannot be fully closed at this time. Please try
+              again with a smaller amount.
             </div>
           );
         }
