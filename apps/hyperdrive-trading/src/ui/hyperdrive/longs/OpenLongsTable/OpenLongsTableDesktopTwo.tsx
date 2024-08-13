@@ -33,16 +33,54 @@ import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
+import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 
 export function OpenLongsContainer(): ReactElement {
+  const { openLongPositions, openLongPositionsStatus } =
+    usePortfolioLongsData();
   const appConfig = useAppConfig();
   return (
-    <div className="flex flex-col gap-10">
+    <div className="mt-10 flex flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
+        const baseToken = appConfig.tokens.find(
+          (token) => token.address === hyperdrive.baseToken,
+        );
+        const sharesToken = appConfig.tokens.find(
+          (token) => token.address === hyperdrive.sharesToken,
+        );
+        if (
+          openLongPositionsStatus === "success" &&
+          openLongPositions &&
+          openLongPositions[hyperdrive.address].length === 0
+        ) {
+          return null;
+        }
         return (
-          <div className="border" key={hyperdrive.address}>
-            <h1>{hyperdrive.name}</h1>
+          <div className="flex flex-col gap-6" key={hyperdrive.address}>
+            <div className="flex items-center gap-1">
+              <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
+                {baseToken &&
+                hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
+                  <div
+                    className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                    data-tip={baseToken?.symbol}
+                  >
+                    <img src={baseToken?.iconUrl} />
+                  </div>
+                ) : null}
+                {sharesToken &&
+                hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
+                  <div
+                    className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                    data-tip={sharesToken.symbol}
+                  >
+                    <img src={sharesToken.iconUrl} />
+                  </div>
+                ) : null}
+              </div>
+              <p className="text-h4">{hyperdrive.name}</p>
+            </div>
             <OpenLongsTableDesktopTwo hyperdrive={hyperdrive} />
           </div>
         );
@@ -63,7 +101,6 @@ export function OpenLongsTableDesktopTwo({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-  console.log(openLongs, "openLongs");
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
@@ -125,7 +162,7 @@ export function OpenLongsTableDesktopTwo({
   }
 
   return (
-    <div className="overflow-x-clip">
+    <div className="overflow-x-clip rounded-box bg-[#152025]">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;

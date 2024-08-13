@@ -15,15 +15,16 @@ export function TabsTwo<TabId extends string>({
   activeTabId: TabId;
 }): ReactElement {
   return (
-    <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
+    <div role="tablist" className="daisy-tabs daisy-tabs-lg">
       {tabs.map(({ id, onClick, label }) => (
         <input
           key={id}
           className={classNames(
             "daisy-tab font-chakraPetch",
-            "!border-b-0", // override the bottom border since lifted tabs style doesn't need it, and it creates a stray line beneath the tab
+
             {
-              "daisy-tab-active font-bold": activeTabId === id,
+              "daisy-tab-active border-b-2 !border-b-primary/40 pb-1":
+                activeTabId === id,
               "opacity-80 hover:opacity-100": activeTabId !== id,
             },
           )}
@@ -37,7 +38,7 @@ export function TabsTwo<TabId extends string>({
       <div
         role="tabpanel"
         className={classNames(
-          "daisy-tab-content flex max-w-full overflow-x-auto rounded-b-box rounded-tr-box border-neutral-content/20 bg-base-100",
+          "daisy-tab-content flex max-w-full overflow-x-auto",
           {
             // The Longs tab is first, and the tabby bit is connected to the
             // tab content, so don't put a round border on it

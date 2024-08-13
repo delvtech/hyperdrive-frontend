@@ -10,15 +10,15 @@ import { useAccount, usePublicClient } from "wagmi";
 type OpenLongPositionsData = Record<`0x${string}`, OpenLongPositionReceived[]>;
 
 export function usePortfolioLongsData(): {
-  OpenLongPositions: OpenLongPositionsData | undefined;
-  OpenLongPositionsStatus: "error" | "success" | "loading";
+  openLongPositions: OpenLongPositionsData | undefined;
+  openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
   const queryEnabled = !!account && !!appConfig && !!publicClient;
 
-  const { data: OpenLongPositions, status: OpenLongPositionsStatus } = useQuery(
+  const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
       queryKey: ["portfolio/longs", account],
       enabled: queryEnabled,
@@ -54,5 +54,8 @@ export function usePortfolioLongsData(): {
         : undefined,
     },
   );
-  return { OpenLongPositions, OpenLongPositionsStatus };
+  return {
+    openLongPositions,
+    openLongPositionsStatus,
+  };
 }

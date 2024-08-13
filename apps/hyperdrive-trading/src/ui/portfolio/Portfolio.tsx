@@ -5,11 +5,9 @@ import { OpenLongsContainer } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenL
 import { PORTFOLIO_ROUTE } from "src/ui/markets/routes";
 
 export function Portfolio(): ReactElement {
-  // const { data } = usePortfolioLongsData();
   const { position } = useSearch({ from: PORTFOLIO_ROUTE });
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
   const activeTab = position ?? "longs";
-  // console.log(data, "data");
   return (
     <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8">
       <TabsTwo
