@@ -21,7 +21,7 @@ import {
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
-import { fixed, ln } from "src/fixed-point";
+import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
 import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
@@ -2023,7 +2023,7 @@ export class ReadHyperdrive extends ReadModel {
  * p_1 = to lpSharePrice
  * t = term length in fractions of a year
  *
- * r = ln(p_1 / p_0) / t
+ * r = (p_1 / p_0) ^ (1 / t) - 1
  */
 function calculateLpApy({
   startingLpSharePrice,
@@ -2036,5 +2036,8 @@ function calculateLpApy({
 }): number {
   const priceRatio = fixed(endingLpSharePrice).div(startingLpSharePrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  return ln(priceRatio).div(yearFraction).toNumber();
+  return priceRatio
+    .pow(fixed(1e18).div(yearFraction))
+    .sub(fixed(1e18))
+    .toNumber();
 }
