@@ -266,7 +266,6 @@ export function CloseLongForm({
             </div>
           );
         }
-        return;
       })()}
       actionButton={(() => {
         if (!account) {
