@@ -2023,7 +2023,6 @@ export class ReadHyperdrive extends ReadModel {
  * p_1 = to lpSharePrice
  * t = term length in fractions of a year
  *
- * r = ln(p_1 / p_0) / t
  * r = (p_1 / p_0) ^ (1 / t) - 1
  */
 function calculateLpApy({
