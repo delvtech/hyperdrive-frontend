@@ -1,21 +1,27 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenChoice } from "src/ui/token/TokenPicker";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useAccount, useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -30,6 +36,7 @@ export function CloseLongForm({
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
+  const chainId = useChainId();
 
   const defaultItems = [];
   const baseToken = appConfig.tokens.find(
@@ -61,6 +68,11 @@ export function CloseLongForm({
       ? hyperdrive.poolConfig.baseToken
       : hyperdrive.poolConfig.vaultSharesToken,
   });
+
+  const tokenPrices = useTokenFiatPrices([activeWithdrawToken.address]);
+
+  const activeWithdrawTokenPrice =
+    tokenPrices?.[activeWithdrawToken.address.toLowerCase() as Address];
 
   const {
     amount: bondAmount,
@@ -120,72 +132,104 @@ export function CloseLongForm({
       tokenConfig: sharesToken,
     });
   }
-
+  const maturityMilliseconds = Number(long.maturity * 1000n);
+  const isMature = Date.now() > maturityMilliseconds;
   return (
-    <TransactionViewOld
-      disclaimer={
-        <>
-          <p className="text-center text-xs text-neutral-content">
-            Note: 1 hy{baseToken?.symbol} is always worth 1 {baseToken?.symbol}{" "}
-            at maturity, however its value may fluctuate before maturity based
-            on market activity.
-          </p>
-          {previewCloseLongStatus === "error" ? (
-            <p className="text-center text-error">
-              Insufficient liquidity: There is not enough liquidity in the pool
-              to close your long position at this time. You may either add more
-              funds to the pool or wait for the liquidity to improve.
-            </p>
-          ) : undefined}
-        </>
-      }
+    <TransactionView
       tokenInput={
         baseToken ? (
-          <TokenInput
-            name={baseToken.symbol}
-            inputLabel="Amount to redeem"
-            token={`hy${baseToken.symbol}`}
-            value={bondAmount ?? ""}
-            maxValue={
-              long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
-            }
-            stat={`Balance: ${formatBalance({
-              balance: long.bondAmount,
-              decimals: hyperdrive.decimals,
-              places: baseToken.places,
-            })}`}
-            onChange={(newAmount) => setAmount(newAmount)}
-          />
-        ) : null
-      }
-      setting={
-        withdrawTokenChoices.length > 1 ? (
-          <TokenPicker
-            tokens={withdrawTokenChoices}
-            activeTokenAddress={activeWithdrawToken.address}
-            onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-            label="Choose withdrawal asset"
-          />
-        ) : undefined
-      }
-      transactionPreview={
-        <div className="flex flex-col gap-3 px-2 pb-2">
-          <LabelValue
-            label="You receive"
-            value={
-              <p className="font-bold">
-                {withdrawAmount
+          <div className="flex flex-col gap-3">
+            <TokenInputTwo
+              name={baseToken.symbol}
+              inputLabel="Amount to redeem"
+              token={`hy${baseToken.symbol}`}
+              value={bondAmount ?? ""}
+              maxValue={
+                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+              }
+              onChange={(newAmount) => setAmount(newAmount)}
+              bottomRightElement={
+                <div className="flex flex-col gap-1 text-xs text-neutral-content">
+                  {`Balance: ${formatBalance({
+                    balance: long.bondAmount,
+                    decimals: hyperdrive.decimals,
+                    places: baseToken.places,
+                  })}`}
+                </div>
+              }
+            />
+            <TokenInputTwo
+              name={baseToken.symbol}
+              inputLabel="You receive"
+              token={
+                <TokenPickerTwo
+                  tokens={withdrawTokenChoices}
+                  activeTokenAddress={activeWithdrawToken.address}
+                  onChange={(tokenAddress) =>
+                    setActiveWithdrawToken(tokenAddress)
+                  }
+                />
+              }
+              value={
+                withdrawAmount
                   ? `${formatBalance({
                       balance: withdrawAmount,
                       decimals: hyperdrive.decimals,
-                      places: baseToken?.places,
+                      places: activeWithdrawToken?.places,
                     })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </p>
+                  : "0"
+              }
+              maxValue={
+                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+              }
+              disabled
+              bottomLeftElement={
+                // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+                !isTestnetChain(chainId) ? (
+                  <label className="text-sm text-neutral-content">
+                    {`$${formatBalance({
+                      balance:
+                        activeWithdrawTokenPrice && bondAmountAsBigInt
+                          ? fixed(
+                              bondAmountAsBigInt,
+                              activeWithdrawToken.decimals,
+                            ).mul(
+                              activeWithdrawTokenPrice,
+                              activeWithdrawToken.decimals,
+                            ).bigint
+                          : 0n,
+                      decimals: activeWithdrawToken.decimals,
+                      places: 2,
+                    })}`}
+                  </label>
+                ) : null
+              }
+              onChange={(newAmount) => setAmount(newAmount)}
+            />
+          </div>
+        ) : null
+      }
+      primaryStats={
+        <div className="flex flex-row justify-between px-4 py-8">
+          <PrimaryStat
+            label="Time remaining"
+            value={
+              <span
+                className={classNames("flex items-center", {
+                  "font-normal": isMature,
+                })}
+              >
+                {getRemainingTimeLabel({
+                  maturitySeconds: Number(long.maturity),
+                  condensed: true,
+                  showLeftSuffix: false,
+                })}
+              </span>
             }
+            valueClassName="flex items-end"
           />
-          <LabelValue
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <PrimaryStat
             label="Pool fee"
             value={
               <p>
@@ -196,10 +240,11 @@ export function CloseLongForm({
                       // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
                       places: 4,
                     })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
+                  : "0"}
               </p>
             }
+            valueUnit={activeWithdrawToken.symbol}
+            valueClassName="flex items-end"
           />
         </div>
       }
