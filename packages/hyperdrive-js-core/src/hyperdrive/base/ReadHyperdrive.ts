@@ -2041,7 +2041,4 @@ function calculateLpApy({
     .pow(fixed(1e18).div(yearFraction))
     .sub(fixed(1e18))
     .toNumber();
-  // const priceRatio = fixed(endingLpSharePrice).div(startingLpSharePrice);
-  // const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  // return ln(priceRatio).div(yearFraction).toNumber();
 }
