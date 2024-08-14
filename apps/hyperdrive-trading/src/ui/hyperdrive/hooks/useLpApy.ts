@@ -23,12 +23,11 @@ export function useLpApy(hyperdriveAddress: Address): {
     queryFn: queryEnabled
       ? async () =>
           readHyperdrive.getLpApy({
-            // If on devnet, start from block 1, otherwise start from 7 days ago
+            // If on devnet, start from block 1, otherwise start from 1 day ago
             // TODO: Update this on mainnet and testnet according to average daily blocks
             fromBlock: [31337, 42069].includes(chainId)
               ? 1n
-              : blockNumber - 7000n * 7n,
-            toBlock: blockNumber,
+              : blockNumber - 86400n / 12n, // 1 day, 12 seconds per block
           })
       : undefined,
     enabled: queryEnabled,
