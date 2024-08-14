@@ -12,7 +12,6 @@ import classNames from "classnames";
 import { createRoot } from "react-dom/client";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { worker } from "src/bridge/api";
 import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
@@ -32,13 +31,6 @@ if (import.meta.env.DEV) {
 }
 
 logAppVersion();
-
-// TODO: remove this when we no longer need to stub the gopher API.  Currently
-// there is no support for any testnets so we have to stub out the responses for
-// now.
-if (import.meta.env.DEV) {
-  await worker.start({ onUnhandledRequest: "bypass" });
-}
 
 root.render(
   <WagmiProvider config={wagmiConfig}>
