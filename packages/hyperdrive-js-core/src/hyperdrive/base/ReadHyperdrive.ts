@@ -186,7 +186,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Get a standardized variable rate using vault share prices from checkpoints in
+   * Get a standardized variable rate using vault share prices from blocks in
    * the last `timeRange` seconds.
    *
    * Note: This function will throw an error if the pool was deployed within the
@@ -195,8 +195,7 @@ export class ReadHyperdrive extends ReadModel {
    * See Agent0 for calculation:
    * https://github.com/delvtech/agent0/blob/854e9392e09898e65aeed0040c5e648c8d3d1380/src/agent0/ethpy/hyperdrive/interface/read_interface.py#L421
    *
-   * @param timeRange The time range (in seconds) to use to calculate the variable
-   * rate to look for checkpoints.
+   * @param blockRange The block range (in blocks) to use to calculate the variable rate.
    */
   async getYieldSourceRate({
     blockRange,
@@ -207,19 +206,18 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<bigint> {
     // Attempt to fetch the blocks first to fail early if the block is not found
     const currentBlock = await getBlockOrThrow(this.network, options);
-    const startBlockNumber = currentBlock.blockNumber! - blockRange;
+    let startBlockNumber = currentBlock.blockNumber! - blockRange;
+    // If the 24 hour rate doesn't exist, assume the pool was initialized less
+    // than 24 hours ago and try to get the all-time rate
+    const { blockNumber: initializationBlock } =
+      await this.getInitializationBlock();
+    if (initializationBlock && initializationBlock > startBlockNumber) {
+      startBlockNumber = initializationBlock;
+    }
+
     const startBlock = await getBlockOrThrow(this.network, {
       blockNumber: startBlockNumber,
     });
-
-    // validate the time range
-    const { blockNumber: initializationBlock } =
-      await this.getInitializationBlock();
-    if (initializationBlock && startBlockNumber < initializationBlock) {
-      throw new HyperdriveSdkError(
-        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initialized at block ${initializationBlock}.`,
-      );
-    }
 
     // Get the info from fromBlock to get the starting vault share price
     const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
@@ -230,24 +228,15 @@ export class ReadHyperdrive extends ReadModel {
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo(options);
 
-    const timeRange = currentBlock.timestamp - startBlock.timestamp; // bigint
+    const timeFrame = BigInt(currentBlock.timestamp - startBlock.timestamp);
 
-    // Convert values to Fixed type, to perform fixed point math
-    const fixedTimeRange = fixed(timeRange * BigInt(1e18));
-    const fixedYear = fixed(BigInt(SECONDS_PER_YEAR) * BigInt(1e18));
-    const fixedTimeRangeInYears = fixedTimeRange.div(fixedYear);
+    const vaultApy = calculateApyFromSharePrice({
+      startingSharePrice: startVaultSharePrice,
+      endingSharePrice: currentVaultSharePrice,
+      timeFrame,
+    });
 
-    // Calculate the annualized rate of return:
-    // apy = (1 + hpr) ^ t - 1
-    // using fixedpointmath here, as we need to use exponents
-    const rateOfReturn = fixed(currentVaultSharePrice).div(
-      startVaultSharePrice,
-    ); // this is (1 + hpr)
-    const annualizedRateOfReturn = rateOfReturn
-      .pow(fixed(1e18).div(fixedTimeRangeInYears))
-      .sub(fixed(1e18));
-
-    return annualizedRateOfReturn.bigint;
+    return vaultApy;
   }
 
   /**
@@ -647,52 +636,47 @@ export class ReadHyperdrive extends ReadModel {
    * p_0 = from lpSharePrice
    * p_1 = to lpSharePrice
    * t = time frame between p_0 and p_1
-   * r = ln(p_1 / p_0) / t
+   *
+   * r = (p_1 / p_0) ^ (1 / t) - 1
    */
   async getLpApy({
     fromBlock,
-    toBlock,
+    options,
   }: {
     fromBlock: bigint;
-    toBlock: bigint;
+    options?: ContractReadOptions;
   }): Promise<{ lpApy: number }> {
-    const checkpointEvents = await this.getCheckpointEvents({
-      fromBlock,
-      toBlock,
-    });
-
-    if (!checkpointEvents.length) {
-      return { lpApy: 0 };
+    // If the 24 hour rate doesn't exist, assume the pool was initialized less
+    // than 24 hours before and try to get the all-time rate until toBlock
+    const { blockNumber: initializationBlock } =
+      await this.getInitializationBlock();
+    if (initializationBlock && initializationBlock > fromBlock) {
+      fromBlock = initializationBlock;
     }
 
-    // The starting lp share price comes from the first checkpoint in our events
-    const {
-      args: { checkpointTime: startTime, lpSharePrice: startingLpSharePrice },
-    } = checkpointEvents[0];
-
-    let {
-      args: { checkpointTime: endTime, lpSharePrice: endingLpSharePrice },
-    } = checkpointEvents[checkpointEvents.length - 1];
-
-    const endingBlock = await getBlockOrThrow(this.network, {
-      blockNumber: toBlock,
+    // Attempt to fetch the blocks first to fail early if the block is not found
+    const currentBlock = await getBlockOrThrow(this.network, options);
+    const startBlock = await getBlockOrThrow(this.network, {
+      blockNumber: fromBlock,
     });
 
-    // If the toBlock lands on a checkpoint, we can use the lp share price
-    // from the event. Otherwise, we get the price at the toBlock
-    if (endTime < endingBlock.timestamp) {
-      endTime = endingBlock.timestamp;
-      const { lpSharePrice } = await this.getPoolInfo({
-        blockNumber: toBlock,
-      });
-      endingLpSharePrice = lpSharePrice;
-    }
-
-    const lpApy = calculateLpApy({
-      startingLpSharePrice,
-      endingLpSharePrice,
-      timeFrame: endTime - startTime,
+    // Get the info from fromBlock to get the starting lp share price
+    const { lpSharePrice: startLpSharePrice } = await this.getPoolInfo({
+      blockNumber: fromBlock,
     });
+
+    // Get the current lpSharePrice from the latest pool info
+    const { lpSharePrice: currentLpSharePrice } = await this.getPoolInfo();
+
+    const timeFrame = BigInt(currentBlock.timestamp - startBlock.timestamp);
+
+    const lpApy = fixed(
+      calculateApyFromSharePrice({
+        startingSharePrice: startLpSharePrice,
+        endingSharePrice: currentLpSharePrice,
+        timeFrame,
+      }),
+    ).toNumber();
 
     return { lpApy };
   }
@@ -2016,32 +2000,25 @@ export class ReadHyperdrive extends ReadModel {
 }
 
 /*
- * This returns the LP APY using the following formula for continuous compounding:
+ * This returns the APY using the following formula for continuous compounding:
 
  * r = rate of return
  * p_0 = from lpSharePrice
  * p_1 = to lpSharePrice
  * t = term length in fractions of a year
  *
- * r = ln(p_1 / p_0) / t
  * r = (p_1 / p_0) ^ (1 / t) - 1
  */
-function calculateLpApy({
-  startingLpSharePrice,
-  endingLpSharePrice,
-  timeFrame,
+function calculateApyFromSharePrice({
+  startingSharePrice,
+  endingSharePrice,
+  timeFrame, // seconds
 }: {
-  startingLpSharePrice: bigint;
-  endingLpSharePrice: bigint;
+  startingSharePrice: bigint;
+  endingSharePrice: bigint;
   timeFrame: bigint;
-}): number {
-  const priceRatio = fixed(endingLpSharePrice).div(startingLpSharePrice);
+}): bigint {
+  const priceRatio = fixed(endingSharePrice).div(startingSharePrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  return priceRatio
-    .pow(fixed(1e18).div(yearFraction))
-    .sub(fixed(1e18))
-    .toNumber();
-  // const priceRatio = fixed(endingLpSharePrice).div(startingLpSharePrice);
-  // const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  // return ln(priceRatio).div(yearFraction).toNumber();
+  return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(fixed(1e18)).bigint;
 }
