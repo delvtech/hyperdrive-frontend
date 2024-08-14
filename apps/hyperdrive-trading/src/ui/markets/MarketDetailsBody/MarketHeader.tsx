@@ -28,11 +28,14 @@ export function MarketHeader({
       <div className="flex w-full flex-col items-start gap-1">
         <h1 className="gradient-text items-center md:my-0">
           <div className="daisy-avatar-group mr-1 inline -space-x-6 rtl:space-x-reverse">
-            <div className="daisy-avatar">
-              <div className="w-12">
-                <img src={baseToken.iconUrl} />
+            {hyperdrive.depositOptions.isBaseTokenDepositEnabled ||
+            hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? (
+              <div className="daisy-avatar">
+                <div className="w-12">
+                  <img src={baseToken.iconUrl} />
+                </div>
               </div>
-            </div>
+            ) : null}
             {sharesToken ? (
               <div className="daisy-avatar">
                 <div className="w-12">
