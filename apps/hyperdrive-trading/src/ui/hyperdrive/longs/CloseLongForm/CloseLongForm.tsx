@@ -87,6 +87,7 @@ export function CloseLongForm({
     amountOut: withdrawAmount,
     flatPlusCurveFee,
     previewCloseLongStatus,
+    previewCloseLongError,
   } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
@@ -132,6 +133,10 @@ export function CloseLongForm({
       tokenConfig: sharesToken,
     });
   }
+  // You can't close an amount that's larger than the position size
+  const isAmountLargerThanPositionSize = !!(
+    bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
+  );
   const maturityMilliseconds = Number(long.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
   return (
@@ -248,6 +253,21 @@ export function CloseLongForm({
           />
         </div>
       }
+      disclaimer={(() => {
+        if (!!bondAmountAsBigInt && isAmountLargerThanPositionSize) {
+          return (
+            <div className="text-center text-error">Insufficient balance</div>
+          );
+        }
+        if (previewCloseLongError) {
+          return (
+            <div className="text-center text-error">
+              Your position cannot be fully closed at this time. Please try
+              again with a smaller amount.
+            </div>
+          );
+        }
+      })()}
       actionButton={(() => {
         if (!account) {
           return <ConnectButton />;
@@ -258,7 +278,7 @@ export function CloseLongForm({
         return (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            disabled={!closeLong}
+            disabled={!closeLong || isAmountLargerThanPositionSize}
             onClick={(e) => {
               closeLong?.();
               onCloseLong?.(e);
