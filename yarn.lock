@@ -6926,25 +6926,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-abitype@1.0.0:
+abitype@1.0.0, abitype@^0.3.0, abitype@^0.9.8, abitype@^1.0.5:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.0.0.tgz#237176dace81d90d018bebf3a45cb42f2a2d9e97"
   integrity sha512-NMeMah//6bJ56H5XRj8QCV4AwuW6hB6zqz2LnhhLdcWVQOsXki6/Pn3APeqxCma62nXIcmZWdu1DlHWS74umVQ==
-
-abitype@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-0.3.0.tgz#75150e337d88cc0b2423ed0d3fc36935f139d04c"
-  integrity sha512-0YokyAV4hKMcy97Pl+6QgZBlBdZJN2llslOs7kiFY+cu7kMlVXDBpxMExfv0krzBCQt2t7hNovpQ3y/zvEm18A==
-
-abitype@^0.9.8:
-  version "0.9.10"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-0.9.10.tgz#fa6fa30a6465da98736f98b6c601a02ed49f6eec"
-  integrity sha512-FIS7U4n7qwAT58KibwYig5iFG4K61rbhAqaQh/UWj8v1Y8mjX3F8TC9gd8cz9yT1TYel9f8nS5NO5kZp2RW0jQ==
-
-abitype@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/abitype/-/abitype-1.0.5.tgz#29d0daa3eea867ca90f7e4123144c1d1270774b6"
-  integrity sha512-YzDhti7cjlfaBhHutMaboYB21Ha3rXR9QTkNJFzYC4kC8YclaiwPBBBJY8ejFdu2wnJeZCVZSMlQJ7fi8S6hsw==
 
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.8:
   version "1.3.8"

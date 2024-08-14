@@ -38,6 +38,7 @@
     "typescript": "^5.5.4"
   },
   "resolutions": {
+    "abitype": "1.0.0",
     "typescript": "^5.5.4",
     "viem": "2.9.2"
   },
