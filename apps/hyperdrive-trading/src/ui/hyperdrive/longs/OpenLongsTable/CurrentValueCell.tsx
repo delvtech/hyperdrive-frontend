@@ -98,3 +98,87 @@ export function CurrentValueCell({
     </div>
   );
 }
+export function CurrentValueCellTwo({
+  row,
+  hyperdrive,
+}: {
+  row: Long;
+  hyperdrive: HyperdriveConfig;
+}): ReactElement {
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    baseTokenAddress: hyperdrive.baseToken,
+    tokens: appConfig.tokens,
+  });
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+
+  const {
+    amountOut: baseAmountOut,
+    previewCloseLongStatus,
+    previewCloseLongError,
+  } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: row.maturity,
+    bondAmountIn: row.bondAmount,
+  });
+
+  const currentValueLabel = formatBalance({
+    balance: baseAmountOut || 0n,
+    decimals: baseToken.decimals,
+    places: baseToken.places,
+  });
+
+  const profitLoss = formatBalance({
+    balance: (baseAmountOut || 0n) - row.baseAmountPaid,
+    decimals: baseToken.decimals,
+    places: baseToken.places,
+  });
+
+  const isPositiveChangeInValue =
+    baseAmountOut && baseAmountOut > row.baseAmountPaid;
+
+  if (previewCloseLongStatus === "loading") {
+    return (
+      <div className={"flex"}>
+        <Skeleton width={100} />
+      </div>
+    );
+  }
+
+  return (
+    <div className={"flex gap-1"}>
+      <span className="flex items-center gap-2 text-md font-bold">
+        {/* warning icon with tooltip for liquidity issues
+         TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
+         have calcMaxCloseLong */}
+        {previewCloseLongError ? (
+          <span
+            className="daisy-tooltip before:font-normal"
+            data-tip="This position cannot be fully closed at this time"
+          >
+            <ExclamationTriangleIcon className="size-4 text-warning" />
+          </span>
+        ) : (
+          ""
+        )}{" "}
+        {currentValueLabel}
+      </span>
+      <div
+        data-tip={"Profit/Loss since open, after closing fees."}
+        className={classNames(
+          "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
+          {
+            "text-success": isPositiveChangeInValue,
+            "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
+          },
+        )}
+      >
+        <span>{isPositiveChangeInValue ? "+" : ""}</span>
+        {baseAmountOut
+          ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
+          : undefined}
+      </div>
+    </div>
+  );
+}

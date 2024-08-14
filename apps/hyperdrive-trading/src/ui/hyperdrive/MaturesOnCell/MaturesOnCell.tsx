@@ -50,15 +50,9 @@ export function MaturesOnCellTwo({
   });
 
   return (
-    <div className="daisy-stat flex flex-row p-0 font-dmMono xl:flex-col">
-      <span className="daisy-stat-value text-xs font-normal lg:text-md">
-        {formatDate(Number(maturityDateMS))}
-      </span>
-      <div
-        className={classNames(
-          "daisy-stat-desc inline-flex font-dmMono text-xs text-neutral-content lg:mt-1",
-        )}
-      >
+    <div className="flex flex-row p-0 font-dmMono xl:flex-col">
+      <span className="font-normal">{formatDate(Number(maturityDateMS))}</span>
+      <div className={classNames("font-dmMono text-neutral-content")}>
         {convertMillisecondsToDays(
           Number(hyperdrive.poolConfig.positionDuration * 1000n),
         )}

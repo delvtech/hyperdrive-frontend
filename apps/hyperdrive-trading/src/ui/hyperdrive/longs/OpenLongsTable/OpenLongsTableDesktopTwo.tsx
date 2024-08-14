@@ -1,10 +1,10 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
-  HyperdriveConfig,
   findBaseToken,
+  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -18,6 +18,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -30,8 +31,7 @@ import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
-import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
-import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
+import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
@@ -181,7 +181,7 @@ export function OpenLongsTableDesktopTwo({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content"
+                  className="sticky z-10 text-sm font-normal text-neutral-content/70"
                   key={header.id}
                 >
                   <div
@@ -274,48 +274,43 @@ function getColumns({
         );
       },
     }),
+    // columnHelper.accessor("bondAmount", {
+    //   id: "size",
+    //   header: `Size (hy${baseToken.symbol})`,
+    //   cell: ({ row }) => {
+    //     return (
+    //       <span className="flex w-20 justify-end">
+    //         {formatBalance({
+    //           balance: row.original.bondAmount,
+    //           decimals: baseToken.decimals,
+    //           places: baseToken.places,
+    //         })}
+    //       </span>
+    //     );
+    //   },
+    // }),
     columnHelper.accessor("bondAmount", {
-      id: "size",
-      header: `Size (hy${baseToken.symbol})`,
+      id: "fixedRate/size",
+      header: `Fixed Rate / Size`,
       cell: ({ row }) => {
+        const fixedRate = calculateAprFromPrice({
+          baseAmount: row.original.baseAmountPaid,
+          bondAmount: row.original.bondAmount,
+          positionDuration: hyperdrive.poolConfig.positionDuration || 0n,
+        });
+
         return (
-          <span className="flex w-20 justify-end">
-            {formatBalance({
-              balance: row.original.bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })}
-          </span>
-        );
-      },
-    }),
-    columnHelper.accessor("baseAmountPaid", {
-      id: "valuePaid",
-      header: `Cost (${baseToken.symbol})`,
-      cell: (baseAmountPaid) => {
-        const amountPaid = baseAmountPaid.getValue();
-        return (
-          <span className="flex w-16 justify-end">
-            {formatBalance({
-              balance: amountPaid,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })}
-          </span>
-        );
-      },
-    }),
-    columnHelper.accessor("assetId", {
-      id: "fixedRate",
-      header: `Fixed APR`,
-      cell: ({ row }) => {
-        return (
-          <FixedRateCell
-            vertical
-            hyperdrive={hyperdrive}
-            baseAmountPaid={row.original.baseAmountPaid}
-            bondAmount={row.original.bondAmount}
-          />
+          <div className="flex flex-col">
+            <div>{formatRate(fixedRate)}</div>
+            <span className="flex font-dmMono text-neutral-content">
+              {formatBalance({
+                balance: row.original.bondAmount,
+                decimals: baseToken.decimals,
+                places: 2,
+              })}{" "}
+              {`hy${baseToken.symbol}`}
+            </span>
+          </div>
         );
       },
       sortingFn: (rowA, rowB) => {
@@ -336,11 +331,46 @@ function getColumns({
         return aFixedRate - bFixedRate;
       },
     }),
+    // columnHelper.accessor("baseAmountPaid", {
+    //   id: "valuePaid",
+    //   header: `Cost (${baseToken.symbol})`,
+    //   cell: (baseAmountPaid) => {
+    //     const amountPaid = baseAmountPaid.getValue();
+    //     return (
+    //       <span className="flex w-16 justify-end">
+    //         {formatBalance({
+    //           balance: amountPaid,
+    //           decimals: baseToken.decimals,
+    //           places: baseToken.places,
+    //         })}
+    //       </span>
+    //     );
+    //   },
+    // }),
+    columnHelper.accessor("baseAmountPaid", {
+      id: "value/cost",
+      header: `Value / Cost (${baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <div>
+            <CurrentValueCellTwo hyperdrive={hyperdrive} row={row.original} />
+            <span className="flex font-dmMono text-neutral-content">
+              {formatBalance({
+                balance: row.original.baseAmountPaid,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })}
+            </span>
+          </div>
+        );
+      },
+    }),
+
     columnHelper.display({
       id: "value",
-      header: `Current Value (${baseToken.symbol})`,
+      header: `Status`,
       cell: ({ row }) => {
-        return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
+        return <div className="text-accent">Completed</div>;
       },
     }),
     columnHelper.display({
@@ -350,7 +380,7 @@ function getColumns({
         const maturityDateMS = row.original.maturity * 1000n;
         const maturityDate = new Date(Number(maturityDateMS));
         return (
-          <div className="flex items-center">
+          <div className="flex w-full items-center">
             <button
               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
               onClick={() => {
@@ -360,7 +390,7 @@ function getColumns({
             >
               Close Long
             </button>
-            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-left absolute right-10 z-10">
+            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom">
               <div
                 tabIndex={0}
                 role="button"
