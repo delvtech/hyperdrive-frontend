@@ -199,7 +199,7 @@ function getColumns(appConfig: AppConfig) {
       header: () => (
         <TextWithTooltip
           label="LP APY"
-          tooltip={`The LP's yearly projected return, derived from the past 7 days of trading activity.`}
+          tooltip={`The LP's yearly projected return, derived from the past 24 hours of trading activity.`}
         />
       ),
       cell: ({ row }) => {
