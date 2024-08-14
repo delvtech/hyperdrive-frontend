@@ -89,7 +89,7 @@ export function YieldStats({
                   )}
                 </RewardsTooltip>
               }
-              description={`The LP's annual return projection assuming the past 24h performance rate continues for a year.`}
+              description={`The LP's annual return projection assuming the past ${yieldSource.historicalRatePeriod}-day performance rate continues for a year.`}
               tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
             />
           </Animated>
