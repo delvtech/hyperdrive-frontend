@@ -3,17 +3,6 @@ export const mainnetAppConfig: AppConfig = {
   chainId: 1,
   tokens: [
     {
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      decimals: 18,
-      places: 2,
-      name: "Dai Stablecoin",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-      extensions: {},
-    },
-    {
       address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       decimals: 18,
       places: 4,
@@ -32,6 +21,17 @@ export const mainnetAppConfig: AppConfig = {
       tags: [],
       extensions: {},
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+    },
+    {
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      decimals: 18,
+      places: 2,
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+      extensions: {},
     },
     {
       address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
@@ -183,9 +183,9 @@ export const mainnetAppConfig: AppConfig = {
     {
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
-      name: "182d Morpho Blue sUSDe/DAI",
+      name: "182d Morpho sUSDe/DAI",
       decimals: 18,
-      yieldSource: "morphoBlueSusdeDai",
+      yieldSource: "morphoSusdeDai",
       baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
@@ -265,9 +265,15 @@ export const mainnetAppConfig: AppConfig = {
       protocol: "lido",
       isSharesPeggedToBase: true,
     },
-    morphoBlueSusdeDai: {
-      id: "morphoBlueSusdeDai",
-      shortName: "Morpho Blue sUSDe/DAI",
+    morphoSusdeDai: {
+      id: "morphoSusdeDai",
+      shortName: "Morpho sUSDe/DAI",
+      protocol: "morpho",
+      isSharesPeggedToBase: false,
+    },
+    morphoUsdeDai: {
+      id: "morphoUsdeDai",
+      shortName: "Morpho USDe/DAI",
       protocol: "morpho",
       isSharesPeggedToBase: false,
     },

@@ -54,7 +54,9 @@ export async function getReadWriteHyperdrive({
     }
 
     // morpho
-    if (hyperdriveConfig.yieldSource === "morphoBlueSusdeDai") {
+    if (
+      ["morphoSusdeDai", "morphoUsdeDai"].includes(hyperdriveConfig.yieldSource)
+    ) {
       hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
 
       return hyperdrive;

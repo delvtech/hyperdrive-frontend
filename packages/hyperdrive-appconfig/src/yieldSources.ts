@@ -21,10 +21,15 @@ const lidoSteth: YieldSource = {
   protocol: "lido",
   isSharesPeggedToBase: true,
 };
-
-const morphoBlueSusdeDai: YieldSource = {
-  id: "morphoBlueSusdeDai",
-  shortName: "Morpho Blue sUSDe/DAI",
+const morphoSusdeDai: YieldSource = {
+  id: "morphoSusdeDai",
+  shortName: "Morpho sUSDe/DAI",
+  protocol: "morpho",
+  isSharesPeggedToBase: false,
+};
+const morphoUsdeDai: YieldSource = {
+  id: "morphoUsdeDai",
+  shortName: "Morpho USDe/DAI",
   protocol: "morpho",
   isSharesPeggedToBase: false,
 };
@@ -46,7 +51,8 @@ const ezEth: YieldSource = {
 export const yieldSources = {
   makerDsr,
   lidoSteth,
-  morphoBlueSusdeDai,
+  morphoSusdeDai,
+  morphoUsdeDai,
   reth,
   ezEth,
 } as const;
