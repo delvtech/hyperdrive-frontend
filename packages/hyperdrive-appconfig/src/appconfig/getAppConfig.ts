@@ -47,17 +47,32 @@ export async function getAppConfig({
       console.log("Hyperdrive Name: ", hackName);
 
       if (
-        [
-          "MORPHO_BLUE_DAI_14_DAY", // sepolia
-          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
-        ].includes(hackName)
+        // partial string matches for flexibility
+        hackName.includes("MORPHO_BLUE_DAI") || // sepolia
+        hackName.includes("Morpho Blue sUSDe/DAI Hyperdrive") // mainnet
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
           hyperdrive,
           baseTokenTags: ["stablecoin"],
           baseTokenIconUrl: DAI_ICON_URL,
           baseTokenPlaces: 2,
-          yieldSourceId: "morphoBlueSusdeDai",
+          yieldSourceId: "morphoSusdeDai",
+        });
+
+        tokens.push(baseToken);
+
+        return hyperdriveConfig;
+      }
+      if (
+        // partial string matches for flexibility
+        hackName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia
+      ) {
+        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
+          hyperdrive,
+          baseTokenTags: ["stablecoin"],
+          baseTokenIconUrl: DAI_ICON_URL,
+          baseTokenPlaces: 2,
+          yieldSourceId: "morphoUsdeDai",
         });
 
         tokens.push(baseToken);
