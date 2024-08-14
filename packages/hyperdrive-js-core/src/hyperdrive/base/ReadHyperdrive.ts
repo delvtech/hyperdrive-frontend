@@ -2020,5 +2020,8 @@ function calculateApyFromSharePrice({
 }): bigint {
   const priceRatio = fixed(endingSharePrice).div(startingSharePrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(fixed(1e18)).bigint;
+  return priceRatio
+    .pow(fixed(1e18).div(yearFraction))
+    .sub(fixed(1e18))
+    .toNumber();
 }
