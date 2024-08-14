@@ -25,7 +25,7 @@ import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
@@ -264,9 +264,14 @@ function getColumns({
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
-      header: `Matures On`,
+      header: `Maturity Date`,
       cell: ({ row }) => {
-        return <MaturesOnCell maturity={row.original.maturity} />;
+        return (
+          <MaturesOnCellTwo
+            hyperdrive={hyperdrive}
+            maturity={row.original.maturity}
+          />
+        );
       },
     }),
     columnHelper.accessor("bondAmount", {
