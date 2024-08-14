@@ -207,8 +207,8 @@ export class ReadHyperdrive extends ReadModel {
     // Attempt to fetch the blocks first to fail early if the block is not found
     const currentBlock = await getBlockOrThrow(this.network, options);
     let startBlockNumber = currentBlock.blockNumber! - blockRange;
-    // If the 24 hour rate doesn't exist, assume the pool was initialized less
-    // than 24 hours ago and try to get the all-time rate
+    // If the blockRange extends past the initialization block, then we adjust
+    // the range to start at the initialization block instead of throwing an error
     const { blockNumber: initializationBlock } =
       await this.getInitializationBlock();
     if (initializationBlock && initializationBlock > startBlockNumber) {
@@ -228,11 +228,11 @@ export class ReadHyperdrive extends ReadModel {
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo(options);
 
-    const timeFrame = BigInt(currentBlock.timestamp - startBlock.timestamp);
+    const timeFrame = currentBlock.timestamp - startBlock.timestamp; // bigint
 
-    const vaultApy = calculateApyFromSharePrice({
-      startingSharePrice: startVaultSharePrice,
-      endingSharePrice: currentVaultSharePrice,
+    const vaultApy = calculateApyFromPrice({
+      startPrice: startVaultSharePrice,
+      endPrice: currentVaultSharePrice,
       timeFrame,
     });
 
@@ -668,12 +668,12 @@ export class ReadHyperdrive extends ReadModel {
     // Get the current lpSharePrice from the latest pool info
     const { lpSharePrice: currentLpSharePrice } = await this.getPoolInfo();
 
-    const timeFrame = BigInt(currentBlock.timestamp - startBlock.timestamp);
+    const timeFrame = currentBlock.timestamp - startBlock.timestamp;
 
     const lpApy = fixed(
-      calculateApyFromSharePrice({
-        startingSharePrice: startLpSharePrice,
-        endingSharePrice: currentLpSharePrice,
+      calculateApyFromPrice({
+        startPrice: startLpSharePrice,
+        endPrice: currentLpSharePrice,
         timeFrame,
       }),
     ).toNumber();
@@ -2003,22 +2003,22 @@ export class ReadHyperdrive extends ReadModel {
  * This returns the APY using the following formula for continuous compounding:
 
  * r = rate of return
- * p_0 = from lpSharePrice
- * p_1 = to lpSharePrice
+ * p_0 = start price
+ * p_1 = end price
  * t = term length in fractions of a year
  *
  * r = (p_1 / p_0) ^ (1 / t) - 1
  */
-function calculateApyFromSharePrice({
-  startingSharePrice,
-  endingSharePrice,
+function calculateApyFromPrice({
+  startPrice,
+  endPrice,
   timeFrame, // seconds
 }: {
-  startingSharePrice: bigint;
-  endingSharePrice: bigint;
+  startPrice: bigint;
+  endPrice: bigint;
   timeFrame: bigint;
 }): bigint {
-  const priceRatio = fixed(endingSharePrice).div(startingSharePrice);
+  const priceRatio = fixed(endPrice).div(startPrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
   return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(fixed(1e18)).bigint;
 }
