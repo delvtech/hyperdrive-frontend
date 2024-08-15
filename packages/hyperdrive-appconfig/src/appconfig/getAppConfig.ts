@@ -18,15 +18,14 @@ import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
 
 export async function getAppConfig({
-  chainId,
   registryAddress,
   publicClient,
 }: {
-  chainId: number;
   registryAddress: Address;
   publicClient: PublicClient;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
+  const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure
   // that only registered pools are delivered to the frontend
@@ -196,6 +195,9 @@ export async function getAppConfig({
     chainId,
     tokens: uniqBy(tokens, "address"),
     registryAddress,
+    registries: {
+      [chainId]: registryAddress,
+    },
     hyperdrives: configs,
     protocols,
     yieldSources,

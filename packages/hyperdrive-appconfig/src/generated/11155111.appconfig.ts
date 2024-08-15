@@ -73,6 +73,9 @@ export const sepoliaAppConfig: AppConfig = {
     },
   ],
   registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+  registries: {
+    "11155111": "0x03f6554299acf544ac646305800f57db544b837a",
+  },
   hyperdrives: [
     {
       chainId: 11155111,

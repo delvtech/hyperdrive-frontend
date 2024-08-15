@@ -14,6 +14,7 @@
     "gen:cloudchain": "npx tsx ./src/scripts/cloudChain.ts",
     "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
     "gen:mainnet": "npx tsx ./src/scripts/mainnet.ts",
+    "generate": "npx tsx ./src/scripts/generate.ts",
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "typecheck": "tsc --noEmit"
   },

@@ -3,6 +3,7 @@ export const cloudChainAppConfig: AppConfig = {
   chainId: 42069,
   tokens: [],
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  registries: {},
   hyperdrives: [],
   yieldSources: {
     makerDsr: {
