@@ -42,6 +42,7 @@ export async function getMorphoHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
+    chainId: await hyperdrive.network.getChainId(),
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,

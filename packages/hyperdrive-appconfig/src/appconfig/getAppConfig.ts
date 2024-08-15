@@ -120,7 +120,6 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
             hyperdrive,
-            chainId,
           });
 
         tokens.push(sharesToken);
