@@ -36,11 +36,13 @@ import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 import { StatusCell } from "./StatusCell";
+import { TotalOpenLongsValue } from "./TotalOpenLongsValue";
 
 export function OpenLongsContainer(): ReactElement {
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsData();
   const appConfig = useAppConfig();
+
   return (
     <div className="mt-10 flex flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
@@ -59,28 +61,31 @@ export function OpenLongsContainer(): ReactElement {
         }
         return (
           <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <div className="flex items-center gap-1">
-              <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                {baseToken &&
-                hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
-                  <div
-                    className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                    data-tip={baseToken?.symbol}
-                  >
-                    <img src={baseToken?.iconUrl} />
-                  </div>
-                ) : null}
-                {sharesToken &&
-                hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
-                  <div
-                    className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                    data-tip={sharesToken.symbol}
-                  >
-                    <img src={sharesToken.iconUrl} />
-                  </div>
-                ) : null}
+            <div className="flex justify-between">
+              <div className="flex items-center gap-1">
+                <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
+                  {baseToken &&
+                  hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
+                    <div
+                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                      data-tip={baseToken?.symbol}
+                    >
+                      <img src={baseToken?.iconUrl} />
+                    </div>
+                  ) : null}
+                  {sharesToken &&
+                  hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
+                    <div
+                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                      data-tip={sharesToken.symbol}
+                    >
+                      <img src={sharesToken.iconUrl} />
+                    </div>
+                  ) : null}
+                </div>
+                <p className="text-h4">{hyperdrive.name}</p>
               </div>
-              <p className="text-h4">{hyperdrive.name}</p>
+              <TotalOpenLongsValue hyperdrive={hyperdrive} />
             </div>
             <OpenLongsTableDesktopTwo hyperdrive={hyperdrive} />
           </div>

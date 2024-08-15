@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
 
 export function useTotalOpenLongsValue({
@@ -24,7 +23,7 @@ export function useTotalOpenLongsValue({
 } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
+  // const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
   const queryEnabled =
     !!account && !!longs && !!readHyperdrive && !!poolInfo && enabled;
 
@@ -36,7 +35,7 @@ export function useTotalOpenLongsValue({
     queryKey: makeQueryKey("totalLongsValue", {
       hyperdriveAddress: hyperdrive.address,
       account,
-      activeOpenOrClosedTab,
+      // activeOpenOrClosedTab,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled

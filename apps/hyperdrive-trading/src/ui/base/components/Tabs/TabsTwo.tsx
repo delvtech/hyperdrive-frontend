@@ -15,7 +15,7 @@ export function TabsTwo<TabId extends string>({
   activeTabId: TabId;
 }): ReactElement {
   return (
-    <div role="tablist" className="daisy-tabs daisy-tabs-lg">
+    <div role="tablist" className="daisy-tabs daisy-tabs-lg text-clip">
       {tabs.map(({ id, onClick, label }) => (
         <input
           key={id}
@@ -38,12 +38,7 @@ export function TabsTwo<TabId extends string>({
       <div
         role="tabpanel"
         className={classNames(
-          "daisy-tab-content flex max-w-full overflow-x-auto",
-          {
-            // The Longs tab is first, and the tabby bit is connected to the
-            // tab content, so don't put a round border on it
-            "rounded-tl-box": activeTabId !== tabs[0].id,
-          },
+          "daisy-tab-content flex max-h-lvh max-w-full overflow-x-auto border",
         )}
       >
         {tabs.find(({ id }) => id === activeTabId)?.content}
