@@ -1,6 +1,5 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-export const mainnetAppConfig: AppConfig = {
-  chainId: 1,
+export const ethereumAppConfig: AppConfig = {
   tokens: [
     {
       chainId: 1,
@@ -72,7 +71,9 @@ export const mainnetAppConfig: AppConfig = {
       extensions: {},
     },
   ],
-  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  registries: {
+    "1": "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  },
   hyperdrives: [
     {
       chainId: 1,

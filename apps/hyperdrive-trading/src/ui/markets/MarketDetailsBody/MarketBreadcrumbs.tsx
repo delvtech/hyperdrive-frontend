@@ -27,9 +27,9 @@ export function MarketBreadcrumbs({
       <a
         href={makeAddressUrl(
           hyperdrive.address,
-          appConfig.chainId as SupportedChainId,
+          hyperdrive.chainId as SupportedChainId,
         )}
-        className="daisy-btn daisy-btn-xs flex items-center gap-2 rounded-full "
+        className="daisy-btn daisy-btn-xs flex items-center gap-2 rounded-full"
         target="_blank"
         rel="noreferrer"
       >
