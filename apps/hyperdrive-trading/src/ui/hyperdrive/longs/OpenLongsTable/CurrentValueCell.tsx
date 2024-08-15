@@ -105,13 +105,11 @@ export function CurrentValueCellTwo({
   row: Long;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const {
     amountOut: baseAmountOut,

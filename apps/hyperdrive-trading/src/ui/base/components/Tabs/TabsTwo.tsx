@@ -38,7 +38,7 @@ export function TabsTwo<TabId extends string>({
       <div
         role="tabpanel"
         className={classNames(
-          "daisy-tab-content flex max-h-lvh max-w-full overflow-x-auto border",
+          "daisy-tab-content flex max-h-lvh max-w-full overflow-x-auto",
         )}
       >
         {tabs.find(({ id }) => id === activeTabId)?.content}
