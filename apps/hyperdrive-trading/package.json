@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.3",
-    "@delvtech/gopher": "*",
     "@delvtech/hyperdrive-viem": "^2.3.0",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
@@ -80,7 +79,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-tailwindcss": "^3.15.1",
-    "msw": "^2.3.1",
     "postcss": "^8.4.21",
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.0.0",
