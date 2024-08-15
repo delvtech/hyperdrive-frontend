@@ -1,4 +1,4 @@
-import { Chain } from "@wagmi/core/chains";
+import { Chain } from "viem";
 
 const { VITE_CUSTOM_CHAIN_NODE_RPC_URL, VITE_CUSTOM_CHAIN_CHAIN_ID } =
   import.meta.env;
