@@ -74,7 +74,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "14d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       sharesToken: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
@@ -115,7 +114,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "30d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       sharesToken: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
@@ -156,7 +154,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "14d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
@@ -197,7 +194,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "30d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
@@ -238,7 +234,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "14d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
@@ -279,7 +274,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "30d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
@@ -319,7 +313,6 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "14d Lido stETH",
       decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
       sharesToken: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       depositOptions: {
@@ -360,7 +353,6 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "30d Lido stETH",
       decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
       sharesToken: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       depositOptions: {
@@ -402,7 +394,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "14d Morpho sUSDe/DAI",
       decimals: 18,
       yieldSource: "morphoSusdeDai",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
@@ -443,7 +434,6 @@ export const sepoliaAppConfig: AppConfig = {
       name: "14d Morpho USDe/DAI",
       decimals: 18,
       yieldSource: "morphoUsdeDai",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
         isBaseTokenDepositEnabled: true,

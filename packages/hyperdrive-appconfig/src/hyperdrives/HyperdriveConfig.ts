@@ -9,12 +9,6 @@ export interface HyperdriveConfig {
   decimals: number;
 
   /**
-   * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
-   * @deprecated use poolConfig.baseToken instead
-   */
-  baseToken: Address;
-
-  /**
    * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
    * @deprecated use poolConfig.vaultSharesToken instead
    */
