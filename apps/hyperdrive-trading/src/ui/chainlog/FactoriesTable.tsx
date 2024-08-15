@@ -126,7 +126,7 @@ interface Factory {
 
 function useFactoriesQuery(): UseQueryResult<Factory[], any> {
   const chainId = useChainId();
-  const registry = useReadRegistry();
+  const registry = useReadRegistry(chainId);
   const queryEnabled = !!registry;
 
   return useQuery({

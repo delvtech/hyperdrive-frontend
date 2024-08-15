@@ -162,7 +162,7 @@ interface Pool {
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
   const chainId = useChainId();
-  const registry = useReadRegistry();
+  const registry = useReadRegistry(chainId);
   const queryEnabled = !!registry;
 
   return useQuery({

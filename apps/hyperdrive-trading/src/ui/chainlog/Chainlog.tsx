@@ -12,7 +12,8 @@ import { FactoriesTable } from "./FactoriesTable";
 export function Chainlog(): ReactElement {
   const navigate = useNavigate();
   const chainId = useChainId();
-  const { registryAddress } = useAppConfig();
+  const { registries } = useAppConfig();
+  const registryAddress = registries[chainId];
   const { tab = "pools", version } = useSearch({ from: "/chainlog" });
 
   return (
