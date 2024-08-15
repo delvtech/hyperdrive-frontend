@@ -9,7 +9,7 @@ export function Portfolio(): ReactElement {
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
   const activeTab = position ?? "longs";
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8">
+    <div className="flex w-full flex-col items-center bg-base-100 py-8">
       <TabsTwo
         activeTabId={activeTab}
         tabs={[

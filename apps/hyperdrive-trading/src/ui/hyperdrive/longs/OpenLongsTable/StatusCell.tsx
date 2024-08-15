@@ -1,4 +1,4 @@
-import { CheckBadgeIcon } from "@heroicons/react/16/solid";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
@@ -16,11 +16,12 @@ export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
   return (
     <div
       className={classNames("flex items-center gap-2", {
-        "rounded-md bg-accent/20 px-2 py-1 text-accent": isTermComplete,
+        "rounded-md border-[1px] border-accent/20 bg-accent/20 px-1 py-[1px] text-accent":
+          isTermComplete,
         "text-neutral-content": !isTermComplete,
       })}
     >
-      {isTermComplete ? <CheckBadgeIcon className="size-4" /> : null}
+      {isTermComplete ? <CheckCircleIcon className="size-4" /> : null}
       {remainingTime}
     </div>
   );

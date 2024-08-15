@@ -147,8 +147,8 @@ export function CurrentValueCellTwo({
   }
 
   return (
-    <div className={"flex gap-1"}>
-      <span className="flex items-center gap-2 text-md font-bold">
+    <div className={"flex items-center gap-2"}>
+      <span className="flex items-center gap-2 text-md">
         {/* warning icon with tooltip for liquidity issues
          TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
          have calcMaxCloseLong */}
@@ -167,10 +167,12 @@ export function CurrentValueCellTwo({
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
-          "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
+          "daisy-tooltip daisy-tooltip-left flex text-xs before:border",
           {
-            "text-success": isPositiveChangeInValue,
-            "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
+            "rounded-md border-[1px] border-success/20 bg-success/20 px-1 py-[1px] text-success":
+              isPositiveChangeInValue,
+            "rounded-md border-[1px] border-error/20 bg-error/20 px-1 py-[1px] text-error":
+              !isPositiveChangeInValue && profitLoss !== "-0",
           },
         )}
       >

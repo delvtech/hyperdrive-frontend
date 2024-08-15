@@ -275,21 +275,6 @@ function getColumns({
         );
       },
     }),
-    // columnHelper.accessor("bondAmount", {
-    //   id: "size",
-    //   header: `Size (hy${baseToken.symbol})`,
-    //   cell: ({ row }) => {
-    //     return (
-    //       <span className="flex w-20 justify-end">
-    //         {formatBalance({
-    //           balance: row.original.bondAmount,
-    //           decimals: baseToken.decimals,
-    //           places: baseToken.places,
-    //         })}
-    //       </span>
-    //     );
-    //   },
-    // }),
     columnHelper.accessor("bondAmount", {
       id: "fixedRate/size",
       header: `Fixed Rate / Size`,
@@ -332,22 +317,6 @@ function getColumns({
         return aFixedRate - bFixedRate;
       },
     }),
-    // columnHelper.accessor("baseAmountPaid", {
-    //   id: "valuePaid",
-    //   header: `Cost (${baseToken.symbol})`,
-    //   cell: (baseAmountPaid) => {
-    //     const amountPaid = baseAmountPaid.getValue();
-    //     return (
-    //       <span className="flex w-16 justify-end">
-    //         {formatBalance({
-    //           balance: amountPaid,
-    //           decimals: baseToken.decimals,
-    //           places: baseToken.places,
-    //         })}
-    //       </span>
-    //     );
-    //   },
-    // }),
     columnHelper.accessor("baseAmountPaid", {
       id: "value/cost",
       header: `Value / Cost (${baseToken.symbol})`,
