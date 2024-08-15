@@ -36,7 +36,7 @@ export function YourBalanceWell({
 
   // shares token
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
 
   return (

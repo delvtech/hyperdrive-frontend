@@ -83,7 +83,7 @@ export function OpenShortForm({
   }
 
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({

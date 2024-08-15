@@ -69,7 +69,6 @@ export async function getCustomHyperdrive({
     name: hyperdriveName,
     decimals: await hyperdrive.getDecimals(),
     yieldSource,
-    sharesToken: sharesTokenConfig.address,
     depositOptions: depositOptions,
     withdrawOptions: withdrawalOptions,
     poolConfig,

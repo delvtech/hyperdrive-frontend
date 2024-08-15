@@ -16,7 +16,7 @@ export function MarketHeader({
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   const analyticsUrl = getAnalyticsUrl({
     chainId: appConfig.chainId,

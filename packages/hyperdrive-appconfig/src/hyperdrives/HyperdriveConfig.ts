@@ -9,12 +9,6 @@ export interface HyperdriveConfig {
   decimals: number;
 
   /**
-   * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
-   * @deprecated use poolConfig.vaultSharesToken instead
-   */
-  sharesToken: Address;
-
-  /**
    * The yield source backing the pool,
    */
   yieldSource: keyof typeof yieldSources;
