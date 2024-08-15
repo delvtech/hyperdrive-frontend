@@ -3,6 +3,7 @@ import { yieldSources } from "src/yieldSources";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {
+  chainId: number;
   address: Address;
   name: string;
   version: string;

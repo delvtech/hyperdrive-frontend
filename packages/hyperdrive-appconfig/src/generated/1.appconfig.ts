@@ -3,6 +3,7 @@ export const mainnetAppConfig: AppConfig = {
   chainId: 1,
   tokens: [
     {
+      chainId: 1,
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
       places: 2,
@@ -14,6 +15,7 @@ export const mainnetAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      chainId: 1,
       address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       decimals: 18,
       places: 4,
@@ -25,6 +27,7 @@ export const mainnetAppConfig: AppConfig = {
     },
     {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      chainId: 1,
       name: "Ether",
       symbol: "ETH",
       decimals: 18,
@@ -34,17 +37,7 @@ export const mainnetAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["liquidStakingToken"],
-      extensions: {},
-    },
-    {
+      chainId: 1,
       address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
       decimals: 18,
       places: 4,
@@ -56,6 +49,19 @@ export const mainnetAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      chainId: 1,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+      extensions: {},
+    },
+    {
+      chainId: 1,
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       decimals: 18,
       places: 2,
@@ -69,6 +75,7 @@ export const mainnetAppConfig: AppConfig = {
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   hyperdrives: [
     {
+      chainId: 1,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
       name: "182d Lido stETH",
@@ -108,6 +115,7 @@ export const mainnetAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 1,
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
@@ -147,6 +155,7 @@ export const mainnetAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 1,
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
@@ -186,6 +195,7 @@ export const mainnetAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 1,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
       name: "182d Morpho sUSDe/DAI",
@@ -225,6 +235,7 @@ export const mainnetAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 1,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
       name: "182d Morpho USDe/DAI",
@@ -264,6 +275,7 @@ export const mainnetAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 1,
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",

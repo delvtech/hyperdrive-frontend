@@ -7,6 +7,7 @@ export interface TokenConfig<
   Extensions = Record<string, string | number | boolean> | EmptyExtensions,
 > {
   address: Address;
+  chainId: number;
   name: string;
   symbol: string;
   decimals: number;
@@ -32,6 +33,7 @@ export async function getTokenConfig<
   extensions: Extensions;
 }): Promise<TokenConfig<Extensions>> {
   return {
+    chainId: await token.network.getChainId(),
     address: token.address,
     decimals: await token.getDecimals(),
     places,
