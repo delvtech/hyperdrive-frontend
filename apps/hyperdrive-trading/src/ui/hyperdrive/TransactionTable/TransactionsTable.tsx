@@ -122,7 +122,7 @@ export function TransactionTable({
                 >
                   <div
                     className={classNames("font-normal text-neutral-content", {
-                      "flex cursor-pointer select-none items-center gap-2 ":
+                      "flex cursor-pointer select-none items-center gap-2":
                         header.column.getCanSort(),
                     })}
                     onClick={header.column.getToggleSortingHandler()}
@@ -183,7 +183,7 @@ export function TransactionTable({
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
@@ -258,7 +258,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
               <span>
                 {size} {baseToken.symbol}
               </span>
-              <span className="daisy-label-text text-neutral-content ">
+              <span className="daisy-label-text text-neutral-content">
                 {baseQueuedForWithdrawalLabel}
               </span>
             </div>
@@ -294,7 +294,7 @@ function formatTransactionTableMobileData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const size = dnum.format(
@@ -342,7 +342,7 @@ function formatTransactionTableMobileData(
           <span className="flex">
             {size} {baseToken.symbol}
           </span>
-          <span className="daisy-label-text text-neutral-content ">
+          <span className="daisy-label-text text-neutral-content">
             {baseQueuedForWithdrawalLabel}
           </span>
         </div>
@@ -471,7 +471,7 @@ function FilterSelect({
             header.column.getFilterValue() === filter ||
             (!header.column.getFilterValue() && filter === "All")
               ? "daisy-tab daisy-tab-active text-sm md:text-lg"
-              : "daisy-tab text-sm  font-normal opacity-80 hover:opacity-100 md:text-lg"
+              : "daisy-tab text-sm font-normal opacity-80 hover:opacity-100 md:text-lg"
           }`}
           onClick={() => header.column.setFilterValue(filter)}
         >

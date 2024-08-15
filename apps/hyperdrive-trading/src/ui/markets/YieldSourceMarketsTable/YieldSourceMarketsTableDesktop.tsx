@@ -222,7 +222,7 @@ function getColumns(appConfig: AppConfig, yieldSource: YieldSourceId) {
       cell: ({ getValue, row }) => {
         const liquidity = getValue();
         const baseToken = findBaseToken({
-          baseTokenAddress: row.original.market.baseToken,
+          baseTokenAddress: row.original.market.poolConfig.baseToken,
           tokens: appConfig.tokens,
         });
         return (

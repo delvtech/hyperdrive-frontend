@@ -56,7 +56,7 @@ export function ShortsTab({
       : isTotalClosedValueLoading;
 
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 
@@ -89,7 +89,7 @@ export function ShortsTab({
                       className="daisy-tooltip before:font-normal"
                       data-tip="One or more positions cannot be fully closed at this time. Once all positions can be fully closed the total value of your positions will appear here."
                     >
-                      <ExclamationTriangleIcon className=" ml-1 size-4 text-warning" />
+                      <ExclamationTriangleIcon className="ml-1 size-4 text-warning" />
                     </span>
                   ) : undefined}
                 </p>
