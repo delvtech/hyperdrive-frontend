@@ -5,7 +5,7 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
-import { useTotalOpenLongsValue } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
+import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { Address } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -23,14 +23,14 @@ export function TotalOpenLongsValue({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValue({
+  const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
     account,
     longs: openLongs,
     enabled: openLongsStatus === "success",
     hyperdrive,
   });
   const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.baseToken,
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
   const tokenPrices = useTokenFiatPrices([baseToken?.address as Address]);
 

@@ -4,16 +4,14 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
 import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalClosedLongsValue } from "src/ui/hyperdrive/longs/hooks/useTotalClosedLongsValue";
-import { useTotalOpenLongsValue } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
+import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
-import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { useAccount } from "wagmi";
 
 export function LongsTabTwo({
@@ -21,7 +19,6 @@ export function LongsTabTwo({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const { openLongs } = useOpenLongs({
@@ -36,34 +33,28 @@ export function LongsTabTwo({
     totalOpenLongsValue,
     isLoading: isTotalOpenValueLoading,
     totalOpenLongsValueError,
-  } = useTotalOpenLongsValue({
+  } = useTotalOpenLongsValueTwo({
     hyperdrive,
     account,
     longs: openLongs,
-    enabled: activeOpenOrClosedTab === "open",
+    enabled: true,
   });
   const { totalClosedLongsValue, isLoading: isTotalClosedValueLoading } =
     useTotalClosedLongsValue({
       hyperdrive,
       account,
       closedLongs,
-      enabled: activeOpenOrClosedTab === "open",
+      enabled: true,
     });
-  const isTotalValueLoading =
-    activeOpenOrClosedTab === "open"
-      ? isTotalOpenValueLoading
-      : isTotalClosedValueLoading;
 
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 
-  const totalValue =
-    activeOpenOrClosedTab === "open"
-      ? totalOpenLongsValue
-      : totalClosedLongsValue;
-  const longs = activeOpenOrClosedTab === "open" ? openLongs : closedLongs;
+  const totalValue = totalOpenLongsValue;
+
+  const longs = openLongs;
 
   return (
     <MarketDetailsTab
@@ -72,7 +63,7 @@ export function LongsTabTwo({
           <div className="flex flex-wrap items-center justify-between gap-4 p-8">
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Long Positions</h5>
-              {isTotalValueLoading ? (
+              {isTotalOpenValueLoading ? (
                 <Skeleton width={100} />
               ) : longs?.length ? (
                 <p className="text-sm text-neutral-content">
@@ -104,11 +95,8 @@ export function LongsTabTwo({
               <OpenClosedFilter />
             </div>
           </div>
-          {activeOpenOrClosedTab === "open" ? (
-            <OpenLongsTable hyperdrive={hyperdrive} />
-          ) : (
-            <ClosedLongsTable hyperdrive={hyperdrive} />
-          )}
+
+          <OpenLongsTable hyperdrive={hyperdrive} />
         </div>
       }
     />

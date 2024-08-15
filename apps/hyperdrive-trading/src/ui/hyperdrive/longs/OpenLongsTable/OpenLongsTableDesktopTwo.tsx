@@ -47,10 +47,10 @@ export function OpenLongsContainer(): ReactElement {
     <div className="mt-10 flex flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
         const baseToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.baseToken,
+          (token) => token.address === hyperdrive.poolConfig.baseToken,
         );
         const sharesToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.sharesToken,
+          (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
         );
         if (
           openLongPositionsStatus === "success" &&
@@ -264,7 +264,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
