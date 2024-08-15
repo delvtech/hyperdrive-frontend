@@ -1,8 +1,7 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 export const cloudChainAppConfig: AppConfig = {
-  chainId: 42069,
   tokens: [],
-  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  registries: {},
   hyperdrives: [],
   yieldSources: {
     makerDsr: {
@@ -10,30 +9,42 @@ export const cloudChainAppConfig: AppConfig = {
       shortName: "Maker DSR",
       protocol: "maker",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     lidoSteth: {
       id: "lidoSteth",
       shortName: "Lido stETH",
       protocol: "lido",
       isSharesPeggedToBase: true,
+      historicalRatePeriod: 1,
     },
-    morphoBlueSusdeDai: {
-      id: "morphoBlueSusdeDai",
-      shortName: "Morpho Blue sUSDe/DAI",
+    morphoSusdeDai: {
+      id: "morphoSusdeDai",
+      shortName: "Morpho sUSDe/DAI",
       protocol: "morpho",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
+    },
+    morphoUsdeDai: {
+      id: "morphoUsdeDai",
+      shortName: "Morpho USDe/DAI",
+      protocol: "morpho",
+      isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     reth: {
       id: "reth",
       shortName: "Rocket Pool ETH",
       protocol: "rocketPool",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     ezEth: {
       id: "ezEth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 7,
     },
   },
   protocols: {

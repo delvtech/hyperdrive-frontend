@@ -13,7 +13,6 @@ const publicClient = createPublicClient({
 
 const appConfig = await getAppConfig({
   registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
-  chainId: sepolia.id,
   publicClient,
 });
 

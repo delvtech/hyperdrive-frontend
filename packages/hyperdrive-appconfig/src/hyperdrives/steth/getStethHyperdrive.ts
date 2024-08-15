@@ -11,15 +11,14 @@ import { yieldSources } from "src/yieldSources";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   hyperdrive,
-  chainId,
 }: {
   hyperdrive: ReadHyperdrive;
-  chainId: number;
 }): Promise<{
   sharesToken: TokenConfig<EmptyExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
 }> {
+  const chainId = await hyperdrive.network.getChainId();
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
@@ -34,6 +33,7 @@ export async function getStethHyperdrive({
 
   const baseTokenConfig: TokenConfig<EmptyExtensions> = {
     address: poolConfig.baseToken,
+    chainId: await hyperdrive.network.getChainId(),
     name: "Ether",
     symbol: "ETH",
     decimals: 18,
@@ -49,13 +49,12 @@ export async function getStethHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
+    chainId,
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
-    baseToken: baseTokenConfig.address,
     yieldSource: "lidoSteth",
-    sharesToken: sharesToken.address,
     depositOptions: {
       // Turn off sepolia eth deposits so users aren't risking their eth.
       // They can still mint steth and deposit that.

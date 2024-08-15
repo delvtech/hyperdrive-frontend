@@ -30,13 +30,13 @@ export function YourBalanceWell({
 
   // base token
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 
   // shares token
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
 
   return (
@@ -44,7 +44,10 @@ export function YourBalanceWell({
       <div className="flex flex-col">
         <h5 className="mb-2 text-neutral-content">Available Assets</h5>
         <div className="flex flex-col gap-2 px-2">
-          <AvailableAsset token={baseToken} spender={hyperdrive.address} />
+          {hyperdrive.depositOptions.isBaseTokenDepositEnabled ||
+          hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? (
+            <AvailableAsset token={baseToken} spender={hyperdrive.address} />
+          ) : null}
           {sharesToken &&
             hyperdrive.depositOptions.isShareTokenDepositsEnabled && (
               <AvailableAsset

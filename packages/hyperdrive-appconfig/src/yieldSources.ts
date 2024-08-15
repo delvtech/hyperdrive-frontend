@@ -6,6 +6,11 @@ export interface YieldSource {
   shortName: string;
   protocol: ProtocolId;
   isSharesPeggedToBase: boolean;
+  /**
+   * Number of days in the past to consider for historical rates. This should be
+   * used to calculate LP APY and Yield Source APYs.
+   */
+  historicalRatePeriod: number;
 }
 
 const makerDsr: YieldSource = {
@@ -13,6 +18,7 @@ const makerDsr: YieldSource = {
   shortName: "Maker DSR",
   protocol: "maker",
   isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
 };
 
 const lidoSteth: YieldSource = {
@@ -20,13 +26,21 @@ const lidoSteth: YieldSource = {
   shortName: "Lido stETH",
   protocol: "lido",
   isSharesPeggedToBase: true,
+  historicalRatePeriod: 1,
 };
-
-const morphoBlueSusdeDai: YieldSource = {
-  id: "morphoBlueSusdeDai",
-  shortName: "Morpho Blue sUSDe/DAI",
+const morphoSusdeDai: YieldSource = {
+  id: "morphoSusdeDai",
+  shortName: "Morpho sUSDe/DAI",
   protocol: "morpho",
   isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
+};
+const morphoUsdeDai: YieldSource = {
+  id: "morphoUsdeDai",
+  shortName: "Morpho USDe/DAI",
+  protocol: "morpho",
+  isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
 };
 
 const reth: YieldSource = {
@@ -34,6 +48,7 @@ const reth: YieldSource = {
   shortName: "Rocket Pool ETH",
   protocol: "rocketPool",
   isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
 };
 
 const ezEth: YieldSource = {
@@ -41,12 +56,14 @@ const ezEth: YieldSource = {
   shortName: "Renzo ezETH",
   protocol: "renzo",
   isSharesPeggedToBase: false,
+  historicalRatePeriod: 7,
 };
 
 export const yieldSources = {
   makerDsr,
   lidoSteth,
-  morphoBlueSusdeDai,
+  morphoSusdeDai,
+  morphoUsdeDai,
   reth,
   ezEth,
 } as const;

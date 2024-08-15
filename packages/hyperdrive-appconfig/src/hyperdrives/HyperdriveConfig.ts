@@ -3,20 +3,11 @@ import { yieldSources } from "src/yieldSources";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {
+  chainId: number;
   address: Address;
   name: string;
   version: string;
   decimals: number;
-
-  /**
-   * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
-   */
-  baseToken: Address;
-
-  /**
-   * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
-   */
-  sharesToken: Address;
 
   /**
    * The yield source backing the pool,

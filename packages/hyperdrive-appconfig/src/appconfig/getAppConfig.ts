@@ -18,15 +18,14 @@ import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
 
 export async function getAppConfig({
-  chainId,
   registryAddress,
   publicClient,
 }: {
-  chainId: number;
   registryAddress: Address;
   publicClient: PublicClient;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
+  const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure
   // that only registered pools are delivered to the frontend
@@ -47,17 +46,32 @@ export async function getAppConfig({
       console.log("Hyperdrive Name: ", hackName);
 
       if (
-        [
-          "MORPHO_BLUE_DAI_14_DAY", // sepolia
-          "ElementDAO 182 Day Morpho Blue sUSDe/DAI Hyperdrive", // mainnet
-        ].includes(hackName)
+        // partial string matches for flexibility
+        hackName.includes("MORPHO_BLUE_DAI") || // sepolia
+        hackName.includes("Morpho Blue sUSDe/DAI Hyperdrive") // mainnet
       ) {
         const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
           hyperdrive,
           baseTokenTags: ["stablecoin"],
           baseTokenIconUrl: DAI_ICON_URL,
           baseTokenPlaces: 2,
-          yieldSourceId: "morphoBlueSusdeDai",
+          yieldSourceId: "morphoSusdeDai",
+        });
+
+        tokens.push(baseToken);
+
+        return hyperdriveConfig;
+      }
+      if (
+        // partial string matches for flexibility
+        hackName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia
+      ) {
+        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
+          hyperdrive,
+          baseTokenTags: ["stablecoin"],
+          baseTokenIconUrl: DAI_ICON_URL,
+          baseTokenPlaces: 2,
+          yieldSourceId: "morphoUsdeDai",
         });
 
         tokens.push(baseToken);
@@ -105,7 +119,6 @@ export async function getAppConfig({
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
             hyperdrive,
-            chainId,
           });
 
         tokens.push(sharesToken);
@@ -179,9 +192,10 @@ export async function getAppConfig({
   );
 
   const config: AppConfig = {
-    chainId,
     tokens: uniqBy(tokens, "address"),
-    registryAddress,
+    registries: {
+      [chainId]: registryAddress,
+    },
     hyperdrives: configs,
     protocols,
     yieldSources,

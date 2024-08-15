@@ -33,11 +33,11 @@ export function RedeemWithdrawalSharesForm({
 }: RedeemWithdrawalSharesFormProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   const items: TokenConfig[] = [baseToken];
   if (sharesToken) {

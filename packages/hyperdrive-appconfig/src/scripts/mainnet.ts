@@ -13,7 +13,6 @@ const publicClient = createPublicClient({
 
 const appConfig = await getAppConfig({
   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
-  chainId: mainnet.id,
   publicClient,
 });
 

@@ -64,13 +64,12 @@ export async function getCustomHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
+    chainId: await hyperdrive.network.getChainId(),
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
     decimals: await hyperdrive.getDecimals(),
     yieldSource,
-    baseToken: baseTokenConfig.address,
-    sharesToken: sharesTokenConfig.address,
     depositOptions: depositOptions,
     withdrawOptions: withdrawalOptions,
     poolConfig,

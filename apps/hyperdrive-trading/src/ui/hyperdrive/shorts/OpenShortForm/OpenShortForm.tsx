@@ -50,7 +50,7 @@ export function OpenShortForm({
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
@@ -83,7 +83,7 @@ export function OpenShortForm({
   }
 
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({

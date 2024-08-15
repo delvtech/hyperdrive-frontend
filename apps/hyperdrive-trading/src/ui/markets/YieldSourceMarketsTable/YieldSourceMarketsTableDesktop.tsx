@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { AppConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { AppConfig, findBaseToken, YieldSourceId } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -20,8 +20,8 @@ import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
 import { ShortRateCell } from "src/ui/markets/YieldSourceMarketsTable/ShortRateCell";
 import {
-  YieldSourceMarketsTableRowData,
   useRowData,
+  YieldSourceMarketsTableRowData,
 } from "src/ui/markets/YieldSourceMarketsTable/useRowData";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { Address } from "viem";
@@ -33,14 +33,14 @@ const EMPTY_ARRAY: YieldSourceMarketsTableRowData[] = [];
 export function YieldSourceMarketsTableDesktop({
   yieldSource,
 }: {
-  yieldSource: keyof AppConfig["yieldSources"];
+  yieldSource: YieldSourceId;
 }): ReactElement {
   const navigate = useNavigate();
   const { data: rowData, status } = useRowData(yieldSource);
   const appConfig = useAppConfig();
 
   const tableInstance = useReactTable({
-    columns: getColumns(appConfig),
+    columns: getColumns(appConfig, yieldSource),
     data: rowData || EMPTY_ARRAY,
     getCoreRowModel: getCoreRowModel(),
     initialState: {
@@ -144,7 +144,7 @@ function GoToMarketButton({
   );
 }
 
-function getColumns(appConfig: AppConfig) {
+function getColumns(appConfig: AppConfig, yieldSource: YieldSourceId) {
   return [
     columnHelper.accessor("market.poolConfig.positionDuration", {
       id: "term",
@@ -196,10 +196,10 @@ function getColumns(appConfig: AppConfig) {
     }),
     columnHelper.display({
       id: "lp-apy",
-      header: () => (
+      header: ({ header }) => (
         <TextWithTooltip
           label="LP APY"
-          tooltip={`The LP's yearly projected return, derived from the past 7 days of trading activity.`}
+          tooltip={`The LP's yearly projected return, derived from the past ${appConfig.yieldSources[yieldSource].historicalRatePeriod} days of trading activity.`}
         />
       ),
       cell: ({ row }) => {
@@ -222,7 +222,7 @@ function getColumns(appConfig: AppConfig) {
       cell: ({ getValue, row }) => {
         const liquidity = getValue();
         const baseToken = findBaseToken({
-          baseTokenAddress: row.original.market.baseToken,
+          baseTokenAddress: row.original.market.poolConfig.baseToken,
           tokens: appConfig.tokens,
         });
         return (

@@ -55,7 +55,7 @@ export function LongsTab({
       : isTotalClosedValueLoading;
 
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

@@ -34,7 +34,7 @@ function getColumns() {
       cell: ({ getValue, row }) => {
         const termLength = getValue();
         return (
-          <div key="term" className="flex items-center ">
+          <div key="term" className="flex items-center">
             <img
               src={row.original.baseToken.iconUrl}
               className="mr-2 h-10 rounded-full p-1"
@@ -60,7 +60,7 @@ function getColumns() {
             />
             <div className="flex-col">
               <p className="-mb-1">{row.original.yieldSourceShortName}</p>
-              <p className="text-neutral-content/70 ">
+              <p className="text-neutral-content/70">
                 {row.original.yieldSourceProtocol.name}
               </p>
             </div>
@@ -112,7 +112,7 @@ function getColumns() {
       header: () => (
         <TextWithTooltip
           label="LP APY"
-          tooltip={`The LP's yearly projected return, derived from the past 7 days of trading activity.`}
+          tooltip={`The LP's yearly projected return, derived from the past 24 hours of trading activity.`}
         />
       ),
       cell: ({ row }) => {

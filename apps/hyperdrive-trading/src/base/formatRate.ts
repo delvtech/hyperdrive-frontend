@@ -6,6 +6,5 @@ export function formatRate(rate: bigint, decimals = 18): string {
   return `${sign}${fixed(abs, decimals).format({
     percent: true,
     decimals: 2,
-    rounding: "trunc",
   })}`;
 }

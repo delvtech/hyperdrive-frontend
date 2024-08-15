@@ -102,7 +102,7 @@ function formatMobileColumnData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
-    baseTokenAddress: row.market.baseToken,
+    baseTokenAddress: row.market.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [

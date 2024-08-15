@@ -49,7 +49,7 @@ export function OpenLongForm({
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

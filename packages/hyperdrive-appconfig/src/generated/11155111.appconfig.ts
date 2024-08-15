@@ -1,8 +1,8 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
-  chainId: 11155111,
   tokens: [
     {
+      chainId: 11155111,
       address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       decimals: 18,
       places: 2,
@@ -14,6 +14,7 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      chainId: 11155111,
       address: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       decimals: 18,
       places: 4,
@@ -25,6 +26,7 @@ export const sepoliaAppConfig: AppConfig = {
     },
     {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      chainId: 11155111,
       name: "Ether",
       symbol: "ETH",
       decimals: 18,
@@ -34,17 +36,7 @@ export const sepoliaAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
-      decimals: 18,
-      places: 4,
-      name: "RocketPool ETH",
-      symbol: "RETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["liquidStakingToken"],
-      extensions: {},
-    },
-    {
+      chainId: 11155111,
       address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       decimals: 18,
       places: 4,
@@ -56,6 +48,19 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      chainId: 11155111,
+      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
+      decimals: 18,
+      places: 4,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+      extensions: {},
+    },
+    {
+      chainId: 11155111,
       address: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       decimals: 18,
       places: 2,
@@ -66,16 +71,17 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
   ],
-  registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+  registries: {
+    "11155111": "0x03f6554299acf544ac646305800f57db544b837a",
+  },
   hyperdrives: [
     {
+      chainId: 11155111,
       address: "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",
       version: "v1.0.12",
       name: "14d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      sharesToken: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -110,13 +116,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2",
       version: "v1.0.12",
       name: "30d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      sharesToken: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -151,13 +156,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0x54A93937EE00838d659795b9bbbe904a00DdF278",
       version: "v1.0.12",
       name: "14d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -192,13 +196,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0x87621c072B1967730b70F4c0536D739c2053d34c",
       version: "v1.0.12",
       name: "30d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -233,13 +236,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8",
       version: "v1.0.12",
       name: "14d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -274,13 +276,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D",
       version: "v1.0.12",
       name: "30d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -315,13 +316,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91",
       version: "v1.0.12",
       name: "14d Lido stETH",
       decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
-      sharesToken: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -356,13 +356,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0x51C054F75b2c4b53E8E5114430C3ded4572473D8",
       version: "v1.0.12",
       name: "30d Lido stETH",
       decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
-      sharesToken: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -397,13 +396,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
+      chainId: 11155111,
       address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
       version: "v1.0.15",
-      name: "14d Morpho Blue sUSDe/DAI",
+      name: "14d Morpho sUSDe/DAI",
       decimals: 18,
-      yieldSource: "morphoBlueSusdeDai",
-      baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      sharesToken: "0x0000000000000000000000000000000000000000",
+      yieldSource: "morphoSusdeDai",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: false,
@@ -422,6 +420,46 @@ export const sepoliaAppConfig: AppConfig = {
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
+        positionDuration: 1209600n,
+        checkpointDuration: 86400n,
+        timeStretch: 3571858958603589n,
+        governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        checkpointRewarder: "0x23841713B4FB268cCEc3fD9CA231FA2116CfC2Af",
+        fees: {
+          curve: 10000000000000000n,
+          flat: 19230769230769n,
+          governanceLP: 150000000000000000n,
+          governanceZombie: 30000000000000000n,
+        },
+      },
+    },
+    {
+      chainId: 11155111,
+      address: "0x0399BBA8DE5959007148a95ADaaD04eA3172513E",
+      version: "v1.0.15",
+      name: "14d Morpho USDe/DAI",
+      decimals: 18,
+      yieldSource: "morphoUsdeDai",
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: false,
+      },
+      withdrawOptions: {
+        isBaseTokenWithdrawalEnabled: true,
+        isShareTokenWithdrawalEnabled: false,
+      },
+      poolConfig: {
+        baseToken: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+        vaultSharesToken: "0x0000000000000000000000000000000000000000",
+        linkerFactory: "0xBdF7facd9620C33Bbd0d0C819CFB516c476464B4",
+        linkerCodeHash:
+          "0xa9440b04a1fa4bd06b5eeb03d81251ddbdb2e881d69fd8e7292db430b12b37a6",
+        initialVaultSharePrice: 1000000000000n,
+        minimumShareReserves: 10000000000000000000n,
+        minimumTransactionAmount: 1000000000000000n,
+        circuitBreakerDelta: 500000000000000000n,
         positionDuration: 1209600n,
         checkpointDuration: 86400n,
         timeStretch: 3571858958603589n,
@@ -474,30 +512,42 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Maker DSR",
       protocol: "maker",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     lidoSteth: {
       id: "lidoSteth",
       shortName: "Lido stETH",
       protocol: "lido",
       isSharesPeggedToBase: true,
+      historicalRatePeriod: 1,
     },
-    morphoBlueSusdeDai: {
-      id: "morphoBlueSusdeDai",
-      shortName: "Morpho Blue sUSDe/DAI",
+    morphoSusdeDai: {
+      id: "morphoSusdeDai",
+      shortName: "Morpho sUSDe/DAI",
       protocol: "morpho",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
+    },
+    morphoUsdeDai: {
+      id: "morphoUsdeDai",
+      shortName: "Morpho USDe/DAI",
+      protocol: "morpho",
+      isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     reth: {
       id: "reth",
       shortName: "Rocket Pool ETH",
       protocol: "rocketPool",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 1,
     },
     ezEth: {
       id: "ezEth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
       isSharesPeggedToBase: false,
+      historicalRatePeriod: 7,
     },
   },
 };

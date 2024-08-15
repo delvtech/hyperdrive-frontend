@@ -12,14 +12,14 @@ export function MarketHeader({
 }): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.sharesToken,
+    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   const analyticsUrl = getAnalyticsUrl({
-    chainId: appConfig.chainId,
+    chainId: hyperdrive.chainId,
     hyperdrive: hyperdrive.address,
   });
 
@@ -28,11 +28,14 @@ export function MarketHeader({
       <div className="flex w-full flex-col items-start gap-1">
         <h1 className="gradient-text items-center md:my-0">
           <div className="daisy-avatar-group mr-1 inline -space-x-6 rtl:space-x-reverse">
-            <div className="daisy-avatar">
-              <div className="w-12">
-                <img src={baseToken.iconUrl} />
+            {hyperdrive.depositOptions.isBaseTokenDepositEnabled ||
+            hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? (
+              <div className="daisy-avatar">
+                <div className="w-12">
+                  <img src={baseToken.iconUrl} />
+                </div>
               </div>
-            </div>
+            ) : null}
             {sharesToken ? (
               <div className="daisy-avatar">
                 <div className="w-12">

@@ -17,7 +17,6 @@ const publicClient = createPublicClient({
 const addresses = await fetchJson<AddressesJson>(localAddressesUrl);
 const appConfig = await getAppConfig({
   registryAddress: addresses.hyperdriveRegistry,
-  chainId: localChainId,
   publicClient,
 });
 

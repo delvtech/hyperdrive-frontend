@@ -42,13 +42,12 @@ export async function getMorphoHyperdrive({
   });
 
   const hyperdriveConfig: HyperdriveConfig = {
+    chainId: await hyperdrive.network.getChainId(),
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
-    yieldSource: "morphoBlueSusdeDai",
-    baseToken: baseTokenConfig.address,
-    sharesToken: poolConfig.vaultSharesToken, // This will be the 0x address because there is no shares token for morpho
+    yieldSource: yieldSourceId,
     depositOptions: {
       isBaseTokenDepositEnabled: true,
       // No shares token for morpho, turn off deposits

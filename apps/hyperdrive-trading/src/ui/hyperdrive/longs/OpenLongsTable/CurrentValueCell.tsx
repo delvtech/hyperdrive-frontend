@@ -20,7 +20,7 @@ export function CurrentValueCell({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
