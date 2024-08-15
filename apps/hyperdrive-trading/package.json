@@ -27,7 +27,7 @@
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
-    "@0xsquid/widget": "2.0.0-beta.18",
+    "@0xsquid/widget": "3.0.0-beta.13",
     "@delvtech/fixed-point-wasm": "^0.0.3",
     "@delvtech/hyperdrive-viem": "^2.3.0",
     "@heroicons/react": "^2.0.16",
