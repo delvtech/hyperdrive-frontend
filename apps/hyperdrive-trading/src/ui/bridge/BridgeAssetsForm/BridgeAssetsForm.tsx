@@ -79,6 +79,7 @@ export function BridgeAssetsForm({
       return {
         tokenConfig: {
           address: token.addresses[destinationChainId],
+          chainId: destinationChainId,
           name: token.name,
           symbol: token.symbol,
           decimals: token.decimals,
