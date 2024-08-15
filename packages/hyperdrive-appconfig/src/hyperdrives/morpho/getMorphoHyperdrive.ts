@@ -47,8 +47,6 @@ export async function getMorphoHyperdrive({
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     yieldSource: yieldSourceId,
-    baseToken: baseTokenConfig.address,
-    sharesToken: poolConfig.vaultSharesToken, // This will be the 0x address because there is no shares token for morpho
     depositOptions: {
       isBaseTokenDepositEnabled: true,
       // No shares token for morpho, turn off deposits

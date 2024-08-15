@@ -28,7 +28,7 @@ export function CloseShortModalButton({
 }: CloseShortModalButtonProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(

@@ -23,9 +23,9 @@ export function FixedRateCell({
 }): ReactElement {
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { poolConfig, baseToken: baseTokenAddress } = hyperdrive;
+  const { poolConfig } = hyperdrive;
   const baseToken = findBaseToken({
-    baseTokenAddress,
+    baseTokenAddress: poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

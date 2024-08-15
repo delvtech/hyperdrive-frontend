@@ -9,16 +9,6 @@ export interface HyperdriveConfig {
   decimals: number;
 
   /**
-   * The base token for hyperdrive deposits and withdrawals, eg: DAI or ETH
-   */
-  baseToken: Address;
-
-  /**
-   * The shares token for hyperdrive deposits and withdrawals, eg: sDAI or stETH
-   */
-  sharesToken: Address;
-
-  /**
    * The yield source backing the pool,
    */
   yieldSource: keyof typeof yieldSources;

@@ -73,9 +73,7 @@ export const mainnetAppConfig: AppConfig = {
       version: "v1.0.13",
       name: "182d Lido stETH",
       decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       yieldSource: "lidoSteth",
-      sharesToken: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -115,8 +113,6 @@ export const mainnetAppConfig: AppConfig = {
       name: "182d Maker DSR",
       decimals: 18,
       yieldSource: "makerDsr",
-      baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      sharesToken: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -156,8 +152,6 @@ export const mainnetAppConfig: AppConfig = {
       name: "182d Rocket Pool ETH",
       decimals: 18,
       yieldSource: "reth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xae78736Cd615f374D3085123A210448E74Fc6393",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -197,8 +191,6 @@ export const mainnetAppConfig: AppConfig = {
       name: "182d Morpho sUSDe/DAI",
       decimals: 18,
       yieldSource: "morphoSusdeDai",
-      baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: false,
@@ -238,8 +230,6 @@ export const mainnetAppConfig: AppConfig = {
       name: "182d Morpho USDe/DAI",
       decimals: 18,
       yieldSource: "morphoUsdeDai",
-      baseToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      sharesToken: "0x0000000000000000000000000000000000000000",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: false,
@@ -279,8 +269,6 @@ export const mainnetAppConfig: AppConfig = {
       name: "182d Renzo ezETH",
       decimals: 18,
       yieldSource: "ezEth",
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,

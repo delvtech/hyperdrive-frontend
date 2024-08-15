@@ -53,9 +53,7 @@ export async function getStethHyperdrive({
     version: version.string,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
-    baseToken: baseTokenConfig.address,
     yieldSource: "lidoSteth",
-    sharesToken: sharesToken.address,
     depositOptions: {
       // Turn off sepolia eth deposits so users aren't risking their eth.
       // They can still mint steth and deposit that.

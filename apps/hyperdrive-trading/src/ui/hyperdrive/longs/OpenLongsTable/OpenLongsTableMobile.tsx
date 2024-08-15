@@ -218,7 +218,7 @@ function getMobileColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [

@@ -171,7 +171,7 @@ export function OpenLongsTableDesktop({
                       "align-top text-xs md:text-md",
                       // This rounds the edges of the first and last cell on the bottom row to match the rounding of the tabs component. Border radius can't be applied to <tr />
                       {
-                        "rounded-bl-box ": isLastRow && cellIndex === 0,
+                        "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
                           isLastRow &&
                           cellIndex === row.getVisibleCells().length - 1,
@@ -204,7 +204,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
+    baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
