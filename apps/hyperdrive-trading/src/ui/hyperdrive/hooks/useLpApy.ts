@@ -41,7 +41,7 @@ export function useLpApy(hyperdriveAddress: Address): {
               ? // local devnets don't have a lot of blocks, so start from the beginning
                 1n
               : // Appconfig tells us how many days to look back for historical rates
-                (blockNumber - numBlocksForHistoricalRate) / 12n,
+                blockNumber - numBlocksForHistoricalRate,
           });
         }
       : undefined,
