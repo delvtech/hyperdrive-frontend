@@ -192,9 +192,7 @@ export async function getAppConfig({
   );
 
   const config: AppConfig = {
-    chainId,
     tokens: uniqBy(tokens, "address"),
-    registryAddress,
     registries: {
       [chainId]: registryAddress,
     },

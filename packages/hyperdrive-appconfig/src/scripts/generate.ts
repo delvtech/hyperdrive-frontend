@@ -29,8 +29,6 @@ const chainConfigs: ChainConfig[] = [
 // Initialize an empty AppConfig that we'll populate with all the multi-chain
 // app config info
 const combinedAppConfig: AppConfig = {
-  registryAddress: "0x0000000000000000000000000000000000000000",
-  chainId: 0,
   hyperdrives: [],
   tokens: [],
   registries: {},
