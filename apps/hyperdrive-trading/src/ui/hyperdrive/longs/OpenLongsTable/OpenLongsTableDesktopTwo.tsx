@@ -35,6 +35,7 @@ import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/Curr
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
+import { StatusCell } from "./StatusCell";
 
 export function OpenLongsContainer(): ReactElement {
   const { openLongPositions, openLongPositionsStatus } =
@@ -370,7 +371,7 @@ function getColumns({
       id: "value",
       header: `Status`,
       cell: ({ row }) => {
-        return <div className="text-accent">Completed</div>;
+        return <StatusCell maturity={row.original.maturity} />;
       },
     }),
     columnHelper.display({

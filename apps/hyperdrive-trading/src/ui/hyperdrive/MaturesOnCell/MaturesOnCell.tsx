@@ -50,7 +50,7 @@ export function MaturesOnCellTwo({
   });
 
   return (
-    <div className="flex flex-row p-0 font-dmMono xl:flex-col">
+    <div className="flex flex-col p-0 font-dmMono">
       <span className="font-normal">{formatDate(Number(maturityDateMS))}</span>
       <div className={classNames("font-dmMono text-neutral-content")}>
         {convertMillisecondsToDays(
