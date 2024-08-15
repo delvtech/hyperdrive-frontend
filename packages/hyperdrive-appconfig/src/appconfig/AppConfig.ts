@@ -6,16 +6,6 @@ import { yieldSources } from "src/yieldSources";
 
 export interface AppConfig {
   /**
-   * @deprecated AppConfig is multi-chain. Do not depend on this.
-   */
-  chainId: number;
-
-  /**
-   * @deprecated AppConfig is multi-chain.  Use the registries object instead.
-   */
-  registryAddress: Address;
-
-  /**
    * Registry addresses by Chain ID
    */
   registries: Record<number, Address>;
