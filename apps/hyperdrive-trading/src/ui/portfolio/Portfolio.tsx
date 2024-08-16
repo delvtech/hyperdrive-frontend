@@ -26,7 +26,8 @@ export function Portfolio(): ReactElement {
           },
           {
             id: "shorts",
-            content: <h1>Shorts</h1>,
+            // TODO: Implement shorts
+            content: null,
             label: "Short",
             onClick: () => {
               navigate({
@@ -37,7 +38,8 @@ export function Portfolio(): ReactElement {
           },
           {
             id: "lp",
-            content: <h1>LP</h1>,
+            // TODO: Implement LPs
+            content: null,
             label: "LP",
             onClick: () => {
               navigate({

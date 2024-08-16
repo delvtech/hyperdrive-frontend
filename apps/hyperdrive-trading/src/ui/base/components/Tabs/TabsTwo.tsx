@@ -35,12 +35,7 @@ export function TabsTwo<TabId extends string>({
           role="tab"
         />
       ))}
-      <div
-        role="tabpanel"
-        className={classNames(
-          "daisy-tab-content flex max-h-lvh max-w-full overflow-x-auto",
-        )}
-      >
+      <div role="tabpanel" className={classNames("daisy-tab-content flex")}>
         {tabs.find(({ id }) => id === activeTabId)?.content}
       </div>
     </div>

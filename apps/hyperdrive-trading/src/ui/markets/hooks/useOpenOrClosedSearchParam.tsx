@@ -5,7 +5,6 @@ export type OpenOrClosedTab = "open" | "closed";
 
 export function useOpenOrClosedSearchParam(): OpenOrClosedTab {
   const { openOrClosed } = useSearch({ from: MARKET_DETAILS_ROUTE });
-
   const activeOpenOrClosedTab = openOrClosed || "open";
   return activeOpenOrClosedTab;
 }
