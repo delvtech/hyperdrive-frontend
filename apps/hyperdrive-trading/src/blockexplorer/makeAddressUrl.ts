@@ -21,6 +21,6 @@ export function makeAddressUrl(
     case 42069: // Cloudchain
       return `#`;
     default:
-      assertNever(chainId);
+      assertNever(chainId, true);
   }
 }
