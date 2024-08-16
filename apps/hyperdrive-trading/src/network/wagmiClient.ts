@@ -1,4 +1,4 @@
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { getDefaultConfig, type WalletList } from "@rainbow-me/rainbowkit";
 import {
   injectedWallet,
   metaMaskWallet,
@@ -88,6 +88,20 @@ if (VITE_MAINNET_RPC_URL) {
   }
 }
 
+const wallets: WalletList = [
+  {
+    groupName: "Other",
+    wallets: recommendedWallets,
+  },
+];
+// If Capsule is not configured in your .env, then don't include it in the
+// custom wallets
+if (customWallets.length) {
+  wallets.push({
+    groupName: "Log In or Sign Up with Capsule",
+    wallets: customWallets,
+  });
+}
 export const wagmiConfig = getDefaultConfig({
   appName: "Hyperdrive",
   projectId: VITE_WALLET_CONNECT_PROJECT_ID || "0",
@@ -95,14 +109,5 @@ export const wagmiConfig = getDefaultConfig({
   // Viem's type for `chains` requires at least one item in the array, but since
   // we build the list up programmatically we must cast.
   chains: chains as [Chain, ...restChains: Chain[]],
-  wallets: [
-    {
-      groupName: "Other",
-      wallets: recommendedWallets,
-    },
-    {
-      groupName: "Log In or Sign Up with Capsule",
-      wallets: customWallets,
-    },
-  ],
+  wallets,
 });

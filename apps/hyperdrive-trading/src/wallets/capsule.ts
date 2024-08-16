@@ -7,8 +7,6 @@ import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 
 const { VITE_CAPSULE_API_KEY, VITE_CAPSULE_ENV } = import.meta.env;
 
-const hasRequiredEnvVars = !!VITE_CAPSULE_API_KEY && !!VITE_CAPSULE_ENV;
-
 export const getCapsuleWalletOpts: GetCapsuleOpts = {
   capsule: {
     environment: VITE_CAPSULE_ENV, // Environment.PROD for Production
@@ -43,16 +41,17 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
   ],
 };
 
-export const capsuleWallet: CreateWalletFn | undefined = hasRequiredEnvVars
-  ? ({ projectId }) => {
-      const capsuleWallet = getCapsuleWallet(getCapsuleWalletOpts);
-      const wallet = capsuleWallet({ projectId });
-      return {
-        ...wallet,
+export const capsuleWallet: CreateWalletFn | undefined =
+  !!VITE_CAPSULE_API_KEY && !!VITE_CAPSULE_ENV
+    ? ({ projectId }) => {
+        const capsuleWallet = getCapsuleWallet(getCapsuleWalletOpts);
+        const wallet = capsuleWallet({ projectId });
+        return {
+          ...wallet,
 
-        // override the rainbowkit name and icon options
-        name: "Capsule",
-        iconUrl: "/capsule-logo.png",
-      };
-    }
-  : undefined;
+          // override the rainbowkit name and icon options
+          name: "Capsule",
+          iconUrl: "/capsule-logo.png",
+        };
+      }
+    : undefined;
