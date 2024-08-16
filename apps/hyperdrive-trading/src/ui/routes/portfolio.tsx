@@ -11,6 +11,5 @@ export const Route = createFileRoute(PORTFOLIO_ROUTE)({
   ),
   validateSearch: z.object({
     position: z.enum(["longs", "shorts", "lp"]).optional(),
-    openOrClosed: z.enum(["open", "closed"]).optional(),
   }),
 });
