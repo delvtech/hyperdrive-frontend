@@ -16,7 +16,7 @@ export function Landing(): ReactElement | null {
     <div className="flex flex-col items-center gap-16 px-4 py-8">
       <Hero />
       <div className="flex w-full flex-col items-center">
-        <YieldSourceCards />
+        {isNewPoolsView ? null : <YieldSourceCards />}
       </div>
 
       {isNewPoolsView ? null : (
