@@ -181,13 +181,13 @@ export function OpenLongsTableDesktopTwo({
           />
         );
       })}
-      <table className="daisy-table daisy-table-zebra daisy-table-lg">
+      <table className="daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
+              {headerGroup.headers.map((header, headerIndex) => (
                 <th
-                  className="sticky z-10 text-sm font-normal text-neutral-content/70"
+                  className="relative z-10 text-sm font-normal text-neutral-content/70"
                   key={header.id}
                 >
                   <div
@@ -206,6 +206,19 @@ export function OpenLongsTableDesktopTwo({
                       desc: <ChevronDownIcon height={15} />,
                     }[header.column.getIsSorted() as string] ?? null}
                   </div>
+                  <span
+                    className={classNames(
+                      "absolute bottom-0 border-b border-neutral-content/20",
+                      {
+                        "left-6 right-0": headerIndex === 0, // Border inset only on the left side for the first header cell
+                        "left-0 right-6":
+                          headerIndex === headerGroup.headers.length - 1, // Border inset only on the right side for the last header cell
+                        "left-0 right-0":
+                          headerIndex !== 0 &&
+                          headerIndex !== headerGroup.headers.length - 1, // Full width border for other header cells
+                      },
+                    )}
+                  />
                 </th>
               ))}
             </tr>
@@ -219,7 +232,7 @@ export function OpenLongsTableDesktopTwo({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
+                className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
@@ -228,9 +241,9 @@ export function OpenLongsTableDesktopTwo({
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
-                      "align-top text-xs md:text-md",
-                      // This rounds the edges of the first and last cell on the bottom row to match the rounding of the tabs component. Border radius can't be applied to <tr />
+                      "relative align-top text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
+                        "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
                           isLastRow &&
@@ -240,6 +253,21 @@ export function OpenLongsTableDesktopTwo({
                     key={cell.id}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    {!isLastRow && (
+                      <span
+                        className={classNames(
+                          "absolute bottom-0 border-b-[0.5px] border-neutral-content/20",
+                          {
+                            "left-6 right-0": cellIndex === 0, // Border inset only on the left side for the first cell
+                            "left-0 right-6":
+                              cellIndex === row.getVisibleCells().length - 1, // Border inset only on the right side for the last cell
+                            "left-0 right-0":
+                              cellIndex !== 0 &&
+                              cellIndex !== row.getVisibleCells().length - 1, // Full width border for other cells
+                          },
+                        )}
+                      />
+                    )}
                   </td>
                 ))}
               </tr>
