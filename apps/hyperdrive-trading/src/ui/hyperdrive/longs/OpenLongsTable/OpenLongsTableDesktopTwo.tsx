@@ -196,6 +196,7 @@ export function OpenLongsTableDesktopTwo({
                     className={classNames({
                       "flex cursor-pointer select-none items-center gap-2":
                         header.column.getCanSort(),
+                      "px-4": headerIndex === 0, // Add padding only to the first header cell
                     })}
                     onClick={header.column.getToggleSortingHandler()}
                   >
@@ -249,6 +250,7 @@ export function OpenLongsTableDesktopTwo({
                     className={classNames(
                       "relative align-top text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
+                        "px-10": cellIndex === 0, // Add padding only to the first cell
                         "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
