@@ -55,6 +55,6 @@ export function useAppConfig(): AppConfig {
       return b3SepoliaAppConfig;
 
     default:
-      assertNever(chainId);
+      assertNever(chainId, true);
   }
 }
