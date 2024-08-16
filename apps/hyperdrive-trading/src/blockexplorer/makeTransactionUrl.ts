@@ -21,6 +21,6 @@ export function makeTransactionURL(
     case 42069: // cloud chain
       return `#`;
     default:
-      assertNever(chainId);
+      assertNever(chainId, true);
   }
 }

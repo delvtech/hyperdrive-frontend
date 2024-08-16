@@ -1039,7 +1039,7 @@ export class ReadHyperdrive extends ReadModel {
         }
 
         default:
-          assertNever(eventName);
+          assertNever(eventName, true);
       }
     }
 
