@@ -7,6 +7,9 @@ import { YieldSourceMarketsTableDesktop } from "src/ui/markets/YieldSourceMarket
 import { YieldSourceMarketsTableMobile } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableMobile";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
+/**
+ * @deprecated
+ */
 export function YieldSourceCard({
   yieldSource,
 }: {
