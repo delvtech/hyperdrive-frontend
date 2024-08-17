@@ -447,7 +447,7 @@ export class ReadHyperdrive extends ReadModel {
     options?: ContractReadOptions;
   }): Promise<bigint> {
     // Get the vault share price when the short was opened
-    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+    let { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
       checkpointTime,
       options,
     });
@@ -469,6 +469,12 @@ export class ReadHyperdrive extends ReadModel {
       // Otherwise get the current vault share price
       const poolInfo = await this.getPoolInfo(options);
       endingVaultSharePrice = poolInfo.vaultSharePrice;
+      // Also check if the latest checkpoint was minted
+      const checkpointIsMinted = openVaultSharePrice != 0n;
+      // If not, this tx will mint it and set its vaultSharePrice
+      if (!checkpointIsMinted) {
+        openVaultSharePrice = poolInfo.vaultSharePrice;
+      }
     }
 
     return calculateShortAccruedYield({
