@@ -1,11 +1,20 @@
-import { ReactElement } from "react";
+import { ClockIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
+import { ReactElement, ReactNode } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
+import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Hero } from "src/ui/landing/Hero/Hero";
+import { AssetStack } from "src/ui/markets/AssetStack";
+import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
+import { Address } from "viem";
+import { mainnet, sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -13,10 +22,10 @@ export function Landing(): ReactElement | null {
   const { isFlagEnabled: isNewPoolsView } = useFeatureFlag("pools-view");
 
   return (
-    <div className="flex flex-col items-center gap-16 px-4 py-8">
+    <div className="flex flex-col items-center gap-16 lg:w-[900px]">
       <Hero />
       <div className="flex w-full flex-col items-center">
-        {isNewPoolsView ? null : <YieldSourceCards />}
+        {isNewPoolsView ? <PoolRows /> : <YieldSourceCards />}
       </div>
 
       {isNewPoolsView ? null : (
@@ -29,6 +38,108 @@ export function Landing(): ReactElement | null {
   );
 }
 
+function PoolRows() {
+  const appConfig = useAppConfig();
+
+  return (
+    <div className="flex w-full flex-col gap-5">
+      {appConfig.hyperdrives.map((hyperdrive) => (
+        <PoolRow
+          key={hyperdrive.address}
+          hyperdriveAddress={hyperdrive.address}
+        />
+      ))}
+    </div>
+  );
+}
+function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
+  const appConfig = useAppConfig();
+  const { yieldSources } = appConfig;
+  const hyperdrive = appConfig.hyperdrives.find(
+    (hyperdrive) => hyperdrive.address === hyperdriveAddress,
+  )!;
+
+  const { presentValue } = usePresentValue({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  // TODO: convert presentValue into fiat
+  const presentValueFiat = presentValue;
+
+  // TODO: Move this into appconfig
+  const chainInfo = getChainInfo(hyperdrive.chainId);
+
+  return (
+    <Well block>
+      <div className="flex justify-between gap-4">
+        {/* Left side */}
+        <div className="flex items-center gap-6">
+          <div>
+            <AssetStack hyperdriveAddress={hyperdrive.address} />
+          </div>
+          <div className="flex flex-col gap-1">
+            <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
+            <div className="flex gap-5">
+              <div className="flex items-center gap-1.5">
+                <ClockIcon className="size-4 text-gray-500" />{" "}
+                <span className="text-neutral-content">
+                  {formatTermLength2(
+                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
+                  )}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 text-neutral-content">
+                <span className="text-sm text-gray-500">TVL</span>{" "}
+                <span className="text-neutral-content">
+                  {`$${formatCompact({
+                    value: presentValueFiat || 0n,
+                    decimals: hyperdrive.decimals,
+                  })}`}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <img src={chainInfo?.logo} />
+                <span className="text-neutral-content">{chainInfo?.name}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div className="flex shrink-0 items-end gap-10">
+          <PoolStat
+            label={"Fixed APR"}
+            value={"5.5%"}
+            variant="gradient"
+            action={
+              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+                Long
+              </button>
+            }
+          />
+          <PoolStat
+            label={"Variable APY"}
+            value={"5.5%"}
+            action={
+              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+                Short
+              </button>
+            }
+          />
+          <PoolStat
+            label={"LP APY (1d)"}
+            value={"5.5%"}
+            action={
+              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+                Supply
+              </button>
+            }
+          />
+        </div>
+      </div>
+    </Well>
+  );
+}
 /**
  * @deprecated
  */
@@ -40,6 +151,56 @@ function YieldSourceCards() {
       {Object.entries(yieldSources).map(([key, yieldSource]) => (
         <YieldSourceCard key={key} yieldSource={yieldSource} />
       ))}
+    </div>
+  );
+}
+
+/**
+ * @deprecated Temporary code, this will be moved into appconfig
+ * https://github.com/delvtech/hyperdrive-frontend/issues/1371
+ */
+function getChainInfo(chainId: number) {
+  if (chainId === mainnet.id) {
+    return { name: "Mainnet", logo: "/ethereum-mainnet.svg" };
+  }
+
+  if (chainId === sepolia.id) {
+    // TODO: Add sepolia logo
+    return { name: "Sepolia", logo: "/ethereum-mainnet.svg" };
+  }
+}
+
+function PoolStat({
+  label,
+  labelTooltip,
+  value,
+  variant = "default",
+  action,
+}: {
+  label: string;
+  labelTooltip?: string;
+  value: string;
+  variant?: "default" | "gradient";
+  action?: ReactNode;
+}): ReactElement {
+  return (
+    <div className="flex w-24 flex-col items-start gap-1.5">
+      <p
+        data-tip={labelTooltip}
+        className={
+          "group daisy-tooltip cursor-help text-sm text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start"
+        }
+      >
+        {label}
+      </p>
+      <div
+        className={classNames("font-dmMono text-h4 font-medium", {
+          "gradient-text": variant === "gradient",
+        })}
+      >
+        {value}
+      </div>
+      <div>{action}</div>
     </div>
   );
 }

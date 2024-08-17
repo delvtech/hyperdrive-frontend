@@ -28,9 +28,9 @@ export function Hero(): ReactElement {
               isNewPoolsView ? "text-lg" : null,
             )}
           >
-            Open a Long to lock in a predictable fixed rate, open a Short to get
-            multiplied exposure to the variable rate, or LP to profit from rates
-            volatility.
+            {isNewPoolsView
+              ? "Open a Long to lock in a predictable fixed rate, open a Short to get multiplied exposure to the variable rate, or become a liquidity provider to earn the variable rate plus trading fees."
+              : "Open a Long to lock in a predictable fixed rate, open a Short to get multiplied exposure to the variable rate, or LP to profit from rates volatility."}
           </h5>
           {isNewPoolsView ? null : (
             <a

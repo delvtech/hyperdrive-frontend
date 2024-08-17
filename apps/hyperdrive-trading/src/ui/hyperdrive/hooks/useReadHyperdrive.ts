@@ -10,7 +10,10 @@ export function useReadHyperdrive(
   address: Address | undefined,
 ): ReadHyperdrive | undefined {
   const appConfig = useAppConfig();
-  const publicClient = usePublicClient();
+  const pool = appConfig.hyperdrives.find(
+    (hyperdrive) => hyperdrive.address === address,
+  );
+  const publicClient = usePublicClient({ chainId: pool?.chainId });
 
   const enabled = !!address && !!publicClient;
 
