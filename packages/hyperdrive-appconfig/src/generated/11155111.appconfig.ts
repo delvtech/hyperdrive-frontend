@@ -547,7 +547,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Renzo ezETH",
       protocol: "renzo",
       isSharesPeggedToBase: false,
-      historicalRatePeriod: 7,
+      historicalRatePeriod: 14,
     },
   },
 };
