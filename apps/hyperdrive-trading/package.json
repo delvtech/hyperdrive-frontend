@@ -14,6 +14,7 @@
   },
   "scripts": {
     "build": "bash ./scripts/build-app.sh",
+    "build:dev": "bash ./scripts/build-app.sh development",
     "dev": "vite",
     "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
     "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
