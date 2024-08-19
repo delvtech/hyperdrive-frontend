@@ -1,5 +1,5 @@
 import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
-import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
+import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -20,14 +20,12 @@ import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualize
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { PositionActionsMenu } from "src/ui/hyperdrive/PositionActionsMenu";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
@@ -237,7 +235,7 @@ export function OpenLongsTableDesktopTwo({
               <tr
                 key={row.id}
                 className={classNames(
-                  "daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out",
+                  "daisy-hover h-32 cursor-pointer transition duration-300 ease-in-out",
                   "!border-b-0", // Remove default bottom border for table rows
                 )}
                 onClick={() => {
@@ -248,7 +246,7 @@ export function OpenLongsTableDesktopTwo({
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
-                      "relative align-top text-xs md:text-md", // Make the td relative for the pseudo-element
+                      "relative text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
                         "px-10": cellIndex === 0, // Add padding only to the first cell
                         "rounded-b-none": isLastRow,
@@ -376,7 +374,6 @@ function getColumns({
         );
       },
     }),
-
     columnHelper.display({
       id: "value",
       header: `Status`,
@@ -385,7 +382,6 @@ function getColumns({
       },
     }),
     columnHelper.display({
-      header: "",
       id: "go-to-market",
       cell: ({ row }) => {
         const maturityDateMS = row.original.maturity * 1000n;
@@ -399,31 +395,9 @@ function getColumns({
                 (window as any)[modalId].showModal();
               }}
             >
-              Close Long
+              <Cog8ToothIcon className="h-5" />
+              Manage
             </button>
-            <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom">
-              <div
-                tabIndex={0}
-                role="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-                className="daisy-btn daisy-btn-ghost daisy-btn-sm rotate-90 hover:bg-transparent"
-              >
-                <EllipsisVerticalIcon className="h-5" />
-              </div>
-              <ul
-                tabIndex={0}
-                className="daisy-menu daisy-dropdown-content z-10 w-52 rounded-lg bg-base-100 p-4 shadow"
-              >
-                <CalendarLinkMenu
-                  date={maturityDate}
-                  title={`Hyperdrive - Long position has matured`}
-                  description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
-                />
-                <PositionActionsMenu position={row.original} />
-              </ul>
-            </div>
           </div>
         );
       },

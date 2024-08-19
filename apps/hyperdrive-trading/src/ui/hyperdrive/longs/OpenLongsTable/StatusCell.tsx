@@ -16,9 +16,9 @@ export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
   return (
     <div
       className={classNames("flex items-center gap-2", {
-        "rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
+        "mb-3 rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
           isTermComplete,
-        "text-neutral-content": !isTermComplete,
+        "mb-5 text-neutral-content": !isTermComplete,
       })}
     >
       {isTermComplete ? <CheckCircleIcon className="size-4" /> : null}
