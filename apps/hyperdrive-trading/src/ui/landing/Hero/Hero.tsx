@@ -24,8 +24,8 @@ export function Hero(): ReactElement {
           </h1>
           <h5
             className={classNames(
-              "mb-5 font-inter text-neutral-content",
-              isNewPoolsView ? "text-lg" : null,
+              "font-inter text-neutral-content",
+              isNewPoolsView ? "text-lg" : "mb-5",
             )}
           >
             {isNewPoolsView

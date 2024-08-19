@@ -1,4 +1,4 @@
-import { ClockIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -22,10 +22,30 @@ export function Landing(): ReactElement | null {
   const { isFlagEnabled: isNewPoolsView } = useFeatureFlag("pools-view");
 
   return (
-    <div className="flex flex-col items-center gap-16 lg:w-[900px]">
+    <div className="flex flex-col items-center gap-4 lg:w-[900px]">
       <Hero />
       <div className="flex w-full flex-col items-center">
-        {isNewPoolsView ? <PoolRows /> : <YieldSourceCards />}
+        {isNewPoolsView ? (
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <button className="daisy-btn daisy-btn-sm gap-1.5 rounded-full">
+                All Terms
+                <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
+              </button>
+              <button className="daisy-btn daisy-btn-sm gap-1.5 rounded-full">
+                All Assets
+                <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
+              </button>
+              <button className="daisy-btn daisy-btn-sm gap-1.5 rounded-full">
+                All Chains
+                <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
+              </button>
+            </div>
+            <PoolRows />
+          </div>
+        ) : (
+          <YieldSourceCards />
+        )}
       </div>
 
       {isNewPoolsView ? null : (
