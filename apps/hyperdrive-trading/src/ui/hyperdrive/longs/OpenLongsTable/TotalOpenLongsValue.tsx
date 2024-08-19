@@ -38,8 +38,7 @@ export function TotalOpenLongsValue({
     tokenPrices?.[baseToken?.address.toLowerCase() as Address];
   return !isTestnetChain(chainId) ? (
     <p className="font-dmMono text-h4">
-      {"$"}
-      {formatBalance({
+      {`$${formatBalance({
         balance:
           totalOpenLongsValue && !isLoading && baseTokenPrice
             ? fixed(totalOpenLongsValue || 0n, baseToken?.decimals).mul(
@@ -50,14 +49,14 @@ export function TotalOpenLongsValue({
         decimals: baseToken?.decimals || 18,
         places: 2,
         includeCommas: true,
-      })}{" "}
+      })}`}{" "}
     </p>
   ) : (
     <p className="font-dmMono text-h4">
       {formatBalance({
         balance: totalOpenLongsValue || 0n,
         decimals: baseToken?.decimals || 18,
-        places: 2,
+        places: baseToken?.places || 2,
         includeCommas: true,
       })}{" "}
       {baseToken?.symbol}
