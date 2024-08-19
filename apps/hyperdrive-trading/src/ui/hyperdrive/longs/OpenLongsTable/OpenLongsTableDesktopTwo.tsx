@@ -42,7 +42,7 @@ export function OpenLongsContainer(): ReactElement {
   const appConfig = useAppConfig();
 
   return (
-    <div className="mt-10 flex flex-col gap-10">
+    <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
         const baseToken = appConfig.tokens.find(
           (token) => token.address === hyperdrive.poolConfig.baseToken,
@@ -59,8 +59,8 @@ export function OpenLongsContainer(): ReactElement {
         }
         return (
           <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <div className="flex justify-between">
-              <div className="flex items-center gap-1">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1 font-chakraPetch text-h4">
                 <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
                   {baseToken &&
                   hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
@@ -235,7 +235,7 @@ export function OpenLongsTableDesktopTwo({
               <tr
                 key={row.id}
                 className={classNames(
-                  "daisy-hover h-32 cursor-pointer transition duration-300 ease-in-out",
+                  "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
                   "!border-b-0", // Remove default bottom border for table rows
                 )}
                 onClick={() => {
@@ -387,7 +387,7 @@ function getColumns({
         const maturityDateMS = row.original.maturity * 1000n;
         const maturityDate = new Date(Number(maturityDateMS));
         return (
-          <div className="flex w-full items-center">
+          <div className="flex w-full items-center font-inter">
             <button
               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
               onClick={() => {

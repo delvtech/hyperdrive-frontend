@@ -165,7 +165,7 @@ export function CurrentValueCellTwo({
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
-          "daisy-tooltip daisy-tooltip-left flex text-xs before:border",
+          "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
           {
             "rounded-md border-[1px] border-success/20 bg-success/20 px-1 py-[1px] text-success":
               isPositiveChangeInValue,
@@ -176,7 +176,7 @@ export function CurrentValueCellTwo({
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {baseAmountOut
-          ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
+          ? `${profitLoss === "-0" ? "0" : profitLoss}`
           : undefined}
       </div>
     </div>

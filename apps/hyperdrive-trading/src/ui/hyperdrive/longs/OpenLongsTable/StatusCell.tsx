@@ -15,7 +15,7 @@ export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
 
   return (
     <div
-      className={classNames("flex items-center gap-2", {
+      className={classNames("flex w-28 items-center gap-2 font-inter", {
         "mb-3 rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
           isTermComplete,
         "mb-5 text-neutral-content": !isTermComplete,

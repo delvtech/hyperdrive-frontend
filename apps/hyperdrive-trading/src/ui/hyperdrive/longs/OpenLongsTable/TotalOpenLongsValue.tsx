@@ -34,12 +34,12 @@ export function TotalOpenLongsValue({
   );
   const tokenPrices = useTokenFiatPrices([baseToken?.address as Address]);
 
-  //   const baseTokenPrice =
-  //     tokenPrices?.[baseToken?.address.toLowerCase() as Address];
+  const baseTokenPrice =
+    tokenPrices?.[baseToken?.address.toLowerCase() as Address];
   // TODO: Replace this before merging.
-  const baseTokenPrice = 999363000000000000n;
+  // const baseTokenPrice = 999363000000000000n;
   return !isTestnetChain(chainId) ? (
-    <p className="text-h4">
+    <p className="font-dmMono text-h4">
       {"$"}
       {formatBalance({
         balance:
@@ -55,7 +55,7 @@ export function TotalOpenLongsValue({
       })}{" "}
     </p>
   ) : (
-    <p className="text-h4">
+    <p className="font-dmMono text-h4">
       {formatBalance({
         balance: totalOpenLongsValue || 0n,
         decimals: baseToken?.decimals || 18,
