@@ -27,7 +27,7 @@ export function getRemainingTimeLabel({
   }
 
   if (isTermComplete) {
-    return "Term Complete";
+    return "Term complete";
   }
 
   const suffix = showLeftSuffix ? " left" : "";

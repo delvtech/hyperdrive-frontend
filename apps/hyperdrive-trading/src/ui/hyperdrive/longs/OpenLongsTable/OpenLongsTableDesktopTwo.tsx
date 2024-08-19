@@ -50,6 +50,7 @@ export function OpenLongsContainer(): ReactElement {
         const sharesToken = appConfig.tokens.find(
           (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
         );
+        // Ensure this hyperdrive pool has open positions before rendering.
         if (
           openLongPositionsStatus === "success" &&
           !openLongPositions?.[hyperdrive.address]?.length

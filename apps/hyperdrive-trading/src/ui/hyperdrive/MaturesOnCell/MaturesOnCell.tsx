@@ -41,18 +41,11 @@ export function MaturesOnCellTwo({
   maturity: bigint;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { data: currentBlock } = useBlock();
-  const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
-
-  const remainingTime = getRemainingTimeLabel({
-    maturitySeconds: Number(maturity),
-  });
-
   return (
-    <div className="flex flex-col p-0 font-dmMono">
-      <span className="font-normal">{formatDate(Number(maturityDateMS))}</span>
-      <div className={classNames("font-dmMono text-neutral-content")}>
+    <div className="flex flex-col">
+      <span>{formatDate(Number(maturityDateMS))}</span>
+      <div className={classNames("text-neutral-content")}>
         {convertMillisecondsToDays(
           Number(hyperdrive.poolConfig.positionDuration * 1000n),
         )}
