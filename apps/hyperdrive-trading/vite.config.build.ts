@@ -7,6 +7,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // We need this seperate configuration for this problem
 // https://github.com/wevm/wagmi/discussions/2248
 export default defineConfig({
+  build: {
+    target: "esnext",
+  },
   plugins: [
     react(),
     tsconfigPaths(),
