@@ -2,6 +2,7 @@ import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -135,7 +136,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         <div className="flex shrink-0 items-end gap-10">
           <PoolStat
             label={"Fixed APR"}
-            value={fixedApr?.formatted || "-"}
+            value={fixedApr ? formatRate(fixedApr.apr, 18, false) : "-"}
             variant="gradient"
             action={
               <Link
@@ -150,7 +151,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={"Variable APY"}
-            value={vaultRate?.formatted || "-"}
+            value={vaultRate ? formatRate(vaultRate.vaultRate, 18, false) : "-"}
             action={
               <Link
                 to="/market/$address"
@@ -164,11 +165,12 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
+            showPercentage={!isLpApyNew}
             value={
               // TODO: Fix useLpApy to have the same interface as
               // useYieldSourceRate and useFixedRate
               lpApy && !isLpApyNew
-                ? `${(lpApy * 100).toFixed(2)}%`
+                ? `${(lpApy * 100).toFixed(2)}`
                 : isLpApyNew
                   ? "✨New✨"
                   : "-"
@@ -208,12 +210,14 @@ function PoolStat({
   label,
   labelTooltip,
   value,
+  showPercentage = true,
   variant = "default",
   action,
 }: {
   label: string;
   labelTooltip?: string;
   value: string;
+  showPercentage?: boolean;
   variant?: "default" | "gradient";
   action?: ReactNode;
 }): ReactElement {
@@ -230,6 +234,7 @@ function PoolStat({
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
           "gradient-text": variant === "gradient",
+          "after:text-h5 after:content-['%']": showPercentage,
         })}
       >
         {value}
