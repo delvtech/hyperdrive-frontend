@@ -37,9 +37,7 @@ export function usePortfolioLongsData(): {
                 });
                 const openLongPositionsReceived = await Promise.all(
                   allLongs.map(async (long) => ({
-                    assetId: long.assetId,
-                    value: long.value,
-                    maturity: long.maturity,
+                    ...long,
                     details: await readHyperdrive.getOpenLongDetails({
                       assetId: long.assetId,
                       account: account,
