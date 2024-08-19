@@ -1,7 +1,9 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -17,8 +19,10 @@ import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
+import { sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -84,17 +88,42 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   )!;
   const chainInfo = chains[hyperdrive.chainId];
 
-  const { presentValue } = usePresentValue({
-    hyperdriveAddress: hyperdrive.address,
-  });
-
   const { fixedApr } = useFixedRate(hyperdriveAddress);
   const { vaultRate } = useYieldSourceRate({ hyperdriveAddress });
   const { lpApy, lpApyStatus } = useLpApy(hyperdriveAddress);
   const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
 
-  // TODO: convert presentValue into fiat
-  const presentValueFiat = presentValue;
+  // Display TVL as base value on testnet due to lack of reliable fiat pricing.
+  // On mainnet and others, use DeFiLlama's fiat price.
+  const { presentValue } = usePresentValue({
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const isFiatPriceEnabled =
+    hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
+    chainInfo.id !== sepolia.id;
+  const { fiatPrice } = useTokenFiatPrice({
+    tokenAddress: isFiatPriceEnabled
+      ? hyperdrive.poolConfig.baseToken
+      : undefined,
+  });
+  const baseAsset = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
+  let tvlLabel = `${formatCompact({
+    value: presentValue || 0n,
+    decimals: hyperdrive.decimals,
+  })} ${baseAsset?.symbol}`;
+
+  if (isFiatPriceEnabled) {
+    const presentValueFiat =
+      presentValue && fiatPrice && isFiatPriceEnabled
+        ? fixed(presentValue, hyperdrive.decimals).mul(fiatPrice).bigint
+        : 0n;
+    tvlLabel = `$${formatCompact({
+      value: presentValueFiat || 0n,
+      decimals: hyperdrive.decimals,
+    })}`;
+  }
 
   return (
     <Well block>
@@ -118,10 +147,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
               <div className="flex items-center gap-1.5 text-sm">
                 <span className="text-gray-500">TVL</span>{" "}
                 <span className="font-dmMono text-neutral-content">
-                  {`$${formatCompact({
-                    value: presentValueFiat || 0n,
-                    decimals: hyperdrive.decimals,
-                  })}`}
+                  {tvlLabel}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
