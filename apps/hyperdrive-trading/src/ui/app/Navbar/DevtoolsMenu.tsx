@@ -19,6 +19,9 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="bridge">
           Bridge Assets
         </FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName="pools-view">
+          Pools View v2
+        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
