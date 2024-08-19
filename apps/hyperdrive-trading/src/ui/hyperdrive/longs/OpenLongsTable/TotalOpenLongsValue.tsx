@@ -36,8 +36,6 @@ export function TotalOpenLongsValue({
 
   const baseTokenPrice =
     tokenPrices?.[baseToken?.address.toLowerCase() as Address];
-  // TODO: Replace this before merging.
-  // const baseTokenPrice = 999363000000000000n;
   return !isTestnetChain(chainId) ? (
     <p className="font-dmMono text-h4">
       {"$"}

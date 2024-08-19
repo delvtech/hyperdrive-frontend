@@ -28,7 +28,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
-import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
@@ -85,7 +84,10 @@ export function OpenLongsContainer(): ReactElement {
               </div>
               <TotalOpenLongsValue hyperdrive={hyperdrive} />
             </div>
-            <OpenLongsTableDesktopTwo hyperdrive={hyperdrive} />
+            <OpenLongsTableDesktopTwo
+              hyperdrive={hyperdrive}
+              openLongPositionsStatus={openLongPositionsStatus}
+            />
           </div>
         );
       })}
@@ -95,8 +97,10 @@ export function OpenLongsContainer(): ReactElement {
 
 export function OpenLongsTableDesktopTwo({
   hyperdrive,
+  openLongPositionsStatus,
 }: {
   hyperdrive: HyperdriveConfig;
+  openLongPositionsStatus?: "loading" | "success" | "error";
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
@@ -132,7 +136,7 @@ export function OpenLongsTableDesktopTwo({
       </div>
     );
   }
-  if (openLongsStatus === "loading") {
+  if (openLongsStatus === "loading" || openLongPositionsStatus === "loading") {
     return (
       <LoadingState
         heading="Loading your Longs..."
@@ -152,17 +156,6 @@ export function OpenLongsTableDesktopTwo({
         </div>
       );
     }
-    return (
-      <div className="my-28">
-        <NonIdealState
-          heading="You have no open Long positions"
-          text="Open a Long, switch wallets, or view your closed Long positions"
-          action={
-            <OpenLongModalButton modalId="open-long" hyperdrive={hyperdrive} />
-          }
-        />
-      </div>
-    );
   }
 
   return (
