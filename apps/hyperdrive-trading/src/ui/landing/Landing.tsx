@@ -2,6 +2,7 @@ import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -18,7 +19,6 @@ import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { mainnet, sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -78,10 +78,11 @@ function PoolRows() {
 }
 function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   const appConfig = useAppConfig();
-  const { yieldSources } = appConfig;
+  const { yieldSources, chains } = appConfig;
   const hyperdrive = appConfig.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;
+  const chainInfo = chains[hyperdrive.chainId];
 
   const { presentValue } = usePresentValue({
     hyperdriveAddress: hyperdrive.address,
@@ -94,9 +95,6 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
 
   // TODO: convert presentValue into fiat
   const presentValueFiat = presentValue;
-
-  // TODO: Move this into appconfig
-  const chainInfo = getChainInfo(hyperdrive.chainId);
 
   return (
     <Well block>
@@ -127,8 +125,8 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
-                <img src={chainInfo?.logo} />
-                <span className="text-neutral-content">{chainInfo?.name}</span>
+                <img className="size-4 rounded-full" src={chainInfo.iconUrl} />
+                <span className="text-neutral-content">{chainInfo.name}</span>
               </div>
             </div>
           </div>
@@ -138,7 +136,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         <div className="flex shrink-0 items-end gap-10">
           <PoolStat
             label={"Fixed APR"}
-            value={fixedApr?.formatted || "-"}
+            value={fixedApr ? formatRate(fixedApr.apr, 18, false) : "-"}
             variant="gradient"
             action={
               <Link
@@ -153,7 +151,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={"Variable APY"}
-            value={vaultRate?.formatted || "-"}
+            value={vaultRate ? formatRate(vaultRate.vaultRate, 18, false) : "-"}
             action={
               <Link
                 to="/market/$address"
@@ -167,11 +165,12 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
+            showPercentage={!isLpApyNew}
             value={
               // TODO: Fix useLpApy to have the same interface as
               // useYieldSourceRate and useFixedRate
               lpApy && !isLpApyNew
-                ? `${(lpApy * 100).toFixed(2)}%`
+                ? `${(lpApy * 100).toFixed(2)}`
                 : isLpApyNew
                   ? "✨New✨"
                   : "-"
@@ -207,31 +206,18 @@ function YieldSourceCards() {
   );
 }
 
-/**
- * @deprecated Temporary code, this will be moved into appconfig
- * https://github.com/delvtech/hyperdrive-frontend/issues/1371
- */
-function getChainInfo(chainId: number) {
-  if (chainId === mainnet.id) {
-    return { name: "Mainnet", logo: "/ethereum-mainnet.svg" };
-  }
-
-  if (chainId === sepolia.id) {
-    // TODO: Add sepolia logo
-    return { name: "Sepolia", logo: "/ethereum-mainnet.svg" };
-  }
-}
-
 function PoolStat({
   label,
   labelTooltip,
   value,
+  showPercentage = true,
   variant = "default",
   action,
 }: {
   label: string;
   labelTooltip?: string;
   value: string;
+  showPercentage?: boolean;
   variant?: "default" | "gradient";
   action?: ReactNode;
 }): ReactElement {
@@ -248,6 +234,7 @@ function PoolStat({
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
           "gradient-text": variant === "gradient",
+          "after:text-h5 after:content-['%']": showPercentage,
         })}
       >
         {value}

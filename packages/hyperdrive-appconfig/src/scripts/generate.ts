@@ -2,6 +2,7 @@ import "dotenv/config";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
+import { chains } from "src/chains/chains";
 import { protocols } from "src/protocols";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
@@ -34,6 +35,7 @@ const combinedAppConfig: AppConfig = {
   registries: {},
   protocols,
   yieldSources,
+  chains,
 };
 
 for (const { chain, rpcUrl, registryAddress } of chainConfigs) {
