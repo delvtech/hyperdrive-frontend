@@ -3,6 +3,7 @@ export const appConfig: AppConfig = {
   hyperdrives: [
     {
       chainId: 1,
+      initializationBlock: 20180623n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
       name: "182d Lido stETH",
@@ -46,6 +47,7 @@ export const appConfig: AppConfig = {
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
+      initializationBlock: 20180617n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -86,6 +88,7 @@ export const appConfig: AppConfig = {
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
+      initializationBlock: 20322429n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -123,6 +126,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      initializationBlock: 20484838n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
       name: "182d Morpho sUSDe/DAI",
@@ -163,6 +167,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      initializationBlock: 20528971n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
       name: "182d Morpho USDe/DAI",
@@ -206,6 +211,7 @@ export const appConfig: AppConfig = {
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",
+      initializationBlock: 20322421n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -246,6 +252,7 @@ export const appConfig: AppConfig = {
       address: "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",
       version: "v1.0.12",
       name: "14d Maker DSR",
+      initializationBlock: 6137333n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -286,6 +293,7 @@ export const appConfig: AppConfig = {
       address: "0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2",
       version: "v1.0.12",
       name: "30d Maker DSR",
+      initializationBlock: 6137347n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -326,6 +334,7 @@ export const appConfig: AppConfig = {
       address: "0x54A93937EE00838d659795b9bbbe904a00DdF278",
       version: "v1.0.12",
       name: "14d Renzo ezETH",
+      initializationBlock: 6137354n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -366,6 +375,7 @@ export const appConfig: AppConfig = {
       address: "0x87621c072B1967730b70F4c0536D739c2053d34c",
       version: "v1.0.12",
       name: "30d Renzo ezETH",
+      initializationBlock: 6137362n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -406,6 +416,7 @@ export const appConfig: AppConfig = {
       address: "0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8",
       version: "v1.0.12",
       name: "14d Rocket Pool ETH",
+      initializationBlock: 6137491n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -446,6 +457,7 @@ export const appConfig: AppConfig = {
       address: "0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D",
       version: "v1.0.12",
       name: "30d Rocket Pool ETH",
+      initializationBlock: 6137499n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -483,6 +495,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      initializationBlock: 6137506n,
       address: "0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91",
       version: "v1.0.12",
       name: "14d Lido stETH",
@@ -523,6 +536,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      initializationBlock: 6137513n,
       address: "0x51C054F75b2c4b53E8E5114430C3ded4572473D8",
       version: "v1.0.12",
       name: "30d Lido stETH",
@@ -563,6 +577,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      initializationBlock: 6341309n,
       address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
       version: "v1.0.15",
       name: "14d Morpho sUSDe/DAI",
@@ -603,6 +618,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      initializationBlock: 6495162n,
       address: "0x0399BBA8DE5959007148a95ADaaD04eA3172513E",
       version: "v1.0.15",
       name: "14d Morpho USDe/DAI",
@@ -691,17 +707,6 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
-      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
-      decimals: 18,
-      places: 2,
-      name: "Savings Dai",
-      symbol: "sDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: [],
-      extensions: {},
-    },
-    {
-      chainId: 1,
       address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
       decimals: 18,
       places: 4,
@@ -710,6 +715,17 @@ export const appConfig: AppConfig = {
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMiIgdmlld0JveD0iMCAwIDIwMCAyMDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTk4LjM2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyKSIgZmlsbD0iIzA4MEIxQiIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9kZF83N180MykiPgo8cGF0aCBkPSJNMTAwLjExMSA0NC4xMjA0TDk5LjM0ODMgNDYuNzEzMUw5OS4zNDgzIDEyMS45NDFMMTAwLjExMSAxMjIuNzAyTDEzNC45NzggMTAyLjA2MUwxMDAuMTExIDQ0LjEyMDRaIiBmaWxsPSIjNkI2QjZCIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDQ0LjEyMDRMNjUuMjQxNyAxMDIuMDYxTDEwMC4xMTEgMTIyLjcwMkwxMDAuMTExIDg2LjE4ODlMMTAwLjExMSA0NC4xMjA0WiIgZmlsbD0iI0EyQTJBMiIvPgo8cGF0aCBkPSJNMTAwLjExMSAxMjkuMzE0TDk5LjY4MDkgMTI5LjgzOEw5OS42ODA5IDE1Ni42MzZMMTAwLjExMSAxNTcuODkyTDEzNSAxMDguNjgzTDEwMC4xMTEgMTI5LjMxNFoiIGZpbGw9IiM0RjRFNEUiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTU3Ljg5MkwxMDAuMTExIDEyOS4zMTRMNjUuMjQxNyAxMDguNjgzTDEwMC4xMTEgMTU3Ljg5MloiIGZpbGw9IiNBMkEyQTIiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExMSA4Ni4xODg5TDEwMC4xMTEgMTIyLjcwMloiIGZpbGw9IiM3OTc5NzkiLz4KPHBhdGggZD0iTTY1LjI0MTcgMTAyLjA2MUwxMDAuMTExIDEyMi43MDJMMTAwLjExMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNENEQ0RDQiLz4KPGcgc3R5bGU9Im1peC1ibGVuZC1tb2RlOm92ZXJsYXkiPgo8cGF0aCBkPSJNMTAwLjExIDQ0LjEyMDRMOTkuMzQ4MyA0Ni43MTMxTDk5LjM0ODMgMTIxLjk0MUwxMDAuMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTEgNDQuMTIwNEw2NS4yNDE3IDEwMi4wNjFMMTAwLjExIDEyMi43MDJMMTAwLjExIDg2LjE4ODlMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDEyOS4zMTRMOTkuNjgwOSAxMjkuODM4TDk5LjY4MDkgMTU2LjYzNkwxMDAuMTExIDE1Ny44OTJMMTM1IDEwOC42ODNMMTAwLjExMSAxMjkuMzE0WiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExMSAxNTcuODkyTDEwMC4xMTEgMTI5LjMxNEw2NS4yNDE3IDEwOC42ODNMMTAwLjExMSAxNTcuODkyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExIDEyMi43MDJMMTM0Ljk3OCAxMDIuMDYxTDEwMC4xMSA4Ni4xODg5TDEwMC4xMSAxMjIuNzAyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNNjUuMjQxNyAxMDIuMDYxTDEwMC4xMSAxMjIuNzAyTDEwMC4xMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNBQ0U3MzAiLz4KPC9nPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RkXzc3XzQzIiB4PSIyMS4yMTMxIiB5PSIwLjA5MTgwMDciIHdpZHRoPSIxNTcuODE1IiBoZWlnaHQ9IjIwMS44MjgiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEwLjY3MjUiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0ib3V0Ii8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuNjc0NTEgMCAwIDAgMCAwLjkwNTg4MiAwIDAgMCAwIDAuMTg4MjM1IDAgMCAwIDAuNSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93Xzc3XzQzIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMi4wMTQzIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9Im91dCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjY3NDUxIDAgMCAwIDAgMC45MDU4ODIgMCAwIDAgMCAwLjE4ODIzNSAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd183N180MyIgcmVzdWx0PSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiIHJlc3VsdD0ic2hhcGUiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg==",
       tags: ["liquidStakingToken"],
+      extensions: {},
+    },
+    {
+      chainId: 1,
+      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+      decimals: 18,
+      places: 2,
+      name: "Savings Dai",
+      symbol: "sDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      tags: [],
       extensions: {},
     },
     {
@@ -748,18 +764,6 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
-      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
-      decimals: 18,
-      places: 4,
-      name: "Renzo ezETH",
-      symbol: "ezETH",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMiIgdmlld0JveD0iMCAwIDIwMCAyMDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTk4LjM2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyKSIgZmlsbD0iIzA4MEIxQiIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9kZF83N180MykiPgo8cGF0aCBkPSJNMTAwLjExMSA0NC4xMjA0TDk5LjM0ODMgNDYuNzEzMUw5OS4zNDgzIDEyMS45NDFMMTAwLjExMSAxMjIuNzAyTDEzNC45NzggMTAyLjA2MUwxMDAuMTExIDQ0LjEyMDRaIiBmaWxsPSIjNkI2QjZCIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDQ0LjEyMDRMNjUuMjQxNyAxMDIuMDYxTDEwMC4xMTEgMTIyLjcwMkwxMDAuMTExIDg2LjE4ODlMMTAwLjExMSA0NC4xMjA0WiIgZmlsbD0iI0EyQTJBMiIvPgo8cGF0aCBkPSJNMTAwLjExMSAxMjkuMzE0TDk5LjY4MDkgMTI5LjgzOEw5OS42ODA5IDE1Ni42MzZMMTAwLjExMSAxNTcuODkyTDEzNSAxMDguNjgzTDEwMC4xMTEgMTI5LjMxNFoiIGZpbGw9IiM0RjRFNEUiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTU3Ljg5MkwxMDAuMTExIDEyOS4zMTRMNjUuMjQxNyAxMDguNjgzTDEwMC4xMTEgMTU3Ljg5MloiIGZpbGw9IiNBMkEyQTIiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExMSA4Ni4xODg5TDEwMC4xMTEgMTIyLjcwMloiIGZpbGw9IiM3OTc5NzkiLz4KPHBhdGggZD0iTTY1LjI0MTcgMTAyLjA2MUwxMDAuMTExIDEyMi43MDJMMTAwLjExMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNENEQ0RDQiLz4KPGcgc3R5bGU9Im1peC1ibGVuZC1tb2RlOm92ZXJsYXkiPgo8cGF0aCBkPSJNMTAwLjExIDQ0LjEyMDRMOTkuMzQ4MyA0Ni43MTMxTDk5LjM0ODMgMTIxLjk0MUwxMDAuMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTEgNDQuMTIwNEw2NS4yNDE3IDEwMi4wNjFMMTAwLjExIDEyMi43MDJMMTAwLjExIDg2LjE4ODlMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDEyOS4zMTRMOTkuNjgwOSAxMjkuODM4TDk5LjY4MDkgMTU2LjYzNkwxMDAuMTExIDE1Ny44OTJMMTM1IDEwOC42ODNMMTAwLjExMSAxMjkuMzE0WiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExMSAxNTcuODkyTDEwMC4xMTEgMTI5LjMxNEw2NS4yNDE3IDEwOC42ODNMMTAwLjExMSAxNTcuODkyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExIDEyMi43MDJMMTM0Ljk3OCAxMDIuMDYxTDEwMC4xMSA4Ni4xODg5TDEwMC4xMSAxMjIuNzAyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNNjUuMjQxNyAxMDIuMDYxTDEwMC4xMSAxMjIuNzAyTDEwMC4xMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNBQ0U3MzAiLz4KPC9nPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RkXzc3XzQzIiB4PSIyMS4yMTMxIiB5PSIwLjA5MTgwMDciIHdpZHRoPSIxNTcuODE1IiBoZWlnaHQ9IjIwMS44MjgiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEwLjY3MjUiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0ib3V0Ii8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuNjc0NTEgMCAwIDAgMCAwLjkwNTg4MiAwIDAgMCAwIDAuMTg4MjM1IDAgMCAwIDAuNSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93Xzc3XzQzIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMi4wMTQzIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9Im91dCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjY3NDUxIDAgMCAwIDAgMC45MDU4ODIgMCAwIDAgMCAwLjE4ODIzNSAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd183N180MyIgcmVzdWx0PSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiIHJlc3VsdD0ic2hhcGUiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg==",
-      tags: ["liquidStakingToken"],
-      extensions: {},
-    },
-    {
-      chainId: 11155111,
       address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       decimals: 18,
       places: 4,
@@ -767,6 +771,18 @@ export const appConfig: AppConfig = {
       symbol: "RETH",
       iconUrl:
         "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+      extensions: {},
+    },
+    {
+      chainId: 11155111,
+      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
+      decimals: 18,
+      places: 4,
+      name: "Renzo ezETH",
+      symbol: "ezETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMiIgdmlld0JveD0iMCAwIDIwMCAyMDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTk4LjM2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyKSIgZmlsbD0iIzA4MEIxQiIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9kZF83N180MykiPgo8cGF0aCBkPSJNMTAwLjExMSA0NC4xMjA0TDk5LjM0ODMgNDYuNzEzMUw5OS4zNDgzIDEyMS45NDFMMTAwLjExMSAxMjIuNzAyTDEzNC45NzggMTAyLjA2MUwxMDAuMTExIDQ0LjEyMDRaIiBmaWxsPSIjNkI2QjZCIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDQ0LjEyMDRMNjUuMjQxNyAxMDIuMDYxTDEwMC4xMTEgMTIyLjcwMkwxMDAuMTExIDg2LjE4ODlMMTAwLjExMSA0NC4xMjA0WiIgZmlsbD0iI0EyQTJBMiIvPgo8cGF0aCBkPSJNMTAwLjExMSAxMjkuMzE0TDk5LjY4MDkgMTI5LjgzOEw5OS42ODA5IDE1Ni42MzZMMTAwLjExMSAxNTcuODkyTDEzNSAxMDguNjgzTDEwMC4xMTEgMTI5LjMxNFoiIGZpbGw9IiM0RjRFNEUiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTU3Ljg5MkwxMDAuMTExIDEyOS4zMTRMNjUuMjQxNyAxMDguNjgzTDEwMC4xMTEgMTU3Ljg5MloiIGZpbGw9IiNBMkEyQTIiLz4KPHBhdGggZD0iTTEwMC4xMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExMSA4Ni4xODg5TDEwMC4xMTEgMTIyLjcwMloiIGZpbGw9IiM3OTc5NzkiLz4KPHBhdGggZD0iTTY1LjI0MTcgMTAyLjA2MUwxMDAuMTExIDEyMi43MDJMMTAwLjExMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNENEQ0RDQiLz4KPGcgc3R5bGU9Im1peC1ibGVuZC1tb2RlOm92ZXJsYXkiPgo8cGF0aCBkPSJNMTAwLjExIDQ0LjEyMDRMOTkuMzQ4MyA0Ni43MTMxTDk5LjM0ODMgMTIxLjk0MUwxMDAuMTEgMTIyLjcwMkwxMzQuOTc4IDEwMi4wNjFMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTEgNDQuMTIwNEw2NS4yNDE3IDEwMi4wNjFMMTAwLjExIDEyMi43MDJMMTAwLjExIDg2LjE4ODlMMTAwLjExIDQ0LjEyMDRaIiBmaWxsPSIjQUNFNzMwIi8+CjxwYXRoIGQ9Ik0xMDAuMTExIDEyOS4zMTRMOTkuNjgwOSAxMjkuODM4TDk5LjY4MDkgMTU2LjYzNkwxMDAuMTExIDE1Ny44OTJMMTM1IDEwOC42ODNMMTAwLjExMSAxMjkuMzE0WiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExMSAxNTcuODkyTDEwMC4xMTEgMTI5LjMxNEw2NS4yNDE3IDEwOC42ODNMMTAwLjExMSAxNTcuODkyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNMTAwLjExIDEyMi43MDJMMTM0Ljk3OCAxMDIuMDYxTDEwMC4xMSA4Ni4xODg5TDEwMC4xMSAxMjIuNzAyWiIgZmlsbD0iI0FDRTczMCIvPgo8cGF0aCBkPSJNNjUuMjQxNyAxMDIuMDYxTDEwMC4xMSAxMjIuNzAyTDEwMC4xMSA4Ni4xODg5TDY1LjI0MTcgMTAyLjA2MVoiIGZpbGw9IiNBQ0U3MzAiLz4KPC9nPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RkXzc3XzQzIiB4PSIyMS4yMTMxIiB5PSIwLjA5MTgwMDciIHdpZHRoPSIxNTcuODE1IiBoZWlnaHQ9IjIwMS44MjgiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEwLjY3MjUiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0ib3V0Ii8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuNjc0NTEgMCAwIDAgMCAwLjkwNTg4MiAwIDAgMCAwIDAuMTg4MjM1IDAgMCAwIDAuNSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93Xzc3XzQzIi8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMi4wMTQzIi8+CjxmZUNvbXBvc2l0ZSBpbjI9ImhhcmRBbHBoYSIgb3BlcmF0b3I9Im91dCIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjY3NDUxIDAgMCAwIDAgMC45MDU4ODIgMCAwIDAgMCAwLjE4ODIzNSAwIDAgMCAxIDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd183N180MyIgcmVzdWx0PSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QyX2Ryb3BTaGFkb3dfNzdfNDMiIHJlc3VsdD0ic2hhcGUiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg==",
       tags: ["liquidStakingToken"],
       extensions: {},
     },

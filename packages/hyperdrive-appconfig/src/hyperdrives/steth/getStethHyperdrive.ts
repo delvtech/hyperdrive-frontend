@@ -22,6 +22,10 @@ export async function getStethHyperdrive({
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
+  // safe to cast here because we know the pool was initialized
+  const initializationBlock = (await hyperdrive.getInitializationBlock())
+    .blockNumber as bigint;
+
   const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
@@ -50,6 +54,7 @@ export async function getStethHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     chainId,
+    initializationBlock,
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,

@@ -49,17 +49,6 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
-      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
-      decimals: 18,
-      places: 2,
-      name: "Savings Dai",
-      symbol: "sDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: [],
-      extensions: {},
-    },
-    {
-      chainId: 1,
       address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
       decimals: 18,
       places: 4,
@@ -70,6 +59,17 @@ export const ethereumAppConfig: AppConfig = {
       tags: ["liquidStakingToken"],
       extensions: {},
     },
+    {
+      chainId: 1,
+      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+      decimals: 18,
+      places: 2,
+      name: "Savings Dai",
+      symbol: "sDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      tags: [],
+      extensions: {},
+    },
   ],
   registries: {
     "1": "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
@@ -77,6 +77,7 @@ export const ethereumAppConfig: AppConfig = {
   hyperdrives: [
     {
       chainId: 1,
+      initializationBlock: 20180623n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
       name: "182d Lido stETH",
@@ -120,6 +121,7 @@ export const ethereumAppConfig: AppConfig = {
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
+      initializationBlock: 20180617n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -160,6 +162,7 @@ export const ethereumAppConfig: AppConfig = {
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
+      initializationBlock: 20322429n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -197,6 +200,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      initializationBlock: 20484838n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
       name: "182d Morpho sUSDe/DAI",
@@ -237,6 +241,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      initializationBlock: 20528971n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
       name: "182d Morpho USDe/DAI",
@@ -280,6 +285,7 @@ export const ethereumAppConfig: AppConfig = {
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",
+      initializationBlock: 20322421n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
