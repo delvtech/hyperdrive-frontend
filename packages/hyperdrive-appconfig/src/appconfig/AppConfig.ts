@@ -1,4 +1,5 @@
 import { Address } from "abitype";
+import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
@@ -13,4 +14,5 @@ export interface AppConfig {
   tokens: TokenConfig[];
   protocols: typeof protocols;
   yieldSources: typeof yieldSources;
+  chains: typeof chains;
 }

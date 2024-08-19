@@ -1,6 +1,7 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
+import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
@@ -199,6 +200,7 @@ export async function getAppConfig({
     hyperdrives: configs,
     protocols,
     yieldSources,
+    chains,
   };
 
   return config;
