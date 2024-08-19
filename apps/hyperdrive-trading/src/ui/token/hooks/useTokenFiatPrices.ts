@@ -1,6 +1,8 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
+import { sepolia } from "viem/chains";
 import { useChainId, useChains } from "wagmi";
 
 /**
@@ -17,7 +19,7 @@ export function useTokenFiatPrices(
   const chainName =
     chains?.find((network) => network.id === chainId)?.name ?? "Ethereum";
   const coins = addresses.map((address) => `${chainName}:${address}`).join(",");
-  const queryEnabled = !!coins;
+  const queryEnabled = !!coins && chainId !== sepolia.id;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenPrices", { coins }),
@@ -40,4 +42,36 @@ export function useTokenFiatPrices(
       : undefined,
   });
   return data ?? {};
+}
+
+export function useTokenFiatPrice({
+  tokenAddress,
+}: {
+  tokenAddress: Address | undefined;
+}): {
+  fiatPrice: bigint | undefined;
+} {
+  const chainId = useChainId();
+  const chains = useChains();
+  const chainName =
+    chains?.find((network) => network.id === chainId)?.name ?? "Ethereum";
+  const defiLlamaTokenId = `${chainName}:${tokenAddress}`;
+
+  const queryEnabled = chainId !== sepolia.id && !!tokenAddress;
+
+  const { data } = useQuery({
+    queryKey: makeQueryKey("tokenFiatPrice", { defiLlamaTokenId }),
+    enabled: queryEnabled,
+    queryFn: queryEnabled
+      ? async () => {
+          const response = await fetch(
+            `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`,
+          );
+          const data = await response.json();
+          const { price } = data.coins[defiLlamaTokenId];
+          return parseFixed(price).bigint;
+        }
+      : undefined,
+  });
+  return { fiatPrice: data };
 }
