@@ -8,6 +8,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://github.com/wevm/wagmi/discussions/2248
 export default defineConfig({
   build: {
+    // target esnext is needed for top-level await support
     target: "esnext",
   },
   plugins: [
