@@ -1,4 +1,5 @@
 import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
+import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -132,27 +133,42 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             value={"5.5%"}
             variant="gradient"
             action={
-              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+              <Link
+                to="/market/$address"
+                params={{ address: hyperdrive.address }}
+                search={{ position: "longs" }}
+                className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+              >
                 Long
-              </button>
+              </Link>
             }
           />
           <PoolStat
             label={"Variable APY"}
             value={"5.5%"}
             action={
-              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+              <Link
+                to="/market/$address"
+                params={{ address: hyperdrive.address }}
+                search={{ position: "shorts" }}
+                className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+              >
                 Short
-              </button>
+              </Link>
             }
           />
           <PoolStat
             label={"LP APY (1d)"}
             value={"5.5%"}
             action={
-              <button className="daisy-btn daisy-btn-sm rounded-full bg-gray-600">
+              <Link
+                to="/market/$address"
+                params={{ address: hyperdrive.address }}
+                search={{ position: "lp" }}
+                className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+              >
                 Supply
-              </button>
+              </Link>
             }
           />
         </div>
