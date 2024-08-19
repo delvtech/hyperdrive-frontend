@@ -152,7 +152,7 @@ export function CurrentValueCellTwo({
          have calcMaxCloseLong */}
         {previewCloseLongError ? (
           <span
-            className="daisy-tooltip before:font-normal"
+            className="daisy-tooltip before:z-10 before:border before:font-inter"
             data-tip="This position cannot be fully closed at this time"
           >
             <ExclamationTriangleIcon className="size-4 text-warning" />
@@ -167,9 +167,9 @@ export function CurrentValueCellTwo({
         className={classNames(
           "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
           {
-            "rounded-md border-[1px] border-success/20 bg-success/20 px-1 py-[1px] text-success":
+            "rounded-md border border-success/20 bg-success/20 px-1 text-success":
               isPositiveChangeInValue,
-            "rounded-md border-[1px] border-error/20 bg-error/20 px-1 py-[1px] text-error":
+            "rounded-md border border-error/20 bg-error/20 px-1 text-error":
               !isPositiveChangeInValue && profitLoss !== "-0",
           },
         )}

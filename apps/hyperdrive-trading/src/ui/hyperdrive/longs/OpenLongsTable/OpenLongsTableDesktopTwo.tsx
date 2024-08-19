@@ -52,8 +52,7 @@ export function OpenLongsContainer(): ReactElement {
         );
         if (
           openLongPositionsStatus === "success" &&
-          openLongPositions &&
-          openLongPositions[hyperdrive.address].length === 0
+          !openLongPositions?.[hyperdrive.address]?.length
         ) {
           return null;
         }
@@ -166,7 +165,7 @@ export function OpenLongsTableDesktopTwo({
   }
 
   return (
-    <div className="overflow-x-clip rounded-box bg-[#152025]">
+    <div className="overflow-x-clip rounded-box bg-gray-750">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -210,7 +209,7 @@ export function OpenLongsTableDesktopTwo({
                   {/* Custom border with inset for the first and last header cells */}
                   <span
                     className={classNames(
-                      "absolute bottom-0 border-b-[0.5px] border-neutral-content/20",
+                      "absolute bottom-0 border-b border-neutral-content/20",
                       {
                         "left-6 right-0": headerIndex === 0, // Inset border only on the left side for the first header cell
                         "left-0 right-6":
@@ -262,7 +261,8 @@ export function OpenLongsTableDesktopTwo({
                     {!isLastRow && (
                       <span
                         className={classNames(
-                          "absolute bottom-0 border-b-[0.5px] border-neutral-content/20",
+                          // Most displays round half pixels to the nearest whole pixel. As a workaround, we can use a 1px border and scale it down so it appears as a 0.5px border.
+                          "absolute bottom-0 left-0 right-0 scale-y-50 transform border-b border-neutral-content/20",
                           {
                             "left-6 right-0": cellIndex === 0, // Inset border only on the left side for the first cell
                             "left-0 right-6":
@@ -384,8 +384,6 @@ function getColumns({
     columnHelper.display({
       id: "go-to-market",
       cell: ({ row }) => {
-        const maturityDateMS = row.original.maturity * 1000n;
-        const maturityDate = new Date(Number(maturityDateMS));
         return (
           <div className="flex w-full items-center font-inter">
             <button
