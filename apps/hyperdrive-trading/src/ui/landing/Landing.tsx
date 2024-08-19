@@ -7,13 +7,16 @@ import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { Hero } from "src/ui/landing/Hero/Hero";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 import { mainnet, sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
@@ -84,6 +87,11 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
     hyperdriveAddress: hyperdrive.address,
   });
 
+  const { fixedApr } = useFixedRate(hyperdriveAddress);
+  const { vaultRate } = useYieldSourceRate({ hyperdriveAddress });
+  const { lpApy, lpApyStatus } = useLpApy(hyperdriveAddress);
+  const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
+
   // TODO: convert presentValue into fiat
   const presentValueFiat = presentValue;
 
@@ -130,7 +138,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         <div className="flex shrink-0 items-end gap-10">
           <PoolStat
             label={"Fixed APR"}
-            value={"5.5%"}
+            value={fixedApr?.formatted || "-"}
             variant="gradient"
             action={
               <Link
@@ -145,7 +153,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={"Variable APY"}
-            value={"5.5%"}
+            value={vaultRate?.formatted || "-"}
             action={
               <Link
                 to="/market/$address"
@@ -158,8 +166,16 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             }
           />
           <PoolStat
-            label={"LP APY (1d)"}
-            value={"5.5%"}
+            label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
+            value={
+              // TODO: Fix useLpApy to have the same interface as
+              // useYieldSourceRate and useFixedRate
+              lpApy && !isLpApyNew
+                ? `${(lpApy * 100).toFixed(2)}%`
+                : isLpApyNew
+                  ? "✨New✨"
+                  : "-"
+            }
             action={
               <Link
                 to="/market/$address"
