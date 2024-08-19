@@ -15,7 +15,7 @@ export function Page({ children }: PropsWithChildren): ReactElement {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
-      <div className="flex w-full grow flex-col gap-9">
+      <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
 
         {/* analytics */}

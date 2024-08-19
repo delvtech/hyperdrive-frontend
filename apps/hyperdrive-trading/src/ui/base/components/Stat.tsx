@@ -32,7 +32,7 @@ export function Stat({
       )}
     >
       <div
-        className={classNames("whitespace-nowrap font-bold ", {
+        className={classNames("whitespace-nowrap font-bold", {
           "mb-1 text-h5 lg:text-h4": size === "large",
           "text-sm": size === "small",
           "text-xs": size === "xsmall",
@@ -56,7 +56,7 @@ export function Stat({
           )}
         >
           {label}
-          <InformationCircleIcon className="group-hover:text-gray-500 ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
+          <InformationCircleIcon className="ml-1 hidden w-4 text-neutral-content opacity-0 transition duration-150 ease-in-out group-hover:text-gray-500 group-hover:opacity-100 lg:inline-block" />
         </p>
       ) : (
         <div className="text-sm text-neutral-content">{label}</div>

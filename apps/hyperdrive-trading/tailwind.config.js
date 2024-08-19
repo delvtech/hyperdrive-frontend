@@ -43,7 +43,8 @@ module.exports = {
         500: "#4E6A77",
         600: "#243942",
         700: "#202F36",
-        800: "#1A272D",
+        // 800: "#1A272D",
+        800: "#141E23",
         900: "#10191D",
       },
     },
@@ -84,7 +85,7 @@ module.exports = {
           accent: "#14D0F9", // teal DEFAULT
           "accent-content": "#10191D", // Neutral-900
 
-          neutral: "#1A272D", // Neutral-800
+          neutral: "#141E23", // Neutral-800
           "neutral-content": "#9CBBC9", // Neutral-800
 
           "base-100": "#10191D", // Gray-900

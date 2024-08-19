@@ -13,6 +13,7 @@ import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
 const baseSepoliaAppConfig: AppConfig = {
+  chains: {},
   registries: {
     [baseSepolia.id]: ZERO_ADDRESS,
   },
@@ -23,6 +24,7 @@ const baseSepoliaAppConfig: AppConfig = {
 };
 
 const b3SepoliaAppConfig: AppConfig = {
+  chains: {},
   registries: {
     [b3Sepolia.id]: ZERO_ADDRESS,
   },

@@ -7,6 +7,9 @@ import { YieldSourceMarketsTableDesktop } from "src/ui/markets/YieldSourceMarket
 import { YieldSourceMarketsTableMobile } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableMobile";
 import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
+/**
+ * @deprecated
+ */
 export function YieldSourceCard({
   yieldSource,
 }: {
@@ -40,7 +43,7 @@ export function YieldSourceCard({
   );
 
   return (
-    <Well transparent interactive block={isSmallScreen}>
+    <Well interactive block={isSmallScreen}>
       <div className="flex flex-col gap-12 md:w-[740px] md:gap-2">
         <div className="flex flex-col justify-between gap-2 sm:flex-row sm:gap-8 md:p-4">
           {/* Card header */}
