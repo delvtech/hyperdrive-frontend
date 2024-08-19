@@ -1,5 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { ChevronDownIcon, ClockIcon } from "@heroicons/react/24/outline";
+import { ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
@@ -35,7 +35,8 @@ export function Landing(): ReactElement | null {
       <div className="flex w-full flex-col items-center">
         {isNewPoolsView ? (
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
+            {/* TODO: Implement filter buttons
+             <div className="flex items-center gap-3">
               <button className="daisy-btn daisy-btn-sm gap-1.5 rounded-full">
                 All Terms
                 <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
@@ -48,7 +49,7 @@ export function Landing(): ReactElement | null {
                 All Chains
                 <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
               </button>
-            </div>
+            </div> */}
             <PoolRows />
           </div>
         ) : (

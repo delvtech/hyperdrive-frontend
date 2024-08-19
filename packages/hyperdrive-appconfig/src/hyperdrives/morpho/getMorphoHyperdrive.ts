@@ -41,8 +41,12 @@ export async function getMorphoHyperdrive({
     yieldSourceShortName: yieldSources[yieldSourceId].shortName,
   });
 
+  // safe to cast here because we know the pool was initialized
+  const initializationBlock = (await hyperdrive.getInitializationBlock())
+    .blockNumber as bigint;
   const hyperdriveConfig: HyperdriveConfig = {
     chainId: await hyperdrive.network.getChainId(),
+    initializationBlock,
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
