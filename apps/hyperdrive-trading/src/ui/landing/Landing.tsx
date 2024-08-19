@@ -18,7 +18,6 @@ import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { mainnet, sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -78,10 +77,11 @@ function PoolRows() {
 }
 function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   const appConfig = useAppConfig();
-  const { yieldSources } = appConfig;
+  const { yieldSources, chains } = appConfig;
   const hyperdrive = appConfig.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;
+  const chainInfo = chains[hyperdrive.chainId];
 
   const { presentValue } = usePresentValue({
     hyperdriveAddress: hyperdrive.address,
@@ -94,9 +94,6 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
 
   // TODO: convert presentValue into fiat
   const presentValueFiat = presentValue;
-
-  // TODO: Move this into appconfig
-  const chainInfo = getChainInfo(hyperdrive.chainId);
 
   return (
     <Well block>
@@ -127,8 +124,8 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
-                <img src={chainInfo?.logo} />
-                <span className="text-neutral-content">{chainInfo?.name}</span>
+                <img className="size-4 rounded-full" src={chainInfo.iconUrl} />
+                <span className="text-neutral-content">{chainInfo.name}</span>
               </div>
             </div>
           </div>
@@ -205,21 +202,6 @@ function YieldSourceCards() {
       ))}
     </div>
   );
-}
-
-/**
- * @deprecated Temporary code, this will be moved into appconfig
- * https://github.com/delvtech/hyperdrive-frontend/issues/1371
- */
-function getChainInfo(chainId: number) {
-  if (chainId === mainnet.id) {
-    return { name: "Mainnet", logo: "/ethereum-mainnet.svg" };
-  }
-
-  if (chainId === sepolia.id) {
-    // TODO: Add sepolia logo
-    return { name: "Sepolia", logo: "/ethereum-mainnet.svg" };
-  }
 }
 
 function PoolStat({
