@@ -11,6 +11,7 @@ export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
 
   const remainingTime = getRemainingTimeLabel({
     maturitySeconds: Number(maturity),
+    condensed: true,
   });
 
   return (

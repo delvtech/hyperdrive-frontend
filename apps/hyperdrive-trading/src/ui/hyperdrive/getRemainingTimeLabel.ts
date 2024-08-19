@@ -22,8 +22,12 @@ export function getRemainingTimeLabel({
     Number(maturitySeconds),
   );
 
-  if (isTermComplete) {
+  if (isTermComplete && condensed) {
     return "Complete";
+  }
+
+  if (isTermComplete) {
+    return "Term Complete";
   }
 
   const suffix = showLeftSuffix ? " left" : "";
