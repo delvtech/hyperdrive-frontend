@@ -15,12 +15,12 @@ export function TabsTwo<TabId extends string>({
   activeTabId: TabId;
 }): ReactElement {
   return (
-    <div role="tablist" className="daisy-tabs daisy-tabs-lg text-clip">
+    <div role="tablist" className="daisy-tabs daisy-tabs-lg">
       {tabs.map(({ id, onClick, label }) => (
         <input
           key={id}
           className={classNames(
-            "daisy-tab font-chakraPetch",
+            "daisy-tab font-chakraPetch text-h4",
 
             {
               "daisy-tab-active border-b-2 !border-b-primary/40 pb-1":
