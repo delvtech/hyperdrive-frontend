@@ -21,7 +21,7 @@ export function Well({
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
-    "daisy-card p-8 border border-1 border-neutral-content/20",
+    "daisy-card p-8 border border-1 border-base-200",
     {
       "shadow-md": elevation === "elevated",
       "bg-gray-800": !transparent,

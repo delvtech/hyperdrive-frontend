@@ -102,14 +102,14 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
     <Well block>
       <div className="flex justify-between gap-4">
         {/* Left side */}
-        <div className="flex items-center gap-6">
+        <div className="flex w-[440px] items-center gap-6">
           <div>
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
             <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
             <div className="flex gap-5">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-500" />{" "}
                 <span className="text-neutral-content">
                   {formatTermLength2(
@@ -117,16 +117,16 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                   )}
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 text-neutral-content">
-                <span className="text-sm text-gray-500">TVL</span>{" "}
-                <span className="text-neutral-content">
+              <div className="flex items-center gap-1.5 text-sm">
+                <span className="text-gray-500">TVL</span>{" "}
+                <span className="font-dmMono text-neutral-content">
                   {`$${formatCompact({
                     value: presentValueFiat || 0n,
                     decimals: hyperdrive.decimals,
                   })}`}
                 </span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 text-sm">
                 <img src={chainInfo?.logo} />
                 <span className="text-neutral-content">{chainInfo?.name}</span>
               </div>
