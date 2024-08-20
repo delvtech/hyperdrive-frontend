@@ -32,7 +32,9 @@ export function ShortRateAndSizeCell({
       <div className="flex items-center gap-2 text-md">
         <p>{`${formatRate(short.fixedRatePaid)} APR`}</p>
         <div
-          data-tip={"Profit/Loss since open, after closing fees."}
+          data-tip={
+            "The difference between the rate you shorted and the current rate."
+          }
           className={classNames(
             "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
             {
