@@ -14,7 +14,7 @@ export function Page({ children }: PropsWithChildren): ReactElement {
   useAddressScreen();
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between">
+    <div className="flex min-h-screen flex-col items-center justify-between gap-9">
       <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
 
