@@ -72,12 +72,20 @@ function PoolRows() {
 
   return (
     <div className="flex w-full flex-col gap-5">
-      {appConfig.hyperdrives.map((hyperdrive) => (
-        <PoolRow
-          key={hyperdrive.address}
-          hyperdriveAddress={hyperdrive.address}
-        />
-      ))}
+      {
+        // Show the newest pools first
+        [...appConfig.hyperdrives]
+          .sort(
+            (a, b) =>
+              Number(b.initializationBlock) - Number(a.initializationBlock),
+          )
+          .map((hyperdrive) => (
+            <PoolRow
+              key={hyperdrive.address}
+              hyperdriveAddress={hyperdrive.address}
+            />
+          ))
+      }
     </div>
   );
 }
@@ -128,15 +136,15 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
 
   return (
     <Well block>
-      <div className="flex justify-between gap-4">
+      <div className="flex flex-col justify-between gap-6 lg:flex-row lg:gap-4">
         {/* Left side */}
-        <div className="flex w-[440px] items-center gap-6">
+        <div className="flex items-center gap-6 lg:w-[440px]">
           <div>
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
             <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
-            <div className="flex gap-5">
+            <div className="flex flex-wrap gap-5 gap-y-2">
               <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-500" />{" "}
                 <span className="text-neutral-content">
@@ -160,7 +168,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         </div>
 
         {/* Right side */}
-        <div className="flex shrink-0 items-end gap-10">
+        <div className="flex shrink-0 justify-between gap-10 lg:items-end lg:justify-start">
           <PoolStat
             label={"Fixed APR"}
             value={fixedApr ? formatRate(fixedApr.apr, 18, false) : "-"}

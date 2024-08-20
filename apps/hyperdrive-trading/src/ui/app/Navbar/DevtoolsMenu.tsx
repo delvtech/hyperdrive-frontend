@@ -48,7 +48,12 @@ function FeatureFlagMenuItem({
   const { isFlagEnabled, enableFlag, disableFlag } = useFeatureFlag(flagName);
   return (
     <li>
-      <button onClick={isFlagEnabled ? disableFlag : enableFlag}>
+      <button
+        onClick={() => {
+          isFlagEnabled ? disableFlag() : enableFlag();
+          location.reload();
+        }}
+      >
         {children}
         {isFlagEnabled ? (
           <div className="daisy-badge daisy-badge-primary daisy-badge-sm">

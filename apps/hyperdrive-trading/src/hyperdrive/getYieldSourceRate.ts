@@ -23,10 +23,9 @@ export async function getYieldSourceRate(
       // than 24 hours ago and try to get the all-time rate
       .catch(async () => {
         const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
-        const initializationBlock =
-          await readHyperdrive.getInitializationBlock();
+        const initializationBlock = hyperdrive.initializationBlock;
         const blocksSinceInitialization =
-          currentBlock.blockNumber! - initializationBlock.blockNumber!;
+          currentBlock.blockNumber! - initializationBlock;
 
         return readHyperdrive.getYieldSourceRate({
           blockRange: blocksSinceInitialization,
