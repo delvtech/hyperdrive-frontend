@@ -1,7 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { Link } from "@tanstack/react-router";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -10,10 +9,8 @@ import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useBridgeTokenBalances } from "src/ui/bridge/hooks/useBridgeTokenBalances";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -44,7 +41,6 @@ export function OpenLongForm({
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId();
-  const { isFlagEnabled: isBridgingEnabled } = useFeatureFlag("bridge");
 
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
@@ -52,12 +48,6 @@ export function OpenLongForm({
     baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
-
-  const tokenSymbol = baseToken.symbol;
-  const { balances = [[]] } = useBridgeTokenBalances(account, [tokenSymbol]);
-  const hasBridgeableBalance = balances[0]?.some(
-    ({ balance }) => Number(balance) > 0,
-  );
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -196,21 +186,6 @@ export function OpenLongForm({
     );
   }
 
-  const switchToBridgeUILink = (
-    <Link
-      to="/bridge"
-      search={{
-        token: activeToken.symbol,
-        destination: chainId,
-      }}
-      className="daisy-btn daisy-btn-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {`Bridge ${tokenSymbol} from L2s`}
-    </Link>
-  );
-
   return (
     <TransactionView
       tokenInput={
@@ -271,9 +246,6 @@ export function OpenLongForm({
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
-      }
-      setting={
-        isBridgingEnabled && hasBridgeableBalance ? switchToBridgeUILink : null
       }
       primaryStats={
         <OpenLongStats
