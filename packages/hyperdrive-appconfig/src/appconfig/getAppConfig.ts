@@ -1,4 +1,4 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { chains } from "src/chains/chains";
@@ -14,9 +14,152 @@ import {
   EZETH_ICON_URL,
   RETH_ICON_URL,
   SDAI_ICON_URL,
+  USDC_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
+
+type HyperdriveConfigResolver = (
+  hyperdrive: ReadHyperdrive,
+  publicClient: PublicClient,
+) => Promise<{
+  hyperdriveConfig: HyperdriveConfig;
+  sharesTokenConfig?: TokenConfig;
+  baseTokenConfig?: TokenConfig;
+}>;
+
+const hyperdriveKindResolvers: Record<
+  string /* kind */,
+  HyperdriveConfigResolver
+> = {
+  EzETHHyperdrive: async (hyperdrive: ReadHyperdrive) =>
+    getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "ezEth",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: EZETH_ICON_URL,
+      sharesTokenTags: ["liquidStakingToken"],
+      tokenPlaces: 4,
+    }),
+
+  RETHHyperdrive: async (hyperdrive) =>
+    getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "reth",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: RETH_ICON_URL,
+      sharesTokenTags: ["liquidStakingToken"],
+      tokenPlaces: 4,
+    }),
+
+  StETHHyperdrive: (hyperdrive) => getStethHyperdrive({ hyperdrive }),
+
+  ERC4626Hyperdrive: async (hyperdrive) => {
+    const readSharesToken = await hyperdrive.getSharesToken();
+    const sharesTokenSymbol = (
+      await readSharesToken.getSymbol()
+    ).toUpperCase() as Uppercase<string>;
+
+    if (
+      [
+        "DELV", // cloudchain
+        "SDAI", // sepolia and mainnet
+      ].includes(sharesTokenSymbol)
+    ) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "makerDsr",
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        baseTokenIconUrl: DAI_ICON_URL,
+        baseTokenTags: ["stablecoin"],
+        sharesTokenIconUrl: SDAI_ICON_URL,
+        tokenPlaces: 2,
+      });
+    }
+    throw new Error(
+      `Unknown ERC4626Hyperdrive, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
+    );
+  },
+
+  MorphoBlueHyperdrive: async (hyperdrive, publicClient) => {
+    // There are several MorphoBlue hyperdrives, each with different yield sources.
+    // Once we’ve identified it as a MorphoBlueHyperdrive, we can use the name to
+    // determine the exact type of hyperdrive.
+    // TODO: Replace this direct call to the publicClient with a call to
+    // the sdk's hyperdrive.getName() once overloaded methods are
+    // supported (currently only supports the 1155 interface, ie:
+    // `name(tokenId)`).
+    const hyperdriveName = await publicClient.readContract({
+      address: hyperdrive.address,
+      abi: hyperdrive.contract.abi,
+      functionName: "name",
+    });
+
+    if (
+      hyperdriveName.includes("MORPHO_BLUE_DAI") || // sepolia
+      hyperdriveName.includes("Morpho Blue sUSDe/DAI Hyperdrive") // mainnet
+    ) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: DAI_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoSusdeDai",
+      });
+    }
+
+    if (
+      hyperdriveName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia and mainnet
+    ) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: DAI_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoUsdeDai",
+      });
+    }
+
+    if (
+      hyperdriveName.includes("wstETH/USDC Morpho Blue Hyperdrive") // sepolia
+    ) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: USDC_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoWstethUsdc",
+      });
+    }
+
+    throw new Error(
+      `Unknown MorphoBlueHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
+    );
+  },
+};
 
 export async function getAppConfig({
   registryAddress,
@@ -38,157 +181,31 @@ export async function getAppConfig({
 
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
-      // TODO: Replace this with a call to hyperdrive.getKind()
-      const hackName = await publicClient.readContract({
-        address: hyperdrive.address,
-        abi: hyperdrive.contract.abi,
-        functionName: "name",
+      const kind = await hyperdrive.getKind();
+      const hyperdriveResolver = hyperdriveKindResolvers[kind];
+      if (!hyperdriveResolver) {
+        throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);
+      }
+
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+        await hyperdriveResolver(hyperdrive, publicClient);
+
+      console.table({
+        chainId: publicClient.chain?.id,
+        kind: kind,
+        name: hyperdriveConfig.name,
       });
-      console.log("Hyperdrive Name: ", hackName);
 
-      if (
-        // partial string matches for flexibility
-        hackName.includes("MORPHO_BLUE_DAI") || // sepolia
-        hackName.includes("Morpho Blue sUSDe/DAI Hyperdrive") // mainnet
-      ) {
-        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
-          hyperdrive,
-          baseTokenTags: ["stablecoin"],
-          baseTokenIconUrl: DAI_ICON_URL,
-          baseTokenPlaces: 2,
-          yieldSourceId: "morphoSusdeDai",
-        });
-
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
+      // Not all hyperdrives have a base or shares token, so only add them if
+      // they exist. (Note: `tokens` is deduped at the end)
+      if (baseTokenConfig) {
+        tokens.push(baseTokenConfig);
       }
-      if (
-        // partial string matches for flexibility
-        hackName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia
-      ) {
-        const { baseToken, hyperdriveConfig } = await getMorphoHyperdrive({
-          hyperdrive,
-          baseTokenTags: ["stablecoin"],
-          baseTokenIconUrl: DAI_ICON_URL,
-          baseTokenPlaces: 2,
-          yieldSourceId: "morphoUsdeDai",
-        });
-
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
+      if (sharesTokenConfig) {
+        tokens.push(sharesTokenConfig);
       }
 
-      const token = await hyperdrive.getSharesToken();
-      const tokenSymbol = (
-        await token.getSymbol()
-      ).toUpperCase() as Uppercase<string>;
-
-      if (
-        [
-          "DELV", // cloudchain
-          "SDAI", // sepolia and mainnet
-        ].includes(tokenSymbol)
-      ) {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getCustomHyperdrive({
-            hyperdrive,
-            yieldSource: "makerDsr",
-            depositOptions: {
-              isBaseTokenDepositEnabled: true,
-              isShareTokenDepositsEnabled: true,
-            },
-            withdrawalOptions: {
-              isBaseTokenWithdrawalEnabled: true,
-              isShareTokenWithdrawalEnabled: true,
-            },
-            baseTokenIconUrl: DAI_ICON_URL,
-            baseTokenTags: ["stablecoin"],
-            sharesTokenIconUrl: SDAI_ICON_URL,
-            tokenPlaces: 2,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      // Lido stETH
-      if (tokenSymbol === "STETH") {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getStethHyperdrive({
-            hyperdrive,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      // Rocket Pool
-      if (tokenSymbol === "RETH") {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getCustomHyperdrive({
-            hyperdrive,
-            yieldSource: "reth",
-            depositOptions: {
-              // you can't deposit eth into reth hyperdrive due to how the reth
-              // contract works (it does not queue deposits the same way steth
-              // does)
-              isBaseTokenDepositEnabled: false,
-              isShareTokenDepositsEnabled: true,
-            },
-            withdrawalOptions: {
-              // you can't withdraw eth from staking protocols
-              isBaseTokenWithdrawalEnabled: false,
-              isShareTokenWithdrawalEnabled: true,
-            },
-            baseTokenIconUrl: ETH_ICON_URL,
-            sharesTokenIconUrl: RETH_ICON_URL,
-            sharesTokenTags: ["liquidStakingToken"],
-            tokenPlaces: 4,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      // Renzo ezETH
-      if (tokenSymbol === "EZETH") {
-        const { sharesToken, baseToken, hyperdriveConfig } =
-          await getCustomHyperdrive({
-            hyperdrive,
-            yieldSource: "ezEth",
-            depositOptions: {
-              // don't let users deposit sepolia eth into the testnet
-              isBaseTokenDepositEnabled: false,
-              isShareTokenDepositsEnabled: true,
-            },
-            withdrawalOptions: {
-              // you can't withdraw eth from staking protocols
-              isBaseTokenWithdrawalEnabled: false,
-              isShareTokenWithdrawalEnabled: true,
-            },
-            baseTokenIconUrl: ETH_ICON_URL,
-            sharesTokenIconUrl: EZETH_ICON_URL,
-            sharesTokenTags: ["liquidStakingToken"],
-            tokenPlaces: 4,
-          });
-
-        tokens.push(sharesToken);
-        tokens.push(baseToken);
-
-        return hyperdriveConfig;
-      }
-
-      throw new Error(
-        `Missing Hyperdrive config implementation for address: ${hyperdrive.address}`,
-      );
+      return hyperdriveConfig;
     }),
   );
 
@@ -202,6 +219,10 @@ export async function getAppConfig({
     yieldSources,
     chains,
   };
+
+  console.log(
+    `App config generated successfully with ${configs.length} hyperdrives`,
+  );
 
   return config;
 }

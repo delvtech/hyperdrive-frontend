@@ -42,6 +42,13 @@ const morphoUsdeDai: YieldSource = {
   isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
+const morphoWstethUsdc: YieldSource = {
+  id: "morphoWstethUsdc",
+  shortName: "Morpho wstETH/USDC",
+  protocol: "morpho",
+  isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
+};
 
 const reth: YieldSource = {
   id: "reth",
@@ -64,6 +71,7 @@ export const yieldSources = {
   lidoSteth,
   morphoSusdeDai,
   morphoUsdeDai,
+  morphoWstethUsdc,
   reth,
   ezEth,
 } as const;

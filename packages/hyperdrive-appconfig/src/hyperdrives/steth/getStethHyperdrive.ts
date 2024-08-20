@@ -14,8 +14,8 @@ export async function getStethHyperdrive({
 }: {
   hyperdrive: ReadHyperdrive;
 }): Promise<{
-  sharesToken: TokenConfig<EmptyExtensions>;
-  baseToken: TokenConfig<EmptyExtensions>;
+  sharesTokenConfig: TokenConfig;
+  baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
   const chainId = await hyperdrive.network.getChainId();
@@ -76,8 +76,8 @@ export async function getStethHyperdrive({
   };
 
   return {
-    sharesToken: sharesTokenConfig,
-    baseToken: baseTokenConfig,
-    hyperdriveConfig: hyperdriveConfig,
+    sharesTokenConfig,
+    baseTokenConfig,
+    hyperdriveConfig,
   };
 }
