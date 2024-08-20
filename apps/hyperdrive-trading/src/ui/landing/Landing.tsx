@@ -72,12 +72,20 @@ function PoolRows() {
 
   return (
     <div className="flex w-full flex-col gap-5">
-      {appConfig.hyperdrives.map((hyperdrive) => (
-        <PoolRow
-          key={hyperdrive.address}
-          hyperdriveAddress={hyperdrive.address}
-        />
-      ))}
+      {
+        // Show the newest pools first
+        [...appConfig.hyperdrives]
+          .sort(
+            (a, b) =>
+              Number(b.initializationBlock) - Number(a.initializationBlock),
+          )
+          .map((hyperdrive) => (
+            <PoolRow
+              key={hyperdrive.address}
+              hyperdriveAddress={hyperdrive.address}
+            />
+          ))
+      }
     </div>
   );
 }
