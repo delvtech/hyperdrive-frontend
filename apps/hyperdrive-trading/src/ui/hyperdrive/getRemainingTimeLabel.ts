@@ -22,6 +22,10 @@ export function getRemainingTimeLabel({
     Number(maturitySeconds),
   );
 
+  if (isTermComplete && condensed) {
+    return "Complete";
+  }
+
   if (isTermComplete) {
     return "Term complete";
   }

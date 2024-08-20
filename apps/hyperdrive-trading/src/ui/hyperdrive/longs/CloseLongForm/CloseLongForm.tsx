@@ -226,7 +226,6 @@ export function CloseLongForm({
               >
                 {getRemainingTimeLabel({
                   maturitySeconds: Number(long.maturity),
-                  condensed: true,
                   showLeftSuffix: false,
                 })}
               </span>
