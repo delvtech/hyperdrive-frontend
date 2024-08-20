@@ -9,7 +9,10 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-
+/**
+ * @deprecated Use CurrentValueCellTwo instead. Remove this component once all references to it have been replaced.
+ * Returns the current value of a long position, and the profit/loss since the position was opened.
+ */
 export function CurrentValueCell({
   row,
   hyperdrive,

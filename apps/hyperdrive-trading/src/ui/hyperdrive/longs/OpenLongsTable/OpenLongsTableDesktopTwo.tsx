@@ -145,21 +145,8 @@ export function OpenLongsTableDesktopTwo({
     );
   }
 
-  if (!openLongs?.length && openLongsStatus === "success") {
-    if (marketState?.isPaused) {
-      return (
-        <div className="my-28">
-          <NonIdealState
-            heading="Market Paused"
-            text="This market is currently paused. You cannot open new positions but you may close existing ones."
-          />
-        </div>
-      );
-    }
-  }
-
   return (
-    <div className="daisy-card overflow-x-clip rounded-box bg-gray-750">
+    <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 py-3">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -187,7 +174,7 @@ export function OpenLongsTableDesktopTwo({
                     className={classNames({
                       "flex cursor-pointer select-none items-center gap-2":
                         header.column.getCanSort(),
-                      "px-4": headerIndex === 0, // Add padding only to the first header cell
+                      "px-4": headerIndex === 0, // Add padding only to the first header cell. This is so that the headers line up vertically with the card title
                     })}
                     onClick={header.column.getToggleSortingHandler()}
                   >
@@ -241,7 +228,7 @@ export function OpenLongsTableDesktopTwo({
                     className={classNames(
                       "relative text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
-                        "px-10": cellIndex === 0, // Add padding only to the first cell
+                        "px-10": cellIndex === 0, // Add padding only to the first cell. This is so that the data line up vertically with the header title
                         "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":

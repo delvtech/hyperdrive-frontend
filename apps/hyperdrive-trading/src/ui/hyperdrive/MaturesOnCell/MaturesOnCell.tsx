@@ -6,6 +6,10 @@ import { formatDate } from "src/ui/base/formatting/formatDate";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useBlock } from "wagmi";
 
+/**
+ * @deprecated Use MaturesOnCellTwo instead. Remove this component once all references to it have been replaced.
+ * Returns the maturity date of a long in a human-readable format.
+ */
 export function MaturesOnCell({
   maturity,
 }: {

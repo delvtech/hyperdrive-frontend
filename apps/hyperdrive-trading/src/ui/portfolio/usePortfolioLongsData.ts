@@ -3,6 +3,7 @@ import {
   ReadHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useAccount, usePublicClient } from "wagmi";
@@ -20,7 +21,7 @@ export function usePortfolioLongsData(): {
 
   const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
-      queryKey: ["portfolio/longs", account],
+      queryKey: makeQueryKey("portfolioLongs", { account }),
       enabled: queryEnabled,
       queryFn: queryEnabled
         ? async () => {

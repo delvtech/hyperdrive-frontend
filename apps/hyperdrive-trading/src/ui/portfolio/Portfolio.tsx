@@ -19,7 +19,6 @@ export function Portfolio(): ReactElement {
             label: "Long",
             onClick: () => {
               navigate({
-                // params: { address },
                 search: () => ({ position: "longs" }),
               });
             },
@@ -31,7 +30,6 @@ export function Portfolio(): ReactElement {
             label: "Short",
             onClick: () => {
               navigate({
-                // params: { address },
                 search: () => ({ position: "shorts" }),
               });
             },
@@ -43,7 +41,6 @@ export function Portfolio(): ReactElement {
             label: "LP",
             onClick: () => {
               navigate({
-                // params: { address },
                 search: () => ({ position: "lp" }),
               });
             },
