@@ -2,6 +2,7 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { TabsTwo } from "src/ui/base/components/Tabs/TabsTwo";
 import { OpenLongsContainer } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktopTwo";
+import { OpenShortsContainer } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktopTwo";
 import { PORTFOLIO_ROUTE } from "src/ui/markets/routes";
 
 export function Portfolio(): ReactElement {
@@ -25,8 +26,7 @@ export function Portfolio(): ReactElement {
           },
           {
             id: "shorts",
-            // TODO: Implement shorts
-            content: null,
+            content: <OpenShortsContainer />,
             label: "Short",
             onClick: () => {
               navigate({
