@@ -3,6 +3,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import Skeleton from "react-loading-skeleton";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -97,8 +98,10 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   )!;
   const chainInfo = chains[hyperdrive.chainId];
 
-  const { fixedApr } = useFixedRate(hyperdriveAddress);
-  const { vaultRate } = useYieldSourceRate({ hyperdriveAddress });
+  const { fixedApr, fixedRateStatus } = useFixedRate(hyperdriveAddress);
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress,
+  });
   const { lpApy, lpApyStatus } = useLpApy(hyperdriveAddress);
   const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
 
@@ -171,6 +174,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         <div className="flex shrink-0 justify-between gap-10 lg:items-end lg:justify-start">
           <PoolStat
             label={"Fixed APR"}
+            isLoading={fixedRateStatus === "loading"}
             value={fixedApr ? formatRate(fixedApr.apr, 18, false) : "-"}
             variant="gradient"
             action={
@@ -186,6 +190,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={"Variable APY"}
+            isLoading={vaultRateStatus === "loading"}
             value={vaultRate ? formatRate(vaultRate.vaultRate, 18, false) : "-"}
             action={
               <Link
@@ -200,6 +205,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           />
           <PoolStat
             label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
+            isLoading={lpApyStatus === "loading"}
             showPercentage={!isLpApyNew}
             value={
               // TODO: Fix useLpApy to have the same interface as
@@ -247,11 +253,13 @@ function PoolStat({
   value,
   showPercentage = true,
   variant = "default",
+  isLoading = false,
   action,
 }: {
   label: string;
   labelTooltip?: string;
   value: string;
+  isLoading?: boolean;
   showPercentage?: boolean;
   variant?: "default" | "gradient";
   action?: ReactNode;
@@ -269,10 +277,10 @@ function PoolStat({
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
           "gradient-text": variant === "gradient",
-          "after:text-h5 after:content-['%']": showPercentage,
+          "after:text-h5 after:content-['%']": showPercentage && !isLoading,
         })}
       >
-        {value}
+        {isLoading ? <Skeleton width={70} /> : value}
       </div>
       <div>{action}</div>
     </div>
