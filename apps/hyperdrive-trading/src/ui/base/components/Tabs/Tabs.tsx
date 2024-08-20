@@ -7,6 +7,10 @@ export interface Tab<TabId extends string> {
   label: string;
   content: ReactNode;
 }
+
+/**
+ * @deprecated Use TabsTwo instead. Remove this component once all references to it have been replaced.
+ */
 export function Tabs<TabId extends string>({
   tabs,
   activeTabId,
