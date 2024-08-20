@@ -1,14 +1,14 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
+import { sepolia } from "viem/chains";
+import { useAccount } from "wagmi";
 
 export function TotalOpenLongsValue({
   hyperdrive,
@@ -16,8 +16,7 @@ export function TotalOpenLongsValue({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
-  const chainId = useChainId();
+  const { chains, tokens } = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
@@ -29,24 +28,27 @@ export function TotalOpenLongsValue({
     enabled: openLongsStatus === "success",
     hyperdrive,
   });
-  const baseToken = appConfig.tokens.find(
+  const baseToken = tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
-  const tokenPrices = useTokenFiatPrices([baseToken?.address as Address]);
+  const chainInfo = chains[hyperdrive.chainId];
 
-  const baseTokenPrice =
-    tokenPrices?.[baseToken?.address.toLowerCase() as Address];
-  return !isTestnetChain(chainId) ? (
+  const { fiatPrice } = useTokenFiatPrice({ tokenAddress: baseToken?.address });
+  const isFiatPriceEnabled =
+    hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
+    chainInfo.id !== sepolia.id;
+
+  return isFiatPriceEnabled ? (
     <p className="font-dmMono text-h4">
       {`$${formatBalance({
         balance:
-          totalOpenLongsValue && !isLoading && baseTokenPrice
+          totalOpenLongsValue && !isLoading && fiatPrice
             ? fixed(totalOpenLongsValue || 0n, baseToken?.decimals).mul(
-                baseTokenPrice,
+                fiatPrice,
                 baseToken?.decimals,
               ).bigint
             : 0n,
-        decimals: baseToken?.decimals || 18,
+        decimals: hyperdrive.decimals || 18,
         places: 2,
         includeCommas: true,
       })}`}{" "}

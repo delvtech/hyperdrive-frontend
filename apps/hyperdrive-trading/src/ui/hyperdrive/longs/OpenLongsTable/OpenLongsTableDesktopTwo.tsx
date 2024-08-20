@@ -159,7 +159,7 @@ export function OpenLongsTableDesktopTwo({
   }
 
   return (
-    <div className="overflow-x-clip rounded-box bg-gray-750">
+    <div className="daisy-card overflow-x-clip rounded-box bg-gray-750">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
