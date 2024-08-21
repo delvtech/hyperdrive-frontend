@@ -10,6 +10,7 @@ import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
+  EETH_ICON_URL,
   ETH_ICON_URL,
   EZETH_ICON_URL,
   RETH_ICON_URL,
@@ -32,6 +33,23 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
+  EETHHyperdrive: async (hyperdrive) =>
+    getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "eEth",
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: EETH_ICON_URL,
+      sharesTokenTags: ["liquidStakingToken"],
+      tokenPlaces: 4,
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+    }),
   EzETHHyperdrive: async (hyperdrive: ReadHyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
@@ -144,7 +162,7 @@ const hyperdriveKindResolvers: Record<
     }
 
     if (
-      hyperdriveName.includes("wstETH/USDC Morpho Blue Hyperdrive") // sepolia
+      hyperdriveName.includes("Morpho Blue wstETH/USDC Hyperdrive") // cloudchain
     ) {
       return getMorphoHyperdrive({
         hyperdrive,

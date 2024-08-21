@@ -4,7 +4,8 @@ export const SDAI_ICON_URL =
   "https://etherscan.io/token/images/Badgedai_32.svg";
 export const STETH_ICON_URL =
   "https://cryptologos.cc/logos/steth-steth-logo.png?v=029";
-
+export const EETH_ICON_URL =
+  "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063";
 export const DAI_ICON_URL =
   "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029";
 
