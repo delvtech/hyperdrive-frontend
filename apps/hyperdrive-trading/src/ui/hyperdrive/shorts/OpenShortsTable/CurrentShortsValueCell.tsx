@@ -48,7 +48,7 @@ export function CurrentShortsValueCell({
   const profitLossAsBigInt =
     (currentValueInBase || 0n) - openShort.baseAmountPaid;
 
-  const negligibleThreshold = 10n ** BigInt(hyperdrive.decimals - 2); // Define a negligible threshold
+  const negligibleThreshold = 10n ** BigInt(hyperdrive.decimals - 2); // This is the threshold for a negligible change in value. We'll need to show more decimals if the change is negligible.
 
   const isNegligibleChange =
     profitLossAsBigInt > -negligibleThreshold &&
