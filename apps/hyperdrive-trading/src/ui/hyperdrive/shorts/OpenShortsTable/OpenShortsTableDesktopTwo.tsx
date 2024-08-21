@@ -26,11 +26,12 @@ import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell"
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
+import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
+import { ShortRateAndSizeCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePortfolioShortsData } from "src/ui/portfolio/usePortfolioShortsData";
 import { useAccount } from "wagmi";
-import { CurrentShortsValueCell } from "./CurrentShortsValueCell";
-import { ShortRateAndSizeCell } from "./ShortRateAndSizeCell";
+import { TotalOpenShortValue } from "./TotalOpenShortsValue";
 
 export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
@@ -78,7 +79,7 @@ export function OpenShortsContainer(): ReactElement {
                 </div>
                 <p className="text-h4">{hyperdrive.name}</p>
               </div>
-              {/* <TotalOpenLongsValue hyperdrive={hyperdrive} /> */}
+              <TotalOpenShortValue hyperdrive={hyperdrive} />
             </div>
             <OpenShortsTableDesktopTwo
               hyperdrive={hyperdrive}
@@ -145,7 +146,7 @@ export function OpenShortsTableDesktopTwo({
   }
 
   return (
-    <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 py-3">
+    <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -219,7 +220,9 @@ export function OpenShortsTableDesktopTwo({
                 )}
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
+                  (
+                    document.getElementById(modalId) as HTMLDialogElement
+                  )?.showModal();
                 }}
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (

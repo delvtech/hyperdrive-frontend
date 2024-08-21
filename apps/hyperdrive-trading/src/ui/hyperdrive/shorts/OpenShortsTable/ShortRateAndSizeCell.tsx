@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 
 export function ShortRateAndSizeCell({
   hyperdrive,
@@ -18,12 +18,10 @@ export function ShortRateAndSizeCell({
   const baseToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
-  const { vaultRate } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-  });
+  const { fixedApr } = useFixedRate(hyperdrive.address);
 
   // TODO: Use the fixed point library here once it's able to hanlde negative numbers.
-  const rateDifference = short.fixedRatePaid - (vaultRate?.vaultRate || 0n);
+  const rateDifference = short.fixedRatePaid - (fixedApr?.apr || 0n);
 
   const isPositiveChangeInValue = rateDifference > 0;
 

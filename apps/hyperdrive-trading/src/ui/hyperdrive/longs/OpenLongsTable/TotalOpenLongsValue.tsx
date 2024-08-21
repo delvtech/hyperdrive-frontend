@@ -38,30 +38,35 @@ export function TotalOpenLongsValue({
     hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
     chainInfo.id !== sepolia.id;
 
-  return isFiatPriceEnabled ? (
-    <p className="font-dmMono text-h4">
-      {`$${formatBalance({
-        balance:
-          totalOpenLongsValue && !isLoading && fiatPrice
-            ? fixed(totalOpenLongsValue || 0n, baseToken?.decimals).mul(
-                fiatPrice,
-                baseToken?.decimals,
-              ).bigint
-            : 0n,
-        decimals: hyperdrive.decimals || 18,
-        places: 2,
-        includeCommas: true,
-      })}`}{" "}
-    </p>
-  ) : (
-    <p className="font-dmMono text-h4">
-      {formatBalance({
-        balance: totalOpenLongsValue || 0n,
-        decimals: baseToken?.decimals || 18,
-        places: baseToken?.places || 2,
-        includeCommas: true,
-      })}{" "}
-      {baseToken?.symbol}
-    </p>
+  return (
+    <div className="flex items-center gap-2">
+      <img src={chainInfo.iconUrl} className="mr-2 h-10 rounded-full p-1" />
+      {isFiatPriceEnabled ? (
+        <p className="font-dmMono text-h4">
+          {`$${formatBalance({
+            balance:
+              totalOpenLongsValue && !isLoading && fiatPrice
+                ? fixed(totalOpenLongsValue || 0n, baseToken?.decimals).mul(
+                    fiatPrice,
+                    baseToken?.decimals,
+                  ).bigint
+                : 0n,
+            decimals: hyperdrive.decimals || 18,
+            places: 2,
+            includeCommas: true,
+          })}`}{" "}
+        </p>
+      ) : (
+        <p className="font-dmMono text-h4">
+          {formatBalance({
+            balance: totalOpenLongsValue || 0n,
+            decimals: baseToken?.decimals || 18,
+            places: baseToken?.places || 2,
+            includeCommas: true,
+          })}{" "}
+          {baseToken?.symbol}
+        </p>
+      )}
+    </div>
   );
 }
