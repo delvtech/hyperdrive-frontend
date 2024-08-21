@@ -45,32 +45,40 @@ export function CurrentShortsValueCell({
     places: baseToken?.places,
   });
 
+  const profitLossAsBigInt =
+    (currentValueInBase || 0n) - openShort.baseAmountPaid;
+
+  const negligibleThreshold = 10n ** BigInt(hyperdrive.decimals - 2); // Define a negligible threshold
+
+  const isNegligibleChange =
+    profitLossAsBigInt > -negligibleThreshold &&
+    profitLossAsBigInt < negligibleThreshold;
+
   const profitLoss = formatBalance({
-    balance: (currentValueInBase || 0n) - openShort.baseAmountPaid,
+    balance: profitLossAsBigInt,
     decimals: hyperdrive.decimals,
-    places: baseToken?.places,
+    places: isNegligibleChange
+      ? (baseToken?.places || 2) + 2 // Show more decimals if change is negligible. Otherwise the user could see a red -0.00 if there is a small loss.
+      : baseToken?.places,
   });
 
-  const isPositiveChangeInValue =
-    currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
-
-  const cellClassName = classNames("daisy-stat p-0", {
-    "flex w-32 flex-col items-end": !isTailwindSmallScreen,
-  });
+  const isPositiveChangeInValue = profitLossAsBigInt > 0n;
 
   if (previewCloseShortStatus === "loading") {
     return (
-      <div className={cellClassName}>
+      <div
+        className={classNames("daisy-stat p-0", {
+          "flex w-32 flex-col items-end": !isTailwindSmallScreen,
+        })}
+      >
         <Skeleton width={100} />
       </div>
     );
   }
+
   return (
     <div className={"flex items-center gap-2"}>
       <span className="flex items-center gap-2 text-md">
-        {/* warning icon with tooltip for liquidity issues
-             TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
-             have calcMaxCloseLong */}
         {previewCloseShortError ? (
           <span
             className="daisy-tooltip before:z-10 before:border before:font-inter"
@@ -95,8 +103,8 @@ export function CurrentShortsValueCell({
           },
         )}
       >
-        <span>{isPositiveChangeInValue ? "+" : ""}</span>
-        {profitLoss ? `${profitLoss === "-0" ? "0" : profitLoss}` : undefined}
+        <span>{!isNegligibleChange && isPositiveChangeInValue ? "+" : ""}</span>
+        {profitLoss}
       </div>
     </div>
   );
