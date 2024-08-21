@@ -12,7 +12,7 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: process.env.CLOUDCHAIN_REGISTRY_ADDRESS as `0x${string}`,
+  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
   publicClient,
 });
 

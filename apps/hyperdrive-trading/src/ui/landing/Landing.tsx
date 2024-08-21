@@ -1,11 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -17,6 +18,7 @@ import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { Hero } from "src/ui/landing/Hero/Hero";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
@@ -24,7 +26,6 @@ import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -92,6 +93,7 @@ function PoolRows() {
   );
 }
 function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
+  const navigate = useNavigate();
   const appConfig = useAppConfig();
   const { yieldSources, chains } = appConfig;
   const hyperdrive = appConfig.hyperdrives.find(
@@ -113,7 +115,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   });
   const isFiatPriceEnabled =
     hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-    chainInfo.id !== sepolia.id;
+    !isTestnetChain(chainInfo.id);
   const { fiatPrice } = useTokenFiatPrice({
     tokenAddress: isFiatPriceEnabled
       ? hyperdrive.poolConfig.baseToken
@@ -139,7 +141,16 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   }
 
   return (
-    <Well block>
+    <Well
+      block
+      onClick={() => {
+        navigate({
+          to: MARKET_DETAILS_ROUTE,
+          resetScroll: true,
+          params: { address: hyperdriveAddress },
+        });
+      }}
+    >
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:gap-4">
         {/* Left side */}
         <div className="flex items-center gap-6 lg:w-[440px]">
@@ -147,7 +158,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
-            <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
+            <h4 className="text-left">
+              {yieldSources[hyperdrive.yieldSource].shortName}
+            </h4>
             <div className="flex flex-wrap gap-5 gap-y-2">
               <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-500" />{" "}
@@ -190,6 +203,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "longs" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Long
               </Link>
@@ -218,6 +234,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "shorts" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Short
               </Link>
@@ -247,6 +266,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "lp" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Supply
               </Link>

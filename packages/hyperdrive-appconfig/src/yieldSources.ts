@@ -66,7 +66,16 @@ const ezEth: YieldSource = {
   historicalRatePeriod: 14,
 };
 
+const eEth: YieldSource = {
+  id: "eEth",
+  shortName: "Ether.fi Staked ETH",
+  protocol: "etherFi",
+  isSharesPeggedToBase: false,
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
+  eEth,
   makerDsr,
   lidoSteth,
   morphoSusdeDai,
