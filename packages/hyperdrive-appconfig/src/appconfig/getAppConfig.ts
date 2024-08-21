@@ -26,6 +26,7 @@ type HyperdriveConfigResolver = (
   hyperdriveConfig: HyperdriveConfig;
   sharesTokenConfig?: TokenConfig;
   baseTokenConfig?: TokenConfig;
+  rewardsTokenConfigs?: TokenConfig[];
 }>;
 
 const hyperdriveKindResolvers: Record<
@@ -128,6 +129,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: DAI_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoSusdeDai",
+        hasRewards: false,
       });
     }
 
@@ -140,6 +142,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: DAI_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoUsdeDai",
+        hasRewards: false,
       });
     }
 
@@ -152,6 +155,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: USDC_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoWstethUsdc",
+        hasRewards: false,
       });
     }
 
@@ -187,8 +191,12 @@ export async function getAppConfig({
         throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);
       }
 
-      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
-        await hyperdriveResolver(hyperdrive, publicClient);
+      const {
+        hyperdriveConfig,
+        baseTokenConfig,
+        sharesTokenConfig,
+        rewardsTokenConfigs,
+      } = await hyperdriveResolver(hyperdrive, publicClient);
 
       console.table({
         chainId: publicClient.chain?.id,
@@ -196,13 +204,16 @@ export async function getAppConfig({
         name: hyperdriveConfig.name,
       });
 
-      // Not all hyperdrives have a base or shares token, so only add them if
-      // they exist. (Note: `tokens` is deduped at the end)
+      // Not all hyperdrives have a base, shares, or rewards tokens, so only add
+      // them if they exist. (Note: `tokens` is deduped at the end)
       if (baseTokenConfig) {
         tokens.push(baseTokenConfig);
       }
       if (sharesTokenConfig) {
         tokens.push(sharesTokenConfig);
+      }
+      if (rewardsTokenConfigs?.length) {
+        tokens.push(...rewardsTokenConfigs);
       }
 
       return hyperdriveConfig;

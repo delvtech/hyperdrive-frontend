@@ -1,3 +1,4 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ProtocolId } from "src/protocols";
 
 export type YieldSourceId = keyof typeof yieldSources;
@@ -11,6 +12,12 @@ export interface YieldSource {
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
+
+  rewards?: {
+    type: string;
+    ratePerYear: bigint;
+    // TODO: Add token address
+  }[];
 }
 
 const makerDsr: YieldSource = {
@@ -42,12 +49,24 @@ const morphoUsdeDai: YieldSource = {
   isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
+
+// Source: https://docs.morpho.org/rewards/concepts/programs
+const MorphoFlatRatePerDay = 1.45e-4;
+const morphoFlatRatePerYear = parseFixed(
+  MorphoFlatRatePerDay * 365 * 1000,
+).bigint;
 const morphoWstethUsdc: YieldSource = {
   id: "morphoWstethUsdc",
   shortName: "Morpho wstETH/USDC",
   protocol: "morpho",
   isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
+  rewards: [
+    {
+      type: "MorphoFlatRate",
+      ratePerYear: morphoFlatRatePerYear,
+    },
+  ],
 };
 
 const reth: YieldSource = {

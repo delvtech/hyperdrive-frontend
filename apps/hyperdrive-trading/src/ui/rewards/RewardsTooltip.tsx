@@ -52,7 +52,7 @@ export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
                         alt="Morpho logo"
                         className="h-4"
                       />
-                      {reward.name}
+                      {reward.rewardTokenSymbol}
                     </div>
 
                     <div className="grid justify-items-end">

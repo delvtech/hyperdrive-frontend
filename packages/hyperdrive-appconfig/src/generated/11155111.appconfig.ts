@@ -603,6 +603,12 @@ export const sepoliaAppConfig: AppConfig = {
       protocol: "morpho",
       isSharesPeggedToBase: false,
       historicalRatePeriod: 1,
+      rewards: [
+        {
+          type: "MorphoFlatRate",
+          ratePerYear: 52925000000000000000n,
+        },
+      ],
     },
     reth: {
       id: "reth",

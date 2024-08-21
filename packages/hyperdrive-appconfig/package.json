@@ -40,6 +40,7 @@
     "access": "public"
   },
   "dependencies": {
-    "viem": "^2.7.8"
+    "viem": "^2.7.8",
+    "@delvtech/fixed-point-wasm": "^0.0.3"
   }
 }

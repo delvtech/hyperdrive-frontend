@@ -10,12 +10,14 @@ export async function getMorphoHyperdrive({
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
+  hasRewards,
 }: {
   hyperdrive: ReadHyperdrive;
   yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
+  hasRewards: boolean;
 }): Promise<{
   baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
