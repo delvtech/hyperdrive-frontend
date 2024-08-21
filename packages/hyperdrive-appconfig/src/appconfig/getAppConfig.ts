@@ -90,16 +90,9 @@ const hyperdriveKindResolvers: Record<
 
   ERC4626Hyperdrive: async (hyperdrive) => {
     const readSharesToken = await hyperdrive.getSharesToken();
-    const sharesTokenSymbol = (
-      await readSharesToken.getSymbol()
-    ).toUpperCase() as Uppercase<string>;
+    const sharesTokenSymbol = await readSharesToken.getSymbol();
 
-    if (
-      [
-        "DELV", // cloudchain
-        "SDAI", // sepolia and mainnet
-      ].includes(sharesTokenSymbol)
-    ) {
+    if (sharesTokenSymbol.toUpperCase() === "SDAI") {
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "makerDsr",
@@ -149,9 +142,7 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
-    if (
-      hyperdriveName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia and mainnet
-    ) {
+    if (hyperdriveName.includes("Morpho Blue USDe/DAI Hyperdrive")) {
       return getMorphoHyperdrive({
         hyperdrive,
         baseTokenTags: ["stablecoin"],
@@ -161,9 +152,7 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
-    if (
-      hyperdriveName.includes("Morpho Blue wstETH/USDC Hyperdrive") // cloudchain
-    ) {
+    if (hyperdriveName.includes("Morpho Blue wstETH/USDC Hyperdrive")) {
       return getMorphoHyperdrive({
         hyperdrive,
         baseTokenTags: ["stablecoin"],
