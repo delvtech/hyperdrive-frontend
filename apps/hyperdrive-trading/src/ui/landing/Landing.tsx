@@ -158,7 +158,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
-            <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
+            <h4 className="text-left">
+              {yieldSources[hyperdrive.yieldSource].shortName}
+            </h4>
             <div className="flex flex-wrap gap-5 gap-y-2">
               <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-500" />{" "}
