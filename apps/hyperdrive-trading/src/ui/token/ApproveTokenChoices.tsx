@@ -14,7 +14,7 @@ export function ApproveTokenChoices({
   spender: Address | undefined;
   amountAsBigInt: bigint | undefined;
   amount: string | undefined;
-  token: TokenConfig<any>;
+  token: TokenConfig;
 }): JSX.Element {
   const [selectedOption, setSelectedOption] = useState<
     "Unlimited" | "FixedAmount"
@@ -60,7 +60,7 @@ export function ApproveTokenChoices({
                   setSelectedOption("Unlimited");
                 }}
               />
-              <span className="daisy-label-text ml-2 flex flex-1  text-left">
+              <span className="daisy-label-text ml-2 flex flex-1 text-left">
                 Unlimited {token.symbol}
               </span>
             </label>
@@ -76,7 +76,7 @@ export function ApproveTokenChoices({
                   setSelectedOption("FixedAmount");
                 }}
               />
-              <span className="daisy-label-text ml-2 flex flex-1  text-left">
+              <span className="daisy-label-text ml-2 flex flex-1 text-left">
                 {amount} {token.symbol}
               </span>
             </label>

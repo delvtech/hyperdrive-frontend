@@ -2,7 +2,6 @@ import { ClosedLong } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -36,7 +35,7 @@ const columnHelper = createColumnHelper<ClosedLong>();
 function formatClosedLongMobileColumnData(
   closedLong: ClosedLong,
   hyperdrive: HyperdriveConfig,
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
 ) {
   return [
     {

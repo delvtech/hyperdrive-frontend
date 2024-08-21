@@ -15,7 +15,7 @@ export function RevokeAllowanceModalButton({
   allowance,
   spender,
 }: {
-  token: TokenConfig<any>;
+  token: TokenConfig;
   allowance: bigint | undefined;
   spender: `0x${string}`;
 }): JSX.Element {
@@ -97,7 +97,7 @@ export function RevokeAllowanceModalButton({
                     setSelectedOption("All");
                   }}
                 />
-                <span className="daisy-label-text ml-2 flex flex-1  text-left">
+                <span className="daisy-label-text ml-2 flex flex-1 text-left">
                   Revoke all {token.symbol}
                 </span>
               </label>

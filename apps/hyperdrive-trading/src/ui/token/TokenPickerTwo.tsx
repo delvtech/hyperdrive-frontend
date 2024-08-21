@@ -6,7 +6,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
 
 export interface TokenChoice {
-  tokenConfig: TokenConfig<any>;
+  tokenConfig: TokenConfig;
   disabled?: boolean;
   tokenBalance?: bigint;
 }

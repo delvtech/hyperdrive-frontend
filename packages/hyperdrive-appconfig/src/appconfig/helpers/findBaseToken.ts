@@ -1,4 +1,4 @@
-import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+import { TokenConfig } from "src/tokens/getTokenConfig";
 import { Address } from "viem";
 
 /**
@@ -15,7 +15,7 @@ export function findBaseToken({
 }: {
   baseTokenAddress: Address;
   tokens: TokenConfig[];
-}): TokenConfig<EmptyExtensions> {
+}): TokenConfig {
   const baseToken = tokens.find((token) => baseTokenAddress === token.address);
 
   if (!baseToken) {
@@ -24,17 +24,5 @@ export function findBaseToken({
     );
   }
 
-  if (!isBaseToken(baseToken)) {
-    throw new Error(
-      `Misconfigured token ${baseTokenAddress}. Base tokens may not contain any extensions.`,
-    );
-  }
-
   return baseToken;
-}
-
-function isBaseToken(
-  token: TokenConfig,
-): token is TokenConfig<EmptyExtensions> {
-  return !Object.keys(token.extensions).length;
 }
