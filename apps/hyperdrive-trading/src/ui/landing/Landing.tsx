@@ -20,6 +20,7 @@ import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
@@ -175,7 +176,13 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           <PoolStat
             label={"Fixed APR"}
             isLoading={fixedRateStatus === "loading"}
-            value={fixedApr ? formatRate(fixedApr.apr, 18, false) : "-"}
+            value={
+              fixedApr ? (
+                <PercentLabel value={formatRate(fixedApr.apr, 18, false)} />
+              ) : (
+                "-"
+              )
+            }
             variant="gradient"
             action={
               <Link
@@ -191,7 +198,20 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           <PoolStat
             label={"Variable APY"}
             isLoading={vaultRateStatus === "loading"}
-            value={vaultRate ? formatRate(vaultRate.vaultRate, 18, false) : "-"}
+            value={
+              vaultRate ? (
+                <RewardsTooltip
+                  hyperdriveAddress={hyperdriveAddress}
+                  positionType="short"
+                >
+                  <PercentLabel
+                    value={formatRate(vaultRate.vaultRate, 18, false)}
+                  />
+                </RewardsTooltip>
+              ) : (
+                "-"
+              )
+            }
             action={
               <Link
                 to="/market/$address"
@@ -206,15 +226,20 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
           <PoolStat
             label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
             isLoading={lpApyStatus === "loading"}
-            showPercentage={!isLpApyNew}
+            isNew={isLpApyNew}
             value={
               // TODO: Fix useLpApy to have the same interface as
               // useYieldSourceRate and useFixedRate
-              lpApy && !isLpApyNew
-                ? `${(lpApy * 100).toFixed(2)}`
-                : isLpApyNew
-                  ? "✨New✨"
-                  : "-"
+              lpApy && !isLpApyNew ? (
+                <RewardsTooltip
+                  positionType="lp"
+                  hyperdriveAddress={hyperdriveAddress}
+                >
+                  <PercentLabel value={`${(lpApy * 100).toFixed(2)}`} />
+                </RewardsTooltip>
+              ) : (
+                "-"
+              )
             }
             action={
               <Link
@@ -251,19 +276,28 @@ function PoolStat({
   label,
   labelTooltip,
   value,
-  showPercentage = true,
+  isNew = false,
   variant = "default",
   isLoading = false,
   action,
 }: {
   label: string;
   labelTooltip?: string;
-  value: string;
+  value: ReactNode;
   isLoading?: boolean;
-  showPercentage?: boolean;
+  isNew?: boolean;
   variant?: "default" | "gradient";
   action?: ReactNode;
 }): ReactElement {
+  let displayValue;
+  if (isLoading) {
+    displayValue = <Skeleton width={70} />;
+  } else if (isNew) {
+    displayValue = "✨New✨";
+  } else {
+    displayValue = value;
+  }
+
   return (
     <div className="flex w-24 flex-col items-start gap-1.5">
       <p
@@ -277,12 +311,24 @@ function PoolStat({
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
           "gradient-text": variant === "gradient",
-          "after:text-h5 after:content-['%']": showPercentage && !isLoading,
         })}
       >
-        {isLoading ? <Skeleton width={70} /> : value}
+        {displayValue}
       </div>
       <div>{action}</div>
+    </div>
+  );
+}
+
+function PercentLabel({ value }: { value: string }) {
+  return (
+    <div
+      className={classNames(
+        "font-dmMono text-h4 font-medium",
+        "after:text-h5 after:content-['%']",
+      )}
+    >
+      {value}
     </div>
   );
 }
