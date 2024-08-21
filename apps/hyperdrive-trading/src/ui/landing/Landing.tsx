@@ -6,6 +6,7 @@ import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -25,7 +26,6 @@ import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { sepolia } from "viem/chains";
 import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
@@ -115,7 +115,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   });
   const isFiatPriceEnabled =
     hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-    chainInfo.id !== sepolia.id;
+    !isTestnetChain(chainInfo.id);
   const { fiatPrice } = useTokenFiatPrice({
     tokenAddress: isFiatPriceEnabled
       ? hyperdrive.poolConfig.baseToken
@@ -158,7 +158,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
-            <h4>{yieldSources[hyperdrive.yieldSource].shortName}</h4>
+            <h4 className="text-left">
+              {yieldSources[hyperdrive.yieldSource].shortName}
+            </h4>
             <div className="flex flex-wrap gap-5 gap-y-2">
               <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-500" />{" "}

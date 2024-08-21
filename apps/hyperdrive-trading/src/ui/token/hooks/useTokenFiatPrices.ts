@@ -1,8 +1,8 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { Address } from "viem";
-import { sepolia } from "viem/chains";
 import { useChainId, useChains } from "wagmi";
 
 /**
@@ -19,7 +19,7 @@ export function useTokenFiatPrices(
   const chainName =
     chains?.find((network) => network.id === chainId)?.name ?? "Ethereum";
   const coins = addresses.map((address) => `${chainName}:${address}`).join(",");
-  const queryEnabled = !!coins && chainId !== sepolia.id;
+  const queryEnabled = !!coins && !isTestnetChain(chainId);
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenPrices", { coins }),
@@ -57,7 +57,7 @@ export function useTokenFiatPrice({
     chains?.find((network) => network.id === chainId)?.name ?? "Ethereum";
   const defiLlamaTokenId = `${chainName}:${tokenAddress}`;
 
-  const queryEnabled = chainId !== sepolia.id && !!tokenAddress;
+  const queryEnabled = !isTestnetChain(chainId) && !!tokenAddress;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenFiatPrice", { defiLlamaTokenId }),

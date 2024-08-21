@@ -10,6 +10,7 @@ import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
+  EETH_ICON_URL,
   ETH_ICON_URL,
   EZETH_ICON_URL,
   RETH_ICON_URL,
@@ -32,6 +33,23 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
+  EETHHyperdrive: async (hyperdrive) =>
+    getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "eEth",
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: EETH_ICON_URL,
+      sharesTokenTags: ["liquidStakingToken"],
+      tokenPlaces: 4,
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+    }),
   EzETHHyperdrive: async (hyperdrive: ReadHyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
@@ -72,16 +90,9 @@ const hyperdriveKindResolvers: Record<
 
   ERC4626Hyperdrive: async (hyperdrive) => {
     const readSharesToken = await hyperdrive.getSharesToken();
-    const sharesTokenSymbol = (
-      await readSharesToken.getSymbol()
-    ).toUpperCase() as Uppercase<string>;
+    const sharesTokenSymbol = await readSharesToken.getSymbol();
 
-    if (
-      [
-        "DELV", // cloudchain
-        "SDAI", // sepolia and mainnet
-      ].includes(sharesTokenSymbol)
-    ) {
+    if (sharesTokenSymbol.toUpperCase() === "SDAI") {
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "makerDsr",
@@ -131,9 +142,7 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
-    if (
-      hyperdriveName.includes("Morpho Blue USDe/DAI Hyperdrive") // sepolia and mainnet
-    ) {
+    if (hyperdriveName.includes("Morpho Blue USDe/DAI Hyperdrive")) {
       return getMorphoHyperdrive({
         hyperdrive,
         baseTokenTags: ["stablecoin"],
@@ -143,9 +152,7 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
-    if (
-      hyperdriveName.includes("wstETH/USDC Morpho Blue Hyperdrive") // sepolia
-    ) {
+    if (hyperdriveName.includes("Morpho Blue wstETH/USDC Hyperdrive")) {
       return getMorphoHyperdrive({
         hyperdrive,
         baseTokenTags: ["stablecoin"],

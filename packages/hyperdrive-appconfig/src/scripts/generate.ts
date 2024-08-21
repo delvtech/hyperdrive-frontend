@@ -3,6 +3,7 @@ import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { chains } from "src/chains/chains";
+import { cloudChain } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
@@ -14,6 +15,11 @@ interface ChainConfig {
   registryAddress: Address;
 }
 const chainConfigs: ChainConfig[] = [
+  {
+    chain: cloudChain,
+    rpcUrl: process.env.CLOUDCHAIN_NODE_RPC_URL as string,
+    registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  },
   {
     chain: mainnet,
     rpcUrl: process.env.MAINNET_NODE_RPC_URL as string,
