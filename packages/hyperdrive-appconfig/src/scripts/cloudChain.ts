@@ -19,5 +19,5 @@ const appConfig = await getAppConfig({
 writeAppConfigToFile({
   filename: `./src/generated/${cloudChain.id}.appconfig.ts`,
   appConfig,
-  appConfigName: "cloudChainAppConfig",
+  appConfigName: `${cloudChain.name.toLowerCase()}AppConfig`,
 });

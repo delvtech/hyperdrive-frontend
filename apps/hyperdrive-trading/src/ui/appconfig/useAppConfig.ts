@@ -1,6 +1,6 @@
 import {
   AppConfig,
-  cloudChainAppConfig,
+  cloudchainAppConfig,
   mainnetAppConfig,
   protocols,
   sepoliaAppConfig,
@@ -42,7 +42,7 @@ export function useAppConfig(): AppConfig {
       return {} as AppConfig;
 
     case 42069: // cloudchain
-      return cloudChainAppConfig;
+      return cloudchainAppConfig;
 
     case mainnet.id:
       return mainnetAppConfig;

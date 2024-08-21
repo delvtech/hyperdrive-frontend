@@ -45,7 +45,7 @@ export async function getMorphoHyperdrive({
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
-    decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
+    decimals: await hyperdrive.getDecimals(),
     yieldSource: yieldSourceId,
     depositOptions: {
       isBaseTokenDepositEnabled: true,
