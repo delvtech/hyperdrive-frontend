@@ -28,10 +28,10 @@ import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ShortRateAndSizeCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/ShortRateAndSizeCell";
+import { TotalOpenShortValue } from "src/ui/hyperdrive/shorts/OpenShortsTable/TotalOpenShortsValue";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePortfolioShortsData } from "src/ui/portfolio/usePortfolioShortsData";
 import { useAccount } from "wagmi";
-import { TotalOpenShortValue } from "./TotalOpenShortsValue";
 
 export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
@@ -329,7 +329,6 @@ function getColumns({
       id: "value",
       header: `Status`,
       cell: ({ row }) => {
-        // TODO: Move this out of the longs file
         return <StatusCell maturity={row.original.maturity} />;
       },
     }),

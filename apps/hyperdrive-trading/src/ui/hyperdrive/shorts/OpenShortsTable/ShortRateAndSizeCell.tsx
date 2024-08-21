@@ -31,7 +31,7 @@ export function ShortRateAndSizeCell({
         <p>{`${formatRate(short.fixedRatePaid)} APR`}</p>
         <div
           data-tip={
-            "The difference between the rate you shorted and the current rate."
+            "The difference between the fixed rate you shorted and the current fixed rate."
           }
           className={classNames(
             "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",

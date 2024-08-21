@@ -40,7 +40,7 @@ export function TotalOpenLongsValue({
 
   return (
     <div className="flex items-center gap-2">
-      <img src={chainInfo.iconUrl} className="mr-2 h-10 rounded-full p-1" />
+      <img src={chainInfo.iconUrl} className="size-7 rounded-full" />
       {isFiatPriceEnabled ? (
         <p className="font-dmMono text-h4">
           {`$${formatBalance({
