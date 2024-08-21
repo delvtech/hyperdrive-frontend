@@ -40,7 +40,6 @@ export async function getCustomHyperdrive({
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
     tags: sharesTokenTags,
-    extensions: {},
     iconUrl: sharesTokenIconUrl,
     places: tokenPlaces,
   });
@@ -48,7 +47,6 @@ export async function getCustomHyperdrive({
   const baseToken = await hyperdrive.getBaseToken();
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
-    extensions: {},
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: tokenPlaces,

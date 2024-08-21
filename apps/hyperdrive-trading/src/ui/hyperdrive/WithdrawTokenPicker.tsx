@@ -12,7 +12,7 @@ export function WithdrawTokenPicker({
   sharesToken: TokenConfig;
   hyperdrive: HyperdriveConfig;
   baseToken: TokenConfig;
-  activeWithdrawToken: TokenConfig<any>;
+  activeWithdrawToken: TokenConfig;
   onChange: (tokenAddress: string) => void;
 }): ReactElement {
   const tokens: TokenChoice[] = [{ tokenConfig: sharesToken }];

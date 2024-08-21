@@ -2,7 +2,6 @@ import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -444,7 +443,7 @@ function calculatePoolShare({
   depositAmount: bigint | undefined;
   lpSharesTotalSupply: bigint | undefined;
   hyperdrive: HyperdriveConfig;
-  baseToken: TokenConfig<EmptyExtensions>;
+  baseToken: TokenConfig;
 }) {
   if (
     !depositAmount ||

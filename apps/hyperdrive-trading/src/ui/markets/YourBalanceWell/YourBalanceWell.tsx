@@ -65,7 +65,7 @@ function AvailableAsset({
   spender,
 }: {
   spender: Address;
-  token: TokenConfig<any>;
+  token: TokenConfig;
 }) {
   const { address: account } = useAccount();
   const { isFlagEnabled: isBridgeFlagEnabled } = useFeatureFlag("bridge");

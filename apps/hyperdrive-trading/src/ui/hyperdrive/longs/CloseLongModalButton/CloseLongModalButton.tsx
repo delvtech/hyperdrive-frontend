@@ -1,6 +1,5 @@
 import { Long } from "@delvtech/hyperdrive-viem";
 import {
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -55,7 +54,7 @@ export function CloseLongModalButton({
   );
 }
 function getSubHeadingLabel(
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
   hyperdrive: HyperdriveConfig,
   sharesToken: TokenConfig,
 ) {

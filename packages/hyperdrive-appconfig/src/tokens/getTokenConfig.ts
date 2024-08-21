@@ -1,11 +1,7 @@
 import { ReadToken } from "@delvtech/hyperdrive-viem";
 import { Address } from "viem";
 
-export type EmptyExtensions = Record<string, never>;
-
-export interface TokenConfig<
-  Extensions = Record<string, string | number | boolean> | EmptyExtensions,
-> {
+export interface TokenConfig {
   address: Address;
   chainId: number;
   name: string;
@@ -14,24 +10,19 @@ export interface TokenConfig<
   places: number;
   iconUrl: string;
   tags: string[];
-  extensions: Extensions;
 }
 
-export async function getTokenConfig<
-  Extensions = Record<string, string | number | boolean> | EmptyExtensions,
->({
+export async function getTokenConfig({
   token,
   iconUrl,
   places,
   tags,
-  extensions,
 }: {
   token: ReadToken;
   tags: string[];
   iconUrl: string;
   places: number;
-  extensions: Extensions;
-}): Promise<TokenConfig<Extensions>> {
+}): Promise<TokenConfig> {
   return {
     chainId: await token.network.getChainId(),
     address: token.address,
@@ -41,6 +32,5 @@ export async function getTokenConfig<
     symbol: await token.getSymbol(),
     iconUrl,
     tags,
-    extensions,
   };
 }

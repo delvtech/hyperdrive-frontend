@@ -26,7 +26,6 @@ export async function getMorphoHyperdrive({
   const baseToken = await hyperdrive.getBaseToken();
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
-    extensions: {},
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: baseTokenPlaces,
