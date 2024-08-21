@@ -52,7 +52,7 @@ export async function getStethHyperdrive({
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
-    decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
+    decimals: await hyperdrive.getDecimals(),
     yieldSource: "lidoSteth",
     depositOptions: {
       // Turn off sepolia eth deposits so users aren't risking their eth.

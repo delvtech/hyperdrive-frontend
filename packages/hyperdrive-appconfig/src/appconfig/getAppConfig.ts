@@ -201,6 +201,7 @@ export async function getAppConfig({
         chainId: publicClient.chain?.id,
         kind: kind,
         name: hyperdriveConfig.name,
+        decimals: hyperdriveConfig.decimals,
       });
 
       // Not all hyperdrives have a base or shares token, so only add them if

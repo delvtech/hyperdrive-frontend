@@ -1,5 +1,5 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-export const cloudChainAppConfig: AppConfig = {
+export const cloudchainAppConfig: AppConfig = {
   tokens: [
     {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -34,6 +34,16 @@ export const cloudChainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      decimals: 6,
+      places: 2,
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
       address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
       decimals: 18,
       places: 4,
@@ -42,16 +52,6 @@ export const cloudChainAppConfig: AppConfig = {
       iconUrl:
         "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063",
       tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 42069,
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      decimals: 6,
-      places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
     },
     {
       chainId: 42069,
@@ -342,7 +342,7 @@ export const cloudChainAppConfig: AppConfig = {
       address: "0x8C66f5b401638093312161081eaA6cE70267d002",
       version: "v1.0.17",
       name: "182d Morpho wstETH/USDC",
-      decimals: 18,
+      decimals: 6,
       yieldSource: "morphoWstethUsdc",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
