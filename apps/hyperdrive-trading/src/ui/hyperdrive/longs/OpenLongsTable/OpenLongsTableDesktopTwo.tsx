@@ -220,7 +220,9 @@ export function OpenLongsTableDesktopTwo({
                 )}
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
+                  (
+                    document.getElementById(modalId) as HTMLDialogElement
+                  )?.showModal();
                 }}
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (
