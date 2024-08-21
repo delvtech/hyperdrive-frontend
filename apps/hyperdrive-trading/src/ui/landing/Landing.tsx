@@ -1,6 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -17,6 +17,7 @@ import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { Hero } from "src/ui/landing/Hero/Hero";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
@@ -92,6 +93,7 @@ function PoolRows() {
   );
 }
 function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
+  const navigate = useNavigate();
   const appConfig = useAppConfig();
   const { yieldSources, chains } = appConfig;
   const hyperdrive = appConfig.hyperdrives.find(
@@ -139,7 +141,16 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   }
 
   return (
-    <Well block>
+    <Well
+      block
+      onClick={() => {
+        navigate({
+          to: MARKET_DETAILS_ROUTE,
+          resetScroll: true,
+          params: { address: hyperdriveAddress },
+        });
+      }}
+    >
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:gap-4">
         {/* Left side */}
         <div className="flex items-center gap-6 lg:w-[440px]">
@@ -190,6 +201,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "longs" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Long
               </Link>
@@ -218,6 +232,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "shorts" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Short
               </Link>
@@ -247,6 +264,9 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
                 params={{ address: hyperdrive.address }}
                 search={{ position: "lp" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
               >
                 Supply
               </Link>
