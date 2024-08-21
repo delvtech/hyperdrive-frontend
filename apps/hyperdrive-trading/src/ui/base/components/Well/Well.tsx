@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { PropsWithChildren, ReactElement } from "react";
+import { ComponentProps, PropsWithChildren, ReactElement } from "react";
 
 interface WellProps {
   interactive?: boolean;
@@ -7,7 +7,7 @@ interface WellProps {
   transparent?: boolean;
   block?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: ComponentProps<"button">["onClick"];
 }
 
 export function Well({
