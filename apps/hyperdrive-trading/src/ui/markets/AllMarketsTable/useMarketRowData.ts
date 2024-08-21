@@ -1,6 +1,5 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
-  EmptyExtensions,
   HyperdriveConfig,
   Protocol,
   TokenConfig,
@@ -15,7 +14,7 @@ import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
   market: HyperdriveConfig;
-  baseToken: TokenConfig<EmptyExtensions>;
+  baseToken: TokenConfig;
   liquidity: bigint;
   yieldSourceShortName: string;
   yieldSourceProtocol: Protocol;

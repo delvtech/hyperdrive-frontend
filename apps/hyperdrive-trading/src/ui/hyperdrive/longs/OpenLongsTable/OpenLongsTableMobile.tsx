@@ -1,7 +1,6 @@
 import { Long } from "@delvtech/hyperdrive-viem";
 import {
   AppConfig,
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -166,7 +165,7 @@ const columnHelper = createColumnHelper<Long>();
 function formatOpenLongMobileColumnData(
   row: Long,
   hyperdrive: HyperdriveConfig,
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
 ) {
   return [
     {

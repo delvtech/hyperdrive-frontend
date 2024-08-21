@@ -3,7 +3,6 @@ import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -149,10 +148,7 @@ export function OpenShortsTableDesktop({
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(
-  hyperdrive: HyperdriveConfig,
-  baseToken: TokenConfig<EmptyExtensions>,
-) {
+function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",

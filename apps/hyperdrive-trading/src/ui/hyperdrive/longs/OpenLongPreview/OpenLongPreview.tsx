@@ -25,7 +25,7 @@ interface OpenLongPreviewProps {
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
-  activeToken: TokenConfig<any>;
+  activeToken: TokenConfig;
   curveFee: bigint | undefined;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;

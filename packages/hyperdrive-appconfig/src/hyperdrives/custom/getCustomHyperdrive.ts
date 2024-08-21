@@ -1,11 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  EmptyExtensions,
-  TokenConfig,
-  getTokenConfig,
-} from "src/tokens/getTokenConfig";
+import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
 import { yieldSources } from "src/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
@@ -34,8 +30,8 @@ export async function getCustomHyperdrive({
   sharesTokenTags = [],
   baseTokenTags = [],
 }: GetHyperdriveConfigParams): Promise<{
-  sharesToken: TokenConfig<EmptyExtensions>;
-  baseToken: TokenConfig<EmptyExtensions>;
+  sharesTokenConfig: TokenConfig;
+  baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
   const version = await hyperdrive.getVersion();
@@ -44,7 +40,6 @@ export async function getCustomHyperdrive({
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
     tags: sharesTokenTags,
-    extensions: {},
     iconUrl: sharesTokenIconUrl,
     places: tokenPlaces,
   });
@@ -52,7 +47,6 @@ export async function getCustomHyperdrive({
   const baseToken = await hyperdrive.getBaseToken();
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
-    extensions: {},
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: tokenPlaces,
@@ -81,8 +75,8 @@ export async function getCustomHyperdrive({
   };
 
   return {
-    sharesToken: sharesTokenConfig,
-    baseToken: baseTokenConfig,
-    hyperdriveConfig: hyperdriveConfig,
+    sharesTokenConfig,
+    baseTokenConfig,
+    hyperdriveConfig,
   };
 }

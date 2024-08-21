@@ -1,7 +1,6 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
-  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
@@ -109,7 +108,7 @@ export function CloseShortModalButton({
 }
 
 function getSubHeadingLabel(
-  baseToken: TokenConfig<EmptyExtensions>,
+  baseToken: TokenConfig,
   hyperdrive: HyperdriveConfig,
   sharesToken: TokenConfig,
 ) {

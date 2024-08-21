@@ -1,11 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  EmptyExtensions,
-  getTokenConfig,
-  TokenConfig,
-} from "src/tokens/getTokenConfig";
+import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceId, yieldSources } from "src/yieldSources";
 
 export async function getMorphoHyperdrive({
@@ -21,7 +17,7 @@ export async function getMorphoHyperdrive({
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
 }): Promise<{
-  baseToken: TokenConfig<EmptyExtensions>;
+  baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
   const version = await hyperdrive.getVersion();
@@ -30,7 +26,6 @@ export async function getMorphoHyperdrive({
   const baseToken = await hyperdrive.getBaseToken();
   const baseTokenConfig = await getTokenConfig({
     token: baseToken,
-    extensions: {},
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: baseTokenPlaces,
@@ -66,7 +61,7 @@ export async function getMorphoHyperdrive({
   };
 
   return {
-    baseToken: baseTokenConfig,
-    hyperdriveConfig: hyperdriveConfig,
+    baseTokenConfig,
+    hyperdriveConfig,
   };
 }

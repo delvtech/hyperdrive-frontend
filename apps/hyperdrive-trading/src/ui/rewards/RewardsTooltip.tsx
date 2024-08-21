@@ -27,7 +27,7 @@ export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
-          {props.children}✨
+          {props.children}⚡
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content

@@ -22,7 +22,7 @@ import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
-  tokenIn: TokenConfig<any>;
+  tokenIn: TokenConfig;
   costBasis: bigint | undefined;
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;

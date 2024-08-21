@@ -24,7 +24,7 @@ interface OpenLongStatsProps {
   bondAmount: bigint;
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
-  activeToken: TokenConfig<any>;
+  activeToken: TokenConfig;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }

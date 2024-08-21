@@ -21,7 +21,7 @@ export function useMintToken({
   destination,
   amount,
 }: {
-  token: TokenConfig<any>;
+  token: TokenConfig;
   destination: Address | undefined;
   amount: bigint;
 }): { mint: (() => void) | undefined } {

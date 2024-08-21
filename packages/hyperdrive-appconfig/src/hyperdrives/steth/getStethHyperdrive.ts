@@ -1,11 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  EmptyExtensions,
-  getTokenConfig,
-  TokenConfig,
-} from "src/tokens/getTokenConfig";
+import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
 import { sepolia } from "viem/chains";
@@ -14,8 +10,8 @@ export async function getStethHyperdrive({
 }: {
   hyperdrive: ReadHyperdrive;
 }): Promise<{
-  sharesToken: TokenConfig<EmptyExtensions>;
-  baseToken: TokenConfig<EmptyExtensions>;
+  sharesTokenConfig: TokenConfig;
+  baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
   const chainId = await hyperdrive.network.getChainId();
@@ -30,12 +26,11 @@ export async function getStethHyperdrive({
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
     tags: ["liquidStakingToken"],
-    extensions: {},
     iconUrl: STETH_ICON_URL,
     places: 4,
   });
 
-  const baseTokenConfig: TokenConfig<EmptyExtensions> = {
+  const baseTokenConfig: TokenConfig = {
     address: poolConfig.baseToken,
     chainId: await hyperdrive.network.getChainId(),
     name: "Ether",
@@ -43,7 +38,6 @@ export async function getStethHyperdrive({
     decimals: 18,
     places: 4,
     tags: [],
-    extensions: {},
     iconUrl: ETH_ICON_URL,
   };
 
@@ -76,8 +70,8 @@ export async function getStethHyperdrive({
   };
 
   return {
-    sharesToken: sharesTokenConfig,
-    baseToken: baseTokenConfig,
-    hyperdriveConfig: hyperdriveConfig,
+    sharesTokenConfig,
+    baseTokenConfig,
+    hyperdriveConfig,
   };
 }

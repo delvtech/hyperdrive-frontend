@@ -15,7 +15,7 @@ export { findYieldSourceToken } from "src/appconfig/helpers/findYieldSourceToken
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 
 // tokens
-export type { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
+export type { TokenConfig } from "src/tokens/getTokenConfig";
 
 // yield sources
 export { yieldSources } from "src/yieldSources";
