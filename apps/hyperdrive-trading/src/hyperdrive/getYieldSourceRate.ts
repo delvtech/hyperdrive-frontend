@@ -18,6 +18,7 @@ export async function getYieldSourceRate(
         BigInt(
           appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
         );
+
   return (
     readHyperdrive
       .getYieldSourceRate({
@@ -26,17 +27,10 @@ export async function getYieldSourceRate(
       // If the 24 hour rate doesn't exist, assume the pool was initialized less
       // than 24 hours ago and try to get the all-time rate
       .catch(async (e: any) => {
-        console.log(
-          "could not get yield source rate from",
-          numBlocksForHistoricalRate,
-          "blocks ago",
-        );
         const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
-
         const initializationBlock = hyperdrive.initializationBlock;
         const blocksSinceInitialization =
           currentBlock.blockNumber! - initializationBlock;
-        console.log("blocksSinceInitialization", blocksSinceInitialization);
 
         return readHyperdrive.getYieldSourceRate({
           blockRange: blocksSinceInitialization,

@@ -21,7 +21,7 @@ interface UsePreviewAddLiquidityOptions {
 
 interface UsePreviewAddLiquidityResult {
   status: QueryStatusWithIdle;
-  previewAddLiquidityError: string;
+  previewAddLiquidityError: Error;
   lpSharesOut: bigint | undefined;
 }
 
@@ -100,7 +100,7 @@ export function usePreviewAddLiquidity({
 
   return {
     status: queryStatus,
-    previewAddLiquidityError: error as string,
+    previewAddLiquidityError: error as Error,
     lpSharesOut: data?.lpSharesOut,
   };
 }

@@ -205,7 +205,7 @@ export function AddLiquidityForm({
   });
   const poolShare = calculatePoolShare({
     lpSharesBalanceOf,
-    depositAmount: depositAmountAsBigInt,
+    lpSharesOut,
     lpSharesTotalSupply,
     hyperdrive,
     baseToken,
@@ -244,11 +244,10 @@ export function AddLiquidityForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          activeToken.decimals,
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
-                  places: activeToken.places,
+                  places: 2,
                 })}`}
               </label>
             ) : null
@@ -302,7 +301,7 @@ export function AddLiquidityForm({
                   })}
                 >
                   {poolShare
-                    ? `${fixed(poolShare, activeToken.decimals).format({
+                    ? `${fixed(poolShare).format({
                         decimals: 4,
                         rounding: "trunc",
                       })}% of total liquidity`
@@ -375,12 +374,29 @@ export function AddLiquidityForm({
           );
         }
         if (
-          previewAddLiquidityError?.includes("Not enough lp shares minted.")
+          previewAddLiquidityError?.message.includes(
+            "Not enough lp shares minted.",
+          )
         ) {
           return (
             <p className="text-center text-sm text-error">
               Not enough LP shares minted. Please adjust your slippage to add
               liquidity.
+            </p>
+          );
+        }
+        if (
+          previewAddLiquidityError?.message.includes("MinimumTransactionAmount")
+        ) {
+          return (
+            <p className="text-center text-sm text-error">
+              Trade does not meet the minimum transaction amount:{" "}
+              {formatBalance({
+                balance: hyperdrive.poolConfig.minimumTransactionAmount,
+                decimals: hyperdrive.decimals,
+                places: activeToken.places,
+              })}{" "}
+              {activeToken.symbol}.
             </p>
           );
         }
@@ -434,27 +450,23 @@ export function AddLiquidityForm({
 }
 function calculatePoolShare({
   lpSharesBalanceOf,
-  depositAmount,
+  lpSharesOut,
   lpSharesTotalSupply,
   hyperdrive,
   baseToken,
 }: {
   lpSharesBalanceOf: bigint | undefined;
-  depositAmount: bigint | undefined;
+  lpSharesOut: bigint | undefined;
   lpSharesTotalSupply: bigint | undefined;
   hyperdrive: HyperdriveConfig;
   baseToken: TokenConfig;
 }) {
-  if (
-    !depositAmount ||
-    !lpSharesTotalSupply ||
-    lpSharesBalanceOf === undefined
-  ) {
+  if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
     return;
   }
   return calculateRatio({
-    a: lpSharesBalanceOf + depositAmount,
-    b: lpSharesTotalSupply + depositAmount,
+    a: lpSharesOut,
+    b: lpSharesTotalSupply + lpSharesOut,
     decimals: baseToken.decimals,
   });
 }
