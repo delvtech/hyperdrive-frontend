@@ -36,6 +36,8 @@ import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
+(window as any).fixed = fixed;
+
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
