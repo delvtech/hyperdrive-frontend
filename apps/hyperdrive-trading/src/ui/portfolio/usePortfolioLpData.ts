@@ -12,7 +12,7 @@ type OpenLpPositionsData = Record<
 >;
 
 export function usePortfolioLpData(): {
-  openLpPosition: OpenLpPositionsData | undefined;
+  openLpPositions: OpenLpPositionsData | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
@@ -51,7 +51,7 @@ export function usePortfolioLpData(): {
       : undefined,
   });
   return {
-    openLpPosition,
+    openLpPositions: openLpPosition,
     openLpPositionStatus,
   };
 }
