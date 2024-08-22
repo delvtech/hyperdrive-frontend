@@ -10,9 +10,7 @@ import { useChainId } from "wagmi";
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
 const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
-  [mainnet.id]: [
-    // TODO @cashd: add morpho addresses
-  ],
+  [mainnet.id]: ["0xc8D47DE20F7053Cc02504600596A647A482Bbc46"],
 };
 
 // Source: https://docs.morpho.org/rewards/concepts/programs
