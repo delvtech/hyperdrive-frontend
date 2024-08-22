@@ -23,17 +23,6 @@ export const cloudchainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      decimals: 18,
-      places: 2,
-      name: "Dai Stablecoin",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 42069,
       address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       decimals: 6,
       places: 2,
@@ -41,6 +30,17 @@ export const cloudchainAppConfig: AppConfig = {
       symbol: "USDC",
       iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
       tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
     },
     {
       chainId: 42069,
@@ -55,14 +55,14 @@ export const cloudchainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
+      places: 2,
+      name: "Dai Stablecoin",
+      symbol: "DAI",
       iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["liquidStakingToken"],
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
     },
     {
       chainId: 42069,
