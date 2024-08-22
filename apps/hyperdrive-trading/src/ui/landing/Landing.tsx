@@ -9,9 +9,7 @@ import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
-import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -20,25 +18,18 @@ import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
-import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
-import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { PositionCards } from "./PositionCards/PositionCards";
 
 export function Landing(): ReactElement | null {
-  const isSmallScreenView = useIsTailwindSmallScreen();
-  const { isFlagEnabled: isNewPoolsView } = useFeatureFlag("pools-view");
-
   return (
     <div className="flex flex-col items-center gap-4 lg:w-[900px]">
       <Hero />
       <div className="flex w-full flex-col items-center">
-        {isNewPoolsView ? (
-          <div className="flex flex-col gap-4">
-            {/* TODO: Implement filter buttons
+        <div className="flex flex-col gap-4">
+          {/* TODO: Implement filter buttons
              <div className="flex items-center gap-3">
               <button className="daisy-btn daisy-btn-sm gap-1.5 rounded-full">
                 All Terms
@@ -53,19 +44,9 @@ export function Landing(): ReactElement | null {
                 <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
               </button>
             </div> */}
-            <PoolRows />
-          </div>
-        ) : (
-          <YieldSourceCards />
-        )}
+          <PoolRows />
+        </div>
       </div>
-
-      {isNewPoolsView ? null : (
-        <>
-          <PositionCards />
-          {isSmallScreenView ? <MobileFaq /> : <FAQ />}
-        </>
-      )}
     </div>
   );
 }
