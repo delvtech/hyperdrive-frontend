@@ -302,7 +302,7 @@ export function OpenShortForm({
                         ? fixed(
                             amountOfBondsToShortAsBigInt || 0n,
                             baseToken.decimals,
-                          ).mul(baseTokenPrice, baseToken.decimals).bigint
+                          ).mul(baseTokenPrice).bigint
                         : 0n,
                     decimals: baseToken.decimals,
                     places: 2,
@@ -345,7 +345,6 @@ export function OpenShortForm({
                       activeTokenPrice && traderDeposit
                         ? fixed(traderDeposit, activeToken.decimals).mul(
                             activeTokenPrice,
-                            activeToken.decimals,
                           ).bigint
                         : 0n,
                     decimals: activeToken.decimals,

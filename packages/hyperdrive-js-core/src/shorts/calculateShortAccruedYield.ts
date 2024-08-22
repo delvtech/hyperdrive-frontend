@@ -20,8 +20,5 @@ export function calculateShortAccruedYield({
   const result =
     // vaultSharePrice is always 18 decimals
     fixed(absoluteDifference).mul(bondAmount, decimals).bigint * sign_factor;
-  console.log(
-    `absoluteDifference (${absoluteDifference}) * bondAmount (${bondAmount}) = ${result}`,
-  );
   return result;
 }

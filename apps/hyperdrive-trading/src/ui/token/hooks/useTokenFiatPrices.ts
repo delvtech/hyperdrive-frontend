@@ -33,6 +33,7 @@ export function useTokenFiatPrices(
           const prices: Record<Address, bigint> = {};
           for (const [coin, info] of Object.entries(data.coins)) {
             const [, address] = coin.split(":");
+            // make sure prices are always in 18 decimals
             prices[address.toLowerCase() as Address] = BigInt(
               (info as any).price * Number(10n ** 18n),
             );

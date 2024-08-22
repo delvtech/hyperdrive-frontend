@@ -9,5 +9,5 @@ export function calculateRatio({
   b: bigint;
   decimals: number;
 }): bigint {
-  return fixed(a, decimals).div(b, decimals).mul(100, 0).bigint;
+  return fixed(fixed(a, decimals).div(b, decimals).mul(100, 0)).bigint;
 }

@@ -133,7 +133,7 @@ export function OpenLongStats({
                   ? fixed(
                       amountPaidInBase + yieldAtMaturity,
                       baseToken.decimals,
-                    ).mul(baseTokenPrice, baseToken.decimals).bigint
+                    ).mul(baseTokenPrice).bigint
                   : 0n,
                 decimals: baseToken.decimals,
                 places: 2,

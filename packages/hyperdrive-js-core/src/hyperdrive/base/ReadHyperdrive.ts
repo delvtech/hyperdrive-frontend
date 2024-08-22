@@ -209,7 +209,6 @@ export class ReadHyperdrive extends ReadModel {
     options?: ContractReadOptions;
   }): Promise<bigint> {
     const currentBlock = await getBlockOrThrow(this.network, options);
-    console.log("Current block:", currentBlock);
     // Clamp the start block to the pool's initialization block if the
     // blockRange is too big.
     let startBlockNumber = currentBlock.blockNumber! - blockRange;
@@ -225,32 +224,22 @@ export class ReadHyperdrive extends ReadModel {
       blockNumber: startBlockNumber,
     });
 
-    console.log("Start block:", startBlock);
-
     // Get the info from fromBlock to get the starting vault share price
     const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
       blockNumber: startBlockNumber,
     });
 
-    console.log("Start vault share price:", startVaultSharePrice);
-
     // Get the current vaultSharePrice from the latest pool info
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo(options);
 
-    console.log("Current vault share price:", currentVaultSharePrice);
-
     const timeFrame = currentBlock.timestamp - startBlock.timestamp; // bigint
-
-    console.log("Time frame:", timeFrame);
 
     const vaultApy = calculateApyFromPrice({
       startPrice: startVaultSharePrice,
       endPrice: currentVaultSharePrice,
       timeFrame,
     });
-
-    console.log("Vault APY:", vaultApy);
 
     return vaultApy;
   }
@@ -444,7 +433,6 @@ export class ReadHyperdrive extends ReadModel {
       poolConfig,
       currentTime: BigInt(Date.now()) / 1000n,
     });
-    console.log("presentValueInShares", presentValueInShares);
 
     return this.convertToBase({
       sharesAmount: presentValueInShares,
