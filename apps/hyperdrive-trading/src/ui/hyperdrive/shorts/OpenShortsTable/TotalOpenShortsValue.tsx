@@ -48,12 +48,12 @@ export function TotalOpenShortValue({
             {`$${formatBalance({
               balance:
                 totalOpenShortsValue && !isLoading && fiatPrice
-                  ? fixed(totalOpenShortsValue || 0n, baseToken?.decimals).mul(
+                  ? fixed(totalOpenShortsValue, baseToken?.decimals).mul(
                       fiatPrice,
                       baseToken?.decimals,
                     ).bigint
                   : 0n,
-              decimals: hyperdrive.decimals || 18,
+              decimals: hyperdrive.decimals,
               places: 2,
               includeCommas: true,
             })}`}{" "}

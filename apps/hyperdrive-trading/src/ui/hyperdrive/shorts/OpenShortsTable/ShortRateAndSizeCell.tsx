@@ -44,7 +44,7 @@ export function ShortRateAndSizeCell({
               "rounded-md border border-success/20 bg-success/20 px-1 text-success":
                 isPositiveChangeInValue,
               "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                !isPositiveChangeInValue && rateDifference !== -0n,
+                !isPositiveChangeInValue,
             },
           )}
         >

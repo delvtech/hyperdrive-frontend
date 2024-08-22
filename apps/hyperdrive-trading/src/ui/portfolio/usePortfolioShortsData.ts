@@ -3,9 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Address } from "viem";
 import { useAccount, usePublicClient } from "wagmi";
 
-type OpenShortPositionsData = Record<`0x${string}`, OpenShort[]>;
+type OpenShortPositionsData = Record<Address, OpenShort[]>;
 
 export function usePortfolioShortsData(): {
   openShortPositions: OpenShortPositionsData | undefined;

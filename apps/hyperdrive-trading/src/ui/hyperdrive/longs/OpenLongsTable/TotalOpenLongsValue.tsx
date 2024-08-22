@@ -51,7 +51,7 @@ export function TotalOpenLongsValue({
                     baseToken?.decimals,
                   ).bigint
                 : 0n,
-            decimals: hyperdrive.decimals || 18,
+            decimals: hyperdrive.decimals,
             places: 2,
             includeCommas: true,
           })}`}{" "}
