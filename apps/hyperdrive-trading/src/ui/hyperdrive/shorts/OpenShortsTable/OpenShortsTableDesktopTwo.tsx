@@ -62,9 +62,9 @@ export function OpenShortsContainer(): ReactElement {
                   hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
                     <div
                       className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={baseToken?.symbol}
+                      data-tip={baseToken.symbol}
                     >
-                      <img src={baseToken?.iconUrl} />
+                      <img src={baseToken.iconUrl} />
                     </div>
                   ) : null}
                   {sharesToken &&

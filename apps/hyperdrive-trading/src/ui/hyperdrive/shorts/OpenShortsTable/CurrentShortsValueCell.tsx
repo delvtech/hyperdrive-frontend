@@ -48,18 +48,10 @@ export function CurrentShortsValueCell({
   const profitLossAsBigInt =
     (currentValueInBase || 0n) - openShort.baseAmountPaid;
 
-  const negligibleThreshold = 10n ** BigInt(hyperdrive.decimals - 2); // This is the threshold for a negligible change in value. We'll need to show more decimals if the change is negligible.
-
-  const isNegligibleChange =
-    profitLossAsBigInt > -negligibleThreshold &&
-    profitLossAsBigInt < negligibleThreshold;
-
   const profitLoss = formatBalance({
     balance: profitLossAsBigInt,
     decimals: hyperdrive.decimals,
-    places: isNegligibleChange
-      ? (baseToken?.places || 2) + 2 // Show more decimals if change is negligible. Otherwise the user could see a red -0.00 if there is a small loss.
-      : baseToken?.places,
+    places: baseToken?.places,
   });
 
   const isPositiveChangeInValue = profitLossAsBigInt > 0n;
@@ -103,7 +95,7 @@ export function CurrentShortsValueCell({
           },
         )}
       >
-        <span>{!isNegligibleChange && isPositiveChangeInValue ? "+" : ""}</span>
+        <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {profitLoss}
       </div>
     </div>
