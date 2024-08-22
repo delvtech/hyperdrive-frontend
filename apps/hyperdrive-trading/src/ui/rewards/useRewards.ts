@@ -42,13 +42,11 @@ function getWeight(
     return parseFixed(1, 18);
   }
 
-  const ONE = parseFixed(1, 18);
-
   const shareReserves = fixed(poolInfo.shareReserves, decimals);
   const minShareReserves = fixed(poolConfig.minimumShareReserves, decimals);
-  const netShareReserves = shareReserves.sub(minShareReserves).mul(ONE);
+  const netShareReserves = shareReserves.sub(minShareReserves);
 
-  return netShareReserves.div(parseFixed(presentValue, decimals).mul(ONE));
+  return netShareReserves.div(parseFixed(presentValue, decimals));
 }
 
 export function useRewards(
