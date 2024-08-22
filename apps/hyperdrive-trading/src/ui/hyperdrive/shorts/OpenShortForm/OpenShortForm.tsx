@@ -85,6 +85,7 @@ export function OpenShortForm({
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
+
   if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({
       tokenConfig: sharesToken,
@@ -390,7 +391,7 @@ export function OpenShortForm({
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
             label="Rate you pay"
-            value={formatRate(fixedRatePaid || 0n, baseToken.decimals)}
+            value={formatRate(fixedRatePaid || 0n)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"
             unitClassName="text-xs"
@@ -399,7 +400,7 @@ export function OpenShortForm({
                 1 hy{baseToken.symbol} ≈{" "}
                 {formatBalance({
                   balance: longPrice ?? 0n,
-                  decimals: baseToken.decimals,
+                  decimals: 18, // prices are always 18 decimals regardless of the base token,
                   places: baseToken.places,
                 })}{" "}
                 {baseToken.symbol}

@@ -49,10 +49,12 @@ export function OpenShortPreview({
   const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
+  const defaultBondAmount =
+    hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6);
   const { shortApr, shortRateStatus } = useShortRate({
     // show the market short rate (aka bond amount of 1) if the user hasn't
     // already entered a short size
-    bondAmount: shortSize || BigInt(1e15),
+    bondAmount: shortSize || defaultBondAmount,
     hyperdriveAddress: hyperdrive.address,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
     variableApy: vaultRate?.vaultRate,

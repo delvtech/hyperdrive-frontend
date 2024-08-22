@@ -10,6 +10,7 @@ export function calculateMatureLongYieldAfterFees({
   baseAmountPaid: bigint;
   decimals: number;
 }): bigint {
-  const poolFee = fixed(bondAmount, decimals).mul(flatFee, decimals).bigint;
+  // Flat fee is always 18 decimals
+  const poolFee = fixed(bondAmount, decimals).mul(flatFee).bigint;
   return bondAmount - baseAmountPaid - poolFee;
 }

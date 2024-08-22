@@ -226,7 +226,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             row.original.eventName === "CloseShort"
               ? bondAmount || 0n
               : row.original.baseAmount || 0n,
-            18,
+            hyperdrive.decimals,
           ],
           { digits: 2 },
         );
@@ -302,7 +302,7 @@ function formatTransactionTableMobileData(
       row.eventName === "OpenShort" || row.eventName === "CloseShort"
         ? row.bondAmount || 0n
         : row.baseAmount || 0n,
-      18,
+      hyperdrive.decimals,
     ],
     { digits: 2 },
   );

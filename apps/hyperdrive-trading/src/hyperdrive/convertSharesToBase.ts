@@ -9,5 +9,7 @@ export function convertSharesToBase({
   vaultSharePrice: bigint | undefined;
   decimals: number;
 }): bigint {
-  return fixed(sharesAmount, decimals).mul(vaultSharePrice, decimals).bigint;
+  // vault share price is always 18 decimals, so only allow the caller to
+  // specify the sharesAmount decimals
+  return fixed(sharesAmount, decimals).mul(vaultSharePrice).bigint;
 }

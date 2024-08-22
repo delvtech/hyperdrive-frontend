@@ -24,7 +24,7 @@ export function ShortRateStat({
   });
 
   const { shortApr, shortRoi, shortRateStatus } = useShortRate({
-    bondAmount: BigInt(1e15),
+    bondAmount: hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6),
     hyperdriveAddress: hyperdrive.address,
     variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),

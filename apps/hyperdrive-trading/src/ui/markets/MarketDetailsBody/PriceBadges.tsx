@@ -1,8 +1,7 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { divideBigInt } from "src/base/divideBigInt";
-import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Badge } from "src/ui/base/components/Badge";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -35,7 +34,7 @@ export function PriceBadges({
         1 hy{baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice ?? 0n,
-          decimals: baseToken.decimals,
+          decimals: 18, // price is always 18 decimals
           places: baseToken.places,
         })}{" "}
         {baseToken.symbol}
@@ -43,13 +42,9 @@ export function PriceBadges({
       <Badge>
         1 {baseToken.symbol} ≈{" "}
         {formatBalance({
-          balance: divideBigInt(
-            parseUnits("1", 18),
-            longPrice ?? 0n,
-            baseToken.decimals,
-          ),
-
-          decimals: baseToken.decimals,
+          balance: parseFixed(1, hyperdrive.decimals).div(longPrice || 1n)
+            .bigint,
+          decimals: hyperdrive.decimals,
           places: baseToken.places,
         })}{" "}
         hy{baseToken.symbol}
