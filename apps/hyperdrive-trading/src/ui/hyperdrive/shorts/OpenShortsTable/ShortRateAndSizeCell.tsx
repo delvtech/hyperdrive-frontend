@@ -49,9 +49,7 @@ export function ShortRateAndSizeCell({
           )}
         >
           <span>{isPositiveChangeInValue ? "+" : ""}</span>
-          {rateDifference
-            ? `${rateDifference === -0n ? "0" : formatRate(rateDifference)}`
-            : undefined}
+          {formatRate(rateDifference)}
         </div>
       </div>
       <p className="text-neutral-content">{`${formatBalance({
