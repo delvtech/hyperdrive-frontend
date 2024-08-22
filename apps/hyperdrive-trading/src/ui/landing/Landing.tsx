@@ -17,7 +17,6 @@ import { Hero } from "src/ui/landing/Hero/Hero";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { YieldSourceCard } from "src/ui/markets/YieldSourceCard/YieldSourceCard";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
@@ -258,20 +257,6 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         </div>
       </div>
     </Well>
-  );
-}
-/**
- * @deprecated
- */
-function YieldSourceCards() {
-  const { yieldSources } = useAppConfig();
-
-  return (
-    <div className="flex max-w-[1610px] flex-wrap justify-center gap-16">
-      {Object.entries(yieldSources).map(([key, yieldSource]) => (
-        <YieldSourceCard key={key} yieldSource={yieldSource} />
-      ))}
-    </div>
   );
 }
 
