@@ -208,37 +208,49 @@ export class ReadHyperdrive extends ReadModel {
     blockRange: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    // Attempt to fetch the blocks first to fail early if the block is not found
     const currentBlock = await getBlockOrThrow(this.network, options);
+    console.log("Current block:", currentBlock);
+    // Clamp the start block to the pool's initialization block if the
+    // blockRange is too big.
     let startBlockNumber = currentBlock.blockNumber! - blockRange;
-    // If the blockRange extends past the initialization block, then we adjust
-    // the range to start at the initialization block instead of throwing an error
     const { blockNumber: initializationBlock } =
       await this.getInitializationBlock();
     if (initializationBlock && initializationBlock > startBlockNumber) {
       startBlockNumber = initializationBlock;
     }
 
+    // NOTE: Cloudchain will throw an error if the block number is too far back
+    // in history.
     const startBlock = await getBlockOrThrow(this.network, {
       blockNumber: startBlockNumber,
     });
+
+    console.log("Start block:", startBlock);
 
     // Get the info from fromBlock to get the starting vault share price
     const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
       blockNumber: startBlockNumber,
     });
 
+    console.log("Start vault share price:", startVaultSharePrice);
+
     // Get the current vaultSharePrice from the latest pool info
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo(options);
 
+    console.log("Current vault share price:", currentVaultSharePrice);
+
     const timeFrame = currentBlock.timestamp - startBlock.timestamp; // bigint
+
+    console.log("Time frame:", timeFrame);
 
     const vaultApy = calculateApyFromPrice({
       startPrice: startVaultSharePrice,
       endPrice: currentVaultSharePrice,
       timeFrame,
     });
+
+    console.log("Vault APY:", vaultApy);
 
     return vaultApy;
   }
@@ -253,7 +265,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * A protected version of {@linkcode ReadHyperdrive.getCheckpointTime} with
+   * A protected version of `ReadHyperdrive.getCheckpointTime` with
    * more relaxed types to streamline internal usage. The public API ensures
    * only one of `timestamp` or `blockNumber` is provided to avoid ambiguity,
    * but this function allows both to be provided, in which case `timestamp`
@@ -418,6 +430,12 @@ export class ReadHyperdrive extends ReadModel {
    * @returns
    */
   async getPresentValue(options?: ContractReadOptions): Promise<bigint> {
+    //  presentValueInShares 33997119981629446n
+    //  Start block: {blockNumber: 20486359n, timestamp: 1723150091n}
+    //  Start vault share price: 1015896019620210959n
+    //  Current vault share price: 1017273050693203130n
+    //  Time frame: 1203624n
+    //  Vault APY: 36128140020150719n
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
@@ -426,6 +444,7 @@ export class ReadHyperdrive extends ReadModel {
       poolConfig,
       currentTime: BigInt(Date.now()) / 1000n,
     });
+    console.log("presentValueInShares", presentValueInShares);
 
     return this.convertToBase({
       sharesAmount: presentValueInShares,
@@ -1604,17 +1623,43 @@ export class ReadHyperdrive extends ReadModel {
       openVaultSharePrice: latestCheckpoint.vaultSharePrice,
     });
 
-    // Calculation for fixed rate paid. This is the rate the user pays upfront to open a short.
-    const baseAmountMinusYield = baseDepositAmount - accruedYield;
-    const bondsMinusBaseAmount = amountOfBondsToShort - baseAmountMinusYield;
-    const fixedRatePaid = fixed(baseAmountMinusYield, 18).div(
-      bondsMinusBaseAmount,
+    // Calculation for fixed rate paid. This is the rate the user pays upfront
+    // to open a short.
+    // FIXME: Replace with `.sub()` once fixed point addition and subtraction is decimal agnostic
+    const baseAmountMinusYield =
+      fixed(fixed(baseDepositAmount, 6)).bigint - accruedYield;
+
+    // FIXME: temporary to handle negative numbers, remove once fixed point is updated
+    const signAndAbs =
+      baseAmountMinusYield >= 0n
+        ? [1n, baseAmountMinusYield]
+        : [-1n, -baseAmountMinusYield];
+    let signFactor = signAndAbs[0];
+    const absBaseAmountMinusYield = signAndAbs[1];
+
+    // FIXME: Replace with `.sub()` once fixed point addition and subtraction is decimal agnostic
+    const bondsMinusBaseAmount =
+      fixed(fixed(amountOfBondsToShort, 6)).bigint - baseAmountMinusYield;
+
+    // FIXME: temporary to handle negative numbers, remove once fixed point is updated
+    const [shouldFlipSign, absBondsMinusBaseAmount] =
+      bondsMinusBaseAmount >= 0n
+        ? [false, bondsMinusBaseAmount]
+        : [true, -bondsMinusBaseAmount];
+    if (shouldFlipSign) {
+      signFactor *= -1n;
+    }
+
+    const fixedRatePaid = fixed(absBaseAmountMinusYield, 18).div(
+      absBondsMinusBaseAmount,
       18,
     );
     const fixedTimeRangeInYears = fixed(poolConfig.positionDuration).div(
       SECONDS_PER_YEAR,
     );
-    const fixedRatePaidScaled = fixedRatePaid.div(fixedTimeRangeInYears).bigint;
+    // multiply by 1 or -1 to ensure the sign is retained
+    const fixedRatePaidScaled =
+      fixedRatePaid.div(fixedTimeRangeInYears).bigint * signFactor;
 
     const spotPriceAfterOpen = hyperwasm.spotPriceAfterShort({
       poolInfo,

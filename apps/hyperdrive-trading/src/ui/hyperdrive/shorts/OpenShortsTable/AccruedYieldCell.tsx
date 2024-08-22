@@ -35,7 +35,7 @@ export function AccruedYieldCell({
     >
       {formatBalance({
         balance: accruedYield || 0n,
-        decimals: baseToken.decimals,
+        decimals: 18, // accrued yield is always 18 decimals
         places: baseToken.places,
       })}
     </span>

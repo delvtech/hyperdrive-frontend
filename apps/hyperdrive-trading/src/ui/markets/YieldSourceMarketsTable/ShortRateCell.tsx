@@ -15,7 +15,7 @@ export function ShortRateCell({
   });
   const { shortApr } = useShortRate({
     hyperdriveAddress: hyperdrive.address,
-    bondAmount: BigInt(1e15),
+    bondAmount: hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6),
     variableApy: vaultRate?.vaultRate,
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
   });

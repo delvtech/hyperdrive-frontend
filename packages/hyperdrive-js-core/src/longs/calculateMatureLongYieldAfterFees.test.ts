@@ -12,3 +12,14 @@ test("calculateMatureLongYieldAfterFees should return the yield a mature long ha
 
   expect(value).toEqual(362141952422255235n);
 });
+
+test("calculateMatureLongYieldAfterFees should work with mixed decimals", async () => {
+  const value = calculateMatureLongYieldAfterFees({
+    flatFee: 500000000000000n,
+    bondAmount: 5000862n,
+    baseAmountPaid: 4000000n,
+    decimals: 6,
+  });
+
+  expect(value).toEqual(998362n);
+});

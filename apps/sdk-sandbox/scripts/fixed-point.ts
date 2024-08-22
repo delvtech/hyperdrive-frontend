@@ -28,3 +28,19 @@ console.log(
   })}`,
 );
 // // => Fee amount: $25.0031
+
+const price = 981873174114563822n;
+const price1 = fixed(price, 6);
+const price2 = fixed(price).mul(parseFixed(1, 6));
+console.log("price1", price1.bigint);
+// price1 981873174114563822n
+console.log("price2", price2.bigint);
+// price2 981873n
+const price3 = parseFixed(981873n, 18);
+console.log("price3", price3.bigint);
+
+// const fixedRatePaid = fixed(-1363359n, 6).div(2363359n, 6);
+// console.log("fixedRatePaid", fixedRatePaid.bigint);
+
+const blocks = fixed(7127, 1).div(2).bigint;
+console.log("blocks", blocks);

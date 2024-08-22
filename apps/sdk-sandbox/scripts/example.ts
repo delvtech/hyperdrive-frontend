@@ -9,6 +9,8 @@ const hyperdrive = new ReadWriteHyperdrive({
   walletClient: walletClient!,
 });
 
+const block = await hyperdrive.network.getBlock();
+
 const tx = await walletClient?.writeContract({
   address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
   abi: hyperdrive.contract.abi,
