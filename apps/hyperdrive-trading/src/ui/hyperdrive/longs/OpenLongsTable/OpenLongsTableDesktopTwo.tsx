@@ -1,4 +1,7 @@
-import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
+import {
+  calculateAprFromPrice,
+  OpenLongPositionReceived,
+} from "@delvtech/hyperdrive-viem";
 import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
@@ -26,10 +29,8 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
-import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 import { StatusCell } from "./StatusCell";
@@ -40,9 +41,21 @@ export function OpenLongsContainer(): ReactElement {
     usePortfolioLongsData();
   const appConfig = useAppConfig();
 
+  if (openLongPositionsStatus === "loading") {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <LoadingState
+          heading="Loading your Longs..."
+          text="Searching for Long events, calculating current value and PnL..."
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
+        const openLongs = openLongPositions?.[hyperdrive.address];
         const baseToken = appConfig.tokens.find(
           (token) => token.address === hyperdrive.poolConfig.baseToken,
         );
@@ -86,7 +99,7 @@ export function OpenLongsContainer(): ReactElement {
             </div>
             <OpenLongsTableDesktopTwo
               hyperdrive={hyperdrive}
-              openLongPositionsStatus={openLongPositionsStatus}
+              openLongs={openLongs}
             />
           </div>
         );
@@ -97,18 +110,14 @@ export function OpenLongsContainer(): ReactElement {
 
 export function OpenLongsTableDesktopTwo({
   hyperdrive,
-  openLongPositionsStatus,
+  openLongs,
 }: {
   hyperdrive: HyperdriveConfig;
-  openLongPositionsStatus?: "loading" | "success" | "error";
+  openLongs: OpenLongPositionReceived[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
-  const { openLongs, openLongsStatus } = useOpenLongs({
-    account,
-    hyperdriveAddress: hyperdrive.address,
-  });
+
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
@@ -136,14 +145,6 @@ export function OpenLongsTableDesktopTwo({
       </div>
     );
   }
-  if (openLongsStatus === "loading" || openLongPositionsStatus === "loading") {
-    return (
-      <LoadingState
-        heading="Loading your Longs..."
-        text="Searching for Long events, calculating current value and PnL..."
-      />
-    );
-  }
 
   return (
     <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
@@ -155,7 +156,12 @@ export function OpenLongsTableDesktopTwo({
             key={modalId}
             hyperdrive={hyperdrive}
             modalId={modalId}
-            long={row.original}
+            long={{
+              assetId: row.original.assetId,
+              baseAmountPaid: row.original.details?.baseAmountPaid || 0n,
+              bondAmount: row.original.details?.bondAmount || 0n,
+              maturity: row.original.maturity,
+            }}
           />
         );
       })}
@@ -271,7 +277,7 @@ export function OpenLongsTableDesktopTwo({
   );
 }
 
-const columnHelper = createColumnHelper<Long>();
+const columnHelper = createColumnHelper<OpenLongPositionReceived>();
 
 function getColumns({
   hyperdrive,
@@ -297,13 +303,13 @@ function getColumns({
         );
       },
     }),
-    columnHelper.accessor("bondAmount", {
+    columnHelper.accessor("details.bondAmount", {
       id: "fixedRate/size",
       header: `Fixed Rate / Size`,
       cell: ({ row }) => {
         const fixedRate = calculateAprFromPrice({
-          baseAmount: row.original.baseAmountPaid,
-          bondAmount: row.original.bondAmount,
+          baseAmount: row.original.details?.baseAmountPaid || 0n,
+          bondAmount: row.original.details?.bondAmount || 0n,
           positionDuration: hyperdrive.poolConfig.positionDuration || 0n,
         });
 
@@ -312,7 +318,7 @@ function getColumns({
             <div>{formatRate(fixedRate)} APR</div>
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: row.original.bondAmount,
+                balance: row.original.details?.bondAmount || 0n,
                 decimals: baseToken.decimals,
                 places: 2,
               })}{" "}
@@ -323,15 +329,15 @@ function getColumns({
       },
       sortingFn: (rowA, rowB) => {
         const aFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowA.original.baseAmountPaid,
-          amountAfter: rowA.original.bondAmount,
+          amountBefore: rowA.original.details?.baseAmountPaid || 0n,
+          amountAfter: rowA.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
             Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
         });
         const bFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowB.original.baseAmountPaid,
-          amountAfter: rowB.original.bondAmount,
+          amountBefore: rowB.original.details?.baseAmountPaid || 0n,
+          amountAfter: rowB.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
             Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
@@ -339,7 +345,7 @@ function getColumns({
         return aFixedRate - bFixedRate;
       },
     }),
-    columnHelper.accessor("baseAmountPaid", {
+    columnHelper.accessor("details.baseAmountPaid", {
       id: "value/cost",
       header: `Value / Cost (${baseToken.symbol})`,
       cell: ({ row }) => {
@@ -348,7 +354,7 @@ function getColumns({
             <CurrentValueCellTwo hyperdrive={hyperdrive} row={row.original} />
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: row.original.baseAmountPaid,
+                balance: row.original.details?.baseAmountPaid || 0n,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })}
