@@ -1,8 +1,4 @@
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  Cog8ToothIcon,
-} from "@heroicons/react/16/solid";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -23,10 +19,10 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { Pagination } from "src/ui/base/components/Pagination";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
+import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
@@ -45,6 +41,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           withdrawalShares: 0n,
         };
         // Ensure this hyperdrive pool has open positions before rendering.
+        // openLpPosition needs to have at least one of lpShares or withdrawalShares to be non-zero.
         if (
           openLpPositionStatus === "success" &&
           openLpPosition.lpShares === 0n &&
@@ -144,27 +141,6 @@ export function OpenLpTableDesktop({
 
   return (
     <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
-      {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
-      {/* {tableInstance.getRowModel().rows.map((row) => {
-        const modalId = `withdrawalLpModal`;
-        return (
-          <Modal
-            key={modalId}
-            modalId="withdrawalLpModal"
-            modalHeader={
-              <ModalHeader heading="Remove Liquidity" subHeading={"TODO"} />
-            }
-            modalContent={
-              <div>
-                <RemoveLiquidityForm
-                  hyperdrive={hyperdrive}
-                  lpShares={openLpPosition.lpShares}
-                />
-              </div>
-            }
-          />
-        );
-      })} */}
       <table className="daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -270,9 +246,6 @@ export function OpenLpTableDesktop({
           })}
         </tbody>
       </table>
-      {tableInstance.getFilteredRowModel().rows.length > 10 ? (
-        <Pagination tableInstance={tableInstance} />
-      ) : null}
     </div>
   );
 }
@@ -296,7 +269,7 @@ function getColumns({
   return [
     columnHelper.accessor("lpShares", {
       id: "maturationDate",
-      header: `Maturity Date`,
+      header: `Term`,
       cell: () => {
         return (
           <div>
@@ -310,60 +283,77 @@ function getColumns({
       },
     }),
     columnHelper.accessor("lpShares", {
-      id: "fixedRate/size",
-      header: `Fixed Rate / Size`,
-      cell: ({ row }) => {
-        return null;
-        //   return (
-        //     <div className="flex flex-col">
-        //       <div>{formatRate(fixedRate)}</div>
-        //       <span className="flex font-dmMono text-neutral-content">
-        //         {formatBalance({
-        //           balance: row.original.bondAmount,
-        //           decimals: baseToken.decimals,
-        //           places: 2,
-        //         })}{" "}
-        //         {`hy${baseToken.symbol}`}
-        //       </span>
-        //     </div>
-        //   );
-      },
+      id: "size",
+      header: `Size (${baseToken.symbol}-LP)`,
+      cell: ({ row }) => (
+        <SizeAndPoolShareCell
+          hyperdrive={hyperdrive}
+          lpShares={row.original.lpShares}
+        />
+      ),
     }),
     columnHelper.accessor("withdrawalShares", {
-      id: "value/cost",
-      header: `Value / Cost (${baseToken.symbol})`,
-      cell: ({ row }) => {
-        return null;
-      },
-    }),
-    columnHelper.display({
       id: "value",
-      header: `Status`,
+      header: `Value (${baseToken.symbol})`,
       cell: ({ row }) => {
         return null;
       },
     }),
     columnHelper.display({
-      id: "go-to-market",
+      id: "withdrawalQueue",
+      header: `Withdrawal Queue`,
       cell: ({ row }) => {
-        return (
-          <div className="flex w-full items-center font-inter">
-            <button
-              className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-              onClick={() => {
-                (
-                  document.getElementById(
-                    "withdrawalLpModal",
-                  ) as HTMLDialogElement
-                )?.showModal();
-              }}
-            >
-              <Cog8ToothIcon className="h-5" />
-              Manage
-            </button>
-          </div>
-        );
+        return null;
       },
     }),
+    // columnHelper.display({
+    //   id: "go-to-market",
+    //   cell: ({ row }) => {
+    //     return (
+    //       <div className="flex w-full items-center font-inter">
+    //         <Modal
+    //           modalId="withdrawalLpModal"
+    //           modalHeader={
+    //             <ModalHeader
+    //               heading="Remove Liquidity"
+    //               subHeading={"TODO subheading"}
+    //             />
+    //           }
+    //           modalContent={
+    //             <div>
+    //               <h1>Modal Content</h1>
+    //               {/* <button
+
+    //                   className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
+    //                   onClick={() =>
+    //                     (window as any)["withdrawalLpModal"].close()
+    //                   }
+    //                 >
+    //                   <XMarkIcon className="w-6" title="Close" />
+    //                 </button> */}
+    //               {/* <RemoveLiquidityForm
+    //                   hyperdrive={hyperdrive}
+    //                   lpShares={lpShares || 0n}
+    //                 /> */}
+    //             </div>
+    //           }
+    //         >
+    //           {({ showModal }) => (
+    //             <button
+    //               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
+    //               onClick={() => {
+    //                 console.log("Clicked");
+    //                 return showModal();
+    //               }}
+    //             >
+    //               <Cog8ToothIcon className="h-5" />
+    //               Manage
+    //             </button>
+    //           )}
+    //         </Modal>
+    //       </div>
+    //     );
+    //   },
+    // }),
   ];
 }
