@@ -22,6 +22,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
+import { LpCurrentValueCell } from "./LpCurrentValueCell";
 import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
@@ -295,9 +296,12 @@ function getColumns({
     columnHelper.accessor("withdrawalShares", {
       id: "value",
       header: `Value (${baseToken.symbol})`,
-      cell: ({ row }) => {
-        return null;
-      },
+      cell: ({ row }) => (
+        <LpCurrentValueCell
+          hyperdrive={hyperdrive}
+          lpShares={row.original.lpShares}
+        />
+      ),
     }),
     columnHelper.display({
       id: "withdrawalQueue",
