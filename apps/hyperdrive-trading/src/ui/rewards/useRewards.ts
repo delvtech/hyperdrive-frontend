@@ -30,6 +30,7 @@ type UseRewardsReturn =
 function getWeight(
   poolConfig: PoolConfig,
   positionType: "short" | "lp",
+  decimals: number,
   poolInfo?: PoolInfo,
   presentValue?: bigint,
 ): FixedPoint {
@@ -41,11 +42,11 @@ function getWeight(
     return parseFixed(1, 18);
   }
 
-  const shareReserves = fixed(poolInfo.shareReserves);
-  const minShareReserves = fixed(poolConfig.minimumShareReserves);
+  const shareReserves = fixed(poolInfo.shareReserves, decimals);
+  const minShareReserves = fixed(poolConfig.minimumShareReserves, decimals);
   const netShareReserves = shareReserves.sub(minShareReserves);
 
-  return netShareReserves.div(presentValue);
+  return netShareReserves.div(parseFixed(presentValue, decimals));
 }
 
 export function useRewards(
@@ -63,7 +64,13 @@ export function useRewards(
 
   if (eligibleMarketsForMorphoRewards[chainId]?.includes(hyperdrive.address)) {
     const morphoRate = MorphoFlatRatePerYear.mul(
-      getWeight(hyperdrive.poolConfig, positionType, poolInfo, presentValue),
+      getWeight(
+        hyperdrive.poolConfig,
+        positionType,
+        hyperdrive.decimals,
+        poolInfo,
+        presentValue,
+      ),
     );
 
     return [
