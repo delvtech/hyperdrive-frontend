@@ -22,6 +22,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
 import { LpCurrentValueCell } from "./LpCurrentValueCell";
+import { ManageLpAndWithdrawalSharesButton } from "./ManageLpAndWithdrawalSharesButton";
 import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
 import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 
@@ -307,6 +308,12 @@ function getColumns({
       cell: ({ row }) => {
         return <WithdrawalQueueCell hyperdrive={hyperdrive} />;
       },
+    }),
+    columnHelper.display({
+      id: "manage",
+      cell: ({ row }) => (
+        <ManageLpAndWithdrawalSharesButton hyperdrive={hyperdrive} />
+      ),
     }),
   ];
 }
