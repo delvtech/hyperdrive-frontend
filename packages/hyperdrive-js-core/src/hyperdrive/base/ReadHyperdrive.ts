@@ -1613,41 +1613,15 @@ export class ReadHyperdrive extends ReadModel {
 
     // Calculation for fixed rate paid. This is the rate the user pays upfront
     // to open a short.
-    // FIXME: Replace with `.sub()` once fixed point addition and subtraction is decimal agnostic
-    const baseAmountMinusYield =
-      fixed(fixed(baseDepositAmount, 6)).bigint - accruedYield;
-
-    // FIXME: temporary to handle negative numbers, remove once fixed point is updated
-    const signAndAbs =
-      baseAmountMinusYield >= 0n
-        ? [1n, baseAmountMinusYield]
-        : [-1n, -baseAmountMinusYield];
-    let signFactor = signAndAbs[0];
-    const absBaseAmountMinusYield = signAndAbs[1];
-
-    // FIXME: Replace with `.sub()` once fixed point addition and subtraction is decimal agnostic
-    const bondsMinusBaseAmount =
-      fixed(fixed(amountOfBondsToShort, 6)).bigint - baseAmountMinusYield;
-
-    // FIXME: temporary to handle negative numbers, remove once fixed point is updated
-    const [shouldFlipSign, absBondsMinusBaseAmount] =
-      bondsMinusBaseAmount >= 0n
-        ? [false, bondsMinusBaseAmount]
-        : [true, -bondsMinusBaseAmount];
-    if (shouldFlipSign) {
-      signFactor *= -1n;
-    }
-
-    const fixedRatePaid = fixed(absBaseAmountMinusYield, 18).div(
-      absBondsMinusBaseAmount,
-      18,
-    );
     const fixedTimeRangeInYears = fixed(poolConfig.positionDuration).div(
       SECONDS_PER_YEAR,
     );
-    // multiply by 1 or -1 to ensure the sign is retained
-    const fixedRatePaidScaled =
-      fixedRatePaid.div(fixedTimeRangeInYears).bigint * signFactor;
+    const baseAmountMinusYield = fixed(baseDepositAmount).sub(accruedYield);
+    const bondsMinusBaseAmount =
+      fixed(amountOfBondsToShort).sub(baseAmountMinusYield);
+    const fixedRatePaid = baseAmountMinusYield
+      .div(bondsMinusBaseAmount)
+      .div(fixedTimeRangeInYears).bigint;
 
     const spotPriceAfterOpen = hyperwasm.spotPriceAfterShort({
       poolInfo,
@@ -1674,7 +1648,7 @@ export class ReadHyperdrive extends ReadModel {
         spotPriceAfterOpen,
         spotRateAfterOpen,
         curveFee: curveFeeInBase,
-        fixedRatePaid: fixedRatePaidScaled,
+        fixedRatePaid,
       };
     }
 
@@ -1691,7 +1665,7 @@ export class ReadHyperdrive extends ReadModel {
         baseAmount: curveFeeInBase,
         options,
       }),
-      fixedRatePaid: fixedRatePaidScaled,
+      fixedRatePaid,
     };
   }
 

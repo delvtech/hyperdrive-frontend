@@ -71,7 +71,7 @@ pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, E
 pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
     // If the value is already a fixed-point number, it's already scaled.
     if value.is_fixed_point() == Some(true) {
-        return WasmFixedPoint::new(value, decimals);
+        return fixed(value, decimals);
     }
 
     let decimals = decimals.unwrap_or(INNER_DECIMALS);
@@ -104,9 +104,7 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPo
     }
 
     let scaled_str = format!("{s}e{decimals}",);
-    WasmFixedPoint::new(JsValue::from(scaled_str).into(), Some(decimals))
-
-    // Scale the value by the number of decimals.
+    fixed(JsValue::from(scaled_str).into(), Some(decimals))
 }
 
 /// Create a random fixed-point number with an optional min and max.
