@@ -5,11 +5,9 @@ export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
 export { cloudchainAppConfig } from "src/generated/42069.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
 
-// appconfig helpers
-export { findBaseToken } from "src/appconfig/selectors/findBaseToken";
-export { findHyperdriveConfig } from "src/appconfig/selectors/findHyperdriveConfig";
-export { findYieldSourceHyperdrives } from "src/appconfig/selectors/findYieldSourceHyperdrives";
-export { findYieldSourceToken } from "src/appconfig/selectors/findYieldSourceToken";
+// appconfig selectors
+export { findHyperdriveConfig } from "src/hyperdrives/selectors";
+export { findBaseToken } from "src/tokens/selectors";
 
 // hyperdrive
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
