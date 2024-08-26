@@ -1,8 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint, ToU256},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
-use fixedpointmath::fixed;
+use fixedpointmath::{fixed, Fixed};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -57,26 +57,26 @@ pub fn calcCloseShort(params: ICloseShortParams) -> Result<BigInt, Error> {
 pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
     // dy is the bonds shorted
-    let bond_amount = params.bond_amount().to_fixed()?;
+    let bond_amount = params.bond_amount().to_u256()?.fixed();
 
     // c is the closing vault share price
-    let close_vault_share_price = params.close_vault_share_price().to_fixed()?;
+    let close_vault_share_price = params.close_vault_share_price().to_u256()?.fixed();
 
     // c0 is the open vault share price
-    let open_vault_share_price = params.open_vault_share_price().to_fixed()?;
+    let open_vault_share_price = params.open_vault_share_price().to_u256()?.fixed();
 
-    let maturity_time = params.maturity_time().to_fixed()?;
-    let current_time = params.current_time().to_fixed()?;
+    let maturity_time = params.maturity_time().to_u256()?.fixed();
+    let current_time = params.current_time().to_u256()?.fixed();
 
     // p is the current pool spot price
-    let spot_price = state.calculate_spot_price().to_result()?.to_fixed()?;
+    let spot_price = state.calculate_spot_price().to_result()?;
 
     // t is the time remaining (maturity_time - latest_checkpoint) /
     // position_duration
-    let latest_checkpoint = state.to_checkpoint(current_time.into()).to_fixed()?;
+    let latest_checkpoint = state.to_checkpoint(current_time.into()).fixed();
     let time_remaining = if maturity_time > latest_checkpoint {
         // NOTE: Round down to underestimate the time remaining.
-        (maturity_time - latest_checkpoint).div_down(state.config.position_duration.to_fixed()?)
+        (maturity_time - latest_checkpoint).div_down(state.config.position_duration.fixed())
     } else {
         fixed!(0)
     };
@@ -89,10 +89,10 @@ pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, Error> 
     let trading_proceeds = bond_amount * (fixed!(1e18) - spot_price) * time_remaining;
 
     // curve_fees_paid = trading_proceeds * curve_fee
-    let curve_fees_paid = trading_proceeds * state.config.fees.curve.to_fixed()?;
+    let curve_fees_paid = trading_proceeds * state.config.fees.curve.fixed();
 
     // flat_fees_returned = dy * t * flat_fee
-    let flat_fees_returned = bond_amount * time_remaining * state.config.fees.flat.to_fixed()?;
+    let flat_fees_returned = bond_amount * time_remaining * state.config.fees.flat.fixed();
 
     let result = yield_accrued + trading_proceeds - curve_fees_paid + flat_fees_returned;
 

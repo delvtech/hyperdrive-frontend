@@ -1,7 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
+use fixedpointmath::Fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -21,8 +22,8 @@ struct OpenShortParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcOpenShort(params: IOpenShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let bond_amount = params.bond_amount().to_fixed()?;
-    let open_vault_share_price = params.open_vault_share_price().to_fixed()?;
+    let bond_amount = params.bond_amount().to_u256()?.fixed();
+    let open_vault_share_price = params.open_vault_share_price().to_u256()?.fixed();
 
     let result_fp = state
         .calculate_open_short(bond_amount, open_vault_share_price)
@@ -42,7 +43,7 @@ struct SpotPriceAfterShortParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPriceAfterShort(params: ISpotPriceAfterShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let bond_amount = params.bond_amount().to_fixed()?;
+    let bond_amount = params.bond_amount().to_u256()?.fixed();
 
     let result_fp = state
         .calculate_spot_price_after_short(bond_amount, None)
@@ -69,9 +70,9 @@ pub fn calcImpliedRate(params: IImpliedRateParams) -> Result<BigInt, Error> {
 
     let result_fp = state
         .calculate_implied_rate(
-            params.bond_amount().to_fixed()?,
-            params.open_vault_share_price().to_fixed()?,
-            params.variable_apy().to_fixed()?,
+            params.bond_amount().to_u256()?.fixed(),
+            params.open_vault_share_price().to_u256()?.fixed(),
+            params.variable_apy().to_u256()?.fixed(),
         )
         .to_result()?;
 
