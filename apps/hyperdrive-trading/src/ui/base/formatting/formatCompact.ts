@@ -14,10 +14,8 @@ export function formatCompact({
   value: bigint;
   decimals: number;
 }): string {
-  const [sign, abs] = value >= 0n ? ["", value] : ["-", -value];
-
-  return `${sign}${fixed(abs, decimals).format({
+  return fixed(value, decimals).format({
     compactDisplay: "short",
     decimals: 2,
-  })}`;
+  });
 }
