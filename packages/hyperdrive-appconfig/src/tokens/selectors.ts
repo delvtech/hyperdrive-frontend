@@ -3,11 +3,6 @@ import { Address } from "viem";
 
 /**
  * Returns a strongly typed TokenConfig for the token address
- * @deprecated This method is too shallow to be useful, use this instead:
- * ```
- * // Find the yield source token
- * appConfig.tokens.find(token => token.address === baseTokenAddress);
- * ```
  */
 export function findToken({
   tokenAddress,
