@@ -60,7 +60,7 @@ export function ManageLpAndWithdrawalSharesButton({
       >
         {balanceOfWithdrawalShares ? (
           <>
-            <button className="daisy-btn daisy-btn-ghost flex w-full flex-row justify-start rounded-btn px-0 hover:bg-neutral hover:text-neutral-content">
+            <button className="flex w-full flex-row justify-start border-b-2 border-b-neutral-content/20 px-0 py-4 hover:bg-neutral hover:text-neutral-content">
               <span>Claim from queue</span>
               <span className="ml-6 rounded-md border border-success/20 bg-success/20 px-1 text-success">
                 {baseProceedsFromPreview !== undefined ? (
@@ -74,14 +74,13 @@ export function ManageLpAndWithdrawalSharesButton({
                 )}
               </span>
             </button>
-            <div className="daisy-divider m-0 p-0" />
           </>
         ) : undefined}
-        <button className="daisy-btn daisy-btn-ghost m-0 flex h-[52px] w-full flex-row justify-start rounded-btn p-0 text-start hover:bg-neutral hover:text-neutral-content">
+        <button className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content">
           Add Liquidity
         </button>
-        <div className="daisy-divider m-0 p-0" />
-        <button className="daisy-btn daisy-btn-ghost m-0 flex w-full flex-row justify-start rounded-btn p-0 text-start hover:bg-neutral hover:text-neutral-content">
+
+        <button className="m-0 flex h-[52px] w-full flex-row items-center justify-start p-0 text-start hover:bg-neutral hover:text-neutral-content">
           Remove Liquidity
         </button>
       </ul>
