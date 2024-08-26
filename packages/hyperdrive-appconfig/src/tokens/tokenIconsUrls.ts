@@ -20,3 +20,7 @@ export const EZETH_ICON_URL =
 
 export const USDC_ICON_URL =
   "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033";
+
+// https://docs.gnosischain.com/about/tokens/xdai
+export const WXDAI_ICON_URL =
+  "https://docs.gnosischain.com/img/tokens/xdai.png";

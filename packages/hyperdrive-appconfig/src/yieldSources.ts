@@ -20,7 +20,8 @@ export interface YieldSource {
   historicalRatePeriod: number;
 
   /**
-   * If provided, can be used instead of the zero address for the base token
+   * If provided, can be used when a hyperdrive's base asset is the zero
+   * address.
    */
   baseTokenFallback?:
     | {
@@ -90,10 +91,20 @@ const gnosisWsteth: YieldSource = {
   shortName: "Gnosis wstETH",
   protocol: "lido",
   historicalRatePeriod: 1,
+  // There is no actual Lido deployment on gnosis, so we can't let users deposit
+  // or withdraw eth. However we can still use mainnet eth as the fallback for
+  // displaying totals and prices.
   baseTokenFallback: {
     chainId: mainnet.id,
     address: ETH_MAGIC_NUMBER,
   },
+};
+
+const gnosisSxdai: YieldSource = {
+  id: "gnosisSxdai",
+  shortName: "Savings xDAI",
+  protocol: "maker",
+  historicalRatePeriod: 1,
 };
 
 export const yieldSources = {
@@ -106,4 +117,5 @@ export const yieldSources = {
   reth,
   ezEth,
   gnosisWsteth,
+  gnosisSxdai,
 } as const;
