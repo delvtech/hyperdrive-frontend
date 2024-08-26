@@ -13,7 +13,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -102,11 +102,14 @@ export function OpenLpTableDesktop({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
-
+  const memoizedOpenLpPosition = useMemo(
+    () => openLpPosition,
+    [openLpPosition],
+  );
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
 
-    data: [openLpPosition],
+    data: [memoizedOpenLpPosition],
     initialState: {
       sorting: [
         {
