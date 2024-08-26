@@ -6,9 +6,10 @@ mod short;
 mod types;
 
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint, ToI256, ToU256},
+    conversions::{ToBigInt, ToI256, ToU256},
     error::{Error, ToResult},
 };
+use fixedpointmath::Fixed;
 use hyperdrive_math::{
     calculate_hpr_given_apr, calculate_hpr_given_apy, calculate_rate_given_fixed_price,
 };
@@ -59,7 +60,7 @@ struct CalcHprGivenAprParams {
 pub fn calcHprGivenApr(params: ICalcHprGivenAprParams) -> Result<BigInt, Error> {
     calculate_hpr_given_apr(
         params.apr().to_i256()?,
-        params.position_duration().to_fixed()?,
+        params.position_duration().to_u256()?.fixed(),
     )
     .to_result()?
     .to_bigint()
@@ -79,7 +80,7 @@ struct CalcHprGivenApyParams {
 pub fn calcHprGivenApy(params: ICalcHprGivenApyParams) -> Result<BigInt, Error> {
     calculate_hpr_given_apy(
         params.apy().to_i256()?,
-        params.position_duration().to_fixed()?,
+        params.position_duration().to_u256()?.fixed(),
     )
     .to_result()?
     .to_bigint()
@@ -134,8 +135,8 @@ struct CalcAprGivenPriceParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcAprGivenFixedPrice(params: ICalcAprGivenPriceParams) -> Result<BigInt, Error> {
     calculate_rate_given_fixed_price(
-        params.price().to_fixed()?,
-        params.position_duration().to_fixed()?,
+        params.price().to_u256()?.fixed(),
+        params.position_duration().to_u256()?.fixed(),
     )
     .to_bigint()
 }

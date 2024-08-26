@@ -16,4 +16,4 @@ thiserror = "1.0"
 wasm-bindgen = "0.2.92"
 
 # internal
-fixedpointmath = "0.16.9"
+fixedpointmath = "0.17.1"

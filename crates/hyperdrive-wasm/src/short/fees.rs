@@ -1,7 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint, ToU256},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
+use fixedpointmath::Fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -18,7 +19,7 @@ struct OpenShortCurveFeeParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortCurveFee(params: IOpenShortCurveFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let bond_amount = params.bond_amount().to_fixed()?;
+    let bond_amount = params.bond_amount().to_u256()?.fixed();
 
     let result_fp = state.open_short_curve_fee(bond_amount).to_result()?;
 
@@ -35,7 +36,7 @@ struct OpenShortFlatFeeParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn openShortGovernanceFee(params: IOpenShortFlatFeeParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let bond_amount = params.bond_amount().to_fixed()?;
+    let bond_amount = params.bond_amount().to_u256()?.fixed();
 
     let result_fp = state
         .open_short_governance_fee(bond_amount, None)
@@ -51,7 +52,7 @@ pub fn closeShortCurveFee(params: IClosePositionParams) -> Result<BigInt, Error>
 
     let result_fp = state
         .close_short_curve_fee(
-            params.bond_amount().to_fixed()?,
+            params.bond_amount().to_u256()?.fixed(),
             params.maturity_time().to_u256()?,
             params.current_time().to_u256()?,
         )
@@ -66,7 +67,7 @@ pub fn closeShortFlatFee(params: IClosePositionParams) -> Result<BigInt, Error> 
     let state = params.to_state()?;
 
     let result_fp = state.close_short_flat_fee(
-        params.bond_amount().to_fixed()?,
+        params.bond_amount().to_u256()?.fixed(),
         params.maturity_time().to_u256()?,
         params.current_time().to_u256()?,
     );

@@ -1,8 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint, ToU256},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
-use ethers::types::U256;
+use fixedpointmath::{Fixed, FixedPoint};
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -38,18 +38,18 @@ struct CalcAddLiquidityParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcAddLiquidity(params: ICalcAddLiquidityParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let min_lp_share_price = params.min_lp_share_price().to_fixed()?;
-    let min_apr = params.min_apr().to_fixed()?;
+    let min_lp_share_price = params.min_lp_share_price().to_u256()?.fixed();
+    let min_apr = params.min_apr().to_u256()?.fixed();
 
     let max_apr = match params.max_apr() {
-        Some(max_apr) => max_apr.to_fixed()?,
-        None => U256::MAX.to_fixed()?,
+        Some(max_apr) => max_apr.to_u256()?.fixed(),
+        None => FixedPoint::MAX,
     };
 
     let result_fp = state
         .calculate_add_liquidity(
             params.current_time().to_u256()?,
-            params.contribution().to_fixed()?,
+            params.contribution().to_u256()?.fixed(),
             min_lp_share_price,
             min_apr,
             max_apr,
