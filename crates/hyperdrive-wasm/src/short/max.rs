@@ -1,7 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint, ToI256, ToU256},
+    conversions::{ToBigInt, ToI256, ToU256},
     error::{Error, ToResult},
 };
+use fixedpointmath::Fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -36,10 +37,10 @@ pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
             params.budget().to_u256()?,
             params.open_vault_share_price().to_u256()?,
             params.checkpoint_exposure().to_i256()?,
-            params
-                .conservative_price()
-                .map(|x| x.to_fixed())
-                .transpose()?,
+            match params.conservative_price() {
+                Some(price) => Some(price.to_u256()?.fixed()),
+                None => None,
+            },
             params.max_iterations().map(|x| x.into()),
         )
         .to_result()?;

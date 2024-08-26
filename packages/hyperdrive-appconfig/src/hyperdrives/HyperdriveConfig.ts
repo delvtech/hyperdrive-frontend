@@ -4,6 +4,7 @@ import { Address } from "viem";
 
 export interface HyperdriveConfig {
   chainId: number;
+  kind: string;
   initializationBlock: bigint;
   address: Address;
   name: string;

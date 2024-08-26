@@ -1,7 +1,8 @@
 use delv_core::{
-    conversions::{ToBigInt, ToFixedPoint},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
+use fixedpointmath::Fixed;
 use js_sys::BigInt;
 use ts_macro::ts;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -18,7 +19,7 @@ struct OpenLongParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn calcOpenLong(params: IOpenLongParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let base_amount = params.base_amount().to_fixed()?;
+    let base_amount = params.base_amount().to_u256()?.fixed();
 
     let result_fp = state.calculate_open_long(base_amount).to_result()?;
 
@@ -35,7 +36,7 @@ struct SpotPriceAfterLongParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn spotPriceAfterLong(params: ISpotPriceAfterLongParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
-    let base_amount = params.base_amount().to_fixed()?;
+    let base_amount = params.base_amount().to_u256()?.fixed();
 
     let result_fp = state
         .calculate_spot_price_after_long(base_amount, None)

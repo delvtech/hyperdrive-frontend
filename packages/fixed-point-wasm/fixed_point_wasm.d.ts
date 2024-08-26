@@ -247,14 +247,17 @@ interface ICurrencyFormatOptions extends IBaseFormatOptions {
 export class FixedPoint {
   free(): void;
 /**
-* Create a new fixed-point number from a scaled value.
+* Create a new fixed-point number from a scaled value or another
+* fixed-point number. If the value is already a fixed-point number, the
+* number of decimal places will be adjusted to match the new value.
 *
-* @param value - A scaled value.
+* @param value - A scaled value between `-2^255` and `2^255 - 1` (signed
+* 256-bit integer).
 *
 * @param decimals - The number of decimal places to use. Max is `18`.
 * Defaults to `18`.
 */
-  constructor(value?: Numberish, decimals?: number);
+  constructor(value: Numberish, decimals?: number);
 /**
 * Create a fixed-point number representing one unit.
 *
@@ -265,37 +268,30 @@ export class FixedPoint {
 /**
 * Create a random fixed-point number with and optional min and max.
 *
+* **Note**:
+*
 * @example
 *
 * ```ts
-* const random = Fixed.random();
+* const random = FixedPoint.random();
 * console.log(random.toString());
 * // => 0.472987274007185487
 * ```
 */
   static random(params?: IGenerateRandomParams): FixedPoint;
 /**
-* Get the scaled bigint representation of this fixed-point number.
-*/
-  valueOf(): bigint;
-/**
-* Get the float representation of this fixed-point number.
-*
-* __Caution__: This method may lose precision.
+* Change the number of decimal places in this fixed-point.
+* This will scale or truncate the value as necessary.
 *
 * @example
-*
 * ```ts
 * const fixed = new FixedPoint(1_123456789012345678n);
-* console.log(fixed.toNumber());
-* // 1.1234567890123457
+* fixed.setDecimals(6);;
+* console.log(fixed.toString());
+* // => 1.123456
 * ```
 */
-  toNumber(): number;
-/**
-* Get the decimal string representation of this fixed-point number.
-*/
-  toString(): string;
+  setDecimals(decimals: number): void;
 /**
 * Add a fixed-point number to this one.
 */
@@ -304,14 +300,6 @@ export class FixedPoint {
 * Subtract a fixed-point number from this one.
 */
   sub(other: Numberish, decimals?: number): FixedPoint;
-/**
-* Multiply this fixed-point number by another.
-*/
-  mul(other: Numberish, decimals?: number): FixedPoint;
-/**
-* Divide this fixed-point number by another.
-*/
-  div(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Multiply this fixed-point number by another, then divide by a divisor,
 * rounding down.
@@ -323,7 +311,7 @@ export class FixedPoint {
 */
   mulDivUp(other: Numberish, divisor: Numberish, decimals?: number): FixedPoint;
 /**
-* Multiply this fixed-point number by another, rounding down.
+* Multiply this fixed-point number by another, truncating the result.
 */
   mulDown(other: Numberish, decimals?: number): FixedPoint;
 /**
@@ -331,13 +319,21 @@ export class FixedPoint {
 */
   mulUp(other: Numberish, decimals?: number): FixedPoint;
 /**
-* Divide this fixed-point number by another, rounding down.
+* Multiply this fixed-point number by another. Rounding to the nearest integer.
+*/
+  mul(other: Numberish, decimals?: number): FixedPoint;
+/**
+* Divide this fixed-point number by another, truncating the result.
 */
   divDown(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Divide this fixed-point number by another, rounding up.
 */
   divUp(other: Numberish, decimals?: number): FixedPoint;
+/**
+* Divide this fixed-point number by another.
+*/
+  div(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Raise this fixed-point number to the power of another.
 */
@@ -368,16 +364,41 @@ export class FixedPoint {
   lte(other: Numberish, decimals?: number): boolean;
 /**
 * Get the minimum of this number and another.
+*
+* If the numbers are equal, the number with the fewest decimal places will be returned.
 */
   min(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Get the maximum of this number and another.
+*
+* If the numbers are equal, the number with the most decimal places will be returned.
 */
   max(other: Numberish, decimals?: number): FixedPoint;
 /**
 * Clamp this number to a range.
 */
   clamp(min: Numberish, max: Numberish, decimals?: number): FixedPoint;
+/**
+* Get the decimal string representation of this fixed-point number.
+*/
+  toString(): string;
+/**
+* Get the float representation of this fixed-point number.
+*
+* __Caution__: This method may lose precision.
+*
+* @example
+*
+* ```ts
+* const fixed = new FixedPoint(1_123456789012345678n);
+* console.log(fixed.toNumber());
+* // 1.1234567890123457
+* ```
+*/
+  toNumber(): number;
+/**
+*/
+  valueOf(): string;
 /**
 * Format this fixed-point number for display.
 */
@@ -393,7 +414,7 @@ export class FixedPoint {
 /**
 * The number of decimal places in the fixed-point number.
 */
-  decimals: number;
+  readonly decimals: number;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
@@ -402,23 +423,21 @@ export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly __wbg_fixedpoint_free: (a: number) => void;
   readonly __wbg_get_fixedpoint_decimals: (a: number) => number;
-  readonly __wbg_set_fixedpoint_decimals: (a: number, b: number) => void;
   readonly fixedpoint_new: (a: number, b: number, c: number) => void;
   readonly fixedpoint_one: (a: number, b: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
-  readonly fixedpoint_toNumber: (a: number) => number;
-  readonly fixedpoint_toString: (a: number, b: number) => void;
+  readonly fixedpoint_setDecimals: (a: number, b: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
-  readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
-  readonly fixedpoint_div: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly fixedpoint_mulDivUp: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly fixedpoint_mulDown: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulUp: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_divDown: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_divUp: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_div: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_pow: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_eq: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_ne: (a: number, b: number, c: number, d: number) => void;
@@ -429,6 +448,8 @@ export interface InitOutput {
   readonly fixedpoint_min: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_max: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_clamp: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly fixedpoint_toString: (a: number, b: number) => void;
+  readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;

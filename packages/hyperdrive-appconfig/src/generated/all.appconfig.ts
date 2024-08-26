@@ -3,6 +3,7 @@ export const appConfig: AppConfig = {
   hyperdrives: [
     {
       chainId: 42069,
+      kind: "StETHHyperdrive",
       initializationBlock: 20180623n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
@@ -44,6 +45,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "ERC4626Hyperdrive",
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
@@ -85,6 +87,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "RETHHyperdrive",
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
@@ -126,6 +129,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20484838n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
@@ -167,6 +171,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20528971n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
@@ -208,6 +213,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "EzETHHyperdrive",
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",
@@ -249,6 +255,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "EETHHyperdrive",
       address: "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
       version: "v1.0.18",
       name: "182d Ether.fi Staked ETH",
@@ -290,6 +297,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20585765n,
       address: "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
       version: "v1.0.18",
@@ -331,6 +339,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "StETHHyperdrive",
       initializationBlock: 20180623n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
@@ -372,6 +381,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "ERC4626Hyperdrive",
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
@@ -413,6 +423,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "RETHHyperdrive",
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
@@ -454,6 +465,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20484838n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
@@ -495,6 +507,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20528971n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
@@ -536,6 +549,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "EzETHHyperdrive",
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",
@@ -577,6 +591,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "EETHHyperdrive",
       address: "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
       version: "v1.0.18",
       name: "182d Ether.fi Staked ETH",
@@ -618,6 +633,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20585765n,
       address: "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
       version: "v1.0.18",
@@ -659,6 +675,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "ERC4626Hyperdrive",
       address: "0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3",
       version: "v1.0.12",
       name: "14d Maker DSR",
@@ -700,6 +717,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "ERC4626Hyperdrive",
       address: "0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2",
       version: "v1.0.12",
       name: "30d Maker DSR",
@@ -741,6 +759,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "EzETHHyperdrive",
       address: "0x54A93937EE00838d659795b9bbbe904a00DdF278",
       version: "v1.0.12",
       name: "14d Renzo ezETH",
@@ -782,6 +801,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "EzETHHyperdrive",
       address: "0x87621c072B1967730b70F4c0536D739c2053d34c",
       version: "v1.0.12",
       name: "30d Renzo ezETH",
@@ -823,6 +843,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "RETHHyperdrive",
       address: "0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8",
       version: "v1.0.12",
       name: "14d Rocket Pool ETH",
@@ -864,6 +885,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "RETHHyperdrive",
       address: "0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D",
       version: "v1.0.12",
       name: "30d Rocket Pool ETH",
@@ -905,6 +927,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "StETHHyperdrive",
       initializationBlock: 6137506n,
       address: "0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91",
       version: "v1.0.12",
@@ -946,6 +969,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "StETHHyperdrive",
       initializationBlock: 6137513n,
       address: "0x51C054F75b2c4b53E8E5114430C3ded4572473D8",
       version: "v1.0.12",
@@ -987,6 +1011,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 6341309n,
       address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
       version: "v1.0.15",
@@ -1028,6 +1053,7 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 6495162n,
       address: "0x0399BBA8DE5959007148a95ADaaD04eA3172513E",
       version: "v1.0.15",
@@ -1091,17 +1117,6 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
-      decimals: 18,
-      places: 4,
-      name: "Renzo Restaked ETH",
-      symbol: "ezETH",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 42069,
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
       places: 2,
@@ -1109,6 +1124,16 @@ export const appConfig: AppConfig = {
       symbol: "DAI",
       iconUrl:
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      decimals: 6,
+      places: 2,
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
       tags: ["stablecoin"],
     },
     {
@@ -1124,6 +1149,28 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
+      decimals: 18,
+      places: 4,
+      name: "ether.fi ETH",
+      symbol: "eETH",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 42069,
+      address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
+      decimals: 18,
+      places: 4,
+      name: "Renzo Restaked ETH",
+      symbol: "ezETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 42069,
       address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
       decimals: 18,
       places: 2,
@@ -1133,25 +1180,15 @@ export const appConfig: AppConfig = {
       tags: [],
     },
     {
-      chainId: 42069,
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      decimals: 6,
-      places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 42069,
-      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
+      chainId: 1,
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
-      places: 4,
-      name: "ether.fi ETH",
-      symbol: "eETH",
+      places: 2,
+      name: "Dai Stablecoin",
+      symbol: "DAI",
       iconUrl:
-        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063",
-      tags: ["liquidStakingToken"],
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
     },
     {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -1175,23 +1212,23 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 1,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 1,
       address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       decimals: 6,
       places: 2,
       name: "USD Coin",
       symbol: "USDC",
       iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 1,
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      decimals: 18,
-      places: 2,
-      name: "Dai Stablecoin",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: ["stablecoin"],
     },
     {
@@ -1203,17 +1240,6 @@ export const appConfig: AppConfig = {
       symbol: "eETH",
       iconUrl:
         "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 1,
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
       tags: ["liquidStakingToken"],
     },
     {
@@ -1270,17 +1296,6 @@ export const appConfig: AppConfig = {
     },
     {
       chainId: 11155111,
-      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
-      decimals: 18,
-      places: 4,
-      name: "Renzo ezETH",
-      symbol: "ezETH",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 11155111,
       address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
       decimals: 18,
       places: 4,
@@ -1288,6 +1303,17 @@ export const appConfig: AppConfig = {
       symbol: "RETH",
       iconUrl:
         "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 11155111,
+      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
+      decimals: 18,
+      places: 4,
+      name: "Renzo ezETH",
+      symbol: "ezETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
       tags: ["liquidStakingToken"],
     },
     {

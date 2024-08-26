@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
@@ -105,7 +105,7 @@ export function CurrentValueCellTwo({
   row,
   hyperdrive,
 }: {
-  row: Long;
+  row: OpenLongPositionReceived;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
@@ -121,7 +121,7 @@ export function CurrentValueCellTwo({
   } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
-    bondAmountIn: row.bondAmount,
+    bondAmountIn: row.details?.bondAmount || 0n,
   });
 
   const currentValueLabel = formatBalance({
@@ -131,13 +131,13 @@ export function CurrentValueCellTwo({
   });
 
   const profitLoss = formatBalance({
-    balance: (baseAmountOut || 0n) - row.baseAmountPaid,
+    balance: (baseAmountOut || 0n) - (row.details?.baseAmountPaid || 0n),
     decimals: baseToken.decimals,
     places: baseToken.places,
   });
 
   const isPositiveChangeInValue =
-    baseAmountOut && baseAmountOut > row.baseAmountPaid;
+    baseAmountOut && baseAmountOut > (row.details?.baseAmountPaid || 0n);
 
   if (previewCloseLongStatus === "loading") {
     return (

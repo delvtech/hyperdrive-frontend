@@ -48,6 +48,7 @@ export async function getStethHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     chainId,
+    kind: await hyperdrive.getKind(),
     initializationBlock,
     address: hyperdrive.address,
     version: version.string,
