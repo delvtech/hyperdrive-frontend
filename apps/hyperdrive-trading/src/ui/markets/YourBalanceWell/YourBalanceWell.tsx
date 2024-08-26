@@ -30,7 +30,7 @@ export function YourBalanceWell({
 
   // base token
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

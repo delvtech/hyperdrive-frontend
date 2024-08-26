@@ -7,7 +7,7 @@ import { formatUnits } from "viem";
 export function useDevLogging(market: HyperdriveConfig): void {
   const appConfig = useAppConfig();
   const baseToken = findToken({
-    baseTokenAddress: market.poolConfig.baseToken,
+    tokenAddress: market.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   useEffect(() => {

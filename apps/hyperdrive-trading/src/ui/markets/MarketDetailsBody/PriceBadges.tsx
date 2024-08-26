@@ -17,7 +17,7 @@ export function PriceBadges({
     hyperdrive.address,
   );
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   if (longPriceStatus !== "success") {

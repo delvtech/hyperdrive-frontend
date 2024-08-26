@@ -39,7 +39,7 @@ export function OpenLongStats({
 }: OpenLongStatsProps): JSX.Element {
   const appConfig = useAppConfig();
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const chainId = useChainId();

@@ -52,7 +52,7 @@ export function OpenShortForm({
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({

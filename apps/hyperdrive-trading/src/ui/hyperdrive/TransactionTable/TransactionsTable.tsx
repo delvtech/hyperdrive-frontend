@@ -179,7 +179,7 @@ export function TransactionTable({
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
@@ -290,7 +290,7 @@ function formatTransactionTableMobileData(
   appConfig: AppConfig,
 ) {
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const size = dnum.format(

@@ -25,7 +25,7 @@ export function FixedRateCell({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { poolConfig } = hyperdrive;
   const baseToken = findToken({
-    baseTokenAddress: poolConfig.baseToken,
+    tokenAddress: poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

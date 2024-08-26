@@ -200,7 +200,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [

@@ -42,7 +42,7 @@ export function OpenShortPreview({
   const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { fixedApr } = useFixedRate(hyperdrive.address);

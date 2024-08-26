@@ -23,7 +23,7 @@ export function LiquidityStats({
   const { data: currentBlockNumber } = useBlockNumber();
   const appConfig = useAppConfig();
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

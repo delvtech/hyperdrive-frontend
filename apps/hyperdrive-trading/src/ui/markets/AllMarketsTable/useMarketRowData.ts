@@ -43,7 +43,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                   cache: sdkCache,
                 });
                 const baseToken = findToken({
-                  baseTokenAddress: hyperdrive.poolConfig.baseToken,
+                  tokenAddress: hyperdrive.poolConfig.baseToken,
                   tokens: appConfig.tokens,
                 });
                 const liquidity = await readHyperdrive.getPresentValue();

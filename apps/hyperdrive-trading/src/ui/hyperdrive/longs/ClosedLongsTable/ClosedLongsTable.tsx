@@ -74,7 +74,7 @@ function formatClosedLongMobileColumnData(
 
 function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
@@ -119,7 +119,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [
@@ -303,7 +303,7 @@ function BaseAmountReceivedCell({
 }) {
   const appConfig = useAppConfig();
   const baseToken = findToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const currentValueLabel = formatBalance({
