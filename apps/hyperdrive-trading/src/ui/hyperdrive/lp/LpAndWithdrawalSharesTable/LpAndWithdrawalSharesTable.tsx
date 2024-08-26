@@ -13,13 +13,12 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
 import { LpCurrentValueCell } from "./LpCurrentValueCell";
@@ -28,6 +27,7 @@ import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const appConfig = useAppConfig();
+
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
@@ -101,11 +101,15 @@ export function OpenLpTableDesktop({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
-  const tableInstance = useReactTable({
-    columns: getColumns({ hyperdrive, appConfig }),
 
-    data: [openLpPosition],
+  const columns = useMemo(
+    () => getColumns({ hyperdrive, appConfig }),
+    [hyperdrive, appConfig],
+  );
+  const data = useMemo(() => [openLpPosition], [openLpPosition]);
+  const tableInstance = useReactTable({
+    columns,
+    data,
     initialState: {
       sorting: [
         {
@@ -200,12 +204,6 @@ export function OpenLpTableDesktop({
                   "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
                   "!border-b-0", // Remove default bottom border for table rows
                 )}
-                // onClick={() => {
-                //   const modalId = `${row.original.assetId}`;
-                //   (
-                //     document.getElementById(modalId) as HTMLDialogElement
-                //   )?.showModal();
-                // }}
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
@@ -309,54 +307,5 @@ function getColumns({
         return null;
       },
     }),
-    // columnHelper.display({
-    //   id: "go-to-market",
-    //   cell: ({ row }) => {
-    //     return (
-    //       <div className="flex w-full items-center font-inter">
-    //         <Modal
-    //           modalId="withdrawalLpModal"
-    //           modalHeader={
-    //             <ModalHeader
-    //               heading="Remove Liquidity"
-    //               subHeading={"TODO subheading"}
-    //             />
-    //           }
-    //           modalContent={
-    //             <div>
-    //               <h1>Modal Content</h1>
-    //               {/* <button
-
-    //                   className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-    //                   onClick={() =>
-    //                     (window as any)["withdrawalLpModal"].close()
-    //                   }
-    //                 >
-    //                   <XMarkIcon className="w-6" title="Close" />
-    //                 </button> */}
-    //               {/* <RemoveLiquidityForm
-    //                   hyperdrive={hyperdrive}
-    //                   lpShares={lpShares || 0n}
-    //                 /> */}
-    //             </div>
-    //           }
-    //         >
-    //           {({ showModal }) => (
-    //             <button
-    //               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-    //               onClick={() => {
-    //                 console.log("Clicked");
-    //                 return showModal();
-    //               }}
-    //             >
-    //               <Cog8ToothIcon className="h-5" />
-    //               Manage
-    //             </button>
-    //           )}
-    //         </Modal>
-    //       </div>
-    //     );
-    //   },
-    // }),
   ];
 }
