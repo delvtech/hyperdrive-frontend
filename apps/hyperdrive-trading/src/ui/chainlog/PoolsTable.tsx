@@ -183,8 +183,8 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
           return Promise.all(
             pools.map(async (pool, i): Promise<Pool> => {
               const { data, factory, name, version } = metas[i];
-              const baseToken = await pool.getBaseToken();
-              const vaultToken = await pool.getSharesToken();
+              const { baseToken, vaultSharesToken: vaultToken } =
+                await pool.getPoolConfig();
               const { isPaused } = await pool.getMarketState();
               const { status } = decodeInstanceData(data);
               const [deployerCoordinatorAddress] =
@@ -200,8 +200,8 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
                 status,
                 factoryAddress: factory.address,
                 deployerCoordinatorAddress,
-                baseToken: baseToken.address,
-                vaultToken: vaultToken.address,
+                baseToken,
+                vaultToken,
               };
             }),
           );
