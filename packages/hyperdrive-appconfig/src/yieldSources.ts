@@ -71,7 +71,7 @@ const eEth: YieldSource = {
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
   isSharesPeggedToBase: false,
-  historicalRatePeriod: 1,
+  historicalRatePeriod: 30,
 };
 
 export const yieldSources = {

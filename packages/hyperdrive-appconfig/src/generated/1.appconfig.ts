@@ -469,7 +469,7 @@ export const ethereumAppConfig: AppConfig = {
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       isSharesPeggedToBase: false,
-      historicalRatePeriod: 1,
+      historicalRatePeriod: 30,
     },
     makerDsr: {
       id: "makerDsr",
