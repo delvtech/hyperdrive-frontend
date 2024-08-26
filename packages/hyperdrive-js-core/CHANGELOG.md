@@ -1,5 +1,25 @@
 # @delvtech/hyperdrive-js-core
 
+## 3.0.0
+
+### Major Changes
+
+- b26e00b: 🚨 **Breaking Change**: Upgraded to Hyperdrive `v1.0.16`. The updated models, e.g. `ReadHyperdrive` are no longer compatible for `<=1.0.14` contracts. To continue using the SDK with `<=1.0.14` contracts, import the corresponding model from the `/v1.0.14` import path. E.g., `import { ReadHyperdrive_v1_0_14 } from "@delvtech/hyperdrive-viem/v1.0.14"`.
+
+### Minor Changes
+
+- 19814a4: Add getKind to ReadHyperdrive
+
+### Patch Changes
+
+- Updated dependencies [c5a369d]
+- Updated dependencies [b26e00b]
+- Updated dependencies [eefe0fc]
+- Updated dependencies [c5a369d]
+  - @delvtech/fixed-point-wasm@0.0.4
+  - @delvtech/hyperdrive-wasm@0.15.3
+  - @delvtech/hyperdrive-artifacts@1.0.16
+
 ## 2.4.3
 
 ### Patch Changes

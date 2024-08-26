@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 1.0.16
+
+### Major Changes
+
+- eefe0fc: Updated to hyperdrive [`v1.0.16`](https://github.com/delvtech/hyperdrive/releases/tag/v1.0.16)
+
 ## 0.4.0
 
 ### Minor Changes

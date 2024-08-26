@@ -1,5 +1,12 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.15.3
+
+### Patch Changes
+
+- b26e00b: Updated hyperdrive-rs deps
+- c5a369d: Bumped deps
+
 ## 0.15.2
 
 ### Patch Changes
