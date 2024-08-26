@@ -56,8 +56,6 @@ export function LpCurrentValueCell({
       ? ((baseProceedsFromPreview || 0n) / (baseValue || 1n)) * 100n
       : 0n;
 
-  console.log(withdrawablePercentage, hyperdrive.name);
-
   // Then render it
   return (
     <div className="flex flex-col">
@@ -69,10 +67,12 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`}
           <span className="text-sm text-gray-500">
-            {`(${formatBalance({
-              balance: withdrawablePercentage,
-              decimals: hyperdrive.decimals,
-            })}% withdrawable)`}
+            {(balanceOfWithdrawalShares ?? 0n) > 0n
+              ? `${formatBalance({
+                  balance: withdrawablePercentage,
+                  decimals: hyperdrive.decimals,
+                })}% withdrawable`
+              : "100% withdrawalable"}
           </span>
         </>
       ) : (
