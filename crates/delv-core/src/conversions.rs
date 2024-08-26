@@ -1,8 +1,8 @@
 use ethers::types::{Address, I256, U256};
-use fixedpointmath::FixedPoint;
+use fixedpointmath::{FixedPoint, FixedPointValue};
 use js_sys::BigInt;
 use std::{panic::Location, str::FromStr};
-use wasm_bindgen::{JsCast, JsValue};
+use wasm_bindgen::JsValue;
 
 use crate::{
     error::{Error, ToResult},
@@ -89,10 +89,18 @@ impl ToU256 for BigInt {
     }
 }
 
-impl ToU256 for FixedPoint {
+impl<T> ToU256 for Option<T>
+where
+    T: ToU256,
+{
+    /// Convert an optional value to a `Result<U256, Error>`, using the default
+    /// value if `None`.
     #[track_caller]
     fn to_u256(&self) -> Result<U256, Error> {
-        Ok(U256::from(*self))
+        match self {
+            Some(value) => value.to_u256(),
+            None => Ok(U256::default()),
+        }
     }
 }
 
@@ -140,52 +148,17 @@ impl ToI256 for BigInt {
     }
 }
 
-impl ToI256 for FixedPoint {
+impl<T> ToI256 for Option<T>
+where
+    T: ToI256,
+{
+    /// Convert an optional value to a `Result<I256, Error>`, using the default
+    /// value if `None`.
     #[track_caller]
     fn to_i256(&self) -> Result<I256, Error> {
-        let location = Location::caller();
-        I256::try_from(*self)
-            .map_err(|error| type_error_at!(location, "Invalid int256: {self}\n    {error}"))
-    }
-}
-
-// FixedPoint //
-
-/// Convert a value to a `Result<FixedPoint, Error>` via
-/// `.to_fixed()`
-pub trait ToFixedPoint {
-    /// Convert a value to a `Result<FixedPoint, Error>`
-    fn to_fixed(&self) -> Result<FixedPoint, Error>;
-}
-
-// If a value can `.to_u256()`, it can `.to_fixed()`
-impl<T> ToFixedPoint for T
-where
-    T: ToU256,
-{
-    #[track_caller]
-    fn to_fixed(&self) -> Result<FixedPoint, Error> {
-        Ok(FixedPoint::from(self.to_u256()?))
-    }
-}
-
-impl ToFixedPoint for U256 {
-    fn to_fixed(&self) -> Result<FixedPoint, Error> {
-        Ok(FixedPoint::from(*self))
-    }
-}
-
-impl<T> ToFixedPoint for Option<T>
-where
-    T: ToFixedPoint,
-{
-    /// Convert an optional value to a `Result<FixedPoint, Error>`, using the
-    /// default value if `None`.
-    #[track_caller]
-    fn to_fixed(&self) -> Result<FixedPoint, Error> {
         match self {
-            Some(value) => value.to_fixed(),
-            None => Ok(FixedPoint::default()),
+            Some(value) => value.to_i256(),
+            None => Ok(I256::default()),
         }
     }
 }
@@ -197,6 +170,7 @@ where
 macro_rules! try_bigint {
     ($value:expr) => {{
         let location = std::panic::Location::caller();
+        // FIXME: Is this going to result in "self" being printed?
         let string = stringify!($value);
         BigInt::from_str(string)
             .map_err(|_| $crate::type_error_at!(location, "Invalid BigInt: {}", string))
@@ -234,7 +208,8 @@ impl ToBigInt for &str {
 impl ToBigInt for JsValue {
     #[track_caller]
     fn to_bigint(&self) -> Result<BigInt, Error> {
-        Ok(BigInt::unchecked_from_js(self.to_owned()))
+        let location = std::panic::Location::caller();
+        BigInt::new(self).to_result_at(location)
     }
 }
 
@@ -258,11 +233,11 @@ impl ToBigInt for I256 {
     }
 }
 
-impl ToBigInt for FixedPoint {
+impl<T: FixedPointValue> ToBigInt for FixedPoint<T> {
     #[track_caller]
     fn to_bigint(&self) -> Result<BigInt, Error> {
         let location = std::panic::Location::caller();
-        let string = self.to_u256()?.to_string();
+        let string = format!("{:?}", self.raw());
         BigInt::from_str(&string)
             .map_err(|_| type_error_at!(location, "Invalid BigInt: {}", string))
     }
@@ -272,7 +247,7 @@ impl ToBigInt for FixedPoint {
 mod tests {
     use std::ops::Neg;
 
-    use fixedpointmath::{fixed, int256, uint256};
+    use fixedpointmath::{int256, uint256};
 
     use super::*;
 
@@ -298,16 +273,6 @@ mod tests {
         assert_eq!(
             "-1000000000000000000".to_i256().unwrap(),
             int256!(1_000_000_000_000_000_000).neg()
-        );
-    }
-
-    #[test]
-    fn test_to_fixed() {
-        assert_eq!("0".to_fixed().unwrap(), fixed!(0));
-        assert_eq!("1".to_fixed().unwrap(), fixed!(1));
-        assert_eq!(
-            "1000000000000000000".to_fixed().unwrap(),
-            fixed!(1_000_000_000_000_000_000)
         );
     }
 }
