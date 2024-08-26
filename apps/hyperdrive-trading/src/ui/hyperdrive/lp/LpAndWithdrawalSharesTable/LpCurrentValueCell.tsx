@@ -5,6 +5,8 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
+import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
+import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { useAccount } from "wagmi";
 
 export function LpCurrentValueCell({
@@ -26,8 +28,22 @@ export function LpCurrentValueCell({
       account,
     },
   );
+  const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+
+  const {
+    baseProceeds: baseProceedsFromPreview,
+    withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
+  } = usePreviewRedeemWithdrawalShares({
+    hyperdriveAddress: hyperdrive.address,
+    withdrawalSharesIn: balanceOfWithdrawalShares,
+    minOutputPerShare: 1n, // TODO: slippage,
+    destination: account,
+  });
   return (
-    <div>
+    <div className="flex flex-col">
       {!!poolInfo && !!lpShares ? (
         `${formatBalance({
           balance: baseValue,
