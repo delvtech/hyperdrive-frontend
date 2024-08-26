@@ -1,4 +1,4 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import { useEffect } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -6,7 +6,7 @@ import { formatUnits } from "viem";
 
 export function useDevLogging(market: HyperdriveConfig): void {
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
+  const baseToken = findToken({
     baseTokenAddress: market.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });

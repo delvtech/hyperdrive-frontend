@@ -3,7 +3,7 @@ import {
   HyperdriveConfig,
   Protocol,
   TokenConfig,
-  findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
@@ -42,7 +42,7 @@ export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
                   publicClient,
                   cache: sdkCache,
                 });
-                const baseToken = findBaseToken({
+                const baseToken = findToken({
                   baseTokenAddress: hyperdrive.poolConfig.baseToken,
                   tokens: appConfig.tokens,
                 });

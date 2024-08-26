@@ -2,25 +2,25 @@ import { TokenConfig } from "src/tokens/getTokenConfig";
 import { Address } from "viem";
 
 /**
- * Returns a strongly typed TokenConfig for the baseToken
+ * Returns a strongly typed TokenConfig for the token address
  * @deprecated This method is too shallow to be useful, use this instead:
  * ```
  * // Find the yield source token
  * appConfig.tokens.find(token => token.address === baseTokenAddress);
  * ```
  */
-export function findBaseToken({
-  baseTokenAddress,
+export function findToken({
+  tokenAddress,
   tokens,
 }: {
-  baseTokenAddress: Address;
+  tokenAddress: Address;
   tokens: TokenConfig[];
 }): TokenConfig {
-  const baseToken = tokens.find((token) => baseTokenAddress === token.address);
+  const baseToken = tokens.find((token) => tokenAddress === token.address);
 
   if (!baseToken) {
     throw new Error(
-      `Missing token ${baseTokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
+      `Missing token ${tokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
     );
   }
 

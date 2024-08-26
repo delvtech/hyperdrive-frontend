@@ -5,7 +5,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
@@ -41,7 +41,7 @@ export function OpenShortPreview({
 }: OpenShortPreviewProps): ReactElement {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
+  const baseToken = findToken({
     baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });

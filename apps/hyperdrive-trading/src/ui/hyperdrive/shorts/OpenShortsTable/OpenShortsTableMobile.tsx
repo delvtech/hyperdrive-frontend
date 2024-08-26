@@ -1,10 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import {
-  AppConfig,
-  HyperdriveConfig,
-  findBaseToken,
-} from "@hyperdrive/appconfig";
+import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -156,7 +152,7 @@ function formatOpenShortMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findBaseToken({
+  const baseToken = findToken({
     baseTokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
