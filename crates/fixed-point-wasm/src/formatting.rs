@@ -3,12 +3,12 @@ use js_sys::{Array, Intl, JsString, Object, Reflect};
 use ts_macro::ts;
 use wasm_bindgen::prelude::*;
 
-use crate::Fixed;
+use crate::WasmFixedPoint;
 
 // Methods //
 
 #[wasm_bindgen(js_class = FixedPoint)]
-impl Fixed {
+impl WasmFixedPoint {
     /// Format this fixed-point number for display.
     #[wasm_bindgen(skip_jsdoc)]
     pub fn format(&self, options: Option<IFormatOptions>) -> Result<JsString, Error> {

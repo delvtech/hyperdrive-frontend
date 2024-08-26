@@ -1,11 +1,9 @@
-use delv_core::{
-    conversions::{ToFixedPoint, ToI256},
-    error::{Error, ToResult},
-};
-use fixedpointmath::FixedPoint;
+use delv_core::error::{Error, ToResult};
+use ethers::types::I256;
+use fixedpointmath::{Fixed, FixedPoint};
 use wasm_bindgen::prelude::*;
 
-use crate::{Fixed, IGenerateRandomParams, Numberish, INNER_DECIMALS};
+use crate::{IGenerateRandomParams, Numberish, WasmFixedPoint, INNER_DECIMALS};
 
 /// Get the version of this package.
 #[wasm_bindgen(skip_jsdoc, js_name = getVersion)]
@@ -41,8 +39,8 @@ pub fn get_version() -> String {
 /// // => 1.500000
 /// ```
 #[wasm_bindgen(skip_jsdoc)]
-pub fn fixed(value: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
-    Fixed::new(Some(value.clone()), decimals)
+pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
+    WasmFixedPoint::new(value, decimals)
 }
 
 /// Create a fixed-point number by parsing a decimal value and scaling it by a
@@ -70,22 +68,45 @@ pub fn fixed(value: &Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
 /// // => 1.500000
 /// ```
 #[wasm_bindgen(skip_jsdoc, js_name = parseFixed)]
-pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Error> {
+pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
     // If the value is already a fixed-point number, it's already scaled.
     if value.is_fixed_point() == Some(true) {
-        return Fixed::new(Some(value), decimals);
+        return WasmFixedPoint::new(value, decimals);
     }
 
-    // Scale the value by the number of decimals.
     let decimals = decimals.unwrap_or(INNER_DECIMALS);
-    let scaled_str = format!(
-        "{}e{}",
-        value.to_string().as_string().unwrap_or_default(),
-        decimals,
-    );
-    let scaled_value: Numberish = JsValue::from_str(&scaled_str).into();
+    let mut s = value.to_string().as_string().unwrap_or_default();
 
-    Fixed::new(Some(scaled_value), Some(decimals))
+    if s.contains("e") {
+        s = value.as_string().unwrap_or_default();
+        let mut parts = s.split("e");
+        let mantissa_str = parts.next().unwrap_or_default();
+        let exponent_str = parts.next().unwrap_or_default();
+        let exponent = u8::from_str_radix(exponent_str, 10).to_result()?;
+        let mut mantissa_parts = mantissa_str.split(".");
+        let int_str = mantissa_parts.next().unwrap_or_default();
+        let fraction_str = mantissa_parts.next().unwrap_or_default();
+        let mut inner = I256::from_dec_str(&format!("{int_str}{fraction_str}"))
+            .to_result()?
+            .fixed();
+        let fraction_digits = fraction_str.len() as u8;
+
+        if fraction_digits > exponent {
+            inner /= (10u32.pow((fraction_digits - exponent) as u32)).into();
+            return Ok(WasmFixedPoint { inner, decimals });
+        }
+
+        let unscaled = inner.raw() * I256::from(10u32.pow((exponent - fraction_digits) as u32));
+        s = unscaled.to_string();
+    } else if !s.contains(".") {
+        let unscaled_value: FixedPoint<I256> = value.try_into()?;
+        s = unscaled_value.raw().to_string();
+    }
+
+    let scaled_str = format!("{s}e{decimals}",);
+    WasmFixedPoint::new(JsValue::from(scaled_str).into(), Some(decimals))
+
+    // Scale the value by the number of decimals.
 }
 
 /// Create a random fixed-point number with an optional min and max.
@@ -99,8 +120,8 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<Fixed, Erro
 /// // => 0.472987274007185487
 /// ```
 #[wasm_bindgen(skip_jsdoc, js_name = randomFixed)]
-pub fn random_fixed(params: Option<IGenerateRandomParams>) -> Result<Fixed, Error> {
-    Fixed::random(params)
+pub fn random_fixed(params: Option<IGenerateRandomParams>) -> Result<WasmFixedPoint, Error> {
+    WasmFixedPoint::random(params)
 }
 
 /// Get the natural logarithm of a fixed-point number.
@@ -108,12 +129,12 @@ pub fn random_fixed(params: Option<IGenerateRandomParams>) -> Result<Fixed, Erro
 /// @param x - The value to calculate the natural logarithm of.
 /// scaled raw value.
 #[wasm_bindgen(skip_jsdoc)]
-pub fn ln(x: Numberish) -> Result<Fixed, Error> {
-    let int = x.to_fixed()?.to_i256()?;
-    let int_result = FixedPoint::ln(int).to_result()?;
-    let result = Fixed {
-        inner: FixedPoint::try_from(int_result).to_result()?,
-        decimals: 18,
+pub fn ln(x: Numberish) -> Result<WasmFixedPoint, Error> {
+    let fixed: FixedPoint<I256> = x.try_into()?;
+    let int_result = fixedpointmath::ln(fixed.raw()).to_result()?;
+    let result = WasmFixedPoint {
+        inner: int_result.fixed(),
+        decimals: fixed.decimals(),
     };
     Ok(result)
 }
