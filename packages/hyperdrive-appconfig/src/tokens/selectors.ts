@@ -16,13 +16,13 @@ export function findToken({
   tokenAddress: Address;
   tokens: TokenConfig[];
 }): TokenConfig {
-  const baseToken = tokens.find((token) => tokenAddress === token.address);
+  const token = tokens.find((token) => tokenAddress === token.address);
 
-  if (!baseToken) {
+  if (!token) {
     throw new Error(
       `Missing token ${tokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
     );
   }
 
-  return baseToken;
+  return token;
 }
