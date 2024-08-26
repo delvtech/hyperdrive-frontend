@@ -63,6 +63,7 @@ export async function getCustomHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     chainId: await hyperdrive.network.getChainId(),
+    kind: await hyperdrive.getKind(),
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,

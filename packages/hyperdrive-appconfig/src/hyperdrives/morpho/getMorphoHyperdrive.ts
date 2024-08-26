@@ -41,6 +41,7 @@ export async function getMorphoHyperdrive({
     .blockNumber as bigint;
   const hyperdriveConfig: HyperdriveConfig = {
     chainId: await hyperdrive.network.getChainId(),
+    kind: await hyperdrive.getKind(),
     initializationBlock,
     address: hyperdrive.address,
     version: version.string,
