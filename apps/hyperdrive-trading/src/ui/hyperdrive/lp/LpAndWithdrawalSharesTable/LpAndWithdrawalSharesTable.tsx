@@ -23,6 +23,7 @@ import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
 import { LpCurrentValueCell } from "./LpCurrentValueCell";
 import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
+import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
@@ -304,7 +305,7 @@ function getColumns({
       id: "withdrawalQueue",
       header: `Withdrawal Queue`,
       cell: ({ row }) => {
-        return null;
+        return <WithdrawalQueueCell hyperdrive={hyperdrive} />;
       },
     }),
   ];

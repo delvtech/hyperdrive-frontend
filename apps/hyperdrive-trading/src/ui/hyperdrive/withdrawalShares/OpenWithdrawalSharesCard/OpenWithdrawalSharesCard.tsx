@@ -132,7 +132,7 @@ export function OpenWithdrawalSharesCard({
   );
 }
 
-function getWithdrawalSharesCurrentValue({
+export function getWithdrawalSharesCurrentValue({
   lpSharePrice,
   decimals,
   withdrawalShares,

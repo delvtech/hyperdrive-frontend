@@ -42,14 +42,39 @@ export function LpCurrentValueCell({
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
   });
+
+  // Calculate the withdrawable percentage using fixed()
+  // const withdrawablePercentage =
+  //   baseValue > 0n
+  //     ? fixed(baseProceedsFromPreview || 0n, baseToken?.decimals || 18)
+  //         .div(baseValue, baseToken?.decimals || 18)
+  //         .mul(100)
+  //     : 0;
+
+  const withdrawablePercentage =
+    baseValue > 0n
+      ? ((baseProceedsFromPreview || 0n) / (baseValue || 1n)) * 100n
+      : 0n;
+
+  console.log(withdrawablePercentage, hyperdrive.name);
+
+  // Then render it
   return (
     <div className="flex flex-col">
       {!!poolInfo && !!lpShares ? (
-        `${formatBalance({
-          balance: baseValue,
-          decimals: baseToken?.decimals || 18,
-          places: baseToken?.places,
-        })}`
+        <>
+          {`${formatBalance({
+            balance: baseValue,
+            decimals: baseToken?.decimals || 18,
+            places: baseToken?.places,
+          })}`}
+          <span className="text-sm text-gray-500">
+            {`(${formatBalance({
+              balance: withdrawablePercentage,
+              decimals: hyperdrive.decimals,
+            })}% withdrawable)`}
+          </span>
+        </>
       ) : (
         <Skeleton />
       )}
