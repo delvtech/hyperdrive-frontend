@@ -2,6 +2,17 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const ethereumAppConfig: AppConfig = {
   tokens: [
     {
+      chainId: 1,
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      decimals: 18,
+      places: 2,
+      name: "Dai Stablecoin",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 1,
       name: "Ether",
@@ -23,23 +34,23 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 1,
       address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       decimals: 6,
       places: 2,
       name: "USD Coin",
       symbol: "USDC",
       iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 1,
-      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      decimals: 18,
-      places: 2,
-      name: "Dai Stablecoin",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: ["stablecoin"],
     },
     {
@@ -51,17 +62,6 @@ export const ethereumAppConfig: AppConfig = {
       symbol: "eETH",
       iconUrl:
         "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 1,
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
       tags: ["liquidStakingToken"],
     },
     {
@@ -92,6 +92,7 @@ export const ethereumAppConfig: AppConfig = {
   hyperdrives: [
     {
       chainId: 1,
+      kind: "StETHHyperdrive",
       initializationBlock: 20180623n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
@@ -133,6 +134,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "ERC4626Hyperdrive",
       address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
       version: "v1.0.13",
       name: "182d Maker DSR",
@@ -174,6 +176,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "RETHHyperdrive",
       address: "0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589",
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
@@ -215,6 +218,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20484838n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
@@ -256,6 +260,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20528971n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
@@ -297,6 +302,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "EzETHHyperdrive",
       address: "0x4c3054e51b46BE3191be9A05e73D73F1a2147854",
       version: "v1.0.15",
       name: "182d Renzo ezETH",
@@ -338,6 +344,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "EETHHyperdrive",
       address: "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
       version: "v1.0.18",
       name: "182d Ether.fi Staked ETH",
@@ -379,6 +386,7 @@ export const ethereumAppConfig: AppConfig = {
     },
     {
       chainId: 1,
+      kind: "MorphoBlueHyperdrive",
       initializationBlock: 20585765n,
       address: "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
       version: "v1.0.18",
