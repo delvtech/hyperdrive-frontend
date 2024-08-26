@@ -6,10 +6,10 @@ export { cloudchainAppConfig } from "src/generated/42069.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
 
 // appconfig helpers
-export { findBaseToken } from "src/appconfig/helpers/findBaseToken";
-export { findHyperdriveConfig } from "src/appconfig/helpers/findHyperdriveConfig";
-export { findYieldSourceHyperdrives } from "src/appconfig/helpers/findYieldSourceHyperdrives";
-export { findYieldSourceToken } from "src/appconfig/helpers/findYieldSourceToken";
+export { findBaseToken } from "src/appconfig/selectors/findBaseToken";
+export { findHyperdriveConfig } from "src/appconfig/selectors/findHyperdriveConfig";
+export { findYieldSourceHyperdrives } from "src/appconfig/selectors/findYieldSourceHyperdrives";
+export { findYieldSourceToken } from "src/appconfig/selectors/findYieldSourceToken";
 
 // hyperdrive
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
