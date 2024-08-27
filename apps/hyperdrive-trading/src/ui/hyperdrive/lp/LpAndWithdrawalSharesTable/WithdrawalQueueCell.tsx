@@ -81,7 +81,7 @@ export function WithdrawalQueueCell({
       </p>
       <p className="text-neutral-content">
         {formatBalance({
-          balance: baseValue - (withdrawalSharesCurrentValue ?? 0n),
+          balance: baseProceedsFromPreview || 0n,
           decimals: baseToken?.decimals || 18,
           places: baseToken?.places,
         })}{" "}

@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -30,7 +30,7 @@ export function LpCurrentValueCell({
     },
   );
 
-  const { proceeds: actualValueOut } = usePreviewRemoveLiquidity({
+  const { proceeds, withdrawalShares } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn: lpShares,
     hyperdriveAddress: hyperdrive.address,
@@ -39,40 +39,28 @@ export function LpCurrentValueCell({
   });
 
   // make sure proceeds from withdrawal are always denominated in base
-  let baseProceeds = actualValueOut || 0n;
+  let baseProceeds = proceeds || 0n;
   if (
-    actualValueOut &&
+    proceeds &&
     poolInfo &&
     !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
   ) {
-    baseProceeds = fixed(actualValueOut).mul(poolInfo.vaultSharePrice).bigint;
+    baseProceeds = fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint;
   }
-
-  const withdrawablePercent =
-    baseValue > 0n && baseProceeds > 0n
-      ? fixed(
-          // amountOut / total * 100
-          calculateRatio({
-            a: baseProceeds,
-            b: baseValue,
-            decimals: hyperdrive.decimals,
-          }),
-        )
-      : fixed(0n);
-
-  //
-
-  console.log({
-    hyperdrive: hyperdrive.name,
-    // fixedBaseValue: fixed(baseProceeds).bigint,
-    baseValueFromOpenLpPositionHook: fixed(baseValue).bigint,
-    calculateFromLpSharePrice: fixed(lpShares).mul(poolInfo?.lpSharePrice || 0n)
-      .bigint,
-    // fixedActualValueOut: fixed(lpShares)
-    //   .mul(poolInfo?.lpSharePrice || 0n)
-    //   .toNumber(),
-    withdrawablePercentage: withdrawablePercent.toNumber(),
-  });
+  console.log(!!withdrawalShares, hyperdrive.name);
+  let withdrawablePercent = parseFixed("100");
+  if (withdrawalShares) {
+    if (baseProceeds && baseValue) {
+      withdrawablePercent = fixed(
+        // amountOut / total * 100
+        calculateRatio({
+          a: baseProceeds,
+          b: baseValue,
+          decimals: hyperdrive.decimals,
+        }),
+      );
+    }
+  }
 
   return (
     <div className="flex flex-col">
@@ -84,7 +72,7 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`}
           <span className="text-sm text-gray-500">
-            {`${withdrawablePercent.toNumber()}%`}
+            {`${withdrawablePercent.format({ decimals: 2 })}%`}
           </span>
         </>
       ) : (
