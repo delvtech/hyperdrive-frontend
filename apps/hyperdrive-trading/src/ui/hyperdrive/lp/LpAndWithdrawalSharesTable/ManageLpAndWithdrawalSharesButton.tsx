@@ -79,7 +79,10 @@ export function ManageLpAndWithdrawalSharesButton({
                 />
               }
               modalContent={
-                <RedeemWithdrawalSharesForm hyperdrive={hyperdrive} />
+                <RedeemWithdrawalSharesForm
+                  modalOpenTimestamp={Date.now()}
+                  hyperdrive={hyperdrive}
+                />
               }
             >
               {({ showModal }) => (
@@ -118,6 +121,7 @@ export function ManageLpAndWithdrawalSharesButton({
           modalContent={
             <AddLiquidityForm
               hyperdrive={hyperdrive}
+              modalOpenTimestamp={Date.now()}
               onAddLiquidity={(e) => {
                 // preventDefault since we don't want to close the modal while the
                 // tx is temporarily pending the user's signature in their wallet.
@@ -151,6 +155,7 @@ export function ManageLpAndWithdrawalSharesButton({
               </button>
               {lpShares && lpShares > 0n ? (
                 <RemoveLiquidityForm
+                  modalOpenTimestamp={Date.now()}
                   hyperdrive={hyperdrive}
                   lpShares={lpShares || 0n}
                 />

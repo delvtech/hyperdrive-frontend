@@ -42,11 +42,13 @@ import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
+  modalOpenTimestamp?: number;
   onAddLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function AddLiquidityForm({
   hyperdrive,
+  modalOpenTimestamp,
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
@@ -258,6 +260,7 @@ export function AddLiquidityForm({
           }
           token={
             <TokenPickerTwo
+              key={`token-picker-${modalOpenTimestamp}`}
               tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
@@ -268,6 +271,7 @@ export function AddLiquidityForm({
           }
           settings={
             <SlippageSettingsTwo
+              // key={`slippage-settings-${modalOpenTimestamp}`}
               onSlippageChange={setSlippage}
               slippage={slippage}
               activeOption={activeSlippageOption}

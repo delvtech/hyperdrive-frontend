@@ -26,10 +26,12 @@ import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RedeemWithdrawalSharesFormProps {
   hyperdrive: HyperdriveConfig;
+  modalOpenTimestamp: number;
 }
 
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
+  modalOpenTimestamp,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findToken({
@@ -147,6 +149,7 @@ export function RedeemWithdrawalSharesForm({
           token={
             sharesToken ? (
               <WithdrawTokenPicker
+                key={`token-picker-${modalOpenTimestamp}`}
                 sharesToken={sharesToken}
                 hyperdrive={hyperdrive}
                 baseToken={baseToken}
@@ -182,6 +185,7 @@ export function RedeemWithdrawalSharesForm({
           onChange={(newAmount) => setAmount(newAmount)}
           settings={
             <SlippageSettings
+              key={`slippage-settings-${modalOpenTimestamp}`}
               onSlippageChange={setSlippage}
               slippage={slippage}
               activeOption={activeSlippageOption}

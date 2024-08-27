@@ -25,12 +25,14 @@ import { useAccount } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
+  modalOpenTimestamp?: number;
   onRemoveLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function RemoveLiquidityForm({
   hyperdrive,
   lpShares,
+  modalOpenTimestamp,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
@@ -187,6 +189,7 @@ export function RemoveLiquidityForm({
     <TransactionViewOld
       setting={
         <TokenPicker
+          key={`token-picker-${modalOpenTimestamp}`}
           label={
             baseTokenDepositEnabled
               ? "Choose asset for withdrawal"
@@ -199,6 +202,7 @@ export function RemoveLiquidityForm({
       }
       tokenInput={
         <TokenInput
+          key={`token-input-${modalOpenTimestamp}`}
           name="Input LP shares"
           token={
             <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
@@ -210,6 +214,7 @@ export function RemoveLiquidityForm({
           }
           settings={
             <SlippageSettings
+              key={`slippage-settings-${modalOpenTimestamp}`}
               onSlippageChange={setSlippage}
               slippage={slippage}
               activeOption={activeSlippageOption}
