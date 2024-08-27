@@ -31,8 +31,7 @@ export function findHyperdriveConfig({
  * Retrieves the appropriate base token for display purposes given a specific
  * Hyperdrive address.  If the pool configuration does not specify a base
  * token, this function attempts to find a fallback base token from the
- * associated yield source. Throws an error if neither the base token nor the
- * fallback token can be located.
+ * associated yield source.
  *
  * **Important:** This selector is intended solely for display purposes and
  * should not be used as the definitive source of truth for a Hyperdrive's base
@@ -44,7 +43,7 @@ export function findDisplayBaseToken({
 }: {
   hyperdriveAddress: Address;
   appConfig: AppConfig;
-}): TokenConfig {
+}): TokenConfig | undefined {
   const hyperdriveConfig = findHyperdriveConfig({
     hyperdriveAddress,
     hyperdrives: appConfig.hyperdrives,
@@ -68,7 +67,7 @@ export function findDisplayBaseToken({
   });
 
   if (!baseToken) {
-    throw new Error(`Missing base token for hyperdrive: ${hyperdriveAddress}.`);
+    console.error(`Missing base token for hyperdrive: ${hyperdriveAddress}.`);
   }
   return baseToken;
 }

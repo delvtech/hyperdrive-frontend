@@ -10,11 +10,11 @@ export function findToken({
 }: {
   tokenAddress: Address;
   tokens: TokenConfig[];
-}): TokenConfig {
+}): TokenConfig | undefined {
   const token = tokens.find((token) => tokenAddress === token.address);
 
   if (!token) {
-    throw new Error(
+    console.error(
       `Missing token ${tokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
     );
   }
