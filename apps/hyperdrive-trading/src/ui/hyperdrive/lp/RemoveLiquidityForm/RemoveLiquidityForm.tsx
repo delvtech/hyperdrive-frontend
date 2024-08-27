@@ -22,6 +22,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
+
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;

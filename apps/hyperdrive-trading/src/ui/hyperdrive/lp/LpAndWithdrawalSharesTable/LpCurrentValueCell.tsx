@@ -2,13 +2,12 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { calculateRatio } from "src/base/calculateRatio";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
-import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { useAccount } from "wagmi";
 
 export function LpCurrentValueCell({
@@ -30,50 +29,49 @@ export function LpCurrentValueCell({
       account,
     },
   );
-  const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-  });
 
-  const {
-    baseProceeds: baseProceedsFromPreview,
-    withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
-  } = usePreviewRedeemWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    withdrawalSharesIn: balanceOfWithdrawalShares,
-    minOutputPerShare: 1n, // TODO: slippage,
-    destination: account,
-  });
-
-  const {
-    proceeds: actualValueOut,
-    previewRemoveLiquidityStatus,
-    withdrawalShares,
-  } = usePreviewRemoveLiquidity({
+  const { proceeds: actualValueOut } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn: lpShares,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare: 1n,
-    asBase: true,
+    asBase: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
   });
 
-  const fixedActualValueOut = fixed(
-    (actualValueOut ?? 0n) > 0n ? (actualValueOut ?? 0n) : 0n,
-    baseToken?.decimals || 18,
-  );
-  const fixedBaseValue = fixed(
-    baseValue > 0n ? baseValue : 0n,
-    baseToken?.decimals || 18,
-  );
-  const withdrawablePercentage = fixedBaseValue.eq(0)
-    ? fixed(0)
-    : fixedActualValueOut.div(fixedBaseValue);
+  // make sure proceeds from withdrawal are always denominated in base
+  let baseProceeds = actualValueOut || 0n;
+  if (
+    actualValueOut &&
+    poolInfo &&
+    !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+  ) {
+    baseProceeds = fixed(actualValueOut).mul(poolInfo.vaultSharePrice).bigint;
+  }
+
+  const withdrawablePercent =
+    baseValue > 0n && baseProceeds > 0n
+      ? fixed(
+          // amountOut / total * 100
+          calculateRatio({
+            a: baseProceeds,
+            b: baseValue,
+            decimals: hyperdrive.decimals,
+          }),
+        )
+      : fixed(0n);
+
+  //
 
   console.log({
     hyperdrive: hyperdrive.name,
-    fixedBaseValue: fixedBaseValue.toNumber(),
-    fixedActualValueOut: fixedActualValueOut.toNumber(),
-    withdrawablePercentage: withdrawablePercentage.toNumber(),
+    // fixedBaseValue: fixed(baseProceeds).bigint,
+    baseValueFromOpenLpPositionHook: fixed(baseValue).bigint,
+    calculateFromLpSharePrice: fixed(lpShares).mul(poolInfo?.lpSharePrice || 0n)
+      .bigint,
+    // fixedActualValueOut: fixed(lpShares)
+    //   .mul(poolInfo?.lpSharePrice || 0n)
+    //   .toNumber(),
+    withdrawablePercentage: withdrawablePercent.toNumber(),
   });
 
   return (
@@ -86,7 +84,7 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`}
           <span className="text-sm text-gray-500">
-            {withdrawablePercentage.format({ percent: true })} withdrawable
+            {`${withdrawablePercent.toNumber()}%`}
           </span>
         </>
       ) : (
