@@ -2,7 +2,7 @@ import { Long } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findDisplayBaseToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -21,9 +21,9 @@ export function CloseLongModalButton({
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,

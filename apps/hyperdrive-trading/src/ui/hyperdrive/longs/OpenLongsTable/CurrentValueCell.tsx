@@ -1,13 +1,12 @@
 import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findDisplayBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 /**
  * @deprecated Use CurrentValueCellTwo instead. Remove this component once all references to it have been replaced.
@@ -22,11 +21,10 @@ export function CurrentValueCell({
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const {
     amountOut: baseAmountOut,
@@ -40,14 +38,14 @@ export function CurrentValueCell({
 
   const currentValueLabel = formatBalance({
     balance: baseAmountOut || 0n,
-    decimals: baseToken.decimals,
-    places: baseToken.places,
+    decimals: hyperdrive.decimals,
+    places: displayBaseToken.places,
   });
 
   const profitLoss = formatBalance({
     balance: (baseAmountOut || 0n) - row.baseAmountPaid,
-    decimals: baseToken.decimals,
-    places: baseToken.places,
+    decimals: hyperdrive.decimals,
+    places: displayBaseToken.places,
   });
 
   const isPositiveChangeInValue =
@@ -95,7 +93,7 @@ export function CurrentValueCell({
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {baseAmountOut
-          ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
+          ? `${profitLoss === "-0" ? "0" : profitLoss} ${displayBaseToken.symbol}`
           : undefined}
       </div>
     </div>
@@ -109,9 +107,9 @@ export function CurrentValueCellTwo({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const {
@@ -126,14 +124,14 @@ export function CurrentValueCellTwo({
 
   const currentValueLabel = formatBalance({
     balance: baseAmountOut || 0n,
-    decimals: baseToken.decimals,
-    places: baseToken.places,
+    decimals: hyperdrive.decimals,
+    places: displayBaseToken.places,
   });
 
   const profitLoss = formatBalance({
     balance: (baseAmountOut || 0n) - (row.details?.baseAmountPaid || 0n),
-    decimals: baseToken.decimals,
-    places: baseToken.places,
+    decimals: hyperdrive.decimals,
+    places: displayBaseToken.places,
   });
 
   const isPositiveChangeInValue =

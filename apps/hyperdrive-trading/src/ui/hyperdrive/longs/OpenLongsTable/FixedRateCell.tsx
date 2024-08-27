@@ -2,7 +2,7 @@ import {
   calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
 } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findDisplayBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
@@ -24,9 +24,9 @@ export function FixedRateCell({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { poolConfig } = hyperdrive;
-  const baseToken = findToken({
-    tokenAddress: poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const fixedRate = calculateAprFromPrice({
@@ -39,7 +39,7 @@ export function FixedRateCell({
     flatFee: poolConfig?.fees.flat || 0n,
     bondAmount,
     baseAmountPaid,
-    decimals: baseToken.decimals,
+    decimals: hyperdrive.decimals,
   });
 
   return (
@@ -62,10 +62,10 @@ export function FixedRateCell({
         <span>{"+"}</span>
         {formatBalance({
           balance: yieldAfterFlatFee,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
+          decimals: hyperdrive.decimals,
+          places: displayBaseToken.places,
         })}{" "}
-        {baseToken.symbol}
+        {displayBaseToken.symbol}
       </div>
     </div>
   );

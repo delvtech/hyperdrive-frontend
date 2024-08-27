@@ -2,17 +2,12 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import {
-  HyperdriveConfig,
-  TokenConfig,
-  findToken,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findDisplayBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -21,44 +16,24 @@ import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
-  bondAmount: bigint;
-  amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
-  activeToken: TokenConfig;
   curveFee: bigint | undefined;
-  asBase: boolean;
-  vaultSharePrice: bigint | undefined;
 }
 
 export function OpenLongPreview({
   hyperdrive,
   openLongPreviewStatus,
-  amountPaid,
-  bondAmount,
   spotRateAfterOpen,
-  activeToken,
   curveFee,
-  asBase,
-  vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
-  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
-  const isBaseAmount = asBase || yieldSource.isSharesPeggedToBase;
-  const amountPaidInBase = isBaseAmount
-    ? amountPaid
-    : convertSharesToBase({
-        sharesAmount: amountPaid,
-        vaultSharePrice: vaultSharePrice,
-        decimals: baseToken.decimals,
-      });
-  const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   return (
@@ -93,7 +68,7 @@ export function OpenLongPreview({
                 {curveFee
                   ? `${formatBalance({
                       balance: curveFee,
-                      decimals: baseToken.decimals,
+                      decimals: hyperdrive.decimals,
                       places: baseToken.places,
                     })} hy${baseToken.symbol}`
                   : `0 hy${baseToken.symbol}`}

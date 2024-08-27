@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
-import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findDisplayBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -44,15 +48,15 @@ export function OpenLongForm({
 
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
 
   const { balance: sharesTokenBalance } = useTokenBalance({
@@ -62,9 +66,13 @@ export function OpenLongForm({
   });
 
   const tokenChoices: TokenChoice[] = [];
-  if (baseToken && hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+  if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+    const actualBaseToken = findToken({
+      tokenAddress: hyperdrive.poolConfig.baseToken,
+      tokens: appConfig.tokens,
+    });
     tokenChoices.push({
-      tokenConfig: baseToken,
+      tokenConfig: actualBaseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
@@ -84,7 +92,7 @@ export function OpenLongForm({
     useActiveToken({
       account,
       defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
-        ? baseToken.address
+        ? hyperdrive.poolConfig.baseToken
         : hyperdrive.poolConfig.vaultSharesToken,
       tokens: tokenChoices.map((token) => token.tokenConfig),
     });
@@ -122,7 +130,9 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
   });
   const activeTokenMaxTradeSize =
-    activeToken.address === baseToken.address ? maxBaseIn : maxSharesIn;
+    activeToken.address === hyperdrive.poolConfig.baseToken
+      ? maxBaseIn
+      : maxSharesIn;
 
   const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: depositAmountAsBigInt,
@@ -137,7 +147,7 @@ export function OpenLongForm({
   } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     amountIn: depositAmountAsBigInt,
-    asBase: activeToken.address === baseToken.address,
+    asBase: activeToken.address === hyperdrive.poolConfig.baseToken,
   });
 
   const {
@@ -159,7 +169,7 @@ export function OpenLongForm({
 
   const { openLong, openLongStatus } = useOpenLong({
     hyperdriveAddress: hyperdrive.address,
-    asBase: activeToken.address === baseToken.address,
+    asBase: activeToken.address === hyperdrive.poolConfig.baseToken,
     amount: depositAmountAsBigInt,
     ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
     minBondsOut: bondsReceivedAfterSlippage,
@@ -250,11 +260,10 @@ export function OpenLongForm({
       primaryStats={
         <OpenLongStats
           hyperdrive={hyperdrive}
-          activeToken={activeToken}
           amountPaid={depositAmountAsBigInt || 0n}
           bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
-          asBase={activeToken.address === baseToken.address}
+          asBase={activeToken.address === hyperdrive.poolConfig.baseToken}
           vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
@@ -263,12 +272,7 @@ export function OpenLongForm({
           hyperdrive={hyperdrive}
           spotRateAfterOpen={spotRateAfterOpen}
           curveFee={curveFee}
-          activeToken={activeToken}
-          amountPaid={depositAmountAsBigInt || 0n}
-          bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
-          asBase={activeToken.address === baseToken.address}
-          vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
       disclaimer={(() => {
@@ -278,10 +282,10 @@ export function OpenLongForm({
               Pool limit exceeded. Max long size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken.places,
               })}{" "}
-              hy{baseToken.symbol}
+              hy{displayBaseToken.symbol}
             </p>
           );
         }

@@ -1,10 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
-import {
-  findToken,
-  HyperdriveConfig,
-  TokenConfig,
-} from "@hyperdrive/appconfig";
+import { findDisplayBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -24,7 +20,6 @@ interface OpenLongStatsProps {
   bondAmount: bigint;
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
-  activeToken: TokenConfig;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }
@@ -33,19 +28,18 @@ export function OpenLongStats({
   openLongPreviewStatus,
   amountPaid,
   bondAmount,
-  activeToken,
   asBase,
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const chainId = useChainId();
-  const tokenPrices = useTokenFiatPrices([baseToken.address]);
+  const tokenPrices = useTokenFiatPrices([displayBaseToken.address]);
   const baseTokenPrice =
-    tokenPrices?.[baseToken.address.toLowerCase() as Address];
+    tokenPrices?.[displayBaseToken.address.toLowerCase() as Address];
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
   const isBaseAmount =
@@ -56,7 +50,7 @@ export function OpenLongStats({
     : convertSharesToBase({
         sharesAmount: amountPaid,
         vaultSharePrice: vaultSharePrice,
-        decimals: baseToken.decimals,
+        decimals: hyperdrive.decimals,
       });
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
@@ -90,9 +84,9 @@ export function OpenLongStats({
           ) : (
             <>{`${formatBalance({
               balance: bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })} hy${baseToken.symbol}`}</>
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken.places,
+            })} hy${displayBaseToken.symbol}`}</>
           )
         }
         valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
@@ -110,18 +104,18 @@ export function OpenLongStats({
               })}
             >
               <img
-                src={baseToken.iconUrl}
+                src={displayBaseToken.iconUrl}
                 className="mr-1 h-9 rounded-full p-1"
               />
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken.places,
               })}`}
             </span>
           )
         }
-        valueUnit={`${baseToken.symbol}`}
+        valueUnit={`${displayBaseToken.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
@@ -132,10 +126,10 @@ export function OpenLongStats({
                 balance: baseTokenPrice
                   ? fixed(
                       amountPaidInBase + yieldAtMaturity,
-                      baseToken.decimals,
+                      hyperdrive.decimals,
                     ).mul(baseTokenPrice).bigint
                   : 0n,
-                decimals: baseToken.decimals,
+                decimals: hyperdrive.decimals,
                 places: 2,
               })}`
         }

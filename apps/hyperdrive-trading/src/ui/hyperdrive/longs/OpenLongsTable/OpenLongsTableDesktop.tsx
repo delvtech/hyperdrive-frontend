@@ -1,7 +1,11 @@
 import { Long } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findDisplayBaseToken,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -199,9 +203,9 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.accessor("assetId", {
@@ -213,14 +217,14 @@ function getColumns({
     }),
     columnHelper.accessor("bondAmount", {
       id: "size",
-      header: `Size (hy${baseToken.symbol})`,
+      header: `Size (hy${displayBaseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <span className="flex w-20 justify-end">
             {formatBalance({
               balance: row.original.bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken.places,
             })}
           </span>
         );
@@ -228,15 +232,15 @@ function getColumns({
     }),
     columnHelper.accessor("baseAmountPaid", {
       id: "valuePaid",
-      header: `Cost (${baseToken.symbol})`,
+      header: `Cost (${displayBaseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return (
           <span className="flex w-16 justify-end">
             {formatBalance({
               balance: amountPaid,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken.places,
             })}
           </span>
         );
@@ -275,7 +279,7 @@ function getColumns({
     }),
     columnHelper.display({
       id: "value",
-      header: `Current Value (${baseToken.symbol})`,
+      header: `Current Value (${displayBaseToken.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
       },
