@@ -17,11 +17,9 @@ export function formatBalance({
   places?: number;
   includeCommas?: boolean;
 }): string {
-  const [sign, abs] = balance >= 0n ? ["", balance] : ["-", -balance];
-
-  return `${sign}${fixed(abs, decimals).format({
+  return fixed(balance, decimals).format({
     decimals: places,
     rounding: "trunc",
     group: includeCommas,
-  })}`;
+  });
 }

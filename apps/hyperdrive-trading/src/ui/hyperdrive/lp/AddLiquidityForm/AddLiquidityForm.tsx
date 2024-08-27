@@ -4,7 +4,7 @@ import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
@@ -53,8 +53,8 @@ export function AddLiquidityForm({
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(

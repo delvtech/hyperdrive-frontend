@@ -25,9 +25,7 @@ export function ShortRateAndSizeCell({
   // defaulting to latest.
   const { fixedApr } = useFixedRate(hyperdrive.address, maturityBlock?.number);
 
-  // TODO: Use the fixed point library here once it's able to hanlde negative numbers.
   const rateDifference = (fixedApr?.apr || 0n) - short.fixedRatePaid;
-
   const isPositiveChangeInValue = rateDifference > 0;
 
   return (

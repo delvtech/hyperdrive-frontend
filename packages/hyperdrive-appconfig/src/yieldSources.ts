@@ -1,24 +1,42 @@
 import { ProtocolId } from "src/protocols";
+import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
+import { Address } from "viem";
+import { mainnet } from "viem/chains";
 
 export type YieldSourceId = keyof typeof yieldSources;
 export interface YieldSource {
   id: YieldSourceId;
   shortName: string;
   protocol: ProtocolId;
-  isSharesPeggedToBase: boolean;
+  /**
+   * If true, the yield source's shares token will be considered 1 to 1 with the
+   * base token. Defaults to false.
+   */
+  isSharesPeggedToBase?: boolean;
   /**
    * Number of days in the past to consider for historical rates. This should be
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
+
+  /**
+   * If provided, can be used when a hyperdrive's base asset is the zero
+   * address.
+   */
+  baseTokenFallback?:
+    | {
+        address: Address;
+        chainId: number;
+      }
+    | undefined;
 }
 
 const makerDsr: YieldSource = {
   id: "makerDsr",
   shortName: "Maker DSR",
   protocol: "maker",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
+  baseTokenFallback: undefined,
 };
 
 const lidoSteth: YieldSource = {
@@ -32,21 +50,18 @@ const morphoSusdeDai: YieldSource = {
   id: "morphoSusdeDai",
   shortName: "Morpho sUSDe/DAI",
   protocol: "morpho",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
 const morphoUsdeDai: YieldSource = {
   id: "morphoUsdeDai",
   shortName: "Morpho USDe/DAI",
   protocol: "morpho",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
 const morphoWstethUsdc: YieldSource = {
   id: "morphoWstethUsdc",
   shortName: "Morpho wstETH/USDC",
   protocol: "morpho",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
 
@@ -54,7 +69,6 @@ const reth: YieldSource = {
   id: "reth",
   shortName: "Rocket Pool ETH",
   protocol: "rocketPool",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 1,
 };
 
@@ -62,7 +76,6 @@ const ezEth: YieldSource = {
   id: "ezEth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
-  isSharesPeggedToBase: false,
   historicalRatePeriod: 14,
 };
 
@@ -70,7 +83,27 @@ const eEth: YieldSource = {
   id: "eEth",
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
-  isSharesPeggedToBase: false,
+  historicalRatePeriod: 30,
+};
+
+const gnosisWsteth: YieldSource = {
+  id: "gnosisWsteth",
+  shortName: "Gnosis wstETH",
+  protocol: "lido",
+  historicalRatePeriod: 1,
+  // There is no actual Lido deployment on gnosis, so we can't let users deposit
+  // or withdraw eth. However we can still use mainnet eth as the fallback for
+  // displaying totals and prices.
+  baseTokenFallback: {
+    chainId: mainnet.id,
+    address: ETH_MAGIC_NUMBER,
+  },
+};
+
+const gnosisSxdai: YieldSource = {
+  id: "gnosisSxdai",
+  shortName: "Savings xDAI",
+  protocol: "maker",
   historicalRatePeriod: 1,
 };
 
@@ -83,4 +116,6 @@ export const yieldSources = {
   morphoWstethUsdc,
   reth,
   ezEth,
+  gnosisWsteth,
+  gnosisSxdai,
 } as const;

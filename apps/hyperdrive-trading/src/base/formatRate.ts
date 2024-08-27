@@ -5,12 +5,10 @@ export function formatRate(
   decimals = 18,
   includePercentSign = true,
 ): string {
-  const [sign, abs] = rate >= 0n ? ["", rate] : ["-", -rate];
-
-  const formatted = `${sign}${fixed(abs, decimals).format({
+  const formatted = fixed(rate, decimals).format({
     percent: true,
     decimals: 2,
-  })}`;
+  });
   if (includePercentSign) {
     return formatted;
   }

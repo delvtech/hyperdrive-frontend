@@ -1,6 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
-  findBaseToken,
+  findToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -34,8 +34,8 @@ export function OpenLpSharesCard({
 }: OpenLpSharesCardProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = appConfig.tokens.find(

@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-trading",
   "description": "Trading interface for the hyperdrive protocol.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "license": "AGPL-3.0",
   "author": {
@@ -27,8 +27,8 @@
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
-    "@delvtech/fixed-point-wasm": "^0.0.3",
-    "@delvtech/hyperdrive-viem": "^2.3.0",
+    "@delvtech/fixed-point-wasm": "^0.0.4",
+    "@delvtech/hyperdrive-viem": "^3.0.0",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
     "@radix-ui/react-tooltip": "^1.1.2",

@@ -30,6 +30,12 @@ const chainConfigs: ChainConfig[] = [
     rpcUrl: process.env.SEPOLIA_NODE_RPC_URL as string,
     registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
   },
+  // {
+  //   chain: gnosis,
+  //   rpcUrl: process.env.GNOSIS_NODE_RPC_URL as string,
+  //   registryAddress: "", // TODO: add registry for gnosis chain
+  // },
+
   // Add more chains here
 ];
 

@@ -280,19 +280,6 @@ export class FixedPoint {
 */
   static random(params?: IGenerateRandomParams): FixedPoint;
 /**
-* Change the number of decimal places in this fixed-point.
-* This will scale or truncate the value as necessary.
-*
-* @example
-* ```ts
-* const fixed = new FixedPoint(1_123456789012345678n);
-* fixed.setDecimals(6);;
-* console.log(fixed.toString());
-* // => 1.123456
-* ```
-*/
-  setDecimals(decimals: number): void;
-/**
 * Add a fixed-point number to this one.
 */
   add(other: Numberish, decimals?: number): FixedPoint;
@@ -390,7 +377,7 @@ export class FixedPoint {
 * @example
 *
 * ```ts
-* const fixed = new FixedPoint(1_123456789012345678n);
+* const fixed = fixed(1_123456789012345678n);
 * console.log(fixed.toNumber());
 * // 1.1234567890123457
 * ```
@@ -399,6 +386,22 @@ export class FixedPoint {
 /**
 */
   valueOf(): string;
+/**
+* Create a new fixed-point number from this one, with a given number of
+* decimal places.
+*
+* @example
+* ```ts
+* const a = fixed(1e18);
+* console.log(a.toString());
+* // => 1.000000000000000000
+*
+* const b = a.toFixed(6);
+* console.log(b.toString());
+* // => 1.000000
+* ```
+*/
+  toFixed(decimals: number): FixedPoint;
 /**
 * Format this fixed-point number for display.
 */
@@ -427,7 +430,6 @@ export interface InitOutput {
   readonly fixedpoint_one: (a: number, b: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
-  readonly fixedpoint_setDecimals: (a: number, b: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
@@ -451,6 +453,7 @@ export interface InitOutput {
   readonly fixedpoint_toString: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_is_fixed_point: (a: number) => number;
+  readonly fixedpoint_toFixed: (a: number, b: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
   readonly getVersion: (a: number) => void;

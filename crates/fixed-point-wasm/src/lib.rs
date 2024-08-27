@@ -130,23 +130,6 @@ impl WasmFixedPoint {
         adjusted.to_bigint()
     }
 
-    /// Change the number of decimal places in this fixed-point.
-    /// This will scale or truncate the value as necessary.
-    ///
-    /// @example
-    /// ```ts
-    /// const fixed = new FixedPoint(1_123456789012345678n);
-    /// fixed.setDecimals(6);;
-    /// console.log(fixed.toString());
-    /// // => 1.123456
-    /// ```
-    #[wasm_bindgen(skip_jsdoc, js_name = setDecimals)]
-    pub fn set_decimals(&mut self, decimals: u8) {
-        self.inner = self.inner / WasmFixedPoint::scale_factor(decimals)
-            * WasmFixedPoint::scale_factor(decimals);
-        self.decimals = decimals;
-    }
-
     /// Add a fixed-point number to this one.
     #[wasm_bindgen(skip_jsdoc)]
     pub fn add(&self, other: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
@@ -373,7 +356,7 @@ impl WasmFixedPoint {
     /// @example
     ///
     /// ```ts
-    /// const fixed = new FixedPoint(1_123456789012345678n);
+    /// const fixed = fixed(1_123456789012345678n);
     /// console.log(fixed.toNumber());
     /// // 1.1234567890123457
     /// ```
@@ -390,6 +373,28 @@ impl WasmFixedPoint {
     #[wasm_bindgen(skip_jsdoc, skip_typescript)]
     pub fn is_fixed_point(&self) -> bool {
         true
+    }
+
+    /// Create a new fixed-point number from this one, with a given number of
+    /// decimal places.
+    ///
+    /// @example
+    /// ```ts
+    /// const a = fixed(1e18);
+    /// console.log(a.toString());
+    /// // => 1.000000000000000000
+    ///
+    /// const b = a.toFixed(6);
+    /// console.log(b.toString());
+    /// // => 1.000000
+    /// ```
+    #[wasm_bindgen(skip_jsdoc, js_name = toFixed)]
+    pub fn to_fixed(&self, decimals: u8) -> WasmFixedPoint {
+        WasmFixedPoint {
+            inner: self.inner / WasmFixedPoint::scale_factor(decimals)
+                * WasmFixedPoint::scale_factor(decimals),
+            decimals,
+        }
     }
 
     fn scale_factor(decimals: u8) -> FixedPoint<I256> {
