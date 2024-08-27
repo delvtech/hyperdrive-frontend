@@ -40,9 +40,10 @@ export function OpenShortsContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const baseToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.baseToken,
-        );
+        const baseToken = findBaseToken({
+          hyperdriveAddress: hyperdrive.address,
+          appConfig,
+        });
         const sharesToken = appConfig.tokens.find(
           (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
         );
@@ -58,8 +59,7 @@ export function OpenShortsContainer(): ReactElement {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1 font-chakraPetch text-h4">
                 <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                  {baseToken &&
-                  hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
+                  {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
                     <div
                       className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
                       data-tip={baseToken.symbol}

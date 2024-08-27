@@ -1,5 +1,5 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
@@ -16,9 +16,10 @@ export function ShortRateAndSizeCell({
   short: OpenShort;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
   const { data: maturityBlock } = useBlock({ blockNumber: short.maturity });
 
   // NOTE: Maturity block will be undefined if the term in incomplete,
@@ -53,8 +54,8 @@ export function ShortRateAndSizeCell({
       <p className="text-neutral-content">{`${formatBalance({
         balance: short.bondAmount,
         decimals: hyperdrive.decimals,
-        places: baseToken?.places,
-      })} hy${baseToken?.symbol}`}</p>
+        places: baseToken.places,
+      })} hy${baseToken.symbol}`}</p>
     </div>
   );
 }

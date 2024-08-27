@@ -2,7 +2,7 @@ import { TokenConfig } from "src/tokens/getTokenConfig";
 import { Address } from "viem";
 
 /**
- * Returns a strongly typed TokenConfig for the token address
+ * Returns a strongly typed TokenConfig for the token address if it exists.
  */
 export function findToken({
   tokenAddress,

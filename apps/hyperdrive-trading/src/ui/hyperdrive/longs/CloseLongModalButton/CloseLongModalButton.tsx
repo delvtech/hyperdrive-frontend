@@ -3,6 +3,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -25,9 +26,10 @@ export function CloseLongModalButton({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    tokens: appConfig.tokens,
+  });
 
   const subHeading = sharesToken
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)

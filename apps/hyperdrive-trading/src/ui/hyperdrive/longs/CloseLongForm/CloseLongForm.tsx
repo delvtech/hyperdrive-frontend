@@ -1,6 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+  TokenConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
@@ -38,7 +43,7 @@ export function CloseLongForm({
   const { address: account } = useAccount();
   const chainId = useChainId();
 
-  const defaultItems = [];
+  const defaultItems: TokenConfig[] = [];
   const baseToken = findBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -46,11 +51,14 @@ export function CloseLongForm({
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     defaultItems.push(baseToken);
   }
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
-  if (sharesToken) {
-    defaultItems.push(sharesToken);
+
+  const sharesToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    tokens: appConfig.tokens,
+  });
+  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    // Safe to cast: sharesToken must be defined if its enabled for withdrawal
+    defaultItems.push(sharesToken!);
   }
 
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -122,16 +130,17 @@ export function CloseLongForm({
   });
 
   const withdrawTokenChoices: TokenChoice[] = [];
-  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
 
-  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
-      tokenConfig: sharesToken,
+      // Safe to cast: sharesToken must be defined if its enabled for withdrawal
+      tokenConfig: sharesToken!,
     });
   }
   // You can't close an amount that's larger than the position size

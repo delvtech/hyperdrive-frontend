@@ -1,6 +1,6 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -19,9 +19,10 @@ export function CurrentShortsValueCell({
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
 
   const {
     amountOut: currentValueInBase,
@@ -42,7 +43,7 @@ export function CurrentShortsValueCell({
   const currentValueLabel = formatBalance({
     balance: currentValueInBase || marketEstimate || 0n,
     decimals: hyperdrive.decimals,
-    places: baseToken?.places,
+    places: baseToken.places,
   });
 
   const profitLossAsBigInt =
@@ -51,7 +52,7 @@ export function CurrentShortsValueCell({
   const profitLoss = formatBalance({
     balance: profitLossAsBigInt,
     decimals: hyperdrive.decimals,
-    places: baseToken?.places,
+    places: baseToken.places,
   });
 
   const isPositiveChangeInValue = profitLossAsBigInt > 0n;
