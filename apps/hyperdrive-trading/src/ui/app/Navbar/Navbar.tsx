@@ -48,7 +48,7 @@ export function Navbar(): ReactElement {
                   "text-neutral-content": location.pathname !== "/bridge",
                 })}
               >
-                Portfolio
+                Bridge
               </span>
             </Link>
             <Link to={"/portfolio"}>
