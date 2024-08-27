@@ -40,6 +40,17 @@ export function Navbar(): ReactElement {
                 All Pools
               </span>
             </Link>
+            <Link to={"/bridge"}>
+              <span
+                className={classNames("text-md", {
+                  "text-white border-b-2 border-b-primary/20 pb-1":
+                    location.pathname === "/bridge",
+                  "text-neutral-content": location.pathname !== "/bridge",
+                })}
+              >
+                Bridge
+              </span>
+            </Link>
             <Link to={"/portfolio"}>
               <span
                 className={classNames("text-md", {
