@@ -1,7 +1,4 @@
 import { ProtocolId } from "src/protocols";
-import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
-import { Address } from "viem";
-import { mainnet } from "viem/chains";
 
 export type YieldSourceId = keyof typeof yieldSources;
 export interface YieldSource {
@@ -11,6 +8,8 @@ export interface YieldSource {
   /**
    * If true, the yield source's shares token will be considered 1 to 1 with the
    * base token. Defaults to false.
+   *
+   * TODO: Move this onto HyperdriveConfig
    */
   isSharesPeggedToBase?: boolean;
   /**
@@ -18,17 +17,6 @@ export interface YieldSource {
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
-
-  /**
-   * If provided, can be used when a hyperdrive's base asset is the zero
-   * address.
-   */
-  baseTokenFallback?:
-    | {
-        address: Address;
-        chainId: number;
-      }
-    | undefined;
 }
 
 const makerDsr: YieldSource = {
@@ -36,7 +24,6 @@ const makerDsr: YieldSource = {
   shortName: "Maker DSR",
   protocol: "maker",
   historicalRatePeriod: 1,
-  baseTokenFallback: undefined,
 };
 
 const lidoSteth: YieldSource = {
@@ -91,13 +78,6 @@ const gnosisWsteth: YieldSource = {
   shortName: "Gnosis wstETH",
   protocol: "lido",
   historicalRatePeriod: 1,
-  // There is no actual Lido deployment on gnosis, so we can't let users deposit
-  // or withdraw eth. However we can still use mainnet eth as the fallback for
-  // displaying totals and prices.
-  baseTokenFallback: {
-    chainId: mainnet.id,
-    address: ETH_MAGIC_NUMBER,
-  },
 };
 
 const gnosisSxdai: YieldSource = {
