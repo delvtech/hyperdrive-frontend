@@ -1,9 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
-import {
-  AppConfig,
-  HyperdriveConfig,
-  findBaseToken,
-} from "@hyperdrive/appconfig";
+import { AppConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -262,10 +258,9 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
+  const baseToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
   return [
     columnHelper.accessor("lpShares", {
       id: "maturationDate",
@@ -284,7 +279,7 @@ function getColumns({
     }),
     columnHelper.accessor("lpShares", {
       id: "size",
-      header: `Size (${baseToken.symbol}-LP)`,
+      header: `Size (${baseToken?.symbol}-LP)`,
       cell: ({ row }) => (
         <SizeAndPoolShareCell
           hyperdrive={hyperdrive}
@@ -294,7 +289,7 @@ function getColumns({
     }),
     columnHelper.accessor("withdrawalShares", {
       id: "value",
-      header: `Value (${baseToken.symbol})`,
+      header: `Value (${baseToken?.symbol})`,
       cell: ({ row }) => (
         <LpCurrentValueCell
           hyperdrive={hyperdrive}

@@ -1,5 +1,5 @@
 import { Cog8ToothIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -23,10 +23,9 @@ export function ManageLpAndWithdrawalSharesButton({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
+  const baseToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
   const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
@@ -93,8 +92,8 @@ export function ManageLpAndWithdrawalSharesButton({
                     {baseProceedsFromPreview !== undefined ? (
                       `+ ${formatBalance({
                         balance: baseProceedsFromPreview,
-                        decimals: baseToken.decimals,
-                        places: baseToken.places,
+                        decimals: baseToken?.decimals || 18,
+                        places: baseToken?.places,
                       })}`
                     ) : (
                       <Skeleton />
@@ -150,10 +149,12 @@ export function ManageLpAndWithdrawalSharesButton({
               >
                 <XMarkIcon className="w-6" title="Close" />
               </button>
-              <RemoveLiquidityForm
-                hyperdrive={hyperdrive}
-                lpShares={lpShares || 0n}
-              />
+              {lpShares && lpShares > 0n ? (
+                <RemoveLiquidityForm
+                  hyperdrive={hyperdrive}
+                  lpShares={lpShares || 0n}
+                />
+              ) : undefined}
             </div>
           }
         >

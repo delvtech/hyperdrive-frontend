@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -6,6 +7,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
+import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { useAccount } from "wagmi";
 
@@ -43,18 +45,41 @@ export function LpCurrentValueCell({
     destination: account,
   });
 
-  // Calculate the withdrawable percentage using fixed()
-  // const withdrawablePercentage =
-  //   baseValue > 0n
-  //     ? fixed(baseProceedsFromPreview || 0n, baseToken?.decimals || 18)
-  //         .div(baseValue, baseToken?.decimals || 18)
-  //         .mul(100)
-  //     : 0;
+  const {
+    proceeds: actualValueOut,
+    previewRemoveLiquidityStatus,
+    withdrawalShares,
+  } = usePreviewRemoveLiquidity({
+    destination: account,
+    lpSharesIn: lpShares,
+    hyperdriveAddress: hyperdrive.address,
+    minOutputPerShare: 1n,
+    asBase: true,
+  });
 
-  const withdrawablePercentage =
-    baseValue > 0n
-      ? ((baseProceedsFromPreview || 0n) / (baseValue || 1n)) * 100n
-      : 0n;
+  const fixedActualValueOut = fixed(
+    (actualValueOut ?? 0n) > 0n ? (actualValueOut ?? 0n) : 0n,
+    baseToken?.decimals || 18,
+  );
+  const fixedBaseValue = fixed(
+    baseValue > 0n ? baseValue : 0n,
+    baseToken?.decimals || 18,
+  );
+  const withdrawablePercentage = fixedBaseValue.eq(0)
+    ? fixed(0)
+    : fixedActualValueOut.div(fixedBaseValue);
+  // console.log(actualValueOut, hyperdrive.name, "Actual Value out");
+  // console.log(
+  //   fixedActualValueOut.toNumber(),
+  //   hyperdrive.name,
+  //   "Fixed Actual Value out",
+  // );
+  // console.log(fixedBaseValue.toNumber(), hyperdrive.name, "Fixed Base Value");
+  // console.log(
+  //   withdrawablePercentage.toNumber(),
+  //   hyperdrive.name,
+  //   "withdrawablePercentage",
+  // );
 
   // Then render it
   return (
@@ -68,10 +93,7 @@ export function LpCurrentValueCell({
           })}`}
           <span className="text-sm text-gray-500">
             {(balanceOfWithdrawalShares ?? 0n) > 0n
-              ? `${formatBalance({
-                  balance: withdrawablePercentage,
-                  decimals: hyperdrive.decimals,
-                })}% withdrawable`
+              ? `${withdrawablePercentage.format({ percent: true })}% withdrawable`
               : "100% withdrawalable"}
           </span>
         </>

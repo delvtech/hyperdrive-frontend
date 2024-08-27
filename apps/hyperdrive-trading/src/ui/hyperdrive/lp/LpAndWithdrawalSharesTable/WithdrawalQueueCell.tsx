@@ -1,4 +1,4 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -15,10 +15,9 @@ export function WithdrawalQueueCell({
 }): JSX.Element {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
+  const baseToken = appConfig.tokens.find(
+    (token) => token.address === hyperdrive.poolConfig.baseToken,
+  );
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
@@ -55,17 +54,17 @@ export function WithdrawalQueueCell({
         <p>
           {formatBalance({
             balance: 0n,
-            decimals: baseToken.decimals,
-            places: baseToken.places,
+            decimals: baseToken?.decimals || 18,
+            places: baseToken?.places,
           })}{" "}
         </p>
         <p className="text-neutral-content">
           {formatBalance({
             balance: 0n,
-            decimals: baseToken.decimals,
-            places: baseToken.places,
+            decimals: baseToken?.decimals || 18,
+            places: baseToken?.places,
           })}{" "}
-          {baseToken.symbol}
+          {baseToken?.symbol}
         </p>
       </div>
     );
@@ -76,17 +75,17 @@ export function WithdrawalQueueCell({
       <p>
         {formatBalance({
           balance: withdrawalSharesCurrentValue || 0n,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
+          decimals: baseToken?.decimals || 18,
+          places: baseToken?.places,
         })}{" "}
       </p>
       <p className="text-neutral-content">
         {formatBalance({
           balance: baseValue - (withdrawalSharesCurrentValue ?? 0n),
-          decimals: baseToken.decimals,
-          places: baseToken.places,
+          decimals: baseToken?.decimals || 18,
+          places: baseToken?.places,
         })}{" "}
-        {baseToken.symbol}
+        {baseToken?.symbol}
       </p>
     </div>
   );
