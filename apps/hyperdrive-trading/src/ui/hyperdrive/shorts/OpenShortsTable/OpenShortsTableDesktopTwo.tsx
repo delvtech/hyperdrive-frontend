@@ -1,7 +1,11 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { AppConfig, findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  findDisplayBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -19,7 +23,6 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
@@ -97,7 +100,6 @@ export function OpenShortsTableDesktopTwo({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
   const { openShorts, openShortsStatus } = useOpenShorts({
     account,
     hyperdriveAddress: hyperdrive.address,
@@ -276,9 +278,9 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.accessor("assetId", {
@@ -302,7 +304,7 @@ function getColumns({
     }),
     columnHelper.accessor("checkpointTime", {
       id: "value/cost",
-      header: `Value / Cost (${baseToken.symbol})`,
+      header: `Value / Cost (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <div>
@@ -313,8 +315,8 @@ function getColumns({
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
                 balance: row.original.baseAmountPaid,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken?.places,
               })}
             </span>
           </div>

@@ -5,7 +5,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findDisplayBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
@@ -41,9 +41,9 @@ export function OpenShortPreview({
 }: OpenShortPreviewProps): ReactElement {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const { fixedApr } = useFixedRate(hyperdrive.address);
   const { vaultRate } = useYieldSourceRate({
@@ -107,10 +107,10 @@ export function OpenShortPreview({
                 {curveFee
                   ? `${formatBalance({
                       balance: curveFee,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
-                    })} hy${baseToken.symbol}`
-                  : `0 hy${baseToken.symbol}`}
+                      decimals: hyperdrive.decimals,
+                      places: displayBaseToken?.places,
+                    })} hy${displayBaseToken?.symbol}`
+                  : `0 hy${displayBaseToken?.symbol}`}
               </span>
             )
           }

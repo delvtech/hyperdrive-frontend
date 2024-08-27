@@ -3,9 +3,9 @@ import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { EllipsisVerticalIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
+  AppConfig,
   HyperdriveConfig,
-  TokenConfig,
-  findToken,
+  findDisplayBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -36,13 +36,9 @@ export function OpenShortsTableDesktop({
   openShorts: OpenShort[];
 }): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
 
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive, baseToken),
+    columns: getColumns(hyperdrive, appConfig),
     data: openShorts || [],
     initialState: {
       sorting: [
@@ -148,7 +144,11 @@ export function OpenShortsTableDesktop({
 }
 
 const columnHelper = createColumnHelper<OpenShort>();
-function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
+function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -158,15 +158,15 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
       },
     }),
     columnHelper.accessor("bondAmount", {
-      header: `Size (hy${baseToken.symbol})`,
+      header: `Size (hy${displayBaseToken?.symbol})`,
       cell: (bondAmount) => {
         const bondAmountValue = bondAmount.getValue();
         return (
           <span className="flex w-20 justify-end">
             {formatBalance({
               balance: bondAmountValue,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
@@ -178,7 +178,7 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
           className="daisy-tooltip daisy-tooltip-bottom before:text-wrap"
           data-tip="The amount paid to open the short, and the Fixed APR that was shorted"
         >
-          Cost ({baseToken.symbol})
+          Cost ({displayBaseToken?.symbol})
         </div>
       ),
       cell: (baseAmountPaid) => {
@@ -189,8 +189,8 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
             <span className="daisy-stat-value flex w-16 justify-end text-md font-normal">
               {formatBalance({
                 balance: amountPaid,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken?.places,
               })}
             </span>
             <div
@@ -205,7 +205,7 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
       },
     }),
     columnHelper.display({
-      header: `Yield Earned (${baseToken.symbol})`,
+      header: `Yield Earned (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
@@ -213,7 +213,7 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
       },
     }),
     columnHelper.display({
-      header: `Current Value (${baseToken.symbol})`,
+      header: `Current Value (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />

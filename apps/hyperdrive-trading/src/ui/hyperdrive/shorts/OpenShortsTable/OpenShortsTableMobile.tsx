@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findDisplayBaseToken,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -152,9 +156,9 @@ function formatOpenShortMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     {
@@ -162,19 +166,19 @@ function formatOpenShortMobileColumnData(
       value: <MaturesOnCell maturity={openShort.maturity} />,
     },
     {
-      name: `Size (${baseToken.symbol})`,
+      name: `Size (${displayBaseToken?.symbol})`,
       value: formatBalance({
         balance: openShort.bondAmount,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
-      name: `Cost (${baseToken.symbol})`,
+      name: `Cost (${displayBaseToken?.symbol})`,
       value: formatBalance({
         balance: openShort.baseAmountPaid,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
@@ -182,7 +186,7 @@ function formatOpenShortMobileColumnData(
       value: `${formatRate(openShort.fixedRatePaid)} APR`,
     },
     {
-      name: `Yield (${baseToken.symbol})`,
+      name: `Yield (${displayBaseToken?.symbol})`,
       value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
     },
     {
