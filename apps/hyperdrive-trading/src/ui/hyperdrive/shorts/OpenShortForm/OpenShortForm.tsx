@@ -1,7 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
-import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findDisplayBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -31,9 +35,9 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address, formatUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 (window as any).fixed = fixed;
@@ -51,7 +55,7 @@ export function OpenShortForm({
   const appConfig = useAppConfig();
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const baseToken = findToken({
+  const actualBaseToken = findToken({
     tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
@@ -60,8 +64,8 @@ export function OpenShortForm({
   });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
   const { longPrice } = useCurrentLongPrice(hyperdrive.address);
 
@@ -75,11 +79,12 @@ export function OpenShortForm({
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
   const shareTokenDepositsEnabled =
     hyperdrive.depositOptions.isShareTokenDepositsEnabled;
+
   const tokenOptions = [];
 
-  if (baseTokenDepositEnabled) {
+  if (actualBaseToken && baseTokenDepositEnabled) {
     tokenOptions.push({
-      tokenConfig: baseToken,
+      tokenConfig: actualBaseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
@@ -99,20 +104,22 @@ export function OpenShortForm({
     useActiveToken({
       account,
       defaultActiveToken: baseTokenDepositEnabled
-        ? baseToken.address
+        ? hyperdrive.poolConfig.baseToken
         : hyperdrive.poolConfig.vaultSharesToken,
       tokens: tokenOptions.map((token) => token.tokenConfig),
     });
 
-  const tokenPrices = useTokenFiatPrices([
-    activeToken.address,
-    baseToken.address,
-  ]);
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeToken.address,
+  });
 
-  const baseTokenPrice =
-    tokenPrices?.[baseToken.address.toLowerCase() as Address];
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    tokenAddress: displayBaseToken?.address,
+  });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -144,14 +151,13 @@ export function OpenShortForm({
   const {
     traderDeposit,
     spotRateAfterOpen,
-    spotPriceAfterOpen,
     curveFee,
     fixedRatePaid,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
-    asBase: activeToken.address === baseToken.address,
+    asBase: activeToken.address === hyperdrive.poolConfig.baseToken,
   });
 
   const hasEnoughBalance = getHasEnoughBalance({
@@ -216,7 +222,7 @@ export function OpenShortForm({
     maxDeposit: maxDepositAfterSlippage,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
-    asBase: activeToken.address === baseToken.address,
+    asBase: activeToken.address === hyperdrive.poolConfig.baseToken,
     // Some hyperdrives allow native eth deposits, so we must include the
     // traderDeposit as msg.value
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
@@ -253,16 +259,20 @@ export function OpenShortForm({
       tokenInput={
         <div className="flex flex-col gap-3">
           <TokenInputTwo
-            name={`${baseToken.symbol}-input`}
+            name={`${displayBaseToken?.symbol}-input`}
             inputLabel="Earn yield on"
             token={
               <TokenPickerTwo
-                tokens={[
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
-                ]}
+                tokens={
+                  actualBaseToken
+                    ? [
+                        {
+                          tokenConfig: actualBaseToken,
+                          tokenBalance: baseTokenBalance?.value,
+                        },
+                      ]
+                    : []
+                }
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);
@@ -276,7 +286,7 @@ export function OpenShortForm({
               activeInput === "bonds"
                 ? amountOfBondsToShort || ""
                 : maxBondsOutFromPayment
-                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
+                  ? formatUnits(maxBondsOutFromPayment, hyperdrive.decimals)
                   : ""
             }
             settings={
@@ -301,10 +311,10 @@ export function OpenShortForm({
                       baseTokenPrice && traderDeposit
                         ? fixed(
                             amountOfBondsToShortAsBigInt || 0n,
-                            baseToken.decimals,
+                            hyperdrive.decimals,
                           ).mul(baseTokenPrice).bigint
                         : 0n,
-                    decimals: baseToken.decimals,
+                    decimals: hyperdrive.decimals,
                     places: 2,
                   })}`}
                 </label>
@@ -312,7 +322,7 @@ export function OpenShortForm({
             }
           />
           <TokenInputTwo
-            name={`${baseToken.symbol}-input`}
+            name={`${displayBaseToken?.symbol}-input`}
             // This input is disabled until the getMaxShort is fixed on the sdk.
             disabled
             token={
@@ -398,13 +408,13 @@ export function OpenShortForm({
             unitClassName="text-xs"
             subValue={
               <>
-                1 hy{baseToken.symbol} ≈{" "}
+                1 hy{displayBaseToken?.symbol} ≈{" "}
                 {formatBalance({
                   balance: longPrice ?? 0n,
-                  decimals: 18, // prices are always 18 decimals regardless of the base token,
-                  places: baseToken.places,
+                  decimals: 18, // prices are always 18 decimals regardless of the base token
+                  places: displayBaseToken?.places,
                 })}{" "}
-                {baseToken.symbol}
+                {displayBaseToken?.symbol}
               </>
             }
           />
@@ -437,7 +447,7 @@ export function OpenShortForm({
                 includeCommas: true,
                 places: activeToken.places,
               })}{" "}
-              hy{baseToken.symbol}
+              hy{displayBaseToken?.symbol}
             </p>
           );
         }

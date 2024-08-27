@@ -12,8 +12,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address } from "viem";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
@@ -37,9 +36,9 @@ export function OpenLongStats({
     appConfig,
   });
   const chainId = useChainId();
-  const tokenPrices = useTokenFiatPrices([displayBaseToken.address]);
-  const baseTokenPrice =
-    tokenPrices?.[displayBaseToken.address.toLowerCase() as Address];
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+  });
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
   const isBaseAmount =
@@ -85,8 +84,8 @@ export function OpenLongStats({
             <>{`${formatBalance({
               balance: bondAmount,
               decimals: hyperdrive.decimals,
-              places: displayBaseToken.places,
-            })} hy${displayBaseToken.symbol}`}</>
+              places: displayBaseToken?.places,
+            })} hy${displayBaseToken?.symbol}`}</>
           )
         }
         valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
@@ -104,18 +103,18 @@ export function OpenLongStats({
               })}
             >
               <img
-                src={displayBaseToken.iconUrl}
+                src={displayBaseToken?.iconUrl}
                 className="mr-1 h-9 rounded-full p-1"
               />
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
                 decimals: hyperdrive.decimals,
-                places: displayBaseToken.places,
+                places: displayBaseToken?.places,
               })}`}
             </span>
           )
         }
-        valueUnit={`${displayBaseToken.symbol}`}
+        valueUnit={`${displayBaseToken?.symbol}`}
         valueClassName="text-base-content flex items-end"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.

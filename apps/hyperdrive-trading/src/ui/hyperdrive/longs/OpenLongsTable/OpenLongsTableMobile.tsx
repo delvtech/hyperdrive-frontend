@@ -3,7 +3,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findDisplayBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -216,19 +216,21 @@ function getMobileColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const data = formatOpenLongMobileColumnData(
-          row.original,
-          hyperdrive,
-          baseToken,
-        );
+        const data = displayBaseToken
+          ? formatOpenLongMobileColumnData(
+              row.original,
+              hyperdrive,
+              displayBaseToken,
+            )
+          : [];
         return (
           <ul className="flex flex-col items-start gap-1 text-neutral-content">
             {data.map((column) => (
@@ -244,11 +246,13 @@ function getMobileColumns({
         return Number(rowA.original.maturity - rowB.original.maturity);
       },
       cell: ({ row }) => {
-        const data = formatOpenLongMobileColumnData(
-          row.original,
-          hyperdrive,
-          baseToken,
-        );
+        const data = displayBaseToken
+          ? formatOpenLongMobileColumnData(
+              row.original,
+              hyperdrive,
+              displayBaseToken,
+            )
+          : [];
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (

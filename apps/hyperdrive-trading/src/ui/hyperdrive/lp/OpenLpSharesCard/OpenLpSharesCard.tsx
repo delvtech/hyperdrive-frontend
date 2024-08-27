@@ -1,5 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
+  findDisplayBaseToken,
   findToken,
   HyperdriveConfig,
   TokenConfig,
@@ -34,9 +35,9 @@ export function OpenLpSharesCard({
 }: OpenLpSharesCardProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
@@ -51,8 +52,12 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
+  const actualBaseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    tokens: appConfig.tokens,
+  });
   const subHeading = sharesToken
-    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    ? getSubHeadingLabel(actualBaseToken, hyperdrive, sharesToken)
     : "";
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
@@ -67,8 +72,8 @@ export function OpenLpSharesCard({
   const isPositiveChangeInValue = profit > 0n;
   const formattedProfit = formatBalance({
     balance: profit,
-    decimals: baseToken.decimals,
-    places: baseToken.places,
+    decimals: hyperdrive.decimals,
+    places: displayBaseToken?.places,
   });
 
   const utilizationRatio = useUtilizationRatio({
@@ -81,7 +86,7 @@ export function OpenLpSharesCard({
       ? calculateRatio({
           a: lpShares,
           b: lpSharesTotalSupply,
-          decimals: baseToken.decimals,
+          decimals: hyperdrive.decimals,
         })
       : 0n;
 
@@ -94,14 +99,14 @@ export function OpenLpSharesCard({
               Your Liquidity
             </span>
             <LabelValue
-              label={`${baseToken.symbol}-LP Shares`}
+              label={`${displayBaseToken?.symbol}-LP Shares`}
               value={
                 <p>
                   {lpShares !== undefined ? (
                     formatBalance({
                       balance: lpShares || 0n,
                       decimals: hyperdrive.decimals,
-                      places: baseToken.places,
+                      places: displayBaseToken?.places,
                     })
                   ) : (
                     <Skeleton />
@@ -116,9 +121,9 @@ export function OpenLpSharesCard({
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
                       balance: baseValue,
-                      decimals: baseToken.decimals,
-                      places: baseToken.places,
-                    })} ${baseToken.symbol}`
+                      decimals: hyperdrive.decimals,
+                      places: displayBaseToken?.places,
+                    })} ${displayBaseToken?.symbol}`
                   ) : (
                     <Skeleton />
                   )}
@@ -146,7 +151,7 @@ export function OpenLpSharesCard({
                   {isPositiveChangeInValue ? "+" : ""}
                   {/* format balance could return -0 if the bigint value is a small negative number */}
                   {formattedProfit === "-0" ? "0" : formattedProfit}{" "}
-                  {baseToken.symbol}
+                  {displayBaseToken?.symbol}
                 </div>
               }
             />
@@ -160,7 +165,7 @@ export function OpenLpSharesCard({
                   data-tip="Your share of the total liquidity in the pool"
                 >
                   {!!lpShares && !!lpSharesTotalSupply ? (
-                    `${dnum.format([poolShare, baseToken.decimals], 6)}%`
+                    `${dnum.format([poolShare, hyperdrive.decimals], 6)}%`
                   ) : (
                     <Skeleton />
                   )}
@@ -179,7 +184,7 @@ export function OpenLpSharesCard({
                   <p>
                     {!!utilizationRatio
                       ? `${dnum.format(
-                          [utilizationRatio, baseToken.decimals],
+                          [utilizationRatio, hyperdrive.decimals],
                           2,
                         )}%`
                       : "0%"}
@@ -195,7 +200,7 @@ export function OpenLpSharesCard({
                   // remove this defensive coding once negative interest is
                   // fixed.
                   Math.min(
-                    +formatUnits(utilizationRatio || 0n, baseToken.decimals),
+                    +formatUnits(utilizationRatio || 0n, hyperdrive.decimals),
                     100,
                   )
                 }
@@ -257,18 +262,19 @@ export function OpenLpSharesCard({
 }
 
 function getSubHeadingLabel(
-  baseToken: TokenConfig,
+  baseToken: TokenConfig | undefined,
   hyperdrive: HyperdriveConfig,
   sharesToken: TokenConfig,
 ) {
   if (
+    baseToken &&
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
     hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
   ) {
     return `Redeem your LP shares for ${baseToken.symbol} or ${sharesToken.symbol}`;
   }
 
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     return `Redeem your LP shares for ${baseToken.symbol}`;
   }
 

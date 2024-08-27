@@ -63,9 +63,9 @@ export function FixedRateCell({
         {formatBalance({
           balance: yieldAfterFlatFee,
           decimals: hyperdrive.decimals,
-          places: displayBaseToken.places,
+          places: displayBaseToken?.places,
         })}{" "}
-        {displayBaseToken.symbol}
+        {displayBaseToken?.symbol}
       </div>
     </div>
   );

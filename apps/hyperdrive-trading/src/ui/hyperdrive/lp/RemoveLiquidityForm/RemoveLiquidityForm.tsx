@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findDisplayBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -35,9 +39,13 @@ export function RemoveLiquidityForm({
 }: RemoveLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findToken({
+  const actualBaseToken = findToken({
     tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
+  });
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const sharesToken = appConfig.tokens.find(
@@ -46,8 +54,8 @@ export function RemoveLiquidityForm({
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
 
   const { balance: sharesTokenBalance } = useTokenBalance({
@@ -66,10 +74,13 @@ export function RemoveLiquidityForm({
       tokenBalance: sharesTokenBalance?.value,
     });
   }
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (
+    actualBaseToken &&
+    hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+  ) {
     // base token should be listed first if it's enabled
     tokens.unshift({
-      tokenConfig: baseToken,
+      tokenConfig: actualBaseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
@@ -79,9 +90,10 @@ export function RemoveLiquidityForm({
   } = useActiveItem({
     items: tokens.map(({ tokenConfig }) => tokenConfig),
     idField: "address",
-    defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-      ? baseToken.address
-      : hyperdrive.poolConfig.vaultSharesToken,
+    defaultActiveItemId:
+      actualBaseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+        ? actualBaseToken.address
+        : hyperdrive.poolConfig.vaultSharesToken,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -99,11 +111,12 @@ export function RemoveLiquidityForm({
 
   // if withdrawingin shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
-  const isBaseActiveToken = activeWithdrawToken.address === baseToken.address;
+  const isBaseActiveToken =
+    activeWithdrawToken.address === hyperdrive.poolConfig.baseToken;
   const lpSharePrice = !isBaseActiveToken
-    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+    ? fixed(poolInfo?.lpSharePrice || 0n, hyperdrive.decimals).div(
         poolInfo?.vaultSharePrice || 0n,
-        baseToken.decimals,
+        hyperdrive.decimals,
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
   const {
@@ -132,7 +145,7 @@ export function RemoveLiquidityForm({
     minOutputPerShare,
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-      activeWithdrawToken.address === baseToken.address,
+      activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
   });
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
@@ -142,7 +155,7 @@ export function RemoveLiquidityForm({
     enabled: previewRemoveLiquidityStatus === "success",
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-      activeWithdrawToken.address === baseToken.address,
+      activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     onSubmitted: () => {
       (window as any)["withdrawalLpModal"].close();
     },
@@ -158,10 +171,10 @@ export function RemoveLiquidityForm({
         balance: calculateValueFromPrice({
           amount: withdrawalShares,
           unitPrice: poolInfo?.lpSharePrice || 0n,
-          decimals: baseToken.decimals,
+          decimals: hyperdrive.decimals,
         }),
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       })
     : null;
 
@@ -171,9 +184,12 @@ export function RemoveLiquidityForm({
   });
 
   const withdrawTokenChoices: TokenChoice[] = [];
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (
+    actualBaseToken &&
+    hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+  ) {
     withdrawTokenChoices.push({
-      tokenConfig: baseToken,
+      tokenConfig: actualBaseToken,
     });
   }
 
@@ -202,9 +218,9 @@ export function RemoveLiquidityForm({
           name="Input LP shares"
           token={
             <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-              <img src={baseToken.iconUrl} className="h-5" />{" "}
+              <img src={displayBaseToken?.iconUrl} className="h-5" />{" "}
               <span className="text-sm font-semibold">
-                {baseToken.symbol}-LP
+                {displayBaseToken?.symbol}-LP
               </span>
             </div>
           }
@@ -218,7 +234,7 @@ export function RemoveLiquidityForm({
             />
           }
           value={amount ?? ""}
-          maxValue={formatUnits(lpShares, baseToken.decimals)}
+          maxValue={formatUnits(lpShares, hyperdrive.decimals)}
           stat={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
               <span>
@@ -226,8 +242,8 @@ export function RemoveLiquidityForm({
                   ? `Withdrawable: ${formatBalance({
                       balance: lpShares,
                       decimals: hyperdrive.decimals,
-                      places: baseToken.places,
-                    })} ${baseToken.symbol}-LP`
+                      places: displayBaseToken?.places,
+                    })} ${displayBaseToken?.symbol}-LP`
                   : undefined}
               </span>
               <span>{`Slippage: ${slippage || "0.5"}%`}</span>
@@ -245,10 +261,10 @@ export function RemoveLiquidityForm({
                 ? `${formatBalance({
                     balance: lpShares || 0n,
                     decimals: hyperdrive.decimals,
-                    places: baseToken.places,
+                    places: displayBaseToken?.places,
                   })}`
                 : "0"
-            } ${baseToken.symbol}-LP`}
+            } ${displayBaseToken?.symbol}-LP`}
           />
           <LabelValue
             label="Total you receive now"
@@ -269,7 +285,7 @@ export function RemoveLiquidityForm({
             label="Queued for delayed withdrawal"
             value={
               <span className="font-bold">
-                {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
+                {formattedWithdrawalSharesOut || 0} {displayBaseToken?.symbol}
               </span>
             }
           />

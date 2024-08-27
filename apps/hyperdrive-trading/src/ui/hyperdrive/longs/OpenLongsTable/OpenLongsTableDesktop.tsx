@@ -217,14 +217,14 @@ function getColumns({
     }),
     columnHelper.accessor("bondAmount", {
       id: "size",
-      header: `Size (hy${displayBaseToken.symbol})`,
+      header: `Size (hy${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <span className="flex w-20 justify-end">
             {formatBalance({
               balance: row.original.bondAmount,
               decimals: hyperdrive.decimals,
-              places: displayBaseToken.places,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
@@ -232,7 +232,7 @@ function getColumns({
     }),
     columnHelper.accessor("baseAmountPaid", {
       id: "valuePaid",
-      header: `Cost (${displayBaseToken.symbol})`,
+      header: `Cost (${displayBaseToken?.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
         return (
@@ -240,7 +240,7 @@ function getColumns({
             {formatBalance({
               balance: amountPaid,
               decimals: hyperdrive.decimals,
-              places: displayBaseToken.places,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
@@ -279,7 +279,7 @@ function getColumns({
     }),
     columnHelper.display({
       id: "value",
-      header: `Current Value (${displayBaseToken.symbol})`,
+      header: `Current Value (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />;
       },

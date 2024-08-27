@@ -28,7 +28,7 @@ export function OpenLongPreview({
   curveFee,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findDisplayBaseToken({
+  const displayBaseToken = findDisplayBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -69,9 +69,9 @@ export function OpenLongPreview({
                   ? `${formatBalance({
                       balance: curveFee,
                       decimals: hyperdrive.decimals,
-                      places: baseToken.places,
-                    })} hy${baseToken.symbol}`
-                  : `0 hy${baseToken.symbol}`}
+                      places: displayBaseToken?.places,
+                    })} hy${displayBaseToken?.symbol}`
+                  : `0 hy${displayBaseToken?.symbol}`}
               </span>
             )
           }

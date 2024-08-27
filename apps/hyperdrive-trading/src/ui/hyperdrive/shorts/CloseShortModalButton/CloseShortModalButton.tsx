@@ -26,7 +26,7 @@ export function CloseShortModalButton({
   hyperdrive,
 }: CloseShortModalButtonProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
+  const actualBaseToken = findToken({
     tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
@@ -34,7 +34,7 @@ export function CloseShortModalButton({
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
   const subHeading = sharesToken
-    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
+    ? getSubHeadingLabel(actualBaseToken, hyperdrive, sharesToken)
     : "";
 
   const maturityMilliseconds = Number(short.maturity * 1000n);
@@ -108,18 +108,19 @@ export function CloseShortModalButton({
 }
 
 function getSubHeadingLabel(
-  baseToken: TokenConfig,
+  baseToken: TokenConfig | undefined,
   hyperdrive: HyperdriveConfig,
   sharesToken: TokenConfig,
 ) {
   if (
+    baseToken &&
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
     hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
   ) {
     return `Redeem your short for ${baseToken.symbol} or ${sharesToken.symbol}`;
   }
 
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     return `Redeem your short for ${baseToken.symbol}`;
   }
 

@@ -3,7 +3,7 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
-  TokenConfig,
+  findDisplayBaseToken,
   findToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
@@ -53,9 +53,9 @@ export function AddLiquidityForm({
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
@@ -66,8 +66,8 @@ export function AddLiquidityForm({
   });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    decimals: hyperdrive.decimals,
   });
 
   const { balance: sharesTokenBalance } = useTokenBalance({
@@ -84,9 +84,15 @@ export function AddLiquidityForm({
   const { fixedApr } = useFixedRate(hyperdrive.address);
 
   const tokenOptions = [];
+  const actualBaseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
+    tokens: appConfig.tokens,
+  });
   if (baseTokenDepositEnabled) {
     tokenOptions.push({
-      tokenConfig: baseToken,
+      // safe to cast because if deposits are enabled then the pool
+      // must have a real base token
+      tokenConfig: actualBaseToken!,
       tokenBalance: baseTokenBalance?.value,
     });
   }
@@ -107,7 +113,9 @@ export function AddLiquidityForm({
     useActiveToken({
       account,
       defaultActiveToken: baseTokenDepositEnabled
-        ? baseToken.address
+        ? // safe to cast because if deposits are enabled then the
+          // pool must have a real base token
+          actualBaseToken!.address
         : hyperdrive.poolConfig.vaultSharesToken,
       tokens: tokenOptions.map((token) => token.tokenConfig),
     });
@@ -148,14 +156,14 @@ export function AddLiquidityForm({
     setActiveOption: setActiveSlippageOption,
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
-  const isBaseActiveToken = activeToken.address === baseToken.address;
+  const isBaseActiveToken = activeToken.address === actualBaseToken?.address;
 
   // if depositing in shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
   const lpSharePrice = !isBaseActiveToken
-    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+    ? fixed(poolInfo?.lpSharePrice || 0n, hyperdrive.decimals).div(
         poolInfo?.vaultSharePrice || 0n,
-        baseToken.decimals,
+        hyperdrive.decimals,
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
@@ -207,8 +215,7 @@ export function AddLiquidityForm({
     lpSharesBalanceOf,
     lpSharesOut,
     lpSharesTotalSupply,
-    hyperdrive,
-    baseToken,
+    decimals: hyperdrive.decimals,
   });
   const tokenPrices = useTokenFiatPrices([activeToken.address]);
   const activeTokenPrice =
@@ -309,7 +316,7 @@ export function AddLiquidityForm({
                 </span>
               )
             }
-            valueUnit={`${baseToken.symbol}-LP`}
+            valueUnit={`${displayBaseToken?.symbol}-LP`}
             valueClassName="flex items-end"
             unitClassName="text-xs"
             value={
@@ -326,7 +333,7 @@ export function AddLiquidityForm({
                     ? `${formatBalance({
                         balance: lpSharesOut,
                         decimals: hyperdrive.decimals,
-                        places: baseToken.places,
+                        places: displayBaseToken?.places,
                       })}`
                     : "0"}
                 </p>
@@ -452,14 +459,12 @@ function calculatePoolShare({
   lpSharesBalanceOf,
   lpSharesOut,
   lpSharesTotalSupply,
-  hyperdrive,
-  baseToken,
+  decimals: decimals,
 }: {
   lpSharesBalanceOf: bigint | undefined;
   lpSharesOut: bigint | undefined;
   lpSharesTotalSupply: bigint | undefined;
-  hyperdrive: HyperdriveConfig;
-  baseToken: TokenConfig;
+  decimals: number;
 }) {
   if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
     return;
@@ -467,6 +472,6 @@ function calculatePoolShare({
   return calculateRatio({
     a: lpSharesOut,
     b: lpSharesTotalSupply + lpSharesOut,
-    decimals: baseToken.decimals,
+    decimals,
   });
 }

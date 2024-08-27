@@ -1,6 +1,10 @@
 import { ClosedShort } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
-import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findDisplayBaseToken,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -31,9 +35,9 @@ function formatClosedShortMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     {
@@ -41,19 +45,19 @@ function formatClosedShortMobileColumnData(
       value: formatDate(Number(closedShort.maturity * 1000n)),
     },
     {
-      name: `Size (${baseToken.symbol})`,
+      name: `Size (${displayBaseToken?.symbol})`,
       value: formatBalance({
         balance: closedShort.bondAmount,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
-      name: `Value Received (${baseToken.symbol})`,
+      name: `Value Received (${displayBaseToken?.symbol})`,
       value: formatBalance({
         balance: closedShort.baseAmountReceived,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
@@ -107,9 +111,9 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   return [
@@ -121,30 +125,30 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor("bondAmount", {
-      header: `Size (hy${baseToken.symbol})`,
+      header: `Size (hy${displayBaseToken?.symbol})`,
       cell: (bondAmount) => {
         const bondAmountValue = bondAmount.getValue();
         return (
           <span className="flex w-20 justify-end">
             {formatBalance({
               balance: bondAmountValue,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
       },
     }),
     columnHelper.accessor("baseAmountReceived", {
-      header: `Value Received (${baseToken.symbol})`,
+      header: `Value Received (${displayBaseToken?.symbol})`,
       cell: (baseAmountReceived) => {
         const amountReceived = baseAmountReceived.getValue();
         return (
           <span className="flex w-36 justify-end font-bold">
             {formatBalance({
               balance: amountReceived,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );

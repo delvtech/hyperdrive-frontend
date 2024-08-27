@@ -39,13 +39,13 @@ export function CurrentValueCell({
   const currentValueLabel = formatBalance({
     balance: baseAmountOut || 0n,
     decimals: hyperdrive.decimals,
-    places: displayBaseToken.places,
+    places: displayBaseToken?.places,
   });
 
   const profitLoss = formatBalance({
     balance: (baseAmountOut || 0n) - row.baseAmountPaid,
     decimals: hyperdrive.decimals,
-    places: displayBaseToken.places,
+    places: displayBaseToken?.places,
   });
 
   const isPositiveChangeInValue =
@@ -93,7 +93,7 @@ export function CurrentValueCell({
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {baseAmountOut
-          ? `${profitLoss === "-0" ? "0" : profitLoss} ${displayBaseToken.symbol}`
+          ? `${profitLoss === "-0" ? "0" : profitLoss} ${displayBaseToken?.symbol}`
           : undefined}
       </div>
     </div>
@@ -125,13 +125,13 @@ export function CurrentValueCellTwo({
   const currentValueLabel = formatBalance({
     balance: baseAmountOut || 0n,
     decimals: hyperdrive.decimals,
-    places: displayBaseToken.places,
+    places: displayBaseToken?.places,
   });
 
   const profitLoss = formatBalance({
     balance: (baseAmountOut || 0n) - (row.details?.baseAmountPaid || 0n),
     decimals: hyperdrive.decimals,
-    places: displayBaseToken.places,
+    places: displayBaseToken?.places,
   });
 
   const isPositiveChangeInValue =

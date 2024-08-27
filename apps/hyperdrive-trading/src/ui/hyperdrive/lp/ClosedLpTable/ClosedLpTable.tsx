@@ -3,7 +3,11 @@ import {
   RedeemedWithdrawalShares,
 } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
-import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findDisplayBaseToken,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -37,9 +41,9 @@ function formatClosedLpMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const isWithdrawalShare = closedLpShares.redeemedTimestamp;
   const shares = isWithdrawalShare
@@ -55,16 +59,16 @@ function formatClosedLpMobileColumnData(
       name: "Shares Closed",
       value: formatBalance({
         balance: shares,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
-      name: `Received (${baseToken.symbol})`,
+      name: `Received (${displayBaseToken?.symbol})`,
       value: formatBalance({
         balance: closedLpShares.baseAmount,
-        decimals: baseToken.decimals,
-        places: baseToken.places,
+        decimals: hyperdrive.decimals,
+        places: displayBaseToken?.places,
       }),
     },
     {
@@ -73,8 +77,8 @@ function formatClosedLpMobileColumnData(
         ? "N/A"
         : formatBalance({
             balance: closedLpShares.withdrawalShareAmount,
-            decimals: baseToken.decimals,
-            places: baseToken.places,
+            decimals: hyperdrive.decimals,
+            places: displayBaseToken?.places,
           }),
     },
   ];
@@ -122,9 +126,9 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   ];
 }
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.display({
@@ -149,23 +153,23 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           <span className="flex w-24 justify-end">
             {formatBalance({
               balance: shares,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
       },
     }),
     columnHelper.accessor("baseAmount", {
-      header: `Value Received (${baseToken.symbol})`,
+      header: `Value Received (${displayBaseToken?.symbol})`,
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
           <span className="flex w-36 justify-end">
             {formatBalance({
               balance: baseAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );
@@ -183,8 +187,8 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           <span className="flex w-48 justify-end">
             {formatBalance({
               balance: withdrawalShareAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
+              decimals: hyperdrive.decimals,
+              places: displayBaseToken?.places,
             })}
           </span>
         );

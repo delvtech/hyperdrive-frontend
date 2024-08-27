@@ -71,10 +71,12 @@ export function OpenLongForm({
       tokenAddress: hyperdrive.poolConfig.baseToken,
       tokens: appConfig.tokens,
     });
-    tokenChoices.push({
-      tokenConfig: actualBaseToken,
-      tokenBalance: baseTokenBalance?.value,
-    });
+    if (actualBaseToken) {
+      tokenChoices.push({
+        tokenConfig: actualBaseToken,
+        tokenBalance: baseTokenBalance?.value,
+      });
+    }
   }
 
   const sharesToken = appConfig.tokens.find(
@@ -276,7 +278,11 @@ export function OpenLongForm({
         />
       }
       disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
+        if (
+          !!depositAmountAsBigInt &&
+          !hasEnoughLiquidity &&
+          displayBaseToken
+        ) {
           return (
             <p className="text-center text-sm text-error">
               Pool limit exceeded. Max long size is{" "}

@@ -4,7 +4,11 @@ import {
 } from "@delvtech/hyperdrive-viem";
 import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { AppConfig, findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  findDisplayBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -52,9 +56,10 @@ export function OpenLongsContainer(): ReactElement {
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
         const openLongs = openLongPositions?.[hyperdrive.address];
-        const baseToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.baseToken,
-        );
+        const displayBaseToken = findDisplayBaseToken({
+          hyperdriveAddress: hyperdrive.address,
+          appConfig,
+        });
         const sharesToken = appConfig.tokens.find(
           (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
         );
@@ -70,13 +75,12 @@ export function OpenLongsContainer(): ReactElement {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1 font-chakraPetch text-h4">
                 <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                  {baseToken &&
-                  hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
+                  {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
                     <div
                       className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={baseToken?.symbol}
+                      data-tip={displayBaseToken?.symbol}
                     >
-                      <img src={baseToken?.iconUrl} />
+                      <img src={displayBaseToken?.iconUrl} />
                     </div>
                   ) : null}
                   {sharesToken &&
@@ -282,9 +286,9 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const displayBaseToken = findDisplayBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.accessor("assetId", {
@@ -315,10 +319,10 @@ function getColumns({
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
                 balance: row.original.details?.bondAmount || 0n,
-                decimals: baseToken.decimals,
+                decimals: hyperdrive.decimals,
                 places: 2,
               })}{" "}
-              {`hy${baseToken.symbol}`}
+              {`hy${displayBaseToken?.symbol}`}
             </span>
           </div>
         );
@@ -343,7 +347,7 @@ function getColumns({
     }),
     columnHelper.accessor("details.baseAmountPaid", {
       id: "value/cost",
-      header: `Value / Cost (${baseToken.symbol})`,
+      header: `Value / Cost (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <div>
@@ -351,8 +355,8 @@ function getColumns({
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
                 balance: row.original.details?.baseAmountPaid || 0n,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken?.places,
               })}
             </span>
           </div>

@@ -48,7 +48,7 @@ function formatClosedLongMobileColumnData(
         <span>
           {formatBalance({
             balance: closedLong.bondAmount,
-            decimals: baseToken.decimals,
+            decimals: hyperdrive.decimals,
             places: baseToken.places,
           })}
         </span>
@@ -73,7 +73,7 @@ function formatClosedLongMobileColumnData(
 }
 
 function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findDisplayBaseToken({
+  const displayBaseToken = findDisplayBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -81,11 +81,13 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const data = formatClosedLongMobileColumnData(
-          row.original,
-          hyperdrive,
-          baseToken,
-        );
+        const data = displayBaseToken
+          ? formatClosedLongMobileColumnData(
+              row.original,
+              hyperdrive,
+              displayBaseToken,
+            )
+          : [];
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -98,11 +100,13 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     columnHelper.display({
       id: "ColumnValues",
       cell: ({ row }) => {
-        const data = formatClosedLongMobileColumnData(
-          row.original,
-          hyperdrive,
-          baseToken,
-        );
+        const data = displayBaseToken
+          ? formatClosedLongMobileColumnData(
+              row.original,
+              hyperdrive,
+              displayBaseToken,
+            )
+          : [];
         return (
           <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
@@ -118,7 +122,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findDisplayBaseToken({
+  const displayBaseToken = findDisplayBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -132,22 +136,23 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       },
     }),
     columnHelper.accessor(
-      (row) =>
-        formatBalance({
+      (row) => {
+        return formatBalance({
           balance: row.bondAmount,
           decimals: hyperdrive.decimals,
-          places: baseToken.places,
-        }),
+          places: displayBaseToken?.places,
+        });
+      },
       {
         id: "size",
-        header: `Size (hy${baseToken.symbol})`,
+        header: `Size (hy${displayBaseToken?.symbol})`,
         cell: ({ row }) => {
           return (
             <span className="flex w-20 justify-end">
               {formatBalance({
                 balance: row.original.bondAmount,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
+                decimals: hyperdrive.decimals,
+                places: displayBaseToken?.places,
               })}
             </span>
           );
@@ -156,7 +161,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     ),
     columnHelper.accessor("baseAmount", {
       id: "baseReceived",
-      header: `Value Received (${baseToken.symbol})`,
+      header: `Value Received (${displayBaseToken?.symbol})`,
       cell: ({ row }) => {
         return (
           <BaseAmountReceivedCell
@@ -302,14 +307,14 @@ function BaseAmountReceivedCell({
   hyperdrive: HyperdriveConfig;
 }) {
   const appConfig = useAppConfig();
-  const baseToken = findDisplayBaseToken({
+  const displayBaseToken = findDisplayBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
   const currentValueLabel = formatBalance({
     balance: closedLong.baseAmount,
     decimals: hyperdrive.decimals,
-    places: baseToken.places,
+    places: displayBaseToken?.places,
   });
 
   return (

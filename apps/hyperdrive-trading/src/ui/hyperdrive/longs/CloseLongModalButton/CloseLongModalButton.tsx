@@ -21,7 +21,7 @@ export function CloseLongModalButton({
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findDisplayBaseToken({
+  const displayBaseToken = findDisplayBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -29,9 +29,10 @@ export function CloseLongModalButton({
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
   );
 
-  const subHeading = sharesToken
-    ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
-    : "";
+  const subHeading =
+    sharesToken && displayBaseToken
+      ? getSubHeadingLabel(displayBaseToken, hyperdrive, sharesToken)
+      : "";
 
   return (
     <Modal
