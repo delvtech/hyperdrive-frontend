@@ -1,31 +1,29 @@
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useEffect } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";
 
-export function useDevLogging(market: HyperdriveConfig): void {
+export function useDevLogging(hyperdrive: HyperdriveConfig): void {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: market.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Config:");
-      console.table(bigIntsToString(market.poolConfig, baseToken.decimals));
+      console.table(
+        bigIntsToString(hyperdrive.poolConfig, hyperdrive.decimals),
+      );
     }
-  }, [baseToken.decimals, market.poolConfig]);
+  }, [hyperdrive.decimals, hyperdrive.poolConfig]);
 
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: market.address });
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Info:");
       console.table(
-        poolInfo ? bigIntsToString(poolInfo, baseToken.decimals) : undefined,
+        poolInfo ? bigIntsToString(poolInfo, hyperdrive.decimals) : undefined,
       );
     }
-  }, [poolInfo, baseToken.decimals]);
+  }, [poolInfo, hyperdrive.decimals]);
 }
 
 type BigIntsToStrings<T> = T extends bigint

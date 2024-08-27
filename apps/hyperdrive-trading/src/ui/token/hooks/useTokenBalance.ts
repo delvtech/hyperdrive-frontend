@@ -5,8 +5,9 @@ import { Address, erc20Abi, formatUnits } from "viem";
 import { useBalance, useChainId, useReadContract } from "wagmi";
 
 /**
- * Hook to get the token balance for an account. Supports the eth magic number
- * address to fetch the native eth balance as well.
+ * Hook to retrieve the token balance for a specified account. Supports
+ * fetching the native ETH balance by using a special ETH magic number address.
+ * The hook will be disabled if the token address provided is the zero address.
  */
 export function useTokenBalance({
   account,

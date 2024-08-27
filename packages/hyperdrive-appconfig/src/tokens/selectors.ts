@@ -14,9 +14,7 @@ export function findToken({
   const token = tokens.find((token) => tokenAddress === token.address);
 
   if (!token) {
-    throw new Error(
-      `Missing token ${tokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
-    );
+    throw new Error(`Missing token ${tokenAddress}.`);
   }
 
   return token;

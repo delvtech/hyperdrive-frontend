@@ -1,6 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
@@ -39,10 +39,11 @@ export function CloseLongForm({
   const chainId = useChainId();
 
   const defaultItems = [];
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
-  if (baseToken) {
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     defaultItems.push(baseToken);
   }
   const sharesToken = appConfig.tokens.find(
