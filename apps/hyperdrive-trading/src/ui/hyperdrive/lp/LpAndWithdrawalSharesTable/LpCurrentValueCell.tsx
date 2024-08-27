@@ -68,20 +68,14 @@ export function LpCurrentValueCell({
   const withdrawablePercentage = fixedBaseValue.eq(0)
     ? fixed(0)
     : fixedActualValueOut.div(fixedBaseValue);
-  // console.log(actualValueOut, hyperdrive.name, "Actual Value out");
-  // console.log(
-  //   fixedActualValueOut.toNumber(),
-  //   hyperdrive.name,
-  //   "Fixed Actual Value out",
-  // );
-  // console.log(fixedBaseValue.toNumber(), hyperdrive.name, "Fixed Base Value");
-  // console.log(
-  //   withdrawablePercentage.toNumber(),
-  //   hyperdrive.name,
-  //   "withdrawablePercentage",
-  // );
 
-  // Then render it
+  console.log({
+    hyperdrive: hyperdrive.name,
+    fixedBaseValue: fixedBaseValue.toNumber(),
+    fixedActualValueOut: fixedActualValueOut.toNumber(),
+    withdrawablePercentage: withdrawablePercentage.toNumber(),
+  });
+
   return (
     <div className="flex flex-col">
       {!!poolInfo && !!lpShares ? (
@@ -92,9 +86,7 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`}
           <span className="text-sm text-gray-500">
-            {(balanceOfWithdrawalShares ?? 0n) > 0n
-              ? `${withdrawablePercentage.format({ percent: true })}% withdrawable`
-              : "100% withdrawalable"}
+            {withdrawablePercentage.format({ percent: true })} withdrawable
           </span>
         </>
       ) : (
