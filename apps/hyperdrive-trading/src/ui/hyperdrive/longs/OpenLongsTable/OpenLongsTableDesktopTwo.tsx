@@ -4,11 +4,7 @@ import {
 } from "@delvtech/hyperdrive-viem";
 import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import {
-  AppConfig,
-  findBaseToken,
-  HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+import { AppConfig, findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -286,8 +282,8 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [

@@ -1,5 +1,5 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -16,8 +16,8 @@ export function PriceBadges({
   const { longPrice, longPriceStatus } = useCurrentLongPrice(
     hyperdrive.address,
   );
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   if (longPriceStatus !== "success") {

@@ -3,11 +3,7 @@ import {
   RedeemedWithdrawalShares,
 } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
-import {
-  AppConfig,
-  HyperdriveConfig,
-  findBaseToken,
-} from "@hyperdrive/appconfig";
+import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
   flexRender,
@@ -41,8 +37,8 @@ function formatClosedLpMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const isWithdrawalShare = closedLpShares.redeemedTimestamp;
@@ -126,8 +122,8 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   ];
 }
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   return [

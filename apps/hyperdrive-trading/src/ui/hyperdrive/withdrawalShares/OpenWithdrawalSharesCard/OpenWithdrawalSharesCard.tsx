@@ -1,4 +1,4 @@
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -24,8 +24,8 @@ export function OpenWithdrawalSharesCard({
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });

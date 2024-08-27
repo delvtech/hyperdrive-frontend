@@ -7,7 +7,7 @@ export { appConfig } from "src/generated/all.appconfig";
 
 // appconfig selectors
 export { findHyperdriveConfig } from "src/hyperdrives/selectors";
-export { findBaseToken } from "src/tokens/selectors";
+export { findToken } from "src/tokens/selectors";
 
 // hyperdrive
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";

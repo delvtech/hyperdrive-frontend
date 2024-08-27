@@ -1,6 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -35,8 +35,8 @@ export function RemoveLiquidityForm({
 }: RemoveLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

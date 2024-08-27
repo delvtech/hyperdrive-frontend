@@ -1,7 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -51,8 +51,8 @@ export function OpenShortForm({
   const appConfig = useAppConfig();
   const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({

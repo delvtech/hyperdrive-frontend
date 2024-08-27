@@ -1,6 +1,6 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -19,8 +19,8 @@ export function CurrentValueCell({
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
 

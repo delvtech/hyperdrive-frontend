@@ -1,5 +1,5 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -17,8 +17,8 @@ export function AccruedYieldCell({
   const { bondAmount, checkpointTime } = openShort;
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.poolConfig.baseToken,
+  const baseToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
   const { accruedYield } = useAccruedYield({
