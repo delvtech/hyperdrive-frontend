@@ -6,7 +6,10 @@ export { cloudchainAppConfig } from "src/generated/42069.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
 
 // appconfig selectors
-export { findHyperdriveConfig } from "src/hyperdrives/selectors";
+export {
+  findDisplayBaseToken,
+  findHyperdriveConfig,
+} from "src/hyperdrives/selectors";
 export { findToken } from "src/tokens/selectors";
 
 // hyperdrive
