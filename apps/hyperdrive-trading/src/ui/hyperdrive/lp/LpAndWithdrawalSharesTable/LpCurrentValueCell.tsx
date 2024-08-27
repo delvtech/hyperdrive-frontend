@@ -72,7 +72,7 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`}
           <span className="text-sm text-gray-500">
-            {`${withdrawablePercent.format({ decimals: 2 })}%`}
+            {`${withdrawablePercent.format({ decimals: 2 })}% withdrawable`}
           </span>
         </>
       ) : (
