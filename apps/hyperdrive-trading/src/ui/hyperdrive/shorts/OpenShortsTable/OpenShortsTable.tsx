@@ -46,7 +46,7 @@ export function OpenShortsTable({
           text="Please switch to the correct network to view your Short positions"
           action={
             <button
-              className="daisy-btn daisy-btn-primary"
+              className="daisy-btn daisy-btn-warning rounded-full"
               onClick={() => switchChain({ chainId: hyperdrive.chainId })}
             >
               Switch Network
