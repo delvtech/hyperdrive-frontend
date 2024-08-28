@@ -1,7 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
@@ -17,7 +16,7 @@ export function TotalOpenShortValue({
 }): ReactElement {
   {
     const { address: account } = useAccount();
-    const { chains, tokens } = useAppConfig();
+    const appConfig = useAppConfig();
     const { openShorts, openShortsStatus } = useOpenShorts({
       account,
       hyperdriveAddress: hyperdrive.address,
@@ -28,17 +27,16 @@ export function TotalOpenShortValue({
       shorts: openShorts,
       enabled: openShortsStatus === "success",
     });
-    const baseToken = tokens.find(
-      (token) => token.address === hyperdrive.poolConfig.baseToken,
-    );
-    const chainInfo = chains[hyperdrive.chainId];
+    const baseToken = findBaseToken({
+      hyperdriveAddress: hyperdrive.address,
+      appConfig,
+    });
+    const chainInfo = appConfig.chains[hyperdrive.chainId];
 
     const { fiatPrice } = useTokenFiatPrice({
-      tokenAddress: baseToken?.address,
+      tokenAddress: baseToken.address,
     });
-    const isFiatPriceEnabled =
-      hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-      chainInfo.id !== sepolia.id;
+    const isFiatPriceEnabled = chainInfo.id !== sepolia.id;
 
     return (
       <div className="flex items-center gap-2">
@@ -48,9 +46,9 @@ export function TotalOpenShortValue({
             {`$${formatBalance({
               balance:
                 totalOpenShortsValue && !isLoading && fiatPrice
-                  ? fixed(totalOpenShortsValue, baseToken?.decimals).mul(
+                  ? fixed(totalOpenShortsValue, baseToken.decimals).mul(
                       fiatPrice,
-                      baseToken?.decimals,
+                      baseToken.decimals,
                     ).bigint
                   : 0n,
               decimals: hyperdrive.decimals,
@@ -62,11 +60,11 @@ export function TotalOpenShortValue({
           <p className="font-dmMono text-h4">
             {formatBalance({
               balance: totalOpenShortsValue || 0n,
-              decimals: baseToken?.decimals || 18,
-              places: baseToken?.places || 2,
+              decimals: baseToken.decimals || 18,
+              places: baseToken.places || 2,
               includeCommas: true,
             })}{" "}
-            {baseToken?.symbol}
+            {baseToken.symbol}
           </p>
         )}
       </div>

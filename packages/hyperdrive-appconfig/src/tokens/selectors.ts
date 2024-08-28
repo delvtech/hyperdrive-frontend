@@ -2,7 +2,7 @@ import { TokenConfig } from "src/tokens/getTokenConfig";
 import { Address } from "viem";
 
 /**
- * Returns a strongly typed TokenConfig for the token address
+ * Returns a strongly typed TokenConfig for the token address if it exists.
  */
 export function findToken({
   tokenAddress,
@@ -10,14 +10,8 @@ export function findToken({
 }: {
   tokenAddress: Address;
   tokens: TokenConfig[];
-}): TokenConfig {
+}): TokenConfig | undefined {
   const token = tokens.find((token) => tokenAddress === token.address);
-
-  if (!token) {
-    throw new Error(
-      `Missing token ${tokenAddress}. Make sure your appconfig's "tokens" property is properly constructed.`,
-    );
-  }
 
   return token;
 }

@@ -16,8 +16,7 @@ import { Route as ChainlogImport } from "./ui/routes/chainlog";
 import { Route as ErrorImport } from "./ui/routes/error";
 import { Route as IndexImport } from "./ui/routes/index";
 import { Route as IneligibleImport } from "./ui/routes/ineligible";
-import { Route as MarketAddressImport } from "./ui/routes/market.$address";
-import { Route as MarketsImport } from "./ui/routes/markets";
+import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
 import { Route as PortfolioImport } from "./ui/routes/portfolio";
 import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
 import { Route as VpnImport } from "./ui/routes/vpn";
@@ -36,11 +35,6 @@ const RestrictedcountriesRoute = RestrictedcountriesImport.update({
 
 const PortfolioRoute = PortfolioImport.update({
   path: "/portfolio",
-  getParentRoute: () => rootRoute,
-} as any);
-
-const MarketsRoute = MarketsImport.update({
-  path: "/markets",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -69,8 +63,8 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
-const MarketAddressRoute = MarketAddressImport.update({
-  path: "/market/$address",
+const MarketChainIdAddressRoute = MarketChainIdAddressImport.update({
+  path: "/market/$chainId/$address",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -98,10 +92,6 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IneligibleImport;
       parentRoute: typeof rootRoute;
     };
-    "/markets": {
-      preLoaderRoute: typeof MarketsImport;
-      parentRoute: typeof rootRoute;
-    };
     "/portfolio": {
       preLoaderRoute: typeof PortfolioImport;
       parentRoute: typeof rootRoute;
@@ -114,8 +104,8 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof VpnImport;
       parentRoute: typeof rootRoute;
     };
-    "/market/$address": {
-      preLoaderRoute: typeof MarketAddressImport;
+    "/market/$chainId/$address": {
+      preLoaderRoute: typeof MarketChainIdAddressImport;
       parentRoute: typeof rootRoute;
     };
   }
@@ -129,11 +119,10 @@ export const routeTree = rootRoute.addChildren([
   ChainlogRoute,
   ErrorRoute,
   IneligibleRoute,
-  MarketsRoute,
   PortfolioRoute,
   RestrictedcountriesRoute,
   VpnRoute,
-  MarketAddressRoute,
+  MarketChainIdAddressRoute,
 ]);
 
 /* prettier-ignore-end */

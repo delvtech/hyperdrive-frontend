@@ -3,7 +3,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -28,7 +28,7 @@ import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 export function OpenLongsTableMobile({
   hyperdrive,
@@ -36,6 +36,8 @@ export function OpenLongsTableMobile({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { switchChain } = useSwitchChain();
+  const chainId = useChainId();
   const { marketState } = useMarketState(hyperdrive.address);
   const appConfig = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
@@ -65,6 +67,24 @@ export function OpenLongsTableMobile({
           heading="No wallet connected"
           text="Connect your wallet to view your Longs."
           action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
+  if (chainId !== hyperdrive.chainId) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="Wrong Network"
+          text="Please switch to the correct network to view your Long positions"
+          action={
+            <button
+              className="daisy-btn daisy-btn-warning rounded-full"
+              onClick={() => switchChain({ chainId: hyperdrive.chainId })}
+            >
+              Switch Network
+            </button>
+          }
         />
       </div>
     );
@@ -216,9 +236,9 @@ function getMobileColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.display({

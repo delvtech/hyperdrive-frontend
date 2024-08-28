@@ -16,9 +16,6 @@ export function DevtoolsMenu(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
-        <FeatureFlagMenuItem flagName="bridge">
-          Bridge Assets
-        </FeatureFlagMenuItem>
         <FeatureFlagMenuItem flagName="portfolio">
           Portfolio
         </FeatureFlagMenuItem>

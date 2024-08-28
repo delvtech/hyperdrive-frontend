@@ -1,5 +1,5 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -54,9 +54,9 @@ export function LongsTab({
       ? isTotalOpenValueLoading
       : isTotalClosedValueLoading;
 
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const totalValue =

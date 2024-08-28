@@ -1,7 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
@@ -16,7 +15,7 @@ export function TotalOpenLongsValue({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const { chains, tokens } = useAppConfig();
+  const appConfig = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
@@ -28,15 +27,14 @@ export function TotalOpenLongsValue({
     enabled: openLongsStatus === "success",
     hyperdrive,
   });
-  const baseToken = tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
-  const chainInfo = chains[hyperdrive.chainId];
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  const chainInfo = appConfig.chains[hyperdrive.chainId];
 
-  const { fiatPrice } = useTokenFiatPrice({ tokenAddress: baseToken?.address });
-  const isFiatPriceEnabled =
-    hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-    chainInfo.id !== sepolia.id;
+  const { fiatPrice } = useTokenFiatPrice({ tokenAddress: baseToken.address });
+  const isFiatPriceEnabled = chainInfo.id !== sepolia.id;
 
   return (
     <div className="flex items-center gap-2">

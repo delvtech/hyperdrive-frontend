@@ -1,10 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/24/outline";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -20,7 +20,6 @@ import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address } from "viem";
 
 export function Landing(): ReactElement | null {
   return (
@@ -52,7 +51,6 @@ export function Landing(): ReactElement | null {
 
 function PoolRows() {
   const appConfig = useAppConfig();
-
   return (
     <div className="flex w-full flex-col gap-5">
       {
@@ -64,28 +62,26 @@ function PoolRows() {
           )
           .map((hyperdrive) => (
             <PoolRow
-              key={hyperdrive.address}
-              hyperdriveAddress={hyperdrive.address}
+              // Combine address and chainId for a unique key, as addresses may overlap across chains (e.g. cloudchain and mainnet)
+              key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+              hyperdrive={hyperdrive}
             />
           ))
       }
     </div>
   );
 }
-function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
+function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const navigate = useNavigate();
   const appConfig = useAppConfig();
   const { yieldSources, chains } = appConfig;
-  const hyperdrive = appConfig.hyperdrives.find(
-    (hyperdrive) => hyperdrive.address === hyperdriveAddress,
-  )!;
-  const chainInfo = chains[hyperdrive.chainId];
 
-  const { fixedApr, fixedRateStatus } = useFixedRate(hyperdriveAddress);
+  const chainInfo = chains[hyperdrive.chainId];
+  const { fixedApr, fixedRateStatus } = useFixedRate(hyperdrive.address);
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
   });
-  const { lpApy, lpApyStatus } = useLpApy(hyperdriveAddress);
+  const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
   const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
 
   // Display TVL as base value on testnet due to lack of reliable fiat pricing.
@@ -93,21 +89,20 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
   const { presentValue } = usePresentValue({
     hyperdriveAddress: hyperdrive.address,
   });
-  const isFiatPriceEnabled =
-    hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-    !isTestnetChain(chainInfo.id);
+  const isFiatPriceEnabled = !isTestnetChain(chainInfo.id);
   const { fiatPrice } = useTokenFiatPrice({
     tokenAddress: isFiatPriceEnabled
       ? hyperdrive.poolConfig.baseToken
       : undefined,
   });
-  const baseAsset = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+  });
   let tvlLabel = `${formatCompact({
     value: presentValue || 0n,
     decimals: hyperdrive.decimals,
-  })} ${baseAsset?.symbol}`;
+  })} ${baseToken.symbol}`;
 
   if (isFiatPriceEnabled) {
     const presentValueFiat =
@@ -127,7 +122,10 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
         navigate({
           to: MARKET_DETAILS_ROUTE,
           resetScroll: true,
-          params: { address: hyperdriveAddress },
+          params: {
+            address: hyperdrive.address,
+            chainId: hyperdrive.chainId.toString(),
+          },
         });
       }}
     >
@@ -179,8 +177,11 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             variant="gradient"
             action={
               <Link
-                to="/market/$address"
-                params={{ address: hyperdrive.address }}
+                to="/market/$chainId/$address"
+                params={{
+                  address: hyperdrive.address,
+                  chainId: hyperdrive.chainId.toString(),
+                }}
                 search={{ position: "longs" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
                 onClick={(e) => {
@@ -197,7 +198,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             value={
               vaultRate ? (
                 <RewardsTooltip
-                  hyperdriveAddress={hyperdriveAddress}
+                  hyperdriveAddress={hyperdrive.address}
                   positionType="short"
                 >
                   <PercentLabel
@@ -210,8 +211,11 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             }
             action={
               <Link
-                to="/market/$address"
-                params={{ address: hyperdrive.address }}
+                to="/market/$chainId/$address"
+                params={{
+                  address: hyperdrive.address,
+                  chainId: hyperdrive.chainId.toString(),
+                }}
                 search={{ position: "shorts" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
                 onClick={(e) => {
@@ -232,7 +236,7 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
               lpApy && !isLpApyNew ? (
                 <RewardsTooltip
                   positionType="lp"
-                  hyperdriveAddress={hyperdriveAddress}
+                  hyperdriveAddress={hyperdrive.address}
                 >
                   <PercentLabel value={`${(lpApy * 100).toFixed(2)}`} />
                 </RewardsTooltip>
@@ -242,8 +246,11 @@ function PoolRow({ hyperdriveAddress }: { hyperdriveAddress: Address }) {
             }
             action={
               <Link
-                to="/market/$address"
-                params={{ address: hyperdrive.address }}
+                to="/market/$chainId/$address"
+                params={{
+                  address: hyperdrive.address,
+                  chainId: hyperdrive.chainId.toString(),
+                }}
                 search={{ position: "lp" }}
                 className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
                 onClick={(e) => {

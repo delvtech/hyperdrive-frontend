@@ -40,4 +40,12 @@ export interface HyperdriveConfig {
   };
 
   poolConfig: PoolConfig;
+
+  /**
+   * For use in cases where the poolConfig.baseToken is the zero address
+   */
+  baseTokenFallback?: {
+    chainId: number;
+    address: Address;
+  };
 }

@@ -2,7 +2,7 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -11,7 +11,6 @@ import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalButton";
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
@@ -29,9 +28,9 @@ export function YourBalanceWell({
   const appConfig = useAppConfig();
 
   // base token
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   // shares token
@@ -68,7 +67,6 @@ function AvailableAsset({
   token: TokenConfig;
 }) {
   const { address: account } = useAccount();
-  const { isFlagEnabled: isBridgeFlagEnabled } = useFeatureFlag("bridge");
   const isEth = token.address === ETH_MAGIC_NUMBER;
   const { balance: tokenBalance, status: tokenBalanceStatus } = useTokenBalance(
     {

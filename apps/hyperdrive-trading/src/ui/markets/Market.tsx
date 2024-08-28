@@ -6,11 +6,12 @@ import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetail
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
 export function Market(): ReactElement {
-  const { address } = useParams({ from: MARKET_DETAILS_ROUTE });
+  const { address, chainId } = useParams({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
 
   const market = appConfig?.hyperdrives.find(
-    (hyperdrive) => hyperdrive.address === address,
+    (hyperdrive) =>
+      hyperdrive.address === address && hyperdrive.chainId === Number(chainId),
   );
 
   return (
