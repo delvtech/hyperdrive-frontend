@@ -40,6 +40,7 @@ export function useApproveToken({
     tokenAddress,
     tokens: appConfig.tokens,
   });
+
   // Pad the approval amount if on sepolia
   let finalAmount = amount;
   if (token?.chainId === sepolia.id && amount > 0 && amount !== MAX_UINT256) {
