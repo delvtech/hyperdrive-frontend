@@ -93,7 +93,11 @@ export function useOpenLong({
         onTransactionCompleted: (txHash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Long opened" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Long opened"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           setTimeout(() => {
@@ -104,7 +108,11 @@ export function useOpenLong({
       });
 
       toast.loading(
-        <TransactionToast txHash={hash} message="Opening a Long..." />,
+        <TransactionToast
+          chainId={chainId}
+          txHash={hash}
+          message="Opening a Long..."
+        />,
         { id: hash },
       );
 

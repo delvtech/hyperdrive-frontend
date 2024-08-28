@@ -107,7 +107,11 @@ export function useOpenShort({
         onTransactionCompleted: (txHash: `0x${string}`) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Short opened" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Short opened"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -116,7 +120,11 @@ export function useOpenShort({
       });
 
       toast.loading(
-        <TransactionToast message="Opening Short" txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Opening Short"
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

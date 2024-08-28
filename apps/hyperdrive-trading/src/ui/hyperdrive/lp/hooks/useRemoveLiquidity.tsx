@@ -83,7 +83,11 @@ export function useRemoveLiquidity({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Liquidity removed" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Liquidity removed"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -92,7 +96,11 @@ export function useRemoveLiquidity({
       });
 
       toast.loading(
-        <TransactionToast message="Removing liquidity..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Removing liquidity..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

@@ -35,7 +35,7 @@ export function useApproveToken({
   const appConfig = useAppConfig();
   const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
-  const publicClient = usePublicClient();
+  const publicClient = usePublicClient({ chainId: tokenChainId });
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
   const token = findToken({
@@ -70,7 +70,11 @@ export function useApproveToken({
               const loadingDescription =
                 finalAmount === 0n ? "Revoking approval..." : "Approving...";
               toast.loading(
-                <TransactionToast message={loadingDescription} txHash={hash} />,
+                <TransactionToast
+                  chainId={tokenChainId}
+                  message={loadingDescription}
+                  txHash={hash}
+                />,
                 { id: hash },
               );
 
@@ -84,7 +88,11 @@ export function useApproveToken({
               const loadedDescription =
                 finalAmount === 0n ? "Approval revoked" : "Token approved";
               toast.success(
-                <TransactionToast message={loadedDescription} txHash={hash} />,
+                <TransactionToast
+                  chainId={tokenChainId}
+                  message={loadedDescription}
+                  txHash={hash}
+                />,
                 { id: hash, duration: SUCCESS_TOAST_DURATION },
               );
             },

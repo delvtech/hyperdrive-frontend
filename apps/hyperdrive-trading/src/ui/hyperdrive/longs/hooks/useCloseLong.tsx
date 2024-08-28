@@ -91,7 +91,11 @@ export function useCloseLong({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Long closed" txHash={hash} />,
+            <TransactionToast
+              message="Long closed"
+              txHash={hash}
+              chainId={chainId}
+            />,
             { id: hash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -100,7 +104,11 @@ export function useCloseLong({
       });
 
       toast.loading(
-        <TransactionToast message="Closing Long..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Closing Long..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

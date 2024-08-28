@@ -86,7 +86,11 @@ export function useCloseShort({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Short closed" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Short closed"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -95,7 +99,11 @@ export function useCloseShort({
       });
 
       toast.loading(
-        <TransactionToast message="Closing Short..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Closing Short..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

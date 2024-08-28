@@ -97,7 +97,11 @@ export function useAddLiquidity({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Liquidity added" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Liquidity added"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -106,7 +110,11 @@ export function useAddLiquidity({
       });
 
       toast.loading(
-        <TransactionToast message="Adding liquidity..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Adding liquidity..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted(hash);
