@@ -338,7 +338,12 @@ function getColumns({
       id: "value",
       header: `Status`,
       cell: ({ row }) => {
-        return <StatusCell maturity={row.original.maturity} />;
+        return (
+          <StatusCell
+            chainId={hyperdrive.chainId}
+            maturity={row.original.maturity}
+          />
+        );
       },
     }),
     columnHelper.display({
