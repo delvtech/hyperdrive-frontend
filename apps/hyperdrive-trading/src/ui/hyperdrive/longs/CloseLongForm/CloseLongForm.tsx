@@ -53,6 +53,7 @@ export function CloseLongForm({
   }
 
   const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     tokens: appConfig.tokens,
   });

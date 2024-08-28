@@ -3,6 +3,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -33,9 +34,11 @@ export function YourBalanceWell({
   });
 
   // shares token
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   return (
     <Well elevation="flat">

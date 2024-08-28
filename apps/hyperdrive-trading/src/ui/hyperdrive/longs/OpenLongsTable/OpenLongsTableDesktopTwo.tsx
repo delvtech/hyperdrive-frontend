@@ -7,6 +7,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   findBaseToken,
+  findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import {
@@ -60,9 +61,11 @@ export function OpenLongsContainer(): ReactElement {
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
-        const sharesToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-        );
+        const sharesToken = findToken({
+          chainId: hyperdrive.chainId,
+          tokens: appConfig.tokens,
+          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+        });
         // Ensure this hyperdrive pool has open positions before rendering.
         if (
           openLongPositionsStatus === "success" &&

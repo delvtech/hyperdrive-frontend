@@ -27,6 +27,7 @@ export function CloseLongModalButton({
     appConfig,
   });
   const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     tokens: appConfig.tokens,
   });

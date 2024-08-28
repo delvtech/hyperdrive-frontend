@@ -2,6 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
+  findToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -36,9 +37,11 @@ export function RedeemWithdrawalSharesForm({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
   const items: TokenConfig[] = [baseToken];
   if (sharesToken) {
     items.push(sharesToken);

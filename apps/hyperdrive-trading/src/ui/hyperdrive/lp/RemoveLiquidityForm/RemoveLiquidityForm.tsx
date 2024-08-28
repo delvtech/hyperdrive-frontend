@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -40,9 +44,11 @@ export function RemoveLiquidityForm({
     appConfig,
   });
 
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,

@@ -5,6 +5,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
@@ -57,9 +58,11 @@ export function AddLiquidityForm({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
