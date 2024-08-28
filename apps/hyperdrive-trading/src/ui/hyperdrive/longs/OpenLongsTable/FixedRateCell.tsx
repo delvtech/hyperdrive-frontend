@@ -2,7 +2,7 @@ import {
   calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
 } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
@@ -24,9 +24,9 @@ export function FixedRateCell({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { poolConfig } = hyperdrive;
-  const baseToken = findToken({
-    tokenAddress: poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const fixedRate = calculateAprFromPrice({

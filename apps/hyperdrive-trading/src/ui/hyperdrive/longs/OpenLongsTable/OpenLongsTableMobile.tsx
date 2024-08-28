@@ -3,7 +3,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -236,9 +236,9 @@ function getMobileColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.display({

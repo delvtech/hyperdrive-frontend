@@ -5,7 +5,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -36,10 +36,9 @@ export function OpenShortsTableDesktop({
   openShorts: OpenShort[];
 }): ReactElement {
   const appConfig = useAppConfig();
-
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const tableInstance = useReactTable({

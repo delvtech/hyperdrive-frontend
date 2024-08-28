@@ -1,7 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
-  findToken,
+  findBaseToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@hyperdrive/appconfig";
@@ -38,9 +38,9 @@ export function OpenLongStats({
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const chainId = useChainId();
   const tokenPrices = useTokenFiatPrices([baseToken.address]);

@@ -1,5 +1,9 @@
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -32,22 +36,24 @@ export function CloseShortForm({
 
   const { address: account } = useAccount();
   const defaultItems = [];
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
-  if (baseToken) {
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     defaultItems.push(baseToken);
   }
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
-  if (sharesToken) {
+  const sharesToken = findToken({
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    tokens: appConfig.tokens,
+  });
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     defaultItems.push(sharesToken);
   }
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
-    tokenAddress: hyperdrive.poolConfig.baseToken,
+    tokenAddress: baseToken.address,
     decimals: hyperdrive.decimals,
   });
 
@@ -108,7 +114,7 @@ export function CloseShortForm({
   });
 
   const withdrawTokenChoices: TokenChoice[] = [];
-  if (baseToken && hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,

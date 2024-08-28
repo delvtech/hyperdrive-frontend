@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { AppConfig, HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  HyperdriveConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import {
   ColumnFiltersState,
   Header,
@@ -178,9 +182,9 @@ export function TransactionTable({
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.accessor("eventName", {
@@ -289,9 +293,9 @@ function formatTransactionTableMobileData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const size = dnum.format(
     [

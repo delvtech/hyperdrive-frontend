@@ -3,7 +3,7 @@ import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -26,9 +26,9 @@ export function CloseShortModalButton({
   hyperdrive,
 }: CloseShortModalButtonProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,

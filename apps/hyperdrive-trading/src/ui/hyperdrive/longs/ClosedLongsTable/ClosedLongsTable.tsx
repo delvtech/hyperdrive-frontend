@@ -4,7 +4,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
   createColumnHelper,
@@ -73,9 +73,9 @@ function formatClosedLongMobileColumnData(
 }
 
 function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.display({
@@ -118,9 +118,9 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   return [
     columnHelper.accessor((row) => formatDate(Number(row.maturity * 1000n)), {
@@ -302,9 +302,9 @@ function BaseAmountReceivedCell({
   hyperdrive: HyperdriveConfig;
 }) {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const currentValueLabel = formatBalance({
     balance: closedLong.baseAmount,

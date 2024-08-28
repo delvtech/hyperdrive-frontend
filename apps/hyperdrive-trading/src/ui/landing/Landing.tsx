@@ -1,11 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -86,21 +85,20 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { presentValue } = usePresentValue({
     hyperdriveAddress: hyperdrive.address,
   });
-  const isFiatPriceEnabled =
-    hyperdrive.poolConfig.baseToken !== ZERO_ADDRESS &&
-    !isTestnetChain(chainInfo.id);
+  const isFiatPriceEnabled = !isTestnetChain(chainInfo.id);
   const { fiatPrice } = useTokenFiatPrice({
     tokenAddress: isFiatPriceEnabled
       ? hyperdrive.poolConfig.baseToken
       : undefined,
   });
-  const baseAsset = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+  });
   let tvlLabel = `${formatCompact({
     value: presentValue || 0n,
     decimals: hyperdrive.decimals,
-  })} ${baseAsset?.symbol}`;
+  })} ${baseToken.symbol}`;
 
   if (isFiatPriceEnabled) {
     const presentValueFiat =
