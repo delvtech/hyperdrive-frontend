@@ -1,4 +1,3 @@
-import { findToken } from "@hyperdrive/appconfig";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -14,10 +13,12 @@ export function useTokenBalance({
   account,
   tokenAddress,
   decimals,
+  tokenChainId,
 }: {
   account: Address | undefined;
   tokenAddress: Address | undefined;
   decimals: number;
+  tokenChainId?: number;
 }): {
   balance:
     | {
@@ -41,12 +42,7 @@ export function useTokenBalance({
 
   const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
     address: tokenAddress,
-    chainId: tokenAddress
-      ? findToken({
-          tokenAddress,
-          tokens: appConfig.tokens,
-        })?.chainId
-      : undefined,
+    chainId: tokenChainId,
     abi: erc20Abi,
     functionName: "balanceOf",
     args: account ? [account] : undefined,

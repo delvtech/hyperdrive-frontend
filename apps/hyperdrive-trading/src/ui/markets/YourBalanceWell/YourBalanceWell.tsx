@@ -75,6 +75,7 @@ function AvailableAsset({
     {
       account: account,
       tokenAddress: token.address,
+      tokenChainId: token.chainId,
       decimals: token.decimals,
     },
   );
@@ -86,6 +87,7 @@ function AvailableAsset({
     account,
     spender,
     tokenAddress: token.address,
+    tokenChainId: token.chainId,
     enabled: !isEth,
   });
   const { data: totalSupply } = useReadContract({

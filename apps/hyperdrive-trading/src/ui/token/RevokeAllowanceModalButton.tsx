@@ -63,6 +63,7 @@ export function RevokeAllowanceModalButton({
     amount: revokedAmount || 0n,
     spender,
     enabled: !isEth,
+    tokenChainId: token.chainId,
   });
   const modalId = `revoke_token`;
   function closeModal() {

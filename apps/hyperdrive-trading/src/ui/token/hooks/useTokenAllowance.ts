@@ -1,4 +1,3 @@
-import { findToken } from "@hyperdrive/appconfig";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, erc20Abi } from "viem";
@@ -8,6 +7,7 @@ interface UseTokenAllowanceOptions {
   account: Address | undefined;
   spender: Address | undefined;
   tokenAddress: Address | undefined;
+  tokenChainId?: number | undefined;
   enabled?: boolean;
 }
 
@@ -20,6 +20,7 @@ export function useTokenAllowance({
   account,
   spender,
   tokenAddress,
+  tokenChainId,
   enabled = true,
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
   const appConfig = useAppConfig();
@@ -30,12 +31,7 @@ export function useTokenAllowance({
       enabled,
     },
     address: tokenAddress,
-    chainId: queryEnabled
-      ? findToken({
-          tokenAddress,
-          tokens: appConfig.tokens,
-        })?.chainId
-      : undefined,
+    chainId: tokenChainId,
     abi: erc20Abi,
     functionName: "allowance",
     args: queryEnabled ? [account, spender] : undefined,

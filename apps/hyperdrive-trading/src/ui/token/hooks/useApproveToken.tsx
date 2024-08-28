@@ -15,6 +15,7 @@ import { Address, erc20Abi, parseUnits } from "viem";
 import { sepolia } from "viem/chains";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
+  tokenChainId: number;
   spender: Address | undefined;
   amount: bigint;
   enabled?: boolean;
@@ -22,6 +23,7 @@ interface UseTokenApprovalOptions {
 
 export function useApproveToken({
   tokenAddress,
+  tokenChainId,
   spender,
   amount,
   enabled = true,
@@ -39,6 +41,7 @@ export function useApproveToken({
   const token = findToken({
     tokenAddress,
     tokens: appConfig.tokens,
+    chainId: tokenChainId,
   });
 
   // Pad the approval amount if on sepolia
@@ -53,7 +56,7 @@ export function useApproveToken({
           {
             abi: erc20Abi,
             address: tokenAddress,
-            chainId: token?.chainId,
+            chainId: tokenChainId,
             functionName: "approve",
             args: [spender, finalAmount],
           },

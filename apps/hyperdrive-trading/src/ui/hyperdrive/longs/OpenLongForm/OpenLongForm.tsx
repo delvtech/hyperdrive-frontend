@@ -104,6 +104,7 @@ export function OpenLongForm({
     enabled: requiresAllowance,
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
   });
 
   const {

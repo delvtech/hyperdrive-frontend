@@ -35,6 +35,7 @@ export function ApproveTokenChoices({
       spender: spender,
       amount: approvedAmount,
       enabled: token.address !== ETH_MAGIC_NUMBER,
+      tokenChainId: token.chainId,
     });
 
   return (
