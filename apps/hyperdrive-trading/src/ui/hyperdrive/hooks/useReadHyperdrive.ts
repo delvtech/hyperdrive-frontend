@@ -6,19 +6,22 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
-export function useReadHyperdrive(
-  address: Address | undefined,
-): ReadHyperdrive | undefined {
+export function useReadHyperdrive({
+  chainId,
+  address,
+}: {
+  chainId: number;
+  address: Address | undefined;
+}): ReadHyperdrive | undefined {
   const appConfig = useAppConfig();
-  const pool = appConfig.hyperdrives.find(
-    (hyperdrive) => hyperdrive.address === address,
-  );
-  const publicClient = usePublicClient({ chainId: pool?.chainId });
+
+  const publicClient = usePublicClient({ chainId });
 
   const enabled = !!address && !!publicClient;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadHyperdrive", {
+      chainId,
       address,
     }),
     enabled,

@@ -20,7 +20,7 @@ export function useMintToken({
   amount: bigint;
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
-  const publicClient = usePublicClient();
+  const publicClient = usePublicClient({ chainId: token.chainId });
   const { data: maxMintAmount } = useReadContract({
     abi: [
       {
@@ -70,6 +70,7 @@ export function useMintToken({
             onSuccess: async (hash) => {
               toast.loading(
                 <TransactionToast
+                  chainId={token.chainId}
                   message={`Minting ${token.symbol}`}
                   txHash={hash}
                 />,
@@ -86,6 +87,7 @@ export function useMintToken({
               });
               toast.success(
                 <TransactionToast
+                  chainId={token.chainId}
                   message={`Minted ${token.symbol}`}
                   txHash={hash}
                 />,

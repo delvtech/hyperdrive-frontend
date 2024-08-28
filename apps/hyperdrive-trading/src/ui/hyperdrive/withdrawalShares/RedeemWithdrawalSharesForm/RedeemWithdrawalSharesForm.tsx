@@ -34,6 +34,7 @@ export function RedeemWithdrawalSharesForm({
 }: RedeemWithdrawalSharesFormProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -75,6 +76,7 @@ export function RedeemWithdrawalSharesForm({
   // The max button is wired up to this
   const { withdrawalShares } = useWithdrawalShares({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const {
@@ -82,6 +84,7 @@ export function RedeemWithdrawalSharesForm({
     baseProceeds: maxRedeemableBaseProceeds,
     sharesProceeds: maxRedeemableSharesProceeds,
   } = usePreviewRedeemWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: withdrawalShares,
     minOutputPerShare: 0n,
@@ -90,7 +93,10 @@ export function RedeemWithdrawalSharesForm({
 
   // Whatever amount of base or shares they type in, we convert it to withdrawal
   // shares, since that's what the smart contract method requires
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const isBaseTokenWithdrawal =
     activeWithdrawToken.address === baseToken.address;
   const convertedAmountToWithdrawalShares = convertAmountToWithdrawalShares({
@@ -120,6 +126,7 @@ export function RedeemWithdrawalSharesForm({
 
   const { baseProceeds, sharesProceeds, previewRedeemWithdrawalSharesStatus } =
     usePreviewRedeemWithdrawalShares({
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: convertedAmountToWithdrawalShares,
       minOutputPerShare,
@@ -128,6 +135,7 @@ export function RedeemWithdrawalSharesForm({
 
   const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
     useRedeemWithdrawalShares({
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: convertedAmountToWithdrawalShares,
       minOutputPerShare,

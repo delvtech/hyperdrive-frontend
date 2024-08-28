@@ -5,22 +5,28 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseRedeemedWithdrawalSharesOptions {
   account: Address | undefined;
+  chainId: number;
   hyperdriveAddress: Address | undefined;
 }
 export function useRedeemedWithdrawalShares({
   account,
+  chainId,
   hyperdriveAddress,
 }: UseRedeemedWithdrawalSharesOptions): {
   redeemedWithdrawalShares: RedeemedWithdrawalShares[] | undefined;
   redeemedWithdrawlSharesStatus: QueryStatus;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!account;
   const {
     data: redeemedWithdrawalShares,
     status: redeemedWithdrawlSharesStatus,
   } = useQuery({
     queryKey: makeQueryKey("redeemedWithdrawalShares", {
+      chainId,
       account,
       hyperdriveAddress,
     }),

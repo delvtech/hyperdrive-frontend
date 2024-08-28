@@ -42,16 +42,22 @@ export function OpenShortPreview({
   const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { fixedApr } = useFixedRate(hyperdrive.address);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { vaultRate } = useYieldSourceRate({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const defaultBondAmount =
     hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6);
   const { shortApr, shortRateStatus } = useShortRate({
+    chainId: hyperdrive.chainId,
     // show the market short rate (aka bond amount of 1) if the user hasn't
     // already entered a short size
     bondAmount: shortSize || defaultBondAmount,

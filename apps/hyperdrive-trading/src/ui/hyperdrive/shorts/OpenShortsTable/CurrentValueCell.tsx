@@ -20,6 +20,7 @@ export function CurrentValueCell({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -30,12 +31,14 @@ export function CurrentValueCell({
     previewCloseShortError,
   } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
   });
 
   const { marketEstimate } = useEstimateShortMarketValue({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
   });

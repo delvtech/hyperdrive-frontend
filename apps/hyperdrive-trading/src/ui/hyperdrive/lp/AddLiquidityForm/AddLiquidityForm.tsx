@@ -39,7 +39,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -51,10 +51,13 @@ export function AddLiquidityForm({
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
-  const chainId = useChainId();
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -66,6 +69,7 @@ export function AddLiquidityForm({
 
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
   });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -84,7 +88,10 @@ export function AddLiquidityForm({
   const shareTokenDepositsEnabled =
     hyperdrive.depositOptions.isShareTokenDepositsEnabled;
 
-  const { fixedApr } = useFixedRate(hyperdrive.address);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const tokenOptions = [];
   if (baseTokenDepositEnabled) {
@@ -103,6 +110,7 @@ export function AddLiquidityForm({
 
   const { lpShares: lpSharesBalanceOf } = useLpShares({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -163,7 +171,10 @@ export function AddLiquidityForm({
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
-  const { lpApy } = useLpApy(hyperdrive.address);
+  const { lpApy } = useLpApy({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
     amount: lpSharePrice,
@@ -189,6 +200,7 @@ export function AddLiquidityForm({
 
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     contribution: depositAmountAsBigInt,
     minApr,
     maxApr,
@@ -205,6 +217,7 @@ export function AddLiquidityForm({
   } = usePreviewAddLiquidity(addLiquidityParams);
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const poolShare = calculatePoolShare({
@@ -219,11 +232,13 @@ export function AddLiquidityForm({
     tokenPrices?.[activeToken.address.toLowerCase() as Address];
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
+    chainId: hyperdrive.chainId,
     enabled:
       hasEnoughAllowance &&
       hasEnoughBalance &&
       addLiquidityPreviewStatus === "success",
     onSubmitted: () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)["add-lp"].close();
     },
     onExecuted: () => {
@@ -241,7 +256,7 @@ export function AddLiquidityForm({
           inputLabel="You deposit"
           bottomLeftElement={
             // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-            !isTestnetChain(chainId) ? (
+            !isTestnetChain(hyperdrive.chainId) ? (
               <label className="text-sm text-neutral-content">
                 {`$${formatBalance({
                   balance:

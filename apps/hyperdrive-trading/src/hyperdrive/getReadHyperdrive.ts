@@ -35,8 +35,8 @@ export async function getReadHyperdrive({
 
   try {
     // steth
-
     const hyperdriveConfig = findHyperdriveConfig({
+      hyperdriveChainId: publicClient.chain?.id as number,
       hyperdriveAddress,
       hyperdrives: appConfig.hyperdrives,
     });

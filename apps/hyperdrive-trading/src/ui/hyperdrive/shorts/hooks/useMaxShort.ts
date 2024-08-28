@@ -14,19 +14,25 @@ interface UseMaxShortResult {
 }
 
 export function useMaxShort({
+  chainId,
   hyperdriveAddress,
   budget,
 }: {
   hyperdriveAddress: Address;
+  chainId: number;
   budget: bigint;
 }): UseMaxShortResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryEnabled = !!readHyperdrive && !!budget;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", {
-      market: hyperdriveAddress,
+      chainId,
+      hyperdriveAddress,
       budget: budget.toString(),
     }),
     enabled: queryEnabled,
@@ -37,7 +43,7 @@ export function useMaxShort({
           // All shares coming from the sdk need to be prepared for the UI
           const finalMaxSharesIn = await prepareSharesOut({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive,
             sharesAmount: result.maxSharesIn,
           });

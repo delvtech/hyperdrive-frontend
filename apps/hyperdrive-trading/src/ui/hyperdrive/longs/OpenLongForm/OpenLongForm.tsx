@@ -47,8 +47,12 @@ export function OpenLongForm({
   const chainId = useChainId();
 
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -127,6 +131,7 @@ export function OpenLongForm({
 
   const { maxBaseIn, maxSharesIn, maxBondsOut } = useMaxLong({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
   });
   const activeTokenMaxTradeSize =
     activeToken.address === baseToken.address ? maxBaseIn : maxSharesIn;
@@ -142,6 +147,7 @@ export function OpenLongForm({
     curveFee,
     status: openLongPreviewStatus,
   } = usePreviewOpenLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     amountIn: depositAmountAsBigInt,
     asBase: activeToken.address === baseToken.address,
@@ -165,6 +171,7 @@ export function OpenLongForm({
     });
 
   const { openLong, openLongStatus } = useOpenLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     asBase: activeToken.address === baseToken.address,
     amount: depositAmountAsBigInt,
@@ -174,7 +181,7 @@ export function OpenLongForm({
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onSubmitted: () => {
-      (window as any)["open-long"].close();
+      (document.getElementById("open-long") as HTMLDialogElement).close();
     },
     onExecuted: () => {
       setAmount("");

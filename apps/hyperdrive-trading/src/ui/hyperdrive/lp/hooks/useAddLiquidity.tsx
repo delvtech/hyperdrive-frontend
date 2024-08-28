@@ -13,8 +13,8 @@ import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
-import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   destination: Address | undefined;
   contribution: bigint | undefined;
@@ -36,6 +36,7 @@ interface UseAddLiquidityResult {
 }
 
 export function useAddLiquidity({
+  chainId,
   hyperdriveAddress,
   destination,
   contribution,
@@ -48,10 +49,12 @@ export function useAddLiquidity({
   onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
 
   const appConfig = useAppConfig();
-  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
 
@@ -62,7 +65,6 @@ export function useAddLiquidity({
     maxApr !== undefined &&
     !!destination &&
     enabled &&
-    !!publicClient &&
     !!readWriteHyperdrive;
 
   const { mutate: addLiquidity, status } = useMutation({
@@ -77,7 +79,7 @@ export function useAddLiquidity({
         ? contribution
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive: readWriteHyperdrive,
             sharesAmount: contribution,
           });
@@ -95,7 +97,11 @@ export function useAddLiquidity({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Liquidity added" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Liquidity added"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -104,7 +110,11 @@ export function useAddLiquidity({
       });
 
       toast.loading(
-        <TransactionToast message="Adding liquidity..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Adding liquidity..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted(hash);

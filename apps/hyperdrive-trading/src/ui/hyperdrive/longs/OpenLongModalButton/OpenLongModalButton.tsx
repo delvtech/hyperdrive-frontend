@@ -17,9 +17,13 @@ export function OpenLongModalButton({
   modalId,
   hyperdrive,
 }: OpenLongModalButtonProps): ReactElement {
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   function closeModal() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any)[modalId].close();
   }
 

@@ -17,14 +17,21 @@ export function useTotalOpenShortsValue({
   shorts: Short[] | undefined;
   enabled: boolean;
 }): { totalOpenShortsValue: bigint | undefined; isLoading: boolean } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
 
   const queryEnabled =
     !!account && !!shorts && !!readHyperdrive && !!poolInfo && enabled;
 
   const { data: totalOpenShortsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalOpenShortsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
     }),

@@ -5,18 +5,23 @@ import { Address } from "viem";
 interface UseLpSharesOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;
+  chainId: number;
 }
 export function useLpShares({
   account,
   hyperdriveAddress,
+  chainId,
 }: UseLpSharesOptions): {
   lpShares: bigint | undefined;
   lpSharesStatus: QueryStatus;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: lpShares, status: lpSharesStatus } = useQuery({
-    queryKey: makeQueryKey("lpShares", { account, hyperdriveAddress }),
+    queryKey: makeQueryKey("lpShares", { account, hyperdriveAddress, chainId }),
     queryFn: queryEnabled
       ? () => readHyperdrive.getLpShares({ account })
       : undefined,

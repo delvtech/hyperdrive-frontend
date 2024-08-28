@@ -4,6 +4,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, BlockTag } from "viem";
 export function useTradingVolume(
+  chainId: number,
   hyperdriveAddress: Address,
   currentBlockNumber: bigint | undefined,
 ): {
@@ -12,7 +13,10 @@ export function useTradingVolume(
   shortVolume: bigint | undefined;
   tradingVolumeStatus: "loading" | "error" | "success";
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
 
   // If we have at least 1 day of blocks, go back by 1 day, otherwise
@@ -27,6 +31,7 @@ export function useTradingVolume(
 
   const { data: volume, status } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
+      chainId,
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
       fromBlock: fromBlock.toString(),

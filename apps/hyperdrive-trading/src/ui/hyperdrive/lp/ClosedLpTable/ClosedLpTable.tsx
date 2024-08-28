@@ -42,6 +42,7 @@ function formatClosedLpMobileColumnData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -127,6 +128,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 }
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -212,11 +214,13 @@ export function ClosedLpTable({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
   const { redeemedWithdrawalShares } = useRedeemedWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });

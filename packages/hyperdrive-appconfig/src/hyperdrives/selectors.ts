@@ -5,17 +5,22 @@ import { findToken } from "src/tokens/selectors";
 import { Address, zeroAddress } from "viem";
 
 /**
- * Returns a strongly typed TokenConfig for the yield source token.
+ * Returns a strongly typed HyperdriveConfig for the hyperdrive address and
+ * chain id
  */
 export function findHyperdriveConfig({
-  hyperdrives,
+  hyperdriveChainId,
   hyperdriveAddress,
+  hyperdrives,
 }: {
-  hyperdrives: HyperdriveConfig[];
+  hyperdriveChainId: number;
   hyperdriveAddress: Address;
+  hyperdrives: HyperdriveConfig[];
 }): HyperdriveConfig {
   const hyperdriveConfig = hyperdrives.find(
-    (hyperdriveConfig) => hyperdriveConfig.address === hyperdriveAddress,
+    (hyperdriveConfig) =>
+      hyperdriveConfig.address === hyperdriveAddress &&
+      hyperdriveConfig.chainId === hyperdriveChainId,
   );
 
   if (!hyperdriveConfig) {
@@ -34,13 +39,16 @@ export function findHyperdriveConfig({
  * zero address), the function will attempt to return a fallback base token.
  */
 export function findBaseToken({
+  hyperdriveChainId,
   hyperdriveAddress,
   appConfig,
 }: {
+  hyperdriveChainId: number;
   hyperdriveAddress: Address;
   appConfig: AppConfig;
 }): TokenConfig {
   const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: hyperdriveChainId,
     hyperdriveAddress,
     hyperdrives: appConfig.hyperdrives,
   });

@@ -10,23 +10,29 @@ import { Address } from "viem";
 export function usePrepareSharesIn({
   sharesAmount,
   hyperdriveAddress,
+  chainId,
   enabled,
 }: {
   sharesAmount: bigint | undefined;
   hyperdriveAddress: Address;
+  chainId: number;
   enabled: boolean;
 }): {
   amount: bigint | undefined;
   status: QueryStatusWithIdle;
 } {
   const appConfig = useAppConfig();
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
 
   const queryEnabled =
     !!readHyperdrive && sharesAmount !== undefined && enabled;
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("prepare-shares-amount-in", {
       hyperdrive: hyperdriveAddress,
+      chainId,
       amount: sharesAmount?.toString(),
     }),
     enabled: queryEnabled,
@@ -34,7 +40,7 @@ export function usePrepareSharesIn({
       ? () =>
           prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             sharesAmount,
             readHyperdrive,
           })
@@ -49,18 +55,19 @@ export function usePrepareSharesIn({
 
 export async function prepareSharesIn({
   appConfig,
-  hyperdriveAddress,
+  chainId,
   sharesAmount,
   readHyperdrive,
 }: {
   appConfig: AppConfig;
-  hyperdriveAddress: Address;
+  chainId: number;
   sharesAmount: bigint;
   readHyperdrive: ReadHyperdrive;
 }): Promise<bigint> {
   const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
     hyperdrives: appConfig.hyperdrives,
-    hyperdriveAddress: hyperdriveAddress,
+    hyperdriveAddress: readHyperdrive.address,
   });
 
   // If the shares token is pegged to its base token (e.g., stETH to ETH), then

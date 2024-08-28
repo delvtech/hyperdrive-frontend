@@ -13,6 +13,7 @@ export function AssetStack({
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

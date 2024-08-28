@@ -7,6 +7,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UsePreviewCloseShortOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
@@ -23,12 +24,16 @@ interface UsePreviewCloseShortResult {
 
 export function usePreviewCloseShort({
   hyperdriveAddress,
+  chainId,
   maturityTime,
   shortAmountIn,
   asBase = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryEnabled =
     !!readHyperdrive && !!maturityTime && !!shortAmountIn && enabled;
@@ -36,6 +41,7 @@ export function usePreviewCloseShort({
   const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
+      chainId,
       maturityTime: maturityTime?.toString(),
       shortAmountIn: shortAmountIn?.toString(),
       asBase,
@@ -56,13 +62,13 @@ export function usePreviewCloseShort({
             : await Promise.all([
                 prepareSharesOut({
                   appConfig,
-                  hyperdriveAddress,
+                  chainId,
                   readHyperdrive,
                   sharesAmount: result.amountOut,
                 }),
                 prepareSharesOut({
                   appConfig,
-                  hyperdriveAddress,
+                  chainId,
                   readHyperdrive,
                   sharesAmount: result.flatPlusCurveFee,
                 }),

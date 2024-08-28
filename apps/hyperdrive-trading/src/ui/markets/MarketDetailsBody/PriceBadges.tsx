@@ -13,10 +13,12 @@ export function PriceBadges({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const { longPrice, longPriceStatus } = useCurrentLongPrice(
-    hyperdrive.address,
-  );
+  const { longPrice, longPriceStatus } = useCurrentLongPrice({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

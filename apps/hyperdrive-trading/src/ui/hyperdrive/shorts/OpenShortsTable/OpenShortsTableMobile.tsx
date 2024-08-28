@@ -157,6 +157,7 @@ function formatOpenShortMobileColumnData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

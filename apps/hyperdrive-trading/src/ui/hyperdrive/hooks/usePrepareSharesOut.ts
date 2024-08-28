@@ -10,9 +10,11 @@ import { Address } from "viem";
 export function usePrepareSharesOut({
   sharesAmount,
   hyperdriveAddress,
+  chainId,
   enabled = true,
 }: {
   sharesAmount: bigint | undefined;
+  chainId: number;
   hyperdriveAddress: Address;
   enabled?: boolean;
 }): {
@@ -20,12 +22,16 @@ export function usePrepareSharesOut({
   status: QueryStatusWithIdle;
 } {
   const appConfig = useAppConfig();
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
 
   const queryEnabled =
     !!readHyperdrive && sharesAmount !== undefined && enabled;
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("prepare-shares-amount-out", {
+      chainId,
       hyperdrive: hyperdriveAddress,
       amount: sharesAmount?.toString(),
     }),
@@ -34,7 +40,7 @@ export function usePrepareSharesOut({
       ? () =>
           prepareSharesOut({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             sharesAmount,
             readHyperdrive,
           })
@@ -49,12 +55,12 @@ export function usePrepareSharesOut({
 
 export async function prepareSharesOut({
   appConfig,
-  hyperdriveAddress,
+  chainId,
   sharesAmount,
   readHyperdrive,
 }: {
   appConfig: AppConfig;
-  hyperdriveAddress: Address;
+  chainId: number;
   sharesAmount: bigint;
   readHyperdrive: ReadHyperdrive;
 }): Promise<bigint> {
@@ -63,8 +69,9 @@ export async function prepareSharesOut({
   }
 
   const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
     hyperdrives: appConfig.hyperdrives,
-    hyperdriveAddress: hyperdriveAddress,
+    hyperdriveAddress: readHyperdrive.address,
   });
 
   // If the shares token is pegged to its base token (e.g., stETH to ETH), then

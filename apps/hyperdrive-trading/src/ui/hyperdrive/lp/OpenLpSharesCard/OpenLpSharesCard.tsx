@@ -36,6 +36,7 @@ export function OpenLpSharesCard({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -45,12 +46,17 @@ export function OpenLpSharesCard({
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
 
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     account,
   });
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -59,6 +65,7 @@ export function OpenLpSharesCard({
     : "";
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
     },
@@ -219,6 +226,7 @@ export function OpenLpSharesCard({
                     <button
                       className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
                       onClick={() =>
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         (window as any)["withdrawalLpModal"].close()
                       }
                     >

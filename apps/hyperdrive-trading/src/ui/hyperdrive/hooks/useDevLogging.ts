@@ -15,7 +15,10 @@ export function useDevLogging(hyperdrive: HyperdriveConfig): void {
     }
   }, [hyperdrive.decimals, hyperdrive.poolConfig]);
 
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Info:");

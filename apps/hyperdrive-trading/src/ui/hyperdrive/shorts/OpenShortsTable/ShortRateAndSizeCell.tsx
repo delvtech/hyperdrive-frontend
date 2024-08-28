@@ -6,7 +6,7 @@ import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { useBlock, useChainId } from "wagmi";
+import { useBlock } from "wagmi";
 
 export function ShortRateAndSizeCell({
   hyperdrive,
@@ -16,19 +16,23 @@ export function ShortRateAndSizeCell({
   short: OpenShort;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const chainId = useChainId();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
   const { data: maturityBlock } = useBlock({
     blockNumber: short.maturity,
-    chainId,
+    chainId: hyperdrive.chainId,
   });
 
   // NOTE: Maturity block will be undefined if the term in incomplete,
   // defaulting to latest.
-  const { fixedApr } = useFixedRate(hyperdrive.address, maturityBlock?.number);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    blockNumber: maturityBlock?.number,
+  });
 
   const rateDifference = (fixedApr?.apr || 0n) - short.fixedRatePaid;
   const isPositiveChangeInValue = rateDifference > 0;
