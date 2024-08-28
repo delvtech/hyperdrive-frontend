@@ -235,7 +235,12 @@ function getColumns({
       id: "maturationDate",
       header: `Matures On`,
       cell: ({ row }) => {
-        return <MaturesOnCell maturity={row.original.maturity} />;
+        return (
+          <MaturesOnCell
+            hyperdrive={hyperdrive}
+            maturity={row.original.maturity}
+          />
+        );
       },
     }),
     columnHelper.accessor("bondAmount", {

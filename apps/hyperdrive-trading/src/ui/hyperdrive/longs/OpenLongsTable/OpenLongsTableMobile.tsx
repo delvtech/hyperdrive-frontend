@@ -190,7 +190,7 @@ function formatOpenLongMobileColumnData(
   return [
     {
       name: "Matures on",
-      value: <MaturesOnCell maturity={row.maturity} />,
+      value: <MaturesOnCell hyperdrive={hyperdrive} maturity={row.maturity} />,
     },
     {
       name: `Size (hy${baseToken.symbol})`,

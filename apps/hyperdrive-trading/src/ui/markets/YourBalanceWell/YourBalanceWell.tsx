@@ -89,7 +89,7 @@ function AvailableAsset({
     abi: erc20Abi,
     functionName: "totalSupply",
     address: token.address,
-    chainId: chainId,
+    chainId: token.chainId,
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
