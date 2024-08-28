@@ -189,8 +189,9 @@ export function OpenLongsTableDesktop({
                 className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  (window as any)[modalId].showModal();
+                  (
+                    document.getElementById(modalId) as HTMLDialogElement
+                  ).showModal();
                 }}
               >
                 {row.getVisibleCells().map((cell, cellIndex) => (

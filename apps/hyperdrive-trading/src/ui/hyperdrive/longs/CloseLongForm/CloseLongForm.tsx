@@ -125,8 +125,7 @@ export function CloseLongForm({
     asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     enabled: previewCloseLongStatus === "success",
     onSubmitted: () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any)[`${long.assetId}`].close();
+      (document.getElementById(`${long.assetId}`) as HTMLDialogElement).close();
     },
     onExecuted: () => {
       setAmount("");

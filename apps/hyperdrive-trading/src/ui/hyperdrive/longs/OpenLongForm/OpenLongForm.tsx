@@ -181,8 +181,7 @@ export function OpenLongForm({
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onSubmitted: () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any)["open-long"].close();
+      (document.getElementById("open-long") as HTMLDialogElement).close();
     },
     onExecuted: () => {
       setAmount("");
