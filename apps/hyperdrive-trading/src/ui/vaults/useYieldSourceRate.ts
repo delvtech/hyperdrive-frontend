@@ -6,17 +6,20 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-interface UseVaultRateOptions {
-  hyperdriveAddress: Address | undefined;
-}
-
 export function useYieldSourceRate({
+  chainId,
   hyperdriveAddress,
-}: UseVaultRateOptions): {
+}: {
+  chainId: number;
+  hyperdriveAddress: Address | undefined;
+}): {
   vaultRate: { vaultRate: bigint; formatted: string } | undefined;
   vaultRateStatus: "error" | "success" | "loading";
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryEnabled = !!hyperdriveAddress && !!readHyperdrive;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({

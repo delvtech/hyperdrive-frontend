@@ -26,7 +26,7 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -41,7 +41,6 @@ export function CloseLongForm({
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
-  const chainId = useChainId();
 
   const defaultItems: TokenConfig[] = [];
   const baseToken = findBaseToken({
@@ -100,6 +99,7 @@ export function CloseLongForm({
     previewCloseLongStatus,
     previewCloseLongError,
   } = usePreviewCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
@@ -116,6 +116,7 @@ export function CloseLongForm({
     });
 
   const { closeLong, closeLongStatus } = useCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
@@ -124,6 +125,7 @@ export function CloseLongForm({
     asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     enabled: previewCloseLongStatus === "success",
     onSubmitted: () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)[`${long.assetId}`].close();
     },
     onExecuted: () => {
@@ -202,7 +204,7 @@ export function CloseLongForm({
               disabled
               bottomLeftElement={
                 // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-                !isTestnetChain(chainId) ? (
+                !isTestnetChain(hyperdrive.chainId) ? (
                   <label className="text-sm text-neutral-content">
                     {`$${formatBalance({
                       balance:

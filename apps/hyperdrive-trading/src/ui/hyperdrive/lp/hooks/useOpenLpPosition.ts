@@ -19,11 +19,18 @@ export function useOpenLpPosition({
   sharesValue: bigint;
   openLpPositionStatus: "loading" | "error" | "success";
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryEnabled = !!hyperdriveAddress && !!readHyperdrive && !!account;
   const { data, status: openLpPositionStatus } = useQuery({
-    queryKey: makeQueryKey("openLpPosition", { account, hyperdriveAddress }),
+    queryKey: makeQueryKey("openLpPosition", {
+      account,
+      hyperdriveAddress,
+      chainId,
+    }),
     queryFn: queryEnabled
       ? () => {
           const hyperdriveConfig = findHyperdriveConfig({

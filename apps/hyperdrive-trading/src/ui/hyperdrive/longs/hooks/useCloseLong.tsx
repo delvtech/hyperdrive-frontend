@@ -17,6 +17,7 @@ import { usePublicClient } from "wagmi";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
+  chainId: number;
   maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minAmountOut: bigint | undefined;
@@ -34,6 +35,7 @@ interface UseCloseLongResult {
 
 export function useCloseLong({
   hyperdriveAddress,
+  chainId,
   maturityTime,
   bondAmountIn,
   minAmountOut,
@@ -43,7 +45,10 @@ export function useCloseLong({
   onSubmitted,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -70,7 +75,7 @@ export function useCloseLong({
         ? minAmountOut
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             sharesAmount: minAmountOut,
             readHyperdrive: readWriteHyperdrive,
           });

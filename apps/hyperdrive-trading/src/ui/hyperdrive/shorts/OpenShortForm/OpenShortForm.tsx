@@ -38,7 +38,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address, formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 (window as any).fixed = fixed;
 
@@ -53,14 +53,17 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const chainId = useChainId();
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -68,7 +71,10 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
-  const { longPrice } = useCurrentLongPrice(hyperdrive.address);
+  const { longPrice } = useCurrentLongPrice({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const { balance: sharesTokenBalance } = useTokenBalance({
     account,
@@ -157,6 +163,7 @@ export function OpenShortForm({
     fixedRatePaid,
     status: openShortPreviewStatus,
   } = usePreviewOpenShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
     asBase: activeToken.address === baseToken.address,
@@ -186,11 +193,13 @@ export function OpenShortForm({
   });
 
   const { maxBondsOut } = useMaxShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     budget: MAX_UINT256,
   });
 
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     budget: amountToPayAsBigInt || 0n,
   });
@@ -218,6 +227,7 @@ export function OpenShortForm({
     });
 
   const { openShort, openShortStatus } = useOpenShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
@@ -302,7 +312,7 @@ export function OpenShortForm({
             }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-              !isTestnetChain(chainId) ? (
+              !isTestnetChain(hyperdrive.chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
                     balance:
@@ -346,7 +356,7 @@ export function OpenShortForm({
             }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-              !isTestnetChain(chainId) ? (
+              !isTestnetChain(hyperdrive.chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
                     balance:

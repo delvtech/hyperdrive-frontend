@@ -7,6 +7,7 @@ import { Address } from "viem";
 interface UseOpenLongsOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;
+  chainId: number;
 }
 
 /**
@@ -15,12 +16,16 @@ interface UseOpenLongsOptions {
  */
 export function useOpenLongs({
   account,
+  chainId,
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
   openLongs: Long[] | undefined;
   openLongsStatus: "error" | "success" | "loading";
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: openLongs, status: openLongsStatus } = useQuery({
     enabled: queryEnabled,
@@ -39,12 +44,16 @@ export function useOpenLongs({
  */
 export function useOpenLongPositions({
   account,
+  chainId,
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
   openLongPositionsReceived: OpenLongPositionReceived[] | undefined;
   openLongPositionsReceivedStatus: "error" | "success" | "loading";
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
   const {
     data: openLongPositionsReceived,

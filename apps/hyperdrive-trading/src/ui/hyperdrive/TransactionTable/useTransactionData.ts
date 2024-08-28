@@ -6,7 +6,7 @@ import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, Hash } from "viem";
-export type TransactionData = {
+export interface TransactionData {
   assetId?: bigint;
   baseAmount: bigint;
   bondAmount?: bigint;
@@ -16,22 +16,28 @@ export type TransactionData = {
   lpSharePrice?: bigint;
   blockNumber: bigint | undefined;
   transactionHash: Hash | undefined;
-};
+}
 
 export function useTransactionData({
   hyperdriveAddress,
   account,
+  chainId,
 }: {
   account?: Address;
   hyperdriveAddress: Address;
+  chainId: number;
 }): {
   data: TransactionData[] | undefined;
   isLoading: boolean;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const { decimals } = findHyperdriveConfig({
     hyperdriveAddress,
+    hyperdriveChainId: chainId,
     hyperdrives: appConfig.hyperdrives,
   });
 

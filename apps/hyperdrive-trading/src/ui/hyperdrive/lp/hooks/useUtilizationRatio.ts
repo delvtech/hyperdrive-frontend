@@ -12,10 +12,12 @@ export function useUtilizationRatio({
   account: Address | undefined;
 }): bigint | undefined {
   const { lpShares } = useLpShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });
   const { withdrawalShares } = usePreviewRemoveLiquidity({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn: lpShares,
     minOutputPerShare: 1n,

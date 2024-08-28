@@ -67,6 +67,7 @@ export function TransactionTable({
 }): JSX.Element {
   const { data: transactionData, isLoading } = useTransactionData({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     account,
   });
   const appConfig = useAppConfig();

@@ -105,9 +105,13 @@ export function OpenShortsTableDesktopTwo({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { openShorts, openShortsStatus } = useOpenShorts({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({

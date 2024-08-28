@@ -25,10 +25,12 @@ export function LongsTab({
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const { openLongs } = useOpenLongs({
+    chainId: hyperdrive.chainId,
     account,
     hyperdriveAddress: hyperdrive.address,
   });
   const { closedLongs } = useClosedLongs({
+    chainId: hyperdrive.chainId,
     account,
     hyperdriveAddress: hyperdrive.address,
   });

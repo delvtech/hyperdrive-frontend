@@ -31,12 +31,14 @@ export function CurrentValueCell({
     previewCloseShortError,
   } = usePreviewCloseShort({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
   });
 
   const { marketEstimate } = useEstimateShortMarketValue({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
     maturityTime: openShort.maturity,
     shortAmountIn: openShort.bondAmount,
   });

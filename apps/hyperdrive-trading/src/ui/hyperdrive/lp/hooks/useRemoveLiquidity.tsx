@@ -13,9 +13,9 @@ import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
-import { usePublicClient } from "wagmi";
 
 interface UseRemoveLiquidityOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
   minOutputPerShare: bigint | undefined;
@@ -33,6 +33,7 @@ interface UseRemoveLiquidityResult {
 
 export function useRemoveLiquidity({
   hyperdriveAddress,
+  chainId,
   lpSharesIn,
   minOutputPerShare,
   destination,
@@ -41,9 +42,11 @@ export function useRemoveLiquidity({
   onSubmitted,
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
-  const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
@@ -51,8 +54,7 @@ export function useRemoveLiquidity({
     !!lpSharesIn &&
     minOutputPerShare !== undefined &&
     !!destination &&
-    !!readWriteHyperdrive &&
-    !!publicClient;
+    !!readWriteHyperdrive;
 
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
@@ -66,7 +68,7 @@ export function useRemoveLiquidity({
         ? minOutputPerShare
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive: readWriteHyperdrive,
             sharesAmount: minOutputPerShare,
           });

@@ -8,6 +8,7 @@ import { Address } from "viem";
 import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   destination: Address | undefined;
   contribution: bigint | undefined;
@@ -26,6 +27,7 @@ interface UsePreviewAddLiquidityResult {
 }
 
 export function usePreviewAddLiquidity({
+  chainId,
   hyperdriveAddress,
   destination,
   contribution,
@@ -39,10 +41,10 @@ export function usePreviewAddLiquidity({
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const hyperdrive = appConfig.hyperdrives.find(
-    (hyperdrive) => hyperdrive.address === hyperdriveAddress,
-  );
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled =
     minApr !== undefined &&
     minLpSharePrice !== undefined &&
@@ -54,7 +56,7 @@ export function usePreviewAddLiquidity({
     enabled &&
     !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
-    chainId: hyperdrive?.chainId,
+    chainId,
     watch: true,
     query: { enabled: queryEnabled },
   });
@@ -62,6 +64,7 @@ export function usePreviewAddLiquidity({
   const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,
+      chainId,
       destination,
       contribution: contribution?.toString(),
       minApr: minApr?.toString(),
@@ -78,8 +81,8 @@ export function usePreviewAddLiquidity({
           const finalContribution = asBase
             ? contribution
             : await prepareSharesIn({
+                chainId,
                 appConfig,
-                hyperdriveAddress,
                 readHyperdrive,
                 sharesAmount: contribution,
               });

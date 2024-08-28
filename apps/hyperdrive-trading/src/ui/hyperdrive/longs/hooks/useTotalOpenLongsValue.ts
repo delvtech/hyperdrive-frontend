@@ -22,8 +22,14 @@ export function useTotalOpenLongsValue({
   isLoading: boolean;
   totalOpenLongsValueError: Error;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
   const queryEnabled =
     !!account && !!longs && !!readHyperdrive && !!poolInfo && enabled;
@@ -83,8 +89,14 @@ export function useTotalOpenLongsValueTwo({
   isLoading: boolean;
   totalOpenLongsValueError: Error;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
+  const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const queryEnabled =
     !!account && !!longs && !!readHyperdrive && !!poolInfo && enabled;
 

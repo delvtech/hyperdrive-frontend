@@ -19,6 +19,7 @@ export function TotalOpenShortValue({
     const appConfig = useAppConfig();
     const { openShorts, openShortsStatus } = useOpenShorts({
       account,
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
     });
     const { totalOpenShortsValue, isLoading } = useTotalOpenShortsValue({

@@ -26,10 +26,12 @@ export function ShortsTab({
   const appConfig = useAppConfig();
   const { openShorts } = useOpenShorts({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { closedShorts } = useClosedShorts({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { totalOpenShortsValue, isLoading: isTotalOpenValueLoading } =

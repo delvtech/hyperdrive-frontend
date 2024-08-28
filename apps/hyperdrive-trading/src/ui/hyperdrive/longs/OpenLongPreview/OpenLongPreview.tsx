@@ -49,7 +49,10 @@ export function OpenLongPreview({
     appConfig,
   });
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
-  const { fixedApr } = useFixedRate(hyperdrive.address);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const isBaseAmount = asBase || yieldSource.isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount

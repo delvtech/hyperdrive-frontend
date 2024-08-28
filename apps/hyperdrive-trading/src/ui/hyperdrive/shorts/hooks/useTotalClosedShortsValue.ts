@@ -21,7 +21,10 @@ export function useTotalClosedShortsValue({
   isLoading: boolean;
   totalClosedShortsValueError: Error;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const queryEnabled =

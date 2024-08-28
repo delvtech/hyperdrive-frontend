@@ -18,6 +18,7 @@ export function TotalOpenLongsValue({
   const appConfig = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 

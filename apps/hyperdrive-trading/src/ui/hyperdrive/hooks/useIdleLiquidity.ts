@@ -5,13 +5,18 @@ import { Address } from "viem";
 
 export function useIdleLiquidity({
   hyperdriveAddress,
+  chainId,
 }: {
   hyperdriveAddress: Address;
+  chainId: number;
 }): {
   idleLiquidity: bigint | undefined;
   idleLiquidityStatus: QueryStatus;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),

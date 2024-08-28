@@ -174,6 +174,7 @@ export function ClosedShortsTable({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedShorts, closedShortsStatus } = useClosedShorts({
+    chainId: hyperdrive.chainId,
     account,
     hyperdriveAddress: hyperdrive.address,
   });

@@ -5,9 +5,11 @@ import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 
 export function YieldSourceRateBadge({
+  chainId,
   hyperdriveAddress,
   labelRenderer,
 }: {
+  chainId: number;
   hyperdriveAddress: Address;
   labelRenderer?: (vaultRate: {
     vaultRate: bigint;
@@ -16,6 +18,7 @@ export function YieldSourceRateBadge({
 }): ReactElement {
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress,
+    chainId,
   });
 
   if (vaultRateStatus === "loading" && !vaultRate) {

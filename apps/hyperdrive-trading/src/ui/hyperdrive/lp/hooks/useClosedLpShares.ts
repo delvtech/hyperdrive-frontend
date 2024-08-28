@@ -5,16 +5,21 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseClosedLpSharesOptions {
   account: Address | undefined;
+  chainId: number;
   hyperdriveAddress: Address | undefined;
 }
 export function useClosedLpShares({
   account,
+  chainId,
   hyperdriveAddress,
 }: UseClosedLpSharesOptions): {
   closedLpShares: ClosedLpShares[] | undefined;
   closedLpSharesStatus: QueryStatus;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: closedLpShares, status: closedLpSharesStatus } = useQuery({
     queryKey: makeQueryKey("closedLpShares", { account, hyperdriveAddress }),

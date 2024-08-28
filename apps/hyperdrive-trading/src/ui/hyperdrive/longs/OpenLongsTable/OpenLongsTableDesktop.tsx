@@ -42,10 +42,14 @@ export function OpenLongsTableDesktop({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { switchChain } = useSwitchChain();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -185,6 +189,7 @@ export function OpenLongsTableDesktop({
                 className="daisy-hover h-24 cursor-pointer items-center border-none transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (window as any)[modalId].showModal();
                 }}
               >
@@ -325,6 +330,7 @@ function getColumns({
               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
               onClick={() => {
                 const modalId = `${row.original.assetId}`;
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (window as any)[modalId].showModal();
               }}
             >

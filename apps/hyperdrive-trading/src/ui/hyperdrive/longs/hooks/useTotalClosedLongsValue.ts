@@ -17,7 +17,10 @@ export function useTotalClosedLongsValue({
   closedLongs: ClosedLong[] | undefined;
   enabled: boolean;
 }): { totalClosedLongsValue: bigint | undefined; isLoading: boolean } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const queryEnabled =

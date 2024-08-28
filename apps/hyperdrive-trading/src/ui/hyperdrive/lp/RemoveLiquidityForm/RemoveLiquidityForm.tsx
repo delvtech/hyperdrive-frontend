@@ -90,7 +90,10 @@ export function RemoveLiquidityForm({
       ? baseToken.address
       : hyperdrive.poolConfig.vaultSharesToken,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
 
   // Let users type in an amount of lp shares they want to remove
   const {
@@ -135,6 +138,7 @@ export function RemoveLiquidityForm({
   } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare,
     asBase:
@@ -142,6 +146,7 @@ export function RemoveLiquidityForm({
       activeWithdrawToken.address === baseToken.address,
   });
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn,
     minOutputPerShare,
@@ -151,6 +156,7 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)["withdrawalLpModal"].close();
     },
     onExecuted: () => {

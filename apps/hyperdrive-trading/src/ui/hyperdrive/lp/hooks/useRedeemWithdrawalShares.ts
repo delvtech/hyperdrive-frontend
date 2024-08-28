@@ -14,6 +14,7 @@ import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseRedeemWithdrawalSharesOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
   minOutputPerShare: bigint | undefined;
@@ -28,6 +29,7 @@ interface UseRedeemWithdrawalSharesResult {
 }
 
 export function useRedeemWithdrawalShares({
+  chainId,
   hyperdriveAddress,
   withdrawalSharesIn,
   minOutputPerShare,
@@ -35,7 +37,10 @@ export function useRedeemWithdrawalShares({
   asBase = true,
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const appConfig = useAppConfig();
@@ -60,7 +65,7 @@ export function useRedeemWithdrawalShares({
         ? minOutputPerShare
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive: readWriteHyperdrive,
             sharesAmount: minOutputPerShare,
           });

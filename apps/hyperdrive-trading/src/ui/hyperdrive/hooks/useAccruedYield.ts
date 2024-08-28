@@ -16,7 +16,10 @@ export function useAccruedYield({
   accruedYield: bigint | undefined;
   status: QueryStatusWithIdle;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const readHyperdrive = useReadHyperdrive({
+    chainId: hyperdrive.chainId,
+    address: hyperdrive.address,
+  });
   const queryEnabled = !!readHyperdrive;
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("accruedYield", {

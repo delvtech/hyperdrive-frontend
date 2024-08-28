@@ -186,6 +186,7 @@ export function ClosedLongsTable({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLongs, closedLongsStatus } = useClosedLongs({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const reversedClosedLongs = useMemo(

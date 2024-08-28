@@ -214,11 +214,13 @@ export function ClosedLpTable({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
   const { redeemedWithdrawalShares } = useRedeemedWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });

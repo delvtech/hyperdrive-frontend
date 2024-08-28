@@ -13,9 +13,9 @@ import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
-import { usePublicClient } from "wagmi";
 
 interface UseCloseShortOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
@@ -33,6 +33,7 @@ interface UseCloseShortResult {
 }
 
 export function useCloseShort({
+  chainId,
   hyperdriveAddress,
   maturityTime,
   bondAmountIn,
@@ -43,8 +44,10 @@ export function useCloseShort({
   onSubmitted,
   onExecuted,
 }: UseCloseShortOptions): UseCloseShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
-  const publicClient = usePublicClient();
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -54,8 +57,7 @@ export function useCloseShort({
     !!bondAmountIn &&
     minAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
-    !!readWriteHyperdrive &&
-    !!publicClient;
+    !!readWriteHyperdrive;
 
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
@@ -68,7 +70,7 @@ export function useCloseShort({
         ? minAmountOut
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive: readWriteHyperdrive,
             sharesAmount: minAmountOut,
           });

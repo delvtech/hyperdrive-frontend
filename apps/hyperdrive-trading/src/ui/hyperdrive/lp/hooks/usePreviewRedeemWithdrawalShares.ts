@@ -7,6 +7,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { Address } from "viem";
 
 interface UsePreviewRedeemWithdrawalSharesOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
   minOutputPerShare: bigint | undefined;
@@ -23,15 +24,20 @@ interface UsePreviewRedeemWithdrawalSharesResult {
 }
 
 export function usePreviewRedeemWithdrawalShares({
+  chainId,
   hyperdriveAddress,
   withdrawalSharesIn,
   minOutputPerShare,
   destination,
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
     hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress,
   });
@@ -66,7 +72,7 @@ export function usePreviewRedeemWithdrawalShares({
             // The shares output need to be prepared before being returned
             sharesProceeds: await prepareSharesOut({
               appConfig,
-              hyperdriveAddress,
+              chainId,
               readHyperdrive: readWriteHyperdrive,
               sharesAmount: result.sharesProceeds,
             }),

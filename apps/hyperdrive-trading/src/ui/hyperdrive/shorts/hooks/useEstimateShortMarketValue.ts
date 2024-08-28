@@ -7,6 +7,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UseEstimateShortMarketValue {
+  chainId: number;
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
@@ -20,19 +21,24 @@ interface UseEstimateShortMarketValueResult {
 }
 
 export function useEstimateShortMarketValue({
+  chainId,
   hyperdriveAddress,
   maturityTime,
   shortAmountIn,
   asBase = true,
   enabled = true,
 }: UseEstimateShortMarketValue): UseEstimateShortMarketValueResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
   const queryEnabled =
     !!readHyperdrive && !!maturityTime && !!shortAmountIn && enabled;
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("estimateShortMarketValue", {
+      chainId,
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
       shortAmountIn: shortAmountIn?.toString(),
@@ -53,7 +59,7 @@ export function useEstimateShortMarketValue({
             ? result
             : await prepareSharesOut({
                 appConfig,
-                hyperdriveAddress,
+                chainId,
                 readHyperdrive,
                 sharesAmount: result,
               });

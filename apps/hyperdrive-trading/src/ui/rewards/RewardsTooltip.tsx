@@ -5,29 +5,34 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
-interface RewardsTooltipProps extends PropsWithChildren {
+export function RewardsTooltip({
+  hyperdriveAddress,
+  chainId,
+  positionType,
+  children,
+}: PropsWithChildren<{
   hyperdriveAddress: Address;
+  chainId: number;
   positionType: "lp" | "short";
-}
-
-export function RewardsTooltip(props: RewardsTooltipProps): ReactNode {
+}>): ReactNode {
   const { hyperdrives } = useAppConfig();
   const hyperdrive = findHyperdriveConfig({
     hyperdrives,
-    hyperdriveAddress: props.hyperdriveAddress,
+    hyperdriveAddress: hyperdriveAddress,
+    hyperdriveChainId: chainId,
   });
 
-  const rewards = useRewards(hyperdrive, props.positionType);
+  const rewards = useRewards(hyperdrive, positionType);
 
   if (!rewards || (rewards && rewards.length === 0)) {
-    return props.children;
+    return children;
   }
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
-          {props.children}⚡
+          {children}⚡
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content

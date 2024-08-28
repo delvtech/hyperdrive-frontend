@@ -18,7 +18,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
 import { Address } from "viem";
-import { useChainId } from "wagmi";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -43,11 +42,13 @@ export function OpenLongStats({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const chainId = useChainId();
   const tokenPrices = useTokenFiatPrices([baseToken.address]);
   const baseTokenPrice =
     tokenPrices?.[baseToken.address.toLowerCase() as Address];
-  const { fixedApr } = useFixedRate(hyperdrive.address);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const isBaseAmount =
     asBase ||
@@ -127,7 +128,7 @@ export function OpenLongStats({
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 
-          isTestnetChain(chainId)
+          isTestnetChain(hyperdrive.chainId)
             ? `Term: ${numDays} days`
             : `$${formatBalance({
                 balance: baseTokenPrice

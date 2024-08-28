@@ -29,8 +29,12 @@ export function OpenWithdrawalSharesCard({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -39,6 +43,7 @@ export function OpenWithdrawalSharesCard({
     baseProceeds: baseProceedsFromPreview,
     withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
   } = usePreviewRedeemWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     withdrawalSharesIn: balanceOfWithdrawalShares,
     minOutputPerShare: 1n, // TODO: slippage,

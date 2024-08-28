@@ -5,14 +5,19 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 export function usePoolInfo({
   hyperdriveAddress,
+  chainId,
   enabled = true,
 }: {
   hyperdriveAddress: Address;
+  chainId: number;
   enabled?: boolean;
 }): {
   poolInfo: PoolInfo | undefined;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!enabled;
   const { data: poolInfo } = useQuery({
     queryKey: makeQueryKey("poolInfo", {

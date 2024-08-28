@@ -14,6 +14,7 @@ import { usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
+  chainId: number;
   destination: Address | undefined;
   minSharePrice: bigint | undefined;
   minBondsOut: bigint | undefined;
@@ -32,6 +33,7 @@ interface UseOpenLongResult {
 
 export function useOpenLong({
   hyperdriveAddress,
+  chainId,
   destination,
   amount,
   minBondsOut,
@@ -46,7 +48,10 @@ export function useOpenLong({
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
   const queryClient = useQueryClient();
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
 
   const mutationEnabled =
     !!amount &&
@@ -69,7 +74,7 @@ export function useOpenLong({
         ? amount
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             sharesAmount: amount,
             readHyperdrive: readWriteHyperdrive,
           });

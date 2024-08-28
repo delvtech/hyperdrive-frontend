@@ -15,7 +15,10 @@ export function AddLiquidityModalButton({
   modalId: string;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
 
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
