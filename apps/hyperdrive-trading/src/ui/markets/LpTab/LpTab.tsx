@@ -76,7 +76,7 @@ export function LpTab({
                         text="Please switch to the correct network to view your LP positions"
                         action={
                           <button
-                            className="daisy-btn daisy-btn-primary"
+                            className="daisy-btn daisy-btn-warning rounded-full"
                             onClick={() =>
                               switchChain({ chainId: hyperdrive.chainId })
                             }
