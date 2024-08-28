@@ -517,8 +517,10 @@ function AccountCell({ account }: { account: Address }) {
 }
 
 function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
+  const chainId = useChainId();
   const { data: transactionBlock, status: transactionBlockStatus } = useBlock({
     blockNumber,
+    chainId,
   });
 
   const { data: currentBlock, status: currentBlockStatus } = useBlock();

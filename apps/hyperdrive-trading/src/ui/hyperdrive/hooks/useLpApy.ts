@@ -14,13 +14,13 @@ export function useLpApy(hyperdriveAddress: Address): {
   lpApyStatus: "error" | "success" | "loading";
 } {
   const chainId = useChainId();
-  const { data: blockNumber } = useBlockNumber();
   const { poolInfo: currentPoolInfo } = usePoolInfo({ hyperdriveAddress });
   const appConfig = useAppConfig();
   const hyperdrive = findHyperdriveConfig({
     hyperdriveAddress,
     hyperdrives: appConfig.hyperdrives,
   });
+  const { data: blockNumber } = useBlockNumber({ chainId: hyperdrive.chainId });
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data, status } = useQuery({

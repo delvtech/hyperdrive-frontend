@@ -5,7 +5,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useBlockNumber } from "wagmi";
+import { useBlockNumber, useChainId } from "wagmi";
 interface UsePreviewOpenLongOptions {
   hyperdriveAddress: Address;
   amountIn: bigint | undefined;
@@ -27,11 +27,12 @@ export function usePreviewOpenLong({
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-
+  const chainId = useChainId();
   const appConfig = useAppConfig();
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
     watch: true,
+    chainId: chainId,
     query: { enabled: queryEnabled },
   });
   const { data, status, fetchStatus } = useQuery({

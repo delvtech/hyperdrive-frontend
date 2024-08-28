@@ -47,6 +47,7 @@ export function useApproveToken({
           {
             abi: erc20Abi,
             address: tokenAddress,
+            chainId,
             functionName: "approve",
             args: [spender, finalAmount],
           },

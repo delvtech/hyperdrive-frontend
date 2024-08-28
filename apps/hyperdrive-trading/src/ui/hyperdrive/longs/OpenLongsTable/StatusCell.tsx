@@ -2,10 +2,11 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
-import { useBlock } from "wagmi";
+import { useBlock, useChainId } from "wagmi";
 
 export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
-  const { data: currentBlock } = useBlock();
+  const chainId = useChainId();
+  const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
 

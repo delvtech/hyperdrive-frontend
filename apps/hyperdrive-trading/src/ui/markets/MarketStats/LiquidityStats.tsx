@@ -20,7 +20,9 @@ export function LiquidityStats({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { data: currentBlockNumber } = useBlockNumber();
+  const { data: currentBlockNumber } = useBlockNumber({
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveAddress: hyperdrive.address,

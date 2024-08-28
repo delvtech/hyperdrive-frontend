@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
-import { useBlock } from "wagmi";
+import { useBlock, useChainId } from "wagmi";
 
 /**
  * @deprecated Use MaturesOnCellTwo instead. Remove this component once all references to it have been replaced.
@@ -15,7 +15,8 @@ export function MaturesOnCell({
 }: {
   maturity: bigint;
 }): ReactElement {
-  const { data: currentBlock } = useBlock();
+  const chainId = useChainId();
+  const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
 

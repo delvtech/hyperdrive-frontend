@@ -5,7 +5,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
+import { useAccount, useBlockNumber, useChainId, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
   hyperdriveAddress: Address;
@@ -37,6 +37,7 @@ export function usePreviewAddLiquidity({
   ethValue,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
+  const chainId = useChainId();
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
@@ -51,6 +52,7 @@ export function usePreviewAddLiquidity({
     enabled &&
     !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
+    chainId: chainId,
     watch: true,
     query: { enabled: queryEnabled },
   });
