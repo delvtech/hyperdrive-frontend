@@ -2,7 +2,7 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -28,9 +28,9 @@ export function YourBalanceWell({
   const appConfig = useAppConfig();
 
   // base token
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   // shares token

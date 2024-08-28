@@ -1,6 +1,6 @@
 import { Long, OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -22,9 +22,9 @@ export function CurrentValueCell({
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
@@ -109,9 +109,9 @@ export function CurrentValueCellTwo({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
 
   const {

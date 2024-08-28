@@ -1,3 +1,4 @@
+import { findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
@@ -11,9 +12,10 @@ export function AssetStack({
   const hyperdrive = appConfig.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;
-  const baseToken = appConfig.tokens.find(
-    (token) => hyperdrive.poolConfig.baseToken === token.address,
-  );
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
   const sharesToken = appConfig.tokens.find(
     (token) => hyperdrive.poolConfig.vaultSharesToken === token.address,
   );
@@ -24,13 +26,12 @@ export function AssetStack({
         "daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse"
       }
     >
-      {hyperdrive.poolConfig.baseToken &&
-      hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
+      {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
         <div
           className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 scale-75 overflow-visible before:bg-base-100 sm:scale-100"
-          data-tip={baseToken?.symbol}
+          data-tip={baseToken.symbol}
         >
-          <img src={baseToken?.iconUrl} />
+          <img src={baseToken.iconUrl} />
         </div>
       ) : null}
       {hyperdrive.poolConfig.vaultSharesToken &&

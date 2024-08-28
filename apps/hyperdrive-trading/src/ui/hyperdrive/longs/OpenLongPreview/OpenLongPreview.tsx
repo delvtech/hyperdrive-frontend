@@ -5,7 +5,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
-  findToken,
+  findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -43,9 +43,9 @@ export function OpenLongPreview({
   vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
   const { fixedApr } = useFixedRate(hyperdrive.address);

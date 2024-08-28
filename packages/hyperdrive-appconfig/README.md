@@ -5,16 +5,16 @@ Pre-generated metadata for applications that use Hyperdrive.
 # Example Usage
 
 ```ts
-import { cloudChainAppConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@hyperdrive/appconfig";
 
 // 1. Grab the first hyperdrive in the app config
-const { poolConfig, baseToken: baseTokenAddress } =
-  cloudChainAppConfig.hyperdrives[0];
+const firstHyperdrive = appConfig.hyperdrives[0];
 
 // 2. Lookup its base token
-const baseToken = cloudChainAppConfig.tokens.find(
-  (token) => token.address === baseTokenAddress,
-);
+const baseToken = findBaseToken({
+  hyperdriveAddress: firstHyperdrive.address,
+  appConfig,
+});
 
 // 3. Access token metadata
 const { name, symbol, decimals, iconUrl } = baseToken;

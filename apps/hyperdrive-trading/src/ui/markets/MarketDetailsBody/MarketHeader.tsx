@@ -1,5 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig, findToken } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -11,9 +11,9 @@ export function MarketHeader({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const baseToken = findToken({
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    tokens: appConfig.tokens,
+  const baseToken = findBaseToken({
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   const sharesToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,

@@ -45,19 +45,21 @@ export function findBaseToken({
     hyperdrives: appConfig.hyperdrives,
   });
 
+  let baseToken: TokenConfig | undefined;
+
   // If there's no base token on pool config, see if there's a fallback
   if (
     hyperdriveConfig.poolConfig.baseToken === zeroAddress &&
     hyperdriveConfig.baseTokenFallback
   ) {
-    return findToken({
+    baseToken = findToken({
       tokenAddress: hyperdriveConfig.baseTokenFallback.address,
       tokens: appConfig.tokens,
     });
   }
 
   // Otherwise, use the pool's base token
-  const baseToken = findToken({
+  baseToken = findToken({
     tokenAddress: hyperdriveConfig.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
@@ -66,5 +68,6 @@ export function findBaseToken({
   if (!baseToken) {
     throw new Error(`Missing base token for hyperdrive: ${hyperdriveAddress}.`);
   }
+
   return baseToken;
 }
