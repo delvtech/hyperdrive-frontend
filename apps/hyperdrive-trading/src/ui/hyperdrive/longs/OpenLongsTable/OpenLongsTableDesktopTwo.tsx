@@ -58,6 +58,7 @@ export function OpenLongsContainer(): ReactElement {
       {appConfig.hyperdrives.map((hyperdrive) => {
         const openLongs = openLongPositions?.[hyperdrive.address];
         const baseToken = findBaseToken({
+          hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
@@ -290,6 +291,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

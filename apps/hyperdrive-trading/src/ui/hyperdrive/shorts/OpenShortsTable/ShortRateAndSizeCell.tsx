@@ -18,6 +18,7 @@ export function ShortRateAndSizeCell({
   const appConfig = useAppConfig();
   const chainId = useChainId();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

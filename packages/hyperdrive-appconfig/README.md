@@ -12,6 +12,7 @@ const firstHyperdrive = appConfig.hyperdrives[0];
 
 // 2. Lookup its base token
 const baseToken = findBaseToken({
+  hyperdriveChainId: firstHyperdrive.chainId,
   hyperdriveAddress: firstHyperdrive.address,
   appConfig,
 });

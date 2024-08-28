@@ -17,6 +17,7 @@ export function PriceBadges({
     hyperdrive.address,
   );
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

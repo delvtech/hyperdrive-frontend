@@ -4,14 +4,15 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-interface UseOpenLpPositionOptions {
-  account: Address | undefined;
-  hyperdriveAddress: Address | undefined;
-}
 export function useOpenLpPosition({
   account,
+  chainId,
   hyperdriveAddress,
-}: UseOpenLpPositionOptions): {
+}: {
+  account: Address | undefined;
+  chainId: number;
+  hyperdriveAddress: Address | undefined;
+}): {
   lpShareBalance: bigint;
   baseAmountPaid: bigint;
   baseValue: bigint;
@@ -26,6 +27,7 @@ export function useOpenLpPosition({
     queryFn: queryEnabled
       ? () => {
           const hyperdriveConfig = findHyperdriveConfig({
+            hyperdriveChainId: chainId,
             hyperdrives: appConfig.hyperdrives,
             hyperdriveAddress,
           });

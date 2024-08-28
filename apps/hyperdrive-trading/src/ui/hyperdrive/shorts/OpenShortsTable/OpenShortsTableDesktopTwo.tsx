@@ -42,6 +42,7 @@ export function OpenShortsContainer(): ReactElement {
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
         const baseToken = findBaseToken({
+          hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
@@ -284,6 +285,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

@@ -36,6 +36,7 @@ export function OpenLpSharesCard({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -59,6 +60,7 @@ export function OpenLpSharesCard({
     : "";
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
     },

@@ -28,6 +28,7 @@ export function TotalOpenLongsValue({
     hyperdrive,
   });
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

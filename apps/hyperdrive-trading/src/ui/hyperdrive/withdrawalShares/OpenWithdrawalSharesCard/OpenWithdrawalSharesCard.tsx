@@ -25,6 +25,7 @@ export function OpenWithdrawalSharesCard({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

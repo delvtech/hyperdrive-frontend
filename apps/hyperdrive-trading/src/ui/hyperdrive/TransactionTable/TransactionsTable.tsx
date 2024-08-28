@@ -183,6 +183,7 @@ export function TransactionTable({
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -294,6 +295,7 @@ function formatTransactionTableMobileData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

@@ -46,6 +46,7 @@ export function CloseLongForm({
   const defaultItems: TokenConfig[] = [];
   const baseToken = findBaseToken({
     hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
     appConfig,
   });
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {

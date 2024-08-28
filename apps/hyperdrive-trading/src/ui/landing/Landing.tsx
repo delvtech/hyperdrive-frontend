@@ -96,8 +96,9 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       : undefined,
   });
   const baseToken = findBaseToken({
-    appConfig,
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   let tvlLabel = `${formatCompact({
     value: presentValue || 0n,

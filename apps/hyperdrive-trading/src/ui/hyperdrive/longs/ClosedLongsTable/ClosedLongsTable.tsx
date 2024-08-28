@@ -74,6 +74,7 @@ function formatClosedLongMobileColumnData(
 
 function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -119,6 +120,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -303,6 +305,7 @@ function BaseAmountReceivedCell({
 }) {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

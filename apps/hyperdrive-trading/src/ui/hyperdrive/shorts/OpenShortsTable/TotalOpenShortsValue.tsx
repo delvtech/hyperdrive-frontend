@@ -28,6 +28,7 @@ export function TotalOpenShortValue({
       enabled: openShortsStatus === "success",
     });
     const baseToken = findBaseToken({
+      hyperdriveChainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       appConfig,
     });

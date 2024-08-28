@@ -44,6 +44,7 @@ export function OpenLongPreview({
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

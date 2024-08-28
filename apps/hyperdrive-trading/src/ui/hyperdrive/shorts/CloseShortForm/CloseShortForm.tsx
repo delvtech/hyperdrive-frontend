@@ -37,6 +37,7 @@ export function CloseShortForm({
   const { address: account } = useAccount();
   const defaultItems = [];
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

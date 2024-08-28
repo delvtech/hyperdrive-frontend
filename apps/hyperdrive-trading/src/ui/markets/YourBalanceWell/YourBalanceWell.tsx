@@ -29,6 +29,7 @@ export function YourBalanceWell({
 
   // base token
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

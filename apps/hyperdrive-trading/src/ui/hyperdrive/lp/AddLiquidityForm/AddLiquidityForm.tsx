@@ -55,6 +55,7 @@ export function AddLiquidityForm({
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

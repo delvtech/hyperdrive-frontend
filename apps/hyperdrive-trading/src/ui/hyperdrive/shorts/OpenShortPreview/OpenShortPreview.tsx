@@ -42,6 +42,7 @@ export function OpenShortPreview({
   const [detailsOpen, setDetailsOpen] = useState(false);
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
