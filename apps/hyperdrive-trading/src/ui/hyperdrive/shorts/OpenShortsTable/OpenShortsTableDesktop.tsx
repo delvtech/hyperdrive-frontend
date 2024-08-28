@@ -36,6 +36,7 @@ export function OpenShortsTableDesktop({
   openShorts: OpenShort[];
 }): ReactElement {
   const appConfig = useAppConfig();
+
   const baseToken = findToken({
     tokenAddress: hyperdrive.poolConfig.baseToken,
     tokens: appConfig.tokens,

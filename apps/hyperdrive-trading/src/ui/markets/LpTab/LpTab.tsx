@@ -13,7 +13,7 @@ import { OpenWithdrawalSharesCard } from "src/ui/hyperdrive/withdrawalShares/Ope
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenClosedFilter } from "src/ui/markets/OpenClosedFilter/OpenClosedFilter";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 export function LpTab({
   hyperdrive,
@@ -21,7 +21,8 @@ export function LpTab({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-
+  const { switchChain } = useSwitchChain();
+  const chainId = useChainId();
   const { marketState } = useMarketState(hyperdrive.address);
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
@@ -63,6 +64,26 @@ export function LpTab({
                         heading="No wallet connected"
                         text="Connect your wallet to view your positions."
                         action={<ConnectWalletButton />}
+                      />
+                    </div>
+                  );
+                }
+                if (chainId !== hyperdrive.chainId) {
+                  return (
+                    <div className="my-28">
+                      <NonIdealState
+                        heading="Wrong Network"
+                        text="Please switch to the correct network to view your LP positions"
+                        action={
+                          <button
+                            className="daisy-btn daisy-btn-primary"
+                            onClick={() =>
+                              switchChain({ chainId: hyperdrive.chainId })
+                            }
+                          >
+                            Switch Network
+                          </button>
+                        }
                       />
                     </div>
                   );

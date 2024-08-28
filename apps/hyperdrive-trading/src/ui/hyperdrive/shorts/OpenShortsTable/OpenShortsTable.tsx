@@ -11,7 +11,7 @@ import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalBut
 import { OpenShortsTableDesktop } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktop";
 import { OpenShortsTableMobile } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableMobile";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 export function OpenShortsTable({
   hyperdrive,
@@ -19,6 +19,8 @@ export function OpenShortsTable({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { switchChain } = useSwitchChain();
+  const chainId = useChainId();
   const { marketState } = useMarketState(hyperdrive.address);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { openShorts, openShortsStatus } = useOpenShorts({
@@ -32,6 +34,24 @@ export function OpenShortsTable({
           heading="No wallet connected"
           text="Connect your wallet to view your Shorts."
           action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
+  if (chainId !== hyperdrive.chainId) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="Wrong Network"
+          text="Please switch to the correct network to view your Short positions"
+          action={
+            <button
+              className="daisy-btn daisy-btn-primary"
+              onClick={() => switchChain({ chainId: hyperdrive.chainId })}
+            >
+              Switch Network
+            </button>
+          }
         />
       </div>
     );

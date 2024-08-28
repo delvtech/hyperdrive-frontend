@@ -14,8 +14,6 @@ export function Market(): ReactElement {
       hyperdrive.address === address && hyperdrive.chainId === Number(chainId),
   );
 
-  console.log("Market", market);
-
   return (
     <div className="flex justify-center bg-base-100 px-4 py-8">
       <Helmet>
