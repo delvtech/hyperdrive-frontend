@@ -1,7 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
@@ -84,9 +88,11 @@ export function OpenShortForm({
     });
   }
 
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   if (sharesToken && shareTokenDepositsEnabled) {
     tokenOptions.push({
