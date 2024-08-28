@@ -4,6 +4,7 @@ import { AppConfig } from "src/appconfig/AppConfig";
 import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
+import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
@@ -15,7 +16,9 @@ import {
   EZETH_ICON_URL,
   RETH_ICON_URL,
   SDAI_ICON_URL,
+  SXDAI_ICON_URL,
   USDC_ICON_URL,
+  WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
 import { Address, PublicClient } from "viem";
@@ -33,6 +36,10 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
+  ChainlinkHyperdrive: async (hyperdrive) =>
+    getGnosisWstethHyperdrive({
+      hyperdrive,
+    }),
   EETHHyperdrive: async (hyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
@@ -88,11 +95,23 @@ const hyperdriveKindResolvers: Record<
 
   StETHHyperdrive: (hyperdrive) => getStethHyperdrive({ hyperdrive }),
 
-  ERC4626Hyperdrive: async (hyperdrive) => {
+  ERC4626Hyperdrive: async (hyperdrive, publicClient) => {
     const readSharesToken = await hyperdrive.getSharesToken();
     const sharesTokenSymbol = await readSharesToken.getSymbol();
+    const hyperdriveName = await publicClient.readContract({
+      address: hyperdrive.address,
+      abi: hyperdrive.contract.abi,
+      functionName: "name",
+    });
 
-    if (sharesTokenSymbol.toUpperCase() === "SDAI") {
+    // Maker DSR
+    if (
+      [
+        "0x4441495f33305f44415900000000000000000000000000000000000000000000",
+        "0x4441495f31345f44415900000000000000000000000000000000000000000000",
+      ].includes(hyperdriveName) || // sepolia
+      hyperdriveName.includes("sDAI Hyperdrive") // mainnet
+    ) {
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "makerDsr",
@@ -110,8 +129,28 @@ const hyperdriveKindResolvers: Record<
         tokenPlaces: 2,
       });
     }
+    // Gnosis sxDAI
+    if (hyperdriveName.includes("sxDAI Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "sxDai",
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        baseTokenIconUrl: WXDAI_ICON_URL,
+        baseTokenTags: ["stablecoin"],
+        sharesTokenIconUrl: SXDAI_ICON_URL,
+        tokenPlaces: 2,
+      });
+    }
+
     throw new Error(
-      `Unknown ERC4626Hyperdrive, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
+      `Unknown ERC4626Hyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
     );
   },
 
@@ -189,6 +228,7 @@ export async function getAppConfig({
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
       const kind = await hyperdrive.getKind();
+      console.log("Hyperdrive:", kind, hyperdrive.address);
       const hyperdriveResolver = hyperdriveKindResolvers[kind];
       if (!hyperdriveResolver) {
         throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);

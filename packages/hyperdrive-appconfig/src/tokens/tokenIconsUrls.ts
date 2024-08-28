@@ -5,12 +5,12 @@ export const SDAI_ICON_URL =
 export const STETH_ICON_URL =
   "https://cryptologos.cc/logos/steth-steth-logo.png?v=029";
 export const EETH_ICON_URL =
-  "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png?1700473063";
+  "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png";
 export const DAI_ICON_URL =
   "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029";
 
 export const MORPHO_ICON_URL =
-  "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764";
+  "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png";
 
 export const RETH_ICON_URL =
   "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031";
@@ -24,3 +24,6 @@ export const USDC_ICON_URL =
 // https://docs.gnosischain.com/about/tokens/xdai
 export const WXDAI_ICON_URL =
   "https://docs.gnosischain.com/img/tokens/xdai.png";
+
+export const SXDAI_ICON_URL =
+  "https://coin-images.coingecko.com/coins/images/32066/large/sDAI_Logo_%281%29.png";
