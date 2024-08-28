@@ -61,7 +61,11 @@ function PoolRows() {
               Number(b.initializationBlock) - Number(a.initializationBlock),
           )
           .map((hyperdrive) => (
-            <PoolRow key={hyperdrive.address} hyperdrive={hyperdrive} />
+            <PoolRow
+              // Combine address and chainId for a unique key, as addresses may overlap across chains (e.g. cloudchain and mainnet)
+              key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+              hyperdrive={hyperdrive}
+            />
           ))
       }
     </div>

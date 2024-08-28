@@ -7,6 +7,6 @@ import { foundry, sepolia } from "viem/chains";
  * @returns True if the chain ID corresponds to a testnet chain, false otherwise.
  */
 export function isTestnetChain(chainId: number): boolean {
-  const testnetChainIds = [cloudChain.id, sepolia.id, foundry.id];
+  const testnetChainIds = [cloudChain.id, sepolia.id, foundry.id, 42069];
   return testnetChainIds.includes(chainId);
 }

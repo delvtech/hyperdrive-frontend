@@ -77,7 +77,6 @@ export function OpenLongsTableDesktop({
       </div>
     );
   }
-  console.log(chainId !== hyperdrive.chainId, "chain id status");
   if (chainId !== hyperdrive.chainId) {
     return (
       <div className="my-28">
