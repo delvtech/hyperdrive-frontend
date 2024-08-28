@@ -32,6 +32,7 @@ export function usePrepareSharesIn({
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("prepare-shares-amount-in", {
       hyperdrive: hyperdriveAddress,
+      chainId,
       amount: sharesAmount?.toString(),
     }),
     enabled: queryEnabled,

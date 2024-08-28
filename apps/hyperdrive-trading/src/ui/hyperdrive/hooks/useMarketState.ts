@@ -21,7 +21,10 @@ export function useMarketState({
   });
   const queryEnabled = !!readHyperdrive;
   const { data: marketState, status: marketStateStatus } = useQuery({
-    queryKey: makeQueryKey("marketState", { hyperdrive: hyperdriveAddress }),
+    queryKey: makeQueryKey("marketState", {
+      hyperdrive: hyperdriveAddress,
+      chainId,
+    }),
     queryFn: queryEnabled ? () => readHyperdrive.getMarketState() : undefined,
     enabled: queryEnabled,
   });

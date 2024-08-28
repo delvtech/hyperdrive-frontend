@@ -25,6 +25,7 @@ export function useYieldSourceRate({
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("vaultRate", {
+      chainId,
       hyperdriveAddress,
     }),
     queryFn: queryEnabled

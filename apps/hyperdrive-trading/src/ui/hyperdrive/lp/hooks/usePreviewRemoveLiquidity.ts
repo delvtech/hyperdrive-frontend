@@ -46,6 +46,7 @@ export function usePreviewRemoveLiquidity({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
+      chainId,
       market: hyperdriveAddress,
       lpSharesIn: lpSharesIn?.toString(),
       minOutputPerShare: minOutputPerShare?.toString(),

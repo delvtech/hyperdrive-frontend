@@ -49,6 +49,7 @@ export function usePreviewCloseLong({
 
   const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewCloseLong", {
+      chainId,
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
       bondAmountIn: bondAmountIn?.toString(),

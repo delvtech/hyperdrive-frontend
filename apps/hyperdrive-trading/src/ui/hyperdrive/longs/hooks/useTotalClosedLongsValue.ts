@@ -28,6 +28,7 @@ export function useTotalClosedLongsValue({
 
   const { data: totalClosedLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalClosedLongsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
       activeOpenOrClosedTab,

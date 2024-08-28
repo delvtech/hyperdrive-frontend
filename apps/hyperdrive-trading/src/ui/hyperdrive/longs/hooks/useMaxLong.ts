@@ -27,7 +27,8 @@ export function useMaxLong({
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("maxLong", {
-      market: hyperdriveAddress,
+      hyperdriveAddress,
+      chainId,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled

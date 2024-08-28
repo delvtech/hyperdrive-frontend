@@ -19,7 +19,7 @@ export function usePresentValue({
   });
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
-    queryKey: makeQueryKey("present-value", { hyperdriveAddress }),
+    queryKey: makeQueryKey("present-value", { chainId, hyperdriveAddress }),
     queryFn: queryEnabled ? () => readHyperdrive.getPresentValue() : undefined,
     enabled: queryEnabled,
   });

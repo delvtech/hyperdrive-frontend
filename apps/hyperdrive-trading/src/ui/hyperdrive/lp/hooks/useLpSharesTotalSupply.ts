@@ -18,7 +18,10 @@ export function useLpSharesTotalSupply({
   });
   const queryEnabled = !!readHyperdrive;
   const { data: lpSharesTotalSupply } = useQuery({
-    queryKey: makeQueryKey("lpSharesTotalSupply", { hyperdriveAddress }),
+    queryKey: makeQueryKey("lpSharesTotalSupply", {
+      chainId,
+      hyperdriveAddress,
+    }),
     queryFn: queryEnabled
       ? () => readHyperdrive.getLpSharesTotalSupply()
       : undefined,

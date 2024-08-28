@@ -31,6 +31,7 @@ export function useTradingVolume(
 
   const { data: volume, status } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
+      chainId,
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
       fromBlock: fromBlock.toString(),

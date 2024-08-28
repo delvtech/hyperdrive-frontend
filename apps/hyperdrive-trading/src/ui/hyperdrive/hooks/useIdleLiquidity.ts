@@ -19,7 +19,7 @@ export function useIdleLiquidity({
   });
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
-    queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),
+    queryKey: makeQueryKey("liquidity", { chainId, hyperdriveAddress }),
     queryFn: queryEnabled ? () => readHyperdrive.getIdleLiquidity() : undefined,
     enabled: queryEnabled,
   });

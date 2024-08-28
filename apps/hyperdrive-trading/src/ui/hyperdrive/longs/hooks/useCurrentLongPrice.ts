@@ -20,6 +20,7 @@ export function useCurrentLongPrice({
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("current-long-price", {
+      chainId,
       hyperdriveAddress: hyperdriveAddress,
     }),
     queryFn: queryEnabled ? () => readHyperdrive.getLongPrice() : undefined,

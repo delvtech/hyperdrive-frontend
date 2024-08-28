@@ -42,7 +42,11 @@ export function useTransactionData({
   });
 
   const { data: longs, status: longEventsStatus } = useQuery({
-    queryKey: makeQueryKey("longEvents", { hyperdriveAddress, account }),
+    queryKey: makeQueryKey("longEvents", {
+      chainId,
+      hyperdriveAddress,
+      account,
+    }),
     enabled: !!readHyperdrive,
     queryFn: !!readHyperdrive
       ? async () =>
@@ -53,7 +57,11 @@ export function useTransactionData({
   });
 
   const { data: shorts, status: shortEventsStatus } = useQuery({
-    queryKey: makeQueryKey("shortEvents", { hyperdriveAddress, account }),
+    queryKey: makeQueryKey("shortEvents", {
+      chainId,
+      hyperdriveAddress,
+      account,
+    }),
     enabled: !!readHyperdrive,
     queryFn: !!readHyperdrive
       ? async () =>
@@ -63,7 +71,7 @@ export function useTransactionData({
       : undefined,
   });
   const { data: lpEvents, status: lpEventsStatus } = useQuery({
-    queryKey: makeQueryKey("lpEvents", { hyperdriveAddress, account }),
+    queryKey: makeQueryKey("lpEvents", { chainId, hyperdriveAddress, account }),
     enabled: !!readHyperdrive,
     queryFn: !!readHyperdrive
       ? async () =>

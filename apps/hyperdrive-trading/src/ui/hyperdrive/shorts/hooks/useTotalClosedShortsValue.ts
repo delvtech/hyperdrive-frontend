@@ -36,6 +36,7 @@ export function useTotalClosedShortsValue({
     error: totalClosedShortsValueError,
   } = useQuery({
     queryKey: makeQueryKey("totalClosedShortsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
       activeOpenOrClosedTab,

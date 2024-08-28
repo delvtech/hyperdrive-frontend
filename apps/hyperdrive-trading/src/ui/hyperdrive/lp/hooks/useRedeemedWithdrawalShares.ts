@@ -26,6 +26,7 @@ export function useRedeemedWithdrawalShares({
     status: redeemedWithdrawlSharesStatus,
   } = useQuery({
     queryKey: makeQueryKey("redeemedWithdrawalShares", {
+      chainId,
       account,
       hyperdriveAddress,
     }),

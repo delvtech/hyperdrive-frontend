@@ -23,6 +23,7 @@ export function useAccruedYield({
   const queryEnabled = !!readHyperdrive;
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("accruedYield", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       checkpointId: checkpointTime.toString(),
       bondAmount: bondAmount.toString(),

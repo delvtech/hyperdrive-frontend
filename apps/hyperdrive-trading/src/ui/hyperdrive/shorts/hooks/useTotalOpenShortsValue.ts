@@ -31,6 +31,7 @@ export function useTotalOpenShortsValue({
 
   const { data: totalOpenShortsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalOpenShortsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
     }),

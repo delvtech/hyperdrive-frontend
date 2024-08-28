@@ -40,6 +40,7 @@ export function useTotalOpenLongsValue({
     error: totalOpenLongsValueError,
   } = useQuery({
     queryKey: makeQueryKey("totalLongsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
       activeOpenOrClosedTab,
@@ -106,6 +107,7 @@ export function useTotalOpenLongsValueTwo({
     error: totalOpenLongsValueError,
   } = useQuery({
     queryKey: makeQueryKey("totalLongsValue", {
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       account,
     }),

@@ -27,7 +27,11 @@ export function useClosedLongs({
   });
   const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
   const { data: closedLongs, status: closedLongsStatus } = useQuery({
-    queryKey: makeQueryKey("closedLongs", { account, hyperdriveAddress }),
+    queryKey: makeQueryKey("closedLongs", {
+      chainId,
+      account,
+      hyperdriveAddress,
+    }),
     queryFn: queryEnabled
       ? () => readHyperdrive.getClosedLongs({ account })
       : undefined,

@@ -50,6 +50,7 @@ export function usePreviewRedeemWithdrawalShares({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
+      chainId,
       hyperdriveAddress,
       withdrawalSharesIn: withdrawalSharesIn?.toString(),
       minBaseAmountOutPerShare: minOutputPerShare?.toString(),

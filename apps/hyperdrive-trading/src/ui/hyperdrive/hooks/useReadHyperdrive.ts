@@ -21,6 +21,7 @@ export function useReadHyperdrive({
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadHyperdrive", {
+      chainId,
       address,
     }),
     enabled,

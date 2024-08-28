@@ -15,6 +15,8 @@ export function usePortfolioLongsData(): {
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
+  // TODO: We should be getting a specific public client for the chain the
+  // hyperdrive is on
   const publicClient = usePublicClient();
   const appConfig = useAppConfig();
   const queryEnabled = !!account && !!appConfig && !!publicClient;

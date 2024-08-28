@@ -21,6 +21,7 @@ export function usePoolInfo({
   const queryEnabled = !!readHyperdrive && !!enabled;
   const { data: poolInfo } = useQuery({
     queryKey: makeQueryKey("poolInfo", {
+      chainId,
       hyperdriveAddress,
     }),
     queryFn: queryEnabled ? () => readHyperdrive.getPoolInfo() : undefined,
