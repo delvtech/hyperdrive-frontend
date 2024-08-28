@@ -40,6 +40,7 @@ export function useMintToken({
     ],
     functionName: "maxMintAmount",
     address: token.address,
+    chainId: chainId,
     args: [],
     query: {
       enabled: token.address !== ETH_MAGIC_NUMBER && chainId === sepolia.id,

@@ -8,7 +8,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
 import { erc20Abi } from "viem";
-import { useAccount, useBalance, useReadContract } from "wagmi";
+import { useAccount, useBalance, useChainId, useReadContract } from "wagmi";
 
 export function RevokeAllowanceModalButton({
   token,
@@ -20,6 +20,7 @@ export function RevokeAllowanceModalButton({
   spender: `0x${string}`;
 }): JSX.Element {
   const { address: account } = useAccount();
+  const chainId = useChainId();
   const isEth = token.address === ETH_MAGIC_NUMBER;
   const { data: tokenBalance } = useBalance({
     address: account,
@@ -51,6 +52,7 @@ export function RevokeAllowanceModalButton({
     abi: erc20Abi,
     functionName: "totalSupply",
     address: token.address,
+    chainId: chainId,
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;

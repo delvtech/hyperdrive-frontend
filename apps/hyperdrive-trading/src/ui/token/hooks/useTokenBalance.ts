@@ -40,6 +40,7 @@ export function useTokenBalance({
 
   const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
     address: tokenAddress,
+    chainId: chainId,
     abi: erc20Abi,
     functionName: "balanceOf",
     args: account ? [account] : undefined,
