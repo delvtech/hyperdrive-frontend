@@ -5,7 +5,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useBlockNumber } from "wagmi";
+import { useBlockNumber, useChainId } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
   hyperdriveAddress: Address;
@@ -29,11 +29,12 @@ export function usePreviewOpenShort({
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const appConfig = useAppConfig();
-
+  const chainId = useChainId();
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
   const { data: blockNumber } = useBlockNumber({
     watch: true,
     query: { enabled: queryEnabled },
+    chainId: chainId,
   });
 
   const { data, status, fetchStatus } = useQuery({

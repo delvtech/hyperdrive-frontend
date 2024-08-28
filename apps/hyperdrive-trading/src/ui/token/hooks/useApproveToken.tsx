@@ -2,18 +2,20 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { useChainId, usePublicClient, useWriteContract } from "wagmi";
+import { usePublicClient, useWriteContract } from "wagmi";
 
+import { findToken } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { SupportedChainId } from "src/chains/supportedChains";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, erc20Abi, parseUnits } from "viem";
 import { sepolia } from "viem/chains";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
+  tokenChainId: number;
   spender: Address | undefined;
   amount: bigint;
   enabled?: boolean;
@@ -21,6 +23,7 @@ interface UseTokenApprovalOptions {
 
 export function useApproveToken({
   tokenAddress,
+  tokenChainId,
   spender,
   amount,
   enabled = true,
@@ -29,15 +32,21 @@ export function useApproveToken({
   pendingWalletSignatureStatus: QueryStatusWithIdle;
   isTransactionMined: boolean;
 } {
+  const appConfig = useAppConfig();
   const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
-  const chainId = useChainId() as SupportedChainId;
+  const token = findToken({
+    tokenAddress,
+    tokens: appConfig.tokens,
+    chainId: tokenChainId,
+  });
+
   // Pad the approval amount if on sepolia
   let finalAmount = amount;
-  if (chainId === sepolia.id && amount > 0 && amount !== MAX_UINT256) {
+  if (token?.chainId === sepolia.id && amount > 0 && amount !== MAX_UINT256) {
     finalAmount += parseUnits("1", 18);
   }
 
@@ -47,6 +56,7 @@ export function useApproveToken({
           {
             abi: erc20Abi,
             address: tokenAddress,
+            chainId: tokenChainId,
             functionName: "approve",
             args: [spender, finalAmount],
           },

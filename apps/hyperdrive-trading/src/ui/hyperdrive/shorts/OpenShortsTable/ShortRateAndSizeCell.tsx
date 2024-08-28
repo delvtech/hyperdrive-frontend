@@ -6,7 +6,7 @@ import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { useBlock } from "wagmi";
+import { useBlock, useChainId } from "wagmi";
 
 export function ShortRateAndSizeCell({
   hyperdrive,
@@ -16,11 +16,15 @@ export function ShortRateAndSizeCell({
   short: OpenShort;
 }): ReactElement {
   const appConfig = useAppConfig();
+  const chainId = useChainId();
   const baseToken = findBaseToken({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { data: maturityBlock } = useBlock({ blockNumber: short.maturity });
+  const { data: maturityBlock } = useBlock({
+    blockNumber: short.maturity,
+    chainId,
+  });
 
   // NOTE: Maturity block will be undefined if the term in incomplete,
   // defaulting to latest.

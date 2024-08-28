@@ -13,10 +13,12 @@ export function useTokenBalance({
   account,
   tokenAddress,
   decimals,
+  tokenChainId,
 }: {
   account: Address | undefined;
   tokenAddress: Address | undefined;
   decimals: number;
+  tokenChainId?: number;
 }): {
   balance:
     | {
@@ -40,6 +42,7 @@ export function useTokenBalance({
 
   const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
     address: tokenAddress,
+    chainId: tokenChainId,
     abi: erc20Abi,
     functionName: "balanceOf",
     args: account ? [account] : undefined,

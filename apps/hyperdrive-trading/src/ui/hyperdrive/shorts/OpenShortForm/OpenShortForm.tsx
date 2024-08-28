@@ -127,6 +127,7 @@ export function OpenShortForm({
     enabled: requiresAllowance,
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
   });
 
   // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk

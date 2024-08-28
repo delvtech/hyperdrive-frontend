@@ -11,11 +11,13 @@ import { useBlock } from "wagmi";
  * Returns the maturity date of a long in a human-readable format.
  */
 export function MaturesOnCell({
+  hyperdrive,
   maturity,
 }: {
+  hyperdrive: HyperdriveConfig;
   maturity: bigint;
 }): ReactElement {
-  const { data: currentBlock } = useBlock();
+  const { data: currentBlock } = useBlock({ chainId: hyperdrive.chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
 

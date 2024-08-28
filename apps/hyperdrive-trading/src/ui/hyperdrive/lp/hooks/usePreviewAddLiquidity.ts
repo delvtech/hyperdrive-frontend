@@ -40,6 +40,9 @@ export function usePreviewAddLiquidity({
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const hyperdrive = appConfig.hyperdrives.find(
+    (hyperdrive) => hyperdrive.address === hyperdriveAddress,
+  );
   const queryEnabled =
     minApr !== undefined &&
     minLpSharePrice !== undefined &&
@@ -51,6 +54,7 @@ export function usePreviewAddLiquidity({
     enabled &&
     !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
+    chainId: hyperdrive?.chainId,
     watch: true,
     query: { enabled: queryEnabled },
   });

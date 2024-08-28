@@ -129,6 +129,7 @@ export function AddLiquidityForm({
     account,
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
     enabled: requiresAllowance,
   });
 
