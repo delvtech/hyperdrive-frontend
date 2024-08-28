@@ -53,6 +53,7 @@ export function findBaseToken({
     hyperdriveConfig.baseTokenFallback
   ) {
     baseToken = findToken({
+      chainId: hyperdriveConfig.baseTokenFallback.chainId,
       tokenAddress: hyperdriveConfig.baseTokenFallback.address,
       tokens: appConfig.tokens,
     });
@@ -60,6 +61,7 @@ export function findBaseToken({
 
   // Otherwise, use the pool's base token
   baseToken = findToken({
+    chainId: hyperdriveConfig.chainId,
     tokenAddress: hyperdriveConfig.poolConfig.baseToken,
     tokens: appConfig.tokens,
   });
