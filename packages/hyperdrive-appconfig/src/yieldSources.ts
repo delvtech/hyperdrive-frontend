@@ -80,8 +80,8 @@ const gnosisWsteth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const gnosisSxdai: YieldSource = {
-  id: "gnosisSxdai",
+const sxDai: YieldSource = {
+  id: "sxDai",
   shortName: "Savings xDAI",
   protocol: "maker",
   historicalRatePeriod: 1,
@@ -97,5 +97,5 @@ export const yieldSources = {
   reth,
   ezEth,
   gnosisWsteth,
-  gnosisSxdai,
+  sxDai,
 } as const;
