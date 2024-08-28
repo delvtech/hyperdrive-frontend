@@ -44,6 +44,7 @@ export function CloseShortForm({
     defaultItems.push(baseToken);
   }
   const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     tokens: appConfig.tokens,
   });
