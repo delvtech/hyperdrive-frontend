@@ -33,7 +33,7 @@ import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { FixedRateCell } from "src/ui/hyperdrive/longs/OpenLongsTable/FixedRateCell";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 export function OpenLongsTableDesktop({
   hyperdrive,
@@ -43,10 +43,13 @@ export function OpenLongsTableDesktop({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const { marketState } = useMarketState(hyperdrive.address);
+  const { switchChain } = useSwitchChain();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const chainId = useChainId();
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openLongs || [],
@@ -74,6 +77,25 @@ export function OpenLongsTableDesktop({
       </div>
     );
   }
+  if (chainId !== hyperdrive.chainId) {
+    return (
+      <div className="my-28">
+        <NonIdealState
+          heading="Wrong Network"
+          text="Please switch to the correct network to view your Long positions"
+          action={
+            <button
+              className="daisy-btn daisy-btn-warning rounded-full"
+              onClick={() => switchChain({ chainId: hyperdrive.chainId })}
+            >
+              Switch Network
+            </button>
+          }
+        />
+      </div>
+    );
+  }
+
   if (openLongsStatus === "loading") {
     return (
       <LoadingState
@@ -94,6 +116,7 @@ export function OpenLongsTableDesktop({
         </div>
       );
     }
+
     return (
       <div className="my-28">
         <NonIdealState

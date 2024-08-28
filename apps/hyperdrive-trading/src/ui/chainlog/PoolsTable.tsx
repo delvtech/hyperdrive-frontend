@@ -108,8 +108,11 @@ const poolCols = [
     cell: ({ getValue, row }) => (
       <Link
         className="daisy-link-hover daisy-link"
-        to={`/market/$address`}
-        params={{ address: row.original.address }}
+        to={`/market/$chainId/$address`}
+        params={{
+          address: row.original.address,
+          chainId: row.original.chainId.toString(),
+        }}
       >
         {getValue()}
       </Link>
@@ -151,6 +154,7 @@ const poolCols = [
 interface Pool {
   name: string;
   address: Address;
+  chainId: number;
   version: string;
   isPaused: boolean;
   status: Status;
@@ -195,6 +199,7 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
               return {
                 name,
                 address: pool.address,
+                chainId,
                 version,
                 isPaused,
                 status,
