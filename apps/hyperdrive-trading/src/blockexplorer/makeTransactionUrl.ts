@@ -1,4 +1,5 @@
-import assertNever from "assert-never";
+import { cloudChain } from "src/chains/cloudChain";
+import { gnosisFork } from "src/chains/gnosisFork";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { b3Sepolia } from "src/network/b3Sepolia";
 import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
@@ -18,9 +19,11 @@ export function makeTransactionURL(
       return `https://sepolia.explorer.b3.fun/tx/${transactionHash}`;
     case foundry.id:
       return `#`;
-    case 42069: // cloud chain
+    case cloudChain.id: // cloud chain
+      return `#`;
+    case gnosisFork.id:
       return `#`;
     default:
-      assertNever(chainId, true);
+      return `#`;
   }
 }

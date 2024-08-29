@@ -1,7 +1,6 @@
 import { cloudChain } from "src/chains/cloudChain";
 import { gnosisFork } from "src/chains/gnosisFork";
-import { b3Sepolia } from "src/network/b3Sepolia";
-import { baseSepolia, foundry, mainnet, sepolia } from "viem/chains";
+import { foundry, mainnet, sepolia } from "viem/chains";
 
 export const supportedChainIds = [
   cloudChain.id,
@@ -9,8 +8,10 @@ export const supportedChainIds = [
   foundry.id,
   mainnet.id,
   sepolia.id,
-  baseSepolia.id,
-  b3Sepolia.id,
 ] as const;
 
+/**
+ * @deprecated Can't strongly type this because custom chains have their chain
+ * ID set via an environment variable.
+ */
 export type SupportedChainId = (typeof supportedChainIds)[number];
