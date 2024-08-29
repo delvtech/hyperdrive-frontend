@@ -24,21 +24,11 @@ export function readHyperdriveMixin_v1_0_14<
      * @hidden
      */
     constructor(...[options]: any[]) {
-      const {
-        debugName = "Hyperdrive v1.0.14",
-        address,
-        contractFactory,
-        network,
-        cache,
-        namespace,
-      } = options as ReadHyperdriveOptions;
+      const { debugName = "Hyperdrive v1.0.14", ...restOptions } =
+        options as ReadHyperdriveOptions;
       super({
         debugName,
-        address,
-        contractFactory,
-        network,
-        cache,
-        namespace,
+        ...restOptions,
       });
     }
 

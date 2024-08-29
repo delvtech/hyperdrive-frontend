@@ -14,7 +14,7 @@ const SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS =
   "0xf5461A30b3723085F8E702fCc7461db85481c173";
 
 export class ReadMetaMorphoHyperdrive extends readMetaMorphoHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -28,7 +28,7 @@ export interface ReadMetaMorphoHyperdriveMixin {
  * @internal
  */
 export function readMetaMorphoHyperdriveMixin<
-  T extends Constructor<ReadHyperdrive>
+  T extends Constructor<ReadHyperdrive>,
 >(Base: T): Constructor<ReadMetaMorphoHyperdriveMixin> & T {
   return class extends Base {
     metaMorphoContract: ReadContract<MetaMorphoSnippetsABI>;
@@ -37,12 +37,11 @@ export function readMetaMorphoHyperdriveMixin<
       const {
         debugName = "MetaMorpho Hyperdrive",
         address,
-        contractFactory,
-        network,
         cache,
         namespace,
+        ...modelOptions
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, debugName, namespace });
+      super({ debugName, address, cache, namespace, ...modelOptions });
 
       this.metaMorphoContract = this.contractFactory({
         abi: metaMorphoSnippetsABI,
