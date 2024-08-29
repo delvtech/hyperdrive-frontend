@@ -26,6 +26,12 @@ import { Address, PublicClient } from "viem";
 type HyperdriveConfigResolver = (
   hyperdrive: ReadHyperdrive,
   publicClient: PublicClient,
+  /**
+   * For forked chains, this is the block at which the fork occurred. Often,
+   * forked chains can't do full archival requests for events from "earliest",
+   * (ie: grabbing the Initialize event).  This allows us to clamp requests to
+   * the earliest known block.
+   */
   forkBlock?: bigint,
 ) => Promise<{
   hyperdriveConfig: HyperdriveConfig;
