@@ -1479,10 +1479,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.6.1.tgz#d8cc37b6a7b5a4ab5957e0bcba4428ddfd3a61e7"
-  integrity sha512-LtJ9hsRPjqqMZ08+Rwz/spcCEX9WO5Kl94wQPXt/6nwFtCQS+Q7zqBOGruxYT93cRnlLvdI3wLdf26NNY3zFsw==
+"@delvtech/evm-client-viem@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.6.2.tgz#9f7874af8ebd7d8a87b3368ae97ab1e50031ab60"
+  integrity sha512-SzQUi72dyj49gpXx8MsUIREefGLzdVTIgxz1pDgeiBeBb+GQBicsRiarmxK3CTv/melJfVv2DDJYM/wW5LvHDw==
   dependencies:
     "@delvtech/evm-client" "0.5.1"
 
