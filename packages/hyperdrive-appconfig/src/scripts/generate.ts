@@ -8,7 +8,7 @@ import { gnosisFork } from "src/chains/gnosisFork";
 import { protocols } from "src/protocols";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
-import { mainnet, sepolia } from "viem/chains";
+import { gnosis, mainnet, sepolia } from "viem/chains";
 
 interface ChainConfig {
   chain: Chain;
@@ -38,11 +38,11 @@ const chainConfigs: ChainConfig[] = [
     registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
     forkBlock: 35730200n,
   },
-  // {
-  //   chain: gnosis,
-  //   rpcUrl: process.env.GNOSIS_NODE_RPC_URL as string,
-  //   registryAddress: "", // TODO: add registry for gnosis chain
-  // },
+  {
+    chain: gnosis,
+    rpcUrl: process.env.GNOSIS_NODE_RPC_URL as string,
+    registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+  },
 
   // Add more chains here
 ];
