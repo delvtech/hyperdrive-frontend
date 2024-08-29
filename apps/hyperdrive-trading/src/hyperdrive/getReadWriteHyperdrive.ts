@@ -27,12 +27,18 @@ export async function getReadWriteHyperdrive({
 }): Promise<ReadWriteHyperdrive> {
   let hyperdrive: ReadWriteHyperdrive;
 
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: publicClient.chain?.id as number,
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
   const options: ReadWriteHyperdriveOptions = {
     address: hyperdriveAddress,
     publicClient,
     walletClient,
     cache: sdkCache,
     namespace: publicClient.chain?.id.toString(),
+    earliestBlock: appConfig.chains[hyperdriveConfig.chainId]?.earliestBlock,
   };
 
   try {

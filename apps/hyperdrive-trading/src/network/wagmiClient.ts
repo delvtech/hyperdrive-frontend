@@ -7,6 +7,7 @@ import {
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
 import { cloudChain } from "src/chains/cloudChain";
+import { gnosisFork } from "src/chains/gnosisFork";
 import { b3Sepolia } from "src/network/b3Sepolia";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
@@ -22,6 +23,8 @@ const {
   VITE_BASE_SEPOLIA_RPC_URL,
   VITE_B3_SEPOLIA_RPC_URL,
   VITE_MAINNET_RPC_URL,
+  VITE_GNOSIS_FORK_NODE_RPC_URL,
+  VITE_GNOSIS_FORK_CHAIN_ID,
 } = import.meta.env;
 
 export const chains: Chain[] = [];
@@ -44,6 +47,12 @@ if (VITE_WALLET_CONNECT_PROJECT_ID) {
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
   chains.push(foundry);
   transports[foundry.id] = http(VITE_LOCALHOST_NODE_RPC_URL);
+}
+
+// Gnosis Fork
+if (VITE_GNOSIS_FORK_NODE_RPC_URL && VITE_GNOSIS_FORK_CHAIN_ID) {
+  chains.push(gnosisFork);
+  transports[gnosisFork.id] = http(VITE_GNOSIS_FORK_NODE_RPC_URL);
 }
 
 // CloudChain

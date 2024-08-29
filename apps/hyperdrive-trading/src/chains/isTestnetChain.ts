@@ -1,4 +1,5 @@
 import { cloudChain } from "src/chains/cloudChain";
+import { gnosisFork } from "src/chains/gnosisFork";
 import { foundry, sepolia } from "viem/chains";
 
 /**
@@ -7,6 +8,11 @@ import { foundry, sepolia } from "viem/chains";
  * @returns True if the chain ID corresponds to a testnet chain, false otherwise.
  */
 export function isTestnetChain(chainId: number): boolean {
-  const testnetChainIds = [cloudChain.id, sepolia.id, foundry.id];
+  const testnetChainIds = [
+    cloudChain.id,
+    sepolia.id,
+    foundry.id,
+    gnosisFork.id,
+  ];
   return testnetChainIds.includes(chainId);
 }
