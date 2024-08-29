@@ -22,11 +22,15 @@ export function LpCurrentValueCell({
   const baseToken = tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,
       account,
+      chainId: hyperdrive.chainId,
     },
   );
 
@@ -36,6 +40,7 @@ export function LpCurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare: 1n,
     asBase: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled,
+    chainId: hyperdrive.chainId,
   });
 
   // make sure proceeds from withdrawal are always denominated in base

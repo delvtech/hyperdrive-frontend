@@ -18,15 +18,20 @@ export function WithdrawalQueueCell({
   const baseToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
+    chainId: hyperdrive.chainId,
   });
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,
       account,
+      chainId: hyperdrive.chainId,
     },
   );
 
@@ -38,6 +43,7 @@ export function WithdrawalQueueCell({
     withdrawalSharesIn: balanceOfWithdrawalShares,
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
+    chainId: hyperdrive.chainId,
   });
 
   const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({

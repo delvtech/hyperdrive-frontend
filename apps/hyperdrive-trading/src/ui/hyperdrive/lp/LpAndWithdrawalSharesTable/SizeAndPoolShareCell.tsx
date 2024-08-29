@@ -16,6 +16,7 @@ export function SizeAndPoolShareCell({
 }): ReactElement {
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
   });
   const { tokens } = useAppConfig();
 
