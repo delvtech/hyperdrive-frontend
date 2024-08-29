@@ -2,8 +2,7 @@ import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { cloudChain } from "src/chains/cloudChain";
-import { gnosisFork } from "src/chains/gnosisFork";
+import { isForkChain } from "src/chains/isForkChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -44,10 +43,7 @@ export function useLpApy({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const numBlocksForHistoricalRate = [
-            cloudChain.id,
-            gnosisFork.id,
-          ].includes(chainId)
+          const numBlocksForHistoricalRate = isForkChain(chainId)
             ? 1000n // roughly 3 hours for cloudchain
             : DAILY_AVERAGE_BLOCK_TOTAL *
               BigInt(

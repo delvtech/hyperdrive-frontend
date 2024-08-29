@@ -1,8 +1,7 @@
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
-import { cloudChain } from "src/chains/cloudChain";
-import { gnosisFork } from "src/chains/gnosisFork";
+import { isForkChain } from "src/chains/isForkChain";
 
 export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,
@@ -14,9 +13,7 @@ export async function getYieldSourceRate(
     hyperdriveAddress: readHyperdrive.address,
     hyperdrives: appConfig.hyperdrives,
   });
-  const numBlocksForHistoricalRate = [gnosisFork.id, cloudChain.id].includes(
-    hyperdrive.chainId,
-  )
+  const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
     ? 1000n // roughly 3 hours for cloudchain
     : DAILY_AVERAGE_BLOCK_TOTAL *
       BigInt(
