@@ -1,6 +1,5 @@
 import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
-import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isForkChain } from "src/chains/isForkChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -45,7 +44,7 @@ export function useLpApy({
       ? async () => {
           const numBlocksForHistoricalRate = isForkChain(chainId)
             ? 1000n // roughly 3 hours for cloudchain
-            : DAILY_AVERAGE_BLOCK_TOTAL *
+            : appConfig.chains[hyperdrive.chainId].dailyAverageBlocks *
               BigInt(
                 appConfig.yieldSources[hyperdrive.yieldSource]
                   .historicalRatePeriod,

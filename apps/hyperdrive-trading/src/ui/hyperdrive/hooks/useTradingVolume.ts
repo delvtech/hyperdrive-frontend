@@ -1,8 +1,10 @@
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
-import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, BlockTag } from "viem";
+
 export function useTradingVolume(
   chainId: number,
   hyperdriveAddress: Address,
@@ -13,20 +15,26 @@ export function useTradingVolume(
   shortVolume: bigint | undefined;
   tradingVolumeStatus: "loading" | "error" | "success";
 } {
+  const appConfig = useAppConfig();
+  const hyperdrive = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
   const readHyperdrive = useReadHyperdrive({
     chainId,
     address: hyperdriveAddress,
   });
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
 
+  const dailyAverageBlocks =
+    appConfig.chains[hyperdrive.chainId].dailyAverageBlocks;
+
   // If we have at least 1 day of blocks, go back by 1 day, otherwise
   // start from the earliest block we have
   let fromBlock: BlockTag | bigint = "earliest";
-  if (
-    currentBlockNumber &&
-    currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL > 0
-  ) {
-    fromBlock = currentBlockNumber - DAILY_AVERAGE_BLOCK_TOTAL;
+  if (currentBlockNumber && currentBlockNumber - dailyAverageBlocks > 0) {
+    fromBlock = currentBlockNumber - dailyAverageBlocks;
   }
 
   const { data: volume, status } = useQuery({
