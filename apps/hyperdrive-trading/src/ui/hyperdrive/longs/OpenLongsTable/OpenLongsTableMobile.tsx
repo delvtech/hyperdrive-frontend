@@ -38,10 +38,14 @@ export function OpenLongsTableMobile({
   const { address: account } = useAccount();
   const { switchChain } = useSwitchChain();
   const chainId = useChainId();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
@@ -146,6 +150,7 @@ export function OpenLongsTableMobile({
                 className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (window as any)[modalId].showModal();
                 }}
               >
@@ -190,7 +195,7 @@ function formatOpenLongMobileColumnData(
   return [
     {
       name: "Matures on",
-      value: <MaturesOnCell maturity={row.maturity} />,
+      value: <MaturesOnCell hyperdrive={hyperdrive} maturity={row.maturity} />,
     },
     {
       name: `Size (hy${baseToken.symbol})`,
@@ -237,6 +242,7 @@ function getMobileColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });

@@ -8,6 +8,7 @@ import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   amountOfBondsToShort: bigint | undefined;
   asBase: boolean;
@@ -23,22 +24,27 @@ interface UsePreviewOpenShortResult {
 }
 
 export function usePreviewOpenShort({
+  chainId,
   hyperdriveAddress,
   amountOfBondsToShort,
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
-
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
   const { data: blockNumber } = useBlockNumber({
     watch: true,
     query: { enabled: queryEnabled },
+    chainId,
   });
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
-      hyperdrive: hyperdriveAddress,
+      chainId,
+      hyperdriveAddress,
       amountBondShorts: amountOfBondsToShort?.toString(),
       asBase,
       blockNumber: blockNumber?.toString(),
@@ -56,7 +62,7 @@ export function usePreviewOpenShort({
             ? result.traderDeposit
             : await prepareSharesOut({
                 appConfig,
-                hyperdriveAddress,
+                chainId,
                 readHyperdrive,
                 sharesAmount: result.traderDeposit,
               });

@@ -20,10 +20,12 @@ export function ShortRateStat({
     "shortApr",
   );
   const { vaultRate } = useYieldSourceRate({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 
   const { shortApr, shortRoi, shortRateStatus } = useShortRate({
+    chainId: hyperdrive.chainId,
     bondAmount: hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6),
     hyperdriveAddress: hyperdrive.address,
     variableApy: vaultRate?.vaultRate ? vaultRate.vaultRate : undefined,
@@ -56,6 +58,7 @@ export function ShortRateStat({
             <Skeleton className="w-20" />
           ) : (
             <RewardsTooltip
+              chainId={hyperdrive.chainId}
               hyperdriveAddress={hyperdrive.address}
               positionType="short"
             >
@@ -75,6 +78,7 @@ export function ShortRateStat({
             <Skeleton className="w-20" />
           ) : (
             <RewardsTooltip
+              chainId={hyperdrive.chainId}
               hyperdriveAddress={hyperdrive.address}
               positionType="short"
             >

@@ -17,14 +17,22 @@ export function ShortRateAndSizeCell({
 }): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { data: maturityBlock } = useBlock({ blockNumber: short.maturity });
+  const { data: maturityBlock } = useBlock({
+    blockNumber: short.maturity,
+    chainId: hyperdrive.chainId,
+  });
 
   // NOTE: Maturity block will be undefined if the term in incomplete,
   // defaulting to latest.
-  const { fixedApr } = useFixedRate(hyperdrive.address, maturityBlock?.number);
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    blockNumber: maturityBlock?.number,
+  });
 
   const rateDifference = (fixedApr?.apr || 0n) - short.fixedRatePaid;
   const isPositiveChangeInValue = rateDifference > 0;

@@ -20,28 +20,39 @@ export function LiquidityStats({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { data: currentBlockNumber } = useBlockNumber();
+  const { data: currentBlockNumber } = useBlockNumber({
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
 
   const { totalVolume, longVolume, shortVolume, tradingVolumeStatus } =
-    useTradingVolume(hyperdrive.address, currentBlockNumber);
+    useTradingVolume(
+      hyperdrive.chainId,
+      hyperdrive.address,
+      currentBlockNumber,
+    );
 
   const { presentValue, presentValueStatus } = usePresentValue({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { maxBondsOut: maxLong } = useMaxLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { maxBondsOut: maxShort } = useMaxShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     budget: MAX_UINT256,
   });
 
   const { idleLiquidity, idleLiquidityStatus } = useIdleLiquidity({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 

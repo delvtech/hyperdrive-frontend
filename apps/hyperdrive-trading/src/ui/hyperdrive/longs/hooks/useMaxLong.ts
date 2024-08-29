@@ -7,8 +7,10 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 export function useMaxLong({
+  chainId,
   hyperdriveAddress,
 }: {
+  chainId: number;
   hyperdriveAddress: Address;
 }): {
   maxBaseIn: bigint | undefined;
@@ -16,13 +18,17 @@ export function useMaxLong({
   maxBondsOut: bigint | undefined;
   status: QueryStatusWithIdle;
 } {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive;
   const appConfig = useAppConfig();
 
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("maxLong", {
-      market: hyperdriveAddress,
+      hyperdriveAddress,
+      chainId,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -33,7 +39,7 @@ export function useMaxLong({
           const finalMaxSharesIn = await prepareSharesOut({
             sharesAmount: result.maxSharesIn,
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive,
           });
 

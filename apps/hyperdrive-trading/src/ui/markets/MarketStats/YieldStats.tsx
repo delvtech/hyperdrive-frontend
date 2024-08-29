@@ -25,7 +25,10 @@ export function YieldStats({
   const appConfig = useAppConfig();
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
 
-  const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
+  const { lpApy, lpApyStatus } = useLpApy({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   return (
     <Well transparent block>
@@ -34,6 +37,7 @@ export function YieldStats({
           <h5 className="flex text-neutral-content">Yield</h5>
           <div className="font-dmMono text-neutral-content">
             <YieldSourceRateBadge
+              chainId={hyperdrive.chainId}
               hyperdriveAddress={hyperdrive.address}
               labelRenderer={(vaultRate) =>
                 `${yieldSource?.shortName} @ ${vaultRate.formatted || 0} APY`
@@ -59,6 +63,7 @@ export function YieldStats({
               label={`LP APY (${yieldSource.historicalRatePeriod}d)`}
               value={
                 <RewardsTooltip
+                  chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                   positionType="lp"
                 >

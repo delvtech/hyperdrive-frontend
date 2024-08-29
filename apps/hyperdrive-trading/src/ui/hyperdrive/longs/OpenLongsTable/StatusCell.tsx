@@ -4,8 +4,14 @@ import { ReactElement } from "react";
 import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useBlock } from "wagmi";
 
-export function StatusCell({ maturity }: { maturity: bigint }): ReactElement {
-  const { data: currentBlock } = useBlock();
+export function StatusCell({
+  chainId,
+  maturity,
+}: {
+  chainId: number;
+  maturity: bigint;
+}): ReactElement {
+  const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
   const maturityDateMS = maturity * 1000n;
 

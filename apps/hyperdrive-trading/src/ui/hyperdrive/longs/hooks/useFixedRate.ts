@@ -9,21 +9,33 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-export function useFixedRate(
-  hyperdriveAddress: Address,
-  blockNumber?: bigint,
-): {
+export function useFixedRate({
+  chainId,
+  hyperdriveAddress,
+  blockNumber,
+}: {
+  chainId: number;
+  hyperdriveAddress: Address;
+  blockNumber?: bigint;
+}): {
   fixedApr: { apr: bigint; formatted: string } | undefined;
   fixedRoi: { roi: bigint; formatted: string } | undefined;
   fixedRateStatus: QueryStatusWithIdle;
 } {
   const { hyperdrives } = useAppConfig();
-  const hyperdrive = findHyperdriveConfig({ hyperdrives, hyperdriveAddress });
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const hyperdrive = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
+    hyperdrives,
+    hyperdriveAddress,
+  });
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
 
   const queryEnabled = !!readHyperdrive;
   const { data, status, fetchStatus } = useQuery({
-    queryKey: makeQueryKey("fixedApr", { address: hyperdriveAddress }),
+    queryKey: makeQueryKey("fixedApr", { chainId, address: hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
           const fixedApr = await readHyperdrive.getFixedApr({ blockNumber });

@@ -17,7 +17,10 @@ export function OpenShortModalButton({
   modalId,
   hyperdrive,
 }: OpenShortModalButtonProps): ReactElement {
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const appConfig = useAppConfig();
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);

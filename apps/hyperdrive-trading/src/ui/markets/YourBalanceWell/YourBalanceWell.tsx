@@ -3,11 +3,11 @@ import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
+  findToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { cloudChain } from "src/chains/cloudChain";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -29,14 +29,17 @@ export function YourBalanceWell({
 
   // base token
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
 
   // shares token
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   return (
     <Well elevation="flat">
@@ -67,11 +70,13 @@ function AvailableAsset({
   token: TokenConfig;
 }) {
   const { address: account } = useAccount();
+  const chainId = useChainId();
   const isEth = token.address === ETH_MAGIC_NUMBER;
   const { balance: tokenBalance, status: tokenBalanceStatus } = useTokenBalance(
     {
       account: account,
       tokenAddress: token.address,
+      tokenChainId: token.chainId,
       decimals: token.decimals,
     },
   );
@@ -83,12 +88,14 @@ function AvailableAsset({
     account,
     spender,
     tokenAddress: token.address,
+    tokenChainId: token.chainId,
     enabled: !isEth,
   });
   const { data: totalSupply } = useReadContract({
     abi: erc20Abi,
     functionName: "totalSupply",
     address: token.address,
+    chainId: token.chainId,
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
@@ -99,7 +106,6 @@ function AvailableAsset({
     destination: account,
   });
 
-  const chainId = useChainId() as SupportedChainId;
   const isTestnetChain = [cloudChain.id, sepolia.id, foundry.id].includes(
     chainId,
   );

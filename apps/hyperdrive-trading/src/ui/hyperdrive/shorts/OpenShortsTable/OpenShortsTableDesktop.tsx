@@ -37,6 +37,7 @@ export function OpenShortsTableDesktop({
 }): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -154,7 +155,12 @@ function getColumns(hyperdrive: HyperdriveConfig, baseToken: TokenConfig) {
       id: "maturationDate",
       header: `Matures On`,
       cell: ({ row }) => {
-        return <MaturesOnCell maturity={row.original.maturity} />;
+        return (
+          <MaturesOnCell
+            hyperdrive={hyperdrive}
+            maturity={row.original.maturity}
+          />
+        );
       },
     }),
     columnHelper.accessor("bondAmount", {

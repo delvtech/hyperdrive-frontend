@@ -19,7 +19,10 @@ export function FixedRateStat({
     fixedApr,
     fixedRoi,
     fixedRateStatus: fixedAprStatus,
-  } = useFixedRate(hyperdrive.address);
+  } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const [rateType, setRateType] = useLocalStorage<"fixedApr" | "fixedRoi">(
     "yield-stats-long-rate-type",
     "fixedApr",

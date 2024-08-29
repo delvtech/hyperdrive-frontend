@@ -23,16 +23,21 @@ export function CurrentValueCell({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
 
   const {
     amountOut: baseAmountOut,
     previewCloseLongStatus,
     previewCloseLongError,
   } = usePreviewCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
     bondAmountIn: row.bondAmount,
@@ -110,6 +115,7 @@ export function CurrentValueCellTwo({
 }): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -119,6 +125,7 @@ export function CurrentValueCellTwo({
     previewCloseLongStatus,
     previewCloseLongError,
   } = usePreviewCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
     bondAmountIn: row.details?.bondAmount || 0n,

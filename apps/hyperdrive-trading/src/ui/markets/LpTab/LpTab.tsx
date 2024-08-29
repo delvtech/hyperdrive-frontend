@@ -23,15 +23,20 @@ export function LpTab({
   const { address: account } = useAccount();
   const { switchChain } = useSwitchChain();
   const chainId = useChainId();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const { lpShares, lpSharesStatus } = useLpShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
   const { withdrawalShares, withdrawalSharesStatus } = useWithdrawalShares({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     account,
   });

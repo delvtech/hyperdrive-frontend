@@ -7,12 +7,6 @@ import { getStatus } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-interface UseImpliedRateOptions {
-  hyperdriveAddress: Address | undefined;
-  bondAmount: bigint | undefined;
-  timestamp: bigint | undefined;
-  variableApy: bigint | undefined;
-}
 
 /**
  * Returns the list of shorts that the account currently has open.
@@ -22,13 +16,23 @@ export function useShortRate({
   timestamp,
   variableApy,
   hyperdriveAddress,
-}: UseImpliedRateOptions): {
+  chainId,
+}: {
+  hyperdriveAddress: Address | undefined;
+  chainId: number;
+  bondAmount: bigint | undefined;
+  timestamp: bigint | undefined;
+  variableApy: bigint | undefined;
+}): {
   shortApr: { apr: bigint; formatted: string } | undefined;
   shortRoi: { roi: bigint; formatted: string } | undefined;
   shortRateStatus: "loading" | "error" | "success" | "idle";
 } {
   const { hyperdrives } = useAppConfig();
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled =
     !!hyperdriveAddress &&
     !!readHyperdrive &&
@@ -47,6 +51,7 @@ export function useShortRate({
     fetchStatus,
   } = useQuery({
     queryKey: makeQueryKey("shortRate", {
+      chainId,
       hyperdriveAddress,
       bondAmount: bondAmount?.toString(),
       timestamp: timestamp?.toString(),
@@ -56,8 +61,9 @@ export function useShortRate({
     queryFn: queryEnabled
       ? async () => {
           const hyperdrive = findHyperdriveConfig({
-            hyperdrives,
+            hyperdriveChainId: chainId,
             hyperdriveAddress,
+            hyperdrives,
           });
           const shortApr = await readHyperdrive.getImpliedRate({
             bondAmount,

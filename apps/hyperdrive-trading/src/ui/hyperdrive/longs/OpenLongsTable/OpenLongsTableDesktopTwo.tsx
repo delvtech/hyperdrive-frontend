@@ -7,6 +7,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   findBaseToken,
+  findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import {
@@ -57,12 +58,15 @@ export function OpenLongsContainer(): ReactElement {
       {appConfig.hyperdrives.map((hyperdrive) => {
         const openLongs = openLongPositions?.[hyperdrive.address];
         const baseToken = findBaseToken({
+          hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
-        const sharesToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-        );
+        const sharesToken = findToken({
+          chainId: hyperdrive.chainId,
+          tokens: appConfig.tokens,
+          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+        });
         // Ensure this hyperdrive pool has open positions before rendering.
         if (
           openLongPositionsStatus === "success" &&
@@ -287,6 +291,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -367,7 +372,12 @@ function getColumns({
       id: "value",
       header: `Status`,
       cell: ({ row }) => {
-        return <StatusCell maturity={row.original.maturity} />;
+        return (
+          <StatusCell
+            maturity={row.original.maturity}
+            chainId={hyperdrive.chainId}
+          />
+        );
       },
     }),
     columnHelper.display({

@@ -56,9 +56,11 @@ export function useRewards(
   const chainId = useChainId();
 
   const { poolInfo } = usePoolInfo({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const { presentValue } = usePresentValue({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 

@@ -7,7 +7,9 @@ export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,
   appConfig: AppConfig,
 ): Promise<bigint> {
+  const hyperdriveChainId = await readHyperdrive.network.getChainId();
   const hyperdrive = findHyperdriveConfig({
+    hyperdriveChainId,
     hyperdriveAddress: readHyperdrive.address,
     hyperdrives: appConfig.hyperdrives,
   });

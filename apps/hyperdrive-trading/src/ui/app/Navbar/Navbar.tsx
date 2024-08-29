@@ -27,30 +27,30 @@ export function Navbar(): ReactElement {
         <Link to={"/"} className="inline-flex items-center sm:hidden">
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
-        {isPortfolioEnabled ? (
-          <div className="ml-16 flex gap-8">
-            <Link to={"/"} className="hidden sm:inline">
-              <span
-                className={classNames("text-md", {
-                  "text-white border-b-2 border-b-primary/20 pb-1":
-                    location.pathname === "/",
-                  "text-neutral-content": location.pathname !== "/",
-                })}
-              >
-                All Pools
-              </span>
-            </Link>
-            <Link to={"/bridge"}>
-              <span
-                className={classNames("text-md", {
-                  "text-white border-b-2 border-b-primary/20 pb-1":
-                    location.pathname === "/bridge",
-                  "text-neutral-content": location.pathname !== "/bridge",
-                })}
-              >
-                Bridge
-              </span>
-            </Link>
+        <div className="ml-16 flex gap-8">
+          <Link to={"/"} className="hidden sm:inline">
+            <span
+              className={classNames("text-md", {
+                "text-white border-b-2 border-b-primary/20 pb-1":
+                  location.pathname === "/",
+                "text-neutral-content": location.pathname !== "/",
+              })}
+            >
+              All Pools
+            </span>
+          </Link>
+          <Link to={"/bridge"}>
+            <span
+              className={classNames("text-md", {
+                "text-white border-b-2 border-b-primary/20 pb-1":
+                  location.pathname === "/bridge",
+                "text-neutral-content": location.pathname !== "/bridge",
+              })}
+            >
+              Bridge
+            </span>
+          </Link>
+          {isPortfolioEnabled ? (
             <Link to={"/portfolio"}>
               <span
                 className={classNames("text-md", {
@@ -62,8 +62,8 @@ export function Navbar(): ReactElement {
                 Portfolio
               </span>
             </Link>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">
         <a

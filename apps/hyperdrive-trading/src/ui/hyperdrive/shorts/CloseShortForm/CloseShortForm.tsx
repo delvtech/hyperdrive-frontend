@@ -37,6 +37,7 @@ export function CloseShortForm({
   const { address: account } = useAccount();
   const defaultItems = [];
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -44,6 +45,7 @@ export function CloseShortForm({
     defaultItems.push(baseToken);
   }
   const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     tokens: appConfig.tokens,
   });
@@ -78,6 +80,7 @@ export function CloseShortForm({
   );
   const { amountOut, flatPlusCurveFee, previewCloseShortStatus } =
     usePreviewCloseShort({
+      chainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       maturityTime: short.maturity,
       shortAmountIn: amountAsBigInt,
@@ -95,6 +98,7 @@ export function CloseShortForm({
     });
 
   const { closeShort, closeShortStatus } = useCloseShort({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: short.maturity,
     bondAmountIn: amountAsBigInt,

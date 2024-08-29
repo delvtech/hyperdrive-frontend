@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -39,13 +43,16 @@ export function RemoveLiquidityForm({
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
 
-  const sharesToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-  );
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -86,7 +93,10 @@ export function RemoveLiquidityForm({
       ? baseToken.address
       : hyperdrive.poolConfig.vaultSharesToken,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
 
   // Let users type in an amount of lp shares they want to remove
   const {
@@ -131,6 +141,7 @@ export function RemoveLiquidityForm({
   } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     minOutputPerShare,
     asBase:
@@ -138,6 +149,7 @@ export function RemoveLiquidityForm({
       activeWithdrawToken.address === baseToken.address,
   });
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     lpSharesIn,
     minOutputPerShare,
@@ -147,6 +159,7 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)["withdrawalLpModal"].close();
     },
     onExecuted: () => {

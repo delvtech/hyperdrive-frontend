@@ -7,21 +7,33 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useBlockNumber, useChainId } from "wagmi";
+import { useBlockNumber } from "wagmi";
 
-export function useLpApy(hyperdriveAddress: Address): {
+export function useLpApy({
+  hyperdriveAddress,
+  chainId,
+}: {
+  hyperdriveAddress: Address;
+  chainId: number;
+}): {
   lpApy: number | undefined;
   lpApyStatus: "error" | "success" | "loading";
 } {
-  const chainId = useChainId();
-  const { data: blockNumber } = useBlockNumber();
-  const { poolInfo: currentPoolInfo } = usePoolInfo({ hyperdriveAddress });
+  const { poolInfo: currentPoolInfo } = usePoolInfo({
+    hyperdriveAddress,
+    chainId,
+  });
   const appConfig = useAppConfig();
   const hyperdrive = findHyperdriveConfig({
+    hyperdriveChainId: chainId,
     hyperdriveAddress,
     hyperdrives: appConfig.hyperdrives,
   });
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const { data: blockNumber } = useBlockNumber({ chainId });
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
@@ -32,7 +44,7 @@ export function useLpApy(hyperdriveAddress: Address): {
     queryFn: queryEnabled
       ? async () => {
           const numBlocksForHistoricalRate =
-            hyperdrive.chainId === cloudChain.id
+            chainId === cloudChain.id
               ? 1000n // roughly 3 hours for cloudchain
               : DAILY_AVERAGE_BLOCK_TOTAL *
                 BigInt(

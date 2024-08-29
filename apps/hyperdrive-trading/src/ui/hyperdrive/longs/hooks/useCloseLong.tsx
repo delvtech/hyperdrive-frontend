@@ -17,6 +17,7 @@ import { usePublicClient } from "wagmi";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
+  chainId: number;
   maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minAmountOut: bigint | undefined;
@@ -34,6 +35,7 @@ interface UseCloseLongResult {
 
 export function useCloseLong({
   hyperdriveAddress,
+  chainId,
   maturityTime,
   bondAmountIn,
   minAmountOut,
@@ -43,7 +45,10 @@ export function useCloseLong({
   onSubmitted,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -70,7 +75,7 @@ export function useCloseLong({
         ? minAmountOut
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             sharesAmount: minAmountOut,
             readHyperdrive: readWriteHyperdrive,
           });
@@ -86,7 +91,11 @@ export function useCloseLong({
         onTransactionCompleted: (txHash: Hash) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Long closed" txHash={hash} />,
+            <TransactionToast
+              message="Long closed"
+              txHash={hash}
+              chainId={chainId}
+            />,
             { id: hash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -95,7 +104,11 @@ export function useCloseLong({
       });
 
       toast.loading(
-        <TransactionToast message="Closing Long..." txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Closing Long..."
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

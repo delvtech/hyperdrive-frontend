@@ -1,7 +1,6 @@
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
@@ -9,12 +8,7 @@ import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, formatUnits, parseAbi } from "viem";
 import { sepolia } from "viem/chains";
-import {
-  useChainId,
-  usePublicClient,
-  useReadContract,
-  useWriteContract,
-} from "wagmi";
+import { usePublicClient, useReadContract, useWriteContract } from "wagmi";
 
 export function useMintToken({
   token,
@@ -26,8 +20,7 @@ export function useMintToken({
   amount: bigint;
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
-  const publicClient = usePublicClient();
-  const chainId = useChainId() as SupportedChainId;
+  const publicClient = usePublicClient({ chainId: token.chainId });
   const { data: maxMintAmount } = useReadContract({
     abi: [
       {
@@ -40,16 +33,18 @@ export function useMintToken({
     ],
     functionName: "maxMintAmount",
     address: token.address,
+    chainId: token.chainId,
     args: [],
     query: {
-      enabled: token.address !== ETH_MAGIC_NUMBER && chainId === sepolia.id,
+      enabled:
+        token.address !== ETH_MAGIC_NUMBER && token.chainId === sepolia.id,
     },
   });
 
   let mintAmount = amount;
 
   // On sepolia, only let users mint half the max amount
-  if (chainId === sepolia.id) {
+  if (token.chainId === sepolia.id) {
     if (maxMintAmount) {
       mintAmount = maxMintAmount / 2n;
     } else {
@@ -75,6 +70,7 @@ export function useMintToken({
             onSuccess: async (hash) => {
               toast.loading(
                 <TransactionToast
+                  chainId={token.chainId}
                   message={`Minting ${token.symbol}`}
                   txHash={hash}
                 />,
@@ -91,6 +87,7 @@ export function useMintToken({
               });
               toast.success(
                 <TransactionToast
+                  chainId={token.chainId}
                   message={`Minted ${token.symbol}`}
                   txHash={hash}
                 />,

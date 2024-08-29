@@ -2,17 +2,17 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { Hash } from "viem";
-import { useChainId } from "wagmi";
 
 export default function TransactionToast({
+  chainId,
   message,
   txHash,
 }: {
+  chainId: number;
   message: string;
   txHash: Hash;
 }): JSX.Element {
-  const chainId = useChainId() as SupportedChainId;
-  const link = makeTransactionURL(txHash, chainId);
+  const link = makeTransactionURL(txHash, chainId as SupportedChainId);
 
   return (
     <span className="flex flex-col">

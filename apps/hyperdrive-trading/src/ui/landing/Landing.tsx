@@ -77,16 +77,24 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { yieldSources, chains } = appConfig;
 
   const chainInfo = chains[hyperdrive.chainId];
-  const { fixedApr, fixedRateStatus } = useFixedRate(hyperdrive.address);
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+  const { fixedApr, fixedRateStatus } = useFixedRate({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const { lpApy, lpApyStatus } = useLpApy({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
 
   // Display TVL as base value on testnet due to lack of reliable fiat pricing.
   // On mainnet and others, use DeFiLlama's fiat price.
   const { presentValue } = usePresentValue({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const isFiatPriceEnabled = !isTestnetChain(chainInfo.id);
@@ -96,8 +104,9 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       : undefined,
   });
   const baseToken = findBaseToken({
-    appConfig,
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    appConfig,
   });
   let tvlLabel = `${formatCompact({
     value: presentValue || 0n,
@@ -199,6 +208,7 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
               vaultRate ? (
                 <RewardsTooltip
                   hyperdriveAddress={hyperdrive.address}
+                  chainId={hyperdrive.chainId}
                   positionType="short"
                 >
                   <PercentLabel
@@ -236,6 +246,7 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
               lpApy && !isLpApyNew ? (
                 <RewardsTooltip
                   positionType="lp"
+                  chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
                   <PercentLabel value={`${(lpApy * 100).toFixed(2)}`} />

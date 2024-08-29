@@ -6,11 +6,15 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 import { usePublicClient, useWalletClient } from "wagmi";
 
-export function useReadWriteHyperdrive(
-  address: Address | undefined,
-): ReadWriteHyperdrive | undefined {
-  const publicClient = usePublicClient();
-  const { data: walletClient } = useWalletClient();
+export function useReadWriteHyperdrive({
+  address,
+  chainId,
+}: {
+  address: Address | undefined;
+  chainId: number;
+}): ReadWriteHyperdrive | undefined {
+  const publicClient = usePublicClient({ chainId });
+  const { data: walletClient } = useWalletClient({ chainId });
 
   const appConfig = useAppConfig();
 
@@ -18,6 +22,7 @@ export function useReadWriteHyperdrive(
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadWriteHyperdrive", {
+      chainId,
       address,
     }),
     enabled,

@@ -7,6 +7,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UsePreviewRemoveLiquidityOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
   minOutputPerShare: bigint | undefined;
@@ -22,6 +23,7 @@ interface UsePreviewRemoveLiquidityResult {
 }
 
 export function usePreviewRemoveLiquidity({
+  chainId,
   hyperdriveAddress,
   lpSharesIn,
   minOutputPerShare,
@@ -29,7 +31,10 @@ export function usePreviewRemoveLiquidity({
   asBase = true,
   enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const appConfig = useAppConfig();
 
   const queryEnabled =
@@ -41,6 +46,7 @@ export function usePreviewRemoveLiquidity({
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
+      chainId,
       market: hyperdriveAddress,
       lpSharesIn: lpSharesIn?.toString(),
       minOutputPerShare: minOutputPerShare?.toString(),
@@ -55,7 +61,7 @@ export function usePreviewRemoveLiquidity({
             ? minOutputPerShare
             : await prepareSharesIn({
                 appConfig,
-                hyperdriveAddress,
+                chainId,
                 readHyperdrive,
                 sharesAmount: minOutputPerShare,
               });
@@ -73,7 +79,7 @@ export function usePreviewRemoveLiquidity({
             ? result.proceeds
             : await prepareSharesOut({
                 appConfig,
-                hyperdriveAddress,
+                chainId,
                 readHyperdrive,
                 sharesAmount: result.proceeds,
               });

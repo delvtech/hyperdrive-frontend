@@ -36,6 +36,7 @@ function formatClosedShortMobileColumnData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -112,6 +113,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -172,6 +174,7 @@ export function ClosedShortsTable({
   const appConfig = useAppConfig();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedShorts, closedShortsStatus } = useClosedShorts({
+    chainId: hyperdrive.chainId,
     account,
     hyperdriveAddress: hyperdrive.address,
   });

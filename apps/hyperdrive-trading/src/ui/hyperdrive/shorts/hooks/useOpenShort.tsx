@@ -17,6 +17,7 @@ import { Address, Hash, parseUnits } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
+  chainId: number;
   hyperdriveAddress: Address;
   amountBondShorts: bigint | undefined;
   maxDeposit: bigint | undefined;
@@ -37,6 +38,7 @@ interface UseOpenShortResult {
 
 export function useOpenShort({
   hyperdriveAddress,
+  chainId,
   amountBondShorts,
   maxDeposit,
   minVaultSharePrice,
@@ -47,7 +49,10 @@ export function useOpenShort({
   onSubmitted,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive({
+    chainId,
+    address: hyperdriveAddress,
+  });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const appConfig = useAppConfig();
@@ -85,7 +90,7 @@ export function useOpenShort({
         ? maxDeposit
         : await prepareSharesIn({
             appConfig,
-            hyperdriveAddress,
+            chainId,
             readHyperdrive: readWriteHyperdrive,
             sharesAmount: maxDeposit,
           });
@@ -102,7 +107,11 @@ export function useOpenShort({
         onTransactionCompleted: (txHash: `0x${string}`) => {
           queryClient.invalidateQueries();
           toast.success(
-            <TransactionToast message="Short opened" txHash={txHash} />,
+            <TransactionToast
+              chainId={chainId}
+              message="Short opened"
+              txHash={txHash}
+            />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
           toastWarpcast();
@@ -111,7 +120,11 @@ export function useOpenShort({
       });
 
       toast.loading(
-        <TransactionToast message="Opening Short" txHash={hash} />,
+        <TransactionToast
+          chainId={chainId}
+          message="Opening Short"
+          txHash={hash}
+        />,
         { id: hash },
       );
       onSubmitted?.(hash);

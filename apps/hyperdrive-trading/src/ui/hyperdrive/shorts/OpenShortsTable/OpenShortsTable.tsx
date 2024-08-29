@@ -20,12 +20,16 @@ export function OpenShortsTable({
 }): ReactElement {
   const { address: account } = useAccount();
   const { switchChain } = useSwitchChain();
-  const chainId = useChainId();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const connectedChainId = useChainId();
+  const { marketState } = useMarketState({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { openShorts, openShortsStatus } = useOpenShorts({
     account,
     hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
   });
   if (!account) {
     return (
@@ -38,7 +42,7 @@ export function OpenShortsTable({
       </div>
     );
   }
-  if (chainId !== hyperdrive.chainId) {
+  if (connectedChainId !== hyperdrive.chainId) {
     return (
       <div className="my-28">
         <NonIdealState

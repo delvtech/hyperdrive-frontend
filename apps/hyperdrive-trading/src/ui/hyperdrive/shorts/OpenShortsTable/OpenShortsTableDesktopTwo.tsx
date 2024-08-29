@@ -4,6 +4,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   findBaseToken,
+  findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import {
@@ -41,12 +42,15 @@ export function OpenShortsContainer(): ReactElement {
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
         const baseToken = findBaseToken({
+          hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
-        const sharesToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-        );
+        const sharesToken = findToken({
+          chainId: hyperdrive.chainId,
+          tokens: appConfig.tokens,
+          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+        });
         // Ensure this hyperdrive pool has open positions before rendering.
         if (
           openShortPositionsStatus === "success" &&
@@ -101,9 +105,13 @@ export function OpenShortsTableDesktopTwo({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { openShorts, openShortsStatus } = useOpenShorts({
     account,
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
   const tableInstance = useReactTable({
@@ -281,6 +289,7 @@ function getColumns({
   appConfig: AppConfig;
 }) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
@@ -329,7 +338,12 @@ function getColumns({
       id: "value",
       header: `Status`,
       cell: ({ row }) => {
-        return <StatusCell maturity={row.original.maturity} />;
+        return (
+          <StatusCell
+            chainId={hyperdrive.chainId}
+            maturity={row.original.maturity}
+          />
+        );
       },
     }),
     columnHelper.display({

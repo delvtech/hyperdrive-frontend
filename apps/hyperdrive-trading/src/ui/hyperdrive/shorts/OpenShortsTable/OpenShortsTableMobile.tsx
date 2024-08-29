@@ -157,13 +157,16 @@ function formatOpenShortMobileColumnData(
   appConfig: AppConfig,
 ) {
   const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
   return [
     {
       name: "Matures On",
-      value: <MaturesOnCell maturity={openShort.maturity} />,
+      value: (
+        <MaturesOnCell hyperdrive={hyperdrive} maturity={openShort.maturity} />
+      ),
     },
     {
       name: `Size (${baseToken.symbol})`,

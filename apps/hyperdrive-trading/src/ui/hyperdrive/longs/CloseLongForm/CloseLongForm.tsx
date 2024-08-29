@@ -26,7 +26,7 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -41,11 +41,11 @@ export function CloseLongForm({
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
-  const chainId = useChainId();
 
   const defaultItems: TokenConfig[] = [];
   const baseToken = findBaseToken({
     hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
     appConfig,
   });
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
@@ -53,6 +53,7 @@ export function CloseLongForm({
   }
 
   const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     tokens: appConfig.tokens,
   });
@@ -98,6 +99,7 @@ export function CloseLongForm({
     previewCloseLongStatus,
     previewCloseLongError,
   } = usePreviewCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
@@ -114,6 +116,7 @@ export function CloseLongForm({
     });
 
   const { closeLong, closeLongStatus } = useCloseLong({
+    chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
@@ -122,7 +125,7 @@ export function CloseLongForm({
     asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     enabled: previewCloseLongStatus === "success",
     onSubmitted: () => {
-      (window as any)[`${long.assetId}`].close();
+      (document.getElementById(`${long.assetId}`) as HTMLDialogElement).close();
     },
     onExecuted: () => {
       setAmount("");
@@ -200,7 +203,7 @@ export function CloseLongForm({
               disabled
               bottomLeftElement={
                 // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-                !isTestnetChain(chainId) ? (
+                !isTestnetChain(hyperdrive.chainId) ? (
                   <label className="text-sm text-neutral-content">
                     {`$${formatBalance({
                       balance:

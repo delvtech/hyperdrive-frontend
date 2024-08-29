@@ -17,7 +17,10 @@ interface PositionsTableProps {
 export function MarketDetailsBody({
   hyperdrive,
 }: PositionsTableProps): ReactElement {
-  const { marketState } = useMarketState(hyperdrive.address);
+  const { marketState } = useMarketState({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const { address: account } = useAccount();
   return (
     <div className="flex flex-col gap-12 xl:w-[1200px]">
