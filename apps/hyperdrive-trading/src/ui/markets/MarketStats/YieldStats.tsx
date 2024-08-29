@@ -10,10 +10,9 @@ import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
-import { ShortRateStat } from "src/ui/markets/MarketStats/ShortRateStat";
+import { VariableRateStat } from "src/ui/markets/MarketStats/VariableRateStat";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
-import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 
 export function YieldStats({
   hyperdrive,
@@ -33,18 +32,7 @@ export function YieldStats({
   return (
     <Well transparent block>
       <div className="space-y-8">
-        <div className="flex justify-between">
-          <h5 className="flex text-neutral-content">Yield</h5>
-          <div className="font-dmMono text-neutral-content">
-            <YieldSourceRateBadge
-              chainId={hyperdrive.chainId}
-              hyperdriveAddress={hyperdrive.address}
-              labelRenderer={(vaultRate) =>
-                `${yieldSource?.shortName} @ ${vaultRate.formatted || 0} APY`
-              }
-            />
-          </div>
-        </div>
+        <h5 className="flex text-neutral-content">Yield</h5>
         <div className="flex flex-wrap gap-8 lg:gap-16">
           <Animated isActive={position === "longs"}>
             <FixedRateStat
@@ -53,7 +41,7 @@ export function YieldStats({
             />
           </Animated>
           <Animated isActive={position === "shorts"}>
-            <ShortRateStat
+            <VariableRateStat
               isActive={position === "shorts"}
               hyperdrive={hyperdrive}
             />
