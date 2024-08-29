@@ -8,11 +8,10 @@ import {
 } from "@rainbow-me/rainbowkit/wallets";
 import { cloudChain } from "src/chains/cloudChain";
 import { gnosisFork } from "src/chains/gnosisFork";
-import { b3Sepolia } from "src/network/b3Sepolia";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Chain, http, Transport } from "viem";
-import { baseSepolia, foundry, mainnet, sepolia } from "wagmi/chains";
+import { foundry, gnosis, mainnet, sepolia } from "wagmi/chains";
 
 const {
   VITE_LOCALHOST_NODE_RPC_URL,
@@ -20,11 +19,10 @@ const {
   VITE_CUSTOM_CHAIN_CHAIN_ID,
   VITE_WALLET_CONNECT_PROJECT_ID,
   VITE_SEPOLIA_RPC_URL,
-  VITE_BASE_SEPOLIA_RPC_URL,
-  VITE_B3_SEPOLIA_RPC_URL,
   VITE_MAINNET_RPC_URL,
   VITE_GNOSIS_FORK_NODE_RPC_URL,
   VITE_GNOSIS_FORK_CHAIN_ID,
+  VITE_GNOSIS_NODE_RPC_URL,
 } = import.meta.env;
 
 export const chains: Chain[] = [];
@@ -72,18 +70,6 @@ if (VITE_SEPOLIA_RPC_URL) {
   }
 }
 
-// Base Sepolia
-if (VITE_BASE_SEPOLIA_RPC_URL) {
-  chains.push(baseSepolia);
-  transports[baseSepolia.id] = http(VITE_BASE_SEPOLIA_RPC_URL);
-}
-
-// B3 Sepolia
-if (VITE_B3_SEPOLIA_RPC_URL) {
-  chains.push(b3Sepolia);
-  transports[b3Sepolia.id] = http(VITE_B3_SEPOLIA_RPC_URL);
-}
-
 if (VITE_MAINNET_RPC_URL) {
   chains.push(mainnet);
   transports[mainnet.id] = http(VITE_MAINNET_RPC_URL);
@@ -93,6 +79,11 @@ if (VITE_MAINNET_RPC_URL) {
   if (capsuleWallet && !customWallets.includes(capsuleWallet)) {
     customWallets.push(capsuleWallet);
   }
+}
+// Gnosis
+if (VITE_GNOSIS_NODE_RPC_URL) {
+  chains.push(gnosis);
+  transports[gnosis.id] = http(VITE_GNOSIS_NODE_RPC_URL);
 }
 
 const wallets: WalletList = [
