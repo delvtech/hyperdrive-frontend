@@ -26,6 +26,7 @@ export function RevokeAllowanceModalButton({
     address: account,
     // Fetches the account's eth balance by setting `token` to undefined
     token: token.address === ETH_MAGIC_NUMBER ? undefined : token.address,
+    chainId: token.chainId,
   });
   const [selectedOption, setSelectedOption] = useState<"All" | "Custom">("All");
   const {

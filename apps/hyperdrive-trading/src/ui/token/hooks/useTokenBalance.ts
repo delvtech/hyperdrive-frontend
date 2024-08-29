@@ -39,6 +39,7 @@ export function useTokenBalance({
     query: {
       enabled: isEth,
     },
+    chainId: tokenChainId,
   });
 
   const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
