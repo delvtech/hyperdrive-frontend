@@ -26,7 +26,11 @@ export async function getReadWriteHyperdrive({
   appConfig: AppConfig;
 }): Promise<ReadWriteHyperdrive> {
   let hyperdrive: ReadWriteHyperdrive;
-
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: publicClient.chain?.id as number,
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
   const options: ReadWriteHyperdriveOptions = {
     address: hyperdriveAddress,
     publicClient,
@@ -37,13 +41,7 @@ export async function getReadWriteHyperdrive({
 
   try {
     // steth
-
-    const hyperdriveConfig = findHyperdriveConfig({
-      hyperdriveChainId: publicClient.chain?.id as number,
-      hyperdriveAddress,
-      hyperdrives: appConfig.hyperdrives,
-    });
-    if (hyperdriveConfig.yieldSource === "lidoSteth") {
+    if (hyperdriveConfig.kind === "StETHHyperdrive") {
       hyperdrive = new ReadWriteStEthHyperdrive(options);
 
       // <= v1.0.14
@@ -55,16 +53,13 @@ export async function getReadWriteHyperdrive({
     }
 
     // morpho
-    if (
-      ["morphoSusdeDai", "morphoUsdeDai"].includes(hyperdriveConfig.yieldSource)
-    ) {
+    if (hyperdriveConfig.kind === "MorphoBlueHyperdrive") {
       hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
 
       return hyperdrive;
     }
 
     // base
-
     hyperdrive = new ReadWriteHyperdrive(options);
 
     // <= v1.0.14
