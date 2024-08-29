@@ -8,7 +8,7 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadLsEth } from "src/token/lseth/ReadLsEth";
 
 export class ReadLsEthHyperdrive extends readLsEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -30,19 +30,13 @@ export interface ReadLsEthHyperdriveMixin {
  * @internal
  */
 export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadLsEthHyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
-      const {
-        debugName = "lsETH Hyperdrive",
-        address,
-        contractFactory,
-        network,
-        cache,
-        namespace,
-      } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, debugName, namespace });
+      const { debugName = "lsETH Hyperdrive", ...restOptions } =
+        options as ReadHyperdriveOptions;
+      super({ debugName, ...restOptions });
     }
 
     async getBaseToken(): Promise<ReadEth> {

@@ -55,14 +55,13 @@ export class ReadHyperdrive extends ReadModel {
   constructor({
     debugName = "Hyperdrive",
     address,
-    contractFactory,
-    network,
     cache,
     namespace,
+    ...modelOptions
   }: ReadHyperdriveOptions) {
-    super({ contractFactory, debugName, network });
+    super({ debugName, ...modelOptions });
     this.address = address;
-    this.contract = contractFactory({
+    this.contract = this.contractFactory({
       abi: hyperdriveAbi,
       address,
       cache,

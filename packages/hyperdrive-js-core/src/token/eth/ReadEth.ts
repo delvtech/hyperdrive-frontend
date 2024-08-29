@@ -8,8 +8,8 @@ export class ReadEth extends ReadModel implements ReadToken {
   static address = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
   address = ReadEth.address;
 
-  constructor({ debugName = "ETH", contractFactory, network }: ReadEthOptions) {
-    super({ contractFactory, debugName, network });
+  constructor({ debugName = "ETH", ...restOptions }: ReadEthOptions) {
+    super({ debugName, ...restOptions });
   }
 
   async getName(): Promise<string> {

@@ -43,13 +43,12 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const {
         debugName = "rETH Hyperdrive",
         address,
-        contractFactory,
-        network,
         cache,
         namespace,
+        ...modelOptions
       } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, debugName, namespace });
-      this.rEthHyperdriveContract = contractFactory({
+      super({ debugName, address, cache, namespace, ...modelOptions });
+      this.rEthHyperdriveContract = this.contractFactory({
         abi: rEthHyperdriveAbi,
         address,
         cache,
