@@ -14,7 +14,9 @@ export function findToken({
   tokens: TokenConfig[];
 }): TokenConfig | undefined {
   const token = tokens.find(
-    (token) => token.address == tokenAddress && token.chainId === chainId,
+    (token) =>
+      token.address.toLowerCase() == tokenAddress.toLowerCase() &&
+      token.chainId === chainId,
   );
 
   return token;

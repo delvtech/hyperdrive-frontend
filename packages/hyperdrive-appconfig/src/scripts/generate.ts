@@ -35,8 +35,8 @@ const chainConfigs: ChainConfig[] = [
   {
     chain: gnosisFork,
     rpcUrl: process.env.GNOSIS_FORK_NODE_RPC_URL as string,
-    registryAddress: "0xac43d75fb09429a8c7585f179075b440ee460120",
-    forkBlock: 35723322n,
+    registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+    forkBlock: 35730200n,
   },
   // {
   //   chain: gnosis,
