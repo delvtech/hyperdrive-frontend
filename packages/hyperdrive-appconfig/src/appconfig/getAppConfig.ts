@@ -27,12 +27,11 @@ type HyperdriveConfigResolver = (
   hyperdrive: ReadHyperdrive,
   publicClient: PublicClient,
   /**
-   * For forked chains, this is the block at which the fork occurred. Often,
-   * forked chains can't do full archival requests for events from "earliest",
-   * (ie: grabbing the Initialize event).  This allows us to clamp requests to
-   * the earliest known block.
+   * Block number to clamp the beginning of event requests to. This is useful
+   * for L2s that have too many blocks where the default "earliest" blockTag
+   * would timeout.
    */
-  forkBlock?: bigint,
+  earliestBlock?: bigint,
 ) => Promise<{
   hyperdriveConfig: HyperdriveConfig;
   sharesTokenConfig?: TokenConfig;
@@ -43,10 +42,10 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
-  ChainlinkHyperdrive: async (hyperdrive, publicClient, forkBlock) =>
+  ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) =>
     getGnosisWstethHyperdrive({
       hyperdrive,
-      forkBlock,
+      earliestBlock,
     }),
   EETHHyperdrive: async (hyperdrive) =>
     getCustomHyperdrive({
@@ -103,7 +102,7 @@ const hyperdriveKindResolvers: Record<
 
   StETHHyperdrive: (hyperdrive) => getStethHyperdrive({ hyperdrive }),
 
-  ERC4626Hyperdrive: async (hyperdrive, publicClient, forkBlock) => {
+  ERC4626Hyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
     const readSharesToken = await hyperdrive.getSharesToken();
     const sharesTokenSymbol = await readSharesToken.getSymbol();
     const hyperdriveName = await publicClient.readContract({
@@ -141,7 +140,7 @@ const hyperdriveKindResolvers: Record<
     if (hyperdriveName.includes("sxDAI Hyperdrive")) {
       return getCustomHyperdrive({
         hyperdrive,
-        forkBlock,
+        earliestBlock,
         yieldSource: "sxDai",
         depositOptions: {
           isBaseTokenDepositEnabled: true,
@@ -219,11 +218,11 @@ const hyperdriveKindResolvers: Record<
 export async function getAppConfig({
   registryAddress,
   publicClient,
-  forkBlock,
+  earliestBlock,
 }: {
   registryAddress: Address;
   publicClient: PublicClient;
-  forkBlock?: bigint;
+  earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
   const chainId = publicClient.chain?.id as number;
@@ -246,7 +245,7 @@ export async function getAppConfig({
       }
 
       const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
-        await hyperdriveResolver(hyperdrive, publicClient, forkBlock);
+        await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
 
       console.table({
         chainId: publicClient.chain?.id,

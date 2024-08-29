@@ -8,13 +8,13 @@ import { gnosisFork } from "src/chains/gnosisFork";
 import { protocols } from "src/protocols";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
-import { mainnet, sepolia } from "viem/chains";
+import { gnosis, mainnet, sepolia } from "viem/chains";
 
 interface ChainConfig {
   chain: Chain;
   rpcUrl: string;
   registryAddress: Address;
-  forkBlock?: bigint;
+  earliestBlock?: bigint;
 }
 const chainConfigs: ChainConfig[] = [
   {
@@ -36,13 +36,14 @@ const chainConfigs: ChainConfig[] = [
     chain: gnosisFork,
     rpcUrl: process.env.GNOSIS_FORK_NODE_RPC_URL as string,
     registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
-    forkBlock: 35730200n,
+    earliestBlock: 35730200n,
   },
-  // {
-  //   chain: gnosis,
-  //   rpcUrl: process.env.GNOSIS_NODE_RPC_URL as string,
-  //   registryAddress: "", // TODO: add registry for gnosis chain
-  // },
+  {
+    chain: gnosis,
+    rpcUrl: process.env.GNOSIS_NODE_RPC_URL as string,
+    registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+    earliestBlock: 35732205n,
+  },
 
   // Add more chains here
 ];
@@ -58,7 +59,7 @@ const combinedAppConfig: AppConfig = {
   chains,
 };
 
-for (const { chain, rpcUrl, registryAddress, forkBlock } of chainConfigs) {
+for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   const publicClient = createPublicClient({
     chain,
     transport: http(rpcUrl),
@@ -68,7 +69,7 @@ for (const { chain, rpcUrl, registryAddress, forkBlock } of chainConfigs) {
   const appConfig = await getAppConfig({
     registryAddress,
     publicClient,
-    forkBlock,
+    earliestBlock,
   });
 
   // Merge the current appConfig with the combinedAppConfig

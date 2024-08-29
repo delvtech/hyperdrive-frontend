@@ -8,7 +8,7 @@ type DepositOptions = HyperdriveConfig["depositOptions"];
 type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
 
 interface GetHyperdriveConfigParams {
-  forkBlock?: bigint;
+  earliestBlock?: bigint;
   hyperdrive: ReadHyperdrive;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
@@ -22,7 +22,7 @@ interface GetHyperdriveConfigParams {
 
 export async function getCustomHyperdrive({
   hyperdrive,
-  forkBlock,
+  earliestBlock,
   baseTokenIconUrl,
   yieldSource,
   sharesTokenIconUrl,
@@ -61,7 +61,7 @@ export async function getCustomHyperdrive({
 
   // safe to cast here because we know the pool was initialized
   const initializationBlock = (
-    await hyperdrive.getInitializationBlock({ fromBlock: forkBlock })
+    await hyperdrive.getInitializationBlock({ fromBlock: earliestBlock })
   ).blockNumber as bigint;
 
   const hyperdriveConfig: HyperdriveConfig = {

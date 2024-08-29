@@ -8,10 +8,10 @@ import { yieldSources } from "src/yieldSources";
 import { mainnet } from "viem/chains";
 export async function getGnosisWstethHyperdrive({
   hyperdrive,
-  forkBlock,
+  earliestBlock,
 }: {
   hyperdrive: ReadHyperdrive;
-  forkBlock?: bigint;
+  earliestBlock?: bigint;
 }): Promise<{
   baseTokenConfig: TokenConfig;
   sharesTokenConfig: TokenConfig;
@@ -23,7 +23,7 @@ export async function getGnosisWstethHyperdrive({
 
   // safe to cast here because we know the pool was initialized
   const initializationBlock = (
-    await hyperdrive.getInitializationBlock({ fromBlock: forkBlock })
+    await hyperdrive.getInitializationBlock({ fromBlock: earliestBlock })
   ).blockNumber as bigint;
 
   const sharesToken = await hyperdrive.getSharesToken();
