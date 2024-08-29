@@ -176,8 +176,11 @@ export class ReadHyperdrive extends ReadModel {
     );
   }
 
-  async getInitializationBlock(): Promise<Block> {
-    const events = await this.contract.getEvents("Initialize");
+  async getInitializationBlock(options?: {
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }): Promise<Block> {
+    const events = await this.contract.getEvents("Initialize", options);
 
     if (!events.length || events[0].blockNumber === undefined) {
       throw new HyperdriveSdkError(

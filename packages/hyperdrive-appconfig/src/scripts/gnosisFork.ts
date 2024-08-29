@@ -12,8 +12,9 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0xfbabc73b6241df6453d88ac13b556ba643f9a6ad",
+  registryAddress: "0xac43d75fb09429a8c7585f179075b440ee460120",
   publicClient,
+  forkBlock: 35723322n,
 });
 
 writeAppConfigToFile({
