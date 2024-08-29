@@ -36,7 +36,6 @@ export async function getReadHyperdrive({
     publicClient,
     cache: sdkCache,
     namespace: publicClient.chain?.id.toString(),
-    earliestBlock: appConfig.chains[hyperdriveConfig.chainId]?.earliestBlock,
   };
 
   try {

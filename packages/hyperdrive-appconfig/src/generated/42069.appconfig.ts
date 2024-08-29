@@ -2,26 +2,6 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const cloudchainAppConfig: AppConfig = {
   tokens: [
     {
-      address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      chainId: 42069,
-      name: "Ether",
-      symbol: "ETH",
-      decimals: 18,
-      places: 4,
-      tags: [],
-      iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
-    },
-    {
-      chainId: 42069,
-      address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-      decimals: 18,
-      places: 4,
-      name: "Liquid staked Ether 2.0",
-      symbol: "stETH",
-      iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
-      tags: ["liquidStakingToken"],
-    },
-    {
       chainId: 42069,
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
@@ -31,6 +11,26 @@ export const cloudchainAppConfig: AppConfig = {
       iconUrl:
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      decimals: 6,
+      places: 2,
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
+      address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      decimals: 18,
+      places: 4,
+      name: "Ethereum",
+      symbol: "ETH",
+      iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+      tags: [],
     },
     {
       chainId: 42069,
@@ -45,13 +45,14 @@ export const cloudchainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      decimals: 6,
-      places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
+      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
+      decimals: 18,
+      places: 4,
+      name: "ether.fi ETH",
+      symbol: "eETH",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
+      tags: ["liquidStakingToken"],
     },
     {
       chainId: 42069,
@@ -66,13 +67,12 @@ export const cloudchainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
+      address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
       decimals: 18,
       places: 4,
-      name: "ether.fi ETH",
-      symbol: "eETH",
-      iconUrl:
-        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
+      name: "Liquid staked Ether 2.0",
+      symbol: "stETH",
+      iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
       tags: ["liquidStakingToken"],
     },
     {
@@ -547,7 +547,6 @@ export const cloudchainAppConfig: AppConfig = {
     },
     "42070": {
       id: 42070,
-      earliestBlock: 35730200n,
       name: "Gnosis Fork",
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI0OTlfNzU1KSI+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUuNDgwMjEgNC45NTkwMUMxMS41NzQyIC0wLjg0OTg5OCAyMS4yMjQ5IC0wLjYyMTgxNyAyNy4wMzM4IDUuNDcyMTlDMjcuNDExNSA1Ljg3MTMzIDI3Ljc3NSA2LjI4NDczIDI4LjEwMjkgNi43MTk1MUwxNi4wMDA0IDE4LjgyOTFMMy44OTc5MSA2LjcxOTUxQzQuMjMyOSA2LjI4NDczIDQuNTg5MjggNS44NzEzMyA0Ljk2NzAzIDUuNDcyMTlDNS4xMzA5NyA1LjMwMTEzIDUuMzAyMDMgNS4xMzAwNyA1LjQ4MDIxIDQuOTU5MDFaTTI1LjM4MDIgNi42MjY4NUMyMi44ODU2IDQuMTE3OTcgMTkuNTY0MSAyLjc0MjM2IDE2LjAwMDQgMi43NDIzNkMxMi40MzY3IDIuNzQyMzYgOS4xMTUyNCA0LjExNzk3IDYuNjIwNjEgNi42MjY4NUwxNi4wMDA0IDE2LjAwNjZMMjUuMzgwMiA2LjYyNjg1Wk0yOS4wNTEgOC4wOTUxM0wyNi41OTIgMTAuNTU0MUMyOC41NzM0IDEyLjkyNzYgMjguMjU5OCAxNi40NjI4IDI1Ljg4NjQgMTguNDQ0M0MyMy44MDUxIDIwLjE4MzQgMjAuNzgzMSAyMC4xODM0IDE4LjcwMTggMTguNDQ0M0wxNi4wMDA1IDIxLjE0NTZMMTMuMzA2MyAxOC40NTE0QzEwLjkzMjkgMjAuNDMyOCA3LjM5NzY0IDIwLjExOTIgNS40MTYxOSAxNy43NDU4QzMuNjc3MDggMTUuNjY0NSAzLjY3NzA4IDEyLjY0MjUgNS40MTYxOSAxMC41NjEyTDQuMTU0NjIgOS4yOTk2OEwyLjk1NzIxIDguMDk1MTNDMS41MTAzMiAxMC40NzU3IDAuNzQ3NjgxIDEzLjIxMjcgMC43NDc2ODEgMTUuOTk5NUMwLjc0NzY4MSAyNC40MjQyIDcuNTc1ODIgMzEuMjUyNCAxNi4wMDA1IDMxLjI1MjRDMjQuNDI1MiAzMS4yNTI0IDMxLjI1MzQgMjQuNDI0MiAzMS4yNTM0IDE1Ljk5OTVDMzEuMjYwNSAxMy4yMTI3IDMwLjQ5MDcgMTAuNDc1NyAyOS4wNTEgOC4wOTUxM1pNMjUuNDIzMiAxMS43MjNDMjUuOTU3OCAxMi40MTQ0IDI2LjI1IDEzLjI2OTcgMjYuMjUgMTQuMTQ2NEMyNi4yNSAxNS4wMjMxIDI1Ljk1NzggMTUuODc4NCAyNS40MjMyIDE2LjU2OTdDMjQuMDgzMyAxOC4zMDE3IDIxLjU5NTggMTguNjIyNSAxOS44NjM4IDE3LjI4MjVMMjUuNDIzMiAxMS43MjNaTTEyLjEzNzQgMTcuMjg5NkMxMS40NDYgMTcuODI0MiAxMC41OTA3IDE4LjExNjQgOS43MTQwMyAxOC4xMTY0QzguODM3MzUgMTguMTE2NCA3Ljk4OTE4IDE3LjgyNDIgNy4yOTA2OCAxNy4yOTY3QzUuNTU4NyAxNS45NTY4IDUuMjM3OTYgMTMuNDYyMSA2LjU3NzkzIDExLjczMDJMMTIuMTM3NCAxNy4yODk2WiIgZmlsbD0iIzNFNjk1NyIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzI0OTlfNzU1Ij4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
