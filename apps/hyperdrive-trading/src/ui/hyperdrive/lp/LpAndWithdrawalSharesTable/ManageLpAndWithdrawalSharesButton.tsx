@@ -29,12 +29,17 @@ export function ManageLpAndWithdrawalSharesButton({
   const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
+    chainId: hyperdrive.chainId,
   });
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
+  const { poolInfo } = usePoolInfo({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
+    chainId: hyperdrive.chainId,
   });
 
   const {
@@ -45,6 +50,7 @@ export function ManageLpAndWithdrawalSharesButton({
     withdrawalSharesIn: balanceOfWithdrawalShares,
     minOutputPerShare: 1n, // TODO: slippage,
     destination: account,
+    chainId: hyperdrive.chainId,
   });
 
   const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
