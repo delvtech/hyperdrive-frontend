@@ -72,6 +72,11 @@ export class ReadFactory extends ReadModel {
       {},
       options,
     );
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getDeployerCoordinatorsInRange",
       {
@@ -106,6 +111,11 @@ export class ReadFactory extends ReadModel {
     options?: ContractReadOptions,
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getInstancesInRange",
       {

@@ -52,6 +52,11 @@ export class ReadRegistry extends ReadModel {
    */
   async getFactoryAddresses(options?: ContractReadOptions): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfFactories", {}, options);
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getFactoriesInRange",
       {
@@ -127,6 +132,11 @@ export class ReadRegistry extends ReadModel {
     options?: ContractReadOptions,
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getInstancesInRange",
       {
