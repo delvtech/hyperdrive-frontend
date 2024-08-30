@@ -12,12 +12,6 @@ export {
   type MetaMorphoSnippetsABI,
 } from "src/hyperdrive/metamorpho/abi";
 
-// reth
-export {
-  rEthHyperdriveAbi,
-  type REthHyperdriveAbi,
-} from "src/hyperdrive/reth/abi";
-
 // pool
 export type { PoolConfig, PoolInfo } from "src/pool/types";
 
