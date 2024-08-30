@@ -3,15 +3,12 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 export function MarketBreadcrumbs({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const appConfig = useAppConfig();
   return (
     <div className="flex flex-1 items-center justify-between">
       <div className="daisy-breadcrumbs md:text-md">
@@ -25,10 +22,7 @@ export function MarketBreadcrumbs({
         </ul>
       </div>
       <a
-        href={makeAddressUrl(
-          hyperdrive.address,
-          hyperdrive.chainId as SupportedChainId,
-        )}
+        href={makeAddressUrl(hyperdrive.address, hyperdrive.chainId)}
         className="daisy-btn daisy-btn-xs flex items-center gap-2 rounded-full"
         target="_blank"
         rel="noreferrer"
