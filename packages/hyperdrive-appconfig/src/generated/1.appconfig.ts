@@ -3,16 +3,6 @@ export const ethereumAppConfig: AppConfig = {
   tokens: [
     {
       chainId: 1,
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      decimals: 6,
-      places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 1,
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
       places: 2,
@@ -39,7 +29,29 @@ export const ethereumAppConfig: AppConfig = {
       places: 4,
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
-      iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yNTYgNTEyQzM5Ny4zODUgNTEyIDUxMiAzOTcuMzg1IDUxMiAyNTZDNTEyIDExNC42MTUgMzk3LjM4NSAwIDI1NiAwQzExNC42MTUgMCAwIDExNC42MTUgMCAyNTZDMCAzOTcuMzg1IDExNC42MTUgNTEyIDI1NiA1MTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTUwLjk4OCAyMzcuODEyTDE0OC4xMjIgMjQyLjIwOUMxMTUuNzk2IDI5MS43OTggMTIzLjAxNiAzNTYuNzQyIDE2NS40OCAzOTguMzQ4QzE5MC40NjEgNDIyLjgyNiAyMjMuMjAyIDQzNS4wNjYgMjU1Ljk0NCA0MzUuMDY5QzI1NS45NDQgNDM1LjA2OSAyNTUuOTQ0IDQzNS4wNjkgMTUwLjk4OCAyMzcuODEyWiIgZmlsbD0iIzAwQTNGRiIvPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0yNTUuOTE0IDI5Ny43NjRMMTUwLjk1OCAyMzcuODEyQzI1NS45MTQgNDM1LjA2OSAyNTUuOTE0IDQzNS4wNjkgMjU1LjkxNCA0MzUuMDY5QzI1NS45MTQgMzkyLjEwOCAyNTUuOTE0IDM0Mi44OCAyNTUuOTE0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTM2MS4wMTIgMjM3LjgxMkwzNjMuODc4IDI0Mi4yMDlDMzk2LjIwNCAyOTEuNzk4IDM4OC45ODQgMzU2Ljc0MiAzNDYuNTIgMzk4LjM0OEMzMjEuNTM5IDQyMi44MjYgMjg4Ljc5OCA0MzUuMDY2IDI1Ni4wNTYgNDM1LjA2OUMyNTYuMDU2IDQzNS4wNjkgMjU2LjA1NiA0MzUuMDY5IDM2MS4wMTIgMjM3LjgxMloiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC4yIiBkPSJNMjU2LjA0NCAyOTcuNzY0TDM2MSAyMzcuODEyQzI1Ni4wNDUgNDM1LjA2OSAyNTYuMDQ0IDQzNS4wNjkgMjU2LjA0NCA0MzUuMDY5QzI1Ni4wNDQgMzkyLjEwOCAyNTYuMDQ0IDM0Mi44OCAyNTYuMDQ0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuMiIgZD0iTTI1Ni4wODMgMTYzLjgzM1YyNjcuMjMzTDM0Ni40OTEgMjE1LjU2N0wyNTYuMDgzIDE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTI1Ni4wNTYgMTYzLjgzM0wxNjUuNTgzIDIxNS41NjVMMjU2LjA1NiAyNjcuMjMzVjE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIGQ9Ik0yNTYuMDU2IDc2Ljg3NUwxNjUuNTgzIDIxNS41OTlMMjU2LjA1NiAxNjMuNzIyVjc2Ljg3NVoiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC42IiBkPSJNMjU2LjA4MyAxNjMuNzA2TDM0Ni41NiAyMTUuNTg1TDI1Ni4wODMgNzYuNzkxN1YxNjMuNzA2WiIgZmlsbD0iIzAwQTNGRiIvPgo8L3N2Zz4K",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 1,
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      decimals: 6,
+      places: 2,
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 1,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
       tags: ["liquidStakingToken"],
     },
     {
@@ -62,17 +74,6 @@ export const ethereumAppConfig: AppConfig = {
       symbol: "eETH",
       iconUrl:
         "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 1,
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      decimals: 18,
-      places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
       tags: ["liquidStakingToken"],
     },
     {
