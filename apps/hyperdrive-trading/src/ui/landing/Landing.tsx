@@ -10,6 +10,7 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -89,7 +90,12 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const isLpApyNew = lpApyStatus !== "loading" && lpApy === undefined;
+
+  // if the pool was deployed less than one historical period ago, it's new.
+  const isYoungerThanOneDay = useIsNewPool({ hyperdrive });
+
+  const isLpApyNew =
+    isYoungerThanOneDay || (lpApyStatus !== "loading" && lpApy === undefined);
 
   // Display TVL as base value on testnet due to lack of reliable fiat pricing.
   // On mainnet and others, use DeFiLlama's fiat price.
@@ -204,6 +210,7 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
           />
           <PoolStat
             label={"Variable APY"}
+            isNew={isLpApyNew}
             isLoading={vaultRateStatus === "loading"}
             value={
               vaultRate ? (

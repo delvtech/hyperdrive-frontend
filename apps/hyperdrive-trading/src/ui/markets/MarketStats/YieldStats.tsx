@@ -1,4 +1,3 @@
-import { SparklesIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
@@ -8,6 +7,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { FixedRateStat } from "src/ui/markets/MarketStats/FixedRateStat";
 import { VariableRateStat } from "src/ui/markets/MarketStats/VariableRateStat";
@@ -28,6 +28,8 @@ export function YieldStats({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const isYoungerThanHistoricalPeriod = useIsNewPool({ hyperdrive });
 
   return (
     <Well transparent block>
@@ -61,14 +63,8 @@ export function YieldStats({
                         "gradient-text": position === "lp",
                       })}
                     >
-                      {lpApy === undefined ? (
-                        <span className="flex flex-row">
-                          <SparklesIcon
-                            width={24}
-                            className="fill-base-content stroke-none"
-                          />
-                          New
-                        </span>
+                      {lpApy === undefined || isYoungerThanHistoricalPeriod ? (
+                        <span className="flex flex-row">✨New✨</span>
                       ) : (
                         `${
                           (lpApy * 100).toFixed(2) === "-0.00"

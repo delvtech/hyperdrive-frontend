@@ -1,6 +1,5 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
@@ -21,6 +20,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -214,6 +214,7 @@ export function AddLiquidityForm({
     status: addLiquidityPreviewStatus,
     previewAddLiquidityError,
   } = usePreviewAddLiquidity(addLiquidityParams);
+  const isNewPool = useIsNewPool({ hyperdrive });
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     chainId: hyperdrive.chainId,
@@ -356,14 +357,8 @@ export function AddLiquidityForm({
           <PrimaryStat
             label="LP APY"
             value={
-              lpApy == undefined ? (
-                <div className="flex gap-2">
-                  <SparklesIcon
-                    width={18}
-                    className="fill-primary stroke-none"
-                  />
-                  New
-                </div>
+              isNewPool || lpApy == undefined ? (
+                <div className="flex gap-2">✨New✨</div>
               ) : (
                 `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
               )
