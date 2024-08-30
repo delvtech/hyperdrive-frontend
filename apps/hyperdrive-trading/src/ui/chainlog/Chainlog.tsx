@@ -17,8 +17,8 @@ export function Chainlog(): ReactElement {
   const { tab = "pools", version } = useSearch({ from: "/chainlog" });
 
   return (
-    <div className="flex justify-center">
-      <div className="mx-[4vw] w-full max-w-screen-xl">
+    <div className="flex w-full justify-center">
+      <div className="mx-[4vw] w-full">
         {/* Header */}
         <div className="mb-12 max-w-4xl text-center lg:text-left">
           <h1 className="gradient-text mb-4 text-h2 font-bold">Chainlog</h1>

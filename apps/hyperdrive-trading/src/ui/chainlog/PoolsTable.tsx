@@ -13,6 +13,7 @@ import { Status, decodeInstanceData } from "src/registry/data";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
+import { ChainCell } from "src/ui/chainlog/ChainCell";
 import { PausedCell } from "src/ui/chainlog/PausedCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
 import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
@@ -117,6 +118,11 @@ const poolCols = [
         {getValue()}
       </Link>
     ),
+  }),
+  poolColHelper.accessor((row) => row.chainId, {
+    id: "chain",
+    header: "Chain",
+    cell: ({ getValue }) => <ChainCell chainId={getValue()} />,
   }),
   poolColHelper.accessor((row) => row.address, {
     header: "Address",
