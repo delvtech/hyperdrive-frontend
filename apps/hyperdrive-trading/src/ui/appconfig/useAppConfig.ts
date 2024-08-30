@@ -1,6 +1,6 @@
 import { AppConfig, appConfig } from "@hyperdrive/appconfig";
 import { useMemo } from "react";
-import { isTestnetChain } from "src/chains/isTestnetChain";
+import { isMainnetChain } from "src/chains/isMainnetChain";
 import { useChainId } from "wagmi";
 
 export function useAppConfig(): AppConfig {
@@ -24,24 +24,24 @@ export function useAppConfig(): AppConfig {
     // registries
     for (const [chainIdString, registry] of Object.entries(registries)) {
       const chainId = +chainIdString;
-      if (isTestnetChain(chainId)) {
-        testnetConfig.registries[chainId] = registry;
-      } else {
+      if (isMainnetChain(chainId)) {
         mainnetConfig.registries[chainId] = registry;
+      } else {
+        testnetConfig.registries[chainId] = registry;
       }
     }
 
     // hyperdrives
     for (const hyperdrive of hyperdrives) {
-      if (isTestnetChain(hyperdrive.chainId)) {
-        testnetConfig.hyperdrives.push(hyperdrive);
-      } else {
+      if (isMainnetChain(hyperdrive.chainId)) {
         mainnetConfig.hyperdrives.push(hyperdrive);
+      } else {
+        testnetConfig.hyperdrives.push(hyperdrive);
       }
     }
 
     return { testnetConfig, mainnetConfig };
   }, []);
 
-  return isTestnetChain(chainId) ? testnetConfig : mainnetConfig;
+  return isMainnetChain(chainId) ? mainnetConfig : testnetConfig;
 }
