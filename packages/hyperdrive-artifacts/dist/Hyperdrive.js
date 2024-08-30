@@ -657,32 +657,6 @@ export const Hyperdrive = {
         },
         {
             "type": "function",
-            "name": "setCheckpointRewarder",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setFeeCollector",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
             "name": "setGovernance",
             "inputs": [
                 {
@@ -707,19 +681,6 @@ export const Hyperdrive = {
                     "name": "",
                     "type": "bool",
                     "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setSweepCollector",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
                 }
             ],
             "outputs": [],
@@ -965,19 +926,6 @@ export const Hyperdrive = {
         },
         {
             "type": "event",
-            "name": "CheckpointRewarderUpdated",
-            "inputs": [
-                {
-                    "name": "newCheckpointRewarder",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "CloseLong",
             "inputs": [
                 {
@@ -1180,32 +1128,6 @@ export const Hyperdrive = {
         },
         {
             "type": "event",
-            "name": "FeeCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newFeeCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "GovernanceUpdated",
-            "inputs": [
-                {
-                    "name": "newGovernance",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "Initialize",
             "inputs": [
                 {
@@ -1384,25 +1306,6 @@ export const Hyperdrive = {
         },
         {
             "type": "event",
-            "name": "PauserUpdated",
-            "inputs": [
-                {
-                    "name": "newPauser",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "status",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "RedeemWithdrawalShares",
             "inputs": [
                 {
@@ -1532,19 +1435,6 @@ export const Hyperdrive = {
         },
         {
             "type": "event",
-            "name": "SweepCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newSweepCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "TransferSingle",
             "inputs": [
                 {
@@ -1611,11 +1501,8 @@ export const Hyperdrive = {
         "setApproval(uint256,address,uint256)": "9cd241af",
         "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
         "setApprovalForAll(address,bool)": "a22cb465",
-        "setCheckpointRewarder(address)": "a5107626",
-        "setFeeCollector(address)": "a42dce80",
         "setGovernance(address)": "ab033ea9",
         "setPauser(address,bool)": "7180c8ca",
-        "setSweepCollector(address)": "e4af29d1",
         "sweep(address)": "01681a62",
         "target0()": "21b57d53",
         "target1()": "eac3e799",

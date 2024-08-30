@@ -627,32 +627,6 @@ export const IHyperdriveCore = {
         },
         {
             "type": "function",
-            "name": "setCheckpointRewarder",
-            "inputs": [
-                {
-                    "name": "_checkpointRewarder",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setFeeCollector",
-            "inputs": [
-                {
-                    "name": "_who",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
             "name": "setGovernance",
             "inputs": [
                 {
@@ -669,27 +643,14 @@ export const IHyperdriveCore = {
             "name": "setPauser",
             "inputs": [
                 {
-                    "name": "who",
+                    "name": "",
                     "type": "address",
                     "internalType": "address"
                 },
                 {
-                    "name": "status",
+                    "name": "",
                     "type": "bool",
                     "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setSweepCollector",
-            "inputs": [
-                {
-                    "name": "_who",
-                    "type": "address",
-                    "internalType": "address"
                 }
             ],
             "outputs": [],
@@ -788,11 +749,8 @@ export const IHyperdriveCore = {
         "setApproval(uint256,address,uint256)": "9cd241af",
         "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
         "setApprovalForAll(address,bool)": "a22cb465",
-        "setCheckpointRewarder(address)": "a5107626",
-        "setFeeCollector(address)": "a42dce80",
         "setGovernance(address)": "ab033ea9",
         "setPauser(address,bool)": "7180c8ca",
-        "setSweepCollector(address)": "e4af29d1",
         "sweep(address)": "01681a62",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"

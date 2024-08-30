@@ -2,6 +2,19 @@ export const IAaveHyperdriveRead = {
     abi: [
         {
             "type": "function",
+            "name": "adminController",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "balanceOf",
             "inputs": [
                 {
@@ -639,6 +652,19 @@ export const IAaveHyperdriveRead = {
         },
         {
             "type": "function",
+            "name": "totalShares",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "totalSupply",
             "inputs": [
                 {
@@ -698,6 +724,7 @@ export const IAaveHyperdriveRead = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
+        "adminController()": "950c5d03",
         "balanceOf(uint256,address)": "3656eec2",
         "baseToken()": "c55dae63",
         "convertToBase(uint256)": "b88fed9f",
@@ -719,6 +746,7 @@ export const IAaveHyperdriveRead = {
         "nonces(address)": "7ecebe00",
         "perTokenApprovals(uint256,address,address)": "21ff32a9",
         "symbol(uint256)": "4e41a1fb",
+        "totalShares()": "3a98ef39",
         "totalSupply(uint256)": "bd85b039",
         "vault()": "fbfa77cf",
         "vaultSharesToken()": "0a4e1493",

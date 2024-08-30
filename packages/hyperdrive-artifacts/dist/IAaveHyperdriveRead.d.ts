@@ -1,6 +1,16 @@
 export declare const IAaveHyperdriveRead: {
     abi: readonly [{
         readonly type: "function";
+        readonly name: "adminController";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "balanceOf";
         readonly inputs: readonly [{
             readonly name: "tokenId";
@@ -489,6 +499,16 @@ export declare const IAaveHyperdriveRead: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "totalShares";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "totalSupply";
         readonly inputs: readonly [{
             readonly name: "tokenId";
@@ -534,6 +554,7 @@ export declare const IAaveHyperdriveRead: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "adminController()": "950c5d03";
         readonly "balanceOf(uint256,address)": "3656eec2";
         readonly "baseToken()": "c55dae63";
         readonly "convertToBase(uint256)": "b88fed9f";
@@ -555,6 +576,7 @@ export declare const IAaveHyperdriveRead: {
         readonly "nonces(address)": "7ecebe00";
         readonly "perTokenApprovals(uint256,address,address)": "21ff32a9";
         readonly "symbol(uint256)": "4e41a1fb";
+        readonly "totalShares()": "3a98ef39";
         readonly "totalSupply(uint256)": "bd85b039";
         readonly "vault()": "fbfa77cf";
         readonly "vaultSharesToken()": "0a4e1493";
