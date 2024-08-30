@@ -8,30 +8,18 @@ export function useAppConfig(): AppConfig {
 
   // split config into mainnet and testnet
   const { testnetConfig, mainnetConfig } = useMemo(() => {
-    const { chains, hyperdrives, registries, ...nonSpecific } = appConfig;
+    const { hyperdrives, registries, ...nonSpecific } = appConfig;
 
     const testnetConfig: AppConfig = {
-      chains: {},
-      hyperdrives: [],
       registries: {},
+      hyperdrives: [],
       ...nonSpecific,
     };
     const mainnetConfig: AppConfig = {
-      chains: {},
-      hyperdrives: [],
       registries: {},
+      hyperdrives: [],
       ...nonSpecific,
     };
-
-    // chains
-    for (const [chainIdString, chain] of Object.entries(chains)) {
-      const chainId = +chainIdString;
-      if (isTestnetChain(chainId)) {
-        testnetConfig.chains[chainId] = chain;
-      } else {
-        mainnetConfig.chains[chainId] = chain;
-      }
-    }
 
     // registries
     for (const [chainIdString, registry] of Object.entries(registries)) {
