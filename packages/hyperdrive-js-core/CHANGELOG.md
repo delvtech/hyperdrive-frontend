@@ -6,7 +6,7 @@
 
 - 8e77c04: Add `earliestBlock` option to `ReadModel` and bump `evm-client-viem` version to use `eth_getLogs` rather than `eth_getFilterLogs`.
 - Updated dependencies [4e841fc]
-  - @delvtech/hyperdrive-artifacts@1.0.17
+  - @delvtech/hyperdrive-artifacts@1.0.18
 
 ## 3.0.0
 
