@@ -5,7 +5,6 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
 import { mainnet } from "viem/chains";
-import { useChainId } from "wagmi";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -53,8 +52,6 @@ export function useRewards(
   hyperdrive: HyperdriveConfig,
   positionType: "short" | "lp",
 ): UseRewardsReturn {
-  const chainId = useChainId();
-
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -64,7 +61,11 @@ export function useRewards(
     hyperdriveAddress: hyperdrive.address,
   });
 
-  if (eligibleMarketsForMorphoRewards[chainId]?.includes(hyperdrive.address)) {
+  if (
+    eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
+      hyperdrive.address,
+    )
+  ) {
     const morphoRate = MorphoFlatRatePerYear.mul(
       getWeight(
         hyperdrive.poolConfig,
