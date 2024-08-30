@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
@@ -21,6 +22,7 @@ export function VariableRateStat({
   });
 
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
+  const isNewPool = useIsNewPool({ hyperdrive });
 
   const isLoadingVaultRate =
     vaultRateStatus === "loading" && vaultRate === undefined;
@@ -43,7 +45,13 @@ export function VariableRateStat({
             hyperdriveAddress={hyperdrive.address}
             positionType="short"
           >
-            <span className={rateClassName}>{vaultRate?.formatted || "-"}</span>
+            {vaultRate === undefined || isNewPool ? (
+              <span className="flex flex-row">✨New✨</span>
+            ) : (
+              <span className={rateClassName}>
+                {vaultRate?.formatted || "-"}
+              </span>
+            )}
           </RewardsTooltip>
         )
       }
