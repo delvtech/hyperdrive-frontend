@@ -23,7 +23,6 @@ import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -492,7 +491,7 @@ function EventNameCell({
   name: EventName | string;
   txHash: Hash | undefined;
 }) {
-  const chainId = useChainId() as SupportedChainId;
+  const chainId = useChainId();
   return (
     <a
       href={makeTransactionURL(txHash || "", chainId)}
@@ -506,7 +505,7 @@ function EventNameCell({
 }
 
 function AccountCell({ account }: { account: Address }) {
-  const chainId = useChainId() as SupportedChainId;
+  const chainId = useChainId();
   return (
     <a
       href={makeAddressUrl(account, chainId)}

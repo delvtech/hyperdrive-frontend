@@ -2,7 +2,6 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { SupportedChainId } from "src/chains/supportedChains";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
@@ -25,10 +24,7 @@ export function Chainlog(): ReactElement {
           <p className="text-neutral-content">
             Find the latest information on pools and factories from the{" "}
             <a
-              href={makeAddressUrl(
-                registryAddress,
-                chainId as SupportedChainId,
-              )}
+              href={makeAddressUrl(registryAddress, chainId)}
               target="_blank"
               rel="noreferrer"
               className="daisy-link-hover daisy-link inline-flex items-center gap-1"
