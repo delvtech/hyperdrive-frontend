@@ -8,22 +8,19 @@ export function useAppConfig(): AppConfig {
 
   // split config into mainnet and testnet
   const { testnetConfig, mainnetConfig } = useMemo(() => {
-    const { chains, hyperdrives, registries, tokens, ...nonSpecific } =
-      appConfig;
+    const { chains, hyperdrives, registries, ...nonSpecific } = appConfig;
 
     const testnetConfig: AppConfig = {
-      ...nonSpecific,
       chains: {},
       hyperdrives: [],
       registries: {},
-      tokens: [],
+      ...nonSpecific,
     };
     const mainnetConfig: AppConfig = {
-      ...nonSpecific,
       chains: {},
       hyperdrives: [],
       registries: {},
-      tokens: [],
+      ...nonSpecific,
     };
 
     // chains
@@ -52,15 +49,6 @@ export function useAppConfig(): AppConfig {
         testnetConfig.hyperdrives.push(hyperdrive);
       } else {
         mainnetConfig.hyperdrives.push(hyperdrive);
-      }
-    }
-
-    // tokens
-    for (const token of tokens) {
-      if (isTestnetChain(token.chainId)) {
-        testnetConfig.tokens.push(token);
-      } else {
-        mainnetConfig.tokens.push(token);
       }
     }
 
