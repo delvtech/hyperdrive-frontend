@@ -21,11 +21,11 @@ import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { Address, formatUnits, parseUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
@@ -79,10 +79,10 @@ export function CloseLongForm({
       : hyperdrive.poolConfig.vaultSharesToken,
   });
 
-  const tokenPrices = useTokenFiatPrices([activeWithdrawToken.address]);
-
-  const activeWithdrawTokenPrice =
-    tokenPrices?.[activeWithdrawToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeWithdrawTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeWithdrawToken.address,
+    chainId: activeWithdrawToken.chainId,
+  });
 
   const {
     amount: bondAmount,

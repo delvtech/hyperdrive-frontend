@@ -1,12 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
-import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
-import { sepolia } from "viem/chains";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useAccount } from "wagmi";
 
 export function TotalOpenLongsValue({
@@ -35,8 +35,11 @@ export function TotalOpenLongsValue({
   });
   const chainInfo = appConfig.chains[hyperdrive.chainId];
 
-  const { fiatPrice } = useTokenFiatPrice({ tokenAddress: baseToken.address });
-  const isFiatPriceEnabled = chainInfo.id !== sepolia.id;
+  const { fiatPrice } = useTokenFiatPrice({
+    chainId: baseToken.chainId,
+    tokenAddress: baseToken.address,
+  });
+  const isFiatPriceEnabled = !isTestnetChain(hyperdrive.chainId);
 
   return (
     <div className="flex items-center gap-2">

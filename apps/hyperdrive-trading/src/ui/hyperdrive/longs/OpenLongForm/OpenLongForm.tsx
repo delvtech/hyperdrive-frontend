@@ -27,11 +27,11 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { Address, formatUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
@@ -98,9 +98,10 @@ export function OpenLongForm({
         : hyperdrive.poolConfig.vaultSharesToken,
       tokens: tokenChoices.map((token) => token.tokenConfig),
     });
-  const tokenPrices = useTokenFiatPrices([activeToken.address]);
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeToken.address,
+    chainId: activeToken.chainId,
+  });
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
