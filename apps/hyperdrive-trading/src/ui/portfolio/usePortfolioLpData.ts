@@ -12,56 +12,6 @@ type OpenLpPositionsData = Record<
   { lpShares: bigint; withdrawalShares: bigint }
 >;
 
-// export function usePortfolioLpData(): {
-//   openLpPositions: OpenLpPositionsData | undefined;
-//   openLpPositionStatus: "error" | "success" | "loading";
-// } {
-//   const { address: account } = useAccount();
-//   const publicClient = usePublicClient();
-//   const appConfig = useAppConfig();
-//   const queryEnabled = !!account && !!appConfig && !!publicClient;
-
-//   const {
-//     data: openLpPosition,
-//     status: openLpPositionStatus,
-//     error,
-//   } = useQuery({
-//     queryKey: makeQueryKey("portfolioLp", { account }),
-//     enabled: queryEnabled,
-//     queryFn: queryEnabled
-//       ? async () => {
-//           const result: OpenLpPositionsData = {};
-//           await Promise.all(
-//             appConfig.hyperdrives.map(async (hyperdrive) => {
-//               const readHyperdrive = await getReadHyperdrive({
-//                 appConfig,
-//                 hyperdriveAddress: hyperdrive.address,
-//                 publicClient,
-//               });
-//               // const lpShares = await readHyperdrive.getLpShares({
-//               //   account: account,
-//               // });
-
-//               // // const withdrawalShares = await readHyperdrive.getWithdrawalShares(
-//               // //   {
-//               // //     account: account,
-//               // //   },
-//               // // );
-//               // console.log({ lpShares }, "all");
-//               // result[hyperdrive.address] = { lpShares };
-//             }),
-//           );
-//           return result;
-//         }
-//       : undefined,
-//   });
-//   console.log(error, "error");
-//   return {
-//     openLpPositions: openLpPosition,
-//     openLpPositionStatus,
-//   };
-// }
-
 export function usePortfolioLpData(): {
   openLpPositions: OpenLpPositionsData | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
