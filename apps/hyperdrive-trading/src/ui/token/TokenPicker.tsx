@@ -34,7 +34,10 @@ export function TokenPicker({
           </label>
         ) : undefined}
         <div className="daisy-join-item flex h-12 w-32 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-          <img src={tokens[0].tokenConfig.iconUrl} className="h-5" />{" "}
+          <img
+            src={tokens[0].tokenConfig.iconUrl}
+            className="h-5 rounded-full"
+          />{" "}
           <span className="text-sm font-semibold">
             {tokens[0].tokenConfig.symbol}
           </span>
@@ -67,7 +70,10 @@ export function TokenPicker({
             e.preventDefault();
           }}
         >
-          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5" />{" "}
+          <img
+            src={activeToken?.tokenConfig?.iconUrl}
+            className="h-5 rounded-full"
+          />{" "}
           {activeToken?.tokenConfig?.symbol}
           <ChevronDownIcon className="ml-2 h-3" />
         </button>
@@ -86,7 +92,10 @@ export function TokenPicker({
                   }}
                   className="gap-2"
                 >
-                  <img src={tokenConfig?.iconUrl} className="h-5" />{" "}
+                  <img
+                    src={tokenConfig?.iconUrl}
+                    className="h-5 rounded-full"
+                  />{" "}
                   {tokenConfig?.symbol}
                   <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
                     <span>
