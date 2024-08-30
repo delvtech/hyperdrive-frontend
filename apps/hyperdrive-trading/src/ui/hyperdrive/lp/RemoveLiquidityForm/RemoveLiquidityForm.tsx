@@ -220,7 +220,7 @@ export function RemoveLiquidityForm({
           name="Input LP shares"
           token={
             <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-              <img src={baseToken.iconUrl} className="h-5" />{" "}
+              <img src={baseToken.iconUrl} className="h-5 rounded-full" />{" "}
               <span className="text-sm font-semibold">
                 {baseToken.symbol}-LP
               </span>

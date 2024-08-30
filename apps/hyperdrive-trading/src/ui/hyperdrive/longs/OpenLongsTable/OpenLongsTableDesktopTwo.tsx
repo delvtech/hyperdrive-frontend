@@ -84,7 +84,7 @@ export function OpenLongsContainer(): ReactElement {
                       className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
                       data-tip={baseToken.symbol}
                     >
-                      <img src={baseToken.iconUrl} />
+                      <img src={baseToken.iconUrl} className="rounded-full" />
                     </div>
                   ) : null}
                   {sharesToken &&
@@ -93,7 +93,7 @@ export function OpenLongsContainer(): ReactElement {
                       className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
                       data-tip={sharesToken.symbol}
                     >
-                      <img src={sharesToken.iconUrl} />
+                      <img src={sharesToken.iconUrl} className="rounded-full" />
                     </div>
                   ) : null}
                 </div>

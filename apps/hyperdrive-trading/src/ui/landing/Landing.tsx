@@ -148,7 +148,13 @@ function PoolRow({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:gap-4">
         {/* Left side */}
         <div className="flex items-center gap-6 lg:w-[440px]">
-          <div>
+          <div
+            className={
+              // Set a fixed width so pools with one or two asset icons still
+              // line up
+              "w-16"
+            }
+          >
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1">
