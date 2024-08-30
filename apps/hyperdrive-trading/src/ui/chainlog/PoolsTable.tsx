@@ -212,7 +212,7 @@ interface Pool {
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
   const appConfig = useAppConfig();
-  const chainIds = Object.keys(appConfig.chains).map(Number);
+  const chainIds = Object.keys(appConfig.registries).map(Number);
 
   return useQuery({
     queryKey: makeQueryKey("chainlog", {

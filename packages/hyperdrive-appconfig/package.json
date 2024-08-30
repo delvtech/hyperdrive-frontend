@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@delvtech/hyperdrive-artifacts": "^1.0.16",
-    "@delvtech/hyperdrive-viem": "^3.0.0",
+    "@delvtech/hyperdrive-viem": "^3.0.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
