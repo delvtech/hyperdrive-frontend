@@ -203,19 +203,6 @@ export const HyperdriveTarget1 = {
         },
         {
             "type": "event",
-            "name": "CheckpointRewarderUpdated",
-            "inputs": [
-                {
-                    "name": "newCheckpointRewarder",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "CloseLong",
             "inputs": [
                 {
@@ -418,32 +405,6 @@ export const HyperdriveTarget1 = {
         },
         {
             "type": "event",
-            "name": "FeeCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newFeeCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "GovernanceUpdated",
-            "inputs": [
-                {
-                    "name": "newGovernance",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "Initialize",
             "inputs": [
                 {
@@ -622,25 +583,6 @@ export const HyperdriveTarget1 = {
         },
         {
             "type": "event",
-            "name": "PauserUpdated",
-            "inputs": [
-                {
-                    "name": "newPauser",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "status",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "RedeemWithdrawalShares",
             "inputs": [
                 {
@@ -761,19 +703,6 @@ export const HyperdriveTarget1 = {
                 },
                 {
                     "name": "target",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "SweepCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newSweepCollector",
                     "type": "address",
                     "indexed": true,
                     "internalType": "address"

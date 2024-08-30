@@ -6,7 +6,6 @@ export {
   ReadWriteHyperdrive,
   type ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/base/ReadWriteHyperdrive";
-export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/base/abi";
 
 // erc-4626
 export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
@@ -17,10 +16,6 @@ export { ReadWriteMockErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadWrite
 // ezeth
 export { ReadEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadEzEthHyperdrive";
 export { ReadWriteEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadWriteEzEthHyperdrive";
-export {
-  ezEthHyperdriveAbi,
-  type EzEthHyperdriveAbi,
-} from "src/hyperdrive/ezeth/abi";
 
 // lseth
 export { ReadLsEthHyperdrive } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
@@ -33,10 +28,6 @@ export { ReadWriteMetaMorphoHyperdrive } from "src/hyperdrive/metamorpho/ReadWri
 // reth
 export { ReadREthHyperdrive } from "src/hyperdrive/reth/ReadREthHyperdrive";
 export { ReadWriteREthHyperdrive } from "src/hyperdrive/reth/ReadWriteREthHyperdrive";
-export {
-  rEthHyperdriveAbi,
-  type REthHyperdriveAbi,
-} from "src/hyperdrive/reth/abi";
 
 // steth
 export {

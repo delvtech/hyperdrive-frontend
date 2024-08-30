@@ -55,14 +55,13 @@ export class ReadHyperdrive extends ReadModel {
   constructor({
     debugName = "Hyperdrive",
     address,
-    contractFactory,
-    network,
     cache,
     namespace,
+    ...modelOptions
   }: ReadHyperdriveOptions) {
-    super({ contractFactory, debugName, network });
+    super({ debugName, ...modelOptions });
     this.address = address;
-    this.contract = contractFactory({
+    this.contract = this.contractFactory({
       abi: hyperdriveAbi,
       address,
       cache,
@@ -176,8 +175,11 @@ export class ReadHyperdrive extends ReadModel {
     );
   }
 
-  async getInitializationBlock(): Promise<Block> {
-    const events = await this.contract.getEvents("Initialize");
+  async getInitializationBlock(options?: {
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }): Promise<Block> {
+    const events = await this.contract.getEvents("Initialize", options);
 
     if (!events.length || events[0].blockNumber === undefined) {
       throw new HyperdriveSdkError(

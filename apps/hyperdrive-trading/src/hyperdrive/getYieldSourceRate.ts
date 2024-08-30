@@ -1,7 +1,6 @@
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
-import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
-import { cloudChain } from "src/chains/cloudChain";
+import { isForkChain } from "src/chains/isForkChain";
 
 export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,
@@ -13,13 +12,12 @@ export async function getYieldSourceRate(
     hyperdriveAddress: readHyperdrive.address,
     hyperdrives: appConfig.hyperdrives,
   });
-  const numBlocksForHistoricalRate =
-    hyperdrive.chainId === cloudChain.id
-      ? 1000n // roughly 3 hours for cloudchain
-      : DAILY_AVERAGE_BLOCK_TOTAL *
-        BigInt(
-          appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
-        );
+  const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
+    ? 1000n // roughly 3 hours for cloudchain
+    : appConfig.chains[hyperdrive.chainId].dailyAverageBlocks *
+      BigInt(
+        appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
+      );
 
   return (
     readHyperdrive
@@ -28,7 +26,7 @@ export async function getYieldSourceRate(
       })
       // If the 24 hour rate doesn't exist, assume the pool was initialized less
       // than 24 hours ago and try to get the all-time rate
-      .catch(async (e: any) => {
+      .catch(async () => {
         const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
         const initializationBlock = hyperdrive.initializationBlock;
         const blocksSinceInitialization =

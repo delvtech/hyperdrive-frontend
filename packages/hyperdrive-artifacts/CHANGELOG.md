@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 1.0.18
+
+### Patch Changes
+
+- 4e841fc: Update artifacts to v1.0.18
+
 ## 1.0.16
 
 ### Major Changes

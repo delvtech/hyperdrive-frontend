@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.4",
-    "@delvtech/hyperdrive-viem": "^3.0.0",
+    "@delvtech/hyperdrive-viem": "^3.0.1",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
     "@radix-ui/react-tooltip": "^1.1.2",
@@ -41,6 +41,7 @@
     "@types/lodash.sortby": "^4.7.9",
     "@usecapsule/rainbowkit-wallet": "^0.9.4",
     "@usecapsule/react-sdk": "^3.17.0",
+    "@wagmi/core": "^2.6.9",
     "assert-never": "^1.2.1",
     "buffer": "^6.0.3",
     "calendar-link": "^2.6.0",

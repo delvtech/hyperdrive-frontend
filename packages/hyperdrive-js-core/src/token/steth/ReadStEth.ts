@@ -51,7 +51,7 @@ export interface ReadStEthMixin {
  * @internal
  */
 export function readStEthMixin<T extends Constructor<ReadErc20>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadStEthMixin> & T {
   return class extends Base implements ReadStEthMixin {
     stEthContract: CachedReadContract<StEthAbi>;
@@ -60,20 +60,12 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       const {
         debugName = "stETH Token",
         address,
-        contractFactory,
-        network,
         cache,
         namespace,
+        ...modelOptions
       } = options as ReadErc20Options;
-      super({
-        address,
-        contractFactory,
-        network,
-        cache,
-        debugName,
-        namespace,
-      });
-      this.stEthContract = contractFactory({
+      super({ debugName, address, cache, namespace, ...modelOptions });
+      this.stEthContract = this.contractFactory({
         abi: stEthAbi,
         address,
         cache,
@@ -91,7 +83,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "sharesOf",
         { _account: account },
-        options
+        options,
       );
     }
 
@@ -105,7 +97,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "getPooledEthByShares",
         { _sharesAmount: sharesAmount },
-        options
+        options,
       );
     }
 
@@ -119,7 +111,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       return this.stEthContract.read(
         "getSharesByPooledEth",
         { _ethAmount: ethAmount },
-        options
+        options,
       );
     }
   };

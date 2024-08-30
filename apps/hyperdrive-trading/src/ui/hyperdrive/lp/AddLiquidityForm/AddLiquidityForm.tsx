@@ -1,6 +1,5 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { SparklesIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
@@ -21,6 +20,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -36,9 +36,8 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address } from "viem";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -221,6 +220,7 @@ export function AddLiquidityForm({
     status: addLiquidityPreviewStatus,
     previewAddLiquidityError,
   } = usePreviewAddLiquidity(addLiquidityParams);
+  const isNewPool = useIsNewPool({ hyperdrive });
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     chainId: hyperdrive.chainId,
@@ -233,9 +233,10 @@ export function AddLiquidityForm({
     hyperdrive,
     baseToken,
   });
-  const tokenPrices = useTokenFiatPrices([activeToken.address]);
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeToken.address,
+    chainId: activeToken.chainId,
+  });
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
     chainId: hyperdrive.chainId,
@@ -364,14 +365,8 @@ export function AddLiquidityForm({
           <PrimaryStat
             label="LP APY"
             value={
-              lpApy == undefined ? (
-                <div className="flex gap-2">
-                  <SparklesIcon
-                    width={18}
-                    className="fill-primary stroke-none"
-                  />
-                  New
-                </div>
+              isNewPool || lpApy == undefined ? (
+                <div className="flex gap-2">✨New✨</div>
               ) : (
                 `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
               )

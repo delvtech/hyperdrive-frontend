@@ -660,6 +660,19 @@ export const IHyperdriveFactory = {
         },
         {
             "type": "function",
+            "name": "maxCircuitBreakerDelta",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "maxFees",
             "inputs": [],
             "outputs": [
@@ -735,6 +748,19 @@ export const IHyperdriveFactory = {
         {
             "type": "function",
             "name": "minCheckpointDuration",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "minCircuitBreakerDelta",
             "inputs": [],
             "outputs": [
                 {
@@ -904,6 +930,19 @@ export const IHyperdriveFactory = {
         },
         {
             "type": "function",
+            "name": "updateDeployerCoordinatorManager",
+            "inputs": [
+                {
+                    "name": "_deployerCoordinatorManager",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "updateFeeCollector",
             "inputs": [
                 {
@@ -973,6 +1012,19 @@ export const IHyperdriveFactory = {
             "inputs": [
                 {
                     "name": "_maxCheckpointDuration",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "updateMaxCircuitBreakerDelta",
+            "inputs": [
+                {
+                    "name": "_maxCircuitBreakerDelta",
                     "type": "uint256",
                     "internalType": "uint256"
                 }
@@ -1060,6 +1112,19 @@ export const IHyperdriveFactory = {
             "inputs": [
                 {
                     "name": "_minCheckpointDuration",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "updateMinCircuitBreakerDelta",
+            "inputs": [
+                {
+                    "name": "_minCircuitBreakerDelta",
                     "type": "uint256",
                     "internalType": "uint256"
                 }
@@ -1830,11 +1895,13 @@ export const IHyperdriveFactory = {
         "linkerCodeHash()": "c905a4b5",
         "linkerFactory()": "99623bb1",
         "maxCheckpointDuration()": "e0e2daaa",
+        "maxCircuitBreakerDelta()": "4554f9a9",
         "maxFees()": "e83e34b1",
         "maxFixedAPR()": "bf9bd5cd",
         "maxPositionDuration()": "8efc0986",
         "maxTimeStretchAPR()": "48800760",
         "minCheckpointDuration()": "5720c9d5",
+        "minCircuitBreakerDelta()": "1ecda0fe",
         "minFees()": "c1722563",
         "minFixedAPR()": "d23d7ea3",
         "minPositionDuration()": "daf012e6",
@@ -1845,17 +1912,20 @@ export const IHyperdriveFactory = {
         "updateCheckpointDurationResolution(uint256)": "11e77bfe",
         "updateCheckpointRewarder(address)": "3e2d2014",
         "updateDefaultPausers(address[])": "9af25262",
+        "updateDeployerCoordinatorManager(address)": "a98a46db",
         "updateFeeCollector(address)": "d2c35ce8",
         "updateGovernance(address)": "b2561263",
         "updateHyperdriveGovernance(address)": "dd2b8fbb",
         "updateLinkerCodeHash(bytes32)": "4fbfee77",
         "updateLinkerFactory(address)": "85229785",
         "updateMaxCheckpointDuration(uint256)": "6f6d5c4a",
+        "updateMaxCircuitBreakerDelta(uint256)": "84c19aab",
         "updateMaxFees((uint256,uint256,uint256,uint256))": "2885e3ac",
         "updateMaxFixedAPR(uint256)": "97b0e8ce",
         "updateMaxPositionDuration(uint256)": "eb71f66c",
         "updateMaxTimeStretchAPR(uint256)": "628027a3",
         "updateMinCheckpointDuration(uint256)": "8e127cf5",
+        "updateMinCircuitBreakerDelta(uint256)": "2907d3dd",
         "updateMinFees((uint256,uint256,uint256,uint256))": "10d1dc3e",
         "updateMinFixedAPR(uint256)": "1978ebcf",
         "updateMinPositionDuration(uint256)": "e71f34b3",

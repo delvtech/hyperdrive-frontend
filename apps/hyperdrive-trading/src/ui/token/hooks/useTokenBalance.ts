@@ -1,4 +1,5 @@
 import { ZERO_ADDRESS } from "src/base/constants";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, erc20Abi, formatUnits } from "viem";
@@ -38,6 +39,7 @@ export function useTokenBalance({
     query: {
       enabled: isEth,
     },
+    chainId: tokenChainId,
   });
 
   const { data: tokenBalance, status: tokenBalanceStatus } = useReadContract({
@@ -84,7 +86,7 @@ export function useTokenBalance({
       hyperdrive.yieldSource === "lidoSteth" &&
       hyperdrive.poolConfig.vaultSharesToken === tokenAddress,
   );
-  if (tokenBalance && (chainId === 42069 || chainId === 11155111) && isSteth) {
+  if (tokenBalance && isTestnetChain(chainId) && isSteth) {
     const truncatedBalance = tokenBalance - (tokenBalance % BigInt(1e14));
     return {
       balance: {

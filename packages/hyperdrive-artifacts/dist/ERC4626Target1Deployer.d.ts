@@ -89,6 +89,10 @@ export declare const ERC4626Target1Deployer: {
                 }];
             }];
         }, {
+            readonly name: "_adminController";
+            readonly type: "address";
+            readonly internalType: "contract IHyperdriveAdminController";
+        }, {
             readonly name: "";
             readonly type: "bytes";
             readonly internalType: "bytes";
@@ -106,7 +110,7 @@ export declare const ERC4626Target1Deployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployTarget((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "6b323707";
+        readonly "deployTarget((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),address,bytes,bytes32)": "8c98b3c6";
     };
 };
 //# sourceMappingURL=ERC4626Target1Deployer.d.ts.map

@@ -11,13 +11,12 @@ export class ReadErc20 extends ReadModel implements ReadToken {
   constructor({
     debugName = "ERC-20 Token",
     address,
-    contractFactory,
-    network,
     cache,
     namespace,
+    ...modelOptions
   }: ReadErc20Options) {
-    super({ debugName, network, contractFactory });
-    this.contract = contractFactory({
+    super({ debugName, ...modelOptions });
+    this.contract = this.contractFactory({
       abi: erc20Abi,
       address,
       cache,

@@ -1,6 +1,16 @@
 export declare const IEzETHHyperdriveRead: {
     abi: readonly [{
         readonly type: "function";
+        readonly name: "adminController";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "balanceOf";
         readonly inputs: readonly [{
             readonly name: "tokenId";
@@ -509,6 +519,16 @@ export declare const IEzETHHyperdriveRead: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "totalShares";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "totalSupply";
         readonly inputs: readonly [{
             readonly name: "tokenId";
@@ -544,6 +564,7 @@ export declare const IEzETHHyperdriveRead: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "adminController()": "950c5d03";
         readonly "balanceOf(uint256,address)": "3656eec2";
         readonly "baseToken()": "c55dae63";
         readonly "convertToBase(uint256)": "b88fed9f";
@@ -567,6 +588,7 @@ export declare const IEzETHHyperdriveRead: {
         readonly "renzo()": "6a1a3f3d";
         readonly "renzoOracle()": "892866a4";
         readonly "symbol(uint256)": "4e41a1fb";
+        readonly "totalShares()": "3a98ef39";
         readonly "totalSupply(uint256)": "bd85b039";
         readonly "vaultSharesToken()": "0a4e1493";
         readonly "version()": "54fd4d50";

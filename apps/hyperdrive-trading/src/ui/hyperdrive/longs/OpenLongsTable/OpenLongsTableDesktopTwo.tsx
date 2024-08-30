@@ -32,10 +32,10 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
+import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
+import { TotalOpenLongsValue } from "src/ui/hyperdrive/longs/OpenLongsTable/TotalOpenLongsValue";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
-import { StatusCell } from "./StatusCell";
-import { TotalOpenLongsValue } from "./TotalOpenLongsValue";
 
 export function OpenLongsContainer(): ReactElement {
   const { openLongPositions, openLongPositionsStatus } =

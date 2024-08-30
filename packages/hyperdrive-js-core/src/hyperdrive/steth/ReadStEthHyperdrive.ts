@@ -56,15 +56,9 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 ): Constructor<ReadStEthHyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
-      const {
-        debugName = "stETH Hyperdrive",
-        address,
-        contractFactory,
-        network,
-        cache,
-        namespace,
-      } = options as ReadStEthHyperdriveOptions;
-      super({ address, contractFactory, network, cache, debugName, namespace });
+      const { debugName = "stETH Hyperdrive", ...restOptions } =
+        options as ReadStEthHyperdriveOptions;
+      super({ debugName, ...restOptions });
     }
 
     async getBaseToken(): Promise<ReadEth> {

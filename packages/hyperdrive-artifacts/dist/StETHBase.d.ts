@@ -81,16 +81,6 @@ export declare const StETHBase: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "CheckpointRewarderUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newCheckpointRewarder";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "CloseLong";
         readonly inputs: readonly [{
             readonly name: "trader";
@@ -256,26 +246,6 @@ export declare const StETHBase: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "FeeCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newFeeCollector";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newGovernance";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "Initialize";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -421,21 +391,6 @@ export declare const StETHBase: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "PauserUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newPauser";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "status";
-            readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -534,16 +489,6 @@ export declare const StETHBase: {
             readonly internalType: "address";
         }, {
             readonly name: "target";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "SweepCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newSweepCollector";
             readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";

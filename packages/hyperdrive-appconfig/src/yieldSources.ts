@@ -75,7 +75,7 @@ const eEth: YieldSource = {
 
 const gnosisWsteth: YieldSource = {
   id: "gnosisWsteth",
-  shortName: "Gnosis wstETH",
+  shortName: "Lido wstETH",
   protocol: "lido",
   historicalRatePeriod: 1,
 };

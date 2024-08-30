@@ -13,6 +13,7 @@
     "gen:local": "npx tsx ./src/scripts/local.ts",
     "gen:cloudchain": "npx tsx ./src/scripts/cloudChain.ts",
     "gen:gnosisfork": "npx tsx ./src/scripts/gnosisFork.ts",
+    "gen:gnosis": "npx tsx ./src/scripts/gnosis.ts",
     "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
     "gen:mainnet": "npx tsx ./src/scripts/mainnet.ts",
     "generate": "npx tsx ./src/scripts/generate.ts",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {
     "@delvtech/hyperdrive-artifacts": "^1.0.16",
-    "@delvtech/hyperdrive-viem": "^3.0.0",
+    "@delvtech/hyperdrive-viem": "^3.0.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

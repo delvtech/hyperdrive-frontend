@@ -5,7 +5,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
-import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { sepolia } from "viem/chains";
 import { useAccount } from "wagmi";
 
@@ -36,6 +36,7 @@ export function TotalOpenShortValue({
     const chainInfo = appConfig.chains[hyperdrive.chainId];
 
     const { fiatPrice } = useTokenFiatPrice({
+      chainId: baseToken.chainId,
       tokenAddress: baseToken.address,
     });
     const isFiatPriceEnabled = chainInfo.id !== sepolia.id;

@@ -9,7 +9,7 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
-  ReadHyperdrive
+  ReadHyperdrive,
 ) {}
 
 /**
@@ -33,7 +33,7 @@ export interface ReadEzEthHyperdriveMixin {
  * @internal
  */
 export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
-  Base: T
+  Base: T,
 ): Constructor<ReadEzEthHyperdriveMixin> & T {
   return class extends Base {
     ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
@@ -42,13 +42,12 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const {
         debugName = "EzETH Hyperdrive",
         address,
-        contractFactory,
-        network,
         cache,
         namespace,
-      } = options as any;
-      super({ address, contractFactory, network, cache, debugName, namespace });
-      this.ezEthHyperdriveContract = contractFactory({
+        ...modelOptions
+      } = options as ConstructorParameters<typeof ReadHyperdrive>[0];
+      super({ debugName, address, cache, namespace, ...modelOptions });
+      this.ezEthHyperdriveContract = this.contractFactory({
         abi: ezEthHyperdriveAbi,
         address,
         cache,

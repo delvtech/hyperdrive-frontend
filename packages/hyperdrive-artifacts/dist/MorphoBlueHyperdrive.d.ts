@@ -92,6 +92,10 @@ export declare const MorphoBlueHyperdrive: {
                 }];
             }];
         }, {
+            readonly name: "__adminController";
+            readonly type: "address";
+            readonly internalType: "contract IHyperdriveAdminController";
+        }, {
             readonly name: "_target0";
             readonly type: "address";
             readonly internalType: "address";
@@ -644,26 +648,6 @@ export declare const MorphoBlueHyperdrive: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "setCheckpointRewarder";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setFeeCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
         readonly name: "setGovernance";
         readonly inputs: readonly [{
             readonly name: "";
@@ -683,16 +667,6 @@ export declare const MorphoBlueHyperdrive: {
             readonly name: "";
             readonly type: "bool";
             readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setSweepCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -886,16 +860,6 @@ export declare const MorphoBlueHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "CheckpointRewarderUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newCheckpointRewarder";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "CloseLong";
         readonly inputs: readonly [{
             readonly name: "trader";
@@ -1061,26 +1025,6 @@ export declare const MorphoBlueHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "FeeCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newFeeCollector";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newGovernance";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "Initialize";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1226,21 +1170,6 @@ export declare const MorphoBlueHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "PauserUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newPauser";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "status";
-            readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1346,16 +1275,6 @@ export declare const MorphoBlueHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "SweepCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newSweepCollector";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "TransferSingle";
         readonly inputs: readonly [{
             readonly name: "operator";
@@ -1441,11 +1360,8 @@ export declare const MorphoBlueHyperdrive: {
         readonly "setApproval(uint256,address,uint256)": "9cd241af";
         readonly "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac";
         readonly "setApprovalForAll(address,bool)": "a22cb465";
-        readonly "setCheckpointRewarder(address)": "a5107626";
-        readonly "setFeeCollector(address)": "a42dce80";
         readonly "setGovernance(address)": "ab033ea9";
         readonly "setPauser(address,bool)": "7180c8ca";
-        readonly "setSweepCollector(address)": "e4af29d1";
         readonly "sweep(address)": "01681a62";
         readonly "target0()": "21b57d53";
         readonly "target1()": "eac3e799";

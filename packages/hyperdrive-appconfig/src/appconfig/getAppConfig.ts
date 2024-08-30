@@ -26,6 +26,12 @@ import { Address, PublicClient } from "viem";
 type HyperdriveConfigResolver = (
   hyperdrive: ReadHyperdrive,
   publicClient: PublicClient,
+  /**
+   * Block number to clamp the beginning of event requests to. This is useful
+   * for L2s that have too many blocks where the default "earliest" blockTag
+   * would timeout.
+   */
+  earliestBlock?: bigint,
 ) => Promise<{
   hyperdriveConfig: HyperdriveConfig;
   sharesTokenConfig?: TokenConfig;
@@ -36,9 +42,10 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
-  ChainlinkHyperdrive: async (hyperdrive) =>
+  ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) =>
     getGnosisWstethHyperdrive({
       hyperdrive,
+      earliestBlock,
     }),
   EETHHyperdrive: async (hyperdrive) =>
     getCustomHyperdrive({
@@ -95,7 +102,7 @@ const hyperdriveKindResolvers: Record<
 
   StETHHyperdrive: (hyperdrive) => getStethHyperdrive({ hyperdrive }),
 
-  ERC4626Hyperdrive: async (hyperdrive, publicClient) => {
+  ERC4626Hyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
     const readSharesToken = await hyperdrive.getSharesToken();
     const sharesTokenSymbol = await readSharesToken.getSymbol();
     const hyperdriveName = await publicClient.readContract({
@@ -133,6 +140,7 @@ const hyperdriveKindResolvers: Record<
     if (hyperdriveName.includes("sxDAI Hyperdrive")) {
       return getCustomHyperdrive({
         hyperdrive,
+        earliestBlock,
         yieldSource: "sxDai",
         depositOptions: {
           isBaseTokenDepositEnabled: true,
@@ -210,9 +218,11 @@ const hyperdriveKindResolvers: Record<
 export async function getAppConfig({
   registryAddress,
   publicClient,
+  earliestBlock,
 }: {
   registryAddress: Address;
   publicClient: PublicClient;
+  earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
   const chainId = publicClient.chain?.id as number;
@@ -235,7 +245,7 @@ export async function getAppConfig({
       }
 
       const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
-        await hyperdriveResolver(hyperdrive, publicClient);
+        await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
 
       console.table({
         chainId: publicClient.chain?.id,

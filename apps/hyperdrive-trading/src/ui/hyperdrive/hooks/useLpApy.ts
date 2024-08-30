@@ -1,8 +1,7 @@
 import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
-import { DAILY_AVERAGE_BLOCK_TOTAL } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { cloudChain } from "src/chains/cloudChain";
+import { isForkChain } from "src/chains/isForkChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -43,14 +42,13 @@ export function useLpApy({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const numBlocksForHistoricalRate =
-            chainId === cloudChain.id
-              ? 1000n // roughly 3 hours for cloudchain
-              : DAILY_AVERAGE_BLOCK_TOTAL *
-                BigInt(
-                  appConfig.yieldSources[hyperdrive.yieldSource]
-                    .historicalRatePeriod,
-                );
+          const numBlocksForHistoricalRate = isForkChain(chainId)
+            ? 1000n // roughly 3 hours for cloudchain
+            : appConfig.chains[hyperdrive.chainId].dailyAverageBlocks *
+              BigInt(
+                appConfig.yieldSources[hyperdrive.yieldSource]
+                  .historicalRatePeriod,
+              );
           return readHyperdrive.getLpApy({
             fromBlock: [31337].includes(chainId)
               ? // local devnets don't have a lot of blocks, so start from the beginning

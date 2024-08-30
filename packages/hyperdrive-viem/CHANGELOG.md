@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-viem
 
+## 3.0.1
+
+### Patch Changes
+
+- 8e77c04: Add `earliestBlock` option to `ReadModel` and bump `evm-client-viem` version to use `eth_getLogs` rather than `eth_getFilterLogs`.
+- Updated dependencies [8e77c04]
+  - @delvtech/hyperdrive-js-core@3.0.1
+
 ## 3.0.0
 
 ### Major Changes

@@ -1,11 +1,10 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/base/ReadHyperdrive";
-import { REthHyperdriveAbi, rEthHyperdriveAbi } from "src/hyperdrive/reth/abi";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadREth } from "src/token/reth/ReadREth";
 
@@ -17,8 +16,6 @@ export class ReadREthHyperdrive extends readREthHyperdriveMixin(
  * @internal
  */
 export interface ReadREthHyperdriveMixin {
-  rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
-
   /**
    * Get a model of ETH, the base token for this Hyperdrive instance.
    */
@@ -37,24 +34,10 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadREthHyperdriveMixin> & T {
   return class extends Base {
-    rEthHyperdriveContract: CachedReadContract<REthHyperdriveAbi>;
-
     constructor(...[options]: any[]) {
-      const {
-        debugName = "rETH Hyperdrive",
-        address,
-        contractFactory,
-        network,
-        cache,
-        namespace,
-      } = options as ReadHyperdriveOptions;
-      super({ address, contractFactory, network, cache, debugName, namespace });
-      this.rEthHyperdriveContract = contractFactory({
-        abi: rEthHyperdriveAbi,
-        address,
-        cache,
-        namespace,
-      });
+      const { debugName = "rETH Hyperdrive", ...restOptions } =
+        options as ReadHyperdriveOptions;
+      super({ debugName, ...restOptions });
     }
 
     async getBaseToken(): Promise<ReadEth> {

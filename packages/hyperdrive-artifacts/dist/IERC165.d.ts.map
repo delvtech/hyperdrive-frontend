@@ -1,1 +1,1 @@
-{"version":3,"file":"IERC165.d.ts","sourceRoot":"","sources":["../src/IERC165.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,OAAO;;;;;;;;;;;;;;;;;;;;CA0BnB,CAAC"}
+{"version":3,"file":"IERC165.d.ts","sourceRoot":"","sources":["../src/IERC165.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,OAAO;;;;;;;;;;;;;;;;cAsBA,KAAK,MAAM,EAAE;;;;CAIhC,CAAC"}

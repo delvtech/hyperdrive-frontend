@@ -1,23 +1,30 @@
+import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeInstanceData } from "src/registry/data";
+import { sdkCache } from "src/sdk/sdkCache";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
+import { ChainCell } from "src/ui/chainlog/ChainCell";
 import { PausedCell } from "src/ui/chainlog/PausedCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
-import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
-import { Address } from "viem";
-import { useChainId } from "wagmi";
+import { Address, PublicClient } from "viem";
 
 export function PoolsTable(): ReactElement {
   const { data = [], isFetching } = usePoolsQuery();
@@ -25,6 +32,15 @@ export function PoolsTable(): ReactElement {
     columns: poolCols,
     data,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    initialState: {
+      sorting: [
+        {
+          id: "chain",
+          desc: false,
+        },
+      ],
+    },
   });
 
   return (
@@ -41,27 +57,42 @@ export function PoolsTable(): ReactElement {
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th
-                    className={classNames(
-                      "sticky top-0 z-10 h-10 rounded-box text-sm",
-                      {
-                        "min-w-52": header.id === "name",
-                      },
-                    )}
-                    key={header.id}
-                  >
-                    <div
-                      className="font-normal text-neutral-content"
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
+                {headerGroup.headers.map((header) => {
+                  const sortDirection = header.column.getIsSorted();
+                  return (
+                    <th
+                      className={classNames(
+                        "sticky top-0 z-10 h-10 rounded-box text-sm",
+                        {
+                          "min-w-52": header.id === "name",
+                        },
                       )}
-                    </div>
-                  </th>
-                ))}
+                      key={header.id}
+                    >
+                      <div
+                        className={classNames(
+                          "flex items-center gap-1 font-normal text-neutral-content",
+                          {
+                            "flex cursor-pointer select-none items-center gap-2":
+                              header.column.getCanSort(),
+                          },
+                        )}
+                        onClick={header.column.getToggleSortingHandler()}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {sortDirection === "asc" && (
+                          <ChevronUpIcon height={15} />
+                        )}
+                        {sortDirection === "desc" && (
+                          <ChevronDownIcon height={15} />
+                        )}
+                      </div>
+                    </th>
+                  );
+                })}
               </tr>
             ))}
           </thead>
@@ -103,7 +134,6 @@ const poolColHelper = createColumnHelper<Pool>();
 
 const poolCols = [
   poolColHelper.accessor((row) => row.name, {
-    id: "name",
     header: "Name",
     cell: ({ getValue, row }) => (
       <Link
@@ -118,9 +148,17 @@ const poolCols = [
       </Link>
     ),
   }),
+  poolColHelper.accessor((row) => row.chainId, {
+    id: "chain",
+    header: "Chain",
+    cell: ({ getValue }) => <ChainCell chainId={getValue()} />,
+    sortingFn: "alphanumeric",
+  }),
   poolColHelper.accessor((row) => row.address, {
     header: "Address",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
   poolColHelper.accessor((row) => row.version, {
     header: "Version",
@@ -135,19 +173,27 @@ const poolCols = [
   }),
   poolColHelper.accessor((row) => row.factoryAddress, {
     header: "Factory",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
   poolColHelper.accessor((row) => row.deployerCoordinatorAddress, {
     header: "Deployer Coordinator",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
   poolColHelper.accessor((row) => row.baseToken, {
     header: "Base Token",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
   poolColHelper.accessor((row) => row.vaultToken, {
     header: "Vault Token",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
 ];
 
@@ -165,52 +211,98 @@ interface Pool {
 }
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
-  const chainId = useChainId();
-  const registry = useReadRegistry(chainId);
-  const queryEnabled = !!registry;
+  const appConfig = useAppConfig();
+  const chainIds = Object.keys(appConfig.registries).map(Number);
 
   return useQuery({
     queryKey: makeQueryKey("chainlog", {
       tab: "pools",
-      registry: registry?.address,
-      chainId,
+      chainIds,
     }),
-    enabled: queryEnabled,
     placeholderData: [],
-    queryFn: queryEnabled
-      ? async () => {
-          const pools = await registry.getInstances();
-          const metas = await registry.getInstanceInfos(
-            pools.map((pool) => pool.address),
-          );
-
-          return Promise.all(
-            pools.map(async (pool, i): Promise<Pool> => {
-              const { data, factory, name, version } = metas[i];
-              const { baseToken, vaultSharesToken: vaultToken } =
-                await pool.getPoolConfig();
-              const { isPaused } = await pool.getMarketState();
-              const { status } = decodeInstanceData(data);
-              const [deployerCoordinatorAddress] =
-                await factory.getDeployerCoordinatorAddresses({
-                  instances: [pool.address],
-                });
-
-              return {
-                name,
-                address: pool.address,
-                chainId,
-                version,
-                isPaused,
-                status,
-                factoryAddress: factory.address,
-                deployerCoordinatorAddress,
-                baseToken,
-                vaultToken,
-              };
-            }),
-          );
+    queryFn: async () => {
+      // registries and clients for each chain
+      const clients: Map<
+        number,
+        {
+          registry: ReadRegistry;
+          publicClient: PublicClient;
         }
-      : undefined,
+      > = new Map();
+
+      for (const chainId of chainIds) {
+        // TODO: Cleanup type casting
+        const publicClient = getPublicClient(wagmiConfig as any, {
+          chainId,
+        }) as PublicClient;
+
+        clients.set(chainId, {
+          publicClient,
+          registry: new ReadRegistry({
+            address: appConfig.registries[chainId],
+            publicClient,
+            cache: sdkCache,
+            namespace: chainId.toString(),
+          }),
+        });
+      }
+
+      return Promise.all(
+        appConfig.hyperdrives.map(async (hyperdrive): Promise<Pool> => {
+          const { registry, publicClient } =
+            clients.get(hyperdrive.chainId) || {};
+
+          // Return available static data if no registry is found
+          if (!registry || !publicClient) {
+            console.error(
+              `No registry found for chainId ${hyperdrive.chainId}`,
+            );
+            return {
+              name: hyperdrive.name,
+              address: hyperdrive.address,
+              chainId: hyperdrive.chainId,
+              version: hyperdrive.version,
+              isPaused: false,
+              status: "active",
+              factoryAddress: "0x",
+              deployerCoordinatorAddress: "0x",
+              baseToken: hyperdrive.poolConfig.baseToken,
+              vaultToken: hyperdrive.poolConfig.vaultSharesToken,
+            };
+          }
+
+          const { data, factory, name, version } =
+            await registry.getInstanceInfo(hyperdrive.address);
+          const readHyperdrive = await getReadHyperdrive({
+            appConfig,
+            hyperdriveAddress: hyperdrive.address,
+            publicClient,
+          });
+
+          const { baseToken, vaultSharesToken: vaultToken } =
+            await readHyperdrive.getPoolConfig();
+
+          const { isPaused } = await readHyperdrive.getMarketState();
+          const { status } = decodeInstanceData(data);
+          const [deployerCoordinatorAddress] =
+            await factory.getDeployerCoordinatorAddresses({
+              instances: [hyperdrive.address],
+            });
+
+          return {
+            name,
+            address: hyperdrive.address,
+            chainId: hyperdrive.chainId,
+            version,
+            isPaused,
+            status,
+            factoryAddress: factory.address,
+            deployerCoordinatorAddress,
+            baseToken,
+            vaultToken,
+          };
+        }),
+      );
+    },
   });
 }

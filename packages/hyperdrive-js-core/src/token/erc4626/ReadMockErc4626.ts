@@ -21,7 +21,7 @@ export interface ReadMockErc4626Mixin {
  * @internal
  */
 export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
-  BaseReadErc4626: T
+  BaseReadErc4626: T,
 ): Constructor<ReadMockErc4626Mixin> & T {
   return class extends BaseReadErc4626 implements ReadMockErc4626Mixin {
     mockErc4626Contract: CachedReadContract<MockErc4626Abi>;
@@ -30,20 +30,12 @@ export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
       const {
         debugName = "Mock ERC-4626 Tokenized Vault",
         address,
-        contractFactory,
-        network,
         cache,
         namespace,
+        ...modelOptions
       } = options as ConstructorParameters<typeof ReadErc4626>[0];
-      super({
-        address,
-        contractFactory,
-        network,
-        cache,
-        debugName,
-        namespace,
-      });
-      this.mockErc4626Contract = contractFactory({
+      super({ debugName, address, cache, namespace, ...modelOptions });
+      this.mockErc4626Contract = this.contractFactory({
         abi: mockErc4626Abi,
         address,
         cache,

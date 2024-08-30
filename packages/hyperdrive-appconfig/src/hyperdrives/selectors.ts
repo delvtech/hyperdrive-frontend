@@ -56,10 +56,13 @@ export function findBaseToken({
   let baseToken: TokenConfig | undefined;
 
   // If there's no base token on pool config, see if there's a fallback
-  if (
-    hyperdriveConfig.poolConfig.baseToken === zeroAddress &&
-    hyperdriveConfig.baseTokenFallback
-  ) {
+  if (hyperdriveConfig.poolConfig.baseToken !== zeroAddress) {
+    baseToken = findToken({
+      chainId: hyperdriveConfig.chainId,
+      tokenAddress: hyperdriveConfig.poolConfig.baseToken,
+      tokens: appConfig.tokens,
+    });
+  } else if (hyperdriveConfig.baseTokenFallback) {
     baseToken = findToken({
       chainId: hyperdriveConfig.baseTokenFallback.chainId,
       tokenAddress: hyperdriveConfig.baseTokenFallback.address,
@@ -67,16 +70,11 @@ export function findBaseToken({
     });
   }
 
-  // Otherwise, use the pool's base token
-  baseToken = findToken({
-    chainId: hyperdriveConfig.chainId,
-    tokenAddress: hyperdriveConfig.poolConfig.baseToken,
-    tokens: appConfig.tokens,
-  });
-
   // At this point your appconfig is broken
   if (!baseToken) {
-    throw new Error(`Missing base token for hyperdrive: ${hyperdriveAddress}.`);
+    throw new Error(
+      `Missing base token for hyperdrive: ${hyperdriveAddress}, baseToken address: ${hyperdriveConfig.poolConfig.baseToken}, chainId: ${hyperdriveChainId}`,
+    );
   }
 
   return baseToken;

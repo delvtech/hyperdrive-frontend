@@ -3,13 +3,17 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
 import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
-import { STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
+import { mainnet } from "viem/chains";
 export async function getGnosisWstethHyperdrive({
   hyperdrive,
+  earliestBlock,
 }: {
   hyperdrive: ReadHyperdrive;
+  earliestBlock?: bigint;
 }): Promise<{
+  baseTokenConfig: TokenConfig;
   sharesTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
@@ -18,8 +22,9 @@ export async function getGnosisWstethHyperdrive({
   const poolConfig = await hyperdrive.getPoolConfig();
 
   // safe to cast here because we know the pool was initialized
-  const initializationBlock = (await hyperdrive.getInitializationBlock())
-    .blockNumber as bigint;
+  const initializationBlock = (
+    await hyperdrive.getInitializationBlock({ fromBlock: earliestBlock })
+  ).blockNumber as bigint;
 
   const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
@@ -45,7 +50,7 @@ export async function getGnosisWstethHyperdrive({
     yieldSource: "gnosisWsteth",
     baseTokenFallback: {
       address: ETH_MAGIC_NUMBER,
-      chainId: 1,
+      chainId: mainnet.id,
     },
     depositOptions: {
       // there is no lido deployment on gnosis, so hyperdrive cannot
@@ -63,6 +68,16 @@ export async function getGnosisWstethHyperdrive({
   };
 
   return {
+    baseTokenConfig: {
+      address: poolConfig.baseToken,
+      chainId: mainnet.id,
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+      places: 4,
+      tags: [],
+      iconUrl: ETH_ICON_URL,
+    },
     sharesTokenConfig,
     hyperdriveConfig,
   };

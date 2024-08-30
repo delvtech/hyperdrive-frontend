@@ -13,14 +13,13 @@ export class ReadFactory extends ReadModel {
   constructor({
     debugName = "Hyperdrive Factory",
     address,
-    contractFactory,
-    network,
     cache,
     namespace,
+    ...modelOptions
   }: ReadFactoryOptions) {
-    super({ debugName, network, contractFactory });
+    super({ debugName, ...modelOptions });
     this.address = address;
-    this.contract = contractFactory({
+    this.contract = this.contractFactory({
       abi: factoryAbi,
       address,
       cache,
@@ -63,7 +62,7 @@ export class ReadFactory extends ReadModel {
         "getDeployerCoordinatorByInstances",
         {
           __instances: instances,
-        }
+        },
       );
       return readOnlyAddresses.slice();
     }
@@ -71,15 +70,20 @@ export class ReadFactory extends ReadModel {
     const count = await this.contract.read(
       "getNumberOfDeployerCoordinators",
       {},
-      options
+      options,
     );
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getDeployerCoordinatorsInRange",
       {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }
@@ -96,7 +100,7 @@ export class ReadFactory extends ReadModel {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
@@ -104,16 +108,21 @@ export class ReadFactory extends ReadModel {
    * Get the address of all Hyperdrive instances deployed by the factory.
    */
   async getInstanceAddresses(
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
+
+    if (count === 0n) {
+      return [];
+    }
+
     const readOnlyAddresses = await this.contract.read(
       "getInstancesInRange",
       {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return readOnlyAddresses.slice();
   }

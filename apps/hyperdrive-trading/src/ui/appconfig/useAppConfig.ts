@@ -1,22 +1,47 @@
 import { AppConfig, appConfig } from "@hyperdrive/appconfig";
-import { isTestnetChain } from "src/chains/isTestnetChain";
-import { SupportedChainId } from "src/chains/supportedChains";
+import { useMemo } from "react";
+import { isMainnetChain } from "src/chains/isMainnetChain";
 import { useChainId } from "wagmi";
 
 export function useAppConfig(): AppConfig {
-  const chainId = useChainId() as SupportedChainId;
-  if (isTestnetChain(chainId)) {
-    return {
-      ...appConfig,
-      hyperdrives: appConfig.hyperdrives.filter((hyperdrive) =>
-        isTestnetChain(hyperdrive.chainId),
-      ),
+  const chainId = useChainId();
+
+  // split config into mainnet and testnet
+  const { testnetConfig, mainnetConfig } = useMemo(() => {
+    const { hyperdrives, registries, ...nonSpecific } = appConfig;
+
+    const testnetConfig: AppConfig = {
+      registries: {},
+      hyperdrives: [],
+      ...nonSpecific,
     };
-  }
-  return {
-    ...appConfig,
-    hyperdrives: appConfig.hyperdrives.filter(
-      (hyperdrive) => !isTestnetChain(hyperdrive.chainId),
-    ),
-  };
+    const mainnetConfig: AppConfig = {
+      registries: {},
+      hyperdrives: [],
+      ...nonSpecific,
+    };
+
+    // registries
+    for (const [chainIdString, registry] of Object.entries(registries)) {
+      const chainId = +chainIdString;
+      if (isMainnetChain(chainId)) {
+        mainnetConfig.registries[chainId] = registry;
+      } else {
+        testnetConfig.registries[chainId] = registry;
+      }
+    }
+
+    // hyperdrives
+    for (const hyperdrive of hyperdrives) {
+      if (isMainnetChain(hyperdrive.chainId)) {
+        mainnetConfig.hyperdrives.push(hyperdrive);
+      } else {
+        testnetConfig.hyperdrives.push(hyperdrive);
+      }
+    }
+
+    return { testnetConfig, mainnetConfig };
+  }, []);
+
+  return isMainnetChain(chainId) ? mainnetConfig : testnetConfig;
 }
