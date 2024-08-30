@@ -52,7 +52,6 @@ export function LpCurrentValueCell({
   ) {
     baseProceeds = fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint;
   }
-  console.log(!!withdrawalShares, hyperdrive.name);
   let withdrawablePercent = parseFixed("100");
   if (withdrawalShares) {
     if (baseProceeds && baseValue) {

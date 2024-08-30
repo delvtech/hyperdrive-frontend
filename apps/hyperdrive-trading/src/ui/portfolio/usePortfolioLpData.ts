@@ -1,38 +1,117 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
+import { getPublicClient } from "@wagmi/core";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { sdkCache } from "src/sdk/sdkCache";
+import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { wagmiConfig } from "src/network/wagmiClient";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Address } from "viem";
-import { useAccount, usePublicClient } from "wagmi";
+import { Address, PublicClient } from "viem";
+import { useAccount } from "wagmi";
 
 type OpenLpPositionsData = Record<
   Address,
   { lpShares: bigint; withdrawalShares: bigint }
 >;
 
+// export function usePortfolioLpData(): {
+//   openLpPositions: OpenLpPositionsData | undefined;
+//   openLpPositionStatus: "error" | "success" | "loading";
+// } {
+//   const { address: account } = useAccount();
+//   const publicClient = usePublicClient();
+//   const appConfig = useAppConfig();
+//   const queryEnabled = !!account && !!appConfig && !!publicClient;
+
+//   const {
+//     data: openLpPosition,
+//     status: openLpPositionStatus,
+//     error,
+//   } = useQuery({
+//     queryKey: makeQueryKey("portfolioLp", { account }),
+//     enabled: queryEnabled,
+//     queryFn: queryEnabled
+//       ? async () => {
+//           const result: OpenLpPositionsData = {};
+//           await Promise.all(
+//             appConfig.hyperdrives.map(async (hyperdrive) => {
+//               const readHyperdrive = await getReadHyperdrive({
+//                 appConfig,
+//                 hyperdriveAddress: hyperdrive.address,
+//                 publicClient,
+//               });
+//               // const lpShares = await readHyperdrive.getLpShares({
+//               //   account: account,
+//               // });
+
+//               // // const withdrawalShares = await readHyperdrive.getWithdrawalShares(
+//               // //   {
+//               // //     account: account,
+//               // //   },
+//               // // );
+//               // console.log({ lpShares }, "all");
+//               // result[hyperdrive.address] = { lpShares };
+//             }),
+//           );
+//           return result;
+//         }
+//       : undefined,
+//   });
+//   console.log(error, "error");
+//   return {
+//     openLpPositions: openLpPosition,
+//     openLpPositionStatus,
+//   };
+// }
+
 export function usePortfolioLpData(): {
   openLpPositions: OpenLpPositionsData | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
-  const publicClient = usePublicClient();
   const appConfig = useAppConfig();
-  const queryEnabled = !!account && !!appConfig && !!publicClient;
+  const chainIds = Object.keys(appConfig.registries).map(Number);
+  const { address: account } = useAccount();
+  const queryEnabled = !!account && !!appConfig;
+  const clients: Map<
+    number,
+    {
+      publicClient: PublicClient;
+    }
+  > = new Map();
 
-  const { data: openLpPosition, status: openLpPositionStatus } = useQuery({
+  for (const chainId of chainIds) {
+    // TODO: Cleanup type casting
+    const publicClient = getPublicClient(wagmiConfig as any, {
+      chainId,
+    }) as PublicClient;
+
+    clients.set(chainId, {
+      publicClient,
+    });
+  }
+
+  const { data, error, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", { account }),
-    enabled: queryEnabled,
+    placeholderData: [],
     queryFn: queryEnabled
       ? async () => {
           const result: OpenLpPositionsData = {};
-          await Promise.all(
+          const results = await Promise.all(
             appConfig.hyperdrives.map(async (hyperdrive) => {
-              const readHyperdrive = new ReadHyperdrive({
-                address: hyperdrive.address,
+              const { publicClient } = clients.get(hyperdrive.chainId) || {};
+
+              // Return available static data if no registry is found
+              if (!publicClient) {
+                console.error(
+                  `No public client found for chainId ${hyperdrive.chainId}`,
+                );
+                return undefined;
+              }
+
+              const readHyperdrive = await getReadHyperdrive({
+                appConfig,
+                hyperdriveAddress: hyperdrive.address,
                 publicClient,
-                cache: sdkCache,
               });
+
               const lpShares = await readHyperdrive.getLpShares({
                 account: account,
               });
@@ -42,16 +121,22 @@ export function usePortfolioLpData(): {
                   account: account,
                 },
               );
+              // console.log({ lpShares, withdrawalShares }, "all");
+              result[hyperdrive.address] = {
+                lpShares,
+                withdrawalShares,
+              };
 
-              result[hyperdrive.address] = { lpShares, withdrawalShares };
+              return result;
             }),
           );
-          return result;
+          return Object.assign({}, ...results.filter(Boolean));
         }
       : undefined,
   });
+
   return {
-    openLpPositions: openLpPosition,
-    openLpPositionStatus,
+    openLpPositions: data,
+    openLpPositionStatus: status,
   };
 }
