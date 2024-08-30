@@ -21,6 +21,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -66,6 +67,7 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+  const isNewPool = useIsNewPool({ hyperdrive });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -399,7 +401,7 @@ export function OpenShortForm({
               vaultRateStatus === "success" && vaultRate ? (
                 <>
                   {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
-                  {vaultRate.formatted || 0} APY
+                  {isNewPool ? "✨New✨" : `${vaultRate.formatted} APY`}
                 </>
               ) : (
                 <Skeleton className="w-42 h-8" />
