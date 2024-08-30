@@ -36,9 +36,8 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address } from "viem";
 import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -227,9 +226,10 @@ export function AddLiquidityForm({
     hyperdrive,
     baseToken,
   });
-  const tokenPrices = useTokenFiatPrices([activeToken.address]);
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeToken.address,
+    chainId: activeToken.chainId,
+  });
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     ...addLiquidityParams,
     chainId: hyperdrive.chainId,

@@ -35,9 +35,9 @@ import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { Address, formatUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 (window as any).fixed = fixed;
@@ -117,15 +117,14 @@ export function OpenShortForm({
       tokens: tokenOptions.map((token) => token.tokenConfig),
     });
 
-  const tokenPrices = useTokenFiatPrices([
-    activeToken.address,
-    baseToken.address,
-  ]);
-  const activeTokenPrice =
-    tokenPrices?.[activeToken.address.toLowerCase() as Address];
-
-  const baseTokenPrice =
-    tokenPrices?.[baseToken.address.toLowerCase() as Address];
+  const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeToken.address,
+    chainId: activeToken.chainId,
+  });
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    tokenAddress: baseToken.address,
+    chainId: baseToken.chainId,
+  });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;

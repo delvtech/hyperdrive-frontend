@@ -16,8 +16,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
-import { useTokenFiatPrices } from "src/ui/token/hooks/useTokenFiatPrices";
-import { Address } from "viem";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 interface OpenLongStatsProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
@@ -42,9 +41,10 @@ export function OpenLongStats({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const tokenPrices = useTokenFiatPrices([baseToken.address]);
-  const baseTokenPrice =
-    tokenPrices?.[baseToken.address.toLowerCase() as Address];
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    chainId: baseToken.chainId,
+    tokenAddress: baseToken.address,
+  });
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
