@@ -2,6 +2,19 @@ export const HyperdriveTarget0 = {
     abi: [
         {
             "type": "function",
+            "name": "adminController",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "balanceOf",
             "inputs": [
                 {
@@ -819,36 +832,10 @@ export const HyperdriveTarget0 = {
         },
         {
             "type": "function",
-            "name": "setCheckpointRewarder",
-            "inputs": [
-                {
-                    "name": "_checkpointRewarder",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setFeeCollector",
-            "inputs": [
-                {
-                    "name": "_who",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
             "name": "setGovernance",
             "inputs": [
                 {
-                    "name": "_who",
+                    "name": "",
                     "type": "address",
                     "internalType": "address"
                 }
@@ -861,27 +848,14 @@ export const HyperdriveTarget0 = {
             "name": "setPauser",
             "inputs": [
                 {
-                    "name": "who",
+                    "name": "",
                     "type": "address",
                     "internalType": "address"
                 },
                 {
-                    "name": "status",
+                    "name": "",
                     "type": "bool",
                     "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setSweepCollector",
-            "inputs": [
-                {
-                    "name": "_who",
-                    "type": "address",
-                    "internalType": "address"
                 }
             ],
             "outputs": [],
@@ -918,6 +892,19 @@ export const HyperdriveTarget0 = {
                 }
             ],
             "stateMutability": "pure"
+        },
+        {
+            "type": "function",
+            "name": "totalShares",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
         },
         {
             "type": "function",
@@ -1126,19 +1113,6 @@ export const HyperdriveTarget0 = {
         },
         {
             "type": "event",
-            "name": "CheckpointRewarderUpdated",
-            "inputs": [
-                {
-                    "name": "newCheckpointRewarder",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "CloseLong",
             "inputs": [
                 {
@@ -1341,32 +1315,6 @@ export const HyperdriveTarget0 = {
         },
         {
             "type": "event",
-            "name": "FeeCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newFeeCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "GovernanceUpdated",
-            "inputs": [
-                {
-                    "name": "newGovernance",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "Initialize",
             "inputs": [
                 {
@@ -1545,25 +1493,6 @@ export const HyperdriveTarget0 = {
         },
         {
             "type": "event",
-            "name": "PauserUpdated",
-            "inputs": [
-                {
-                    "name": "newPauser",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "status",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "RedeemWithdrawalShares",
             "inputs": [
                 {
@@ -1684,19 +1613,6 @@ export const HyperdriveTarget0 = {
                 },
                 {
                     "name": "target",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "SweepCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newSweepCollector",
                     "type": "address",
                     "indexed": true,
                     "internalType": "address"
@@ -1848,6 +1764,7 @@ export const HyperdriveTarget0 = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
+        "adminController()": "950c5d03",
         "balanceOf(uint256,address)": "3656eec2",
         "baseToken()": "c55dae63",
         "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc",
@@ -1875,13 +1792,11 @@ export const HyperdriveTarget0 = {
         "setApproval(uint256,address,uint256)": "9cd241af",
         "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
         "setApprovalForAll(address,bool)": "a22cb465",
-        "setCheckpointRewarder(address)": "a5107626",
-        "setFeeCollector(address)": "a42dce80",
         "setGovernance(address)": "ab033ea9",
         "setPauser(address,bool)": "7180c8ca",
-        "setSweepCollector(address)": "e4af29d1",
         "sweep(address)": "01681a62",
         "symbol(uint256)": "4e41a1fb",
+        "totalShares()": "3a98ef39",
         "totalSupply(uint256)": "bd85b039",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc",

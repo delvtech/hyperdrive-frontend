@@ -508,6 +508,16 @@ export declare const IHyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "maxCircuitBreakerDelta";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "maxFees";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -566,6 +576,16 @@ export declare const IHyperdriveFactory: {
     }, {
         readonly type: "function";
         readonly name: "minCheckpointDuration";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "minCircuitBreakerDelta";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
             readonly name: "";
@@ -696,6 +716,16 @@ export declare const IHyperdriveFactory: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "updateDeployerCoordinatorManager";
+        readonly inputs: readonly [{
+            readonly name: "_deployerCoordinatorManager";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "updateFeeCollector";
         readonly inputs: readonly [{
             readonly name: "_feeCollector";
@@ -749,6 +779,16 @@ export declare const IHyperdriveFactory: {
         readonly name: "updateMaxCheckpointDuration";
         readonly inputs: readonly [{
             readonly name: "_maxCheckpointDuration";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMaxCircuitBreakerDelta";
+        readonly inputs: readonly [{
+            readonly name: "_maxCircuitBreakerDelta";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -816,6 +856,16 @@ export declare const IHyperdriveFactory: {
         readonly name: "updateMinCheckpointDuration";
         readonly inputs: readonly [{
             readonly name: "_minCheckpointDuration";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "updateMinCircuitBreakerDelta";
+        readonly inputs: readonly [{
+            readonly name: "_minCircuitBreakerDelta";
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
@@ -1422,11 +1472,13 @@ export declare const IHyperdriveFactory: {
         readonly "linkerCodeHash()": "c905a4b5";
         readonly "linkerFactory()": "99623bb1";
         readonly "maxCheckpointDuration()": "e0e2daaa";
+        readonly "maxCircuitBreakerDelta()": "4554f9a9";
         readonly "maxFees()": "e83e34b1";
         readonly "maxFixedAPR()": "bf9bd5cd";
         readonly "maxPositionDuration()": "8efc0986";
         readonly "maxTimeStretchAPR()": "48800760";
         readonly "minCheckpointDuration()": "5720c9d5";
+        readonly "minCircuitBreakerDelta()": "1ecda0fe";
         readonly "minFees()": "c1722563";
         readonly "minFixedAPR()": "d23d7ea3";
         readonly "minPositionDuration()": "daf012e6";
@@ -1437,17 +1489,20 @@ export declare const IHyperdriveFactory: {
         readonly "updateCheckpointDurationResolution(uint256)": "11e77bfe";
         readonly "updateCheckpointRewarder(address)": "3e2d2014";
         readonly "updateDefaultPausers(address[])": "9af25262";
+        readonly "updateDeployerCoordinatorManager(address)": "a98a46db";
         readonly "updateFeeCollector(address)": "d2c35ce8";
         readonly "updateGovernance(address)": "b2561263";
         readonly "updateHyperdriveGovernance(address)": "dd2b8fbb";
         readonly "updateLinkerCodeHash(bytes32)": "4fbfee77";
         readonly "updateLinkerFactory(address)": "85229785";
         readonly "updateMaxCheckpointDuration(uint256)": "6f6d5c4a";
+        readonly "updateMaxCircuitBreakerDelta(uint256)": "84c19aab";
         readonly "updateMaxFees((uint256,uint256,uint256,uint256))": "2885e3ac";
         readonly "updateMaxFixedAPR(uint256)": "97b0e8ce";
         readonly "updateMaxPositionDuration(uint256)": "eb71f66c";
         readonly "updateMaxTimeStretchAPR(uint256)": "628027a3";
         readonly "updateMinCheckpointDuration(uint256)": "8e127cf5";
+        readonly "updateMinCircuitBreakerDelta(uint256)": "2907d3dd";
         readonly "updateMinFees((uint256,uint256,uint256,uint256))": "10d1dc3e";
         readonly "updateMinFixedAPR(uint256)": "1978ebcf";
         readonly "updateMinPositionDuration(uint256)": "e71f34b3";

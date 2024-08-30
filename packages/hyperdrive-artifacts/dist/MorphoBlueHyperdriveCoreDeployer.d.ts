@@ -93,6 +93,10 @@ export declare const MorphoBlueHyperdriveCoreDeployer: {
                 }];
             }];
         }, {
+            readonly name: "_adminController";
+            readonly type: "address";
+            readonly internalType: "contract IHyperdriveAdminController";
+        }, {
             readonly name: "_extraData";
             readonly type: "bytes";
             readonly internalType: "bytes";
@@ -130,7 +134,7 @@ export declare const MorphoBlueHyperdriveCoreDeployer: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
-        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "285fd401";
+        readonly "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),address,bytes,address,address,address,address,address,bytes32)": "8cc23ce0";
     };
 };
 //# sourceMappingURL=MorphoBlueHyperdriveCoreDeployer.d.ts.map

@@ -482,26 +482,6 @@ export declare const IHyperdriveCore: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "setCheckpointRewarder";
-        readonly inputs: readonly [{
-            readonly name: "_checkpointRewarder";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setFeeCollector";
-        readonly inputs: readonly [{
-            readonly name: "_who";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
         readonly name: "setGovernance";
         readonly inputs: readonly [{
             readonly name: "_who";
@@ -514,23 +494,13 @@ export declare const IHyperdriveCore: {
         readonly type: "function";
         readonly name: "setPauser";
         readonly inputs: readonly [{
-            readonly name: "who";
+            readonly name: "";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "status";
+            readonly name: "";
             readonly type: "bool";
             readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setSweepCollector";
-        readonly inputs: readonly [{
-            readonly name: "_who";
-            readonly type: "address";
-            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -611,11 +581,8 @@ export declare const IHyperdriveCore: {
         readonly "setApproval(uint256,address,uint256)": "9cd241af";
         readonly "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac";
         readonly "setApprovalForAll(address,bool)": "a22cb465";
-        readonly "setCheckpointRewarder(address)": "a5107626";
-        readonly "setFeeCollector(address)": "a42dce80";
         readonly "setGovernance(address)": "ab033ea9";
         readonly "setPauser(address,bool)": "7180c8ca";
-        readonly "setSweepCollector(address)": "e4af29d1";
         readonly "sweep(address)": "01681a62";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";

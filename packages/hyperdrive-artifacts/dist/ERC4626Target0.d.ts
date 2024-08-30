@@ -87,8 +87,22 @@ export declare const ERC4626Target0: {
                     readonly internalType: "uint256";
                 }];
             }];
+        }, {
+            readonly name: "__adminController";
+            readonly type: "address";
+            readonly internalType: "contract IHyperdriveAdminController";
         }];
         readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "adminController";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "function";
         readonly name: "balanceOf";
@@ -720,29 +734,9 @@ export declare const ERC4626Target0: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "setCheckpointRewarder";
-        readonly inputs: readonly [{
-            readonly name: "_checkpointRewarder";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setFeeCollector";
-        readonly inputs: readonly [{
-            readonly name: "_who";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
         readonly name: "setGovernance";
         readonly inputs: readonly [{
-            readonly name: "_who";
+            readonly name: "";
             readonly type: "address";
             readonly internalType: "address";
         }];
@@ -752,23 +746,13 @@ export declare const ERC4626Target0: {
         readonly type: "function";
         readonly name: "setPauser";
         readonly inputs: readonly [{
-            readonly name: "who";
+            readonly name: "";
             readonly type: "address";
             readonly internalType: "address";
         }, {
-            readonly name: "status";
+            readonly name: "";
             readonly type: "bool";
             readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setSweepCollector";
-        readonly inputs: readonly [{
-            readonly name: "_who";
-            readonly type: "address";
-            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -796,6 +780,16 @@ export declare const ERC4626Target0: {
             readonly internalType: "string";
         }];
         readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "totalShares";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "function";
         readonly name: "totalSupply";
@@ -956,16 +950,6 @@ export declare const ERC4626Target0: {
             readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "CheckpointRewarderUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newCheckpointRewarder";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }];
         readonly anonymous: false;
     }, {
@@ -1135,26 +1119,6 @@ export declare const ERC4626Target0: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "FeeCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newFeeCollector";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newGovernance";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "Initialize";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1300,21 +1264,6 @@ export declare const ERC4626Target0: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "PauserUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newPauser";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "status";
-            readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1413,16 +1362,6 @@ export declare const ERC4626Target0: {
             readonly internalType: "address";
         }, {
             readonly name: "target";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "SweepCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newSweepCollector";
             readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
@@ -1541,6 +1480,7 @@ export declare const ERC4626Target0: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "adminController()": "950c5d03";
         readonly "balanceOf(uint256,address)": "3656eec2";
         readonly "baseToken()": "c55dae63";
         readonly "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc";
@@ -1568,13 +1508,11 @@ export declare const ERC4626Target0: {
         readonly "setApproval(uint256,address,uint256)": "9cd241af";
         readonly "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac";
         readonly "setApprovalForAll(address,bool)": "a22cb465";
-        readonly "setCheckpointRewarder(address)": "a5107626";
-        readonly "setFeeCollector(address)": "a42dce80";
         readonly "setGovernance(address)": "ab033ea9";
         readonly "setPauser(address,bool)": "7180c8ca";
-        readonly "setSweepCollector(address)": "e4af29d1";
         readonly "sweep(address)": "01681a62";
         readonly "symbol(uint256)": "4e41a1fb";
+        readonly "totalShares()": "3a98ef39";
         readonly "totalSupply(uint256)": "bd85b039";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";

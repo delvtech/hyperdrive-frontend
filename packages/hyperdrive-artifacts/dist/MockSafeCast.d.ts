@@ -70,6 +70,20 @@ export declare const MockSafeCast: {
         }];
         readonly stateMutability: "pure";
     }, {
+        readonly type: "function";
+        readonly name: "toUint256";
+        readonly inputs: readonly [{
+            readonly name: "x";
+            readonly type: "int256";
+            readonly internalType: "int256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "y";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
         readonly type: "error";
         readonly name: "UnsafeCastToInt128";
         readonly inputs: readonly [];
@@ -85,6 +99,10 @@ export declare const MockSafeCast: {
         readonly type: "error";
         readonly name: "UnsafeCastToUint128";
         readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsafeCastToUint256";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
@@ -93,6 +111,7 @@ export declare const MockSafeCast: {
         readonly "toInt256(uint256)": "dfbe873b";
         readonly "toUint112(uint256)": "41d2aa64";
         readonly "toUint128(uint256)": "809fdd33";
+        readonly "toUint256(int256)": "fdcf791b";
     };
 };
 //# sourceMappingURL=MockSafeCast.d.ts.map

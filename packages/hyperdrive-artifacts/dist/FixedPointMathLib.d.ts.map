@@ -1,1 +1,1 @@
-{"version":3,"file":"FixedPointMathLib.d.ts","sourceRoot":"","sources":["../src/FixedPointMathLib.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,iBAAiB;;;;CAI7B,CAAC"}
+{"version":3,"file":"FixedPointMathLib.d.ts","sourceRoot":"","sources":["../src/FixedPointMathLib.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,iBAAiB;;cAEgR,KAAK,MAAM,EAAE;;CAE1T,CAAC"}

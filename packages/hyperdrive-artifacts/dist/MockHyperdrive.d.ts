@@ -87,6 +87,10 @@ export declare const MockHyperdrive: {
                     readonly internalType: "uint256";
                 }];
             }];
+        }, {
+            readonly name: "__adminController";
+            readonly type: "address";
+            readonly internalType: "contract IHyperdriveAdminController";
         }];
         readonly stateMutability: "nonpayable";
     }, {
@@ -845,26 +849,6 @@ export declare const MockHyperdrive: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
-        readonly name: "setCheckpointRewarder";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setFeeCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
         readonly name: "setGovernance";
         readonly inputs: readonly [{
             readonly name: "";
@@ -967,16 +951,6 @@ export declare const MockHyperdrive: {
             readonly name: "bondReserves";
             readonly type: "uint128";
             readonly internalType: "uint128";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setSweepCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -1190,16 +1164,6 @@ export declare const MockHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "CheckpointRewarderUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newCheckpointRewarder";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "CloseLong";
         readonly inputs: readonly [{
             readonly name: "trader";
@@ -1365,26 +1329,6 @@ export declare const MockHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "FeeCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newFeeCollector";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newGovernance";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "Initialize";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1530,21 +1474,6 @@ export declare const MockHyperdrive: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
-        readonly name: "PauserUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newPauser";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "status";
-            readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
         readonly name: "RedeemWithdrawalShares";
         readonly inputs: readonly [{
             readonly name: "provider";
@@ -1643,16 +1572,6 @@ export declare const MockHyperdrive: {
             readonly internalType: "address";
         }, {
             readonly name: "target";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "SweepCollectorUpdated";
-        readonly inputs: readonly [{
-            readonly name: "newSweepCollector";
             readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
@@ -1766,14 +1685,11 @@ export declare const MockHyperdrive: {
         readonly "setApproval(uint256,address,uint256)": "9cd241af";
         readonly "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac";
         readonly "setApprovalForAll(address,bool)": "a22cb465";
-        readonly "setCheckpointRewarder(address)": "a5107626";
-        readonly "setFeeCollector(address)": "a42dce80";
         readonly "setGovernance(address)": "ab033ea9";
         readonly "setLongExposure(uint128)": "b4f8da39";
         readonly "setMarketState((uint128,uint128,uint128,uint128,int128,uint128,uint128,uint128,bool,bool,uint112,uint128))": "f45cf2e0";
         readonly "setPauser(address,bool)": "7180c8ca";
         readonly "setReserves(uint128,uint128)": "702db0eb";
-        readonly "setSweepCollector(address)": "e4af29d1";
         readonly "setTotalShares(uint256)": "a77384c1";
         readonly "sweep(address)": "01681a62";
         readonly "target0()": "21b57d53";

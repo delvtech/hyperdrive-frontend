@@ -119,6 +119,11 @@ export const IHyperdriveCoreDeployer = {
                     ]
                 },
                 {
+                    "name": "_adminController",
+                    "type": "address",
+                    "internalType": "contract IHyperdriveAdminController"
+                },
+                {
                     "name": "_extraData",
                     "type": "bytes",
                     "internalType": "bytes"
@@ -166,6 +171,6 @@ export const IHyperdriveCoreDeployer = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
-        "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "285fd401"
+        "deployHyperdrive(string,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,address,(uint256,uint256,uint256,uint256)),address,bytes,address,address,address,address,address,bytes32)": "8cc23ce0"
     }
 };
