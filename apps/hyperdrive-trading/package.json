@@ -41,6 +41,7 @@
     "@types/lodash.sortby": "^4.7.9",
     "@usecapsule/rainbowkit-wallet": "^0.9.4",
     "@usecapsule/react-sdk": "^3.17.0",
+    "@wagmi/core": "^2.6.9",
     "assert-never": "^1.2.1",
     "buffer": "^6.0.3",
     "calendar-link": "^2.6.0",
