@@ -27,7 +27,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    * Get a {@linkcode ReadWriteFactory} instance for each registered factory.
    */
   async getFactories(
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadWriteFactory[]> {
     const factoryAddresses = await this.getFactoryAddresses(options);
     return factoryAddresses.map(
@@ -36,7 +36,7 @@ export class ReadWriteRegistry extends ReadRegistry {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
@@ -45,16 +45,21 @@ export class ReadWriteRegistry extends ReadRegistry {
    * registered in the registry.
    */
   async getInstances(
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadWriteHyperdrive[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
+
+    if (count === 0n) {
+      return [];
+    }
+
     const hyperdriveAddresses = await this.contract.read(
       "getInstancesInRange",
       {
         _startIndex: 0n,
         _endIndex: count,
       },
-      options
+      options,
     );
     return hyperdriveAddresses.map(
       (address) =>
@@ -62,18 +67,18 @@ export class ReadWriteRegistry extends ReadRegistry {
           address,
           contractFactory: this.contractFactory,
           network: this.network,
-        })
+        }),
     );
   }
 
   async getInstanceInfo(
     instanceAddress: Address,
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata> {
     const { kind, name, version, data, factory } = await this.contract.read(
       "getInstanceInfoWithMetadata",
       { _instance: instanceAddress },
-      options
+      options,
     );
     return {
       kind,
@@ -93,12 +98,12 @@ export class ReadWriteRegistry extends ReadRegistry {
    */
   async getInstanceInfos(
     instanceAddresses: Address[],
-    options?: ContractReadOptions
+    options?: ContractReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(
       "getInstanceInfosWithMetadata",
       { __instances: instanceAddresses },
-      options
+      options,
     );
     return infos.map(({ kind, name, version, data, factory }) => ({
       kind,

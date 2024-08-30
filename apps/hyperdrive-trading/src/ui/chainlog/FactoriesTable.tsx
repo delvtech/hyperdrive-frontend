@@ -1,21 +1,27 @@
+import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeFactoryData } from "src/registry/data";
+import { sdkCache } from "src/sdk/sdkCache";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
+import { ChainCell } from "src/ui/chainlog/ChainCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
-import { useReadRegistry } from "src/ui/registry/hooks/useReadRegistry";
-import { Address } from "viem";
-import { useChainId } from "wagmi";
+import { Address, PublicClient } from "viem";
 
 export function FactoriesTable(): ReactElement {
   const { data = [], isFetching } = useFactoriesQuery();
@@ -23,6 +29,15 @@ export function FactoriesTable(): ReactElement {
     columns: factoryCols,
     data,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    initialState: {
+      sorting: [
+        {
+          id: "chain",
+          desc: false,
+        },
+      ],
+    },
   });
 
   return (
@@ -39,27 +54,42 @@ export function FactoriesTable(): ReactElement {
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th
-                    className={classNames(
-                      "sticky top-0 z-10 h-10 rounded-box text-sm",
-                      {
-                        "min-w-52": header.id === "name",
-                      },
-                    )}
-                    key={header.id}
-                  >
-                    <div
-                      className="font-normal text-neutral-content"
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
+                {headerGroup.headers.map((header) => {
+                  const sortDirection = header.column.getIsSorted();
+                  return (
+                    <th
+                      className={classNames(
+                        "sticky top-0 z-10 h-10 rounded-box text-sm",
+                        {
+                          "min-w-52": header.id === "name",
+                        },
                       )}
-                    </div>
-                  </th>
-                ))}
+                      key={header.id}
+                    >
+                      <div
+                        className={classNames(
+                          "flex items-center gap-1 font-normal text-neutral-content",
+                          {
+                            "flex cursor-pointer select-none items-center gap-2":
+                              header.column.getCanSort(),
+                          },
+                        )}
+                        onClick={header.column.getToggleSortingHandler()}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {sortDirection === "asc" && (
+                          <ChevronUpIcon height={15} />
+                        )}
+                        {sortDirection === "desc" && (
+                          <ChevronDownIcon height={15} />
+                        )}
+                      </div>
+                    </th>
+                  );
+                })}
               </tr>
             ))}
           </thead>
@@ -104,9 +134,17 @@ const factoryCols = [
     id: "name",
     header: "Name",
   }),
+  factoryColHelper.accessor((row) => row.chainId, {
+    id: "chain",
+    header: "Chain",
+    cell: ({ getValue }) => <ChainCell chainId={getValue()} />,
+    sortingFn: "alphanumeric",
+  }),
   factoryColHelper.accessor((row) => row.address, {
     header: "Address",
-    cell: ({ getValue }) => <AddressCell address={getValue()} />,
+    cell: ({ getValue, row }) => (
+      <AddressCell address={getValue()} chainId={row.original.chainId} />
+    ),
   }),
   factoryColHelper.accessor((row) => row.version, {
     header: "Version",
@@ -120,38 +158,55 @@ const factoryCols = [
 interface Factory {
   name: string;
   address: Address;
+  chainId: number;
   version: string;
   status: Status;
 }
 
 function useFactoriesQuery(): UseQueryResult<Factory[], any> {
-  const chainId = useChainId();
-  const registry = useReadRegistry(chainId);
-  const queryEnabled = !!registry;
+  const appConfig = useAppConfig();
+  const chainIds = Object.keys(appConfig.chains).map(Number);
 
   return useQuery({
     queryKey: makeQueryKey("chainlog", {
       tab: "factories",
-      registry: registry?.address,
-      chainId,
+      chainIds,
     }),
-    enabled: queryEnabled,
     placeholderData: [],
-    queryFn: queryEnabled
-      ? async () => {
+    queryFn: async () => {
+      const factories: Factory[] = [];
+
+      await Promise.all(
+        chainIds.map(async (chainId) => {
+          // TODO: Cleanup type casting
+          const publicClient = getPublicClient(wagmiConfig as any, {
+            chainId,
+          }) as PublicClient;
+
+          const registry = new ReadRegistry({
+            address: appConfig.registries[chainId],
+            publicClient,
+            cache: sdkCache,
+            namespace: chainId.toString(),
+          });
+
           const factoryAddresses = await registry.getFactoryAddresses();
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
-          return metas.map(({ data, name, version }, i): Factory => {
+          metas.forEach(({ data, name, version }, i) => {
             const { status } = decodeFactoryData(data);
-            return {
+            factories.push({
               name,
               address: factoryAddresses[i],
+              chainId,
               version,
               status,
-            };
+            });
           });
-        }
-      : undefined,
+        }),
+      );
+
+      return factories;
+    },
   });
 }
