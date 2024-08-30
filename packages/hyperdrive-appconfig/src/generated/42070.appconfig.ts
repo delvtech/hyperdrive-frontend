@@ -53,7 +53,7 @@ export const gnosisforkAppConfig: AppConfig = {
       initializationBlock: 35730229n,
       address: "0xceBcC0eEcAf6da7dDA589dD2BEe0da01E4d94F88",
       version: "v1.0.18",
-      name: "182d Gnosis wstETH",
+      name: "182d Lido wstETH",
       decimals: 18,
       yieldSource: "gnosisWsteth",
       baseTokenFallback: {
@@ -224,7 +224,7 @@ export const gnosisforkAppConfig: AppConfig = {
     },
     gnosisWsteth: {
       id: "gnosisWsteth",
-      shortName: "Gnosis wstETH",
+      shortName: "Lido wstETH",
       protocol: "lido",
       historicalRatePeriod: 1,
     },

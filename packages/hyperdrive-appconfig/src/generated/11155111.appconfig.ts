@@ -2,6 +2,17 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   tokens: [
     {
+      chainId: 11155111,
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 11155111,
       name: "Ether",
@@ -20,17 +31,6 @@ export const sepoliaAppConfig: AppConfig = {
       symbol: "stETH",
       iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
       tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 11155111,
-      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
     },
     {
       chainId: 11155111,
@@ -578,7 +578,7 @@ export const sepoliaAppConfig: AppConfig = {
     },
     gnosisWsteth: {
       id: "gnosisWsteth",
-      shortName: "Gnosis wstETH",
+      shortName: "Lido wstETH",
       protocol: "lido",
       historicalRatePeriod: 1,
     },
