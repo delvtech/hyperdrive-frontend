@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-viem
 
+## 3.0.2
+
+### Patch Changes
+
+- 5eaa737: Bump evm-client-viem version to 0.6.3 to fix bug causing event args to not be sent in ethGetLogs
+
 ## 3.0.1
 
 ### Patch Changes
