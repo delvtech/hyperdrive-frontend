@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import { AppConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -25,6 +26,50 @@ import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const appConfig = useAppConfig();
+
+  if (openLpPositionStatus === "loading") {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <LoadingState
+          heading="Loading your LP Positions..."
+          text="Searching for LP events, calculating current value and PnL..."
+        />
+      </div>
+    );
+  }
+  if (openLpPositionStatus === "error") {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="Error loading your LP Positions"
+          text="Please refresh the page and try again."
+        />
+      </div>
+    );
+  }
+
+  if (
+    openLpPositions &&
+    !Object.values(openLpPositions).some(
+      (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
+    )
+  ) {
+    return (
+      <div className="my-28 flex h-full w-[1036px] flex-col">
+        <NonIdealState
+          heading="No LP Positions"
+          text="You don't have any LP positions."
+          action={
+            <Link to="/">
+              <button className="daisy-btn daisy-btn-primary">
+                View Pools
+              </button>
+            </Link>
+          }
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
@@ -99,6 +144,7 @@ export function OpenLpTableDesktop({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  console.log("openLpPosition", openLpPosition);
 
   const columns = useMemo(
     () => getColumns({ hyperdrive, appConfig }),

@@ -7,13 +7,11 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { useAccount } from "wagmi";
 export function ManageLpAndWithdrawalSharesButton({
@@ -29,40 +27,27 @@ export function ManageLpAndWithdrawalSharesButton({
   const baseToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
-  const { lpShares, lpSharesStatus } = useLpShares({
+  const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
     chainId: hyperdrive.chainId,
   });
   const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
-  const { poolInfo } = usePoolInfo({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
+
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
     chainId: hyperdrive.chainId,
   });
 
-  const {
-    baseProceeds: baseProceedsFromPreview,
-    withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
-  } = usePreviewRedeemWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    withdrawalSharesIn: balanceOfWithdrawalShares,
-    minOutputPerShare: 1n, // TODO: slippage,
-    destination: account,
-    chainId: hyperdrive.chainId,
-  });
-
-  const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
-    decimals: hyperdrive.decimals,
-    lpSharePrice: poolInfo?.lpSharePrice,
-    withdrawalShares: balanceOfWithdrawalShares,
-    baseProceedsFromPreview,
-    withdrawalSharesRedeemedFromPreview,
-  });
+  const { baseProceeds: baseProceedsFromPreview } =
+    usePreviewRedeemWithdrawalShares({
+      hyperdriveAddress: hyperdrive.address,
+      withdrawalSharesIn: balanceOfWithdrawalShares,
+      minOutputPerShare: 1n, // TODO: slippage,
+      destination: account,
+      chainId: hyperdrive.chainId,
+    });
 
   return (
     <>
