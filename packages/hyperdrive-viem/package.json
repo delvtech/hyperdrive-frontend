@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-viem",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
     "viem": "^2.7.8"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-js-core": "3.0.1",
+    "@delvtech/hyperdrive-js-core": "3.0.3",
     "@delvtech/evm-client-viem": "^0.6.3"
   },
   "devDependencies": {

@@ -41,6 +41,18 @@ if (VITE_WALLET_CONNECT_PROJECT_ID) {
   recommendedWallets.push(walletConnectWallet);
 }
 
+// mainnet
+if (VITE_MAINNET_RPC_URL) {
+  chains.push(mainnet);
+  transports[mainnet.id] = http(VITE_MAINNET_RPC_URL);
+
+  // TODO: push this into the custom wallets for local and cloudchain once
+  // capsule support is verified
+  if (capsuleWallet && !customWallets.includes(capsuleWallet)) {
+    customWallets.push(capsuleWallet);
+  }
+}
+
 // Local docker anvil node
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
   chains.push(foundry);
@@ -70,16 +82,6 @@ if (VITE_SEPOLIA_RPC_URL) {
   }
 }
 
-if (VITE_MAINNET_RPC_URL) {
-  chains.push(mainnet);
-  transports[mainnet.id] = http(VITE_MAINNET_RPC_URL);
-
-  // TODO: push this into the custom wallets for local and cloudchain once
-  // capsule support is verified
-  if (capsuleWallet && !customWallets.includes(capsuleWallet)) {
-    customWallets.push(capsuleWallet);
-  }
-}
 // Gnosis
 if (VITE_GNOSIS_NODE_RPC_URL) {
   chains.push(gnosis);

@@ -365,10 +365,10 @@ export function AddLiquidityForm({
           <PrimaryStat
             label="LP APY"
             value={
-              isNewPool || lpApy == undefined ? (
+              isNewPool || lpApy === undefined ? (
                 <div className="flex gap-2">✨New✨</div>
               ) : (
-                `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`
+                `${lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted}`
               )
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."
