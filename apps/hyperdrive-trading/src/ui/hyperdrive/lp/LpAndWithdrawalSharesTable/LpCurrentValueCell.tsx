@@ -161,7 +161,10 @@ export function LpCurrentValueCell({
           </span>
         </>
       ) : (
-        <Skeleton />
+        <div className="flex flex-col items-end">
+          <Skeleton className="w-24" />
+          <Skeleton className="mt-1 w-32" />
+        </div>
       )}
     </div>
   );
