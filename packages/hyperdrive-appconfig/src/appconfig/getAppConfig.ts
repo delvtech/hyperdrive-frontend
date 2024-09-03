@@ -16,7 +16,9 @@ import {
   EZETH_ICON_URL,
   RETH_ICON_URL,
   SDAI_ICON_URL,
+  STUSD_ICON_URL,
   SXDAI_ICON_URL,
+  USDA_ICON_URL,
   USDC_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
@@ -157,6 +159,25 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
+    if (hyperdriveName.includes("stUSD Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "stUSD",
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        baseTokenIconUrl: USDA_ICON_URL,
+        baseTokenTags: ["stablecoin"],
+        sharesTokenIconUrl: STUSD_ICON_URL,
+        tokenPlaces: 2,
+      });
+    }
+
     throw new Error(
       `Unknown ERC4626Hyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
     );
@@ -206,6 +227,16 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: USDC_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoWstethUsdc",
+      });
+    }
+
+    if (hyperdriveName.includes("Morpho Blue wstETH/USDA Hyperdrive")) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: USDA_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoWstethUsda",
       });
     }
 
