@@ -72,28 +72,26 @@ export function LpCurrentValueCell({
     withdrawalSharesRedeemedFromPreview,
   });
 
-  // make sure proceeds from withdrawal are always denominated in base
-  let baseProceeds = proceeds || 0n;
-  if (
-    proceeds &&
-    poolInfo &&
-    !hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-  ) {
-    baseProceeds = fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint;
-  }
-  let withdrawablePercent = parseFixed("100");
-  if (withdrawalShares && baseProceeds && baseValue) {
-    withdrawablePercent = fixed(
-      calculateRatio({
-        a: baseProceeds,
-        b: baseValue,
-        decimals: hyperdrive.decimals,
-      }),
-    );
-  }
+  // Simplify the baseProceeds calculation
+  const baseProceeds = proceeds
+    ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+      ? proceeds
+      : poolInfo
+        ? fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint
+        : 0n
+    : 0n;
 
-  // If the withdrawal shares are 100% withdrawable, add the current value of the withdrawal shares to the proceeds.
-  // A note is included in the profit/loss tooltip to let the user know that the current value of the withdrawal shares is included in the proceeds.
+  const withdrawablePercent =
+    withdrawalShares && baseProceeds && baseValue
+      ? fixed(
+          calculateRatio({
+            a: baseProceeds,
+            b: baseValue,
+            decimals: hyperdrive.decimals,
+          }),
+        )
+      : parseFixed("100");
+
   const totalProceeds = withdrawablePercent.eq(parseFixed("100"))
     ? (proceeds || 0n) + (withdrawalSharesCurrentValue || 0n)
     : proceeds || 0n;
