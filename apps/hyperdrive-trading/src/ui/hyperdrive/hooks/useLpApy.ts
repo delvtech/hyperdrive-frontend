@@ -1,5 +1,6 @@
 import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
+import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isForkChain } from "src/chains/isForkChain";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -15,7 +16,7 @@ export function useLpApy({
   hyperdriveAddress: Address;
   chainId: number;
 }): {
-  lpApy: number | undefined;
+  lpApy: { lpApy: bigint; formatted: string } | undefined;
   lpApyStatus: "error" | "success" | "loading";
 } {
   const { poolInfo: currentPoolInfo } = usePoolInfo({
@@ -49,20 +50,25 @@ export function useLpApy({
                 appConfig.yieldSources[hyperdrive.yieldSource]
                   .historicalRatePeriod,
               );
-          return readHyperdrive.getLpApy({
+          const { lpApy } = await readHyperdrive.getLpApy({
             fromBlock: [31337].includes(chainId)
               ? // local devnets don't have a lot of blocks, so start from the beginning
                 1n
               : // Appconfig tells us how many days to look back for historical rates
                 blockNumber - numBlocksForHistoricalRate,
           });
+
+          return {
+            lpApy,
+            formatted: formatRate(lpApy),
+          };
         }
       : undefined,
     enabled: queryEnabled,
   });
 
   return {
-    lpApy: data?.lpApy,
+    lpApy: data,
     lpApyStatus: status,
   };
 }

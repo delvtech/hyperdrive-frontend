@@ -208,15 +208,13 @@ export function PoolRow({
             isLoading={lpApyStatus === "loading"}
             isNew={isLpApyNew}
             value={
-              // TODO: Fix useLpApy to have the same interface as
-              // useYieldSourceRate and useFixedRate
               lpApy && !isLpApyNew ? (
                 <RewardsTooltip
                   positionType="lp"
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
-                  <PercentLabel value={`${(lpApy * 100).toFixed(2)}`} />
+                  <PercentLabel value={`${lpApy.formatted}`} />
                 </RewardsTooltip>
               ) : (
                 "-"

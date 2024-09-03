@@ -67,9 +67,7 @@ export function YieldStats({
                         <span className="flex flex-row">✨New✨</span>
                       ) : (
                         `${
-                          (lpApy * 100).toFixed(2) === "-0.00"
-                            ? "0.00"
-                            : (lpApy * 100).toFixed(2)
+                          lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted
                         }%`
                       )}{" "}
                     </span>
