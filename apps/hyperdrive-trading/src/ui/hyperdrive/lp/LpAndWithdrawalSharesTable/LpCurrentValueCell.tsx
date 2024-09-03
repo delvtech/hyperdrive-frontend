@@ -97,14 +97,18 @@ export function LpCurrentValueCell({
     }
   }
 
+  const totalProceeds = withdrawablePercent.eq(parseFixed("100"))
+    ? (proceeds || 0n) + (withdrawalSharesCurrentValue || 0n)
+    : proceeds || 0n;
+
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
         balance:
-          proceeds !== undefined
-            ? proceeds > baseAmountPaid
-              ? proceeds - baseAmountPaid
-              : baseAmountPaid - proceeds
+          totalProceeds !== undefined
+            ? totalProceeds > baseAmountPaid
+              ? totalProceeds - baseAmountPaid
+              : baseAmountPaid - totalProceeds
             : 0n,
         decimals: baseToken?.decimals || 18,
         places: baseToken?.places,
@@ -113,7 +117,7 @@ export function LpCurrentValueCell({
       <Skeleton />
     );
 
-  const isPositiveChangeInValue = (proceeds ?? 0n) > baseAmountPaid;
+  const isPositiveChangeInValue = totalProceeds > baseAmountPaid;
 
   return (
     <div className="flex flex-col">
