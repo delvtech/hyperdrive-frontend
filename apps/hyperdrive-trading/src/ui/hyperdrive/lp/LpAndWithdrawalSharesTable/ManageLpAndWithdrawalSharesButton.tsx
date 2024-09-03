@@ -1,7 +1,8 @@
 import { Cog8ToothIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { ReactElement, useState } from "react";
+import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useClickAway } from "react-use";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
@@ -15,13 +16,14 @@ import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalSha
 import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { useAccount } from "wagmi";
-
 export function ManageLpAndWithdrawalSharesButton({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  useClickAway(dropdownRef, () => setIsOpen(false));
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = appConfig.tokens.find(
@@ -64,7 +66,10 @@ export function ManageLpAndWithdrawalSharesButton({
 
   return (
     <>
-      <div className="relative flex w-full items-center font-inter">
+      <div
+        className="relative flex w-full items-center font-inter"
+        ref={dropdownRef}
+      >
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
