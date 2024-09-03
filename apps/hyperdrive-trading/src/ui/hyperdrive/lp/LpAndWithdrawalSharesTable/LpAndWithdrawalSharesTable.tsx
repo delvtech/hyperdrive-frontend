@@ -242,7 +242,7 @@ export function OpenLpTableDesktop({
                     className={classNames(
                       "text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
-                        "px-10": cellIndex === 0, // Add padding only to the first cell to align with header
+                        "px-10 pb-10": cellIndex === 0, // Add padding only to the first cell to align with header and the top row data of the next column over
                         "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
