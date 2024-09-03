@@ -86,6 +86,7 @@ export function PoolRow({
 
   return (
     <Well
+      as="div"
       block
       onClick={() => {
         navigate({
