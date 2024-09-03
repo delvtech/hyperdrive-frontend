@@ -267,11 +267,11 @@ export function OpenLpSharesCard({
   );
 }
 
-function getSubHeadingLabel(
+export function getSubHeadingLabel(
   baseToken: TokenConfig,
   hyperdrive: HyperdriveConfig,
   sharesToken: TokenConfig,
-) {
+): string {
   if (
     hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
     hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled

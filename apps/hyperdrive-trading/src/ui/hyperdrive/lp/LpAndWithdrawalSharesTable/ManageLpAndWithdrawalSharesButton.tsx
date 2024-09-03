@@ -1,5 +1,9 @@
 import { Cog8ToothIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -9,6 +13,7 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { getSubHeadingLabel } from "src/ui/hyperdrive/lp/OpenLpSharesCard/OpenLpSharesCard";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
@@ -26,9 +31,16 @@ export function ManageLpAndWithdrawalSharesButton({
   useClickAway(dropdownRef, () => setIsOpen(false));
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    tokens: appConfig.tokens,
+  });
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
@@ -154,7 +166,14 @@ export function ManageLpAndWithdrawalSharesButton({
             <Modal
               modalId="withdrawalLpModal"
               modalHeader={
-                <ModalHeader heading="Remove Liquidity" subHeading={"TODO"} />
+                <ModalHeader
+                  heading="Remove Liquidity"
+                  subHeading={getSubHeadingLabel(
+                    baseToken,
+                    hyperdrive,
+                    sharesToken!,
+                  )}
+                />
               }
               modalContent={
                 <div>

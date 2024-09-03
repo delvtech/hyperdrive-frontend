@@ -45,7 +45,7 @@ export function OpenShortModalButton({
       modalHeader={
         <ModalHeader
           heading="Open a Short"
-          subHeading={`Buy exposure to ${appConfig.yieldSources[hyperdrive.yieldSource].shortName}} with minimal upfront capital`}
+          subHeading={`Buy exposure to ${appConfig.yieldSources[hyperdrive.yieldSource].shortName} with minimal upfront capital`}
         />
       }
       modalContent={
