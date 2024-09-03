@@ -47,6 +47,9 @@ module.exports = {
         800: "#141E23",
         900: "#10191D",
       },
+      // New style variables from latest design
+      "inactive-tab": "#C2C7CA",
+      white: "#FFFFFF",
     },
     fontFamily: {
       chakraPetch: ["Chakra Petch"],

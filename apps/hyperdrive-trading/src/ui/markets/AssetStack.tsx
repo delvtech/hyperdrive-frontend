@@ -31,7 +31,7 @@ export function AssetStack({
     >
       {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
         <div
-          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 scale-75 overflow-visible bg-[#ffffff] before:bg-base-100 sm:scale-100"
+          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 overflow-visible bg-[#ffffff] before:bg-base-100"
           data-tip={baseToken.symbol}
         >
           <img src={baseToken.iconUrl} className="rounded-full" />
@@ -40,7 +40,7 @@ export function AssetStack({
       {hyperdrive.poolConfig.vaultSharesToken &&
       hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
         <div
-          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 scale-75 overflow-visible before:bg-base-100 sm:scale-100"
+          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 overflow-visible before:bg-base-100"
           data-tip={sharesToken?.symbol}
         >
           <img
