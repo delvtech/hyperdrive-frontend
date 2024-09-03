@@ -90,6 +90,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
         ) {
           return null;
         }
+
         return (
           <div className="flex flex-col gap-6" key={hyperdrive.address}>
             <div className="flex items-center justify-between">
@@ -116,7 +117,6 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
                 </div>
                 <p className="text-h4">{hyperdrive.name}</p>
               </div>
-              {/* <TotalOpenLongsValue hyperdrive={hyperdrive} /> */}
             </div>
             <OpenLpTableDesktop
               hyperdrive={hyperdrive}
@@ -189,10 +189,8 @@ export function OpenLpTableDesktop({
                   <div
                     className={classNames({
                       "px-4": headerIndex === 0,
-                      "flex justify-end":
-                        headerIndex === 1 ||
-                        headerIndex === 2 ||
-                        headerIndex === 3,
+                      // Right align the headers in the Size, Value, and Withdrawal Queue columns
+                      "flex justify-end": [1, 2, 3].includes(headerIndex),
                     })}
                   >
                     {flexRender(
@@ -219,62 +217,54 @@ export function OpenLpTableDesktop({
             </tr>
           ))}
         </thead>
-
         <tbody>
-          {tableInstance.getRowModel().rows.map((row, index) => {
-            const isLastRow =
-              index === tableInstance.getRowModel().rows.length - 1;
-            const isTextRightAligned =
-              row.getVisibleCells()[1].column.columnDef.header === "Size" ||
-              row.getVisibleCells()[2].column.columnDef.header === "Value" ||
-              row.getVisibleCells()[3].column.columnDef.header ===
-                "Withdrawal Queue";
-            return (
-              <tr
-                key={row.id}
-                className={classNames(
-                  "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
-                  "!border-b-0", // Remove default bottom border for table rows
-                )}
-              >
-                {row.getVisibleCells().map((cell, cellIndex) => (
-                  <td
-                    className={classNames(
-                      "text-xs md:text-md", // Make the td relative for the pseudo-element
-                      {
-                        "px-10 pb-10": cellIndex === 0, // Add padding only to the first cell to align with header and the top row data of the next column over
-                        "rounded-b-none": isLastRow,
-                        "rounded-bl-box": isLastRow && cellIndex === 0,
-                        "rounded-br-box":
-                          isLastRow &&
-                          cellIndex === row.getVisibleCells().length - 1,
-                        "text-end": isTextRightAligned && cellIndex !== 0,
-                      },
-                    )}
-                    key={cell.id}
-                  >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    {!isLastRow && (
-                      <span
-                        className={classNames(
-                          // Most displays round half pixels to the nearest whole pixel. As a workaround, we can use a 1px border and scale it down so it appears as a 0.5px border.
-                          "absolute bottom-0 left-0 right-0 scale-y-50 transform border-b border-neutral-content/20",
-                          {
-                            "left-6 right-0": cellIndex === 0, // Inset border only on the left side for the first cell
-                            "left-0 right-6":
-                              cellIndex === row.getVisibleCells().length - 1, // Inset border only on the right side for the last cell
-                            "left-0 right-0":
-                              cellIndex !== 0 &&
-                              cellIndex !== row.getVisibleCells().length - 1, // Full width border for other cells
-                          },
-                        )}
-                      />
-                    )}
-                  </td>
-                ))}
-              </tr>
-            );
-          })}
+          {tableInstance.getRowModel().rows.map((row, index) => (
+            <tr
+              key={row.id}
+              className={classNames(
+                "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
+                "!border-b-0",
+              )}
+            >
+              {row.getVisibleCells().map((cell, cellIndex) => (
+                <td
+                  key={cell.id}
+                  className={classNames("text-xs md:text-md", {
+                    "px-10 pb-10": cellIndex === 0, // Add padding only to the first cell to align with header and the top row data of the next column over
+                    "rounded-b-none":
+                      index === tableInstance.getRowModel().rows.length - 1,
+                    "rounded-bl-box":
+                      index === tableInstance.getRowModel().rows.length - 1 &&
+                      cellIndex === 0,
+                    "rounded-br-box":
+                      index === tableInstance.getRowModel().rows.length - 1 &&
+                      cellIndex === row.getVisibleCells().length - 1,
+                    // Right align the values in the Size, Value, and Withdrawal Queue columns
+                    "text-end":
+                      [1, 2, 3].includes(cellIndex) && cellIndex !== 0,
+                  })}
+                >
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  {index !== tableInstance.getRowModel().rows.length - 1 && (
+                    <span
+                      className={classNames(
+                        "absolute bottom-0 left-0 right-0 scale-y-50 transform border-b border-neutral-content/20",
+                        {
+                          "left-6 right-0": cellIndex === 0,
+                          "left-0 right-6":
+                            cellIndex === row.getVisibleCells().length - 1,
+                          "left-0 right-0": ![
+                            0,
+                            row.getVisibleCells().length - 1,
+                          ].includes(cellIndex),
+                        },
+                      )}
+                    />
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -296,21 +286,19 @@ function getColumns({
   const baseToken = appConfig.tokens.find(
     (token) => token.address === hyperdrive.poolConfig.baseToken,
   );
+
   return [
     columnHelper.accessor("lpShares", {
       id: "maturationDate",
       header: `Term`,
-      cell: () => {
-        return (
-          <div>
-            {convertMillisecondsToDays(
-              Number(hyperdrive.poolConfig.positionDuration * 1000n),
-            )}
-            {"-"}
-            Day
-          </div>
-        );
-      },
+      cell: () => (
+        <div>
+          {convertMillisecondsToDays(
+            Number(hyperdrive.poolConfig.positionDuration * 1000n),
+          )}
+          {"-"}Day
+        </div>
+      ),
     }),
     columnHelper.accessor("lpShares", {
       id: "size",
@@ -335,9 +323,7 @@ function getColumns({
     columnHelper.accessor("withdrawalShares", {
       id: "withdrawalQueue",
       header: `Withdrawal Queue`,
-      cell: () => {
-        return <WithdrawalQueueCell hyperdrive={hyperdrive} />;
-      },
+      cell: () => <WithdrawalQueueCell hyperdrive={hyperdrive} />,
     }),
     columnHelper.display({
       id: "manage",
