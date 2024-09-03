@@ -284,7 +284,6 @@ export function AddLiquidityForm({
           }
           settings={
             <SlippageSettingsTwo
-              // key={`slippage-settings-${modalOpenTimestamp}`}
               onSlippageChange={setSlippage}
               slippage={slippage}
               activeOption={activeSlippageOption}

@@ -20,7 +20,7 @@ export function ManageLpAndWithdrawalSharesButton({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  // This is a controlled component because the default daisy ui dropdown classes seem to interfere with focus elements in manage position modals.
+  // This is a controlled component because the default daisy-ui dropdown classes seem to interfere with focus elements in manage position modals.
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickAway(dropdownRef, () => setIsOpen(false));
