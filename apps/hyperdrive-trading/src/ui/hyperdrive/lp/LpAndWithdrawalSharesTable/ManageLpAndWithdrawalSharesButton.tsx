@@ -1,5 +1,6 @@
 import { Cog8ToothIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useClickAway } from "react-use";
@@ -19,6 +20,7 @@ export function ManageLpAndWithdrawalSharesButton({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  // This is a controlled component because the default daisy ui dropdown classes seem to interfere with focus elements in manage position modals.
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickAway(dropdownRef, () => setIsOpen(false));
@@ -63,7 +65,14 @@ export function ManageLpAndWithdrawalSharesButton({
           Manage
         </button>
         {isOpen && (
-          <ul className="absolute right-6 top-full z-50 mt-4 w-[270px] rounded-box border border-neutral-content/20 bg-neutral p-4">
+          <ul
+            className={classNames(
+              "absolute right-6 top-full z-50 mt-4 w-[270px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1",
+              {
+                "w-[300px]": balanceOfWithdrawalShares,
+              },
+            )}
+          >
             {balanceOfWithdrawalShares ? (
               <Modal
                 modalId="redeemWithdrawalShares"
@@ -76,10 +85,7 @@ export function ManageLpAndWithdrawalSharesButton({
                   />
                 }
                 modalContent={
-                  <RedeemWithdrawalSharesForm
-                    modalOpenTimestamp={Date.now()}
-                    hyperdrive={hyperdrive}
-                  />
+                  <RedeemWithdrawalSharesForm hyperdrive={hyperdrive} />
                 }
               >
                 {({ showModal }) => (
@@ -89,9 +95,9 @@ export function ManageLpAndWithdrawalSharesButton({
                         e.preventDefault();
                         showModal();
                       }}
-                      className="flex w-full flex-row justify-start border-b-2 border-b-neutral-content/20 px-0 py-4 hover:bg-neutral hover:text-neutral-content"
+                      className="flex h-[72px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 px-0 py-4 hover:bg-neutral hover:text-neutral-content"
                     >
-                      <span>Claim from queue</span>
+                      <span className="font-bold">Claim from queue</span>
                       <span className="ml-6 rounded-md border border-success/20 bg-success/20 px-1 text-success">
                         {baseProceedsFromPreview !== undefined ? (
                           `+ ${formatBalance({
@@ -160,7 +166,6 @@ export function ManageLpAndWithdrawalSharesButton({
                   </button>
                   {lpShares && lpShares > 0n ? (
                     <RemoveLiquidityForm
-                      modalOpenTimestamp={Date.now()}
                       hyperdrive={hyperdrive}
                       lpShares={lpShares || 0n}
                     />

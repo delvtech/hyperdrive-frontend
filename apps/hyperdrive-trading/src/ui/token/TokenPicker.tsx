@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
 
@@ -17,22 +17,13 @@ export function TokenPicker({
   onChange,
   label,
   joined,
-  modalOpenTimestamp,
 }: {
   tokens: TokenChoice[];
   activeTokenAddress: Address;
   onChange: (tokenAddress: Address) => void;
   label?: string;
   joined?: boolean;
-  modalOpenTimestamp?: number;
 }): ReactElement {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Reset dropdown state when modal opens
-  useEffect(() => {
-    setIsOpen(false);
-  }, [modalOpenTimestamp]);
-
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
@@ -59,20 +50,16 @@ export function TokenPicker({
   );
 
   return (
-    <div
-      className={classNames("daisy-dropdown", {
-        "daisy-dropdown-open": isOpen,
-      })}
-    >
-      <button
-        className={classNames(
-          "daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30",
-          { "border-r-none rounded-r-none": joined },
-        )}
-        onClick={(e) => {
-          e.preventDefault();
-          setIsOpen(!isOpen);
-        }}
+    <div>
+      {label ? (
+        <label className="daisy-label">
+          <span className="daisy-label-text">{label}</span>
+        </label>
+      ) : undefined}
+      <div
+        className={
+          "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
+        }
       >
         <button
           className={classNames(
@@ -126,7 +113,7 @@ export function TokenPicker({
             )),
           ]}
         </ul>
-      </button>
+      </div>
     </div>
   );
 }

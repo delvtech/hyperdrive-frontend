@@ -2,7 +2,6 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
@@ -27,13 +26,6 @@ export function WithdrawalQueueCell({
     account,
     chainId: hyperdrive.chainId,
   });
-  const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
-    {
-      hyperdriveAddress: hyperdrive.address,
-      account,
-      chainId: hyperdrive.chainId,
-    },
-  );
 
   const {
     baseProceeds: baseProceedsFromPreview,
@@ -54,40 +46,25 @@ export function WithdrawalQueueCell({
     withdrawalSharesRedeemedFromPreview,
   });
 
-  if (balanceOfWithdrawalShares === 0n) {
-    return (
-      <div className="flex flex-col">
-        <p>
-          {formatBalance({
-            balance: 0n,
-            decimals: baseToken?.decimals || 18,
-            places: baseToken?.places,
-          })}{" "}
-        </p>
-        <p className="text-neutral-content">
-          {formatBalance({
-            balance: 0n,
-            decimals: baseToken?.decimals || 18,
-            places: baseToken?.places,
-          })}{" "}
-          {baseToken?.symbol}
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div className="flex flex-col">
       <p>
         {formatBalance({
-          balance: withdrawalSharesCurrentValue || 0n,
+          balance:
+            // If there are no withdrawal shares, return 0 for both values
+            balanceOfWithdrawalShares === 0n
+              ? 0n
+              : withdrawalSharesCurrentValue || 0n,
           decimals: baseToken?.decimals || 18,
           places: baseToken?.places,
         })}{" "}
       </p>
       <p className="text-neutral-content">
         {formatBalance({
-          balance: baseProceedsFromPreview || 0n,
+          balance:
+            balanceOfWithdrawalShares === 0n
+              ? 0n
+              : baseProceedsFromPreview || 0n,
           decimals: baseToken?.decimals || 18,
           places: baseToken?.places,
         })}{" "}

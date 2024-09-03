@@ -38,7 +38,7 @@ export function SizeAndPoolShareCell({
           balance: lpShares,
           decimals: baseToken?.decimals || 18,
           places: baseToken?.places || 2,
-        })}{" "}
+        })}
       </span>
       <p className="text-neutral-content">
         {!!lpShares && !!lpSharesTotalSupply ? (
