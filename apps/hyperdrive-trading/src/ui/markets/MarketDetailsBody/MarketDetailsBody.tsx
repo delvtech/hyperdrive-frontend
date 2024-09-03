@@ -14,6 +14,10 @@ import { useAccount } from "wagmi";
 interface PositionsTableProps {
   hyperdrive: HyperdriveConfig;
 }
+/**
+ *
+ * @deprecated use PoolDetails instead
+ */
 export function MarketDetailsBody({
   hyperdrive,
 }: PositionsTableProps): ReactElement {
