@@ -360,7 +360,7 @@ export function AddLiquidityForm({
               isNewPool || lpApy === undefined ? (
                 <div className="flex gap-2">✨New✨</div>
               ) : (
-                `${lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted}%`
+                `${lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted}`
               )
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."
