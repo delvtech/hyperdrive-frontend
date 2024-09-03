@@ -166,14 +166,10 @@ export function AddLiquidityForm({
   // if depositing in shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
   const lpSharePrice = !isBaseActiveToken
-    ? poolInfo?.lpSharePrice &&
-      poolInfo?.vaultSharePrice &&
-      poolInfo.vaultSharePrice > 0n
-      ? fixed(poolInfo.lpSharePrice, baseToken.decimals).div(
-          poolInfo.vaultSharePrice,
-          baseToken.decimals,
-        ).bigint
-      : 0n
+    ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
+        poolInfo?.vaultSharePrice || 0n,
+        baseToken.decimals,
+      ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
   const { lpApy } = useLpApy({
