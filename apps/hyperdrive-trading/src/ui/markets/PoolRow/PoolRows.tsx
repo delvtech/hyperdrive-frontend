@@ -9,10 +9,12 @@ export function PoolRows(): ReactElement {
       {
         // Show the newest pools first
         [...appConfig.hyperdrives]
-          .sort(
-            (a, b) =>
-              Number(b.initializationBlock) - Number(a.initializationBlock),
-          )
+          .sort((a, b) => {
+            return (
+              Number(b.initializationTimestamp) -
+              Number(a.initializationTimestamp)
+            );
+          })
           .map((hyperdrive) => (
             <PoolRow
               // Combine address and chainId for a unique key, as addresses may
