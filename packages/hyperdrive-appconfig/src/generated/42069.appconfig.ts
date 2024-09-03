@@ -36,17 +36,6 @@ export const cloudchainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
-      decimals: 18,
-      places: 4,
-      name: "ether.fi ETH",
-      symbol: "eETH",
-      iconUrl:
-        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
-      tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 42069,
       address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
       decimals: 18,
       places: 4,
@@ -65,6 +54,17 @@ export const cloudchainAppConfig: AppConfig = {
       symbol: "USDC",
       iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
       tags: ["stablecoin"],
+    },
+    {
+      chainId: 42069,
+      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
+      decimals: 18,
+      places: 4,
+      name: "ether.fi ETH",
+      symbol: "eETH",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
+      tags: ["liquidStakingToken"],
     },
     {
       chainId: 42069,
@@ -96,6 +96,7 @@ export const cloudchainAppConfig: AppConfig = {
       chainId: 42069,
       kind: "StETHHyperdrive",
       initializationBlock: 20180623n,
+      initializationTimestamp: 1719462347n,
       address: "0xd7e470043241C10970953Bd8374ee6238e77D735",
       version: "v1.0.13",
       name: "182d Lido stETH",
@@ -141,6 +142,7 @@ export const cloudchainAppConfig: AppConfig = {
       version: "v1.0.13",
       name: "182d Maker DSR",
       initializationBlock: 20180617n,
+      initializationTimestamp: 1719462275n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -183,6 +185,7 @@ export const cloudchainAppConfig: AppConfig = {
       version: "v1.0.15",
       name: "182d Rocket Pool ETH",
       initializationBlock: 20322429n,
+      initializationTimestamp: 1721173307n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -222,6 +225,7 @@ export const cloudchainAppConfig: AppConfig = {
       chainId: 42069,
       kind: "MorphoBlueHyperdrive",
       initializationBlock: 20484838n,
+      initializationTimestamp: 1723131803n,
       address: "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
       version: "v1.0.17",
       name: "182d Morpho sUSDe/DAI",
@@ -264,6 +268,7 @@ export const cloudchainAppConfig: AppConfig = {
       chainId: 42069,
       kind: "MorphoBlueHyperdrive",
       initializationBlock: 20528971n,
+      initializationTimestamp: 1723663847n,
       address: "0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B",
       version: "v1.0.17",
       name: "182d Morpho USDe/DAI",
@@ -309,6 +314,7 @@ export const cloudchainAppConfig: AppConfig = {
       version: "v1.0.15",
       name: "182d Renzo ezETH",
       initializationBlock: 20322421n,
+      initializationTimestamp: 1721173211n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -351,6 +357,7 @@ export const cloudchainAppConfig: AppConfig = {
       version: "v1.0.18",
       name: "182d Ether.fi Staked ETH",
       initializationBlock: 20585772n,
+      initializationTimestamp: 1724349335n,
       decimals: 18,
       yieldSource: "eEth",
       depositOptions: {
@@ -390,6 +397,7 @@ export const cloudchainAppConfig: AppConfig = {
       chainId: 42069,
       kind: "MorphoBlueHyperdrive",
       initializationBlock: 20585765n,
+      initializationTimestamp: 1724349251n,
       address: "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
       version: "v1.0.18",
       name: "182d Morpho wstETH/USDC",

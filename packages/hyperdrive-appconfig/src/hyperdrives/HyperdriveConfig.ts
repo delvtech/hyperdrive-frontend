@@ -6,6 +6,7 @@ export interface HyperdriveConfig {
   chainId: number;
   kind: string;
   initializationBlock: bigint;
+  initializationTimestamp: bigint;
   address: Address;
   name: string;
   version: string;

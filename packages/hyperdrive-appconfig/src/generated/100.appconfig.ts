@@ -53,6 +53,7 @@ export const gnosisAppConfig: AppConfig = {
       chainId: 100,
       kind: "ChainlinkHyperdrive",
       initializationBlock: 35732205n,
+      initializationTimestamp: 1724956225n,
       address: "0x2f840f1575EE77adAa43415Ac5953F7Db9F8C6ba",
       version: "v1.0.18",
       name: "182d Lido wstETH",
@@ -102,6 +103,7 @@ export const gnosisAppConfig: AppConfig = {
       version: "v1.0.18",
       name: "182d Savings xDAI",
       initializationBlock: 35732218n,
+      initializationTimestamp: 1724956290n,
       decimals: 18,
       yieldSource: "sxDai",
       depositOptions: {

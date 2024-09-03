@@ -59,10 +59,9 @@ export async function getCustomHyperdrive({
     yieldSourceShortName: yieldSources[yieldSource].shortName,
   });
 
-  // safe to cast here because we know the pool was initialized
-  const initializationBlock = (
-    await hyperdrive.getInitializationBlock({ fromBlock: earliestBlock })
-  ).blockNumber as bigint;
+  const initializationBlock = await hyperdrive.getInitializationBlock({
+    fromBlock: earliestBlock,
+  });
 
   const hyperdriveConfig: HyperdriveConfig = {
     chainId: await hyperdrive.network.getChainId(),
@@ -70,7 +69,9 @@ export async function getCustomHyperdrive({
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
-    initializationBlock,
+    // safe to cast here because we know the pool was initialized
+    initializationBlock: initializationBlock.blockNumber as bigint,
+    initializationTimestamp: initializationBlock.timestamp,
     decimals: await hyperdrive.getDecimals(),
     yieldSource,
     depositOptions: depositOptions,

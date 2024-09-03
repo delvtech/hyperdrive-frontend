@@ -2,6 +2,17 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   tokens: [
     {
+      chainId: 11155111,
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 11155111,
       name: "Ether",
@@ -22,17 +33,6 @@ export const sepoliaAppConfig: AppConfig = {
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yNTYgNTEyQzM5Ny4zODUgNTEyIDUxMiAzOTcuMzg1IDUxMiAyNTZDNTEyIDExNC42MTUgMzk3LjM4NSAwIDI1NiAwQzExNC42MTUgMCAwIDExNC42MTUgMCAyNTZDMCAzOTcuMzg1IDExNC42MTUgNTEyIDI1NiA1MTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTUwLjk4OCAyMzcuODEyTDE0OC4xMjIgMjQyLjIwOUMxMTUuNzk2IDI5MS43OTggMTIzLjAxNiAzNTYuNzQyIDE2NS40OCAzOTguMzQ4QzE5MC40NjEgNDIyLjgyNiAyMjMuMjAyIDQzNS4wNjYgMjU1Ljk0NCA0MzUuMDY5QzI1NS45NDQgNDM1LjA2OSAyNTUuOTQ0IDQzNS4wNjkgMTUwLjk4OCAyMzcuODEyWiIgZmlsbD0iIzAwQTNGRiIvPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0yNTUuOTE0IDI5Ny43NjRMMTUwLjk1OCAyMzcuODEyQzI1NS45MTQgNDM1LjA2OSAyNTUuOTE0IDQzNS4wNjkgMjU1LjkxNCA0MzUuMDY5QzI1NS45MTQgMzkyLjEwOCAyNTUuOTE0IDM0Mi44OCAyNTUuOTE0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTM2MS4wMTIgMjM3LjgxMkwzNjMuODc4IDI0Mi4yMDlDMzk2LjIwNCAyOTEuNzk4IDM4OC45ODQgMzU2Ljc0MiAzNDYuNTIgMzk4LjM0OEMzMjEuNTM5IDQyMi44MjYgMjg4Ljc5OCA0MzUuMDY2IDI1Ni4wNTYgNDM1LjA2OUMyNTYuMDU2IDQzNS4wNjkgMjU2LjA1NiA0MzUuMDY5IDM2MS4wMTIgMjM3LjgxMloiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC4yIiBkPSJNMjU2LjA0NCAyOTcuNzY0TDM2MSAyMzcuODEyQzI1Ni4wNDUgNDM1LjA2OSAyNTYuMDQ0IDQzNS4wNjkgMjU2LjA0NCA0MzUuMDY5QzI1Ni4wNDQgMzkyLjEwOCAyNTYuMDQ0IDM0Mi44OCAyNTYuMDQ0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuMiIgZD0iTTI1Ni4wODMgMTYzLjgzM1YyNjcuMjMzTDM0Ni40OTEgMjE1LjU2N0wyNTYuMDgzIDE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTI1Ni4wNTYgMTYzLjgzM0wxNjUuNTgzIDIxNS41NjVMMjU2LjA1NiAyNjcuMjMzVjE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIGQ9Ik0yNTYuMDU2IDc2Ljg3NUwxNjUuNTgzIDIxNS41OTlMMjU2LjA1NiAxNjMuNzIyVjc2Ljg3NVoiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC42IiBkPSJNMjU2LjA4MyAxNjMuNzA2TDM0Ni41NiAyMTUuNTg1TDI1Ni4wODMgNzYuNzkxN1YxNjMuNzA2WiIgZmlsbD0iIzAwQTNGRiIvPgo8L3N2Zz4K",
       tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 11155111,
-      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
     },
     {
       chainId: 11155111,
@@ -78,6 +78,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "14d Maker DSR",
       initializationBlock: 6137333n,
+      initializationTimestamp: 1718760504n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -120,6 +121,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "30d Maker DSR",
       initializationBlock: 6137347n,
+      initializationTimestamp: 1718760708n,
       decimals: 18,
       yieldSource: "makerDsr",
       depositOptions: {
@@ -162,6 +164,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "14d Renzo ezETH",
       initializationBlock: 6137354n,
+      initializationTimestamp: 1718760792n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -204,6 +207,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "30d Renzo ezETH",
       initializationBlock: 6137362n,
+      initializationTimestamp: 1718760888n,
       decimals: 18,
       yieldSource: "ezEth",
       depositOptions: {
@@ -246,6 +250,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "14d Rocket Pool ETH",
       initializationBlock: 6137491n,
+      initializationTimestamp: 1718762592n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -288,6 +293,7 @@ export const sepoliaAppConfig: AppConfig = {
       version: "v1.0.12",
       name: "30d Rocket Pool ETH",
       initializationBlock: 6137499n,
+      initializationTimestamp: 1718762688n,
       decimals: 18,
       yieldSource: "reth",
       depositOptions: {
@@ -327,6 +333,7 @@ export const sepoliaAppConfig: AppConfig = {
       chainId: 11155111,
       kind: "StETHHyperdrive",
       initializationBlock: 6137506n,
+      initializationTimestamp: 1718762784n,
       address: "0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91",
       version: "v1.0.12",
       name: "14d Lido stETH",
@@ -369,6 +376,7 @@ export const sepoliaAppConfig: AppConfig = {
       chainId: 11155111,
       kind: "StETHHyperdrive",
       initializationBlock: 6137513n,
+      initializationTimestamp: 1718762880n,
       address: "0x51C054F75b2c4b53E8E5114430C3ded4572473D8",
       version: "v1.0.12",
       name: "30d Lido stETH",
@@ -411,6 +419,7 @@ export const sepoliaAppConfig: AppConfig = {
       chainId: 11155111,
       kind: "MorphoBlueHyperdrive",
       initializationBlock: 6341309n,
+      initializationTimestamp: 1721426760n,
       address: "0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b",
       version: "v1.0.15",
       name: "14d Morpho sUSDe/DAI",
@@ -453,6 +462,7 @@ export const sepoliaAppConfig: AppConfig = {
       chainId: 11155111,
       kind: "MorphoBlueHyperdrive",
       initializationBlock: 6495162n,
+      initializationTimestamp: 1723592604n,
       address: "0x0399BBA8DE5959007148a95ADaaD04eA3172513E",
       version: "v1.0.15",
       name: "14d Morpho USDe/DAI",
