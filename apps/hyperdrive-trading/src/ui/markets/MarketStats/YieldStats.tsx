@@ -68,7 +68,7 @@ export function YieldStats({
                       ) : (
                         `${
                           lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted
-                        }%`
+                        }`
                       )}{" "}
                     </span>
                   ) : (

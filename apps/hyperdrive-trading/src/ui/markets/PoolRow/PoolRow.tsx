@@ -215,7 +215,7 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
-                  <PercentLabel value={`${lpApy.formatted}`} />
+                  <PercentLabel value={formatRate(lpApy.lpApy, 18, false)} />
                 </RewardsTooltip>
               ) : (
                 "-"
