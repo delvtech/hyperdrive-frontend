@@ -131,7 +131,9 @@ export function LpCurrentValueCell({
             })}`}
             {!withdrawalShares ? (
               <div
-                data-tip={"Profit/Loss since open, after closing fees."}
+                data-tip={
+                  "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+                }
                 className={classNames(
                   "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
                   {
