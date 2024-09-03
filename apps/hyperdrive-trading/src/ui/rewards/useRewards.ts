@@ -9,7 +9,12 @@ import { mainnet } from "viem/chains";
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
 const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
-  [mainnet.id]: ["0xc8D47DE20F7053Cc02504600596A647A482Bbc46"],
+  [mainnet.id]: [
+    // 182d Morpho wstETH/USDC
+    "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
+    // 182d Morpho Blue wstETH/USDA
+    "0x7548c4F665402BAb3a4298B88527824B7b18Fe27",
+  ],
 };
 
 // Source: https://docs.morpho.org/rewards/concepts/programs
