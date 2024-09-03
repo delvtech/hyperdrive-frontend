@@ -52,6 +52,13 @@ const morphoWstethUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
+const morphoWstethUsda: YieldSource = {
+  id: "morphoWstethUsda",
+  shortName: "Morpho wstETH/USDA",
+  protocol: "morpho",
+  historicalRatePeriod: 1,
+};
+
 const reth: YieldSource = {
   id: "reth",
   shortName: "Rocket Pool ETH",
@@ -87,6 +94,13 @@ const sxDai: YieldSource = {
   historicalRatePeriod: 1,
 };
 
+const stUSD: YieldSource = {
+  id: "stUSD",
+  shortName: "Angle stUSD",
+  protocol: "angle",
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
   eEth,
   makerDsr,
@@ -94,8 +108,10 @@ export const yieldSources = {
   morphoSusdeDai,
   morphoUsdeDai,
   morphoWstethUsdc,
+  morphoWstethUsda,
   reth,
   ezEth,
   gnosisWsteth,
   sxDai,
+  stUSD,
 } as const;
