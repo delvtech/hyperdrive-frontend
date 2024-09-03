@@ -112,10 +112,7 @@ export function OpenWithdrawalSharesCard({
                   />
                 }
                 modalContent={
-                  <RedeemWithdrawalSharesForm
-                    modalOpenTimestamp={Date.now()}
-                    hyperdrive={hyperdrive}
-                  />
+                  <RedeemWithdrawalSharesForm hyperdrive={hyperdrive} />
                 }
               >
                 {({ showModal }) => (
