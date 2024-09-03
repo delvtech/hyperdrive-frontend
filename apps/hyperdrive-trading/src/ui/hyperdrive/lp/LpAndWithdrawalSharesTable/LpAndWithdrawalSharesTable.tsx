@@ -29,7 +29,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
 
   if (openLpPositionStatus === "loading") {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="my-28 flex h-full w-[1036px] flex-col">
         <LoadingState
           heading="Loading your LP Positions..."
           text="Searching for LP events, calculating current value and PnL..."
@@ -39,7 +39,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   }
   if (openLpPositionStatus === "error") {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="my-28 flex h-full w-[1036px] flex-col">
         <NonIdealState
           heading="Error loading your LP Positions"
           text="Please refresh the page and try again."
@@ -144,7 +144,6 @@ export function OpenLpTableDesktop({
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  console.log("openLpPosition", openLpPosition);
 
   const columns = useMemo(
     () => getColumns({ hyperdrive, appConfig }),
@@ -202,9 +201,13 @@ export function OpenLpTableDesktop({
                 >
                   <div
                     className={classNames({
-                      "flex cursor-pointer select-none items-center gap-2":
+                      "flex cursor-pointer select-none":
                         header.column.getCanSort(),
-                      "px-4": headerIndex === 0, // Add padding only to the first header cell. This is so that the headers line up vertically with the card title
+
+                      "flex justify-end":
+                        headerIndex === 1 ||
+                        headerIndex === 2 ||
+                        headerIndex === 3,
                     })}
                     onClick={header.column.getToggleSortingHandler()}
                   >
@@ -241,6 +244,11 @@ export function OpenLpTableDesktop({
           {tableInstance.getRowModel().rows.map((row, index) => {
             const isLastRow =
               index === tableInstance.getRowModel().rows.length - 1;
+            const isTextRightAligned =
+              row.getVisibleCells()[1].column.columnDef.header === "Size" ||
+              row.getVisibleCells()[2].column.columnDef.header === "Value" ||
+              row.getVisibleCells()[3].column.columnDef.header ===
+                "Withdrawal Queue";
             return (
               <tr
                 key={row.id}
@@ -252,14 +260,15 @@ export function OpenLpTableDesktop({
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
-                      "relative text-xs md:text-md", // Make the td relative for the pseudo-element
+                      "text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
-                        "px-10": cellIndex === 0, // Add padding only to the first cell. This is so that the data line up vertically with the header title
+                        "mx-4 text-start": cellIndex === 0, // Add padding only to the first cell. This is so that the data line up vertically with the header title
                         "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
                           isLastRow &&
                           cellIndex === row.getVisibleCells().length - 1,
+                        "text-end": isTextRightAligned && cellIndex !== 0,
                       },
                     )}
                     key={cell.id}
@@ -343,18 +352,16 @@ function getColumns({
         />
       ),
     }),
-    columnHelper.display({
+    columnHelper.accessor("withdrawalShares", {
       id: "withdrawalQueue",
       header: `Withdrawal Queue`,
-      cell: ({ row }) => {
+      cell: () => {
         return <WithdrawalQueueCell hyperdrive={hyperdrive} />;
       },
     }),
     columnHelper.display({
       id: "manage",
-      cell: ({ row }) => (
-        <ManageLpAndWithdrawalSharesButton hyperdrive={hyperdrive} />
-      ),
+      cell: () => <ManageLpAndWithdrawalSharesButton hyperdrive={hyperdrive} />,
     }),
   ];
 }

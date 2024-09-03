@@ -122,7 +122,6 @@ export function ManageLpAndWithdrawalSharesButton({
               modalContent={
                 <AddLiquidityForm
                   hyperdrive={hyperdrive}
-                  modalOpenTimestamp={Date.now()}
                   onAddLiquidity={(e) => {
                     // preventDefault since we don't want to close the modal while the
                     // tx is temporarily pending the user's signature in their wallet.
