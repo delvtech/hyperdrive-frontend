@@ -1,12 +1,9 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import { AppConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -153,17 +150,7 @@ export function OpenLpTableDesktop({
   const tableInstance = useReactTable({
     columns,
     data,
-    initialState: {
-      sorting: [
-        {
-          id: "maturationDate",
-          desc: true,
-        },
-      ],
-    },
     getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
   });
 
   if (!account) {
@@ -201,24 +188,17 @@ export function OpenLpTableDesktop({
                 >
                   <div
                     className={classNames({
-                      "flex cursor-pointer select-none":
-                        header.column.getCanSort(),
-
+                      "px-4": headerIndex === 0,
                       "flex justify-end":
                         headerIndex === 1 ||
                         headerIndex === 2 ||
                         headerIndex === 3,
                     })}
-                    onClick={header.column.getToggleSortingHandler()}
                   >
                     {flexRender(
                       header.column.columnDef.header,
                       header.getContext(),
                     )}
-                    {{
-                      asc: <ChevronUpIcon height={15} />,
-                      desc: <ChevronDownIcon height={15} />,
-                    }[header.column.getIsSorted() as string] ?? null}
                   </div>
                   {/* Custom border with inset for the first and last header cells */}
                   <span
@@ -262,7 +242,7 @@ export function OpenLpTableDesktop({
                     className={classNames(
                       "text-xs md:text-md", // Make the td relative for the pseudo-element
                       {
-                        "mx-4 text-start": cellIndex === 0, // Add padding only to the first cell. This is so that the data line up vertically with the header title
+                        "px-10": cellIndex === 0, // Add padding only to the first cell to align with header
                         "rounded-b-none": isLastRow,
                         "rounded-bl-box": isLastRow && cellIndex === 0,
                         "rounded-br-box":
