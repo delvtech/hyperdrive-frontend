@@ -31,13 +31,11 @@ export function LpCurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
-    {
-      hyperdriveAddress: hyperdrive.address,
-      account,
-      chainId: hyperdrive.chainId,
-    },
-  );
+  const { baseAmountPaid, baseValue } = useOpenLpPosition({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+    chainId: hyperdrive.chainId,
+  });
 
   const { proceeds, withdrawalShares, previewRemoveLiquidityStatus } =
     usePreviewRemoveLiquidity({
@@ -84,19 +82,18 @@ export function LpCurrentValueCell({
     baseProceeds = fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint;
   }
   let withdrawablePercent = parseFixed("100");
-  if (withdrawalShares) {
-    if (baseProceeds && baseValue) {
-      withdrawablePercent = fixed(
-        // amountOut / total * 100
-        calculateRatio({
-          a: baseProceeds,
-          b: baseValue,
-          decimals: hyperdrive.decimals,
-        }),
-      );
-    }
+  if (withdrawalShares && baseProceeds && baseValue) {
+    withdrawablePercent = fixed(
+      calculateRatio({
+        a: baseProceeds,
+        b: baseValue,
+        decimals: hyperdrive.decimals,
+      }),
+    );
   }
 
+  // If the withdrawal shares are 100% withdrawable, add the current value of the withdrawal shares to the proceeds.
+  // A note is included in the profit/loss tooltip to let the user know that the current value of the withdrawal shares is included in the proceeds.
   const totalProceeds = withdrawablePercent.eq(parseFixed("100"))
     ? (proceeds || 0n) + (withdrawalSharesCurrentValue || 0n)
     : proceeds || 0n;
