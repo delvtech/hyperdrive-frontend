@@ -158,7 +158,7 @@ export function OpenLpTableDesktop({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your Longs"
+          text="Connect your wallet to view your LP Positions"
           action={<ConnectWalletButton />}
         />
       </div>
@@ -166,10 +166,12 @@ export function OpenLpTableDesktop({
   }
   if (openLpPositionStatus === "loading" || !openLpPosition) {
     return (
-      <LoadingState
-        heading="Loading your Longs..."
-        text="Searching for Long events, calculating current value and PnL..."
-      />
+      <div className="my-28">
+        <LoadingState
+          heading="Loading your LP Positions..."
+          text="Searching for LP events, calculating current value and PnL..."
+        />
+      </div>
     );
   }
 
