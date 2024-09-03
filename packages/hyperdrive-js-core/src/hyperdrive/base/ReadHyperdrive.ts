@@ -664,7 +664,7 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     fromBlock: bigint;
     options?: ContractReadOptions;
-  }): Promise<{ lpApy: number }> {
+  }): Promise<{ lpApy: bigint }> {
     // If the 24 hour rate doesn't exist, assume the pool was initialized less
     // than 24 hours before and try to get the all-time rate until toBlock
     const { blockNumber: initializationBlock } =
@@ -695,7 +695,7 @@ export class ReadHyperdrive extends ReadModel {
         endPrice: currentLpSharePrice,
         timeFrame,
       }),
-    ).toNumber();
+    ).bigint;
 
     return { lpApy };
   }
