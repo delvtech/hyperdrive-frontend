@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js-core
 
+## 3.0.3
+
+### Patch Changes
+
+- 40b8f1b: Return bigint instead of number for getLpApy
+
 ## 3.0.1
 
 ### Patch Changes

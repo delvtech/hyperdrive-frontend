@@ -1,5 +1,12 @@
 # @delvtech/hyperdrive-viem
 
+## 3.0.3
+
+### Patch Changes
+
+- Updated dependencies [40b8f1b]
+  - @delvtech/hyperdrive-js-core@3.0.3
+
 ## 3.0.2
 
 ### Patch Changes
