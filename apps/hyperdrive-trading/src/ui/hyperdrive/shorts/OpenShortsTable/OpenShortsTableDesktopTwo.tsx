@@ -24,13 +24,11 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ShortRateAndSizeCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortValue } from "src/ui/hyperdrive/shorts/OpenShortsTable/TotalOpenShortsValue";
-import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePortfolioShortsData } from "src/ui/portfolio/usePortfolioShortsData";
 import { useAccount } from "wagmi";
 
@@ -100,7 +98,12 @@ export function OpenShortsContainer(): ReactElement {
             </div>
             <OpenShortsTableDesktopTwo
               hyperdrive={hyperdrive}
-              openShortPositionsStatus={openShortPositionsStatus}
+              openShorts={
+                openShortPositions?.find(
+                  (position) =>
+                    position.hyperdrive.address === hyperdrive.address,
+                )?.openShorts
+              }
             />
           </div>
         );
@@ -111,22 +114,14 @@ export function OpenShortsContainer(): ReactElement {
 
 export function OpenShortsTableDesktopTwo({
   hyperdrive,
-  openShortPositionsStatus,
+  openShorts,
 }: {
   hyperdrive: HyperdriveConfig;
-  openShortPositionsStatus?: "loading" | "success" | "error";
+  openShorts: OpenShort[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
-  const { openShorts, openShortsStatus } = useOpenShorts({
-    account,
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
+
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openShorts || [],
