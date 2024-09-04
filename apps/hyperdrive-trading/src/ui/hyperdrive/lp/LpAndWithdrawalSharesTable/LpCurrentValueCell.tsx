@@ -12,7 +12,7 @@ import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition"
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
+import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/getWithdrawalSharesCurrentValue";
 import { useAccount } from "wagmi";
 
 export function LpCurrentValueCell({
@@ -108,9 +108,10 @@ export function LpCurrentValueCell({
       formatBalance({
         balance:
           totalProceeds !== undefined
-            ? totalProceeds > baseAmountPaid
-              ? totalProceeds - baseAmountPaid
-              : baseAmountPaid - totalProceeds
+            ? // Use Math.abs to get the absolute difference between totalProceeds and baseAmountPaid.
+              // This ensures we always have a positive value for display purposes,
+              // as the sign (profit/loss) is handled separately in the UI.
+              BigInt(Math.abs(Number(totalProceeds - baseAmountPaid)))
             : 0n,
         decimals: baseToken?.decimals || 18,
         places: baseToken?.places,

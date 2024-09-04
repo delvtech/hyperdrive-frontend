@@ -1,8 +1,6 @@
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
-import { calculateEquivalentShareValue } from "src/hyperdrive/calculateEquivalentShareValue";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -12,6 +10,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
+import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/getWithdrawalSharesCurrentValue";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
 import { useAccount } from "wagmi";
 
@@ -136,46 +135,4 @@ export function OpenWithdrawalSharesCard({
       </div>
     </Well>
   );
-}
-
-export function getWithdrawalSharesCurrentValue({
-  lpSharePrice,
-  decimals,
-  withdrawalShares,
-  withdrawalSharesRedeemedFromPreview,
-
-  baseProceedsFromPreview,
-}: {
-  lpSharePrice: bigint | undefined;
-  decimals: number;
-  withdrawalShares: bigint | undefined;
-  baseProceedsFromPreview: bigint | undefined;
-  withdrawalSharesRedeemedFromPreview: bigint | undefined;
-}): bigint | undefined {
-  if (lpSharePrice === undefined || withdrawalShares === undefined) {
-    return;
-  }
-
-  // Get a more accurate estimate from previewing the redeem withdrawal shares
-  // and basing the current value of all of your withdrawal shares on actual
-  // redemption data.
-  if (
-    baseProceedsFromPreview !== undefined &&
-    withdrawalSharesRedeemedFromPreview
-  ) {
-    return calculateEquivalentShareValue({
-      targetShares: withdrawalShares,
-      referenceShares: withdrawalSharesRedeemedFromPreview,
-      totalReferenceValue: baseProceedsFromPreview,
-      decimals,
-    });
-  }
-
-  // If withdrawal shares are not yet redeemable, we should just treat
-  // them as the same value as lp shares.
-  return calculateValueFromPrice({
-    amount: withdrawalShares,
-    unitPrice: lpSharePrice,
-    decimals,
-  });
 }
