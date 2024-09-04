@@ -4,6 +4,7 @@ import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: ReactNode;
+  variant?: "default" | "lighter";
   name: string;
   value: string;
   onChange: (newAmount: string) => void;
@@ -35,6 +36,7 @@ export function TokenInputTwo({
   name,
   onChange,
   maxValue,
+  variant = "default",
   inputLabel = "Enter amount",
   bottomLeftElement: bottomLeftStatistic,
   bottomRightElement: bottomRightStatistic,
@@ -46,7 +48,12 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-      <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
+      <div
+        className={classNames("flex flex-col gap-2 rounded-md px-4 py-3", {
+          "bg-base-100": variant === "default",
+          "bg-base-200": variant === "lighter",
+        })}
+      >
         <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row items-center">
           <input
@@ -67,6 +74,8 @@ export function TokenInputTwo({
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
+                "bg-base-100": variant === "default",
+                "bg-base-200": variant === "lighter",
               },
             )}
             value={value}
