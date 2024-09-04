@@ -3,16 +3,19 @@ import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
+import { OpenLongForm2 } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm2";
+import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
-import { PoolHeader } from "src/ui/markets/PoolDetails/PoolHeader";
 
 export function PoolDetails({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const appConfig = useAppConfig();
   const { marketState } = useMarketState({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -28,7 +31,10 @@ export function PoolDetails({
           <ArrowLeftIcon className="mr-1 size-3" />
           Back to home
         </Link>
-        <PoolHeader hyperdrive={hyperdrive} />
+        <h1 className="flex items-center gap-2 text-h2">
+          <AssetStack hyperdriveAddress={hyperdrive.address} />
+          {appConfig.yieldSources[hyperdrive.yieldSource].shortName}
+        </h1>
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
         )}
@@ -57,6 +63,7 @@ export function PoolDetails({
           0.5% slippage <Cog6ToothIcon className="size-4" />
         </button>
       </div>
+      <OpenLongForm2 hyperdrive={hyperdrive} />
     </div>
   );
 }

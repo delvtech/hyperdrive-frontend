@@ -4,6 +4,7 @@ import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: ReactNode;
+  variant?: "default" | "lighter";
   name: string;
   value: string;
   onChange: (newAmount: string) => void;
@@ -35,6 +36,7 @@ export function TokenInputTwo({
   name,
   onChange,
   maxValue,
+  variant = "default",
   inputLabel = "Enter amount",
   bottomLeftElement: bottomLeftStatistic,
   bottomRightElement: bottomRightStatistic,
@@ -46,7 +48,15 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
-      <div className="flex flex-col gap-2 rounded-md bg-base-100 px-4 py-3">
+      <div
+        className={classNames(
+          "flex flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-2 has-[:focus]:ring-gray-600",
+          {
+            "bg-base-100": variant === "default",
+            "bg-base-200": variant === "lighter",
+          },
+        )}
+      >
         <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row items-center">
           <input
@@ -63,10 +73,12 @@ export function TokenInputTwo({
             name={name}
             disabled={disabled}
             className={classNames(
-              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
+              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:outline-none",
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
+                "bg-base-100 focus:border-base-100": variant === "default",
+                "bg-base-200 focus:border-base-200": variant === "lighter",
               },
             )}
             value={value}

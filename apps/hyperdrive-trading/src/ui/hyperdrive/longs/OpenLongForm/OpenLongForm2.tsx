@@ -39,11 +39,7 @@ interface OpenLongFormProps {
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- *
- * @deprecated use OpenLongForm2 instead
- */
-export function OpenLongForm({
+export function OpenLongForm2({
   hyperdrive: hyperdrive,
   onOpenLong,
 }: OpenLongFormProps): ReactElement {
@@ -209,6 +205,7 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInputTwo
+          variant="lighter"
           settings={
             <SlippageSettingsTwo
               onSlippageChange={setSlippage}
