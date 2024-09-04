@@ -9,6 +9,10 @@ import { getAnalyticsUrl } from "src/ui/analytics/getAnalyticsUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PriceBadges } from "src/ui/markets/MarketDetailsBody/PriceBadges";
 
+/**
+ *
+ * @deprecated use PoolHeader instead
+ */
 export function MarketHeader({
   hyperdrive,
 }: {

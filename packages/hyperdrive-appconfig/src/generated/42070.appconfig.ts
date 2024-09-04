@@ -53,6 +53,7 @@ export const gnosisforkAppConfig: AppConfig = {
       chainId: 42070,
       kind: "ChainlinkHyperdrive",
       initializationBlock: 35730229n,
+      initializationTimestamp: 1724945836n,
       address: "0xceBcC0eEcAf6da7dDA589dD2BEe0da01E4d94F88",
       version: "v1.0.18",
       name: "182d Lido wstETH",
@@ -102,6 +103,7 @@ export const gnosisforkAppConfig: AppConfig = {
       version: "v1.0.18",
       name: "182d Savings xDAI",
       initializationBlock: 35730236n,
+      initializationTimestamp: 1724945843n,
       decimals: 18,
       yieldSource: "sxDai",
       depositOptions: {
@@ -139,6 +141,12 @@ export const gnosisforkAppConfig: AppConfig = {
     },
   ],
   protocols: {
+    angle: {
+      id: "angle",
+      name: "Angle",
+      iconUrl:
+        "data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjE1NSIgaGVpZ2h0PSIxNTUiIHZpZXdCb3g9IjAgMCAxNTUgMTU1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSI3Ny4wNTg2IiBjeT0iNzcuOTY0MSIgcj0iNzciIGZpbGw9IiNGQUYxRTciLz4KPHBhdGggZD0iTTEyMi4zNzcgOTUuNzk3Nkw3Ny4xMDUzIDUwLjQxNjRMMzEuODMzNyA5NS43OTc2TDU0LjQ2OTggMTE4LjQ4OUw3Ny4xMDU2IDk1Ljc5NzlMOTkuNzQxMSAxMTguNDg4TDEyMi4zNzcgOTUuNzk3NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik03Ny4xMDU1IDk1Ljc5N0w5OS43NDE0IDExOC40OTFMMTA0LjI2OCAxMDcuMjUzTDc3LjEwNTUgODAuMDI0N0w3Ny4xMDU1IDk1Ljc5N1oiIGZpbGw9IiNGQUYxRTciIHN0cm9rZT0iIzFGMjMzMyIgc3Ryb2tlLXdpZHRoPSIxLjcxMjk0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMjIuMzggOTUuNzkyNEw5OS43NDE3IDExOC40ODRMMTA0LjI2OSAxMDcuMjUzTDEzMS40MzIgODAuMDI0N0wxMjIuMzggOTUuNzkyNFoiIGZpbGw9IiMxRjIzMzMiIHN0cm9rZT0iIzFGMjMzMyIgc3Ryb2tlLXdpZHRoPSIxLjcxMjk0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik03Ny4xMDYgOTUuNzk3TDU0LjQ3IDExOC40OTFMNDkuOTQzIDEwNy4yNTNMNzcuMTA2IDgwLjAyNDdMNzcuMTA2IDk1Ljc5N1oiIGZpbGw9IiMxRjIzMzMiIHN0cm9rZT0iIzFGMjMzMyIgc3Ryb2tlLXdpZHRoPSIxLjcxMjk0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMS44MzE0IDk1Ljc5MjRMNTQuNDY5OCAxMTguNDg0TDQ5Ljk0MjcgMTA3LjI1M0wyMi43Nzk4IDgwLjAyNDdMMzEuODMxNCA5NS43OTI0WiIgZmlsbD0iI0ZBRjFFNyIgc3Ryb2tlPSIjMUYyMzMzIiBzdHJva2Utd2lkdGg9IjEuNzEyOTQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEzMS40MzEgODAuMDIyNkw3Ny4xMDUyIDI1LjU2NTFMMjIuNzc5MyA4MC4wMjI2TDQ5Ljk0MjYgMTA3LjI1Mkw3Ny4xMDU2IDgwLjAyMjlMMTA0LjI2OCAxMDcuMjUxTDEzMS40MzEgODAuMDIyNloiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xNTEwXzM1MTA4KSIgc3Ryb2tlPSIjMUYyMzMzIiBzdHJva2Utd2lkdGg9IjEuNzEyOTQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xNTEwXzM1MTA4IiB4MT0iMTMxLjQzIiB5MT0iNjYuNDA3OCIgeDI9IjIyLjc3OTMiIHkyPSI2Ni40MDc4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGQUYxRTciLz4KPHN0b3Agb2Zmc2V0PSIwLjI2MDIxIiBzdG9wLWNvbG9yPSIjRkRDRUFBIi8+CjxzdG9wIG9mZnNldD0iMC42MTIwMSIgc3RvcC1jb2xvcj0iI0Y0ODM3RCIvPgo8c3RvcCBvZmZzZXQ9IjAuOTk5OSIgc3RvcC1jb2xvcj0iI0I5QUFGRCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+    },
     etherFi: {
       id: "etherFi",
       name: "Ether.fi",
@@ -212,6 +220,12 @@ export const gnosisforkAppConfig: AppConfig = {
       protocol: "morpho",
       historicalRatePeriod: 1,
     },
+    morphoWstethUsda: {
+      id: "morphoWstethUsda",
+      shortName: "Morpho wstETH/USDA",
+      protocol: "morpho",
+      historicalRatePeriod: 1,
+    },
     reth: {
       id: "reth",
       shortName: "Rocket Pool ETH",
@@ -234,6 +248,12 @@ export const gnosisforkAppConfig: AppConfig = {
       id: "sxDai",
       shortName: "Savings xDAI",
       protocol: "maker",
+      historicalRatePeriod: 1,
+    },
+    stUSD: {
+      id: "stUSD",
+      shortName: "Angle stUSD",
+      protocol: "angle",
       historicalRatePeriod: 1,
     },
   },
