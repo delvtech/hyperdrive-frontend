@@ -29,7 +29,7 @@ export function SizeAndPoolShareCell({
       ? calculateRatio({
           a: lpShares,
           b: lpSharesTotalSupply,
-          decimals: baseToken?.decimals || 18,
+          decimals: hyperdrive?.decimals,
         })
       : 0n;
   return (
@@ -37,7 +37,7 @@ export function SizeAndPoolShareCell({
       <span>
         {formatBalance({
           balance: lpShares,
-          decimals: baseToken?.decimals || 18,
+          decimals: hyperdrive?.decimals,
           places: baseToken?.places || 2,
         })}
       </span>

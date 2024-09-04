@@ -1,7 +1,6 @@
 import {
   AppConfig,
   findBaseToken,
-  findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
@@ -18,6 +17,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
 import { LpCurrentValueCell } from "./LpCurrentValueCell";
@@ -50,13 +50,9 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     );
   }
 
-  const hasOpenPositions = appConfig.hyperdrives.some((hyperdrive) => {
-    const openLpPosition = openLpPositions?.[hyperdrive.address];
-    return (
-      openLpPosition &&
-      (openLpPosition.lpShares > 0n || openLpPosition.withdrawalShares > 0n)
-    );
-  });
+  const hasOpenPositions = openLpPositions?.some(
+    (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
+  );
 
   if (!hasOpenPositions) {
     return (
@@ -79,20 +75,15 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const baseToken = findBaseToken({
-          appConfig,
-          hyperdriveAddress: hyperdrive.address,
-          hyperdriveChainId: hyperdrive.chainId,
-        });
-        const sharesToken = findToken({
-          chainId: hyperdrive.chainId,
-          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-          tokens: appConfig.tokens,
-        });
-        const openLpPosition = openLpPositions?.[hyperdrive.address] ?? {
+        const openLpPosition = openLpPositions?.find(
+          (position) =>
+            position.hyperdrive.address === hyperdrive.address &&
+            position.hyperdrive.chainId === hyperdrive.chainId,
+        ) ?? {
           lpShares: 0n,
           withdrawalShares: 0n,
         };
+
         // Check if this hyperdrive pool has open positions before rendering
         if (
           openLpPosition.lpShares === 0n &&
@@ -105,26 +96,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           <div className="flex flex-col gap-6" key={hyperdrive.address}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1 font-chakraPetch text-h4">
-                <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                  {baseToken &&
-                  hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={baseToken?.symbol}
-                    >
-                      <img src={baseToken?.iconUrl} />
-                    </div>
-                  ) : null}
-                  {sharesToken &&
-                  hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={sharesToken.symbol}
-                    >
-                      <img src={sharesToken.iconUrl} />
-                    </div>
-                  ) : null}
-                </div>
+                <AssetStack hyperdriveAddress={hyperdrive.address} />
                 <p className="text-h4">
                   {/*
                     This regex removes the term from the hyperdrive name since it's already shown in the table.

@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -113,7 +114,7 @@ export function LpCurrentValueCell({
               // as the sign (profit/loss) is handled separately in the UI.
               BigInt(Math.abs(Number(totalProceeds - baseAmountPaid)))
             : 0n,
-        decimals: baseToken?.decimals || 18,
+        decimals: hyperdrive?.decimals,
         places: baseToken?.places,
       })
     ) : (
@@ -171,7 +172,7 @@ export function LpCurrentValueCell({
             )}
           </span>
           <span className="text-sm text-gray-500">
-            {`${withdrawablePercent.format({ decimals: 2 })}% withdrawable`}
+            {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
           </span>
         </>
       ) : (

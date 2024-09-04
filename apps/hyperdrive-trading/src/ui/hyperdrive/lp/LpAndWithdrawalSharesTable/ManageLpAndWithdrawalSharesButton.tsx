@@ -4,7 +4,6 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import classNames from "classnames";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useClickAway } from "react-use";
@@ -77,14 +76,7 @@ export function ManageLpAndWithdrawalSharesButton({
           Manage
         </button>
         {isOpen && (
-          <ul
-            className={classNames(
-              "absolute right-6 top-full z-50 mt-4 w-[270px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1",
-              {
-                "w-[300px]": balanceOfWithdrawalShares,
-              },
-            )}
-          >
+          <ul className="absolute right-6 top-full z-50 mt-4 w-[300px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1">
             {balanceOfWithdrawalShares ? (
               <Modal
                 modalId="redeemWithdrawalShares"
@@ -112,7 +104,7 @@ export function ManageLpAndWithdrawalSharesButton({
                       <span className="font-bold">Claim from queue</span>
                       <span className="ml-6 rounded-md border border-success/20 bg-success/20 px-1 text-success">
                         {baseProceedsFromPreview !== undefined ? (
-                          `+ ${formatBalance({
+                          `${formatBalance({
                             balance: baseProceedsFromPreview,
                             decimals: baseToken?.decimals || 18,
                             places: baseToken?.places,

@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -14,9 +14,11 @@ export function WithdrawalQueueCell({
 }): JSX.Element {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -55,7 +57,7 @@ export function WithdrawalQueueCell({
             balanceOfWithdrawalShares === 0n
               ? 0n
               : withdrawalSharesCurrentValue || 0n,
-          decimals: baseToken?.decimals || 18,
+          decimals: hyperdrive?.decimals,
           places: baseToken?.places,
         })}{" "}
       </p>

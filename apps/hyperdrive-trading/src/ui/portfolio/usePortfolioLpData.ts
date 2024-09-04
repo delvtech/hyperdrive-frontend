@@ -7,15 +7,19 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, PublicClient } from "viem";
 import { useAccount } from "wagmi";
 
-type OpenLpPositionsData = Record<
-  Address,
-  { lpShares: bigint; withdrawalShares: bigint }
->;
+type LpPosition = {
+  hyperdrive: {
+    address: Address;
+    chainId: number;
+  };
+  lpShares: bigint;
+  withdrawalShares: bigint;
+};
 
 type ClientMap = Map<number, { publicClient: PublicClient }>;
 
 export function usePortfolioLpData(): {
-  openLpPositions: OpenLpPositionsData | undefined;
+  openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
   const appConfig = useAppConfig();
@@ -41,10 +45,11 @@ export function usePortfolioLpData(): {
                 console.error(
                   `No public client found for chainId ${hyperdrive.chainId}`,
                 );
-                return [
-                  hyperdrive.address,
-                  { lpShares: 0n, withdrawalShares: 0n },
-                ];
+                return {
+                  hyperdrive,
+                  lpShares: 0n,
+                  withdrawalShares: 0n,
+                };
               }
 
               const readHyperdrive = await getReadHyperdrive({
@@ -58,11 +63,15 @@ export function usePortfolioLpData(): {
                 readHyperdrive.getWithdrawalShares({ account }),
               ]);
 
-              return [hyperdrive.address, { lpShares, withdrawalShares }];
+              return {
+                hyperdrive,
+                lpShares,
+                withdrawalShares,
+              };
             }),
           );
 
-          return Object.fromEntries(results);
+          return results;
         }
       : undefined,
     enabled: queryEnabled,
