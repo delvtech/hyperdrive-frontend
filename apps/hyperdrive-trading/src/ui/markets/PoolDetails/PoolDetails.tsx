@@ -1,7 +1,8 @@
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import CustomBanner from "src/ui/base/components/CustomBanner";
@@ -9,6 +10,7 @@ import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm2 } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm2";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
 export function PoolDetails({
   hyperdrive,
@@ -16,6 +18,11 @@ export function PoolDetails({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
+  const { position: activePosition } = useSearch({
+    from: MARKET_DETAILS_ROUTE,
+  });
+  // used to set the active position
+  const navigate = useNavigate({ from: MARKET_DETAILS_ROUTE });
   const { marketState } = useMarketState({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -49,15 +56,60 @@ export function PoolDetails({
               // TODO: Implement the term picker here
             }
           </button>
-          <button className="daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md text-white">
+          <Link
+            className={classNames(
+              "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+              {
+                "daisy-btn-ghost font-normal text-inactive-tab":
+                  activePosition !== "longs",
+                "text-white": activePosition === "longs",
+              },
+            )}
+            to={MARKET_DETAILS_ROUTE}
+            params={{
+              chainId: hyperdrive.chainId.toString(),
+              address: hyperdrive.address,
+            }}
+            search={{ position: "longs" }}
+          >
             Long
-          </button>
-          <button className="daisy-btn daisy-btn-ghost daisy-btn-md h-8 min-h-8 rounded-full text-md font-normal text-inactive-tab">
+          </Link>
+          <Link
+            className={classNames(
+              "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+              {
+                "daisy-btn-ghost font-normal text-inactive-tab":
+                  activePosition !== "shorts",
+                "text-white": activePosition === "shorts",
+              },
+            )}
+            to={MARKET_DETAILS_ROUTE}
+            params={{
+              chainId: hyperdrive.chainId.toString(),
+              address: hyperdrive.address,
+            }}
+            search={{ position: "shorts" }}
+          >
             Short
-          </button>
-          <button className="daisy-btn daisy-btn-ghost daisy-btn-md h-8 min-h-8 rounded-full text-md font-normal text-inactive-tab">
+          </Link>
+          <Link
+            className={classNames(
+              "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+              {
+                "daisy-btn-ghost font-normal text-inactive-tab":
+                  activePosition !== "lp",
+                "text-white": activePosition === "lp",
+              },
+            )}
+            to={MARKET_DETAILS_ROUTE}
+            params={{
+              chainId: hyperdrive.chainId.toString(),
+              address: hyperdrive.address,
+            }}
+            search={{ position: "lp" }}
+          >
             Supply
-          </button>
+          </Link>
         </div>
         <button className="daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-xs font-normal text-neutral-content">
           0.5% slippage <Cog6ToothIcon className="size-4" />
