@@ -125,7 +125,15 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
                     </div>
                   ) : null}
                 </div>
-                <p className="text-h4">{hyperdrive.name}</p>
+                <p className="text-h4">
+                  {/*
+                    This regex removes the term from the hyperdrive name since it's already shown in the table.
+                    It matches:
+                    - \d{1,3}: 1 to 3 digits
+                    - d: Followed by the letter 'd'
+                  */}
+                  {hyperdrive.name.replace(/\d{1,3}d/, "")}
+                </p>
               </div>
             </div>
             <OpenLpTableDesktop
