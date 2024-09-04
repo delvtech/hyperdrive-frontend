@@ -45,12 +45,15 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     );
   }
 
-  if (
-    openLpPositions &&
-    !Object.values(openLpPositions).some(
-      (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
-    )
-  ) {
+  const hasOpenPositions = appConfig.hyperdrives.some((hyperdrive) => {
+    const openLpPosition = openLpPositions?.[hyperdrive.address];
+    return (
+      openLpPosition &&
+      (openLpPosition.lpShares > 0n || openLpPosition.withdrawalShares > 0n)
+    );
+  });
+
+  if (!hasOpenPositions) {
     return (
       <div className="my-28 flex h-full w-[1036px] flex-col">
         <NonIdealState
@@ -81,10 +84,8 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           lpShares: 0n,
           withdrawalShares: 0n,
         };
-        // Ensure this hyperdrive pool has open positions before rendering.
-        // openLpPosition needs to have at least one of lpShares or withdrawalShares to be non-zero.
+        // Check if this hyperdrive pool has open positions before rendering
         if (
-          openLpPositionStatus === "success" &&
           openLpPosition.lpShares === 0n &&
           openLpPosition.withdrawalShares === 0n
         ) {
@@ -223,10 +224,7 @@ export function OpenLpTableDesktop({
           {tableInstance.getRowModel().rows.map((row, index) => (
             <tr
               key={row.id}
-              className={classNames(
-                "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
-                "!border-b-0",
-              )}
+              className={classNames("h-32 !border-b-0 font-dmMono")}
             >
               {row.getVisibleCells().map((cell, cellIndex) => (
                 <td
@@ -247,22 +245,6 @@ export function OpenLpTableDesktop({
                   })}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  {index !== tableInstance.getRowModel().rows.length - 1 && (
-                    <span
-                      className={classNames(
-                        "absolute bottom-0 left-0 right-0 scale-y-50 transform border-b border-neutral-content/20",
-                        {
-                          "left-6 right-0": cellIndex === 0,
-                          "left-0 right-6":
-                            cellIndex === row.getVisibleCells().length - 1,
-                          "left-0 right-0": ![
-                            0,
-                            row.getVisibleCells().length - 1,
-                          ].includes(cellIndex),
-                        },
-                      )}
-                    />
-                  )}
                 </td>
               ))}
             </tr>
@@ -312,7 +294,7 @@ function getColumns({
         />
       ),
     }),
-    columnHelper.accessor("withdrawalShares", {
+    columnHelper.accessor("lpShares", {
       id: "value",
       header: `Value (${baseToken?.symbol})`,
       cell: ({ row }) => (
