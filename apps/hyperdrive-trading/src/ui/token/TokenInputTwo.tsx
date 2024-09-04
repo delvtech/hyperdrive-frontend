@@ -49,10 +49,13 @@ export function TokenInputTwo({
     <div className="flex w-full flex-col">
       {settings ? settings : null}
       <div
-        className={classNames("flex flex-col gap-2 rounded-md px-4 py-3", {
-          "bg-base-100": variant === "default",
-          "bg-base-200": variant === "lighter",
-        })}
+        className={classNames(
+          "flex flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-1 has-[:focus]:ring-gray-500",
+          {
+            "bg-base-100": variant === "default",
+            "bg-base-200": variant === "lighter",
+          },
+        )}
       >
         <label className="text-sm text-neutral-content">{inputLabel}</label>
         <div className="flex flex-row items-center">
@@ -70,12 +73,12 @@ export function TokenInputTwo({
             name={name}
             disabled={disabled}
             className={classNames(
-              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:border-base-100 focus:outline-none focus:ring-0",
+              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:outline-none",
               HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
                 "daisy-input-error text-error": hasError,
-                "bg-base-100": variant === "default",
-                "bg-base-200": variant === "lighter",
+                "bg-base-100 focus:border-base-100": variant === "default",
+                "bg-base-200 focus:border-base-200": variant === "lighter",
               },
             )}
             value={value}
