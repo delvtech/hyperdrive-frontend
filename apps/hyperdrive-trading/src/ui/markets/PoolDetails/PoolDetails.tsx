@@ -50,14 +50,14 @@ export function PoolDetails({
       <div className="flex justify-between">
         <div className="flex gap-4">
           {/* TODO: Implement the term picker button */}
-          <button className="daisy-btn daisy-btn-sm gap-2 rounded-full text-xs text-white">
+          <button className="daisy-btn daisy-btn-sm h-9 gap-2 rounded-full text-xs text-white">
             {formatTermLength2(
               Number(hyperdrive.poolConfig.positionDuration * 1000n),
             )}
           </button>
           <PositionPicker hyperdrive={hyperdrive} />
         </div>
-        <button className="daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-xs font-normal text-neutral-content">
+        <button className="daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-xs font-normal text-neutral-content">
           0.5% slippage <Cog6ToothIcon className="size-4" />
         </button>
       </div>
@@ -87,7 +87,7 @@ function PositionPicker({
     <div className="flex gap-4">
       <Link
         className={classNames(
-          "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+          "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
           {
             "daisy-btn-ghost font-normal text-inactive-tab":
               activePosition !== "longs",
@@ -105,7 +105,7 @@ function PositionPicker({
       </Link>
       <Link
         className={classNames(
-          "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+          "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
           {
             "daisy-btn-ghost font-normal text-inactive-tab":
               activePosition !== "shorts",
@@ -123,7 +123,7 @@ function PositionPicker({
       </Link>
       <Link
         className={classNames(
-          "daisy-btn daisy-btn-md h-8 min-h-8 rounded-full text-md",
+          "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
           {
             "daisy-btn-ghost font-normal text-inactive-tab":
               activePosition !== "lp",
