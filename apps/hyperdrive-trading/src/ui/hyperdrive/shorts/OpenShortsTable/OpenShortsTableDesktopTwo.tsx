@@ -38,6 +38,17 @@ export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsData();
   const appConfig = useAppConfig();
+
+  if (openShortPositionsStatus === "loading") {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <LoadingState
+          heading="Loading your Shorts..."
+          text="Searching for Shorts events, calculating current value and PnL..."
+        />
+      </div>
+    );
+  }
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
@@ -54,7 +65,9 @@ export function OpenShortsContainer(): ReactElement {
         // Ensure this hyperdrive pool has open positions before rendering.
         if (
           openShortPositionsStatus === "success" &&
-          !openShortPositions?.[hyperdrive.address]?.length
+          !openShortPositions?.find(
+            (position) => position.hyperdrive.address === hyperdrive.address,
+          )?.openShorts.length
         ) {
           return null;
         }
@@ -139,17 +152,6 @@ export function OpenShortsTableDesktopTwo({
           action={<ConnectWalletButton />}
         />
       </div>
-    );
-  }
-  if (
-    openShortsStatus === "loading" ||
-    openShortPositionsStatus === "loading"
-  ) {
-    return (
-      <LoadingState
-        heading="Loading your Shorts..."
-        text="Searching for Shorts events, calculating current value and PnL..."
-      />
     );
   }
 
