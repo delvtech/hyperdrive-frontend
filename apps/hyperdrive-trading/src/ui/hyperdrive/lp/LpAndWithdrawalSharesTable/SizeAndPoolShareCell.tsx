@@ -1,5 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
@@ -18,11 +18,12 @@ export function SizeAndPoolShareCell({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const { tokens } = useAppConfig();
-
-  const baseToken = tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+  });
   const poolShare =
     !!lpShares && !!lpSharesTotalSupply
       ? calculateRatio({

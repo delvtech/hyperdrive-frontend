@@ -62,7 +62,7 @@ export function usePortfolioLpData(): {
             }),
           );
 
-          return Object.fromEntries(results.filter(Boolean));
+          return Object.fromEntries(results);
         }
       : undefined,
     enabled: queryEnabled,

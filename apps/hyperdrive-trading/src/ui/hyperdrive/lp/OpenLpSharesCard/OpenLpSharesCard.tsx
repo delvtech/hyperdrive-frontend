@@ -3,7 +3,6 @@ import {
   findBaseToken,
   findToken,
   HyperdriveConfig,
-  TokenConfig,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -18,6 +17,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { getSubHeadingLabel } from "src/ui/hyperdrive/lp/getSubHeadingLabel";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
@@ -265,28 +265,4 @@ export function OpenLpSharesCard({
       </div>
     </Well>
   );
-}
-
-export function getSubHeadingLabel(
-  baseToken: TokenConfig,
-  hyperdrive: HyperdriveConfig,
-  sharesToken: TokenConfig,
-): string {
-  if (
-    hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
-    hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
-  ) {
-    return `Redeem your LP shares for ${baseToken.symbol} or ${sharesToken.symbol}`;
-  }
-
-  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
-    return `Redeem your LP shares for ${baseToken.symbol}`;
-  }
-
-  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
-    return `Redeem your LP shares for ${sharesToken.symbol}`;
-  }
-
-  // This should never happen and is just to prevent typescript from complaining
-  throw new Error("Cannot create subheading label");
 }

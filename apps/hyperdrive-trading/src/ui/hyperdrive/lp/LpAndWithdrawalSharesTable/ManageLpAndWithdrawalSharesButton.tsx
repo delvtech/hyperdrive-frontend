@@ -1,4 +1,4 @@
-import { Cog8ToothIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import {
   findBaseToken,
   findToken,
@@ -13,8 +13,8 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
-import { getSubHeadingLabel } from "src/ui/hyperdrive/lp/OpenLpSharesCard/OpenLpSharesCard";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
+import { getSubHeadingLabel } from "src/ui/hyperdrive/lp/getSubHeadingLabel";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
@@ -176,20 +176,10 @@ export function ManageLpAndWithdrawalSharesButton({
                 />
               }
               modalContent={
-                <div>
-                  <button
-                    className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-                    onClick={() => (window as any)["withdrawalLpModal"].close()}
-                  >
-                    <XMarkIcon className="w-6" title="Close" />
-                  </button>
-                  {lpShares && lpShares > 0n ? (
-                    <RemoveLiquidityForm
-                      hyperdrive={hyperdrive}
-                      lpShares={lpShares || 0n}
-                    />
-                  ) : undefined}
-                </div>
+                <RemoveLiquidityForm
+                  hyperdrive={hyperdrive}
+                  lpShares={lpShares || 0n}
+                />
               }
             >
               {({ showModal }) => (

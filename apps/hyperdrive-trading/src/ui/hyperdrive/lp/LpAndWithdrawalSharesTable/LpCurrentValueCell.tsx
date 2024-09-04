@@ -1,6 +1,6 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -23,19 +23,23 @@ export function LpCurrentValueCell({
   lpShares: bigint;
 }): ReactElement {
   const { address: account } = useAccount();
-  const { tokens } = useAppConfig();
-  const baseToken = tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const appConfig = useAppConfig();
+  const baseToken = findBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+  });
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const { baseAmountPaid, baseValue } = useOpenLpPosition({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-    chainId: hyperdrive.chainId,
-  });
+  const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
+    {
+      hyperdriveAddress: hyperdrive.address,
+      account,
+      chainId: hyperdrive.chainId,
+    },
+  );
 
   const { proceeds, withdrawalShares, previewRemoveLiquidityStatus } =
     usePreviewRemoveLiquidity({
@@ -72,7 +76,6 @@ export function LpCurrentValueCell({
     withdrawalSharesRedeemedFromPreview,
   });
 
-  // Simplify the baseProceeds calculation
   const baseProceeds = proceeds
     ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? proceeds
@@ -92,10 +95,14 @@ export function LpCurrentValueCell({
         )
       : parseFixed("100");
 
+  // Calculate total proceeds based on withdrawable percentage
+  // If 100% withdrawable, include both proceeds and withdrawal shares value
+  // Otherwise, use only the proceeds
   const totalProceeds = withdrawablePercent.eq(parseFixed("100"))
     ? (proceeds || 0n) + (withdrawalSharesCurrentValue || 0n)
     : proceeds || 0n;
 
+  // Compute the difference between total proceeds and base amount paid
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
@@ -119,12 +126,18 @@ export function LpCurrentValueCell({
       {!!poolInfo && !!lpShares ? (
         <>
           <span className="flex items-center justify-end gap-2 text-md">
-            {`${formatBalance({
-              balance: baseValue,
-              decimals: baseToken?.decimals || 18,
-              places: baseToken?.places,
-            })}`}
-            {!withdrawalShares ? (
+            {openLpPositionStatus === "loading" ? (
+              <Skeleton className="w-24" />
+            ) : (
+              `${formatBalance({
+                balance: baseValue,
+                decimals: baseToken?.decimals || 18,
+                places: baseToken?.places,
+              })}`
+            )}
+            {openLpPositionStatus === "loading" ? (
+              <Skeleton className="w-8" />
+            ) : !withdrawalShares ? (
               <div
                 data-tip={
                   "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
