@@ -1,4 +1,9 @@
-import { AppConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  findBaseToken,
+  findToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -74,12 +79,16 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const baseToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.baseToken,
-        );
-        const sharesToken = appConfig.tokens.find(
-          (token) => token.address === hyperdrive.poolConfig.vaultSharesToken,
-        );
+        const baseToken = findBaseToken({
+          appConfig,
+          hyperdriveAddress: hyperdrive.address,
+          hyperdriveChainId: hyperdrive.chainId,
+        });
+        const sharesToken = findToken({
+          chainId: hyperdrive.chainId,
+          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+          tokens: appConfig.tokens,
+        });
         const openLpPosition = openLpPositions?.[hyperdrive.address] ?? {
           lpShares: 0n,
           withdrawalShares: 0n,
@@ -267,9 +276,11 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = appConfig.tokens.find(
-    (token) => token.address === hyperdrive.poolConfig.baseToken,
-  );
+  const baseToken = findBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+  });
 
   return [
     columnHelper.accessor("lpShares", {
