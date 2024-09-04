@@ -31,14 +31,10 @@ export function PoolDetails({
           <ArrowLeftIcon className="mr-1 size-3" />
           Back to home
         </Link>
-        <div className="my-2 flex items-center gap-2 md:my-0">
-          <div className="flex w-full flex-col items-start gap-1">
-            <h1 className="flex items-center text-h2 md:my-0">
-              <AssetStack hyperdriveAddress={hyperdrive.address} />
-              {appConfig.yieldSources[hyperdrive.yieldSource].shortName}
-            </h1>
-          </div>
-        </div>
+        <h1 className="flex items-center gap-2 text-h2">
+          <AssetStack hyperdriveAddress={hyperdrive.address} />
+          {appConfig.yieldSources[hyperdrive.yieldSource].shortName}
+        </h1>
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
         )}
