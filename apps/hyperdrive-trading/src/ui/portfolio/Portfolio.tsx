@@ -2,6 +2,7 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { TabsTwo } from "src/ui/base/components/Tabs/TabsTwo";
 import { OpenLongsContainer } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktopTwo";
+import { LpAndWithdrawalSharesContainer } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { OpenShortsContainer } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktopTwo";
 import { PORTFOLIO_ROUTE } from "src/ui/markets/routes";
 
@@ -36,8 +37,7 @@ export function Portfolio(): ReactElement {
           },
           {
             id: "lp",
-            // TODO: Implement LPs
-            content: null,
+            content: <LpAndWithdrawalSharesContainer />,
             label: "LP",
             onClick: () => {
               navigate({
