@@ -21,10 +21,9 @@ export async function getGnosisWstethHyperdrive({
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
-  // safe to cast here because we know the pool was initialized
-  const initializationBlock = (
-    await hyperdrive.getInitializationBlock({ fromBlock: earliestBlock })
-  ).blockNumber as bigint;
+  const initializationBlock = await hyperdrive.getInitializationBlock({
+    fromBlock: earliestBlock,
+  });
 
   const sharesToken = await hyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
@@ -42,7 +41,9 @@ export async function getGnosisWstethHyperdrive({
   const hyperdriveConfig: HyperdriveConfig = {
     chainId,
     kind: await hyperdrive.getKind(),
-    initializationBlock,
+    // safe to cast here because we know the pool was initialized
+    initializationBlock: initializationBlock.blockNumber as bigint,
+    initializationTimestamp: initializationBlock.timestamp,
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
