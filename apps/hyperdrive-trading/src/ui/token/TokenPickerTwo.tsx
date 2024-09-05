@@ -31,7 +31,7 @@ export function TokenPickerTwo({
             <span className="daisy-label-text">{label}</span>
           </label>
         ) : undefined}
-        <div className="daisy-btn daisy-btn-md flex h-9 min-h-9 items-center rounded-box bg-neutral">
+        <div className="daisy-btn no-animation daisy-btn-md flex h-9 min-h-9 cursor-default items-center rounded-box bg-neutral">
           <img
             src={tokens[0].tokenConfig.iconUrl}
             className="h-5 rounded-full"

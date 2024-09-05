@@ -13,14 +13,26 @@ export function PositionPicker({
   const { position: activePosition = "longs" } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
+
+  // TODO: Implement the term picker based on hyperdrives in appConfig of the
+  // same kind but different poisition durations
+  const allTerms = [hyperdrive];
+
   return (
     <div className="flex gap-4">
       {/* TODO: Implement the term picker button */}
-      <button className="daisy-btn daisy-btn-sm h-9 gap-2 rounded-full text-xs text-white">
+      <button
+        className={classNames(
+          "daisy-btn daisy-btn-sm h-9 gap-2 rounded-full bg-base-200 text-xs text-white hover:bg-base-200",
+          { "no-animation cursor-default": allTerms.length === 1 },
+        )}
+      >
         {formatTermLength2(
           Number(hyperdrive.poolConfig.positionDuration * 1000n),
         )}
       </button>
+
+      {/* Position buttons */}
       <Link
         className={classNames(
           "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
