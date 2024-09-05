@@ -6,8 +6,8 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm2 } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm2";
-import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
-import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
+import { AddLiquidityForm2 } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm2";
+import { OpenShortForm2 } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm2";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 
@@ -17,10 +17,14 @@ export function PoolDetails({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const appConfig = useAppConfig();
-  const { position: activePosition } = useSearch({
+  const {
+    // If no search param is specified, we default to showing the
+    // Longs side of the market
+    position: activePosition = "longs",
+  } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
-  // used to set the active position
+
   const { marketState } = useMarketState({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -49,9 +53,9 @@ export function PoolDetails({
           case "longs":
             return <OpenLongForm2 hyperdrive={hyperdrive} />;
           case "shorts":
-            return <OpenShortForm hyperdrive={hyperdrive} />;
+            return <OpenShortForm2 hyperdrive={hyperdrive} />;
           case "lp":
-            return <AddLiquidityForm hyperdrive={hyperdrive} />;
+            return <AddLiquidityForm2 hyperdrive={hyperdrive} />;
         }
       })()}
     </div>
