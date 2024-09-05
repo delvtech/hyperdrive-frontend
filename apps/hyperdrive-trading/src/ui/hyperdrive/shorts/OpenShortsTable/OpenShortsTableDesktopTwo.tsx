@@ -24,13 +24,11 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ShortRateAndSizeCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortValue } from "src/ui/hyperdrive/shorts/OpenShortsTable/TotalOpenShortsValue";
-import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePortfolioShortsData } from "src/ui/portfolio/usePortfolioShortsData";
 import { useAccount } from "wagmi";
 
@@ -38,6 +36,17 @@ export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsData();
   const appConfig = useAppConfig();
+
+  if (openShortPositionsStatus === "loading") {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <LoadingState
+          heading="Loading your Shorts..."
+          text="Searching for Shorts events, calculating current value and PnL..."
+        />
+      </div>
+    );
+  }
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
@@ -51,11 +60,13 @@ export function OpenShortsContainer(): ReactElement {
           tokens: appConfig.tokens,
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
         });
+        const openShorts = openShortPositions?.find(
+          (position) =>
+            position.hyperdrive.address === hyperdrive.address &&
+            position.hyperdrive.chainId === hyperdrive.chainId,
+        )?.openShorts;
         // Ensure this hyperdrive pool has open positions before rendering.
-        if (
-          openShortPositionsStatus === "success" &&
-          !openShortPositions?.[hyperdrive.address]?.length
-        ) {
+        if (openShortPositionsStatus === "success" && !openShorts?.length) {
           return null;
         }
         return (
@@ -87,7 +98,7 @@ export function OpenShortsContainer(): ReactElement {
             </div>
             <OpenShortsTableDesktopTwo
               hyperdrive={hyperdrive}
-              openShortPositionsStatus={openShortPositionsStatus}
+              openShorts={openShorts}
             />
           </div>
         );
@@ -98,22 +109,14 @@ export function OpenShortsContainer(): ReactElement {
 
 export function OpenShortsTableDesktopTwo({
   hyperdrive,
-  openShortPositionsStatus,
+  openShorts,
 }: {
   hyperdrive: HyperdriveConfig;
-  openShortPositionsStatus?: "loading" | "success" | "error";
+  openShorts: OpenShort[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const { marketState } = useMarketState({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
-  const { openShorts, openShortsStatus } = useOpenShorts({
-    account,
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
+
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
     data: openShorts || [],
@@ -139,17 +142,6 @@ export function OpenShortsTableDesktopTwo({
           action={<ConnectWalletButton />}
         />
       </div>
-    );
-  }
-  if (
-    openShortsStatus === "loading" ||
-    openShortPositionsStatus === "loading"
-  ) {
-    return (
-      <LoadingState
-        heading="Loading your Shorts..."
-        text="Searching for Shorts events, calculating current value and PnL..."
-      />
     );
   }
 

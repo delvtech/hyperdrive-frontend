@@ -1,16 +1,13 @@
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
-import { Address } from "viem";
 import { useAccount } from "wagmi";
 
 type LpPosition = {
-  hyperdrive: {
-    address: Address;
-    chainId: number;
-  };
+  hyperdrive: HyperdriveConfig;
   lpShares: bigint;
   withdrawalShares: bigint;
 };
@@ -22,9 +19,7 @@ export function usePortfolioLpData(): {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const queryEnabled = !!account && !!appConfig.hyperdrives.length;
-  const clients = usePublicClients(
-    Object.keys(appConfig.registries).map(Number),
-  );
+  const clients = usePublicClients(Object.keys(appConfig.chains).map(Number));
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", { account }),
     queryFn: queryEnabled

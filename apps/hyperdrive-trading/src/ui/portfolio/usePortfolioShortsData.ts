@@ -1,48 +1,61 @@
-import { OpenShort, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { sdkCache } from "src/sdk/sdkCache";
+import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Address } from "viem";
-import { useAccount, usePublicClient } from "wagmi";
+import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
+import { useAccount } from "wagmi";
 
-type OpenShortPositionsData = Record<Address, OpenShort[]>;
+type OpenShortPositionsData = {
+  hyperdrive: HyperdriveConfig;
+  openShorts: OpenShort[];
+}[];
 
 export function usePortfolioShortsData(): {
   openShortPositions: OpenShortPositionsData | undefined;
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
-  // TODO: We should be getting a specific public client for the chain the
-  // hyperdrive is on
-  const publicClient = usePublicClient();
+
   const appConfig = useAppConfig();
-  const queryEnabled = !!account && !!appConfig && !!publicClient;
+  const clients = usePublicClients(Object.keys(appConfig.chains).map(Number));
+  const queryEnabled = !!account && !!appConfig && !!clients;
 
   const { data: openShortPositions, status: openShortPositionsStatus } =
     useQuery({
       queryKey: makeQueryKey("portfolioShorts", { account }),
       enabled: queryEnabled,
       queryFn: queryEnabled
-        ? async () => {
-            const result: OpenShortPositionsData = {};
+        ? async () =>
             await Promise.all(
               appConfig.hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = new ReadHyperdrive({
-                  address: hyperdrive.address,
+                const publicClient = clients[hyperdrive.chainId]?.publicClient;
+
+                if (!publicClient) {
+                  console.error(
+                    `No public client found for chainId ${hyperdrive.chainId}`,
+                  );
+                  return {
+                    hyperdrive,
+                    openShorts: [],
+                  };
+                }
+
+                const readHyperdrive = await getReadHyperdrive({
+                  appConfig,
+                  hyperdriveAddress: hyperdrive.address,
                   publicClient,
-                  cache: sdkCache,
                 });
 
-                result[hyperdrive.address] = await readHyperdrive.getOpenShorts(
-                  {
-                    account: account,
-                  },
-                );
+                return {
+                  hyperdrive,
+                  openShorts: await readHyperdrive.getOpenShorts({
+                    account,
+                  }),
+                };
               }),
-            );
-            return result;
-          }
+            )
         : undefined,
     });
   return {
