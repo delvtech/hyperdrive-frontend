@@ -51,7 +51,7 @@ export function TokenInputTwo({
 
       <div
         className={classNames(
-          "flex flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-2 has-[:focus]:ring-gray-600",
+          "flex h-[117px] flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-2 has-[:focus]:ring-gray-600",
           {
             "bg-base-100": variant === "default",
             "bg-base-200": variant === "lighter",

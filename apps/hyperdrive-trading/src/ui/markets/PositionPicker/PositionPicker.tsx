@@ -10,7 +10,7 @@ export function PositionPicker({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { position: activePosition } = useSearch({
+  const { position: activePosition = "longs" } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
   return (

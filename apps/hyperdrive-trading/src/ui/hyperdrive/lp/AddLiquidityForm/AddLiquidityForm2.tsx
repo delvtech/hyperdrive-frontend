@@ -28,6 +28,7 @@ import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
+import { PositionPicker } from "src/ui/markets/PositionPicker/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -45,10 +46,7 @@ interface AddLiquidityFormProps {
   onAddLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- *  @deprecated use AddLiquidityForm2
- */
-export function AddLiquidityForm({
+export function AddLiquidityForm2({
   hyperdrive,
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
@@ -255,6 +253,7 @@ export function AddLiquidityForm({
       tokenInput={
         <TokenInputTwo
           name={activeToken.symbol}
+          variant="lighter"
           value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="You deposit"
@@ -286,13 +285,16 @@ export function AddLiquidityForm({
             />
           }
           settings={
-            <SlippageSettingsTwo
-              onSlippageChange={setSlippage}
-              slippage={slippage}
-              activeOption={activeSlippageOption}
-              onActiveOptionChange={setActiveSlippageOption}
-              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-            />
+            <div className="mb-3 flex w-full items-center justify-between">
+              <PositionPicker hyperdrive={hyperdrive} />
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
+            </div>
           }
           bottomRightElement={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">

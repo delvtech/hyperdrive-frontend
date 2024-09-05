@@ -28,6 +28,7 @@ import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/Open
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
+import { PositionPicker } from "src/ui/markets/PositionPicker/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -48,11 +49,7 @@ interface OpenShortPositionFormProps {
   onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- *
- * @deprecated use OpenShortForm2
- */
-export function OpenShortForm({
+export function OpenShortForm2({
   hyperdrive,
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
@@ -277,6 +274,7 @@ export function OpenShortForm({
         <div className="flex flex-col gap-3">
           <TokenInputTwo
             name={`${baseToken.symbol}-input`}
+            variant="lighter"
             inputLabel="Earn yield on"
             token={
               <TokenPickerTwo
@@ -303,13 +301,16 @@ export function OpenShortForm({
                   : ""
             }
             settings={
-              <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
-                slippage={slippage}
-                activeOption={activeSlippageOption}
-                onActiveOptionChange={setActiveSlippageOption}
-                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-              />
+              <div className="mb-3 flex w-full items-center justify-between">
+                <PositionPicker hyperdrive={hyperdrive} />
+                <SlippageSettingsTwo
+                  onSlippageChange={setSlippage}
+                  slippage={slippage}
+                  activeOption={activeSlippageOption}
+                  onActiveOptionChange={setActiveSlippageOption}
+                  tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+                />
+              </div>
             }
             onChange={(newAmount) => {
               setShortAmount(newAmount);
@@ -335,6 +336,7 @@ export function OpenShortForm({
             }
           />
           <TokenInputTwo
+            variant="lighter"
             name={`${baseToken.symbol}-input`}
             // This input is disabled until the getMaxShort is fixed on the sdk.
             disabled
