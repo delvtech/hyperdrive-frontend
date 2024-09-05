@@ -60,13 +60,13 @@ export function OpenShortsContainer(): ReactElement {
           tokens: appConfig.tokens,
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
         });
+        const openShorts = openShortPositions?.find(
+          (position) =>
+            position.hyperdrive.address === hyperdrive.address &&
+            position.hyperdrive.chainId === hyperdrive.chainId,
+        )?.openShorts;
         // Ensure this hyperdrive pool has open positions before rendering.
-        if (
-          openShortPositionsStatus === "success" &&
-          !openShortPositions?.find(
-            (position) => position.hyperdrive.address === hyperdrive.address,
-          )?.openShorts.length
-        ) {
+        if (openShortPositionsStatus === "success" && !openShorts?.length) {
           return null;
         }
         return (
@@ -98,12 +98,7 @@ export function OpenShortsContainer(): ReactElement {
             </div>
             <OpenShortsTableDesktopTwo
               hyperdrive={hyperdrive}
-              openShorts={
-                openShortPositions?.find(
-                  (position) =>
-                    position.hyperdrive.address === hyperdrive.address,
-                )?.openShorts
-              }
+              openShorts={openShorts}
             />
           </div>
         );
