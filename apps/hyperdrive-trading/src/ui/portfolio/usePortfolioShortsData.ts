@@ -21,9 +21,7 @@ export function usePortfolioShortsData(): {
   // hyperdrive is on
 
   const appConfig = useAppConfig();
-  const clients = usePublicClients(
-    Object.keys(appConfig.registries).map(Number),
-  );
+  const clients = usePublicClients(appConfig);
   const queryEnabled = !!account && !!appConfig && !!clients;
 
   const { data: openShortPositions, status: openShortPositionsStatus } =

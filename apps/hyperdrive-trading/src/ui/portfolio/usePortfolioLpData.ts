@@ -19,9 +19,7 @@ export function usePortfolioLpData(): {
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
   const queryEnabled = !!account && !!appConfig.hyperdrives.length;
-  const clients = usePublicClients(
-    Object.keys(appConfig.registries).map(Number),
-  );
+  const clients = usePublicClients(appConfig);
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", { account }),
     queryFn: queryEnabled
