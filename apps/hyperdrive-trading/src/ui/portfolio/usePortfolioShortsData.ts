@@ -29,8 +29,8 @@ export function usePortfolioShortsData(): {
       queryKey: makeQueryKey("portfolioShorts", { account }),
       enabled: queryEnabled,
       queryFn: queryEnabled
-        ? async () => {
-            const results = await Promise.all(
+        ? async () =>
+            await Promise.all(
               appConfig.hyperdrives.map(async (hyperdrive) => {
                 const publicClient = clients[hyperdrive.chainId]?.publicClient;
 
@@ -53,13 +53,11 @@ export function usePortfolioShortsData(): {
                 return {
                   hyperdrive,
                   openShorts: await readHyperdrive.getOpenShorts({
-                    account: account,
+                    account,
                   }),
                 };
               }),
-            );
-            return results;
-          }
+            )
         : undefined,
     });
   return {
