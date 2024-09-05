@@ -17,11 +17,9 @@ export function usePortfolioShortsData(): {
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
-  // TODO: We should be getting a specific public client for the chain the
-  // hyperdrive is on
 
   const appConfig = useAppConfig();
-  const clients = usePublicClients(appConfig);
+  const clients = usePublicClients(Object.keys(appConfig.chains).map(Number));
   const queryEnabled = !!account && !!appConfig && !!clients;
 
   const { data: openShortPositions, status: openShortPositionsStatus } =

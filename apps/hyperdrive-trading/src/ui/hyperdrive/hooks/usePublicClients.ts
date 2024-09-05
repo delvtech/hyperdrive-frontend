@@ -11,11 +11,10 @@ type ClientObject = { [chainId: number]: { publicClient: PublicClient } };
  * @param {AppConfig} appConfig
  * @returns {ClientObject} An object where keys are chain IDs and values are objects containing the corresponding public client.
  */
-export function usePublicClients(appConfig: AppConfig): ClientObject {
+export function usePublicClients(chains: number[]): ClientObject {
   const clients: ClientObject = {};
-  const chainIds = Object.keys(appConfig.registries).map(Number);
 
-  for (const chainId of chainIds) {
+  for (const chainId of chains) {
     const publicClient = getPublicClient(wagmiConfig as any, {
       chainId,
     }) as PublicClient;
