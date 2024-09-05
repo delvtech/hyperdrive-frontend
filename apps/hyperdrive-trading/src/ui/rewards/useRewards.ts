@@ -31,10 +31,9 @@ type UseRewardsReturn =
     }[]
   | undefined;
 
-function getWeight(
+function getWeightMorpho(
   poolConfig: PoolConfig,
   positionType: "short" | "lp",
-  decimals: number,
   poolInfo?: PoolInfo,
   presentValue?: bigint,
 ): FixedPoint {
@@ -46,11 +45,12 @@ function getWeight(
     return parseFixed(1, 18);
   }
 
-  const shareReserves = fixed(poolInfo.shareReserves, decimals);
-  const minShareReserves = fixed(poolConfig.minimumShareReserves, decimals);
+  // Morpho share price is in 24 decimals, but FixedPoint only supports 18 max.
+  const shareReserves = fixed(poolInfo.shareReserves / BigInt(1e6));
+  const minShareReserves = fixed(poolConfig.minimumShareReserves / BigInt(1e6));
   const netShareReserves = shareReserves.sub(minShareReserves);
 
-  return netShareReserves.div(parseFixed(presentValue, decimals));
+  return netShareReserves.div(presentValue);
 }
 
 export function useRewards(
@@ -72,10 +72,9 @@ export function useRewards(
     )
   ) {
     const morphoRate = MorphoFlatRatePerYear.mul(
-      getWeight(
+      getWeightMorpho(
         hyperdrive.poolConfig,
         positionType,
-        hyperdrive.decimals,
         poolInfo,
         presentValue,
       ),
