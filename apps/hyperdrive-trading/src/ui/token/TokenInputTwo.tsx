@@ -48,6 +48,7 @@ export function TokenInputTwo({
   return (
     <div className="flex w-full flex-col">
       {settings ? settings : null}
+
       <div
         className={classNames(
           "flex flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-2 has-[:focus]:ring-gray-600",

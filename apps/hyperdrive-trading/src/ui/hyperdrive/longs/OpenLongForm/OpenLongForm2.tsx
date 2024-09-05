@@ -22,6 +22,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { PositionPicker } from "src/ui/markets/PositionPicker/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
@@ -207,13 +208,16 @@ export function OpenLongForm2({
         <TokenInputTwo
           variant="lighter"
           settings={
-            <SlippageSettingsTwo
-              onSlippageChange={setSlippage}
-              slippage={slippage}
-              activeOption={activeSlippageOption}
-              onActiveOptionChange={setActiveSlippageOption}
-              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-            />
+            <div className="mb-3 flex w-full items-center justify-between">
+              <PositionPicker hyperdrive={hyperdrive} />
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
+            </div>
           }
           name={activeToken.symbol}
           token={
