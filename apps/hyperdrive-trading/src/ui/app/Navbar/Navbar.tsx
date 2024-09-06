@@ -31,8 +31,7 @@ export function Navbar(): ReactElement {
           <Link to={"/"} className="hidden sm:inline">
             <span
               className={classNames("text-md", {
-                "text-white border-b-2 border-b-primary/20 pb-1":
-                  location.pathname === "/",
+                "text-white": location.pathname === "/",
                 "text-neutral-content": location.pathname !== "/",
               })}
             >
@@ -42,8 +41,7 @@ export function Navbar(): ReactElement {
           <Link to={"/bridge"}>
             <span
               className={classNames("text-md", {
-                "text-white border-b-2 border-b-primary/20 pb-1":
-                  location.pathname === "/bridge",
+                "text-white": location.pathname === "/bridge",
                 "text-neutral-content": location.pathname !== "/bridge",
               })}
             >
@@ -54,8 +52,7 @@ export function Navbar(): ReactElement {
             <Link to={"/portfolio"}>
               <span
                 className={classNames("text-md", {
-                  "text-white border-b-2 border-b-primary/20 pb-1":
-                    location.pathname === "/portfolio",
+                  "text-white": location.pathname === "/portfolio",
                   "text-neutral-content": location.pathname !== "/portfolio",
                 })}
               >
