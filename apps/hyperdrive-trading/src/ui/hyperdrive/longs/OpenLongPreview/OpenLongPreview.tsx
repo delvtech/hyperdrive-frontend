@@ -1,23 +1,21 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { ClockIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
+import { AccordionSection } from "src/ui/base/components/AccordionSection/AccordionSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -65,15 +63,21 @@ export function OpenLongPreview({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
+  const [isDetailsExpanded, expandDetails] = useState(false);
   return (
     <div className="flex flex-col gap-3.5 px-2">
-      <CollapseSection
+      <AccordionSection
+        isExpanded={isDetailsExpanded}
+        onClick={() => expandDetails((prev) => !prev)}
         heading={
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
             <div className="flex items-center gap-1">
-              <ClockIcon className="size-5 text-gray-500" />
-              <p>{formatDate(Date.now() + termLengthMS)}</p>
+              {`${formatBalance({
+                balance: bondAmount,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })} hy${baseToken.symbol}`}
               <ChevronDownIcon className="ml-1 size-6" />
             </div>
           </div>
@@ -148,7 +152,7 @@ export function OpenLongPreview({
             )
           }
         />
-      </CollapseSection>
+      </AccordionSection>
     </div>
   );
 }

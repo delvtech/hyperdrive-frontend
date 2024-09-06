@@ -13,7 +13,7 @@ import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { CollapseSection } from "src/ui/base/components/CollapseSection/CollapseSection";
+import { AccordionSection } from "src/ui/base/components/AccordionSection/AccordionSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -69,7 +69,7 @@ export function OpenShortPreview({
 
   return (
     <div className="flex flex-col gap-3.5 px-2">
-      <CollapseSection
+      <AccordionSection
         heading={
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
@@ -180,7 +180,7 @@ export function OpenShortPreview({
             )
           }
         />
-      </CollapseSection>
+      </AccordionSection>
     </div>
   );
 }
