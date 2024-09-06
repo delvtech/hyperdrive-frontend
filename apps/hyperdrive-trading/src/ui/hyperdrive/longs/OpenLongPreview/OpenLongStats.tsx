@@ -101,7 +101,7 @@ export function OpenLongStats({
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
-        label="Value at Maturity"
+        label="Receive at Maturity"
         value={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
