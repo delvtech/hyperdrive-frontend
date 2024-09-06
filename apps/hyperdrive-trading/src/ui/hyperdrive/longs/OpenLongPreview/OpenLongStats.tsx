@@ -92,11 +92,6 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             `Matures on ${formatDate(Date.now() + termLengthMS)}`
-            // {`${formatBalance({
-            //   balance: bondAmount,
-            //   decimals: baseToken.decimals,
-            //   places: baseToken.places,
-            // })} hy${baseToken.symbol}`}
           )
         }
         valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"

@@ -60,8 +60,6 @@ export function OpenLongPreview({
         vaultSharePrice: vaultSharePrice,
         decimals: baseToken.decimals,
       });
-  const yieldAtMaturity = bondAmount - amountPaidInBase;
-  const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   const [isDetailsExpanded, expandDetails] = useState(false);
   return (
@@ -70,19 +68,38 @@ export function OpenLongPreview({
         isExpanded={isDetailsExpanded}
         onClick={() => expandDetails((prev) => !prev)}
         heading={
-          <div className="flex w-full items-center justify-between text-neutral-content">
-            <p>Transaction Details</p>
-            <div className="flex items-center gap-1">
-              {`${formatBalance({
-                balance: bondAmount,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
-              })} hy${baseToken.symbol}`}
-              <ChevronDownIcon className="ml-1 size-6" />
-            </div>
-          </div>
+          <OpenLongTransactionDetailsHeader
+            bondAmount={bondAmount}
+            baseToken={baseToken}
+            isDetailsExpanded={isDetailsExpanded}
+          />
         }
       >
+        <LabelValue
+          label="Size"
+          size="small"
+          value={
+            openLongPreviewStatus === "loading" ? (
+              <Skeleton width={100} />
+            ) : bondAmount ? (
+              <span
+                className={classNames(
+                  !curveFee
+                    ? "text-base-content/80"
+                    : "font-medium text-neutral-content",
+                )}
+              >
+                {`${formatBalance({
+                  balance: bondAmount,
+                  decimals: baseToken.decimals,
+                  places: baseToken.places,
+                })} hy${baseToken.symbol}`}
+              </span>
+            ) : (
+              "-"
+            )
+          }
+        />
         <LabelValue
           label="Pool fee"
           tooltipContent="Total combined fee paid to LPs and governance to open the long."
@@ -92,12 +109,8 @@ export function OpenLongPreview({
           value={
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
-            ) : (
-              <span
-                className={classNames({
-                  "text-base-content/80": !curveFee,
-                })}
-              >
+            ) : bondAmount ? (
+              <span className={classNames("text-base-content/80")}>
                 {curveFee
                   ? `${formatBalance({
                       balance: curveFee,
@@ -106,6 +119,8 @@ export function OpenLongPreview({
                     })} hy${baseToken.symbol}`
                   : `0 hy${baseToken.symbol}`}
               </span>
+            ) : (
+              "-"
             )
           }
         />
@@ -124,7 +139,7 @@ export function OpenLongPreview({
                 {spotRateAfterOpen ? (
                   <span className="flex gap-2">
                     <span className="text-base-content/80">{`${fixedApr?.formatted}`}</span>
-                    <ArrowRightIcon className="h-4 text-neutral-content" />
+                    <ArrowRightIcon className="h-4 text-base-content/80" />
                     {formatRate(spotRateAfterOpen)}
                   </span>
                 ) : (
@@ -153,6 +168,39 @@ export function OpenLongPreview({
           }
         />
       </AccordionSection>
+    </div>
+  );
+}
+
+function OpenLongTransactionDetailsHeader({
+  bondAmount,
+  baseToken,
+  isDetailsExpanded,
+}: {
+  bondAmount: bigint;
+  baseToken: TokenConfig;
+  isDetailsExpanded: boolean;
+}) {
+  return (
+    <div className="flex w-full items-center justify-between text-neutral-content">
+      <p>Transaction Details</p>
+      <div className="flex items-center gap-1">
+        {isDetailsExpanded ? null : (
+          <span>{`${formatBalance({
+            balance: bondAmount,
+            decimals: baseToken.decimals,
+            places: baseToken.places,
+          })} hy${baseToken.symbol}`}</span>
+        )}
+        <ChevronDownIcon
+          className={classNames(
+            "ml-1 size-6 transition-transform duration-300 ease-in-out",
+            {
+              "rotate-180": isDetailsExpanded,
+            },
+          )}
+        />
+      </div>
     </div>
   );
 }
