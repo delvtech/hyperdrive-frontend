@@ -222,10 +222,7 @@ export function OpenLongsTableDesktopTwo({
             const isLastRow =
               index === tableInstance.getRowModel().rows.length - 1;
             return (
-              <tr
-                key={row.id}
-                className={classNames("h-32 !border-b-0 font-dmMono")}
-              >
+              <tr key={row.id} className="h-32 !border-b-0 font-dmMono">
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
