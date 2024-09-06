@@ -222,19 +222,7 @@ export function OpenLongsTableDesktopTwo({
             const isLastRow =
               index === tableInstance.getRowModel().rows.length - 1;
             return (
-              <tr
-                key={row.id}
-                className={classNames(
-                  "daisy-hover h-32 cursor-pointer font-dmMono transition duration-300 ease-in-out",
-                  "!border-b-0", // Remove default bottom border for table rows
-                )}
-                onClick={() => {
-                  const modalId = `${row.original.assetId}`;
-                  (
-                    document.getElementById(modalId) as HTMLDialogElement
-                  )?.showModal();
-                }}
-              >
+              <tr key={row.id} className="h-32 !border-b-0 font-dmMono">
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
@@ -389,7 +377,9 @@ function getColumns({
               className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
               onClick={() => {
                 const modalId = `${row.original.assetId}`;
-                (window as any)[modalId].showModal();
+                (
+                  document.getElementById(modalId) as HTMLDialogElement
+                ).showModal();
               }}
             >
               <Cog8ToothIcon className="h-5" />
