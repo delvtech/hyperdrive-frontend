@@ -1,44 +1,56 @@
-import {
-  OpenLongPositionReceived,
-  ReadHyperdrive,
-} from "@delvtech/hyperdrive-viem";
+import { OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
+import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { sdkCache } from "src/sdk/sdkCache";
+import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { useAccount, usePublicClient } from "wagmi";
+import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
+import { useAccount } from "wagmi";
 
-type OpenLongPositionsData = Record<`0x${string}`, OpenLongPositionReceived[]>;
+type OpenLongPositionsData = {
+  hyperdrive: HyperdriveConfig;
+  openLongs: OpenLongPositionReceived[];
+}[];
 
 export function usePortfolioLongsData(): {
   openLongPositions: OpenLongPositionsData | undefined;
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
-  // TODO: We should be getting a specific public client for the chain the
-  // hyperdrive is on
-  const publicClient = usePublicClient();
   const appConfig = useAppConfig();
-  const queryEnabled = !!account && !!appConfig && !!publicClient;
+  const clients = usePublicClients(Object.keys(appConfig.chains).map(Number));
+  const queryEnabled = !!account && !!appConfig && !!clients;
 
   const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
       queryKey: makeQueryKey("portfolioLongs", { account }),
       enabled: queryEnabled,
       queryFn: queryEnabled
-        ? async () => {
-            const result: OpenLongPositionsData = {};
+        ? async () =>
             await Promise.all(
               appConfig.hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = new ReadHyperdrive({
-                  address: hyperdrive.address,
+                const publicClient = clients[hyperdrive.chainId]?.publicClient;
+
+                if (!publicClient) {
+                  console.error(
+                    `No public client found for chainId ${hyperdrive.chainId}`,
+                  );
+                  return {
+                    hyperdrive,
+                    openLongs: [],
+                  };
+                }
+
+                const readHyperdrive = await getReadHyperdrive({
+                  appConfig,
+                  hyperdriveAddress: hyperdrive.address,
                   publicClient,
-                  cache: sdkCache,
                 });
+
                 const allLongs = await readHyperdrive.getOpenLongPositions({
-                  account: account,
+                  account,
                 });
-                const openLongPositionsReceived = await Promise.all(
+                const openLongs = await Promise.all(
                   allLongs.map(async (long) => ({
                     ...long,
                     details: await readHyperdrive.getOpenLongDetails({
@@ -47,14 +59,16 @@ export function usePortfolioLongsData(): {
                     }),
                   })),
                 );
-                result[hyperdrive.address] = openLongPositionsReceived;
+                return {
+                  hyperdrive,
+                  openLongs,
+                };
               }),
-            );
-            return result;
-          }
+            )
         : undefined,
     },
   );
+
   return {
     openLongPositions,
     openLongPositionsStatus,
