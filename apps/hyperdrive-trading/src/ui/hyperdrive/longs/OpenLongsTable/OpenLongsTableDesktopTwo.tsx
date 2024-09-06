@@ -56,7 +56,11 @@ export function OpenLongsContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const openLongs = openLongPositions?.[hyperdrive.address];
+        const openLongs = openLongPositions?.find(
+          (position) =>
+            position.hyperdrive.address === hyperdrive.address &&
+            position.hyperdrive.chainId === hyperdrive.chainId,
+        )?.openLongs;
         const baseToken = findBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
@@ -68,10 +72,7 @@ export function OpenLongsContainer(): ReactElement {
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
         });
         // Ensure this hyperdrive pool has open positions before rendering.
-        if (
-          openLongPositionsStatus === "success" &&
-          !openLongPositions?.[hyperdrive.address]?.length
-        ) {
+        if (openLongPositionsStatus === "success" && !openLongs?.length) {
           return null;
         }
         return (
