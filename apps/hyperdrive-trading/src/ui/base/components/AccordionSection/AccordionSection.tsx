@@ -50,7 +50,7 @@ export function AccordionSection2({
         {heading}
         <ChevronDownIcon className="w-5 text-neutral-content transition-transform group-data-[open]:rotate-180" />
       </DisclosureButton>
-      <DisclosurePanel className="mb-12 px-0">{children}</DisclosurePanel>
+      <DisclosurePanel className="mb-4 px-0">{children}</DisclosurePanel>
     </Disclosure>
   );
 }

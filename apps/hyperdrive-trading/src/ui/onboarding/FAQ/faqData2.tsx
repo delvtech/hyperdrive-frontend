@@ -18,7 +18,7 @@ export const faqData2 = [
           Users can also take speculative Long positions where they bet on the
           short-term movement of rates. Read our docs to learn more about{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
@@ -53,7 +53,7 @@ export const faqData2 = [
           Users can take speculative Short positions or use Shorts for hedging
           other investments. Read our docs to learn more about Hyperdrive&apos;s{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
@@ -93,7 +93,7 @@ export const faqData2 = [
           </p>
           <br /> Learn more about{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/lp-profit-loss"
@@ -130,7 +130,7 @@ export const faqData2 = [
         <p>
           Learn more about{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types/liquidity-provider/value-of-the-lp-position"
@@ -168,7 +168,7 @@ export const faqData2 = [
         <p>
           Learn more about the different{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
@@ -209,7 +209,7 @@ export const faqData2 = [
         <p>
           Learn more in the{" "}
           <a
-            className="daisy-link"
+            className="daisy-link hover:text-white"
             rel="noreferrer"
             target="_blank"
             href="https://docs-delv.gitbook.io/hyperdrive/trading/fees"

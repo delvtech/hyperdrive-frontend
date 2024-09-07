@@ -88,7 +88,7 @@ function FAQ() {
               </div>
             }
           >
-            <div className="flex flex-col gap-4 text-bodyText text-md text-base-content/80">
+            <div className="flex flex-col gap-4 text-md leading-bodyText text-base-content/80">
               {answer}
             </div>
           </AccordionSection2>
