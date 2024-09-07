@@ -110,7 +110,7 @@ export function OpenLongPreview({
             openLongPreviewStatus === "loading" ? (
               <Skeleton width={100} />
             ) : bondAmount ? (
-              <span className={classNames("text-base-content/80")}>
+              <span className="text-base-content/80">
                 {curveFee
                   ? `${formatBalance({
                       balance: curveFee,
