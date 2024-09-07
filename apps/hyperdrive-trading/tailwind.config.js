@@ -60,6 +60,9 @@ module.exports = {
       // body texts
       lg: ["18px", { lineHeight: "22px" }],
       md: ["16px", { lineHeight: "20px" }],
+      // used in FAQ and places where we want more space between full lines of
+      // text.
+      bodyText: ["16px", { lineHeight: "24px" }],
 
       // design doc says `sm` should have 16px lineHeight, but it looks too
       // squeezed when there are 2 lines of text, so we are intentionally

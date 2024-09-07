@@ -84,7 +84,7 @@ export function OpenShortPreview({
             </div>
           </div>
         }
-        onClick={() => setDetailsOpen(!detailsOpen)}
+        onChange={() => setDetailsOpen(!detailsOpen)}
       >
         <LabelValue
           label="Maturity"

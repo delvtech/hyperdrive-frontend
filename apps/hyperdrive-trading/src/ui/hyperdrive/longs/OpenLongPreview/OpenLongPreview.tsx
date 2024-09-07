@@ -66,7 +66,7 @@ export function OpenLongPreview({
     <div className="flex flex-col gap-3.5 px-2">
       <AccordionSection
         isExpanded={isDetailsExpanded}
-        onClick={() => expandDetails((prev) => !prev)}
+        onChange={() => expandDetails((prev) => !prev)}
         heading={
           <OpenLongTransactionDetailsHeader
             bondAmount={bondAmount}

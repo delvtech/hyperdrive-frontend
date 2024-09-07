@@ -1,48 +1,39 @@
-/**
- * @deprecated use faqData2
- */
-export const faqData = [
+export const faqData2 = [
   {
-    key: "faq1",
     question: "How can I get fixed rates?",
     answer: (
-      <div className="flex flex-col gap-4">
+      <>
         <p>Open a Long and hold it to maturity.</p>
         <p>
-          Opening a Long position in Hyperdrive means purchasing hy[Token] at a
-          discount. hy[Token] is redeemable for its full face value at maturity.
-          The market price traders pay (which includes fees paid to LPs) and the
-          hy[Token]&apos;s value at maturity are known upfront, which results in
-          a fixed rate of return.
+          When you open a Long in Hyperdrive, you&apos;re buying tokens at a
+          discount. These tokens are redeemable at maturity for their full
+          value, giving you a fixed return.
         </p>
         <p>
-          Opening Longs has an immediate impact on the market. hy[Token]&apos;s
-          market price increases, which means the fixed rate decreases.
-          Conversely, closing Longs prior to maturity has the immediate impact
-          of decreasing the market price and increasing the fixed rate.
+          Opening Longs has an immediate impact on the market. If more people
+          open Longs, the fixed rate goes down. If they close Longs, the fixed
+          rate goes up.
         </p>
         <p>
           Users can also take speculative Long positions where they bet on the
-          short-term movement of rates. Read our docs to learn more about
-          Hyperdrive&apos;s{" "}
+          short-term movement of rates. Read our docs to learn more about{" "}
           <a
             className="daisy-link"
             rel="noreferrer"
             target="_blank"
-            href="https://docs-delv.gitbook.io/hyperdrive/hyperdrive-overview/position-types"
+            href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
           >
-            Position Types
+            Hyperdrive Longs
           </a>
           .
         </p>
-      </div>
+      </>
     ),
   },
   {
-    key: "faq2",
     question: "How can I get variable rates?",
     answer: (
-      <div className="flex flex-col gap-4">
+      <>
         <p>
           Users can get multiplied exposure to variable rates by opening a
           Short.
@@ -71,14 +62,13 @@ export const faqData = [
           </a>
           .
         </p>
-      </div>
+      </>
     ),
   },
   {
-    key: "faq3",
-    question: "What are the benefits of providing liquidity?",
+    question: "What are the benefits of supplying liquidity?",
     answer: (
-      <div>
+      <>
         <span>
           Liquidity providers (LPs) benefit from 3 potential revenue sources:
           <ol className="list-decimal space-y-2 px-8 py-4">
@@ -112,14 +102,13 @@ export const faqData = [
           </a>{" "}
           in the docs.
         </span>
-      </div>
+      </>
     ),
   },
   {
-    key: "faq4",
     question: "How do LP positions work?",
     answer: (
-      <div className="space-y-4">
+      <>
         <p>
           Users open an LP position by providing a market’s specific base asset
           to the AMM. This increases the AMM&apos;s capacity for Longs and
@@ -150,14 +139,14 @@ export const faqData = [
           </a>{" "}
           in the docs.
         </p>
-      </div>
+      </>
     ),
   },
   {
     key: "faq5",
     question: "Can I close my Long / Short / LP position before maturity?",
     answer: (
-      <div className="space-y-4">
+      <>
         <p>
           Yes, Longs and Shorts can be closed at any time (except in rare cases
           where closing could be delayed). However, closing these positions
@@ -188,11 +177,10 @@ export const faqData = [
           </a>{" "}
           in the docs.
         </p>
-      </div>
+      </>
     ),
   },
   {
-    key: "faq6",
     question: "Are there any trading fees?",
     answer: (
       <div className="space-y-4">
