@@ -56,6 +56,11 @@ module.exports = {
       inter: ["Inter"],
       dmMono: ["DM Mono"],
     },
+    lineHeight: {
+      // used in FAQ and places where we want more space between full lines of
+      // text.
+      bodyText: "24px",
+    },
     fontSize: {
       // body texts
       lg: ["18px", { lineHeight: "22px" }],

@@ -48,7 +48,9 @@ export function PrimaryStat({
           <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
         ) : null}
       </div>
-      {subValue && <p className="text-xs text-neutral-content">{subValue}</p>}
+      {subValue && (
+        <div className="text-sm text-neutral-content">{subValue}</div>
+      )}
     </div>
   );
 }

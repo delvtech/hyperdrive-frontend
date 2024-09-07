@@ -15,6 +15,7 @@ import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 interface OpenLongStatsProps {
@@ -90,18 +91,14 @@ export function OpenLongStats({
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <>{`${formatBalance({
-              balance: bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })} hy${baseToken.symbol}`}</>
+            `Matures on ${formatDate(Date.now() + termLengthMS)}`
           )
         }
         valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
-        label="Value at Maturity"
+        label="Receive at Maturity"
         value={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />

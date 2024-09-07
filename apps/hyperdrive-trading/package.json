@@ -29,6 +29,7 @@
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.4",
     "@delvtech/hyperdrive-viem": "^3.0.1",
+    "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
     "@radix-ui/react-tooltip": "^1.1.2",
