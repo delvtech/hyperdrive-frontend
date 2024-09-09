@@ -65,7 +65,8 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     const openLpPosition = openLpPositions?.find(
       (position) =>
         position.hyperdrive.address === hyperdrive.address &&
-        position.hyperdrive.chainId === hyperdrive.chainId,
+        position.hyperdrive.chainId === hyperdrive.chainId &&
+        (position.lpShares > 0n || position.withdrawalShares > 0n), // Filter out positions with 0n shares
     );
 
     if (openLpPosition) {
