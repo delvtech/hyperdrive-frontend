@@ -6,6 +6,5 @@ const registry = new ReadRegistry({
   publicClient,
 });
 
-const result = await registry.getFactoryAddresses();
-
-console.log(result);
+const block = await publicClient.getBlock({ blockNumber: 35855116n });
+console.log("block", block.timestamp);
