@@ -1,12 +1,12 @@
-import { blockExplorers } from "src/blockexplorer/blockExplorers";
+import { ChainConfig } from "@hyperdrive/appconfig";
 import { gnosis, mainnet, sepolia } from "viem/chains";
 
-export function makeAddressUrl(address: string, chainId: number): string {
-  switch (chainId) {
+export function makeAddressUrl(address: string, chain: ChainConfig): string {
+  switch (chain.id) {
     case mainnet.id:
     case sepolia.id:
     case gnosis.id:
-      return `${blockExplorers[chainId]}/address/${address}`;
+      return `${chain.blockExplorerUrl}/address/${address}`;
 
     default:
       return `#`;

@@ -1,15 +1,15 @@
-import { blockExplorers } from "src/blockexplorer/blockExplorers";
+import { ChainConfig } from "@hyperdrive/appconfig";
 import { gnosis, mainnet, sepolia } from "viem/chains";
 
 export function makeTransactionURL(
   transactionHash: string | undefined,
-  chainId: number,
+  chain: ChainConfig,
 ): string {
-  switch (chainId) {
+  switch (chain.id) {
     case mainnet.id:
     case sepolia.id:
     case gnosis.id:
-      return `${blockExplorers[chainId]}/tx/${transactionHash}`;
+      return `${chain.blockExplorerUrl}/tx/${transactionHash}`;
 
     default:
       return `#`;

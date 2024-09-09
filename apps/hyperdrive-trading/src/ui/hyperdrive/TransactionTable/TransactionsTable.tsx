@@ -492,9 +492,10 @@ function EventNameCell({
   txHash: Hash | undefined;
 }) {
   const chainId = useChainId();
+  const appConfig = useAppConfig();
   return (
     <a
-      href={makeTransactionURL(txHash || "", chainId)}
+      href={makeTransactionURL(txHash || "", appConfig.chains[chainId])}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"
@@ -506,9 +507,10 @@ function EventNameCell({
 
 function AccountCell({ account }: { account: Address }) {
   const chainId = useChainId();
+  const appConfig = useAppConfig();
   return (
     <a
-      href={makeAddressUrl(account, chainId)}
+      href={makeAddressUrl(account, appConfig.chains[chainId])}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"

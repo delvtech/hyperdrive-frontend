@@ -13,6 +13,10 @@ export interface ChainConfig {
   id: ChainId;
   name: string;
   iconUrl: string;
+  /**
+   * The base url for block explorer links, e.g. "https://etherscan.io" can be
+   * used to create "https://etherscan.io/address/0x..."
+   */
   blockExplorerUrl: string;
   blockExplorerName: string;
   dailyAverageBlocks: bigint;

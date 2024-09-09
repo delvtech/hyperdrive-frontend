@@ -1,5 +1,6 @@
 // appconfigs
 export type { AppConfig } from "src/appconfig/AppConfig";
+export type { ChainConfig } from "src/chains/chains";
 export { ethereumAppConfig as mainnetAppConfig } from "src/generated/1.appconfig";
 export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
 export { cloudchainAppConfig } from "src/generated/42069.appconfig";

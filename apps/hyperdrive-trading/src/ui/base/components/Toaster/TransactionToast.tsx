@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Hash } from "viem";
 
 export default function TransactionToast({
@@ -11,7 +12,8 @@ export default function TransactionToast({
   message: string;
   txHash: Hash;
 }): JSX.Element {
-  const link = makeTransactionURL(txHash, chainId);
+  const appConfig = useAppConfig();
+  const link = makeTransactionURL(txHash, appConfig.chains[chainId]);
 
   return (
     <span className="flex flex-col">
@@ -22,7 +24,8 @@ export default function TransactionToast({
         rel="noopener noreferrer"
         className="daisy-link-hover daisy-link mt-1 flex cursor-pointer flex-row items-center text-sm"
       >
-        View on Etherscan <ArrowRightIcon className="ml-1 h-4" />
+        View on {appConfig.chains[chainId].blockExplorerName}{" "}
+        <ArrowRightIcon className="ml-1 h-4" />
       </a>
     </span>
   );

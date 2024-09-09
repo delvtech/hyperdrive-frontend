@@ -11,8 +11,8 @@ import { FactoriesTable } from "./FactoriesTable";
 export function Chainlog(): ReactElement {
   const navigate = useNavigate();
   const chainId = useChainId();
-  const { registries } = useAppConfig();
-  const registryAddress = registries[chainId];
+  const appConfig = useAppConfig();
+  const registryAddress = appConfig.registries[chainId];
   const { tab = "pools", version } = useSearch({ from: "/chainlog" });
 
   return (
@@ -24,7 +24,7 @@ export function Chainlog(): ReactElement {
           <p className="text-neutral-content">
             Find the latest information on pools and factories from the{" "}
             <a
-              href={makeAddressUrl(registryAddress, chainId)}
+              href={makeAddressUrl(registryAddress, appConfig.chains[chainId])}
               target="_blank"
               rel="noreferrer"
               className="daisy-link-hover daisy-link inline-flex items-center gap-1"
