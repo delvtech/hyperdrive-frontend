@@ -54,6 +54,35 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
   );
 
+  interface GroupedPosition {
+    yieldSource: string;
+    positions: { lpShares: bigint; withdrawalShares: bigint }[];
+  }
+
+  const groupedOpenLpPositionsMap = new Map<string, GroupedPosition>();
+
+  appConfig.hyperdrives.forEach((hyperdrive) => {
+    const openLpPosition = openLpPositions?.find(
+      (position) =>
+        position.hyperdrive.address === hyperdrive.address &&
+        position.hyperdrive.chainId === hyperdrive.chainId,
+    );
+
+    if (openLpPosition) {
+      if (!groupedOpenLpPositionsMap.has(hyperdrive.yieldSource)) {
+        groupedOpenLpPositionsMap.set(hyperdrive.yieldSource, {
+          yieldSource: hyperdrive.yieldSource,
+          positions: [],
+        });
+      }
+      groupedOpenLpPositionsMap
+        .get(hyperdrive.yieldSource)
+        ?.positions.push(openLpPosition);
+    }
+  });
+
+  const groupedOpenLpPositions = Array.from(groupedOpenLpPositionsMap.values());
+  console.log(groupedOpenLpPositions, "groupedOpenLpPositions");
   if (!hasOpenPositions) {
     return (
       <div className="my-28 flex h-full w-[1036px] flex-col">
