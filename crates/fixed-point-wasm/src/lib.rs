@@ -344,8 +344,17 @@ impl WasmFixedPoint {
     /// Get the decimal string representation of this fixed-point number.
     #[wasm_bindgen(skip_jsdoc, js_name = toString)]
     pub fn to_string(&self) -> String {
-        let decimals_delta = INNER_DECIMALS - self.decimals;
         let str = self.inner.to_string();
+
+        // If there are no decimals, return the integer part only.
+        if self.decimals == 0 {
+            return str.split('.').next().unwrap_or_default().to_string();
+        }
+
+        let decimals_delta = INNER_DECIMALS - self.decimals;
+        if decimals_delta == 0 {
+            return str;
+        }
         str[..str.len() - decimals_delta as usize].to_string()
     }
 
