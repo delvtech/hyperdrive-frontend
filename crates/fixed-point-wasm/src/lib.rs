@@ -452,11 +452,11 @@ impl TryFrom<Numberish> for FixedPoint<I256> {
                     .replace_all(",", "");
                 let mut sign = 1;
                 if s.starts_with("-", 0) {
-                    s = s.slice(0, s.length());
+                    s = s.slice(1, s.length());
                     sign = -1;
                 };
                 if s.starts_with("+", 0) {
-                    s = s.slice(0, s.length());
+                    s = s.slice(1, s.length());
                 };
                 if s.starts_with("0x", 0) || s.starts_with("0b", 0) || s.starts_with("0o", 0) {
                     let int = s.to_i256()? * I256::from(sign);
