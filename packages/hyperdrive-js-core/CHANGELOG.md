@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js-core
 
+## 3.0.4
+
+### Patch Changes
+
+- bd6d2da: Fix bug in calcOpenLpPosition causing baseAmountPaid to be wrong when withdrawalShares are present.
+
 ## 3.0.3
 
 ### Patch Changes
