@@ -60,13 +60,10 @@ export function LpCurrentValueCell({
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
-        balance:
-          baseValue !== undefined
-            ? // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
-              // This ensures we always have a positive value for display purposes,
-              // as the sign (profit/loss) is handled separately in the UI.
-              BigInt(Math.abs(Number(baseValue - baseAmountPaid)))
-            : 0n,
+        // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
+        // This ensures we always have a positive value for display purposes,
+        // as the sign (profit/loss) is handled separately in the UI.
+        balance: BigInt(Math.abs(Number(baseValue - baseAmountPaid))),
         decimals: hyperdrive?.decimals,
         places: baseToken?.places,
       })
