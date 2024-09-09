@@ -4,6 +4,8 @@ import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
+  makeAddressUrl,
+  makeTransactionUrl,
 } from "@hyperdrive/appconfig";
 import {
   ColumnFiltersState,
@@ -21,8 +23,6 @@ import * as dnum from "dnum";
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -35,7 +35,7 @@ import {
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address, Hash, parseUnits } from "viem";
-import { useBlock, useChainId } from "wagmi";
+import { useBlock } from "wagmi";
 
 export interface Transaction {
   type: string;
@@ -196,6 +196,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: ({ getValue, row }) => {
         return (
           <EventNameCell
+            chainId={hyperdrive.chainId}
             name={eventMap[getValue() as EventName] || getValue()}
             txHash={row.original.transactionHash}
           />
@@ -279,12 +280,22 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       header: "Account",
       enableColumnFilter: false,
       enableSorting: false,
-      cell: (account) => <AccountCell account={account.getValue()} />,
+      cell: (account) => (
+        <AccountCell
+          chainId={hyperdrive.chainId}
+          account={account.getValue()}
+        />
+      ),
     }),
     columnHelper.accessor("blockNumber", {
       header: "Time",
       enableColumnFilter: false,
-      cell: (blockNumber) => <BlockInfo blockNumber={blockNumber.getValue()} />,
+      cell: (blockNumber) => (
+        <BlockInfo
+          chainId={hyperdrive.chainId}
+          blockNumber={blockNumber.getValue()}
+        />
+      ),
     }),
   ];
 }
@@ -332,6 +343,7 @@ function formatTransactionTableMobileData(
       name: "Event",
       value: (
         <EventNameCell
+          chainId={hyperdrive.chainId}
           name={eventMap[row.eventName as EventName] || row.eventName}
           txHash={row.transactionHash}
         />
@@ -352,11 +364,13 @@ function formatTransactionTableMobileData(
     },
     {
       name: "Account",
-      value: <AccountCell account={row.trader} />,
+      value: <AccountCell chainId={hyperdrive.chainId} account={row.trader} />,
     },
     {
       name: "Time",
-      value: <BlockInfo blockNumber={row.blockNumber} />,
+      value: (
+        <BlockInfo chainId={hyperdrive.chainId} blockNumber={row.blockNumber} />
+      ),
     },
   ];
 }
@@ -486,15 +500,17 @@ function FilterSelect({
 
 function EventNameCell({
   name,
+  chainId,
   txHash,
 }: {
   name: EventName | string;
+  chainId: number;
   txHash: Hash | undefined;
 }) {
-  const chainId = useChainId();
+  const appConfig = useAppConfig();
   return (
     <a
-      href={makeTransactionURL(txHash || "", chainId)}
+      href={makeTransactionUrl(txHash || "", appConfig.chains[chainId])}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"
@@ -504,11 +520,17 @@ function EventNameCell({
   );
 }
 
-function AccountCell({ account }: { account: Address }) {
-  const chainId = useChainId();
+function AccountCell({
+  chainId,
+  account,
+}: {
+  account: Address;
+  chainId: number;
+}) {
+  const appConfig = useAppConfig();
   return (
     <a
-      href={makeAddressUrl(account, chainId)}
+      href={makeAddressUrl(account, appConfig.chains[chainId])}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"
@@ -518,8 +540,13 @@ function AccountCell({ account }: { account: Address }) {
   );
 }
 
-function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
-  const chainId = useChainId();
+function BlockInfo({
+  chainId,
+  blockNumber,
+}: {
+  chainId: number;
+  blockNumber: bigint | undefined;
+}) {
   const { data: transactionBlock, status: transactionBlockStatus } = useBlock({
     blockNumber,
     chainId,

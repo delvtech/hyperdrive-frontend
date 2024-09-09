@@ -6,6 +6,11 @@ export { cloudchainAppConfig } from "src/generated/42069.appconfig";
 export { gnosisforkAppConfig } from "src/generated/42070.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
 
+// chains
+export { makeAddressUrl } from "src/chains/blockexplorer/makeAddressUrl";
+export { makeTransactionUrl } from "src/chains/blockexplorer/makeTransactionUrl";
+export type { ChainConfig } from "src/chains/chains";
+
 // appconfig selectors
 export { findBaseToken, findHyperdriveConfig } from "src/hyperdrives/selectors";
 export { findToken } from "src/tokens/selectors";

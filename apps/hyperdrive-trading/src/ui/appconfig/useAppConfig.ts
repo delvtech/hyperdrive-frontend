@@ -4,7 +4,7 @@ import { isMainnetChain } from "src/chains/isMainnetChain";
 import { useChainId } from "wagmi";
 
 export function useAppConfig(): AppConfig {
-  const chainId = useChainId();
+  const connectedChainId = useChainId();
 
   // split config into mainnet and testnet
   const { testnetConfig, mainnetConfig } = useMemo(() => {
@@ -43,5 +43,5 @@ export function useAppConfig(): AppConfig {
     return { testnetConfig, mainnetConfig };
   }, []);
 
-  return isMainnetChain(chainId) ? mainnetConfig : testnetConfig;
+  return isMainnetChain(connectedChainId) ? mainnetConfig : testnetConfig;
 }
