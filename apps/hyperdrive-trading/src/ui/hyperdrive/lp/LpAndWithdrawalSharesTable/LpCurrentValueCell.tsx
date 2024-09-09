@@ -56,44 +56,8 @@ export function LpCurrentValueCell({
         : 0n
     : 0n;
 
-  // const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
-  //   hyperdriveAddress: hyperdrive.address,
-  //   account,
-  //   chainId: hyperdrive.chainId,
-  // });
-
-  // const {
-  //   baseProceeds: baseProceedsFromPreview,
-  //   withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
-  // } = usePreviewRedeemWithdrawalShares({
-  //   hyperdriveAddress: hyperdrive.address,
-  //   withdrawalSharesIn: balanceOfWithdrawalShares,
-  //   minOutputPerShare: 1n, // TODO: slippage,
-  //   destination: account,
-  //   chainId: hyperdrive.chainId,
-  // });
-
-  const withdrawalSharesBaseValue = fixed(withdrawalShares || 0n).mul(
-    poolInfo?.lpSharePrice || 0n,
-  ).bigint;
-  // const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
-  //   decimals: hyperdrive.decimals,
-  //   lpSharePrice: poolInfo?.lpSharePrice,
-  //   withdrawalShares: balanceOfWithdrawalShares,
-  //   baseProceedsFromPreview,
-  //   withdrawalSharesRedeemedFromPreview,
-  // });
-
-  // const baseProceeds = proceeds
-  //   ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-  //     ? proceeds
-  //     : poolInfo
-  //       ? fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint
-  //       : 0n
-  //   : 0n;
-
   const withdrawablePercent =
-    withdrawalShares && baseProceeds && baseValue
+    baseProceeds && baseValue
       ? fixed(
           calculateRatio({
             a: baseProceeds,
@@ -103,13 +67,13 @@ export function LpCurrentValueCell({
         )
       : parseFixed("100");
 
-  // Compute the difference between current value and base amount paid
+  // profitLoss is the difference between baseValue and baseAmountPaid
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
         balance:
           baseValue !== undefined
-            ? // Use Math.abs to get the absolute difference between currentValue and baseAmountPaid.
+            ? // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
               // This ensures we always have a positive value for display purposes,
               // as the sign (profit/loss) is handled separately in the UI.
               BigInt(Math.abs(Number(baseValue - baseAmountPaid)))
@@ -137,24 +101,27 @@ export function LpCurrentValueCell({
                 places: baseToken?.places,
               })}`
             )}
-
-            <div
-              data-tip={
-                "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-              }
-              className={classNames(
-                "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-                {
-                  "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-                    isPositiveChangeInValue,
-                  "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                    !isPositiveChangeInValue && profitLoss !== "0",
-                },
-              )}
-            >
-              <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-              {profitLoss === "0" ? "0" : profitLoss}
-            </div>
+            {openLpPositionStatus === "loading" ? (
+              <Skeleton className="w-12" />
+            ) : (
+              <div
+                data-tip={
+                  "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+                }
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
+                  {
+                    "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+                      isPositiveChangeInValue,
+                    "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+                      !isPositiveChangeInValue && profitLoss !== "0",
+                  },
+                )}
+              >
+                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
+                {profitLoss === "0" ? "0" : profitLoss}
+              </div>
+            )}
           </span>
           <span className="text-sm text-gray-500">
             {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
