@@ -4,6 +4,8 @@ import {
   AppConfig,
   HyperdriveConfig,
   findBaseToken,
+  makeAddressUrl,
+  makeTransactionUrl,
 } from "@hyperdrive/appconfig";
 import {
   ColumnFiltersState,
@@ -21,8 +23,6 @@ import * as dnum from "dnum";
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
-import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -495,7 +495,7 @@ function EventNameCell({
   const appConfig = useAppConfig();
   return (
     <a
-      href={makeTransactionURL(txHash || "", appConfig.chains[chainId])}
+      href={makeTransactionUrl(txHash || "", appConfig.chains[chainId])}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"

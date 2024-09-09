@@ -1,8 +1,7 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, makeAddressUrl } from "@hyperdrive/appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 export function MarketBreadcrumbs({

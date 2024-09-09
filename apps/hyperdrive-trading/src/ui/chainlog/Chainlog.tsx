@@ -1,7 +1,7 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { makeAddressUrl } from "@hyperdrive/appconfig";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";

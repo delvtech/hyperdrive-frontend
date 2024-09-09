@@ -1,5 +1,5 @@
+import { makeAddressUrl } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
