@@ -7,7 +7,6 @@ import { calculateRatio } from "src/base/calculateRatio";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useAccount } from "wagmi";
@@ -26,10 +25,7 @@ export function LpCurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
   });
-  const { poolInfo } = usePoolInfo({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
+
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
     {
       hyperdriveAddress: hyperdrive.address,
@@ -82,48 +78,39 @@ export function LpCurrentValueCell({
 
   return (
     <div className="flex flex-col">
-      {poolInfo && lpShares ? (
-        <>
-          <span className="flex items-center justify-end gap-2 text-md">
-            {openLpPositionStatus === "loading" ? (
-              <Skeleton className="w-24" />
-            ) : (
-              `${formatBalance({
-                balance: baseValue,
-                decimals: baseToken?.decimals || 18,
-                places: baseToken?.places,
-              })}`
-            )}
-            {openLpPositionStatus === "loading" ? (
-              <Skeleton className="w-12" />
-            ) : (
-              <div
-                data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-                  {
-                    "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-                      isPositiveChangeInValue,
-                    "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                      !isPositiveChangeInValue && profitLoss !== "0",
-                  },
-                )}
-              >
-                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-                {profitLoss === "0" ? "0" : profitLoss}
-              </div>
-            )}
-          </span>
-          <span className="text-sm text-gray-500">
-            {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
-          </span>
-        </>
-      ) : (
-        <div className="flex flex-col items-end">
+      <span className="flex items-center justify-end gap-2 text-md">
+        {openLpPositionStatus === "loading" ? (
           <Skeleton className="w-24" />
-          <Skeleton className="mt-1 w-32" />
-        </div>
-      )}
+        ) : (
+          `${formatBalance({
+            balance: baseValue,
+            decimals: hyperdrive.decimals,
+            places: baseToken?.places,
+          })}`
+        )}
+        {openLpPositionStatus === "loading" ? (
+          <Skeleton className="w-12" />
+        ) : (
+          <div
+            data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+            className={classNames(
+              "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
+              {
+                "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+                  isPositiveChangeInValue,
+                "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+                  !isPositiveChangeInValue && profitLoss !== "0",
+              },
+            )}
+          >
+            <span>{isPositiveChangeInValue ? "+" : "-"}</span>
+            {profitLoss === "0" ? "0" : profitLoss}
+          </div>
+        )}
+      </span>
+      <span className="text-sm text-gray-500">
+        {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
+      </span>
     </div>
   );
 }
