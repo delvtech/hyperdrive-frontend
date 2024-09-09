@@ -7,13 +7,18 @@ import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 export function PoolRows(): ReactElement {
   const appConfig = useAppConfig();
   const [selectedTerm, setSelectedTerm] = useState<bigint | null>(null);
+  const [selectedAssets, setSelectedAssets] = useState<string[]>([]);
 
   const allTerms = Array.from(
     new Set(
-      appConfig.hyperdrives
-        .map((hyperdrive) => hyperdrive.poolConfig.positionDuration)
-        .sort((a, b) => Number(a) - Number(b)),
+      appConfig.hyperdrives.map(
+        (hyperdrive) => hyperdrive.poolConfig.positionDuration,
+      ),
     ),
+  ).sort((a, b) => Number(a) - Number(b));
+
+  const allAssets = Array.from(
+    new Set(appConfig.hyperdrives.map((hyperdrive) => hyperdrive.address)),
   );
 
   const filteredHyperdrives = selectedTerm
@@ -51,24 +56,21 @@ export function PoolRows(): ReactElement {
           </ul>
         </div>
       </div>
-      {
-        // Show the newest pools first
-        [...filteredHyperdrives]
-          .sort((a, b) => {
-            return (
-              Number(b.initializationTimestamp) -
-              Number(a.initializationTimestamp)
-            );
-          })
-          .map((hyperdrive) => (
-            <PoolRow
-              // Combine address and chainId for a unique key, as addresses may
-              // overlap across chains (e.g. cloudchain and mainnet)
-              key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-              hyperdrive={hyperdrive}
-            />
-          ))
-      }
+
+      {filteredHyperdrives
+        .sort((a, b) => {
+          // Show the newest pools first
+          return (
+            Number(b.initializationTimestamp) -
+            Number(a.initializationTimestamp)
+          );
+        })
+        .map((hyperdrive) => (
+          <PoolRow
+            key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+            hyperdrive={hyperdrive}
+          />
+        ))}
     </div>
   );
 }
