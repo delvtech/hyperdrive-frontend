@@ -10,10 +10,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
-import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { getWithdrawalSharesCurrentValue } from "src/ui/hyperdrive/withdrawalShares/getWithdrawalSharesCurrentValue";
 import { useAccount } from "wagmi";
 
 export function LpCurrentValueCell({
@@ -52,31 +49,6 @@ export function LpCurrentValueCell({
       chainId: hyperdrive.chainId,
     });
 
-  const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-    chainId: hyperdrive.chainId,
-  });
-
-  const {
-    baseProceeds: baseProceedsFromPreview,
-    withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
-  } = usePreviewRedeemWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    withdrawalSharesIn: balanceOfWithdrawalShares,
-    minOutputPerShare: 1n, // TODO: slippage,
-    destination: account,
-    chainId: hyperdrive.chainId,
-  });
-
-  const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
-    decimals: hyperdrive.decimals,
-    lpSharePrice: poolInfo?.lpSharePrice,
-    withdrawalShares: balanceOfWithdrawalShares,
-    baseProceedsFromPreview,
-    withdrawalSharesRedeemedFromPreview,
-  });
-
   const baseProceeds = proceeds
     ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? proceeds
@@ -84,6 +56,42 @@ export function LpCurrentValueCell({
         ? fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint
         : 0n
     : 0n;
+
+  // const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
+  //   hyperdriveAddress: hyperdrive.address,
+  //   account,
+  //   chainId: hyperdrive.chainId,
+  // });
+
+  // const {
+  //   baseProceeds: baseProceedsFromPreview,
+  //   withdrawalSharesRedeemed: withdrawalSharesRedeemedFromPreview,
+  // } = usePreviewRedeemWithdrawalShares({
+  //   hyperdriveAddress: hyperdrive.address,
+  //   withdrawalSharesIn: balanceOfWithdrawalShares,
+  //   minOutputPerShare: 1n, // TODO: slippage,
+  //   destination: account,
+  //   chainId: hyperdrive.chainId,
+  // });
+
+  const withdrawalSharesBaseValue = fixed(withdrawalShares || 0n).mul(
+    poolInfo?.lpSharePrice || 0n,
+  ).bigint;
+  // const withdrawalSharesCurrentValue = getWithdrawalSharesCurrentValue({
+  //   decimals: hyperdrive.decimals,
+  //   lpSharePrice: poolInfo?.lpSharePrice,
+  //   withdrawalShares: balanceOfWithdrawalShares,
+  //   baseProceedsFromPreview,
+  //   withdrawalSharesRedeemedFromPreview,
+  // });
+
+  // const baseProceeds = proceeds
+  //   ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+  //     ? proceeds
+  //     : poolInfo
+  //       ? fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint
+  //       : 0n
+  //   : 0n;
 
   const withdrawablePercent =
     withdrawalShares && baseProceeds && baseValue
@@ -97,22 +105,26 @@ export function LpCurrentValueCell({
       : parseFixed("100");
 
   // Calculate total proceeds based on withdrawable percentage
-  // If 100% withdrawable, include both proceeds and withdrawal shares value
-  // Otherwise, use only the proceeds
-  const totalProceeds = withdrawablePercent.eq(parseFixed("100"))
-    ? (proceeds || 0n) + (withdrawalSharesCurrentValue || 0n)
-    : proceeds || 0n;
+  // If 100% withdrawable, then proceeds is all you need, otherwise include both
+  // proceeds and withdrawal shares
+  const currentValueInBase = !withdrawalShares
+    ? baseProceeds || 0n
+    : baseProceeds || 0n + (withdrawalSharesBaseValue || 0n);
 
-  // Compute the difference between total proceeds and base amount paid
+  // const currentValueInBase = fixed(currentValue, 24).mul(
+  //   poolInfo?.lpSharePrice || 0n,
+  // ).bigint;
+
+  // Compute the difference between current value and base amount paid
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
         balance:
-          totalProceeds !== undefined
-            ? // Use Math.abs to get the absolute difference between totalProceeds and baseAmountPaid.
+          currentValueInBase !== undefined
+            ? // Use Math.abs to get the absolute difference between currentValue and baseAmountPaid.
               // This ensures we always have a positive value for display purposes,
               // as the sign (profit/loss) is handled separately in the UI.
-              BigInt(Math.abs(Number(totalProceeds - baseAmountPaid)))
+              BigInt(Math.abs(Number(currentValueInBase - baseAmountPaid)))
             : 0n,
         decimals: hyperdrive?.decimals,
         places: baseToken?.places,
@@ -121,7 +133,17 @@ export function LpCurrentValueCell({
       <Skeleton />
     );
 
-  const isPositiveChangeInValue = totalProceeds > baseAmountPaid;
+  const isPositiveChangeInValue = currentValueInBase > baseAmountPaid;
+
+  console.table([
+    {
+      "Base Amount Paid": fixed(baseAmountPaid).format(),
+      "Base Proceeds": fixed(baseProceeds).format(),
+      "Profit/Loss": profitLoss,
+      "Withdrawal Shares": fixed(withdrawalShares || 0n).format(),
+      "Hyperdrive Name": hyperdrive.name,
+    },
+  ]);
 
   return (
     <div className="flex flex-col">

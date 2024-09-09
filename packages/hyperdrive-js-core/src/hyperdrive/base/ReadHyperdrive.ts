@@ -1354,26 +1354,8 @@ export class ReadHyperdrive extends ReadModel {
     addLiquidityEvents,
     removeLiquidityEvents,
   }: {
-    addLiquidityEvents: {
-      eventName: "AddLiquidity";
-      blockNumber?: bigint;
-      args: {
-        lpAmount: bigint;
-        amount: bigint;
-        vaultSharePrice: bigint;
-        asBase: boolean;
-      };
-    }[];
-    removeLiquidityEvents: {
-      eventName: "RemoveLiquidity";
-      blockNumber?: bigint;
-      args: {
-        lpAmount: bigint;
-        amount: bigint;
-        vaultSharePrice: bigint;
-        asBase: boolean;
-      };
-    }[];
+    addLiquidityEvents: Event<typeof hyperdriveAbi, "AddLiquidity">[];
+    removeLiquidityEvents: Event<typeof hyperdriveAbi, "RemoveLiquidity">[];
   }) {
     const combinedEventsInOrder = [
       ...addLiquidityEvents,
@@ -1393,14 +1375,24 @@ export class ReadHyperdrive extends ReadModel {
           baseAmountPaid += baseAmount;
           return;
 
-        case "RemoveLiquidity":
+        case "RemoveLiquidity": {
           lpShareBalance -= event.args.lpAmount;
 
           // If a user removes all their lp shares, we should zero out
           // baseAmountPaid, since it's basically starting over
-          baseAmountPaid =
-            lpShareBalance <= 0n ? 0n : baseAmountPaid - baseAmount;
+          if (lpShareBalance <= 0n) {
+            baseAmountPaid = 0n;
+          } else {
+            // Include the base value of withdrawal shares received when
+            // recalculating baseAmountPaid.
+            const withdrawalSharesBaseValue = fixed(
+              event.args.withdrawalShareAmount,
+            ).mul(event.args.lpSharePrice).bigint;
+            baseAmountPaid =
+              baseAmountPaid - baseAmount - withdrawalSharesBaseValue;
+          }
           return;
+        }
 
         default:
           assertNever(event, true);
