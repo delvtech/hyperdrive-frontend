@@ -1,5 +1,4 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
-import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
@@ -104,27 +103,16 @@ export function LpCurrentValueCell({
         )
       : parseFixed("100");
 
-  // Calculate total proceeds based on withdrawable percentage
-  // If 100% withdrawable, then proceeds is all you need, otherwise include both
-  // proceeds and withdrawal shares
-  const currentValueInBase = !withdrawalShares
-    ? baseProceeds || 0n
-    : baseProceeds || 0n + (withdrawalSharesBaseValue || 0n);
-
-  // const currentValueInBase = fixed(currentValue, 24).mul(
-  //   poolInfo?.lpSharePrice || 0n,
-  // ).bigint;
-
   // Compute the difference between current value and base amount paid
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
         balance:
-          currentValueInBase !== undefined
+          baseValue !== undefined
             ? // Use Math.abs to get the absolute difference between currentValue and baseAmountPaid.
               // This ensures we always have a positive value for display purposes,
               // as the sign (profit/loss) is handled separately in the UI.
-              BigInt(Math.abs(Number(currentValueInBase - baseAmountPaid)))
+              BigInt(Math.abs(Number(baseValue - baseAmountPaid)))
             : 0n,
         decimals: hyperdrive?.decimals,
         places: baseToken?.places,
@@ -133,17 +121,7 @@ export function LpCurrentValueCell({
       <Skeleton />
     );
 
-  const isPositiveChangeInValue = currentValueInBase > baseAmountPaid;
-
-  console.table([
-    {
-      "Base Amount Paid": fixed(baseAmountPaid).format(),
-      "Base Proceeds": fixed(baseProceeds).format(),
-      "Profit/Loss": profitLoss,
-      "Withdrawal Shares": fixed(withdrawalShares || 0n).format(),
-      "Hyperdrive Name": hyperdrive.name,
-    },
-  ]);
+  const isPositiveChangeInValue = baseValue > baseAmountPaid;
 
   return (
     <div className="flex flex-col">
@@ -159,39 +137,24 @@ export function LpCurrentValueCell({
                 places: baseToken?.places,
               })}`
             )}
-            {openLpPositionStatus === "loading" ? (
-              <Skeleton className="w-8" />
-            ) : !withdrawalShares ? (
-              <div
-                data-tip={
-                  "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-                }
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-                  {
-                    "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-                      isPositiveChangeInValue,
-                    "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                      !isPositiveChangeInValue && profitLoss !== "0",
-                  },
-                )}
-              >
-                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-                {baseProceeds
-                  ? `${profitLoss === "0" ? "0" : profitLoss}`
-                  : undefined}
-              </div>
-            ) : (
-              <span className="daisy-stat-value flex items-center gap-2 text-md font-bold">
-                {/* TODO: Return to this to incorporate the withdrawal queue into the profit loss calculation */}
-                <span
-                  className="daisy-tooltip before:z-10 before:text-wrap before:border before:font-normal"
-                  data-tip="This position cannot be fully closed at this time. Once the withdrawal shares are fully redeemed, profit/loss will be displayed."
-                >
-                  <ExclamationTriangleIcon className="size-4 text-warning" />
-                </span>
-              </span>
-            )}
+
+            <div
+              data-tip={
+                "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+              }
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
+                {
+                  "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+                    isPositiveChangeInValue,
+                  "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+                    !isPositiveChangeInValue && profitLoss !== "0",
+                },
+              )}
+            >
+              <span>{isPositiveChangeInValue ? "+" : "-"}</span>
+              {profitLoss === "0" ? "0" : profitLoss}
+            </div>
           </span>
           <span className="text-sm text-gray-500">
             {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
