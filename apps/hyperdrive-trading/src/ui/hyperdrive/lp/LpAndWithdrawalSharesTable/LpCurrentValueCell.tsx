@@ -48,26 +48,19 @@ export function LpCurrentValueCell({
       chainId: hyperdrive.chainId,
     });
 
-  const baseProceeds = proceeds
-    ? hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
-      ? proceeds
-      : poolInfo
-        ? fixed(proceeds).mul(poolInfo.vaultSharePrice).bigint
-        : 0n
-    : 0n;
-
+  // If withdrawal shares from preview are 0, we can assume the LP position is fully withdrawable.
+  // Otherwise, we calculate the withdrawable percent based on the proceeds and base value.
   const withdrawablePercent =
-    baseProceeds && baseValue
+    withdrawalShares && proceeds && baseValue
       ? fixed(
           calculateRatio({
-            a: baseProceeds,
+            a: proceeds,
             b: baseValue,
             decimals: hyperdrive.decimals,
           }),
         )
       : parseFixed("100");
 
-  // profitLoss is the difference between baseValue and baseAmountPaid
   const profitLoss =
     previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
@@ -89,7 +82,7 @@ export function LpCurrentValueCell({
 
   return (
     <div className="flex flex-col">
-      {!!poolInfo && !!lpShares ? (
+      {poolInfo && lpShares ? (
         <>
           <span className="flex items-center justify-end gap-2 text-md">
             {openLpPositionStatus === "loading" ? (
@@ -105,9 +98,7 @@ export function LpCurrentValueCell({
               <Skeleton className="w-12" />
             ) : (
               <div
-                data-tip={
-                  "Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-                }
+                data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
                 className={classNames(
                   "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
                   {
