@@ -1,4 +1,5 @@
 import "dotenv/config";
+import camelCase from "lodash.camelcase";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
@@ -87,7 +88,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   writeAppConfigToFile({
     filename: `./src/generated/${chain.id}.appconfig.ts`,
     appConfig,
-    appConfigName: `${chain.name.toLowerCase()}AppConfig`,
+    appConfigName: `${camelCase(chain.name)}AppConfig`,
   });
 }
 

@@ -1,6 +1,8 @@
 import "dotenv/config";
+import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
+import { gnosisChainConfig } from "src/chains/chains";
 import { gnosisFork } from "src/chains/gnosisFork";
 import { createPublicClient, http } from "viem";
 
@@ -14,11 +16,11 @@ const publicClient = createPublicClient({
 const appConfig = await getAppConfig({
   registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
   publicClient,
-  earliestBlock: 35730200n,
+  earliestBlock: gnosisChainConfig.earliestBlock,
 });
 
 writeAppConfigToFile({
   filename: `./src/generated/${gnosisFork.id}.appconfig.ts`,
   appConfig,
-  appConfigName: `${gnosisFork.name.toLowerCase()}AppConfig`,
+  appConfigName: `${camelCase(gnosisFork.name)}AppConfig`,
 });
