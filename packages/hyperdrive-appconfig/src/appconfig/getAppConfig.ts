@@ -105,8 +105,6 @@ const hyperdriveKindResolvers: Record<
   StETHHyperdrive: (hyperdrive) => getStethHyperdrive({ hyperdrive }),
 
   ERC4626Hyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
-    const readSharesToken = await hyperdrive.getSharesToken();
-    const sharesTokenSymbol = await readSharesToken.getSymbol();
     const hyperdriveName = await publicClient.readContract({
       address: hyperdrive.address,
       abi: hyperdrive.contract.abi,
@@ -178,6 +176,8 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
+    const readSharesToken = await hyperdrive.getSharesToken();
+    const sharesTokenSymbol = await readSharesToken.getSymbol();
     throw new Error(
       `Unknown ERC4626Hyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
     );
