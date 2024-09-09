@@ -19,15 +19,12 @@ export function TabsTwo<TabId extends string>({
       {tabs.map(({ id, onClick, label }) => (
         <input
           key={id}
-          className={classNames(
-            "daisy-tab font-chakraPetch text-h4",
-
-            {
-              "daisy-tab-active border-b-2 !border-b-primary/40 pb-1":
-                activeTabId === id,
-              "opacity-80 hover:opacity-100": activeTabId !== id,
-            },
-          )}
+          className={classNames("daisy-tab font-chakraPetch text-h4", {
+            "daisy-tab-active border-b-2 !border-b-primary/40 pb-1":
+              activeTabId === id,
+            "border-b-2 border-transparent pb-1 opacity-80 hover:opacity-100":
+              activeTabId !== id,
+          })}
           aria-label={label}
           onChange={onClick}
           checked={activeTabId === id}
