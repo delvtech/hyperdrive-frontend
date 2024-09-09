@@ -1,4 +1,4 @@
-import { ChainConfig } from "@hyperdrive/appconfig";
+import { ChainConfig } from "src/chains/chains";
 
 export function makeTransactionUrl(
   transactionHash: string | undefined,
