@@ -16,6 +16,7 @@
     "gen:gnosis": "npx tsx ./src/scripts/gnosis.ts",
     "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
     "gen:mainnet": "npx tsx ./src/scripts/mainnet.ts",
+    "gen:linea": "npx tsx ./src/scripts/linea.ts",
     "generate": "npx tsx ./src/scripts/generate.ts",
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "typecheck": "tsc --noEmit"
