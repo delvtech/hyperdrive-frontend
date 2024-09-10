@@ -56,10 +56,25 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
 
   if (!hasOpenPositions) {
     return (
-      <div className="my-28 flex h-full w-[1036px] flex-col">
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
         <NonIdealState
           heading="No LP Positions"
-          text="You don't have any LP positions."
+          text={
+            <div className="max-w-xl">
+              <div>
+                Learn more about positions on Hyperdrive in our{" "}
+                <a
+                  className="daisy-link"
+                  href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  documentation
+                </a>{" "}
+                or explore our pools to open your first LP position.
+              </div>
+            </div>
+          }
           action={
             <Link to="/">
               <button className="daisy-btn daisy-btn-primary">
