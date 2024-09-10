@@ -45,7 +45,7 @@ export function OpenLongsContainer(): ReactElement {
 
   if (openLongPositionsStatus === "loading") {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="flex w-[1036px] flex-col gap-10">
         <LoadingState
           heading="Loading your Longs..."
           text="Searching for Long events, calculating current value and PnL..."
@@ -56,7 +56,7 @@ export function OpenLongsContainer(): ReactElement {
 
   if (openLongPositions?.every((position) => position.openLongs.length === 0)) {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
         <NonIdealState
           heading="No Longs found"
           text={

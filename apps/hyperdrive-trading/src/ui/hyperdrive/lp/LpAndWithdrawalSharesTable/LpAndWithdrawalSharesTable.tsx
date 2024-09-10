@@ -31,7 +31,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
 
   if (openLpPositionStatus === "loading") {
     return (
-      <div className="my-28 flex h-full w-[1036px] flex-col">
+      <div className="flex h-full w-[1036px] flex-col">
         <LoadingState
           heading="Loading your LP Positions..."
           text="Searching for LP events, calculating current value and PnL..."
@@ -56,7 +56,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
 
   if (!hasOpenPositions) {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="my-28 flex h-full w-[1036px] flex-col">
         <NonIdealState
           heading="No LP Positions"
           text={

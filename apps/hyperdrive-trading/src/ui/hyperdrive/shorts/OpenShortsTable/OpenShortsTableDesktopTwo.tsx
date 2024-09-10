@@ -40,7 +40,7 @@ export function OpenShortsContainer(): ReactElement {
 
   if (openShortPositionsStatus === "loading") {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="flex w-[1036px] flex-col gap-10">
         <LoadingState
           heading="Loading your Shorts..."
           text="Searching for Shorts events, calculating current value and PnL..."
@@ -53,7 +53,7 @@ export function OpenShortsContainer(): ReactElement {
     openShortPositions?.every((position) => position.openShorts.length === 0)
   ) {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
         <NonIdealState
           heading="No Shorts found"
           text={
