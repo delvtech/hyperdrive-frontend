@@ -7,6 +7,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -47,6 +48,42 @@ export function OpenShortsContainer(): ReactElement {
       </div>
     );
   }
+
+  if (
+    openShortPositions?.every((position) => position.openShorts.length === 0)
+  ) {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No Shorts found"
+          text={
+            <div className="max-w-xl">
+              <div>
+                Learn more about positions on Hyperdrive in our{" "}
+                <a
+                  className="daisy-link"
+                  href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  documentation
+                </a>{" "}
+                or explore our pools to open your first Short position.
+              </div>
+            </div>
+          }
+          action={
+            <Link to="/">
+              <button className="daisy-btn daisy-btn-primary">
+                View Pools
+              </button>
+            </Link>
+          }
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
