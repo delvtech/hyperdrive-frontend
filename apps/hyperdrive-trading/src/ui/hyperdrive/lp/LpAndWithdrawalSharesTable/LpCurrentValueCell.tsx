@@ -107,7 +107,7 @@ export function LpCurrentValueCell({
           )}
         </>
       </span>
-      <span className="text-sm text-gray-500">
+      <span className="text-neutral-content">
         {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
       </span>
     </div>

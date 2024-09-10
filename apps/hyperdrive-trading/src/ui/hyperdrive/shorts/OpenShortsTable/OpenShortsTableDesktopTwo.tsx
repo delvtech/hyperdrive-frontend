@@ -71,7 +71,7 @@ export function OpenShortsContainer(): ReactElement {
             </p>
           }
           action={
-            <Link className="daisy-btn daisy-btn-primary" to="/">
+            <Link className="daisy-btn daisy-btn-primary rounded-full" to="/">
               View Pools
             </Link>
           }
