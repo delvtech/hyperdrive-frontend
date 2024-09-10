@@ -370,7 +370,10 @@ export function AddLiquidityForm2({
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."
             tooltipPosition="left"
-            valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
+            valueClassName={classNames("flex items-end", {
+              "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent":
+                !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
+            })}
             subValue={
               vaultRateStatus === "success" && vaultRate ? (
                 <div>
