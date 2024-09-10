@@ -1,5 +1,12 @@
 # @delvtech/fixed-point-wasm
 
+## 0.0.5
+
+### Patch Changes
+
+- 66133b5: Fix negative number parsing for strings and `parseFixed`
+- 3099256: Fix `toString()` for instances with `0` decimals.
+
 ## 0.0.4
 
 ### Patch Changes
