@@ -243,7 +243,7 @@ export function AddLiquidityForm({
       addLiquidityPreviewStatus === "success",
     onSubmitted: () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any)["add-lp"].close();
+      (window as any)["add-lp"]?.close();
     },
     onExecuted: () => {
       setAmount("");

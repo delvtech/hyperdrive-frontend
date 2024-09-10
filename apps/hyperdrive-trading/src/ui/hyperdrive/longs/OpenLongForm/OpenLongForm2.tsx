@@ -183,7 +183,7 @@ export function OpenLongForm2({
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onSubmitted: () => {
-      (document.getElementById("open-long") as HTMLDialogElement).close();
+      (document.getElementById("open-long") as HTMLDialogElement)?.close();
     },
     onExecuted: () => {
       setAmount("");

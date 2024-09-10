@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/fixed-point-wasm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "AGPL-3.0",
   "files": [
     "fixed_point_wasm.js",

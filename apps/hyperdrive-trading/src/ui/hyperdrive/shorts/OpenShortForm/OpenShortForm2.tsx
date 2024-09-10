@@ -241,7 +241,7 @@ export function OpenShortForm2({
     // traderDeposit as msg.value
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
     onSubmitted: () => {
-      (window as any)["open-short"].close();
+      (window as any)["open-short"]?.close();
     },
     onExecuted: () => {
       setShortAmount("");
@@ -398,7 +398,7 @@ export function OpenShortForm2({
         <div className="flex justify-between px-4 py-8">
           <PrimaryStat
             label="Exposure Multiplier"
-            tooltipContent="Reflects the leverage effect of your short position."
+            tooltipContent={`This represents how much exposure you get to ${appConfig.yieldSources[hyperdrive.yieldSource].shortName} compared to what you pay to open the short.`}
             value={exposureMultiplier}
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end font-bold text-h5"
             valueUnit="x"
@@ -417,6 +417,7 @@ export function OpenShortForm2({
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
             label="Rate you pay"
+            tooltipContent={`The market fixed rate you pay which determines the cost of this short.`}
             value={formatRate(fixedRatePaid || 0n)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"

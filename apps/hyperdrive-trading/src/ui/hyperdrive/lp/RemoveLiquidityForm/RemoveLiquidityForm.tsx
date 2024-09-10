@@ -157,7 +157,7 @@ export function RemoveLiquidityForm({
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any)["withdrawalLpModal"].close();
+      (window as any)["withdrawalLpModal"]?.close();
     },
     onExecuted: () => {
       setAmount("");
