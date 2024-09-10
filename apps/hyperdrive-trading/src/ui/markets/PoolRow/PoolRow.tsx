@@ -1,6 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  HyperdriveConfig,
+  findBaseToken,
+  findToken,
+} from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
@@ -84,6 +88,12 @@ export function PoolRow({
     })}`;
   }
 
+  const sharesToken = findToken({
+    chainId: hyperdrive.chainId,
+    tokens: appConfig.tokens,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
+
   return (
     <Well
       as="div"
@@ -111,13 +121,13 @@ export function PoolRow({
           >
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             <h4 className="text-left">
               {yieldSources[hyperdrive.yieldSource].shortName}
             </h4>
-            <div className="flex flex-wrap gap-5 gap-y-2">
+            <div className="flex flex-wrap gap-5 gap-y-20">
               <div className="flex items-center gap-1.5 text-sm">
-                <ClockIcon className="size-4 text-gray-500" />{" "}
+                <ClockIcon className="size-4 text-gray-400/60" />{" "}
                 <span className="text-neutral-content">
                   {formatTermLength2(
                     Number(hyperdrive.poolConfig.positionDuration * 1000n),
@@ -125,7 +135,7 @@ export function PoolRow({
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
-                <span className="text-gray-500">TVL</span>{" "}
+                <span className="text-gray-400/60">TVL</span>{" "}
                 <span className="font-dmMono text-neutral-content">
                   {tvlLabel}
                 </span>
@@ -133,6 +143,38 @@ export function PoolRow({
               <div className="flex items-center gap-1.5 text-sm">
                 <img className="size-4 rounded-full" src={chainInfo.iconUrl} />
                 <span className="text-neutral-content">{chainInfo.name}</span>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-5 gap-y-2">
+              <div className="flex items-center gap-1.5 text-sm">
+                <span className="text-gray-400/60">Deposit</span>{" "}
+                <span className="text-neutral-content">
+                  {(() => {
+                    const depositTokens = [];
+                    if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+                      depositTokens.push(baseToken.symbol);
+                    }
+                    if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+                      depositTokens.push(sharesToken?.symbol);
+                    }
+                    return depositTokens.join(", ");
+                  })()}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 text-sm">
+                <span className="text-gray-400/60">Withdraw</span>{" "}
+                <span className="text-neutral-content">
+                  {(() => {
+                    const withdrawTokens = [];
+                    if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+                      withdrawTokens.push(baseToken.symbol);
+                    }
+                    if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+                      withdrawTokens.push(sharesToken?.symbol);
+                    }
+                    return withdrawTokens.join(", ");
+                  })()}
+                </span>
               </div>
             </div>
           </div>
