@@ -16,6 +16,7 @@
     "gen:gnosis": "npx tsx ./src/scripts/gnosis.ts",
     "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
     "gen:mainnet": "npx tsx ./src/scripts/mainnet.ts",
+    "gen:linea": "npx tsx ./src/scripts/linea.ts",
     "generate": "npx tsx ./src/scripts/generate.ts",
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "typecheck": "tsc --noEmit"
@@ -28,6 +29,8 @@
     "@hyperdrive/tsconfig": "*",
     "lodash.uniqby": "^4.7.0",
     "@types/lodash.uniqby": "^4.7.9",
+    "lodash.camelcase": "^4.3.0",
+    "@types/lodash.camelcase": "^4.3.9",
     "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
     "tsx": "^4.7.0",

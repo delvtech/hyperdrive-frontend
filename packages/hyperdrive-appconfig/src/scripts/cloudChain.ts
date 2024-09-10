@@ -1,4 +1,5 @@
 import "dotenv/config";
+import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { cloudChain } from "src/chains/cloudChain";
@@ -19,5 +20,5 @@ const appConfig = await getAppConfig({
 writeAppConfigToFile({
   filename: `./src/generated/${cloudChain.id}.appconfig.ts`,
   appConfig,
-  appConfigName: `${cloudChain.name.toLowerCase()}AppConfig`,
+  appConfigName: `${camelCase(cloudChain.name)}AppConfig`,
 });

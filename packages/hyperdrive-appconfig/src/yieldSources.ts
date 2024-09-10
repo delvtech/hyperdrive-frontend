@@ -66,15 +66,22 @@ const reth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const ezEth: YieldSource = {
-  id: "ezEth",
+const ezeth: YieldSource = {
+  id: "ezeth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
   historicalRatePeriod: 14,
 };
 
-const eEth: YieldSource = {
-  id: "eEth",
+const lineaEzeth: YieldSource = {
+  id: "lineaEzeth",
+  shortName: "Renzo ezETH",
+  protocol: "renzo",
+  historicalRatePeriod: 1,
+};
+
+const eeth: YieldSource = {
+  id: "eeth",
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
   historicalRatePeriod: 30,
@@ -87,22 +94,29 @@ const gnosisWsteth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const sxDai: YieldSource = {
-  id: "sxDai",
+const sxdai: YieldSource = {
+  id: "sxdai",
   shortName: "Savings xDAI",
   protocol: "maker",
   historicalRatePeriod: 1,
 };
 
-const stUSD: YieldSource = {
-  id: "stUSD",
+const stusd: YieldSource = {
+  id: "stusd",
   shortName: "Angle stUSD",
   protocol: "angle",
   historicalRatePeriod: 1,
 };
 
+const rseth: YieldSource = {
+  id: "rseth",
+  shortName: "KelpDAO rsETH",
+  protocol: "kelpDao",
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
-  eEth,
+  eeth,
   makerDsr,
   lidoSteth,
   morphoSusdeDai,
@@ -110,8 +124,10 @@ export const yieldSources = {
   morphoWstethUsdc,
   morphoWstethUsda,
   reth,
-  ezEth,
+  ezeth,
   gnosisWsteth,
-  sxDai,
-  stUSD,
+  sxdai,
+  stusd,
+  lineaEzeth,
+  rseth,
 } as const;

@@ -1,10 +1,18 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Address } from "viem";
-import { useChains } from "wagmi";
+import { gnosis, linea, mainnet } from "viem/chains";
 
+// NOTE: DefiLlama chain name identifier must be lower case.
+const defiLlamaChainNameIdentifier: Record<number, string> = {
+  [mainnet.id]: "ethereum",
+  [gnosis.id]: "gnosis",
+  [linea.id]: "linea",
+};
 export function useTokenFiatPrice({
   tokenAddress,
   chainId,
@@ -14,13 +22,15 @@ export function useTokenFiatPrice({
 }): {
   fiatPrice: bigint | undefined;
 } {
-  const chains = useChains();
-  const chainName =
-    chains?.find((network) => network.id === chainId)?.name ?? "ethereum";
-  // NOTE: DefiLlama chain name identifier must be lower case.
-  const defiLlamaTokenId = `${chainName.toLowerCase()}:${tokenAddress}`;
+  // Always use mainnet ETH as the reference for native ETH price, regardless of
+  // the current chain.
+  let defiLlamaTokenId = `${defiLlamaChainNameIdentifier[chainId]}:${tokenAddress}`;
+  if (tokenAddress === ETH_MAGIC_NUMBER) {
+    defiLlamaTokenId = `ethereum:${ETH_MAGIC_NUMBER}`;
+  }
 
-  const queryEnabled = !isTestnetChain(chainId) && !!tokenAddress;
+  const queryEnabled =
+    !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenFiatPrice", { defiLlamaTokenId }),

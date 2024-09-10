@@ -1,4 +1,5 @@
 import "dotenv/config";
+import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { createPublicClient, http } from "viem";
@@ -19,5 +20,5 @@ const appConfig = await getAppConfig({
 writeAppConfigToFile({
   filename: `./src/generated/${mainnet.id}.appconfig.ts`,
   appConfig,
-  appConfigName: "mainnetAppConfig",
+  appConfigName: `${camelCase(mainnet.name)}AppConfig`,
 });

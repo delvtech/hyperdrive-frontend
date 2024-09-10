@@ -2,25 +2,25 @@ import "dotenv/config";
 import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { gnosisChainConfig } from "src/chains/chains";
+import { lineaChainConfig } from "src/chains/chains";
 import { createPublicClient, http } from "viem";
-import { gnosis } from "viem/chains";
+import { linea } from "viem/chains";
 
-const rpcUrl = process.env.GNOSIS_NODE_RPC_URL as string;
+const rpcUrl = process.env.LINEA_NODE_RPC_URL as string;
 
 const publicClient = createPublicClient({
-  chain: gnosis,
+  chain: linea,
   transport: http(rpcUrl),
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+  registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
   publicClient,
-  earliestBlock: gnosisChainConfig.earliestBlock,
+  earliestBlock: lineaChainConfig.earliestBlock,
 });
 
 writeAppConfigToFile({
-  filename: `./src/generated/${gnosis.id}.appconfig.ts`,
+  filename: `./src/generated/${lineaChainConfig.id}.appconfig.ts`,
   appConfig,
-  appConfigName: `${camelCase(gnosis.name)}AppConfig`,
+  appConfigName: `${camelCase(linea.name)}AppConfig`,
 });
