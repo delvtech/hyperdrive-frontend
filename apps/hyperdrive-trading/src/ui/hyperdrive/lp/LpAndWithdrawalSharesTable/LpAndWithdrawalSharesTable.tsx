@@ -61,7 +61,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           heading="No LP Positions"
           text={
             <p className="max-w-xl">
-              Learn more about positions on Hyperdrive in our{" "}
+              Visit the{" "}
               <a
                 className="daisy-link"
                 href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
@@ -70,14 +70,12 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
               >
                 documentation
               </a>{" "}
-              or explore our pools to open your first LP position.
+              or explore pools to open your first LP position.
             </p>
           }
           action={
-            <Link to="/">
-              <button className="daisy-btn daisy-btn-primary">
-                View Pools
-              </button>
+            <Link className="daisy-btn daisy-btn-primary" to="/">
+              View Pools
             </Link>
           }
         />

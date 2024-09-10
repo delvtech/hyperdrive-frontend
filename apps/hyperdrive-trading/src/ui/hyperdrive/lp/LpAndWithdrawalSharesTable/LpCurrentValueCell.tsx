@@ -58,18 +58,16 @@ export function LpCurrentValueCell({
       : parseFixed("100");
 
   const profitLoss =
-    previewRemoveLiquidityStatus === "success" ? (
-      formatBalance({
-        // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
-        // This ensures we always have a positive value for display purposes,
-        // as the sign (profit/loss) is handled separately in the UI.
-        balance: BigInt(Math.abs(Number(baseValue - baseAmountPaid))),
-        decimals: hyperdrive?.decimals,
-        places: baseToken?.places,
-      })
-    ) : (
-      <Skeleton />
-    );
+    previewRemoveLiquidityStatus === "success"
+      ? formatBalance({
+          // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
+          // This ensures we always have a positive value for display purposes,
+          // as the sign (profit/loss) is handled separately in the UI.
+          balance: BigInt(Math.abs(Number(baseValue - baseAmountPaid))),
+          decimals: hyperdrive?.decimals,
+          places: baseToken?.places,
+        })
+      : null;
 
   const isPositiveChangeInValue = baseValue > baseAmountPaid;
 
@@ -103,7 +101,7 @@ export function LpCurrentValueCell({
                 )}
               >
                 <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-                {profitLoss === "0" ? "0" : profitLoss.toString()}
+                {profitLoss === null ? <Skeleton /> : profitLoss.toString()}
               </div>
             )
           )}
