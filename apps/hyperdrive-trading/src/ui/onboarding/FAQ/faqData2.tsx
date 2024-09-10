@@ -31,7 +31,7 @@ export const faqData2 = [
     ),
   },
   {
-    question: "How can I get variable rates?",
+    question: "How do Short positions work?",
     answer: (
       <>
         <p>
