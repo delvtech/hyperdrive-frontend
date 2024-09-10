@@ -60,26 +60,22 @@ export function OpenLongsContainer(): ReactElement {
         <NonIdealState
           heading="No Longs found"
           text={
-            <div className="max-w-xl">
-              <div>
-                Learn more about positions on Hyperdrive in our{" "}
-                <a
-                  className="daisy-link"
-                  href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  documentation
-                </a>{" "}
-                or explore our pools to open your first Long position.
-              </div>
-            </div>
+            <p className="max-w-xl">
+              Visit the{" "}
+              <a
+                className="daisy-link"
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                documentation
+              </a>{" "}
+              or explore pools to open your first Long position.
+            </p>
           }
           action={
-            <Link to="/">
-              <button className="daisy-btn daisy-btn-primary">
-                View Pools
-              </button>
+            <Link className="daisy-btn daisy-btn-primary" to="/">
+              View Pools
             </Link>
           }
         />
