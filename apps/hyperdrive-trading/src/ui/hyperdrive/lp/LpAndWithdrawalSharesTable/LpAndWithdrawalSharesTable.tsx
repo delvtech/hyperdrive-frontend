@@ -60,20 +60,18 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
         <NonIdealState
           heading="No LP Positions"
           text={
-            <div className="max-w-xl">
-              <div>
-                Learn more about positions on Hyperdrive in our{" "}
-                <a
-                  className="daisy-link"
-                  href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  documentation
-                </a>{" "}
-                or explore our pools to open your first LP position.
-              </div>
-            </div>
+            <p className="max-w-xl">
+              Learn more about positions on Hyperdrive in our{" "}
+              <a
+                className="daisy-link"
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                documentation
+              </a>{" "}
+              or explore our pools to open your first LP position.
+            </p>
           }
           action={
             <Link to="/">
