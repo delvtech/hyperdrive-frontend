@@ -192,11 +192,7 @@ export function CloseLongForm({
               }
               value={
                 withdrawAmount
-                  ? `${formatBalance({
-                      balance: withdrawAmount,
-                      decimals: hyperdrive.decimals,
-                      places: activeWithdrawToken?.places,
-                    })}`
+                  ? fixed(withdrawAmount, hyperdrive.decimals).toString()
                   : "0"
               }
               maxValue={
