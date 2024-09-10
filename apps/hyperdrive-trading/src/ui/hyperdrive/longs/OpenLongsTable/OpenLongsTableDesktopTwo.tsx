@@ -10,6 +10,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -48,6 +49,39 @@ export function OpenLongsContainer(): ReactElement {
         <LoadingState
           heading="Loading your Longs..."
           text="Searching for Long events, calculating current value and PnL..."
+        />
+      </div>
+    );
+  }
+
+  if (openLongPositions?.every((position) => position.openLongs.length === 0)) {
+    return (
+      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No Longs found"
+          text={
+            <div className="max-w-xl">
+              <div>
+                Learn more about positions on Hyperdrive in our{" "}
+                <a
+                  className="daisy-link"
+                  href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  documentation
+                </a>{" "}
+                or explore our pools to open your first Long position.
+              </div>
+            </div>
+          }
+          action={
+            <Link to="/">
+              <button className="daisy-btn daisy-btn-primary">
+                View Pools
+              </button>
+            </Link>
+          }
         />
       </div>
     );
