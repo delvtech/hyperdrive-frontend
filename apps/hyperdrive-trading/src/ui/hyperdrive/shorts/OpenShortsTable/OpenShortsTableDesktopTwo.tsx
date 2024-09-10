@@ -7,6 +7,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -39,7 +40,7 @@ export function OpenShortsContainer(): ReactElement {
 
   if (openShortPositionsStatus === "loading") {
     return (
-      <div className="mt-10 flex w-[1036px] flex-col gap-10">
+      <div className="flex w-[1036px] flex-col gap-10">
         <LoadingState
           heading="Loading your Shorts..."
           text="Searching for Shorts events, calculating current value and PnL..."
@@ -47,6 +48,38 @@ export function OpenShortsContainer(): ReactElement {
       </div>
     );
   }
+
+  if (
+    openShortPositions?.every((position) => position.openShorts.length === 0)
+  ) {
+    return (
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No Shorts found"
+          text={
+            <p className="max-w-xl">
+              Visit the{" "}
+              <a
+                className="daisy-link"
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                documentation
+              </a>{" "}
+              or explore pools to open your first Short position.
+            </p>
+          }
+          action={
+            <Link className="daisy-btn daisy-btn-primary" to="/">
+              View Pools
+            </Link>
+          }
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {

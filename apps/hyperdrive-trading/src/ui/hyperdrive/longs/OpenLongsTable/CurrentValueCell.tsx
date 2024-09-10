@@ -7,7 +7,6 @@ import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 /**
  * @deprecated Use CurrentValueCellTwo instead. Remove this component once all references to it have been replaced.
@@ -26,10 +25,6 @@ export function CurrentValueCell({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
-  });
-  const { poolInfo } = usePoolInfo({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
   });
 
   const {

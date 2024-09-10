@@ -14,10 +14,11 @@ export function SizeAndPoolShareCell({
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
 }): ReactElement {
-  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
+  const { lpSharesTotalSupply, lpSharesTotalSupplyStatus } =
+    useLpSharesTotalSupply({
+      hyperdriveAddress: hyperdrive.address,
+      chainId: hyperdrive.chainId,
+    });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     appConfig,
@@ -42,7 +43,7 @@ export function SizeAndPoolShareCell({
         })}
       </span>
       <p className="text-neutral-content">
-        {!!lpShares && !!lpSharesTotalSupply ? (
+        {lpSharesTotalSupplyStatus === "success" ? (
           `${fixed(poolShare).format({ decimals: 6 })}% of pool`
         ) : (
           <Skeleton />

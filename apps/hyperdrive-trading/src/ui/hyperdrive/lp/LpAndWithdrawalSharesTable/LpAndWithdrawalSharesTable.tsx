@@ -31,7 +31,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
 
   if (openLpPositionStatus === "loading") {
     return (
-      <div className="my-28 flex h-full w-[1036px] flex-col">
+      <div className="flex h-full w-[1036px] flex-col">
         <LoadingState
           heading="Loading your LP Positions..."
           text="Searching for LP events, calculating current value and PnL..."
@@ -59,12 +59,23 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
       <div className="my-28 flex h-full w-[1036px] flex-col">
         <NonIdealState
           heading="No LP Positions"
-          text="You don't have any LP positions."
+          text={
+            <p className="max-w-xl">
+              Visit the{" "}
+              <a
+                className="daisy-link"
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                documentation
+              </a>{" "}
+              or explore pools to open your first LP position.
+            </p>
+          }
           action={
-            <Link to="/">
-              <button className="daisy-btn daisy-btn-primary">
-                View Pools
-              </button>
+            <Link className="daisy-btn daisy-btn-primary" to="/">
+              View Pools
             </Link>
           }
         />

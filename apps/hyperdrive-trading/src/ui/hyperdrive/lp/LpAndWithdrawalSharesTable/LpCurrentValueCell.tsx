@@ -58,18 +58,16 @@ export function LpCurrentValueCell({
       : parseFixed("100");
 
   const profitLoss =
-    previewRemoveLiquidityStatus === "success" ? (
-      formatBalance({
-        // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
-        // This ensures we always have a positive value for display purposes,
-        // as the sign (profit/loss) is handled separately in the UI.
-        balance: BigInt(Math.abs(Number(baseValue - baseAmountPaid))),
-        decimals: hyperdrive?.decimals,
-        places: baseToken?.places,
-      })
-    ) : (
-      <Skeleton />
-    );
+    previewRemoveLiquidityStatus === "success"
+      ? formatBalance({
+          // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
+          // This ensures we always have a positive value for display purposes,
+          // as the sign (profit/loss) is handled separately in the UI.
+          balance: BigInt(Math.abs(Number(baseValue - baseAmountPaid))),
+          decimals: hyperdrive?.decimals,
+          places: baseToken?.places,
+        })
+      : null;
 
   const isPositiveChangeInValue = baseValue > baseAmountPaid;
 
@@ -85,25 +83,29 @@ export function LpCurrentValueCell({
             places: baseToken?.places,
           })}`
         )}
-        {openLpPositionStatus === "loading" ? (
-          <Skeleton className="w-12" />
-        ) : (
-          <div
-            data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-              {
-                "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-                  isPositiveChangeInValue,
-                "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                  !isPositiveChangeInValue && profitLoss !== "0",
-              },
-            )}
-          >
-            <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-            {profitLoss === "0" ? "0" : profitLoss}
-          </div>
-        )}
+        <>
+          {openLpPositionStatus === "loading" ? (
+            <Skeleton className="w-12" />
+          ) : (
+            baseValue && (
+              <div
+                data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+                className={classNames(
+                  "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
+                  {
+                    "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+                      isPositiveChangeInValue,
+                    "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+                      !isPositiveChangeInValue && profitLoss !== "0",
+                  },
+                )}
+              >
+                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
+                {profitLoss === null ? <Skeleton /> : profitLoss.toString()}
+              </div>
+            )
+          )}
+        </>
       </span>
       <span className="text-sm text-gray-500">
         {`${formatRate(withdrawablePercent.div(parseFixed("100")).bigint)} withdrawable`}
