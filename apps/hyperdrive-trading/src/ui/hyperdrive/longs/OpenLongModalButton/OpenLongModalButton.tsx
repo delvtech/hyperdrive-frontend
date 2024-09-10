@@ -24,7 +24,7 @@ export function OpenLongModalButton({
 
   function closeModal() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any)[modalId].close();
+    (window as any)[modalId]?.close();
   }
 
   if (marketState?.isPaused) {

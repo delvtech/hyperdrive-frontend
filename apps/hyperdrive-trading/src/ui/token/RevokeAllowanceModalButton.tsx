@@ -68,7 +68,7 @@ export function RevokeAllowanceModalButton({
   });
   const modalId = `revoke_token`;
   function closeModal() {
-    (window as any)[modalId].close();
+    (window as any)[modalId]?.close();
   }
   return (
     <Modal

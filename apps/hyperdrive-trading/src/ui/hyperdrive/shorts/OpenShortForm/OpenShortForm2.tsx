@@ -241,7 +241,7 @@ export function OpenShortForm2({
     // traderDeposit as msg.value
     ethValue: isActiveTokenEth ? traderDeposit : undefined,
     onSubmitted: () => {
-      (window as any)["open-short"].close();
+      (window as any)["open-short"]?.close();
     },
     onExecuted: () => {
       setShortAmount("");

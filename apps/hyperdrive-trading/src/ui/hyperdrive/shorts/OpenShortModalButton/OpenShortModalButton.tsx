@@ -26,7 +26,7 @@ export function OpenShortModalButton({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
   function closeModal() {
-    (window as any)[modalId].close();
+    (window as any)[modalId]?.close();
   }
 
   if (marketState?.isPaused) {

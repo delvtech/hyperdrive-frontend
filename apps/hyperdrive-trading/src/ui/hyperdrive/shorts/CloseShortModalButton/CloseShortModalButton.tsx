@@ -44,7 +44,7 @@ export function CloseShortModalButton({
   const maturityMilliseconds = Number(short.maturity * 1000n);
   const isMature = Date.now() > maturityMilliseconds;
   function closeModal() {
-    (window as any)[modalId].close();
+    (window as any)[modalId]?.close();
   }
 
   return (
