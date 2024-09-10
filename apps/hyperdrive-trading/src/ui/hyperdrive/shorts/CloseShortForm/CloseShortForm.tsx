@@ -110,7 +110,7 @@ export function CloseShortForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
     onSubmitted: (hash) => {
-      (window as any)[`${short.assetId}`].close();
+      (window as any)[`${short.assetId}`]?.close();
     },
     onExecuted: (hash) => {
       setAmount("");

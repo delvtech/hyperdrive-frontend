@@ -227,7 +227,7 @@ export function OpenLpSharesCard({
                       className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
                       onClick={() =>
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        (window as any)["withdrawalLpModal"].close()
+                        (window as any)["withdrawalLpModal"]?.close()
                       }
                     >
                       <XMarkIcon className="w-6" title="Close" />
