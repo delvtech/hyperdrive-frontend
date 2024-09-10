@@ -105,7 +105,7 @@ export const gnosisforkAppConfig: AppConfig = {
       initializationBlock: 35730236n,
       initializationTimestamp: 1724945843n,
       decimals: 18,
-      yieldSource: "sxDai",
+      yieldSource: "sxdai",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -189,8 +189,8 @@ export const gnosisforkAppConfig: AppConfig = {
     },
   },
   yieldSources: {
-    eEth: {
-      id: "eEth",
+    eeth: {
+      id: "eeth",
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
@@ -238,8 +238,8 @@ export const gnosisforkAppConfig: AppConfig = {
       protocol: "rocketPool",
       historicalRatePeriod: 1,
     },
-    ezEth: {
-      id: "ezEth",
+    ezeth: {
+      id: "ezeth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
@@ -250,16 +250,28 @@ export const gnosisforkAppConfig: AppConfig = {
       protocol: "lido",
       historicalRatePeriod: 1,
     },
-    sxDai: {
-      id: "sxDai",
+    sxdai: {
+      id: "sxdai",
       shortName: "Savings xDAI",
       protocol: "maker",
       historicalRatePeriod: 1,
     },
-    stUSD: {
-      id: "stUSD",
+    stusd: {
+      id: "stusd",
       shortName: "Angle stUSD",
       protocol: "angle",
+      historicalRatePeriod: 1,
+    },
+    lineaEzeth: {
+      id: "lineaEzeth",
+      shortName: "Renzo ezETH",
+      protocol: "renzo",
+      historicalRatePeriod: 1,
+    },
+    rseth: {
+      id: "rseth",
+      shortName: "KelpDAO rsETH",
+      protocol: "kelpDao",
       historicalRatePeriod: 1,
     },
   },

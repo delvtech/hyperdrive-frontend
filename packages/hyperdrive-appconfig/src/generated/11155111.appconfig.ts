@@ -2,17 +2,6 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   tokens: [
     {
-      chainId: 11155111,
-      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-    },
-    {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 11155111,
       name: "Ether",
@@ -36,14 +25,14 @@ export const sepoliaAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
-      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       decimals: 18,
-      places: 4,
-      name: "RocketPool ETH",
-      symbol: "RETH",
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
       iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["liquidStakingToken"],
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
     },
     {
       chainId: 11155111,
@@ -54,6 +43,17 @@ export const sepoliaAppConfig: AppConfig = {
       symbol: "ezETH",
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 11155111,
+      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
+      decimals: 18,
+      places: 4,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
       tags: ["liquidStakingToken"],
     },
     {
@@ -166,7 +166,7 @@ export const sepoliaAppConfig: AppConfig = {
       initializationBlock: 6137354n,
       initializationTimestamp: 1718760792n,
       decimals: 18,
-      yieldSource: "ezEth",
+      yieldSource: "ezeth",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -209,7 +209,7 @@ export const sepoliaAppConfig: AppConfig = {
       initializationBlock: 6137362n,
       initializationTimestamp: 1718760888n,
       decimals: 18,
-      yieldSource: "ezEth",
+      yieldSource: "ezeth",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -551,8 +551,8 @@ export const sepoliaAppConfig: AppConfig = {
     },
   },
   yieldSources: {
-    eEth: {
-      id: "eEth",
+    eeth: {
+      id: "eeth",
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
@@ -600,8 +600,8 @@ export const sepoliaAppConfig: AppConfig = {
       protocol: "rocketPool",
       historicalRatePeriod: 1,
     },
-    ezEth: {
-      id: "ezEth",
+    ezeth: {
+      id: "ezeth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
@@ -612,16 +612,28 @@ export const sepoliaAppConfig: AppConfig = {
       protocol: "lido",
       historicalRatePeriod: 1,
     },
-    sxDai: {
-      id: "sxDai",
+    sxdai: {
+      id: "sxdai",
       shortName: "Savings xDAI",
       protocol: "maker",
       historicalRatePeriod: 1,
     },
-    stUSD: {
-      id: "stUSD",
+    stusd: {
+      id: "stusd",
       shortName: "Angle stUSD",
       protocol: "angle",
+      historicalRatePeriod: 1,
+    },
+    lineaEzeth: {
+      id: "lineaEzeth",
+      shortName: "Renzo ezETH",
+      protocol: "renzo",
+      historicalRatePeriod: 1,
+    },
+    rseth: {
+      id: "rseth",
+      shortName: "KelpDAO rsETH",
+      protocol: "kelpDao",
       historicalRatePeriod: 1,
     },
   },

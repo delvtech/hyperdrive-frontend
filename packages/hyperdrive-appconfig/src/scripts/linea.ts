@@ -6,7 +6,7 @@ import { lineaChainConfig } from "src/chains/chains";
 import { createPublicClient, http } from "viem";
 import { linea } from "viem/chains";
 
-const rpcUrl = process.env.GNOSIS_NODE_RPC_URL as string;
+const rpcUrl = process.env.LINEA_NODE_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: linea,

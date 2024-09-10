@@ -15,6 +15,7 @@ import {
   ETH_ICON_URL,
   EZETH_ICON_URL,
   RETH_ICON_URL,
+  RSETH_ICON_URL,
   SDAI_ICON_URL,
   STUSD_ICON_URL,
   SXDAI_ICON_URL,
@@ -44,6 +45,45 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
+  RsETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
+    return getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "rseth",
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: RSETH_ICON_URL,
+      tokenPlaces: 4,
+      sharesTokenTags: ["liquidStakingToken"],
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      earliestBlock,
+    });
+  },
+
+  EzETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
+    return getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "lineaEzeth",
+      baseTokenIconUrl: ETH_ICON_URL,
+      sharesTokenIconUrl: EZETH_ICON_URL,
+      tokenPlaces: 4,
+      sharesTokenTags: ["liquidStakingToken"],
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      earliestBlock,
+    });
+  },
   ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) =>
     getGnosisWstethHyperdrive({
       hyperdrive,
@@ -52,7 +92,7 @@ const hyperdriveKindResolvers: Record<
   EETHHyperdrive: async (hyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
-      yieldSource: "eEth",
+      yieldSource: "eeth",
       baseTokenIconUrl: ETH_ICON_URL,
       sharesTokenIconUrl: EETH_ICON_URL,
       sharesTokenTags: ["liquidStakingToken"],
@@ -69,7 +109,7 @@ const hyperdriveKindResolvers: Record<
   EzETHHyperdrive: async (hyperdrive: ReadHyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
-      yieldSource: "ezEth",
+      yieldSource: "ezeth",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -141,7 +181,7 @@ const hyperdriveKindResolvers: Record<
       return getCustomHyperdrive({
         hyperdrive,
         earliestBlock,
-        yieldSource: "sxDai",
+        yieldSource: "sxdai",
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,
@@ -160,7 +200,7 @@ const hyperdriveKindResolvers: Record<
     if (hyperdriveName.includes("stUSD Hyperdrive")) {
       return getCustomHyperdrive({
         hyperdrive,
-        yieldSource: "stUSD",
+        yieldSource: "stusd",
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,

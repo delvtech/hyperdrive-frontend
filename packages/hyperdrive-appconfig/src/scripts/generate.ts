@@ -3,12 +3,12 @@ import camelCase from "lodash.camelcase";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { chains, gnosisChainConfig } from "src/chains/chains";
+import { chains, gnosisChainConfig, lineaChainConfig } from "src/chains/chains";
 import { cloudChain } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
-import { gnosis, mainnet, sepolia } from "viem/chains";
+import { gnosis, linea, mainnet, sepolia } from "viem/chains";
 
 interface ChainConfig {
   chain: Chain;
@@ -44,12 +44,12 @@ const chainConfigs: ChainConfig[] = [
     registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
     earliestBlock: gnosisChainConfig.earliestBlock,
   },
-  // {
-  //   chain: linea,
-  //   rpcUrl: process.env.LINEA_NODE_RPC_URL as string,
-  //   registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
-  //   earliestBlock: lineaChainConfig.earliestBlock,
-  // },
+  {
+    chain: linea,
+    rpcUrl: process.env.LINEA_NODE_RPC_URL as string,
+    registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
+    earliestBlock: lineaChainConfig.earliestBlock,
+  },
 
   // Add more chains here
 ];
