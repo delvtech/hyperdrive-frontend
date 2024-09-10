@@ -58,7 +58,7 @@ export function LpCurrentValueCell({
       : parseFixed("100");
 
   const profitLoss =
-    previewRemoveLiquidityStatus === "success" && baseValue ? (
+    previewRemoveLiquidityStatus === "success" ? (
       formatBalance({
         // Use Math.abs to get the absolute difference between baseValue and baseAmountPaid.
         // This ensures we always have a positive value for display purposes,
