@@ -50,7 +50,7 @@ export function YieldStats({
           </Animated>
           <Animated isActive={position === "lp"}>
             <Stat
-              label={`LP APY (${yieldSource.historicalRatePeriod}d)`}
+              label={lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY"}
               value={
                 <RewardsTooltip
                   chainId={hyperdrive.chainId}
