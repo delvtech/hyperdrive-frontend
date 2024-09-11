@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Hero } from "src/ui/landing/Hero/Hero";
-import { PoolRows } from "src/ui/markets/PoolRow/PoolRows";
+import { PoolsList } from "src/ui/markets/PoolRow/PoolsList";
 
 export function Landing(): ReactElement | null {
   return (
@@ -23,7 +23,7 @@ export function Landing(): ReactElement | null {
                 <ChevronDownIcon className="ml-1 size-4 text-neutral-content" />
               </button>
             </div> */}
-          <PoolRows />
+          <PoolsList />
         </div>
       </div>
     </div>
