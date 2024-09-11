@@ -9,7 +9,7 @@ import { createPublicClient, http } from "viem";
 
 const localChainId = +(process.env.LOCAL_CHAIN_ID as string);
 const localAddressesUrl = process.env.LOCAL_ADDRESSES_URL as string;
-const localNodeRpcUrl = process.env.LOCAL_NODE_RPC_URL as string;
+const localNodeRpcUrl = process.env.LOCAL_CHAIN_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: localChain,

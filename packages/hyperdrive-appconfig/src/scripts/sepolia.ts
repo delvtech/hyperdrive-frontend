@@ -5,7 +5,7 @@ import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
-const sepoliaNodeRpcUrl = process.env.SEPOLIA_NODE_RPC_URL as string;
+const sepoliaNodeRpcUrl = process.env.SEPOLIA_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: sepolia,

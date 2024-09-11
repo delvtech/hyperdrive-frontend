@@ -6,7 +6,7 @@ import { gnosisChainConfig } from "src/chains/chains";
 import { gnosisFork } from "src/chains/gnosisFork";
 import { createPublicClient, http } from "viem";
 
-const rpcUrl = process.env.GNOSIS_FORK_NODE_RPC_URL as string;
+const rpcUrl = process.env.GNOSIS_FORK_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: gnosisFork,
