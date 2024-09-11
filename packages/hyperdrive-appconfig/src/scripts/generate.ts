@@ -20,7 +20,7 @@ interface ChainInitializationConfig {
   isTestnet?: boolean;
 }
 
-export const chainConfigs: ChainInitializationConfig[] = [
+const chainConfigs: ChainInitializationConfig[] = [
   {
     chain: cloudChain,
     rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,

@@ -1,5 +1,4 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-import { chainConfigs } from "src/scripts/generate";
 
 export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
   mainnetConfig: AppConfig;
@@ -24,9 +23,7 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
     appConfig.registries,
   )) {
     const chainId = +chainIdString;
-    const isTestnet = !!chainConfigs.find(
-      (c) => c.chain.id === chainId && c.isTestnet,
-    );
+    const isTestnet = appConfig.chains[chainId].isTestnet;
     if (isTestnet) {
       testnetConfig.registries[chainId] = registry;
     } else {
@@ -36,9 +33,7 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
 
   // Populate the hyperdrives
   for (const hyperdrive of appConfig.hyperdrives) {
-    const isTestnet = !!chainConfigs.find(
-      (c) => c.chain.id === hyperdrive.chainId && c.isTestnet,
-    );
+    const isTestnet = appConfig.chains[hyperdrive.chainId].isTestnet;
     if (isTestnet) {
       testnetConfig.hyperdrives.push(hyperdrive);
     } else {
@@ -56,9 +51,7 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
   }
   // also include chains for any fallbackBaseTokens that might exist
   for (const hyperdrive of appConfig.hyperdrives) {
-    const isTestnet = !!chainConfigs.find(
-      (c) => c.chain.id === hyperdrive.chainId && c.isTestnet,
-    );
+    const isTestnet = appConfig.chains[hyperdrive.chainId].isTestnet;
     if (hyperdrive.baseTokenFallback?.chainId) {
       if (isTestnet) {
         testnetConfig.chains[hyperdrive.baseTokenFallback.chainId] =
