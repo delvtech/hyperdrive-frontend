@@ -105,12 +105,6 @@ export function AddLiquidityForm2({
     });
   }
 
-  const { lpShares: lpSharesBalanceOf } = useLpShares({
-    account,
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
@@ -207,19 +201,7 @@ export function AddLiquidityForm2({
     status: addLiquidityPreviewStatus,
     previewAddLiquidityError,
   } = usePreviewAddLiquidity(addLiquidityParams);
-  const isNewPool = useIsNewPool({ hyperdrive });
 
-  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const poolShare = calculatePoolShare({
-    lpSharesBalanceOf,
-    lpSharesOut,
-    lpSharesTotalSupply,
-    hyperdrive,
-    baseToken,
-  });
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
     chainId: activeToken.chainId,
@@ -306,52 +288,12 @@ export function AddLiquidityForm2({
       }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
-          <PrimaryStat
-            label="You receive"
-            subValue={
-              addLiquidityPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span
-                  className={classNames({
-                    "text-base-content/80": !poolShare,
-                  })}
-                >
-                  {poolShare
-                    ? `${fixed(poolShare).format({
-                        decimals: 4,
-                        rounding: "trunc",
-                      })}% of total liquidity`
-                    : undefined}
-                </span>
-              )
-            }
-            valueUnit={`${baseToken.symbol}-LP`}
-            valueClassName="flex items-end"
-            unitClassName="text-xs"
-            value={
-              addLiquidityPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <p
-                  className={classNames({
-                    "text-base-content/80": !lpSharesOut,
-                    "font-bold": lpSharesOut,
-                  })}
-                >
-                  {lpSharesOut
-                    ? `${formatBalance({
-                        balance: lpSharesOut,
-                        decimals: hyperdrive.decimals,
-                        places: baseToken.places,
-                      })}`
-                    : "0"}
-                </p>
-              )
-            }
+          <YouReceiveStat
+            addLiquidityPreviewStatus={addLiquidityPreviewStatus}
+            lpSharesOut={lpSharesOut}
+            hyperdrive={hyperdrive}
           />
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
-
           <LpApyStat hyperdrive={hyperdrive} />
         </div>
       }
@@ -438,6 +380,85 @@ export function AddLiquidityForm2({
     />
   );
 }
+function YouReceiveStat({
+  addLiquidityPreviewStatus,
+  lpSharesOut,
+  hyperdrive,
+}: {
+  addLiquidityPreviewStatus: string;
+  lpSharesOut: bigint | undefined;
+  hyperdrive: HyperdriveConfig;
+}) {
+  const { address: account } = useAccount();
+  const { lpShares: lpSharesBalanceOf } = useLpShares({
+    account,
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const poolShare = calculatePoolShare({
+    lpSharesBalanceOf,
+    lpSharesOut,
+    lpSharesTotalSupply,
+    hyperdrive,
+    baseToken,
+  });
+  return (
+    <PrimaryStat
+      label="You receive"
+      subValue={
+        addLiquidityPreviewStatus === "loading" ? (
+          <Skeleton width={100} />
+        ) : (
+          <span
+            className={classNames({
+              "text-base-content/80": !poolShare,
+            })}
+          >
+            {poolShare
+              ? `${fixed(poolShare).format({
+                  decimals: 4,
+                  rounding: "trunc",
+                })}% of total liquidity`
+              : undefined}
+          </span>
+        )
+      }
+      valueUnit={`${baseToken.symbol}-LP`}
+      valueClassName="flex items-end"
+      unitClassName="text-xs"
+      value={
+        addLiquidityPreviewStatus === "loading" ? (
+          <Skeleton width={100} />
+        ) : (
+          <p
+            className={classNames({
+              "text-base-content/80": !lpSharesOut,
+              "font-bold": lpSharesOut,
+            })}
+          >
+            {lpSharesOut
+              ? `${formatBalance({
+                  balance: lpSharesOut,
+                  decimals: hyperdrive.decimals,
+                  places: baseToken.places,
+                })}`
+              : "0"}
+          </p>
+        )
+      }
+    />
+  );
+}
+
 function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const isNewPool = useIsNewPool({ hyperdrive });
   const { lpApy, lpApyStatus } = useLpApy({
