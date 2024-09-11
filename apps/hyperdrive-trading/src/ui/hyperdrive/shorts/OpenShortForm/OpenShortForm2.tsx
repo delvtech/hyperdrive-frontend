@@ -421,7 +421,7 @@ export function OpenShortForm2({
             value={formatRate(fixedRatePaid || 0n)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"
-            unitClassName="text-xs"
+            unitClassName="text-xs mb-1"
             subValue={
               <>
                 1 hy{baseToken.symbol} ≈{" "}

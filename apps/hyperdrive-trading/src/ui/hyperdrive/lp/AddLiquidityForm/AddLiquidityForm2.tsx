@@ -380,6 +380,7 @@ export function AddLiquidityForm2({
     />
   );
 }
+
 function YouReceiveStat({
   addLiquidityPreviewStatus,
   lpSharesOut,
@@ -433,8 +434,8 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueClassName="flex items-end"
-      unitClassName="text-xs"
+      valueClassName="flex items-end "
+      unitClassName="text-xs mb-1"
       value={
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={100} />
