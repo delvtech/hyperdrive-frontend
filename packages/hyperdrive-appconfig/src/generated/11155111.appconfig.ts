@@ -628,7 +628,7 @@ export const sepoliaAppConfig: AppConfig = {
       id: "lineaEzeth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
-      historicalRatePeriod: 1,
+      historicalRatePeriod: 14,
     },
     rseth: {
       id: "rseth",
