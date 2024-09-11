@@ -247,7 +247,7 @@ export function PoolRow({
             }
           />
           <PoolStat
-            label={`LP APY (${yieldSources[hyperdrive.yieldSource].historicalRatePeriod}d)`}
+            label={lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY"}
             isLoading={lpApyStatus === "loading"}
             isNew={isLpApyNew}
             value={

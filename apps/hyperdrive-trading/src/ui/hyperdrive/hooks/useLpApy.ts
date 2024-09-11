@@ -1,5 +1,7 @@
+import { Block } from "@delvtech/hyperdrive-viem";
 import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isForkChain } from "src/chains/isForkChain";
@@ -16,7 +18,9 @@ export function useLpApy({
   hyperdriveAddress: Address;
   chainId: number;
 }): {
-  lpApy: { lpApy: bigint; formatted: string } | undefined;
+  lpApy:
+    | { lpApy: bigint; formatted: string; ratePeriodDays: number }
+    | undefined;
   lpApyStatus: "error" | "success" | "loading";
 } {
   const { poolInfo: currentPoolInfo } = usePoolInfo({
@@ -58,8 +62,26 @@ export function useLpApy({
                 blockNumber - numBlocksForHistoricalRate,
           });
 
+          // Figure out if the pool is younger than 1 rate period
+          const currentBlock =
+            (await readHyperdrive.network.getBlock()) as Block;
+          const isPoolYoungerThanOneRatePeriod =
+            hyperdrive.initializationBlock >
+            currentBlock.blockNumber! - numBlocksForHistoricalRate;
+
+          // If we don't have enough blocks to go back 1 full historical period, then
+          // grab the all-time rate instead.
+          let ratePeriodDays =
+            appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod;
+          if (isPoolYoungerThanOneRatePeriod) {
+            ratePeriodDays = convertMillisecondsToDays(
+              Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),
+            );
+          }
+
           return {
             lpApy,
+            ratePeriodDays,
             formatted: formatRate(lpApy),
           };
         }

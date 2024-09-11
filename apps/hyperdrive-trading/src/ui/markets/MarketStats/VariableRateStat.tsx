@@ -33,7 +33,7 @@ export function VariableRateStat({
 
   return (
     <Stat
-      label={`Variable APY (${yieldSource.historicalRatePeriod}d)`}
+      label={`Variable APY (${vaultRate?.ratePeriodDays}d)`}
       description={`The yield rate earned on deposits into ${yieldSource.shortName} in the last ${yieldSource.historicalRatePeriod} days.`}
       tooltipPosition="bottom"
       value={
