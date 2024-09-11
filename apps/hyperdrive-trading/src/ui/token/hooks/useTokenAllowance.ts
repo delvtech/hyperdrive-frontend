@@ -1,5 +1,4 @@
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, erc20Abi } from "viem";
 import { useReadContract } from "wagmi";
 
@@ -23,7 +22,6 @@ export function useTokenAllowance({
   tokenChainId,
   enabled = true,
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
-  const appConfig = useAppConfig();
   const queryEnabled = !!spender && !!account && !!tokenAddress && !!enabled;
 
   const { data, status } = useReadContract({

@@ -12,7 +12,7 @@ import { AddLiquidityForm2 } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiqu
 import { OpenShortForm2 } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm2";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { faqData2 } from "src/ui/onboarding/FAQ/faqData2";
+import { faqData2 } from "src/ui/onboarding/faqData2";
 
 export function PoolDetails({
   hyperdrive,
