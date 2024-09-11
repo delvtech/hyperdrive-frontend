@@ -23,6 +23,7 @@ export interface ChainConfig {
   blockExplorerName: string;
   dailyAverageBlocks: bigint;
   earliestBlock?: bigint;
+  isTestnet?: boolean;
 }
 
 export const lineaChainConfig: ChainConfig = {
@@ -65,6 +66,7 @@ export const chains: Record<ChainId, ChainConfig> = {
   [cloudChain.id]: {
     id: cloudChain.id,
     name: "Cloudchain",
+    isTestnet: true,
     dailyAverageBlocks: 7172n,
     blockExplorerName: "Etherscan",
     blockExplorerUrl: "https://etherscan.io",
@@ -74,6 +76,7 @@ export const chains: Record<ChainId, ChainConfig> = {
   [sepolia.id]: {
     id: sepolia.id,
     name: "Sepolia",
+    isTestnet: true,
     blockExplorerName: "Etherscan",
     blockExplorerUrl: "https://sepolia.etherscan.io",
     dailyAverageBlocks: 7172n,
@@ -83,6 +86,7 @@ export const chains: Record<ChainId, ChainConfig> = {
   [gnosisFork.id]: {
     id: gnosisFork.id,
     name: "Gnosis Fork",
+    isTestnet: true,
     blockExplorerName: "Gnosisscan",
     blockExplorerUrl: "https://gnosisscan.io",
     dailyAverageBlocks: 16605n,

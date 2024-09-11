@@ -1,4 +1,5 @@
 import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
+import chalk from "chalk";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { chains } from "src/chains/chains";
@@ -309,7 +310,7 @@ export async function getAppConfig({
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
       const kind = await hyperdrive.getKind();
-      console.log("Hyperdrive:", kind, hyperdrive.address);
+      console.log(chalk.blue(kind), chalk.yellow(chainId), hyperdrive.address);
       const hyperdriveResolver = hyperdriveKindResolvers[kind];
       if (!hyperdriveResolver) {
         throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);
@@ -317,13 +318,6 @@ export async function getAppConfig({
 
       const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
         await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
-
-      console.table({
-        chainId: publicClient.chain?.id,
-        kind: kind,
-        name: hyperdriveConfig.name,
-        decimals: hyperdriveConfig.decimals,
-      });
 
       // Not all hyperdrives have a base or shares token, so only add them if
       // they exist. (Note: `tokens` is deduped at the end)
@@ -348,10 +342,6 @@ export async function getAppConfig({
     yieldSources,
     chains,
   };
-
-  console.log(
-    `App config generated successfully with ${configs.length} hyperdrives`,
-  );
 
   return config;
 }

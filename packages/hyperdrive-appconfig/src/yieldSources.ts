@@ -77,7 +77,7 @@ const lineaEzeth: YieldSource = {
   id: "lineaEzeth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
-  historicalRatePeriod: 1,
+  historicalRatePeriod: 14,
 };
 
 const eeth: YieldSource = {
@@ -112,7 +112,7 @@ const rseth: YieldSource = {
   id: "rseth",
   shortName: "KelpDAO rsETH",
   protocol: "kelpDao",
-  historicalRatePeriod: 1,
+  historicalRatePeriod: 30,
 };
 
 export const yieldSources = {

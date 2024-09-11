@@ -5,7 +5,7 @@ import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { cloudChain } from "src/chains/cloudChain";
 import { createPublicClient, http } from "viem";
 
-const cloudChainNodeRpcUrl = process.env.CLOUDCHAIN_NODE_RPC_URL as string;
+const cloudChainNodeRpcUrl = process.env.CLOUDCHAIN_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: cloudChain,

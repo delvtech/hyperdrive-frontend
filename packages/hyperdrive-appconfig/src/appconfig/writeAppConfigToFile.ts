@@ -1,4 +1,5 @@
-import fs from "fs";
+import chalk from "chalk";
+import fs from "node:fs/promises";
 import { AppConfig } from "src/appconfig/AppConfig";
 
 // Custom replacer function to handle bigint
@@ -22,7 +23,7 @@ export const ${appConfigName}: AppConfig = ${finalOutput};`;
 }
 
 // Write to a .ts file
-export function writeAppConfigToFile({
+export async function writeAppConfigToFile({
   filename,
   appConfig,
   appConfigName,
@@ -30,15 +31,7 @@ export function writeAppConfigToFile({
   filename: string;
   appConfig: AppConfig;
   appConfigName: string;
-}): void {
-  fs.writeFile(
-    filename,
-    generateFileString(appConfig, appConfigName),
-    (err) => {
-      if (err) {
-        throw err;
-      }
-      console.log("The file has been saved!");
-    },
-  );
+}): Promise<void> {
+  await fs.writeFile(filename, generateFileString(appConfig, appConfigName));
+  console.log(chalk.gray(`${filename} has been saved!`));
 }

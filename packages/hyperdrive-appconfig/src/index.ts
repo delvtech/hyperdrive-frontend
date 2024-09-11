@@ -1,15 +1,18 @@
 // appconfigs
 export type { AppConfig } from "src/appconfig/AppConfig";
-export { ethereumAppConfig as mainnetAppConfig } from "src/generated/1.appconfig";
+export { ethereumAppConfig } from "src/generated/1.appconfig";
 export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
 export { cloudChainAppConfig } from "src/generated/42069.appconfig";
 export { gnosisforkAppConfig } from "src/generated/42070.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
+export { mainnetAppConfig } from "src/generated/mainnet.appconfig";
+export { testnetAppConfig } from "src/generated/testnet.appconfig";
 
 // chains
 export { makeAddressUrl } from "src/chains/blockexplorer/makeAddressUrl";
 export { makeTransactionUrl } from "src/chains/blockexplorer/makeTransactionUrl";
 export type { ChainConfig } from "src/chains/chains";
+export { isMainnetChain } from "src/chains/isMainnetChain";
 
 // appconfig selectors
 export { findBaseToken, findHyperdriveConfig } from "src/hyperdrives/selectors";

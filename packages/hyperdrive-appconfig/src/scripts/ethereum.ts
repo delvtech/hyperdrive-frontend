@@ -5,11 +5,11 @@ import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
 
-const mainnetNodeRpcUrl = process.env.MAINNET_NODE_RPC_URL as string;
+const ethereumRpcUrl = process.env.ETHEREUM_RPC_URL as string;
 
 const publicClient = createPublicClient({
   chain: mainnet,
-  transport: http(mainnetNodeRpcUrl),
+  transport: http(ethereumRpcUrl),
 });
 
 const appConfig = await getAppConfig({

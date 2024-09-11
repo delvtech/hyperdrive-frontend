@@ -266,13 +266,13 @@ export const gnosisAppConfig: AppConfig = {
       id: "lineaEzeth",
       shortName: "Renzo ezETH",
       protocol: "renzo",
-      historicalRatePeriod: 1,
+      historicalRatePeriod: 14,
     },
     rseth: {
       id: "rseth",
       shortName: "KelpDAO rsETH",
       protocol: "kelpDao",
-      historicalRatePeriod: 1,
+      historicalRatePeriod: 30,
     },
   },
   chains: {
@@ -298,6 +298,7 @@ export const gnosisAppConfig: AppConfig = {
     "42069": {
       id: 42069,
       name: "Cloudchain",
+      isTestnet: true,
       dailyAverageBlocks: 7172n,
       blockExplorerName: "Etherscan",
       blockExplorerUrl: "https://etherscan.io",
@@ -307,6 +308,7 @@ export const gnosisAppConfig: AppConfig = {
     "42070": {
       id: 42070,
       name: "Gnosis Fork",
+      isTestnet: true,
       blockExplorerName: "Gnosisscan",
       blockExplorerUrl: "https://gnosisscan.io",
       dailyAverageBlocks: 16605n,
@@ -326,6 +328,7 @@ export const gnosisAppConfig: AppConfig = {
     "11155111": {
       id: 11155111,
       name: "Sepolia",
+      isTestnet: true,
       blockExplorerName: "Etherscan",
       blockExplorerUrl: "https://sepolia.etherscan.io",
       dailyAverageBlocks: 7172n,
