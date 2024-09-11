@@ -417,11 +417,11 @@ export function OpenShortForm2({
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
             label="Rate you pay"
-            tooltipContent={`The market fixed rate you pay which determines the cost of this short.`}
+            tooltipContent={`The fixed rate you pay upfront that determines the cost-basis of this short.`}
             value={formatRate(fixedRatePaid || 0n)}
             valueClassName="flex items-end font-bold text-h5"
             valueUnit="APR"
-            unitClassName="text-xs"
+            unitClassName="text-xs mb-1"
             subValue={
               <>
                 1 hy{baseToken.symbol} ≈{" "}

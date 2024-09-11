@@ -32,6 +32,7 @@ export function useActiveToken({
   const { balance: activeTokenBalance } = useTokenBalance({
     account,
     tokenAddress: activeTokenAddress,
+    tokenChainId: activeToken.chainId,
     decimals: activeToken.decimals,
   });
 
