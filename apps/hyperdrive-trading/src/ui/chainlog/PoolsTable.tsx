@@ -221,88 +221,59 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
     }),
     placeholderData: [],
     queryFn: async () => {
-      // registries and clients for each chain
-      const clients: Map<
-        number,
-        {
-          registry: ReadRegistry;
-          publicClient: PublicClient;
-        }
-      > = new Map();
+      const pools: Pool[] = [];
 
-      for (const chainId of chainIds) {
-        // TODO: Cleanup type casting
-        const publicClient = getPublicClient(wagmiConfig as any, {
-          chainId,
-        }) as PublicClient;
+      await Promise.all(
+        chainIds.map(async (chainId) => {
+          const publicClient = getPublicClient(wagmiConfig as any, {
+            chainId,
+          }) as PublicClient;
 
-        clients.set(chainId, {
-          publicClient,
-          registry: new ReadRegistry({
+          const registry = new ReadRegistry({
             address: appConfig.registries[chainId],
             publicClient,
             cache: sdkCache,
             namespace: chainId.toString(),
-          }),
-        });
-      }
-
-      return Promise.all(
-        appConfig.hyperdrives.map(async (hyperdrive): Promise<Pool> => {
-          const { registry, publicClient } =
-            clients.get(hyperdrive.chainId) || {};
-
-          // Return available static data if no registry is found
-          if (!registry || !publicClient) {
-            console.error(
-              `No registry found for chainId ${hyperdrive.chainId}`,
-            );
-            return {
-              name: hyperdrive.name,
-              address: hyperdrive.address,
-              chainId: hyperdrive.chainId,
-              version: hyperdrive.version,
-              isPaused: false,
-              status: "active",
-              factoryAddress: "0x",
-              deployerCoordinatorAddress: "0x",
-              baseToken: hyperdrive.poolConfig.baseToken,
-              vaultToken: hyperdrive.poolConfig.vaultSharesToken,
-            };
-          }
-
-          const { data, factory, name, version } =
-            await registry.getInstanceInfo(hyperdrive.address);
-          const readHyperdrive = await getReadHyperdrive({
-            appConfig,
-            hyperdriveAddress: hyperdrive.address,
-            publicClient,
           });
 
-          const { baseToken, vaultSharesToken: vaultToken } =
-            await readHyperdrive.getPoolConfig();
+          const addresses = await registry.getInstanceAddresses();
+          const metas = await registry.getInstanceInfos(addresses);
 
-          const { isPaused } = await readHyperdrive.getMarketState();
-          const { status } = decodeInstanceData(data);
-          const [deployerCoordinatorAddress] =
-            await factory.getDeployerCoordinatorAddresses({
-              instances: [hyperdrive.address],
+          for (const [i, address] of addresses.entries()) {
+            const { data, factory, name, version } = metas[i];
+            const { status } = decodeInstanceData(data);
+
+            const readHyperdrive = await getReadHyperdrive({
+              appConfig,
+              hyperdriveAddress: address,
+              publicClient,
             });
 
-          return {
-            name,
-            address: hyperdrive.address,
-            chainId: hyperdrive.chainId,
-            version,
-            isPaused,
-            status,
-            factoryAddress: factory.address,
-            deployerCoordinatorAddress,
-            baseToken,
-            vaultToken,
-          };
+            const { baseToken, vaultSharesToken: vaultToken } =
+              await readHyperdrive.getPoolConfig();
+            const { isPaused } = await readHyperdrive.getMarketState();
+            const [deployerCoordinatorAddress] =
+              await factory.getDeployerCoordinatorAddresses({
+                instances: [address],
+              });
+
+            pools.push({
+              name,
+              address,
+              chainId,
+              version,
+              isPaused,
+              status,
+              factoryAddress: factory.address,
+              deployerCoordinatorAddress,
+              baseToken,
+              vaultToken,
+            });
+          }
         }),
       );
+
+      return pools;
     },
   });
 }
