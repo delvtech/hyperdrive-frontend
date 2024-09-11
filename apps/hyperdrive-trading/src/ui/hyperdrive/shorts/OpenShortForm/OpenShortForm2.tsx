@@ -22,6 +22,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -54,6 +55,10 @@ export function OpenShortForm2({
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
@@ -506,7 +511,7 @@ export function OpenShortForm2({
         }
         return (
           <button
-            disabled={!openShort || !hasEnoughBalance}
+            disabled={!openShort || !hasEnoughBalance || marketState?.isPaused}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               openShort?.();

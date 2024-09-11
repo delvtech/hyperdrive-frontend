@@ -15,6 +15,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -46,6 +47,10 @@ export function OpenLongForm2({
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const chainId = useChainId();
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId,
+  });
 
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({
@@ -318,7 +323,7 @@ export function OpenLongForm2({
           return <ConnectWalletButton />;
         }
 
-        if (!hasEnoughBalance || !hasEnoughLiquidity) {
+        if (!hasEnoughBalance || !hasEnoughLiquidity || marketState?.isPaused) {
           return (
             <button
               disabled
