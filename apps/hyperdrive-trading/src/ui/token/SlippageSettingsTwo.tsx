@@ -5,7 +5,6 @@ import {
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { PercentInput } from "src/ui/base/components/PercentInput";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 
 export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
 
@@ -23,7 +22,6 @@ export function SlippageSettingsTwo({
   tooltip?: string;
 }): ReactElement {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { isFlagEnabled: isPoolDetailsV2 } = useFeatureFlag("pool-details-v2");
 
   return (
     <div className="daisy-dropdown daisy-dropdown-bottom flex justify-end">
@@ -35,17 +33,12 @@ export function SlippageSettingsTwo({
           setIsDropdownOpen((prevState) => !prevState);
         }}
         className={
-          isPoolDetailsV2
-            ? "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-xs font-normal text-neutral-content"
-            : "daisy-btn daisy-btn-ghost daisy-btn-sm flex flex-row items-center justify-end gap-2 text-xs font-light text-neutral-content"
+          "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-xs font-normal text-neutral-content"
         }
       >
         {`${slippage || DEFAULT_SLIPPAGE_AMOUNT}%`} slippage
         <Cog6ToothIcon
-          className={classNames(
-            "h-4 stroke-2",
-            isPoolDetailsV2 ? "test-neutral-content" : "text-base-content",
-          )}
+          className={classNames("h-4 stroke-2", "test-neutral-content")}
         />
       </button>
       {isDropdownOpen && (
