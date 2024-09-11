@@ -33,5 +33,5 @@ export async function writeAppConfigToFile({
   appConfigName: string;
 }): Promise<void> {
   await fs.writeFile(filename, generateFileString(appConfig, appConfigName));
-  console.log(chalk.gray(`${filename} has been saved!\n`));
+  console.log(chalk.gray(`${filename} has been saved!`));
 }

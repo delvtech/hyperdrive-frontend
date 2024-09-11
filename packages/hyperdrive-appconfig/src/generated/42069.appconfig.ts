@@ -25,6 +25,17 @@ export const cloudChainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
+      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      decimals: 18,
+      places: 4,
+      name: "Rocket Pool ETH",
+      symbol: "rETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+    },
+    {
+      chainId: 42069,
       address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       decimals: 18,
       places: 2,
@@ -33,17 +44,6 @@ export const cloudChainAppConfig: AppConfig = {
       iconUrl:
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: ["stablecoin"],
-    },
-    {
-      chainId: 42069,
-      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
-      decimals: 18,
-      places: 4,
-      name: "ether.fi ETH",
-      symbol: "eETH",
-      iconUrl:
-        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
-      tags: ["liquidStakingToken"],
     },
     {
       chainId: 42069,
@@ -57,13 +57,13 @@ export const cloudChainAppConfig: AppConfig = {
     },
     {
       chainId: 42069,
-      address: "0xae78736Cd615f374D3085123A210448E74Fc6393",
+      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
       decimals: 18,
       places: 4,
-      name: "Rocket Pool ETH",
-      symbol: "rETH",
+      name: "ether.fi ETH",
+      symbol: "eETH",
       iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
       tags: ["liquidStakingToken"],
     },
     {

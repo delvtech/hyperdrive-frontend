@@ -1,4 +1,6 @@
 import { AppConfig } from "src/appconfig/AppConfig";
+import { isTestnetChain } from "src/chains/isTestnetChain";
+import { findToken } from "src/tokens/selectors";
 
 export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
   mainnetConfig: AppConfig;
@@ -8,6 +10,7 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
     ...appConfig,
     registries: {},
     hyperdrives: [],
+    tokens: [],
     chains: {},
   };
 
@@ -15,6 +18,7 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
     ...appConfig,
     registries: {},
     hyperdrives: [],
+    tokens: [],
     chains: {},
   };
 
@@ -33,34 +37,71 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
 
   // Populate the hyperdrives
   for (const hyperdrive of appConfig.hyperdrives) {
-    const isTestnet = appConfig.chains[hyperdrive.chainId].isTestnet;
-    if (isTestnet) {
+    if (isTestnetChain(hyperdrive.chainId)) {
       testnetConfig.hyperdrives.push(hyperdrive);
     } else {
       mainnetConfig.hyperdrives.push(hyperdrive);
     }
   }
 
+  // Populate the tokens
+  for (const token of appConfig.tokens) {
+    if (isTestnetChain(token.chainId)) {
+      testnetConfig.tokens.push(token);
+    } else {
+      mainnetConfig.tokens.push(token);
+    }
+  }
+  // also include tokens for any fallbackBaseTokens that might exist
+  for (const hyperdrive of appConfig.hyperdrives) {
+    if (!hyperdrive.baseTokenFallback) {
+      continue;
+    }
+
+    const fallbackBaseToken = findToken({
+      chainId: hyperdrive.baseTokenFallback.chainId,
+      tokenAddress: hyperdrive.baseTokenFallback.address,
+      tokens: appConfig.tokens,
+    })!;
+
+    const targetAppConfig = isTestnetChain(hyperdrive.chainId)
+      ? testnetConfig
+      : mainnetConfig;
+
+    const fallbackBaseTokenAlreadyExists = !!findToken({
+      chainId: fallbackBaseToken.chainId,
+      tokenAddress: fallbackBaseToken.address,
+      tokens: targetAppConfig.tokens,
+    });
+
+    if (!fallbackBaseTokenAlreadyExists) {
+      targetAppConfig.tokens.push(fallbackBaseToken);
+    }
+  }
+
   // Populate the chains
   for (const [chainIdString, chain] of Object.entries(appConfig.chains)) {
-    if (chain.isTestnet) {
+    if (isTestnetChain(+chainIdString)) {
       testnetConfig.chains[+chainIdString] = chain;
     } else {
       mainnetConfig.chains[+chainIdString] = chain;
     }
   }
+
   // also include chains for any fallbackBaseTokens that might exist
   for (const hyperdrive of appConfig.hyperdrives) {
-    const isTestnet = appConfig.chains[hyperdrive.chainId].isTestnet;
-    if (hyperdrive.baseTokenFallback?.chainId) {
-      if (isTestnet) {
-        testnetConfig.chains[hyperdrive.baseTokenFallback.chainId] =
-          appConfig.chains[hyperdrive.baseTokenFallback.chainId];
-      } else {
-        mainnetConfig.chains[hyperdrive.baseTokenFallback.chainId] =
-          appConfig.chains[hyperdrive.baseTokenFallback.chainId];
-      }
+    if (!hyperdrive.baseTokenFallback) {
+      continue;
     }
+
+    const fallbackBaseTokenChain =
+      appConfig.chains[hyperdrive.baseTokenFallback.chainId];
+
+    const targetAppConfig = isTestnetChain(hyperdrive.chainId)
+      ? testnetConfig
+      : mainnetConfig;
+
+    targetAppConfig.chains[fallbackBaseTokenChain.id] = fallbackBaseTokenChain;
   }
 
   return { mainnetConfig, testnetConfig };

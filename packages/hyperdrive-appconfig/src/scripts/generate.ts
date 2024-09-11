@@ -82,7 +82,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   console.log(
     chalk.white(
       chalk.underline(
-        `Generating app config for ${chain.name}, chain id: ${chalk.yellow(chain.id)}`,
+        `\nGenerating app config for ${chain.name}, chain id: ${chalk.yellow(chain.id)}`,
       ),
     ),
   );
@@ -108,7 +108,9 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
 const { mainnetConfig, testnetConfig } =
   getMainnetAndTestnetAppConfigs(combinedAppConfig);
 
-console.log("\nCombining app configs for mainnet, testnet and all chains...");
+console.log(
+  `\n${chalk.white(chalk.underline("Combining app configs for mainnet, testnet and all chains..."))}`,
+);
 
 await writeAppConfigToFile({
   filename: `./src/generated/mainnet.appconfig.ts`,
