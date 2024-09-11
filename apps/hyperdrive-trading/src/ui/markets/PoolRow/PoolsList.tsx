@@ -11,7 +11,6 @@ import { PublicClient } from "viem";
 
 export function PoolsList(): ReactElement {
   const { hyperdrives, status } = usePoolsListHyperdriveConfigs();
-  console.log("hyperdrives", hyperdrives);
   return (
     <div className="flex w-full flex-col gap-5">
       {

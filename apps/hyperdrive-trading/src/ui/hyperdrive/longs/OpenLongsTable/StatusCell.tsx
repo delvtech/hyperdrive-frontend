@@ -13,7 +13,6 @@ export function StatusCell({
 }): ReactElement {
   const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
-  const maturityDateMS = maturity * 1000n;
 
   const remainingTime = getRemainingTimeLabel({
     maturitySeconds: Number(maturity),
