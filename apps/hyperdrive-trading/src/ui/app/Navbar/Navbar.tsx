@@ -9,7 +9,6 @@ import { ReactElement } from "react";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
@@ -17,7 +16,6 @@ export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { location } = useRouterState();
   const chainId = useChainId();
-  const { isFlagEnabled: isPortfolioEnabled } = useFeatureFlag("portfolio");
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
@@ -48,18 +46,16 @@ export function Navbar(): ReactElement {
               Bridge
             </span>
           </Link>
-          {isPortfolioEnabled ? (
-            <Link to={"/portfolio"}>
-              <span
-                className={classNames("text-md", {
-                  "text-white": location.pathname === "/portfolio",
-                  "text-neutral-content": location.pathname !== "/portfolio",
-                })}
-              >
-                Portfolio
-              </span>
-            </Link>
-          ) : null}
+          <Link to={"/portfolio"}>
+            <span
+              className={classNames("text-md", {
+                "text-white": location.pathname === "/portfolio",
+                "text-neutral-content": location.pathname !== "/portfolio",
+              })}
+            >
+              Portfolio
+            </span>
+          </Link>
         </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">

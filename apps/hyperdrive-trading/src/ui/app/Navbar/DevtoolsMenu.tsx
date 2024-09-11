@@ -16,12 +16,6 @@ export function DevtoolsMenu(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
-        <FeatureFlagMenuItem flagName="pool-details-v2">
-          Pool Details v2
-        </FeatureFlagMenuItem>
-        <FeatureFlagMenuItem flagName="portfolio">
-          Portfolio
-        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
