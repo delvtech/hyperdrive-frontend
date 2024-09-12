@@ -84,7 +84,7 @@ export function RewardsTooltip({
                           alt="KelpDAO logo"
                           className="h-8"
                         />
-                        <p>This pool is eligible for XLP-L rewards.</p>
+                        <p>This pool is eligible for LXP-L rewards.</p>
                       </div>
                     </div>
                   );
