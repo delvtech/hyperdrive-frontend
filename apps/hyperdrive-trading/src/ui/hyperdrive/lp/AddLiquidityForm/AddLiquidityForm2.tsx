@@ -277,7 +277,7 @@ export function AddLiquidityForm2({
             </div>
           }
           bottomRightElement={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-sm text-neutral-content">
               <span>
                 {activeTokenBalance
                   ? `Balance: ${formatBalance({

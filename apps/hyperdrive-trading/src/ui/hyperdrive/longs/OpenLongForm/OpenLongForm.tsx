@@ -259,7 +259,7 @@ export function OpenLongForm({
             ) : null
           }
           bottomRightElement={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-sm text-neutral-content">
               <span>
                 {activeTokenBalance
                   ? `Balance: ${formatBalance({
@@ -286,17 +286,19 @@ export function OpenLongForm({
         />
       }
       transactionPreview={
-        <OpenLongPreview
-          hyperdrive={hyperdrive}
-          spotRateAfterOpen={spotRateAfterOpen}
-          curveFee={curveFee}
-          activeToken={activeToken}
-          amountPaid={depositAmountAsBigInt || 0n}
-          bondAmount={bondsReceived || 0n}
-          openLongPreviewStatus={openLongPreviewStatus}
-          asBase={activeToken.address === baseToken.address}
-          vaultSharePrice={poolInfo?.vaultSharePrice}
-        />
+        depositAmountAsBigInt ? (
+          <OpenLongPreview
+            hyperdrive={hyperdrive}
+            spotRateAfterOpen={spotRateAfterOpen}
+            curveFee={curveFee}
+            activeToken={activeToken}
+            amountPaid={depositAmountAsBigInt || 0n}
+            bondAmount={bondsReceived || 0n}
+            openLongPreviewStatus={openLongPreviewStatus}
+            asBase={activeToken.address === baseToken.address}
+            vaultSharePrice={poolInfo?.vaultSharePrice}
+          />
+        ) : null
       }
       disclaimer={(() => {
         if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {

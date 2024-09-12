@@ -120,7 +120,7 @@ export function TokenInputTwo({
               <div className="text-base-content">
                 <button
                   className={classNames(
-                    "ml-1 flex items-end text-xs font-semibold",
+                    "ml-1 flex items-end text-sm font-semibold",
                     {
                       "daisy-btn-error": hasError,
                     },
