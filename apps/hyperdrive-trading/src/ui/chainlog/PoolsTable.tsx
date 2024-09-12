@@ -1,5 +1,6 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import { appConfig } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import {
@@ -17,7 +18,6 @@ import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeInstanceData } from "src/registry/data";
 import { sdkCache } from "src/sdk/sdkCache";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
@@ -211,7 +211,6 @@ interface Pool {
 }
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
-  const appConfig = useAppConfig();
   const chainIds = Object.keys(appConfig.registries).map(Number);
 
   return useQuery({

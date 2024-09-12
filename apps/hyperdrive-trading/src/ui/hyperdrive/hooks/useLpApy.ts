@@ -1,11 +1,10 @@
 import { Block } from "@delvtech/hyperdrive-viem";
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isForkChain } from "src/chains/isForkChain";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -27,7 +26,7 @@ export function useLpApy({
     hyperdriveAddress,
     chainId,
   });
-  const appConfig = useAppConfig();
+
   const hyperdrive = findHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdriveAddress,

@@ -1,6 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -9,7 +10,6 @@ import {
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
@@ -32,7 +32,6 @@ interface RedeemWithdrawalSharesFormProps {
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
-  const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

@@ -1,8 +1,7 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { makeAddressUrl } from "@hyperdrive/appconfig";
+import { appConfig, makeAddressUrl } from "@hyperdrive/appconfig";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
 import { useChainId } from "wagmi";
@@ -11,7 +10,7 @@ import { FactoriesTable } from "./FactoriesTable";
 export function Chainlog(): ReactElement {
   const navigate = useNavigate();
   const chainId = useChainId();
-  const appConfig = useAppConfig();
+
   const registryAddress = appConfig.registries[chainId];
   const { tab = "pools", version } = useSearch({ from: "/chainlog" });
 

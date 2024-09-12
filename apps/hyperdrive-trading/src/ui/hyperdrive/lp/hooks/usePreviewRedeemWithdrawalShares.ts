@@ -1,7 +1,6 @@
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "viem";
@@ -35,7 +34,7 @@ export function usePreviewRedeemWithdrawalShares({
     chainId,
     address: hyperdriveAddress,
   });
-  const appConfig = useAppConfig();
+
   const hyperdriveConfig = findHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdrives: appConfig.hyperdrives,

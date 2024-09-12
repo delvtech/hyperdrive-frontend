@@ -1,11 +1,14 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { formatRate } from "src/base/formatRate";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -19,7 +22,7 @@ export function LpCurrentValueCell({
   lpShares: bigint;
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     appConfig,
     hyperdriveAddress: hyperdrive.address,

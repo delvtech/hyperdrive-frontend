@@ -3,6 +3,7 @@ import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -18,7 +19,6 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -36,7 +36,6 @@ import { useAccount } from "wagmi";
 export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsData();
-  const appConfig = useAppConfig();
 
   if (openShortPositionsStatus === "loading") {
     return (
@@ -148,7 +147,6 @@ export function OpenShortsTableDesktopTwo({
   openShorts: OpenShort[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
 
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),

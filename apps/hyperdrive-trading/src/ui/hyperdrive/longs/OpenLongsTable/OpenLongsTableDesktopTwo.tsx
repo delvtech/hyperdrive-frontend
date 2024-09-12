@@ -6,6 +6,7 @@ import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -24,7 +25,6 @@ import { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -41,7 +41,6 @@ import { useAccount } from "wagmi";
 export function OpenLongsContainer(): ReactElement {
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsData();
-  const appConfig = useAppConfig();
 
   if (openLongPositionsStatus === "loading") {
     return (
@@ -151,7 +150,6 @@ export function OpenLongsTableDesktopTwo({
   openLongs: OpenLongPositionReceived[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
 
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),

@@ -1,6 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -10,7 +11,6 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -35,7 +35,7 @@ import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
-import { useAccount, useChainId, useSwitchChain } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -52,9 +52,7 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const { switchChain, status: switchChainStatus } = useSwitchChain();
 
-  const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -324,7 +322,11 @@ export function OpenLongForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectWalletButton />;
+          return (
+            <div className="flex w-full">
+              <ConnectWalletButton />
+            </div>
+          );
         }
 
         if (connectedChainId !== hyperdrive.chainId) {

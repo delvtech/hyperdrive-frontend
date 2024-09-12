@@ -1,8 +1,11 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  HyperdriveConfig,
+  appConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
@@ -16,7 +19,7 @@ export function AccruedYieldCell({
 }): ReactElement {
   const { bondAmount, checkpointTime } = openShort;
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

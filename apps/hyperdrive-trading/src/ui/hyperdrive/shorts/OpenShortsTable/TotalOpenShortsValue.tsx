@@ -1,7 +1,10 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
@@ -16,7 +19,7 @@ export function TotalOpenShortValue({
 }): ReactElement {
   {
     const { address: account } = useAccount();
-    const appConfig = useAppConfig();
+
     const { openShorts, openShortsStatus } = useOpenShorts({
       account,
       chainId: hyperdrive.chainId,

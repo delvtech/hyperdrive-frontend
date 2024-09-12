@@ -1,9 +1,8 @@
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, Hash } from "viem";
 export interface TransactionData {
@@ -34,7 +33,7 @@ export function useTransactionData({
     chainId,
     address: hyperdriveAddress,
   });
-  const appConfig = useAppConfig();
+
   const { decimals } = findHyperdriveConfig({
     hyperdriveAddress,
     hyperdriveChainId: chainId,

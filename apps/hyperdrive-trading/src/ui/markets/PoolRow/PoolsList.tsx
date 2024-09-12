@@ -4,10 +4,11 @@ import { getPublicClient } from "@wagmi/core";
 import { ReactElement } from "react";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
 import { PublicClient } from "viem";
+import { useChainId } from "wagmi";
 
 export function PoolsList(): ReactElement {
   const { hyperdrives, status } = usePoolsListHyperdriveConfigs();
@@ -43,9 +44,16 @@ function usePoolsListHyperdriveConfigs(): {
   hyperdrives: HyperdriveConfig[] | undefined;
   status: QueryStatus;
 } {
-  const appConfigForConnectedChain = useAppConfig();
+  // Only show testnet and fork pools if the user is connected to a testnet
+  // chain
+  const appConfigForConnectedChain = useAppConfigForConnectedChain();
+
+  // Use the chain id in the query key to make sure the pools list updates when
+  // you switch chains
+  const connectedChainId = useChainId();
+
   const { data, status } = useQuery({
-    queryKey: ["poolsListHyperdriveConfigs"],
+    queryKey: ["poolsListHyperdriveConfigs", { connectedChainId }],
     queryFn: async () => {
       // We only show hyperdrives that are not paused
       const marketStates = await Promise.all(

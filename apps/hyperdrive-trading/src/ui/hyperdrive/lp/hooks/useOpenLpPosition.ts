@@ -1,7 +1,6 @@
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 export function useOpenLpPosition({
@@ -23,7 +22,7 @@ export function useOpenLpPosition({
     chainId,
     address: hyperdriveAddress,
   });
-  const appConfig = useAppConfig();
+
   const queryEnabled = !!hyperdriveAddress && !!readHyperdrive && !!account;
   const { data, status: openLpPositionStatus } = useQuery({
     queryKey: makeQueryKey("openLpPosition", {

@@ -2,7 +2,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
 import { useAccount } from "wagmi";
 
@@ -16,16 +16,21 @@ export function usePortfolioLpData(): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
-  const appConfig = useAppConfig();
   const { address: account } = useAccount();
-  const queryEnabled = !!account && !!appConfig.hyperdrives.length;
-  const clients = usePublicClients(Object.keys(appConfig.chains).map(Number));
+
+  const appConfigForConnectedChain = useAppConfigForConnectedChain();
+
+  const queryEnabled =
+    !!account && !!appConfigForConnectedChain.hyperdrives.length;
+  const clients = usePublicClients(
+    Object.keys(appConfigForConnectedChain.chains).map(Number),
+  );
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", { account }),
     queryFn: queryEnabled
       ? async () => {
           const results = await Promise.all(
-            appConfig.hyperdrives.map(async (hyperdrive) => {
+            appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
               const publicClient = clients[hyperdrive.chainId]?.publicClient;
 
               if (!publicClient) {
@@ -40,7 +45,7 @@ export function usePortfolioLpData(): {
               }
 
               const readHyperdrive = await getReadHyperdrive({
-                appConfig,
+                appConfig: appConfigForConnectedChain,
                 hyperdriveAddress: hyperdrive.address,
                 publicClient,
               });

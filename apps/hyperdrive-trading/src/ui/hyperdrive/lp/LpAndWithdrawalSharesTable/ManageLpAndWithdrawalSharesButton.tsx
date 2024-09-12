@@ -1,5 +1,6 @@
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -7,7 +8,6 @@ import {
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useClickAway } from "react-use";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -29,7 +29,7 @@ export function ManageLpAndWithdrawalSharesButton({
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickAway(dropdownRef, () => setIsOpen(false));
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

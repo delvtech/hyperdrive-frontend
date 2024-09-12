@@ -1,5 +1,8 @@
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
@@ -13,7 +16,7 @@ export function WithdrawalQueueCell({
   hyperdrive: HyperdriveConfig;
 }): JSX.Element {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

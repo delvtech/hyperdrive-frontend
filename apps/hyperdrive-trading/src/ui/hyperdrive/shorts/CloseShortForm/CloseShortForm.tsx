@@ -1,12 +1,12 @@
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -32,8 +32,6 @@ export function CloseShortForm({
   hyperdrive,
   short,
 }: CloseShortFormProps): ReactElement {
-  const appConfig = useAppConfig();
-
   const { address: account } = useAccount();
   const defaultItems = [];
   const baseToken = findBaseToken({

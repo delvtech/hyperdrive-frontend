@@ -1,5 +1,6 @@
 import {
   AppConfig,
+  appConfig,
   findBaseToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
@@ -13,7 +14,6 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -27,7 +27,6 @@ import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
-  const appConfig = useAppConfig();
 
   if (openLpPositionStatus === "loading") {
     return (
@@ -141,7 +140,6 @@ export function OpenLpTableDesktop({
   openLpPositionStatus?: "loading" | "success" | "error";
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
 
   const columns = useMemo(
     () => getColumns({ hyperdrive, appConfig }),

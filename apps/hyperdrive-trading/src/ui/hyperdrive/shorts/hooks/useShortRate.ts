@@ -1,10 +1,9 @@
 import { getHprFromApr } from "@delvtech/hyperdrive-viem";
-import { findHyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getStatus } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -28,7 +27,7 @@ export function useShortRate({
   shortRoi: { roi: bigint; formatted: string } | undefined;
   shortRateStatus: "loading" | "error" | "success" | "idle";
 } {
-  const { hyperdrives } = useAppConfig();
+  const { hyperdrives } = appConfig;
   const readHyperdrive = useReadHyperdrive({
     chainId,
     address: hyperdriveAddress,

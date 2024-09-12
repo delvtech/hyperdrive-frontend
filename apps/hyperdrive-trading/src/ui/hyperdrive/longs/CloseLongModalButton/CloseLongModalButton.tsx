@@ -2,11 +2,11 @@ import { Long } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   TokenConfig,
+  appConfig,
   findBaseToken,
   findToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { CloseLongForm } from "src/ui/hyperdrive/longs/CloseLongForm/CloseLongForm";
@@ -21,7 +21,6 @@ export function CloseLongModalButton({
   long,
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
-  const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

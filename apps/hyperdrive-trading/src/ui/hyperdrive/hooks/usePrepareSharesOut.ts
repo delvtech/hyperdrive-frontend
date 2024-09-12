@@ -1,9 +1,12 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  AppConfig,
+  appConfig,
+  findHyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -21,7 +24,6 @@ export function usePrepareSharesOut({
   amount: bigint | undefined;
   status: QueryStatusWithIdle;
 } {
-  const appConfig = useAppConfig();
   const readHyperdrive = useReadHyperdrive({
     chainId,
     address: hyperdriveAddress,
