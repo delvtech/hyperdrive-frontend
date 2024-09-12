@@ -254,7 +254,7 @@ export const gnosisAppConfig: AppConfig = {
       id: "sxdai",
       shortName: "Savings xDAI",
       protocol: "maker",
-      historicalRatePeriod: 1,
+      historicalRatePeriod: 7,
     },
     stusd: {
       id: "stusd",
