@@ -27,6 +27,17 @@ import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
+  const { address: account } = useAccount();
+  if (!account) {
+    return (
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No wallet connected"
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
 
   if (openLpPositionStatus === "loading") {
     return (

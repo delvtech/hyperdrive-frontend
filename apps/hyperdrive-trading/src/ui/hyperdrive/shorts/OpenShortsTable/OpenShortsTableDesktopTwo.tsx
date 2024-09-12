@@ -36,6 +36,17 @@ import { useAccount } from "wagmi";
 export function OpenShortsContainer(): ReactElement {
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsData();
+  const { address: account } = useAccount();
+  if (!account) {
+    return (
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No wallet connected"
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
 
   if (openShortPositionsStatus === "loading") {
     return (
