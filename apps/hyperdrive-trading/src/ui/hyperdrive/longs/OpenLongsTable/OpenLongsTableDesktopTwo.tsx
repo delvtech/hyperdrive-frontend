@@ -39,8 +39,19 @@ import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 
 export function OpenLongsContainer(): ReactElement {
+  const { address: account } = useAccount();
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsData();
+  if (!account) {
+    return (
+      <div className="my-28 flex w-[1036px] flex-col gap-10">
+        <NonIdealState
+          heading="No wallet connected"
+          action={<ConnectWalletButton />}
+        />
+      </div>
+    );
+  }
 
   if (openLongPositionsStatus === "loading") {
     return (

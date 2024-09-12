@@ -433,7 +433,6 @@ function YouReceiveStat({
     lpSharesBalanceOf,
     lpSharesOut,
     lpSharesTotalSupply,
-    hyperdrive,
     baseToken,
   });
   return (
@@ -534,13 +533,11 @@ function calculatePoolShare({
   lpSharesBalanceOf,
   lpSharesOut,
   lpSharesTotalSupply,
-  hyperdrive,
   baseToken,
 }: {
   lpSharesBalanceOf: bigint | undefined;
   lpSharesOut: bigint | undefined;
   lpSharesTotalSupply: bigint | undefined;
-  hyperdrive: HyperdriveConfig;
   baseToken: TokenConfig;
 }) {
   if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
