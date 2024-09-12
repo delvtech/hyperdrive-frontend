@@ -20,6 +20,7 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -41,7 +42,7 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -52,6 +53,7 @@ export function AddLiquidityForm2({
   hyperdrive,
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
+  const connectedChainId = useChainId();
   const { address: account } = useAccount();
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
@@ -341,6 +343,14 @@ export function AddLiquidityForm2({
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
+        }
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
         }
 
         if (!hasEnoughBalance || marketState?.isPaused) {

@@ -1,9 +1,8 @@
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -19,7 +18,6 @@ export function PoolDetails({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const appConfig = useAppConfig();
   const {
     // If no search param is specified, we default to showing the
     // Longs side of the market

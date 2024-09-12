@@ -20,6 +20,7 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -41,7 +42,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 (window as any).fixed = fixed;
 
@@ -55,6 +56,7 @@ export function OpenShortForm({
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
+  const connectedChainId = useChainId();
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -491,6 +493,14 @@ export function OpenShortForm({
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
+        }
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
         }
 
         if (!hasEnoughAllowance) {
