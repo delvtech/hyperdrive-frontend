@@ -98,7 +98,7 @@ const sxdai: YieldSource = {
   id: "sxdai",
   shortName: "Savings xDAI",
   protocol: "maker",
-  historicalRatePeriod: 1,
+  historicalRatePeriod: 7,
 };
 
 const stusd: YieldSource = {
