@@ -1,15 +1,14 @@
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { appConfig, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { OpenLongForm2 } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm2";
+import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { AddLiquidityForm2 } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm2";
-import { OpenShortForm2 } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm2";
+import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { faqData2 } from "src/ui/onboarding/faqData2";
@@ -19,7 +18,6 @@ export function PoolDetails({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const appConfig = useAppConfig();
   const {
     // If no search param is specified, we default to showing the
     // Longs side of the market
@@ -55,9 +53,9 @@ export function PoolDetails({
         {(() => {
           switch (activePosition) {
             case "longs":
-              return <OpenLongForm2 hyperdrive={hyperdrive} />;
+              return <OpenLongForm hyperdrive={hyperdrive} />;
             case "shorts":
-              return <OpenShortForm2 hyperdrive={hyperdrive} />;
+              return <OpenShortForm hyperdrive={hyperdrive} />;
             case "lp":
               return <AddLiquidityForm2 hyperdrive={hyperdrive} />;
           }

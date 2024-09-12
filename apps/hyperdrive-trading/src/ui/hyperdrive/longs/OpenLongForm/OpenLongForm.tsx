@@ -15,6 +15,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
@@ -34,23 +35,24 @@ import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
 
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function OpenLongForm2({
+export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
-  const chainId = useChainId();
+  const connectedChainId = useChainId();
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
-    chainId,
+    chainId: hyperdrive.chainId,
   });
+  const { switchChain, status: switchChainStatus } = useSwitchChain();
 
   const appConfig = useAppConfig();
   const { poolInfo } = usePoolInfo({
@@ -239,8 +241,10 @@ export function OpenLongForm2({
           maxValue={maxButtonValue}
           inputLabel="You spend"
           bottomLeftElement={
-            // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
-            !isTestnetChain(chainId) ? (
+            // Defillama fetches the token price via {chain}:{tokenAddress}.
+            // Since the token address differs on testnet, price display is
+            // disabled there.
+            !isTestnetChain(hyperdrive.chainId) ? (
               <label className="text-sm text-neutral-content">
                 {`$${formatBalance({
                   balance:
@@ -321,6 +325,15 @@ export function OpenLongForm2({
       actionButton={(() => {
         if (!account) {
           return <ConnectWalletButton />;
+        }
+
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
         }
 
         if (!hasEnoughBalance || !hasEnoughLiquidity || marketState?.isPaused) {
