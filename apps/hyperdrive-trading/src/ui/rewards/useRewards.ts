@@ -4,7 +4,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
-import { mainnet } from "viem/chains";
+import { linea, mainnet } from "viem/chains";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -17,19 +17,24 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
   ],
 };
 
+const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
+  [linea.id]: [
+    // 182d KelpDAO rsETH
+    "0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777",
+  ],
+};
+
 // Source: https://docs.morpho.org/rewards/concepts/programs
 const MorphoFlatRatePerDay = 1.45e-4;
 const MorphoFlatRatePerYear = parseFixed(MorphoFlatRatePerDay * 365 * 1000);
 
-type RewardType = "MorphoFlatRate";
+type RewardType = "MorphoFlatRate" | "LineaLXPL";
 
-type UseRewardsReturn =
-  | {
-      id: RewardType;
-      name: string;
-      amount: string;
-    }[]
-  | undefined;
+type Reward = {
+  id: RewardType;
+  name: string;
+  amount: string;
+};
 
 function getWeightMorpho(
   poolConfig: PoolConfig,
@@ -56,7 +61,7 @@ function getWeightMorpho(
 export function useRewards(
   hyperdrive: HyperdriveConfig,
   positionType: "short" | "lp",
-): UseRewardsReturn {
+): Reward[] | undefined {
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -66,6 +71,9 @@ export function useRewards(
     hyperdriveAddress: hyperdrive.address,
   });
 
+  const rewards = [];
+
+  // Add any morpho rewards for this market
   if (
     eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
       hyperdrive.address,
@@ -80,14 +88,29 @@ export function useRewards(
       ),
     );
 
-    return [
-      {
-        id: "MorphoFlatRate",
-        name: "MORPHO",
-        amount: morphoRate.format({
-          decimals: 2,
-        }),
-      },
-    ];
+    const morphoReward: Reward = {
+      id: "MorphoFlatRate",
+      name: "MORPHO",
+      amount: morphoRate.format({
+        decimals: 2,
+      }),
+    };
+    rewards.push(morphoReward);
   }
+
+  // Add any linea rewards for this market
+  if (
+    eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
+      hyperdrive.address,
+    )
+  ) {
+    const lineaReward: Reward = {
+      id: "LineaLXPL",
+      name: "LXPL",
+      amount: "1",
+    };
+    rewards.push(lineaReward);
+  }
+
+  return rewards;
 }
