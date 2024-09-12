@@ -492,7 +492,7 @@ export function OpenShortForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectWalletButton />;
+          return <ConnectWalletButton wide />;
         }
         if (connectedChainId !== hyperdrive.chainId) {
           return (

@@ -322,11 +322,7 @@ export function OpenLongForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return (
-            <div className="flex w-full">
-              <ConnectWalletButton />
-            </div>
-          );
+          return <ConnectWalletButton wide />;
         }
 
         if (connectedChainId !== hyperdrive.chainId) {

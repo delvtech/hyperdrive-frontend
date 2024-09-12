@@ -420,7 +420,7 @@ export function AddLiquidityForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectWalletButton />;
+          return <ConnectWalletButton wide />;
         }
 
         if (!hasEnoughBalance) {

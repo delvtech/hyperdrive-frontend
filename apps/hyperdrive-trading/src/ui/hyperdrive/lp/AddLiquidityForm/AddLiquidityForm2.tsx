@@ -341,7 +341,7 @@ export function AddLiquidityForm2({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectWalletButton />;
+          return <ConnectWalletButton wide />;
         }
         if (connectedChainId !== hyperdrive.chainId) {
           return (
