@@ -1,6 +1,5 @@
-import { findBaseToken, findToken } from "@hyperdrive/appconfig";
+import { appConfig, findBaseToken, findToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 
 export function AssetStack({
@@ -8,7 +7,6 @@ export function AssetStack({
 }: {
   hyperdriveAddress: Address;
 }): ReactElement {
-  const appConfig = useAppConfig();
   const hyperdrive = appConfig.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;

@@ -2,6 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -14,7 +15,6 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -61,7 +61,7 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const appConfig = useAppConfig();
+
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -492,7 +492,7 @@ export function OpenShortForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectWalletButton />;
+          return <ConnectWalletButton wide />;
         }
         if (connectedChainId !== hyperdrive.chainId) {
           return (

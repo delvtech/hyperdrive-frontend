@@ -1,6 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
+  appConfig,
   findBaseToken,
   HyperdriveConfig,
   TokenConfig,
@@ -12,7 +13,6 @@ import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -36,7 +36,6 @@ export function OpenLongStats({
   asBase,
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {
-  const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

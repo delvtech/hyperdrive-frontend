@@ -1,8 +1,8 @@
 import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
+import { appConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 import { usePublicClient, useWalletClient } from "wagmi";
 
@@ -15,8 +15,6 @@ export function useReadWriteHyperdrive({
 }): ReadWriteHyperdrive | undefined {
   const publicClient = usePublicClient({ chainId });
   const { data: walletClient } = useWalletClient({ chainId });
-
-  const appConfig = useAppConfig();
 
   const enabled = !!address && !!publicClient && !!walletClient;
 

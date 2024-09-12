@@ -4,11 +4,10 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
-import { findToken } from "@hyperdrive/appconfig";
+import { appConfig, findToken } from "@hyperdrive/appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, erc20Abi, parseUnits } from "viem";
@@ -32,7 +31,6 @@ export function useApproveToken({
   pendingWalletSignatureStatus: QueryStatusWithIdle;
   isTransactionMined: boolean;
 } {
-  const appConfig = useAppConfig();
   const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient({ chainId: tokenChainId });

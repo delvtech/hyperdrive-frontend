@@ -1,7 +1,7 @@
+import { appConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -34,7 +34,7 @@ export function usePreviewCloseShort({
     chainId,
     address: hyperdriveAddress,
   });
-  const appConfig = useAppConfig();
+
   const queryEnabled =
     !!readHyperdrive && !!maturityTime && !!shortAmountIn && enabled;
 

@@ -1,10 +1,13 @@
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  HyperdriveConfig,
+  appConfig,
+  findBaseToken,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 
@@ -15,7 +18,6 @@ export function CurrentValueCellTwo({
   row: OpenLongPositionReceived;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

@@ -1,6 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -10,7 +11,6 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -39,7 +39,6 @@ export function CloseLongForm({
   long,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
-  const appConfig = useAppConfig();
   const { address: account } = useAccount();
 
   const defaultItems: TokenConfig[] = [];

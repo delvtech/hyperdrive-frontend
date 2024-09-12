@@ -1,7 +1,7 @@
+import { appConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -33,7 +33,6 @@ export function usePreviewOpenLong({
     address: hyperdriveAddress,
   });
 
-  const appConfig = useAppConfig();
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
     watch: true,

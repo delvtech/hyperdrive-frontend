@@ -1,8 +1,8 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { appConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -13,8 +13,6 @@ export function useReadHyperdrive({
   chainId: number;
   address: Address | undefined;
 }): ReadHyperdrive | undefined {
-  const appConfig = useAppConfig();
-
   const publicClient = usePublicClient({ chainId });
 
   const enabled = !!address && !!publicClient;

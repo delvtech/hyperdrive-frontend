@@ -1,8 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
@@ -15,7 +18,7 @@ export function TotalOpenLongsValue({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
     chainId: hyperdrive.chainId,

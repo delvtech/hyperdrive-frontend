@@ -6,7 +6,7 @@ import {
 } from "@hyperdrive/appconfig";
 import { useChainId } from "wagmi";
 
-export function useAppConfig(): AppConfig {
+export function useAppConfigForConnectedChain(): AppConfig {
   const connectedChainId = useChainId();
 
   return isMainnetChain(connectedChainId) ? mainnetAppConfig : testnetAppConfig;

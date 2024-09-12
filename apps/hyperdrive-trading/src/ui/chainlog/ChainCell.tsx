@@ -1,8 +1,7 @@
+import { appConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 export function ChainCell({ chainId }: { chainId: number }): ReactElement {
-  const appConfig = useAppConfig();
   const { iconUrl, name } = appConfig.chains[chainId] || {};
   return (
     <a

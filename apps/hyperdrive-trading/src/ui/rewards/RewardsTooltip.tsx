@@ -2,7 +2,6 @@ import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
@@ -16,9 +15,8 @@ export function RewardsTooltip({
   chainId: number;
   positionType: "lp" | "short";
 }>): ReactNode {
-  const { hyperdrives } = useAppConfig();
   const hyperdrive = findHyperdriveConfig({
-    hyperdrives,
+    hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });

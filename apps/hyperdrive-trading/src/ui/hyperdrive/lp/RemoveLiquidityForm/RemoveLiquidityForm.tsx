@@ -1,6 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
+  appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
@@ -9,7 +10,6 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -38,7 +38,7 @@ export function RemoveLiquidityForm({
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

@@ -1,9 +1,12 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useBlock } from "wagmi";
@@ -15,7 +18,6 @@ export function ShortRateAndSizeCell({
   hyperdrive: HyperdriveConfig;
   short: OpenShort;
 }): ReactElement {
-  const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

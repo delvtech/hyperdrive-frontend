@@ -1,6 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { makeTransactionUrl } from "@hyperdrive/appconfig";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { appConfig, makeTransactionUrl } from "@hyperdrive/appconfig";
 import { Hash } from "viem";
 
 export default function TransactionToast({
@@ -12,7 +11,6 @@ export default function TransactionToast({
   message: string;
   txHash: Hash;
 }): JSX.Element {
-  const appConfig = useAppConfig();
   const link = makeTransactionUrl(txHash, appConfig.chains[chainId]);
 
   return (

@@ -1,11 +1,9 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useEffect } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";
 
 export function useDevLogging(hyperdrive: HyperdriveConfig): void {
-  const appConfig = useAppConfig();
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Config:");

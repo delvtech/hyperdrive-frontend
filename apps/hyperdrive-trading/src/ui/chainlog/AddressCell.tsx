@@ -1,6 +1,5 @@
-import { makeAddressUrl } from "@hyperdrive/appconfig";
+import { appConfig, makeAddressUrl } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
 
@@ -11,7 +10,6 @@ export function AddressCell({
   address: Address;
   chainId: number;
 }): ReactElement {
-  const appConfig = useAppConfig();
   return (
     <a
       href={makeAddressUrl(address, appConfig.chains[chainId])}

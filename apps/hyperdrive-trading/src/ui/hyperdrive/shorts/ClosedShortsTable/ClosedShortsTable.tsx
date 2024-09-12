@@ -3,6 +3,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   HyperdriveConfig,
+  appConfig,
   findBaseToken,
 } from "@hyperdrive/appconfig";
 import {
@@ -15,7 +16,6 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -171,7 +171,7 @@ export function ClosedShortsTable({
   hyperdrive,
 }: ClosedShortsTableProps): ReactElement {
   const { address: account } = useAccount();
-  const appConfig = useAppConfig();
+
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedShorts, closedShortsStatus } = useClosedShorts({
     chainId: hyperdrive.chainId,

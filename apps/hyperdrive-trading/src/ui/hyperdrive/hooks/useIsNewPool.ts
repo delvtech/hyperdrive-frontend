@@ -1,5 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { HyperdriveConfig, appConfig } from "@hyperdrive/appconfig";
 import { useBlockNumber } from "wagmi";
 
 /**
@@ -10,8 +9,6 @@ export function useIsNewPool({
 }: {
   hyperdrive: HyperdriveConfig;
 }): boolean {
-  const appConfig = useAppConfig();
-
   const { data: currentBlockNumber } = useBlockNumber({
     chainId: hyperdrive.chainId,
   });

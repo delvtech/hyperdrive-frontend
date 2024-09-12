@@ -1,10 +1,13 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
-import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  HyperdriveConfig,
+} from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useEstimateShortMarketValue } from "src/ui/hyperdrive/shorts/hooks/useEstimateShortMarketValue";
@@ -18,7 +21,7 @@ export function CurrentShortsValueCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const appConfig = useAppConfig();
+
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

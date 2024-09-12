@@ -1,4 +1,5 @@
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { appConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -7,7 +8,6 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
@@ -55,7 +55,7 @@ export function useOpenShort({
   });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
-  const appConfig = useAppConfig();
+
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!amountBondShorts &&

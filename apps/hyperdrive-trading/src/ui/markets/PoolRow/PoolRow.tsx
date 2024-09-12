@@ -2,6 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
+  appConfig,
   findBaseToken,
   findToken,
 } from "@hyperdrive/appconfig";
@@ -11,7 +12,6 @@ import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
@@ -31,7 +31,7 @@ export function PoolRow({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const navigate = useNavigate();
-  const appConfig = useAppConfig();
+
   const { yieldSources, chains } = appConfig;
 
   const chainInfo = chains[hyperdrive.chainId];

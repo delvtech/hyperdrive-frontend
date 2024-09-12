@@ -24,7 +24,7 @@ export function LabelValue({
 }): JSX.Element {
   return (
     <div
-      className={classNames("flex w-full justify-between pb-2 ", {
+      className={classNames("flex w-full justify-between pb-2", {
         "text-md": size === "medium",
         "text-sm": size === "small",
       })}

@@ -3,6 +3,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
+  appConfig,
   findBaseToken,
   makeAddressUrl,
   makeTransactionUrl,
@@ -23,7 +24,6 @@ import * as dnum from "dnum";
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -69,7 +69,7 @@ export function TransactionTable({
     chainId: hyperdrive.chainId,
     account,
   });
-  const appConfig = useAppConfig();
+
   const isSmallScreenView = useIsTailwindSmallScreen();
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
@@ -507,7 +507,6 @@ function EventNameCell({
   chainId: number;
   txHash: Hash | undefined;
 }) {
-  const appConfig = useAppConfig();
   return (
     <a
       href={makeTransactionUrl(txHash || "", appConfig.chains[chainId])}
@@ -527,7 +526,6 @@ function AccountCell({
   account: Address;
   chainId: number;
 }) {
-  const appConfig = useAppConfig();
   return (
     <a
       href={makeAddressUrl(account, appConfig.chains[chainId])}
