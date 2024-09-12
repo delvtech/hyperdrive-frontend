@@ -8,7 +8,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
-import Skeleton from "react-loading-skeleton";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -19,6 +18,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
@@ -276,6 +276,9 @@ export function OpenShortForm({
           .format({ decimals: 2, rounding: "trunc" })
       : "0";
 
+  const maturesOnLabel = formatDate(
+    Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
+  );
   return (
     <TransactionView
       tokenInput={
@@ -324,6 +327,14 @@ export function OpenShortForm({
               setShortAmount(newAmount);
               setActiveInput("bonds");
             }}
+            bottomRightElement={
+              vaultRateStatus === "success" && vaultRate ? (
+                <>
+                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
+                  {isNewPool ? "✨New✨" : `${vaultRate.formatted} APY`}
+                </>
+              ) : null
+            }
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (
@@ -387,7 +398,7 @@ export function OpenShortForm({
               ) : null
             }
             bottomRightElement={
-              <div className="flex flex-col text-xs text-neutral-content">
+              <div className="flex flex-col text-neutral-content">
                 <span>
                   {activeTokenBalance
                     ? `Balance: ${formatBalance({
@@ -411,16 +422,7 @@ export function OpenShortForm({
             valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end font-bold text-h5"
             valueUnit="x"
             unitClassName="text-h3"
-            subValue={
-              vaultRateStatus === "success" && vaultRate ? (
-                <>
-                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
-                  {isNewPool ? "✨New✨" : `${vaultRate.formatted} APY`}
-                </>
-              ) : (
-                <Skeleton className="w-42 h-8" />
-              )
-            }
+            subValue={`Matures on ${maturesOnLabel}`}
           />
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
