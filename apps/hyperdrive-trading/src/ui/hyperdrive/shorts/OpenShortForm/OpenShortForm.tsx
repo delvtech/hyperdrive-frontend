@@ -21,6 +21,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
@@ -454,15 +455,31 @@ export function OpenShortForm({
           openShortPreviewStatus={openShortPreviewStatus}
         />
       }
-      disclaimer={(() => {
-        // If the user has not input a short amount, don't show the disclaimer
-        if (!amountOfBondsToShortAsBigInt) {
-          return null;
-        }
-        // If the user has input an amount, but that amount makes the hasEnoughLiquidity become falsy, show the pool limit exceeded note
-        else if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+      actionButton={(() => {
+        if (marketState?.isPaused) {
           return (
-            <p className="text-center text-sm text-error">
+            <InvalidTransactionButton wide>
+              This market is paused
+            </InvalidTransactionButton>
+          );
+        }
+
+        if (!account) {
+          return <ConnectWalletButton wide />;
+        }
+
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
+        }
+
+        if (!!amountOfBondsToShortAsBigInt && !hasEnoughLiquidity) {
+          return (
+            <InvalidTransactionButton wide>
               Pool limit exceeded. Max short size is{" "}
               {formatBalance({
                 balance: maxBondsOut || 0n,
@@ -471,29 +488,13 @@ export function OpenShortForm({
                 places: activeToken.places,
               })}{" "}
               hy{baseToken.symbol}
-            </p>
+            </InvalidTransactionButton>
           );
         }
-        // In all other cases where the user has input an amount, show the disclaimer, but ensure a skeleton is shown only on the stats that are being refetched on new blocks
         if (!hasEnoughBalance && openShortPreviewStatus !== "loading") {
-          return (
-            <p className="flex flex-col text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
-      })()}
-      actionButton={(() => {
-        if (!account) {
-          return <ConnectWalletButton wide />;
-        }
-        if (connectedChainId !== hyperdrive.chainId) {
-          return (
-            <SwitchNetworksButton
-              targetChainId={hyperdrive.chainId}
-              targetChainName={appConfig.chains[hyperdrive.chainId].name}
-            />
-          );
+          <InvalidTransactionButton wide>
+            Insufficient balance
+          </InvalidTransactionButton>;
         }
 
         if (!hasEnoughAllowance) {
@@ -514,7 +515,7 @@ export function OpenShortForm({
         }
         return (
           <button
-            disabled={!openShort || !hasEnoughBalance || marketState?.isPaused}
+            disabled={!openShort}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               openShort?.();

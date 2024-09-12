@@ -18,6 +18,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
@@ -300,29 +301,15 @@ export function OpenLongForm({
           />
         ) : null
       }
-      disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
-          return (
-            <p className="text-center text-sm text-error">
-              Pool limit exceeded. Max long size is{" "}
-              {formatBalance({
-                balance: maxBondsOut || 0n,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
-              })}{" "}
-              hy{baseToken.symbol}
-            </p>
-          );
-        }
-        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
-      })()}
       actionButton={(() => {
+        if (marketState?.isPaused) {
+          return (
+            <InvalidTransactionButton wide>
+              This market is paused
+            </InvalidTransactionButton>
+          );
+        }
+
         if (!account) {
           return <ConnectWalletButton wide />;
         }
@@ -336,14 +323,24 @@ export function OpenLongForm({
           );
         }
 
-        if (!hasEnoughBalance || !hasEnoughLiquidity || marketState?.isPaused) {
+        if (!!depositAmountAsBigInt && !hasEnoughLiquidity) {
           return (
-            <button
-              disabled
-              className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
-            >
-              Open Long
-            </button>
+            <InvalidTransactionButton wide>
+              Pool limit exceeded. Max long is{" "}
+              {formatBalance({
+                balance: maxBondsOut || 0n,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })}{" "}
+              hy{baseToken.symbol}
+            </InvalidTransactionButton>
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
           );
         }
 

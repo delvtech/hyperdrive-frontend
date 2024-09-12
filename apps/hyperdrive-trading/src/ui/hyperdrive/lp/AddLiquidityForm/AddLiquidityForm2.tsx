@@ -20,6 +20,7 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -304,13 +305,6 @@ export function AddLiquidityForm2({
         </div>
       }
       disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
         if (
           previewAddLiquidityError?.message.includes(
             "Not enough lp shares minted.",
@@ -323,32 +317,48 @@ export function AddLiquidityForm2({
             </p>
           );
         }
-        if (
-          previewAddLiquidityError?.message.includes("MinimumTransactionAmount")
-        ) {
-          return (
-            <p className="text-center text-sm text-error">
-              Trade does not meet the minimum transaction amount:{" "}
-              {formatBalance({
-                balance: hyperdrive.poolConfig.minimumTransactionAmount,
-                decimals: hyperdrive.decimals,
-                places: activeToken.places,
-              })}{" "}
-              {activeToken.symbol}.
-            </p>
-          );
-        }
       })()}
       actionButton={(() => {
+        if (marketState?.isPaused) {
+          return (
+            <InvalidTransactionButton wide>
+              This market is paused
+            </InvalidTransactionButton>
+          );
+        }
+
         if (!account) {
           return <ConnectWalletButton wide />;
         }
+
         if (connectedChainId !== hyperdrive.chainId) {
           return (
             <SwitchNetworksButton
               targetChainId={hyperdrive.chainId}
               targetChainName={appConfig.chains[hyperdrive.chainId].name}
             />
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
+          );
+        }
+        if (
+          previewAddLiquidityError?.message.includes("MinimumTransactionAmount")
+        ) {
+          return (
+            <InvalidTransactionButton wide>
+              Deposit must be greater than{" "}
+              {formatBalance({
+                balance: hyperdrive.poolConfig.minimumTransactionAmount,
+                decimals: hyperdrive.decimals,
+                places: activeToken.places * 2,
+              })}{" "}
+              {activeToken.symbol}
+            </InvalidTransactionButton>
           );
         }
 
