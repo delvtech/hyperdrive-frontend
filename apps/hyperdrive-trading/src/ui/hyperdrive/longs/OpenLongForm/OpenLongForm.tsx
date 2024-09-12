@@ -41,7 +41,7 @@ interface OpenLongFormProps {
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function OpenLongForm2({
+export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
 }: OpenLongFormProps): ReactElement {

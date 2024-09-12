@@ -50,7 +50,7 @@ interface OpenShortPositionFormProps {
   onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function OpenShortForm2({
+export function OpenShortForm({
   hyperdrive,
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {

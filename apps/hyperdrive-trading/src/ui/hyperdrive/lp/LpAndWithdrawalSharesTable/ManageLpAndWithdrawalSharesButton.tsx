@@ -118,6 +118,7 @@ export function ManageLpAndWithdrawalSharesButton({
                 )}
               </Modal>
             ) : null}
+            {/* TODO: Change this to a simple link to the pool's Supply tab */}
             <Modal
               modalId={"add-lp"}
               modalHeader={
