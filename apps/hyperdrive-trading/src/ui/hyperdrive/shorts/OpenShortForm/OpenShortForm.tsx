@@ -475,20 +475,13 @@ export function OpenShortForm({
           );
         }
         // In all other cases where the user has input an amount, show the disclaimer, but ensure a skeleton is shown only on the stats that are being refetched on new blocks
-        return (
-          <div className="flex flex-col gap-4">
-            {!hasEnoughBalance && openShortPreviewStatus !== "loading" ? (
-              <p className="text-center text-sm text-error">
-                Insufficient balance
-              </p>
-            ) : null}
-            {hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled ? null : (
-              <p className="text-center text-sm text-neutral-content">
-                {`When closing your Short position, you'll receive ${sharesToken?.symbol}.`}
-              </p>
-            )}
-          </div>
-        );
+        if (!hasEnoughBalance && openShortPreviewStatus !== "loading") {
+          return (
+            <p className="flex flex-col text-center text-sm text-error">
+              Insufficient balance
+            </p>
+          );
+        }
       })()}
       actionButton={(() => {
         if (!account) {

@@ -1,6 +1,5 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
@@ -29,8 +28,7 @@ export function useTokenFiatPrice({
     defiLlamaTokenId = `ethereum:${ETH_MAGIC_NUMBER}`;
   }
 
-  const queryEnabled =
-    !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
+  const queryEnabled = !isTestnetChain(chainId) && !!tokenAddress;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenFiatPrice", { defiLlamaTokenId }),
