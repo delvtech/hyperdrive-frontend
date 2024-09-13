@@ -45,11 +45,32 @@ export function Well<T extends ElementType = "div">({
       "shadow-md": elevation === "elevated",
       "bg-gray-800": !transparent,
       "w-full": block,
-      "hover:-translate-y-0.5 hover:scale-[1.01] transition duration-300 hover:shadow-xl ease-in-out hover:shadow-primary/5":
-        isInteractive,
       "hover:cursor-pointer": onClick,
     },
   );
+
+  if (isInteractive) {
+    return (
+      <Component
+        className={classNames(
+          "group relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-xl p-[1.5px] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-xl hover:shadow-primary/5",
+        )}
+        onClick={onClick}
+        disabled={disabled}
+        {...rest}
+      >
+        <div className="absolute inset-0 size-full rounded-full group-hover:-translate-y-0.5 group-hover:scale-[1.01] group-hover:animate-rotate group-hover:bg-[conic-gradient(#11cc89_20deg,transparent_120deg)]"></div>
+        <div
+          className={classNames(
+            "relative z-20 flex w-full rounded-[0.60rem] bg-base-100 p-2",
+            className,
+          )}
+        >
+          {children}
+        </div>
+      </Component>
+    );
+  }
 
   return (
     <Component

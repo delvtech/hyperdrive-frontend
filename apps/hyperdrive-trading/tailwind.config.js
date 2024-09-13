@@ -2,6 +2,18 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,css}", "index.html"],
   theme: {
+    extend: {
+      animation: {
+        rotate: "rotate 1s linear 1 forwards",
+      },
+      keyframes: {
+        rotate: {
+          "0%": { transform: "rotate(0deg) scale(10)", opacity: 0 },
+          "50%": { transform: "rotate(-180deg) scale(10)", opacity: 0.25 },
+          "100%": { transform: "rotate(-360deg) scale(10)", opacity: 0 },
+        },
+      },
+    },
     colors: {
       aquamarine: {
         100: "#E8FFF7",

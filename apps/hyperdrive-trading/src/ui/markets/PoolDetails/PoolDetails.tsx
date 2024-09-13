@@ -39,7 +39,7 @@ export function PoolDetails({
           className="flex items-center py-2 text-xs font-semibold text-neutral-content"
         >
           <ArrowLeftIcon className="mr-1 size-3" />
-          Back to home
+          Back to All Pools
         </Link>
         <h1 className="flex items-center gap-2 text-h2">
           <AssetStack hyperdriveAddress={hyperdrive.address} />
