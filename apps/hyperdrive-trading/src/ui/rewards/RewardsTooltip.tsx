@@ -35,7 +35,7 @@ export function RewardsTooltip({
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className="h-fit w-64 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
+            className="z-20 h-fit w-64 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
             sideOffset={5}
             collisionPadding={12}
           >
