@@ -226,7 +226,6 @@ export function AddLiquidityForm({
     lpSharesBalanceOf,
     lpSharesOut,
     lpSharesTotalSupply,
-    hyperdrive,
     baseToken,
   });
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
@@ -468,13 +467,11 @@ function calculatePoolShare({
   lpSharesBalanceOf,
   lpSharesOut,
   lpSharesTotalSupply,
-  hyperdrive,
   baseToken,
 }: {
   lpSharesBalanceOf: bigint | undefined;
   lpSharesOut: bigint | undefined;
   lpSharesTotalSupply: bigint | undefined;
-  hyperdrive: HyperdriveConfig;
   baseToken: TokenConfig;
 }) {
   if (!lpSharesOut || !lpSharesTotalSupply || lpSharesBalanceOf === undefined) {
