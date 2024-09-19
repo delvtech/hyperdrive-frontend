@@ -9,7 +9,7 @@ import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
-import { getTokenFiatPrice } from "src/token/getTokenFietPrice";
+import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow/PoolRow";
@@ -168,8 +168,8 @@ function usePoolsList(): {
           // fiat pricing. On mainnet and others, use DeFiLlama's fiat
           // price.
           let tvl = await readHyperdrive.getPresentValue();
-          let isFiat = !isTestnetChain(hyperdrive.chainId);
-          if (isFiat) {
+          let isFiatSupported = !isTestnetChain(hyperdrive.chainId);
+          if (isFiatSupported) {
             const baseToken = findBaseToken({
               hyperdriveChainId: hyperdrive.chainId,
               hyperdriveAddress: hyperdrive.address,
@@ -180,7 +180,7 @@ function usePoolsList(): {
               tokenAddress: baseToken.address,
             });
             if (fiatPrice === undefined) {
-              isFiat = false;
+              isFiatSupported = false;
               return;
             }
             tvl = fixed(tvl, hyperdrive.decimals).mul(fiatPrice).bigint;
@@ -189,7 +189,7 @@ function usePoolsList(): {
           pools.push({
             fixedApr,
             hyperdrive,
-            isFiat,
+            isFiat: isFiatSupported,
             lpApy,
             tvl,
             vaultRate: vaultRate.rate,

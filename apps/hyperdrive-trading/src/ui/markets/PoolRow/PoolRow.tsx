@@ -149,13 +149,7 @@ export function PoolRow({
         <div className="flex shrink-0 justify-between gap-10 lg:items-end lg:justify-start">
           <PoolStat
             label={"Fixed APR"}
-            value={
-              // fixedApr ? (
-              <PercentLabel value={formatRate(fixedApr, 18, false)} />
-              // ) : (
-              //   "-"
-              // )
-            }
+            value={<PercentLabel value={formatRate(fixedApr, 18, false)} />}
             variant="gradient"
             action={
               <Link

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
-import { getTokenFiatPrice } from "src/token/getTokenFietPrice";
+import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { Address } from "viem";
 
 export function useTokenFiatPrice({
