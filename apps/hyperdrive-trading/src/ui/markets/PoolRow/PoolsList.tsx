@@ -30,10 +30,6 @@ export function PoolsList(): ReactElement {
   const { pools, status } = usePoolsList();
   const [sort, setSort] = useState<SortOption>("TVL");
 
-  function handleSortChange(option: SortOption) {
-    setSort(option);
-  }
-
   const list = pools?.slice().sort((a, b) => {
     switch (sort) {
       case "Chain":
@@ -86,7 +82,7 @@ export function PoolsList(): ReactElement {
                           type="button"
                           onClick={() => {
                             (document.activeElement as HTMLElement)?.blur();
-                            handleSortChange(option);
+                            setSort(option);
                           }}
                           className="cursor-pointer whitespace-nowrap text-left"
                         >
