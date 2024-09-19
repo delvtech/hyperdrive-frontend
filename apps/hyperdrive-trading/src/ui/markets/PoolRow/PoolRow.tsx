@@ -1,4 +1,3 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/16/solid";
 import {
   HyperdriveConfig,
@@ -11,82 +10,40 @@ import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
-import { isTestnetChain } from "src/chains/isTestnetChain";
+import { LpApyResult } from "src/hyperdrive/getLpApy";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
-import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
-import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
-import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+
+export interface PoolRowProps {
+  hyperdrive: HyperdriveConfig;
+  tvl: bigint;
+  isFiat: boolean;
+  fixedApr: bigint;
+  vaultRate: bigint;
+  lpApy: LpApyResult;
+}
 
 export function PoolRow({
   hyperdrive,
-}: {
-  hyperdrive: HyperdriveConfig;
-}): ReactElement {
+  tvl,
+  isFiat,
+  fixedApr,
+  vaultRate,
+  lpApy,
+}: PoolRowProps): ReactElement {
   const navigate = useNavigate();
-
   const { yieldSources, chains } = appConfig;
-
   const chainInfo = chains[hyperdrive.chainId];
-  const { fixedApr, fixedRateStatus } = useFixedRate({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const { lpApy, lpApyStatus } = useLpApy({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
 
-  // if the pool was deployed less than one historical period ago, it's new.
-  const isYoungerThanOneDay = useIsNewPool({ hyperdrive });
-
-  const isLpApyNew =
-    isYoungerThanOneDay || (lpApyStatus !== "loading" && lpApy === undefined);
-
-  // Display TVL as base value on testnet due to lack of reliable fiat pricing.
-  // On mainnet and others, use DeFiLlama's fiat price.
-  const { presentValue } = usePresentValue({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const isFiatPriceEnabled = !isTestnetChain(chainInfo.id);
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { fiatPrice } = useTokenFiatPrice({
-    chainId: baseToken.chainId,
-    tokenAddress: isFiatPriceEnabled
-      ? hyperdrive.poolConfig.baseToken
-      : undefined,
-  });
-  let tvlLabel = `${formatCompact({
-    value: presentValue || 0n,
-    decimals: hyperdrive.decimals,
-  })} ${baseToken.symbol}`;
-
-  if (isFiatPriceEnabled) {
-    const presentValueFiat =
-      presentValue && fiatPrice && isFiatPriceEnabled
-        ? fixed(presentValue, hyperdrive.decimals).mul(fiatPrice).bigint
-        : 0n;
-    tvlLabel = `$${formatCompact({
-      value: presentValueFiat || 0n,
-      decimals: hyperdrive.decimals,
-    })}`;
-  }
 
   const sharesToken = findToken({
     chainId: hyperdrive.chainId,
@@ -137,7 +94,15 @@ export function PoolRow({
               <div className="flex items-center gap-1.5 text-sm">
                 <span className="text-gray-400/60">TVL</span>{" "}
                 <span className="font-dmMono text-neutral-content">
-                  {tvlLabel}
+                  {isFiat
+                    ? `$${formatCompact({
+                        value: tvl,
+                        decimals: hyperdrive.decimals,
+                      })}`
+                    : `${formatCompact({
+                        value: tvl,
+                        decimals: hyperdrive.decimals,
+                      })} ${baseToken.symbol}`}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
@@ -184,13 +149,12 @@ export function PoolRow({
         <div className="flex shrink-0 justify-between gap-10 lg:items-end lg:justify-start">
           <PoolStat
             label={"Fixed APR"}
-            isLoading={fixedRateStatus === "loading"}
             value={
-              fixedApr ? (
-                <PercentLabel value={formatRate(fixedApr.apr, 18, false)} />
-              ) : (
-                "-"
-              )
+              // fixedApr ? (
+              <PercentLabel value={formatRate(fixedApr, 18, false)} />
+              // ) : (
+              //   "-"
+              // )
             }
             variant="gradient"
             action={
@@ -212,8 +176,7 @@ export function PoolRow({
           />
           <PoolStat
             label={"Variable APY"}
-            isNew={isLpApyNew}
-            isLoading={vaultRateStatus === "loading"}
+            isNew={lpApy.isNew}
             value={
               vaultRate ? (
                 <RewardsTooltip
@@ -221,9 +184,7 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  <PercentLabel
-                    value={formatRate(vaultRate.vaultRate, 18, false)}
-                  />
+                  <PercentLabel value={formatRate(vaultRate, 18, false)} />
                 </RewardsTooltip>
               ) : (
                 "-"
@@ -248,10 +209,9 @@ export function PoolRow({
           />
           <PoolStat
             label={lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY"}
-            isLoading={lpApyStatus === "loading"}
-            isNew={isLpApyNew}
+            isNew={lpApy.isNew}
             value={
-              lpApy && !isLpApyNew ? (
+              !lpApy.isNew ? (
                 <RewardsTooltip
                   positionType="lp"
                   chainId={hyperdrive.chainId}
