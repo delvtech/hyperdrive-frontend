@@ -34,7 +34,7 @@ export function PoolsList(): ReactElement {
     setSort(option);
   }
 
-  const list = pools?.sort((a, b) => {
+  const list = pools?.slice().sort((a, b) => {
     switch (sort) {
       case "Chain":
         const chainA = appConfig.chains[a.hyperdrive.chainId] || {};
