@@ -74,7 +74,6 @@ export function PoolsList(): ReactElement {
                     className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
                   >
                     {sort}
-                    {/* <ArrowsUpDownIcon className="size-5" /> */}
                     <BarsArrowDownIcon className="size-5" />
                   </div>
                   <ul
