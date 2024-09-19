@@ -11,6 +11,7 @@ import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
+import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -503,11 +504,11 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         if (showSkeleton) {
           return <Skeleton />;
         }
-        if (isNewPool) {
+        if (lpApy === undefined || lpApy.isNew) {
           return <div className="flex gap-2">✨New✨</div>;
         }
 
-        return `${lpApy?.formatted === "-0.00" ? "0.00" : lpApy?.formatted}`;
+        return `${formatRate(lpApy?.lpApy)}`;
       })()}
       tooltipContent="The annual percentage yield projection for providing liquidity."
       tooltipPosition="left"

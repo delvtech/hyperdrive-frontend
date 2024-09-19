@@ -11,6 +11,7 @@ import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
+import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -20,7 +21,6 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -217,7 +217,6 @@ export function AddLiquidityForm({
     status: addLiquidityPreviewStatus,
     previewAddLiquidityError,
   } = usePreviewAddLiquidity(addLiquidityParams);
-  const isNewPool = useIsNewPool({ hyperdrive });
 
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     chainId: hyperdrive.chainId,
@@ -360,10 +359,10 @@ export function AddLiquidityForm({
           <PrimaryStat
             label="LP APY"
             value={
-              isNewPool || lpApy === undefined ? (
+              lpApy === undefined || lpApy.isNew ? (
                 <div className="flex gap-2">✨New✨</div>
               ) : (
-                `${lpApy.formatted === "-0.00" ? "0.00" : lpApy.formatted}`
+                `${formatRate(lpApy.lpApy)}`
               )
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."

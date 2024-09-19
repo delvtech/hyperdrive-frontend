@@ -5,12 +5,18 @@ export function formatRate(
   decimals = 18,
   includePercentSign = true,
 ): string {
-  const formatted = fixed(rate, decimals).format({
+  let formatted = fixed(rate, decimals).format({
     percent: true,
     decimals: 2,
   });
-  if (includePercentSign) {
-    return formatted;
+
+  if (formatted === "-0.00%") {
+    formatted = "0.00%";
   }
-  return formatted.split("%")[0];
+
+  if (!includePercentSign) {
+    formatted = formatted.split("%")[0];
+  }
+
+  return formatted;
 }
