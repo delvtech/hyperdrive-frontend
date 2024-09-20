@@ -55,7 +55,8 @@ function usePageview(page?: string) {
 
   useEffect(() => {
     const _page = page || location.pathname;
-    if (_page !== previousPage.current) {
+    // Only log page view when in production
+    if (_page !== previousPage.current && import.meta.env.PROD) {
       window.plausible("pageview", { u: _page });
       previousPage.current = _page;
     }
