@@ -39,19 +39,25 @@ export function PoolsList(): ReactElement {
   const [selectedChainIds, setSelectedChainIds] =
     useState<number[]>(allChainIds);
 
-  // Reset allChainIds when pools change
+  // Reset allChainIds and selectedChainIds if the chain ids in pools change
   useEffect(() => {
-    setAllChainIds(
-      Array.from(
+    setAllChainIds((prev) => {
+      const newChainIds = Array.from(
         new Set(pools?.map((pool) => pool.hyperdrive.chainId) || []),
-      ).sort(),
-    );
+      ).sort();
+      if (prev.length !== newChainIds.length) {
+        setSelectedChainIds(newChainIds);
+        return newChainIds;
+      }
+      for (let i = 0; i < prev.length; i++) {
+        if (prev[i] !== newChainIds[i]) {
+          setSelectedChainIds(newChainIds);
+          return newChainIds;
+        }
+      }
+      return prev;
+    });
   }, [pools]);
-
-  // Reset selectedChainIds when allChainIds change
-  useEffect(() => {
-    setSelectedChainIds(allChainIds);
-  }, [allChainIds]);
 
   // Filter and sort pools
   const list = pools
