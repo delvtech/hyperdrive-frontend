@@ -98,98 +98,93 @@ export function PoolsList(): ReactElement {
           <div className="relative z-20 flex items-center gap-4">
             <AdjustmentsHorizontalIcon className="size-5" />
             {/* Chain filter */}
-            <div className="flex items-center gap-1">
-              <div className="daisy-dropdown">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  title="Filter by chain"
-                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-                >
-                  {selectedChainIds.length === 1
-                    ? appConfig.chains[selectedChainIds[0]]?.name ||
-                      `chain ${selectedChainIds[0]}`
-                    : `${selectedChainIds.length === 0 ? allChainIds.length : selectedChainIds.length} chains`}
-                  <ChevronDownIcon className="size-5" />
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
-                >
-                  {allChainIds.map((chainId) => (
-                    <li key={chainId}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setSelectedChainIds((prev) =>
-                            prev.includes(chainId)
-                              ? prev.filter((id) => id !== chainId)
-                              : [...prev, chainId],
-                          );
-                        }}
-                        className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
-                      >
-                        <span className="flex items-center gap-1.5">
-                          {appConfig.chains[chainId]?.iconUrl && (
-                            <img
-                              className="size-4 rounded-full"
-                              src={appConfig.chains[chainId]?.iconUrl}
-                            />
-                          )}
-                          {appConfig.chains[chainId]?.name ||
-                            `chain ${chainId}`}{" "}
-                          <span className="daisy-badge daisy-badge-neutral">
-                            {
-                              pools?.filter(
-                                (pool) => pool.hyperdrive.chainId === chainId,
-                              ).length
-                            }
-                          </span>
-                        </span>
-                        <CheckIcon
-                          className={classNames("size-5 fill-aquamarine", {
-                            invisible: !selectedChainIds.includes(chainId),
-                          })}
-                        />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+            <div className="daisy-dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                title="Filter by chain"
+                className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
+              >
+                {selectedChainIds.length === 1
+                  ? appConfig.chains[selectedChainIds[0]]?.name ||
+                    `chain ${selectedChainIds[0]}`
+                  : `${selectedChainIds.length === 0 ? allChainIds.length : selectedChainIds.length} chains`}
+                <ChevronDownIcon className="size-5" />
               </div>
+              <ul
+                tabIndex={0}
+                className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
+              >
+                {allChainIds.map((chainId) => (
+                  <li key={chainId}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedChainIds((prev) =>
+                          prev.includes(chainId)
+                            ? prev.filter((id) => id !== chainId)
+                            : [...prev, chainId],
+                        );
+                      }}
+                      className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
+                    >
+                      <span className="flex items-center gap-1.5">
+                        {appConfig.chains[chainId]?.iconUrl && (
+                          <img
+                            className="size-4 rounded-full"
+                            src={appConfig.chains[chainId]?.iconUrl}
+                          />
+                        )}
+                        {appConfig.chains[chainId]?.name || `chain ${chainId}`}{" "}
+                        <span className="daisy-badge daisy-badge-neutral">
+                          {
+                            pools?.filter(
+                              (pool) => pool.hyperdrive.chainId === chainId,
+                            ).length
+                          }
+                        </span>
+                      </span>
+                      <CheckIcon
+                        className={classNames("size-5 fill-aquamarine", {
+                          invisible: !selectedChainIds.includes(chainId),
+                        })}
+                      />
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Sorting */}
-            <div className="ml-auto flex items-center gap-1">
-              <div className="daisy-dropdown daisy-dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  title="Sort by"
-                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-                >
-                  {sort}
-                  <BarsArrowDownIcon className="size-5" />
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
-                >
-                  {sortOptions.map((option) => (
-                    <li key={option}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          (document.activeElement as HTMLElement)?.blur();
-                          setSort(option);
-                        }}
-                        className="cursor-pointer whitespace-nowrap text-left"
-                      >
-                        {option}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+            <div className="daisy-dropdown daisy-dropdown-end ml-auto">
+              <div
+                tabIndex={0}
+                role="button"
+                title="Sort by"
+                className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
+              >
+                {sort}
+                <BarsArrowDownIcon className="size-5" />
               </div>
+              <ul
+                tabIndex={0}
+                className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
+              >
+                {sortOptions.map((option) => (
+                  <li key={option}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        (document.activeElement as HTMLElement)?.blur();
+                        setSort(option);
+                      }}
+                      className="cursor-pointer whitespace-nowrap text-left"
+                    >
+                      {option}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
