@@ -11,11 +11,14 @@ import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { sepolia } from "viem/chains";
-import { useChainId } from "wagmi";
+import { useChainId, useConnectorClient } from "wagmi";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { location } = useRouterState();
   const chainId = useChainId();
+
+  const { data: connector } = useConnectorClient();
+
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
@@ -44,16 +47,6 @@ export function Navbar(): ReactElement {
               })}
             >
               Portfolio
-            </span>
-          </Link>
-          <Link to={"/bridge"}>
-            <span
-              className={classNames("text-md", {
-                "text-white": location.pathname === "/bridge",
-                "text-neutral-content": location.pathname !== "/bridge",
-              })}
-            >
-              Bridge
             </span>
           </Link>
         </div>

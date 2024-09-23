@@ -11,7 +11,6 @@
 // Import Routes
 
 import { Route as rootRoute } from "./ui/routes/__root";
-import { Route as BridgeImport } from "./ui/routes/bridge";
 import { Route as ChainlogImport } from "./ui/routes/chainlog";
 import { Route as ErrorImport } from "./ui/routes/error";
 import { Route as IndexImport } from "./ui/routes/index";
@@ -53,11 +52,6 @@ const ChainlogRoute = ChainlogImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
-const BridgeRoute = BridgeImport.update({
-  path: "/bridge",
-  getParentRoute: () => rootRoute,
-} as any);
-
 const IndexRoute = IndexImport.update({
   path: "/",
   getParentRoute: () => rootRoute,
@@ -74,10 +68,6 @@ declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
     "/": {
       preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/bridge": {
-      preLoaderRoute: typeof BridgeImport;
       parentRoute: typeof rootRoute;
     };
     "/chainlog": {
@@ -115,7 +105,6 @@ declare module "@tanstack/react-router" {
 
 export const routeTree = rootRoute.addChildren([
   IndexRoute,
-  BridgeRoute,
   ChainlogRoute,
   ErrorRoute,
   IneligibleRoute,
