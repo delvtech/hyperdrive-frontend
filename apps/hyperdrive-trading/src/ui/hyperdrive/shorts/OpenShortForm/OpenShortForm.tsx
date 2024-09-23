@@ -82,7 +82,7 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
-  const { longPrice } = useCurrentLongPrice({
+  const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -270,11 +270,15 @@ export function OpenShortForm({
   }
 
   const exposureMultiplier =
-    amountOfBondsToShortAsBigInt && traderDeposit
-      ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
-          .div(traderDeposit, activeToken.decimals)
-          .format({ decimals: 2, rounding: "trunc" })
-      : "0";
+    longPriceStatus === "loading"
+      ? "-"
+      : amountOfBondsToShortAsBigInt && traderDeposit
+        ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
+            .div(traderDeposit, activeToken.decimals)
+            .format({ decimals: 2, rounding: "trunc" })
+        : fixed(1e18)
+            .div(fixed(1e18).sub(longPrice ?? 0n))
+            .format({ decimals: 2, rounding: "trunc" });
 
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
