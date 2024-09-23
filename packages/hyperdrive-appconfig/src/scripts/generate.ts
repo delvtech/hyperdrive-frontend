@@ -5,12 +5,17 @@ import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestnetAppConfigs";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { chains, gnosisChainConfig, lineaChainConfig } from "src/chains/chains";
-import { cloudChain } from "src/chains/cloudChain";
+import {
+  baseChainConfig,
+  chains,
+  gnosisChainConfig,
+  lineaChainConfig,
+} from "src/chains/chains";
 import { protocols } from "src/protocols";
+import { BASE_REGISTRY_ADDRESS } from "src/registries";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
-import { gnosis, linea, mainnet, sepolia } from "viem/chains";
+import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
 
 interface ChainInitializationConfig {
   chain: Chain;
@@ -21,23 +26,13 @@ interface ChainInitializationConfig {
 }
 
 const chainConfigs: ChainInitializationConfig[] = [
-  {
-    chain: cloudChain,
-    rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,
-    registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
-    isTestnet: true,
-  },
-  {
-    chain: mainnet,
-    rpcUrl: process.env.ETHEREUM_RPC_URL as string,
-    registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
-  },
-  {
-    chain: sepolia,
-    rpcUrl: process.env.SEPOLIA_RPC_URL as string,
-    registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
-    isTestnet: true,
-  },
+  // Testnet chains
+  // { // TODO: Re-enable this when needed
+  //   chain: cloudChain,
+  //   rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,
+  //   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  //   isTestnet: true,
+  // },
   // { // TODO: Re-enable this when needed
   //   chain: gnosisFork,
   //   rpcUrl: process.env.GNOSIS_FORK_RPC_URL as string,
@@ -45,6 +40,19 @@ const chainConfigs: ChainInitializationConfig[] = [
   //   earliestBlock: gnosisChainConfig.earliestBlock,
   //   isTestnet: true,
   // },
+  {
+    chain: sepolia,
+    rpcUrl: process.env.SEPOLIA_RPC_URL as string,
+    registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+    isTestnet: true,
+  },
+
+  // Mainnet chains
+  {
+    chain: mainnet,
+    rpcUrl: process.env.ETHEREUM_RPC_URL as string,
+    registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  },
   {
     chain: gnosis,
     rpcUrl: process.env.GNOSIS_RPC_URL as string,
@@ -57,7 +65,12 @@ const chainConfigs: ChainInitializationConfig[] = [
     registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
     earliestBlock: lineaChainConfig.earliestBlock,
   },
-
+  {
+    chain: base,
+    rpcUrl: process.env.BASE_RPC_URL as string,
+    registryAddress: BASE_REGISTRY_ADDRESS,
+    earliestBlock: baseChainConfig.earliestBlock,
+  },
   // Add more chains here
 ];
 

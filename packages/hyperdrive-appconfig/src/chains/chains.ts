@@ -56,6 +56,11 @@ export const baseChainConfig: ChainConfig = {
   dailyAverageBlocks: 43_200n,
   blockExplorerName: "Basescan",
   blockExplorerUrl: "https://basescan.org",
+  // The block at which the first pool (cbeth) was deployed. Normally we use the
+  // block at which the registry was deployed, however that didn't happen in the
+  // case of BASE.
+  // https://basescan.org/tx/0x4c13f98211264c9b54cf4b0213959abcac2791d4ddd64a03c38548b8cdb458c5
+  earliestBlock: 19731412n,
   iconUrl:
     "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgdmlld0JveD0iMCAwIDI1NiAyNTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI1NiAxMjhDMjU2IDE5OC42OTIgMTk4LjU5MiAyNTYgMTI3Ljc3NyAyNTZDNjAuNTkwOSAyNTYgNS40NzM5NCAyMDQuNDE3IDAgMTM4Ljc1OUgxNjkuNDgyVjExNy4yNEgwQzUuNDczOTQgNTEuNTgzIDYwLjU5MDkgMCAxMjcuNzc3IDBDMTk4LjU5MiAwIDI1NiA1Ny4zMDc0IDI1NiAxMjhaIiBmaWxsPSIjMDA1MkZGIi8+DQo8L3N2Zz4NCg==",
 };

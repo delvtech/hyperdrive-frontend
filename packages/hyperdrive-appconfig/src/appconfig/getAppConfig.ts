@@ -4,6 +4,7 @@ import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
@@ -85,11 +86,33 @@ const hyperdriveKindResolvers: Record<
       earliestBlock,
     });
   },
-  ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) =>
-    getGnosisWstethHyperdrive({
-      hyperdrive,
-      earliestBlock,
-    }),
+  ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
+    const hyperdriveName = await publicClient.readContract({
+      address: hyperdrive.address,
+      abi: hyperdrive.contract.abi,
+      functionName: "name",
+    });
+
+    if (hyperdriveName.includes("wstETH Hyperdrive")) {
+      return getGnosisWstethHyperdrive({
+        hyperdrive,
+        earliestBlock,
+      });
+    }
+
+    if (hyperdriveName.includes("cbETH Hyperdrive")) {
+      return getCbethHyperdrive({
+        hyperdrive,
+        earliestBlock,
+      });
+    }
+
+    const readSharesToken = await hyperdrive.getSharesToken();
+    const sharesTokenSymbol = await readSharesToken.getSymbol();
+    throw new Error(
+      `Unknown ChainklinkHyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
+    );
+  },
   EETHHyperdrive: async (hyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
@@ -278,6 +301,16 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: USDA_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoWstethUsda",
+      });
+    }
+
+    if (hyperdriveName.includes("Morpho Blue cbETH/USDC Hyperdrive")) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: USDC_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoCbethUsdc",
       });
     }
 
