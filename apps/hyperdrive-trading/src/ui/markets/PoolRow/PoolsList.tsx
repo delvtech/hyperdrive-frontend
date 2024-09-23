@@ -5,11 +5,24 @@ import {
   CheckIcon,
   ChevronDownIcon,
 } from "@heroicons/react/20/solid";
-import { appConfig, findBaseToken } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  findToken,
+  TokenConfig,
+} from "@hyperdrive/appconfig";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
-import { ReactElement, useEffect, useState } from "react";
+import {
+  ReactElement,
+  useEffect,
+  useLayoutEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
@@ -18,6 +31,8 @@ import { wagmiConfig } from "src/network/wagmiClient";
 import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { Well } from "src/ui/base/components/Well/Well";
 import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
@@ -30,42 +45,67 @@ const sortOptions = [
   "Chain",
 ] as const;
 
-type SortOption = (typeof sortOptions)[number];
-
 export function PoolsList(): ReactElement {
   const { pools, status } = usePoolsList();
   const [sort, setSort] = useState<SortOption>("TVL");
-  const [allChainIds, setAllChainIds] = useState<number[]>([]);
-  const [selectedChainIds, setSelectedChainIds] =
-    useState<number[]>(allChainIds);
+  const [filters, dispatch] = useReducer(filtersReducer, {
+    chains: {},
+    assets: {},
+  });
 
-  // Reset allChainIds and selectedChainIds if the chain ids in pools change
+  // Sync filters with pools
   useEffect(() => {
-    setAllChainIds((prev) => {
-      const newChainIds = Array.from(
-        new Set(pools?.map((pool) => pool.hyperdrive.chainId) || []),
-      ).sort();
-      if (prev.length !== newChainIds.length) {
-        setSelectedChainIds(newChainIds);
-        return newChainIds;
-      }
-      for (let i = 0; i < prev.length; i++) {
-        if (prev[i] !== newChainIds[i]) {
-          setSelectedChainIds(newChainIds);
-          return newChainIds;
-        }
-      }
-      return prev;
-    });
+    if (!pools) {
+      return;
+    }
+    dispatch({ type: "init", pools });
   }, [pools]);
+
+  // Prep filter values
+  const allAssets = Object.values(filters.assets).sort((a, b) =>
+    a.symbol.localeCompare(b.symbol),
+  );
+  const selectedAssets = allAssets.filter(({ checked }) => checked);
+  const allChains = Object.values(filters.chains).sort((a, b) => a.id - b.id);
+  const selectedChains = allChains.filter(({ checked }) => checked);
 
   // Filter and sort pools
   const list = pools
     ?.filter((pool) => {
-      if (selectedChainIds.length === 0) {
+      if (
+        selectedChains.length &&
+        !selectedChains.some(({ id }) => id === pool.hyperdrive.chainId)
+      ) {
+        return false;
+      }
+
+      if (!selectedAssets.length) {
         return true;
       }
-      return selectedChainIds.includes(pool.hyperdrive.chainId);
+
+      const baseToken = findBaseToken({
+        appConfig,
+        hyperdriveAddress: pool.hyperdrive.address,
+        hyperdriveChainId: pool.hyperdrive.chainId,
+      });
+
+      const sharesToken = findToken({
+        chainId: pool.hyperdrive.chainId,
+        tokenAddress: pool.hyperdrive.poolConfig.vaultSharesToken,
+        tokens: appConfig.tokens,
+      });
+
+      const hasToken = selectedAssets.some(({ symbol }) => {
+        return (
+          symbol === baseToken.symbol ||
+          (sharesToken && symbol === sharesToken.symbol)
+        );
+      });
+      if (!hasToken) {
+        return false;
+      }
+
+      return true;
     })
     .toSorted((a, b) => {
       switch (sort) {
@@ -88,75 +128,143 @@ export function PoolsList(): ReactElement {
       }
     });
 
+  // Track the container width to prevent a jarring collapse when no pools match
+  // the selected filters.
+  const [containerWidth, setContainerWidth] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.getBoundingClientRect().width);
+    }
+  });
+
   return (
-    <div className="flex w-full flex-col gap-5">
+    <div className="flex w-full flex-col gap-5" ref={containerRef}>
       {status === "loading" && !list ? (
         <LoadingState />
       ) : list ? (
         <>
           {/* List controls */}
-          <div className="relative z-20 flex items-center gap-4">
-            <AdjustmentsHorizontalIcon className="size-5" />
-            {/* Chain filter */}
-            <div className="daisy-dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                title="Filter by chain"
-                className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-              >
-                {selectedChainIds.length === 1
-                  ? appConfig.chains[selectedChainIds[0]]?.name ||
-                    `chain ${selectedChainIds[0]}`
-                  : `${selectedChainIds.length === 0 ? allChainIds.length : selectedChainIds.length} chains`}
-                <ChevronDownIcon className="size-5" />
+          <div className="relative z-20 flex items-center justify-between gap-10">
+            {/* Filters */}
+            <div className="flex items-center gap-2">
+              <AdjustmentsHorizontalIcon className="mr-1 size-5" />
+              {/* Chain filter */}
+              <div className="daisy-dropdown">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  title="Filter by chain"
+                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
+                >
+                  {selectedChains.length === 1
+                    ? appConfig.chains[selectedChains[0].id]?.name ||
+                      `chain ${selectedChains[0].id}`
+                    : `${selectedChains.length || allChains.length} chains`}
+                  <ChevronDownIcon className="size-5" />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
+                >
+                  {allChains.map((chain) => (
+                    <li key={chain.id}>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          dispatch({ type: "toggleChain", chainId: chain.id })
+                        }
+                        className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
+                      >
+                        <span className="flex items-center gap-1.5">
+                          {appConfig.chains[chain.id]?.iconUrl && (
+                            <img
+                              className="size-4 rounded-full"
+                              src={appConfig.chains[chain.id]?.iconUrl}
+                            />
+                          )}
+                          {appConfig.chains[chain.id]?.name ||
+                            `chain ${chain.id}`}{" "}
+                          <span className="daisy-badge daisy-badge-neutral">
+                            {
+                              pools?.filter(
+                                (pool) => pool.hyperdrive.chainId === chain.id,
+                              ).length
+                            }
+                          </span>
+                        </span>
+                        <CheckIcon
+                          className={classNames("size-5 fill-aquamarine", {
+                            invisible: !selectedChains.includes(chain),
+                          })}
+                        />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul
-                tabIndex={0}
-                className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
-              >
-                {allChainIds.map((chainId) => (
-                  <li key={chainId}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setSelectedChainIds((prev) =>
-                          prev.includes(chainId)
-                            ? prev.filter((id) => id !== chainId)
-                            : [...prev, chainId],
-                        );
-                      }}
-                      className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
-                    >
-                      <span className="flex items-center gap-1.5">
-                        {appConfig.chains[chainId]?.iconUrl && (
+
+              {/* Assets filter */}
+              <div className="daisy-dropdown">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  title="Filter by chain"
+                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
+                >
+                  {selectedAssets.length === 1
+                    ? selectedAssets[0].symbol
+                    : `${selectedAssets.length || allAssets.length} assets`}
+                  <ChevronDownIcon className="size-5" />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
+                >
+                  {allAssets.map((asset) => (
+                    <li key={`${asset.chainId}-${asset.address}`}>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          dispatch({
+                            type: "toggleAsset",
+                            symbol: asset.symbol,
+                          })
+                        }
+                        className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
+                      >
+                        <span className="flex items-center gap-1.5">
                           <img
                             className="size-4 rounded-full"
-                            src={appConfig.chains[chainId]?.iconUrl}
+                            src={asset.iconUrl}
                           />
-                        )}
-                        {appConfig.chains[chainId]?.name || `chain ${chainId}`}{" "}
-                        <span className="daisy-badge daisy-badge-neutral">
-                          {
-                            pools?.filter(
-                              (pool) => pool.hyperdrive.chainId === chainId,
-                            ).length
-                          }
+                          {asset.symbol}{" "}
+                          <span className="daisy-badge daisy-badge-neutral">
+                            {
+                              pools?.filter(({ hyperdrive }) =>
+                                [
+                                  hyperdrive.baseTokenFallback?.address,
+                                  hyperdrive.poolConfig.baseToken,
+                                  hyperdrive.poolConfig.vaultSharesToken,
+                                ].includes(asset.address),
+                              ).length
+                            }
+                          </span>
                         </span>
-                      </span>
-                      <CheckIcon
-                        className={classNames("size-5 fill-aquamarine", {
-                          invisible: !selectedChainIds.includes(chainId),
-                        })}
-                      />
-                    </button>
-                  </li>
-                ))}
-              </ul>
+                        <CheckIcon
+                          className={classNames("size-5 fill-aquamarine", {
+                            invisible: !selectedAssets.includes(asset),
+                          })}
+                        />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Sorting */}
-            <div className="daisy-dropdown daisy-dropdown-end ml-auto">
+            <div className="daisy-dropdown daisy-dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -188,25 +296,136 @@ export function PoolsList(): ReactElement {
             </div>
           </div>
 
-          {list.map(
-            ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
-              <PoolRow
-                // Combine address and chainId for a unique key, as addresses may
-                // overlap across chains (e.g. cloudchain and mainnet)
-                key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-                hyperdrive={hyperdrive}
-                tvl={tvl}
-                isFiat={isFiat}
-                fixedApr={fixedApr}
-                vaultRate={vaultRate}
-                lpApy={lpApy}
+          {list.length ? (
+            list.map(
+              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
+                <PoolRow
+                  // Combine address and chainId for a unique key, as addresses may
+                  // overlap across chains (e.g. cloudchain and mainnet)
+                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+                  hyperdrive={hyperdrive}
+                  tvl={tvl}
+                  isFiat={isFiat}
+                  fixedApr={fixedApr}
+                  vaultRate={vaultRate}
+                  lpApy={lpApy}
+                />
+              ),
+            )
+          ) : (
+            <Well
+              className="max-w-[90vw]"
+              style={{
+                width: containerWidth,
+              }}
+            >
+              <NonIdealState
+                heading="No pools found"
+                text="No pools matching the selected filters."
               />
-            ),
+            </Well>
           )}
         </>
       ) : null}
     </div>
   );
+}
+
+type SortOption = (typeof sortOptions)[number];
+
+interface FiltersState {
+  assets: {
+    [symbol: string]: TokenConfig & {
+      checked: boolean;
+    };
+  };
+  chains: {
+    [id: number]: {
+      id: number;
+      checked: boolean;
+    };
+  };
+}
+
+type FiltersAction =
+  | { type: "init"; pools: PoolRowProps[] }
+  | { type: "toggleAsset"; symbol: string }
+  | { type: "toggleChain"; chainId: number };
+
+function filtersReducer(
+  state: FiltersState,
+  action: FiltersAction,
+): FiltersState {
+  switch (action.type) {
+    case "init":
+      const newState = {
+        assets: { ...state.assets },
+        chains: { ...state.chains },
+      };
+
+      for (const { hyperdrive } of action.pools) {
+        if (newState.chains[hyperdrive.chainId] === undefined) {
+          newState.chains[hyperdrive.chainId] = {
+            id: hyperdrive.chainId,
+            checked: false,
+          };
+        }
+
+        const baseToken = findBaseToken({
+          appConfig,
+          hyperdriveAddress: hyperdrive.address,
+          hyperdriveChainId: hyperdrive.chainId,
+        });
+        if (newState.assets[baseToken.symbol] === undefined) {
+          newState.assets[baseToken.symbol] = {
+            ...baseToken,
+            checked: false,
+          };
+        }
+
+        const sharesToken = findToken({
+          chainId: hyperdrive.chainId,
+          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+          tokens: appConfig.tokens,
+        });
+        if (
+          sharesToken &&
+          sharesToken.address !== ZERO_ADDRESS &&
+          newState.assets[sharesToken.symbol] === undefined
+        ) {
+          newState.assets[sharesToken.symbol] = {
+            ...sharesToken,
+            checked: false,
+          };
+        }
+      }
+
+      return newState;
+
+    case "toggleAsset":
+      return {
+        ...state,
+        assets: {
+          ...state.assets,
+          [action.symbol]: {
+            ...state.assets[action.symbol],
+            checked: !state.assets[action.symbol].checked,
+          },
+        },
+      };
+
+    case "toggleChain":
+      return {
+        ...state,
+        chains: {
+          ...state.chains,
+          [action.chainId]: {
+            id: action.chainId,
+            checked: !state.chains[action.chainId].checked,
+          },
+        },
+      };
+  }
 }
 
 function usePoolsList(): {
