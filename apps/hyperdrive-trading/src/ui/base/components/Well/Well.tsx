@@ -33,13 +33,14 @@ export function Well<T extends ElementType = "div">({
   transparent,
   children,
   block,
+  className,
   onClick,
   ...rest
 }: PropsWithChildren<WellProps<T>> &
   Omit<ComponentProps<T>, keyof WellProps<T>>): ReactElement {
   const Component = as || (onClick ? "button" : "div");
   const isInteractive = !disabled && (interactive || onClick);
-  const className = classNames(
+  const innerClassName = classNames(
     "daisy-card p-4 lg:p-8 border border-1 border-base-200",
     {
       "shadow-md": elevation === "elevated",
@@ -47,6 +48,7 @@ export function Well<T extends ElementType = "div">({
       "w-full": block,
       "hover:cursor-pointer": onClick,
     },
+    className,
   );
 
   if (isInteractive) {
@@ -63,7 +65,7 @@ export function Well<T extends ElementType = "div">({
         <div
           className={classNames(
             "relative z-20 flex w-full rounded-[0.60rem] bg-base-100 p-2",
-            className,
+            innerClassName,
           )}
         >
           {children}
@@ -74,7 +76,7 @@ export function Well<T extends ElementType = "div">({
 
   return (
     <Component
-      className={className}
+      className={innerClassName}
       onClick={onClick}
       disabled={disabled}
       {...rest}
