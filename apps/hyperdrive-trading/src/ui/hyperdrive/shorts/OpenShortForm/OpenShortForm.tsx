@@ -11,6 +11,7 @@ import { MouseEvent, ReactElement, useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -82,7 +83,7 @@ export function OpenShortForm({
     tokenAddress: baseToken.address,
     decimals: baseToken.decimals,
   });
-  const { longPrice } = useCurrentLongPrice({
+  const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -274,7 +275,7 @@ export function OpenShortForm({
       ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
           .div(traderDeposit, activeToken.decimals)
           .format({ decimals: 2, rounding: "trunc" })
-      : "0";
+      : calculateMarketYieldMultiplier(longPrice ?? 0n);
 
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
@@ -423,6 +424,7 @@ export function OpenShortForm({
             valueUnit="x"
             unitClassName="text-h3"
             subValue={`Matures on ${maturesOnLabel}`}
+            valueLoading={longPriceStatus === "loading"}
           />
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat

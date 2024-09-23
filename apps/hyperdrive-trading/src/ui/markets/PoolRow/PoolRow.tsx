@@ -1,23 +1,24 @@
 import { ClockIcon } from "@heroicons/react/16/solid";
 import {
-  HyperdriveConfig,
   appConfig,
   findBaseToken,
   findToken,
+  HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { LpApyResult } from "src/hyperdrive/getLpApy";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
-
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
   tvl: bigint;
@@ -49,6 +50,11 @@ export function PoolRow({
     chainId: hyperdrive.chainId,
     tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
+
+  const { longPrice, longPriceStatus } = useCurrentLongPrice({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
   });
 
   return (
@@ -168,17 +174,18 @@ export function PoolRow({
               </Link>
             }
           />
+
           <PoolStat
-            label={"Variable APY"}
+            label={"Yield Multiplier"}
             isNew={lpApy.isNew}
             value={
-              vaultRate ? (
+              longPriceStatus === "success" && longPrice ? (
                 <RewardsTooltip
                   hyperdriveAddress={hyperdrive.address}
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  <PercentLabel value={formatRate(vaultRate, 18, false)} />
+                  {`${calculateMarketYieldMultiplier(longPrice)}x`}
                 </RewardsTooltip>
               ) : (
                 "-"
@@ -267,7 +274,7 @@ function PoolStat({
   }
 
   return (
-    <div className="flex w-24 flex-col items-start gap-1.5">
+    <div className="flex w-28 flex-col items-start gap-1.5">
       <p
         data-tip={labelTooltip}
         className={
