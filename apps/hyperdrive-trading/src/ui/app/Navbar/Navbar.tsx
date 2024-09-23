@@ -22,6 +22,8 @@ export function Navbar(): ReactElement {
   // https://github.com/wevm/wagmi/blob/main/packages/connectors/src/safe.ts#L32
   const shouldShowBridgePage = connector && connector.type !== "safe";
 
+  console.log(connector);
+
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
