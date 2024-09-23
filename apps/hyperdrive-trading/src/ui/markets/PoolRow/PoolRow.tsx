@@ -186,7 +186,9 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  {`${fixed(1e18).div(fixed(1e18).sub(longPrice)).format({ decimals: 2, rounding: "trunc" })}X`}
+                  {`${fixed(1e18)
+                    .div(fixed(1e18).sub(longPrice))
+                    .format({ decimals: 2, rounding: "trunc" })}x`}
                 </RewardsTooltip>
               ) : (
                 "-"
