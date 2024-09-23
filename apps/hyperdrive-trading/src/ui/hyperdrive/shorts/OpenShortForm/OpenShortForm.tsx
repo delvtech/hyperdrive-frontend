@@ -1,4 +1,4 @@
-import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
@@ -11,6 +11,7 @@ import { MouseEvent, ReactElement, useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -274,9 +275,7 @@ export function OpenShortForm({
       ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
           .div(traderDeposit, activeToken.decimals)
           .format({ decimals: 2, rounding: "trunc" })
-      : parseFixed(1)
-          .div(parseFixed(1).sub(longPrice ?? 0n))
-          .format({ decimals: 2, rounding: "trunc" });
+      : calculateMarketYieldMultiplier(longPrice ?? 0n);
 
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),

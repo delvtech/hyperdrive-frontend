@@ -1,4 +1,3 @@
-import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/16/solid";
 import {
   appConfig,
@@ -11,6 +10,7 @@ import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { LpApyResult } from "src/hyperdrive/getLpApy";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
@@ -19,7 +19,6 @@ import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
-
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
   tvl: bigint;
@@ -186,17 +185,7 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  {/*
-                    Yield Multiplier calculation:
-                    1 / (1 - longPrice)
-
-                    Example:
-                    If longPrice = 0.9, then:
-                    1 / (1 - 0.9) = 1 / 0.1 = 10x
-                  */}
-                  {`${parseFixed(1)
-                    .div(parseFixed(1).sub(longPrice))
-                    .format({ decimals: 2, rounding: "trunc" })}x`}
+                  {`${calculateMarketYieldMultiplier(longPrice)}x`}
                 </RewardsTooltip>
               ) : (
                 "-"
