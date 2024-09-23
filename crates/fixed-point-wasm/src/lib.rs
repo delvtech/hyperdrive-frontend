@@ -130,6 +130,15 @@ impl WasmFixedPoint {
         adjusted.to_bigint()
     }
 
+    /// Get the absolute value of this fixed-point number.
+    #[wasm_bindgen(skip_jsdoc)]
+    pub fn abs(&self) -> Result<WasmFixedPoint, Error> {
+        Ok(WasmFixedPoint {
+            inner: self.inner.abs(),
+            decimals: self.decimals,
+        })
+    }
+
     /// Add a fixed-point number to this one.
     #[wasm_bindgen(skip_jsdoc)]
     pub fn add(&self, other: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {

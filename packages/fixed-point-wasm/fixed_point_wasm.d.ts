@@ -280,6 +280,10 @@ export class FixedPoint {
 */
   static random(params?: IGenerateRandomParams): FixedPoint;
 /**
+* Get the absolute value of this fixed-point number.
+*/
+  abs(): FixedPoint;
+/**
 * Add a fixed-point number to this one.
 */
   add(other: Numberish, decimals?: number): FixedPoint;
@@ -430,6 +434,7 @@ export interface InitOutput {
   readonly fixedpoint_one: (a: number, b: number) => void;
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
+  readonly fixedpoint_abs: (a: number, b: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
