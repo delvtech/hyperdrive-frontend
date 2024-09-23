@@ -270,15 +270,13 @@ export function OpenShortForm({
   }
 
   const exposureMultiplier =
-    longPriceStatus === "loading"
-      ? "-"
-      : amountOfBondsToShortAsBigInt && traderDeposit
-        ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
-            .div(traderDeposit, activeToken.decimals)
-            .format({ decimals: 2, rounding: "trunc" })
-        : fixed(1e18)
-            .div(fixed(1e18).sub(longPrice ?? 0n))
-            .format({ decimals: 2, rounding: "trunc" });
+    amountOfBondsToShortAsBigInt && traderDeposit
+      ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
+          .div(traderDeposit, activeToken.decimals)
+          .format({ decimals: 2, rounding: "trunc" })
+      : fixed(1e18)
+          .div(fixed(1e18).sub(longPrice ?? 0n))
+          .format({ decimals: 2, rounding: "trunc" });
 
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
@@ -427,6 +425,7 @@ export function OpenShortForm({
             valueUnit="x"
             unitClassName="text-h3"
             subValue={`Matures on ${maturesOnLabel}`}
+            valueLoading={longPriceStatus === "loading"}
           />
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
