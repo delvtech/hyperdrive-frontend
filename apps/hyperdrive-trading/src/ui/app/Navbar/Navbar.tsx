@@ -19,11 +19,6 @@ export function Navbar(): ReactElement {
 
   const { data: connector } = useConnectorClient();
 
-  // https://github.com/wevm/wagmi/blob/main/packages/connectors/src/safe.ts#L32
-  const shouldShowBridgePage = connector && connector.type !== "safe";
-
-  console.log(connector);
-
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
@@ -54,18 +49,6 @@ export function Navbar(): ReactElement {
               Portfolio
             </span>
           </Link>
-          {shouldShowBridgePage && (
-            <Link to={"/bridge"}>
-              <span
-                className={classNames("text-md", {
-                  "text-white": location.pathname === "/bridge",
-                  "text-neutral-content": location.pathname !== "/bridge",
-                })}
-              >
-                Bridge
-              </span>
-            </Link>
-          )}
         </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">
