@@ -148,7 +148,7 @@ export function PoolsList(): ReactElement {
           <div className="relative z-20 flex items-center justify-between gap-10">
             {/* Filters */}
             <div className="flex items-center gap-2">
-              <AdjustmentsHorizontalIcon className="mr-1 size-5" />
+              <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
               {/* Chain filter */}
               <div className="daisy-dropdown">
                 <div
@@ -261,6 +261,12 @@ export function PoolsList(): ReactElement {
                   ))}
                 </ul>
               </div>
+
+              {/* <span className="hidden text-sm text-neutral-content sm:block"> */}
+              <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
+                {list.length}
+                {list.length === 1 ? " pool" : " pools"}
+              </span>
             </div>
 
             {/* Sorting */}
