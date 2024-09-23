@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ClockIcon } from "@heroicons/react/16/solid";
 import {
   appConfig,
@@ -186,8 +186,16 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  {`${fixed(1e18)
-                    .div(fixed(1e18).sub(longPrice))
+                  {/*
+                    Yield Multiplier calculation:
+                    1 / (1 - longPrice)
+
+                    Example:
+                    If longPrice = 0.9, then:
+                    1 / (1 - 0.9) = 1 / 0.1 = 10x
+                  */}
+                  {`${parseFixed(1)
+                    .div(parseFixed(1).sub(longPrice))
                     .format({ decimals: 2, rounding: "trunc" })}x`}
                 </RewardsTooltip>
               ) : (
