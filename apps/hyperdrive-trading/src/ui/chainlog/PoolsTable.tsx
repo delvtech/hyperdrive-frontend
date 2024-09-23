@@ -1,6 +1,5 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { appConfig } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import {
@@ -18,6 +17,7 @@ import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeInstanceData } from "src/registry/data";
 import { sdkCache } from "src/sdk/sdkCache";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
@@ -211,7 +211,8 @@ interface Pool {
 }
 
 function usePoolsQuery(): UseQueryResult<Pool[], any> {
-  const chainIds = Object.keys(appConfig.registries).map(Number);
+  const connectedAppConfig = useAppConfigForConnectedChain();
+  const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
   return useQuery({
     queryKey: makeQueryKey("chainlog", {
@@ -229,7 +230,7 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
           }) as PublicClient;
 
           const registry = new ReadRegistry({
-            address: appConfig.registries[chainId],
+            address: connectedAppConfig.registries[chainId],
             publicClient,
             cache: sdkCache,
             namespace: chainId.toString(),
@@ -243,7 +244,7 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
             const { status } = decodeInstanceData(data);
 
             const readHyperdrive = await getReadHyperdrive({
-              appConfig,
+              appConfig: connectedAppConfig,
               hyperdriveAddress: address,
               publicClient,
             });

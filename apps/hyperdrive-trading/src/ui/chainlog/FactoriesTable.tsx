@@ -1,6 +1,5 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { appConfig } from "@hyperdrive/appconfig";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
@@ -16,6 +15,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeFactoryData } from "src/registry/data";
 import { sdkCache } from "src/sdk/sdkCache";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
@@ -164,7 +164,8 @@ interface Factory {
 }
 
 function useFactoriesQuery(): UseQueryResult<Factory[], any> {
-  const chainIds = Object.keys(appConfig.registries).map(Number);
+  const connectedAppConfig = useAppConfigForConnectedChain();
+  const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
   return useQuery({
     queryKey: makeQueryKey("chainlog", {
@@ -183,7 +184,7 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
           }) as PublicClient;
 
           const registry = new ReadRegistry({
-            address: appConfig.registries[chainId],
+            address: connectedAppConfig.registries[chainId],
             publicClient,
             cache: sdkCache,
             namespace: chainId.toString(),
