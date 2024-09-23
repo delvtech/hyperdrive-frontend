@@ -326,8 +326,16 @@ export function PoolsList(): ReactElement {
               }}
             >
               <NonIdealState
-                heading="No pools found"
-                text="No pools matching the selected filters."
+                heading={
+                  pools?.length || 0 > 0
+                    ? "No pools found"
+                    : "No pools available"
+                }
+                text={
+                  pools?.length || 0 > 0
+                    ? "Try adjusting your filters."
+                    : "Check back soon!"
+                }
               />
             </Well>
           )}
