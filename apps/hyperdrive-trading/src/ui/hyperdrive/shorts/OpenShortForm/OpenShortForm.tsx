@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
@@ -274,8 +274,8 @@ export function OpenShortForm({
       ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
           .div(traderDeposit, activeToken.decimals)
           .format({ decimals: 2, rounding: "trunc" })
-      : fixed(1e18)
-          .div(fixed(1e18).sub(longPrice ?? 0n))
+      : parseFixed(1)
+          .div(parseFixed(1).sub(longPrice ?? 0n))
           .format({ decimals: 2, rounding: "trunc" });
 
   const maturesOnLabel = formatDate(
