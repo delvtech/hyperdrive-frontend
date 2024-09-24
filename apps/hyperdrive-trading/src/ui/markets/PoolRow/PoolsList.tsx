@@ -273,23 +273,7 @@ export function PoolsList(): ReactElement {
             </div>
           </div>
 
-          {selectedPools.length ? (
-            selectedPools.map(
-              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
-                <PoolRow
-                  // Combine address and chainId for a unique key, as addresses may
-                  // overlap across chains (e.g. cloudchain and mainnet)
-                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-                  hyperdrive={hyperdrive}
-                  tvl={tvl}
-                  isFiat={isFiat}
-                  fixedApr={fixedApr}
-                  vaultRate={vaultRate}
-                  lpApy={lpApy}
-                />
-              ),
-            )
-          ) : (
+          {!selectedPools.length ? (
             <Well
               className="max-w-[90vw]"
               style={{
@@ -308,6 +292,22 @@ export function PoolsList(): ReactElement {
                 />
               )}
             </Well>
+          ) : (
+            selectedPools.map(
+              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
+                <PoolRow
+                  // Combine address and chainId for a unique key, as addresses may
+                  // overlap across chains (e.g. cloudchain and mainnet)
+                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+                  hyperdrive={hyperdrive}
+                  tvl={tvl}
+                  isFiat={isFiat}
+                  fixedApr={fixedApr}
+                  vaultRate={vaultRate}
+                  lpApy={lpApy}
+                />
+              ),
+            )
           )}
         </>
       ) : null}
