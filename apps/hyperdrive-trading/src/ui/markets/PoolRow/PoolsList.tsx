@@ -65,43 +65,28 @@ export function PoolsList(): ReactElement {
   const allAssets = Object.values(filters.assets).sort((a, b) =>
     a.symbol.localeCompare(b.symbol),
   );
-  const selectedAssets = allAssets.filter(({ checked }) => checked);
+  const selectedAssets = allAssets.filter(({ selected }) => selected);
   const allChains = Object.values(filters.chains).sort((a, b) => a.id - b.id);
-  const selectedChains = allChains.filter(({ checked }) => checked);
+  const selectedChains = allChains.filter(({ selected }) => selected);
 
   // Filter and sort pools
   const list = pools
     ?.filter((pool) => {
       if (
         selectedChains.length &&
-        !selectedChains.some(({ id }) => id === pool.hyperdrive.chainId)
+        !selectedChains.some(({ id }) => pool.hyperdrive.chainId === id)
       ) {
         return false;
       }
 
-      if (!selectedAssets.length) {
-        return true;
-      }
-
-      const baseToken = findBaseToken({
-        appConfig,
-        hyperdriveAddress: pool.hyperdrive.address,
-        hyperdriveChainId: pool.hyperdrive.chainId,
-      });
-
-      const sharesToken = findToken({
-        chainId: pool.hyperdrive.chainId,
-        tokenAddress: pool.hyperdrive.poolConfig.vaultSharesToken,
-        tokens: appConfig.tokens,
-      });
-
-      const hasToken = selectedAssets.some(({ symbol }) => {
-        return (
-          symbol === baseToken.symbol ||
-          (sharesToken && symbol === sharesToken.symbol)
-        );
-      });
-      if (!hasToken) {
+      if (
+        selectedAssets.length &&
+        !selectedAssets.some((selectedAsset) =>
+          pool.depositAssets.some(
+            (poolAsset) => poolAsset.symbol === selectedAsset.symbol,
+          ),
+        )
+      ) {
         return false;
       }
 
@@ -241,12 +226,10 @@ export function PoolsList(): ReactElement {
                           {asset.symbol}{" "}
                           <span className="daisy-badge daisy-badge-neutral">
                             {
-                              pools?.filter(({ hyperdrive }) =>
-                                [
-                                  hyperdrive.baseTokenFallback?.address,
-                                  hyperdrive.poolConfig.baseToken,
-                                  hyperdrive.poolConfig.vaultSharesToken,
-                                ].includes(asset.address),
+                              pools?.filter(({ depositAssets }) =>
+                                depositAssets.some(
+                                  ({ symbol }) => symbol === asset.symbol,
+                                ),
                               ).length
                             }
                           </span>
@@ -350,19 +333,19 @@ type SortOption = (typeof sortOptions)[number];
 interface FiltersState {
   assets: {
     [symbol: string]: TokenConfig & {
-      checked: boolean;
+      selected: boolean;
     };
   };
   chains: {
     [id: number]: {
       id: number;
-      checked: boolean;
+      selected: boolean;
     };
   };
 }
 
 type FiltersAction =
-  | { type: "init"; pools: PoolRowProps[] }
+  | { type: "init"; pools: Pool[] }
   | { type: "toggleAsset"; symbol: string }
   | { type: "toggleChain"; chainId: number };
 
@@ -377,39 +360,16 @@ function filtersReducer(
         chains: { ...state.chains },
       };
 
-      for (const { hyperdrive } of action.pools) {
-        if (newState.chains[hyperdrive.chainId] === undefined) {
-          newState.chains[hyperdrive.chainId] = {
-            id: hyperdrive.chainId,
-            checked: false,
-          };
-        }
+      for (const { hyperdrive, depositAssets } of action.pools) {
+        newState.chains[hyperdrive.chainId] ||= {
+          id: hyperdrive.chainId,
+          selected: false,
+        };
 
-        const baseToken = findBaseToken({
-          appConfig,
-          hyperdriveAddress: hyperdrive.address,
-          hyperdriveChainId: hyperdrive.chainId,
-        });
-        if (newState.assets[baseToken.symbol] === undefined) {
-          newState.assets[baseToken.symbol] = {
-            ...baseToken,
-            checked: false,
-          };
-        }
-
-        const sharesToken = findToken({
-          chainId: hyperdrive.chainId,
-          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-          tokens: appConfig.tokens,
-        });
-        if (
-          sharesToken &&
-          sharesToken.address !== ZERO_ADDRESS &&
-          newState.assets[sharesToken.symbol] === undefined
-        ) {
-          newState.assets[sharesToken.symbol] = {
-            ...sharesToken,
-            checked: false,
+        for (const asset of depositAssets) {
+          newState.assets[asset.symbol] ||= {
+            ...asset,
+            selected: false,
           };
         }
       }
@@ -423,7 +383,7 @@ function filtersReducer(
           ...state.assets,
           [action.symbol]: {
             ...state.assets[action.symbol],
-            checked: !state.assets[action.symbol].checked,
+            selected: !state.assets[action.symbol].selected,
           },
         },
       };
@@ -435,15 +395,19 @@ function filtersReducer(
           ...state.chains,
           [action.chainId]: {
             id: action.chainId,
-            checked: !state.chains[action.chainId].checked,
+            selected: !state.chains[action.chainId].selected,
           },
         },
       };
   }
 }
 
+interface Pool extends PoolRowProps {
+  depositAssets: TokenConfig[];
+}
+
 function usePoolsList(): {
-  pools: PoolRowProps[] | undefined;
+  pools: Pool[] | undefined;
   status: QueryStatus;
 } {
   // Only show testnet and fork pools if the user is connected to a testnet
@@ -457,7 +421,7 @@ function usePoolsList(): {
   const { data, status } = useQuery({
     queryKey: ["poolsList", { connectedChainId }],
     queryFn: async () => {
-      const pools: PoolRowProps[] = [];
+      const pools: Pool[] = [];
 
       await Promise.all(
         appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
@@ -476,6 +440,12 @@ function usePoolsList(): {
             return;
           }
 
+          const baseToken = findBaseToken({
+            hyperdriveChainId: hyperdrive.chainId,
+            hyperdriveAddress: hyperdrive.address,
+            appConfig,
+          });
+
           const fixedApr = await readHyperdrive.getFixedApr();
           const vaultRate = await getYieldSourceRate(
             readHyperdrive,
@@ -492,11 +462,6 @@ function usePoolsList(): {
           let tvl = await readHyperdrive.getPresentValue();
           let isFiatSupported = !isTestnetChain(hyperdrive.chainId);
           if (isFiatSupported) {
-            const baseToken = findBaseToken({
-              hyperdriveChainId: hyperdrive.chainId,
-              hyperdriveAddress: hyperdrive.address,
-              appConfig,
-            });
             const fiatPrice = await getTokenFiatPrice({
               chainId: hyperdrive.chainId,
               tokenAddress: baseToken.address,
@@ -508,13 +473,30 @@ function usePoolsList(): {
             tvl = fixed(tvl, hyperdrive.decimals).mul(fiatPrice).bigint;
           }
 
+          const depositAssets: TokenConfig[] = [];
+          if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+            depositAssets.push(baseToken);
+          }
+
+          if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+            const sharesToken = findToken({
+              chainId: hyperdrive.chainId,
+              tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+              tokens: appConfig.tokens,
+            });
+            if (sharesToken && sharesToken.address !== ZERO_ADDRESS) {
+              depositAssets.push(sharesToken);
+            }
+          }
+
           pools.push({
-            fixedApr,
             hyperdrive,
-            isFiat: isFiatSupported,
+            fixedApr,
+            vaultRate: vaultRate.rate,
             lpApy,
             tvl,
-            vaultRate: vaultRate.rate,
+            isFiat: isFiatSupported,
+            depositAssets,
           });
         }),
       );
