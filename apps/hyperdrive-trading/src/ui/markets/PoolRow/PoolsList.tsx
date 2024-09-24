@@ -234,7 +234,6 @@ export function PoolsList(): ReactElement {
                 </ul>
               </div>
 
-              {/* <span className="hidden text-sm text-neutral-content sm:block"> */}
               <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
                 {list.length}
                 {list.length === 1 ? " pool" : " pools"}
