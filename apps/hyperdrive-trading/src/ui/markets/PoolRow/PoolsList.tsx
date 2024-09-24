@@ -183,7 +183,7 @@ export function PoolsList(): ReactElement {
                 <div
                   tabIndex={0}
                   role="button"
-                  title="Filter by chain"
+                  title="Filter by deposit asset"
                   className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
                 >
                   {selectedAssets.length === 1
