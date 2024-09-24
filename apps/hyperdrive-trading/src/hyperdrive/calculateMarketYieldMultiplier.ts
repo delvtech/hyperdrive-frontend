@@ -1,4 +1,4 @@
-import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { FixedPoint, parseFixed } from "@delvtech/fixed-point-wasm";
 /**
  * Calculates the yield multiplier for a Hyperdrive market based on the long price.
  *
@@ -18,11 +18,9 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
  *   The short position amplifies the underlying yield by 25 times.
  *
  * @param longPrice The current price of a long position, represented as a bigint.
- * @returns The calculated yield multiplier as a string, formatted to 2 decimal places.
+ * @returns The calculated yield multiplier as a FixedPoint.
  */
 
-export function calculateMarketYieldMultiplier(longPrice: bigint): string {
-  return parseFixed(1)
-    .div(parseFixed(1).sub(longPrice))
-    .format({ decimals: 2, rounding: "trunc" });
+export function calculateMarketYieldMultiplier(longPrice: bigint): FixedPoint {
+  return parseFixed(1).div(parseFixed(1).sub(longPrice));
 }

@@ -24,7 +24,6 @@ export interface PoolRowProps {
   tvl: bigint;
   isFiat: boolean;
   fixedApr: bigint;
-  vaultRate: bigint;
   lpApy: LpApyResult;
 }
 
@@ -33,7 +32,6 @@ export function PoolRow({
   tvl,
   isFiat,
   fixedApr,
-  vaultRate,
   lpApy,
 }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
@@ -177,7 +175,6 @@ export function PoolRow({
 
           <PoolStat
             label={"Yield Multiplier"}
-            isNew={lpApy.isNew}
             value={
               longPriceStatus === "success" && longPrice ? (
                 <RewardsTooltip
@@ -185,7 +182,7 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   positionType="short"
                 >
-                  {`${calculateMarketYieldMultiplier(longPrice)}x`}
+                  {`${calculateMarketYieldMultiplier(longPrice).format({ decimals: 2, rounding: "trunc" })}x`}
                 </RewardsTooltip>
               ) : (
                 "-"

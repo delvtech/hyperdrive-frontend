@@ -17,6 +17,7 @@ import classNames from "classnames";
 import { ReactElement, useEffect, useReducer, useRef, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
@@ -33,7 +34,7 @@ import { useChainId } from "wagmi";
 const sortOptions = [
   "TVL",
   "Fixed APR",
-  "Variable APY",
+  "Yield Multiplier",
   "LP APY",
   "Chain",
 ] as const;
@@ -95,8 +96,11 @@ export function PoolsList(): ReactElement {
           return Number(b.fixedApr - a.fixedApr);
         case "LP APY":
           return Number((b.lpApy.lpApy || 0n) - (a.lpApy.lpApy || 0n));
-        case "Variable APY":
-          return Number(b.vaultRate - a.vaultRate);
+        case "Yield Multiplier":
+          return Number(
+            calculateMarketYieldMultiplier(b.longPrice).bigint -
+              calculateMarketYieldMultiplier(a.longPrice).bigint,
+          );
         case "TVL":
           return fixed(b.tvl, b.hyperdrive.decimals)
             .sub(a.tvl, a.hyperdrive.decimals)
@@ -294,7 +298,7 @@ export function PoolsList(): ReactElement {
             </Well>
           ) : (
             selectedPools.map(
-              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
+              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl }) => (
                 <PoolRow
                   // Combine address and chainId for a unique key, as addresses may
                   // overlap across chains (e.g. cloudchain and mainnet)
@@ -303,7 +307,6 @@ export function PoolsList(): ReactElement {
                   tvl={tvl}
                   isFiat={isFiat}
                   fixedApr={fixedApr}
-                  vaultRate={vaultRate}
                   lpApy={lpApy}
                 />
               ),
@@ -391,6 +394,7 @@ function filtersReducer(
 
 interface Pool extends PoolRowProps {
   depositAssets: TokenConfig[];
+  longPrice: bigint;
 }
 
 function usePoolsList(): {
@@ -434,6 +438,7 @@ function usePoolsList(): {
           });
 
           const fixedApr = await readHyperdrive.getFixedApr();
+          const longPrice = await readHyperdrive.getLongPrice();
           const vaultRate = await getYieldSourceRate(
             readHyperdrive,
             appConfigForConnectedChain,
@@ -479,7 +484,7 @@ function usePoolsList(): {
           pools.push({
             hyperdrive,
             fixedApr,
-            vaultRate: vaultRate.rate,
+            longPrice,
             lpApy,
             tvl,
             isFiat: isFiatSupported,
