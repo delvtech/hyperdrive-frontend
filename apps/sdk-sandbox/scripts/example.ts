@@ -1,10 +1,22 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { publicClient } from "../client";
 
-const registry = new ReadRegistry({
-  address: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+const pool = new ReadHyperdrive({
+  address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
   publicClient,
 });
 
-const block = await publicClient.getBlock({ blockNumber: 35855116n });
-console.log("block", block.timestamp);
+const kind = await pool.getKind();
+const name = await publicClient.readContract({
+  abi: IHyperdrive.abi,
+  address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
+  functionName: "name",
+});
+const config = await pool.getPoolConfig();
+console.log(`
+  kind: ${kind}
+  name: ${name}
+  baseToken: ${config.baseToken}
+  sharesToken: ${config.vaultSharesToken}
+`);
