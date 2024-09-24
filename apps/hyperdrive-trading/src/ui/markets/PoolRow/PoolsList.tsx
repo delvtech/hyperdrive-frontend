@@ -14,14 +14,7 @@ import {
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
-import {
-  ReactElement,
-  useEffect,
-  useLayoutEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import { ReactElement, useEffect, useReducer, useRef, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getLpApy } from "src/hyperdrive/getLpApy";
@@ -113,15 +106,11 @@ export function PoolsList(): ReactElement {
       }
     });
 
-  // Track the container width to prevent a jarring layout shift when no pools
-  // match the selected filters.
-  const [containerWidth, setContainerWidth] = useState(0);
+  // To prevent jarring layout shifts when no pools match the selected filters,
+  // the NonIdealState is wrapped in a div with a width set to match the outer
+  // container's width, which will be the width it rendered at before the
+  // filter's were changed.
   const containerRef = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
-    if (containerRef.current) {
-      setContainerWidth(containerRef.current.getBoundingClientRect().width);
-    }
-  });
 
   return (
     <div className="flex w-full flex-col gap-5" ref={containerRef}>
@@ -305,7 +294,7 @@ export function PoolsList(): ReactElement {
             <Well
               className="max-w-[90vw]"
               style={{
-                width: containerWidth,
+                width: containerRef.current?.offsetWidth,
               }}
             >
               <NonIdealState
