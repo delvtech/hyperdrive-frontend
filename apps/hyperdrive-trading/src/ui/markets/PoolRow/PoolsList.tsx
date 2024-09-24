@@ -113,8 +113,8 @@ export function PoolsList(): ReactElement {
       }
     });
 
-  // Track the container width to prevent a jarring collapse when no pools match
-  // the selected filters.
+  // Track the container width to prevent a jarring layout shift when no pools
+  // match the selected filters.
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
