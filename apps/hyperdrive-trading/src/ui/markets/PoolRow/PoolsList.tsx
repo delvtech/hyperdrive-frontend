@@ -39,7 +39,7 @@ const sortOptions = [
 ] as const;
 
 export function PoolsList(): ReactElement {
-  const { pools, status } = usePoolsList();
+  const { pools: allPools, status } = usePoolsList();
   const [sort, setSort] = useState<SortOption>("TVL");
   const [filters, dispatch] = useReducer(filtersReducer, {
     chains: {},
@@ -48,11 +48,11 @@ export function PoolsList(): ReactElement {
 
   // Sync filters with pools
   useEffect(() => {
-    if (!pools) {
+    if (!allPools) {
       return;
     }
-    dispatch({ type: "init", pools });
-  }, [pools]);
+    dispatch({ type: "init", pools: allPools });
+  }, [allPools]);
 
   // Prep filter values
   const allAssets = Object.values(filters.assets).sort((a, b) =>
@@ -63,7 +63,7 @@ export function PoolsList(): ReactElement {
   const selectedChains = allChains.filter(({ selected }) => selected);
 
   // Filter and sort pools
-  const list = pools
+  const selectedPools = allPools
     ?.filter((pool) => {
       if (
         selectedChains.length &&
@@ -114,9 +114,9 @@ export function PoolsList(): ReactElement {
 
   return (
     <div className="flex w-full flex-col gap-5" ref={containerRef}>
-      {status === "loading" && !list ? (
+      {status === "loading" && !selectedPools ? (
         <LoadingState />
-      ) : list ? (
+      ) : selectedPools ? (
         <>
           {/* List controls */}
           <div className="relative z-20 flex items-center justify-between gap-10">
@@ -161,7 +161,7 @@ export function PoolsList(): ReactElement {
                             `chain ${chain.id}`}{" "}
                           <span className="daisy-badge daisy-badge-neutral">
                             {
-                              pools?.filter(
+                              allPools?.filter(
                                 (pool) => pool.hyperdrive.chainId === chain.id,
                               ).length
                             }
@@ -215,7 +215,7 @@ export function PoolsList(): ReactElement {
                           {asset.symbol}{" "}
                           <span className="daisy-badge daisy-badge-neutral">
                             {
-                              pools?.filter(({ depositAssets }) =>
+                              allPools?.filter(({ depositAssets }) =>
                                 depositAssets.some(
                                   ({ symbol }) => symbol === asset.symbol,
                                 ),
@@ -235,8 +235,8 @@ export function PoolsList(): ReactElement {
               </div>
 
               <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
-                {list.length}
-                {list.length === 1 ? " pool" : " pools"}
+                {selectedPools.length}
+                {selectedPools.length === 1 ? " pool" : " pools"}
               </span>
             </div>
 
@@ -273,8 +273,8 @@ export function PoolsList(): ReactElement {
             </div>
           </div>
 
-          {list.length ? (
-            list.map(
+          {selectedPools.length ? (
+            selectedPools.map(
               ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
                 <PoolRow
                   // Combine address and chainId for a unique key, as addresses may
@@ -298,12 +298,12 @@ export function PoolsList(): ReactElement {
             >
               <NonIdealState
                 heading={
-                  pools?.length || 0 > 0
+                  allPools?.length || 0 > 0
                     ? "No pools found"
                     : "No pools available"
                 }
                 text={
-                  pools?.length || 0 > 0
+                  allPools?.length || 0 > 0
                     ? "Try adjusting your filters."
                     : "Check back soon!"
                 }
