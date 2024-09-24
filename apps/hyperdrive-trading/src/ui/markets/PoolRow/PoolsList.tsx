@@ -296,7 +296,7 @@ export function PoolsList(): ReactElement {
                 width: containerRef.current?.offsetWidth,
               }}
             >
-              {allPools?.length || 0 > 0 ? (
+              {allPools?.length ? (
                 <NonIdealState
                   heading={"No pools found"}
                   text={"Try adjusting your filters."}
