@@ -13,7 +13,6 @@ import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Status, decodeInstanceData } from "src/registry/data";
 import { sdkCache } from "src/sdk/sdkCache";
@@ -236,30 +235,26 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
             namespace: chainId.toString(),
           });
 
-          const addresses = await registry.getInstanceAddresses();
-          const metas = await registry.getInstanceInfos(addresses);
+          const instances = await registry.getInstances();
+          const metas = await registry.getInstanceInfos(
+            instances.map((pool) => pool.address),
+          );
 
-          for (const [i, address] of addresses.entries()) {
+          for (const [i, readHyperdrive] of instances.entries()) {
             const { data, factory, name, version } = metas[i];
             const { status } = decodeInstanceData(data);
-
-            const readHyperdrive = await getReadHyperdrive({
-              appConfig: connectedAppConfig,
-              hyperdriveAddress: address,
-              publicClient,
-            });
 
             const { baseToken, vaultSharesToken: vaultToken } =
               await readHyperdrive.getPoolConfig();
             const { isPaused } = await readHyperdrive.getMarketState();
             const [deployerCoordinatorAddress] =
               await factory.getDeployerCoordinatorAddresses({
-                instances: [address],
+                instances: [readHyperdrive.address],
               });
 
             pools.push({
               name,
-              address,
+              address: readHyperdrive.address,
               chainId,
               version,
               isPaused,
