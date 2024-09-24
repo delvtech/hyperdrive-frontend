@@ -24,7 +24,6 @@ export interface PoolRowProps {
   tvl: bigint;
   isFiat: boolean;
   fixedApr: bigint;
-  vaultRate: bigint;
   lpApy: LpApyResult;
 }
 
@@ -33,7 +32,6 @@ export function PoolRow({
   tvl,
   isFiat,
   fixedApr,
-  vaultRate,
   lpApy,
 }: PoolRowProps): ReactElement {
   const navigate = useNavigate();

@@ -298,7 +298,7 @@ export function PoolsList(): ReactElement {
             </Well>
           ) : (
             selectedPools.map(
-              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl, vaultRate }) => (
+              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl }) => (
                 <PoolRow
                   // Combine address and chainId for a unique key, as addresses may
                   // overlap across chains (e.g. cloudchain and mainnet)
@@ -307,7 +307,6 @@ export function PoolsList(): ReactElement {
                   tvl={tvl}
                   isFiat={isFiat}
                   fixedApr={fixedApr}
-                  vaultRate={vaultRate}
                   lpApy={lpApy}
                 />
               ),
@@ -453,7 +452,6 @@ function usePoolsList(): {
           // fiat pricing. On mainnet and others, use DeFiLlama's fiat
           // price.
           let tvl = await readHyperdrive.getPresentValue();
-
           let isFiatSupported = !isTestnetChain(hyperdrive.chainId);
           if (isFiatSupported) {
             const fiatPrice = await getTokenFiatPrice({
@@ -487,7 +485,6 @@ function usePoolsList(): {
             hyperdrive,
             fixedApr,
             longPrice,
-            vaultRate: vaultRate.rate,
             lpApy,
             tvl,
             isFiat: isFiatSupported,
