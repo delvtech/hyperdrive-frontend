@@ -17,6 +17,7 @@ import classNames from "classnames";
 import { ReactElement, useEffect, useReducer, useRef, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
@@ -33,7 +34,7 @@ import { useChainId } from "wagmi";
 const sortOptions = [
   "TVL",
   "Fixed APR",
-  "Variable APY",
+  "Yield Multiplier",
   "LP APY",
   "Chain",
 ] as const;
@@ -95,8 +96,11 @@ export function PoolsList(): ReactElement {
           return Number(b.fixedApr - a.fixedApr);
         case "LP APY":
           return Number((b.lpApy.lpApy || 0n) - (a.lpApy.lpApy || 0n));
-        case "Variable APY":
-          return Number(b.vaultRate - a.vaultRate);
+        case "Yield Multiplier":
+          return Number(
+            calculateMarketYieldMultiplier(b.longPrice).bigint -
+              calculateMarketYieldMultiplier(a.longPrice).bigint,
+          );
         case "TVL":
           return fixed(b.tvl, b.hyperdrive.decimals)
             .sub(a.tvl, a.hyperdrive.decimals)
@@ -391,6 +395,7 @@ function filtersReducer(
 
 interface Pool extends PoolRowProps {
   depositAssets: TokenConfig[];
+  longPrice: bigint;
 }
 
 function usePoolsList(): {
@@ -434,6 +439,7 @@ function usePoolsList(): {
           });
 
           const fixedApr = await readHyperdrive.getFixedApr();
+          const longPrice = await readHyperdrive.getLongPrice();
           const vaultRate = await getYieldSourceRate(
             readHyperdrive,
             appConfigForConnectedChain,
@@ -447,6 +453,7 @@ function usePoolsList(): {
           // fiat pricing. On mainnet and others, use DeFiLlama's fiat
           // price.
           let tvl = await readHyperdrive.getPresentValue();
+
           let isFiatSupported = !isTestnetChain(hyperdrive.chainId);
           if (isFiatSupported) {
             const fiatPrice = await getTokenFiatPrice({
@@ -479,6 +486,7 @@ function usePoolsList(): {
           pools.push({
             hyperdrive,
             fixedApr,
+            longPrice,
             vaultRate: vaultRate.rate,
             lpApy,
             tvl,

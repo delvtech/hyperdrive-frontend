@@ -275,7 +275,10 @@ export function OpenShortForm({
       ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
           .div(traderDeposit, activeToken.decimals)
           .format({ decimals: 2, rounding: "trunc" })
-      : calculateMarketYieldMultiplier(longPrice ?? 0n);
+      : calculateMarketYieldMultiplier(longPrice ?? 0n).format({
+          decimals: 2,
+          rounding: "trunc",
+        });
 
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
