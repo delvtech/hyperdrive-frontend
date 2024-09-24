@@ -11,7 +11,7 @@ import { gnosisFork } from "src/chains/gnosisFork";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Chain, http, Transport } from "viem";
-import { foundry, gnosis, linea, mainnet, sepolia } from "wagmi/chains";
+import { base, foundry, gnosis, linea, mainnet, sepolia } from "wagmi/chains";
 
 const {
   VITE_LOCALHOST_NODE_RPC_URL,
@@ -21,6 +21,7 @@ const {
   VITE_SEPOLIA_RPC_URL,
   VITE_MAINNET_RPC_URL,
   VITE_LINEA_RPC_URL,
+  VITE_BASE_RPC_URL,
   VITE_GNOSIS_FORK_NODE_RPC_URL,
   VITE_GNOSIS_FORK_CHAIN_ID,
   VITE_GNOSIS_NODE_RPC_URL,
@@ -54,6 +55,7 @@ interface WagmiClientConfig {
 */
 
 const chainConfigs: Record<string, WagmiClientConfig> = {
+  // mainnet chains
   mainnet: {
     rpcUrl: VITE_MAINNET_RPC_URL,
     chain: mainnet,
@@ -67,6 +69,11 @@ const chainConfigs: Record<string, WagmiClientConfig> = {
     rpcUrl: VITE_LINEA_RPC_URL,
     chain: linea,
   },
+  base: {
+    rpcUrl: VITE_BASE_RPC_URL,
+    chain: base,
+  },
+  // testnet chains
   foundry: {
     rpcUrl: VITE_LOCALHOST_NODE_RPC_URL,
     chain: foundry,

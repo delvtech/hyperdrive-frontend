@@ -2,6 +2,7 @@ import "dotenv/config";
 import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
+import { ETHEREUM_REGISTRY_ADDRESS } from "src/registries";
 import { createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
 
@@ -13,7 +14,7 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  registryAddress: ETHEREUM_REGISTRY_ADDRESS,
   publicClient,
 });
 

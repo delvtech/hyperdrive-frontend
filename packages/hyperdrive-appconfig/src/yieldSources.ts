@@ -52,10 +52,24 @@ const morphoWstethUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
+const morphoCbethUsdc: YieldSource = {
+  id: "morphoCbethUsdc",
+  shortName: "Morpho cbETH/USDC",
+  protocol: "morpho",
+  historicalRatePeriod: 1,
+};
+
 const morphoWstethUsda: YieldSource = {
   id: "morphoWstethUsda",
   shortName: "Morpho wstETH/USDA",
   protocol: "morpho",
+  historicalRatePeriod: 1,
+};
+
+const cbeth: YieldSource = {
+  id: "cbeth",
+  shortName: "cbETH",
+  protocol: "coinbase",
   historicalRatePeriod: 1,
 };
 
@@ -123,9 +137,11 @@ export const yieldSources = {
   morphoUsdeDai,
   morphoWstethUsdc,
   morphoWstethUsda,
+  morphoCbethUsdc,
   reth,
   ezeth,
   gnosisWsteth,
+  cbeth,
   sxdai,
   stusd,
   lineaEzeth,

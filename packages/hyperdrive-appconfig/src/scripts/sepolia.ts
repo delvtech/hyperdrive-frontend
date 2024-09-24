@@ -2,6 +2,7 @@ import "dotenv/config";
 import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
+import { SEPOLIA_REGISTRY_ADDRESS } from "src/registries";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
@@ -13,7 +14,7 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+  registryAddress: SEPOLIA_REGISTRY_ADDRESS,
   publicClient,
 });
 

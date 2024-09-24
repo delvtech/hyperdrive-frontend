@@ -1,6 +1,6 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
-import { gnosis, linea, mainnet } from "viem/chains";
+import { base, gnosis, linea, mainnet } from "viem/chains";
 
 export async function getTokenFiatPrice({
   tokenAddress,
@@ -29,4 +29,5 @@ export const defiLlamaChainNameIdentifier: Record<number, string> = {
   [mainnet.id]: "ethereum",
   [gnosis.id]: "gnosis",
   [linea.id]: "linea",
+  [base.id]: "base",
 };

@@ -43,7 +43,9 @@ export interface HyperdriveConfig {
   poolConfig: PoolConfig;
 
   /**
-   * For use in cases where the poolConfig.baseToken is the zero address
+   * For use in cases where the poolConfig.baseToken is the zero address. For
+   * example, this tells you what the vaultSharePrice of a hyperdrive is
+   * denominated in.
    */
   baseTokenFallback?: {
     chainId: number;

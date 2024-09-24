@@ -1,4 +1,4 @@
-import { gnosis, linea, mainnet } from "viem/chains";
+import { base, gnosis, linea, mainnet } from "viem/chains";
 
 /**
  * Checks if the given chain ID corresponds to a mainnet chain.
@@ -6,6 +6,6 @@ import { gnosis, linea, mainnet } from "viem/chains";
  * @returns True if the chain ID corresponds to a mainnet chain, false otherwise.
  */
 export function isMainnetChain(chainId: number): boolean {
-  const mainnetChainIds: number[] = [mainnet.id, gnosis.id, linea.id];
+  const mainnetChainIds: number[] = [mainnet.id, gnosis.id, linea.id, base.id];
   return mainnetChainIds.includes(chainId);
 }
