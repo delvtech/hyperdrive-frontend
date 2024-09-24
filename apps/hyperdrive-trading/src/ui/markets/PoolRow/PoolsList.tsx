@@ -296,18 +296,17 @@ export function PoolsList(): ReactElement {
                 width: containerRef.current?.offsetWidth,
               }}
             >
-              <NonIdealState
-                heading={
-                  allPools?.length || 0 > 0
-                    ? "No pools found"
-                    : "No pools available"
-                }
-                text={
-                  allPools?.length || 0 > 0
-                    ? "Try adjusting your filters."
-                    : "Check back soon!"
-                }
-              />
+              {allPools?.length || 0 > 0 ? (
+                <NonIdealState
+                  heading={"No pools found"}
+                  text={"Try adjusting your filters."}
+                />
+              ) : (
+                <NonIdealState
+                  heading={"No pools available"}
+                  text={"Check back soon!"}
+                />
+              )}
             </Well>
           )}
         </>
