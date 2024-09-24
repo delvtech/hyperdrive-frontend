@@ -12,7 +12,13 @@ import {
   lineaChainConfig,
 } from "src/chains/chains";
 import { protocols } from "src/protocols";
-import { BASE_REGISTRY_ADDRESS } from "src/registries";
+import {
+  BASE_REGISTRY_ADDRESS,
+  ETHEREUM_REGISTRY_ADDRESS,
+  GNOSIS_REGISTRY_ADDRESS,
+  LINEA_REGISTRY_ADDRESS,
+  SEPOLIA_REGISTRY_ADDRESS,
+} from "src/registries";
 import { yieldSources } from "src/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
@@ -30,20 +36,20 @@ const chainConfigs: ChainInitializationConfig[] = [
   // { // TODO: Re-enable this when needed
   //   chain: cloudChain,
   //   rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,
-  //   registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  //   registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
   //   isTestnet: true,
   // },
   // { // TODO: Re-enable this when needed
   //   chain: gnosisFork,
   //   rpcUrl: process.env.GNOSIS_FORK_RPC_URL as string,
-  //   registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+  //   registryAddress: GNOSIS_FORK_REGISTRY_ADDRESS,
   //   earliestBlock: gnosisChainConfig.earliestBlock,
   //   isTestnet: true,
   // },
   {
     chain: sepolia,
     rpcUrl: process.env.SEPOLIA_RPC_URL as string,
-    registryAddress: "0x03f6554299acf544ac646305800f57db544b837a",
+    registryAddress: SEPOLIA_REGISTRY_ADDRESS,
     isTestnet: true,
   },
 
@@ -51,18 +57,18 @@ const chainConfigs: ChainInitializationConfig[] = [
   {
     chain: mainnet,
     rpcUrl: process.env.ETHEREUM_RPC_URL as string,
-    registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+    registryAddress: ETHEREUM_REGISTRY_ADDRESS,
   },
   {
     chain: gnosis,
     rpcUrl: process.env.GNOSIS_RPC_URL as string,
-    registryAddress: "0x666fa9ef9bca174a042c4c306b23ba8ee0c59666",
+    registryAddress: GNOSIS_REGISTRY_ADDRESS,
     earliestBlock: gnosisChainConfig.earliestBlock,
   },
   {
     chain: linea,
     rpcUrl: process.env.LINEA_RPC_URL as string,
-    registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
+    registryAddress: LINEA_REGISTRY_ADDRESS,
     earliestBlock: lineaChainConfig.earliestBlock,
   },
   {

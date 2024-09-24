@@ -3,6 +3,7 @@ import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { lineaChainConfig } from "src/chains/chains";
+import { LINEA_REGISTRY_ADDRESS } from "src/registries";
 import { createPublicClient, http } from "viem";
 import { linea } from "viem/chains";
 
@@ -14,7 +15,7 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0x6668310631Ad5a5ac92dC9549353a5BaaE16C666",
+  registryAddress: LINEA_REGISTRY_ADDRESS,
   publicClient,
   earliestBlock: lineaChainConfig.earliestBlock,
 });

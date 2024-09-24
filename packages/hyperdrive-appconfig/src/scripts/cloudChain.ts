@@ -3,6 +3,7 @@ import camelCase from "lodash.camelcase";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { cloudChain } from "src/chains/cloudChain";
+import { CLOUDCHAIN_REGISTRY_ADDRESS } from "src/registries";
 import { createPublicClient, http } from "viem";
 
 const cloudChainNodeRpcUrl = process.env.CLOUDCHAIN_RPC_URL as string;
@@ -13,7 +14,7 @@ const publicClient = createPublicClient({
 });
 
 const appConfig = await getAppConfig({
-  registryAddress: "0xbe082293b646cb619a638d29e8eff7cf2f46aa3a",
+  registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
   publicClient,
 });
 
