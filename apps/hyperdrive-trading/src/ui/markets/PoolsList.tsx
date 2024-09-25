@@ -67,17 +67,15 @@ export function PoolsList(): ReactElement {
     ?.filter((pool) => {
       if (
         selectedChains.length &&
-        !selectedChains.some(({ id }) => pool.hyperdrive.chainId === id)
+        !filters.chains[pool.hyperdrive.chainId].selected
       ) {
         return false;
       }
 
       if (
         selectedAssets.length &&
-        !selectedAssets.some((selectedAsset) =>
-          pool.depositAssets.some(
-            (poolAsset) => poolAsset.symbol === selectedAsset.symbol,
-          ),
+        !pool.depositAssets.some(
+          (poolAsset) => filters.assets[poolAsset.symbol].selected,
         )
       ) {
         return false;
@@ -172,7 +170,7 @@ export function PoolsList(): ReactElement {
                         </span>
                         <CheckIcon
                           className={classNames("size-5 fill-aquamarine", {
-                            invisible: !selectedChains.includes(chain),
+                            invisible: !chain.selected,
                           })}
                         />
                       </button>
@@ -228,7 +226,7 @@ export function PoolsList(): ReactElement {
                         </span>
                         <CheckIcon
                           className={classNames("size-5 fill-aquamarine", {
-                            invisible: !selectedAssets.includes(asset),
+                            invisible: !asset.selected,
                           })}
                         />
                       </button>
