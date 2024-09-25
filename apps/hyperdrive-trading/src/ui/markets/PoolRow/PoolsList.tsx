@@ -20,7 +20,6 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
-import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -439,10 +438,6 @@ function usePoolsList(): {
 
           const fixedApr = await readHyperdrive.getFixedApr();
           const longPrice = await readHyperdrive.getLongPrice();
-          const vaultRate = await getYieldSourceRate(
-            readHyperdrive,
-            appConfigForConnectedChain,
-          );
           const lpApy = await getLpApy({
             hyperdrive,
             readHyperdrive,
