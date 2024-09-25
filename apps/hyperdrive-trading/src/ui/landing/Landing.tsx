@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { Hero } from "src/ui/landing/Hero/Hero";
-import { PoolsList } from "src/ui/markets/PoolRow/PoolsList";
+import { PoolsList } from "src/ui/markets/PoolsList";
 
 export function Landing(): ReactElement | null {
   return (

@@ -25,7 +25,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { PositionPicker } from "src/ui/markets/PositionPicker/PositionPicker";
+import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";

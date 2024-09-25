@@ -26,7 +26,7 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
-import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow/PoolRow";
+import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
