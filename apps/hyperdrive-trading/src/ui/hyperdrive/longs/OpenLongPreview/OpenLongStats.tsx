@@ -72,16 +72,20 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             <>
-              {bondAmount > 0
-                ? `${formatRate(
-                    calculateAprFromPrice({
-                      positionDuration:
-                        hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: amountPaidInBase,
-                      bondAmount: bondAmount,
-                    }),
-                  )}`
-                : `${fixedApr?.formatted}`}
+              {bondAmount > 0 ? (
+                `${formatRate(
+                  calculateAprFromPrice({
+                    positionDuration:
+                      hyperdrive.poolConfig.positionDuration || 0n,
+                    baseAmount: amountPaidInBase,
+                    bondAmount: bondAmount,
+                  }),
+                )}`
+              ) : fixedApr?.formatted ? (
+                `${fixedApr.formatted}`
+              ) : (
+                <Skeleton width={100} />
+              )}
             </>
           )
         }
