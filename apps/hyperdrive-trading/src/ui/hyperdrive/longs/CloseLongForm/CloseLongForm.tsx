@@ -231,6 +231,7 @@ export function CloseLongForm({
               <StatusCell
                 chainId={hyperdrive.chainId}
                 maturity={long.maturity}
+                statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
               />
             }
           />
