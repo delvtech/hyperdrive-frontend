@@ -93,7 +93,8 @@ export function OpenLongStats({
             `Matures on ${formatDate(Date.now() + termLengthMS)}`
           )
         }
-        valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
+        valueContainerClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
+        valueClassName="text-h3 font-bold"
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
@@ -120,7 +121,8 @@ export function OpenLongStats({
           )
         }
         valueUnit={`${baseToken.symbol}`}
-        valueClassName="text-base-content flex items-end"
+        valueContainerClassName="flex items-end"
+        valueClassName="text-h3 font-bold"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 

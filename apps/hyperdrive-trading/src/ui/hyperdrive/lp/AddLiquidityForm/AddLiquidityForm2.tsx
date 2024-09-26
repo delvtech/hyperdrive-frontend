@@ -458,7 +458,8 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueClassName="flex items-end "
+      valueContainerClassName="flex items-end"
+      valueClassName="text-h3 font-bold"
       unitClassName="text-xs mb-1"
       value={
         addLiquidityPreviewStatus === "loading" ? (
@@ -512,10 +513,11 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       })()}
       tooltipContent="The annual percentage yield projection for providing liquidity."
       tooltipPosition="left"
-      valueClassName={classNames("", {
+      valueContainerClassName={classNames({
         "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent":
           !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
       })}
+      valueClassName="text-h3 font-bold"
       subValue={
         vaultRateStatus === "success" && vaultRate ? (
           <div>

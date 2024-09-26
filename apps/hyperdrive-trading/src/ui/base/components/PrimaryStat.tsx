@@ -10,6 +10,7 @@ export function PrimaryStat({
   subValue,
   tooltipContent,
   tooltipPosition = "top",
+  valueContainerClassName,
   valueClassName,
   unitClassName,
   valueLoading = false,
@@ -20,12 +21,13 @@ export function PrimaryStat({
   subValue?: ReactNode;
   tooltipContent?: string;
   tooltipPosition?: "top" | "bottom" | "left" | "right";
+  valueContainerClassName?: string;
   valueClassName?: string;
   unitClassName?: string;
   valueLoading?: boolean;
 }): JSX.Element {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col justify-between gap-1">
       <div className="flex gap-1">
         <p className="text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
@@ -45,12 +47,12 @@ export function PrimaryStat({
           </div>
         )}
       </div>
-      <div className={valueClassName}>
+      <div className={valueContainerClassName}>
         {valueLoading ? (
           <Skeleton width={100} className="h-8" />
         ) : (
           <>
-            <div className="text-h3 font-bold">{value}</div>
+            <div className={valueClassName}>{value}</div>
             {valueUnit ? (
               <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
             ) : null}
