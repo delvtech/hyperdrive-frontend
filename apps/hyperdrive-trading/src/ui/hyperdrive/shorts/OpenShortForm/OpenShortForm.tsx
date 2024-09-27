@@ -422,9 +422,10 @@ export function OpenShortForm({
           <PrimaryStat
             label="Exposure Multiplier"
             tooltipContent={`This represents how much exposure you get to ${appConfig.yieldSources[hyperdrive.yieldSource].shortName} compared to what you pay to open the short.`}
-            value={exposureMultiplier}
+            value={
+              <span className="text-h3 font-bold">{exposureMultiplier}</span>
+            }
             valueContainerClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
-            valueClassName="text-h3 font-bold"
             valueUnit="x"
             unitClassName="text-h3 font-bold"
             subValue={`Matures on ${maturesOnLabel}`}
@@ -434,9 +435,12 @@ export function OpenShortForm({
           <PrimaryStat
             label="Rate you pay"
             tooltipContent={`The fixed rate you pay upfront that determines the cost-basis of this short.`}
-            value={formatRate(fixedRatePaid || 0n)}
+            value={
+              <span className="text-h3 font-bold">
+                {formatRate(fixedRatePaid || 0n)}
+              </span>
+            }
             valueContainerClassName="flex items-end"
-            valueClassName="text-h3 font-bold"
             valueUnit="APR"
             unitClassName="text-xs mb-1 font-bold"
             subValue={

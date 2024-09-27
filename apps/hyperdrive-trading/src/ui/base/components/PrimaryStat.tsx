@@ -11,7 +11,6 @@ export function PrimaryStat({
   tooltipContent,
   tooltipPosition = "top",
   valueContainerClassName,
-  valueClassName,
   unitClassName,
   valueLoading = false,
 }: {
@@ -22,7 +21,6 @@ export function PrimaryStat({
   tooltipContent?: string;
   tooltipPosition?: "top" | "bottom" | "left" | "right";
   valueContainerClassName?: string;
-  valueClassName?: string;
   unitClassName?: string;
   valueLoading?: boolean;
 }): JSX.Element {
@@ -52,7 +50,7 @@ export function PrimaryStat({
           <Skeleton width={100} className="h-8" />
         ) : (
           <>
-            <div className={valueClassName}>{value}</div>
+            {value}
             {valueUnit ? (
               <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
             ) : null}

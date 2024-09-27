@@ -71,7 +71,7 @@ export function OpenLongStats({
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <>
+            <span className="text-h3 font-bold">
               {bondAmount > 0 ? (
                 `${formatRate(
                   calculateAprFromPrice({
@@ -86,7 +86,7 @@ export function OpenLongStats({
               ) : (
                 <Skeleton width={100} />
               )}
-            </>
+            </span>
           )
         }
         valueUnit="APR"
@@ -98,7 +98,6 @@ export function OpenLongStats({
           )
         }
         valueContainerClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
-        valueClassName="text-h3 font-bold"
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
@@ -108,7 +107,7 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames("flex", {
+              className={classNames("flex text-h3 font-bold", {
                 "text-base-content/80": !amountPaid,
               })}
             >
@@ -126,7 +125,6 @@ export function OpenLongStats({
         }
         valueUnit={`${baseToken.symbol}`}
         valueContainerClassName="flex items-end"
-        valueClassName="text-h3 font-bold"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 

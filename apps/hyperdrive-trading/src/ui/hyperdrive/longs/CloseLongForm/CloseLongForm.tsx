@@ -239,7 +239,7 @@ export function CloseLongForm({
           <PrimaryStat
             label="Pool fee"
             value={
-              <p>
+              <span className="text-h3 font-bold">
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
@@ -248,10 +248,9 @@ export function CloseLongForm({
                       places: 4,
                     })}`
                   : "0"}
-              </p>
+              </span>
             }
             valueUnit={activeWithdrawToken.symbol}
-            valueClassName="text-h3 font-bold"
             valueContainerClassName="flex flex-row gap-2 items-end"
           />
         </div>
