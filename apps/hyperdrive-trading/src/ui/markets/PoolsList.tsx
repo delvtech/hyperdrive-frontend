@@ -159,7 +159,7 @@ export function PoolsList(): ReactElement {
                   title="Filter by chain"
                   selected={selectedChains}
                   onChange={setSelectedChains}
-                  label={
+                  displayValue={
                     selectedChains.length === 1
                       ? appConfig.chains[selectedChains[0]].name
                       : `${
@@ -187,7 +187,7 @@ export function PoolsList(): ReactElement {
                   title="Filter by deposit asset"
                   selected={selectedAssets}
                   onChange={setSelectedAssets}
-                  label={
+                  displayValue={
                     selectedAssets.length === 1
                       ? selectedAssets[0]
                       : `${

@@ -14,7 +14,7 @@ export interface MultiSelectProps<T extends OptionValue> {
    * The value to show inside the button, representing the selected value, e.g.,
    * `"4 selected"`.
    */
-  label: ReactNode;
+  displayValue: ReactNode;
   options: MultiSelectOption<T>[];
   onChange: (selected: T[]) => void;
   /**
@@ -26,7 +26,7 @@ export interface MultiSelectProps<T extends OptionValue> {
 }
 
 export function MultiSelect<T extends OptionValue>({
-  label,
+  displayValue,
   selected,
   options,
   onChange,
@@ -60,7 +60,7 @@ export function MultiSelect<T extends OptionValue>({
         title={title}
         className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
       >
-        {label}
+        {displayValue}
         <ChevronDownIcon className="size-5" />
       </div>
       <div
