@@ -2,7 +2,7 @@ import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useParams } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Helmet } from "react-helmet";
-import { PoolDetails } from "src/ui/markets/PoolDetails/PoolDetails";
+import { PoolDetails } from "src/ui/markets/PoolDetails";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { Address } from "viem";
 

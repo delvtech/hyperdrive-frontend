@@ -5,19 +5,20 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import { Link } from "@tanstack/react-router";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useClickAway } from "react-use";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { getSubHeadingLabel } from "src/ui/hyperdrive/lp/getSubHeadingLabel";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { RedeemWithdrawalSharesForm } from "src/ui/hyperdrive/withdrawalShares/RedeemWithdrawalSharesForm/RedeemWithdrawalSharesForm";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useAccount } from "wagmi";
 export function ManageLpAndWithdrawalSharesButton({
   hyperdrive,
@@ -118,43 +119,18 @@ export function ManageLpAndWithdrawalSharesButton({
                 )}
               </Modal>
             ) : null}
-            {/* TODO: Change this to a simple link to the pool's Supply tab */}
-            <Modal
-              modalId={"add-lp"}
-              modalHeader={
-                <ModalHeader
-                  heading="Add Liquidity"
-                  subHeading={`Earn yield by providing liquidity for Longs and
-          Shorts. Your liquidity also earns the ${yieldSource.shortName}
-          rate when not in use.
-          `}
-                />
-              }
-              modalContent={
-                <AddLiquidityForm
-                  hyperdrive={hyperdrive}
-                  onAddLiquidity={(e) => {
-                    // preventDefault since we don't want to close the modal while the
-                    // tx is temporarily pending the user's signature in their wallet.
-                    e.preventDefault();
-                  }}
-                />
-              }
+
+            <Link
+              className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
+              to={MARKET_DETAILS_ROUTE}
+              params={{
+                chainId: hyperdrive.chainId.toString(),
+                address: hyperdrive.address,
+              }}
+              search={{ position: "lp" }}
             >
-              {({ showModal }) => (
-                <li>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      showModal();
-                    }}
-                    className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
-                  >
-                    Add Liquidity
-                  </button>
-                </li>
-              )}
-            </Modal>
+              Add Liquidity
+            </Link>
 
             <Modal
               modalId="withdrawalLpModal"

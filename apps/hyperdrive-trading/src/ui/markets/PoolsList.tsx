@@ -2,32 +2,30 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AdjustmentsHorizontalIcon,
   BarsArrowDownIcon,
-  CheckIcon,
-  ChevronDownIcon,
 } from "@heroicons/react/20/solid";
 import {
   appConfig,
+  ChainConfig,
   findBaseToken,
   findToken,
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
-import classNames from "classnames";
-import { ReactElement, useEffect, useReducer, useRef, useState } from "react";
+import { ReactElement, ReactNode, useMemo, useRef, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
-import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
+import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
-import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow/PoolRow";
+import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
@@ -39,46 +37,74 @@ const sortOptions = [
   "Chain",
 ] as const;
 
+type SortOption = (typeof sortOptions)[number];
+
 export function PoolsList(): ReactElement {
   const { pools: allPools, status } = usePoolsList();
   const [sort, setSort] = useState<SortOption>("TVL");
-  const [filters, dispatch] = useReducer(filtersReducer, {
-    chains: {},
-    assets: {},
-  });
 
   // Sync filters with pools
-  useEffect(() => {
+  const filters = useMemo(() => {
     if (!allPools) {
       return;
     }
-    dispatch({ type: "init", pools: allPools });
+
+    const chainsById: {
+      [id: number]: {
+        chain: ChainConfig;
+        count: number;
+      };
+    } = {};
+    const assetsBySymbol: {
+      [symbol: string]: {
+        asset: TokenConfig;
+        count: number;
+      };
+    } = {};
+
+    for (const { hyperdrive, depositAssets } of allPools) {
+      chainsById[hyperdrive.chainId] ||= {
+        chain: appConfig.chains[hyperdrive.chainId],
+        count: 0,
+      };
+      chainsById[hyperdrive.chainId].count += 1;
+
+      for (const asset of depositAssets) {
+        assetsBySymbol[asset.symbol] ||= {
+          asset,
+          count: 0,
+        };
+        assetsBySymbol[asset.symbol].count += 1;
+      }
+    }
+
+    return {
+      chains: Object.values(chainsById).sort((a, b) =>
+        a.chain.name.localeCompare(b.chain.name)
+      ),
+      assets: Object.values(assetsBySymbol).sort((a, b) =>
+        a.asset.symbol.localeCompare(b.asset.symbol)
+      ),
+    };
   }, [allPools]);
 
-  // Prep filter values
-  const allAssets = Object.values(filters.assets).sort((a, b) =>
-    a.symbol.localeCompare(b.symbol),
-  );
-  const selectedAssets = allAssets.filter(({ selected }) => selected);
-  const allChains = Object.values(filters.chains).sort((a, b) => a.id - b.id);
-  const selectedChains = allChains.filter(({ selected }) => selected);
+  const [selectedChains, setSelectedChains] = useState<number[]>([]);
+  const [selectedAssets, setSelectedAssets] = useState<string[]>([]);
 
   // Filter and sort pools
   const selectedPools = allPools
     ?.filter((pool) => {
       if (
         selectedChains.length &&
-        !selectedChains.some(({ id }) => pool.hyperdrive.chainId === id)
+        !selectedChains.includes(pool.hyperdrive.chainId)
       ) {
         return false;
       }
 
       if (
         selectedAssets.length &&
-        !selectedAssets.some((selectedAsset) =>
-          pool.depositAssets.some(
-            (poolAsset) => poolAsset.symbol === selectedAsset.symbol,
-          ),
+        !pool.depositAssets.some(({ symbol }) =>
+          selectedAssets.includes(symbol)
         )
       ) {
         return false;
@@ -99,7 +125,7 @@ export function PoolsList(): ReactElement {
         case "Yield Multiplier":
           return Number(
             calculateMarketYieldMultiplier(b.longPrice).bigint -
-              calculateMarketYieldMultiplier(a.longPrice).bigint,
+              calculateMarketYieldMultiplier(a.longPrice).bigint
           );
         case "TVL":
           return fixed(b.tvl, b.hyperdrive.decimals)
@@ -128,115 +154,59 @@ export function PoolsList(): ReactElement {
             <div className="flex items-center gap-2">
               <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
               {/* Chain filter */}
-              <div className="daisy-dropdown">
-                <div
-                  tabIndex={0}
-                  role="button"
+              {filters && filters.chains.length > 1 && (
+                <MultiSelect
                   title="Filter by chain"
-                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-                >
-                  {selectedChains.length === 1
-                    ? appConfig.chains[selectedChains[0].id]?.name ||
-                      `chain ${selectedChains[0].id}`
-                    : `${selectedChains.length || allChains.length} chains`}
-                  <ChevronDownIcon className="size-5" />
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
-                >
-                  {allChains.map((chain) => (
-                    <li key={chain.id}>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          dispatch({ type: "toggleChain", chainId: chain.id })
-                        }
-                        className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
-                      >
-                        <span className="flex items-center gap-1.5">
-                          {appConfig.chains[chain.id]?.iconUrl && (
-                            <img
-                              className="size-4 rounded-full"
-                              src={appConfig.chains[chain.id]?.iconUrl}
-                            />
-                          )}
-                          {appConfig.chains[chain.id]?.name ||
-                            `chain ${chain.id}`}{" "}
-                          <span className="daisy-badge daisy-badge-neutral">
-                            {
-                              allPools?.filter(
-                                (pool) => pool.hyperdrive.chainId === chain.id,
-                              ).length
-                            }
-                          </span>
-                        </span>
-                        <CheckIcon
-                          className={classNames("size-5 fill-aquamarine", {
-                            invisible: !selectedChains.includes(chain),
-                          })}
-                        />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  selected={selectedChains}
+                  onChange={setSelectedChains}
+                  displayValue={
+                    selectedChains.length === 1
+                      ? appConfig.chains[selectedChains[0]].name
+                      : `${
+                          selectedChains.length || filters?.chains.length
+                        } chains`
+                  }
+                  searchEnabled
+                  options={filters.chains.map(({ chain, count }) => {
+                    return {
+                      value: chain.id,
+                      searchValue: chain.name,
+                      label: (
+                        <FilterMenuItem iconSrc={chain.iconUrl} count={count}>
+                          {chain.name}
+                        </FilterMenuItem>
+                      ),
+                    };
+                  })}
+                />
+              )}
 
               {/* Assets filter */}
-              <div className="daisy-dropdown">
-                <div
-                  tabIndex={0}
-                  role="button"
+              {filters && filters.assets.length > 1 && (
+                <MultiSelect
                   title="Filter by deposit asset"
-                  className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-                >
-                  {selectedAssets.length === 1
-                    ? selectedAssets[0].symbol
-                    : `${selectedAssets.length || allAssets.length} assets`}
-                  <ChevronDownIcon className="size-5" />
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
-                >
-                  {allAssets.map((asset) => (
-                    <li key={`${asset.chainId}-${asset.address}`}>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          dispatch({
-                            type: "toggleAsset",
-                            symbol: asset.symbol,
-                          })
-                        }
-                        className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap text-left"
-                      >
-                        <span className="flex items-center gap-1.5">
-                          <img
-                            className="size-4 rounded-full"
-                            src={asset.iconUrl}
-                          />
-                          {asset.symbol}{" "}
-                          <span className="daisy-badge daisy-badge-neutral">
-                            {
-                              allPools?.filter(({ depositAssets }) =>
-                                depositAssets.some(
-                                  ({ symbol }) => symbol === asset.symbol,
-                                ),
-                              ).length
-                            }
-                          </span>
-                        </span>
-                        <CheckIcon
-                          className={classNames("size-5 fill-aquamarine", {
-                            invisible: !selectedAssets.includes(asset),
-                          })}
-                        />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  selected={selectedAssets}
+                  onChange={setSelectedAssets}
+                  displayValue={
+                    selectedAssets.length === 1
+                      ? selectedAssets[0]
+                      : `${
+                          selectedAssets.length || filters.assets.length
+                        } assets`
+                  }
+                  searchEnabled
+                  options={filters.assets.map(({ asset, count }) => {
+                    return {
+                      value: asset.symbol,
+                      label: (
+                        <FilterMenuItem iconSrc={asset.iconUrl} count={count}>
+                          {asset.symbol}
+                        </FilterMenuItem>
+                      ),
+                    };
+                  })}
+                />
+              )}
 
               <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
                 {selectedPools.length}
@@ -309,7 +279,7 @@ export function PoolsList(): ReactElement {
                   fixedApr={fixedApr}
                   lpApy={lpApy}
                 />
-              ),
+              )
             )
           )}
         </>
@@ -318,78 +288,24 @@ export function PoolsList(): ReactElement {
   );
 }
 
-type SortOption = (typeof sortOptions)[number];
-
-interface FiltersState {
-  assets: {
-    [symbol: string]: TokenConfig & {
-      selected: boolean;
-    };
-  };
-  chains: {
-    [id: number]: {
-      id: number;
-      selected: boolean;
-    };
-  };
-}
-
-type FiltersAction =
-  | { type: "init"; pools: Pool[] }
-  | { type: "toggleAsset"; symbol: string }
-  | { type: "toggleChain"; chainId: number };
-
-function filtersReducer(
-  state: FiltersState,
-  action: FiltersAction,
-): FiltersState {
-  switch (action.type) {
-    case "init":
-      const newState = {
-        assets: { ...state.assets },
-        chains: { ...state.chains },
-      };
-
-      for (const { hyperdrive, depositAssets } of action.pools) {
-        newState.chains[hyperdrive.chainId] ||= {
-          id: hyperdrive.chainId,
-          selected: false,
-        };
-
-        for (const asset of depositAssets) {
-          newState.assets[asset.symbol] ||= {
-            ...asset,
-            selected: false,
-          };
-        }
-      }
-
-      return newState;
-
-    case "toggleAsset":
-      return {
-        ...state,
-        assets: {
-          ...state.assets,
-          [action.symbol]: {
-            ...state.assets[action.symbol],
-            selected: !state.assets[action.symbol].selected,
-          },
-        },
-      };
-
-    case "toggleChain":
-      return {
-        ...state,
-        chains: {
-          ...state.chains,
-          [action.chainId]: {
-            id: action.chainId,
-            selected: !state.chains[action.chainId].selected,
-          },
-        },
-      };
-  }
+function FilterMenuItem({
+  count,
+  children,
+  iconSrc,
+}: {
+  count?: number;
+  children: ReactNode;
+  iconSrc?: string;
+}) {
+  return (
+    <>
+      {iconSrc && <img className="size-4 rounded-full" src={iconSrc} />}
+      {children}
+      {count !== undefined && (
+        <span className="daisy-badge daisy-badge-neutral">{count}</span>
+      )}
+    </>
+  );
 }
 
 interface Pool extends PoolRowProps {
@@ -439,10 +355,6 @@ function usePoolsList(): {
 
           const fixedApr = await readHyperdrive.getFixedApr();
           const longPrice = await readHyperdrive.getLongPrice();
-          const vaultRate = await getYieldSourceRate(
-            readHyperdrive,
-            appConfigForConnectedChain,
-          );
           const lpApy = await getLpApy({
             hyperdrive,
             readHyperdrive,
@@ -490,7 +402,7 @@ function usePoolsList(): {
             isFiat: isFiatSupported,
             depositAssets,
           });
-        }),
+        })
       );
 
       return pools;
