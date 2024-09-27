@@ -67,68 +67,66 @@ export function MultiSelect<T extends OptionValue>({
         tabIndex={0}
         className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
       >
-        <div className="flex gap-2">
-          {searchEnabled && (
-            <>
-              <div className="daisy-input daisy-input-sm flex items-center gap-2 rounded-md bg-base-200 has-[:focus]:outline-none has-[:focus]:ring-1 has-[:focus]:ring-gray-600">
-                <input
-                  ref={inputRef}
-                  className="w-full shrink"
-                  style={{
-                    width: inputRef.current?.offsetWidth,
+        {searchEnabled && (
+          <div className="flex gap-2">
+            <div className="daisy-input daisy-input-sm flex items-center gap-2 rounded-md bg-base-200 has-[:focus]:outline-none has-[:focus]:ring-1 has-[:focus]:ring-gray-600">
+              <input
+                ref={inputRef}
+                className="w-full shrink"
+                style={{
+                  width: inputRef.current?.offsetWidth,
+                }}
+                placeholder="Search"
+                value={searchString}
+                onChange={({ target }) => setSearchString(target.value)}
+              />
+              {searchString.length ? (
+                <button
+                  type="button"
+                  title="Reset search"
+                  onClick={() => {
+                    inputRef.current?.focus();
+                    setSearchString("");
                   }}
-                  placeholder="Search"
-                  value={searchString}
-                  onChange={({ target }) => setSearchString(target.value)}
-                />
-                {searchString.length ? (
-                  <button
-                    type="button"
-                    title="Reset search"
-                    onClick={() => {
-                      inputRef.current?.focus();
-                      setSearchString("");
-                    }}
-                    className="text-neutral-content transition-all hover:text-current"
-                  >
-                    <XMarkIcon className="size-5 fill-current" />
-                  </button>
-                ) : (
-                  <MagnifyingGlassIcon className="size-5 fill-neutral-content" />
+                  className="text-neutral-content transition-all hover:text-current"
+                >
+                  <XMarkIcon className="size-5 fill-current" />
+                </button>
+              ) : (
+                <MagnifyingGlassIcon className="size-5 fill-neutral-content" />
+              )}
+            </div>
+            <button
+              className="group relative ml-auto flex size-8 shrink-0 items-center justify-center rounded-lg border border-gray-600"
+              type="button"
+              title={selected.length ? "Deselect all" : "Select all"}
+              onClick={() =>
+                onChange(
+                  selected.length ? [] : options.map(({ value }) => value)
+                )
+              }
+            >
+              <CheckIcon
+                className={classNames(
+                  "size-5 fill-current opacity-0 transition-all group-hover:opacity-100",
+                  {
+                    "!fill-aquamarine opacity-100 group-hover:-translate-y-1 group-hover:opacity-0":
+                      selected.length,
+                  }
                 )}
-              </div>
-              <button
-                className="group relative ml-auto flex size-8 shrink-0 items-center justify-center rounded-lg border border-gray-600"
-                type="button"
-                title={selected.length ? "Deselect all" : "Select all"}
-                onClick={() =>
-                  onChange(
-                    selected.length ? [] : options.map(({ value }) => value)
-                  )
-                }
-              >
-                <CheckIcon
-                  className={classNames(
-                    "size-5 fill-current opacity-0 transition-all group-hover:opacity-100",
-                    {
-                      "!fill-aquamarine opacity-100 group-hover:-translate-y-1 group-hover:opacity-0":
-                        selected.length,
-                    }
-                  )}
-                />
-                <XMarkIcon
-                  className={classNames(
-                    "absolute m-auto size-5 translate-y-1 opacity-0 transition-all",
-                    {
-                      "group-hover:translate-y-0 group-hover:opacity-100":
-                        selected.length,
-                    }
-                  )}
-                />
-              </button>
-            </>
-          )}
-        </div>
+              />
+              <XMarkIcon
+                className={classNames(
+                  "absolute m-auto size-5 translate-y-1 opacity-0 transition-all",
+                  {
+                    "group-hover:translate-y-0 group-hover:opacity-100":
+                      selected.length,
+                  }
+                )}
+              />
+            </button>
+          </div>
+        )}
         <ul className="grid max-h-[40vh] gap-2 overflow-auto">
           {searchString.length && !filteredOptions.length ? (
             <li className="flex h-8 flex-row items-center px-4">No matches</li>
