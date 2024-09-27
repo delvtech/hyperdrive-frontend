@@ -331,7 +331,6 @@ export function AddLiquidityForm({
               )
             }
             valueUnit={`${baseToken.symbol}-LP`}
-            valueClassName="flex items-end"
             unitClassName="text-xs"
             value={
               addLiquidityPreviewStatus === "loading" ? (
@@ -366,7 +365,6 @@ export function AddLiquidityForm({
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."
             tooltipPosition="left"
-            valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
             subValue={
               vaultRateStatus === "success" && vaultRate ? (
                 <div>
