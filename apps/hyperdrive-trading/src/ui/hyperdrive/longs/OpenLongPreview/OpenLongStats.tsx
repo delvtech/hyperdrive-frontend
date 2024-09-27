@@ -71,18 +71,22 @@ export function OpenLongStats({
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
           ) : (
-            <>
-              {bondAmount > 0
-                ? `${formatRate(
-                    calculateAprFromPrice({
-                      positionDuration:
-                        hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: amountPaidInBase,
-                      bondAmount: bondAmount,
-                    }),
-                  )}`
-                : `${fixedApr?.formatted}`}
-            </>
+            <span className="text-h3 font-bold">
+              {bondAmount > 0 ? (
+                `${formatRate(
+                  calculateAprFromPrice({
+                    positionDuration:
+                      hyperdrive.poolConfig.positionDuration || 0n,
+                    baseAmount: amountPaidInBase,
+                    bondAmount: bondAmount,
+                  }),
+                )}`
+              ) : fixedApr?.formatted ? (
+                `${fixedApr.formatted}`
+              ) : (
+                <Skeleton width={100} />
+              )}
+            </span>
           )
         }
         valueUnit="APR"
@@ -93,7 +97,7 @@ export function OpenLongStats({
             `Matures on ${formatDate(Date.now() + termLengthMS)}`
           )
         }
-        valueClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
+        valueContainerClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
@@ -103,7 +107,7 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames("flex", {
+              className={classNames("flex text-h3 font-bold", {
                 "text-base-content/80": !amountPaid,
               })}
             >
@@ -120,7 +124,7 @@ export function OpenLongStats({
           )
         }
         valueUnit={`${baseToken.symbol}`}
-        valueClassName="text-base-content flex items-end"
+        valueContainerClassName="flex items-end"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 

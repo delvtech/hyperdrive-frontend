@@ -458,14 +458,14 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueClassName="flex items-end "
+      valueContainerClassName="flex items-end"
       unitClassName="text-xs mb-1"
       value={
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={100} />
         ) : (
-          <p
-            className={classNames({
+          <span
+            className={classNames("text-h3", {
               "text-base-content/80": !lpSharesOut,
               "font-bold": lpSharesOut,
             })}
@@ -477,7 +477,7 @@ function YouReceiveStat({
                   places: baseToken.places,
                 })}`
               : "0"}
-          </p>
+          </span>
         )
       }
     />
@@ -505,15 +505,17 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
           return <Skeleton />;
         }
         if (lpApy === undefined || lpApy.isNew) {
-          return <div className="flex gap-2">✨New✨</div>;
+          return <div className="flex gap-2 text-h3 font-bold">✨New✨</div>;
         }
 
-        return `${formatRate(lpApy?.lpApy)}`;
+        return (
+          <span className="text-h3 font-bold">{formatRate(lpApy?.lpApy)}</span>
+        );
       })()}
       tooltipContent="The annual percentage yield projection for providing liquidity."
       tooltipPosition="left"
-      valueClassName={classNames("", {
-        "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent":
+      valueContainerClassName={classNames({
+        "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent text-h3 font-bold":
           !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
       })}
       subValue={

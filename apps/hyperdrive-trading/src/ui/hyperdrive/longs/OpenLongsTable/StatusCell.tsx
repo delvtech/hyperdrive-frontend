@@ -7,9 +7,11 @@ import { useBlock } from "wagmi";
 export function StatusCell({
   chainId,
   maturity,
+  statusCellClassName,
 }: {
   chainId: number;
   maturity: bigint;
+  statusCellClassName?: string;
 }): ReactElement {
   const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
@@ -22,9 +24,9 @@ export function StatusCell({
   return (
     <div
       className={classNames("flex w-28 items-center gap-2 font-inter", {
-        "mb-3 rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
+        "rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
           isTermComplete,
-        "mb-5 text-neutral-content": !isTermComplete,
+        [statusCellClassName || "text-neutral-content"]: !isTermComplete,
       })}
     >
       {isTermComplete ? <CheckCircleIcon className="size-4" /> : null}

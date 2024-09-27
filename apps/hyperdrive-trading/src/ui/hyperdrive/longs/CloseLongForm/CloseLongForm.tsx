@@ -8,7 +8,6 @@ import {
   TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
@@ -16,9 +15,9 @@ import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -229,24 +228,18 @@ export function CloseLongForm({
           <PrimaryStat
             label="Time remaining"
             value={
-              <span
-                className={classNames("flex items-center", {
-                  "font-normal": isMature,
-                })}
-              >
-                {getRemainingTimeLabel({
-                  maturitySeconds: Number(long.maturity),
-                  showLeftSuffix: false,
-                })}
-              </span>
+              <StatusCell
+                chainId={hyperdrive.chainId}
+                maturity={long.maturity}
+                statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
+              />
             }
-            valueClassName="flex items-end"
           />
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
             label="Pool fee"
             value={
-              <p>
+              <span className="text-h3 font-bold">
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
@@ -255,10 +248,10 @@ export function CloseLongForm({
                       places: 4,
                     })}`
                   : "0"}
-              </p>
+              </span>
             }
             valueUnit={activeWithdrawToken.symbol}
-            valueClassName="flex items-end"
+            valueContainerClassName="flex flex-row gap-2 items-end"
           />
         </div>
       }
