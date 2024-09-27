@@ -110,7 +110,7 @@ export function MultiSelect<T extends OptionValue>({
                 className={classNames(
                   "size-5 fill-current opacity-0 transition-all group-hover:opacity-100",
                   {
-                    "!fill-aquamarine opacity-100 group-hover:-translate-y-1 group-hover:opacity-0":
+                    "!fill-aquamarine opacity-100 group-hover:-translate-y-1 group-hover:!opacity-0":
                       selected.length,
                   }
                 )}
