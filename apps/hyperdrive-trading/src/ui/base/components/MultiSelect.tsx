@@ -133,32 +133,35 @@ export function MultiSelect<T extends OptionValue>({
           {searchString.length && !filteredOptions.length ? (
             <li className="flex h-8 flex-row items-center px-4">No matches</li>
           ) : (
-            filteredOptions.map((option) => (
-              <li key={option.value}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    onChange(
-                      selected.includes(option.value)
-                        ? selected.filter(
-                            (optionValue) => optionValue !== option.value
-                          )
-                        : [...selected, option.value]
-                    );
-                  }}
-                  className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap pl-4 pr-2 text-left"
-                >
-                  <span className="flex items-center gap-1.5">
-                    {option.label ?? option.value}
-                  </span>
-                  <CheckIcon
-                    className={classNames("size-5 fill-aquamarine", {
-                      invisible: !selected.includes(option.value),
-                    })}
-                  />
-                </button>
-              </li>
-            ))
+            filteredOptions.map((option) => {
+              const isSelected = selected.includes(option.value);
+              return (
+                <li key={option.value}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onChange(
+                        isSelected
+                          ? selected.filter(
+                              (optionValue) => optionValue !== option.value
+                            )
+                          : [...selected, option.value]
+                      );
+                    }}
+                    className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap pl-4 pr-2 text-left"
+                  >
+                    <span className="flex items-center gap-1.5">
+                      {option.label ?? option.value}
+                    </span>
+                    <CheckIcon
+                      className={classNames("size-5 fill-aquamarine", {
+                        invisible: !isSelected,
+                      })}
+                    />
+                  </button>
+                </li>
+              );
+            })
           )}
         </ul>
       </div>
