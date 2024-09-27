@@ -4,7 +4,7 @@ import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
-import { linea, mainnet } from "viem/chains";
+import { base, linea, mainnet } from "viem/chains";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -14,6 +14,10 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
     "0xc8D47DE20F7053Cc02504600596A647A482Bbc46",
     // 182d Morpho Blue wstETH/USDA
     "0x7548c4F665402BAb3a4298B88527824B7b18Fe27",
+  ],
+  [base.id]: [
+    // 182d Morpho chETH/USDC
+    "0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137",
   ],
 };
 
@@ -27,8 +31,17 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
 };
 
 // Source: https://docs.morpho.org/rewards/concepts/programs
+// Mainnet Reward Rates
 const MorphoFlatRatePerDay = 1.45e-4;
+
+// Base Reward Rates
+const MorphoBaseFlatRatePerDay = 2.2e-4;
+
+// Convert to yearly rates
 const MorphoFlatRatePerYear = parseFixed(MorphoFlatRatePerDay * 365 * 1000);
+const MorphoBaseFlatRatePerYear = parseFixed(
+  MorphoBaseFlatRatePerDay * 365 * 1000,
+);
 
 type RewardType = "MorphoFlatRate" | "LineaLXPL";
 
@@ -81,14 +94,24 @@ export function useRewards(
       hyperdrive.address,
     )
   ) {
-    const morphoRate = MorphoFlatRatePerYear.mul(
-      getWeightMorpho(
-        hyperdrive.poolConfig,
-        positionType,
-        poolInfo,
-        presentValue,
-      ),
-    );
+    const morphoRate =
+      hyperdrive.chainId === base.id
+        ? MorphoBaseFlatRatePerYear.mul(
+            getWeightMorpho(
+              hyperdrive.poolConfig,
+              positionType,
+              poolInfo,
+              presentValue,
+            ),
+          )
+        : MorphoFlatRatePerYear.mul(
+            getWeightMorpho(
+              hyperdrive.poolConfig,
+              positionType,
+              poolInfo,
+              presentValue,
+            ),
+          );
 
     const morphoReward: Reward = {
       id: "MorphoFlatRate",
