@@ -16,10 +16,13 @@ export function DevtoolsMenu(): ReactElement {
         {/* <FeatureFlagMenuItem flagName="name-here">
         Menu Item Name here
         </FeatureFlagMenuItem> */}
+        <FeatureFlagMenuItem flagName="zaps">Zaps</FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
-              `Rollbar Test Error: Thrown in ${import.meta.env.VITE_ROLLBAR_ENV as string} environment on Rollbar.`,
+              `Rollbar Test Error: Thrown in ${
+                import.meta.env.VITE_ROLLBAR_ENV as string
+              } environment on Rollbar.`
             );
           }}
           title={"Throw Test Error"}

@@ -13,11 +13,13 @@ import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useTokenList } from "src/ui/hyperdrive/hooks/useTokenList";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -37,7 +39,6 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
-
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -52,6 +53,13 @@ export function OpenLongForm({
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
+  });
+
+  const { isFlagEnabled } = useFeatureFlag("zaps");
+
+  const { data: tokenList, isLoading: isTokenListLoading } = useTokenList({
+    chainId: hyperdrive.chainId,
+    enabled: isFlagEnabled,
   });
 
   const { poolInfo } = usePoolInfo({
@@ -204,7 +212,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals,
+      activeToken.decimals
     );
   }
 
@@ -250,7 +258,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18, // prices are always in 18 decimals
+                          18 // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
