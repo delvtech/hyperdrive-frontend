@@ -74,7 +74,7 @@ export function TokenPickerTwo({
         </button>
         <ul
           className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-72 justify-evenly gap-0.5 rounded-lg bg-neutral",
+            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-neutral",
           )}
         >
           <div className="flex justify-between px-4 py-5">
