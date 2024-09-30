@@ -120,6 +120,10 @@ export function TokenPickerTwo({
               )}
             </div>
           </div>
+          <div className="flex justify-between px-4">
+            <span>Tokens</span>
+            <span>Balance</span>
+          </div>
           <ul className="max-h-[40vh] overflow-y-auto">
             {searchString.length && !filteredTokens.length ? (
               <li className="flex h-8 items-center px-4">No matches</li>
