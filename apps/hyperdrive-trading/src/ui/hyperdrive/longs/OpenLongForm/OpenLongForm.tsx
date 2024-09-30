@@ -37,7 +37,7 @@ import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits } from "viem";
+import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -55,12 +55,14 @@ export function OpenLongForm({
     chainId: hyperdrive.chainId,
   });
 
-  const { isFlagEnabled } = useFeatureFlag("zaps");
+  const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
 
-  const { data: tokenList, isLoading: isTokenListLoading } = useTokenList({
+  const { tokenList, isLoading: isTokenListLoading } = useTokenList({
     chainId: hyperdrive.chainId,
-    enabled: isFlagEnabled,
+    enabled: isZapsEnabled,
   });
+
+  console.log("tokenList", tokenList);
 
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
@@ -102,6 +104,24 @@ export function OpenLongForm({
     tokenChoices.push({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
+    });
+  }
+
+  if (isZapsEnabled) {
+    tokenList?.map((tokenFromTokenList) => {
+      tokenChoices.push({
+        tokenConfig: {
+          address: tokenFromTokenList.address as Address,
+          chainId: tokenFromTokenList.chainId,
+          decimals: tokenFromTokenList.decimals,
+          iconUrl: tokenFromTokenList.logoURI ?? "",
+          name: tokenFromTokenList.name,
+          symbol: tokenFromTokenList.symbol,
+          places: 4,
+          tags: ["zap"],
+        },
+        tokenBalance: 0n,
+      });
     });
   }
 
@@ -212,7 +232,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -258,7 +278,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18 // prices are always in 18 decimals
+                          18, // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,

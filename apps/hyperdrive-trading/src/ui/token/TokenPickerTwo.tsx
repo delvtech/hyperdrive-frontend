@@ -2,8 +2,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
+import { TokenPickerRow } from "./TokenPickerRow";
 
 export interface TokenChoice {
   tokenConfig: TokenConfig;
@@ -74,38 +74,25 @@ export function TokenPickerTwo({
         </button>
         <ul
           className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow-md",
+            "daisy-menu daisy-dropdown-content z-[1] w-72 justify-evenly gap-0.5 rounded-lg bg-neutral",
           )}
         >
-          {[
-            tokens.map(({ tokenConfig, tokenBalance }) => (
-              <li key={tokenConfig?.address}>
-                <button
-                  onClick={(e) => {
-                    onChange(tokenConfig?.address);
-                    e.preventDefault();
-                  }}
-                  className="gap-2"
-                >
-                  <img
-                    src={tokenConfig?.iconUrl}
-                    className="h-5 rounded-full"
-                  />{" "}
-                  {tokenConfig?.symbol}
-                  <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
-                    <span>
-                      Balance: {` `}
-                      {formatBalance({
-                        balance: tokenBalance || 0n,
-                        decimals: tokenConfig?.decimals,
-                        places: tokenConfig?.places,
-                      })}
-                    </span>
-                  </label>
-                </button>
-              </li>
-            )),
-          ]}
+          <div className="flex justify-between px-4 py-5">
+            <span>Tokens</span>
+            <span>Balance</span>
+          </div>
+          <div className="max-h-[40vh] overflow-y-auto">
+            {[
+              tokens.map(({ tokenConfig, tokenBalance }) => (
+                <TokenPickerRow
+                  key={tokenConfig?.address}
+                  tokenConfig={tokenConfig}
+                  tokenBalance={tokenBalance}
+                  onChange={onChange}
+                />
+              )),
+            ]}
+          </div>
         </ul>
       </div>
     </div>

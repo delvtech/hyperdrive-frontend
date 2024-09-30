@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { TokenInfo } from "@uniswap/token-lists";
+import type { TokenInfo, TokenList } from "@uniswap/token-lists";
 
 type TokenListByAddress = Record<string, TokenInfo>;
 
@@ -10,22 +10,22 @@ export function useTokenList({
   chainId: number | undefined;
   enabled: boolean;
 }): {
-  data: TokenListByAddress;
+  tokenList: TokenList["tokens"] | undefined;
   isLoading: boolean;
 } {
-  const { data: result, error } = useQuery({
+  const { data: result } = useQuery({
     queryKey: ["tokenList", chainId],
     enabled,
     staleTime: Infinity,
     retry: 6,
     queryFn: () =>
       fetch("https://ipfs.io/ipns/tokens.uniswap.org").then((res) =>
-        res.json()
+        res.json(),
       ),
   });
 
   return {
-    data: result,
+    tokenList: result?.tokens,
     isLoading: !result,
   };
 }
