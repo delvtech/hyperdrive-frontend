@@ -36,7 +36,11 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import {
+  TokenChoice,
+  TokenPickerTwo,
+  ZapsTokenPicker,
+} from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -257,16 +261,29 @@ export function OpenLongForm({
           }
           name={activeToken.symbol}
           token={
-            <TokenPickerTwo
-              tokens={tokenChoices.filter(
-                (token) => token.tokenConfig.chainId === hyperdrive.chainId,
-              )}
-              activeTokenAddress={activeToken.address}
-              onChange={(tokenAddress) => {
-                setActiveToken(tokenAddress);
-                setAmount("0");
-              }}
-            />
+            isZapsEnabled ? (
+              <ZapsTokenPicker
+                tokens={tokenChoices.filter(
+                  (token) => token.tokenConfig.chainId === hyperdrive.chainId,
+                )}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setAmount("0");
+                }}
+              />
+            ) : (
+              <TokenPickerTwo
+                tokens={tokenChoices.filter(
+                  (token) => token.tokenConfig.chainId === hyperdrive.chainId,
+                )}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setAmount("0");
+                }}
+              />
+            )
           }
           value={depositAmount ?? ""}
           maxValue={maxButtonValue}
