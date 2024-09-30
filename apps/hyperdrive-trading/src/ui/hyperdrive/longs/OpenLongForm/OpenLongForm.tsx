@@ -62,8 +62,6 @@ export function OpenLongForm({
     enabled: isZapsEnabled,
   });
 
-  console.log("tokenList", tokenList);
-
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -108,21 +106,27 @@ export function OpenLongForm({
   }
 
   if (isZapsEnabled) {
-    tokenList?.map((tokenFromTokenList) => {
-      tokenChoices.push({
-        tokenConfig: {
-          address: tokenFromTokenList.address as Address,
-          chainId: tokenFromTokenList.chainId,
-          decimals: tokenFromTokenList.decimals,
-          iconUrl: tokenFromTokenList.logoURI ?? "",
-          name: tokenFromTokenList.name,
-          symbol: tokenFromTokenList.symbol,
-          places: 4,
-          tags: ["zap"],
-        },
-        tokenBalance: 0n,
+    tokenList
+      ?.filter(
+        (tokenFromTokenList) =>
+          tokenFromTokenList.address !== baseToken.address &&
+          tokenFromTokenList.address !== sharesToken?.address,
+      )
+      .map((tokenFromTokenList) => {
+        tokenChoices.push({
+          tokenConfig: {
+            address: tokenFromTokenList.address as Address,
+            chainId: tokenFromTokenList.chainId,
+            decimals: tokenFromTokenList.decimals,
+            iconUrl: tokenFromTokenList.logoURI ?? "",
+            name: tokenFromTokenList.name,
+            symbol: tokenFromTokenList.symbol,
+            places: 4,
+            tags: ["zap"],
+          },
+          tokenBalance: 0n,
+        });
       });
-    });
   }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =

@@ -6,7 +6,7 @@ import {
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import Fuse from "fuse.js";
-import { ReactElement, useEffect, useMemo, useRef, useState } from "react";
+import { ReactElement, useMemo, useRef, useState } from "react";
 import { TokenPickerRow } from "src/ui/token/TokenPickerRow";
 import { Address } from "viem";
 
@@ -40,10 +40,7 @@ export function TokenPickerTwo({
   const filteredTokens = searchString
     ? fuse.search(searchString).map(({ item }) => item)
     : tokens;
-  useEffect(() => {
-    console.log("searchString", searchString);
-    console.log("filteredTokens", filteredTokens);
-  }, [searchString, filteredTokens]);
+
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
