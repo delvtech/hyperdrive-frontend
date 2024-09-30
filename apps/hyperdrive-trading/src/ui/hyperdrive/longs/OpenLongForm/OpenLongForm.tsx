@@ -320,6 +320,15 @@ export function OpenLongForm({
           vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
+      disclaimer={
+        activeToken.tags?.includes("zap") && (
+          <div className="text-center text-sm text-neutral-content">
+            <p>
+              {`${activeToken.symbol} is not directly supported by Hyperdrive. It represents an asset that must be converted before use. When you open a long position, the protocol will automatically swap your ${activeToken.symbol} for a supported token.`}
+            </p>
+          </div>
+        )
+      }
       transactionPreview={
         depositAmountAsBigInt ? (
           <OpenLongPreview
