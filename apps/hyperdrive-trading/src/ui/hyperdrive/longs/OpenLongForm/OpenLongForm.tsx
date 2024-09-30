@@ -256,7 +256,9 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPickerTwo
-              tokens={tokenChoices}
+              tokens={tokenChoices.filter(
+                (token) => token.tokenConfig.chainId === hyperdrive.chainId,
+              )}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

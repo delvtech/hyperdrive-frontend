@@ -1,9 +1,14 @@
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import {
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
+  XMarkIcon,
+} from "@heroicons/react/20/solid";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import Fuse from "fuse.js";
+import { ReactElement, useEffect, useMemo, useRef, useState } from "react";
+import { TokenPickerRow } from "src/ui/token/TokenPickerRow";
 import { Address } from "viem";
-import { TokenPickerRow } from "./TokenPickerRow";
 
 export interface TokenChoice {
   tokenConfig: TokenConfig;
@@ -22,6 +27,23 @@ export function TokenPickerTwo({
   onChange: (tokenAddress: Address) => void;
   label?: string;
 }): ReactElement {
+  const [searchString, setSearchString] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const fuse = useMemo(() => {
+    return new Fuse(tokens, {
+      keys: ["tokenConfig.symbol", "tokenConfig.name"],
+      threshold: 0.4,
+    });
+  }, [tokens]);
+
+  const filteredTokens = searchString
+    ? fuse.search(searchString).map(({ item }) => item)
+    : tokens;
+  useEffect(() => {
+    console.log("searchString", searchString);
+    console.log("filteredTokens", filteredTokens);
+  }, [searchString, filteredTokens]);
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
@@ -43,6 +65,7 @@ export function TokenPickerTwo({
       </div>
     );
   }
+
   const activeToken = tokens.find(
     ({ tokenConfig }) => tokenConfig?.address === activeTokenAddress,
   );
@@ -54,9 +77,7 @@ export function TokenPickerTwo({
           <span className="daisy-label-text">{label}</span>
         </label>
       ) : undefined}
-      <div
-        className={"daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom"}
-      >
+      <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-bottom">
         <button
           className={classNames(
             "daisy-btn daisy-btn-md flex h-9 min-h-9 items-center rounded-box bg-neutral pl-3 pr-1",
@@ -72,28 +93,51 @@ export function TokenPickerTwo({
           {activeToken?.tokenConfig?.symbol}
           <ChevronDownIcon className="h-6 text-neutral-content" />
         </button>
-        <ul
-          className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-neutral",
-          )}
+        <div
+          tabIndex={0}
+          className="daisy-menu daisy-dropdown-content z-[1] mt-1 w-64 gap-2 rounded-lg bg-neutral p-2 shadow"
         >
-          <div className="flex justify-between px-4 py-5">
-            <span>Tokens</span>
-            <span>Balance</span>
+          <div className="mb-2 flex gap-2">
+            <div className="daisy-input daisy-input-sm flex w-full items-center gap-2 rounded-md bg-base-200">
+              <input
+                ref={inputRef}
+                className="w-full shrink bg-transparent outline-none"
+                placeholder="Search"
+                value={searchString}
+                onChange={({ target }) => setSearchString(target.value)}
+              />
+              {searchString.length ? (
+                <button
+                  type="button"
+                  title="Reset search"
+                  onClick={() => {
+                    inputRef.current?.focus();
+                    setSearchString("");
+                  }}
+                  className="text-neutral-content transition-all hover:text-current"
+                >
+                  <XMarkIcon className="size-5 fill-current" />
+                </button>
+              ) : (
+                <MagnifyingGlassIcon className="size-5 fill-neutral-content" />
+              )}
+            </div>
           </div>
-          <div className="max-h-[40vh] overflow-y-auto">
-            {[
-              tokens.map(({ tokenConfig, tokenBalance }) => (
+          <ul className="max-h-[40vh] overflow-y-auto">
+            {searchString.length && !filteredTokens.length ? (
+              <li className="flex h-8 items-center px-4">No matches</li>
+            ) : (
+              filteredTokens.map(({ tokenConfig, tokenBalance }) => (
                 <TokenPickerRow
-                  key={tokenConfig?.address}
+                  key={tokenConfig?.address + tokenConfig.chainId}
                   tokenConfig={tokenConfig}
                   tokenBalance={tokenBalance}
                   onChange={onChange}
                 />
-              )),
-            ]}
-          </div>
-        </ul>
+              ))
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
