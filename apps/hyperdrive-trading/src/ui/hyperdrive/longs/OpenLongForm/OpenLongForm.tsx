@@ -39,6 +39,7 @@ import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
+
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -57,7 +58,7 @@ export function OpenLongForm({
 
   const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
 
-  const { tokenList, isLoading: isTokenListLoading } = useTokenList({
+  const { tokenList } = useTokenList({
     chainId: hyperdrive.chainId,
     enabled: isZapsEnabled,
   });
@@ -115,12 +116,9 @@ export function OpenLongForm({
       .map((tokenFromTokenList) => {
         tokenChoices.push({
           tokenConfig: {
-            address: tokenFromTokenList.address as Address,
-            chainId: tokenFromTokenList.chainId,
-            decimals: tokenFromTokenList.decimals,
+            ...tokenFromTokenList,
             iconUrl: tokenFromTokenList.logoURI ?? "",
-            name: tokenFromTokenList.name,
-            symbol: tokenFromTokenList.symbol,
+            address: tokenFromTokenList.address as Address,
             places: 4,
             tags: ["zap"],
           },
@@ -321,7 +319,8 @@ export function OpenLongForm({
         />
       }
       disclaimer={
-        activeToken.tags?.includes("zap") && (
+        activeToken.tags?.includes("zap") &&
+        isZapsEnabled && (
           <div className="text-center text-sm text-neutral-content">
             <p>
               {`${activeToken.symbol} is not directly supported by Hyperdrive. It represents an asset that must be converted before use. When you open a long position, the protocol will automatically swap your ${activeToken.symbol} for a supported token.`}

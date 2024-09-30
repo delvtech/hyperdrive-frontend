@@ -1,7 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { TokenInfo, TokenList } from "@uniswap/token-lists";
-
-type TokenListByAddress = Record<string, TokenInfo>;
+import type { TokenList } from "@uniswap/token-lists";
 
 export function useTokenList({
   chainId,
