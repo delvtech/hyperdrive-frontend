@@ -46,11 +46,9 @@ function usePageview(page?: string) {
 
   // define the `plausible` function to manually trigger events
   useEffect(() => {
-    window.plausible =
-      window.plausible ||
-      function (...args) {
-        (window.plausible.q = window.plausible.q || []).push(args);
-      };
+    window.plausible ||= function (...args) {
+      (window.plausible.q ||= []).push(args);
+    };
   }, []);
 
   useEffect(() => {
@@ -73,7 +71,7 @@ interface PlausibleFunction {
        */
       u?: string;
       [key: string]: unknown;
-    },
+    }
   ): void;
   q?: unknown[][];
 }
