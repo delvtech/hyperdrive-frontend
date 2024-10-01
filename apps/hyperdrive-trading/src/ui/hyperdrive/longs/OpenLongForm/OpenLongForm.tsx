@@ -126,7 +126,6 @@ export function OpenLongForm({
             places: 4,
             tags: ["zap"],
           },
-          tokenBalance: 0n,
         });
       });
   }
@@ -334,16 +333,6 @@ export function OpenLongForm({
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
         />
-      }
-      disclaimer={
-        activeToken.tags?.includes("zap") &&
-        isZapsEnabled && (
-          <div className="text-center text-sm text-neutral-content">
-            <p>
-              {`${activeToken.symbol} is not directly supported by Hyperdrive. It represents an asset that must be converted before use. When you open a long position, the protocol will automatically swap your ${activeToken.symbol} for a supported token.`}
-            </p>
-          </div>
-        )
       }
       transactionPreview={
         depositAmountAsBigInt ? (
