@@ -8,7 +8,6 @@ import classNames from "classnames";
 import Fuse from "fuse.js";
 import { ReactElement, useMemo, useRef, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { TokenPickerRow } from "src/ui/token/TokenPickerRow";
 import { Address } from "viem";
 
 export interface TokenChoice {
@@ -205,11 +204,21 @@ export function ZapsTokenPicker({
               <li className="flex h-8 items-center px-4">No matches</li>
             ) : (
               filteredTokens.map(({ tokenConfig }) => (
-                <TokenPickerRow
-                  key={tokenConfig?.address + tokenConfig.chainId}
-                  tokenConfig={tokenConfig}
-                  onChange={onChange}
-                />
+                <li key={tokenConfig?.address}>
+                  <button
+                    onClick={(e) => {
+                      onChange(tokenConfig?.address);
+                      e.preventDefault();
+                    }}
+                    className="gap-2"
+                  >
+                    <img
+                      src={tokenConfig?.iconUrl}
+                      className="h-5 rounded-full"
+                    />{" "}
+                    {tokenConfig?.symbol}
+                  </button>
+                </li>
               ))
             )}
           </ul>
