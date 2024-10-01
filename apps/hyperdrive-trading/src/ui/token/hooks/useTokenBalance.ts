@@ -15,13 +15,11 @@ export function useTokenBalance({
   tokenAddress,
   decimals,
   tokenChainId,
-  enabled,
 }: {
   account: Address | undefined;
   tokenAddress: Address | undefined;
   decimals: number;
   tokenChainId?: number;
-  enabled?: boolean;
 }): {
   balance:
     | {
@@ -39,7 +37,7 @@ export function useTokenBalance({
   const { data: ethBalance, status: ethBalanceStatus } = useBalance({
     address: account,
     query: {
-      enabled: isEth && enabled,
+      enabled: isEth,
     },
     chainId: tokenChainId,
   });
@@ -51,7 +49,7 @@ export function useTokenBalance({
     functionName: "balanceOf",
     args: account ? [account] : undefined,
     query: {
-      enabled: account && !isEth && !isZeroAddress && enabled,
+      enabled: account && !isEth && !isZeroAddress,
     },
   });
 

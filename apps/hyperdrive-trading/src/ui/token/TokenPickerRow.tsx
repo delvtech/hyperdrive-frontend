@@ -4,11 +4,9 @@ import { Address } from "viem";
 
 export function TokenPickerRow({
   tokenConfig,
-  tokenBalance,
   onChange,
 }: {
   tokenConfig: TokenConfig;
-  tokenBalance: bigint | undefined;
   onChange: (tokenAddress: Address) => void;
 }): ReactElement {
   return (

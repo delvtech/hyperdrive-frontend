@@ -143,28 +143,6 @@ export function ZapsTokenPicker({
     ? fuse.search(searchString).map(({ item }) => item)
     : tokens;
 
-  // A single element doesn't need a dropdown
-  if (tokens.length === 1) {
-    return (
-      <div>
-        {label ? (
-          <label className="daisy-label">
-            <span className="daisy-label-text">{label}</span>
-          </label>
-        ) : undefined}
-        <div className="daisy-btn no-animation daisy-btn-md flex h-9 min-h-9 cursor-default items-center rounded-box bg-neutral">
-          <img
-            src={tokens[0].tokenConfig.iconUrl}
-            className="h-5 rounded-full"
-          />
-          <span className="text-sm font-semibold">
-            {tokens[0].tokenConfig.symbol}
-          </span>
-        </div>
-      </div>
-    );
-  }
-
   const activeToken = tokens.find(
     ({ tokenConfig }) => tokenConfig?.address === activeTokenAddress,
   );
@@ -226,11 +204,10 @@ export function ZapsTokenPicker({
             {searchString.length && !filteredTokens.length ? (
               <li className="flex h-8 items-center px-4">No matches</li>
             ) : (
-              filteredTokens.map(({ tokenConfig, tokenBalance }) => (
+              filteredTokens.map(({ tokenConfig }) => (
                 <TokenPickerRow
                   key={tokenConfig?.address + tokenConfig.chainId}
                   tokenConfig={tokenConfig}
-                  tokenBalance={tokenBalance}
                   onChange={onChange}
                 />
               ))
