@@ -136,8 +136,8 @@ const usds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const skyUsds: YieldSource = {
-  id: "skyUsds",
+const susds: YieldSource = {
+  id: "susds",
   shortName: "Staking USDS",
   protocol: "sky",
   historicalRatePeriod: 1,
@@ -161,5 +161,5 @@ export const yieldSources = {
   lineaEzeth,
   rseth,
   usds,
-  skyUsds,
+  susds,
 } as const;

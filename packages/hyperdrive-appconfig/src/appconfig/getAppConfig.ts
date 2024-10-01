@@ -73,7 +73,7 @@ const hyperdriveKindResolvers: Record<
   StakingUSDSHyperdrive: async (hyperdrive) => {
     return getSusdsHyperdrive({
       hyperdrive,
-      yieldSourceId: "skyUsds",
+      yieldSourceId: "susds",
       baseTokenIconUrl: USDS_ICON_URL,
       baseTokenPlaces: 4,
       baseTokenTags: ["stablecoin"],
