@@ -9,6 +9,7 @@ import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive"
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
+import { getSusdsHyperdrive } from "src/hyperdrives/susds/getSusdsHyperdrive";
 import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
@@ -20,9 +21,11 @@ import {
   RSETH_ICON_URL,
   SDAI_ICON_URL,
   STUSD_ICON_URL,
+  SUSDS_ICON_URL,
   SXDAI_ICON_URL,
   USDA_ICON_URL,
   USDC_ICON_URL,
+  USDS_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
@@ -47,6 +50,35 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
+  SavingsUSDSHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
+    return getCustomHyperdrive({
+      hyperdrive,
+      yieldSource: "usds",
+      baseTokenIconUrl: USDS_ICON_URL,
+      sharesTokenIconUrl: SUSDS_ICON_URL,
+      tokenPlaces: 4,
+      sharesTokenTags: ["stablecoin"],
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawalOptions: {
+        isBaseTokenWithdrawalEnabled: true,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      earliestBlock,
+    });
+  },
+
+  StakingUSDSHyperdrive: async (hyperdrive) => {
+    return getSusdsHyperdrive({
+      hyperdrive,
+      yieldSourceId: "skyUsds",
+      baseTokenIconUrl: USDS_ICON_URL,
+      baseTokenPlaces: 4,
+      baseTokenTags: ["stablecoin"],
+    });
+  },
   RsETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
     return getCustomHyperdrive({
       hyperdrive,
