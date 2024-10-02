@@ -9,7 +9,6 @@ import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive"
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
-import { getSusdsHyperdrive } from "src/hyperdrives/susds/getSusdsHyperdrive";
 import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
@@ -50,34 +49,6 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
-  SavingsUSDSHyperdrive: async (hyperdrive) => {
-    return getCustomHyperdrive({
-      hyperdrive,
-      yieldSource: "usds",
-      baseTokenIconUrl: USDS_ICON_URL,
-      sharesTokenIconUrl: SUSDS_ICON_URL,
-      tokenPlaces: 4,
-      sharesTokenTags: ["stablecoin"],
-      depositOptions: {
-        isBaseTokenDepositEnabled: true,
-        isShareTokenDepositsEnabled: true,
-      },
-      withdrawalOptions: {
-        isBaseTokenWithdrawalEnabled: true,
-        isShareTokenWithdrawalEnabled: true,
-      },
-    });
-  },
-
-  StakingUSDSHyperdrive: async (hyperdrive) => {
-    return getSusdsHyperdrive({
-      hyperdrive,
-      yieldSourceId: "susds",
-      baseTokenIconUrl: USDS_ICON_URL,
-      baseTokenPlaces: 4,
-      baseTokenTags: ["stablecoin"],
-    });
-  },
   RsETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
     return getCustomHyperdrive({
       hyperdrive,
@@ -205,6 +176,37 @@ const hyperdriveKindResolvers: Record<
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
+
+    // Sky sUSDS
+    if (hyperdriveName.includes("sUSDS Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "usds",
+        baseTokenIconUrl: USDS_ICON_URL,
+        sharesTokenIconUrl: SUSDS_ICON_URL,
+        tokenPlaces: 4,
+        sharesTokenTags: ["stablecoin"],
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+      });
+    }
+
+    // Note: this launch has been delayed
+    // StakingUSDSHyperdrive: async (hyperdrive) => {
+    //   return getSusdsHyperdrive({
+    //     hyperdrive,
+    //     yieldSourceId: "susds",
+    //     baseTokenIconUrl: USDS_ICON_URL,
+    //     baseTokenPlaces: 4,
+    //     baseTokenTags: ["stablecoin"],
+    //   });
+    // },
 
     // Maker DSR
     if (
