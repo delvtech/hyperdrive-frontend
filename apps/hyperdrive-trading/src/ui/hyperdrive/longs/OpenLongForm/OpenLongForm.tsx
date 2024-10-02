@@ -13,11 +13,13 @@ import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useTokenList } from "src/ui/hyperdrive/hooks/useTokenList";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -34,8 +36,12 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenChoice, TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits } from "viem";
+import {
+  TokenChoice,
+  TokenPickerTwo,
+  ZapsTokenPicker,
+} from "src/ui/token/TokenPickerTwo";
+import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
@@ -52,6 +58,13 @@ export function OpenLongForm({
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
+  });
+
+  const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
+
+  const { tokenList } = useTokenList({
+    chainId: hyperdrive.chainId,
+    enabled: isZapsEnabled,
   });
 
   const { poolInfo } = usePoolInfo({
@@ -95,6 +108,27 @@ export function OpenLongForm({
       tokenConfig: sharesToken,
       tokenBalance: sharesTokenBalance?.value,
     });
+  }
+
+  if (isZapsEnabled) {
+    tokenList
+      ?.filter(
+        (tokenFromTokenList) =>
+          tokenFromTokenList.address !== baseToken.address &&
+          tokenFromTokenList.address !== sharesToken?.address &&
+          tokenFromTokenList.chainId === hyperdrive.chainId,
+      )
+      .map((tokenFromTokenList) => {
+        tokenChoices.push({
+          tokenConfig: {
+            ...tokenFromTokenList,
+            iconUrl: tokenFromTokenList.logoURI ?? "",
+            address: tokenFromTokenList.address as Address,
+            places: 4,
+            tags: ["zap"],
+          },
+        });
+      });
   }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
@@ -227,14 +261,25 @@ export function OpenLongForm({
           }
           name={activeToken.symbol}
           token={
-            <TokenPickerTwo
-              tokens={tokenChoices}
-              activeTokenAddress={activeToken.address}
-              onChange={(tokenAddress) => {
-                setActiveToken(tokenAddress);
-                setAmount("0");
-              }}
-            />
+            isZapsEnabled ? (
+              <ZapsTokenPicker
+                tokens={tokenChoices}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setAmount("0");
+                }}
+              />
+            ) : (
+              <TokenPickerTwo
+                tokens={tokenChoices}
+                activeTokenAddress={activeToken.address}
+                onChange={(tokenAddress) => {
+                  setActiveToken(tokenAddress);
+                  setAmount("0");
+                }}
+              />
+            )
           }
           value={depositAmount ?? ""}
           maxValue={maxButtonValue}
