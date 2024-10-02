@@ -115,7 +115,8 @@ export function OpenLongForm({
       ?.filter(
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
-          tokenFromTokenList.address !== sharesToken?.address,
+          tokenFromTokenList.address !== sharesToken?.address &&
+          tokenFromTokenList.chainId === hyperdrive.chainId,
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -262,9 +263,7 @@ export function OpenLongForm({
           token={
             isZapsEnabled ? (
               <ZapsTokenPicker
-                tokens={tokenChoices.filter(
-                  (token) => token.tokenConfig.chainId === hyperdrive.chainId,
-                )}
+                tokens={tokenChoices}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);
@@ -273,9 +272,7 @@ export function OpenLongForm({
               />
             ) : (
               <TokenPickerTwo
-                tokens={tokenChoices.filter(
-                  (token) => token.tokenConfig.chainId === hyperdrive.chainId,
-                )}
+                tokens={tokenChoices}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);

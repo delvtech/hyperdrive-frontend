@@ -158,9 +158,7 @@ export function ZapsTokenPicker({
           className={classNames(
             "daisy-btn daisy-btn-md flex h-9 min-h-9 items-center rounded-box bg-neutral pl-3 pr-1",
           )}
-          onClick={(e) => {
-            e.preventDefault();
-          }}
+          type="button"
         >
           <img
             src={activeToken?.tokenConfig?.iconUrl}
@@ -206,11 +204,11 @@ export function ZapsTokenPicker({
               filteredTokens.map(({ tokenConfig }) => (
                 <li key={tokenConfig?.address}>
                   <button
-                    onClick={(e) => {
+                    type="button"
+                    onClick={() => {
+                      (document.activeElement as HTMLElement)?.blur();
                       onChange(tokenConfig?.address);
-                      e.preventDefault();
                     }}
-                    className="gap-2"
                   >
                     <img
                       src={tokenConfig?.iconUrl}
