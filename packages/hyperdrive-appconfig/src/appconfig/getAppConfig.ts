@@ -50,7 +50,7 @@ const hyperdriveKindResolvers: Record<
   string /* kind */,
   HyperdriveConfigResolver
 > = {
-  SavingsUSDSHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
+  SavingsUSDSHyperdrive: async (hyperdrive) => {
     return getCustomHyperdrive({
       hyperdrive,
       yieldSource: "usds",
@@ -66,7 +66,6 @@ const hyperdriveKindResolvers: Record<
         isBaseTokenWithdrawalEnabled: true,
         isShareTokenWithdrawalEnabled: true,
       },
-      earliestBlock,
     });
   },
 
