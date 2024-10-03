@@ -1,7 +1,7 @@
 import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
+import { base } from "viem/chains";
 
-// Define TypeScript interfaces for better type safety
 interface RateObject {
   per_dollar_per_year: string;
   pool_ids: string[];
@@ -9,39 +9,37 @@ interface RateObject {
 
 interface ProgramData {
   current_rates: RateObject[];
-  // ... other properties if needed
 }
 
 interface ApiResponse {
   data: ProgramData[];
-  // ... other properties if needed
 }
 
-const MORPHO_RATE_URL =
-  "https://rewards.morpho.org/v1/programs/?chains=8453&active=true&type=market-reward";
-
 // 182d Morpho cbETH/USDC Pool ID
-const poolId =
+const basePoolId =
   "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c";
 
+const mainnetPoolId =
+  "0x0000000000000000000000000000000000000000000000000000000000000000";
+
 interface UseMorphoRateResult {
-  morphoRate: ProgramData | undefined;
   isLoading: boolean;
-  perDollarPerYear: FixedPoint | undefined;
+  perDollarPerYear: FixedPoint | undefined; // Formatted supply rate
 }
 
 export function useMorphoRate({
-  enabled,
+  chainId,
 }: {
-  enabled: boolean;
+  chainId: number;
 }): UseMorphoRateResult {
   const { data, isLoading } = useQuery<ApiResponse, Error>({
-    queryKey: ["morphoRate"],
-    enabled,
+    queryKey: ["morphoRate", chainId],
     staleTime: Infinity,
-    retry: 3, // Adjust retry attempts as needed
+    retry: 3,
     queryFn: async () => {
-      const response = await fetch(MORPHO_RATE_URL);
+      const response = await fetch(
+        `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`,
+      );
 
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.statusText}`);
@@ -51,37 +49,35 @@ export function useMorphoRate({
     },
   });
 
-  // Initialize perDollarPerYear as undefined
-  let perDollarPerYear: string | undefined = undefined;
+  let perDollarPerYear: FixedPoint | undefined = undefined;
 
-  if (data) {
-    const currentRates = data.data[0]?.current_rates;
-    if (currentRates && Array.isArray(currentRates)) {
-      // Normalize poolId for case-insensitive comparison
-      const normalizedPoolId = poolId.toLowerCase();
+  if (data && data.data.length > 0) {
+    const program = data.data[0];
+    const currentRates = program.current_rates;
 
-      // Find the first rate object where any pool_id starts with the poolId
-      const matchingRate = currentRates.find((rate) =>
-        rate.pool_ids.some((id) =>
-          id.toLowerCase().startsWith(normalizedPoolId),
-        ),
-      );
+    const poolId =
+      chainId === base.id
+        ? basePoolId.toLowerCase()
+        : mainnetPoolId.toLowerCase();
 
-      if (matchingRate) {
-        perDollarPerYear = matchingRate.per_dollar_per_year;
-      } else {
-        console.warn(`Pool ID ${poolId} not found in current_rates`);
-      }
-    } else {
-      console.warn("Invalid or empty current_rates data structure");
+    let matchingRate = currentRates.find((rate) =>
+      rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
+    )?.per_dollar_per_year;
+
+    // If there is no matching rate, just use the first one in the current_rates array
+    if (!matchingRate) {
+      matchingRate = currentRates[0].per_dollar_per_year;
     }
+
+    console.log("matchingRate", matchingRate, chainId);
+
+    perDollarPerYear = fixed(matchingRate ?? 0, 15);
+  } else {
+    console.warn("Invalid or empty data structure");
   }
 
   return {
-    morphoRate: data?.data[0],
+    perDollarPerYear,
     isLoading,
-    perDollarPerYear: perDollarPerYear
-      ? fixed(perDollarPerYear, 15)
-      : undefined,
   };
 }

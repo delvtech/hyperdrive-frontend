@@ -87,12 +87,8 @@ export function useRewards(
     hyperdriveAddress: hyperdrive.address,
   });
   const { perDollarPerYear, isLoading } = useMorphoRate({
-    enabled: hyperdrive.chainId === base.id,
+    chainId: hyperdrive.chainId,
   });
-  console.log(
-    "perDollarPerYear",
-    perDollarPerYear && parseFixed(perDollarPerYear).format(),
-  );
 
   const rewards = [];
 
@@ -117,8 +113,8 @@ export function useRewards(
     const morphoReward: Reward = {
       id: "MorphoFlatRate",
       name: "MORPHO",
-      amount: morphoRate
-        ? morphoRate.format({
+      amount: perDollarPerYear
+        ? perDollarPerYear.format({
             decimals: 2,
           })
         : "0",
