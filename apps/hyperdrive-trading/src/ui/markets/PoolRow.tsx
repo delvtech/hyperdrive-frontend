@@ -180,7 +180,6 @@ export function PoolRow({
                 <RewardsTooltip
                   hyperdriveAddress={hyperdrive.address}
                   chainId={hyperdrive.chainId}
-                  positionType="short"
                 >
                   {`${calculateMarketYieldMultiplier(longPrice).format({ decimals: 2, rounding: "trunc" })}x`}
                 </RewardsTooltip>
@@ -211,7 +210,6 @@ export function PoolRow({
             value={
               !lpApy.isNew ? (
                 <RewardsTooltip
-                  positionType="lp"
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
