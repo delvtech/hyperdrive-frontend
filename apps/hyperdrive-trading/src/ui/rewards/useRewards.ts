@@ -1,8 +1,4 @@
-import { fixed, FixedPoint, parseFixed } from "@delvtech/fixed-point-wasm";
-import { PoolConfig, PoolInfo } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
 import { useMorphoRate } from "./useMorphoRate";
@@ -31,19 +27,6 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   ],
 };
 
-// Source: https://docs.morpho.org/rewards/concepts/programs
-// Mainnet Reward Rates
-const MorphoFlatRatePerDay = 1.45e-4;
-
-// Base Reward Rates
-const MorphoBaseFlatRatePerDay = 2.2e-4;
-
-// Convert to yearly rates
-const MorphoFlatRatePerYear = parseFixed(MorphoFlatRatePerDay * 365 * 1000);
-const MorphoBaseFlatRatePerYear = parseFixed(
-  MorphoBaseFlatRatePerDay * 365 * 1000,
-);
-
 type RewardType = "MorphoFlatRate" | "LineaLXPL";
 
 type Reward = {
@@ -52,41 +35,8 @@ type Reward = {
   amount: string;
 };
 
-function getWeightMorpho(
-  poolConfig: PoolConfig,
-  positionType: "short" | "lp",
-  poolInfo?: PoolInfo,
-  presentValue?: bigint,
-): FixedPoint {
-  if (!poolInfo || !presentValue) {
-    return parseFixed(0);
-  }
-
-  if (positionType === "short") {
-    return parseFixed(1, 18);
-  }
-
-  // Morpho share price is in 24 decimals, but FixedPoint only supports 18 max.
-  const shareReserves = fixed(poolInfo.shareReserves / BigInt(1e6));
-  const minShareReserves = fixed(poolConfig.minimumShareReserves / BigInt(1e6));
-  const netShareReserves = shareReserves.sub(minShareReserves);
-
-  return netShareReserves.div(presentValue);
-}
-
-export function useRewards(
-  hyperdrive: HyperdriveConfig,
-  positionType: "short" | "lp",
-): Reward[] | undefined {
-  const { poolInfo } = usePoolInfo({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const { presentValue } = usePresentValue({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const { morphoRate, isLoading } = useMorphoRate({
+export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
+  const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
   });
 

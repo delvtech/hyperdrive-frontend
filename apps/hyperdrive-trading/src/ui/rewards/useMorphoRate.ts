@@ -11,7 +11,7 @@ const mainnetPoolId = "";
 
 interface UseMorphoRateResult {
   isLoading: boolean;
-  morphoRate: FixedPoint | undefined; // Formatted supply rate
+  morphoRate: FixedPoint | undefined;
 }
 
 export function useMorphoRate({
@@ -19,13 +19,11 @@ export function useMorphoRate({
 }: {
   chainId: number;
 }): UseMorphoRateResult {
-  const { data, isLoading } = useQuery<
+  const { data: rewardsData, isLoading } = useQuery<
     {
-      data: {
-        current_rates: {
-          per_dollar_per_year: string;
-          pool_ids: string[];
-        }[];
+      current_rates: {
+        per_dollar_per_year: string;
+        pool_ids: string[];
       }[];
     },
     Error
@@ -37,25 +35,16 @@ export function useMorphoRate({
       const response = await fetch(
         `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`,
       );
-
-      if (!response.ok) {
-        throw new Error(`Error fetching data: ${response.statusText}`);
-      }
-
-      return response.json();
+      const result = await response.json();
+      return result.data[0];
     },
   });
 
   let morphoRate: FixedPoint | undefined = undefined;
 
-  if (data && data.data.length > 0) {
-    const program = data.data[0];
-    const currentRates = program.current_rates;
-
-    const poolId =
-      chainId === base.id
-        ? basePoolId.toLowerCase()
-        : mainnetPoolId.toLowerCase();
+  if (rewardsData) {
+    const currentRates = rewardsData.current_rates;
+    const poolId = chainId === base.id ? basePoolId : mainnetPoolId;
 
     let matchingRate = currentRates.find((rate) =>
       rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
@@ -66,6 +55,7 @@ export function useMorphoRate({
       matchingRate = currentRates[0].per_dollar_per_year;
     }
 
+    // The morpho rate is formatted to 15 decimal places
     morphoRate = fixed(matchingRate ?? 0, 15);
   }
 
