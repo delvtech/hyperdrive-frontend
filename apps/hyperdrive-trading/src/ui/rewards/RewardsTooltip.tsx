@@ -12,7 +12,6 @@ export function RewardsTooltip({
 }: PropsWithChildren<{
   hyperdriveAddress: Address;
   chainId: number;
-  positionType: "lp" | "short";
 }>): ReactNode {
   const hyperdrive = findHyperdriveConfig({
     hyperdrives: appConfig.hyperdrives,
