@@ -24,7 +24,7 @@ const mainnetPoolId =
 
 interface UseMorphoRateResult {
   isLoading: boolean;
-  perDollarPerYear: FixedPoint | undefined; // Formatted supply rate
+  morphoRate: FixedPoint | undefined; // Formatted supply rate
 }
 
 export function useMorphoRate({
@@ -49,7 +49,7 @@ export function useMorphoRate({
     },
   });
 
-  let perDollarPerYear: FixedPoint | undefined = undefined;
+  let morphoRate: FixedPoint | undefined = undefined;
 
   if (data && data.data.length > 0) {
     const program = data.data[0];
@@ -71,13 +71,13 @@ export function useMorphoRate({
 
     console.log("matchingRate", matchingRate, chainId);
 
-    perDollarPerYear = fixed(matchingRate ?? 0, 15);
+    morphoRate = fixed(matchingRate ?? 0, 15);
   } else {
     console.warn("Invalid or empty data structure");
   }
 
   return {
-    perDollarPerYear,
+    morphoRate,
     isLoading,
   };
 }
