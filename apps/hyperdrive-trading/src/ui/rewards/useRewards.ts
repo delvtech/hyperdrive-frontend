@@ -5,6 +5,7 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
+import { useMorphoRate } from "./useMorphoRate";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -85,6 +86,13 @@ export function useRewards(
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { perDollarPerYear, isLoading } = useMorphoRate({
+    enabled: hyperdrive.chainId === base.id,
+  });
+  console.log(
+    "perDollarPerYear",
+    perDollarPerYear && parseFixed(perDollarPerYear).format(),
+  );
 
   const rewards = [];
 
@@ -96,14 +104,7 @@ export function useRewards(
   ) {
     const morphoRate =
       hyperdrive.chainId === base.id
-        ? MorphoBaseFlatRatePerYear.mul(
-            getWeightMorpho(
-              hyperdrive.poolConfig,
-              positionType,
-              poolInfo,
-              presentValue,
-            ),
-          )
+        ? perDollarPerYear
         : MorphoFlatRatePerYear.mul(
             getWeightMorpho(
               hyperdrive.poolConfig,
@@ -116,9 +117,11 @@ export function useRewards(
     const morphoReward: Reward = {
       id: "MorphoFlatRate",
       name: "MORPHO",
-      amount: morphoRate.format({
-        decimals: 2,
-      }),
+      amount: morphoRate
+        ? morphoRate.format({
+            decimals: 2,
+          })
+        : "0",
     };
     rewards.push(morphoReward);
   }
