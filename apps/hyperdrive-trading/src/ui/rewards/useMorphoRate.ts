@@ -2,25 +2,12 @@ import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
 import { base } from "viem/chains";
 
-interface RateObject {
-  per_dollar_per_year: string;
-  pool_ids: string[];
-}
-
-interface ProgramData {
-  current_rates: RateObject[];
-}
-
-interface ApiResponse {
-  data: ProgramData[];
-}
-
 // 182d Morpho cbETH/USDC Pool ID
 const basePoolId =
   "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c";
 
-const mainnetPoolId =
-  "0x0000000000000000000000000000000000000000000000000000000000000000";
+// TODO: Get this from the Morpho API
+const mainnetPoolId = "";
 
 interface UseMorphoRateResult {
   isLoading: boolean;
@@ -32,7 +19,17 @@ export function useMorphoRate({
 }: {
   chainId: number;
 }): UseMorphoRateResult {
-  const { data, isLoading } = useQuery<ApiResponse, Error>({
+  const { data, isLoading } = useQuery<
+    {
+      data: {
+        current_rates: {
+          per_dollar_per_year: string;
+          pool_ids: string[];
+        }[];
+      }[];
+    },
+    Error
+  >({
     queryKey: ["morphoRate", chainId],
     staleTime: Infinity,
     retry: 3,
@@ -69,11 +66,7 @@ export function useMorphoRate({
       matchingRate = currentRates[0].per_dollar_per_year;
     }
 
-    console.log("matchingRate", matchingRate, chainId);
-
     morphoRate = fixed(matchingRate ?? 0, 15);
-  } else {
-    console.warn("Invalid or empty data structure");
   }
 
   return {
