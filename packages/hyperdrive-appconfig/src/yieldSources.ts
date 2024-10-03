@@ -129,6 +129,20 @@ const rseth: YieldSource = {
   historicalRatePeriod: 30,
 };
 
+const usds: YieldSource = {
+  id: "usds",
+  shortName: "Savings USDS",
+  protocol: "sky",
+  historicalRatePeriod: 1,
+};
+
+const susds: YieldSource = {
+  id: "susds",
+  shortName: "Staking USDS",
+  protocol: "sky",
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
   eeth,
   makerDsr,
@@ -146,4 +160,6 @@ export const yieldSources = {
   stusd,
   lineaEzeth,
   rseth,
+  usds,
+  susds,
 } as const;
