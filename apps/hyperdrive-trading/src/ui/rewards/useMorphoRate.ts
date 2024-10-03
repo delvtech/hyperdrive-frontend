@@ -5,15 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 const marketPoolIds: Record<string, string> = {
   "182d Morpho cbETH/USDC":
     "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c",
-  // Add other markets here as needed
-  // For example:
-  // "30d Morpho DAI/USDC": "0xanotherPoolIdHere",
 };
-
-interface UseMorphoRateResult {
-  isLoading: boolean;
-  morphoRate: FixedPoint | undefined;
-}
 
 export function useMorphoRate({
   chainId,
@@ -21,8 +13,10 @@ export function useMorphoRate({
 }: {
   chainId: number;
   marketName: string;
-}): UseMorphoRateResult {
-  const { data: rewardsData, isLoading } = useQuery<
+}): {
+  morphoRate: FixedPoint | undefined;
+} {
+  const { data: rewardsData } = useQuery<
     {
       current_rates: {
         per_dollar_per_year: string;
@@ -34,6 +28,7 @@ export function useMorphoRate({
     queryKey: ["morphoRate", chainId, marketName],
     staleTime: Infinity,
     retry: 3,
+    // Only fetch this data on the Morpho markets
     enabled: marketName.includes("Morpho"),
     queryFn: async () => {
       const response = await fetch(
@@ -47,16 +42,14 @@ export function useMorphoRate({
   let morphoRate: FixedPoint | undefined = undefined;
 
   if (rewardsData) {
-    const currentRates = rewardsData.current_rates;
     const poolId = marketPoolIds[marketName];
-
-    let matchingRate = currentRates.find((rate) =>
+    let matchingRate = rewardsData.current_rates.find((rate) =>
       rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
     )?.per_dollar_per_year;
 
     // If there is no matching rate, just use the first one in the current_rates array
     if (!matchingRate) {
-      matchingRate = currentRates[0].per_dollar_per_year;
+      matchingRate = rewardsData.current_rates[0].per_dollar_per_year;
     }
 
     // The morpho rate is formatted to 15 decimal places
@@ -65,6 +58,5 @@ export function useMorphoRate({
 
   return {
     morphoRate,
-    isLoading,
   };
 }
