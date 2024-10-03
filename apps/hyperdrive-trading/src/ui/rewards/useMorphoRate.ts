@@ -1,13 +1,14 @@
 import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import { useQuery } from "@tanstack/react-query";
-import { base } from "viem/chains";
 
-// 182d Morpho cbETH/USDC Pool ID
-const basePoolId =
-  "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c";
-
-// TODO: Get this from the Morpho API
-const mainnetPoolId = "";
+// Mapping for market-specific pool IDs
+const marketPoolIds: Record<string, string> = {
+  "182d Morpho cbETH/USDC":
+    "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c",
+  // Add other markets here as needed
+  // For example:
+  // "30d Morpho DAI/USDC": "0xanotherPoolIdHere",
+};
 
 interface UseMorphoRateResult {
   isLoading: boolean;
@@ -16,8 +17,10 @@ interface UseMorphoRateResult {
 
 export function useMorphoRate({
   chainId,
+  marketName,
 }: {
   chainId: number;
+  marketName: string;
 }): UseMorphoRateResult {
   const { data: rewardsData, isLoading } = useQuery<
     {
@@ -28,9 +31,10 @@ export function useMorphoRate({
     },
     Error
   >({
-    queryKey: ["morphoRate", chainId],
+    queryKey: ["morphoRate", chainId, marketName],
     staleTime: Infinity,
     retry: 3,
+    enabled: marketName.includes("Morpho"),
     queryFn: async () => {
       const response = await fetch(
         `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`,
@@ -44,7 +48,7 @@ export function useMorphoRate({
 
   if (rewardsData) {
     const currentRates = rewardsData.current_rates;
-    const poolId = chainId === base.id ? basePoolId : mainnetPoolId;
+    const poolId = marketPoolIds[marketName];
 
     let matchingRate = currentRates.find((rate) =>
       rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
