@@ -1,7 +1,7 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { useMorphoRate } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
-import { useMorphoRate } from "./useMorphoRate";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
