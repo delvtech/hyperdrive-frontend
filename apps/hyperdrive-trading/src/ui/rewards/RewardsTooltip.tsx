@@ -8,7 +8,6 @@ import { Address } from "viem";
 export function RewardsTooltip({
   hyperdriveAddress,
   chainId,
-  positionType,
   children,
 }: PropsWithChildren<{
   hyperdriveAddress: Address;
@@ -21,7 +20,7 @@ export function RewardsTooltip({
     hyperdriveChainId: chainId,
   });
 
-  const rewards = useRewards(hyperdrive, positionType);
+  const rewards = useRewards(hyperdrive);
 
   if (!rewards || (rewards && rewards.length === 0)) {
     return children;
