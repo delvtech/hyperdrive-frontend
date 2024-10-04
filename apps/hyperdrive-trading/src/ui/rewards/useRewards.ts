@@ -38,7 +38,7 @@ type Reward = {
 export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
-    marketName: hyperdrive.name,
+    hyperdriveAddress: hyperdrive.address,
   });
 
   const rewards = [];
