@@ -5,12 +5,10 @@ import {
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-  ReadMetaMorphoHyperdrive,
   ReadStEthHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import {
   ReadHyperdrive_v1_0_14,
-  ReadMetaMorphoHyperdrive_v1_0_14,
   ReadStEthHyperdrive_v1_0_14,
 } from "@delvtech/hyperdrive-viem/v1.0.14";
 import semver from "semver";
@@ -50,18 +48,6 @@ export async function getReadHyperdrive({
       // <= v1.0.14
       if (await isV1_0_14(hyperdrive)) {
         return new ReadStEthHyperdrive_v1_0_14(options);
-      }
-
-      return hyperdrive;
-    }
-
-    // morpho
-    if (hyperdriveConfig.kind === "MorphoBlueHyperdrive") {
-      hyperdrive = new ReadMetaMorphoHyperdrive(options);
-
-      // <= v1.0.14
-      if (await isV1_0_14(hyperdrive)) {
-        return new ReadMetaMorphoHyperdrive_v1_0_14(options);
       }
 
       return hyperdrive;

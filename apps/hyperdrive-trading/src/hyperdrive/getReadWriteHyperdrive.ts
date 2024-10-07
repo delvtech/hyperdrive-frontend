@@ -5,7 +5,6 @@ import {
 import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
-  ReadWriteMetaMorphoHyperdrive,
   ReadWriteStEthHyperdrive,
 } from "@delvtech/hyperdrive-viem";
 import {
@@ -52,13 +51,6 @@ export async function getReadWriteHyperdrive({
       if (await isV1_0_14(hyperdrive)) {
         return new ReadWriteStEthHyperdrive_v1_0_14(options);
       }
-
-      return hyperdrive;
-    }
-
-    // morpho
-    if (hyperdriveConfig.kind === "MorphoBlueHyperdrive") {
-      hyperdrive = new ReadWriteMetaMorphoHyperdrive(options);
 
       return hyperdrive;
     }

@@ -16,9 +16,6 @@ export { ReadWriteEzEthHyperdrive_v1_0_14 } from "src/hyperdrive/ezeth/v1.0.14/R
 export { ReadLsEthHyperdrive_v1_0_14 } from "src/hyperdrive/lseth/v1.0.14/ReadLsEthHyperdrive_v1_0_14";
 export { ReadWriteLsEthHyperdrive_v1_0_14 } from "src/hyperdrive/lseth/v1.0.14/ReadWriteLsEthHyperdrive_v1_0_14";
 
-// morpho
-export { ReadMetaMorphoHyperdrive_v1_0_14 } from "src/hyperdrive/metamorpho/v1.0.14/ReadMetaMorphoHyperdrive_v1_0_14";
-
 // reth
 export { ReadREthHyperdrive_v1_0_14 } from "src/hyperdrive/reth/v1.0.14/ReadREthHyperdrive_v1_0_14";
 export { ReadWriteREthHyperdrive_v1_0_14 } from "src/hyperdrive/reth/v1.0.14/ReadWriteREthHyperdrive_v1_0_14";

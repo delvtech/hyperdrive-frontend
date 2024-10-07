@@ -24,9 +24,6 @@ export {
   ReadWriteLsEthHyperdrive_v1_0_14,
 } from "src/hyperdrive/v1.0.14/lseth";
 
-// morpho
-export { ReadMetaMorphoHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/morpho";
-
 // reth
 export {
   ReadREthHyperdrive_v1_0_14,

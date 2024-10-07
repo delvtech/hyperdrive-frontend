@@ -1,10 +1,11 @@
 import {
-  CachedReadWriteContract,
   ContractReadOptions,
   ContractWriteOptions,
-} from "@delvtech/evm-client";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
-import { syncCacheWithTransaction } from "src/evm-client/syncCacheWithTransaction";
+  Drift,
+  ReadWriteAdapter,
+  ReadWriteContract,
+} from "@delvtech/drift";
+import { syncCacheWithTransaction } from "src/drift/syncCacheWithTransaction";
 import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { NULL_BYTES } from "src/hyperdrive/constants";
@@ -22,8 +23,8 @@ export interface ReadWriteHyperdriveOptions
   extends ReadWriteContractModelOptions {}
 
 export class ReadWriteHyperdrive extends ReadHyperdrive {
-  declare contract: CachedReadWriteContract<HyperdriveAbi>;
-  declare contractFactory: ReadWriteContractFactory;
+  declare drift: Drift<ReadWriteAdapter>;
+  declare contract: ReadWriteContract<HyperdriveAbi>;
 
   constructor(options: ReadWriteHyperdriveOptions) {
     super(options);
@@ -35,14 +36,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     const address = await this.contract.read("baseToken", {}, options);
     return address === ReadWriteEth.address
       ? new ReadWriteEth({
-          contractFactory: this.contractFactory,
-          network: this.network,
+          drift: this.drift,
         })
       : new ReadWriteErc20({
           address,
-          contractFactory: this.contractFactory,
-          namespace: this.contract.namespace,
-          network: this.network,
+          drift: this.drift,
+          cache: this.contract.cache,
+          cacheNamespace: this.contract.cacheNamespace,
         });
   }
 
@@ -50,9 +50,8 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     const address = await this.contract.read("vaultSharesToken");
     return new ReadWriteErc20({
       address,
-      contractFactory: this.contractFactory,
-      namespace: this.contract.namespace,
-      network: this.network,
+      drift: this.drift,
+      cacheNamespace: this.contract.cacheNamespace,
     });
   }
 
@@ -70,7 +69,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       { _checkpointTime: BigInt(time), _maxIterations: 4n },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -91,7 +90,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       { _status: paused },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -135,7 +134,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -177,7 +176,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -219,7 +218,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -261,7 +260,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -303,7 +302,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -349,7 +348,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -390,7 +389,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       options,
     );
 
-    return hash;
+    return hash as `0x${string}`;
   }
 
   /**
@@ -429,6 +428,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       },
       options,
     );
-    return hash;
+    return hash as `0x${string}`;
   }
 }

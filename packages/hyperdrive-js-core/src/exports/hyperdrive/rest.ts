@@ -6,12 +6,6 @@ export {
   type EzEthHyperdriveAbi,
 } from "src/hyperdrive/ezeth/abi";
 
-// morpho
-export {
-  metaMorphoSnippetsABI,
-  type MetaMorphoSnippetsABI,
-} from "src/hyperdrive/metamorpho/abi";
-
 // pool
 export type { PoolConfig, PoolInfo } from "src/pool/types";
 
