@@ -1,5 +1,5 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
@@ -7,13 +7,9 @@ import {
   findBaseToken,
   findToken,
 } from "@hyperdrive/appconfig";
-import classNames from "classnames";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
-import { Stat } from "src/ui/base/components/Stat";
-import { formatDate } from "src/ui/base/formatting/formatDate";
-import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
 
 export interface CloseShortModalButtonProps {
@@ -45,46 +41,11 @@ export function CloseShortModalButton({
   function closeModal() {
     (document.getElementById(modalId) as HTMLDialogElement)?.close();
   }
-
+  console.log(subHeading, "subheading");
   return (
     <Modal
       modalHeader={
-        <ModalHeader heading="Close Short" subHeading={subHeading}>
-          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div
-              className={classNames("daisy-badge daisy-badge-lg", {
-                "daisy-badge-neutral text-success": isMature,
-              })}
-            >
-              <Stat
-                horizontal
-                size="small"
-                label={isMature ? undefined : "Term:"}
-                value={
-                  <span
-                    className={classNames("flex items-center", {
-                      "font-normal": isMature,
-                    })}
-                  >
-                    {isMature ? <CheckIcon className="mr-2 h-4" /> : undefined}
-                    {getRemainingTimeLabel({
-                      maturitySeconds: Number(short.maturity),
-                      condensed: true,
-                    })}
-                  </span>
-                }
-              />
-            </div>
-            <div className="daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label="Maturity Date:"
-                value={formatDate(maturityMilliseconds)}
-              />
-            </div>
-          </div>
-        </ModalHeader>
+        <ModalHeader heading="Close Short" subHeading={subHeading} />
       }
       modalId={modalId}
       modalContent={
