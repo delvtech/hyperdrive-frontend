@@ -1,5 +1,11 @@
 # @delvtech/fixed-point-wasm
 
+## 0.0.6
+
+### Patch Changes
+
+- 716c6f7: Add `.abs()` method.
+
 ## 0.0.5
 
 ### Patch Changes

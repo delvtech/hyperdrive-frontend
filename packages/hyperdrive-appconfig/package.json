@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-appconfig",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "AGPL-3.0",
   "type": "module",
   "main": "dist/index.js",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "chalk": "^5.3.0",
     "@delvtech/hyperdrive-artifacts": "^1.0.18",
-    "@delvtech/hyperdrive-viem": "^3.0.3",
+    "@delvtech/hyperdrive-viem": "^3.0.6",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
