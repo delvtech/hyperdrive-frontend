@@ -1,4 +1,7 @@
-import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { useParams } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Helmet } from "react-helmet";

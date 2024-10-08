@@ -1,11 +1,14 @@
-# @hyperdrive/appconfig
+# @delvtech/hyperdrive-appconfig
 
 Pre-generated metadata for applications that use Hyperdrive.
+
+Note: The data schema in this package may change at any time, and semantic
+versioning is not strictly enforced.
 
 # Example Usage
 
 ```ts
-import { appConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 
 // 1. Grab the first hyperdrive in the app config
 const firstHyperdrive = appConfig.hyperdrives[0];
@@ -24,7 +27,7 @@ const { name, symbol, decimals, iconUrl } = baseToken;
 # Building the package
 
 1. Add .env variables for chains where Hyperdrive is deployed
-2. Run the appropriate `gen:local` or `gen:cloudchain` script (see package.json)
+2. Run the appropriate, eg: `gen:local` or `gen:cloudchain` script (see package.json)
 3. Run the `build` script.
 
 Note: The `generated/` folder is checked into the repo. You'll want to

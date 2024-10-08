@@ -1,4 +1,4 @@
-import { AppConfig } from "@hyperdrive/appconfig";
+import { AppConfig } from "@delvtech/hyperdrive-appconfig";
 import { getPublicClient } from "@wagmi/core";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";

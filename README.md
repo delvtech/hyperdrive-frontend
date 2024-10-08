@@ -23,7 +23,7 @@ Packages
 - [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts.
 - [@delvtech/fixed-point-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [fixedpointmath](https://github.com/delvtech/hyperdrive-rs/tree/main/crates/fixedpointmath) Rust crate.
 - [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs).
-- [@hyperdrive/appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
+- [@delvtech/hyperdrive-appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
 
 Crates
 

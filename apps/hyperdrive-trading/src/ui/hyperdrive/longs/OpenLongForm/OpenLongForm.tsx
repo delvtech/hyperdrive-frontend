@@ -1,11 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";

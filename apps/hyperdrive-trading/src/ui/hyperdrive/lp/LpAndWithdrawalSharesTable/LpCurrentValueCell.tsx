@@ -3,7 +3,7 @@ import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";

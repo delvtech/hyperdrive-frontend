@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";

@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useMorphoRate } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
@@ -39,6 +39,10 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    enabled:
+      eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
+        hyperdrive.address,
+      ) ?? false,
   });
 
   const rewards = [];

@@ -1,4 +1,4 @@
-import { HyperdriveConfig, appConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useBlockNumber } from "wagmi";
 
 /**

@@ -1,10 +1,10 @@
-import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import { MouseEvent, ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";

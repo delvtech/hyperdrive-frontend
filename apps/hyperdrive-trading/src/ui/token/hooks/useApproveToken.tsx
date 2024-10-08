@@ -4,7 +4,7 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
-import { appConfig, findToken } from "@hyperdrive/appconfig";
+import { appConfig, findToken } from "@delvtech/hyperdrive-appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";

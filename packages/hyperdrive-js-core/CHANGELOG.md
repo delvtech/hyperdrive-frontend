@@ -1,5 +1,12 @@
 # @delvtech/hyperdrive-js-core
 
+## 3.0.6
+
+### Patch Changes
+
+- Updated dependencies [716c6f7]
+  - @delvtech/fixed-point-wasm@0.0.6
+
 ## 3.0.5
 
 ### Patch Changes
