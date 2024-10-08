@@ -16,6 +16,7 @@ import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
+import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -213,20 +214,14 @@ export function CloseShortForm({
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
           <PrimaryStat
-            label="You receive"
+            label="Time remaining"
             value={
-              <span className="text-h3 font-bold">
-                {amountOut
-                  ? `${formatBalance({
-                      balance: amountOut,
-                      decimals: hyperdrive.decimals,
-                      places: baseToken?.places,
-                    })}`
-                  : "0"}{" "}
-              </span>
+              <StatusCell
+                chainId={hyperdrive.chainId}
+                maturity={short.maturity}
+                statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
+              />
             }
-            valueUnit={activeWithdrawToken.symbol}
-            valueContainerClassName="flex flex-row gap-2 items-end"
           />
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
           <PrimaryStat
