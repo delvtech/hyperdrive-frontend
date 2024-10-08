@@ -31,7 +31,7 @@
     "@delvtech/hyperdrive-viem": "^3.0.5",
     "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
-    "@hyperdrive/appconfig": "*",
+    "@delvtech/hyperdrive-appconfig": "^0.0.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@rainbow-me/rainbowkit": "^2.1.3",
     "@rollbar/react": "^0.11.1",

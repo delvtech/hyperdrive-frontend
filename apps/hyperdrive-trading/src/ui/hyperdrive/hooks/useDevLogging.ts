@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useEffect } from "react";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";

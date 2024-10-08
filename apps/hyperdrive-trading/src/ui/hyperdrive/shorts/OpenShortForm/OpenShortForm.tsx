@@ -6,7 +6,7 @@ import {
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";

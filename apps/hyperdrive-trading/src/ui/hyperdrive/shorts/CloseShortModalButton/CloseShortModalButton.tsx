@@ -1,12 +1,12 @@
-import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
   findBaseToken,
   findToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";

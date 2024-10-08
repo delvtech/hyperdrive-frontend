@@ -1,4 +1,4 @@
-import { HyperdriveConfig, TokenConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 
 export function getSubHeadingLabel(
   baseToken: TokenConfig,

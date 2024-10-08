@@ -1,10 +1,10 @@
-import { ClockIcon } from "@heroicons/react/16/solid";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { ClockIcon } from "@heroicons/react/16/solid";
 import { Link, useNavigate } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";

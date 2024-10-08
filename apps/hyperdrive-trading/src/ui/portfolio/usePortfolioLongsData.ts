@@ -1,5 +1,5 @@
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";

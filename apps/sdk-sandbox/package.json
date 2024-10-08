@@ -14,7 +14,7 @@
     "@delvtech/fixed-point-wasm": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
-    "@hyperdrive/appconfig": "*",
+    "@delvtech/hyperdrive-appconfig": "*",
     "viem": "^2.9.2"
   },
   "devDependencies": {

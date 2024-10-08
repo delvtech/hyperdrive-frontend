@@ -1,9 +1,9 @@
+import { TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import Fuse from "fuse.js";
 import { ReactElement, useMemo, useRef, useState } from "react";

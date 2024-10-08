@@ -1,5 +1,5 @@
+import { appConfig, makeTransactionUrl } from "@delvtech/hyperdrive-appconfig";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { appConfig, makeTransactionUrl } from "@hyperdrive/appconfig";
 import { Hash } from "viem";
 
 export default function TransactionToast({

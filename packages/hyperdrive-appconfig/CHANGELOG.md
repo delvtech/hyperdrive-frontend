@@ -1,4 +1,4 @@
-# @hyperdrive/appconfig
+# @delvtech/hyperdrive-appconfig
 
 ## 0.0.1
 

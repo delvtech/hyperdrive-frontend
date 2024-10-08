@@ -1,10 +1,10 @@
-import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { Link } from "@tanstack/react-router";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";

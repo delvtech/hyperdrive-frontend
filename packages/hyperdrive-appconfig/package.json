@@ -1,11 +1,20 @@
 {
-  "name": "@hyperdrive/appconfig",
-  "version": "0.0.1",
-  "private": true,
+  "name": "@delvtech/hyperdrive-appconfig",
+  "version": "0.0.0",
   "license": "AGPL-3.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "export": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      }
+    }
+  },
   "files": [
     "dist"
   ],
@@ -19,7 +28,7 @@
     "gen:base": "npx tsx ./src/scripts/base.ts",
     "gen:linea": "npx tsx ./src/scripts/linea.ts",
     "generate": "npx tsx ./src/scripts/generate.ts",
-    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

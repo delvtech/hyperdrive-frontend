@@ -1,4 +1,8 @@
 import {
+  AppConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
+import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
   ReadWriteMetaMorphoHyperdrive,
@@ -8,7 +12,6 @@ import {
   ReadWriteHyperdrive_v1_0_14,
   ReadWriteStEthHyperdrive_v1_0_14,
 } from "@delvtech/hyperdrive-viem/v1.0.14";
-import { AppConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import semver from "semver";
 import { sdkCache } from "src/sdk/sdkCache";
 import { failedRequestToast } from "src/ui/base/components/Toaster/failedRequestToast";

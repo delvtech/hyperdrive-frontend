@@ -1,12 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
   TokenConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";

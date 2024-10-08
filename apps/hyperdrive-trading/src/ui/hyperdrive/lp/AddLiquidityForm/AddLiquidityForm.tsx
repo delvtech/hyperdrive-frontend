@@ -1,12 +1,12 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
   findBaseToken,
   findToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";

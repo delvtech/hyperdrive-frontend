@@ -1,5 +1,4 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -7,7 +6,8 @@ import {
   findBaseToken,
   makeAddressUrl,
   makeTransactionUrl,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   ColumnFiltersState,
   Header,

@@ -1,4 +1,7 @@
-import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
