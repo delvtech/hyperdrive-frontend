@@ -8,10 +8,12 @@ export function StatusCell({
   chainId,
   maturity,
   statusCellClassName,
+  showLeftSuffix,
 }: {
   chainId: number;
   maturity: bigint;
   statusCellClassName?: string;
+  showLeftSuffix?: boolean;
 }): ReactElement {
   const { data: currentBlock } = useBlock({ chainId });
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
@@ -19,6 +21,7 @@ export function StatusCell({
   const remainingTime = getRemainingTimeLabel({
     maturitySeconds: Number(maturity),
     condensed: true,
+    showLeftSuffix,
   });
 
   return (

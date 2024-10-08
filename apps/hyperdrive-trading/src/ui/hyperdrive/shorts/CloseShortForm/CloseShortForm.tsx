@@ -156,7 +156,7 @@ export function CloseShortForm({
             }
             onChange={(newAmount) => setAmount(newAmount)}
             bottomRightElement={
-              <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <div className="flex flex-col text-xs text-neutral-content">
                 {short
                   ? `Balance: ${formatBalance({
                       balance: short.bondAmount,
@@ -220,6 +220,7 @@ export function CloseShortForm({
                 chainId={hyperdrive.chainId}
                 maturity={short.maturity}
                 statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
+                showLeftSuffix={false}
               />
             }
           />
