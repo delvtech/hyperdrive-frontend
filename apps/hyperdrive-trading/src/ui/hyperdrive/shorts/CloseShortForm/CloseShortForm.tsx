@@ -227,16 +227,16 @@ export function CloseShortForm({
           <PrimaryStat
             label="Pool fee"
             value={
-              <span className="text-h3 font-bold">
+              <div className="text-h3 font-bold">
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
                       decimals: hyperdrive.decimals,
                       // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
-                      places: 4,
+                      places: 6,
                     })}`
                   : "0"}{" "}
-              </span>
+              </div>
             }
             valueUnit={activeWithdrawToken.symbol}
             valueContainerClassName="flex flex-row gap-2 items-end"

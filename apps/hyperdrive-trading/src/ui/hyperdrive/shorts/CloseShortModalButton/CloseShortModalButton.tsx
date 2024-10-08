@@ -36,12 +36,9 @@ export function CloseShortModalButton({
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
     : "";
 
-  const maturityMilliseconds = Number(short.maturity * 1000n);
-  const isMature = Date.now() > maturityMilliseconds;
   function closeModal() {
     (document.getElementById(modalId) as HTMLDialogElement)?.close();
   }
-  console.log(subHeading, "subheading");
   return (
     <Modal
       modalHeader={
