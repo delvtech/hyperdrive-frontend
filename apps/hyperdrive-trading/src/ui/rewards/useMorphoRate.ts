@@ -13,9 +13,11 @@ const marketPoolIds: Record<Address, string> = {
 export function useMorphoRate({
   chainId,
   hyperdriveAddress,
+  enabled = true,
 }: {
   chainId: number;
   hyperdriveAddress: Address;
+  enabled?: boolean;
 }): {
   morphoRate: FixedPoint | undefined;
 } {
@@ -29,6 +31,7 @@ export function useMorphoRate({
     Error
   >({
     queryKey: ["morphoRate", chainId, hyperdriveAddress],
+    enabled,
     staleTime: Infinity,
     retry: 3,
     queryFn: async () => {
