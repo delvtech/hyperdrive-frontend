@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findBaseToken,
@@ -6,6 +7,7 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import { MouseEvent, ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -18,8 +20,10 @@ import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -73,6 +77,11 @@ export function CloseShortForm({
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: hyperdrive.decimals,
+  });
+
+  const { fiatPrice: activeWithdrawTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeWithdrawToken.address,
+    chainId: activeWithdrawToken.chainId,
   });
 
   // You can't close an amount that's larger than the position size
@@ -135,27 +144,71 @@ export function CloseShortForm({
   return (
     <TransactionView
       tokenInput={
-        <TokenInputTwo
-          name={baseToken.symbol}
-          inputLabel="Amount to redeem"
-          token={`hy${baseToken.symbol}`}
-          value={amount ?? ""}
-          maxValue={
-            short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
-          }
-          onChange={(newAmount) => setAmount(newAmount)}
-          bottomRightElement={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              {short
-                ? `Balance: ${formatBalance({
-                    balance: short.bondAmount,
-                    decimals: hyperdrive.decimals,
-                    places: baseToken?.places,
-                  })}`
-                : undefined}
-            </div>
-          }
-        />
+        <div className="flex flex-col gap-3">
+          <TokenInputTwo
+            name={baseToken.symbol}
+            inputLabel="Amount to redeem"
+            token={`hy${baseToken.symbol}`}
+            value={amount ?? ""}
+            maxValue={
+              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
+            bottomRightElement={
+              <div className="flex flex-col gap-1 text-xs text-neutral-content">
+                {short
+                  ? `Balance: ${formatBalance({
+                      balance: short.bondAmount,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken?.places,
+                    })}`
+                  : undefined}
+              </div>
+            }
+          />
+          <TokenInputTwo
+            name={baseToken.symbol}
+            inputLabel="You receive"
+            token={
+              <TokenPickerTwo
+                tokens={withdrawTokenChoices}
+                activeTokenAddress={activeWithdrawToken.address}
+                onChange={(tokenAddress) =>
+                  setActiveWithdrawToken(tokenAddress)
+                }
+              />
+            }
+            value={
+              amountOut ? fixed(amountOut, hyperdrive.decimals).toString() : "0"
+            }
+            maxValue={
+              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+            }
+            disabled
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(hyperdrive.chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeWithdrawTokenPrice && amountAsBigInt
+                        ? fixed(
+                            amountAsBigInt,
+                            activeWithdrawToken.decimals,
+                          ).mul(
+                            activeWithdrawTokenPrice,
+                            activeWithdrawToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeWithdrawToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
+          />
+        </div>
       }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
