@@ -39,6 +39,10 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    enabled:
+      eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
+        hyperdrive.address,
+      ) ?? false,
   });
 
   const rewards = [];
