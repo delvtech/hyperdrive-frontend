@@ -1,5 +1,15 @@
 # hyperdrive-trading
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [716c6f7]
+- Updated dependencies [f83a584]
+  - @delvtech/fixed-point-wasm@0.0.6
+  - @delvtech/hyperdrive-appconfig@0.0.1
+  - @delvtech/hyperdrive-viem@3.0.6
+
 ## 0.0.9
 
 ### Patch Changes
