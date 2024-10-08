@@ -6,7 +6,6 @@ import {
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
@@ -36,9 +35,6 @@ export function CloseShortModalButton({
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
     : "";
 
-  function closeModal() {
-    (document.getElementById(modalId) as HTMLDialogElement)?.close();
-  }
   return (
     <Modal
       modalHeader={
@@ -46,23 +42,15 @@ export function CloseShortModalButton({
       }
       modalId={modalId}
       modalContent={
-        <div>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6" title="Close position" />
-          </button>
-          <CloseShortForm
-            hyperdrive={hyperdrive}
-            short={short}
-            onCloseShort={(e) => {
-              // preventDefault since we don't want to close the modal while the
-              // tx is temporarily pending the user's signature in their wallet.
-              e.preventDefault();
-            }}
-          />
-        </div>
+        <CloseShortForm
+          hyperdrive={hyperdrive}
+          short={short}
+          onCloseShort={(e) => {
+            // preventDefault since we don't want to close the modal while the
+            // tx is temporarily pending the user's signature in their wallet.
+            e.preventDefault();
+          }}
+        />
       }
     />
   );
