@@ -192,9 +192,9 @@ export function CloseShortForm({
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
                     balance:
-                      activeWithdrawTokenPrice && amountAsBigInt
+                      activeWithdrawTokenPrice && amountOut
                         ? fixed(
-                            amountAsBigInt,
+                            amountOut ?? 0n,
                             activeWithdrawToken.decimals,
                           ).mul(
                             activeWithdrawTokenPrice,
