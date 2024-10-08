@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findBaseToken,
@@ -5,21 +6,27 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { LabelValue } from "src/ui/base/components/LabelValue";
+import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
+import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenChoice } from "src/ui/token/TokenPicker";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
@@ -33,6 +40,7 @@ export function CloseShortForm({
   short,
 }: CloseShortFormProps): ReactElement {
   const { address: account } = useAccount();
+  const connectedChainId = useChainId();
   const defaultItems = [];
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
@@ -70,6 +78,11 @@ export function CloseShortForm({
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: hyperdrive.decimals,
+  });
+
+  const { fiatPrice: activeWithdrawTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeWithdrawToken.address,
+    chainId: activeWithdrawToken.chainId,
   });
 
   // You can't close an amount that's larger than the position size
@@ -130,60 +143,92 @@ export function CloseShortForm({
   }
 
   return (
-    <TransactionViewOld
+    <TransactionView
       tokenInput={
-        <TokenInput
-          name="shorts"
-          inputLabel="Amount to redeem"
-          token={`hy${baseToken?.symbol}`}
-          value={amount ?? ""}
-          maxValue={
-            short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
-          }
-          stat={
-            short
-              ? `Balance: ${formatBalance({
-                  balance: short.bondAmount,
-                  decimals: hyperdrive.decimals,
-                  places: baseToken?.places,
-                })}`
-              : undefined
-          }
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
-      }
-      setting={
-        withdrawTokenChoices.length > 1 ? (
-          <TokenPicker
-            tokens={withdrawTokenChoices}
-            activeTokenAddress={activeWithdrawToken.address}
-            onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-            label="Choose withdrawal asset"
-          />
-        ) : undefined
-      }
-      transactionPreview={
-        <div className="flex flex-col gap-3 px-2 pb-2">
-          <LabelValue
-            label="You receive"
-            value={
-              <p className="font-bold">
-                {amountOut
-                  ? `${formatBalance({
-                      balance: amountOut,
+        <div className="flex flex-col gap-3">
+          <TokenInputTwo
+            name={baseToken.symbol}
+            inputLabel="Amount to redeem"
+            token={`hy${baseToken.symbol}`}
+            value={amount ?? ""}
+            maxValue={
+              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
+            bottomRightElement={
+              <div className="flex flex-col text-xs text-neutral-content">
+                {short
+                  ? `Balance: ${formatBalance({
+                      balance: short.bondAmount,
                       decimals: hyperdrive.decimals,
                       places: baseToken?.places,
                     })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </p>
+                  : undefined}
+              </div>
             }
           />
-
-          <LabelValue
+          <TokenInputTwo
+            name={baseToken.symbol}
+            inputLabel="You receive"
+            token={
+              <TokenPickerTwo
+                tokens={withdrawTokenChoices}
+                activeTokenAddress={activeWithdrawToken.address}
+                onChange={(tokenAddress) =>
+                  setActiveWithdrawToken(tokenAddress)
+                }
+              />
+            }
+            value={
+              amountOut ? fixed(amountOut, hyperdrive.decimals).toString() : "0"
+            }
+            maxValue={
+              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+            }
+            disabled
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(hyperdrive.chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeWithdrawTokenPrice && amountOut
+                        ? fixed(
+                            amountOut ?? 0n,
+                            activeWithdrawToken.decimals,
+                          ).mul(
+                            activeWithdrawTokenPrice,
+                            activeWithdrawToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeWithdrawToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
+          />
+        </div>
+      }
+      primaryStats={
+        <div className="flex flex-row justify-between px-4 py-8">
+          <PrimaryStat
+            label="Time remaining"
+            value={
+              <StatusCell
+                chainId={hyperdrive.chainId}
+                maturity={short.maturity}
+                statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
+                showLeftSuffix={false}
+              />
+            }
+          />
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <PrimaryStat
             label="Pool fee"
             value={
-              <p>
+              <div className="text-h3 font-bold">
                 {flatPlusCurveFee
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
@@ -192,20 +237,31 @@ export function CloseShortForm({
                       places: 6,
                     })}`
                   : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </p>
+              </div>
             }
+            valueUnit={activeWithdrawToken.symbol}
+            valueContainerClassName="flex flex-row gap-2 items-end"
           />
         </div>
       }
-      disclaimer={
-        !!amountAsBigInt && isAmountLargerThanPositionSize ? (
-          <p className="text-center text-error">Insufficient balance</p>
-        ) : undefined
-      }
       actionButton={(() => {
         if (!account) {
-          return <ConnectButton />;
+          return <ConnectWalletButton wide />;
+        }
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
+        }
+        if (!!amountAsBigInt && isAmountLargerThanPositionSize) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
+          );
         }
         if (closeShortStatus === "loading") {
           return <LoadingButton label="Closing Short" variant="primary" />;

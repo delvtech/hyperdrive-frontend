@@ -6,14 +6,9 @@ import {
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { CheckIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import classNames from "classnames";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
-import { Stat } from "src/ui/base/components/Stat";
-import { formatDate } from "src/ui/base/formatting/formatDate";
-import { getRemainingTimeLabel } from "src/ui/hyperdrive/getRemainingTimeLabel";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
 
 export interface CloseShortModalButtonProps {
@@ -40,71 +35,22 @@ export function CloseShortModalButton({
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)
     : "";
 
-  const maturityMilliseconds = Number(short.maturity * 1000n);
-  const isMature = Date.now() > maturityMilliseconds;
-  function closeModal() {
-    (document.getElementById(modalId) as HTMLDialogElement)?.close();
-  }
-
   return (
     <Modal
       modalHeader={
-        <ModalHeader heading="Close Short" subHeading={subHeading}>
-          <div className="mt-5 flex w-full flex-wrap justify-between gap-4">
-            <div
-              className={classNames("daisy-badge daisy-badge-lg", {
-                "daisy-badge-neutral text-success": isMature,
-              })}
-            >
-              <Stat
-                horizontal
-                size="small"
-                label={isMature ? undefined : "Term:"}
-                value={
-                  <span
-                    className={classNames("flex items-center", {
-                      "font-normal": isMature,
-                    })}
-                  >
-                    {isMature ? <CheckIcon className="mr-2 h-4" /> : undefined}
-                    {getRemainingTimeLabel({
-                      maturitySeconds: Number(short.maturity),
-                      condensed: true,
-                    })}
-                  </span>
-                }
-              />
-            </div>
-            <div className="daisy-badge daisy-badge-lg">
-              <Stat
-                horizontal
-                size="small"
-                label="Maturity Date:"
-                value={formatDate(maturityMilliseconds)}
-              />
-            </div>
-          </div>
-        </ModalHeader>
+        <ModalHeader heading="Close Short" subHeading={subHeading} />
       }
       modalId={modalId}
       modalContent={
-        <div>
-          <button
-            className="daisy-btn daisy-btn-circle daisy-btn-ghost daisy-btn-sm absolute right-4 top-4"
-            onClick={closeModal}
-          >
-            <XMarkIcon className="w-6" title="Close position" />
-          </button>
-          <CloseShortForm
-            hyperdrive={hyperdrive}
-            short={short}
-            onCloseShort={(e) => {
-              // preventDefault since we don't want to close the modal while the
-              // tx is temporarily pending the user's signature in their wallet.
-              e.preventDefault();
-            }}
-          />
-        </div>
+        <CloseShortForm
+          hyperdrive={hyperdrive}
+          short={short}
+          onCloseShort={(e) => {
+            // preventDefault since we don't want to close the modal while the
+            // tx is temporarily pending the user's signature in their wallet.
+            e.preventDefault();
+          }}
+        />
       }
     />
   );
