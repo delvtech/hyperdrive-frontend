@@ -1,10 +1,10 @@
-import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { LabelValue } from "src/ui/base/components/LabelValue";

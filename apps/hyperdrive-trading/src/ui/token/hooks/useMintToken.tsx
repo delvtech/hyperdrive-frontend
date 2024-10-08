@@ -1,4 +1,4 @@
-import { TokenConfig } from "@hyperdrive/appconfig";
+import { TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";

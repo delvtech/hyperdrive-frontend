@@ -1,4 +1,4 @@
-import { TokenConfig } from "@hyperdrive/appconfig";
+import { TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";

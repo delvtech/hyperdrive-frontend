@@ -55,7 +55,7 @@
 
 - Updated dependencies [de73cff]
 - Updated dependencies [de73cff]
-  - @hyperdrive/appconfig@0.0.1
+  - @delvtech/hyperdrive-appconfig@0.0.1
   - @delvtech/hyperdrive-artifacts@0.0.3
   - @delvtech/hyperdrive-viem@0.0.3
 

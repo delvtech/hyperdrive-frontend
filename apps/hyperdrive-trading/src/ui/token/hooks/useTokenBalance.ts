@@ -1,4 +1,4 @@
-import { appConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";

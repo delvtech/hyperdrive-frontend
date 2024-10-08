@@ -1,4 +1,4 @@
-import { appConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 
 export function ChainCell({ chainId }: { chainId: number }): ReactElement {

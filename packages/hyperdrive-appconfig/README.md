@@ -1,4 +1,4 @@
-# @hyperdrive/appconfig
+# @delvtech/hyperdrive-appconfig
 
 Pre-generated metadata for applications that use Hyperdrive.
 
@@ -8,7 +8,7 @@ versioning is not strictly enforced.
 # Example Usage
 
 ```ts
-import { appConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 
 // 1. Grab the first hyperdrive in the app config
 const firstHyperdrive = appConfig.hyperdrives[0];

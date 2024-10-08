@@ -1,4 +1,4 @@
-import { appConfig } from "@hyperdrive/appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getStatus } from "src/base/queryStatus";

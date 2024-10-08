@@ -1,4 +1,7 @@
-import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";

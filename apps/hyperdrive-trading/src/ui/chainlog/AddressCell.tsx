@@ -1,4 +1,4 @@
-import { appConfig, makeAddressUrl } from "@hyperdrive/appconfig";
+import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";

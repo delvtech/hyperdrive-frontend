@@ -17,7 +17,7 @@ This project uses many tools like:
 #### Monorepo dependencies:
 
 - [@delvtech/hyperdrive-viem](../../packages/hyperdrive-viem/)
-- [@hyperdrive/appconfig](../../packages/hyperdrive-appconfig/)
+- [@delvtech/hyperdrive-appconfig](../../packages/hyperdrive-appconfig/)
 
 ### Environment variables
 

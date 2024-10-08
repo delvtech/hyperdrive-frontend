@@ -1,11 +1,11 @@
-import { Long } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
   findBaseToken,
   findToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { Long } from "@delvtech/hyperdrive-viem";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";

@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";

@@ -1,11 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
   TokenConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";

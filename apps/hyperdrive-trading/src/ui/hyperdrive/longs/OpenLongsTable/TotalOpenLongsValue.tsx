@@ -3,7 +3,7 @@ import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

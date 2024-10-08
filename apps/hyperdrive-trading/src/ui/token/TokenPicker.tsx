@@ -1,5 +1,5 @@
+import { TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

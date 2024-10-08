@@ -1,4 +1,4 @@
-import { HyperdriveConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useMorphoRate } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";

@@ -1,4 +1,4 @@
-import { HyperdriveConfig, TokenConfig } from "@hyperdrive/appconfig";
+import { HyperdriveConfig, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 

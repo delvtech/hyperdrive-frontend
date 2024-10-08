@@ -1,4 +1,8 @@
-import { appConfig, findBaseToken, findToken } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findBaseToken,
+  findToken,
+} from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { Address } from "viem";
 

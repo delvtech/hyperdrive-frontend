@@ -1,9 +1,9 @@
-import { OpenShort } from "@delvtech/hyperdrive-viem";
 import {
   HyperdriveConfig,
   appConfig,
   findBaseToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
