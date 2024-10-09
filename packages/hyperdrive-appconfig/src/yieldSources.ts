@@ -150,8 +150,8 @@ const mwEth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const stWell: YieldSource = {
-  id: "stWell",
+const stkWell: YieldSource = {
+  id: "stkWell",
   shortName: "Staked WELL",
   protocol: "moonwell",
   historicalRatePeriod: 1,
@@ -177,5 +177,5 @@ export const yieldSources = {
   usds,
   susds,
   mwEth,
-  stWell,
+  stkWell,
 } as const;

@@ -312,7 +312,7 @@ const hyperdriveKindResolvers: Record<
     if (hyperdriveName.includes("StkWellHyperdrive")) {
       return getCustomHyperdrive({
         hyperdrive,
-        yieldSource: "stWell",
+        yieldSource: "stkWell",
         baseTokenIconUrl: WELL_ICON_URL,
         sharesTokenIconUrl: WELL_ICON_URL,
         depositOptions: {
