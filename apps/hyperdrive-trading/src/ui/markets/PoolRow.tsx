@@ -55,6 +55,8 @@ export function PoolRow({
     hyperdriveAddress: hyperdrive.address,
   });
 
+  console.log(hyperdrive.withdrawOptions, "hyperdrive.withdrawOptions");
+
   return (
     <Well
       as="div"
@@ -135,10 +137,14 @@ export function PoolRow({
                 <span className="text-neutral-content">
                   {(() => {
                     const withdrawTokens = [];
-                    if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+                    if (
+                      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                    ) {
                       withdrawTokens.push(baseToken.symbol);
                     }
-                    if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+                    if (
+                      hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
+                    ) {
                       withdrawTokens.push(sharesToken?.symbol);
                     }
                     return withdrawTokens.join(", ");

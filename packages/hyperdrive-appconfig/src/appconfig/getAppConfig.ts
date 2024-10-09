@@ -308,7 +308,6 @@ const hyperdriveKindResolvers: Record<
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
-    console.log(hyperdriveName, "hyperdriveName in MoonwellHyperdrive");
     // Moonwell Staked WELL
     if (hyperdriveName.includes("Moonwell StkWell")) {
       return getCustomHyperdrive({
