@@ -139,6 +139,23 @@ impl WasmFixedPoint {
         })
     }
 
+    /// Get the absolute difference between this number and another.
+    #[wasm_bindgen(skip_jsdoc, js_name = absDiff)]
+    pub fn abs_diff(
+        &self,
+        other: Numberish,
+        decimals: Option<u8>,
+    ) -> Result<WasmFixedPoint, Error> {
+        Ok(WasmFixedPoint {
+            inner: self
+                .inner
+                .abs_diff(WasmFixedPoint::new(other, decimals)?.inner)
+                .change_type()
+                .to_result()?,
+            decimals: self.decimals,
+        })
+    }
+
     /// Add a fixed-point number to this one.
     #[wasm_bindgen(skip_jsdoc)]
     pub fn add(&self, other: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
