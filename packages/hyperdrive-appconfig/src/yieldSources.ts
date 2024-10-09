@@ -143,8 +143,8 @@ const susds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const moonwellEth: YieldSource = {
-  id: "moonwellEth",
+const mwEth: YieldSource = {
+  id: "mwEth",
   shortName: "Moonwell ETH",
   protocol: "moonwell",
   historicalRatePeriod: 1,
@@ -176,6 +176,6 @@ export const yieldSources = {
   rseth,
   usds,
   susds,
-  moonwellEth,
+  mwEth,
   stWell,
 } as const;

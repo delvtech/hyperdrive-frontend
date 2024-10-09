@@ -25,6 +25,7 @@ import {
   USDA_ICON_URL,
   USDC_ICON_URL,
   USDS_ICON_URL,
+  WELL_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
@@ -273,10 +274,61 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
+    // Moonwell ETH
+    if (hyperdriveName.includes("mwETH Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "mwEth",
+        baseTokenIconUrl: ETH_ICON_URL,
+        sharesTokenIconUrl: WELL_ICON_URL,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        baseTokenTags: [],
+        tokenPlaces: 4,
+      });
+    }
+
     const readSharesToken = await hyperdrive.getSharesToken();
     const sharesTokenSymbol = await readSharesToken.getSymbol();
     throw new Error(
       `Unknown ERC4626Hyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
+    );
+  },
+
+  MoonwellHyperdrive: async (hyperdrive, publicClient) => {
+    const hyperdriveName = await publicClient.readContract({
+      address: hyperdrive.address,
+      abi: hyperdrive.contract.abi,
+      functionName: "name",
+    });
+
+    // Moonwell Staked WELL
+    if (hyperdriveName.includes("StkWellHyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "stWell",
+        baseTokenIconUrl: WELL_ICON_URL,
+        sharesTokenIconUrl: WELL_ICON_URL,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        tokenPlaces: 4,
+      });
+    }
+
+    throw new Error(
+      `Unknown MoonwellHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
     );
   },
 
