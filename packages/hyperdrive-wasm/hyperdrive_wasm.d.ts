@@ -68,6 +68,8 @@ export function spotPriceAfterShort(params: ISpotPriceAfterShortParams): bigint;
 */
 export function calcImpliedRate(params: IImpliedRateParams): bigint;
 /**
+* Calculates the amount of bonds that will be shorted given a target base
+* deposit amount.
 */
 export function shortBondsGivenDeposit(params: IShortBondsGivenDepositParams): bigint;
 /**
@@ -286,10 +288,29 @@ interface IImpliedRateParams extends IStateParams {
 }
 
 interface IShortBondsGivenDepositParams extends IStateParams {
+  /**
+   * The target base deposit amount.
+   */
   targetBaseAmount: bigint;
+  /**
+   * The vault share price at the start of the checkpoint.
+   */
   openVaultSharePrice: bigint;
+  /**
+   * The pool's absolute maximum bond amount at the time of opening.
+   */
   absoluteMaxBondAmount: bigint;
+  /**
+   * The maximum difference between the target and actual base amount.
+   *
+   * @default 1e9
+   */
   maybeTolerance?: bigint | undefined;
+  /**
+   * The maximum number of iterations to run the Newton's method for.
+   *
+   * @default 500
+   */
   maybeMaxIterations?: number | undefined;
 }
 

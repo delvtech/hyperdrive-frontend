@@ -81,13 +81,24 @@ pub fn calcImpliedRate(params: IImpliedRateParams) -> Result<BigInt, Error> {
 
 #[ts(extends = IStateParams)]
 struct ShortBondsGivenDepositParams {
+    /// The target base deposit amount.
     target_base_amount: BigInt,
+    /// The vault share price at the start of the checkpoint.
     open_vault_share_price: BigInt,
+    /// The pool's absolute maximum bond amount at the time of opening.
     absolute_max_bond_amount: BigInt,
+    /// The maximum difference between the target and actual base amount.
+    ///
+    /// @default 1e9
     maybe_tolerance: Option<BigInt>,
+    /// The maximum number of iterations to run the Newton's method for.
+    ///
+    /// @default 500
     maybe_max_iterations: Option<u16>,
 }
 
+/// Calculates the amount of bonds that will be shorted given a target base
+/// deposit amount.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn shortBondsGivenDeposit(params: IShortBondsGivenDepositParams) -> Result<BigInt, Error> {
     params
