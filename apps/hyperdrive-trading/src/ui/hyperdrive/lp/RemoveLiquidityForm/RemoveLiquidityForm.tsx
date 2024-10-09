@@ -6,26 +6,31 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
-import { LabelValue } from "src/ui/base/components/LabelValue";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
+import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
-import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { SlippageSettings } from "src/ui/token/SlippageSettings";
-import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenChoice } from "src/ui/token/TokenPicker";
+import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -38,7 +43,7 @@ export function RemoveLiquidityForm({
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
-
+  const connectedChainId = useChainId();
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -93,6 +98,11 @@ export function RemoveLiquidityForm({
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
+  });
+
+  const { fiatPrice: activeWithdrawTokenPrice } = useTokenFiatPrice({
+    tokenAddress: activeWithdrawToken.address,
+    chainId: activeWithdrawToken.chainId,
   });
 
   // Let users type in an amount of lp shares they want to remove
@@ -197,123 +207,190 @@ export function RemoveLiquidityForm({
   }
 
   return (
-    <TransactionViewOld
-      setting={
-        <TokenPicker
-          label={
-            baseTokenDepositEnabled
-              ? "Choose asset for withdrawal"
-              : "Asset for withdrawal"
-          }
-          activeTokenAddress={activeWithdrawToken?.address}
-          onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-          tokens={withdrawTokenChoices}
-        />
-      }
+    <TransactionView
       tokenInput={
-        <TokenInput
-          name="Input LP shares"
-          token={
-            <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-              <img src={baseToken.iconUrl} className="h-5 rounded-full" />{" "}
-              <span className="text-sm font-semibold">
-                {baseToken.symbol}-LP
-              </span>
-            </div>
-          }
-          settings={
-            <SlippageSettings
-              onSlippageChange={setSlippage}
-              slippage={slippage}
-              activeOption={activeSlippageOption}
-              onActiveOptionChange={setActiveSlippageOption}
-              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-            />
-          }
-          value={amount ?? ""}
-          maxValue={formatUnits(lpShares, baseToken.decimals)}
-          stat={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              <span>
-                {lpShares && !!poolInfo
-                  ? `Withdrawable: ${formatBalance({
-                      balance: lpShares,
-                      decimals: hyperdrive.decimals,
-                      places: baseToken.places,
-                    })} ${baseToken.symbol}-LP`
-                  : undefined}
-              </span>
-              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
-            </div>
-          }
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
-      }
-      transactionPreview={
-        <div className="flex flex-col gap-3 px-2 pb-2">
-          <LabelValue
-            label="Amount to withdraw"
-            value={`${
+        <div className="flex flex-col gap-3">
+          <TokenInputTwo
+            name="Input LP shares"
+            token={`${baseToken.symbol}-LP`}
+            settings={
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
+            }
+            value={amount ?? ""}
+            maxValue={formatUnits(lpShares, baseToken.decimals)}
+            bottomRightElement={
+              <div className="flex flex-col text-xs text-neutral-content">
+                {`Withdrawable: ${formatBalance({
+                  balance: lpShares,
+                  decimals: baseToken.decimals,
+                  places: baseToken.places,
+                })}`}
+              </div>
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
+          />
+          <TokenInputTwo
+            name={baseToken.symbol}
+            inputLabel="You receive"
+            token={
+              <TokenPickerTwo
+                tokens={withdrawTokenChoices}
+                activeTokenAddress={activeWithdrawToken.address}
+                onChange={(tokenAddress) =>
+                  setActiveWithdrawToken(tokenAddress)
+                }
+              />
+            }
+            value={
               actualValueOut
-                ? `${formatBalance({
-                    balance: lpShares || 0n,
-                    decimals: hyperdrive.decimals,
-                    places: baseToken.places,
-                  })}`
+                ? fixed(actualValueOut, hyperdrive.decimals).toString()
                 : "0"
-            } ${baseToken.symbol}-LP`}
-          />
-          <LabelValue
-            label="Total you receive now"
-            value={
-              <span className="font-bold">
-                {actualValueOut
-                  ? `${formatBalance({
-                      balance: actualValueOut,
-                      decimals: activeWithdrawToken.decimals,
-                      places: activeWithdrawToken.places,
-                    })}`
-                  : "0"}{" "}
-                {activeWithdrawToken.symbol}
-              </span>
             }
-          />
-          <LabelValue
-            label="Queued for delayed withdrawal"
-            value={
-              <span className="font-bold">
-                {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
-              </span>
+            maxValue={
+              actualValueOut
+                ? formatUnits(actualValueOut, hyperdrive.decimals)
+                : ""
             }
+            disabled
+            bottomLeftElement={
+              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              !isTestnetChain(hyperdrive.chainId) ? (
+                <label className="text-sm text-neutral-content">
+                  {`$${formatBalance({
+                    balance:
+                      activeWithdrawTokenPrice && actualValueOut
+                        ? fixed(
+                            actualValueOut,
+                            activeWithdrawToken.decimals,
+                          ).mul(
+                            activeWithdrawTokenPrice,
+                            activeWithdrawToken.decimals,
+                          ).bigint
+                        : 0n,
+                    decimals: activeWithdrawToken.decimals,
+                    places: 2,
+                  })}`}
+                </label>
+              ) : null
+            }
+            onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>
       }
-      disclaimer={
-        <>
-          {lpSharesIn && !hasEnoughBalance ? (
-            <p className="mb-2 text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          ) : null}
+      // transactionPreview={
+      //   <div className="flex flex-col gap-3 px-2 pb-2">
+      //     <LabelValue
+      //       label="Amount to withdraw"
+      //       value={`${
+      //         actualValueOut
+      //           ? `${formatBalance({
+      //               balance: lpShares || 0n,
+      //               decimals: hyperdrive.decimals,
+      //               places: baseToken.places,
+      //             })}`
+      //           : "0"
+      //       } ${baseToken.symbol}-LP`}
+      //     />
+      //     <LabelValue
+      //       label="Total you receive now"
+      //       value={
+      //         <span className="font-bold">
+      //           {actualValueOut
+      //             ? `${formatBalance({
+      //                 balance: actualValueOut,
+      //                 decimals: activeWithdrawToken.decimals,
+      //                 places: activeWithdrawToken.places,
+      //               })}`
+      //             : "0"}{" "}
+      //           {activeWithdrawToken.symbol}
+      //         </span>
+      //       }
+      //     />
+      //     <LabelValue
+      //       label="Queued for delayed withdrawal"
+      //       value={
+      //         <span className="font-bold">
+      //           {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
+      //         </span>
+      //       }
+      //     />
+      //   </div>
+      // }
+      // disclaimer={
+      //   <>
+      //     {lpSharesIn && !hasEnoughBalance ? (
+      //       <p className="mb-2 text-center text-sm text-error">
+      //         Insufficient balance
+      //       </p>
+      //     ) : null}
 
-          <p className="text-center text-sm text-neutral-content">
-            You can withdraw liquidity at any time. The utilized portion may be
-            queued for delayed withdrawal.
-          </p>
-        </>
+      //     <p className="text-center text-sm text-neutral-content">
+      //       You can withdraw liquidity at any time. The utilized portion may be
+      //       queued for delayed withdrawal.
+      //     </p>
+      //   </>
+      // }
+      primaryStats={
+        <div className="flex flex-row justify-between px-4 py-8">
+          <PrimaryStat
+            label="Queued for delayed withdrawal"
+            value={
+              <div className="text-h3 font-bold">
+                {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
+              </div>
+            }
+          />
+          {/* <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <PrimaryStat
+            label="Pool fee"
+            value={
+              <div className="text-h3 font-bold">
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: hyperdrive.decimals,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 6,
+                    })}`
+                  : "0"}{" "}
+              </div>
+            }
+            valueUnit={activeWithdrawToken.symbol}
+            valueContainerClassName="flex flex-row gap-2 items-end"
+          /> */}
+        </div>
       }
       actionButton={(() => {
         if (!account) {
-          return <ConnectButton />;
+          return <ConnectWalletButton wide />;
         }
-
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
+        }
+        if (!!lpSharesIn && !hasEnoughBalance) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
+          );
+        }
         if (removeLiquidityStatus === "loading") {
-          return <LoadingButton label="Removing liquidity" variant="primary" />;
+          return <LoadingButton label="Removing Liquidity" variant="primary" />;
         }
-
         return (
           <button
-            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full"
+            className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!hasEnoughBalance || !removeLiquidity}
             onClick={(e) => {
               // prevent closing the modal until the user approves the transaction
