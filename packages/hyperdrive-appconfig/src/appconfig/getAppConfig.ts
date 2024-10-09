@@ -26,6 +26,7 @@ import {
   USDC_ICON_URL,
   USDS_ICON_URL,
   WELL_ICON_URL,
+  WETH_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { yieldSources } from "src/yieldSources";
@@ -279,7 +280,7 @@ const hyperdriveKindResolvers: Record<
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "mwEth",
-        baseTokenIconUrl: ETH_ICON_URL,
+        baseTokenIconUrl: WETH_ICON_URL,
         sharesTokenIconUrl: WELL_ICON_URL,
         depositOptions: {
           isBaseTokenDepositEnabled: true,
