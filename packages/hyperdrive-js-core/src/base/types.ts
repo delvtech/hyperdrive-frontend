@@ -11,7 +11,7 @@ export type Prettify<T> = {
  */
 export type Constructor<
   TInstanceType = any,
-  TArgs extends any[] = any[]
+  TArgs extends any[] = any[],
 > = new (...args: TArgs) => TInstanceType;
 
 /**
@@ -85,13 +85,14 @@ type UnionToIntersection<T> = (
  * // }
  * ```
  */
-export type MergeKeys<T> = UnionToIntersection<T> extends infer I
-  ? {
-      // Each key of the intersection is first checked against the union type,
-      // T. If it exists in every member of T, then T[K] will be a union of
-      // the value types. Otherwise, I[K] is used. I[K] is the value type of
-      // the key in the intersection which will be `never` for keys with
-      // conflicting value types.
-      [K in keyof I]: K extends keyof T ? T[K] : I[K];
-    }
-  : never;
+export type MergeKeys<T> =
+  UnionToIntersection<T> extends infer I
+    ? {
+        // Each key of the intersection is first checked against the union type,
+        // T. If it exists in every member of T, then T[K] will be a union of
+        // the value types. Otherwise, I[K] is used. I[K] is the value type of
+        // the key in the intersection which will be `never` for keys with
+        // conflicting value types.
+        [K in keyof I]: K extends keyof T ? T[K] : I[K];
+      }
+    : never;

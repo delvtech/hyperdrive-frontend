@@ -284,6 +284,10 @@ export class FixedPoint {
 */
   abs(): FixedPoint;
 /**
+* Get the absolute difference between this number and another.
+*/
+  absDiff(other: Numberish, decimals?: number): FixedPoint;
+/**
 * Add a fixed-point number to this one.
 */
   add(other: Numberish, decimals?: number): FixedPoint;
@@ -435,12 +439,15 @@ export interface InitOutput {
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_abs: (a: number, b: number) => void;
+  readonly fixedpoint_absDiff: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly fixedpoint_mulDivUp: (a: number, b: number, c: number, d: number, e: number) => void;
+  readonly fixedpoint_mulDown: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulUp: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mul: (a: number, b: number, c: number, d: number) => void;
+  readonly fixedpoint_divDown: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_divUp: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_div: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_pow: (a: number, b: number, c: number, d: number) => void;
@@ -459,8 +466,6 @@ export interface InitOutput {
   readonly fixedpoint_toFixed: (a: number, b: number) => number;
   readonly initialize: () => void;
   readonly fixedpoint_valueOf: (a: number, b: number) => void;
-  readonly fixedpoint_mulDown: (a: number, b: number, c: number, d: number) => void;
-  readonly fixedpoint_divDown: (a: number, b: number, c: number, d: number) => void;
   readonly getVersion: (a: number) => void;
   readonly fixed: (a: number, b: number, c: number) => void;
   readonly parseFixed: (a: number, b: number, c: number) => void;

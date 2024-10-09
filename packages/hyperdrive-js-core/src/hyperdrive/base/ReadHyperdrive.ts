@@ -1664,6 +1664,55 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
+   * Predicts the amount of bonds that can be shorted given a target deposit
+   * amount in either base or shares.
+   */
+  async getShortBondsGivenDeposit({
+    amountIn,
+    asBase,
+    tolerance,
+    options,
+  }: {
+    amountIn: bigint;
+    asBase: boolean;
+    /**
+     * The maximum difference between the target and actual base amount.
+     *
+     * @default 1e9
+     */
+    tolerance?: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const latestCheckpoint = await this.getCheckpoint({ options });
+    const checkpointExposure = await this.getCheckpointExposure({ options });
+
+    let targetBaseAmount = amountIn;
+    if (!asBase) {
+      targetBaseAmount = await this.convertToBase({
+        sharesAmount: amountIn,
+        options,
+      });
+    }
+
+    const absoluteMaxBondAmount = hyperwasm.absoluteMaxShort({
+      poolInfo,
+      poolConfig,
+      checkpointExposure,
+    });
+
+    return hyperwasm.shortBondsGivenDeposit({
+      poolInfo,
+      poolConfig,
+      targetBaseAmount,
+      absoluteMaxBondAmount,
+      openVaultSharePrice: latestCheckpoint.vaultSharePrice,
+      maybeTolerance: tolerance,
+    });
+  }
+
+  /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
   async previewCloseLong({

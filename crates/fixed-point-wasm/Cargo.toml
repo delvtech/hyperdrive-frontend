@@ -2,7 +2,7 @@
 name = "fixed-point-wasm"
 # This version will be overwritten by the build script to match the version in
 # the crate's package.json which is managed by changesets.
-version = "0.0.5"
+version = "0.0.6"
 edition = "2021"
 license = "AGPL-3.0"
 
@@ -25,7 +25,7 @@ getrandom = { version = "0.2", features = ["js"] }
 rand = "0.8.5"
 
 # internal
-fixedpointmath = "0.17.1"
+fixedpointmath = "0.18.1"
 
 # workspace
 ts-macro = { path = "../ts-macro" }
