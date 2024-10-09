@@ -275,7 +275,7 @@ const hyperdriveKindResolvers: Record<
     }
 
     // Moonwell ETH
-    if (hyperdriveName.includes("mwETH Hyperdrive")) {
+    if (hyperdriveName.includes("Moonwell ETH Hyperdrive")) {
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "mwEth",
@@ -301,15 +301,15 @@ const hyperdriveKindResolvers: Record<
     );
   },
 
-  MoonwellHyperdrive: async (hyperdrive, publicClient) => {
+  StkWellHyperdrive: async (hyperdrive, publicClient) => {
     const hyperdriveName = await publicClient.readContract({
       address: hyperdrive.address,
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
-
+    console.log(hyperdriveName, "hyperdriveName in MoonwellHyperdrive");
     // Moonwell Staked WELL
-    if (hyperdriveName.includes("StkWellHyperdrive")) {
+    if (hyperdriveName.includes("Moonwell StkWell")) {
       return getCustomHyperdrive({
         hyperdrive,
         yieldSource: "stkWell",
