@@ -1667,7 +1667,7 @@ export class ReadHyperdrive extends ReadModel {
    * Predicts the amount of bonds that can be shorted given a target deposit
    * amount in either base or shares.
    */
-  async getOpenShortBonds({
+  async getShortBondsGivenDeposit({
     amountIn,
     asBase,
     tolerance,

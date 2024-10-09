@@ -1393,7 +1393,7 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
   ]);
 });
 
-test("getOpenShortBonds should return the short size for a target deposit amount", async () => {
+test("getShortBondsGivenDeposit & previewOpenShort should align within a given tolerance", async () => {
   const { contract, network, readHyperdrive } = setupReadHyperdrive();
   contract.stubRead({
     functionName: "getPoolConfig",
@@ -1424,13 +1424,13 @@ test("getOpenShortBonds should return the short size for a target deposit amount
 
   const targetDeposit = parseFixed(1.123);
   const tolerance = fixed(1e9);
-  const shortBonds = await readHyperdrive.getOpenShortBonds({
+  const amountOfBondsToShort = await readHyperdrive.getShortBondsGivenDeposit({
     amountIn: targetDeposit.bigint,
     asBase: true,
     tolerance: tolerance.bigint,
   });
   const { traderDeposit } = await readHyperdrive.previewOpenShort({
-    amountOfBondsToShort: shortBonds,
+    amountOfBondsToShort,
     asBase: true,
   });
 
