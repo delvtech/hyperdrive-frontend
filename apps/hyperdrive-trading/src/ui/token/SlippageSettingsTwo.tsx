@@ -33,7 +33,7 @@ export function SlippageSettingsTwo({
           setIsDropdownOpen((prevState) => !prevState);
         }}
         className={
-          "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-xs font-normal text-neutral-content"
+          "daisy-btn daisy-btn-md mb-1 h-9 min-h-9 rounded-full text-xs font-normal text-neutral-content"
         }
       >
         {`${slippage || DEFAULT_SLIPPAGE_AMOUNT}%`} slippage

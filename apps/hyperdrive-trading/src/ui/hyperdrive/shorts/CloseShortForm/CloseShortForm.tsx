@@ -20,12 +20,14 @@ import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
-import { formatUnits, parseUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface CloseShortFormProps {
@@ -99,11 +101,19 @@ export function CloseShortForm({
       enabled: !isAmountLargerThanPositionSize,
     });
 
+  const {
+    setSlippage,
+    slippage,
+    slippageAsBigInt,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
+  } = useSlippageSettings({ decimals: hyperdrive.decimals });
+
   const minAmountOutAfterSlippage =
     amountOut &&
     adjustAmountByPercentage({
       amount: amountOut,
-      percentage: parseUnits("1", activeWithdrawToken.decimals),
+      percentage: slippageAsBigInt,
       decimals: activeWithdrawToken.decimals,
       direction: "down",
     });
@@ -153,6 +163,15 @@ export function CloseShortForm({
             value={amount ?? ""}
             maxValue={
               short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+            }
+            settings={
+              <SlippageSettingsTwo
+                onSlippageChange={setSlippage}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
             }
             onChange={(newAmount) => setAmount(newAmount)}
             bottomRightElement={
