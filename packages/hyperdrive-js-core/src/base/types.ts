@@ -33,7 +33,7 @@ export type Override<T, U> = Prettify<Omit<T, keyof U> & U>;
  * This works by taking advantage of [distributive conditional
  * types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types),
  * which allows conditional types to be applied to each member of a union type
- * individually, and [contravariance in function argument
+ * individually, and [contravarience in function argument
  * types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html#strict-function-types).
  *
  * The conditional type `T extends any ? (x: T) => any : never` is used to
@@ -96,25 +96,3 @@ export type MergeKeys<T> =
         [K in keyof I]: K extends keyof T ? T[K] : I[K];
       }
     : never;
-
-/**
- * Get the keys of a union of objects.
- */
-export type KeysOfUnion<ObjectType> = ObjectType extends unknown
-  ? keyof ObjectType
-  : never;
-
-/**
- * Add the keys from all members of a union to each member as optional and
- * undefined.
- */
-export type UnionOptional<
-  T extends object,
-  TKey extends KeysOfUnion<T> = KeysOfUnion<T>,
-> = Prettify<
-  T extends object
-    ? T & {
-        [K in Exclude<TKey, keyof T>]?: undefined;
-      }
-    : never
->;
