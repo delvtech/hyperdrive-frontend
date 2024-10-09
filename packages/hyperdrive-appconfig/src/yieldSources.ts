@@ -143,6 +143,20 @@ const susds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
+const mwEth: YieldSource = {
+  id: "mwEth",
+  shortName: "Moonwell ETH",
+  protocol: "moonwell",
+  historicalRatePeriod: 1,
+};
+
+const stkWell: YieldSource = {
+  id: "stkWell",
+  shortName: "Moonwell Staked WELL",
+  protocol: "moonwell",
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
   eeth,
   makerDsr,
@@ -162,4 +176,6 @@ export const yieldSources = {
   rseth,
   usds,
   susds,
+  mwEth,
+  stkWell,
 } as const;
