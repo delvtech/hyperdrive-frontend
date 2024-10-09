@@ -1,6 +1,6 @@
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/checkpoint/types";
-import { parseFixed } from "src/fixed-point";
+import { fixed, parseFixed } from "src/fixed-point";
 import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
@@ -8,7 +8,7 @@ import {
   simplePoolConfig7Days,
 } from "src/pool/testing/PoolConfig";
 import { simplePoolInfo } from "src/pool/testing/PoolInfo";
-import { expect, test } from "vitest";
+import { assert, expect, test } from "vitest";
 
 test("getVersion should return the parsed version of the contract", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
@@ -1391,6 +1391,50 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
       hyperdriveAddress: readHyperdrive.contract.address,
     },
   ]);
+});
+
+test("getOpenShortBonds should return the short size for a target deposit amount", async () => {
+  const { contract, network, readHyperdrive } = setupReadHyperdrive();
+  contract.stubRead({
+    functionName: "getPoolConfig",
+    value: simplePoolConfig30Days,
+  });
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: simplePoolInfo,
+  });
+  contract.stubRead({
+    functionName: "getCheckpointExposure",
+    value: 0n,
+  });
+  contract.stubRead({
+    functionName: "getCheckpoint",
+    value: {
+      vaultSharePrice: parseFixed(1.05).bigint,
+      weightedSpotPrice: 0n,
+      lastWeightedSpotPriceUpdateTime: 0n,
+    },
+  });
+  network.stubGetBlock({
+    value: {
+      timestamp: 123456789n,
+      blockNumber: 1n,
+    },
+  });
+
+  const targetDeposit = parseFixed(1.123);
+  const tolerance = fixed(1e9);
+  const shortBonds = await readHyperdrive.getOpenShortBonds({
+    amountIn: targetDeposit.bigint,
+    asBase: true,
+    tolerance: tolerance.bigint,
+  });
+  const { traderDeposit } = await readHyperdrive.previewOpenShort({
+    amountOfBondsToShort: shortBonds,
+    asBase: true,
+  });
+
+  assert(targetDeposit.absDiff(traderDeposit).lte(tolerance));
 });
 
 test("getClosedShorts should account for shorts closed to base", async () => {
