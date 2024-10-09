@@ -55,8 +55,6 @@ export function PoolRow({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  console.log(hyperdrive.withdrawOptions, "hyperdrive.withdrawOptions");
-
   return (
     <Well
       as="div"
