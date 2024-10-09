@@ -1,5 +1,8 @@
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { getHprFromApr } from "@delvtech/hyperdrive-viem";
-import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";

@@ -38,51 +38,21 @@ export function spotRate(params: IStateParams): bigint;
 */
 export function calcAprGivenFixedPrice(params: ICalcAprGivenPriceParams): bigint;
 /**
-* Calculates the long amount that will be opened for a given base amount.
+* Calculates the curve fee paid by the trader when they open a short.
 */
-export function calcOpenLong(params: IOpenLongParams): bigint;
+export function openShortCurveFee(params: IOpenShortCurveFeeParams): bigint;
 /**
-* Calculates the spot price after opening a Hyperdrive long.
+* Calculates the governance fee paid by the trader when they open a short.
 */
-export function spotPriceAfterLong(params: ISpotPriceAfterLongParams): bigint;
+export function openShortGovernanceFee(params: IOpenShortFlatFeeParams): bigint;
 /**
-* Calculates the amount of lp shares the trader will receive after adding
-* liquidity.
+* Calculates the curve fee paid by the trader when they close a short.
 */
-export function calcAddLiquidity(params: ICalcAddLiquidityParams): bigint;
+export function closeShortCurveFee(params: IClosePositionParams): bigint;
 /**
-* Calculates the max amount of bonds that can be shorted given a budget and
-* the current state of the pool.
+* Calculates the flat fee paid by the trader when they close a short.
 */
-export function maxShort(params: IMaxShortParams): bigint;
-/**
-* Calculates the max amount of bonds that can be shorted given the current
-* state of the pool.
-*/
-export function absoluteMaxShort(params: IAbsoluteMaxShortParams): bigint;
-/**
-* Calculates the max amount of base that can be used to open a long given a
-* budget.
-*/
-export function maxLong(params: IMaxLongParams): bigint;
-/**
-* Calculates the amount of base the trader will need to deposit for a short of
-* a given size.
-*/
-export function calcOpenShort(params: IOpenShortParams): bigint;
-/**
-* Calculates the spot price after opening the short on the YieldSpace curve
-* and before calculating the fees.
-*/
-export function spotPriceAfterShort(params: ISpotPriceAfterShortParams): bigint;
-/**
-* Calculate the implied rate of opening a short at a given size. This rate is
-* calculated as an APY.
-*/
-export function calcImpliedRate(params: IImpliedRateParams): bigint;
-/**
-*/
-export function calcCloseLong(params: IClosePositionParams): bigint;
+export function closeShortFlatFee(params: IClosePositionParams): bigint;
 /**
 * Calculates the curve fee paid in bonds by traders when they open a long.
 */
@@ -103,21 +73,18 @@ export function closeLongCurveFee(params: IClosePositionParams): bigint;
 */
 export function closeLongFlatFee(params: IClosePositionParams): bigint;
 /**
-* Calculates the curve fee paid by the trader when they open a short.
+* Calculates the long amount that will be opened for a given base amount.
 */
-export function openShortCurveFee(params: IOpenShortCurveFeeParams): bigint;
+export function calcOpenLong(params: IOpenLongParams): bigint;
 /**
-* Calculates the governance fee paid by the trader when they open a short.
+* Calculates the spot price after opening a Hyperdrive long.
 */
-export function openShortGovernanceFee(params: IOpenShortFlatFeeParams): bigint;
+export function spotPriceAfterLong(params: ISpotPriceAfterLongParams): bigint;
 /**
-* Calculates the curve fee paid by the trader when they close a short.
+* Calculates the amount of lp shares the trader will receive after adding
+* liquidity.
 */
-export function closeShortCurveFee(params: IClosePositionParams): bigint;
-/**
-* Calculates the flat fee paid by the trader when they close a short.
-*/
-export function closeShortFlatFee(params: IClosePositionParams): bigint;
+export function calcAddLiquidity(params: ICalcAddLiquidityParams): bigint;
 /**
 * Calculates the amount of shares the trader will receive after fees for
 * closing a short
@@ -137,6 +104,39 @@ export function calcCloseShort(params: ICloseShortParams): bigint;
 * timeRemaining
 */
 export function calcShortMarketValue(params: ICloseShortParams): bigint;
+/**
+*/
+export function calcCloseLong(params: IClosePositionParams): bigint;
+/**
+* Calculates the max amount of base that can be used to open a long given a
+* budget.
+*/
+export function maxLong(params: IMaxLongParams): bigint;
+/**
+* Calculates the max amount of bonds that can be shorted given a budget and
+* the current state of the pool.
+*/
+export function maxShort(params: IMaxShortParams): bigint;
+/**
+* Calculates the max amount of bonds that can be shorted given the current
+* state of the pool.
+*/
+export function absoluteMaxShort(params: IAbsoluteMaxShortParams): bigint;
+/**
+* Calculates the amount of base the trader will need to deposit for a short of
+* a given size.
+*/
+export function calcOpenShort(params: IOpenShortParams): bigint;
+/**
+* Calculates the spot price after opening the short on the YieldSpace curve
+* and before calculating the fees.
+*/
+export function spotPriceAfterShort(params: ISpotPriceAfterShortParams): bigint;
+/**
+* Calculate the implied rate of opening a short at a given size. This rate is
+* calculated as an APY.
+*/
+export function calcImpliedRate(params: IImpliedRateParams): bigint;
 interface ICalcHprGivenAprParams {
   /**
    * The annualized rate.
@@ -177,138 +177,18 @@ interface ICalcAprGivenPriceParams {
   positionDuration: bigint;
 }
 
-interface IOpenLongParams extends IStateParams {
+interface IOpenShortCurveFeeParams extends IStateParams {
   /**
-   * The amount of base tokens to open a long for.
-   */
-  baseAmount: bigint;
-}
-
-interface ISpotPriceAfterLongParams extends IStateParams {
-  /**
-   * The amount of base tokens to open a long for.
-   */
-  baseAmount: bigint;
-}
-
-interface ICalcAddLiquidityParams extends IStateParams {
-  /**
-   * The current timestamp (in seconds).
-   */
-  currentTime: bigint;
-  /**
-   * The amount of base or shares to contribute.
-   */
-  contribution: bigint;
-  /**
-   * True if the contribution is in base, false if it's in shares.
-   *
-   * Default: `true`
-   */
-  asBase?: boolean | undefined;
-  /**
-   * The minimum share price the trader will accept.
-   *
-   * Default: `0`
-   */
-  minLpSharePrice?: bigint | undefined;
-  /**
-   * The minimum APR the trader will accept.
-   *
-   * Default: `0`
-   */
-  minApr?: bigint | undefined;
-  /**
-   * The maximum APR the trader will accept.
-   *
-   * Default: max uint256
-   */
-  maxApr?: bigint | undefined;
-}
-
-interface IMaxShortParams extends IStateParams {
-  /**
-   * The maximum budget for the short.
-   */
-  budget: bigint;
-  /**
-   * The open share price of the pool's current checkpoint.
-   */
-  openVaultSharePrice: bigint;
-  /**
-   * The exposure of the pool's current checkpoint.
-   */
-  checkpointExposure: bigint;
-  /**
-   * A lower bound on the realized price that the short will pay. This is
-   * used to help the algorithm converge faster in real world situations. If
-   * this is `None`, then we'll use the theoretical worst case realized
-   * price.
-   */
-  conservativePrice?: bigint | undefined;
-  /**
-   * The maximum number of iterations to run the Newton's method for.
-   */
-  maxIterations?: number | undefined;
-}
-
-interface IAbsoluteMaxShortParams extends IStateParams {
-  /**
-   * The exposure of the pool's current checkpoint.
-   */
-  checkpointExposure: bigint;
-  /**
-   * The maximum number of iterations to run the Newton's method for.
-   */
-  maxIterations?: usize | undefined;
-}
-
-interface IMaxLongParams extends IStateParams {
-  /**
-   * The maximum amount of base tokens that can be spent.
-   */
-  budget: bigint;
-  /**
-   * The exposure of the pool's current checkpoint.
-   */
-  checkpointExposure: bigint;
-  /**
-   * The maximum number of iterations to run the Netwon's method for.
-   */
-  maxIterations?: number | undefined;
-}
-
-interface IOpenShortParams extends IStateParams {
-  /**
-   * The amount of bonds to short.
-   */
-  bondAmount: bigint;
-  /**
-   * The vault share price at the start of the checkpoint.
-   */
-  openVaultSharePrice: bigint;
-}
-
-interface ISpotPriceAfterShortParams extends IStateParams {
-  /**
-   * The amount of bonds to short.
+   * The number of bonds to short.
    */
   bondAmount: bigint;
 }
 
-interface IImpliedRateParams extends IStateParams {
+interface IOpenShortFlatFeeParams extends IStateParams {
   /**
-   * The amount of bonds to short.
+   * The number of bonds to short.
    */
   bondAmount: bigint;
-  /**
-   * The vault share price at the start of the checkpoint.
-   */
-  openVaultSharePrice: bigint;
-  /**
-   * The variable apy.
-   */
-  variableApy: bigint;
 }
 
 interface IOpenLongCurveFeeParams extends IStateParams {
@@ -323,20 +203,6 @@ interface IOpenLongGovernanceFeeParams extends IStateParams {
    * The amount of base tokens to spend.
    */
   baseAmount: bigint;
-}
-
-interface IOpenShortCurveFeeParams extends IStateParams {
-  /**
-   * The number of bonds to short.
-   */
-  bondAmount: bigint;
-}
-
-interface IOpenShortFlatFeeParams extends IStateParams {
-  /**
-   * The number of bonds to short.
-   */
-  bondAmount: bigint;
 }
 
 interface IFees {
@@ -409,6 +275,55 @@ interface IClosePositionParams extends IStateParams {
   currentTime: bigint;
 }
 
+interface IOpenLongParams extends IStateParams {
+  /**
+   * The amount of base tokens to open a long for.
+   */
+  baseAmount: bigint;
+}
+
+interface ISpotPriceAfterLongParams extends IStateParams {
+  /**
+   * The amount of base tokens to open a long for.
+   */
+  baseAmount: bigint;
+}
+
+interface ICalcAddLiquidityParams extends IStateParams {
+  /**
+   * The current timestamp (in seconds).
+   */
+  currentTime: bigint;
+  /**
+   * The amount of base or shares to contribute.
+   */
+  contribution: bigint;
+  /**
+   * True if the contribution is in base, false if it's in shares.
+   *
+   * Default: `true`
+   */
+  asBase?: boolean | undefined;
+  /**
+   * The minimum share price the trader will accept.
+   *
+   * Default: `0`
+   */
+  minLpSharePrice?: bigint | undefined;
+  /**
+   * The minimum APR the trader will accept.
+   *
+   * Default: `0`
+   */
+  minApr?: bigint | undefined;
+  /**
+   * The maximum APR the trader will accept.
+   *
+   * Default: max uint256
+   */
+  maxApr?: bigint | undefined;
+}
+
 interface ICloseShortParams extends IClosePositionParams {
   /**
    * The vault share price at the checkpoint when the position was opened.
@@ -419,6 +334,91 @@ interface ICloseShortParams extends IClosePositionParams {
    * share price from the closing checkpoint.
    */
   closeVaultSharePrice: bigint;
+}
+
+interface IMaxLongParams extends IStateParams {
+  /**
+   * The maximum amount of base tokens that can be spent.
+   */
+  budget: bigint;
+  /**
+   * The exposure of the pool's current checkpoint.
+   */
+  checkpointExposure: bigint;
+  /**
+   * The maximum number of iterations to run the Netwon's method for.
+   */
+  maxIterations?: number | undefined;
+}
+
+interface IMaxShortParams extends IStateParams {
+  /**
+   * The maximum budget for the short.
+   */
+  budget: bigint;
+  /**
+   * The open share price of the pool's current checkpoint.
+   */
+  openVaultSharePrice: bigint;
+  /**
+   * The exposure of the pool's current checkpoint.
+   */
+  checkpointExposure: bigint;
+  /**
+   * A lower bound on the realized price that the short will pay. This is
+   * used to help the algorithm converge faster in real world situations. If
+   * this is `None`, then we'll use the theoretical worst case realized
+   * price.
+   */
+  conservativePrice?: bigint | undefined;
+  /**
+   * The maximum number of iterations to run the Newton's method for.
+   */
+  maxIterations?: number | undefined;
+}
+
+interface IAbsoluteMaxShortParams extends IStateParams {
+  /**
+   * The exposure of the pool's current checkpoint.
+   */
+  checkpointExposure: bigint;
+  /**
+   * The maximum number of iterations to run the Newton's method for.
+   */
+  maxIterations?: usize | undefined;
+}
+
+interface IOpenShortParams extends IStateParams {
+  /**
+   * The amount of bonds to short.
+   */
+  bondAmount: bigint;
+  /**
+   * The vault share price at the start of the checkpoint.
+   */
+  openVaultSharePrice: bigint;
+}
+
+interface ISpotPriceAfterShortParams extends IStateParams {
+  /**
+   * The amount of bonds to short.
+   */
+  bondAmount: bigint;
+}
+
+interface IImpliedRateParams extends IStateParams {
+  /**
+   * The amount of bonds to short.
+   */
+  bondAmount: bigint;
+  /**
+   * The vault share price at the start of the checkpoint.
+   */
+  openVaultSharePrice: bigint;
+  /**
+   * The variable apy.
+   */
+  variableApy: bigint;
 }
 
 
@@ -435,26 +435,26 @@ export interface InitOutput {
   readonly spotRate: (a: number, b: number) => void;
   readonly calcAprGivenFixedPrice: (a: number, b: number) => void;
   readonly initialize: () => void;
-  readonly calcOpenLong: (a: number, b: number) => void;
-  readonly spotPriceAfterLong: (a: number, b: number) => void;
-  readonly calcAddLiquidity: (a: number, b: number) => void;
-  readonly maxShort: (a: number, b: number) => void;
-  readonly absoluteMaxShort: (a: number, b: number) => void;
-  readonly maxLong: (a: number, b: number) => void;
-  readonly calcOpenShort: (a: number, b: number) => void;
-  readonly spotPriceAfterShort: (a: number, b: number) => void;
-  readonly calcImpliedRate: (a: number, b: number) => void;
-  readonly calcCloseLong: (a: number, b: number) => void;
-  readonly openLongCurveFee: (a: number, b: number) => void;
-  readonly openLongGovernanceFee: (a: number, b: number) => void;
-  readonly closeLongCurveFee: (a: number, b: number) => void;
-  readonly closeLongFlatFee: (a: number, b: number) => void;
   readonly openShortCurveFee: (a: number, b: number) => void;
   readonly openShortGovernanceFee: (a: number, b: number) => void;
   readonly closeShortCurveFee: (a: number, b: number) => void;
   readonly closeShortFlatFee: (a: number, b: number) => void;
+  readonly openLongCurveFee: (a: number, b: number) => void;
+  readonly openLongGovernanceFee: (a: number, b: number) => void;
+  readonly closeLongCurveFee: (a: number, b: number) => void;
+  readonly closeLongFlatFee: (a: number, b: number) => void;
+  readonly calcOpenLong: (a: number, b: number) => void;
+  readonly spotPriceAfterLong: (a: number, b: number) => void;
+  readonly calcAddLiquidity: (a: number, b: number) => void;
   readonly calcCloseShort: (a: number, b: number) => void;
   readonly calcShortMarketValue: (a: number, b: number) => void;
+  readonly calcCloseLong: (a: number, b: number) => void;
+  readonly maxLong: (a: number, b: number) => void;
+  readonly maxShort: (a: number, b: number) => void;
+  readonly absoluteMaxShort: (a: number, b: number) => void;
+  readonly calcOpenShort: (a: number, b: number) => void;
+  readonly spotPriceAfterShort: (a: number, b: number) => void;
+  readonly calcImpliedRate: (a: number, b: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;

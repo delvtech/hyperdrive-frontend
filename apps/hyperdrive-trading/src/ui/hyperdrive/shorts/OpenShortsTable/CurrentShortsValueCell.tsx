@@ -1,10 +1,10 @@
-import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";

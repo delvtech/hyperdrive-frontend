@@ -1,9 +1,9 @@
-import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import {
   AppConfig,
   findHyperdriveConfig,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
 

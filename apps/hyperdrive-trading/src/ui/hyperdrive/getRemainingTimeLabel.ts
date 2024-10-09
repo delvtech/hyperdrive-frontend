@@ -33,7 +33,8 @@ export function getRemainingTimeLabel({
   const suffix = showLeftSuffix ? " left" : "";
 
   if (days > 0) {
-    return `${days} days${suffix}`;
+    const dayLabel = days === 1 ? "day" : "days";
+    return `${days} ${dayLabel}${suffix}`;
   }
 
   // Condensed only needed when showing both hours and minutes.

@@ -1,12 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import {
   appConfig,
   findBaseToken,
   findToken,
   HyperdriveConfig,
   TokenConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -232,6 +232,7 @@ export function CloseLongForm({
                 chainId={hyperdrive.chainId}
                 maturity={long.maturity}
                 statusCellClassName="mb-0 text-h3 w-full text-gray-50 font-bold"
+                showLeftSuffix={false}
               />
             }
           />

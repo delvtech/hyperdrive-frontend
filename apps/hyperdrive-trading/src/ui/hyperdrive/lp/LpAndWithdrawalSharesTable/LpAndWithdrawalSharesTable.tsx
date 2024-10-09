@@ -3,7 +3,7 @@ import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,

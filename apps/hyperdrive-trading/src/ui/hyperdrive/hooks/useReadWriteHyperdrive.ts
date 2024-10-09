@@ -1,5 +1,5 @@
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
-import { appConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";

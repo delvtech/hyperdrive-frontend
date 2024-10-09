@@ -1,11 +1,11 @@
-import { ClosedShort } from "@delvtech/hyperdrive-viem";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   HyperdriveConfig,
   appConfig,
   findBaseToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import { ClosedShort } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   createColumnHelper,
   flexRender,

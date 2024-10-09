@@ -13,9 +13,11 @@ const marketPoolIds: Record<Address, string> = {
 export function useMorphoRate({
   chainId,
   hyperdriveAddress,
+  enabled = true,
 }: {
   chainId: number;
   hyperdriveAddress: Address;
+  enabled?: boolean;
 }): {
   morphoRate: FixedPoint | undefined;
 } {
@@ -29,6 +31,7 @@ export function useMorphoRate({
     Error
   >({
     queryKey: ["morphoRate", chainId, hyperdriveAddress],
+    enabled,
     staleTime: Infinity,
     retry: 3,
     queryFn: async () => {
@@ -50,7 +53,7 @@ export function useMorphoRate({
 
     // If there is no matching rate, just use the first one in the current_rates array
     if (!matchingRate) {
-      matchingRate = rewardsData.current_rates[0].per_dollar_per_year;
+      matchingRate = rewardsData.current_rates[0]?.per_dollar_per_year;
     }
 
     // The morpho rate is formatted to 15 decimal places

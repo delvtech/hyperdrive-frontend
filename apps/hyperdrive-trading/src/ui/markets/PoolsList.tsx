@@ -1,15 +1,15 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  AdjustmentsHorizontalIcon,
-  BarsArrowDownIcon,
-} from "@heroicons/react/20/solid";
-import {
   appConfig,
   ChainConfig,
   findBaseToken,
   findToken,
   TokenConfig,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
+import {
+  AdjustmentsHorizontalIcon,
+  BarsArrowDownIcon,
+} from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { ReactElement, ReactNode, useMemo, useRef, useState } from "react";
@@ -80,10 +80,10 @@ export function PoolsList(): ReactElement {
 
     return {
       chains: Object.values(chainsById).sort((a, b) =>
-        a.chain.name.localeCompare(b.chain.name)
+        a.chain.name.localeCompare(b.chain.name),
       ),
       assets: Object.values(assetsBySymbol).sort((a, b) =>
-        a.asset.symbol.localeCompare(b.asset.symbol)
+        a.asset.symbol.localeCompare(b.asset.symbol),
       ),
     };
   }, [allPools]);
@@ -104,7 +104,7 @@ export function PoolsList(): ReactElement {
       if (
         selectedAssets.length &&
         !pool.depositAssets.some(({ symbol }) =>
-          selectedAssets.includes(symbol)
+          selectedAssets.includes(symbol),
         )
       ) {
         return false;
@@ -125,7 +125,7 @@ export function PoolsList(): ReactElement {
         case "Yield Multiplier":
           return Number(
             calculateMarketYieldMultiplier(b.longPrice).bigint -
-              calculateMarketYieldMultiplier(a.longPrice).bigint
+              calculateMarketYieldMultiplier(a.longPrice).bigint,
           );
         case "TVL":
           return fixed(b.tvl, b.hyperdrive.decimals)
@@ -279,7 +279,7 @@ export function PoolsList(): ReactElement {
                   fixedApr={fixedApr}
                   lpApy={lpApy}
                 />
-              )
+              ),
             )
           )}
         </>
@@ -402,7 +402,7 @@ function usePoolsList(): {
             isFiat: isFiatSupported,
             depositAssets,
           });
-        })
+        }),
       );
 
       return pools;

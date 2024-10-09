@@ -2,7 +2,7 @@ import {
   HyperdriveConfig,
   appConfig,
   findBaseToken,
-} from "@hyperdrive/appconfig";
+} from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { LabelValue } from "src/ui/base/components/LabelValue";

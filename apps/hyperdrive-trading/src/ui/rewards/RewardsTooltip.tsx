@@ -1,4 +1,7 @@
-import { appConfig, findHyperdriveConfig } from "@hyperdrive/appconfig";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
