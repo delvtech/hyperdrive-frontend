@@ -284,6 +284,10 @@ export class FixedPoint {
 */
   abs(): FixedPoint;
 /**
+* Get the absolute difference between this number and another.
+*/
+  absDiff(other: Numberish, decimals?: number): FixedPoint;
+/**
 * Add a fixed-point number to this one.
 */
   add(other: Numberish, decimals?: number): FixedPoint;
@@ -435,6 +439,7 @@ export interface InitOutput {
   readonly fixedpoint_random: (a: number, b: number) => void;
   readonly fixedpoint_bigint: (a: number, b: number) => void;
   readonly fixedpoint_abs: (a: number, b: number) => void;
+  readonly fixedpoint_absDiff: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_add: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_sub: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_mulDivDown: (a: number, b: number, c: number, d: number, e: number) => void;
