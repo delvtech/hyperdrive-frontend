@@ -78,3 +78,33 @@ pub fn calcImpliedRate(params: IImpliedRateParams) -> Result<BigInt, Error> {
 
     result_fp.to_bigint()
 }
+
+#[ts(extends = IStateParams)]
+struct ShortBondsGivenDepositParams {
+    target_base_amount: BigInt,
+    open_vault_share_price: BigInt,
+    absolute_max_bond_amount: BigInt,
+    maybe_tolerance: Option<BigInt>,
+    maybe_max_iterations: Option<u16>,
+}
+
+#[wasm_bindgen(skip_jsdoc)]
+pub fn shortBondsGivenDeposit(params: IShortBondsGivenDepositParams) -> Result<BigInt, Error> {
+    params
+        .to_state()?
+        .calculate_short_bonds_given_deposit(
+            params.target_base_amount().to_u256()?.fixed(),
+            params.open_vault_share_price().to_u256()?.fixed(),
+            params.absolute_max_bond_amount().to_u256()?.fixed(),
+            match params.maybe_tolerance() {
+                Some(tolerance) => Some(tolerance.to_u256()?.fixed()),
+                None => None,
+            },
+            match params.maybe_max_iterations() {
+                Some(max_iterations) => Some(max_iterations as usize),
+                None => None,
+            },
+        )
+        .to_result()?
+        .to_bigint()
+}
