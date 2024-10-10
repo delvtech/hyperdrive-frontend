@@ -220,7 +220,7 @@ export const baseAppConfig: AppConfig = {
       kind: "ERC4626Hyperdrive",
       address: "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
       version: "v1.0.19",
-      name: "182d Moonwell ETH",
+      name: "182d Moonwell Flagship ETH",
       initializationBlock: 20858502n,
       initializationTimestamp: 1728506351n,
       decimals: 18,
@@ -437,7 +437,7 @@ export const baseAppConfig: AppConfig = {
     },
     mwEth: {
       id: "mwEth",
-      shortName: "Moonwell ETH",
+      shortName: "Moonwell Flagship ETH",
       protocol: "moonwell",
       historicalRatePeriod: 1,
     },
