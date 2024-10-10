@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.15.4
+
+### Patch Changes
+
+- 18482c3: Add `shortBondsGivenDeposit` function
+
 ## 0.15.3
 
 ### Patch Changes
