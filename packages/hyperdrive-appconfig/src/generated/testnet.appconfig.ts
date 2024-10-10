@@ -686,7 +686,7 @@ export const testnetAppConfig: AppConfig = {
     },
     stkWell: {
       id: "stkWell",
-      shortName: "Staked WELL",
+      shortName: "Moonwell Staked WELL",
       protocol: "moonwell",
       historicalRatePeriod: 1,
     },
