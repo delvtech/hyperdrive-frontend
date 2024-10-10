@@ -145,7 +145,7 @@ const susds: YieldSource = {
 
 const mwEth: YieldSource = {
   id: "mwEth",
-  shortName: "Moonwell ETH",
+  shortName: "Moonwell Flagship ETH",
   protocol: "moonwell",
   historicalRatePeriod: 1,
 };
