@@ -7,7 +7,7 @@ export function Landing(): ReactElement | null {
     <div className="flex flex-col items-center gap-4 lg:w-[900px]">
       <Hero />
       <div className="flex w-full flex-col items-center">
-        <div className="flex flex-col gap-4">
+        <div className="flex w-full flex-col gap-4">
           <PoolsList />
         </div>
       </div>

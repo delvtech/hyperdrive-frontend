@@ -13,7 +13,7 @@ import {
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { getPublicClient } from "@wagmi/core";
-import { ReactElement, ReactNode, useMemo, useRef, useState } from "react";
+import { ReactElement, ReactNode, useMemo, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
@@ -139,14 +139,8 @@ export function PoolsList(): ReactElement {
       }
     });
 
-  // To prevent jarring layout shifts when no pools match the selected filters,
-  // the NonIdealState is wrapped in a div with a width set to match the outer
-  // container's width, which will be the width it rendered at before the
-  // filter's were changed.
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div className="flex w-full flex-col gap-5" ref={containerRef}>
+    <div className="flex w-full flex-col gap-5">
       {status === "loading" && !selectedPools ? (
         <LoadingState />
       ) : selectedPools ? (
@@ -269,12 +263,7 @@ export function PoolsList(): ReactElement {
           </div>
 
           {!selectedPools.length ? (
-            <Well
-              className="max-w-[90vw]"
-              style={{
-                width: containerRef.current?.offsetWidth,
-              }}
-            >
+            <Well className="max-w-[90vw]">
               {allPools?.length ? (
                 <NonIdealState
                   heading={"No pools found"}
