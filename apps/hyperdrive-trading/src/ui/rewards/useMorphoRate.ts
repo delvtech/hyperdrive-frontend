@@ -4,10 +4,13 @@ import { Address } from "viem";
 
 const marketPoolIds: Record<Address, string> = {
   // Key: Hyperdrive contract address for the market
-  // Value: Corresponding Morpho pool ID
+  // Value: Corresponding Morpho vault address (for vault rewards) or pool id (for market rewards)
   // Market:Base 182d Morpho cbETH/USDC
   "0x2a1ca35Ded36C531F77c614b5AAA0d4F86edbB06":
     "0xdba352d93a64b17c71104cbddc6aef85cd432322a1446b5b65163cbbc615cd0c",
+  // Market: 182d Moonwell Flagship ETH
+  "0xceD9F810098f8329472AEFbaa1112534E96A5c7b":
+    "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
 };
 
 export function useMorphoRate({
