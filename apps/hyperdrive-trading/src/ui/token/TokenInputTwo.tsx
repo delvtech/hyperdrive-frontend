@@ -114,14 +114,14 @@ export function TokenInputTwo({
           {bottomLeftStatistic}
           <div className="flex w-full items-baseline justify-end text-sm">
             {bottomRightStatistic ? (
-              <span className="leading-none text-neutral-content">
+              <span className="text-neutral-content">
                 {bottomRightStatistic}
               </span>
             ) : null}
             {maxValue !== undefined && !disabled ? (
               <button
                 className={classNames(
-                  "leading-none ml-1 p-0 text-sm font-semibold text-base-content",
+                  "ml-1 text-sm font-semibold text-base-content",
                   {
                     "daisy-btn-error": hasError,
                   },
