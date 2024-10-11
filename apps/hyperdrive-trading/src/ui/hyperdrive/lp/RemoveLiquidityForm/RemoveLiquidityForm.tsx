@@ -71,9 +71,6 @@ export function RemoveLiquidityForm({
     decimals: hyperdrive.decimals,
   });
 
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-
   const tokens: TokenChoice[] = [];
   if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     tokens.push({
@@ -119,7 +116,6 @@ export function RemoveLiquidityForm({
 
   // Then we preview that trade to show users the split between the actual base
   // and withdrawal shares they'll receive
-
   // if withdrawingin shares, we need to also convert the minLpSharePrice to be
   // priced in terms of shares
   const isBaseActiveToken = activeWithdrawToken.address === baseToken.address;
@@ -164,6 +160,7 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
   });
+
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -175,8 +172,9 @@ export function RemoveLiquidityForm({
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === baseToken.address,
     onSubmitted: () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any)["withdrawalLpModal"]?.close();
+      (
+        document.getElementById("withdrawalLpModal") as HTMLDialogElement
+      )?.close();
     },
     onExecuted: () => {
       setAmount("");
