@@ -43,7 +43,9 @@ type SortOption = (typeof sortOptions)[number];
 
 export function PoolsList(): ReactElement {
   const { pools: allPools, status } = usePoolsList();
-  const { chains: selectedChains, assets } = useSearch({ from: LANDING_ROUTE });
+  const { chains: selectedChains, assets: selectedAssets } = useSearch({
+    from: LANDING_ROUTE,
+  });
   const navigate = useNavigate({ from: LANDING_ROUTE });
   const [sort, setSort] = useState<SortOption>("TVL");
 
@@ -92,8 +94,6 @@ export function PoolsList(): ReactElement {
     };
   }, [allPools]);
 
-  const [selectedAssets, setSelectedAssets] = useState<string[]>([]);
-
   // Filter and sort pools
   const selectedPools = allPools
     ?.filter((pool) => {
@@ -105,7 +105,7 @@ export function PoolsList(): ReactElement {
       }
 
       if (
-        selectedAssets.length &&
+        selectedAssets?.length &&
         !pool.depositAssets.some(({ symbol }) =>
           selectedAssets.includes(symbol),
         )
@@ -197,13 +197,22 @@ export function PoolsList(): ReactElement {
               {filters && filters.assets.length > 1 && (
                 <MultiSelect
                   title="Filter by deposit asset"
-                  selected={selectedAssets}
-                  onChange={setSelectedAssets}
+                  selected={selectedAssets || []}
+                  onChange={(assets) =>
+                    navigate({
+                      search: (current) => {
+                        return {
+                          ...current,
+                          assets,
+                        };
+                      },
+                    })
+                  }
                   displayValue={
-                    selectedAssets.length === 1
+                    selectedAssets?.length === 1
                       ? selectedAssets[0]
                       : `${
-                          selectedAssets.length || filters.assets.length
+                          selectedAssets?.length || filters.assets.length
                         } assets`
                   }
                   searchEnabled
