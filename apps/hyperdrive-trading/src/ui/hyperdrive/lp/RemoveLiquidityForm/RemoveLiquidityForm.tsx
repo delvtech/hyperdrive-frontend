@@ -216,13 +216,18 @@ export function RemoveLiquidityForm({
   }
 
   const poolShareRemaining =
-    !!lpShares && !!lpSharesTotalSupply && !!hasEnoughBalance
-      ? calculateRatio({
-          a: lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n),
-          b: lpSharesTotalSupply,
-          decimals: hyperdrive?.decimals,
-        })
-      : 0n;
+    lpSharesTotalSupplyStatus === "success"
+      ? (() => {
+          const remainingShares =
+            lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n);
+          const ratio = calculateRatio({
+            a: remainingShares,
+            b: lpSharesTotalSupply || 0n,
+            decimals: hyperdrive?.decimals,
+          });
+          return ratio < 0n ? 0n : ratio;
+        })()
+      : null;
 
   return (
     <TransactionView
@@ -369,26 +374,8 @@ export function RemoveLiquidityForm({
             label="Pool share remaining"
             value={
               <div className="text-h3 font-bold">
-                {lpSharesTotalSupplyStatus === "success" ? (
-                  `${fixed(
-                    calculateRatio({
-                      a:
-                        lpShares -
-                        (lpSharesIn || 0n) -
-                        (withdrawalShares || 0n),
-                      b: lpSharesTotalSupply || 0n,
-                      decimals: hyperdrive?.decimals,
-                    }) < 0n
-                      ? 0n
-                      : calculateRatio({
-                          a:
-                            lpShares -
-                            (lpSharesIn || 0n) -
-                            (withdrawalShares || 0n),
-                          b: lpSharesTotalSupply || 0n,
-                          decimals: hyperdrive?.decimals,
-                        }),
-                  ).format({ decimals: 4 })}%`
+                {poolShareRemaining !== null ? (
+                  `${fixed(poolShareRemaining).format({ decimals: 4 })}%`
                 ) : (
                   <Skeleton />
                 )}
