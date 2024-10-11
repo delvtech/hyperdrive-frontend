@@ -15,6 +15,8 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
   [base.id]: [
     // 182d Morpho chETH/USDC
     "0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137",
+    // 182d Moonwell Flagship ETH
+    "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
   ],
 };
 

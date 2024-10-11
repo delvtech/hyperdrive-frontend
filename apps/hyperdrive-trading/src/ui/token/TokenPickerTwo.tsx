@@ -79,7 +79,7 @@ export function TokenPickerTwo({
         </button>
         <ul
           className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow-md",
+            "daisy-menu daisy-dropdown-content z-[1] w-72 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow-md",
           )}
         >
           {[

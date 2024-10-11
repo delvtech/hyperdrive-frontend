@@ -135,10 +135,14 @@ export function PoolRow({
                 <span className="text-neutral-content">
                   {(() => {
                     const withdrawTokens = [];
-                    if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+                    if (
+                      hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
+                    ) {
                       withdrawTokens.push(baseToken.symbol);
                     }
-                    if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+                    if (
+                      hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled
+                    ) {
                       withdrawTokens.push(sharesToken?.symbol);
                     }
                     return withdrawTokens.join(", ");
