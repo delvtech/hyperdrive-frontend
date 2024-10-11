@@ -246,13 +246,13 @@ export function RemoveLiquidityForm({
             value={amount ?? ""}
             maxValue={formatUnits(lpShares, baseToken.decimals)}
             bottomRightElement={
-              <div className="flex flex-col text-xs text-neutral-content">
+              <span className="text-xs text-neutral-content">
                 {`Withdrawable: ${formatBalance({
                   balance: lpShares,
                   decimals: baseToken.decimals,
                   places: baseToken.places,
                 })}`}
-              </div>
+              </span>
             }
             onChange={(newAmount) => setAmount(newAmount)}
           />
@@ -275,7 +275,7 @@ export function RemoveLiquidityForm({
             }
             maxValue={
               actualValueOut
-                ? formatUnits(actualValueOut, hyperdrive.decimals)
+                ? fixed(actualValueOut, hyperdrive.decimals).toString()
                 : ""
             }
             disabled
