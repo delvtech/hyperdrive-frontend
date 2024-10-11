@@ -114,9 +114,9 @@ export function TokenInputTwo({
           {bottomLeftStatistic}
           <div className="flex w-full items-baseline justify-end text-sm">
             {bottomRightStatistic ? (
-              <span className="text-neutral-content">
+              <label className="text-neutral-content">
                 {bottomRightStatistic}
-              </span>
+              </label>
             ) : null}
             {maxValue !== undefined && !disabled ? (
               <button
