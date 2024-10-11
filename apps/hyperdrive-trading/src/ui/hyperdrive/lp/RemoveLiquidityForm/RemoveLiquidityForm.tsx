@@ -6,7 +6,7 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { MouseEvent, ReactElement, useMemo } from "react";
+import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
@@ -215,22 +215,14 @@ export function RemoveLiquidityForm({
     });
   }
 
-  const poolShareRemaining = useMemo(() => {
-    return !!lpShares && !!lpSharesTotalSupply && !!hasEnoughBalance
+  const poolShareRemaining =
+    !!lpShares && !!lpSharesTotalSupply && !!hasEnoughBalance
       ? calculateRatio({
           a: lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n),
           b: lpSharesTotalSupply,
           decimals: hyperdrive?.decimals,
         })
       : 0n;
-  }, [
-    lpSharesIn,
-    lpShares,
-    lpSharesTotalSupply,
-    withdrawalShares,
-    hyperdrive?.decimals,
-    hasEnoughBalance,
-  ]);
 
   return (
     <TransactionView
@@ -378,7 +370,25 @@ export function RemoveLiquidityForm({
             value={
               <div className="text-h3 font-bold">
                 {lpSharesTotalSupplyStatus === "success" ? (
-                  `${fixed(poolShareRemaining).format({ decimals: 4 })}%`
+                  `${fixed(
+                    calculateRatio({
+                      a:
+                        lpShares -
+                        (lpSharesIn || 0n) -
+                        (withdrawalShares || 0n),
+                      b: lpSharesTotalSupply || 0n,
+                      decimals: hyperdrive?.decimals,
+                    }) < 0n
+                      ? 0n
+                      : calculateRatio({
+                          a:
+                            lpShares -
+                            (lpSharesIn || 0n) -
+                            (withdrawalShares || 0n),
+                          b: lpSharesTotalSupply || 0n,
+                          decimals: hyperdrive?.decimals,
+                        }),
+                  ).format({ decimals: 4 })}%`
                 ) : (
                   <Skeleton />
                 )}
