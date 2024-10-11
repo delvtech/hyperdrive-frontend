@@ -11,6 +11,7 @@ import {
   BarsArrowDownIcon,
 } from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import { getPublicClient } from "@wagmi/core";
 import { ReactElement, ReactNode, useMemo, useRef, useState } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
@@ -25,6 +26,7 @@ import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
+import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
@@ -41,6 +43,8 @@ type SortOption = (typeof sortOptions)[number];
 
 export function PoolsList(): ReactElement {
   const { pools: allPools, status } = usePoolsList();
+  const { chains: selectedChains, assets } = useSearch({ from: LANDING_ROUTE });
+  const navigate = useNavigate({ from: LANDING_ROUTE });
   const [sort, setSort] = useState<SortOption>("TVL");
 
   // Sync filters with pools
@@ -88,14 +92,13 @@ export function PoolsList(): ReactElement {
     };
   }, [allPools]);
 
-  const [selectedChains, setSelectedChains] = useState<number[]>([]);
   const [selectedAssets, setSelectedAssets] = useState<string[]>([]);
 
   // Filter and sort pools
   const selectedPools = allPools
     ?.filter((pool) => {
       if (
-        selectedChains.length &&
+        selectedChains?.length &&
         !selectedChains.includes(pool.hyperdrive.chainId)
       ) {
         return false;
@@ -157,13 +160,22 @@ export function PoolsList(): ReactElement {
               {filters && filters.chains.length > 1 && (
                 <MultiSelect
                   title="Filter by chain"
-                  selected={selectedChains}
-                  onChange={setSelectedChains}
+                  selected={selectedChains || []}
+                  onChange={(chains) =>
+                    navigate({
+                      search: (current) => {
+                        return {
+                          ...current,
+                          chains,
+                        };
+                      },
+                    })
+                  }
                   displayValue={
-                    selectedChains.length === 1
+                    selectedChains?.length === 1
                       ? appConfig.chains[selectedChains[0]].name
                       : `${
-                          selectedChains.length || filters?.chains.length
+                          selectedChains?.length || filters?.chains.length
                         } chains`
                   }
                   searchEnabled
