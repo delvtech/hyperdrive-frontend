@@ -218,16 +218,16 @@ export function RemoveLiquidityForm({
   const poolShareRemaining =
     lpSharesTotalSupplyStatus === "success"
       ? (() => {
-          const remainingShares =
-            lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n);
+          // Calculate the ratio of remaining shares to the total supply
           const ratio = calculateRatio({
-            a: remainingShares,
+            a: lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n), // Remaining LP Shares in pool after removing input value lpShares and withdrawalShares received
             b: lpSharesTotalSupply || 0n,
             decimals: hyperdrive?.decimals,
           });
+          // Ensure the ratio is not negative
           return ratio < 0n ? 0n : ratio;
         })()
-      : null;
+      : 0n;
 
   return (
     <TransactionView
@@ -306,59 +306,6 @@ export function RemoveLiquidityForm({
           />
         </div>
       }
-      // transactionPreview={
-      //   <div className="flex flex-col gap-3 px-2 pb-2">
-      //     <LabelValue
-      //       label="Amount to withdraw"
-      //       value={`${
-      //         actualValueOut
-      //           ? `${formatBalance({
-      //               balance: lpShares || 0n,
-      //               decimals: hyperdrive.decimals,
-      //               places: baseToken.places,
-      //             })}`
-      //           : "0"
-      //       } ${baseToken.symbol}-LP`}
-      //     />
-      //     <LabelValue
-      //       label="Total you receive now"
-      //       value={
-      //         <span className="font-bold">
-      //           {actualValueOut
-      //             ? `${formatBalance({
-      //                 balance: actualValueOut,
-      //                 decimals: activeWithdrawToken.decimals,
-      //                 places: activeWithdrawToken.places,
-      //               })}`
-      //             : "0"}{" "}
-      //           {activeWithdrawToken.symbol}
-      //         </span>
-      //       }
-      //     />
-      //     <LabelValue
-      //       label="Queued for delayed withdrawal"
-      //       value={
-      //         <span className="font-bold">
-      //           {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
-      //         </span>
-      //       }
-      //     />
-      //   </div>
-      // }
-      // disclaimer={
-      //   <>
-      //     {lpSharesIn && !hasEnoughBalance ? (
-      //       <p className="mb-2 text-center text-sm text-error">
-      //         Insufficient balance
-      //       </p>
-      //     ) : null}
-
-      //     <p className="text-center text-sm text-neutral-content">
-      //       You can withdraw liquidity at any time. The utilized portion may be
-      //       queued for delayed withdrawal.
-      //     </p>
-      //   </>
-      // }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
           <PrimaryStat
@@ -382,24 +329,6 @@ export function RemoveLiquidityForm({
               </div>
             }
           />
-          {/* <div className="daisy-divider daisy-divider-horizontal mx-0" />
-          <PrimaryStat
-            label="Pool fee"
-            value={
-              <div className="text-h3 font-bold">
-                {flatPlusCurveFee
-                  ? `${formatBalance({
-                      balance: flatPlusCurveFee,
-                      decimals: hyperdrive.decimals,
-                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
-                      places: 6,
-                    })}`
-                  : "0"}{" "}
-              </div>
-            }
-            valueUnit={activeWithdrawToken.symbol}
-            valueContainerClassName="flex flex-row gap-2 items-end"
-          /> */}
         </div>
       }
       actionButton={(() => {
