@@ -6,7 +6,9 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useMemo } from "react";
+import Skeleton from "react-loading-skeleton";
+import { calculateRatio } from "src/base/calculateRatio";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -19,6 +21,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
+import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -141,6 +144,12 @@ export function RemoveLiquidityForm({
     direction: "down",
   });
 
+  const { lpSharesTotalSupply, lpSharesTotalSupplyStatus } =
+    useLpSharesTotalSupply({
+      hyperdriveAddress: hyperdrive.address,
+      chainId: hyperdrive.chainId,
+    });
+
   const {
     proceeds: actualValueOut,
     previewRemoveLiquidityStatus,
@@ -205,6 +214,23 @@ export function RemoveLiquidityForm({
       tokenConfig: sharesToken,
     });
   }
+
+  const poolShareRemaining = useMemo(() => {
+    return !!lpShares && !!lpSharesTotalSupply && !!hasEnoughBalance
+      ? calculateRatio({
+          a: lpShares - (lpSharesIn || 0n) - (withdrawalShares || 0n),
+          b: lpSharesTotalSupply,
+          decimals: hyperdrive?.decimals,
+        })
+      : 0n;
+  }, [
+    lpSharesIn,
+    lpShares,
+    lpSharesTotalSupply,
+    withdrawalShares,
+    hyperdrive?.decimals,
+    hasEnoughBalance,
+  ]);
 
   return (
     <TransactionView
@@ -343,6 +369,19 @@ export function RemoveLiquidityForm({
             value={
               <div className="text-h3 font-bold">
                 {formattedWithdrawalSharesOut || 0} {baseToken.symbol}
+              </div>
+            }
+          />
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <PrimaryStat
+            label="Pool share remaining"
+            value={
+              <div className="text-h3 font-bold">
+                {lpSharesTotalSupplyStatus === "success" ? (
+                  `${fixed(poolShareRemaining).format({ decimals: 4 })}%`
+                ) : (
+                  <Skeleton />
+                )}
               </div>
             }
           />

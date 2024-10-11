@@ -27,7 +27,7 @@ export function PrimaryStat({
   return (
     <div className="flex flex-col justify-between gap-1">
       <div className="flex gap-1">
-        <p className="text-sm text-neutral-content">{label}</p>
+        <p className="max-w-40 text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
           <div
             className={classNames(
