@@ -20,7 +20,7 @@ export function useRegionInfo(): RegionInfo {
   return useContext(RegionInfoContext);
 }
 
-export const RegionInfoContext = createContext<RegionInfo>({});
+const RegionInfoContext = createContext<RegionInfo>({});
 
 // This provider checks the initial value of the "region" query parameter in the
 // URL and sets the region info accordingly. This is done through context to
