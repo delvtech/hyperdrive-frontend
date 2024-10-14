@@ -1,7 +1,10 @@
+import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
+import { base, gnosis, linea, mainnet } from "viem/chains";
 
 export type YieldSourceId = keyof typeof yieldSources;
 export interface YieldSource {
+  chainId: ChainId;
   id: YieldSourceId;
   shortName: string;
   protocol: ProtocolId;
@@ -20,6 +23,7 @@ export interface YieldSource {
 }
 
 const makerDsr: YieldSource = {
+  chainId: mainnet.id,
   id: "makerDsr",
   shortName: "Maker DSR",
   protocol: "maker",
@@ -27,6 +31,7 @@ const makerDsr: YieldSource = {
 };
 
 const lidoSteth: YieldSource = {
+  chainId: mainnet.id,
   id: "lidoSteth",
   shortName: "Lido stETH",
   protocol: "lido",
@@ -34,18 +39,21 @@ const lidoSteth: YieldSource = {
   historicalRatePeriod: 1,
 };
 const morphoSusdeDai: YieldSource = {
+  chainId: mainnet.id,
   id: "morphoSusdeDai",
   shortName: "Morpho sUSDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
 const morphoUsdeDai: YieldSource = {
+  chainId: mainnet.id,
   id: "morphoUsdeDai",
   shortName: "Morpho USDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
 const morphoWstethUsdc: YieldSource = {
+  chainId: mainnet.id,
   id: "morphoWstethUsdc",
   shortName: "Morpho wstETH/USDC",
   protocol: "morpho",
@@ -53,6 +61,7 @@ const morphoWstethUsdc: YieldSource = {
 };
 
 const morphoCbethUsdc: YieldSource = {
+  chainId: base.id,
   id: "morphoCbethUsdc",
   shortName: "Morpho cbETH/USDC",
   protocol: "morpho",
@@ -60,6 +69,7 @@ const morphoCbethUsdc: YieldSource = {
 };
 
 const morphoWstethUsda: YieldSource = {
+  chainId: mainnet.id,
   id: "morphoWstethUsda",
   shortName: "Morpho wstETH/USDA",
   protocol: "morpho",
@@ -67,6 +77,7 @@ const morphoWstethUsda: YieldSource = {
 };
 
 const cbeth: YieldSource = {
+  chainId: base.id,
   id: "cbeth",
   shortName: "cbETH",
   protocol: "coinbase",
@@ -74,6 +85,7 @@ const cbeth: YieldSource = {
 };
 
 const reth: YieldSource = {
+  chainId: mainnet.id,
   id: "reth",
   shortName: "Rocket Pool ETH",
   protocol: "rocketPool",
@@ -81,6 +93,7 @@ const reth: YieldSource = {
 };
 
 const ezeth: YieldSource = {
+  chainId: mainnet.id,
   id: "ezeth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
@@ -88,6 +101,7 @@ const ezeth: YieldSource = {
 };
 
 const lineaEzeth: YieldSource = {
+  chainId: linea.id,
   id: "lineaEzeth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
@@ -95,6 +109,7 @@ const lineaEzeth: YieldSource = {
 };
 
 const eeth: YieldSource = {
+  chainId: mainnet.id,
   id: "eeth",
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
@@ -102,6 +117,7 @@ const eeth: YieldSource = {
 };
 
 const gnosisWsteth: YieldSource = {
+  chainId: gnosis.id,
   id: "gnosisWsteth",
   shortName: "Lido wstETH",
   protocol: "lido",
@@ -109,6 +125,7 @@ const gnosisWsteth: YieldSource = {
 };
 
 const sxdai: YieldSource = {
+  chainId: gnosis.id,
   id: "sxdai",
   shortName: "Savings xDAI",
   protocol: "maker",
@@ -116,6 +133,7 @@ const sxdai: YieldSource = {
 };
 
 const stusd: YieldSource = {
+  chainId: mainnet.id,
   id: "stusd",
   shortName: "Angle stUSD",
   protocol: "angle",
@@ -123,6 +141,7 @@ const stusd: YieldSource = {
 };
 
 const rseth: YieldSource = {
+  chainId: linea.id,
   id: "rseth",
   shortName: "KelpDAO rsETH",
   protocol: "kelpDao",
@@ -130,6 +149,7 @@ const rseth: YieldSource = {
 };
 
 const usds: YieldSource = {
+  chainId: mainnet.id,
   id: "usds",
   shortName: "Savings USDS",
   protocol: "sky",
@@ -137,6 +157,7 @@ const usds: YieldSource = {
 };
 
 const susds: YieldSource = {
+  chainId: mainnet.id,
   id: "susds",
   shortName: "Staking USDS",
   protocol: "sky",
@@ -144,6 +165,7 @@ const susds: YieldSource = {
 };
 
 const mwEth: YieldSource = {
+  chainId: base.id,
   id: "mwEth",
   shortName: "Moonwell Flagship ETH",
   protocol: "moonwell",
@@ -151,6 +173,7 @@ const mwEth: YieldSource = {
 };
 
 const stkWell: YieldSource = {
+  chainId: base.id,
   id: "stkWell",
   shortName: "Moonwell Staked WELL",
   protocol: "moonwell",
