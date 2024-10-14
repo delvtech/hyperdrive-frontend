@@ -7,9 +7,9 @@ import {
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -273,7 +273,7 @@ export function CloseLongForm({
       })()}
       actionButton={(() => {
         if (!account) {
-          return <ConnectButton />;
+          return <ConnectWalletButton />;
         }
         if (closeLongStatus === "loading") {
           return <LoadingButton label="Closing Long" variant="primary" />;
