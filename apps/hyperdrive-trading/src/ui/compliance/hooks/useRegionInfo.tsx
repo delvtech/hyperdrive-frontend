@@ -33,7 +33,6 @@ export function RegionInfoProvider({
     .get("region")
     ?.toLocaleLowerCase();
 
-  // If the region is in the read-only list, set isReadOnly to true
   const isReadOnly = !!region && READONLY_REGIONS.includes(region);
 
   // Force disconnect if in read-only region
