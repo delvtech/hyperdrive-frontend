@@ -16,13 +16,13 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
-import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
 import { useAccount } from "wagmi";
 

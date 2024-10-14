@@ -14,9 +14,9 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";

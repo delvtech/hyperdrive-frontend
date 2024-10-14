@@ -7,13 +7,13 @@ import {
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
@@ -232,7 +232,7 @@ export function RedeemWithdrawalSharesForm({
             Redeem withdrawal shares
           </button>
         ) : (
-          <ConnectButton />
+          <ConnectWalletButton />
         )
       }
     />
