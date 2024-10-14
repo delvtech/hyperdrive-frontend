@@ -4,7 +4,6 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";
-import { RegionInfoProvider } from "src/ui/compliance/hooks/useRegionInfo";
 import { useClearLocalStorageOnNewVersion } from "src/ui/version/useClearLocalStorageOnNewVersion";
 
 // Create a new router instance
@@ -23,9 +22,7 @@ export function App(): ReactElement | null {
   return (
     <div className="flex h-full flex-col">
       <StrictMode>
-        <RegionInfoProvider>
-          <RouterProvider router={router} />
-        </RegionInfoProvider>
+        <RouterProvider router={router} />
       </StrictMode>
     </div>
   );
