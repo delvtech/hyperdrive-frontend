@@ -168,7 +168,7 @@ const mwEth: YieldSource = {
   chainId: base.id,
   id: "mwEth",
   shortName: "Moonwell Flagship ETH",
-  protocol: "moonwell",
+  protocol: "morpho",
   historicalRatePeriod: 1,
 };
 
