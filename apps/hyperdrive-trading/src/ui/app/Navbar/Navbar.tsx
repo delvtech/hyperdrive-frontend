@@ -10,14 +10,14 @@ import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useIsReadOnlyRegion } from "src/ui/compliance/hooks/useIsReadOnlyRegion";
+import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { location } = useRouterState();
   const chainId = useChainId();
-  const isReadOnlyRegion = useIsReadOnlyRegion();
+  const { isReadOnly } = useRegionInfo();
 
   return (
     <div className="daisy-navbar">
@@ -71,7 +71,7 @@ export function Navbar(): ReactElement {
           <DevtoolsMenu />
         ) : null}
 
-        {!isReadOnlyRegion && <ConnectButton showBalance={false} />}
+        {!isReadOnly && <ConnectButton showBalance={false} />}
       </div>
     </div>
   );

@@ -6,14 +6,12 @@ import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 import { useAddressScreen } from "src/ui/compliance/hooks/useAddressScreen";
-import { useDisconnectInReadOnlyRegions } from "src/ui/compliance/hooks/useDisconnectInReadOnlyRegions";
 import { useVpnScreen } from "src/ui/compliance/hooks/useVpnScreen";
 
 export function Page({ children }: PropsWithChildren): ReactElement {
   // compliance
   useVpnScreen();
   useAddressScreen();
-  useDisconnectInReadOnlyRegions();
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between gap-9">

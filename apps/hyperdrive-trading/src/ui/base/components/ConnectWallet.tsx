@@ -1,7 +1,7 @@
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
-import { useIsReadOnlyRegion } from "src/ui/compliance/hooks/useIsReadOnlyRegion";
+import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 
 export function ConnectWalletButton({ wide }: { wide?: boolean }): JSX.Element {
   if (wide) {
@@ -16,9 +16,9 @@ export function ConnectWalletButton({ wide }: { wide?: boolean }): JSX.Element {
 }
 
 function RegionAwareConnectButton({ wide }: { wide?: boolean }) {
-  const isReadOnlyRegion = useIsReadOnlyRegion();
+  const { isReadOnly } = useRegionInfo();
 
-  if (isReadOnlyRegion) {
+  if (isReadOnly) {
     return (
       <button
         type="button"
