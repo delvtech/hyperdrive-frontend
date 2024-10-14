@@ -168,6 +168,8 @@ const mwEth: YieldSource = {
   chainId: base.id,
   id: "mwEth",
   shortName: "Moonwell Flagship ETH",
+  // This is technically a morpho vault that wraps moonwell, so the protocol
+  // should be morpho
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
