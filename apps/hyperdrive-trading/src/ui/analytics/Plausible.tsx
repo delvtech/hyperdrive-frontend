@@ -1,25 +1,21 @@
-import { ReactElement, useEffect, useRef } from "react";
+import { ReactNode, useEffect } from "react";
 import Helmet from "react-helmet";
-import { useLocation } from "react-use";
-
-interface PlausibleProps {
-  /**
-   * A custom page to associate with the event, e.g., `/error`.
-   *
-   * @see https://plausible.io/docs/custom-locations
-   */
-  page?: string;
-}
 
 /**
- * Adds the Plausible analytics script to the `<head>` and triggers pageviews.
+ * Adds the Plausible analytics script to the `<head>` and the `plausible`
+ * function to the `window` object.
  *
- * @see https://plausible.io/docs/plausible-script
+ * @see https://plausible.io/docs/script-extensions#scriptmanualjs
  */
-export function Plausible({ page }: PlausibleProps): ReactElement {
-  usePageview(page);
+export function Plausible(): ReactNode {
+  // define the `plausible` function to manually trigger events
+  useEffect(() => {
+    window.plausible ||= function (...args) {
+      (window.plausible.q ||= []).push(args);
+    } as PlausibleFunction;
+  }, []);
 
-  return (
+  return import.meta.env.PROD ? (
     <Helmet>
       <script
         defer={true}
@@ -27,53 +23,38 @@ export function Plausible({ page }: PlausibleProps): ReactElement {
         data-domain={window.location.host}
       ></script>
     </Helmet>
-  );
+  ) : null;
 }
 
 /**
- * Triggers a new `"pageview"` event when the provided page or the window's
- * pathname change.
+ * Parameters for Plausible events keyed by the event name.
  *
- * @see https://plausible.io/docs/script-extensions#scriptmanualjs
+ * Add custom events and their params here to add them to the `window.plausible`
+ * function args type.
+ *
+ * @see https://plausible.io/docs/custom-event-goals
  */
-function usePageview(page?: string) {
-  // track the current location to trigger new pageviews when the path changes
-  const location = useLocation();
-
-  // track the previous pageview in a ref to avoid duplicate events, even if the
-  // parent component re-renders.
-  const previousPage = useRef<string | undefined>();
-
-  // define the `plausible` function to manually trigger events
-  useEffect(() => {
-    window.plausible =
-      window.plausible ||
-      function (...args) {
-        (window.plausible.q = window.plausible.q || []).push(args);
-      };
-  }, []);
-
-  useEffect(() => {
-    const _page = page || location.pathname;
-    // Only log page view when in production
-    if (_page !== previousPage.current && import.meta.env.PROD) {
-      window.plausible("pageview", { u: _page });
-      previousPage.current = _page;
-    }
-  }, [page, location.pathname]);
+export interface PlausibleEventParamsMap {
+  pageview: {
+    /**
+     * The URL to associate with the event.
+     *
+     * @see https://plausible.io/docs/custom-locations
+     */
+    u?: string;
+  };
+  walletConnect: never;
+  walletDisconnect: never;
 }
 
-type PlausibleEvent = "pageview";
-interface PlausibleFunction {
-  (
-    event: PlausibleEvent,
-    params?: {
-      /**
-       * The URL to associate with the event.
-       */
-      u?: string;
-      [key: string]: unknown;
-    },
+export type PlausibleEvent = keyof PlausibleEventParamsMap;
+
+export interface PlausibleFunction {
+  <T extends PlausibleEvent>(
+    event: T,
+    ...args: PlausibleEventParamsMap[T] extends void
+      ? []
+      : [params: PlausibleEventParamsMap[T]]
   ): void;
   q?: unknown[][];
 }
