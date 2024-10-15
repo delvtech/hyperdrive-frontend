@@ -108,7 +108,9 @@ export function useMorphoVaultRewards({
   hyperdrive: HyperdriveConfig;
   enabled: boolean;
 }): {
-  morphoVaultRewards: SupplyRewardsResponse | undefined;
+  morphoVaultReward:
+    | SupplyRewardsResponse["vault"]["state"]["rewards"][0]
+    | undefined;
   isLoading: boolean;
 } {
   const morphoVault = vaultAddresses[hyperdrive.address];
@@ -147,5 +149,9 @@ export function useMorphoVaultRewards({
       : undefined,
   });
 
-  return { morphoVaultRewards, isLoading };
+  return {
+    // Return the first reward in the rewards array
+    morphoVaultReward: morphoVaultRewards?.vault?.state?.rewards[0],
+    isLoading,
+  };
 }

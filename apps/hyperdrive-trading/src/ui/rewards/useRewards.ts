@@ -61,16 +61,13 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       ) ?? false,
   });
 
-  const { morphoVaultRewards, isLoading: isMorphoVaultLoading } =
-    useMorphoVaultRewards({
-      hyperdrive,
-      enabled:
-        eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-          hyperdrive.address
-        ) ?? false,
-    });
-
-  console.log("morphoVaultRewards", morphoVaultRewards);
+  const { morphoVaultReward } = useMorphoVaultRewards({
+    hyperdrive,
+    enabled:
+      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+        hyperdrive.address
+      ) ?? false,
+  });
 
   const rewards = [];
 
@@ -109,17 +106,15 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   if (
     eligibleMarketsForMorphoVaultRewards[base.id]?.includes(hyperdrive.address)
   ) {
-    const morphoVaultReward: Reward = {
+    const vaultReward: Reward = {
       id: "MorphoVault",
-      name: "WELL",
+      name: morphoVaultReward?.asset.name ?? "WELL",
       iconUrl: WELL_ICON_URL,
-      amount: morphoVaultRewards?.vault?.state?.rewards[0]?.supplyApr
-        ? `${(
-            morphoVaultRewards.vault.state.rewards[0].supplyApr * 100
-          ).toFixed(2)}%`
+      amount: morphoVaultReward?.supplyApr
+        ? `${(morphoVaultReward.supplyApr * 100).toFixed(2)}%`
         : "0%",
     };
-    rewards.push(morphoVaultReward);
+    rewards.push(vaultReward);
   }
 
   return rewards;
