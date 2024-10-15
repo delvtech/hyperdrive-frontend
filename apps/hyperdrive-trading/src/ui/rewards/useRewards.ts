@@ -1,4 +1,7 @@
-import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import {
+  HyperdriveConfig,
+  WELL_ICON_URL,
+} from "@delvtech/hyperdrive-appconfig";
 import {
   useMorphoRate,
   useMorphoVaultRewards,
@@ -45,6 +48,7 @@ type Reward = {
   id: RewardType;
   name: string;
   amount: string;
+  iconUrl?: string;
 };
 
 export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
@@ -65,6 +69,8 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
           hyperdrive.address
         ) ?? false,
     });
+
+  console.log("morphoVaultRewards", morphoVaultRewards);
 
   const rewards = [];
 
@@ -106,7 +112,12 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
     const morphoVaultReward: Reward = {
       id: "MorphoVault",
       name: "WELL",
-      amount: "0",
+      iconUrl: WELL_ICON_URL,
+      amount: morphoVaultRewards?.vault?.state?.rewards[0]?.supplyApr
+        ? `${(
+            morphoVaultRewards.vault.state.rewards[0].supplyApr * 100
+          ).toFixed(2)}%`
+        : "0%",
     };
     rewards.push(morphoVaultReward);
   }

@@ -80,8 +80,8 @@ export function RewardsTooltip({
                     >
                       <div className="flex items-center gap-1">
                         <img
-                          src={appConfig.protocols.morpho.iconUrl}
-                          alt="Morpho logo"
+                          src={reward.iconUrl}
+                          alt={`${reward.name} logo`}
                           className="h-4"
                         />
                         {reward.name}
