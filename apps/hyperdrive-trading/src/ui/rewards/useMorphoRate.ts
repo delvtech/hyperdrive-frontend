@@ -1,6 +1,12 @@
 import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
+import {
+  HyperdriveConfig,
+  WELL_ICON_URL,
+} from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
+
+import { request } from "graphql-request";
 
 const marketPoolIds: Record<Address, string> = {
   // Key: Hyperdrive contract address for the market
@@ -39,7 +45,7 @@ export function useMorphoRate({
     retry: 3,
     queryFn: async () => {
       const response = await fetch(
-        `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`,
+        `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`
       );
       const result = await response.json();
       return result.data[0];
@@ -51,7 +57,7 @@ export function useMorphoRate({
   if (rewardsData) {
     const poolId = marketPoolIds[hyperdriveAddress];
     let matchingRate = rewardsData.current_rates.find((rate) =>
-      rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
+      rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId))
     )?.per_dollar_per_year;
 
     // If there is no matching rate, just use the first one in the current_rates array
@@ -65,5 +71,89 @@ export function useMorphoRate({
 
   return {
     morphoRate,
+  };
+}
+
+const vaultAddresses: Record<
+  Address,
+  { vaultAddress: string; assetIcon: string }
+> = {
+  // Key: Hyperdrive contract address for the market
+  // Value: Morpho vault address and asset icon
+  // Market: 182d Moonwell Flagship ETH
+  "0xceD9F810098f8329472AEFbaa1112534E96A5c7b": {
+    vaultAddress: "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
+    assetIcon: WELL_ICON_URL,
+  },
+};
+
+const endpoint = "https://blue-api.morpho.org/graphql";
+
+type SupplyRewardsResponse = {
+  vaultByAddress: {
+    state: {
+      rewards: {
+        supplyApr: number;
+        asset: {
+          name: string;
+        };
+      }[];
+    };
+  };
+};
+
+export function useMorphoVaultRewards({
+  hyperdrive,
+  enabled,
+}: {
+  hyperdrive: HyperdriveConfig;
+  enabled: boolean;
+}): {
+  morphoVaultReward:
+    | SupplyRewardsResponse["vaultByAddress"]["state"]["rewards"][0]
+    | undefined;
+  isLoading: boolean;
+} {
+  const morphoVault = vaultAddresses[hyperdrive.address];
+  const queryEnabled = !!morphoVault?.vaultAddress && enabled;
+  const { data: morphoVaultRewards, isLoading } = useQuery({
+    queryKey: [
+      "morphoVaultRewards",
+      hyperdrive.address,
+      hyperdrive.chainId,
+      morphoVault?.vaultAddress,
+    ],
+    enabled: queryEnabled,
+    staleTime: Infinity,
+    retry: 3,
+    queryFn: queryEnabled
+      ? async () => {
+          const supplyRewards: SupplyRewardsResponse = await request(
+            endpoint,
+            `query SupplyRewards($address: String!, $chainId: Int!) {
+              vaultByAddress(address: $address, chainId: $chainId) {
+                address
+                state {
+                  rewards {
+                    supplyApr
+                    asset {
+                      address
+                      symbol
+                    }
+                  }
+                }
+              }
+            }`,
+            { address: morphoVault.vaultAddress, chainId: hyperdrive.chainId }
+          );
+          return supplyRewards;
+        }
+      : undefined,
+  });
+
+  return {
+    // Return the first reward in the rewards array
+    morphoVaultReward: morphoVaultRewards?.vaultByAddress?.state?.rewards[0],
+    isLoading,
   };
 }
