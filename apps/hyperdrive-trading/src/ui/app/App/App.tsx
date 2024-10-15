@@ -20,8 +20,8 @@ declare module "@tanstack/react-router" {
 export function App(): ReactElement | null {
   useClearLocalStorageOnNewVersion();
   useAccountEffect({
-    onConnect: () => window.plausible("wallet:connect"),
-    onDisconnect: () => window.plausible("wallet:disconnect"),
+    onConnect: () => window.plausible("walletConnect"),
+    onDisconnect: () => window.plausible("walletDisconnect"),
   });
 
   return (

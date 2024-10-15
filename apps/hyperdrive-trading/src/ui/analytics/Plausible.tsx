@@ -43,8 +43,8 @@ export interface PlausibleEventParamsMap {
      */
     u?: string;
   };
-  "wallet:connect": never;
-  "wallet:disconnect": never;
+  walletConnect: never;
+  walletDisconnect: never;
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
