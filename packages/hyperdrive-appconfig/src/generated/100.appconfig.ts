@@ -338,7 +338,7 @@ export const gnosisAppConfig: AppConfig = {
       chainId: 8453,
       id: "mwEth",
       shortName: "Moonwell Flagship ETH",
-      protocol: "moonwell",
+      protocol: "morpho",
       historicalRatePeriod: 1,
     },
     stkWell: {
