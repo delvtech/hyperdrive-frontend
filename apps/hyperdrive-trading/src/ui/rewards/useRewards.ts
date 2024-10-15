@@ -57,13 +57,14 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       ) ?? false,
   });
 
-  const morphoVaultRate = useMorphoVaultRewards({
-    hyperdrive,
-    enabled:
-      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
-      ) ?? false,
-  });
+  const { morphoVaultRewards, isLoading: isMorphoVaultLoading } =
+    useMorphoVaultRewards({
+      hyperdrive,
+      enabled:
+        eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+          hyperdrive.address
+        ) ?? false,
+    });
 
   const rewards = [];
 
@@ -97,6 +98,17 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       amount: "1",
     };
     rewards.push(lineaReward);
+  }
+
+  if (
+    eligibleMarketsForMorphoVaultRewards[base.id]?.includes(hyperdrive.address)
+  ) {
+    const morphoVaultReward: Reward = {
+      id: "MorphoVault",
+      name: "WELL",
+      amount: "0",
+    };
+    rewards.push(morphoVaultReward);
   }
 
   return rewards;

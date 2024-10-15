@@ -6,7 +6,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
 
-import { gql, request } from "graphql-request";
+import { request } from "graphql-request";
 
 const marketPoolIds: Record<Address, string> = {
   // Key: Hyperdrive contract address for the market
@@ -95,8 +95,6 @@ type SupplyRewardsResponse = {
     state: {
       rewards: {
         supplyApr: number;
-        amountPerSuppliedToken: number;
-        yearlySupplyTokens: number;
         asset: {
           name: string;
           logoURI: string;
@@ -112,9 +110,13 @@ export function useMorphoVaultRewards({
 }: {
   hyperdrive: HyperdriveConfig;
   enabled: boolean;
-}): void {
+}): {
+  morphoVaultRewards: SupplyRewardsResponse | undefined;
+  isLoading: boolean;
+} {
   const morphoVault = vaultAddresses[hyperdrive.address];
-  const { data: vaultRewardsData } = useQuery({
+
+  const { data: morphoVaultRewards, isLoading } = useQuery({
     queryKey: [
       "morphoVaultRewards",
       hyperdrive.address,
@@ -125,54 +127,52 @@ export function useMorphoVaultRewards({
     staleTime: Infinity,
     retry: 3,
     queryFn: async () => {
+      if (!morphoVault?.vaultAddress) {
+        return;
+      }
+
       const vaults = await request<{
-        vaults: {
-          items: {
-            address: string;
-            id: string;
-          }[];
-        };
+        vaults: { items: { address: string; id: string }[] };
       }>(
         endpoint,
-        gql`
-          query Vaults {
-            vaults {
-              items {
-                address
-                id
-              }
+        `query Vaults {
+          vaults {
+            items {
+              address
+              id
             }
           }
-        `
+        }`
       );
+
       const vaultId = vaults?.vaults?.items?.find(
-        (vault) => vault.address === morphoVault?.vaultAddress
+        (vault) => vault.address === morphoVault.vaultAddress
       )?.id;
+      if (!vaultId) {
+        return;
+      }
 
       const supplyRewards: SupplyRewardsResponse = await request(
         endpoint,
-        gql`
-          query SupplyRewards($vaultId: String!) {
-            vault(id: $vaultId) {
-              state {
-                rewards {
-                  supplyApr
-                  amountPerSuppliedToken
-                  yearlySupplyTokens
-                  asset {
-                    name
-                    logoURI
-                  }
+        `query SupplyRewards($vaultId: String!) {
+          vault(id: $vaultId) {
+            state {
+              rewards {
+                supplyApr
+                asset {
+                  name
+                  logoURI
                 }
               }
             }
           }
-        `,
+        }`,
         { vaultId }
       );
-      const supplyRewardsAPY =
-        supplyRewards?.vault?.state?.rewards?.[0]?.supplyApr;
+
+      return supplyRewards;
     },
   });
-  // console.log(vaultRewardsData, "vaultRewardsData");
+
+  return { morphoVaultRewards, isLoading };
 }

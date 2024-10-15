@@ -71,6 +71,29 @@ export function RewardsTooltip({
                       </div>
                     </div>
                   );
+
+                case "MorphoVault":
+                  return (
+                    <div
+                      key={reward.id}
+                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                    >
+                      <div className="flex items-center gap-1">
+                        <img
+                          src={appConfig.protocols.morpho.iconUrl}
+                          alt="Morpho logo"
+                          className="h-4"
+                        />
+                        {reward.name}
+                      </div>
+
+                      <div className="grid justify-items-end">
+                        <p className="flex items-center gap-1">
+                          +{reward.amount}
+                        </p>
+                      </div>
+                    </div>
+                  );
                 case "LineaLXPL":
                   return (
                     <div
