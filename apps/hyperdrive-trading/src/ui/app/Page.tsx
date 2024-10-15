@@ -1,7 +1,6 @@
 import { ScrollRestoration } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { PropsWithChildren, ReactElement } from "react";
-import { Plausible } from "src/ui/analytics/Plausible";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
@@ -17,9 +16,6 @@ export function Page({ children }: PropsWithChildren): ReactElement {
     <div className="flex min-h-screen flex-col items-center justify-between gap-9">
       <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
-
-        {/* analytics */}
-        <Plausible />
 
         {/* compliance */}
         <TermsOfUseAndPrivacyPolicyModal />
