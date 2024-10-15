@@ -14,6 +14,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
+import { Plausible } from "src/ui/analytics/Plausible";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
 import { RegionInfoProvider } from "src/ui/compliance/hooks/useRegionInfo";
@@ -35,6 +36,7 @@ logAppVersion();
 
 root.render(
   <WagmiProvider config={wagmiConfig}>
+    <Plausible />
     <ToastProvider />
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider

@@ -1,4 +1,9 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import {
+  createRootRoute,
+  Outlet,
+  useRouterState,
+} from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 // Set in the `index.html` file
@@ -9,6 +14,14 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const route = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+
+  useEffect(() => {
+    window.plausible("pageview", { u: route });
+  }, [route]);
+
   return (
     <>
       <Helmet>
