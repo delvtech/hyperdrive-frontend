@@ -95,7 +95,6 @@ type SupplyRewardsResponse = {
         supplyApr: number;
         asset: {
           name: string;
-          logoURI: string;
         };
       }[];
     };
@@ -135,13 +134,11 @@ export function useMorphoVaultRewards({
                     supplyApr
                     asset {
                       name
-                      logoURI
                     }
                   }
                 }
               }
-            }
-          }`,
+            }`,
             { vaultId: morphoVault.vaultId }
           );
 
