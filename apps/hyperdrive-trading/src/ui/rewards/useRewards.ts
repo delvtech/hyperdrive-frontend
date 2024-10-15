@@ -1,5 +1,8 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { useMorphoRate } from "src/ui/rewards/useMorphoRate";
+import {
+  useMorphoRate,
+  useMorphoVaultRewards,
+} from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
 
@@ -20,6 +23,13 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
   ],
 };
 
+const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
+  [base.id]: [
+    // 182d Moonwell Flagship ETH
+    "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
+  ],
+};
+
 const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   [linea.id]: [
     // 182d KelpDAO rsETH
@@ -29,7 +39,7 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   ],
 };
 
-type RewardType = "MorphoFlatRate" | "LineaLXPL";
+type RewardType = "MorphoFlatRate" | "MorphoVault" | "LineaLXPL";
 
 type Reward = {
   id: RewardType;
@@ -43,7 +53,15 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
     hyperdriveAddress: hyperdrive.address,
     enabled:
       eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-        hyperdrive.address,
+        hyperdrive.address
+      ) ?? false,
+  });
+
+  const morphoVaultRate = useMorphoVaultRewards({
+    hyperdrive,
+    enabled:
+      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+        hyperdrive.address
       ) ?? false,
   });
 
@@ -52,7 +70,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   // Add any morpho rewards for this market
   if (
     eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
+      hyperdrive.address
     )
   ) {
     const morphoReward: Reward = {
@@ -70,7 +88,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   // Add any linea rewards for this market
   if (
     eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
+      hyperdrive.address
     )
   ) {
     const lineaReward: Reward = {
