@@ -6,11 +6,15 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Link, useRouterState } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
+import { LANDING_ROUTE } from "src/ui/landing/routes";
+import { MINT_ROUTE } from "src/ui/mint/routes";
+import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 export function Navbar(): ReactElement {
@@ -18,6 +22,7 @@ export function Navbar(): ReactElement {
   const { location } = useRouterState();
   const chainId = useChainId();
   const { isReadOnly } = useRegionInfo();
+  const isTestnet = isTestnetChain(chainId);
 
   return (
     <div className="daisy-navbar">
@@ -29,26 +34,38 @@ export function Navbar(): ReactElement {
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
         <div className="ml-16 flex gap-8">
-          <Link to={"/"} className="hidden sm:inline">
+          <Link to={LANDING_ROUTE} className="hidden sm:inline">
             <span
               className={classNames("text-md", {
-                "text-white": location.pathname === "/",
-                "text-neutral-content": location.pathname !== "/",
+                "text-white": location.pathname === LANDING_ROUTE,
+                "text-neutral-content": location.pathname !== LANDING_ROUTE,
               })}
             >
               All Pools
             </span>
           </Link>
-          <Link to={"/portfolio"}>
+          <Link to={PORTFOLIO_ROUTE}>
             <span
               className={classNames("text-md", {
-                "text-white": location.pathname === "/portfolio",
-                "text-neutral-content": location.pathname !== "/portfolio",
+                "text-white": location.pathname === PORTFOLIO_ROUTE,
+                "text-neutral-content": location.pathname !== PORTFOLIO_ROUTE,
               })}
             >
               Portfolio
             </span>
           </Link>
+          {isTestnet ? (
+            <Link to={MINT_ROUTE}>
+              <span
+                className={classNames("text-md", {
+                  "text-white": location.pathname === MINT_ROUTE,
+                  "text-neutral-content": location.pathname !== MINT_ROUTE,
+                })}
+              >
+                Mint Tokens
+              </span>
+            </Link>
+          ) : null}
         </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">
