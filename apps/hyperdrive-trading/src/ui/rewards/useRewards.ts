@@ -26,7 +26,7 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
   ],
 };
 
-const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
+export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
   [base.id]: [
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
