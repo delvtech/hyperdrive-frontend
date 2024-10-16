@@ -182,6 +182,30 @@ const stkWell: YieldSource = {
   historicalRatePeriod: 1,
 };
 
+const snars: YieldSource = {
+  chainId: base.id,
+  id: "snars",
+  shortName: "Numun Staked nARS",
+  protocol: "numun",
+  historicalRatePeriod: 1,
+};
+
+const morphoFlagshipEurc: YieldSource = {
+  chainId: base.id,
+  id: "morphoFlagshipEurc",
+  shortName: "Moonwell Flagship EURC",
+  protocol: "morpho",
+  historicalRatePeriod: 1,
+};
+
+const morphoFlagshipUsdc: YieldSource = {
+  chainId: base.id,
+  id: "morphoFlagshipUsdc",
+  shortName: "Moonwell Flagship USDC",
+  protocol: "morpho",
+  historicalRatePeriod: 1,
+};
+
 export const yieldSources = {
   eeth,
   makerDsr,
@@ -203,4 +227,7 @@ export const yieldSources = {
   susds,
   mwEth,
   stkWell,
+  snars,
+  morphoFlagshipEurc,
+  morphoFlagshipUsdc,
 } as const;
