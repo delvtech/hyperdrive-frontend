@@ -26,7 +26,7 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
   ],
 };
 
-const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
+export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
   [base.id]: [
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
@@ -88,6 +88,19 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
     };
     rewards.push(morphoReward);
   }
+  if (
+    eligibleMarketsForMorphoVaultRewards[base.id]?.includes(hyperdrive.address)
+  ) {
+    const vaultReward: Reward = {
+      id: "MorphoVault",
+      name: morphoVaultReward?.asset.name ?? "WELL",
+      iconUrl: WELL_ICON_URL,
+      amount: morphoVaultReward?.supplyApr
+        ? `${(morphoVaultReward.supplyApr * 100).toFixed(2)}%`
+        : "0%",
+    };
+    rewards.push(vaultReward);
+  }
 
   // Add any linea rewards for this market
   if (
@@ -101,20 +114,6 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       amount: "1",
     };
     rewards.push(lineaReward);
-  }
-
-  if (
-    eligibleMarketsForMorphoVaultRewards[base.id]?.includes(hyperdrive.address)
-  ) {
-    const vaultReward: Reward = {
-      id: "MorphoVault",
-      name: morphoVaultReward?.asset.name ?? "WELL",
-      iconUrl: WELL_ICON_URL,
-      amount: morphoVaultReward?.supplyApr
-        ? `${(morphoVaultReward.supplyApr * 100).toFixed(2)}%`
-        : "0%",
-    };
-    rewards.push(vaultReward);
   }
 
   return rewards;
