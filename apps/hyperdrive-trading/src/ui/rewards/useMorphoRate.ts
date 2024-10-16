@@ -45,7 +45,7 @@ export function useMorphoRate({
     retry: 3,
     queryFn: async () => {
       const response = await fetch(
-        `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`
+        `https://rewards.morpho.org/v1/programs/?chains=${chainId}&active=true&type=uniform-reward`,
       );
       const result = await response.json();
       return result.data[0];
@@ -57,7 +57,7 @@ export function useMorphoRate({
   if (rewardsData) {
     const poolId = marketPoolIds[hyperdriveAddress];
     let matchingRate = rewardsData.current_rates.find((rate) =>
-      rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId))
+      rate.pool_ids.some((id) => id.toLowerCase().startsWith(poolId)),
     )?.per_dollar_per_year;
 
     // If there is no matching rate, just use the first one in the current_rates array
@@ -83,6 +83,16 @@ const vaultAddresses: Record<
   // Market: 182d Moonwell Flagship ETH
   "0xceD9F810098f8329472AEFbaa1112534E96A5c7b": {
     vaultAddress: "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
+    assetIcon: WELL_ICON_URL,
+  },
+  // Market: 182 Moonwell Flagship USDC
+  "0x48A387267462e8134deA1e4Bd8051aEa4D3ACB6d": {
+    vaultAddress: "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
+    assetIcon: WELL_ICON_URL,
+  },
+  // Market: 182d Moonwell Flagship EURC
+  "0xC08Ab5F58Fbc473D1D914913dAC1F1508AcFad27": {
+    vaultAddress: "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
     assetIcon: WELL_ICON_URL,
   },
 };
@@ -144,7 +154,7 @@ export function useMorphoVaultRewards({
                 }
               }
             }`,
-            { address: morphoVault.vaultAddress, chainId: hyperdrive.chainId }
+            { address: morphoVault.vaultAddress, chainId: hyperdrive.chainId },
           );
           return supplyRewards;
         }
