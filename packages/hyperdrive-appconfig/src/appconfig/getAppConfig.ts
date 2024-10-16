@@ -15,10 +15,13 @@ import {
   DAI_ICON_URL,
   EETH_ICON_URL,
   ETH_ICON_URL,
+  EURC_ICON_URL,
   EZETH_ICON_URL,
+  NARS_ICON_URL,
   RETH_ICON_URL,
   RSETH_ICON_URL,
   SDAI_ICON_URL,
+  SNARS_ICON_URL,
   STUSD_ICON_URL,
   SUSDS_ICON_URL,
   SXDAI_ICON_URL,
@@ -291,6 +294,60 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 4,
+      });
+    }
+
+    if (hyperdriveName.includes("Moonwell USDC Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "mwUsdc",
+        baseTokenIconUrl: USDC_ICON_URL,
+        sharesTokenIconUrl: WELL_ICON_URL,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        tokenPlaces: 4,
+      });
+    }
+
+    if (hyperdriveName.includes("Moonwell EURC Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "mwEurc",
+        baseTokenIconUrl: EURC_ICON_URL,
+        sharesTokenIconUrl: WELL_ICON_URL,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        tokenPlaces: 4,
+      });
+    }
+
+    if (hyperdriveName.includes("Num Finance snARS")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "snars",
+        baseTokenIconUrl: NARS_ICON_URL,
+        sharesTokenIconUrl: SNARS_ICON_URL,
+        tokenPlaces: 4,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
       });
     }
 

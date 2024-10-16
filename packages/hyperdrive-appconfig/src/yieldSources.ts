@@ -190,17 +190,17 @@ const snars: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const morphoFlagshipEurc: YieldSource = {
+const mwEurc: YieldSource = {
   chainId: base.id,
-  id: "morphoFlagshipEurc",
+  id: "mwEurc",
   shortName: "Moonwell Flagship EURC",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
 
-const morphoFlagshipUsdc: YieldSource = {
+const mwUsdc: YieldSource = {
   chainId: base.id,
-  id: "morphoFlagshipUsdc",
+  id: "mwUsdc",
   shortName: "Moonwell Flagship USDC",
   protocol: "morpho",
   historicalRatePeriod: 1,
@@ -228,6 +228,6 @@ export const yieldSources = {
   mwEth,
   stkWell,
   snars,
-  morphoFlagshipEurc,
-  morphoFlagshipUsdc,
+  mwEurc,
+  mwUsdc,
 } as const;
