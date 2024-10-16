@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "src/ui/app/Page";
-import { PORTFOLIO_ROUTE } from "src/ui/markets/routes";
 import { Portfolio } from "src/ui/portfolio/Portfolio";
+import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { z } from "zod";
 export const Route = createFileRoute(PORTFOLIO_ROUTE)({
   component: () => (
