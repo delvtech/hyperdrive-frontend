@@ -2,9 +2,12 @@ import {
   appConfig,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { ChartBarIcon, SparklesIcon } from "@heroicons/react/16/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
+import { formatRate } from "src/base/formatRate";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
@@ -23,6 +26,8 @@ export function RewardsTooltip({
   });
 
   const rewards = useRewards(hyperdrive);
+
+  const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   if (!rewards || (rewards && rewards.length === 0)) {
     return children;
@@ -74,25 +79,60 @@ export function RewardsTooltip({
 
                 case "MorphoVault":
                   return (
-                    <div
-                      key={reward.id}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        <img
-                          src={reward.iconUrl}
-                          alt={`${reward.name} logo`}
-                          className="h-4"
-                        />
-                        {reward.name}
-                      </div>
+                    <>
+                      <div
+                        key={reward.id}
+                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                      >
+                        <div className="flex items-center gap-1">
+                          <img
+                            src={reward.iconUrl}
+                            alt={`${reward.name} logo`}
+                            className="h-4"
+                          />
+                          {reward.name}
+                        </div>
 
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +{reward.amount}
-                        </p>
+                        <div className="grid justify-items-end">
+                          <p className="flex items-center gap-1">
+                            +{reward.amount}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+                        <div className="flex items-center gap-1">
+                          <ChartBarIcon className="h-4" />
+                          Rate
+                        </div>
+
+                        <div className="grid justify-items-end">
+                          <p className="flex items-center gap-1">
+                            +{formatRate(BigInt(lpApy?.lpApy || 0), 18, false)}%
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+                        <div className="flex items-center gap-1">
+                          <SparklesIcon className="h-4" />
+                          Net APY
+                        </div>
+
+                        <div className="grid justify-items-end">
+                          <p className="flex items-center gap-1">
+                            +
+                            {formatRate(
+                              (lpApy?.lpApy || 0n) +
+                                BigInt(
+                                  (parseFloat(reward.amount) * 10 ** 18) / 100
+                                ),
+                              18,
+                              false
+                            )}
+                            %
+                          </p>
+                        </div>
+                      </div>
+                    </>
                   );
                 case "LineaLXPL":
                   return (
