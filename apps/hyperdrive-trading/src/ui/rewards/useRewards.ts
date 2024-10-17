@@ -23,6 +23,10 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
     "0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137",
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
+    // 182d Moonwell Flagship USDC
+    "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72",
+    // 182d Moonwell Flagship EURC
+    "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD",
   ],
 };
 
