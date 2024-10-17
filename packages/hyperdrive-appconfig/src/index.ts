@@ -24,7 +24,11 @@ export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 
 // tokens
 export type { TokenConfig } from "src/tokens/getTokenConfig";
-export { WELL_ICON_URL } from "src/tokens/tokenIconsUrls";
+export {
+  EURC_ICON_URL,
+  USDC_ICON_URL,
+  WELL_ICON_URL,
+} from "src/tokens/tokenIconsUrls";
 
 // yield sources
 export { yieldSources } from "src/yieldSources";
