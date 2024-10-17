@@ -343,7 +343,6 @@ const hyperdriveKindResolvers: Record<
         sharesTokenIconUrl: SNARS_ICON_URL,
         tokenPlaces: 2,
         baseTokenTags: ["stablecoin"],
-        sharesTokenTags: ["stablecoin"],
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,
