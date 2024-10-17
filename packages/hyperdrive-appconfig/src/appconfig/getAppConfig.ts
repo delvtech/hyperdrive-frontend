@@ -303,6 +303,7 @@ const hyperdriveKindResolvers: Record<
         yieldSource: "mwUsdc",
         baseTokenIconUrl: USDC_ICON_URL,
         sharesTokenIconUrl: WELL_ICON_URL,
+        baseTokenTags: ["stablecoin"],
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,
@@ -321,6 +322,7 @@ const hyperdriveKindResolvers: Record<
         yieldSource: "mwEurc",
         baseTokenIconUrl: EURC_ICON_URL,
         sharesTokenIconUrl: WELL_ICON_URL,
+        baseTokenTags: ["stablecoin"],
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,
@@ -329,7 +331,7 @@ const hyperdriveKindResolvers: Record<
           isBaseTokenWithdrawalEnabled: true,
           isShareTokenWithdrawalEnabled: true,
         },
-        tokenPlaces: 4,
+        tokenPlaces: 2,
       });
     }
 
@@ -339,7 +341,8 @@ const hyperdriveKindResolvers: Record<
         yieldSource: "snars",
         baseTokenIconUrl: NARS_ICON_URL,
         sharesTokenIconUrl: SNARS_ICON_URL,
-        tokenPlaces: 4,
+        tokenPlaces: 2,
+        baseTokenTags: ["stablecoin"],
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,

@@ -17,6 +17,12 @@ const marketPoolIds: Record<Address, string> = {
   // Market: 182d Moonwell Flagship ETH
   "0xceD9F810098f8329472AEFbaa1112534E96A5c7b":
     "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
+  // Market: 182d Moonwell Flagship USDC
+  "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72":
+    "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
+  // Market: 182d Moonwell Flagship EURC
+  "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD":
+    "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
 };
 
 export function useMorphoRate({
