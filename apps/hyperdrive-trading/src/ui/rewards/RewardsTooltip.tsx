@@ -107,7 +107,9 @@ export function RewardsTooltip({
 
                         <div className="grid justify-items-end">
                           <p className="flex items-center gap-1">
-                            +{formatRate(BigInt(lpApy?.lpApy || 0), 18, false)}%
+                            {lpApy?.isNew
+                              ? "✨New✨"
+                              : `+ ${formatRate(lpApy?.lpApy || 0n, 18, false)} %`}
                           </p>
                         </div>
                       </div>
@@ -123,10 +125,10 @@ export function RewardsTooltip({
                             {formatRate(
                               (lpApy?.lpApy || 0n) +
                                 BigInt(
-                                  (parseFloat(reward.amount) * 10 ** 18) / 100
+                                  (parseFloat(reward.amount) * 10 ** 18) / 100,
                                 ),
                               18,
-                              false
+                              false,
                             )}
                             %
                           </p>

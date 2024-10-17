@@ -20,7 +20,7 @@ export async function getTokenFiatPrice({
     `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`,
   );
   const data = await response.json();
-  const { price } = data.coins[defiLlamaTokenId];
+  const price = data?.coins?.[defiLlamaTokenId]?.price ?? 0n;
   return parseFixed(price).bigint;
 }
 

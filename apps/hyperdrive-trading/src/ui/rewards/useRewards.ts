@@ -30,6 +30,10 @@ export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
   [base.id]: [
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
+    // 182d Moonwell Flagship USDC
+    "0x48A387267462e8134deA1e4Bd8051aEa4D3ACB6d",
+    // 182d Moonwell Flagship EURC
+    "0xC08Ab5F58Fbc473D1D914913dAC1F1508AcFad27",
   ],
 };
 
@@ -57,7 +61,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
     hyperdriveAddress: hyperdrive.address,
     enabled:
       eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -65,7 +69,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -74,7 +78,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   // Add any morpho rewards for this market
   if (
     eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address
+      hyperdrive.address,
     )
   ) {
     const morphoReward: Reward = {
@@ -105,7 +109,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   // Add any linea rewards for this market
   if (
     eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address
+      hyperdrive.address,
     )
   ) {
     const lineaReward: Reward = {
