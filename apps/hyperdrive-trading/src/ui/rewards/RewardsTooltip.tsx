@@ -32,10 +32,7 @@ export function RewardsTooltip({
   let netApy: bigint = lpApy?.lpApy || 0n;
 
   rewards?.forEach((reward) => {
-    if (reward.id === "MorphoVaultAllocation") {
-      netApy += BigInt((parseFloat(reward.amount) * 1e18) / 100);
-    }
-    if (reward.id === "MorphoVault") {
+    if (reward.id === "MorphoVaultAllocation" || reward.id === "MorphoVault") {
       netApy += BigInt((parseFloat(reward.amount) * 1e18) / 100);
     }
   });

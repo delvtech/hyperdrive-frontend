@@ -139,19 +139,13 @@ type SupplyRewardsResponse = {
       totalAssetsUsd: number;
       allocation: {
         supplyAssetsUsd: number;
-        supplyAssets: number;
         market: {
-          uniqueKey: string;
           state: {
             rewards: {
               supplyApr: number;
-              amountPerSuppliedToken: number;
               asset: {
                 address: string;
                 name: string;
-                chain: {
-                  id: number;
-                };
               };
             }[];
           };
@@ -204,7 +198,6 @@ export function useMorphoVaultRewards({
                   totalAssetsUsd
                   rewards {
                     supplyApr
-                    amountPerSuppliedToken
                     asset {
                       address
                       name
@@ -215,13 +208,10 @@ export function useMorphoVaultRewards({
                   }
                   allocation {
                     supplyAssetsUsd
-                    supplyAssets
                     market {
-                      uniqueKey
                       state {
                         rewards {
                           supplyApr
-                          amountPerSuppliedToken
                           asset {
                             address
                             name

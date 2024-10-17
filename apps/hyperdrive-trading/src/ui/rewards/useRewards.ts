@@ -138,6 +138,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
           vaultAddresses[hyperdrive.address].allocation?.assets[0].name ?? "",
         iconUrl:
           vaultAddresses[hyperdrive.address].allocation?.assets[0].assetIcon,
+        // Vault allocation rewards are calculated by taking the total assets in the vault (in USD), and dividing it by the rewards earned for the vault in each market it has allocated to.
         amount: totalAssetsUsd
           ? `${((vaultAllocationRewardTotal / totalAssetsUsd) * 100).toFixed(2)}%`
           : "0%",
