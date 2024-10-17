@@ -58,11 +58,11 @@ export function PoolRow({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { morphoVaultReward } = useMorphoVaultRewards({
+  const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -102,7 +102,7 @@ export function PoolRow({
                 <ClockIcon className="size-4 text-gray-400/60" />{" "}
                 <span className="text-neutral-content">
                   {formatTermLength2(
-                    Number(hyperdrive.poolConfig.positionDuration * 1000n)
+                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
                   )}
                 </span>
               </div>
@@ -231,14 +231,16 @@ export function PoolRow({
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
-                  {morphoVaultReward ? (
+                  {morphoVaultData ? (
                     <PercentLabel
                       // If this is a eligible for morpho vault rewards we need to add this to the existing lpApy. The supply APR is returned as a floating point number from the Morpho API so we need to scale it up to 18 decimals before adding it to the lpApy.
                       value={formatRate(
                         lpApy.lpApy +
-                          BigInt(morphoVaultReward.supplyApr * 1e18),
+                          BigInt(
+                            (morphoVaultData.reward?.supplyApr ?? 0) * 1e18,
+                          ),
                         18,
-                        false
+                        false,
                       )}
                     />
                   ) : (
@@ -325,7 +327,7 @@ function PercentLabel({ value }: { value: string }) {
     <div
       className={classNames(
         "font-dmMono text-h4 font-medium",
-        "after:text-h5 after:content-['%']"
+        "after:text-h5 after:content-['%']",
       )}
     >
       {value}

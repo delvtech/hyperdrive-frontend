@@ -29,6 +29,17 @@ export function RewardsTooltip({
 
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
+  let netApy: bigint = lpApy?.lpApy || 0n;
+
+  rewards?.forEach((reward) => {
+    if (reward.id === "MorphoVaultAllocation") {
+      netApy += BigInt((parseFloat(reward.amount) * 10 ** 18) / 100);
+    }
+    if (reward.id === "MorphoVault") {
+      netApy += BigInt((parseFloat(reward.amount) * 10 ** 18) / 100);
+    }
+  });
+
   if (!rewards || (rewards && rewards.length === 0)) {
     return children;
   }
@@ -113,24 +124,27 @@ export function RewardsTooltip({
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+                    </>
+                  );
+                case "MorphoVaultAllocation":
+                  return (
+                    <>
+                      <div
+                        key={reward.id}
+                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                      >
                         <div className="flex items-center gap-1">
-                          <SparklesIcon className="h-4" />
-                          Net APY
+                          <img
+                            src={reward.iconUrl}
+                            alt={`${reward.name} logo`}
+                            className="h-4"
+                          />
+                          {reward.name}
                         </div>
 
                         <div className="grid justify-items-end">
                           <p className="flex items-center gap-1">
-                            +
-                            {formatRate(
-                              (lpApy?.lpApy || 0n) +
-                                BigInt(
-                                  (parseFloat(reward.amount) * 10 ** 18) / 100,
-                                ),
-                              18,
-                              false,
-                            )}
-                            %
+                            +{reward.amount}
                           </p>
                         </div>
                       </div>
@@ -156,6 +170,18 @@ export function RewardsTooltip({
                   assertNever(reward.id);
               }
             })}
+            <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+              <div className="flex items-center gap-1">
+                <SparklesIcon className="h-4" />
+                Net APY
+              </div>
+
+              <div className="grid justify-items-end">
+                <p className="flex items-center gap-1">
+                  +{formatRate(netApy, 18, false)}%
+                </p>
+              </div>
+            </div>
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>

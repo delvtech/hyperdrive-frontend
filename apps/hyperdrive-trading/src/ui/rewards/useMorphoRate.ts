@@ -1,6 +1,8 @@
 import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import {
+  EURC_ICON_URL,
   HyperdriveConfig,
+  USDC_ICON_URL,
   WELL_ICON_URL,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
@@ -80,12 +82,14 @@ export function useMorphoRate({
   };
 }
 
-const vaultAddresses: Record<
+export const vaultAddresses: Record<
   Address,
   {
     vaultAddress: string;
     assetIcon: string;
-    allocation?: { assets: Address[] };
+    allocation?: {
+      assets: { address: Address; name: string; assetIcon: string }[];
+    };
   }
 > = {
   // Key: Hyperdrive contract address for the market
@@ -102,7 +106,11 @@ const vaultAddresses: Record<
     allocation: {
       assets: [
         // USDC
-        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        {
+          address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          name: "USDC",
+          assetIcon: USDC_ICON_URL,
+        },
       ],
     },
   },
@@ -113,7 +121,11 @@ const vaultAddresses: Record<
     allocation: {
       assets: [
         // EURC
-        "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42",
+        {
+          address: "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42",
+          name: "EURC",
+          assetIcon: EURC_ICON_URL,
+        },
       ],
     },
   },
@@ -124,6 +136,7 @@ const endpoint = "https://blue-api.morpho.org/graphql";
 type SupplyRewardsResponse = {
   vaultByAddress: {
     state: {
+      totalAssetsUsd: number;
       allocation: {
         supplyAssetsUsd: number;
         supplyAssets: number;
@@ -143,7 +156,7 @@ type SupplyRewardsResponse = {
             }[];
           };
         };
-      };
+      }[];
       rewards: {
         supplyApr: number;
         asset: {
@@ -153,7 +166,6 @@ type SupplyRewardsResponse = {
     };
   };
 };
-
 export function useMorphoVaultRewards({
   hyperdrive,
   enabled,
@@ -161,18 +173,16 @@ export function useMorphoVaultRewards({
   hyperdrive: HyperdriveConfig;
   enabled: boolean;
 }): {
-  morphoVault: SupplyRewardsResponse["vaultByAddress"] | undefined;
-  morphoVaultReward:
-    | SupplyRewardsResponse["vaultByAddress"]["state"]["rewards"][0]
-    | undefined;
-  morphoVaultAllocation:
-    | SupplyRewardsResponse["vaultByAddress"]["state"]["allocation"]
-    | undefined;
+  morphoVaultData: {
+    vault?: SupplyRewardsResponse["vaultByAddress"];
+    reward?: SupplyRewardsResponse["vaultByAddress"]["state"]["rewards"][0];
+    allocation?: SupplyRewardsResponse["vaultByAddress"]["state"]["allocation"];
+  };
   isLoading: boolean;
 } {
   const morphoVault = vaultAddresses[hyperdrive.address];
   const queryEnabled = !!morphoVault?.vaultAddress && enabled;
-  const { data: morphoVaultRewards, isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: [
       "morphoVaultRewards",
       hyperdrive.address,
@@ -231,17 +241,19 @@ export function useMorphoVaultRewards({
 
           return {
             vault: supplyRewards.vaultByAddress,
-            vaultRewards: supplyRewards.vaultByAddress.state.rewards,
-            vaultAllocation: supplyRewards.vaultByAddress.state.allocation,
+            reward: supplyRewards.vaultByAddress.state.rewards[0],
+            allocation: supplyRewards.vaultByAddress.state.allocation,
           };
         }
       : undefined,
   });
 
   return {
-    morphoVault: morphoVaultRewards?.vault,
-    morphoVaultReward: morphoVaultRewards?.vaultRewards?.[0],
-    morphoVaultAllocation: morphoVaultRewards?.vaultAllocation,
+    morphoVaultData: {
+      vault: data?.vault,
+      reward: data?.reward,
+      allocation: data?.allocation,
+    },
     isLoading,
   };
 }
