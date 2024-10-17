@@ -82,7 +82,11 @@ export function useMorphoRate({
 
 const vaultAddresses: Record<
   Address,
-  { vaultAddress: string; assetIcon: string }
+  {
+    vaultAddress: string;
+    assetIcon: string;
+    allocation?: { assets: Address[] };
+  }
 > = {
   // Key: Hyperdrive contract address for the market
   // Value: Morpho vault address and asset icon
@@ -95,11 +99,23 @@ const vaultAddresses: Record<
   "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72": {
     vaultAddress: "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
     assetIcon: WELL_ICON_URL,
+    allocation: {
+      assets: [
+        // USDC
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      ],
+    },
   },
   // Market: 182d Moonwell Flagship EURC
   "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD": {
     vaultAddress: "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
     assetIcon: WELL_ICON_URL,
+    allocation: {
+      assets: [
+        // EURC
+        "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42",
+      ],
+    },
   },
 };
 
@@ -108,6 +124,26 @@ const endpoint = "https://blue-api.morpho.org/graphql";
 type SupplyRewardsResponse = {
   vaultByAddress: {
     state: {
+      allocation: {
+        supplyAssetsUsd: number;
+        supplyAssets: number;
+        market: {
+          uniqueKey: string;
+          state: {
+            rewards: {
+              supplyApr: number;
+              amountPerSuppliedToken: number;
+              asset: {
+                address: string;
+                name: string;
+                chain: {
+                  id: number;
+                };
+              };
+            }[];
+          };
+        };
+      };
       rewards: {
         supplyApr: number;
         asset: {
@@ -125,8 +161,12 @@ export function useMorphoVaultRewards({
   hyperdrive: HyperdriveConfig;
   enabled: boolean;
 }): {
+  morphoVault: SupplyRewardsResponse["vaultByAddress"] | undefined;
   morphoVaultReward:
     | SupplyRewardsResponse["vaultByAddress"]["state"]["rewards"][0]
+    | undefined;
+  morphoVaultAllocation:
+    | SupplyRewardsResponse["vaultByAddress"]["state"]["allocation"]
     | undefined;
   isLoading: boolean;
 } {
@@ -150,11 +190,37 @@ export function useMorphoVaultRewards({
               vaultByAddress(address: $address, chainId: $chainId) {
                 address
                 state {
+                  totalSupply
+                  totalAssetsUsd
                   rewards {
                     supplyApr
+                    amountPerSuppliedToken
                     asset {
                       address
-                      symbol
+                      name
+                      chain {
+                        id
+                      }
+                    }
+                  }
+                  allocation {
+                    supplyAssetsUsd
+                    supplyAssets
+                    market {
+                      uniqueKey
+                      state {
+                        rewards {
+                          supplyApr
+                          amountPerSuppliedToken
+                          asset {
+                            address
+                            name
+                            chain {
+                              id
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -162,14 +228,20 @@ export function useMorphoVaultRewards({
             }`,
             { address: morphoVault.vaultAddress, chainId: hyperdrive.chainId },
           );
-          return supplyRewards;
+
+          return {
+            vault: supplyRewards.vaultByAddress,
+            vaultRewards: supplyRewards.vaultByAddress.state.rewards,
+            vaultAllocation: supplyRewards.vaultByAddress.state.allocation,
+          };
         }
       : undefined,
   });
 
   return {
-    // Return the first reward in the rewards array
-    morphoVaultReward: morphoVaultRewards?.vaultByAddress?.state?.rewards[0],
+    morphoVault: morphoVaultRewards?.vault,
+    morphoVaultReward: morphoVaultRewards?.vaultRewards?.[0],
+    morphoVaultAllocation: morphoVaultRewards?.vaultAllocation,
     isLoading,
   };
 }

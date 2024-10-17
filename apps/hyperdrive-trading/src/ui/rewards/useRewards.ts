@@ -69,7 +69,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       ) ?? false,
   });
 
-  const { morphoVaultReward } = useMorphoVaultRewards({
+  const { morphoVaultReward, morphoVaultAllocation } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
