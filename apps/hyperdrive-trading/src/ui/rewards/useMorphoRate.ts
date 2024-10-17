@@ -86,12 +86,12 @@ const vaultAddresses: Record<
     assetIcon: WELL_ICON_URL,
   },
   // Market: 182 Moonwell Flagship USDC
-  "0x48A387267462e8134deA1e4Bd8051aEa4D3ACB6d": {
+  "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72": {
     vaultAddress: "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
     assetIcon: WELL_ICON_URL,
   },
   // Market: 182d Moonwell Flagship EURC
-  "0xC08Ab5F58Fbc473D1D914913dAC1F1508AcFad27": {
+  "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD": {
     vaultAddress: "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
     assetIcon: WELL_ICON_URL,
   },

@@ -311,7 +311,7 @@ const hyperdriveKindResolvers: Record<
           isBaseTokenWithdrawalEnabled: true,
           isShareTokenWithdrawalEnabled: true,
         },
-        tokenPlaces: 4,
+        tokenPlaces: 2,
       });
     }
 
