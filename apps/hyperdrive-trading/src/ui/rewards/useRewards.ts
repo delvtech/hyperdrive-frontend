@@ -113,35 +113,38 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
         : "0%",
     };
 
-    let vaultAllocationRewardTotal: number = 0;
+    if (vaultAddresses[hyperdrive.address].allocation) {
+      let vaultAllocationRewardTotal: number = 0;
 
-    const totalAssetsUsd = morphoVaultData.vault?.state.totalAssetsUsd;
+      const totalAssetsUsd = morphoVaultData.vault?.state.totalAssetsUsd;
 
-    morphoVaultData.vault?.state.allocation?.forEach((allocation) => {
-      const rewardsMarket = allocation.market.state.rewards.find(
-        (reward) =>
-          reward.asset.address ===
-          vaultAddresses[hyperdrive.address].allocation?.assets[0].address,
-      );
+      morphoVaultData.vault?.state.allocation?.forEach((allocation) => {
+        const rewardsMarket = allocation.market.state.rewards.find(
+          (reward) =>
+            reward.asset.address ===
+            vaultAddresses[hyperdrive.address].allocation?.assets[0].address,
+        );
 
-      if (rewardsMarket) {
-        const marketRewardsEarned =
-          allocation.supplyAssetsUsd * rewardsMarket.supplyApr;
-        vaultAllocationRewardTotal += marketRewardsEarned;
-      }
-    });
+        if (rewardsMarket) {
+          const marketRewardsEarned =
+            allocation.supplyAssetsUsd * rewardsMarket.supplyApr;
+          vaultAllocationRewardTotal += marketRewardsEarned;
+        }
+      });
 
-    const vaultAllocationReward: Reward = {
-      id: "MorphoVaultAllocation",
-      name: vaultAddresses[hyperdrive.address].allocation?.assets[0].name ?? "",
-      iconUrl:
-        vaultAddresses[hyperdrive.address].allocation?.assets[0].assetIcon,
-      amount: totalAssetsUsd
-        ? `${((vaultAllocationRewardTotal / totalAssetsUsd) * 100).toFixed(2)}%`
-        : "0%",
-    };
+      const vaultAllocationReward: Reward = {
+        id: "MorphoVaultAllocation",
+        name:
+          vaultAddresses[hyperdrive.address].allocation?.assets[0].name ?? "",
+        iconUrl:
+          vaultAddresses[hyperdrive.address].allocation?.assets[0].assetIcon,
+        amount: totalAssetsUsd
+          ? `${((vaultAllocationRewardTotal / totalAssetsUsd) * 100).toFixed(2)}%`
+          : "0%",
+      };
+      rewards.push(vaultAllocationReward);
+    }
     rewards.push(vaultReward);
-    rewards.push(vaultAllocationReward);
   }
 
   // Add any linea rewards for this market

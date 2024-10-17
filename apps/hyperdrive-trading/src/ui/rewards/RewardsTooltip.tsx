@@ -33,10 +33,10 @@ export function RewardsTooltip({
 
   rewards?.forEach((reward) => {
     if (reward.id === "MorphoVaultAllocation") {
-      netApy += BigInt((parseFloat(reward.amount) * 10 ** 18) / 100);
+      netApy += BigInt((parseFloat(reward.amount) * 1e18) / 100);
     }
     if (reward.id === "MorphoVault") {
-      netApy += BigInt((parseFloat(reward.amount) * 10 ** 18) / 100);
+      netApy += BigInt((parseFloat(reward.amount) * 1e18) / 100);
     }
   });
 
