@@ -1,7 +1,8 @@
-import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
+import coinsJSON from "src/token/coins.json";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { Currencies, Currency, Money } from "ts-money";
 import { base, gnosis, linea, mainnet } from "viem/chains";
-
 export async function getTokenFiatPrice({
   tokenAddress,
   chainId,
@@ -17,10 +18,20 @@ export async function getTokenFiatPrice({
   }
 
   const response = await fetch(
-    `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`,
+    `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`
   );
   const data = await response.json();
   const price = data?.coins?.[defiLlamaTokenId]?.price ?? 0n;
+
+  const coinGeckoId = getCoinGeckoId(tokenAddress);
+  if (coinGeckoId) {
+    const coinGeckoPrice = await fetchCoinGeckoPrice(
+      coinGeckoId,
+      Currencies.USD
+    );
+    return fixed(coinGeckoPrice.amount).bigint;
+  }
+
   return parseFixed(price).bigint;
 }
 
@@ -31,3 +42,44 @@ export const defiLlamaChainNameIdentifier: Record<number, string> = {
   [linea.id]: "linea",
   [base.id]: "base",
 };
+
+export async function fetchCoinGeckoPrice(
+  coinGeckoId: string,
+  currency: Currency
+): Promise<Money> {
+  const currencyCode = currency.code.toLowerCase();
+  const result = await fetch(
+    `https://api.coingecko.com/api/v3/simple/price?ids=${coinGeckoId}&vs_currencies=${currencyCode}`
+  );
+
+  // Result looks like:
+  // { dai: { usd: 1.01 } }
+  const resultJSON = (await result.json()) as Record<
+    string,
+    Record<string, number>
+  >;
+
+  const price = resultJSON[coinGeckoId][currencyCode];
+
+  return Money.fromDecimal(price, currency);
+}
+
+export function getCoinGeckoId(
+  address: string | undefined
+): string | undefined {
+  if (!address) {
+    return;
+  }
+
+  return CoinGeckoIds[address];
+}
+
+const CoinGeckoIds: {
+  [address: string]: string;
+} = {};
+
+coinsJSON.forEach((value) => {
+  if (value.address) {
+    CoinGeckoIds[value.address] = value.id;
+  }
+});
