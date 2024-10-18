@@ -1,26 +1,19 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   ChainConfig,
   findBaseToken,
   findToken,
+  HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import {
-  AdjustmentsHorizontalIcon,
-  BarsArrowDownIcon,
-} from "@heroicons/react/20/solid";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { getPublicClient } from "@wagmi/core";
-import { ReactElement, ReactNode, useMemo, useState } from "react";
+import { ReactElement, ReactNode, useMemo } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { isTestnetChain } from "src/chains/isTestnetChain";
-import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
-import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
-import { getTokenFiatPrice } from "src/token/getTokenFiatPrice";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
@@ -42,16 +35,16 @@ const sortOptions = [
 type SortOption = (typeof sortOptions)[number];
 
 export function PoolsList(): ReactElement {
-  const { pools: allPools, status } = usePoolsList();
+  const { pools: hyperdrives, status } = usePoolsList();
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
     from: LANDING_ROUTE,
   });
   const navigate = useNavigate({ from: LANDING_ROUTE });
-  const [sort, setSort] = useState<SortOption>("TVL");
+  // const [sort, setSort] = useState<SortOption>("TVL");
 
   // Sync filters with pools
   const filters = useMemo(() => {
-    if (!allPools) {
+    if (!hyperdrives) {
       return;
     }
 
@@ -68,7 +61,8 @@ export function PoolsList(): ReactElement {
       };
     } = {};
 
-    for (const { hyperdrive, depositAssets } of allPools) {
+    for (const hyperdrive of hyperdrives) {
+      const depositAssets = getDepositAssets(hyperdrive);
       chainsById[hyperdrive.chainId] ||= {
         chain: appConfig.chains[hyperdrive.chainId],
         count: 0,
@@ -92,52 +86,52 @@ export function PoolsList(): ReactElement {
         a.asset.symbol.localeCompare(b.asset.symbol),
       ),
     };
-  }, [allPools]);
+  }, [hyperdrives]);
 
   // Filter and sort pools
-  const selectedPools = allPools
-    ?.filter((pool) => {
+  const selectedPools = hyperdrives
+    ?.filter((hyperdrive) => {
       if (
         selectedChains?.length &&
-        !selectedChains.includes(pool.hyperdrive.chainId)
+        !selectedChains.includes(hyperdrive.chainId)
       ) {
         return false;
       }
 
+      const depositAssets = getDepositAssets(hyperdrive);
       if (
         selectedAssets?.length &&
-        !pool.depositAssets.some(({ symbol }) =>
-          selectedAssets.includes(symbol),
-        )
+        !depositAssets.some(({ symbol }) => selectedAssets.includes(symbol))
       ) {
         return false;
       }
 
       return true;
     })
-    .toSorted((a, b) => {
-      switch (sort) {
-        case "Chain":
-          const chainA = appConfig.chains[a.hyperdrive.chainId] || {};
-          const chainB = appConfig.chains[b.hyperdrive.chainId] || {};
-          return chainA.name.localeCompare(chainB.name);
-        case "Fixed APR":
-          return Number(b.fixedApr - a.fixedApr);
-        case "LP APY":
-          return Number((b.lpApy.lpApy || 0n) - (a.lpApy.lpApy || 0n));
-        case "Yield Multiplier":
-          return Number(
-            calculateMarketYieldMultiplier(b.longPrice).bigint -
-              calculateMarketYieldMultiplier(a.longPrice).bigint,
-          );
-        case "TVL":
-          return fixed(b.tvl, b.hyperdrive.decimals)
-            .sub(a.tvl, a.hyperdrive.decimals)
-            .toNumber();
-        default:
-          return 0;
-      }
-    });
+    .toSorted((a, b) => a.name.localeCompare(b.name));
+  // .toSorted((a, b) => {
+  //   switch (sort) {
+  //     case "Chain":
+  //       const chainA = appConfig.chains[a.chainId] || {};
+  //       const chainB = appConfig.chains[b.chainId] || {};
+  //       return chainA.name.localeCompare(chainB.name);
+  // case "Fixed APR":
+  //   return Number(b.fixedApr - a.fixedApr);
+  // case "LP APY":
+  //   return Number((b.lpApy.lpApy || 0n) - (a.lpApy.lpApy || 0n));
+  // case "Yield Multiplier":
+  //   return Number(
+  //     calculateMarketYieldMultiplier(b.longPrice).bigint -
+  //       calculateMarketYieldMultiplier(a.longPrice).bigint,
+  //   );
+  // case "TVL":
+  //   return fixed(b.tvl, b.hyperdrive.decimals)
+  //     .sub(a.tvl, a.hyperdrive.decimals)
+  //     .toNumber();
+  //     default:
+  //       return 0;
+  //   }
+  // });
 
   return (
     <div className="flex w-full flex-col gap-5">
@@ -230,7 +224,7 @@ export function PoolsList(): ReactElement {
             </div>
 
             {/* Sorting */}
-            <div className="daisy-dropdown daisy-dropdown-end">
+            {/* <div className="daisy-dropdown daisy-dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -259,12 +253,12 @@ export function PoolsList(): ReactElement {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {!selectedPools.length ? (
             <Well className="max-w-[90vw]">
-              {allPools?.length ? (
+              {hyperdrives?.length ? (
                 <NonIdealState
                   heading={"No pools found"}
                   text={"Try adjusting your filters."}
@@ -277,20 +271,14 @@ export function PoolsList(): ReactElement {
               )}
             </Well>
           ) : (
-            selectedPools.map(
-              ({ fixedApr, hyperdrive, isFiat, lpApy, tvl }) => (
-                <PoolRow
-                  // Combine address and chainId for a unique key, as addresses may
-                  // overlap across chains (e.g. cloudchain and mainnet)
-                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-                  hyperdrive={hyperdrive}
-                  tvl={tvl}
-                  isFiat={isFiat}
-                  fixedApr={fixedApr}
-                  lpApy={lpApy}
-                />
-              ),
-            )
+            selectedPools.map((hyperdrive) => (
+              <PoolRow
+                // Combine address and chainId for a unique key, as addresses may
+                // overlap across chains (e.g. cloudchain and mainnet)
+                key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+                hyperdrive={hyperdrive}
+              />
+            ))
           )}
         </>
       ) : null}
@@ -319,12 +307,13 @@ function FilterMenuItem({
 }
 
 interface Pool extends PoolRowProps {
+  fixedApr: bigint;
   depositAssets: TokenConfig[];
   longPrice: bigint;
 }
 
 function usePoolsList(): {
-  pools: Pool[] | undefined;
+  pools: HyperdriveConfig[] | undefined;
   status: QueryStatus;
 } {
   // Only show testnet and fork pools if the user is connected to a testnet
@@ -338,9 +327,7 @@ function usePoolsList(): {
   const { data, status } = useQuery({
     queryKey: ["poolsList", { connectedChainId }],
     queryFn: async () => {
-      const pools: Pool[] = [];
-
-      await Promise.all(
+      const pools = await Promise.all(
         appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
           const publicClient = getPublicClient(wagmiConfig as any, {
             chainId: hyperdrive.chainId,
@@ -357,67 +344,37 @@ function usePoolsList(): {
             return;
           }
 
-          const baseToken = findBaseToken({
-            hyperdriveChainId: hyperdrive.chainId,
-            hyperdriveAddress: hyperdrive.address,
-            appConfig,
-          });
-
-          const fixedApr = await readHyperdrive.getFixedApr();
-          const longPrice = await readHyperdrive.getLongPrice();
-          const lpApy = await getLpApy({
-            hyperdrive,
-            readHyperdrive,
-          });
-
-          // Display TVL as base value on testnet due to lack of reliable
-          // fiat pricing. On mainnet and others, use DeFiLlama's fiat
-          // price.
-          let tvl = await readHyperdrive.getPresentValue();
-          let isFiatSupported = !isTestnetChain(hyperdrive.chainId);
-          if (isFiatSupported) {
-            const fiatPrice = await getTokenFiatPrice({
-              chainId: hyperdrive.chainId,
-              tokenAddress: baseToken.address,
-            });
-            if (fiatPrice === undefined) {
-              isFiatSupported = false;
-              return;
-            }
-            tvl = fixed(tvl, hyperdrive.decimals).mul(fiatPrice).bigint;
-          }
-
-          const depositAssets: TokenConfig[] = [];
-          if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
-            depositAssets.push(baseToken);
-          }
-
-          if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
-            const sharesToken = findToken({
-              chainId: hyperdrive.chainId,
-              tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-              tokens: appConfig.tokens,
-            });
-            if (sharesToken && sharesToken.address !== ZERO_ADDRESS) {
-              depositAssets.push(sharesToken);
-            }
-          }
-
-          pools.push({
-            hyperdrive,
-            fixedApr,
-            longPrice,
-            lpApy,
-            tvl,
-            isFiat: isFiatSupported,
-            depositAssets,
-          });
+          return hyperdrive;
         }),
       );
 
-      return pools;
+      return pools.filter((pool) => !!pool);
     },
   });
 
   return { pools: data, status };
+}
+
+function getDepositAssets(hyperdrive: HyperdriveConfig): TokenConfig[] {
+  const depositAssets: TokenConfig[] = [];
+  if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
+    const baseToken = findBaseToken({
+      hyperdriveChainId: hyperdrive.chainId,
+      hyperdriveAddress: hyperdrive.address,
+      appConfig,
+    });
+    depositAssets.push(baseToken);
+  }
+
+  if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
+    const sharesToken = findToken({
+      chainId: hyperdrive.chainId,
+      tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+      tokens: appConfig.tokens,
+    });
+    if (sharesToken && sharesToken.address !== ZERO_ADDRESS) {
+      depositAssets.push(sharesToken);
+    }
+  }
+  return depositAssets;
 }
