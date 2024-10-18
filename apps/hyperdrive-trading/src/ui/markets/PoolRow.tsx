@@ -89,7 +89,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { morphoVaultReward } = useMorphoVaultRewards({
+  const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
@@ -262,12 +262,14 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
-                  {morphoVaultReward ? (
+                  {morphoVaultData ? (
                     <PercentLabel
                       // If this is a eligible for morpho vault rewards we need to add this to the existing lpApy. The supply APR is returned as a floating point number from the Morpho API so we need to scale it up to 18 decimals before adding it to the lpApy.
                       value={formatRate(
                         lpApy.lpApy +
-                          BigInt(morphoVaultReward.supplyApr * 1e18),
+                          BigInt(
+                            (morphoVaultData.reward?.supplyApr ?? 0) * 1e18,
+                          ),
                         18,
                         false,
                       )}
