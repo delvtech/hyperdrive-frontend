@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findBaseToken,
@@ -10,33 +11,27 @@ import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
-import { LpApyResult } from "src/hyperdrive/getLpApy";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
 import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { base } from "viem/chains";
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
-  tvl: bigint;
-  isFiat: boolean;
-  fixedApr: bigint;
-  lpApy: LpApyResult;
 }
 
-export function PoolRow({
-  hyperdrive,
-  tvl,
-  isFiat,
-  fixedApr,
-  lpApy,
-}: PoolRowProps): ReactElement {
+export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
   const { yieldSources, chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
@@ -47,11 +42,47 @@ export function PoolRow({
     appConfig,
   });
 
+  const { fixedApr, fixedRateStatus } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+
   const sharesToken = findToken({
     chainId: hyperdrive.chainId,
     tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
+
+  const { lpApy, lpApyStatus } = useLpApy({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
+  // Display TVL as base value on testnet due to lack of reliable fiat pricing.
+  // On mainnet and others, use DeFiLlama's fiat price.
+  const { presentValue } = usePresentValue({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const isFiatSupported = !isTestnetChain(chainInfo.id);
+  const { fiatPrice } = useTokenFiatPrice({
+    chainId: baseToken.chainId,
+    tokenAddress: isFiatSupported ? hyperdrive.poolConfig.baseToken : undefined,
+  });
+  let tvlLabel = `${formatCompact({
+    value: presentValue || 0n,
+    decimals: hyperdrive.decimals,
+  })} ${baseToken.symbol}`;
+
+  if (isFiatSupported) {
+    const presentValueFiat =
+      presentValue && fiatPrice && isFiatSupported
+        ? fixed(presentValue, hyperdrive.decimals).mul(fiatPrice).bigint
+        : 0n;
+    tvlLabel = `$${formatCompact({
+      value: presentValueFiat || 0n,
+      decimals: hyperdrive.decimals,
+    })}`;
+  }
 
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
@@ -62,7 +93,7 @@ export function PoolRow({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -102,22 +133,14 @@ export function PoolRow({
                 <ClockIcon className="size-4 text-gray-400/60" />{" "}
                 <span className="text-neutral-content">
                   {formatTermLength2(
-                    Number(hyperdrive.poolConfig.positionDuration * 1000n)
+                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
                   )}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
                 <span className="text-gray-400/60">TVL</span>{" "}
                 <span className="font-dmMono text-neutral-content">
-                  {isFiat
-                    ? `$${formatCompact({
-                        value: tvl,
-                        decimals: hyperdrive.decimals,
-                      })}`
-                    : `${formatCompact({
-                        value: tvl,
-                        decimals: hyperdrive.decimals,
-                      })} ${baseToken.symbol}`}
+                  {tvlLabel}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-sm">
@@ -168,7 +191,14 @@ export function PoolRow({
         <div className="flex shrink-0 justify-between gap-10 lg:items-end lg:justify-start">
           <PoolStat
             label={"Fixed APR"}
-            value={<PercentLabel value={formatRate(fixedApr, 18, false)} />}
+            value={
+              fixedApr ? (
+                <PercentLabel value={formatRate(fixedApr.apr, 18, false)} />
+              ) : (
+                "-"
+              )
+            }
+            isLoading={fixedRateStatus === "loading"}
             variant="gradient"
             action={
               <Link
@@ -224,9 +254,10 @@ export function PoolRow({
           />
           <PoolStat
             label={lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY"}
-            isNew={lpApy.isNew}
+            isLoading={lpApyStatus === "loading"}
+            isNew={lpApy?.isNew}
             value={
-              !lpApy.isNew ? (
+              lpApy && !lpApy.isNew ? (
                 <RewardsTooltip
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
@@ -238,7 +269,7 @@ export function PoolRow({
                         lpApy.lpApy +
                           BigInt(morphoVaultReward.supplyApr * 1e18),
                         18,
-                        false
+                        false,
                       )}
                     />
                   ) : (
@@ -325,7 +356,7 @@ function PercentLabel({ value }: { value: string }) {
     <div
       className={classNames(
         "font-dmMono text-h4 font-medium",
-        "after:text-h5 after:content-['%']"
+        "after:text-h5 after:content-['%']",
       )}
     >
       {value}
