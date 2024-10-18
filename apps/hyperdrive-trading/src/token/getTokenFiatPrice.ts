@@ -8,7 +8,7 @@ export async function getTokenFiatPrice({
 }: {
   tokenAddress: string;
   chainId: number;
-}): Promise<bigint | undefined> {
+}): Promise<bigint> {
   // Always use mainnet ETH as the reference for native ETH price, regardless of
   // the current chain.
   let defiLlamaTokenId = `${defiLlamaChainNameIdentifier[chainId]}:${tokenAddress}`;
