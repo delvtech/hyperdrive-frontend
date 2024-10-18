@@ -1,12 +1,15 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { appConfig, findToken } from "@delvtech/hyperdrive-appconfig";
+import { fetchCoinGeckoPrice } from "src/token/coingecko";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { Address } from "viem";
 import { base, gnosis, linea, mainnet } from "viem/chains";
 
 export async function getTokenFiatPrice({
   tokenAddress,
   chainId,
 }: {
-  tokenAddress: string;
+  tokenAddress: Address;
   chainId: number;
 }): Promise<bigint> {
   // Always use mainnet ETH as the reference for native ETH price, regardless of
@@ -20,7 +23,16 @@ export async function getTokenFiatPrice({
     `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`,
   );
   const data = await response.json();
-  const price = data?.coins?.[defiLlamaTokenId]?.price ?? 0n;
+  let price = data?.coins?.[defiLlamaTokenId]?.price;
+  if (price === undefined) {
+    // fallback to coingecko if defillama is not available
+    const tokenConfig = findToken({
+      chainId,
+      tokenAddress,
+      tokens: appConfig.tokens,
+    });
+    price = await fetchCoinGeckoPrice(tokenConfig!.symbol);
+  }
   return parseFixed(price).bigint;
 }
 
