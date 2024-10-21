@@ -51,6 +51,14 @@ export default function Footer(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
+          href="https://hyperdrive.box"
+          className="daisy-link-hover daisy-link"
+        >
+          About Hyperdrive
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
           href="https://docs.hyperdrive.box"
           className="daisy-link-hover daisy-link"
         >
