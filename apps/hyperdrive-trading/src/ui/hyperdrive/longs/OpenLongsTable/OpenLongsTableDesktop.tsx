@@ -142,7 +142,7 @@ export function OpenLongsContainer(): ReactElement {
               </div>
               <TotalOpenLongsValue hyperdrive={hyperdrive} />
             </div>
-            <OpenLongsTableDesktopTwo
+            <OpenLongsTableDesktop
               hyperdrive={hyperdrive}
               openLongs={openLongs}
             />
@@ -153,7 +153,7 @@ export function OpenLongsContainer(): ReactElement {
   );
 }
 
-export function OpenLongsTableDesktopTwo({
+export function OpenLongsTableDesktop({
   hyperdrive,
   openLongs,
 }: {
@@ -412,13 +412,11 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => {
         return (
-          <div className="flex w-full items-center font-inter">
-            <ManageLongsButton
-              assetId={row.original.assetId}
-              hyperdrive={hyperdrive}
-              key={row.original.assetId}
-            />
-          </div>
+          <ManageLongsButton
+            assetId={row.original.assetId}
+            hyperdrive={hyperdrive}
+            key={row.original.assetId}
+          />
         );
       },
     }),
