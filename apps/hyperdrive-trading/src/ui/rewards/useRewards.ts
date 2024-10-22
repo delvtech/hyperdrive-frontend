@@ -5,6 +5,7 @@ import {
 import {
   useMorphoRate,
   useMorphoVaultRewards,
+  vaultAddresses,
 } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, linea, mainnet } from "viem/chains";
@@ -50,7 +51,11 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   ],
 };
 
-type RewardType = "MorphoFlatRate" | "MorphoVault" | "LineaLXPL";
+type RewardType =
+  | "MorphoFlatRate"
+  | "MorphoVault"
+  | "MorphoVaultAllocation"
+  | "LineaLXPL";
 
 type Reward = {
   id: RewardType;
@@ -69,7 +74,7 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       ) ?? false,
   });
 
-  const { morphoVaultReward } = useMorphoVaultRewards({
+  const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
@@ -101,12 +106,45 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   ) {
     const vaultReward: Reward = {
       id: "MorphoVault",
-      name: morphoVaultReward?.asset.name ?? "WELL",
+      name: morphoVaultData?.vault?.state.rewards[0].asset.name ?? "WELL",
       iconUrl: WELL_ICON_URL,
-      amount: morphoVaultReward?.supplyApr
-        ? `${(morphoVaultReward.supplyApr * 100).toFixed(2)}%`
+      amount: morphoVaultData?.reward?.supplyApr
+        ? `${(morphoVaultData.reward.supplyApr * 100).toFixed(2)}%`
         : "0%",
     };
+
+    if (vaultAddresses[hyperdrive.address].allocation) {
+      let vaultAllocationRewardTotal: number = 0;
+
+      const totalAssetsUsd = morphoVaultData.vault?.state.totalAssetsUsd;
+
+      morphoVaultData.vault?.state.allocation?.forEach((allocation) => {
+        const rewardsMarket = allocation.market.state.rewards.find(
+          (reward) =>
+            reward.asset.address ===
+            vaultAddresses[hyperdrive.address].allocation?.assets[0].address,
+        );
+
+        if (rewardsMarket) {
+          const marketRewardsEarned =
+            allocation.supplyAssetsUsd * rewardsMarket.supplyApr;
+          vaultAllocationRewardTotal += marketRewardsEarned;
+        }
+      });
+
+      const vaultAllocationReward: Reward = {
+        id: "MorphoVaultAllocation",
+        name:
+          vaultAddresses[hyperdrive.address].allocation?.assets[0].name ?? "",
+        iconUrl:
+          vaultAddresses[hyperdrive.address].allocation?.assets[0].assetIcon,
+        // Vault allocation rewards are calculated by taking the total assets in the vault (in USD), and dividing it by the rewards earned for the vault in each market it has allocated to.
+        amount: totalAssetsUsd
+          ? `${((vaultAllocationRewardTotal / totalAssetsUsd) * 100).toFixed(2)}%`
+          : "0%",
+      };
+      rewards.push(vaultAllocationReward);
+    }
     rewards.push(vaultReward);
   }
 

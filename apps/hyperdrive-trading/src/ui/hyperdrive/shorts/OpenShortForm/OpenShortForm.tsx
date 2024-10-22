@@ -240,11 +240,11 @@ export function OpenShortForm({
       percentage: slippageAsBigInt,
     });
 
-  const { morphoVaultReward } = useMorphoVaultRewards({
+  const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -277,7 +277,7 @@ export function OpenShortForm({
       activeTokenBalance.value > maxBondsOut
         ? maxBondsOut
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -292,7 +292,7 @@ export function OpenShortForm({
         });
 
   const maturesOnLabel = formatDate(
-    Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n)
+    Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
   return (
     <TransactionView
@@ -323,8 +323,8 @@ export function OpenShortForm({
               activeInput === "bonds"
                 ? amountOfBondsToShort || ""
                 : maxBondsOutFromPayment
-                ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
-                : ""
+                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
+                  : ""
             }
             settings={
               <div className="mb-3 flex w-full items-center justify-between">
@@ -349,12 +349,15 @@ export function OpenShortForm({
                   {isNewPool
                     ? "✨New✨"
                     : `${
-                        morphoVaultReward
+                        morphoVaultData
                           ? `${formatRate(
                               vaultRate.vaultRate +
-                                BigInt(morphoVaultReward.supplyApr * 1e18),
+                                BigInt(
+                                  (morphoVaultData.reward?.supplyApr ?? 0) *
+                                    1e18,
+                                ),
                               18,
-                              false
+                              false,
                             )}%`
                           : vaultRate.formatted
                       } APY`}
@@ -370,7 +373,7 @@ export function OpenShortForm({
                       baseTokenPrice && traderDeposit
                         ? fixed(
                             amountOfBondsToShortAsBigInt || 0n,
-                            baseToken.decimals
+                            baseToken.decimals,
                           ).mul(baseTokenPrice).bigint
                         : 0n,
                     decimals: baseToken.decimals,
@@ -414,7 +417,7 @@ export function OpenShortForm({
                     balance:
                       activeTokenPrice && traderDeposit
                         ? fixed(traderDeposit, activeToken.decimals).mul(
-                            activeTokenPrice
+                            activeTokenPrice,
                           ).bigint
                         : 0n,
                     decimals: activeToken.decimals,
@@ -544,7 +547,7 @@ export function OpenShortForm({
               amountAsBigInt={paddedTraderDepositForAllowance}
               amount={formatUnits(
                 paddedTraderDepositForAllowance || 0n,
-                activeToken.decimals
+                activeToken.decimals,
               )}
             />
           );
