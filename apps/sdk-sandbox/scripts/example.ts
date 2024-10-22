@@ -1,14 +1,14 @@
 import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { publicClient } from "../client";
+import { mainnetPublicClient } from "../client";
 
 const pool = new ReadHyperdrive({
   address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
-  publicClient,
+  publicClient: mainnetPublicClient,
 });
 
 const kind = await pool.getKind();
-const name = await publicClient.readContract({
+const name = await mainnetPublicClient.readContract({
   abi: IHyperdrive.abi,
   address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
   functionName: "name",
