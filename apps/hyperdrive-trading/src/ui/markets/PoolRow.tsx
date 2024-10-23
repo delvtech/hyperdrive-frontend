@@ -23,6 +23,7 @@ import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
+import { useAeroRate } from "src/ui/rewards/useAeroRate";
 import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
 import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -95,6 +96,11 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
         hyperdrive.address,
       ) ?? false,
+  });
+
+  const aeroRate = useAeroRate({
+    hyperdrive,
+    enabled: hyperdrive.name === "182d Moonwell Flagship USDC",
   });
 
   return (
