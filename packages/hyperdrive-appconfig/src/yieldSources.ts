@@ -1,7 +1,9 @@
+import { gql, request } from "graphql-request";
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
+import { MorphoRewardsResponse } from "src/rewards/morpho";
+import { Reward, RewardsFn } from "src/rewards/types";
 import { base, gnosis, linea, mainnet } from "viem/chains";
-
 export type YieldSourceId = keyof typeof yieldSources;
 export interface YieldSource {
   chainId: ChainId;
@@ -20,6 +22,8 @@ export interface YieldSource {
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
+
+  rewardsFn?: RewardsFn;
 }
 
 const makerDsr: YieldSource = {
@@ -204,7 +208,74 @@ const mwUsdc: YieldSource = {
   shortName: "Moonwell Flagship USDC",
   protocol: "morpho",
   historicalRatePeriod: 1,
+
+  //   rewards: {
+  // functionName: "fetchMorphoRewards"
+  // args: [
+  // "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", base.id
+
+  // ],
+
+  //   }
+  // rewardsFn: () =>
+  //   fetchMorphoRewards("0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", base.id),
 };
+
+async function fetchMorphoRewards(
+  vaultAddress: `0x${string}`,
+  chainId: number
+): Promise<Reward[]> {
+  const response: MorphoRewardsResponse = await request(
+    "https://blue-api.morpho.org/graphql",
+    gql`
+      query SupplyRewards($address: String!, $chainId: Int!) {
+        vaultByAddress(address: $address, chainId: $chainId) {
+          address
+          state {
+            totalSupply
+            totalAssetsUsd
+            rewards {
+              supplyApr
+              asset {
+                address
+                name
+                chain {
+                  id
+                }
+              }
+            }
+            allocation {
+              supplyAssetsUsd
+              market {
+                state {
+                  rewards {
+                    supplyApr
+                    asset {
+                      address
+                      name
+                      chain {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    { address: vaultAddress, chainId: chainId }
+  );
+
+  console.log(response);
+  // TODO: Convert the response into a Rewards[]
+  const sampleRewardsList = [
+    { type: "apy", apy: 0n, tokenAddress: "0x" },
+  ] as Reward[];
+
+  return sampleRewardsList;
+}
 
 export const yieldSources = {
   eeth,

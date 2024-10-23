@@ -35,6 +35,18 @@ export {
 export { yieldSources } from "src/yieldSources";
 export type { YieldSource, YieldSourceId } from "src/yieldSources";
 
+// rewards
+export type { Reward, RewardsFn } from "src/rewards/types";
+// import { fetchMorphoRewards } from "src/rewards/morpho";
+
+// export const rewardsFunctions = {
+//   fetchMorphoRewards,
+// };
+// called like this:
+// import {rewardsFunctions, findYieldSource} from '@delvtech/appconfig';
+// const yieldSource = findYieldSource({hyperdriveAddress, appConfig});
+// const rewards = rewardsFunctions[yieldSource.rewardsFunctionId](...yieldSource.rewardsFunctionArgs)
+
 // protocols
 export { protocols } from "src/protocols";
 export type { Protocol, ProtocolId } from "src/protocols";
