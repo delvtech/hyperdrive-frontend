@@ -32,11 +32,11 @@ export {
 } from "src/tokens/tokenIconsUrls";
 
 // yield sources
-export { yieldSources } from "src/yieldSources";
-export type { YieldSource, YieldSourceId } from "src/yieldSources";
+export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
+export { yieldSources } from "src/yieldSources/yieldSources";
 
 // rewards
-export type { Reward, RewardsFn } from "src/rewards/types";
+export type { AnyReward as Reward, RewardsFn } from "src/rewards/types";
 // import { fetchMorphoRewards } from "src/rewards/morpho";
 
 // export const rewardsFunctions = {
