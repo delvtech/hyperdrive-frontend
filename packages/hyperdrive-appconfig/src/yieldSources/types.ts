@@ -2,7 +2,7 @@
 
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
-import { RewardFunctions } from "src/rewards/rewards";
+import { rewardFunctions } from "src/rewards/rewards";
 
 export interface YieldSourceIdMap {
   // This interface is intentionally empty to allow for declaration merging.
@@ -12,11 +12,8 @@ export interface YieldSourceIdMap {
 // YieldSourceId is a union of all keys in YieldSourceIdMap
 export type YieldSourceId = keyof YieldSourceIdMap;
 
-export interface YieldSource<
-  RewardFunctionKey extends
-    | keyof typeof RewardFunctions
-    | undefined = undefined,
-> {
+// Base interface with common properties
+interface YieldSourceBase {
   chainId: ChainId;
   id: YieldSourceId;
   shortName: string;
@@ -33,11 +30,28 @@ export interface YieldSource<
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
-
-  rewards?: RewardFunctionKey extends keyof typeof RewardFunctions
-    ? {
-        functionName: RewardFunctionKey;
-        args: Parameters<(typeof RewardFunctions)[RewardFunctionKey]>;
-      }
-    : undefined;
 }
+
+// Interface when RewardFunctionKey is provided
+export interface YieldSourceWithReward<
+  RewardFunctionKey extends keyof typeof rewardFunctions,
+> extends YieldSourceBase {
+  rewards: {
+    functionName: RewardFunctionKey;
+    args: Parameters<(typeof rewardFunctions)[RewardFunctionKey]>;
+  };
+}
+
+// Interface when RewardFunctionKey is not provided
+export interface YieldSourceWithoutReward extends YieldSourceBase {
+  rewards?: undefined;
+}
+
+// Union type that enforces the presence of rewards based on RewardFunctionKey
+export type YieldSource<
+  RewardFunctionKey extends
+    | keyof typeof rewardFunctions
+    | undefined = undefined,
+> = RewardFunctionKey extends keyof typeof rewardFunctions
+  ? YieldSourceWithReward<RewardFunctionKey>
+  : YieldSourceWithoutReward;

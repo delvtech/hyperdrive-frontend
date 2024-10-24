@@ -57,12 +57,16 @@ export const morphoWstethUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const eeth: YieldSource = {
+export const eeth: YieldSource<"fetchEtherfiRewards"> = {
   chainId: mainnet.id,
   id: "eeth",
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
   historicalRatePeriod: 30,
+  rewards: {
+    functionName: "fetchEtherfiRewards",
+    args: [],
+  },
 };
 
 export const morphoWstethUsda: YieldSource = {

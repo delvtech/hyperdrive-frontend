@@ -1,7 +1,7 @@
 import { gql, request } from "graphql-request";
 import { AnyReward } from "src/rewards/types";
 
-export type MorphoRewardsResponse = {
+interface MorphoRewardsResponse {
   vaultByAddress: {
     state: {
       totalAssetsUsd: number;
@@ -27,7 +27,7 @@ export type MorphoRewardsResponse = {
       }[];
     };
   };
-};
+}
 
 export async function fetchMorphoRewards(
   vaultAddress: `0x${string}`,
@@ -77,10 +77,10 @@ export async function fetchMorphoRewards(
   );
 
   console.log(response);
-  // TODO: Convert the response into a Rewards[]
-  const sampleRewardsList = [
-    { type: "apy", apy: 0n, tokenAddress: "0x" },
-  ] as AnyReward[];
+  // TODO: Convert the response into an AnyRewards[]
+  const sampleRewardsList: AnyReward[] = [
+    { type: "transferableToken", apy: 0n, tokenAddress: "0x" },
+  ];
 
   return sampleRewardsList;
 }
