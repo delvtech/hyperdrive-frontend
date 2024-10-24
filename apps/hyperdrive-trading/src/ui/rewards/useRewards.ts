@@ -42,6 +42,14 @@ export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
   ],
 };
 
+export const eligibleForAeroRewards: Record<number, Address[]> = {
+  [base.id]: [
+    // 182d USDC/AERO market
+    // TODO: Update to correct market when deployed
+    "0x4eEa8EeD4dDf9bEe3bDfA3eC0A7bDf5bAeEa8EeD",
+  ],
+};
+
 const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   [linea.id]: [
     // 182d KelpDAO rsETH

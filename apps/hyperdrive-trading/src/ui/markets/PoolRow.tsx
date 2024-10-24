@@ -25,7 +25,10 @@ import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useAeroRate } from "src/ui/rewards/useAeroRate";
 import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
+import {
+  eligibleForAeroRewards,
+  eligibleMarketsForMorphoVaultRewards,
+} from "src/ui/rewards/useRewards";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { base } from "viem/chains";
 export interface PoolRowProps {
@@ -98,9 +101,10 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
       ) ?? false,
   });
 
-  const aeroRate = useAeroRate({
+  const { aeroRate } = useAeroRate({
     hyperdrive,
-    enabled: hyperdrive.name === "182d Moonwell Flagship USDC",
+    enabled:
+      eligibleForAeroRewards[base.id]?.includes(hyperdrive.address) ?? false,
   });
 
   return (
@@ -268,14 +272,14 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                   chainId={hyperdrive.chainId}
                   hyperdriveAddress={hyperdrive.address}
                 >
-                  {morphoVaultData ? (
+                  {morphoVaultData || aeroRate ? (
                     <PercentLabel
-                      // If this is a eligible for morpho vault rewards we need to add this to the existing lpApy. The supply APR is returned as a floating point number from the Morpho API so we need to scale it up to 18 decimals before adding it to the lpApy.
                       value={formatRate(
                         lpApy.lpApy +
                           BigInt(
-                            (morphoVaultData.reward?.supplyApr ?? 0) * 1e18,
-                          ),
+                            (morphoVaultData?.reward?.supplyApr ?? 0) * 1e18,
+                          ) +
+                          (aeroRate?.bigint ?? 0n),
                         18,
                         false,
                       )}

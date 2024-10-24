@@ -206,10 +206,10 @@ const mwUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-const aeroLp: YieldSource = {
+const aeroUsdcAero: YieldSource = {
   chainId: base.id,
-  id: "aeroLp",
-  shortName: "Aerodrome LP",
+  id: "aeroUsdcAero",
+  shortName: "Aerodrome USDC/AERO",
   protocol: "aerodrome",
   historicalRatePeriod: 1,
 };
@@ -238,5 +238,5 @@ export const yieldSources = {
   snars,
   mwEurc,
   mwUsdc,
-  aeroLp,
+  aeroUsdcAero,
 } as const;

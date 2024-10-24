@@ -1,4 +1,4 @@
-import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
+import { fixed, FixedPoint, parseFixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useReadContract } from "wagmi";
@@ -9,27 +9,64 @@ export function useAeroRate({
 }: {
   hyperdrive: HyperdriveConfig;
   enabled: boolean;
-}): FixedPoint {
+}): {
+  aeroRate: FixedPoint | undefined;
+} {
+  // Amount of AERO rewarded per second (~1.9 AERO per second)
   const { data } = useReadContract({
     address: "0x4F09bAb2f0E15e2A078A227FE1537665F55b8360",
     chainId: hyperdrive.chainId,
     functionName: "rewardRate",
     abi: gaugeAbi,
-    query: {
-      enabled,
-    },
+    // query: {
+    //   enabled,
+    // },
   });
   const fixedPointRate = fixed(data ?? 0n);
 
+  // Multiply this by the number of seconds in a year
+  const secondsPerYear = 31_536_000;
+  const fixedSecondsPerYear = parseFixed(secondsPerYear);
+  const aeroRewardsPerYear = fixedPointRate.mul(fixedSecondsPerYear);
+
+  // price per AERO token
   const { fiatPrice } = useTokenFiatPrice({
     tokenAddress: "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
     chainId: hyperdrive.chainId,
   });
 
-  const fixedFiatPrice = fixed(fiatPrice ?? 0n);
+  const dollarAmountRewardedPerYear = aeroRewardsPerYear.mul(
+    fixed(fiatPrice ?? 0n),
+  );
 
-  const apr = fixedPointRate.mul(fixedFiatPrice).mul(365).div(100n);
-  return apr;
+  const { data: totalSupply } = useReadContract({
+    address: "0x4F09bAb2f0E15e2A078A227FE1537665F55b8360",
+    chainId: hyperdrive.chainId,
+    functionName: "totalSupply",
+    abi: gaugeAbi,
+    // query: {
+    //   enabled,
+    // },
+  });
+
+  const fixedTotalSupply = fixed(totalSupply ?? 0n);
+
+  const { fiatPrice: fiatPriceOfLPToken } = useTokenFiatPrice({
+    tokenAddress: "0x6cDcb1C4A4D1C3C6d054b27AC5B77e89eAFb971d",
+    chainId: hyperdrive.chainId,
+  });
+
+  const dollarValueOfPool = fixed(fiatPriceOfLPToken ?? 0n).mul(
+    fixedTotalSupply,
+  );
+
+  let apr = fixed(0n);
+  if (!dollarValueOfPool.eq(0n)) {
+    apr = dollarAmountRewardedPerYear
+      .div(dollarValueOfPool)
+      .mul(parseFixed(100n));
+  }
+  return { aeroRate: fixed(apr) };
 }
 
 export const gaugeAbi = [
