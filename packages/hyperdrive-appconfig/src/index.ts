@@ -25,6 +25,7 @@ export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 // tokens
 export type { TokenConfig } from "src/tokens/getTokenConfig";
 export {
+  EETH_ICON_URL,
   EURC_ICON_URL,
   USDC_ICON_URL,
   WELL_ICON_URL,
