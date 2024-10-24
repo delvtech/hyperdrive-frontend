@@ -36,7 +36,7 @@ export function usePreviewOpenShort({
 
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
   const { data: blockNumber } = useBlockNumber({
-    watch: true,
+    watch: false,
     query: { enabled: queryEnabled },
     chainId,
   });

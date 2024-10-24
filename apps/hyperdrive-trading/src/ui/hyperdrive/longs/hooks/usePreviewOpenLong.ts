@@ -35,7 +35,7 @@ export function usePreviewOpenLong({
 
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
-    watch: true,
+    watch: false,
     chainId: chainId,
     query: { enabled: queryEnabled },
   });
