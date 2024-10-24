@@ -57,7 +57,7 @@ export function usePreviewAddLiquidity({
     !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber({
     chainId,
-    watch: true,
+    watch: false,
     query: { enabled: queryEnabled },
   });
 
