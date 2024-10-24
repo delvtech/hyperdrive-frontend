@@ -51,11 +51,19 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   ],
 };
 
+export const eligibleForEtherFiRewards: Record<number, Address[]> = {
+  [mainnet.id]: [
+    // 182d Ether.fi Staked ETH
+    "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
+  ],
+};
+
 type RewardType =
   | "MorphoFlatRate"
   | "MorphoVault"
   | "MorphoVaultAllocation"
-  | "LineaLXPL";
+  | "LineaLXPL"
+  | "EtherFi";
 
 type Reward = {
   id: RewardType;
@@ -160,6 +168,18 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       amount: "1",
     };
     rewards.push(lineaReward);
+  }
+
+  // Add any ether.fi rewards for this market
+  if (
+    eligibleForEtherFiRewards[hyperdrive.chainId]?.includes(hyperdrive.address)
+  ) {
+    const etherFiReward: Reward = {
+      id: "EtherFi",
+      name: "eETH",
+      amount: "2x",
+    };
+    rewards.push(etherFiReward);
   }
 
   return rewards;
