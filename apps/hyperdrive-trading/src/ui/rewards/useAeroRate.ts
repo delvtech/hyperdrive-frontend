@@ -15,6 +15,9 @@ export function useAeroRate({
     chainId: hyperdrive.chainId,
     functionName: "rewardRate",
     abi: gaugeAbi,
+    query: {
+      enabled,
+    },
   });
   const fixedPointRate = fixed(data ?? 0n);
 
@@ -280,19 +283,7 @@ export const gaugeAbi = [
     stateMutability: "view",
     type: "function",
   },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_account",
-        type: "address",
-      },
-    ],
-    name: "getReward",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
+
   {
     inputs: [],
     name: "isPool",
