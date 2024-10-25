@@ -9,7 +9,6 @@ import {
   calculateAprFromPrice,
   OpenLongPositionReceived,
 } from "@delvtech/hyperdrive-viem";
-import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {
@@ -37,6 +36,7 @@ import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { TotalOpenLongsValue } from "src/ui/hyperdrive/longs/OpenLongsTable/TotalOpenLongsValue";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
+import { ManageLongsButton } from "./ManageLongsButton";
 
 export function OpenLongsContainer(): ReactElement {
   const { address: account } = useAccount();
@@ -99,7 +99,7 @@ export function OpenLongsContainer(): ReactElement {
         const openLongs = openLongPositions?.find(
           (position) =>
             position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
+            position.hyperdrive.chainId === hyperdrive.chainId
         )?.openLongs;
         const baseToken = findBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
@@ -142,7 +142,7 @@ export function OpenLongsContainer(): ReactElement {
               </div>
               <TotalOpenLongsValue hyperdrive={hyperdrive} />
             </div>
-            <OpenLongsTableDesktopTwo
+            <OpenLongsTableDesktop
               hyperdrive={hyperdrive}
               openLongs={openLongs}
             />
@@ -153,7 +153,7 @@ export function OpenLongsContainer(): ReactElement {
   );
 }
 
-export function OpenLongsTableDesktopTwo({
+export function OpenLongsTableDesktop({
   hyperdrive,
   openLongs,
 }: {
@@ -217,7 +217,7 @@ export function OpenLongsTableDesktopTwo({
                 <th
                   key={header.id}
                   className={classNames(
-                    "relative z-10 text-sm font-normal text-neutral-content/70",
+                    "relative z-10 text-sm font-normal text-neutral-content/70"
                   )}
                 >
                   <div
@@ -230,7 +230,7 @@ export function OpenLongsTableDesktopTwo({
                   >
                     {flexRender(
                       header.column.columnDef.header,
-                      header.getContext(),
+                      header.getContext()
                     )}
                     {{
                       asc: <ChevronUpIcon height={15} />,
@@ -248,7 +248,7 @@ export function OpenLongsTableDesktopTwo({
                         "left-0 right-0":
                           headerIndex !== 0 &&
                           headerIndex !== headerGroup.headers.length - 1, // Full-width border for other header cells
-                      },
+                      }
                     )}
                   />
                 </th>
@@ -274,7 +274,7 @@ export function OpenLongsTableDesktopTwo({
                         "rounded-br-box":
                           isLastRow &&
                           cellIndex === row.getVisibleCells().length - 1,
-                      },
+                      }
                     )}
                     key={cell.id}
                   >
@@ -291,7 +291,7 @@ export function OpenLongsTableDesktopTwo({
                             "left-0 right-0":
                               cellIndex !== 0 &&
                               cellIndex !== row.getVisibleCells().length - 1, // Full width border for other cells
-                          },
+                          }
                         )}
                       />
                     )}
@@ -365,14 +365,14 @@ function getColumns({
           amountBefore: rowA.original.details?.baseAmountPaid || 0n,
           amountAfter: rowA.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
+            Number(hyperdrive.poolConfig.positionDuration * 1000n)
           ),
         });
         const bFixedRate = calculateAnnualizedPercentageChange({
           amountBefore: rowB.original.details?.baseAmountPaid || 0n,
           amountAfter: rowB.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
+            Number(hyperdrive.poolConfig.positionDuration * 1000n)
           ),
         });
         return aFixedRate - bFixedRate;
@@ -412,20 +412,11 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => {
         return (
-          <div className="flex w-full items-center font-inter">
-            <button
-              className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-              onClick={() => {
-                const modalId = `${row.original.assetId}`;
-                (
-                  document.getElementById(modalId) as HTMLDialogElement
-                ).showModal();
-              }}
-            >
-              <Cog8ToothIcon className="h-5" />
-              Manage
-            </button>
-          </div>
+          <ManageLongsButton
+            assetId={row.original.assetId}
+            hyperdrive={hyperdrive}
+            key={row.original.assetId}
+          />
         );
       },
     }),
