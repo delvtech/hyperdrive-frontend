@@ -9,7 +9,6 @@ import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { useRewardsOld } from "src/ui/rewards/useRewardsOld";
 import { Address } from "viem";
 import { useRewards } from "./useRewards";
 
@@ -27,10 +26,7 @@ export function RewardsTooltip({
     hyperdriveChainId: chainId,
   });
 
-  const rewards = useRewardsOld(hyperdrive);
-
-  const newRewards = useRewards(hyperdrive);
-  console.log(newRewards, "newRewards");
+  const rewards = useRewards(hyperdrive);
 
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
@@ -125,7 +121,7 @@ export function RewardsTooltip({
                               : `+ ${formatRate(
                                   lpApy?.lpApy || 0n,
                                   18,
-                                  false
+                                  false,
                                 )} %`}
                           </p>
                         </div>

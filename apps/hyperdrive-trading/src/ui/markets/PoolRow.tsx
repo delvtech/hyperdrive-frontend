@@ -24,7 +24,7 @@ import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewardsOld";
+import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { base } from "viem/chains";
 export interface PoolRowProps {
@@ -93,7 +93,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -133,7 +133,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                 <ClockIcon className="size-4 text-gray-400/60" />{" "}
                 <span className="text-neutral-content">
                   {formatTermLength2(
-                    Number(hyperdrive.poolConfig.positionDuration * 1000n)
+                    Number(hyperdrive.poolConfig.positionDuration * 1000n),
                   )}
                 </span>
               </div>
@@ -268,10 +268,10 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                       value={formatRate(
                         lpApy.lpApy +
                           BigInt(
-                            (morphoVaultData.reward?.supplyApr ?? 0) * 1e18
+                            (morphoVaultData.reward?.supplyApr ?? 0) * 1e18,
                           ),
                         18,
-                        false
+                        false,
                       )}
                     />
                   ) : (
@@ -358,7 +358,7 @@ function PercentLabel({ value }: { value: string }) {
     <div
       className={classNames(
         "font-dmMono text-h4 font-medium",
-        "after:text-h5 after:content-['%']"
+        "after:text-h5 after:content-['%']",
       )}
     >
       {value}
