@@ -19,7 +19,7 @@ import {
   LINEA_REGISTRY_ADDRESS,
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
-import { yieldSources } from "src/yieldSources";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, Chain, createPublicClient, http } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
 

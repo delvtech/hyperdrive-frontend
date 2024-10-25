@@ -32,8 +32,18 @@ export {
 } from "src/tokens/tokenIconsUrls";
 
 // yield sources
-export { yieldSources } from "src/yieldSources";
-export type { YieldSource, YieldSourceId } from "src/yieldSources";
+export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
+export { yieldSources } from "src/yieldSources/yieldSources";
+
+// rewards
+export { rewardFunctions } from "src/rewards/rewards";
+export type {
+  AnyReward,
+  InfoReward,
+  NonTransferableTokenReward,
+  RewardsFn,
+  TransferableTokenReward,
+} from "src/rewards/types";
 
 // protocols
 export { protocols } from "src/protocols";

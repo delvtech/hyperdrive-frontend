@@ -2,7 +2,8 @@ import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
-import { YieldSourceId, yieldSources } from "src/yieldSources";
+import { YieldSourceId } from "src/yieldSources/types";
+import { yieldSources } from "src/yieldSources/yieldSources";
 
 export async function getMorphoHyperdrive({
   hyperdrive,
