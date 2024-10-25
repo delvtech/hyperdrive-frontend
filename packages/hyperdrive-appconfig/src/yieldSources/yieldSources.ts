@@ -20,6 +20,7 @@ import {
   morphoWstethUsdc,
   reth,
   stusd,
+  susde,
   susds,
   usds,
 } from "src/yieldSources/mainnet";
@@ -48,4 +49,5 @@ export const yieldSources = {
   snars,
   mwEurc,
   mwUsdc,
+  susde,
 } as const;
