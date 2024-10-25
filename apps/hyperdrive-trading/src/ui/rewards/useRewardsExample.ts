@@ -27,9 +27,7 @@ export function useRewardsExample(hyperdriveConfig: HyperdriveConfig): {
           const rewardsArgs = rewardsConfig.args;
           // @ts-expect-error we know that the function arguments are correct at
           // the type level thanks to how appconfig is typed
-          const rewards = await rewardsFn(...rewardsArgs);
-
-          return rewards;
+          return rewardsFn(...rewardsArgs);
         }
       : undefined,
   });

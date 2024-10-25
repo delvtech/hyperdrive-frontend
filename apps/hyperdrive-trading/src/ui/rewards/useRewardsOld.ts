@@ -55,7 +55,8 @@ type RewardType =
   | "MorphoFlatRate"
   | "MorphoVault"
   | "MorphoVaultAllocation"
-  | "LineaLXPL";
+  | "LineaLXPL"
+  | "EtherFi";
 
 type Reward = {
   id: RewardType;
@@ -68,14 +69,14 @@ type Reward = {
  *  @Depracated Use useRewards in favor
  */
 export function useRewardsOld(
-  hyperdrive: HyperdriveConfig
+  hyperdrive: HyperdriveConfig,
 ): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     enabled:
       eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -83,7 +84,7 @@ export function useRewardsOld(
     hyperdrive,
     enabled:
       eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address
+        hyperdrive.address,
       ) ?? false,
   });
 
@@ -92,7 +93,7 @@ export function useRewardsOld(
   // Add any morpho rewards for this market
   if (
     eligibleMarketsForMorphoRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address
+      hyperdrive.address,
     )
   ) {
     const morphoReward: Reward = {
@@ -127,7 +128,7 @@ export function useRewardsOld(
         const rewardsMarket = allocation.market.state.rewards.find(
           (reward) =>
             reward.asset.address ===
-            vaultAddresses[hyperdrive.address].allocation?.assets[0].address
+            vaultAddresses[hyperdrive.address].allocation?.assets[0].address,
         );
 
         if (rewardsMarket) {
@@ -146,7 +147,7 @@ export function useRewardsOld(
         // Vault allocation rewards are calculated by taking the total assets in the vault (in USD), and dividing it by the rewards earned for the vault in each market it has allocated to.
         amount: totalAssetsUsd
           ? `${((vaultAllocationRewardTotal / totalAssetsUsd) * 100).toFixed(
-              2
+              2,
             )}%`
           : "0%",
       };
@@ -158,7 +159,7 @@ export function useRewardsOld(
   // Add any linea rewards for this market
   if (
     eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address
+      hyperdrive.address,
     )
   ) {
     const lineaReward: Reward = {
