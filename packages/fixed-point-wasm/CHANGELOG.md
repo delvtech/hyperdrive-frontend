@@ -1,5 +1,11 @@
 # @delvtech/fixed-point-wasm
 
+## 0.0.7
+
+### Patch Changes
+
+- 18482c3: Add `absDiff` method
+
 ## 0.0.6
 
 ### Patch Changes
