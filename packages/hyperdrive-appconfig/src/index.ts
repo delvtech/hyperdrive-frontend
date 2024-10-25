@@ -25,14 +25,25 @@ export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 // tokens
 export type { TokenConfig } from "src/tokens/getTokenConfig";
 export {
+  EETH_ICON_URL,
   EURC_ICON_URL,
   USDC_ICON_URL,
   WELL_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 
 // yield sources
-export { yieldSources } from "src/yieldSources";
-export type { YieldSource, YieldSourceId } from "src/yieldSources";
+export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
+export { yieldSources } from "src/yieldSources/yieldSources";
+
+// rewards
+export { rewardFunctions } from "src/rewards/rewards";
+export type {
+  AnyReward,
+  InfoReward,
+  NonTransferableTokenReward,
+  RewardsFn,
+  TransferableTokenReward,
+} from "src/rewards/types";
 
 // protocols
 export { protocols } from "src/protocols";

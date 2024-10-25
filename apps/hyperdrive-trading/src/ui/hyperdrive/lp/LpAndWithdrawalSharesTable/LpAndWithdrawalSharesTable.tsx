@@ -17,13 +17,13 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
+import { LpCurrentValueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
+import { ManageLpAndWithdrawalSharesButton } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
+import { SizeAndPoolShareCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
+import { WithdrawalQueueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
 import { useAccount } from "wagmi";
-import { LpCurrentValueCell } from "./LpCurrentValueCell";
-import { ManageLpAndWithdrawalSharesButton } from "./ManageLpAndWithdrawalSharesButton";
-import { SizeAndPoolShareCell } from "./SizeAndPoolShareCell";
-import { WithdrawalQueueCell } from "./WithdrawalQueueCell";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();

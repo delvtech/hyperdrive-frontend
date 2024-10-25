@@ -1,5 +1,6 @@
 import {
   appConfig,
+  EETH_ICON_URL,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ChartBarIcon, SparklesIcon } from "@heroicons/react/16/solid";
@@ -8,8 +9,8 @@ import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
+import { useRewards } from "./useRewards";
 
 export function RewardsTooltip({
   hyperdriveAddress,
@@ -117,7 +118,11 @@ export function RewardsTooltip({
                           <p className="flex items-center gap-1">
                             {lpApy?.isNew
                               ? "✨New✨"
-                              : `+ ${formatRate(lpApy?.lpApy || 0n, 18, false)} %`}
+                              : `+ ${formatRate(
+                                  lpApy?.lpApy || 0n,
+                                  18,
+                                  false,
+                                )} %`}
                           </p>
                         </div>
                       </div>
@@ -163,6 +168,26 @@ export function RewardsTooltip({
                       </div>
                     </div>
                   );
+                case "EtherFi":
+                  return (
+                    <div
+                      key={reward.id}
+                      className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 text-sm [&:nth-last-child(2)]:border-none"
+                    >
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={EETH_ICON_URL}
+                          alt="Ether.fi logo"
+                          className="h-8"
+                        />
+                        <p>
+                          Ether.fi loyalty points earned in this pool will be
+                          boosted 2x.
+                        </p>
+                      </div>
+                    </div>
+                  );
+
                 default:
                   assertNever(reward.id);
               }

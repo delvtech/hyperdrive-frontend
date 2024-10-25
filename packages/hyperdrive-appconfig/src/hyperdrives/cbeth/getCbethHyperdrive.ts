@@ -4,7 +4,7 @@ import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
 import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
 import { CBETH_ICON_URL, ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { mainnet } from "viem/chains";
 export async function getCbethHyperdrive({
   hyperdrive,

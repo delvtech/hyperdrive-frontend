@@ -9,7 +9,6 @@ import {
   calculateAprFromPrice,
   OpenLongPositionReceived,
 } from "@delvtech/hyperdrive-viem";
-import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {
@@ -37,6 +36,7 @@ import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { TotalOpenLongsValue } from "src/ui/hyperdrive/longs/OpenLongsTable/TotalOpenLongsValue";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
 import { useAccount } from "wagmi";
+import { ManageLongsButton } from "./ManageLongsButton";
 
 export function OpenLongsContainer(): ReactElement {
   const { address: account } = useAccount();
@@ -142,7 +142,7 @@ export function OpenLongsContainer(): ReactElement {
               </div>
               <TotalOpenLongsValue hyperdrive={hyperdrive} />
             </div>
-            <OpenLongsTableDesktopTwo
+            <OpenLongsTableDesktop
               hyperdrive={hyperdrive}
               openLongs={openLongs}
             />
@@ -153,7 +153,7 @@ export function OpenLongsContainer(): ReactElement {
   );
 }
 
-export function OpenLongsTableDesktopTwo({
+export function OpenLongsTableDesktop({
   hyperdrive,
   openLongs,
 }: {
@@ -412,20 +412,11 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => {
         return (
-          <div className="flex w-full items-center font-inter">
-            <button
-              className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-              onClick={() => {
-                const modalId = `${row.original.assetId}`;
-                (
-                  document.getElementById(modalId) as HTMLDialogElement
-                ).showModal();
-              }}
-            >
-              <Cog8ToothIcon className="h-5" />
-              Manage
-            </button>
-          </div>
+          <ManageLongsButton
+            assetId={row.original.assetId}
+            hyperdrive={hyperdrive}
+            key={row.original.assetId}
+          />
         );
       },
     }),

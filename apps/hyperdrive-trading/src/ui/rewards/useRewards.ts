@@ -25,9 +25,9 @@ const eligibleMarketsForMorphoRewards: Record<number, Address[]> = {
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
     // 182d Moonwell Flagship USDC
-    "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72",
+    "0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a",
     // 182d Moonwell Flagship EURC
-    "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD",
+    "0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25",
   ],
 };
 
@@ -36,9 +36,9 @@ export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
     // 182d Moonwell Flagship ETH
     "0xceD9F810098f8329472AEFbaa1112534E96A5c7b",
     // 182d Moonwell Flagship USDC
-    "0x034f7DB8C03fE0aBa3433952aB0fcf66e332AB72",
+    "0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a",
     // 182d Moonwell Flagship EURC
-    "0x8eC02F73b9325B2BdC7Eb25f4628600eAad58fCD",
+    "0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25",
   ],
 };
 
@@ -59,11 +59,19 @@ const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
   ],
 };
 
+export const eligibleForEtherFiRewards: Record<number, Address[]> = {
+  [mainnet.id]: [
+    // 182d Ether.fi Staked ETH
+    "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
+  ],
+};
+
 type RewardType =
   | "MorphoFlatRate"
   | "MorphoVault"
   | "MorphoVaultAllocation"
-  | "LineaLXPL";
+  | "LineaLXPL"
+  | "EtherFi";
 
 type Reward = {
   id: RewardType;
@@ -168,6 +176,18 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       amount: "1",
     };
     rewards.push(lineaReward);
+  }
+
+  // Add any ether.fi rewards for this market
+  if (
+    eligibleForEtherFiRewards[hyperdrive.chainId]?.includes(hyperdrive.address)
+  ) {
+    const etherFiReward: Reward = {
+      id: "EtherFi",
+      name: "eETH",
+      amount: "2x",
+    };
+    rewards.push(etherFiReward);
   }
 
   return rewards;

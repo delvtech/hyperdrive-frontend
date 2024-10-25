@@ -34,7 +34,7 @@ import {
   WETH_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
-import { yieldSources } from "src/yieldSources";
+import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 
 type HyperdriveConfigResolver = (
