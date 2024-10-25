@@ -58,12 +58,7 @@ export const eligibleForEtherFiRewards: Record<number, Address[]> = {
   ],
 };
 
-type RewardType =
-  | "MorphoFlatRate"
-  | "MorphoVault"
-  | "MorphoVaultAllocation"
-  | "LineaLXPL"
-  | "EtherFi";
+type RewardType = "MorphoFlatRate" | "MorphoVault" | "MorphoVaultAllocation";
 
 type Reward = {
   id: RewardType;
@@ -154,32 +149,6 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       rewards.push(vaultAllocationReward);
     }
     rewards.push(vaultReward);
-  }
-
-  // Add any linea rewards for this market
-  if (
-    eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
-    )
-  ) {
-    const lineaReward: Reward = {
-      id: "LineaLXPL",
-      name: "LXPL",
-      amount: "1",
-    };
-    rewards.push(lineaReward);
-  }
-
-  // Add any ether.fi rewards for this market
-  if (
-    eligibleForEtherFiRewards[hyperdrive.chainId]?.includes(hyperdrive.address)
-  ) {
-    const etherFiReward: Reward = {
-      id: "EtherFi",
-      name: "eETH",
-      amount: "2x",
-    };
-    rewards.push(etherFiReward);
   }
 
   return rewards;

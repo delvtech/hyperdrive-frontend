@@ -1,6 +1,5 @@
 import {
   appConfig,
-  EETH_ICON_URL,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ChartBarIcon, SparklesIcon } from "@heroicons/react/16/solid";
@@ -9,8 +8,9 @@ import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useRewards } from "src/ui/rewards/useRewards";
+import { useRewardsExample } from "src/ui/rewards/useRewardsExample";
 import { Address } from "viem";
-import { useRewards } from "./useRewards";
 
 export function RewardsTooltip({
   hyperdriveAddress,
@@ -28,6 +28,8 @@ export function RewardsTooltip({
 
   const rewards = useRewards(hyperdrive);
 
+  const { rewards: newRewardsExamples } = useRewardsExample(hyperdrive);
+
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   let netApy: bigint = lpApy?.lpApy || 0n;
@@ -38,7 +40,11 @@ export function RewardsTooltip({
     }
   });
 
-  if (!rewards || (rewards && rewards.length === 0)) {
+  if (
+    !rewards ||
+    !newRewardsExamples ||
+    (rewards && rewards.length === 0 && newRewardsExamples.length === 0)
+  ) {
     return children;
   }
 
@@ -50,13 +56,58 @@ export function RewardsTooltip({
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className="z-20 h-fit w-64 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
+            className="z-20 h-fit w-72 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
             sideOffset={5}
             collisionPadding={12}
           >
             <div className="flex justify-between border-b border-neutral-content/30 p-3">
               <p className="gradient-text text-lg">Rewards</p>
             </div>
+
+            {newRewardsExamples?.map((reward) => {
+              if (reward.type === "transferableToken") {
+                return (
+                  <>
+                    <div
+                      key={reward.tokenAddress}
+                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                    >
+                      <div className="flex items-center gap-1">
+                        {/* <img
+                   src={reward.}
+                   alt={`${reward.tokenAddress} logo`}
+                   className="h-4"
+                 /> */}
+                        {reward.type}
+                      </div>
+
+                      <div className="grid justify-items-end">
+                        <p className="flex items-center gap-1">
+                          +{reward.type}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                );
+              }
+              if (reward.type === "info") {
+                return (
+                  <div
+                    key={reward.iconUrl}
+                    className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={reward.iconUrl}
+                        alt={`${reward.message}`}
+                        className="h-8"
+                      />
+                      <p>{reward.message}</p>
+                    </div>
+                  </div>
+                );
+              }
+            })}
 
             {rewards?.map((reward) => {
               switch (reward.id) {
@@ -151,41 +202,6 @@ export function RewardsTooltip({
                         </div>
                       </div>
                     </>
-                  );
-                case "LineaLXPL":
-                  return (
-                    <div
-                      key={reward.id}
-                      className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-4">
-                        <img
-                          src={appConfig.chains[hyperdrive.chainId].iconUrl}
-                          alt="KelpDAO logo"
-                          className="h-8"
-                        />
-                        <p>This pool is eligible for LXP-L rewards.</p>
-                      </div>
-                    </div>
-                  );
-                case "EtherFi":
-                  return (
-                    <div
-                      key={reward.id}
-                      className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 text-sm [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-4">
-                        <img
-                          src={EETH_ICON_URL}
-                          alt="Ether.fi logo"
-                          className="h-8"
-                        />
-                        <p>
-                          Ether.fi loyalty points earned in this pool will be
-                          boosted 2x.
-                        </p>
-                      </div>
-                    </div>
                   );
 
                 default:
