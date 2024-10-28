@@ -76,6 +76,8 @@ export interface PlausibleEventParamsMap {
      */
     statValue: string;
   };
+  termsAndPrivacyView: never;
+  termsAndPrivacyAccept: never;
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
