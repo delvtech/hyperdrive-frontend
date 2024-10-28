@@ -8,7 +8,7 @@ import {
   vaultAddresses,
 } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
-import { base, linea, mainnet } from "viem/chains";
+import { base, mainnet } from "viem/chains";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -39,15 +39,6 @@ export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
     "0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a",
     // 182d Moonwell Flagship EURC
     "0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25",
-  ],
-};
-
-const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
-  [linea.id]: [
-    // 182d KelpDAO rsETH
-    "0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777",
-    // 182d Renzo ezETH
-    "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
   ],
 };
 

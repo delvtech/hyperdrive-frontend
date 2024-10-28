@@ -8,8 +8,8 @@ import { PropsWithChildren, ReactNode } from "react";
 import { assertNever } from "src/base/assertNever";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
 import { useRewards } from "src/ui/rewards/useRewards";
-import { useRewardsExample } from "src/ui/rewards/useRewardsExample";
 import { Address } from "viem";
 
 export function RewardsTooltip({
@@ -28,7 +28,7 @@ export function RewardsTooltip({
 
   const rewards = useRewards(hyperdrive);
 
-  const { rewards: newRewardsExamples } = useRewardsExample(hyperdrive);
+  const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
 
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
@@ -42,8 +42,8 @@ export function RewardsTooltip({
 
   if (
     !rewards ||
-    !newRewardsExamples ||
-    (rewards && rewards.length === 0 && newRewardsExamples.length === 0)
+    !appConfigRewards ||
+    (rewards && rewards.length === 0 && appConfigRewards.length === 0)
   ) {
     return children;
   }
@@ -64,32 +64,7 @@ export function RewardsTooltip({
               <p className="gradient-text text-lg">Rewards</p>
             </div>
 
-            {newRewardsExamples?.map((reward) => {
-              if (reward.type === "transferableToken") {
-                return (
-                  <>
-                    <div
-                      key={reward.tokenAddress}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        {/* <img
-                   src={reward.}
-                   alt={`${reward.tokenAddress} logo`}
-                   className="h-4"
-                 /> */}
-                        {reward.type}
-                      </div>
-
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +{reward.type}
-                        </p>
-                      </div>
-                    </div>
-                  </>
-                );
-              }
+            {appConfigRewards?.map((reward) => {
               if (reward.type === "info") {
                 return (
                   <div
