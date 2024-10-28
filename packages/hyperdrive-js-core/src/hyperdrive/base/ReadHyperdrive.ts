@@ -689,13 +689,11 @@ export class ReadHyperdrive extends ReadModel {
 
     const timeFrame = currentBlock.timestamp - startBlock.timestamp;
 
-    const lpApy = fixed(
-      calculateApyFromPrice({
-        startPrice: startLpSharePrice,
-        endPrice: currentLpSharePrice,
-        timeFrame,
-      }),
-    ).bigint;
+    const lpApy = calculateApyFromPrice({
+      startPrice: startLpSharePrice,
+      endPrice: currentLpSharePrice,
+      timeFrame,
+    });
 
     return { lpApy };
   }
@@ -2080,5 +2078,5 @@ function calculateApyFromPrice({
 }): bigint {
   const priceRatio = fixed(endPrice).div(startPrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
-  return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(fixed(1e18)).bigint;
+  return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(1e18).bigint;
 }

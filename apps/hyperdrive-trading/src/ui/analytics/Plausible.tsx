@@ -45,6 +45,12 @@ export interface PlausibleEventParamsMap {
   };
   walletConnect: never;
   walletDisconnect: never;
+  faqOpen: {
+    /**
+     * The name of the FAQ section that was opened.
+     */
+    name: string;
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
