@@ -51,6 +51,16 @@ export interface PlausibleEventParamsMap {
      */
     name: string;
   };
+  filterChange: {
+    /**
+     * The name of the filter that was changed.
+     */
+    name: string;
+    /**
+     * The new value of the filter.
+     */
+    value: string;
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;

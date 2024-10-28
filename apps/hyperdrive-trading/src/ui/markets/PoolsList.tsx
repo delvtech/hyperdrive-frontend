@@ -20,19 +20,20 @@ import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
-import { PoolRow, PoolRowProps } from "src/ui/markets/PoolRow";
+import { PoolRow } from "src/ui/markets/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
-const sortOptions = [
-  "TVL",
-  "Fixed APR",
-  "Yield Multiplier",
-  "LP APY",
-  "Chain",
-] as const;
+// TODO: Re-implement sorting without blocking the list from rendering.
+// const sortOptions = [
+//   "TVL",
+//   "Fixed APR",
+//   "Yield Multiplier",
+//   "LP APY",
+//   "Chain",
+// ] as const;
 
-type SortOption = (typeof sortOptions)[number];
+// type SortOption = (typeof sortOptions)[number];
 
 export function PoolsList(): ReactElement {
   const { pools: hyperdrives, status } = usePoolsList();
@@ -149,7 +150,11 @@ export function PoolsList(): ReactElement {
                 <MultiSelect
                   title="Filter by chain"
                   selected={selectedChains || []}
-                  onChange={(chains) =>
+                  onChange={(chains) => {
+                    window.plausible("filterChange", {
+                      name: "chain",
+                      value: chains.join(", "),
+                    });
                     navigate({
                       search: (current) => {
                         return {
@@ -157,8 +162,8 @@ export function PoolsList(): ReactElement {
                           chains,
                         };
                       },
-                    })
-                  }
+                    });
+                  }}
                   displayValue={
                     selectedChains?.length === 1
                       ? appConfig.chains[selectedChains[0]].name
@@ -186,7 +191,11 @@ export function PoolsList(): ReactElement {
                 <MultiSelect
                   title="Filter by deposit asset"
                   selected={selectedAssets || []}
-                  onChange={(assets) =>
+                  onChange={(assets) => {
+                    window.plausible("filterChange", {
+                      name: "asset",
+                      value: assets.join(", "),
+                    });
                     navigate({
                       search: (current) => {
                         return {
@@ -194,8 +203,8 @@ export function PoolsList(): ReactElement {
                           assets,
                         };
                       },
-                    })
-                  }
+                    });
+                  }}
                   displayValue={
                     selectedAssets?.length === 1
                       ? selectedAssets[0]
@@ -306,11 +315,11 @@ function FilterMenuItem({
   );
 }
 
-interface Pool extends PoolRowProps {
-  fixedApr: bigint;
-  depositAssets: TokenConfig[];
-  longPrice: bigint;
-}
+// interface Pool extends PoolRowProps {
+//   fixedApr: bigint;
+//   depositAssets: TokenConfig[];
+//   longPrice: bigint;
+// }
 
 function usePoolsList(): {
   pools: HyperdriveConfig[] | undefined;
