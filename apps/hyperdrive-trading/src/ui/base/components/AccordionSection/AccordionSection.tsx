@@ -39,18 +39,26 @@ export function AccordionSection({
 export function AccordionSection2({
   heading,
   children,
+  onChange,
 }: PropsWithChildren<{
   heading: ReactNode;
   isExpanded?: boolean;
-  onChange?: () => void;
+  onChange?: (isOpen?: boolean) => void;
 }>): ReactElement {
   return (
     <Disclosure>
-      <DisclosureButton className="group flex justify-between border-b border-base-content/10 p-0 pb-2">
-        {heading}
-        <ChevronDownIcon className="w-5 text-neutral-content transition-transform group-data-[open]:rotate-180" />
-      </DisclosureButton>
-      <DisclosurePanel className="mb-4 px-0">{children}</DisclosurePanel>
+      {({ open }) => (
+        <>
+          <DisclosureButton
+            className="group flex justify-between border-b border-base-content/10 p-0 pb-2"
+            onClick={() => onChange?.(!open)}
+          >
+            {heading}
+            <ChevronDownIcon className="w-5 text-neutral-content transition-transform group-data-[open]:rotate-180" />
+          </DisclosureButton>
+          <DisclosurePanel className="mb-4 px-0">{children}</DisclosurePanel>
+        </>
+      )}
     </Disclosure>
   );
 }

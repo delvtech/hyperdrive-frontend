@@ -76,7 +76,6 @@ export async function fetchMorphoRewards(
     { address: vaultAddress, chainId: chainId },
   );
 
-  console.log(response);
   // TODO: Convert the response into an AnyRewards[]
   const sampleRewardsList: AnyReward[] = [
     { type: "transferableToken", apy: 0n, tokenAddress: "0x" },
