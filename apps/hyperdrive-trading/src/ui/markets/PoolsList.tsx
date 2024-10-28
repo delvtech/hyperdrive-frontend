@@ -151,7 +151,7 @@ export function PoolsList(): ReactElement {
                   selected={selectedChains || []}
                   onChange={(chains) => {
                     window.plausible("filterChange", {
-                      name: "chains",
+                      name: "chain",
                       value: chains.join(", "),
                     });
                     navigate({
@@ -192,7 +192,7 @@ export function PoolsList(): ReactElement {
                   selected={selectedAssets || []}
                   onChange={(assets) => {
                     window.plausible("filterChange", {
-                      name: "assets",
+                      name: "asset",
                       value: assets.join(", "),
                     });
                     navigate({
