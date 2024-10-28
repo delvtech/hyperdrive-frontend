@@ -23,10 +23,12 @@ import {
   SDAI_ICON_URL,
   SNARS_ICON_URL,
   STUSD_ICON_URL,
+  SUSDE_ICON_URL,
   SUSDS_ICON_URL,
   SXDAI_ICON_URL,
   USDA_ICON_URL,
   USDC_ICON_URL,
+  USDE_ICON_URL,
   USDS_ICON_URL,
   WELL_ICON_URL,
   WETH_ICON_URL,
@@ -181,6 +183,26 @@ const hyperdriveKindResolvers: Record<
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
+
+    // Ethena sUSDe
+    if (hyperdriveName.includes("sUSDe Hyperdrive")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "susde",
+        baseTokenIconUrl: USDE_ICON_URL,
+        sharesTokenIconUrl: SUSDE_ICON_URL,
+        tokenPlaces: 4,
+        sharesTokenTags: ["stablecoin"],
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
+      });
+    }
 
     // Sky sUSDS
     if (hyperdriveName.includes("sUSDS Hyperdrive")) {
