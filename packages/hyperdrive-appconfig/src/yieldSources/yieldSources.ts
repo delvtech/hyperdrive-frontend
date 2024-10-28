@@ -21,6 +21,7 @@ import {
   morphoWstethUsdc,
   reth,
   stusd,
+  susde,
   susds,
   usds,
 } from "src/yieldSources/mainnet";
@@ -50,4 +51,5 @@ export const yieldSources = {
   mwEurc,
   mwUsdc,
   aeroUsdcAero,
+  susde,
 } as const;
