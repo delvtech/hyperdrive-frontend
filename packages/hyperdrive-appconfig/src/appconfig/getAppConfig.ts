@@ -300,6 +300,25 @@ const hyperdriveKindResolvers: Record<
       });
     }
 
+    if (hyperdriveName.includes("Aero LP")) {
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "mwAero",
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        baseTokenIconUrl: WELL_ICON_URL,
+        sharesTokenIconUrl: WELL_ICON_URL,
+        baseTokenTags: [],
+        tokenPlaces: 4,
+      });
+    }
+
     // Moonwell ETH
     if (hyperdriveName.includes("Moonwell ETH Hyperdrive")) {
       return getCustomHyperdrive({

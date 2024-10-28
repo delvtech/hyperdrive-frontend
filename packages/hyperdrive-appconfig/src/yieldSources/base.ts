@@ -9,6 +9,7 @@ declare module "src/yieldSources/types" {
     mwEth: "mwEth";
     mwEurc: "mwEurc";
     mwUsdc: "mwUsdc";
+    mwAero: "mwAero";
     stkWell: "stkWell";
     snars: "snars";
   }
@@ -42,6 +43,19 @@ export const mwEth: YieldSource<"fetchMorphoRewards"> = {
     args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", base.id],
   },
 };
+
+export const mwAero: YieldSource<"fetchMoonwellRewards"> = {
+  chainId: base.id,
+  id: "mwAero",
+  shortName: "Moonwell Aero",
+  protocol: "moonwell",
+  historicalRatePeriod: 1,
+  rewards: {
+    functionName: "fetchMoonwellRewards",
+    args: ["0x73902f619CEB9B31FD8EFecf435CbDf89E369Ba6", base.id],
+  },
+};
+
 export const stkWell: YieldSource = {
   chainId: base.id,
   id: "stkWell",
