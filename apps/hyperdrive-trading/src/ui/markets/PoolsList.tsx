@@ -24,6 +24,7 @@ import { PoolRow } from "src/ui/markets/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
+// TODO: Re-implement sorting without blocking the list from rendering.
 // const sortOptions = [
 //   "TVL",
 //   "Fixed APR",
