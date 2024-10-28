@@ -61,6 +61,21 @@ export interface PlausibleEventParamsMap {
      */
     value: string;
   };
+  positionCtaClick: {
+    poolAddress: string;
+    positionType: "long" | "short" | "lp";
+    /**
+     * The name of the stat being shown with the CTA, as it appears in the UI.
+     * @example "Fixed APR" | "Yield Multiplier" | "LP APY (1d)"
+     */
+    statName: string;
+    /**
+     * The decimal string value of the stat being shown with the CTA with full
+     * precision.
+     * @example "6.66"
+     */
+    statValue: string;
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
