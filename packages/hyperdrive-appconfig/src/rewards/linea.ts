@@ -5,7 +5,7 @@ export async function fetchLineaRewards(): Promise<AnyReward[]> {
   return [
     {
       type: "info",
-      message: "This pool is eligible for L-XPL Rewards",
+      message: "This pool is eligible for LXP-L Rewards",
       iconUrl: lineaChainConfig.iconUrl,
     },
   ];

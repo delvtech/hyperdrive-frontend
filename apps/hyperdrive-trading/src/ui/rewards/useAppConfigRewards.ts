@@ -7,7 +7,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 
-export function useRewardsExample(hyperdriveConfig: HyperdriveConfig): {
+export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
