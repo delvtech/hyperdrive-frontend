@@ -20,7 +20,7 @@ import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
-import { PoolRow } from "src/ui/markets/PoolRow";
+import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
