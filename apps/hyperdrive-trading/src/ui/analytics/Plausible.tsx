@@ -72,12 +72,16 @@ export interface PlausibleEventParamsMap {
     /**
      * The decimal string value of the stat being shown with the CTA with full
      * precision.
-     * @example "6.66"
+     * @example "0.123456789012345678"
      */
     statValue: string;
   };
   termsAndPrivacyView: never;
   termsAndPrivacyAccept: never;
+  externalLinkClick: {
+    name?: string;
+    url: string;
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
