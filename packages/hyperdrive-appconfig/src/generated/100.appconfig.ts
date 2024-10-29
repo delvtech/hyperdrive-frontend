@@ -2,6 +2,27 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const gnosisAppConfig: AppConfig = {
   tokens: [
     {
+      chainId: 100,
+      address: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+      decimals: 18,
+      places: 2,
+      name: "Wrapped XDAI",
+      symbol: "WXDAI",
+      iconUrl: "https://docs.gnosischain.com/img/tokens/xdai.png",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 100,
+      address: "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
+      decimals: 18,
+      places: 2,
+      name: "Savings xDAI",
+      symbol: "sDAI",
+      iconUrl:
+        "https://coin-images.coingecko.com/coins/images/32066/large/sDAI_Logo_%281%29.png",
+      tags: [],
+    },
+    {
       address: "0x0000000000000000000000000000000000000000",
       chainId: 1,
       name: "Ether",
@@ -22,27 +43,6 @@ export const gnosisAppConfig: AppConfig = {
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yNTYgNTEyQzM5Ny4zODUgNTEyIDUxMiAzOTcuMzg1IDUxMiAyNTZDNTEyIDExNC42MTUgMzk3LjM4NSAwIDI1NiAwQzExNC42MTUgMCAwIDExNC42MTUgMCAyNTZDMCAzOTcuMzg1IDExNC42MTUgNTEyIDI1NiA1MTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTUwLjk4OCAyMzcuODEyTDE0OC4xMjIgMjQyLjIwOUMxMTUuNzk2IDI5MS43OTggMTIzLjAxNiAzNTYuNzQyIDE2NS40OCAzOTguMzQ4QzE5MC40NjEgNDIyLjgyNiAyMjMuMjAyIDQzNS4wNjYgMjU1Ljk0NCA0MzUuMDY5QzI1NS45NDQgNDM1LjA2OSAyNTUuOTQ0IDQzNS4wNjkgMTUwLjk4OCAyMzcuODEyWiIgZmlsbD0iIzAwQTNGRiIvPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0yNTUuOTE0IDI5Ny43NjRMMTUwLjk1OCAyMzcuODEyQzI1NS45MTQgNDM1LjA2OSAyNTUuOTE0IDQzNS4wNjkgMjU1LjkxNCA0MzUuMDY5QzI1NS45MTQgMzkyLjEwOCAyNTUuOTE0IDM0Mi44OCAyNTUuOTE0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTM2MS4wMTIgMjM3LjgxMkwzNjMuODc4IDI0Mi4yMDlDMzk2LjIwNCAyOTEuNzk4IDM4OC45ODQgMzU2Ljc0MiAzNDYuNTIgMzk4LjM0OEMzMjEuNTM5IDQyMi44MjYgMjg4Ljc5OCA0MzUuMDY2IDI1Ni4wNTYgNDM1LjA2OUMyNTYuMDU2IDQzNS4wNjkgMjU2LjA1NiA0MzUuMDY5IDM2MS4wMTIgMjM3LjgxMloiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC4yIiBkPSJNMjU2LjA0NCAyOTcuNzY0TDM2MSAyMzcuODEyQzI1Ni4wNDUgNDM1LjA2OSAyNTYuMDQ0IDQzNS4wNjkgMjU2LjA0NCA0MzUuMDY5QzI1Ni4wNDQgMzkyLjEwOCAyNTYuMDQ0IDM0Mi44OCAyNTYuMDQ0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuMiIgZD0iTTI1Ni4wODMgMTYzLjgzM1YyNjcuMjMzTDM0Ni40OTEgMjE1LjU2N0wyNTYuMDgzIDE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTI1Ni4wNTYgMTYzLjgzM0wxNjUuNTgzIDIxNS41NjVMMjU2LjA1NiAyNjcuMjMzVjE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIGQ9Ik0yNTYuMDU2IDc2Ljg3NUwxNjUuNTgzIDIxNS41OTlMMjU2LjA1NiAxNjMuNzIyVjc2Ljg3NVoiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC42IiBkPSJNMjU2LjA4MyAxNjMuNzA2TDM0Ni41NiAyMTUuNTg1TDI1Ni4wODMgNzYuNzkxN1YxNjMuNzA2WiIgZmlsbD0iIzAwQTNGRiIvPgo8L3N2Zz4K",
       tags: ["liquidStakingToken"],
-    },
-    {
-      chainId: 100,
-      address: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
-      decimals: 18,
-      places: 2,
-      name: "Wrapped XDAI",
-      symbol: "WXDAI",
-      iconUrl: "https://docs.gnosischain.com/img/tokens/xdai.png",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 100,
-      address: "0xaf204776c7245bF4147c2612BF6e5972Ee483701",
-      decimals: 18,
-      places: 2,
-      name: "Savings xDAI",
-      symbol: "sDAI",
-      iconUrl:
-        "https://coin-images.coingecko.com/coins/images/32066/large/sDAI_Logo_%281%29.png",
-      tags: [],
     },
   ],
   registries: {
@@ -225,10 +225,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchEtherfiRewards",
-        args: [],
-      },
+      rewardsFn: "fetchEtherfiRewards",
     },
     makerDsr: {
       chainId: 1,
@@ -328,10 +325,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     rseth: {
       chainId: 59144,
@@ -339,10 +333,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "KelpDAO rsETH",
       protocol: "kelpDao",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     usds: {
       chainId: 1,
@@ -364,10 +355,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "Moonwell Flagship ETH",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", 8453],
-      },
+      rewardsFn: "fetchMwEthRewards",
     },
     stkWell: {
       chainId: 8453,
@@ -389,10 +377,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "Moonwell Flagship EURC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026", 8453],
-      },
+      rewardsFn: "fetchMweurcRewards",
     },
     mwUsdc: {
       chainId: 8453,
@@ -400,10 +385,7 @@ export const gnosisAppConfig: AppConfig = {
       shortName: "Moonwell Flagship USDC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", 8453],
-      },
+      rewardsFn: "fetchMwUsdcRewards",
     },
     susde: {
       chainId: 1,

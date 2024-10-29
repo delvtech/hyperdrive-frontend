@@ -2,6 +2,16 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const baseAppConfig: AppConfig = {
   tokens: [
     {
+      chainId: 8453,
+      address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      decimals: 6,
+      places: 2,
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
+      tags: ["stablecoin"],
+    },
+    {
       address: "0x0000000000000000000000000000000000000000",
       chainId: 1,
       name: "Ether",
@@ -25,43 +35,11 @@ export const baseAppConfig: AppConfig = {
     },
     {
       chainId: 8453,
-      address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      decimals: 6,
-      places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 8453,
       address: "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
       decimals: 18,
       places: 2,
       name: "Moonwell Flagship USDC",
       symbol: "mwUSDC",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: [],
-    },
-    {
-      chainId: 8453,
-      address: "0xA88594D404727625A9437C3f886C7643872296AE",
-      decimals: 18,
-      places: 4,
-      name: "WELL",
-      symbol: "WELL",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: [],
-    },
-    {
-      chainId: 8453,
-      address: "0xe66E3A37C3274Ac24FE8590f7D84A2427194DC17",
-      decimals: 18,
-      places: 4,
-      name: "Staked WELL",
-      symbol: "stkWELL",
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
       tags: [],
@@ -106,6 +84,28 @@ export const baseAppConfig: AppConfig = {
       places: 2,
       name: "Moonwell Flagship EURC",
       symbol: "mwEURC",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: [],
+    },
+    {
+      chainId: 8453,
+      address: "0xA88594D404727625A9437C3f886C7643872296AE",
+      decimals: 18,
+      places: 4,
+      name: "WELL",
+      symbol: "WELL",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: [],
+    },
+    {
+      chainId: 8453,
+      address: "0xe66E3A37C3274Ac24FE8590f7D84A2427194DC17",
+      decimals: 18,
+      places: 4,
+      name: "Staked WELL",
+      symbol: "stkWELL",
       iconUrl:
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xMDQwOV8yNzk0NikiPgo8cGF0aCBkPSJNMjAwIDBIMFYyMDBIMjAwVjBaIiBmaWxsPSIjMjQ3NERBIi8+CjxwYXRoIGQ9Ik04NC42OTkyIDE0My4wMDFDNzkuODk5MiAxNDQuNzAxIDc0Ljc5OTIgMTQ1LjcwMSA2OS4zOTkyIDE0NS43MDFDNDQuMTk5MiAxNDUuNzAxIDIzLjY5OTIgMTI1LjIwMSAyMy42OTkyIDEwMC4wMDFDMjMuNjk5MiA3NC44MDA4IDQ0LjE5OTIgNTQuMzAwOCA2OS4zOTkyIDU0LjMwMDhDNzQuNzk5MiA1NC4zMDA4IDc5Ljg5OTIgNTUuMzAwOCA4NC42OTkyIDU3LjAwMDhDNjYuOTk5MiA2My4zMDA4IDU0LjI5OTIgODAuMTAwOCA1NC4yOTkyIDEwMC4wMDFDNTQuMjk5MiAxMTkuOTAxIDY2Ljk5OTIgMTM2LjcwMSA4NC42OTkyIDE0My4wMDFaTTEzMC41OTkgNTQuMzAwOEMxMjUuMTk5IDU0LjMwMDggMTIwLjA5OSA1NS4zMDA4IDExNS4yOTkgNTcuMDAwOEMxMzIuOTk5IDYzLjMwMDggMTQ1LjY5OSA4MC4xMDA4IDE0NS42OTkgMTAwLjAwMUMxNDUuNjk5IDExOS45MDEgMTMyLjk5OSAxMzYuNzAxIDExNS4yOTkgMTQzLjAwMUMxMjAuMDk5IDE0NC43MDEgMTI1LjE5OSAxNDUuNzAxIDEzMC41OTkgMTQ1LjcwMUMxNTUuNzk5IDE0NS43MDEgMTc2LjI5OSAxMjUuMjAxIDE3Ni4yOTkgMTAwLjAwMUMxNzYuMjk5IDc0LjgwMDggMTU1Ljg5OSA1NC4zMDA4IDEzMC41OTkgNTQuMzAwOFoiIGZpbGw9IiNGMkYyRjIiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMDQwOV8yNzk0NiI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
       tags: [],
@@ -528,10 +528,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchEtherfiRewards",
-        args: [],
-      },
+      rewardsFn: "fetchEtherfiRewards",
     },
     makerDsr: {
       chainId: 1,
@@ -631,10 +628,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     rseth: {
       chainId: 59144,
@@ -642,10 +636,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "KelpDAO rsETH",
       protocol: "kelpDao",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     usds: {
       chainId: 1,
@@ -667,10 +658,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship ETH",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", 8453],
-      },
+      rewardsFn: "fetchMwEthRewards",
     },
     stkWell: {
       chainId: 8453,
@@ -692,10 +680,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship EURC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026", 8453],
-      },
+      rewardsFn: "fetchMweurcRewards",
     },
     mwUsdc: {
       chainId: 8453,
@@ -703,10 +688,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship USDC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", 8453],
-      },
+      rewardsFn: "fetchMwUsdcRewards",
     },
     susde: {
       chainId: 1,

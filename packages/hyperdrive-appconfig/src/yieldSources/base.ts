@@ -29,7 +29,7 @@ export const cbeth: YieldSource = {
   protocol: "coinbase",
   historicalRatePeriod: 1,
 };
-export const mwEth: YieldSource<"fetchMorphoRewards"> = {
+export const mwEth: YieldSource = {
   chainId: base.id,
   id: "mwEth",
   shortName: "Moonwell Flagship ETH",
@@ -37,10 +37,7 @@ export const mwEth: YieldSource<"fetchMorphoRewards"> = {
   // should be morpho
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewards: {
-    functionName: "fetchMorphoRewards",
-    args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", base.id],
-  },
+  rewardsFn: "fetchMwEthRewards",
 };
 export const stkWell: YieldSource = {
   chainId: base.id,
@@ -58,26 +55,20 @@ export const snars: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const mwEurc: YieldSource<"fetchMorphoRewards"> = {
+export const mwEurc: YieldSource = {
   chainId: base.id,
   id: "mwEurc",
   shortName: "Moonwell Flagship EURC",
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewards: {
-    functionName: "fetchMorphoRewards",
-    args: ["0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026", base.id],
-  },
+  rewardsFn: "fetchMweurcRewards",
 };
 
-export const mwUsdc: YieldSource<"fetchMorphoRewards"> = {
+export const mwUsdc: YieldSource = {
   chainId: base.id,
   id: "mwUsdc",
   shortName: "Moonwell Flagship USDC",
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewards: {
-    functionName: "fetchMorphoRewards",
-    args: ["0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", base.id],
-  },
+  rewardsFn: "fetchMwUsdcRewards",
 };

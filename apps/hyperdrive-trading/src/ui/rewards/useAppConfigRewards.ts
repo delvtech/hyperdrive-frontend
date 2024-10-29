@@ -5,18 +5,19 @@ import {
   rewardFunctions,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
+import { getPublicClient } from "@wagmi/core";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { usePublicClient } from "wagmi";
+import { wagmiConfig } from "src/network/wagmiClient";
+import { PublicClient } from "viem";
 
 export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
-  const publicClient = usePublicClient();
-  const rewardsConfig =
-    appConfig.yieldSources[hyperdriveConfig.yieldSource].rewards;
+  const rewardsFn =
+    appConfig.yieldSources[hyperdriveConfig.yieldSource].rewardsFn;
 
-  const queryEnabled = !!rewardsConfig;
+  const queryEnabled = !!rewardsFn;
 
   const { data: rewards, status } = useQuery({
     queryKey: makeQueryKey("rewards", {
@@ -25,11 +26,10 @@ export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rewardsFn = rewardFunctions[rewardsConfig.functionName];
-          const rewardsArgs = rewardsConfig.args;
-          // @ts-expect-error we know that the function arguments are correct at
-          // the type level thanks to how appconfig is typed
-          return rewardsFn(publicClient)(...rewardsArgs);
+          const publicClient = getPublicClient(wagmiConfig as any, {
+            chainId: hyperdriveConfig.chainId,
+          }) as PublicClient;
+          return rewardFunctions[rewardsFn](publicClient);
         }
       : undefined,
   });
