@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
+import { ExternalLink } from "src/ui/base/components/ExternalLink";
 import FarcasterIcon from "src/ui/base/icons/farcaster";
 import LinkedInIcon from "src/ui/base/icons/linkedin";
 import XIcon from "src/ui/base/icons/x";
@@ -20,175 +21,178 @@ export default function Footer(): ReactElement {
         </Link>
         <span className="text-neutral-content">Yield, Your Way.</span>
         <div className="mt-2 flex flex-row gap-3">
-          <a
+          <ExternalLink
+            newTab
+            rel="noreferrer"
             href="https://x.com/delv_tech"
             className="daisy-link-hover daisy-link"
-            target="_blank"
-            rel="noreferrer"
           >
             <XIcon />
-          </a>
-          <a
+          </ExternalLink>
+          <ExternalLink
+            newTab
+            rel="noreferrer"
             href="https://warpcast.com/~/channel/delv"
             className="daisy-link-hover daisy-link"
-            target="_blank"
-            rel="noreferrer"
           >
             <FarcasterIcon />
-          </a>
-          <a
+          </ExternalLink>
+          <ExternalLink
+            newTab
+            rel="noreferrer"
             href="https://linkedin.com/company/delv-tech"
             className="daisy-link-hover daisy-link"
-            target="_blank"
-            rel="noreferrer"
           >
             <LinkedInIcon />
-          </a>
+          </ExternalLink>
         </div>
       </aside>
       <nav>
         <header className={footerTitleClassName}>Resources</header>
-        <a
-          target="_blank"
-          rel="noreferrer"
+
+        <ExternalLink
+          newTab
           href="https://hyperdrive.box"
           className="daisy-link-hover daisy-link"
         >
           About Hyperdrive
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+        <ExternalLink
+          newTab
           href="https://docs.hyperdrive.box"
           className="daisy-link-hover daisy-link"
         >
           Documentation
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+        <ExternalLink
+          newTab
           href="https://hyperdrive.blockanalitica.com"
           className="daisy-link-hover daisy-link"
         >
           Analytics
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+        <ExternalLink
+          newTab
           href="https://docs.hyperdrive.box/security/security-for-the-hyperdrive-protocol"
           className="daisy-link-hover daisy-link"
         >
           Security
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+        <ExternalLink
+          newTab
           href="https://arxiv.org/pdf/2404.05036"
           className="daisy-link-hover daisy-link"
         >
           Whitepaper
-        </a>
+        </ExternalLink>
         <Link to="/chainlog" className="daisy-link-hover daisy-link">
           Chainlog
         </Link>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        <ExternalLink
+          newTab
           href="https://testnet.hyperdrive.box/"
           className="daisy-link-hover daisy-link"
         >
           Testnet
-        </a>
+        </ExternalLink>
       </nav>
       <nav>
         <header className={footerTitleClassName}>Developers</header>
-        <a
-          target="_blank"
-          rel="noreferrer"
+
+        <ExternalLink
+          newTab
           className="daisy-link-hover daisy-link"
           href="https://github.com/delvtech"
         >
           GitHub
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           href="https://docs.hyperdrive.box/hyperdrive-trading-bots/quickstart"
           className="daisy-link-hover daisy-link"
         >
           Trading Bots
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           href="https://github.com/delvtech/hyperdrive-rs"
           className="daisy-link-hover daisy-link"
         >
           SDK
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           href="https://cantina.xyz/bounties/7fa99194-3a19-476d-92dd-f66289baf95e"
           className="daisy-link-hover daisy-link"
         >
           Bug Bounty
-        </a>
+        </ExternalLink>
       </nav>
       <nav>
         <header className={footerTitleClassName}>Ecosystem</header>
-        <a
-          target="_blank"
-          rel="noreferrer"
+
+        <ExternalLink
+          newTab
           href="https://docs.hyperdrive.box/hyperdrive-for-developers/integrations"
           className="daisy-link-hover daisy-link"
         >
           Integrations
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           href="https://delv.tech/discord"
           className="daisy-link-hover daisy-link"
         >
           Community
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           href="https://governance.element.fi/"
           className="daisy-link-hover daisy-link"
         >
           Governance
-        </a>
+        </ExternalLink>
       </nav>
       <nav>
         <header className={footerTitleClassName}>About Us</header>
-        <a
-          target="_blank"
-          rel="noreferrer"
+
+        <ExternalLink
+          newTab
           className="daisy-link-hover daisy-link"
           href="https://www.delv.tech/"
         >
           DELV
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
+        </ExternalLink>
+
+        <ExternalLink
+          newTab
           className="daisy-link-hover daisy-link"
           href="https://blog.delv.tech/"
         >
           Blog
-        </a>
+        </ExternalLink>
       </nav>
       <nav>
         <header className={footerTitleClassName}>Legal</header>
-        <a className="daisy-link-hover daisy-link" href={termsOfUseUrl}>
+        <ExternalLink
+          newTab
+          className="daisy-link-hover daisy-link"
+          href={termsOfUseUrl}
+        >
           Terms of Use
-        </a>
-        <a className="daisy-link-hover daisy-link" href={privacyPolicyUrl}>
+        </ExternalLink>
+        <ExternalLink
+          newTab
+          className="daisy-link-hover daisy-link"
+          href={privacyPolicyUrl}
+        >
           Privacy Policy
-        </a>
+        </ExternalLink>
       </nav>
     </footer>
   );
