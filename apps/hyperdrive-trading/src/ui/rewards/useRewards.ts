@@ -58,6 +58,10 @@ type Reward = {
   iconUrl?: string;
 };
 
+/**
+ * @deprecated use useAppConfigRewards instead
+ */
+
 export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
     chainId: hyperdrive.chainId,
