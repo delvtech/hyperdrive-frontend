@@ -43,44 +43,52 @@ export interface PlausibleEventParamsMap {
      */
     u?: string;
   };
-  walletConnect: never;
-  walletDisconnect: never;
+  walletConnect: void;
+  walletDisconnect: void;
   faqOpen: {
-    /**
-     * The name of the FAQ section that was opened.
-     */
-    name: string;
+    props: {
+      /**
+       * The name of the FAQ section that was opened.
+       */
+      name: string;
+    };
   };
   filterChange: {
-    /**
-     * The name of the filter that was changed.
-     */
-    name: string;
-    /**
-     * The new value of the filter.
-     */
-    value: string;
+    props: {
+      /**
+       * The name of the filter that was changed.
+       */
+      name: string;
+      /**
+       * The new value of the filter.
+       */
+      value: string;
+    };
   };
   positionCtaClick: {
-    poolAddress: string;
-    positionType: "long" | "short" | "lp";
-    /**
-     * The name of the stat being shown with the CTA, as it appears in the UI.
-     * @example "Fixed APR" | "Yield Multiplier" | "LP APY (1d)"
-     */
-    statName: string;
-    /**
-     * The decimal string value of the stat being shown with the CTA with full
-     * precision.
-     * @example "0.123456789012345678"
-     */
-    statValue: string;
+    props: {
+      poolAddress: string;
+      positionType: "long" | "short" | "lp";
+      /**
+       * The name of the stat being shown with the CTA, as it appears in the UI.
+       * @example "Fixed APR" | "Yield Multiplier" | "LP APY (1d)"
+       */
+      statName: string;
+      /**
+       * The decimal string value of the stat being shown with the CTA with full
+       * precision.
+       * @example "0.123456789012345678"
+       */
+      statValue: string;
+    };
   };
-  termsAndPrivacyView: never;
-  termsAndPrivacyAccept: never;
+  termsAndPrivacyView: void;
+  termsAndPrivacyAccept: void;
   externalLinkClick: {
-    name?: string;
-    url: string;
+    props: {
+      name?: string;
+      url: string;
+    };
   };
 }
 

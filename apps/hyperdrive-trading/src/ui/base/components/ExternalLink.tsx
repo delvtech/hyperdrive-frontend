@@ -35,8 +35,10 @@ export function ExternalLink({
       rel={`${rel} noopener`}
       onClick={(e) => {
         window.plausible("externalLinkClick", {
-          name: ref.current?.textContent ?? undefined,
-          url: rest.href,
+          props: {
+            name: ref.current?.textContent ?? undefined,
+            url: rest.href,
+          },
         });
         onClick?.(e);
       }}
