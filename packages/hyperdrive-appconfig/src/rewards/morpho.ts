@@ -1,5 +1,6 @@
+import { Address } from "abitype";
 import { gql, request } from "graphql-request";
-import { AnyReward } from "src/rewards/types";
+import { AnyReward, RewardsResolver } from "src/rewards/types";
 
 interface MorphoRewardsResponse {
   vaultByAddress: {
@@ -29,40 +30,44 @@ interface MorphoRewardsResponse {
   };
 }
 
-export async function fetchMorphoRewards(
-  vaultAddress: `0x${string}`,
-  chainId: number,
-): Promise<AnyReward[]> {
-  const response: MorphoRewardsResponse = await request(
-    "https://blue-api.morpho.org/graphql",
-    gql`
-      query SupplyRewards($address: String!, $chainId: Int!) {
-        vaultByAddress(address: $address, chainId: $chainId) {
-          address
-          state {
-            totalSupply
-            totalAssetsUsd
-            rewards {
-              supplyApr
-              asset {
-                address
-                name
-                chain {
-                  id
+export const fetchMorphoRewards: RewardsResolver<
+  [vaultAddress: Address, chainId: number]
+> = () => {
+  return async (
+    vaultAddress: Address,
+    chainId: number,
+  ): Promise<AnyReward[]> => {
+    const response: MorphoRewardsResponse = await request(
+      "https://blue-api.morpho.org/graphql",
+      gql`
+        query SupplyRewards($address: String!, $chainId: Int!) {
+          vaultByAddress(address: $address, chainId: $chainId) {
+            address
+            state {
+              totalSupply
+              totalAssetsUsd
+              rewards {
+                supplyApr
+                asset {
+                  address
+                  name
+                  chain {
+                    id
+                  }
                 }
               }
-            }
-            allocation {
-              supplyAssetsUsd
-              market {
-                state {
-                  rewards {
-                    supplyApr
-                    asset {
-                      address
-                      name
-                      chain {
-                        id
+              allocation {
+                supplyAssetsUsd
+                market {
+                  state {
+                    rewards {
+                      supplyApr
+                      asset {
+                        address
+                        name
+                        chain {
+                          id
+                        }
                       }
                     }
                   }
@@ -71,15 +76,15 @@ export async function fetchMorphoRewards(
             }
           }
         }
-      }
-    `,
-    { address: vaultAddress, chainId: chainId },
-  );
+      `,
+      { address: vaultAddress, chainId: chainId },
+    );
 
-  // TODO: Convert the response into an AnyRewards[]
-  const sampleRewardsList: AnyReward[] = [
-    { type: "transferableToken", apy: 0n, tokenAddress: "0x" },
-  ];
+    // TODO: Convert the response into an AnyRewards[]
+    const sampleRewardsList: AnyReward[] = [
+      { type: "transferableToken", apy: 0n, tokenAddress: "0x" },
+    ];
 
-  return sampleRewardsList;
-}
+    return sampleRewardsList;
+  };
+};

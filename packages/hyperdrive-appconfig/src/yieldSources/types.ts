@@ -38,7 +38,7 @@ export interface YieldSourceWithReward<
 > extends YieldSourceBase {
   rewards: {
     functionName: RewardFunctionKey;
-    args: Parameters<(typeof rewardFunctions)[RewardFunctionKey]>;
+    args: Parameters<ReturnType<(typeof rewardFunctions)[RewardFunctionKey]>>;
   };
 }
 

@@ -6,11 +6,13 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { usePublicClient } from "wagmi";
 
 export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
+  const publicClient = usePublicClient();
   const rewardsConfig =
     appConfig.yieldSources[hyperdriveConfig.yieldSource].rewards;
 
@@ -27,7 +29,7 @@ export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
           const rewardsArgs = rewardsConfig.args;
           // @ts-expect-error we know that the function arguments are correct at
           // the type level thanks to how appconfig is typed
-          return rewardsFn(...rewardsArgs);
+          return rewardsFn(publicClient)(...rewardsArgs);
         }
       : undefined,
   });

@@ -37,6 +37,6 @@ export type AnyReward =
   | NonTransferableTokenReward
   | InfoReward;
 
-export type RewardsResolver = (
+export type RewardsResolver<TArgs extends unknown[] = []> = (
   publicClient: PublicClient,
-) => () => Promise<AnyReward[]>;
+) => (...args: TArgs) => Promise<AnyReward[]>;
