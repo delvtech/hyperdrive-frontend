@@ -1,5 +1,6 @@
 import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/base/components/ExternalLink";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
 
@@ -11,13 +12,13 @@ export function AddressCell({
   chainId: number;
 }): ReactElement {
   return (
-    <a
+    <ExternalLink
       href={makeAddressUrl(address, appConfig.chains[chainId])}
-      target="_blank"
+      newTab
       rel="noreferrer"
       className="daisy-link-hover daisy-link"
     >
       {formatAddress(address)}
-    </a>
+    </ExternalLink>
   );
 }

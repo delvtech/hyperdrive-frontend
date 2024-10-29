@@ -1,17 +1,18 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/base/components/ExternalLink";
 
 export function ChainCell({ chainId }: { chainId: number }): ReactElement {
   const { iconUrl, name } = appConfig.chains[chainId] || {};
   return (
-    <a
+    <ExternalLink
       href={appConfig.chains[chainId].blockExplorerUrl}
-      target="_blank"
+      newTab
       rel="noreferrer"
       className="daisy-link-hover daisy-link flex items-center gap-1.5 text-sm"
     >
       {iconUrl && <img className="size-4 rounded-full" src={iconUrl} />}
       {name ?? `Chain ${chainId}`}
-    </a>
+    </ExternalLink>
   );
 }

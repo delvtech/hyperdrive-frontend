@@ -2,6 +2,7 @@ import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/base/components/ExternalLink";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
 import { useChainId } from "wagmi";
@@ -22,15 +23,16 @@ export function Chainlog(): ReactElement {
           <h1 className="gradient-text mb-4 text-h2 font-bold">Chainlog</h1>
           <p className="text-neutral-content">
             Find the latest information on pools and factories from the{" "}
-            <a
+            {/* TODO: Remove this link and add a registries tab since there's at least one for each chain. */}
+            <ExternalLink
               href={makeAddressUrl(registryAddress, appConfig.chains[chainId])}
-              target="_blank"
+              newTab
               rel="noreferrer"
               className="daisy-link-hover daisy-link inline-flex items-center gap-1"
             >
               Hyperdrive Registry.
               <ArrowTopRightOnSquareIcon className="size-4" />
-            </a>
+            </ExternalLink>
           </p>
         </div>
 
