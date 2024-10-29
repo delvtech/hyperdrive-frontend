@@ -1,7 +1,7 @@
 import { lineaChainConfig } from "src/chains/chains";
-import { AnyReward } from "src/rewards/types";
+import { RewardsResolver } from "src/rewards/types";
 
-export async function fetchLineaRewards(): Promise<AnyReward[]> {
+export const fetchLineaRewards: RewardsResolver = async () => {
   return [
     {
       type: "info",
@@ -9,4 +9,4 @@ export async function fetchLineaRewards(): Promise<AnyReward[]> {
       iconUrl: lineaChainConfig.iconUrl,
     },
   ];
-}
+};

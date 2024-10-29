@@ -1,4 +1,4 @@
-import { Address } from "viem";
+import { Address, PublicClient } from "viem";
 
 /**
  * Transferable token rewards apply to tokens with a known fiat price,
@@ -37,4 +37,6 @@ export type AnyReward =
   | NonTransferableTokenReward
   | InfoReward;
 
-export type RewardsFn = () => Promise<AnyReward[]>;
+export type RewardsResolver = (
+  publicClient: PublicClient,
+) => Promise<AnyReward[]>;

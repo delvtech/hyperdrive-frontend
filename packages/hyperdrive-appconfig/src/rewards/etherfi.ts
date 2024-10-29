@@ -1,7 +1,7 @@
-import { AnyReward } from "src/rewards/types";
+import { RewardsResolver } from "src/rewards/types";
 import { EETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 
-export async function fetchEtherfiRewards(): Promise<AnyReward[]> {
+export const fetchEtherfiRewards: RewardsResolver = async () => {
   return [
     {
       type: "info",
@@ -10,4 +10,4 @@ export async function fetchEtherfiRewards(): Promise<AnyReward[]> {
         "eEther.fi loyalty points earned in this pool will be boosted 2x.",
     },
   ];
-}
+};

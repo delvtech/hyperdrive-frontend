@@ -8,25 +8,19 @@ declare module "src/yieldSources/types" {
   }
 }
 
-export const rseth: YieldSource<"fetchLineaRewards"> = {
+export const rseth: YieldSource = {
   chainId: linea.id,
   id: "rseth",
   shortName: "KelpDAO rsETH",
   protocol: "kelpDao",
   historicalRatePeriod: 30,
-  rewards: {
-    functionName: "fetchLineaRewards",
-    args: [],
-  },
+  rewardsFn: "fetchLineaRewards",
 };
-export const lineaEzeth: YieldSource<"fetchLineaRewards"> = {
+export const lineaEzeth: YieldSource = {
   chainId: linea.id,
   id: "lineaEzeth",
   shortName: "Renzo ezETH",
   protocol: "renzo",
   historicalRatePeriod: 14,
-  rewards: {
-    functionName: "fetchLineaRewards",
-    args: [],
-  },
+  rewardsFn: "fetchLineaRewards",
 };
