@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/hooks/useTermsOfUseAndPrivacyPolicyAccepted";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
@@ -11,6 +11,11 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
     setIsTermsOfUseAndPrivacyPolicyAccepted:
       setIsTermsOfServiceAndPrivacyPolicyAccepted,
   } = useTermsOfUseAndPrivacyPolicyAccepted();
+
+  useEffect(() => {
+    window.plausible("termsAndPrivacyView");
+  }, []);
+
   return (
     <Modal
       forceOpen={!isTermsOfServiceAndPrivacePolicyAccepted}
@@ -42,7 +47,10 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
           </p>
           <button
             className="daisy-btn daisy-btn-primary"
-            onClick={() => setIsTermsOfServiceAndPrivacyPolicyAccepted(true)}
+            onClick={() => {
+              window.plausible("termsAndPrivacyAccept");
+              setIsTermsOfServiceAndPrivacyPolicyAccepted(true);
+            }}
           >
             Accept Terms of Use and Privacy Policy
           </button>
