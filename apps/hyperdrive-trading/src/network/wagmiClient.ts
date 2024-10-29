@@ -99,10 +99,13 @@ const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 const customWallets: CreateWalletFn[] = [];
 const recommendedWallets = [
-  injectedWallet,
+  // needs to be first
   safeWallet,
   rainbowWallet,
   metaMaskWallet,
+  // recommended to be last
+  // https://www.rainbowkit.com/docs/custom-wallet-list#injected-wallet
+  injectedWallet,
 ];
 
 // WalletConnect
