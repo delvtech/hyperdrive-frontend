@@ -1,7 +1,8 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { TokenConfig, getTokenConfig } from "src/tokens/getTokenConfig";
+import { getTokenConfig } from "src/tokens/getTokenConfig";
+import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];

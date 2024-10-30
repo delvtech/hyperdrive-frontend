@@ -11,7 +11,9 @@ import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosi
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { TokenConfig } from "src/tokens/getTokenConfig";
+import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
+import { rewardFunctions } from "src/rewards/rewards";
+import { findToken } from "src/tokens/selectors";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -36,6 +38,7 @@ import {
   WETH_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
+import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 
@@ -553,23 +556,38 @@ export async function getAppConfig({
     }),
   );
 
-  // TODO: Loop over entries in rewardFunctions object and push tokens into
-  // tokens array
-  // Object.entries(rewardFunctions).map(([key, rewardFn]) => {
-  // const rewards = rewardFn(publicClient);
-  // rewards.map(anyRewards => {
-  // if (value.type === 'transferableToken') {
-  // if the token doesn't already exist from having been scraped during
-  // the hyperdriveConfig step above, then check if we have a known
-  // hardcoded tokenConfig. If we still don't have the tokenConfig, then
-  // throw an error and say "You must hardcode a tokenConfig for address:
-  // 0x---"
-  //  if (tokens.find((token) => token.address === value.tokenAddress)) {
+  await Promise.all(
+    Object.entries(rewardFunctions).map(async ([unusedKey, rewardFn]) => {
+      const rewards = await rewardFn(publicClient);
+      rewards.map((reward) => {
+        if (
+          reward.type === "transferableToken" ||
+          reward.type === "nonTransferableToken"
+        ) {
+          const alreadyExists = !!findToken({
+            chainId: reward.chainId,
+            tokenAddress: reward.tokenAddress,
+            tokens,
+          });
+          if (alreadyExists) {
+            return;
+          }
 
-  //  }
-  // });
-  // }
-  //})
+          const knownTokenConfig =
+            knownTokenConfigs[reward.chainId][reward.tokenAddress];
+
+          if (!alreadyExists && knownTokenConfig) {
+            tokens.push(knownTokenConfig);
+            return;
+          }
+
+          throw new Error(
+            `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
+          );
+        }
+      });
+    }),
+  );
 
   const config: AppConfig = {
     tokens: uniqBy(tokens, "address"),

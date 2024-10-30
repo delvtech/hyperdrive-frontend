@@ -11,6 +11,7 @@ export interface TransferableTokenReward {
    */
   apy: bigint;
   tokenAddress: Address;
+  chainId: number;
 }
 
 /**
@@ -23,6 +24,7 @@ export interface NonTransferableTokenReward {
   tokenAddress: Address;
   tokensPerThousandUsd: bigint;
   depositDurationDays: number; // 365 = 1 year
+  chainId: number;
 }
 
 /**

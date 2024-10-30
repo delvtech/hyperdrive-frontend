@@ -1,16 +1,5 @@
 import { ReadToken } from "@delvtech/hyperdrive-viem";
-import { Address } from "viem";
-
-export interface TokenConfig {
-  address: Address;
-  chainId: number;
-  name: string;
-  symbol: string;
-  decimals: number;
-  places: number;
-  iconUrl: string;
-  tags: string[];
-}
+import { TokenConfig } from "src/tokens/types";
 
 export async function getTokenConfig({
   token,

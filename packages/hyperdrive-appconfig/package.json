@@ -19,14 +19,6 @@
     "dist"
   ],
   "scripts": {
-    "gen:local": "npx tsx ./src/scripts/local.ts",
-    "gen:cloudchain": "npx tsx ./src/scripts/cloudChain.ts",
-    "gen:gnosisfork": "npx tsx ./src/scripts/gnosisFork.ts",
-    "gen:gnosis": "npx tsx ./src/scripts/gnosis.ts",
-    "gen:sepolia": "npx tsx ./src/scripts/sepolia.ts",
-    "gen:ethereum": "npx tsx ./src/scripts/ethereum.ts",
-    "gen:base": "npx tsx ./src/scripts/base.ts",
-    "gen:linea": "npx tsx ./src/scripts/linea.ts",
     "generate": "npx tsx ./src/scripts/generate.ts",
     "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts",
     "watch": "tsup src/index.ts --watch --minify --format esm,cjs --dts",

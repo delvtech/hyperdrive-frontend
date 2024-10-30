@@ -52,11 +52,7 @@ export const eligibleForAeroRewards: Record<number, Address[]> = {
   ],
 };
 
-type RewardType =
-  | "MorphoFlatRate"
-  | "MorphoVault"
-  | "MorphoVaultAllocation"
-  | "Aero";
+type RewardType = "MorphoFlatRate" |"MorphoVault" | "MorphoVaultAllocation" | "Aero";
 
 type Reward = {
   id: RewardType;

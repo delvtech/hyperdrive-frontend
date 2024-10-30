@@ -1,6 +1,5 @@
 import chalk from "chalk";
 import "dotenv/config";
-import camelCase from "lodash.camelcase";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestnetAppConfigs";
@@ -115,13 +114,6 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   combinedAppConfig.hyperdrives.push(...appConfig.hyperdrives);
   combinedAppConfig.tokens.push(...appConfig.tokens);
   combinedAppConfig.registries[chain.id] = registryAddress;
-
-  // Optionally, write individual app configs to files
-  await writeAppConfigToFile({
-    filename: `./src/generated/${chain.id}.appconfig.ts`,
-    appConfig,
-    appConfigName: `${camelCase(chain.name)}AppConfig`,
-  });
 }
 
 const { mainnetConfig, testnetConfig } =

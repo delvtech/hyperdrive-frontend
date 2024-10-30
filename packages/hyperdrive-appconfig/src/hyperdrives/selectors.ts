@@ -1,7 +1,7 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { TokenConfig } from "src/tokens/getTokenConfig";
 import { findToken } from "src/tokens/selectors";
+import { TokenConfig } from "src/tokens/types";
 import { Address, zeroAddress } from "viem";
 
 /**

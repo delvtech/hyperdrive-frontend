@@ -2,11 +2,11 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findHyperdriveConfig,
+  findToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { ChartBarIcon, SparklesIcon } from "@heroicons/react/16/solid";
+import { SparklesIcon } from "@heroicons/react/16/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
-import { assertNever } from "src/base/assertNever";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
@@ -79,23 +79,76 @@ export function RewardsTooltip({
                 );
               }
               if (reward.type === "transferableToken") {
+                const token = findToken({
+                  tokenAddress: reward.tokenAddress,
+                  chainId: reward.chainId,
+                  tokens: appConfig.tokens,
+                });
+
+                if (!token) {
+                  return null;
+                }
+                return (
+                  <>
+                    <div
+                      key={token.address}
+                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                    >
+                      <div className="flex items-center gap-1">
+                        <img
+                          src={token.iconUrl}
+                          alt={`${token.name} logo`}
+                          className="h-4"
+                        />
+                        {token.name}
+                      </div>
+
+                      <div className="grid justify-items-end">
+                        <p className="flex items-center gap-1">
+                          +
+                          {fixed(reward.apy).format({
+                            percent: true,
+                            decimals: 2,
+                          })}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                );
+              }
+
+              if (reward.type === "nonTransferableToken") {
+                const token = findToken({
+                  tokenAddress: reward.tokenAddress,
+                  chainId: reward.chainId,
+                  tokens: appConfig.tokens,
+                });
+                if (!token) {
+                  return null;
+                }
                 return (
                   <div
-                    key={reward.tokenAddress}
+                    key={token?.address}
                     className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-1">
-                      {/* <img
-                      src={reward.iconUrl}
-                      alt={`${reward.name} logo`}
-                      className="h-4"
-                    /> */}
-                      Example rewards
+                      <img
+                        src={appConfig.protocols.morpho.iconUrl}
+                        alt="Morpho logo"
+                        className="h-4"
+                      />
+                      {token.name}
                     </div>
 
                     <div className="grid justify-items-end">
                       <p className="flex items-center gap-1">
-                        +{fixed(reward.apy).format()}%
+                        +
+                        {fixed(reward.tokensPerThousandUsd).format({
+                          decimals: token.places,
+                        })}
+                      </p>
+                      <p className="text-2xs text-neutral-content">
+                        per $1000 / yr
                       </p>
                     </div>
                   </div>
@@ -103,129 +156,6 @@ export function RewardsTooltip({
               }
             })}
 
-            {rewards?.map((reward) => {
-              switch (reward.id) {
-                case "Aero":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            {reward.amount}%
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-                case "MorphoFlatRate":
-                  return (
-                    <div
-                      key={reward.id}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        <img
-                          src={appConfig.protocols.morpho.iconUrl}
-                          alt="Morpho logo"
-                          className="h-4"
-                        />
-                        {reward.name}
-                      </div>
-
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +{reward.amount}
-                        </p>
-                        <p className="text-2xs text-neutral-content">
-                          per $1000 / yr
-                        </p>
-                      </div>
-                    </div>
-                  );
-
-                case "MorphoVault":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            +{reward.amount}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
-                        <div className="flex items-center gap-1">
-                          <ChartBarIcon className="h-4" />
-                          Rate
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            {lpApy?.isNew
-                              ? "✨New✨"
-                              : `+ ${formatRate(
-                                  lpApy?.lpApy || 0n,
-                                  18,
-                                  false,
-                                )} %`}
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-                case "MorphoVaultAllocation":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            +{reward.amount}
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-
-                default:
-                  assertNever(reward.id);
-              }
-            })}
             <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
               <div className="flex items-center gap-1">
                 <SparklesIcon className="h-4" />
