@@ -86,7 +86,12 @@ function FAQ() {
               </div>
             }
             onChange={(open) =>
-              open && window.plausible("faqOpen", { name: question })
+              open &&
+              window.plausible("faqOpen", {
+                props: {
+                  name: question,
+                },
+              })
             }
           >
             <div className="flex flex-col gap-4 text-md leading-bodyText text-base-content/80">

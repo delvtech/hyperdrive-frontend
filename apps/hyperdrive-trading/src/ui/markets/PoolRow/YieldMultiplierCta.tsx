@@ -54,10 +54,12 @@ export function YieldMultiplierCta({
           onClick={(e) => {
             e.stopPropagation();
             window.plausible("positionCtaClick", {
-              poolAddress: hyperdrive.address,
-              positionType: "short",
-              statName: label,
-              statValue: multiplier ? multiplier.toString() : "",
+              props: {
+                poolAddress: hyperdrive.address,
+                positionType: "short",
+                statName: label,
+                statValue: multiplier ? multiplier.toString() : "",
+              },
             });
           }}
         >

@@ -1,4 +1,5 @@
 import { ReactElement, useEffect } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/hooks/useTermsOfUseAndPrivacyPolicyAccepted";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
@@ -26,23 +27,21 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
           <h5 className="font-bold">Terms of Use and Privacy Policy</h5>
           <p>
             You must accept the{" "}
-            <a
+            <ExternalLink
               href={termsOfUseUrl}
               className="daisy-link-hover daisy-link daisy-link-primary"
-              target="_blank"
-              rel="noreferrer"
+              newTab
             >
               Terms of Use
-            </a>{" "}
+            </ExternalLink>{" "}
             and{" "}
-            <a
+            <ExternalLink
               href={privacyPolicyUrl}
               className="daisy-link-hover daisy-link daisy-link-primary"
-              target="_blank"
-              rel="noreferrer"
+              newTab
             >
               Privacy Policy
-            </a>{" "}
+            </ExternalLink>{" "}
             to use this app.
           </p>
           <button
