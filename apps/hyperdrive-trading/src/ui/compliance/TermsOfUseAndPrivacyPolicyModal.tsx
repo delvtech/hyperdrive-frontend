@@ -14,8 +14,10 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
   } = useTermsOfUseAndPrivacyPolicyAccepted();
 
   useEffect(() => {
-    window.plausible("termsAndPrivacyView");
-  }, []);
+    if (!isTermsOfServiceAndPrivacePolicyAccepted) {
+      window.plausible("termsAndPrivacyView");
+    }
+  }, [isTermsOfServiceAndPrivacePolicyAccepted]);
 
   return (
     <Modal
