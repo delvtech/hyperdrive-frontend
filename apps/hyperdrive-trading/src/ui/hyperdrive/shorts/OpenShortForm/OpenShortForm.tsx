@@ -488,8 +488,6 @@ export function OpenShortForm({
         amountOfBondsToShortAsBigInt ? (
           <OpenShortPreview
             hyperdrive={hyperdrive}
-            tokenIn={activeToken}
-            costBasis={traderDeposit}
             shortSize={amountOfBondsToShortAsBigInt}
             spotRateAfterOpen={spotRateAfterOpen}
             curveFee={curveFee}

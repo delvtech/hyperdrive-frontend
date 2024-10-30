@@ -1,7 +1,6 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   HyperdriveConfig,
-  TokenConfig,
   appConfig,
   findBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
@@ -20,10 +19,9 @@ import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
-  tokenIn: TokenConfig;
-  costBasis: bigint | undefined;
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
@@ -32,8 +30,6 @@ interface OpenShortPreviewProps {
 
 export function OpenShortPreview({
   hyperdrive,
-  costBasis,
-  tokenIn,
   shortSize,
   spotRateAfterOpen,
   curveFee,
