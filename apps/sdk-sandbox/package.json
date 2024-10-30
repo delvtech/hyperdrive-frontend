@@ -5,23 +5,22 @@
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
-    "example": "tesm-node -r dotenv/config scripts/example.ts",
-    "example:watch": "tesm-node -r dotenv/config --watch scripts/example.ts",
-    "fixed-point": "tesm-node -r dotenv/config scripts/fixed-point.ts",
-    "fixed-point:watch": "tesm-node -r dotenv/config --watch scripts/fixed-point.ts"
+    "example": "tsx -r dotenv/config scripts/example.ts",
+    "example:watch": "tsx -r dotenv/config --watch scripts/example.ts",
+    "fixed-point": "tsx -r dotenv/config scripts/fixed-point.ts",
+    "fixed-point:watch": "tsx -r dotenv/config --watch scripts/fixed-point.ts"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "*",
+    "@delvtech/hyperdrive-appconfig": "*",
     "@delvtech/hyperdrive-viem": "*",
     "@delvtech/hyperdrive-wasm": "*",
-    "@delvtech/hyperdrive-appconfig": "*",
     "viem": "^2.9.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
     "dotenv": "^16.4.5",
-    "tesm-node": "^1.3.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.4.5"
   }
 }
