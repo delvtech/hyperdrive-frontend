@@ -7,21 +7,19 @@ import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 
 export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
   const {
-    isTermsOfUseAndPrivacePolicyAccepted:
-      isTermsOfServiceAndPrivacePolicyAccepted,
-    setIsTermsOfUseAndPrivacyPolicyAccepted:
-      setIsTermsOfServiceAndPrivacyPolicyAccepted,
+    isTermsOfUseAndPrivacyPolicyAccepted,
+    setIsTermsOfUseAndPrivacyPolicyAccepted,
   } = useTermsOfUseAndPrivacyPolicyAccepted();
 
   useEffect(() => {
-    if (!isTermsOfServiceAndPrivacePolicyAccepted) {
+    if (!isTermsOfUseAndPrivacyPolicyAccepted) {
       window.plausible("termsAndPrivacyView");
     }
-  }, [isTermsOfServiceAndPrivacePolicyAccepted]);
+  }, [isTermsOfUseAndPrivacyPolicyAccepted]);
 
   return (
     <Modal
-      forceOpen={!isTermsOfServiceAndPrivacePolicyAccepted}
+      forceOpen={!isTermsOfUseAndPrivacyPolicyAccepted}
       modalId="tos-and-privacy-policy"
       className="px-4 pt-8 lg:px-0"
       modalContent={
@@ -50,7 +48,7 @@ export function TermsOfUseAndPrivacyPolicyModal(): ReactElement {
             className="daisy-btn daisy-btn-primary"
             onClick={() => {
               window.plausible("termsAndPrivacyAccept");
-              setIsTermsOfServiceAndPrivacyPolicyAccepted(true);
+              setIsTermsOfUseAndPrivacyPolicyAccepted(true);
             }}
           >
             Accept Terms of Use and Privacy Policy

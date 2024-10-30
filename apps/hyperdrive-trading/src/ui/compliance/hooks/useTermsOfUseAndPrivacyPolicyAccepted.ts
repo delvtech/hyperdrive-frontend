@@ -1,17 +1,17 @@
 import { useLocalStorage } from "react-use";
 
 export function useTermsOfUseAndPrivacyPolicyAccepted(): {
-  isTermsOfUseAndPrivacePolicyAccepted: boolean;
+  isTermsOfUseAndPrivacyPolicyAccepted: boolean;
   setIsTermsOfUseAndPrivacyPolicyAccepted: (isAccepted: boolean) => void;
 } {
   const [
-    isTermsOfUseAndPrivacePolicyAccepted,
+    isTermsOfUseAndPrivacyPolicyAccepted,
     setIsTermsOfUseAndPrivacyPolicyAccepted,
   ] = useLocalStorage("terms-of-use-and-privacy-policy-accepted", false);
   return {
     // safe to case because default value is set to false
-    isTermsOfUseAndPrivacePolicyAccepted:
-      isTermsOfUseAndPrivacePolicyAccepted as boolean,
+    isTermsOfUseAndPrivacyPolicyAccepted:
+      isTermsOfUseAndPrivacyPolicyAccepted as boolean,
     setIsTermsOfUseAndPrivacyPolicyAccepted,
   };
 }
