@@ -68,7 +68,7 @@ export interface PlausibleEventParamsMap {
   positionCtaClick: {
     props: {
       poolAddress: string;
-      positionType: "long" | "short" | "lp";
+      positionType: PositionType;
       /**
        * The name of the stat being shown with the CTA, as it appears in the UI.
        * @example "Fixed APR" | "Yield Multiplier" | "LP APY (1d)"
@@ -88,6 +88,13 @@ export interface PlausibleEventParamsMap {
     props: {
       name?: string;
       url: string;
+    };
+  };
+  transactionDetailsOpen: {
+    props: {
+      chainId: number;
+      poolAddress: string;
+      positionType: PositionType;
     };
   };
 }
@@ -110,3 +117,5 @@ declare global {
     plausible: PlausibleFunction;
   }
 }
+
+type PositionType = "long" | "short" | "lp";
