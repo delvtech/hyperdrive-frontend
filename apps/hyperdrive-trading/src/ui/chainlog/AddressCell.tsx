@@ -1,6 +1,6 @@
 import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
-import { ExternalLink } from "src/ui/base/components/ExternalLink";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
 

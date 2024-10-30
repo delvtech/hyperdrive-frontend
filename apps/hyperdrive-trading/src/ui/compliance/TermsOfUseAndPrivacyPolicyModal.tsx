@@ -1,5 +1,5 @@
 import { ReactElement, useEffect } from "react";
-import { ExternalLink } from "src/ui/base/components/ExternalLink";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { useTermsOfUseAndPrivacyPolicyAccepted } from "src/ui/compliance/hooks/useTermsOfUseAndPrivacyPolicyAccepted";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";

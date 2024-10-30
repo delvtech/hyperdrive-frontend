@@ -1,6 +1,6 @@
 import { appConfig, makeTransactionUrl } from "@delvtech/hyperdrive-appconfig";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { ExternalLink } from "src/ui/base/components/ExternalLink";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { Hash } from "viem";
 
 export default function TransactionToast({

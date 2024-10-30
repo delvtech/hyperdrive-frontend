@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
-import { ExternalLink } from "src/ui/base/components/ExternalLink";
 import FarcasterIcon from "src/ui/base/icons/farcaster";
 import LinkedInIcon from "src/ui/base/icons/linkedin";
 import XIcon from "src/ui/base/icons/x";

@@ -2,7 +2,7 @@ import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { ExternalLink } from "src/ui/base/components/ExternalLink";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
 import { useChainId } from "wagmi";
