@@ -553,6 +553,24 @@ export async function getAppConfig({
     }),
   );
 
+  // TODO: Loop over entries in rewardFunctions object and push tokens into
+  // tokens array
+  // Object.entries(rewardFunctions).map(([key, rewardFn]) => {
+  // const rewards = rewardFn(publicClient);
+  // rewards.map(anyRewards => {
+  // if (value.type === 'transferableToken') {
+  // if the token doesn't already exist from having been scraped during
+  // the hyperdriveConfig step above, then check if we have a known
+  // hardcoded tokenConfig. If we still don't have the tokenConfig, then
+  // throw an error and say "You must hardcode a tokenConfig for address:
+  // 0x---"
+  //  if (tokens.find((token) => token.address === value.tokenAddress)) {
+
+  //  }
+  // });
+  // }
+  //})
+
   const config: AppConfig = {
     tokens: uniqBy(tokens, "address"),
     registries: {

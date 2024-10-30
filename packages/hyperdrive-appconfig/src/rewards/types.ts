@@ -6,6 +6,9 @@ import { Address, PublicClient } from "viem";
  */
 export interface TransferableTokenReward {
   type: "transferableToken";
+  /**
+   * The apy of the token reward in 18-decimal precision
+   */
   apy: bigint;
   tokenAddress: Address;
 }

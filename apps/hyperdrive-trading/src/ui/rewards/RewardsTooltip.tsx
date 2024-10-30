@@ -1,3 +1,4 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findHyperdriveConfig,
@@ -28,6 +29,7 @@ export function RewardsTooltip({
   const rewards = useRewards(hyperdrive);
   const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
 
+  console.log(appConfigRewards, "appConfigRewards");
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   let netApy: bigint = lpApy?.lpApy || 0n;
@@ -72,6 +74,29 @@ export function RewardsTooltip({
                         className="h-8"
                       />
                       <p>{reward.message}</p>
+                    </div>
+                  </div>
+                );
+              }
+              if (reward.type === "transferableToken") {
+                return (
+                  <div
+                    key={reward.tokenAddress}
+                    className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-1">
+                      {/* <img
+                      src={reward.iconUrl}
+                      alt={`${reward.name} logo`}
+                      className="h-4"
+                    /> */}
+                      Example rewards
+                    </div>
+
+                    <div className="grid justify-items-end">
+                      <p className="flex items-center gap-1">
+                        +{fixed(reward.apy).format()}%
+                      </p>
                     </div>
                   </div>
                 );
