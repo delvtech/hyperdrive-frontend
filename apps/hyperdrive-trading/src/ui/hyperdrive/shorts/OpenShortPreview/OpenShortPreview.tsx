@@ -67,6 +67,22 @@ export function OpenShortPreview({
   });
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
+  function handleChange() {
+    setDetailsOpen((prev) => {
+      if (!prev) {
+        window.plausible("transactionDetailsOpen", {
+          props: {
+            chainId: hyperdrive.chainId,
+            poolAddress: hyperdrive.address,
+            positionType: "short",
+          },
+        });
+        return true;
+      }
+      return false;
+    });
+  }
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <AccordionSection
@@ -84,7 +100,7 @@ export function OpenShortPreview({
             </div>
           </div>
         }
-        onChange={() => setDetailsOpen(!detailsOpen)}
+        onChange={handleChange}
       >
         <LabelValue
           label="Maturity"
