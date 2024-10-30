@@ -35,7 +35,7 @@ export function OpenShortPreview({
   curveFee,
   openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
-  const [detailsOpen, setDetailsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
@@ -64,7 +64,7 @@ export function OpenShortPreview({
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
   function handleChange() {
-    setDetailsOpen((prev) => {
+    setIsOpen((prev) => {
       if (!prev) {
         window.plausible("transactionDetailsOpen", {
           props: {
@@ -86,7 +86,7 @@ export function OpenShortPreview({
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
             <div className="flex items-center gap-1">
-              {!detailsOpen ? (
+              {!isOpen ? (
                 <>
                   <ClockIcon className="size-5 text-gray-500" />
                   <p>{formatDate(Date.now() + termLengthMS)}</p>
