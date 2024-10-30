@@ -61,11 +61,28 @@ export function OpenLongPreview({
       });
 
   const [isDetailsExpanded, expandDetails] = useState(false);
+
+  function handleChange() {
+    expandDetails((prev) => {
+      if (!prev) {
+        window.plausible("transactionDetailsOpen", {
+          props: {
+            chainId: hyperdrive.chainId,
+            poolAddress: hyperdrive.address,
+            positionType: "long",
+          },
+        });
+        return true;
+      }
+      return false;
+    });
+  }
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <AccordionSection
         isExpanded={isDetailsExpanded}
-        onChange={() => expandDetails((prev) => !prev)}
+        onChange={handleChange}
         heading={
           <OpenLongTransactionDetailsHeader
             bondAmount={bondAmount}
