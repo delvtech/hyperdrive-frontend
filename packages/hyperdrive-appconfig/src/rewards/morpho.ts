@@ -24,6 +24,9 @@ interface Reward {
 interface MarketAllocation {
   supplyAssetsUsd: number;
   market: {
+    collateralAsset: {
+      priceUsd: number;
+    };
     state: {
       rewards: Reward[];
     };
@@ -91,6 +94,9 @@ async function fetchMorphoRewards(
             allocation {
               supplyAssetsUsd
               market {
+                collateralAsset {
+                  priceUsd
+                }
                 state {
                   rewards {
                     amountPerSuppliedToken
@@ -173,6 +179,7 @@ function parseAllocationRewards({
 
   const allocationsWithPercentsAndEffectiveRewards =
     allocationsWithPercents.map(({ allocation, pctAllocated }) => {
+      console.log(pctAllocated, "pctAllocated", allocation, "allocation");
       const effectiveRewardsRates = allocation.market.state.rewards
         .filter((reward) => reward.supplyApr)
         .map(
@@ -180,12 +187,19 @@ function parseAllocationRewards({
             return { reward, effectiveRate: pctAllocated * reward.supplyApr! };
           }, // safe to cast thanks to the filtering
         );
+
       const effectiveRewardsEmissions = allocation.market.state.rewards
-        .filter((reward) => !reward.supplyApr)
+        // A missing collateralAsset means that these funds are not allocated
+        .filter(
+          (reward) => !reward.supplyApr && allocation.market.collateralAsset,
+        )
         .map((reward) => {
           return {
             reward,
-            effectiveEmissions: pctAllocated * reward.amountPerSuppliedToken,
+            effectiveEmissions:
+              pctAllocated *
+              (reward.amountPerSuppliedToken /
+                allocation.market.collateralAsset.priceUsd),
           };
         });
       return {
@@ -240,10 +254,19 @@ function parseAllocationRewards({
     .map(([chainId, rewardApy]) => {
       return Object.entries(rewardApy).map(
         ([tokenAddress, rewardApyPerToken]): TransferableTokenReward => {
-          console.log("rewardApyPerToken", rewardApyPerToken);
+          let apy = 0n;
+          try {
+            apy = parseFixed(rewardApyPerToken).bigint;
+          } catch (e) {
+            console.log(
+              "FAILED! transferable rewards, rewardApyPerToken",
+              rewardApyPerToken,
+            );
+            throw e;
+          }
           return {
             type: "transferableToken",
-            apy: parseFixed(rewardApyPerToken).bigint,
+            apy,
             tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
             chainId: Number(chainId),
           };
@@ -260,12 +283,22 @@ function parseAllocationRewards({
           tokenAddress,
           rewardEmissionsPerToken,
         ]): NonTransferableTokenReward => {
+          let tokensPerThousandUsd = 0n;
+          try {
+            tokensPerThousandUsd = parseFixed(rewardEmissionsPerToken).bigint;
+          } catch (e) {
+            console.log(
+              "FAILED! nontransferable rewards, rewardApyPerToken",
+              rewardEmissionsPerToken,
+            );
+            throw e;
+          }
           return {
             type: "nonTransferableToken",
             // Morpho non-transferable token rewards are based on assets deposited
             // for 1 year
             depositDurationDays: 365,
-            tokensPerThousandUsd: parseFixed(rewardEmissionsPerToken).bigint,
+            tokensPerThousandUsd,
             tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
             chainId: Number(chainId),
           };

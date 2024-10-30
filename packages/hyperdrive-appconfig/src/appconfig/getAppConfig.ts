@@ -11,9 +11,6 @@ import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosi
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardFunctions } from "src/rewards/rewards";
-import { findToken } from "src/tokens/selectors";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -556,38 +553,39 @@ export async function getAppConfig({
     }),
   );
 
-  await Promise.all(
-    Object.entries(rewardFunctions).map(async ([unusedKey, rewardFn]) => {
-      const rewards = await rewardFn(publicClient);
-      rewards.map((reward) => {
-        if (
-          reward.type === "transferableToken" ||
-          reward.type === "nonTransferableToken"
-        ) {
-          const alreadyExists = !!findToken({
-            chainId: reward.chainId,
-            tokenAddress: reward.tokenAddress,
-            tokens,
-          });
-          if (alreadyExists) {
-            return;
-          }
+  // TODO: Do this part after all appconfigs have been generated
+  // await Promise.all(
+  //   Object.entries(rewardFunctions).map(async ([unusedKey, rewardFn]) => {
+  //     const rewards = await rewardFn(publicClient);
+  //     rewards.map((reward) => {
+  //       if (
+  //         reward.type === "transferableToken" ||
+  //         reward.type === "nonTransferableToken"
+  //       ) {
+  //         const alreadyExists = !!findToken({
+  //           chainId: reward.chainId,
+  //           tokenAddress: reward.tokenAddress,
+  //           tokens,
+  //         });
+  //         if (alreadyExists) {
+  //           return;
+  //         }
 
-          const knownTokenConfig =
-            knownTokenConfigs[reward.chainId][reward.tokenAddress];
+  //         const knownTokenConfig =
+  //           knownTokenConfigs[reward.chainId][reward.tokenAddress];
 
-          if (!alreadyExists && knownTokenConfig) {
-            tokens.push(knownTokenConfig);
-            return;
-          }
+  //         if (!alreadyExists && knownTokenConfig) {
+  //           tokens.push(knownTokenConfig);
+  //           return;
+  //         }
 
-          throw new Error(
-            `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
-          );
-        }
-      });
-    }),
-  );
+  //         throw new Error(
+  //           `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
+  //         );
+  //       }
+  //     });
+  //   }),
+  // );
 
   const config: AppConfig = {
     tokens: uniqBy(tokens, "address"),

@@ -17,4 +17,4 @@ console.table({
   equalValue: b.eq(fixed(100e18)),
 });
 
-console.log(parseFixed(0.004283196243807873e18).bigint);
+console.log(parseFixed(0.0042782412732951195).bigint);

@@ -6,6 +6,7 @@ import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestn
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import {
   baseChainConfig,
+  ChainId,
   chains,
   gnosisChainConfig,
   lineaChainConfig,
@@ -18,8 +19,11 @@ import {
   LINEA_REGISTRY_ADDRESS,
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
+import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
+import { rewardFunctions } from "src/rewards/rewards";
+import { findToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
-import { Address, Chain, createPublicClient, http } from "viem";
+import { Address, Chain, createPublicClient, http, PublicClient } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
 
 interface ChainInitializationConfig {
@@ -115,6 +119,55 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   combinedAppConfig.tokens.push(...appConfig.tokens);
   combinedAppConfig.registries[chain.id] = registryAddress;
 }
+
+// All appconfigs have been built and combined, now let's process rewards
+console.log(
+  `\n${chalk.white(chalk.underline("Processing reward tokens across all yield sources and chains"))}`,
+);
+const publicClients: Record<ChainId, PublicClient> = {};
+chainConfigs.forEach(({ chain, rpcUrl }) => {
+  publicClients[chain.id] = createPublicClient({
+    chain,
+    transport: http(rpcUrl),
+  });
+});
+await Promise.all(
+  Object.entries(yieldSources)
+    .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
+    .map(async ([unusedKey, yieldSource]) => {
+      const rewardFn = rewardFunctions[yieldSource.rewardsFn!]; // safe to cast due to filter above
+      const publicClient = publicClients[yieldSource.chainId];
+      const rewards = await rewardFn(publicClient);
+
+      rewards.map((reward) => {
+        if (
+          reward.type === "transferableToken" ||
+          reward.type === "nonTransferableToken"
+        ) {
+          const alreadyExists = !!findToken({
+            chainId: reward.chainId,
+            tokenAddress: reward.tokenAddress,
+            tokens: combinedAppConfig.tokens,
+          });
+          if (alreadyExists) {
+            return;
+          }
+
+          const knownTokenConfig =
+            knownTokenConfigs[reward.chainId][reward.tokenAddress];
+
+          if (!alreadyExists && knownTokenConfig) {
+            combinedAppConfig.tokens.push(knownTokenConfig);
+            return;
+          }
+
+          throw new Error(
+            `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
+          );
+        }
+      });
+    }),
+);
 
 const { mainnetConfig, testnetConfig } =
   getMainnetAndTestnetAppConfigs(combinedAppConfig);

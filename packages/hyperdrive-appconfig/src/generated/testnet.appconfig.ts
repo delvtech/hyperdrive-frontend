@@ -434,6 +434,17 @@ export const testnetAppConfig: AppConfig = {
   ],
   tokens: [
     {
+      chainId: 11155111,
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 11155111,
       name: "Ether",
@@ -457,6 +468,7 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+<<<<<<< HEAD
       address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       decimals: 18,
       places: 2,
@@ -465,6 +477,16 @@ export const testnetAppConfig: AppConfig = {
       iconUrl:
         "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
       tags: ["stablecoin"],
+=======
+      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
+      decimals: 18,
+      places: 4,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
+>>>>>>> d57d1d05 (update morpho rewards on getAppConfig)
     },
     {
       chainId: 11155111,
