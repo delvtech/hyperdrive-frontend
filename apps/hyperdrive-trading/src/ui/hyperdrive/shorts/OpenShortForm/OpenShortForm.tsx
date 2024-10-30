@@ -172,7 +172,6 @@ export function OpenShortForm({
   const {
     traderDeposit,
     spotRateAfterOpen,
-    spotPriceAfterOpen,
     curveFee,
     fixedRatePaid,
     status: openShortPreviewStatus,
