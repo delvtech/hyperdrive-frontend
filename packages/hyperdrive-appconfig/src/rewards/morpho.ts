@@ -1,3 +1,4 @@
+import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import { Address } from "abitype";
 import { gql, request } from "graphql-request";
 import { parseFixed } from "src/base/fixedPoint";
@@ -9,7 +10,7 @@ import {
 } from "src/rewards/types";
 import { base } from "viem/chains";
 
-interface Reward {
+interface MorphoReward {
   amountPerSuppliedToken: number;
   supplyApr: number | null;
   asset: {
@@ -28,7 +29,7 @@ interface MarketAllocation {
       priceUsd: number;
     };
     state: {
-      rewards: Reward[];
+      rewards: MorphoReward[];
     };
   };
 }
@@ -38,7 +39,7 @@ interface MorphoRewardsResponse {
     state: {
       totalAssetsUsd: number;
       // The vault rewards
-      rewards: Reward[];
+      rewards: MorphoReward[];
 
       // market allocations can have rewards too
       allocation: MarketAllocation[];
@@ -127,7 +128,7 @@ async function fetchMorphoRewards(
   );
 
   const marketAllocationRewards = parseAllocationRewards({
-    totalAssetsUsd: response.vaultByAddress.state.totalAssetsUsd,
+    totalAssetsUsd: parseFixed(response.vaultByAddress.state.totalAssetsUsd),
     allocations: response.vaultByAddress.state.allocation,
   });
 
@@ -135,7 +136,7 @@ async function fetchMorphoRewards(
 }
 
 function parseVaultReward(
-  reward: Reward,
+  reward: MorphoReward,
 ): NonTransferableTokenReward | TransferableTokenReward {
   // Supply APR only exists if the token reward is a transferable token with
   // a known token price
@@ -167,26 +168,28 @@ function parseAllocationRewards({
   totalAssetsUsd,
   allocations,
 }: {
-  totalAssetsUsd: number;
+  totalAssetsUsd: FixedPoint;
   allocations: MarketAllocation[];
 }): (NonTransferableTokenReward | TransferableTokenReward)[] {
   const allocationsWithPercents = allocations.map((allocation) => {
     return {
       allocation,
-      pctAllocated: allocation.supplyAssetsUsd / totalAssetsUsd,
+      pctAllocated: parseFixed(allocation.supplyAssetsUsd).div(
+        parseFixed(totalAssetsUsd),
+      ),
     };
   });
 
   const allocationsWithPercentsAndEffectiveRewards =
     allocationsWithPercents.map(({ allocation, pctAllocated }) => {
-      console.log(pctAllocated, "pctAllocated", allocation, "allocation");
       const effectiveRewardsRates = allocation.market.state.rewards
         .filter((reward) => reward.supplyApr)
-        .map(
-          (reward) => {
-            return { reward, effectiveRate: pctAllocated * reward.supplyApr! };
-          }, // safe to cast thanks to the filtering
-        );
+        .map((reward) => {
+          return {
+            reward,
+            effectiveRate: pctAllocated.mul(parseFixed(reward.supplyApr!)), // safe to cast thanks to the filtering
+          };
+        });
 
       const effectiveRewardsEmissions = allocation.market.state.rewards
         // A missing collateralAsset means that these funds are not allocated
@@ -196,10 +199,17 @@ function parseAllocationRewards({
         .map((reward) => {
           return {
             reward,
-            effectiveEmissions:
-              pctAllocated *
-              (reward.amountPerSuppliedToken /
-                allocation.market.collateralAsset.priceUsd),
+            effectiveEmissions: pctAllocated.mul(
+              // example: we earn 100 Morpho per 1 Eth, and ETH is worth $3000, then
+              // reduces to 100 Morpho per $3000
+              // reduces to 33.33 Morpho per $1000
+              // if 1 eth is worth $3000, then how much eth is worth $1000?
+              parseFixed(reward.amountPerSuppliedToken).div(
+                parseFixed(1000).div(
+                  parseFixed(allocation.market.collateralAsset.priceUsd),
+                ),
+              ),
+            ),
           };
         });
       return {
@@ -216,10 +226,10 @@ function parseAllocationRewards({
   // cBTC allocationPct = marketAllocationUsd/ totalAssetsUsd (example: gives you .1269 for cBTC)
   // effective rewards rate for cBTC's usdc rewards = allocationPct * usdcRewardsSupplyApr (example: .1269 * .0157 = 0.00199233)
   // add them together: 0.00199233 + 0.00220428 = 0.00419661
-  const rewardApyTotals: Record<number, Record<Address, number>> = {
+  const rewardApyTotals: Record<number, Record<Address, FixedPoint>> = {
     // mainnet -> usdc address -> effective APY
   };
-  const rewardEmissionTotals: Record<number, Record<Address, number>> = {
+  const rewardEmissionTotals: Record<number, Record<Address, FixedPoint>> = {
     // mainnet -> usdc address -> effective total emissions
   };
 
@@ -231,10 +241,14 @@ function parseAllocationRewards({
           rewardApyTotals[reward.asset.chain.id] = {};
         }
         if (!rewardApyTotals[reward.asset.chain.id][reward.asset.address]) {
-          rewardApyTotals[reward.asset.chain.id][reward.asset.address] = 0;
+          rewardApyTotals[reward.asset.chain.id][reward.asset.address] =
+            fixed(0);
         }
-        rewardApyTotals[reward.asset.chain.id][reward.asset.address] +=
-          effectiveRate;
+
+        rewardApyTotals[reward.asset.chain.id][reward.asset.address] =
+          rewardApyTotals[reward.asset.chain.id][reward.asset.address].add(
+            effectiveRate,
+          );
       });
       effectiveRewardsEmissions.forEach(({ reward, effectiveEmissions }) => {
         if (!rewardEmissionTotals[reward.asset.chain.id]) {
@@ -243,10 +257,13 @@ function parseAllocationRewards({
         if (
           !rewardEmissionTotals[reward.asset.chain.id][reward.asset.address]
         ) {
-          rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] = 0;
+          rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] =
+            fixed(0);
         }
-        rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] +=
-          effectiveEmissions;
+        rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] =
+          rewardEmissionTotals[reward.asset.chain.id][reward.asset.address].add(
+            effectiveEmissions,
+          );
       });
     },
   );
@@ -254,19 +271,9 @@ function parseAllocationRewards({
     .map(([chainId, rewardApy]) => {
       return Object.entries(rewardApy).map(
         ([tokenAddress, rewardApyPerToken]): TransferableTokenReward => {
-          let apy = 0n;
-          try {
-            apy = parseFixed(rewardApyPerToken).bigint;
-          } catch (e) {
-            console.log(
-              "FAILED! transferable rewards, rewardApyPerToken",
-              rewardApyPerToken,
-            );
-            throw e;
-          }
           return {
             type: "transferableToken",
-            apy,
+            apy: rewardApyPerToken.bigint,
             tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
             chainId: Number(chainId),
           };
@@ -283,22 +290,12 @@ function parseAllocationRewards({
           tokenAddress,
           rewardEmissionsPerToken,
         ]): NonTransferableTokenReward => {
-          let tokensPerThousandUsd = 0n;
-          try {
-            tokensPerThousandUsd = parseFixed(rewardEmissionsPerToken).bigint;
-          } catch (e) {
-            console.log(
-              "FAILED! nontransferable rewards, rewardApyPerToken",
-              rewardEmissionsPerToken,
-            );
-            throw e;
-          }
           return {
             type: "nonTransferableToken",
             // Morpho non-transferable token rewards are based on assets deposited
             // for 1 year
             depositDurationDays: 365,
-            tokensPerThousandUsd,
+            tokensPerThousandUsd: rewardEmissionsPerToken.bigint,
             tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
             chainId: Number(chainId),
           };

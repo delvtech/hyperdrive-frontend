@@ -469,6 +469,7 @@ export const testnetAppConfig: AppConfig = {
     {
       chainId: 11155111,
 <<<<<<< HEAD
+<<<<<<< HEAD
       address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       decimals: 18,
       places: 2,
@@ -490,6 +491,8 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+=======
+>>>>>>> 57fc6c53 (Add rewards tooltip)
       address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
       decimals: 18,
       places: 4,
