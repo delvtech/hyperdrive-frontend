@@ -50,7 +50,6 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { formatUnits } from "viem";
-import { base } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 
 (window as any).fixed = fixed;
@@ -246,14 +245,16 @@ export function OpenShortForm({
   const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
-      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
         hyperdrive.address,
       ) ?? false,
   });
 
   const { aeroRate } = useAeroRate({
     hyperdrive,
-    enabled: eligibleForAeroRewards[base.id]?.includes(hyperdrive.address),
+    enabled: eligibleForAeroRewards[hyperdrive.chainId]?.includes(
+      hyperdrive.address,
+    ),
   });
 
   const { openShort, openShortStatus } = useOpenShort({

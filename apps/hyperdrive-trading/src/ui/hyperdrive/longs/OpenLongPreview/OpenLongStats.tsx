@@ -124,7 +124,7 @@ export function OpenLongStats({
           )
         }
         valueUnit={`${baseToken.symbol}`}
-        valueContainerClassName="flex items-end"
+        valueContainerClassName="flex items-end flex-wrap"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 
