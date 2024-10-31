@@ -52,12 +52,10 @@ export async function getAeroLpHyperdrive({
     yieldSource: yieldSourceId,
     depositOptions: {
       isBaseTokenDepositEnabled: true,
-      // No shares token for morpho, turn off deposits
       isShareTokenDepositsEnabled: false,
     },
     withdrawOptions: {
       isBaseTokenWithdrawalEnabled: true,
-      // No shares token for morpho, turn off withdrawals
       isShareTokenWithdrawalEnabled: false,
     },
     poolConfig,

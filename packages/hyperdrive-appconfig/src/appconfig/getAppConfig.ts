@@ -186,6 +186,16 @@ const hyperdriveKindResolvers: Record<
       functionName: "name",
     });
 
+    // if (hyperdriveName.includes("AerodromeLpHyperdrive")) {
+    //   return getAeroLpHyperdrive({
+    //     hyperdrive,
+    //     baseTokenIconUrl: AERO_ICON_URL,
+    //     yieldSourceId: "aeroUsdcAero",
+    //     baseTokenPlaces: 4,
+    //     baseTokenTags: [],
+    //   });
+    // }
+
     // Ethena sUSDe
     if (hyperdriveName.includes("sUSDe Hyperdrive")) {
       return getCustomHyperdrive({
@@ -415,18 +425,18 @@ const hyperdriveKindResolvers: Record<
     );
   },
 
-  AeroLpHyperdrive: async (hyperdrive, publicClient) => {
+  AerodromeLpHyperdrive: async (hyperdrive, publicClient) => {
     const hyperdriveName = await publicClient.readContract({
       address: hyperdrive.address,
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
-    if (hyperdriveName.includes("AeroLp")) {
+    if (hyperdriveName.includes("Aerodrome LP")) {
       return getAeroLpHyperdrive({
         hyperdrive,
         baseTokenIconUrl: AERO_ICON_URL,
         yieldSourceId: "aeroUsdcAero",
-        baseTokenPlaces: 4,
+        baseTokenPlaces: 2,
         baseTokenTags: [],
       });
     }
