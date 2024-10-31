@@ -18,9 +18,9 @@ export function useAeroRate({
     chainId: hyperdrive.chainId,
     functionName: "rewardRate",
     abi: gaugeAbi,
-    // query: {
-    //   enabled,
-    // },
+    query: {
+      enabled,
+    },
   });
   const fixedPointRate = fixed(data ?? 0n);
 
