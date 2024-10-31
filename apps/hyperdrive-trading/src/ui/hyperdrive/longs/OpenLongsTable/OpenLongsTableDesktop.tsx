@@ -99,7 +99,7 @@ export function OpenLongsContainer(): ReactElement {
         const openLongs = openLongPositions?.find(
           (position) =>
             position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId
+            position.hyperdrive.chainId === hyperdrive.chainId,
         )?.openLongs;
         const baseToken = findBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
@@ -217,7 +217,7 @@ export function OpenLongsTableDesktop({
                 <th
                   key={header.id}
                   className={classNames(
-                    "relative z-10 text-sm font-normal text-neutral-content/70"
+                    "relative z-10 text-sm font-normal text-neutral-content/70",
                   )}
                 >
                   <div
@@ -230,7 +230,7 @@ export function OpenLongsTableDesktop({
                   >
                     {flexRender(
                       header.column.columnDef.header,
-                      header.getContext()
+                      header.getContext(),
                     )}
                     {{
                       asc: <ChevronUpIcon height={15} />,
@@ -248,7 +248,7 @@ export function OpenLongsTableDesktop({
                         "left-0 right-0":
                           headerIndex !== 0 &&
                           headerIndex !== headerGroup.headers.length - 1, // Full-width border for other header cells
-                      }
+                      },
                     )}
                   />
                 </th>
@@ -274,7 +274,7 @@ export function OpenLongsTableDesktop({
                         "rounded-br-box":
                           isLastRow &&
                           cellIndex === row.getVisibleCells().length - 1,
-                      }
+                      },
                     )}
                     key={cell.id}
                   >
@@ -291,7 +291,7 @@ export function OpenLongsTableDesktop({
                             "left-0 right-0":
                               cellIndex !== 0 &&
                               cellIndex !== row.getVisibleCells().length - 1, // Full width border for other cells
-                          }
+                          },
                         )}
                       />
                     )}
@@ -365,14 +365,14 @@ function getColumns({
           amountBefore: rowA.original.details?.baseAmountPaid || 0n,
           amountAfter: rowA.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n)
+            Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
         });
         const bFixedRate = calculateAnnualizedPercentageChange({
           amountBefore: rowB.original.details?.baseAmountPaid || 0n,
           amountAfter: rowB.original.details?.bondAmount || 0n,
           days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n)
+            Number(hyperdrive.poolConfig.positionDuration * 1000n),
           ),
         });
         return aFixedRate - bFixedRate;

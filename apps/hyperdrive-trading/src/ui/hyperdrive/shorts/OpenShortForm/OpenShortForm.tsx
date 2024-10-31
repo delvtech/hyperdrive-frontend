@@ -33,8 +33,12 @@ import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
+import { useAeroRate } from "src/ui/rewards/useAeroRate";
 import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
+import {
+  eligibleForAeroRewards,
+  eligibleMarketsForMorphoVaultRewards,
+} from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -247,6 +251,11 @@ export function OpenShortForm({
       ) ?? false,
   });
 
+  const { aeroRate } = useAeroRate({
+    hyperdrive,
+    enabled: eligibleForAeroRewards[base.id]?.includes(hyperdrive.address),
+  });
+
   const { openShort, openShortStatus } = useOpenShort({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -348,13 +357,14 @@ export function OpenShortForm({
                   {isNewPool
                     ? "✨New✨"
                     : `${
-                        morphoVaultData
+                        morphoVaultData || aeroRate
                           ? `${formatRate(
                               vaultRate.vaultRate +
                                 BigInt(
                                   (morphoVaultData.reward?.supplyApr ?? 0) *
                                     1e18,
-                                ),
+                                ) +
+                                (aeroRate?.bigint ?? 0n),
                               18,
                               false,
                             )}%`

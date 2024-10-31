@@ -1,4 +1,5 @@
 import {
+  AERO_ICON_URL,
   HyperdriveConfig,
   WELL_ICON_URL,
 } from "@delvtech/hyperdrive-appconfig";
@@ -9,6 +10,7 @@ import {
 } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
 import { base, mainnet } from "viem/chains";
+import { useAeroRate } from "./useAeroRate";
 
 // TODO @cashd: Move to AppConfig
 // https://github.com/delvtech/hyperdrive-frontend/issues/1341
@@ -42,14 +44,19 @@ export const eligibleMarketsForMorphoVaultRewards: Record<number, Address[]> = {
   ],
 };
 
-export const eligibleForEtherFiRewards: Record<number, Address[]> = {
-  [mainnet.id]: [
-    // 182d Ether.fi Staked ETH
-    "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
+export const eligibleForAeroRewards: Record<number, Address[]> = {
+  [base.id]: [
+    // 182d USDC/AERO market
+    // TODO: Update to correct market when deployed
+    "0x9bAdB6A21FbA04EE94fde3E85F7d170E90394c89",
   ],
 };
 
-type RewardType = "MorphoFlatRate" | "MorphoVault" | "MorphoVaultAllocation";
+type RewardType =
+  | "MorphoFlatRate"
+  | "MorphoVault"
+  | "MorphoVaultAllocation"
+  | "Aero";
 
 type Reward = {
   id: RewardType;
@@ -80,7 +87,29 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       ) ?? false,
   });
 
+  const { aeroRate } = useAeroRate({
+    enabled:
+      eligibleForAeroRewards[base.id]?.includes(hyperdrive.address) ?? false,
+    hyperdrive,
+  });
+
   const rewards = [];
+
+  if (
+    eligibleForAeroRewards[hyperdrive.chainId]?.includes(hyperdrive.address)
+  ) {
+    const aeroReward: Reward = {
+      id: "Aero",
+      name: "AERO",
+      iconUrl: AERO_ICON_URL,
+      amount: aeroRate
+        ? aeroRate.format({
+            decimals: 2,
+          })
+        : "0",
+    };
+    rewards.push(aeroReward);
+  }
 
   // Add any morpho rewards for this market
   if (

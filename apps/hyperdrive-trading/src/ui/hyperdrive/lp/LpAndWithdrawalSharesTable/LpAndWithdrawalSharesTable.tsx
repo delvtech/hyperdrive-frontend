@@ -61,7 +61,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   }
 
   const hasOpenPositions = openLpPositions?.some(
-    (position) => position.lpShares > 0n || position.withdrawalShares > 0n
+    (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
   );
 
   if (!hasOpenPositions) {
@@ -99,7 +99,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
         const openLpPosition = openLpPositions?.find(
           (position) =>
             position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId
+            position.hyperdrive.chainId === hyperdrive.chainId,
         ) ?? {
           lpShares: 0n,
           withdrawalShares: 0n,
@@ -154,7 +154,7 @@ export function OpenLpTableDesktop({
 
   const columns = useMemo(
     () => getColumns({ hyperdrive, appConfig }),
-    [hyperdrive, appConfig]
+    [hyperdrive, appConfig],
   );
   const data = useMemo(() => [openLpPosition], [openLpPosition]);
   const tableInstance = useReactTable({
@@ -195,7 +195,7 @@ export function OpenLpTableDesktop({
                 <th
                   key={header.id}
                   className={classNames(
-                    "relative z-10 text-sm font-normal text-neutral-content/70"
+                    "relative z-10 text-sm font-normal text-neutral-content/70",
                   )}
                 >
                   <div
@@ -207,7 +207,7 @@ export function OpenLpTableDesktop({
                   >
                     {flexRender(
                       header.column.columnDef.header,
-                      header.getContext()
+                      header.getContext(),
                     )}
                   </div>
                   {/* Custom border with inset for the first and last header cells */}
@@ -221,7 +221,7 @@ export function OpenLpTableDesktop({
                         "left-0 right-0":
                           headerIndex !== 0 &&
                           headerIndex !== headerGroup.headers.length - 1, // Full-width border for other header cells
-                      }
+                      },
                     )}
                   />
                 </th>
@@ -289,7 +289,7 @@ function getColumns({
       cell: () => (
         <div>
           {convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n)
+            Number(hyperdrive.poolConfig.positionDuration * 1000n),
           )}
           {"-"}Day
         </div>

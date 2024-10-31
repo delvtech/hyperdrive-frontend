@@ -11,6 +11,7 @@ declare module "src/yieldSources/types" {
     mwUsdc: "mwUsdc";
     stkWell: "stkWell";
     snars: "snars";
+    aeroUsdcAero: "aeroUsdcAero";
   }
 }
 
@@ -71,4 +72,12 @@ export const mwUsdc: YieldSource = {
   protocol: "morpho",
   historicalRatePeriod: 1,
   rewardsFn: "fetchMwUsdcRewards",
+};
+
+export const aeroUsdcAero: YieldSource = {
+  chainId: base.id,
+  id: "aeroUsdcAero",
+  shortName: "Aerodrome USDC/AERO",
+  protocol: "aerodrome",
+  historicalRatePeriod: 1,
 };

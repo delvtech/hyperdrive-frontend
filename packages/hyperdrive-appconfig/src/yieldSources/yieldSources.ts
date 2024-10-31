@@ -1,4 +1,5 @@
 import {
+  aeroUsdcAero,
   cbeth,
   morphoCbethUsdc,
   mwEth,
@@ -49,5 +50,6 @@ export const yieldSources = {
   snars,
   mwEurc,
   mwUsdc,
+  aeroUsdcAero,
   susde,
 } as const;

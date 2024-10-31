@@ -24,6 +24,7 @@ export function useAppConfigRewards(hyperdriveConfig: HyperdriveConfig): {
       hyperdriveAddress: hyperdriveConfig.address,
       chainId: hyperdriveConfig.chainId,
     }),
+    enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const publicClient = getPublicClient(wagmiConfig as any, {

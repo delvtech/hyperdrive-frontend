@@ -4,6 +4,7 @@ import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import { getAeroLpHyperdrive } from "src/hyperdrives/aero/getAeroHyperdrive";
 import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
@@ -12,6 +13,7 @@ import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
+  AERO_ICON_URL,
   DAI_ICON_URL,
   EETH_ICON_URL,
   ETH_ICON_URL,
@@ -410,6 +412,26 @@ const hyperdriveKindResolvers: Record<
 
     throw new Error(
       `Unknown MoonwellHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
+    );
+  },
+
+  AerodromeLpHyperdrive: async (hyperdrive, publicClient) => {
+    const hyperdriveName = await publicClient.readContract({
+      address: hyperdrive.address,
+      abi: hyperdrive.contract.abi,
+      functionName: "name",
+    });
+    if (hyperdriveName.includes("Aerodrome LP")) {
+      return getAeroLpHyperdrive({
+        hyperdrive,
+        baseTokenIconUrl: AERO_ICON_URL,
+        yieldSourceId: "aeroUsdcAero",
+        baseTokenPlaces: 2,
+        baseTokenTags: [],
+      });
+    }
+    throw new Error(
+      `Unknown AeroLpHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
     );
   },
 
