@@ -27,7 +27,7 @@ interface MarketAllocation {
   market: {
     collateralAsset: {
       priceUsd: number;
-    };
+    } | null;
     state: {
       rewards: MorphoReward[];
     };
@@ -36,6 +36,10 @@ interface MarketAllocation {
 
 interface MorphoRewardsResponse {
   vaultByAddress: {
+    asset: {
+      name: string;
+      priceUsd: number;
+    };
     state: {
       totalAssetsUsd: number;
       // The vault rewards
@@ -78,6 +82,9 @@ async function fetchMorphoRewards(
       query SupplyRewards($address: String!, $chainId: Int!) {
         vaultByAddress(address: $address, chainId: $chainId) {
           address
+          asset {
+            priceUsd
+          }
           state {
             totalSupply
             totalAssetsUsd
@@ -130,6 +137,7 @@ async function fetchMorphoRewards(
   const marketAllocationRewards = parseAllocationRewards({
     totalAssetsUsd: parseFixed(response.vaultByAddress.state.totalAssetsUsd),
     allocations: response.vaultByAddress.state.allocation,
+    vaultCollateralAsset: response.vaultByAddress.asset,
   });
 
   return [...vaultRewards, ...marketAllocationRewards];
@@ -156,7 +164,7 @@ function parseVaultReward(
     // Morpho non-transferable token rewards are based on assets deposited
     // for 1 year
     depositDurationDays: 365,
-    tokensPerThousandUsd: parseFixed(reward.amountPerSuppliedToken).bigint,
+    tokensPerThousandUsd: fixed(reward.amountPerSuppliedToken, 16).bigint,
     tokenAddress: reward.asset.address,
     chainId: reward.asset.chain.id,
   };
@@ -166,11 +174,15 @@ function parseVaultReward(
 
 function parseAllocationRewards({
   totalAssetsUsd,
+  vaultCollateralAsset,
   allocations,
 }: {
   totalAssetsUsd: FixedPoint;
   allocations: MarketAllocation[];
+  vaultCollateralAsset: MorphoRewardsResponse["vaultByAddress"]["asset"];
 }): (NonTransferableTokenReward | TransferableTokenReward)[] {
+  // Calculate the percent of the total assets allocated to each underlying
+  // market and include that next to the allocation object
   const allocationsWithPercents = allocations.map((allocation) => {
     return {
       allocation,
@@ -182,6 +194,7 @@ function parseAllocationRewards({
 
   const allocationsWithPercentsAndEffectiveRewards =
     allocationsWithPercents.map(({ allocation, pctAllocated }) => {
+      // Calculate the actual reward APR for each market the vault allocates to
       const effectiveRewardsRates = allocation.market.state.rewards
         .filter((reward) => reward.supplyApr)
         .map((reward) => {
@@ -191,12 +204,19 @@ function parseAllocationRewards({
           };
         });
 
+      // Calculate the actual non-transferable token rewards for each market the
+      // vault allocates to
       const effectiveRewardsEmissions = allocation.market.state.rewards
-        // A missing collateralAsset means that these funds are not allocated
-        .filter(
-          (reward) => !reward.supplyApr && allocation.market.collateralAsset,
-        )
+        // Note: A missing supplyApr means that the rewards are a non-transferable token
+        .filter((reward) => !reward.supplyApr)
         .map((reward) => {
+          // If an amount of vault assets are idle, then it's considered
+          // "allocated" to the 0x address market. Since there still could be
+          // rewards, we need to use the vault's collateral token to calculate
+          // rewards instead of the underlying market's collateral token.
+          const collateralAssetPrice =
+            allocation.market.collateralAsset?.priceUsd ||
+            vaultCollateralAsset.priceUsd;
           return {
             reward,
             effectiveEmissions: pctAllocated.mul(
@@ -204,10 +224,9 @@ function parseAllocationRewards({
               // reduces to 100 Morpho per $3000
               // reduces to 33.33 Morpho per $1000
               // if 1 eth is worth $3000, then how much eth is worth $1000?
-              parseFixed(reward.amountPerSuppliedToken).div(
-                parseFixed(1000).div(
-                  parseFixed(allocation.market.collateralAsset.priceUsd),
-                ),
+              // if you earn 100 morpho per 1 eth, and eth is worth $3000, then how much morpho do you earn for the amount of eth equal to $1,000?
+              fixed(reward.amountPerSuppliedToken, 18).mul(
+                parseFixed(1000).div(parseFixed(collateralAssetPrice)),
               ),
             ),
           };
