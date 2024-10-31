@@ -17,6 +17,3 @@ export { rEthAbi, type REthAbi } from "src/token/reth/abi";
 
 // steth
 export { stEthAbi, type StEthAbi } from "src/token/steth/abi";
-
-// aero
-export { gaugeAbi, type GaugeAbi } from "src/token/aero/gaugeAbi";
