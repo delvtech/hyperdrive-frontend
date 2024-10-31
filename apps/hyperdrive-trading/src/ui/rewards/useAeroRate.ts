@@ -44,9 +44,9 @@ export function useAeroRate({
     chainId: hyperdrive.chainId,
     functionName: "totalSupply",
     abi: gaugeAbi,
-    // query: {
-    //   enabled,
-    // },
+    query: {
+      enabled,
+    },
   });
 
   const fixedTotalSupply = fixed(totalSupply ?? 0n);
@@ -66,7 +66,7 @@ export function useAeroRate({
       .div(dollarValueOfPool)
       .mul(parseFixed(100n));
   }
-  return { aeroRate: fixed(apr) };
+  return { aeroRate: enabled ? fixed(apr) : undefined };
 }
 
 export const gaugeAbi = [
