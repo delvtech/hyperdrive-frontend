@@ -1,4 +1,4 @@
-import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   HyperdriveConfig,
   appConfig,
@@ -71,6 +71,8 @@ export function OpenShortPreview({
             chainId: hyperdrive.chainId,
             poolAddress: hyperdrive.address,
             positionType: "short",
+            positionSize: fixed(shortSize ?? 0, baseToken.decimals).toString(),
+            feeAmount: fixed(curveFee ?? 0, baseToken.decimals).toString(),
           },
         });
         return true;

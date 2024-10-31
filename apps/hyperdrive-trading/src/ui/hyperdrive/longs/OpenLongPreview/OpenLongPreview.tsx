@@ -1,4 +1,4 @@
-import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   HyperdriveConfig,
   TokenConfig,
@@ -52,6 +52,8 @@ export function OpenLongPreview({
             chainId: hyperdrive.chainId,
             poolAddress: hyperdrive.address,
             positionType: "long",
+            positionSize: fixed(bondAmount, baseToken.decimals).toString(),
+            feeAmount: fixed(curveFee ?? 0, baseToken.decimals).toString(),
           },
         });
         return true;

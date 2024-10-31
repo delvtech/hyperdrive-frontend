@@ -95,6 +95,8 @@ export interface PlausibleEventParamsMap {
       chainId: number;
       poolAddress: string;
       positionType: PositionType;
+      positionSize: string;
+      feeAmount: string;
     };
   };
 }
