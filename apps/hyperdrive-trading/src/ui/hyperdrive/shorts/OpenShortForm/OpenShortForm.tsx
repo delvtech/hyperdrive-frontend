@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
@@ -359,12 +359,14 @@ export function OpenShortForm({
                     : `${
                         morphoVaultData || aeroRate
                           ? `${formatRate(
-                              vaultRate.vaultRate +
-                                BigInt(
-                                  (morphoVaultData.reward?.supplyApr ?? 0) *
-                                    1e18,
-                                ) +
-                                (aeroRate?.bigint ?? 0n),
+                              fixed(vaultRate.vaultRate)
+                                .add(
+                                  parseFixed(
+                                    morphoVaultData.reward?.supplyApr ?? 0,
+                                  ),
+                                )
+                                .add(aeroRate ?? 0n)
+                                .div(parseFixed(100)).bigint,
                               18,
                               false,
                             )}%`
