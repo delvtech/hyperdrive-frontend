@@ -25,9 +25,7 @@ export function RewardsTooltip({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
-
   const rewards = useRewards(hyperdrive);
-
   const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
 
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
@@ -40,11 +38,7 @@ export function RewardsTooltip({
     }
   });
 
-  if (
-    !rewards ||
-    !appConfigRewards ||
-    (rewards && rewards.length === 0 && appConfigRewards.length === 0)
-  ) {
+  if (!rewards?.length && !appConfigRewards?.length) {
     return children;
   }
 
