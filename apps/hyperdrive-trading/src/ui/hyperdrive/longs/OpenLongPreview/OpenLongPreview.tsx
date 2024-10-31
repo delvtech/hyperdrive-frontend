@@ -12,65 +12,64 @@ import { ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { AccordionSection } from "src/ui/base/components/AccordionSection/AccordionSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
   bondAmount: bigint;
-  amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
   spotRateAfterOpen: bigint | undefined;
-  activeToken: TokenConfig;
   curveFee: bigint | undefined;
-  asBase: boolean;
-  vaultSharePrice: bigint | undefined;
 }
 
 export function OpenLongPreview({
   hyperdrive,
   openLongPreviewStatus,
-  amountPaid,
   bondAmount,
   spotRateAfterOpen,
-  activeToken,
   curveFee,
-  asBase,
-  vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const isBaseAmount = asBase || yieldSource.isSharesPeggedToBase;
-  const amountPaidInBase = isBaseAmount
-    ? amountPaid
-    : convertSharesToBase({
-        sharesAmount: amountPaid,
-        vaultSharePrice: vaultSharePrice,
-        decimals: baseToken.decimals,
-      });
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [isDetailsExpanded, expandDetails] = useState(false);
+  function handleChange() {
+    setIsOpen((prev) => {
+      if (!prev) {
+        window.plausible("transactionDetailsOpen", {
+          props: {
+            chainId: hyperdrive.chainId,
+            poolAddress: hyperdrive.address,
+            positionType: "long",
+          },
+        });
+        return true;
+      }
+      return false;
+    });
+  }
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <AccordionSection
-        isExpanded={isDetailsExpanded}
-        onChange={() => expandDetails((prev) => !prev)}
+        isExpanded={isOpen}
+        onChange={handleChange}
         heading={
           <OpenLongTransactionDetailsHeader
             bondAmount={bondAmount}
             baseToken={baseToken}
-            isDetailsExpanded={isDetailsExpanded}
+            isDetailsExpanded={isOpen}
           />
         }
       >

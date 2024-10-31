@@ -2,6 +2,28 @@ import { AppConfig } from "src/appconfig/AppConfig";
 export const sepoliaAppConfig: AppConfig = {
   tokens: [
     {
+      address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      chainId: 11155111,
+      name: "Ether",
+      symbol: "ETH",
+      decimals: 18,
+      places: 4,
+      tags: [],
+      iconUrl:
+        "data:image/png;base64,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",
+    },
+    {
+      chainId: 11155111,
+      address: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
+      decimals: 18,
+      places: 4,
+      name: "Liquid staked Ether 2.0",
+      symbol: "stETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yNTYgNTEyQzM5Ny4zODUgNTEyIDUxMiAzOTcuMzg1IDUxMiAyNTZDNTEyIDExNC42MTUgMzk3LjM4NSAwIDI1NiAwQzExNC42MTUgMCAwIDExNC42MTUgMCAyNTZDMCAzOTcuMzg1IDExNC42MTUgNTEyIDI1NiA1MTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTUwLjk4OCAyMzcuODEyTDE0OC4xMjIgMjQyLjIwOUMxMTUuNzk2IDI5MS43OTggMTIzLjAxNiAzNTYuNzQyIDE2NS40OCAzOTguMzQ4QzE5MC40NjEgNDIyLjgyNiAyMjMuMjAyIDQzNS4wNjYgMjU1Ljk0NCA0MzUuMDY5QzI1NS45NDQgNDM1LjA2OSAyNTUuOTQ0IDQzNS4wNjkgMTUwLjk4OCAyMzcuODEyWiIgZmlsbD0iIzAwQTNGRiIvPgo8cGF0aCBvcGFjaXR5PSIwLjYiIGQ9Ik0yNTUuOTE0IDI5Ny43NjRMMTUwLjk1OCAyMzcuODEyQzI1NS45MTQgNDM1LjA2OSAyNTUuOTE0IDQzNS4wNjkgMjU1LjkxNCA0MzUuMDY5QzI1NS45MTQgMzkyLjEwOCAyNTUuOTE0IDM0Mi44OCAyNTUuOTE0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTM2MS4wMTIgMjM3LjgxMkwzNjMuODc4IDI0Mi4yMDlDMzk2LjIwNCAyOTEuNzk4IDM4OC45ODQgMzU2Ljc0MiAzNDYuNTIgMzk4LjM0OEMzMjEuNTM5IDQyMi44MjYgMjg4Ljc5OCA0MzUuMDY2IDI1Ni4wNTYgNDM1LjA2OUMyNTYuMDU2IDQzNS4wNjkgMjU2LjA1NiA0MzUuMDY5IDM2MS4wMTIgMjM3LjgxMloiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC4yIiBkPSJNMjU2LjA0NCAyOTcuNzY0TDM2MSAyMzcuODEyQzI1Ni4wNDUgNDM1LjA2OSAyNTYuMDQ0IDQzNS4wNjkgMjU2LjA0NCA0MzUuMDY5QzI1Ni4wNDQgMzkyLjEwOCAyNTYuMDQ0IDM0Mi44OCAyNTYuMDQ0IDI5Ny43NjRaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuMiIgZD0iTTI1Ni4wODMgMTYzLjgzM1YyNjcuMjMzTDM0Ni40OTEgMjE1LjU2N0wyNTYuMDgzIDE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIG9wYWNpdHk9IjAuNiIgZD0iTTI1Ni4wNTYgMTYzLjgzM0wxNjUuNTgzIDIxNS41NjVMMjU2LjA1NiAyNjcuMjMzVjE2My44MzNaIiBmaWxsPSIjMDBBM0ZGIi8+CjxwYXRoIGQ9Ik0yNTYuMDU2IDc2Ljg3NUwxNjUuNTgzIDIxNS41OTlMMjU2LjA1NiAxNjMuNzIyVjc2Ljg3NVoiIGZpbGw9IiMwMEEzRkYiLz4KPHBhdGggb3BhY2l0eT0iMC42IiBkPSJNMjU2LjA4MyAxNjMuNzA2TDM0Ni41NiAyMTUuNTg1TDI1Ni4wODMgNzYuNzkxN1YxNjMuNzA2WiIgZmlsbD0iIzAwQTNGRiIvPgo8L3N2Zz4K",
+      tags: ["liquidStakingToken"],
+    },
+    {
       chainId: 11155111,
       address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
       decimals: 18,
@@ -593,10 +615,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchEtherfiRewards",
-        args: [],
-      },
+      rewardsFn: "fetchEtherfiRewards",
     },
     makerDsr: {
       chainId: 1,
@@ -696,10 +715,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     rseth: {
       chainId: 59144,
@@ -707,10 +723,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "KelpDAO rsETH",
       protocol: "kelpDao",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     usds: {
       chainId: 1,
@@ -732,10 +745,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Moonwell Flagship ETH",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", 8453],
-      },
+      rewardsFn: "fetchMwEthRewards",
     },
     stkWell: {
       chainId: 8453,
@@ -757,10 +767,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Moonwell Flagship EURC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026", 8453],
-      },
+      rewardsFn: "fetchMweurcRewards",
     },
     mwUsdc: {
       chainId: 8453,
@@ -768,10 +775,7 @@ export const sepoliaAppConfig: AppConfig = {
       shortName: "Moonwell Flagship USDC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", 8453],
-      },
+      rewardsFn: "fetchMwUsdcRewards",
     },
     aeroUsdcAero: {
       chainId: 8453,

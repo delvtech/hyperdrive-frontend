@@ -42,7 +42,7 @@ export type {
   AnyReward,
   InfoReward,
   NonTransferableTokenReward,
-  RewardsFn,
+  RewardsResolver as RewardsFn,
   TransferableTokenReward,
 } from "src/rewards/types";
 

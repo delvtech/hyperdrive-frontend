@@ -588,10 +588,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Ether.fi Staked ETH",
       protocol: "etherFi",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchEtherfiRewards",
-        args: [],
-      },
+      rewardsFn: "fetchEtherfiRewards",
     },
     makerDsr: {
       chainId: 1,
@@ -691,10 +688,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Renzo ezETH",
       protocol: "renzo",
       historicalRatePeriod: 14,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     rseth: {
       chainId: 59144,
@@ -702,10 +696,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "KelpDAO rsETH",
       protocol: "kelpDao",
       historicalRatePeriod: 30,
-      rewards: {
-        functionName: "fetchLineaRewards",
-        args: [],
-      },
+      rewardsFn: "fetchLineaRewards",
     },
     usds: {
       chainId: 1,
@@ -727,10 +718,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship ETH",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1", 8453],
-      },
+      rewardsFn: "fetchMwEthRewards",
     },
     stkWell: {
       chainId: 8453,
@@ -752,10 +740,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship EURC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026", 8453],
-      },
+      rewardsFn: "fetchMweurcRewards",
     },
     mwUsdc: {
       chainId: 8453,
@@ -763,10 +748,7 @@ export const baseAppConfig: AppConfig = {
       shortName: "Moonwell Flagship USDC",
       protocol: "morpho",
       historicalRatePeriod: 1,
-      rewards: {
-        functionName: "fetchMorphoRewards",
-        args: ["0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca", 8453],
-      },
+      rewardsFn: "fetchMwUsdcRewards",
     },
     aeroUsdcAero: {
       chainId: 8453,

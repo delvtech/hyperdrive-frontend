@@ -1,7 +1,6 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   HyperdriveConfig,
-  TokenConfig,
   appConfig,
   findBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
@@ -20,10 +19,9 @@ import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
-  tokenIn: TokenConfig;
-  costBasis: bigint | undefined;
   shortSize: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
@@ -32,14 +30,12 @@ interface OpenShortPreviewProps {
 
 export function OpenShortPreview({
   hyperdrive,
-  costBasis,
-  tokenIn,
   shortSize,
   spotRateAfterOpen,
   curveFee,
   openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
-  const [detailsOpen, setDetailsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const baseToken = findBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
@@ -67,6 +63,22 @@ export function OpenShortPreview({
   });
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
 
+  function handleChange() {
+    setIsOpen((prev) => {
+      if (!prev) {
+        window.plausible("transactionDetailsOpen", {
+          props: {
+            chainId: hyperdrive.chainId,
+            poolAddress: hyperdrive.address,
+            positionType: "short",
+          },
+        });
+        return true;
+      }
+      return false;
+    });
+  }
+
   return (
     <div className="flex flex-col gap-3.5 px-2">
       <AccordionSection
@@ -74,7 +86,7 @@ export function OpenShortPreview({
           <div className="flex w-full items-center justify-between text-neutral-content">
             <p>Transaction Details</p>
             <div className="flex items-center gap-1">
-              {!detailsOpen ? (
+              {!isOpen ? (
                 <>
                   <ClockIcon className="size-5 text-gray-500" />
                   <p>{formatDate(Date.now() + termLengthMS)}</p>
@@ -84,7 +96,7 @@ export function OpenShortPreview({
             </div>
           </div>
         }
-        onChange={() => setDetailsOpen(!detailsOpen)}
+        onChange={handleChange}
       >
         <LabelValue
           label="Maturity"

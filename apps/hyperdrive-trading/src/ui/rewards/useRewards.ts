@@ -9,7 +9,7 @@ import {
   vaultAddresses,
 } from "src/ui/rewards/useMorphoRate";
 import { Address } from "viem";
-import { base, linea, mainnet } from "viem/chains";
+import { base, mainnet } from "viem/chains";
 import { useAeroRate } from "./useAeroRate";
 
 // TODO @cashd: Move to AppConfig
@@ -52,28 +52,10 @@ export const eligibleForAeroRewards: Record<number, Address[]> = {
   ],
 };
 
-const eligibleMarketsForLineaRewards: Record<number, Address[]> = {
-  [linea.id]: [
-    // 182d KelpDAO rsETH
-    "0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777",
-    // 182d Renzo ezETH
-    "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
-  ],
-};
-
-export const eligibleForEtherFiRewards: Record<number, Address[]> = {
-  [mainnet.id]: [
-    // 182d Ether.fi Staked ETH
-    "0x158Ed87D7E529CFE274f3036ade49975Fb10f030",
-  ],
-};
-
 type RewardType =
   | "MorphoFlatRate"
   | "MorphoVault"
   | "MorphoVaultAllocation"
-  | "LineaLXPL"
-  | "EtherFi"
   | "Aero";
 
 type Reward = {
@@ -82,6 +64,10 @@ type Reward = {
   amount: string;
   iconUrl?: string;
 };
+
+/**
+ * @deprecated use useAppConfigRewards instead
+ */
 
 export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
   const { morphoRate } = useMorphoRate({
@@ -187,32 +173,6 @@ export function useRewards(hyperdrive: HyperdriveConfig): Reward[] | undefined {
       rewards.push(vaultAllocationReward);
     }
     rewards.push(vaultReward);
-  }
-
-  // Add any linea rewards for this market
-  if (
-    eligibleMarketsForLineaRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
-    )
-  ) {
-    const lineaReward: Reward = {
-      id: "LineaLXPL",
-      name: "LXPL",
-      amount: "1",
-    };
-    rewards.push(lineaReward);
-  }
-
-  // Add any ether.fi rewards for this market
-  if (
-    eligibleForEtherFiRewards[hyperdrive.chainId]?.includes(hyperdrive.address)
-  ) {
-    const etherFiReward: Reward = {
-      id: "EtherFi",
-      name: "eETH",
-      amount: "2x",
-    };
-    rewards.push(etherFiReward);
   }
 
   return rewards;

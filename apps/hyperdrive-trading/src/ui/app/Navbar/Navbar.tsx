@@ -7,6 +7,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
@@ -27,10 +28,10 @@ export function Navbar(): ReactElement {
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
-        <Link to={"/"} className="hidden items-center sm:inline-flex">
+        <Link to="/" className="hidden items-center sm:inline-flex">
           <HyperdriveLogo />
         </Link>
-        <Link to={"/"} className="inline-flex items-center sm:hidden">
+        <Link to="/" className="inline-flex items-center sm:hidden">
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
         <div className="ml-16 flex gap-8">
@@ -69,9 +70,8 @@ export function Navbar(): ReactElement {
         </div>
       </div>
       <div className="daisy-navbar-end gap-2 sm:gap-8">
-        <a
-          target="_blank"
-          rel="noreferrer"
+        <ExternalLink
+          newTab
           href="https://hyperdrive.blockanalitica.com"
           className="daisy-btn rounded-full text-accent"
         >
@@ -80,7 +80,7 @@ export function Navbar(): ReactElement {
             <ChartBarIcon className="inline h-6" />
           </span>
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
-        </a>
+        </ExternalLink>
 
         {chainId === sepolia.id ? <VersionPicker /> : null}
 
