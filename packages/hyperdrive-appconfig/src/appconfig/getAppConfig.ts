@@ -186,16 +186,6 @@ const hyperdriveKindResolvers: Record<
       functionName: "name",
     });
 
-    // if (hyperdriveName.includes("AerodromeLpHyperdrive")) {
-    //   return getAeroLpHyperdrive({
-    //     hyperdrive,
-    //     baseTokenIconUrl: AERO_ICON_URL,
-    //     yieldSourceId: "aeroUsdcAero",
-    //     baseTokenPlaces: 4,
-    //     baseTokenTags: [],
-    //   });
-    // }
-
     // Ethena sUSDe
     if (hyperdriveName.includes("sUSDe Hyperdrive")) {
       return getCustomHyperdrive({
