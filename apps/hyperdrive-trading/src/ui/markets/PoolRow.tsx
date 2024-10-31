@@ -30,7 +30,6 @@ import {
   eligibleMarketsForMorphoVaultRewards,
 } from "src/ui/rewards/useRewards";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { base } from "viem/chains";
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -96,7 +95,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
-      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
         hyperdrive.address,
       ) ?? false,
   });
@@ -104,7 +103,9 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const { aeroRate } = useAeroRate({
     hyperdrive,
     enabled:
-      eligibleForAeroRewards[base.id]?.includes(hyperdrive.address) ?? false,
+      eligibleForAeroRewards[hyperdrive.chainId]?.includes(
+        hyperdrive.address,
+      ) ?? false,
   });
 
   return (

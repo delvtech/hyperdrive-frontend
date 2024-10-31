@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
@@ -50,7 +50,6 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { formatUnits } from "viem";
-import { base } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 
 (window as any).fixed = fixed;
@@ -246,14 +245,16 @@ export function OpenShortForm({
   const { morphoVaultData } = useMorphoVaultRewards({
     hyperdrive,
     enabled:
-      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
+      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
         hyperdrive.address,
       ) ?? false,
   });
 
   const { aeroRate } = useAeroRate({
     hyperdrive,
-    enabled: eligibleForAeroRewards[base.id]?.includes(hyperdrive.address),
+    enabled: eligibleForAeroRewards[hyperdrive.chainId]?.includes(
+      hyperdrive.address,
+    ),
   });
 
   const { openShort, openShortStatus } = useOpenShort({
@@ -359,12 +360,14 @@ export function OpenShortForm({
                     : `${
                         morphoVaultData || aeroRate
                           ? `${formatRate(
-                              vaultRate.vaultRate +
-                                BigInt(
-                                  (morphoVaultData.reward?.supplyApr ?? 0) *
-                                    1e18,
-                                ) +
-                                (aeroRate?.bigint ?? 0n),
+                              fixed(vaultRate.vaultRate)
+                                .add(
+                                  parseFixed(
+                                    morphoVaultData.reward?.supplyApr ?? 0,
+                                  ),
+                                )
+                                .add(aeroRate ?? 0n)
+                                .div(parseFixed(100)).bigint,
                               18,
                               false,
                             )}%`

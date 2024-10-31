@@ -426,7 +426,7 @@ const hyperdriveKindResolvers: Record<
         hyperdrive,
         baseTokenIconUrl: AERO_ICON_URL,
         yieldSourceId: "aeroUsdcAero",
-        baseTokenPlaces: 2,
+        baseTokenPlaces: 9, // aero lp tokens are super small
         baseTokenTags: [],
       });
     }

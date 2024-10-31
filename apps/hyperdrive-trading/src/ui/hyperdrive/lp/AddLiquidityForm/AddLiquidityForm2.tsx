@@ -33,6 +33,12 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
+import { useAeroRate } from "src/ui/rewards/useAeroRate";
+import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
+import {
+  eligibleForAeroRewards,
+  eligibleMarketsForMorphoVaultRewards,
+} from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -458,7 +464,7 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueContainerClassName="flex items-end"
+      valueContainerClassName="flex items-end flex-wrap"
       unitClassName="text-xs mb-1"
       value={
         addLiquidityPreviewStatus === "loading" ? (
@@ -495,6 +501,20 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
+  const { morphoVaultData } = useMorphoVaultRewards({
+    hyperdrive,
+    enabled:
+      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
+        hyperdrive.address,
+      ) ?? false,
+  });
+
+  const { aeroRate } = useAeroRate({
+    hyperdrive,
+    enabled: eligibleForAeroRewards[hyperdrive.chainId]?.includes(
+      hyperdrive.address,
+    ),
+  });
   const showSkeleton = !lpApy && lpApyStatus === "loading";
 
   return (
@@ -522,7 +542,17 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         vaultRateStatus === "success" && vaultRate ? (
           <div>
             {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
-            {vaultRate.formatted || 0} APY
+            {morphoVaultData || aeroRate
+              ? `${formatRate(
+                  fixed(vaultRate.vaultRate)
+                    .add(parseFixed(morphoVaultData.reward?.supplyApr ?? 0))
+                    .add(aeroRate ?? 0n)
+                    .div(parseFixed(100)).bigint,
+                  18,
+                  false,
+                )}%`
+              : vaultRate.formatted}{" "}
+            APY
           </div>
         ) : (
           <Skeleton className="w-42 h-8" />

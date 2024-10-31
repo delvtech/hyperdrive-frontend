@@ -25,7 +25,7 @@ export function PrimaryStat({
   valueLoading?: boolean;
 }): JSX.Element {
   return (
-    <div className="flex flex-col justify-between gap-1">
+    <div className="flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1">
       <div className="flex gap-1">
         <p className="max-w-40 text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
