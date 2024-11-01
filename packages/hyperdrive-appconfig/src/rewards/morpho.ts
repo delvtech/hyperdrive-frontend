@@ -15,7 +15,6 @@ interface MorphoReward {
   supplyApr: number | null;
   asset: {
     address: Address;
-    name: string;
     chain: {
       id: number;
     };
@@ -37,7 +36,6 @@ interface MarketAllocation {
 interface MorphoRewardsResponse {
   vaultByAddress: {
     asset: {
-      name: string;
       priceUsd: number;
     };
     state: {
@@ -86,14 +84,12 @@ async function fetchMorphoRewards(
             priceUsd
           }
           state {
-            totalSupply
             totalAssetsUsd
             rewards {
               amountPerSuppliedToken
               supplyApr
               asset {
                 address
-                name
                 chain {
                   id
                 }
@@ -111,7 +107,6 @@ async function fetchMorphoRewards(
                     supplyApr
                     asset {
                       address
-                      name
                       chain {
                         id
                       }
@@ -261,7 +256,6 @@ function parseAllocationRewards({
           rewardApyTotals[chainId][assetAddress] = rewardApyTotals[chainId][
             assetAddress
           ].add(vaultAdjustedRewardRate);
-          return;
         }
 
         // Accumulate token totals

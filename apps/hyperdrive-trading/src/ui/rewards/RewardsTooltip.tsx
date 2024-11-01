@@ -29,7 +29,6 @@ export function RewardsTooltip({
   const rewards = useRewards(hyperdrive);
   const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
 
-  console.log(appConfigRewards, "appConfigRewards");
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   let netApy: bigint = lpApy?.lpApy || 0n;

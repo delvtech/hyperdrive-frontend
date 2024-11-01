@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        rotate: "rotate 1s linear 1 forwards",
+        rotate: "rotate 1.5s linear infinite forwards",
       },
       keyframes: {
         rotate: {
