@@ -23,6 +23,13 @@ export function SlippageSettingsTwo({
 }): ReactElement {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  function handleSlippageChange(value: string) {
+    window.plausible("slippageChange", {
+      props: { value },
+    });
+    onSlippageChange(value);
+  }
+
   return (
     <div className="daisy-dropdown daisy-dropdown-bottom flex justify-end">
       <button
@@ -59,7 +66,7 @@ export function SlippageSettingsTwo({
                 onClick={(e) => {
                   e.preventDefault();
                   onActiveOptionChange("auto");
-                  onSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
+                  handleSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
                 }}
                 className={classNames("daisy-tab text-sm", {
                   "font-bold": activeOption === "auto",
@@ -84,7 +91,7 @@ export function SlippageSettingsTwo({
               value={slippage}
               onChange={(e) => {
                 onActiveOptionChange("custom");
-                onSlippageChange(e);
+                handleSlippageChange(e);
               }}
             />
           </div>

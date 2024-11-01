@@ -95,6 +95,14 @@ export interface PlausibleEventParamsMap {
       chainId: number;
       poolAddress: string;
       positionType: PositionType;
+      positionSize: string;
+      feeAmount: string;
+    };
+  };
+  slippageChange: {
+    props: {
+      value: string;
+      // TODO: Should we add change/delta?
     };
   };
 }
