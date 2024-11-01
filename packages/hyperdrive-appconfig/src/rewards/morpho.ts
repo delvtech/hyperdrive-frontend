@@ -133,12 +133,14 @@ async function fetchMorphoRewards(
   const vaultRewards = response.vaultByAddress.state.rewards.map((reward) =>
     parseVaultReward(reward),
   );
+  console.log("vaultRewards", vaultRewards);
 
   const marketAllocationRewards = parseAllocationRewards({
     totalAssetsUsd: parseFixed(response.vaultByAddress.state.totalAssetsUsd),
-    allocations: response.vaultByAddress.state.allocation,
+    marketAllocations: response.vaultByAddress.state.allocation,
     vaultCollateralAsset: response.vaultByAddress.asset,
   });
+  console.log("marketAllocationRewards", marketAllocationRewards);
 
   return [...vaultRewards, ...marketAllocationRewards];
 }
@@ -146,8 +148,7 @@ async function fetchMorphoRewards(
 function parseVaultReward(
   reward: MorphoReward,
 ): NonTransferableTokenReward | TransferableTokenReward {
-  // Supply APR only exists if the token reward is a transferable token with
-  // a known token price
+  // Supply APR only exists if the reward token is actually worth something
   if (reward.supplyApr) {
     const transferableTokenReward: TransferableTokenReward = {
       type: "transferableToken",
@@ -158,7 +159,7 @@ function parseVaultReward(
     return transferableTokenReward;
   }
 
-  // Without a supply APR, the reward is just some nontransferable token
+  // Without a supply APR, the reward token is just some nontransferable token
   const nontransferableTokenReward: NonTransferableTokenReward = {
     type: "nonTransferableToken",
     // Morpho non-transferable token rewards are based on assets deposited
@@ -175,51 +176,45 @@ function parseVaultReward(
 function parseAllocationRewards({
   totalAssetsUsd,
   vaultCollateralAsset,
-  allocations,
+  marketAllocations,
 }: {
   totalAssetsUsd: FixedPoint;
-  allocations: MarketAllocation[];
+  marketAllocations: MarketAllocation[];
   vaultCollateralAsset: MorphoRewardsResponse["vaultByAddress"]["asset"];
 }): (NonTransferableTokenReward | TransferableTokenReward)[] {
-  // Calculate the percent of the total assets allocated to each underlying
-  // market and include that next to the allocation object
-  const allocationsWithPercents = allocations.map((allocation) => {
-    return {
-      allocation,
-      pctAllocated: parseFixed(allocation.supplyAssetsUsd).div(
-        parseFixed(totalAssetsUsd),
-      ),
-    };
-  });
+  const allocationsWithVaultAdjustedRewards = marketAllocations.map(
+    (allocation) => {
+      // Step 1: Calculate the percentage of the vault's total assets allocated
+      // to this market. This can be seen on the Morpho UI's Vault Allocation
+      // Breakdown section.
+      const percentOfVaultAllocatedToMarket = parseFixed(
+        allocation.supplyAssetsUsd,
+      ).div(parseFixed(totalAssetsUsd));
 
-  const allocationsWithPercentsAndEffectiveRewards =
-    allocationsWithPercents.map(({ allocation, pctAllocated }) => {
-      // Calculate the actual reward APR for each market the vault allocates to
-      const effectiveRewardsRates = allocation.market.state.rewards
-        .filter((reward) => reward.supplyApr)
-        .map((reward) => {
-          return {
-            reward,
-            effectiveRate: pctAllocated.mul(parseFixed(reward.supplyApr!)), // safe to cast thanks to the filtering
-          };
-        });
+      // Step 2: Calculate the rewards the vault will earn from its allocation
+      // to this market
+      const marketAllocationRewards = allocation.market.state.rewards.map(
+        (reward) => {
+          // Calculate "Reward rates" (like APR) for tokens that have monetary
+          // value, based on the vault's allocated assets.
+          if (reward.supplyApr) {
+            return {
+              reward,
+              vaultAdjustedRewardRate: percentOfVaultAllocatedToMarket.mul(
+                parseFixed(reward.supplyApr),
+              ),
+            };
+          }
 
-      // Calculate the actual non-transferable token rewards for each market the
-      // vault allocates to
-      const effectiveRewardsEmissions = allocation.market.state.rewards
-        // Note: A missing supplyApr means that the rewards are a non-transferable token
-        .filter((reward) => !reward.supplyApr)
-        .map((reward) => {
-          // If an amount of vault assets are idle, then it's considered
-          // "allocated" to the 0x address market. Since there still could be
-          // rewards, we need to use the vault's collateral token to calculate
-          // rewards instead of the underlying market's collateral token.
+          // Calculate MORPHO tokens rewards based on the vault's allocated
+          // assets. Unallocated funds are considered allocated to the 0x
+          // market address and can still earn reward tokens.
           const collateralAssetPrice =
             allocation.market.collateralAsset?.priceUsd ||
             vaultCollateralAsset.priceUsd;
           return {
             reward,
-            effectiveEmissions: pctAllocated.mul(
+            vaultAdjustedRewardTokens: percentOfVaultAllocatedToMarket.mul(
               // example: we earn 100 Morpho per 1 Eth, and ETH is worth $3000, then
               // reduces to 100 Morpho per $3000
               // reduces to 33.33 Morpho per $1000
@@ -230,98 +225,93 @@ function parseAllocationRewards({
               ),
             ),
           };
-        });
+        },
+      );
+
       return {
         allocation,
-        pctAllocated,
-        effectiveRewardsRates,
-        effectiveRewardsEmissions,
+        percentOfVaultAllocatedToMarket,
+        marketAllocationRewards,
       };
-    });
+    },
+  );
 
-  // Get the percent of total assets supplied to a market
-  // wstETH allocationPct = marketAllocationUsd / totalAssetsUsd (example, gives you 0.1413 for wstETH pool)
-  // effective rewards rate for wstETH usdc rewards = allocationPct * usdcRewardsSupplyApr (example: 0.1413 * .016 = 0.00220428)
-  // cBTC allocationPct = marketAllocationUsd/ totalAssetsUsd (example: gives you .1269 for cBTC)
-  // effective rewards rate for cBTC's usdc rewards = allocationPct * usdcRewardsSupplyApr (example: .1269 * .0157 = 0.00199233)
-  // add them together: 0.00199233 + 0.00220428 = 0.00419661
   const rewardApyTotals: Record<number, Record<Address, FixedPoint>> = {
     // mainnet -> usdc address -> effective APY
   };
-  const rewardEmissionTotals: Record<number, Record<Address, FixedPoint>> = {
+  const rewardTokenTotals: Record<number, Record<Address, FixedPoint>> = {
     // mainnet -> usdc address -> effective total emissions
   };
 
-  allocationsWithPercentsAndEffectiveRewards.forEach(
-    ({ effectiveRewardsEmissions, effectiveRewardsRates }) => {
-      // go through each reward rate and add it to the existing apy total
-      effectiveRewardsRates.forEach(({ reward, effectiveRate }) => {
-        if (!rewardApyTotals[reward.asset.chain.id]) {
-          rewardApyTotals[reward.asset.chain.id] = {};
-        }
-        if (!rewardApyTotals[reward.asset.chain.id][reward.asset.address]) {
-          rewardApyTotals[reward.asset.chain.id][reward.asset.address] =
-            fixed(0);
+  allocationsWithVaultAdjustedRewards.forEach(({ marketAllocationRewards }) => {
+    marketAllocationRewards.forEach(
+      ({ reward, vaultAdjustedRewardRate, vaultAdjustedRewardTokens }) => {
+        const chainId = reward.asset.chain.id;
+        const assetAddress = reward.asset.address;
+
+        // Accumulate APY totals
+        if (vaultAdjustedRewardRate) {
+          // Initialize APY totals for this chain and asset if needed
+          rewardApyTotals[chainId] = rewardApyTotals[chainId] || {};
+          rewardApyTotals[chainId][assetAddress] =
+            rewardApyTotals[chainId][assetAddress] || fixed(0);
+          rewardApyTotals[chainId][assetAddress] = rewardApyTotals[chainId][
+            assetAddress
+          ].add(vaultAdjustedRewardRate);
+          return;
         }
 
-        rewardApyTotals[reward.asset.chain.id][reward.asset.address] =
-          rewardApyTotals[reward.asset.chain.id][reward.asset.address].add(
-            effectiveRate,
-          );
-      });
-      effectiveRewardsEmissions.forEach(({ reward, effectiveEmissions }) => {
-        if (!rewardEmissionTotals[reward.asset.chain.id]) {
-          rewardEmissionTotals[reward.asset.chain.id] = {};
+        // Accumulate token totals
+        if (vaultAdjustedRewardTokens) {
+          // Initialize emission totals for this chain and asset if needed
+          rewardTokenTotals[chainId] = rewardTokenTotals[chainId] || {};
+          rewardTokenTotals[chainId][assetAddress] =
+            rewardTokenTotals[chainId][assetAddress] || fixed(0);
+
+          rewardTokenTotals[chainId][assetAddress] = rewardTokenTotals[chainId][
+            assetAddress
+          ].add(vaultAdjustedRewardTokens);
         }
-        if (
-          !rewardEmissionTotals[reward.asset.chain.id][reward.asset.address]
-        ) {
-          rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] =
-            fixed(0);
-        }
-        rewardEmissionTotals[reward.asset.chain.id][reward.asset.address] =
-          rewardEmissionTotals[reward.asset.chain.id][reward.asset.address].add(
-            effectiveEmissions,
-          );
-      });
-    },
-  );
-  const transferableTokenRewards = Object.entries(rewardApyTotals)
-    .map(([chainId, rewardApy]) => {
-      return Object.entries(rewardApy).map(
-        ([tokenAddress, rewardApyPerToken]): TransferableTokenReward => {
+      },
+    );
+  });
+
+  const transferableTokenRewards = Object.entries(rewardApyTotals).flatMap(
+    ([chainId, reward]) => {
+      return Object.entries(reward).map(
+        ([tokenAddress, rewardApy]): TransferableTokenReward => {
           return {
             type: "transferableToken",
-            apy: rewardApyPerToken.bigint,
-            tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
+            apy: rewardApy.bigint,
+            tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings
             chainId: Number(chainId),
           };
         },
       );
-    })
-    .flat();
+    },
+  );
 
   // Without a supply APR, the reward is just some nontransferable token
-  const nonTransferableTokenRewards = Object.entries(rewardEmissionTotals)
-    .map(([chainId, rewardEmissions]) => {
+  const nonTransferableTokenRewards = Object.entries(rewardTokenTotals).flatMap(
+    ([chainId, rewardEmissions]) => {
       return Object.entries(rewardEmissions).map(
         ([
           tokenAddress,
-          rewardEmissionsPerToken,
+          rewardTokensPerThousandUsd,
         ]): NonTransferableTokenReward => {
           return {
             type: "nonTransferableToken",
             // Morpho non-transferable token rewards are based on assets deposited
             // for 1 year
             depositDurationDays: 365,
-            tokensPerThousandUsd: rewardEmissionsPerToken.bigint,
-            tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings, when in fact we have a stronger type
+            tokensPerThousandUsd: rewardTokensPerThousandUsd.bigint,
+            tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings
             chainId: Number(chainId),
           };
         },
       );
-    })
-    .flat();
+    },
+  );
 
   return [...transferableTokenRewards, ...nonTransferableTokenRewards];
 }
