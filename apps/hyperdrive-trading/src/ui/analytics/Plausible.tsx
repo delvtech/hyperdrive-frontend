@@ -67,6 +67,7 @@ export interface PlausibleEventParamsMap {
   };
   positionCtaClick: {
     props: {
+      chainId: number;
       poolAddress: string;
       positionType: PositionType;
       /**

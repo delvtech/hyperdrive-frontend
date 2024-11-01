@@ -44,6 +44,7 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
             e.stopPropagation();
             window.plausible("positionCtaClick", {
               props: {
+                chainId: hyperdrive.chainId,
                 poolAddress: hyperdrive.address,
                 positionType: "long",
                 statName: label,
