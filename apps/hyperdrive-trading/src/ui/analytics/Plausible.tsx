@@ -99,6 +99,12 @@ export interface PlausibleEventParamsMap {
       feeAmount: string;
     };
   };
+  slippageChange: {
+    props: {
+      value: string;
+      // TODO: Should we add change/delta?
+    };
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
