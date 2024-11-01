@@ -124,50 +124,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
 console.log(
   `\n${chalk.white(chalk.underline("Processing reward tokens across all yield sources and chains"))}`,
 );
-const publicClients: Record<ChainId, PublicClient> = {};
-chainConfigs.forEach(({ chain, rpcUrl }) => {
-  publicClients[chain.id] = createPublicClient({
-    chain,
-    transport: http(rpcUrl),
-  });
-});
-await Promise.all(
-  Object.entries(yieldSources)
-    .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
-    .map(async ([unusedKey, yieldSource]) => {
-      const rewardFn = rewardFunctions[yieldSource.rewardsFn!]; // safe to cast due to filter above
-      const publicClient = publicClients[yieldSource.chainId];
-      const rewards = await rewardFn(publicClient);
-
-      rewards.map((reward) => {
-        if (
-          reward.type === "transferableToken" ||
-          reward.type === "nonTransferableToken"
-        ) {
-          const alreadyExists = !!findToken({
-            chainId: reward.chainId,
-            tokenAddress: reward.tokenAddress,
-            tokens: combinedAppConfig.tokens,
-          });
-          if (alreadyExists) {
-            return;
-          }
-
-          const knownTokenConfig =
-            knownTokenConfigs[reward.chainId][reward.tokenAddress];
-
-          if (!alreadyExists && knownTokenConfig) {
-            combinedAppConfig.tokens.push(knownTokenConfig);
-            return;
-          }
-
-          throw new Error(
-            `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
-          );
-        }
-      });
-    }),
-);
+await addRewardTokenConfigs({ appConfig: combinedAppConfig });
 
 const { mainnetConfig, testnetConfig } =
   getMainnetAndTestnetAppConfigs(combinedAppConfig);
@@ -193,3 +150,53 @@ await writeAppConfigToFile({
   appConfig: combinedAppConfig,
   appConfigName: "appConfig",
 });
+
+/**
+ * Mutates the given appConfig by adding reward token configs
+ */
+async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
+  const publicClients: Record<ChainId, PublicClient> = {};
+  chainConfigs.forEach(({ chain, rpcUrl }) => {
+    publicClients[chain.id] = createPublicClient({
+      chain,
+      transport: http(rpcUrl),
+    });
+  });
+  await Promise.all(
+    Object.entries(yieldSources)
+      .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
+      .map(async ([unusedKey, yieldSource]) => {
+        const rewardFn = rewardFunctions[yieldSource.rewardsFn!]; // safe to cast due to filter above
+        const publicClient = publicClients[yieldSource.chainId];
+        const rewards = await rewardFn(publicClient);
+
+        rewards.map((reward) => {
+          if (
+            reward.type === "transferableToken" ||
+            reward.type === "nonTransferableToken"
+          ) {
+            const alreadyExists = !!findToken({
+              chainId: reward.chainId,
+              tokenAddress: reward.tokenAddress,
+              tokens: appConfig.tokens,
+            });
+            if (alreadyExists) {
+              return;
+            }
+
+            const knownTokenConfig =
+              knownTokenConfigs[reward.chainId][reward.tokenAddress];
+
+            if (!alreadyExists && knownTokenConfig) {
+              appConfig.tokens.push(knownTokenConfig);
+              return;
+            }
+
+            throw new Error(
+              `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
+            );
+          }
+        });
+      }),
+  );
+}

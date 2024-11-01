@@ -553,40 +553,6 @@ export async function getAppConfig({
     }),
   );
 
-  // TODO: Do this part after all appconfigs have been generated
-  // await Promise.all(
-  //   Object.entries(rewardFunctions).map(async ([unusedKey, rewardFn]) => {
-  //     const rewards = await rewardFn(publicClient);
-  //     rewards.map((reward) => {
-  //       if (
-  //         reward.type === "transferableToken" ||
-  //         reward.type === "nonTransferableToken"
-  //       ) {
-  //         const alreadyExists = !!findToken({
-  //           chainId: reward.chainId,
-  //           tokenAddress: reward.tokenAddress,
-  //           tokens,
-  //         });
-  //         if (alreadyExists) {
-  //           return;
-  //         }
-
-  //         const knownTokenConfig =
-  //           knownTokenConfigs[reward.chainId][reward.tokenAddress];
-
-  //         if (!alreadyExists && knownTokenConfig) {
-  //           tokens.push(knownTokenConfig);
-  //           return;
-  //         }
-
-  //         throw new Error(
-  //           `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
-  //         );
-  //       }
-  //     });
-  //   }),
-  // );
-
   const config: AppConfig = {
     tokens: uniqBy(tokens, "address"),
     registries: {
