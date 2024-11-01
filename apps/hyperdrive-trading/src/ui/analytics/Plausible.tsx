@@ -43,16 +43,19 @@ export interface PlausibleEventParamsMap {
      */
     u?: string;
   };
+
+  termsAndPrivacyView: void;
+  termsAndPrivacyAccept: void;
   walletConnect: void;
   walletDisconnect: void;
-  faqOpen: {
+
+  externalLinkClick: {
     props: {
-      /**
-       * The name of the FAQ section that was opened.
-       */
-      name: string;
+      name?: string;
+      url: string;
     };
   };
+
   filterChange: {
     props: {
       /**
@@ -65,6 +68,7 @@ export interface PlausibleEventParamsMap {
       value: string;
     };
   };
+
   positionCtaClick: {
     props: {
       chainId: number;
@@ -83,14 +87,23 @@ export interface PlausibleEventParamsMap {
       statValue: string;
     };
   };
-  termsAndPrivacyView: void;
-  termsAndPrivacyAccept: void;
-  externalLinkClick: {
+
+  faqOpen: {
     props: {
-      name?: string;
-      url: string;
+      /**
+       * The name of the FAQ section that was opened.
+       */
+      name: string;
     };
   };
+
+  slippageChange: {
+    props: {
+      value: string;
+      // TODO: Should we add change/delta?
+    };
+  };
+
   transactionDetailsOpen: {
     props: {
       chainId: number;
@@ -98,12 +111,6 @@ export interface PlausibleEventParamsMap {
       positionType: PositionType;
       positionSize: string;
       feeAmount: string;
-    };
-  };
-  slippageChange: {
-    props: {
-      value: string;
-      // TODO: Should we add change/delta?
     };
   };
 }
