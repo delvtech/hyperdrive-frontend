@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import Helmet from "react-helmet";
+import { Address } from "viem";
 
 /**
  * Adds the Plausible analytics script to the `<head>` and the `plausible`
@@ -46,6 +47,7 @@ export interface PlausibleEventParamsMap {
 
   termsAndPrivacyView: void;
   termsAndPrivacyAccept: void;
+
   walletConnect: void;
   walletDisconnect: void;
 
@@ -72,7 +74,7 @@ export interface PlausibleEventParamsMap {
   positionCtaClick: {
     props: {
       chainId: number;
-      poolAddress: string;
+      poolAddress: Address;
       positionType: PositionType;
       /**
        * The name of the stat being shown with the CTA, as it appears in the UI.
@@ -104,10 +106,39 @@ export interface PlausibleEventParamsMap {
     };
   };
 
+  formChange: {
+    props: {
+      /**
+       * The name of the form that was changed.
+       */
+      formName: string;
+      /**
+       * The name of the input that was changed.
+       */
+      inputName: string;
+      /**
+       * The new value of the input.
+       */
+      inputValue: string;
+      /**
+       * The chain ID associated with the form.
+       */
+      chainId: string;
+      /**
+       * The address of the pool associated with the form.
+       */
+      poolAddress: Address;
+      /**
+       * The position type associated with the form.
+       */
+      positionType: PositionType;
+    };
+  };
+
   transactionDetailsOpen: {
     props: {
       chainId: number;
-      poolAddress: string;
+      poolAddress: Address;
       positionType: PositionType;
       positionSize: string;
       feeAmount: string;
