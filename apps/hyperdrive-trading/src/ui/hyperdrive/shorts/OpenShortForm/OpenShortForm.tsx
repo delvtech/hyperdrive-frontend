@@ -303,6 +303,7 @@ export function OpenShortForm({
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
+
   return (
     <TransactionView
       tokenInput={
@@ -321,9 +322,18 @@ export function OpenShortForm({
                 ]}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Open Short",
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
                   setActiveToken(tokenAddress);
 
-                  // TODO: Determin if there is a bug here.
+                  // TODO: Determine if there is a bug here.
                   setPaymentAmount("0");
                 }}
               />
@@ -339,7 +349,18 @@ export function OpenShortForm({
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
                 <SlippageSettingsTwo
-                  onSlippageChange={setSlippage}
+                  onSlippageChange={(slippage) => {
+                    window.plausible("formChange", {
+                      props: {
+                        formName: "Open Short",
+                        inputName: "slippage",
+                        inputValue: slippage,
+                        chainId: hyperdrive.chainId,
+                        poolAddress: hyperdrive.address,
+                      },
+                    });
+                    setSlippage(slippage);
+                  }}
                   slippage={slippage}
                   activeOption={activeSlippageOption}
                   onActiveOptionChange={setActiveSlippageOption}
@@ -348,6 +369,15 @@ export function OpenShortForm({
               </div>
             }
             onChange={(newAmount) => {
+              window.plausible("formChange", {
+                props: {
+                  formName: "Open Short",
+                  inputName: "size",
+                  inputValue: newAmount,
+                  chainId: hyperdrive.chainId,
+                  poolAddress: hyperdrive.address,
+                },
+              });
               setShortAmount(newAmount);
               setActiveInput("bonds");
             }}
@@ -398,8 +428,6 @@ export function OpenShortForm({
           <TokenInputTwo
             variant="lighter"
             name={`${baseToken.symbol}-input`}
-            // This input is disabled until the getMaxShort is fixed on the sdk.
-            disabled
             token={
               <TokenPickerTwo
                 tokens={tokenOptions}
@@ -416,11 +444,13 @@ export function OpenShortForm({
                 ? amountToPay || "0"
                 : formatUnits(traderDeposit || 0n, activeToken.decimals)
             }
-            maxValue={maxButtonValue}
-            onChange={(newAmount) => {
-              setActiveInput("budget");
-              setPaymentAmount(newAmount);
-            }}
+            // This input is disabled until the getMaxShort is fixed on the sdk.
+            disabled
+            // maxValue={maxButtonValue}
+            // onChange={(newAmount) => {
+            //   setActiveInput("budget");
+            //   setPaymentAmount(newAmount);
+            // }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (
