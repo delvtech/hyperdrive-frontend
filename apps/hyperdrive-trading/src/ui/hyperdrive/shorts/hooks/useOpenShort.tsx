@@ -133,6 +133,16 @@ export function useOpenShort({
         hash,
         description: "Open Short",
       });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionsType: "open",
+          positionType: "short",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
+      });
     },
     onError(error) {
       const message = parseError({

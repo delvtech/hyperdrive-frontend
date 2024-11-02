@@ -122,6 +122,16 @@ export function useOpenLong({
         hash,
         description: "Open Long",
       });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionsType: "open",
+          positionType: "long",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
+      });
     },
     onError(error) {
       const message = parseError({

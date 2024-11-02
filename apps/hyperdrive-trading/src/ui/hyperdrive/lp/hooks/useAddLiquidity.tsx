@@ -122,6 +122,16 @@ export function useAddLiquidity({
         hash,
         description: "Add Liquidity",
       });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionsType: "open",
+          positionType: "lp",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
+      });
     },
     onError(error) {
       const message = parseError({

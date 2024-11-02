@@ -112,6 +112,16 @@ export function useCloseShort({
         hash,
         description: "Close Short",
       });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionsType: "close",
+          positionType: "short",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
+      });
     },
     onError(error) {
       const message = parseError({

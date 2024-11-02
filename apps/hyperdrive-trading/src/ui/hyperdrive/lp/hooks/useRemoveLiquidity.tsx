@@ -109,6 +109,16 @@ export function useRemoveLiquidity({
         hash,
         description: "Remove Liquidity",
       });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionsType: "close",
+          positionType: "lp",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
+      });
     },
     onError(error) {
       const message = parseError({
