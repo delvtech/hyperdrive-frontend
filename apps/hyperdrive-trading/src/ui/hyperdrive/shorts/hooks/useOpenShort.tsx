@@ -116,6 +116,15 @@ export function useOpenShort({
           );
           toastWarpcast();
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: txHash,
+              transactionsType: "open",
+              positionType: "short",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 

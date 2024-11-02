@@ -99,6 +99,15 @@ export function useCloseLong({
           );
           toastWarpcast();
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: txHash,
+              transactionsType: "close",
+              positionType: "long",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 
