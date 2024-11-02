@@ -15,8 +15,24 @@ export function PositionPicker({
   });
 
   // TODO: Implement the term picker based on hyperdrives in appConfig of the
-  // same kind but different poisition durations
+  // same kind but different position durations
   const allTerms = [hyperdrive];
+
+  // Plausible event props
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+  let prevPositionType: "long" | "short" | "lp" = "long";
+  switch (activePosition) {
+    case "longs":
+      prevPositionType = "long";
+      break;
+    case "shorts":
+      prevPositionType = "short";
+      break;
+    case "lp":
+      prevPositionType = "lp";
+      break;
+  }
 
   return (
     <div className="flex gap-4">
@@ -48,6 +64,16 @@ export function PositionPicker({
           address: hyperdrive.address,
         }}
         search={{ position: "longs" }}
+        onClick={() => {
+          window.plausible("positionTypeChange", {
+            props: {
+              positionType: "long",
+              prevPositionType,
+              chainId,
+              poolAddress,
+            },
+          });
+        }}
       >
         Long
       </Link>
@@ -66,6 +92,16 @@ export function PositionPicker({
           address: hyperdrive.address,
         }}
         search={{ position: "shorts" }}
+        onClick={() => {
+          window.plausible("positionTypeChange", {
+            props: {
+              positionType: "short",
+              prevPositionType,
+              chainId,
+              poolAddress,
+            },
+          });
+        }}
       >
         Short
       </Link>
@@ -84,6 +120,16 @@ export function PositionPicker({
           address: hyperdrive.address,
         }}
         search={{ position: "lp" }}
+        onClick={() => {
+          window.plausible("positionTypeChange", {
+            props: {
+              positionType: "lp",
+              prevPositionType,
+              chainId,
+              poolAddress,
+            },
+          });
+        }}
       >
         Supply
       </Link>
