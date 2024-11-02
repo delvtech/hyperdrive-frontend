@@ -10,7 +10,7 @@ export function PositionPicker({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { position: activePosition = "longs" } = useSearch({
+  const { position: activePosition = "long" } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
 
@@ -19,20 +19,9 @@ export function PositionPicker({
   const allTerms = [hyperdrive];
 
   // Plausible event props
+  const prevPositionType = activePosition;
   const chainId = hyperdrive.chainId;
   const poolAddress = hyperdrive.address;
-  let prevPositionType: "long" | "short" | "lp" = "long";
-  switch (activePosition) {
-    case "longs":
-      prevPositionType = "long";
-      break;
-    case "shorts":
-      prevPositionType = "short";
-      break;
-    case "lp":
-      prevPositionType = "lp";
-      break;
-  }
 
   return (
     <div className="flex gap-4">
@@ -54,8 +43,8 @@ export function PositionPicker({
           "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
           {
             "daisy-btn-ghost font-normal text-inactive-tab":
-              activePosition !== "longs",
-            "text-white": activePosition === "longs",
+              activePosition !== "long",
+            "text-white": activePosition === "long",
           },
         )}
         to={MARKET_DETAILS_ROUTE}
@@ -63,7 +52,7 @@ export function PositionPicker({
           chainId: hyperdrive.chainId.toString(),
           address: hyperdrive.address,
         }}
-        search={{ position: "longs" }}
+        search={{ position: "long" }}
         onClick={() => {
           window.plausible("positionTypeChange", {
             props: {
@@ -82,8 +71,8 @@ export function PositionPicker({
           "daisy-btn daisy-btn-md h-9 min-h-9 rounded-full text-md",
           {
             "daisy-btn-ghost font-normal text-inactive-tab":
-              activePosition !== "shorts",
-            "text-white": activePosition === "shorts",
+              activePosition !== "short",
+            "text-white": activePosition === "short",
           },
         )}
         to={MARKET_DETAILS_ROUTE}
@@ -91,7 +80,7 @@ export function PositionPicker({
           chainId: hyperdrive.chainId.toString(),
           address: hyperdrive.address,
         }}
-        search={{ position: "shorts" }}
+        search={{ position: "short" }}
         onClick={() => {
           window.plausible("positionTypeChange", {
             props: {

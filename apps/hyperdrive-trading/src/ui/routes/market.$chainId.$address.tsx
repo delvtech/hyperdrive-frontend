@@ -11,7 +11,7 @@ export const Route = createFileRoute(MARKET_DETAILS_ROUTE)({
     </Page>
   ),
   validateSearch: z.object({
-    position: z.enum(["longs", "shorts", "lp"]).optional(),
+    position: z.enum(["long", "short", "lp"]).optional(),
     openOrClosed: z.enum(["open", "closed"]).optional(),
   }),
 });

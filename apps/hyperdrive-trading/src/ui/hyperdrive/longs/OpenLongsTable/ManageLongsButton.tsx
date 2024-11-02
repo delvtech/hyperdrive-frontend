@@ -47,7 +47,7 @@ export function ManageLongsButton({
               chainId: hyperdrive.chainId.toString(),
               address: hyperdrive.address,
             }}
-            search={{ position: "longs" }}
+            search={{ position: "long" }}
           >
             Go to pool
           </Link>

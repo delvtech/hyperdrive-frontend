@@ -38,7 +38,7 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
             address: hyperdrive.address,
             chainId: hyperdrive.chainId.toString(),
           }}
-          search={{ position: "longs" }}
+          search={{ position: "long" }}
           className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
           onClick={(e) => {
             e.stopPropagation();

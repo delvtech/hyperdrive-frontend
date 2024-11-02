@@ -21,7 +21,7 @@ export function PoolDetails({
   const {
     // If no search param is specified, we default to showing the
     // Longs side of the market
-    position: activePosition = "longs",
+    position: activePosition = "long",
   } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
@@ -52,9 +52,9 @@ export function PoolDetails({
       <div className="flex flex-col gap-16">
         {(() => {
           switch (activePosition) {
-            case "longs":
+            case "long":
               return <OpenLongForm hyperdrive={hyperdrive} />;
-            case "shorts":
+            case "short":
               return <OpenShortForm hyperdrive={hyperdrive} />;
             case "lp":
               return <AddLiquidityForm2 hyperdrive={hyperdrive} />;
