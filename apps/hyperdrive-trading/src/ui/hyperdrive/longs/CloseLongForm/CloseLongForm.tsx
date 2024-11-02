@@ -150,8 +150,6 @@ export function CloseLongForm({
   const isAmountLargerThanPositionSize = !!(
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
-  const maturityMilliseconds = Number(long.maturity * 1000n);
-  const isMature = Date.now() > maturityMilliseconds;
   return (
     <TransactionView
       tokenInput={
