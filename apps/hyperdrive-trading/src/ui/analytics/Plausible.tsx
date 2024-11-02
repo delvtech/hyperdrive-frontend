@@ -99,13 +99,6 @@ export interface PlausibleEventParamsMap {
     };
   };
 
-  slippageChange: {
-    props: {
-      value: string;
-      // TODO: Should we add change/delta?
-    };
-  };
-
   formChange: {
     props: {
       /**
@@ -123,15 +116,11 @@ export interface PlausibleEventParamsMap {
       /**
        * The chain ID associated with the form.
        */
-      chainId: string;
+      chainId: number;
       /**
        * The address of the pool associated with the form.
        */
       poolAddress: Address;
-      /**
-       * The position type associated with the form.
-       */
-      positionType: PositionType;
     };
   };
 

@@ -251,7 +251,18 @@ export function OpenLongForm({
             <div className="mb-3 flex w-full items-center justify-between">
               <PositionPicker hyperdrive={hyperdrive} />
               <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
+                onSlippageChange={(slippage) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Open Long",
+                      inputName: "slippage",
+                      inputValue: slippage,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
+                  setSlippage(slippage);
+                }}
                 slippage={slippage}
                 activeOption={activeSlippageOption}
                 onActiveOptionChange={setActiveSlippageOption}
@@ -266,6 +277,15 @@ export function OpenLongForm({
                 tokens={tokenChoices}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Open Long",
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
                   setActiveToken(tokenAddress);
                   setAmount("0");
                 }}
@@ -275,6 +295,15 @@ export function OpenLongForm({
                 tokens={tokenChoices}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Open Long",
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
                   setActiveToken(tokenAddress);
                   setAmount("0");
                 }}
@@ -317,7 +346,18 @@ export function OpenLongForm({
               </span>
             </div>
           }
-          onChange={(newAmount) => setAmount(newAmount)}
+          onChange={(newAmount) => {
+            window.plausible("formChange", {
+              props: {
+                formName: "Open Long",
+                inputName: "amount",
+                inputValue: newAmount,
+                chainId: hyperdrive.chainId,
+                poolAddress: hyperdrive.address,
+              },
+            });
+            setAmount(newAmount);
+          }}
         />
       }
       primaryStats={
