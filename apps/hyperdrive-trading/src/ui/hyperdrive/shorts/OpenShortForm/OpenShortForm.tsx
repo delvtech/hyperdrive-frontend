@@ -278,17 +278,18 @@ export function OpenShortForm({
     },
   });
 
+  // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
   // Max button is wired up to the user's balance, or the pool's max long.
   // Whichever is smallest.
-  let maxButtonValue = "0";
-  if (activeTokenBalance && maxBondsOut) {
-    maxButtonValue = formatUnits(
-      activeTokenBalance.value > maxBondsOut
-        ? maxBondsOut
-        : activeTokenBalance?.value,
-      activeToken.decimals,
-    );
-  }
+  // let maxButtonValue = "0";
+  // if (activeTokenBalance && maxBondsOut) {
+  //   maxButtonValue = formatUnits(
+  //     activeTokenBalance.value > maxBondsOut
+  //       ? maxBondsOut
+  //       : activeTokenBalance?.value,
+  //     activeToken.decimals,
+  //   );
+  // }
 
   const exposureMultiplier =
     amountOfBondsToShortAsBigInt && traderDeposit
