@@ -99,6 +99,15 @@ export interface PlausibleEventParamsMap {
     };
   };
 
+  positionTypeChange: {
+    props: {
+      chainId: number;
+      poolAddress: Address;
+      positionType: PositionType;
+      prevPositionType: PositionType;
+    };
+  };
+
   formChange: {
     props: {
       /**
