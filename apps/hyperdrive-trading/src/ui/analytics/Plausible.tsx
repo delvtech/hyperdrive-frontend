@@ -152,6 +152,16 @@ export interface PlausibleEventParamsMap {
       chainId: number;
     };
   };
+
+  transactionSuccess: {
+    props: {
+      transactionHash: string;
+      transactionsType: TransactionType;
+      positionType: PositionType;
+      poolAddress: Address;
+      chainId: number;
+    };
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
