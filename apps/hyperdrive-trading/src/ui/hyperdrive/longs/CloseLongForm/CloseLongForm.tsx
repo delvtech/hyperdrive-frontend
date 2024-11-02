@@ -163,7 +163,18 @@ export function CloseLongForm({
               maxValue={
                 long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
               }
-              onChange={(newAmount) => setAmount(newAmount)}
+              onChange={(newAmount) => {
+                window.plausible("formChange", {
+                  props: {
+                    formName: "Close Long",
+                    inputName: "amount",
+                    inputValue: newAmount,
+                    chainId: hyperdrive.chainId,
+                    poolAddress: hyperdrive.address,
+                  },
+                });
+                setAmount(newAmount);
+              }}
               bottomRightElement={
                 <div className="flex flex-col gap-1 text-xs text-neutral-content">
                   {`Balance: ${formatBalance({
@@ -181,9 +192,18 @@ export function CloseLongForm({
                 <TokenPickerTwo
                   tokens={withdrawTokenChoices}
                   activeTokenAddress={activeWithdrawToken.address}
-                  onChange={(tokenAddress) =>
-                    setActiveWithdrawToken(tokenAddress)
-                  }
+                  onChange={(tokenAddress) => {
+                    window.plausible("formChange", {
+                      props: {
+                        formName: "Close Long",
+                        inputName: "token",
+                        inputValue: tokenAddress,
+                        chainId: hyperdrive.chainId,
+                        poolAddress: hyperdrive.address,
+                      },
+                    });
+                    setActiveWithdrawToken(tokenAddress);
+                  }}
                 />
               }
               value={
