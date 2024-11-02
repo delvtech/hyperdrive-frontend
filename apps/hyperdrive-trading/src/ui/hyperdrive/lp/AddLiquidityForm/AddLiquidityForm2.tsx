@@ -267,6 +267,15 @@ export function AddLiquidityForm2({
               tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
+                window.plausible("formChange", {
+                  props: {
+                    formName: "Add Liquidity",
+                    inputName: "token",
+                    inputValue: tokenAddress,
+                    chainId: hyperdrive.chainId,
+                    poolAddress: hyperdrive.address,
+                  },
+                });
                 setActiveToken(tokenAddress);
                 setAmount("0");
               }}
@@ -276,7 +285,18 @@ export function AddLiquidityForm2({
             <div className="mb-3 flex w-full items-center justify-between">
               <PositionPicker hyperdrive={hyperdrive} />
               <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
+                onSlippageChange={(slippage) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Add Liquidity",
+                      inputName: "slippage",
+                      inputValue: slippage,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
+                  setSlippage(slippage);
+                }}
                 slippage={slippage}
                 activeOption={activeSlippageOption}
                 onActiveOptionChange={setActiveSlippageOption}
@@ -297,7 +317,18 @@ export function AddLiquidityForm2({
               </span>
             </div>
           }
-          onChange={(newAmount) => setAmount(newAmount)}
+          onChange={(newAmount) => {
+            window.plausible("formChange", {
+              props: {
+                formName: "Add Liquidity",
+                inputName: "amount",
+                inputValue: newAmount,
+                chainId: hyperdrive.chainId,
+                poolAddress: hyperdrive.address,
+              },
+            });
+            setAmount(newAmount);
+          }}
         />
       }
       primaryStats={
