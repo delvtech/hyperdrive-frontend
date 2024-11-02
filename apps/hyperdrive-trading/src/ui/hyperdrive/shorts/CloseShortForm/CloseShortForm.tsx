@@ -120,10 +120,10 @@ export function CloseShortForm({
     asBase:
       hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled &&
       activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
-    onSubmitted: (hash) => {
+    onSubmitted: () => {
       (window as any)[`${short.assetId}`]?.close();
     },
-    onExecuted: (hash) => {
+    onExecuted: () => {
       setAmount("");
     },
   });
@@ -154,7 +154,18 @@ export function CloseShortForm({
             maxValue={
               short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
             }
-            onChange={(newAmount) => setAmount(newAmount)}
+            onChange={(newAmount) => {
+              window.plausible("formChange", {
+                props: {
+                  formName: "Close Short",
+                  inputName: "amount",
+                  inputValue: newAmount,
+                  chainId: hyperdrive.chainId,
+                  poolAddress: hyperdrive.address,
+                },
+              });
+              setAmount(newAmount);
+            }}
             bottomRightElement={
               <div className="flex flex-col text-xs text-neutral-content">
                 {short
@@ -174,16 +185,22 @@ export function CloseShortForm({
               <TokenPickerTwo
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
-                onChange={(tokenAddress) =>
-                  setActiveWithdrawToken(tokenAddress)
-                }
+                onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Close Short",
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
+                  setActiveWithdrawToken(tokenAddress);
+                }}
               />
             }
             value={
               amountOut ? fixed(amountOut, hyperdrive.decimals).toString() : "0"
-            }
-            maxValue={
-              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
             }
             disabled
             bottomLeftElement={
@@ -207,7 +224,6 @@ export function CloseShortForm({
                 </label>
               ) : null
             }
-            onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>
       }
