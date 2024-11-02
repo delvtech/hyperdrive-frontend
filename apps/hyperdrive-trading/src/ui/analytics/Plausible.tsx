@@ -142,6 +142,16 @@ export interface PlausibleEventParamsMap {
       feeAmount: string;
     };
   };
+
+  transactionSubmit: {
+    props: {
+      transactionHash: string;
+      transactionsType: TransactionType;
+      positionType: PositionType;
+      poolAddress: Address;
+      chainId: number;
+    };
+  };
 }
 
 export type PlausibleEvent = keyof PlausibleEventParamsMap;
@@ -164,3 +174,4 @@ declare global {
 }
 
 type PositionType = "long" | "short" | "lp";
+type TransactionType = "open" | "close";
