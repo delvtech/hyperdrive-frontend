@@ -98,7 +98,7 @@ export function useCloseShort({
           window.plausible("transactionSuccess", {
             props: {
               transactionHash: hash,
-              transactionsType: "close",
+              transactionType: "close",
               positionType: "short",
               poolAddress: hyperdriveAddress,
               chainId,
@@ -125,7 +125,7 @@ export function useCloseShort({
       window.plausible("transactionSubmit", {
         props: {
           transactionHash: hash,
-          transactionsType: "close",
+          transactionType: "close",
           positionType: "short",
           poolAddress: hyperdriveAddress,
           chainId,

@@ -108,7 +108,7 @@ export function useAddLiquidity({
           window.plausible("transactionSuccess", {
             props: {
               transactionHash: txHash,
-              transactionsType: "open",
+              transactionType: "open",
               positionType: "lp",
               poolAddress: hyperdriveAddress,
               chainId,
@@ -135,7 +135,7 @@ export function useAddLiquidity({
       window.plausible("transactionSubmit", {
         props: {
           transactionHash: hash,
-          transactionsType: "open",
+          transactionType: "open",
           positionType: "lp",
           poolAddress: hyperdriveAddress,
           chainId,

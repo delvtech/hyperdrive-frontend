@@ -119,7 +119,7 @@ export function useOpenShort({
           window.plausible("transactionSuccess", {
             props: {
               transactionHash: txHash,
-              transactionsType: "open",
+              transactionType: "open",
               positionType: "short",
               poolAddress: hyperdriveAddress,
               chainId,
@@ -146,7 +146,7 @@ export function useOpenShort({
       window.plausible("transactionSubmit", {
         props: {
           transactionHash: hash,
-          transactionsType: "open",
+          transactionType: "open",
           positionType: "short",
           poolAddress: hyperdriveAddress,
           chainId,

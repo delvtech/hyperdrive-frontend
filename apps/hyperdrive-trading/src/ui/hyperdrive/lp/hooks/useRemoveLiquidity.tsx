@@ -95,7 +95,7 @@ export function useRemoveLiquidity({
           window.plausible("transactionSuccess", {
             props: {
               transactionHash: txHash,
-              transactionsType: "close",
+              transactionType: "close",
               positionType: "lp",
               poolAddress: hyperdriveAddress,
               chainId,
@@ -122,7 +122,7 @@ export function useRemoveLiquidity({
       window.plausible("transactionSubmit", {
         props: {
           transactionHash: hash,
-          transactionsType: "close",
+          transactionType: "close",
           positionType: "lp",
           poolAddress: hyperdriveAddress,
           chainId,

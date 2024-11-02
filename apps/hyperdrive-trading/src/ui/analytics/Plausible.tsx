@@ -146,7 +146,7 @@ export interface PlausibleEventParamsMap {
   transactionSubmit: {
     props: {
       transactionHash: string;
-      transactionsType: TransactionType;
+      transactionType: TransactionType;
       positionType: PositionType;
       poolAddress: Address;
       chainId: number;
@@ -156,7 +156,7 @@ export interface PlausibleEventParamsMap {
   transactionSuccess: {
     props: {
       transactionHash: string;
-      transactionsType: TransactionType;
+      transactionType: TransactionType;
       positionType: PositionType;
       poolAddress: Address;
       chainId: number;
