@@ -34,6 +34,7 @@ import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
+
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -236,7 +237,18 @@ export function RemoveLiquidityForm({
             token={`${baseToken.symbol}-LP`}
             settings={
               <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
+                onSlippageChange={(slippage) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Remove Liquidity",
+                      inputName: "slippage",
+                      inputValue: slippage,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
+                  setSlippage(slippage);
+                }}
                 slippage={slippage}
                 activeOption={activeSlippageOption}
                 onActiveOptionChange={setActiveSlippageOption}
@@ -254,7 +266,18 @@ export function RemoveLiquidityForm({
                 })}`}
               </span>
             }
-            onChange={(newAmount) => setAmount(newAmount)}
+            onChange={(newAmount) => {
+              window.plausible("formChange", {
+                props: {
+                  formName: "Remove Liquidity",
+                  inputName: "amount",
+                  inputValue: newAmount,
+                  chainId: hyperdrive.chainId,
+                  poolAddress: hyperdrive.address,
+                },
+              });
+              setAmount(newAmount);
+            }}
           />
           <TokenInputTwo
             name={baseToken.symbol}
@@ -263,20 +286,24 @@ export function RemoveLiquidityForm({
               <TokenPickerTwo
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
-                onChange={(tokenAddress) =>
-                  setActiveWithdrawToken(tokenAddress)
-                }
+                onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      formName: "Remove Liquidity",
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      chainId: hyperdrive.chainId,
+                      poolAddress: hyperdrive.address,
+                    },
+                  });
+                  setActiveWithdrawToken(tokenAddress);
+                }}
               />
             }
             value={
               actualValueOut
                 ? fixed(actualValueOut, hyperdrive.decimals).toString()
                 : "0"
-            }
-            maxValue={
-              actualValueOut
-                ? fixed(actualValueOut, hyperdrive.decimals).toString()
-                : ""
             }
             disabled
             bottomLeftElement={
@@ -300,7 +327,6 @@ export function RemoveLiquidityForm({
                 </label>
               ) : null
             }
-            onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>
       }
