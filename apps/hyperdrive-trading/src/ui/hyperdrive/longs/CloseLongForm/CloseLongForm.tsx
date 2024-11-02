@@ -191,9 +191,6 @@ export function CloseLongForm({
                   ? fixed(withdrawAmount, hyperdrive.decimals).toString()
                   : "0"
               }
-              maxValue={
-                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
-              }
               disabled
               bottomLeftElement={
                 // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
@@ -216,7 +213,6 @@ export function CloseLongForm({
                   </label>
                 ) : null
               }
-              onChange={(newAmount) => setAmount(newAmount)}
             />
           </div>
         ) : null
