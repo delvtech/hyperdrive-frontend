@@ -248,6 +248,11 @@ export function AddLiquidityForm({
     },
   });
 
+  // Plausible event props
+  const formName = "Add Liquidity";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -280,11 +285,11 @@ export function AddLiquidityForm({
               onChange={(tokenAddress) => {
                 window.plausible("formChange", {
                   props: {
-                    formName: "Add Liquidity",
                     inputName: "token",
                     inputValue: tokenAddress,
-                    chainId: hyperdrive.chainId,
-                    poolAddress: hyperdrive.address,
+                    formName,
+                    chainId,
+                    poolAddress,
                   },
                 });
                 setActiveToken(tokenAddress);
@@ -297,11 +302,11 @@ export function AddLiquidityForm({
               onSlippageChange={(slippage) => {
                 window.plausible("formChange", {
                   props: {
-                    formName: "Add Liquidity",
                     inputName: "slippage",
                     inputValue: slippage,
-                    chainId: hyperdrive.chainId,
-                    poolAddress: hyperdrive.address,
+                    formName,
+                    chainId,
+                    poolAddress,
                   },
                 });
                 setSlippage(slippage);
@@ -328,11 +333,11 @@ export function AddLiquidityForm({
           onChange={(newAmount) => {
             window.plausible("formChange", {
               props: {
-                formName: "Add Liquidity",
                 inputName: "amount",
                 inputValue: newAmount,
-                chainId: hyperdrive.chainId,
-                poolAddress: hyperdrive.address,
+                formName,
+                chainId,
+                poolAddress,
               },
             });
             setAmount(newAmount);

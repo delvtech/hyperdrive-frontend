@@ -305,6 +305,11 @@ export function OpenShortForm({
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
 
+  // Plausible event props
+  const formName = "Open Short";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -325,11 +330,11 @@ export function OpenShortForm({
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Open Short",
                       inputName: "token",
                       inputValue: tokenAddress,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -353,11 +358,11 @@ export function OpenShortForm({
                   onSlippageChange={(slippage) => {
                     window.plausible("formChange", {
                       props: {
-                        formName: "Open Short",
                         inputName: "slippage",
                         inputValue: slippage,
-                        chainId: hyperdrive.chainId,
-                        poolAddress: hyperdrive.address,
+                        formName,
+                        chainId,
+                        poolAddress,
                       },
                     });
                     setSlippage(slippage);
@@ -372,11 +377,11 @@ export function OpenShortForm({
             onChange={(newAmount) => {
               window.plausible("formChange", {
                 props: {
-                  formName: "Open Short",
                   inputName: "size",
                   inputValue: newAmount,
-                  chainId: hyperdrive.chainId,
-                  poolAddress: hyperdrive.address,
+                  formName,
+                  chainId,
+                  poolAddress,
                 },
               });
               setShortAmount(newAmount);

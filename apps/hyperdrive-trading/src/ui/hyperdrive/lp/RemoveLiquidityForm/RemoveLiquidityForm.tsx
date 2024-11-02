@@ -228,6 +228,11 @@ export function RemoveLiquidityForm({
         })()
       : 0n;
 
+  // Plausible event props
+  const formName = "Remove Liquidity";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -240,11 +245,11 @@ export function RemoveLiquidityForm({
                 onSlippageChange={(slippage) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Remove Liquidity",
                       inputName: "slippage",
                       inputValue: slippage,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setSlippage(slippage);
@@ -269,11 +274,11 @@ export function RemoveLiquidityForm({
             onChange={(newAmount) => {
               window.plausible("formChange", {
                 props: {
-                  formName: "Remove Liquidity",
                   inputName: "amount",
                   inputValue: newAmount,
-                  chainId: hyperdrive.chainId,
-                  poolAddress: hyperdrive.address,
+                  formName,
+                  chainId,
+                  poolAddress,
                 },
               });
               setAmount(newAmount);
@@ -289,11 +294,11 @@ export function RemoveLiquidityForm({
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Remove Liquidity",
                       inputName: "token",
                       inputValue: tokenAddress,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setActiveWithdrawToken(tokenAddress);

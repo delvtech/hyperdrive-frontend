@@ -142,6 +142,11 @@ export function CloseShortForm({
     });
   }
 
+  // Plausible event props
+  const formName = "Close Short";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -157,11 +162,11 @@ export function CloseShortForm({
             onChange={(newAmount) => {
               window.plausible("formChange", {
                 props: {
-                  formName: "Close Short",
                   inputName: "amount",
                   inputValue: newAmount,
-                  chainId: hyperdrive.chainId,
-                  poolAddress: hyperdrive.address,
+                  formName,
+                  chainId,
+                  poolAddress,
                 },
               });
               setAmount(newAmount);
@@ -188,11 +193,11 @@ export function CloseShortForm({
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Close Short",
                       inputName: "token",
                       inputValue: tokenAddress,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setActiveWithdrawToken(tokenAddress);

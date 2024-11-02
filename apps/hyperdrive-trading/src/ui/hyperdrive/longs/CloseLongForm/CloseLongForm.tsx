@@ -150,6 +150,12 @@ export function CloseLongForm({
   const isAmountLargerThanPositionSize = !!(
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
+
+  // Plausible event props
+  const formName = "Close Long";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -166,11 +172,11 @@ export function CloseLongForm({
               onChange={(newAmount) => {
                 window.plausible("formChange", {
                   props: {
-                    formName: "Close Long",
                     inputName: "amount",
                     inputValue: newAmount,
-                    chainId: hyperdrive.chainId,
-                    poolAddress: hyperdrive.address,
+                    formName,
+                    chainId,
+                    poolAddress,
                   },
                 });
                 setAmount(newAmount);
@@ -195,11 +201,11 @@ export function CloseLongForm({
                   onChange={(tokenAddress) => {
                     window.plausible("formChange", {
                       props: {
-                        formName: "Close Long",
                         inputName: "token",
                         inputValue: tokenAddress,
-                        chainId: hyperdrive.chainId,
-                        poolAddress: hyperdrive.address,
+                        formName,
+                        chainId,
+                        poolAddress,
                       },
                     });
                     setActiveWithdrawToken(tokenAddress);

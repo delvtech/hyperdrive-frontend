@@ -242,6 +242,11 @@ export function OpenLongForm({
     );
   }
 
+  // Plausible event props
+  const formName = "Open Long";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -254,11 +259,11 @@ export function OpenLongForm({
                 onSlippageChange={(slippage) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Open Long",
                       inputName: "slippage",
-                      inputValue: slippage,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      inputValue: slippage.toString(),
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setSlippage(slippage);
@@ -279,11 +284,11 @@ export function OpenLongForm({
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Open Long",
                       inputName: "token",
                       inputValue: tokenAddress,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -297,11 +302,11 @@ export function OpenLongForm({
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
                     props: {
-                      formName: "Open Long",
                       inputName: "token",
                       inputValue: tokenAddress,
-                      chainId: hyperdrive.chainId,
-                      poolAddress: hyperdrive.address,
+                      formName,
+                      chainId,
+                      poolAddress,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -349,11 +354,11 @@ export function OpenLongForm({
           onChange={(newAmount) => {
             window.plausible("formChange", {
               props: {
-                formName: "Open Long",
                 inputName: "amount",
                 inputValue: newAmount,
-                chainId: hyperdrive.chainId,
-                poolAddress: hyperdrive.address,
+                formName,
+                chainId,
+                poolAddress,
               },
             });
             setAmount(newAmount);
