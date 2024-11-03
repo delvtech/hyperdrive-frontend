@@ -1,4 +1,4 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { StEthAbi, stEthAbi } from "src/token/steth/abi";
@@ -9,7 +9,7 @@ export class ReadStEth extends readStEthMixin(ReadErc20) {}
  * @internal
  */
 export interface ReadStEthMixin {
-  stEthContract: CachedReadContract<StEthAbi>;
+  stEthContract: Contract<StEthAbi>;
 
   /**
    * Get the number of stETH shares held by an account.
@@ -54,22 +54,22 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
 ): Constructor<ReadStEthMixin> & T {
   return class extends Base implements ReadStEthMixin {
-    stEthContract: CachedReadContract<StEthAbi>;
+    stEthContract: Contract<StEthAbi>;
 
     constructor(...[options]: any[]) {
       const {
         debugName = "stETH Token",
         address,
         cache,
-        namespace,
+        cacheNamespace,
         ...modelOptions
       } = options as ReadErc20Options;
-      super({ debugName, address, cache, namespace, ...modelOptions });
-      this.stEthContract = this.contractFactory({
+      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      this.stEthContract = this.drift.contract({
         abi: stEthAbi,
         address,
         cache,
-        namespace,
+        cacheNamespace,
       });
     }
 

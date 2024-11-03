@@ -1,5 +1,12 @@
-import { Block, Network, NetworkGetBlockOptions } from "@delvtech/evm-client";
+import {
+  Block,
+  ContractReadOptions,
+  Drift,
+  GetBlockParams,
+} from "@delvtech/drift";
 import { BlockNotFoundError } from "src/errors/BlockNotFoundError";
+
+export type GetBlockOrThrowParams = GetBlockParams & ContractReadOptions;
 
 /**
  * A utility that tries to fetch a block from a given network and throws an
@@ -8,10 +15,10 @@ import { BlockNotFoundError } from "src/errors/BlockNotFoundError";
  * @throws `BlockNotFoundError`
  */
 export async function getBlockOrThrow(
-  network: Network,
-  options?: NetworkGetBlockOptions,
+  drift: Drift,
+  options?: GetBlockOrThrowParams,
 ): Promise<Block> {
-  const fetched = await network.getBlock(options);
+  const fetched = await drift.getBlock(options);
   if (!fetched) {
     throw new BlockNotFoundError(options);
   }

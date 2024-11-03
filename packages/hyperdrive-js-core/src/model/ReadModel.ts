@@ -1,16 +1,10 @@
-import { Network } from "@delvtech/evm-client";
-import { Prettify } from "src/base/types";
-import {
-  ContractFactoryOptions,
-  ReadContractFactory,
-} from "src/evm-client/contractFactory";
+import { ContractParams, Drift } from "@delvtech/drift";
 
 /**
  * The base options required for all read models.
  */
 export interface ReadModelOptions {
-  contractFactory: ReadContractFactory;
-  network: Network;
+  drift: Drift;
 
   /**
    * An arbitrary name for the instance. This is for convenience only (e.g., for
@@ -29,25 +23,18 @@ export interface ReadModelOptions {
  * A base class for read-only models.
  */
 export class ReadModel {
+  drift: Drift;
   debugName: string;
-  network: Network;
-  contractFactory: ReadContractFactory;
 
-  constructor({
-    debugName,
-    network,
-    contractFactory,
-    earliestBlock,
-  }: ReadModelOptions) {
+  constructor({ debugName, drift, earliestBlock }: ReadModelOptions) {
     this.debugName = debugName ?? this.constructor.name;
-    this.network = network;
-    this.contractFactory = contractFactory;
+    this.drift = drift;
 
     // Override the contract factory to ensure that events are fetched from the
     // earliest block if necessary.
     if (earliestBlock) {
-      this.contractFactory = (options) => {
-        const contract = contractFactory(options);
+      this.drift.contract = (options) => {
+        const contract = this.drift.contract(options);
 
         // Override the getEvents method
         const originalGetEvents = contract.getEvents;
@@ -63,7 +50,7 @@ export class ReadModel {
           return originalGetEvents(eventName, _options);
         };
 
-        return contract;
+        return contract as any;
       };
     }
   }
@@ -73,7 +60,5 @@ export class ReadModel {
  * The options required to create a read model that represents a specific
  * contract.
  */
-export type ReadContractModelOptions = Prettify<
-  // The abi is omitted because it's assumed the model will import its own ABI
-  ReadModelOptions & Omit<ContractFactoryOptions, "abi">
->;
+export type ReadContractModelOptions = ReadModelOptions &
+  Omit<ContractParams, "abi" | "adapter">;

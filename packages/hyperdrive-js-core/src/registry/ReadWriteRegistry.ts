@@ -1,10 +1,11 @@
 import {
-  CachedReadWriteContract,
   ContractReadOptions,
-} from "@delvtech/evm-client";
+  Drift,
+  ReadWriteAdapter,
+  ReadWriteContract,
+  ReplaceProps,
+} from "@delvtech/drift";
 import { Address } from "abitype";
-import { Override } from "src/base/types";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
@@ -13,11 +14,11 @@ import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
 export interface ReadWriteRegistryOptions
-  extends Override<ReadRegistryOptions, ReadWriteContractModelOptions> {}
+  extends ReplaceProps<ReadRegistryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteRegistry extends ReadRegistry {
-  declare contract: CachedReadWriteContract<RegistryAbi>;
-  declare contractFactory: ReadWriteContractFactory;
+  declare drift: Drift<ReadWriteAdapter>;
+  declare contract: ReadWriteContract<RegistryAbi>;
 
   constructor(options: ReadWriteRegistryOptions) {
     super(options);
@@ -34,8 +35,9 @@ export class ReadWriteRegistry extends ReadRegistry {
       (address) =>
         new ReadWriteFactory({
           address,
-          contractFactory: this.contractFactory,
-          network: this.network,
+          drift: this.drift,
+          cache: this.contract.cache,
+          cacheNamespace: this.contract.cacheNamespace,
         }),
     );
   }
@@ -65,8 +67,9 @@ export class ReadWriteRegistry extends ReadRegistry {
       (address) =>
         new ReadWriteHyperdrive({
           address,
-          contractFactory: this.contractFactory,
-          network: this.network,
+          drift: this.drift,
+          cache: this.contract.cache,
+          cacheNamespace: this.contract.cacheNamespace,
         }),
     );
   }
@@ -87,8 +90,9 @@ export class ReadWriteRegistry extends ReadRegistry {
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
         address: factory,
-        contractFactory: this.contractFactory,
-        network: this.network,
+        drift: this.drift,
+        cache: this.contract.cache,
+        cacheNamespace: this.contract.cacheNamespace,
       }),
     };
   }
@@ -112,8 +116,9 @@ export class ReadWriteRegistry extends ReadRegistry {
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
         address: factory,
-        contractFactory: this.contractFactory,
-        network: this.network,
+        drift: this.drift,
+        cache: this.contract.cache,
+        cacheNamespace: this.contract.cacheNamespace,
       }),
     }));
   }

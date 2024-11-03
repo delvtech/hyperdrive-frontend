@@ -1,4 +1,4 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { LsEthAbi, lsEthAbi } from "src/token/lseth/abi";
@@ -9,7 +9,7 @@ export class ReadLsEth extends readLsEthMixin(ReadErc20) {}
  * @internal
  */
 export interface ReadLsEthMixin {
-  lsEthContract: CachedReadContract<LsEthAbi>;
+  lsEthContract: Contract<LsEthAbi>;
 
   /**
    * Get the total supply of underlying eth in the lsEth contract.
@@ -57,17 +57,17 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
   Base: T,
 ): Constructor<ReadLsEthMixin> & T {
   return class extends Base implements ReadLsEthMixin {
-    lsEthContract: CachedReadContract<LsEthAbi>;
+    lsEthContract: Contract<LsEthAbi>;
 
     constructor(...[options]: any[]) {
-      const { contractFactory, address, cache, namespace } =
+      const { drift, address, cache, cacheNamespace } =
         options as ReadErc20Options;
-      super({ address, contractFactory, cache, namespace });
-      this.lsEthContract = contractFactory({
+      super({ address, drift, cache, cacheNamespace });
+      this.lsEthContract = drift.contract({
         abi: lsEthAbi,
         address,
         cache,
-        namespace,
+        cacheNamespace,
       });
     }
 

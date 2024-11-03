@@ -1,9 +1,10 @@
 import {
-  CachedReadWriteContract,
   ContractWriteOptions,
-} from "@delvtech/evm-client";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
-import { syncCacheWithTransaction } from "src/evm-client/syncCacheWithTransaction";
+  Drift,
+  ReadWriteAdapter,
+  ReadWriteContract,
+} from "@delvtech/drift";
+import { syncCacheWithTransaction } from "src/drift/syncCacheWithTransaction";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -12,8 +13,8 @@ import { Erc20Abi } from "src/token/erc20/abi";
 export interface ReadWriteErc20Options extends ReadWriteContractModelOptions {}
 
 export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
-  declare contract: CachedReadWriteContract<Erc20Abi>;
-  declare contractFactory: ReadWriteContractFactory;
+  declare drift: Drift<ReadWriteAdapter>;
+  declare contract: ReadWriteContract<Erc20Abi>;
 
   constructor(options: ReadWriteErc20Options) {
     super(options);

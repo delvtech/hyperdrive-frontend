@@ -1,11 +1,11 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
-import { ReadHyperdriveOptions } from "src/exports";
+import { ReadHyperdriveOptions } from "src/hyperdrive/base/ReadHyperdrive";
 import { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
 import { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
 
 export class ReadMockErc4626Hyperdrive extends readMockErc4626HyperdriveMixin(
-  ReadErc4626Hyperdrive
+  ReadErc4626Hyperdrive,
 ) {}
 
 /**
@@ -19,7 +19,7 @@ export interface ReadMockErc4626HyperdriveMixin {
  * @internal
  */
 export function readMockErc4626HyperdriveMixin<
-  T extends Constructor<ReadErc4626Hyperdrive>
+  T extends Constructor<ReadErc4626Hyperdrive>,
 >(Base: T): Constructor<ReadMockErc4626HyperdriveMixin> & T {
   return class extends Base {
     constructor(...[options]: any[]) {
@@ -28,15 +28,15 @@ export function readMockErc4626HyperdriveMixin<
     }
 
     async getSharesToken(
-      options?: ContractReadOptions
+      options?: ContractReadOptions,
     ): Promise<ReadMockErc4626> {
       const { vaultSharesToken } = await this.getPoolConfig(options);
 
       return new ReadMockErc4626({
         address: vaultSharesToken,
-        contractFactory: this.contractFactory,
-        namespace: this.contract.namespace,
-        network: this.network,
+        drift: this.drift,
+        cache: this.contract.cache,
+        cacheNamespace: this.contract.cacheNamespace,
       });
     }
   };

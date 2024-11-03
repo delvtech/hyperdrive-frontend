@@ -1,22 +1,26 @@
-import { Prettify } from "src/base/types";
 import {
-  ContractFactoryOptions,
-  ReadWriteContractFactory,
-} from "src/evm-client/contractFactory";
+  ContractParams,
+  Drift,
+  ReadWriteAdapter,
+  ReplaceProps,
+} from "@delvtech/drift";
 import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
 
 /**
  * The base options required for all read-write models.
  */
-export interface ReadWriteModelOptions extends ReadModelOptions {
-  contractFactory: ReadWriteContractFactory;
-}
+export type ReadWriteModelOptions = ReplaceProps<
+  ReadModelOptions,
+  {
+    drift: Drift<ReadWriteAdapter>;
+  }
+>;
 
 /**
  * A base class for read-write models.
  */
 export class ReadWriteModel extends ReadModel {
-  declare contractFactory: ReadWriteContractFactory;
+  declare drift: Drift<ReadWriteAdapter>;
 
   constructor(options: ReadWriteModelOptions) {
     super(options);
@@ -27,7 +31,5 @@ export class ReadWriteModel extends ReadModel {
  * The options required to create a read-write model that represents a specific
  * contract.
  */
-export type ReadWriteContractModelOptions = Prettify<
-  // The abi is omitted because it's assumed the model will import its own ABI
-  ReadWriteModelOptions & Omit<ContractFactoryOptions, "abi">
->;
+export type ReadWriteContractModelOptions = ReadWriteModelOptions &
+  Omit<ContractParams, "abi" | "adapter">;

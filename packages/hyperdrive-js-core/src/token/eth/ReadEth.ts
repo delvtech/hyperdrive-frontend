@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/drift";
 import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
 import { ReadToken } from "src/token/ReadToken";
 
@@ -42,6 +42,9 @@ export class ReadEth extends ReadModel implements ReadToken {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    return this.network.getBalance(account, options);
+    return this.drift.getBalance({
+      address: account,
+      ...options,
+    });
   }
 }

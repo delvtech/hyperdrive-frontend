@@ -1,5 +1,5 @@
+import { Drift, ReadWriteAdapter } from "@delvtech/drift";
 import { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
-import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadEth } from "src/token/eth/ReadEth";
@@ -7,7 +7,7 @@ import { ReadEth } from "src/token/eth/ReadEth";
 export interface ReadWriteEthOptions extends ReadWriteModelOptions {}
 
 export class ReadWriteEth extends ReadEth implements ReadWriteToken {
-  declare contractFactory: ReadWriteContractFactory;
+  declare drift: Drift<ReadWriteAdapter>;
 
   constructor(options: ReadWriteEthOptions) {
     super(options);

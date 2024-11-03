@@ -16,6 +16,9 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 type ReadWriteParams<Args> = {
   args: Args;
   options?: ContractWriteOptions;
+  /**
+   * @deprecated Use `options.onMined` instead.
+   */
   onTransactionCompleted?: (hash: `0x${string}`) => void;
 };
 

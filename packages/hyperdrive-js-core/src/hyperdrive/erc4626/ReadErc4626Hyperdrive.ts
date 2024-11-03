@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -38,9 +38,9 @@ export function readErc4626HyperdriveMixin<
 
       return new ReadErc4626({
         address: vaultSharesToken,
-        contractFactory: this.contractFactory,
-        namespace: this.contract.namespace,
-        network: this.network,
+        drift: this.drift,
+        cache: this.contract.cache,
+        cacheNamespace: this.contract.cacheNamespace,
       });
     }
   };

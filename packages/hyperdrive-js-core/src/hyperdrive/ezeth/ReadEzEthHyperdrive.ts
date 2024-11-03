@@ -1,4 +1,4 @@
-import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { Contract, ContractReadOptions, ReadContract } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import {
@@ -16,7 +16,7 @@ export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
  * @internal
  */
 export interface ReadEzEthHyperdriveMixin {
-  ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
+  ezEthHyperdriveContract: Contract<EzEthHyperdriveAbi>;
 
   /**
    * Get a model of ETH, the base token for this Hyperdrive instance.
@@ -36,29 +36,28 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadEzEthHyperdriveMixin> & T {
   return class extends Base {
-    ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
+    ezEthHyperdriveContract: ReadContract<EzEthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
         debugName = "EzETH Hyperdrive",
         address,
         cache,
-        namespace,
+        cacheNamespace,
         ...modelOptions
       } = options as ConstructorParameters<typeof ReadHyperdrive>[0];
-      super({ debugName, address, cache, namespace, ...modelOptions });
-      this.ezEthHyperdriveContract = this.contractFactory({
+      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      this.ezEthHyperdriveContract = this.drift.contract({
         abi: ezEthHyperdriveAbi,
         address,
         cache,
-        namespace,
+        cacheNamespace,
       });
     }
 
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
-        contractFactory: this.contractFactory,
-        network: this.network,
+        drift: this.drift,
       });
     }
 
@@ -66,9 +65,9 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const { vaultSharesToken } = await this.getPoolConfig();
       return new ReadErc20({
         address: vaultSharesToken,
-        contractFactory: this.contractFactory,
-        namespace: this.contract.namespace,
-        network: this.network,
+        drift: this.drift,
+        cache: this.contract.cache,
+        cacheNamespace: this.contract.cacheNamespace,
       });
     }
   };

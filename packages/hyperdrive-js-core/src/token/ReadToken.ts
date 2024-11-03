@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/evm-client";
+import { ContractReadOptions } from "@delvtech/drift";
 import { ReadModel } from "src/model/ReadModel";
 
 export interface ReadToken extends ReadModel {
