@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
+    "@delvtech/drift": "^0.0.1-beta.6",
     "@delvtech/evm-client": "^0.5.1"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "lodash.mapvalues": "^4.6.0"
   },
   "devDependencies": {
+    "@delvtech/drift": "^0.0.1-beta.6",
     "@delvtech/evm-client": "^0.5.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
