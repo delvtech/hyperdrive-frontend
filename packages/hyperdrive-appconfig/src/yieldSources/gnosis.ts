@@ -5,6 +5,7 @@ declare module "src/yieldSources/types" {
   interface YieldSourceIdMap {
     gnosisWsteth: "gnosisWsteth";
     sxdai: "sxdai";
+    gnosisSgyd: "gnosisSgyd";
   }
 }
 
@@ -22,4 +23,12 @@ export const sxdai: YieldSource = {
   shortName: "Savings xDAI",
   protocol: "maker",
   historicalRatePeriod: 7,
+};
+
+export const gnosisSgyd: YieldSource = {
+  chainId: gnosis.id,
+  id: "gnosisSgyd",
+  shortName: "Savings GYD",
+  protocol: "gyroscope",
+  historicalRatePeriod: 1,
 };

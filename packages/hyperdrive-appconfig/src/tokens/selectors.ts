@@ -1,4 +1,4 @@
-import { TokenConfig } from "src/tokens/getTokenConfig";
+import { TokenConfig } from "src/tokens/types";
 import { Address } from "viem";
 
 /**

@@ -6,8 +6,12 @@ import { Address, PublicClient } from "viem";
  */
 export interface TransferableTokenReward {
   type: "transferableToken";
+  /**
+   * The apy of the token reward in 18-decimal precision
+   */
   apy: bigint;
   tokenAddress: Address;
+  chainId: number;
 }
 
 /**
@@ -20,6 +24,7 @@ export interface NonTransferableTokenReward {
   tokenAddress: Address;
   tokensPerThousandUsd: bigint;
   depositDurationDays: number; // 365 = 1 year
+  chainId: number;
 }
 
 /**

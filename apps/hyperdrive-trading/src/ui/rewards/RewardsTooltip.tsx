@@ -1,15 +1,16 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   findHyperdriveConfig,
+  findToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { ChartBarIcon, SparklesIcon } from "@heroicons/react/16/solid";
+import { SparklesIcon } from "@heroicons/react/16/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
-import { assertNever } from "src/base/assertNever";
-import { formatRate } from "src/base/formatRate";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 
 export function RewardsTooltip({
@@ -25,20 +26,15 @@ export function RewardsTooltip({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
-  const rewards = useRewards(hyperdrive);
   const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
-
+  const { vaultRate: baseRate } = useYieldSourceRate({
+    chainId,
+    hyperdriveAddress,
+  });
+  const isNewPool = useIsNewPool({ hyperdrive });
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
-  let netApy: bigint = lpApy?.lpApy || 0n;
-
-  rewards?.forEach((reward) => {
-    if (reward.id === "MorphoVaultAllocation" || reward.id === "MorphoVault") {
-      netApy += BigInt((parseFloat(reward.amount) * 1e18) / 100);
-    }
-  });
-
-  if (!rewards?.length && !appConfigRewards?.length) {
+  if (!appConfigRewards?.length) {
     return children;
   }
 
@@ -56,6 +52,21 @@ export function RewardsTooltip({
           >
             <div className="flex justify-between border-b border-neutral-content/30 p-3">
               <p className="gradient-text text-lg">Rewards</p>
+            </div>
+            <div className="flex items-center justify-between border-b border-neutral-content/30 p-3">
+              <div className="flex items-center gap-1">Base APY</div>
+              <div className="grid justify-items-end">
+                <p className="flex items-center gap-1">
+                  {!isNewPool ? (
+                    baseRate?.formatted
+                  ) : (
+                    <>
+                      <SparklesIcon className="h-4" />
+                      New
+                    </>
+                  )}
+                </p>
+              </div>
             </div>
 
             {appConfigRewards?.map((reward) => {
@@ -76,131 +87,84 @@ export function RewardsTooltip({
                   </div>
                 );
               }
-            })}
+              if (reward.type === "transferableToken") {
+                const token = findToken({
+                  tokenAddress: reward.tokenAddress,
+                  chainId: reward.chainId,
+                  tokens: appConfig.tokens,
+                });
 
-            {rewards?.map((reward) => {
-              switch (reward.id) {
-                case "Aero":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            {reward.amount}%
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-                case "MorphoFlatRate":
-                  return (
+                if (!token) {
+                  return null;
+                }
+                return (
+                  <>
                     <div
-                      key={reward.id}
+                      key={token.address}
                       className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                     >
                       <div className="flex items-center gap-1">
                         <img
-                          src={appConfig.protocols.morpho.iconUrl}
-                          alt="Morpho logo"
+                          src={token.iconUrl}
+                          alt={`${token.name} logo`}
                           className="h-4"
                         />
-                        {reward.name}
+                        {token.name}
                       </div>
 
                       <div className="grid justify-items-end">
                         <p className="flex items-center gap-1">
-                          +{reward.amount}
-                        </p>
-                        <p className="text-2xs text-neutral-content">
-                          per $1000 / yr
+                          +
+                          {fixed(reward.apy).format({
+                            percent: true,
+                            decimals: 2,
+                          })}
                         </p>
                       </div>
                     </div>
-                  );
+                  </>
+                );
+              }
 
-                case "MorphoVault":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
+              if (reward.type === "nonTransferableToken") {
+                const token = findToken({
+                  tokenAddress: reward.tokenAddress,
+                  chainId: reward.chainId,
+                  tokens: appConfig.tokens,
+                });
+                if (!token) {
+                  return null;
+                }
+                return (
+                  <div
+                    key={token?.address}
+                    className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-1">
+                      <img
+                        src={appConfig.protocols.morpho.iconUrl}
+                        alt="Morpho logo"
+                        className="h-4"
+                      />
+                      {token.name}
+                    </div>
 
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            +{reward.amount}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
-                        <div className="flex items-center gap-1">
-                          <ChartBarIcon className="h-4" />
-                          Rate
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            {lpApy?.isNew
-                              ? "✨New✨"
-                              : `+ ${formatRate(
-                                  lpApy?.lpApy || 0n,
-                                  18,
-                                  false,
-                                )} %`}
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-                case "MorphoVaultAllocation":
-                  return (
-                    <>
-                      <div
-                        key={reward.id}
-                        className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                      >
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={reward.iconUrl}
-                            alt={`${reward.name} logo`}
-                            className="h-4"
-                          />
-                          {reward.name}
-                        </div>
-
-                        <div className="grid justify-items-end">
-                          <p className="flex items-center gap-1">
-                            +{reward.amount}
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  );
-
-                default:
-                  assertNever(reward.id);
+                    <div className="grid justify-items-end">
+                      <p className="flex items-center gap-1">
+                        +
+                        {fixed(reward.tokensPerThousandUsd).format({
+                          decimals: token.places,
+                        })}
+                      </p>
+                      <p className="text-2xs text-neutral-content">
+                        per $1000 / yr
+                      </p>
+                    </div>
+                  </div>
+                );
               }
             })}
+
             <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
               <div className="flex items-center gap-1">
                 <SparklesIcon className="h-4" />
@@ -209,7 +173,19 @@ export function RewardsTooltip({
 
               <div className="grid justify-items-end">
                 <p className="flex items-center gap-1">
-                  +{formatRate(netApy, 18, false)}%
+                  {lpApy?.isNew ? (
+                    <div>
+                      <SparklesIcon className="h-4" />
+                      New
+                    </div>
+                  ) : (
+                    <div>
+                      {fixed(lpApy?.netLpApy || 0n).format({
+                        percent: true,
+                        decimals: 2,
+                      })}
+                    </div>
+                  )}
                 </p>
               </div>
             </div>

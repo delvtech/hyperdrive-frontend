@@ -2,8 +2,9 @@ import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
-import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
+import { getTokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { mainnet } from "viem/chains";
 export async function getGnosisWstethHyperdrive({

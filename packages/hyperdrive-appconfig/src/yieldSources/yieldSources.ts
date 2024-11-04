@@ -8,7 +8,7 @@ import {
   snars,
   stkWell,
 } from "src/yieldSources/base";
-import { gnosisWsteth, sxdai } from "src/yieldSources/gnosis";
+import { gnosisSgyd, gnosisWsteth, sxdai } from "src/yieldSources/gnosis";
 import { lineaEzeth, rseth } from "src/yieldSources/linea";
 import {
   eeth,
@@ -20,6 +20,7 @@ import {
   morphoWstethUsda,
   morphoWstethUsdc,
   reth,
+  sgyd,
   stusd,
   susde,
   susds,
@@ -52,4 +53,6 @@ export const yieldSources = {
   mwUsdc,
   aeroUsdcAero,
   susde,
+  sgyd,
+  gnosisSgyd,
 } as const;

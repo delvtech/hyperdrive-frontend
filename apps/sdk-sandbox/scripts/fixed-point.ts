@@ -1,4 +1,9 @@
-import { fixed, initSync, wasmBuffer } from "@delvtech/fixed-point-wasm";
+import {
+  fixed,
+  initSync,
+  parseFixed,
+  wasmBuffer,
+} from "@delvtech/fixed-point-wasm";
 
 // Initialize the WASM module
 initSync(wasmBuffer);
@@ -11,3 +16,5 @@ console.table({
   b: b.toString(),
   equalValue: b.eq(fixed(100e18)),
 });
+
+console.log(parseFixed(0.0042782412732951195).bigint);

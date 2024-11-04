@@ -1,8 +1,9 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { getTokenConfig, TokenConfig } from "src/tokens/getTokenConfig";
+import { getTokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({

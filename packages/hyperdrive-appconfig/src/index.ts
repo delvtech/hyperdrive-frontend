@@ -1,10 +1,5 @@
 // appconfigs
 export type { AppConfig } from "src/appconfig/AppConfig";
-export { ethereumAppConfig } from "src/generated/1.appconfig";
-export { gnosisAppConfig } from "src/generated/100.appconfig";
-export { sepoliaAppConfig } from "src/generated/11155111.appconfig";
-export { lineaMainnetAppConfig } from "src/generated/59144.appconfig";
-export { baseAppConfig } from "src/generated/8453.appconfig";
 export { appConfig } from "src/generated/all.appconfig";
 export { mainnetAppConfig } from "src/generated/mainnet.appconfig";
 export { testnetAppConfig } from "src/generated/testnet.appconfig";
@@ -23,7 +18,6 @@ export { findToken } from "src/tokens/selectors";
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 
 // tokens
-export type { TokenConfig } from "src/tokens/getTokenConfig";
 export {
   AERO_ICON_URL,
   EETH_ICON_URL,
@@ -31,6 +25,7 @@ export {
   USDC_ICON_URL,
   WELL_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
+export type { TokenConfig } from "src/tokens/types";
 
 // yield sources
 export type { YieldSource, YieldSourceId } from "src/yieldSources/types";

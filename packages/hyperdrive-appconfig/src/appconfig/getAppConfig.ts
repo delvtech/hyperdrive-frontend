@@ -11,7 +11,6 @@ import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosi
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -19,10 +18,12 @@ import {
   ETH_ICON_URL,
   EURC_ICON_URL,
   EZETH_ICON_URL,
+  GYD_ICON_URL,
   NARS_ICON_URL,
   RETH_ICON_URL,
   RSETH_ICON_URL,
   SDAI_ICON_URL,
+  SGYD_ICON_URL,
   SNARS_ICON_URL,
   STUSD_ICON_URL,
   SUSDE_ICON_URL,
@@ -36,6 +37,8 @@ import {
   WETH_ICON_URL,
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
+import { TokenConfig } from "src/tokens/types";
+import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 
@@ -185,6 +188,39 @@ const hyperdriveKindResolvers: Record<
       abi: hyperdrive.contract.abi,
       functionName: "name",
     });
+
+    if (hyperdriveName.includes("sGYD Hyperdrive")) {
+      const yieldSourceByChainId: Record<number, YieldSourceId> = {
+        1: "sgyd",
+        100: "gnosisSgyd",
+      };
+      const yieldSource =
+        yieldSourceByChainId[publicClient.chain?.id as number];
+
+      if (!yieldSource) {
+        throw new Error(
+          `Unsupported chainId for sGYD Hyperdrive: ${publicClient.chain?.id}`,
+        );
+      }
+      return getCustomHyperdrive({
+        hyperdrive,
+        yieldSource,
+        baseTokenIconUrl: GYD_ICON_URL,
+        sharesTokenIconUrl: SGYD_ICON_URL,
+        tokenPlaces: 2,
+        baseTokenTags: ["stablecoin"],
+        sharesTokenTags: [],
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: true,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        earliestBlock,
+      });
+    }
 
     // Ethena sUSDe
     if (hyperdriveName.includes("sUSDe Hyperdrive")) {
