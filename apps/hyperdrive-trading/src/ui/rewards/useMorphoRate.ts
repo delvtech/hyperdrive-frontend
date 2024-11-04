@@ -26,6 +26,9 @@ const marketPoolIds: Record<Address, string> = {
     "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
 };
 
+/**
+ * @deprecated this comes from rewards resolver directly now
+ */
 export function useMorphoRate({
   chainId,
   hyperdriveAddress,
@@ -149,6 +152,9 @@ type SupplyRewardsResponse = {
     };
   };
 };
+/**
+ * @deprecated this comes from rewards resolver directly now
+ */
 export function useMorphoVaultRewards({
   hyperdrive,
   enabled,

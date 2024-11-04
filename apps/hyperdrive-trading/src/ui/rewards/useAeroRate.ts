@@ -3,6 +3,9 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useReadContract } from "wagmi";
 
+/**
+ * @deprecated This now comes from the rewards resolver directly
+ */
 export function useAeroRate({
   hyperdrive,
   enabled,

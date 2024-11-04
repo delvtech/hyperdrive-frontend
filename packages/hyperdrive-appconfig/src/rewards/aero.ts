@@ -26,7 +26,7 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
     chainId: base.id,
   });
 
-  const dollarAmountRewardedPerYear = aeroRewardsPerYear.mul(fixed(aeroPrice));
+  const dollarAmountRewardedPerYear = aeroRewardsPerYear.mul(aeroPrice);
 
   const totalSupply = await publicClient.readContract({
     address: "0x4F09bAb2f0E15e2A078A227FE1537665F55b8360",
@@ -45,12 +45,8 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
 
   const dollarValueOfPool = fixed(aeroLpPrice).mul(fixedTotalSupply);
 
-  let apr = fixed(0n);
-  if (!dollarValueOfPool.eq(0n)) {
-    apr = dollarAmountRewardedPerYear
-      .div(dollarValueOfPool)
-      .mul(parseFixed(100n));
-  }
+  const apr = dollarAmountRewardedPerYear.div(dollarValueOfPool);
+
   return [
     {
       type: "transferableToken",
