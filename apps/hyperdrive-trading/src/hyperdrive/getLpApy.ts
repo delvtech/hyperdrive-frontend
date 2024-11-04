@@ -1,17 +1,39 @@
-import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { fixed } from "@delvtech/fixed-point-wasm";
+import {
+  appConfig,
+  HyperdriveConfig,
+  rewardFunctions,
+} from "@delvtech/hyperdrive-appconfig";
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
+import { wagmiConfig } from "src/network/wagmiClient";
+import { PublicClient } from "viem";
 
 export type LpApyResult = {
   ratePeriodDays: number;
 } & (
   | {
+      /**
+       * The LP APY for this pool
+       */
       lpApy: bigint;
+      /**
+       * The LP APY that includes rewards
+       */
+      netLpApy: bigint;
       isNew: false;
     }
   | {
+      /**
+       * The LP APY for this pool
+       */
       lpApy: undefined;
+      /**
+       * The LP APY that includes rewards
+       */
+      netLpApy: undefined;
       isNew: true;
     }
 );
@@ -25,7 +47,6 @@ export async function getLpApy({
 }): Promise<LpApyResult> {
   const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
   const currentBlockNumber = currentBlock.blockNumber!;
-
   // Appconfig tells us how many days to look back for historical rates
   const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
     ? 1000n // roughly 3 hours for cloudchain
@@ -36,6 +57,7 @@ export async function getLpApy({
   const targetFromBlock = currentBlockNumber - numBlocksForHistoricalRate;
 
   let lpApy: bigint | undefined;
+  let netLpApy: bigint | undefined;
 
   const blocksSinceInitialization =
     (currentBlockNumber || 0n) - hyperdrive.initializationBlock;
@@ -52,6 +74,24 @@ export async function getLpApy({
         : targetFromBlock,
     });
     lpApy = lpApyResult.lpApy;
+    netLpApy = lpApy;
+    const publicClient = getPublicClient(wagmiConfig as any, {
+      chainId: hyperdrive.chainId,
+    }) as PublicClient;
+    // TODO: Create an appconfig selector to grab the rewards function from a
+    // given hyperdrive
+    const rewardsFn = appConfig.yieldSources[hyperdrive.yieldSource].rewardsFn;
+    if (rewardsFn) {
+      const rewards = await rewardFunctions[rewardsFn](publicClient);
+      rewards?.forEach((reward) => {
+        if (reward.type === "transferableToken") {
+          netLpApy = fixed(reward.apy).add(
+            // safe to cast because if we get here then lpApy has been set
+            netLpApy as bigint,
+          ).bigint;
+        }
+      });
+    }
   }
 
   // Figure out if the pool is younger than 1 rate period
@@ -70,6 +110,7 @@ export async function getLpApy({
 
   return {
     lpApy,
+    netLpApy,
     ratePeriodDays,
     isNew: lpApy === undefined,
   } as LpApyResult;

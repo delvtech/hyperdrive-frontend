@@ -7,9 +7,6 @@ import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
-import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import { eligibleMarketsForMorphoVaultRewards } from "src/ui/rewards/useRewards";
-import { base } from "viem/chains";
 
 interface LpApyCtaProps {
   hyperdrive: HyperdriveConfig;
@@ -21,27 +18,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
     chainId: hyperdrive.chainId,
   });
 
-  const { morphoVaultData } = useMorphoVaultRewards({
-    hyperdrive,
-    enabled:
-      eligibleMarketsForMorphoVaultRewards[base.id]?.includes(
-        hyperdrive.address,
-      ) ?? false,
-  });
-
   const label = lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY";
-  let totalLpApy = undefined;
-
-  if (lpApy && !lpApy.isNew) {
-    totalLpApy = lpApy.lpApy;
-    // If this is a eligible for morpho vault rewards we need to add this to the
-    // existing lpApy. The supply APR is returned as a floating point number
-    // from the Morpho API so we need to scale it up to 18 decimals before
-    // adding it to the lpApy.
-    if (morphoVaultData) {
-      totalLpApy += BigInt((morphoVaultData.reward?.supplyApr ?? 0) * 1e18);
-    }
-  }
 
   return (
     <PoolStat
@@ -49,12 +26,12 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
       isLoading={lpApyStatus === "loading"}
       isNew={lpApy?.isNew}
       value={
-        totalLpApy ? (
+        lpApy && !lpApy?.isNew ? (
           <RewardsTooltip
             chainId={hyperdrive.chainId}
             hyperdriveAddress={hyperdrive.address}
           >
-            <PercentLabel value={formatRate(totalLpApy, 18, false)} />
+            <PercentLabel value={formatRate(lpApy.netLpApy, 18, false)} />
           </RewardsTooltip>
         ) : (
           "-"
@@ -77,7 +54,9 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
                 poolAddress: hyperdrive.address,
                 positionType: "lp",
                 statName: label,
-                statValue: totalLpApy ? fixed(totalLpApy, 18).toString() : "",
+                statValue: lpApy?.netLpApy
+                  ? fixed(lpApy.netLpApy).toString()
+                  : "",
               },
             });
           }}

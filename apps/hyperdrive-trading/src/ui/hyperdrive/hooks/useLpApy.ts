@@ -30,6 +30,7 @@ export function useLpApy({
     hyperdriveAddress,
     hyperdrives: appConfig.hyperdrives,
   });
+
   const { data: blockNumber } = useBlockNumber({ chainId });
   const readHyperdrive = useReadHyperdrive({
     chainId,
