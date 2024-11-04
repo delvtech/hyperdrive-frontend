@@ -1,6 +1,10 @@
 import { Address } from "abitype";
 import { ChainId } from "src/chains/chains";
-import { MORPHO_ICON_URL, WELL_ICON_URL } from "src/tokens/tokenIconsUrls";
+import {
+  AERO_ICON_URL,
+  MORPHO_ICON_URL,
+  WELL_ICON_URL,
+} from "src/tokens/tokenIconsUrls";
 import { TokenConfig } from "src/tokens/types";
 import { base, mainnet } from "viem/chains";
 
@@ -23,6 +27,16 @@ export const knownTokenConfigs: Record<
       decimals: 18,
       places: 4,
       iconUrl: WELL_ICON_URL,
+      tags: [],
+    },
+    "0x940181a94A35A4569E4529A3CDfB74e38FD98631": {
+      address: "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
+      chainId: base.id,
+      name: "Aerodrome",
+      symbol: "AERO",
+      decimals: 18,
+      places: 4,
+      iconUrl: AERO_ICON_URL,
       tags: [],
     },
   },

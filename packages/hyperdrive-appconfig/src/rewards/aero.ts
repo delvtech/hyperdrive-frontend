@@ -1,7 +1,8 @@
-import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { parseAbi } from "abitype";
+import { fixed, parseFixed } from "src/base/fixedPoint";
 import { RewardsResolver } from "src/rewards/types";
 import { getDefiLlamaTokenPrice } from "src/tokens/prices";
+import { base } from "viem/chains";
 
 const AERO_TOKEN_ADDRESS = "0x940181a94A35A4569E4529A3CDfB74e38FD98631";
 export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
@@ -22,7 +23,7 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
   const aeroPrice = await getDefiLlamaTokenPrice({
     // price per AERO token
     tokenAddress: AERO_TOKEN_ADDRESS,
-    chainId: 8543,
+    chainId: base.id,
   });
 
   const dollarAmountRewardedPerYear = aeroRewardsPerYear.mul(fixed(aeroPrice));
@@ -39,7 +40,7 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
   const aeroLpPrice = await getDefiLlamaTokenPrice({
     // price per LP token
     tokenAddress: "0x6cDcb1C4A4D1C3C6d054b27AC5B77e89eAFb971d",
-    chainId: 8543,
+    chainId: base.id,
   });
 
   const dollarValueOfPool = fixed(aeroLpPrice).mul(fixedTotalSupply);
@@ -54,7 +55,7 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
     {
       type: "transferableToken",
       apy: apr.bigint,
-      chainId: 8543,
+      chainId: base.id,
       tokenAddress: AERO_TOKEN_ADDRESS,
     },
   ];

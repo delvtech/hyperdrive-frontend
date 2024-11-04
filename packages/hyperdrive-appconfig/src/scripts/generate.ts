@@ -193,7 +193,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             }
 
             throw new Error(
-              `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs: .`,
+              `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
             );
           }
         });
