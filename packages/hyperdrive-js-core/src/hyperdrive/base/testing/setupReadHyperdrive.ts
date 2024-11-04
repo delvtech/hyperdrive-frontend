@@ -1,41 +1,32 @@
-import {
-  CachedReadContract,
-  createCachedReadContract,
-} from "@delvtech/evm-client";
-import { NetworkStub, ReadContractStub } from "@delvtech/evm-client/stubs";
-import { Abi } from "abitype";
-import { ReadHyperdrive_v1_0_14 } from "src/exports/v1.0.14";
-import { HyperdriveAbi } from "src/hyperdrive/base/abi";
+import { ZERO_ADDRESS } from "@delvtech/drift";
+import { MockDrift } from "@delvtech/drift/testing";
+import { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadHyperdrive_v1_0_14";
 
 // No need to explicitly set return types as they are already set in the Stubs
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function setupReadHyperdrive() {
-  const network = new NetworkStub();
-
+  const drift = new MockDrift();
   // TODO: We use the v1.0.14 version of ReadHyperdrive to avoid the need to
-  // stub every `convertToShares` and `convertToBase` call since evm-client only
+  // stub every `convertToShares` and `convertToBase` call since drift only
   // supports stubbing calls with static values. It should be refactored to
   // support stubbing a call with a function to dynamically calculate the return
   // value based on arguments and options.
   const readHyperdrive = new ReadHyperdrive_v1_0_14({
-    address: "0x123",
-    contractFactory: <TAbi extends Abi>({ abi }: { abi: TAbi }) => {
-      const contract = new ReadContractStub(abi);
-      return createCachedReadContract({ contract });
-    },
-    network: network,
+    address: ZERO_ADDRESS,
+    drift,
   });
 
-  // The ReadHyperdrive class doesn't infer that the contract is a Stub
+  // The ReadHyperdrive class doesn't infer that the contract is a MockContract,
   // so we need to cast it to the correct type.
-  const contract =
-    readHyperdrive.contract as unknown as CachedReadContract<HyperdriveAbi> &
-      ReadContractStub<HyperdriveAbi>;
+  const contract = drift.contract({
+    abi: readHyperdrive.contract.abi,
+    address: readHyperdrive.contract.address,
+  });
 
-  contract.stubRead({ functionName: "decimals", value: 18 });
+  contract.onRead("decimals").resolves(18);
   return {
+    drift,
     contract,
-    network,
     readHyperdrive,
   };
 }
