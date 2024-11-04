@@ -187,7 +187,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             const knownTokenConfig =
               knownTokenConfigs[reward.chainId][reward.tokenAddress];
 
-            if (!alreadyExists && knownTokenConfig) {
+            if (knownTokenConfig) {
               appConfig.tokens.push(knownTokenConfig);
               return;
             }
