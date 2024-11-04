@@ -17,6 +17,7 @@ declare module "src/yieldSources/types" {
     usds: "usds";
     susds: "susds";
     susde: "susde";
+    sgyd: "sgyd";
   }
 }
 
@@ -120,5 +121,13 @@ export const susde: YieldSource = {
   id: "susde",
   shortName: "Ethena sUSDe",
   protocol: "ethena",
+  historicalRatePeriod: 1,
+};
+
+export const sgyd: YieldSource = {
+  chainId: mainnet.id,
+  id: "sgyd",
+  shortName: "Savings GYD",
+  protocol: "gyroscope",
   historicalRatePeriod: 1,
 };
