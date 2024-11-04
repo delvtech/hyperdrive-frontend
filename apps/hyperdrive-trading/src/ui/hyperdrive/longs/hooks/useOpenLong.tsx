@@ -104,6 +104,15 @@ export function useOpenLong({
             toastWarpcast();
           }, SUCCESS_TOAST_DURATION);
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: txHash,
+              transactionType: "open",
+              positionType: "long",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 
@@ -121,6 +130,16 @@ export function useOpenLong({
       addTransaction({
         hash,
         description: "Open Long",
+      });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionType: "open",
+          positionType: "long",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
       });
     },
     onError(error) {

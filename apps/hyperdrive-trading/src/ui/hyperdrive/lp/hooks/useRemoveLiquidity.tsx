@@ -92,6 +92,15 @@ export function useRemoveLiquidity({
           );
           toastWarpcast();
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: txHash,
+              transactionType: "close",
+              positionType: "lp",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 
@@ -108,6 +117,16 @@ export function useRemoveLiquidity({
       addTransaction({
         hash,
         description: "Remove Liquidity",
+      });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionType: "close",
+          positionType: "lp",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
       });
     },
     onError(error) {

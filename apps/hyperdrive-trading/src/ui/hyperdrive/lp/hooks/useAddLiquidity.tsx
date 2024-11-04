@@ -105,6 +105,15 @@ export function useAddLiquidity({
           );
           toastWarpcast();
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: txHash,
+              transactionType: "open",
+              positionType: "lp",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 
@@ -121,6 +130,16 @@ export function useAddLiquidity({
       addTransaction({
         hash,
         description: "Add Liquidity",
+      });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionType: "open",
+          positionType: "lp",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
       });
     },
     onError(error) {

@@ -95,6 +95,15 @@ export function useCloseShort({
           );
           toastWarpcast();
           onExecuted?.(txHash);
+          window.plausible("transactionSuccess", {
+            props: {
+              transactionHash: hash,
+              transactionType: "close",
+              positionType: "short",
+              poolAddress: hyperdriveAddress,
+              chainId,
+            },
+          });
         },
       });
 
@@ -111,6 +120,16 @@ export function useCloseShort({
       addTransaction({
         hash,
         description: "Close Short",
+      });
+
+      window.plausible("transactionSubmit", {
+        props: {
+          transactionHash: hash,
+          transactionType: "close",
+          positionType: "short",
+          poolAddress: hyperdriveAddress,
+          chainId,
+        },
       });
     },
     onError(error) {
