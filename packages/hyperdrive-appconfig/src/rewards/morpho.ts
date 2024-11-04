@@ -9,9 +9,48 @@ import {
   TransferableTokenReward,
 } from "src/rewards/types";
 import { base } from "viem/chains";
+/**
+ * Resolver for rewards on Morpho Flagship EURC
+ * https://app.morpho.org/vault?vault=0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026&network=base
+ */
+export const fetchMorphoMweurcRewards: RewardsResolver = async () => {
+  return fetchMorphoVaultRewards(
+    "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
+    base.id,
+  );
+};
+/**
+ * Resolver for rewards on Morpho Flagship USDC
+ * https://app.morpho.org/vault?vault=0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca&network=base
+ */
+export const fetchMorphoMwusdcRewards: RewardsResolver = async () => {
+  return fetchMorphoVaultRewards(
+    "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
+    base.id,
+  );
+};
+
+/**
+ * Resolver for rewards on Morpho Flagship ETH
+ * https://app.morpho.org/vault?vault=0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1&network=base
+ */
+export const fetchMorphoMwethRewards: RewardsResolver = async () => {
+  return fetchMorphoVaultRewards(
+    "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
+    base.id,
+  );
+};
+
+/**
+ * Resolver for rewards on Morpho Market cbETH/USDC
+ * https://app.morpho.org/market?id=0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad&network=base
+ */
+export const fetchMorphoCbethUsdcRewards: RewardsResolver = async () => {
+  return fetchMorphoMarketRewards("ffbf9c87-73ed-4188-aa50-20b1e1101a15");
+};
 
 interface MorphoReward {
-  amountPerSuppliedToken: number;
+  amountPerSuppliedToken: number | string;
   supplyApr: number | null;
   asset: {
     address: Address;
@@ -33,7 +72,79 @@ interface MarketAllocation {
   };
 }
 
-interface MorphoRewardsResponse {
+interface MorphoMarketRewardsResponse {
+  market: {
+    loanAsset: {
+      priceUsd: number;
+    };
+    state: {
+      collateralAssetsUsd: number;
+      // The vault rewards
+      rewards: MorphoReward[];
+    };
+  };
+}
+
+async function fetchMorphoMarketRewards(
+  marketId: string,
+): Promise<AnyReward[]> {
+  const response: MorphoMarketRewardsResponse = await request(
+    "https://blue-api.morpho.org/graphql",
+    gql`
+      query MarketRewards($marketId: String!) {
+        market(id: $marketId) {
+          id
+          loanAsset {
+            priceUsd
+          }
+          state {
+            collateralAssetsUsd
+            rewards {
+              supplyApr
+              amountPerSuppliedToken
+              asset {
+                address
+                chain {
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    { marketId },
+  );
+
+  return response.market.state.rewards.map((reward) => {
+    if (reward.supplyApr) {
+      const transferableTokenReward: TransferableTokenReward = {
+        type: "transferableToken",
+        apy: parseFixed(reward.supplyApr).bigint,
+        tokenAddress: reward.asset.address,
+        chainId: reward.asset.chain.id,
+      };
+      return transferableTokenReward;
+    }
+
+    const nontransferableTokenReward: NonTransferableTokenReward = {
+      type: "nonTransferableToken",
+      tokenAddress: reward.asset.address,
+      tokensPerThousandUsd:
+        // MORPHO amounts are provided with 15 decimals of precision from
+        // the Morpho GraphQL API
+        fixed(reward.amountPerSuppliedToken, 15)
+          .div(parseFixed(response.market.loanAsset.priceUsd))
+          .mul(parseFixed(1000)).bigint,
+      depositDurationDays: 365,
+      chainId: reward.asset.chain.id,
+    };
+
+    return nontransferableTokenReward;
+  });
+}
+
+interface MorphoVaultRewardsResponse {
   vaultByAddress: {
     asset: {
       priceUsd: number;
@@ -48,36 +159,14 @@ interface MorphoRewardsResponse {
     };
   };
 }
-
-export const fetchMweurcRewards: RewardsResolver = async () => {
-  return fetchMorphoRewards(
-    "0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026",
-    base.id,
-  );
-};
-
-export const fetchMwUsdcRewards: RewardsResolver = async () => {
-  return fetchMorphoRewards(
-    "0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca",
-    base.id,
-  );
-};
-
-export const fetchMwEthRewards: RewardsResolver = async () => {
-  return fetchMorphoRewards(
-    "0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1",
-    base.id,
-  );
-};
-
-async function fetchMorphoRewards(
+async function fetchMorphoVaultRewards(
   vaultAddress: Address,
   chainId: number,
 ): Promise<AnyReward[]> {
-  const response: MorphoRewardsResponse = await request(
+  const response: MorphoVaultRewardsResponse = await request(
     "https://blue-api.morpho.org/graphql",
     gql`
-      query SupplyRewards($address: String!, $chainId: Int!) {
+      query VaultRewards($address: String!, $chainId: Int!) {
         vaultByAddress(address: $address, chainId: $chainId) {
           address
           asset {
@@ -146,7 +235,7 @@ function parseVaultReward({
   vaultCollateralAsset,
 }: {
   reward: MorphoReward;
-  vaultCollateralAsset: MorphoRewardsResponse["vaultByAddress"]["asset"];
+  vaultCollateralAsset: MorphoVaultRewardsResponse["vaultByAddress"]["asset"];
 }): NonTransferableTokenReward | TransferableTokenReward {
   // Supply APR only exists if the reward token is actually worth something
   if (reward.supplyApr) {
@@ -185,7 +274,7 @@ function parseAllocationRewards({
 }: {
   totalAssetsUsd: FixedPoint;
   marketAllocations: MarketAllocation[];
-  vaultCollateralAsset: MorphoRewardsResponse["vaultByAddress"]["asset"];
+  vaultCollateralAsset: MorphoVaultRewardsResponse["vaultByAddress"]["asset"];
 }): (NonTransferableTokenReward | TransferableTokenReward)[] {
   const allocationsWithVaultAdjustedRewards = marketAllocations.map(
     (allocation) => {

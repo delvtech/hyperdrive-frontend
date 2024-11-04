@@ -1,15 +1,19 @@
+import { fetchAeroRewards } from "src/rewards/aero";
 import { fetchEtherfiRewards } from "src/rewards/etherfi";
 import { fetchLineaRewards } from "src/rewards/linea";
 import {
-  fetchMwEthRewards,
-  fetchMweurcRewards,
-  fetchMwUsdcRewards,
+  fetchMorphoCbethUsdcRewards,
+  fetchMorphoMwethRewards,
+  fetchMorphoMweurcRewards,
+  fetchMorphoMwusdcRewards,
 } from "src/rewards/morpho";
 
 export const rewardFunctions = {
   fetchLineaRewards,
-  fetchMweurcRewards,
-  fetchMwUsdcRewards,
-  fetchMwEthRewards,
+  fetchMorphoMweurcRewards,
+  fetchMorphoMwusdcRewards,
+  fetchMorphoMwethRewards,
   fetchEtherfiRewards,
+  fetchMorphoCbethUsdcRewards,
+  fetchAeroRewards,
 } as const;
