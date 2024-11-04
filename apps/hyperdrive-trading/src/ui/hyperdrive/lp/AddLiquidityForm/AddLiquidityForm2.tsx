@@ -236,6 +236,11 @@ export function AddLiquidityForm2({
     },
   });
 
+  // Plausible event props
+  const formName = "Add Liquidity";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -267,6 +272,15 @@ export function AddLiquidityForm2({
               tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
+                window.plausible("formChange", {
+                  props: {
+                    inputName: "token",
+                    inputValue: tokenAddress,
+                    formName,
+                    chainId,
+                    poolAddress,
+                  },
+                });
                 setActiveToken(tokenAddress);
                 setAmount("0");
               }}
@@ -276,7 +290,18 @@ export function AddLiquidityForm2({
             <div className="mb-3 flex w-full items-center justify-between">
               <PositionPicker hyperdrive={hyperdrive} />
               <SlippageSettingsTwo
-                onSlippageChange={setSlippage}
+                onSlippageChange={(slippage) => {
+                  window.plausible("formChange", {
+                    props: {
+                      inputName: "slippage",
+                      inputValue: slippage,
+                      formName,
+                      chainId,
+                      poolAddress,
+                    },
+                  });
+                  setSlippage(slippage);
+                }}
                 slippage={slippage}
                 activeOption={activeSlippageOption}
                 onActiveOptionChange={setActiveSlippageOption}
@@ -297,7 +322,18 @@ export function AddLiquidityForm2({
               </span>
             </div>
           }
-          onChange={(newAmount) => setAmount(newAmount)}
+          onChange={(newAmount) => {
+            window.plausible("formChange", {
+              props: {
+                inputName: "amount",
+                inputValue: newAmount,
+                formName,
+                chainId,
+                poolAddress,
+              },
+            });
+            setAmount(newAmount);
+          }}
         />
       }
       primaryStats={

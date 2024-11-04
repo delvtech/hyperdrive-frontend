@@ -73,6 +73,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
             e.stopPropagation();
             window.plausible("positionCtaClick", {
               props: {
+                chainId: hyperdrive.chainId,
                 poolAddress: hyperdrive.address,
                 positionType: "lp",
                 statName: label,

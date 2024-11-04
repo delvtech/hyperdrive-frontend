@@ -248,6 +248,11 @@ export function AddLiquidityForm({
     },
   });
 
+  // Plausible event props
+  const formName = "Add Liquidity";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -278,6 +283,15 @@ export function AddLiquidityForm({
               tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
+                window.plausible("formChange", {
+                  props: {
+                    inputName: "token",
+                    inputValue: tokenAddress,
+                    formName,
+                    chainId,
+                    poolAddress,
+                  },
+                });
                 setActiveToken(tokenAddress);
                 setAmount("0");
               }}
@@ -285,7 +299,18 @@ export function AddLiquidityForm({
           }
           settings={
             <SlippageSettingsTwo
-              onSlippageChange={setSlippage}
+              onSlippageChange={(slippage) => {
+                window.plausible("formChange", {
+                  props: {
+                    inputName: "slippage",
+                    inputValue: slippage,
+                    formName,
+                    chainId,
+                    poolAddress,
+                  },
+                });
+                setSlippage(slippage);
+              }}
               slippage={slippage}
               activeOption={activeSlippageOption}
               onActiveOptionChange={setActiveSlippageOption}
@@ -305,7 +330,18 @@ export function AddLiquidityForm({
               </span>
             </div>
           }
-          onChange={(newAmount) => setAmount(newAmount)}
+          onChange={(newAmount) => {
+            window.plausible("formChange", {
+              props: {
+                inputName: "amount",
+                inputValue: newAmount,
+                formName,
+                chainId,
+                poolAddress,
+              },
+            });
+            setAmount(newAmount);
+          }}
         />
       }
       primaryStats={

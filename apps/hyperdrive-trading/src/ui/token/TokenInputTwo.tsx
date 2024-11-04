@@ -7,7 +7,7 @@ interface TokenInputProps {
   variant?: "default" | "lighter";
   name: string;
   value: string;
-  onChange: (newAmount: string) => void;
+  onChange?: (newAmount: string) => void;
   /**
    * If provided, the MAX button will be shown
    */
@@ -91,7 +91,7 @@ export function TokenInputTwo({
               }
             }}
             onChange={(event) => {
-              onChange(event.target.value);
+              onChange?.(event.target.value);
             }}
           />
           {typeof token === "string" ? (
@@ -129,7 +129,7 @@ export function TokenInputTwo({
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
-                  onChange(maxValue);
+                  onChange?.(maxValue);
                 }}
               >
                 Max

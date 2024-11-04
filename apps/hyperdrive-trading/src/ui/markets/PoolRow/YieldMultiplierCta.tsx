@@ -55,6 +55,7 @@ export function YieldMultiplierCta({
             e.stopPropagation();
             window.plausible("positionCtaClick", {
               props: {
+                chainId: hyperdrive.chainId,
                 poolAddress: hyperdrive.address,
                 positionType: "short",
                 statName: label,

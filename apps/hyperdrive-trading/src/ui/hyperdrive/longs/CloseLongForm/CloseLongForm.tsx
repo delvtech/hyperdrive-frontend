@@ -150,8 +150,12 @@ export function CloseLongForm({
   const isAmountLargerThanPositionSize = !!(
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
-  const maturityMilliseconds = Number(long.maturity * 1000n);
-  const isMature = Date.now() > maturityMilliseconds;
+
+  // Plausible event props
+  const formName = "Close Long";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -165,7 +169,18 @@ export function CloseLongForm({
               maxValue={
                 long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
               }
-              onChange={(newAmount) => setAmount(newAmount)}
+              onChange={(newAmount) => {
+                window.plausible("formChange", {
+                  props: {
+                    inputName: "amount",
+                    inputValue: newAmount,
+                    formName,
+                    chainId,
+                    poolAddress,
+                  },
+                });
+                setAmount(newAmount);
+              }}
               bottomRightElement={
                 <div className="flex flex-col gap-1 text-xs text-neutral-content">
                   {`Balance: ${formatBalance({
@@ -183,18 +198,24 @@ export function CloseLongForm({
                 <TokenPickerTwo
                   tokens={withdrawTokenChoices}
                   activeTokenAddress={activeWithdrawToken.address}
-                  onChange={(tokenAddress) =>
-                    setActiveWithdrawToken(tokenAddress)
-                  }
+                  onChange={(tokenAddress) => {
+                    window.plausible("formChange", {
+                      props: {
+                        inputName: "token",
+                        inputValue: tokenAddress,
+                        formName,
+                        chainId,
+                        poolAddress,
+                      },
+                    });
+                    setActiveWithdrawToken(tokenAddress);
+                  }}
                 />
               }
               value={
                 withdrawAmount
                   ? fixed(withdrawAmount, hyperdrive.decimals).toString()
                   : "0"
-              }
-              maxValue={
-                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
               }
               disabled
               bottomLeftElement={
@@ -218,7 +239,6 @@ export function CloseLongForm({
                   </label>
                 ) : null
               }
-              onChange={(newAmount) => setAmount(newAmount)}
             />
           </div>
         ) : null

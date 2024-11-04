@@ -278,17 +278,18 @@ export function OpenShortForm({
     },
   });
 
+  // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
   // Max button is wired up to the user's balance, or the pool's max long.
   // Whichever is smallest.
-  let maxButtonValue = "0";
-  if (activeTokenBalance && maxBondsOut) {
-    maxButtonValue = formatUnits(
-      activeTokenBalance.value > maxBondsOut
-        ? maxBondsOut
-        : activeTokenBalance?.value,
-      activeToken.decimals,
-    );
-  }
+  // let maxButtonValue = "0";
+  // if (activeTokenBalance && maxBondsOut) {
+  //   maxButtonValue = formatUnits(
+  //     activeTokenBalance.value > maxBondsOut
+  //       ? maxBondsOut
+  //       : activeTokenBalance?.value,
+  //     activeToken.decimals,
+  //   );
+  // }
 
   const exposureMultiplier =
     amountOfBondsToShortAsBigInt && traderDeposit
@@ -303,6 +304,12 @@ export function OpenShortForm({
   const maturesOnLabel = formatDate(
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
+
+  // Plausible event props
+  const formName = "Open Short";
+  const chainId = hyperdrive.chainId;
+  const poolAddress = hyperdrive.address;
+
   return (
     <TransactionView
       tokenInput={
@@ -321,9 +328,18 @@ export function OpenShortForm({
                 ]}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
+                  window.plausible("formChange", {
+                    props: {
+                      inputName: "token",
+                      inputValue: tokenAddress,
+                      formName,
+                      chainId,
+                      poolAddress,
+                    },
+                  });
                   setActiveToken(tokenAddress);
 
-                  // TODO: Determin if there is a bug here.
+                  // TODO: Determine if there is a bug here.
                   setPaymentAmount("0");
                 }}
               />
@@ -339,7 +355,18 @@ export function OpenShortForm({
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
                 <SlippageSettingsTwo
-                  onSlippageChange={setSlippage}
+                  onSlippageChange={(slippage) => {
+                    window.plausible("formChange", {
+                      props: {
+                        inputName: "slippage",
+                        inputValue: slippage,
+                        formName,
+                        chainId,
+                        poolAddress,
+                      },
+                    });
+                    setSlippage(slippage);
+                  }}
                   slippage={slippage}
                   activeOption={activeSlippageOption}
                   onActiveOptionChange={setActiveSlippageOption}
@@ -348,6 +375,15 @@ export function OpenShortForm({
               </div>
             }
             onChange={(newAmount) => {
+              window.plausible("formChange", {
+                props: {
+                  inputName: "size",
+                  inputValue: newAmount,
+                  formName,
+                  chainId,
+                  poolAddress,
+                },
+              });
               setShortAmount(newAmount);
               setActiveInput("bonds");
             }}
@@ -398,8 +434,6 @@ export function OpenShortForm({
           <TokenInputTwo
             variant="lighter"
             name={`${baseToken.symbol}-input`}
-            // This input is disabled until the getMaxShort is fixed on the sdk.
-            disabled
             token={
               <TokenPickerTwo
                 tokens={tokenOptions}
@@ -416,11 +450,13 @@ export function OpenShortForm({
                 ? amountToPay || "0"
                 : formatUnits(traderDeposit || 0n, activeToken.decimals)
             }
-            maxValue={maxButtonValue}
-            onChange={(newAmount) => {
-              setActiveInput("budget");
-              setPaymentAmount(newAmount);
-            }}
+            // This input is disabled until the getMaxShort is fixed on the sdk.
+            disabled
+            // maxValue={maxButtonValue}
+            // onChange={(newAmount) => {
+            //   setActiveInput("budget");
+            //   setPaymentAmount(newAmount);
+            // }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (

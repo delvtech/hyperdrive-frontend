@@ -17,13 +17,6 @@ export function SlippageSettings({
   onActiveOptionChange: (activeTab: "auto" | "custom") => void;
   tooltip?: string;
 }): JSX.Element {
-  function handleSlippageChange(value: string) {
-    window.plausible("slippageChange", {
-      props: { value },
-    });
-    onSlippageChange(value);
-  }
-
   return (
     <>
       <div className="flex items-center">
@@ -41,7 +34,7 @@ export function SlippageSettings({
             onClick={(e) => {
               e.preventDefault();
               onActiveOptionChange("auto");
-              handleSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
+              onSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeOption === "auto",
@@ -63,9 +56,9 @@ export function SlippageSettings({
         </div>
         <PercentInput
           value={slippage}
-          onChange={(e) => {
+          onChange={(value) => {
             onActiveOptionChange("custom");
-            handleSlippageChange(e);
+            onSlippageChange(value);
           }}
         />
       </div>
