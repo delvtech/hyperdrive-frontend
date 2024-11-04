@@ -61,7 +61,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     args: { time },
     options,
   }: ReadWriteParams<{ time: number }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "checkpoint",
       { _checkpointTime: BigInt(time), _maxIterations: 4n },
       {
@@ -72,7 +72,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -85,7 +84,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   }: ReadWriteParams<{
     paused: boolean;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "pause",
       { _status: paused },
       {
@@ -96,8 +95,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-
-    return hash as `0x${string}`;
   }
 
   /**
@@ -127,7 +124,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "initialize",
       {
         _apr: apr,
@@ -146,7 +143,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -177,7 +173,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "openLong",
       {
         _amount: amount,
@@ -193,7 +189,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -224,7 +219,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "openShort",
       {
         _bondAmount: bondAmount,
@@ -240,7 +235,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -271,7 +265,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "closeLong",
       {
         _maturityTime: maturityTime,
@@ -287,7 +281,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -318,7 +311,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "closeShort",
       {
         _maturityTime: maturityTime,
@@ -334,7 +327,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -368,7 +360,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "addLiquidity",
       {
         _contribution: contribution,
@@ -385,7 +377,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 
   /**
@@ -415,7 +406,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "removeLiquidity",
       {
         _lpShares: lpSharesIn,
@@ -430,8 +421,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-
-    return hash as `0x${string}`;
   }
 
   /**
@@ -460,7 +449,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     asBase?: boolean;
     extraData?: `0x${string}`;
   }>): Promise<`0x${string}`> {
-    const hash = await this.contract.write(
+    return this.contract.write(
       "redeemWithdrawalShares",
       {
         _withdrawalShares: withdrawalSharesIn,
@@ -475,6 +464,5 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         },
       },
     );
-    return hash as `0x${string}`;
   }
 }

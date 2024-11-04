@@ -26,7 +26,7 @@ export class ReadErc20 extends ReadModel implements ReadToken {
   }
 
   get address(): Address {
-    return this.contract.address as Address;
+    return this.contract.address;
   }
   get namespace(): PropertyKey | undefined {
     return this.contract.cacheNamespace;

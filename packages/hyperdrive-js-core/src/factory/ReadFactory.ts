@@ -18,7 +18,7 @@ export class ReadFactory extends ReadModel {
     ...modelOptions
   }: ReadFactoryOptions) {
     super({ debugName, ...modelOptions });
-    this.address = address as Address;
+    this.address = address;
     this.contract = this.drift.contract({
       abi: factoryAbi,
       address,
