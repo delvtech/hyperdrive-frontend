@@ -4,7 +4,6 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
-import { syncCacheWithTransaction } from "src/drift/syncCacheWithTransaction";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -20,9 +19,6 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
     super(options);
   }
 
-  @syncCacheWithTransaction<Erc20Abi>({
-    cacheEntries: [{ functionName: "allowance" }],
-  })
   async approve({
     spender,
     amount,
@@ -36,7 +32,13 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
     const hash = await this.contract.write(
       "approve",
       { spender, amount },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.invalidateReadsMatching("allowance");
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash;
   }

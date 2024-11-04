@@ -5,7 +5,6 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
-import { syncCacheWithTransaction } from "src/drift/syncCacheWithTransaction";
 import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { NULL_BYTES } from "src/hyperdrive/constants";
@@ -16,10 +15,6 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 type ReadWriteParams<Args> = {
   args: Args;
   options?: ContractWriteOptions;
-  /**
-   * @deprecated Use `options.onMined` instead.
-   */
-  onTransactionCompleted?: (hash: `0x${string}`) => void;
 };
 
 export interface ReadWriteHyperdriveOptions
@@ -62,7 +57,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
    */
-  @syncCacheWithTransaction()
   async checkpoint({
     args: { time },
     options,
@@ -70,7 +64,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     const hash = await this.contract.write(
       "checkpoint",
       { _checkpointTime: BigInt(time), _maxIterations: 4n },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -79,9 +79,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * Allows an authorized address to pause this contract
    * @param paused - True to pause all deposits and false to unpause them
    */
-  @syncCacheWithTransaction<HyperdriveAbi>({
-    cacheEntries: [{ functionName: "getMarketState" }],
-  })
   async pause({
     args: { paused },
     options,
@@ -91,8 +88,15 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     const hash = await this.contract.write(
       "pause",
       { _status: paused },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.invalidateReadsMatching("getMarketState");
+          options?.onMined?.(receipt);
+        },
+      },
     );
+
     return hash as `0x${string}`;
   }
 
@@ -107,7 +111,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    *                      blocked.
    * @returns The initial number of LP shares created.
    */
-  @syncCacheWithTransaction()
   async initialize({
     args: {
       contribution,
@@ -135,7 +138,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
           extraData: extraData,
         },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -150,7 +159,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @return bondProceeds - The amount of bonds the user received
    *
    */
-  @syncCacheWithTransaction()
   async openLong({
     args: {
       destination,
@@ -177,7 +185,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minVaultSharePrice: minVaultSharePrice,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -192,7 +206,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @return maturityTime - The maturity time of the short.
    * @return traderDeposit - The amount the user deposited for this trade.
    */
-  @syncCacheWithTransaction()
   async openShort({
     args: {
       destination,
@@ -219,7 +232,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minVaultSharePrice: minVaultSharePrice,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -234,7 +253,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @param options - Contract Write Options
    * @return The amount of underlying asset the user receives.
    */
-  @syncCacheWithTransaction()
   async closeLong({
     args: {
       maturityTime,
@@ -261,7 +279,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -276,7 +300,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @param options - Contract Write Options
    * @return The amount of base tokens produced by closing this short
    */
-  @syncCacheWithTransaction()
   async closeShort({
     args: {
       maturityTime,
@@ -303,7 +326,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minOutput: minAmountOut,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -319,7 +348,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @param options - Contract Write Options
    * @return lpShares The number of LP tokens created
    */
-  @syncCacheWithTransaction()
   async addLiquidity({
     args: {
       destination,
@@ -349,7 +377,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _maxApr: maxApr,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
@@ -365,7 +399,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    receives a proportional amount of the pool's idle capital
    * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
-  @syncCacheWithTransaction()
   async removeLiquidity({
     args: {
       destination,
@@ -389,7 +422,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minOutputPerShare: minOutputPerShare,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
 
     return hash as `0x${string}`;
@@ -405,7 +444,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * @return baseProceeds The amount of base the LP received.
    * @return sharesRedeemed The amount of withdrawal shares that were redeemed.
    */
-  @syncCacheWithTransaction()
   async redeemWithdrawalShares({
     args: {
       withdrawalSharesIn,
@@ -429,7 +467,13 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         _minOutputPerShare: minOutputPerShare,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        ...options,
+        onMined: (receipt) => {
+          this.contract.cache.clear();
+          options?.onMined?.(receipt);
+        },
+      },
     );
     return hash as `0x${string}`;
   }
