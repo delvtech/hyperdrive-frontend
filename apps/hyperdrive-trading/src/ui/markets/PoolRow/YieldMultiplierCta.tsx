@@ -49,7 +49,7 @@ export function YieldMultiplierCta({
             address: hyperdrive.address,
             chainId: hyperdrive.chainId.toString(),
           }}
-          search={{ position: "shorts" }}
+          search={{ position: "short" }}
           className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
           onClick={(e) => {
             e.stopPropagation();
