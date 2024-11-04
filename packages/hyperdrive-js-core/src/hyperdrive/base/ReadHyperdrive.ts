@@ -59,7 +59,7 @@ export class ReadHyperdrive extends ReadModel {
     drift,
     ...modelOptions
   }: ReadHyperdriveOptions) {
-    super({ debugName, drift: drift, ...modelOptions });
+    super({ debugName, drift, ...modelOptions });
     this.address = address;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,
