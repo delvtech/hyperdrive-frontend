@@ -1,6 +1,7 @@
+import { ZERO_ADDRESS } from "@delvtech/drift";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/checkpoint/types";
-import { fixed, parseFixed } from "src/fixed-point";
 import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {
@@ -13,10 +14,7 @@ import { assert, expect, test } from "vitest";
 test("getVersion should return the parsed version of the contract", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "version",
-    value: "v1.0.14",
-  });
+  contract.onRead("version").resolves("v1.0.14");
 
   const value = await readHyperdrive.getVersion();
   expect(value).toEqual({
@@ -34,10 +32,7 @@ test("getPoolConfig should return the PoolConfig from the contract as-is", async
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   // stub out the contract call the sdk is going to make
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig7Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
 
   // The sdk should return the correct data
   const value = await readHyperdrive.getPoolConfig();
@@ -50,10 +45,7 @@ test("getPoolConfig should return the PoolConfig from the contract as-is", async
 test("getPoolInfo should return the PoolInfo from the contract as-is", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: simplePoolInfo,
-  });
+  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
 
   const value = await readHyperdrive.getPoolInfo();
   expect(value).toBe(simplePoolInfo);
@@ -66,14 +58,8 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 
   // These are necessary to stub, but the values won't be used since we stub
   // calculateAPRFromReserves directly
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig7Days,
-  });
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: simplePoolInfo,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
+  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
 
   const value = await readHyperdrive.getFixedApr();
   expect(value).toBe(50000000000000000n);
@@ -82,7 +68,7 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubEvents("OpenLong", {}, [
+  contract.onGetEvents("OpenLong").resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -111,7 +97,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     },
   ]);
 
-  contract.stubEvents("CloseLong", {}, [
+  contract.onGetEvents("CloseLong").resolves([
     {
       eventName: "CloseLong",
       args: {
@@ -130,7 +116,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     },
   ]);
 
-  contract.stubEvents("OpenShort", {}, [
+  contract.onGetEvents("OpenShort").resolves([
     {
       eventName: "OpenShort",
       args: {
@@ -161,7 +147,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
     },
   ]);
 
-  contract.stubEvents("CloseShort", {}, []);
+  contract.onGetEvents("CloseShort").resolves([]);
 
   const value = await readHyperdrive.getTradingVolume();
 
@@ -173,35 +159,27 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
 });
 
 test("getShortAccruedYield should return the amount of yield a non-mature position has earned", async () => {
-  const { contract, network, readHyperdrive } = setupReadHyperdrive();
+  const { contract, drift, readHyperdrive } = setupReadHyperdrive();
 
-  network.stubGetBlock({
-    value: { blockNumber: 1n, timestamp: 100n },
-  });
+  drift.onGetBlock().resolves({ blockNumber: 1n, timestamp: 100n });
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: {
-      ...simplePoolConfig7Days,
-      positionDuration: 86400n, // one day in seconds
-      checkpointDuration: 86400n, // one day in seconds
-    },
+  contract.onRead("getPoolConfig").resolves({
+    ...simplePoolConfig7Days,
+    positionDuration: 86400n, // one day in seconds
+    checkpointDuration: 86400n, // one day in seconds
   });
 
   // The pool info gives us the current price
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: parseFixed("1.01").bigint },
+  contract.onRead("getPoolInfo").resolves({
+    ...simplePoolInfo,
+    vaultSharePrice: parseFixed("1.01").bigint,
   });
 
   // The checkpoint gives us the price when the bond was opened
-  contract.stubRead({
-    functionName: "getCheckpoint",
-    value: {
-      vaultSharePrice: parseFixed("1.008").bigint,
-      weightedSpotPrice: 0n,
-      lastWeightedSpotPriceUpdateTime: 0n,
-    },
+  contract.onRead("getCheckpoint").resolves({
+    vaultSharePrice: parseFixed("1.008").bigint,
+    weightedSpotPrice: 0n,
+    lastWeightedSpotPriceUpdateTime: 0n,
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -216,40 +194,28 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
 });
 
 test("getShortAccruedYield should return the amount of yield a mature position has earned", async () => {
-  const { network, contract, readHyperdrive } = setupReadHyperdrive();
+  const { drift, contract, readHyperdrive } = setupReadHyperdrive();
 
-  network.stubGetBlock({
-    value: { blockNumber: 1n, timestamp: 1699503565n },
-  });
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: {
-      ...simplePoolConfig7Days,
-      positionDuration: 86400n, // one day in seconds
-      checkpointDuration: 86400n, // one day in seconds
-    },
+  drift.onGetBlock().resolves({ blockNumber: 1n, timestamp: 1699503565n });
+
+  contract.onRead("getPoolConfig").resolves({
+    ...simplePoolConfig7Days,
+    positionDuration: 86400n, // one day in seconds
+    checkpointDuration: 86400n, // one day in seconds
   });
 
   // This checkpoint gives us the price when the short was opened
-  contract.stubRead({
-    functionName: "getCheckpoint",
-    args: { _checkpointTime: 1n },
-    value: {
-      vaultSharePrice: parseFixed("1.008").bigint,
-      weightedSpotPrice: 0n,
-      lastWeightedSpotPriceUpdateTime: 0n,
-    },
+  contract.onRead("getCheckpoint", { _checkpointTime: 1n }).resolves({
+    vaultSharePrice: parseFixed("1.008").bigint,
+    weightedSpotPrice: 0n,
+    lastWeightedSpotPriceUpdateTime: 0n,
   });
 
   // This checkpoint gives us the price when the shorts matured
-  contract.stubRead({
-    functionName: "getCheckpoint",
-    args: { _checkpointTime: 86401n },
-    value: {
-      vaultSharePrice: parseFixed("1.01").bigint,
-      weightedSpotPrice: 0n,
-      lastWeightedSpotPriceUpdateTime: 0n,
-    },
+  contract.onRead("getCheckpoint", { _checkpointTime: 86401n }).resolves({
+    vaultSharePrice: parseFixed("1.01").bigint,
+    weightedSpotPrice: 0n,
+    lastWeightedSpotPriceUpdateTime: 0n,
   });
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
@@ -287,7 +253,7 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
       },
     },
   ] as CheckpointEvent[];
-  contract.stubEvents("CreateCheckpoint", undefined, checkPointEvents);
+  contract.onGetEvents("CreateCheckpoint").resolves(checkPointEvents);
 
   const events = await readHyperdrive.getCheckpointEvents();
 
@@ -306,7 +272,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -338,7 +304,7 @@ test("getOpenLongs should account for longs opened with base", async () => {
       },
     },
   ]);
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, []);
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([]);
 
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
@@ -364,7 +330,7 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -398,7 +364,7 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   ]);
 
   // Bob has not closed the position at all, these are just stubbed out
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, []);
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([]);
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
   expect(value).toEqual([
@@ -410,6 +376,7 @@ test("getOpenLongs should account for longs opened with shares", async () => {
     },
   ]);
 });
+
 test("getOpenLongs should account for longs partially closed to base", async () => {
   // Description:
   // Bob opens up a long position over 2 txs in the same checkpoint, for a total
@@ -422,7 +389,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -455,7 +422,7 @@ test("getOpenLongs should account for longs partially closed to base", async () 
       },
     },
   ]);
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       args: {
@@ -501,7 +468,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -534,7 +501,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
       },
     },
   ]);
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       args: {
@@ -555,7 +522,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     },
   ]);
 
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -589,7 +556,7 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
     },
   ]);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       args: {
@@ -622,7 +589,7 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
 
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       args: {
         extraData: "0x",
@@ -661,7 +628,7 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
     } as const,
   ]);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       args: {
         extraData: "0x",
@@ -708,7 +675,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -726,7 +693,7 @@ test("getOpenLongs should account for longs partially closed to shares", async (
     },
   ]);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       blockNumber: 5n,
@@ -771,7 +738,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenLong",
       args: {
@@ -790,7 +757,7 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
     },
   ]);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       blockNumber: 5n,
@@ -820,13 +787,13 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
 test("getClosedLongs should account for closing out to base", async () => {
   // Description:
   // Bob closes a long position of 2 bonds and receives back 2.2 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       blockNumber: 5n,
@@ -847,7 +814,7 @@ test("getClosedLongs should account for closing out to base", async () => {
       },
     },
   ]);
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getClosedLongs({ account: BOB });
   expect(value).toEqual([
     {
@@ -866,13 +833,13 @@ test("getClosedLongs should account for closing out to shares", async () => {
   // Bob closes a long position of 2 bonds and receives back 1.9 shares. Shares
   // are worth 1.1 base at the time he closes, therefore his closed position is
   // valued at 2.09 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseLong",
       blockNumber: 5n,
@@ -895,7 +862,7 @@ test("getClosedLongs should account for closing out to shares", async () => {
   ]);
 
   // getBlock gives us the timestamp of when he closed the position
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const value = await readHyperdrive.getClosedLongs({ account: BOB });
   expect(value).toEqual([
@@ -915,13 +882,10 @@ test("getOpenShorts should account for shorts opened with base", async () => {
   // Bob opens up a short position for 100 bonds over 2 txs in the same
   // checkpoint, for a total cost of around 1.44 base.
 
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenShort",
       blockNumber: 1n,
@@ -954,13 +918,11 @@ test("getOpenShorts should account for shorts opened with base", async () => {
     },
   ]);
 
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, []);
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([]);
 
-  network.stubGetBlock({
-    value: {
-      timestamp: 1713801432n,
-      blockNumber: 1n,
-    },
+  drift.onGetBlock().resolves({
+    timestamp: 1713801432n,
+    blockNumber: 1n,
   });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
@@ -973,7 +935,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
       bondAmount: parseFixed("100").bigint,
       baseProceeds: parseFixed("98.576966043666144584").bigint,
       fixedRatePaid: parseFixed("0.175635145784387390").bigint,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       maturity: 1716336000n,
       openedTimestamp: 1713801432n,
     },
@@ -985,13 +947,10 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
   // Bob opens up a short position for 100 bonds over 2 txs in the same
   // checkpoint, for a total cost of around 1.44 shares.
 
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves([
     {
       eventName: "OpenShort",
       blockNumber: 1n,
@@ -1024,13 +983,11 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
     },
   ]);
 
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, []);
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([]);
 
-  network.stubGetBlock({
-    value: {
-      timestamp: 1713801432n,
-      blockNumber: 1n,
-    },
+  drift.onGetBlock().resolves({
+    timestamp: 1713801432n,
+    blockNumber: 1n,
   });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
@@ -1043,7 +1000,7 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
       bondAmount: parseFixed("100").bigint,
       baseProceeds: parseFixed("98.576966043666144584").bigint,
       fixedRatePaid: parseFixed("0.175635145784387390").bigint,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       maturity: 1716336000n,
       openedTimestamp: 1713801432n,
     },
@@ -1055,12 +1012,9 @@ test("getOpenShorts should account for shorts partially closed to base", async (
   // Bob shorts 50 bonds for a total cost of 0.73 base.  He then partially
   // closes this position, redeeming 25 bonds for 0.36 base. As a result, he has 25
   // bonds left with a total cost of 0.37 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
 
   const events = [
     {
@@ -1096,10 +1050,14 @@ test("getOpenShorts should account for shorts partially closed to base", async (
     },
   ] as const;
 
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [events[0]]);
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [events[1]]);
+  contract
+    .onGetEvents("OpenShort", { filter: { trader: BOB } })
+    .resolves([events[0]]);
+  contract
+    .onGetEvents("CloseShort", { filter: { trader: BOB } })
+    .resolves([events[1]]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([
@@ -1109,7 +1067,7 @@ test("getOpenShorts should account for shorts partially closed to base", async (
       baseAmountPaid: parseFixed("0.367919766722905778").bigint,
       baseProceeds: parseFixed("24.637035274042034163").bigint,
       checkpointTime: 123454800n,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       fixedRatePaid: parseFixed("0.179245221000329770").bigint,
       maturity: 1716336000n,
       openedTimestamp: 123456789n,
@@ -1121,12 +1079,9 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
   // Description:
   // Bob opens up a short position, then completely closes this position, As a
   // result, he no longer has any open short positions.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
 
   const events = [
     {
@@ -1162,10 +1117,14 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
     },
   ] as const;
 
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [events[0]]);
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [events[1]]);
+  contract
+    .onGetEvents("OpenShort", { filter: { trader: BOB } })
+    .resolves([events[0]]);
+  contract
+    .onGetEvents("CloseShort", { filter: { trader: BOB } })
+    .resolves([events[1]]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([]);
@@ -1176,12 +1135,9 @@ test("getOpenShorts should account for shorts partially closed to shares", async
   // Bob shorts 50 bonds for a total cost of 0.73 base.  He then partially
   // closes this position, redeeming 25 bonds for 0.36 shares. As a result, he
   // has 25 bonds left with a total cost of 0.37 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
 
   const events = [
     {
@@ -1217,10 +1173,14 @@ test("getOpenShorts should account for shorts partially closed to shares", async
     },
   ] as const;
 
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [events[0]]);
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [events[1]]);
+  contract
+    .onGetEvents("OpenShort", { filter: { trader: BOB } })
+    .resolves([events[0]]);
+  contract
+    .onGetEvents("CloseShort", { filter: { trader: BOB } })
+    .resolves([events[1]]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([
@@ -1230,7 +1190,7 @@ test("getOpenShorts should account for shorts partially closed to shares", async
       baseAmountPaid: parseFixed("0.367919766723039831").bigint,
       baseProceeds: parseFixed("24.637035274042034163").bigint,
       checkpointTime: 123454800n,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       fixedRatePaid: parseFixed("0.179245221000329770").bigint,
       maturity: 1716336000n,
       openedTimestamp: 123456789n,
@@ -1243,12 +1203,9 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
   // Bob opens up a short position, then completely closes this position, As a
   // result, he no longer has any open short positions.
 
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
   const events = [
     {
       eventName: "OpenShort",
@@ -1283,10 +1240,14 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
     },
   ] as const;
 
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [events[0]]);
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [events[1]]);
+  contract
+    .onGetEvents("OpenShort", { filter: { trader: BOB } })
+    .resolves([events[0]]);
+  contract
+    .onGetEvents("CloseShort", { filter: { trader: BOB } })
+    .resolves([events[1]]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([]);
@@ -1298,26 +1259,19 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
   // in the same checkpoint, resulting in a single position with new accounting
   // (ie: the previous loss is not factored in).
 
-  const { contract, network, readHyperdrive } = setupReadHyperdrive();
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
-  });
+  const { contract, drift, readHyperdrive } = setupReadHyperdrive();
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
   // pool info to get the price of shares at the time he closes the short
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: { ...simplePoolInfo, vaultSharePrice: parseFixed("1.1").bigint },
-    options: { blockNumber: 5n },
-  });
+  contract
+    .onRead("getPoolInfo", {}, { block: 5n })
+    .resolves({ ...simplePoolInfo, vaultSharePrice: parseFixed("1.1").bigint });
 
   // Stub the timestamp so getOpenShorts can construct the checkpoint id
-  network.stubGetBlock({
-    value: {
-      timestamp: 123456789n,
-      // this blockNumber is unused, but setting this to 3n, as there should be
-      // 3 blocks in this test flow
-      blockNumber: 3n,
-    },
+  drift.onGetBlock().resolves({
+    timestamp: 123456789n,
+    // this blockNumber is unused, but setting this to 3n, as there should be
+    // 3 blocks in this test flow
+    blockNumber: 3n,
   });
 
   const events = [
@@ -1369,12 +1323,13 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
     },
   ] as const;
 
-  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
-    events[0],
-    events[2],
-  ]);
+  contract
+    .onGetEvents("OpenShort", { filter: { trader: BOB } })
+    .resolves([events[0], events[2]]);
 
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [events[1]]);
+  contract
+    .onGetEvents("CloseShort", { filter: { trader: BOB } })
+    .resolves([events[1]]);
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1394,32 +1349,18 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
 });
 
 test("getShortBondsGivenDeposit & previewOpenShort should align within a given tolerance", async () => {
-  const { contract, network, readHyperdrive } = setupReadHyperdrive();
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig30Days,
+  const { contract, drift, readHyperdrive } = setupReadHyperdrive();
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  contract.onRead("getCheckpointExposure").resolves(0n);
+  contract.onRead("getCheckpoint").resolves({
+    vaultSharePrice: parseFixed(1.05).bigint,
+    weightedSpotPrice: 0n,
+    lastWeightedSpotPriceUpdateTime: 0n,
   });
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: simplePoolInfo,
-  });
-  contract.stubRead({
-    functionName: "getCheckpointExposure",
-    value: 0n,
-  });
-  contract.stubRead({
-    functionName: "getCheckpoint",
-    value: {
-      vaultSharePrice: parseFixed(1.05).bigint,
-      weightedSpotPrice: 0n,
-      lastWeightedSpotPriceUpdateTime: 0n,
-    },
-  });
-  network.stubGetBlock({
-    value: {
-      timestamp: 123456789n,
-      blockNumber: 1n,
-    },
+  drift.onGetBlock().resolves({
+    timestamp: 123456789n,
+    blockNumber: 1n,
   });
 
   const targetDeposit = parseFixed(1.123);
@@ -1440,17 +1381,14 @@ test("getShortBondsGivenDeposit & previewOpenShort should align within a given t
 test("getClosedShorts should account for shorts closed to base", async () => {
   // Description:
   // Bob completely closes his position, redeeming 100 shorted bonds for 2 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
   const eventData =
     "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig7Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
 
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseShort",
       args: {
@@ -1468,7 +1406,7 @@ test("getClosedShorts should account for shorts closed to base", async () => {
     },
   ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const value = await readHyperdrive.getClosedShorts({ account: BOB });
 
@@ -1479,7 +1417,7 @@ test("getClosedShorts should account for shorts closed to base", async () => {
       bondAmount: parseFixed("100").bigint,
       checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       maturity: 1708617600n,
     },
   ]);
@@ -1490,17 +1428,14 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
   // Bob completely closes his position, redeeming 100 shorted bonds for 1.1 shares.
   // Shares are worth 1.1 base at the time he closes, therefore his closed position
   // is valued at 1.21 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
   const eventData =
     "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.stubRead({
-    functionName: "getPoolConfig",
-    value: simplePoolConfig7Days,
-  });
+  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
 
-  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([
     {
       eventName: "CloseShort",
       blockNumber: 5n,
@@ -1519,7 +1454,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
     },
   ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const value = await readHyperdrive.getClosedShorts({ account: BOB });
 
@@ -1530,7 +1465,7 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
       bondAmount: parseFixed("100").bigint,
       checkpointTime: 123454800n,
       closedTimestamp: 123456789n,
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       maturity: 1708617600n,
     },
   ]);
@@ -1543,17 +1478,14 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
   // 1 base on this position) Bob is left with 0 LP shares and 0 base paid in his
   // current LP position.
 
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: simplePoolInfo,
-  });
-  contract.stubSimulateWrite("removeLiquidity", {
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
+  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  contract.onSimulateWrite("removeLiquidity").resolves({
     proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
-  contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 175n });
+  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves([
     {
       eventName: "AddLiquidity",
       blockNumber: 174n,
@@ -1569,23 +1501,25 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
     },
   ]);
 
-  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
-    {
-      eventName: "RemoveLiquidity",
-      blockNumber: 175n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("499").bigint,
-        lpAmount: parseFixed("498").bigint,
-        lpSharePrice: parseFixed("1.002867781011873985").bigint,
-        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: parseFixed("498.567723245858722697").bigint,
-        withdrawalShareAmount: 0n,
-        destination: BOB,
+  contract
+    .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RemoveLiquidity",
+        blockNumber: 175n,
+        args: {
+          extraData: "0x",
+          asBase: true,
+          amount: parseFixed("499").bigint,
+          lpAmount: parseFixed("498").bigint,
+          lpSharePrice: parseFixed("1.002867781011873985").bigint,
+          provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+          vaultSharePrice: parseFixed("498.567723245858722697").bigint,
+          withdrawalShareAmount: 0n,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
   const value = await readHyperdrive.getOpenLpPosition({
     account: BOB,
@@ -1607,17 +1541,14 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
   // receiving 99 LP shares, depositing 100 base. Bob now has with 99 LP
   // shares and 100 base paid in his current LP position.
 
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 175n } });
-  contract.stubSimulateWrite("removeLiquidity", {
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 175n });
+  contract.onSimulateWrite("removeLiquidity").resolves({
     proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
-  contract.stubRead({
-    functionName: "getPoolInfo",
-    value: simplePoolInfo,
-  });
-  contract.stubEvents("AddLiquidity", { filter: { provider: BOB } }, [
+  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves([
     {
       eventName: "AddLiquidity",
       blockNumber: 174n,
@@ -1646,23 +1577,25 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
     },
   ]);
 
-  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
-    {
-      eventName: "RemoveLiquidity",
-      blockNumber: 175n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("499").bigint,
-        lpAmount: parseFixed("498").bigint,
-        lpSharePrice: parseFixed("1.002867781011873985").bigint,
-        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: parseFixed("1.0008670371827").bigint,
-        withdrawalShareAmount: 0n,
-        destination: BOB,
+  contract
+    .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RemoveLiquidity",
+        blockNumber: 175n,
+        args: {
+          extraData: "0x",
+          asBase: true,
+          amount: parseFixed("499").bigint,
+          lpAmount: parseFixed("498").bigint,
+          lpSharePrice: parseFixed("1.002867781011873985").bigint,
+          provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+          vaultSharePrice: parseFixed("1.0008670371827").bigint,
+          withdrawalShareAmount: 0n,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
   const value = await readHyperdrive.getOpenLpPosition({
     account: BOB,
@@ -1680,27 +1613,29 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
   // Description:
   // Bob completely closes his LP position of 5 LP shares and receives back
   // base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
-    {
-      eventName: "RemoveLiquidity",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("10").bigint,
-        vaultSharePrice: parseFixed("9").bigint,
-        provider: BOB,
-        withdrawalShareAmount: 0n,
-        lpAmount: parseFixed("5").bigint,
-        lpSharePrice: parseFixed("2").bigint,
-        destination: BOB,
+  contract
+    .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RemoveLiquidity",
+        blockNumber: 5n,
+        args: {
+          extraData: "0x",
+          asBase: true,
+          amount: parseFixed("10").bigint,
+          vaultSharePrice: parseFixed("9").bigint,
+          provider: BOB,
+          withdrawalShareAmount: 0n,
+          lpAmount: parseFixed("5").bigint,
+          lpSharePrice: parseFixed("2").bigint,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const closedLpShares = await readHyperdrive.getClosedLpShares({
     account: BOB,
@@ -1720,27 +1655,29 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
   // Description:
   // Bob completely closes his LP position of 5 LP shares and receives back
   // shares.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubEvents("RemoveLiquidity", { filter: { provider: BOB } }, [
-    {
-      eventName: "RemoveLiquidity",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        asBase: false,
-        amount: parseFixed("9").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        provider: BOB,
-        withdrawalShareAmount: 0n,
-        lpAmount: parseFixed("5").bigint,
-        lpSharePrice: parseFixed("2").bigint,
-        destination: BOB,
+  contract
+    .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RemoveLiquidity",
+        blockNumber: 5n,
+        args: {
+          extraData: "0x",
+          asBase: false,
+          amount: parseFixed("9").bigint,
+          vaultSharePrice: parseFixed("1.1").bigint,
+          provider: BOB,
+          withdrawalShareAmount: 0n,
+          lpAmount: parseFixed("5").bigint,
+          lpSharePrice: parseFixed("2").bigint,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const closedLpShares = await readHyperdrive.getClosedLpShares({
     account: BOB,
@@ -1759,25 +1696,27 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
 test("getRedeemedWithdrawalShares should account for withdrawal shares closed to base", async () => {
   // Description:
   // Bob completely redeems 5 withdrawal shares and receives 10 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubEvents("RedeemWithdrawalShares", { filter: { provider: BOB } }, [
-    {
-      eventName: "RedeemWithdrawalShares",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("10").bigint,
-        vaultSharePrice: parseFixed("9.8").bigint,
-        provider: BOB,
-        withdrawalShareAmount: parseFixed("5").bigint,
-        destination: BOB,
+  contract
+    .onGetEvents("RedeemWithdrawalShares", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RedeemWithdrawalShares",
+        blockNumber: 5n,
+        args: {
+          extraData: "0x",
+          asBase: true,
+          amount: parseFixed("10").bigint,
+          vaultSharePrice: parseFixed("9.8").bigint,
+          provider: BOB,
+          withdrawalShareAmount: parseFixed("5").bigint,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const redeemedWithdrawalShares =
     await readHyperdrive.getRedeemedWithdrawalShares({
@@ -1785,7 +1724,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
     });
   expect(redeemedWithdrawalShares).toEqual([
     {
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       baseAmount: parseFixed("10").bigint,
       withdrawalShareAmount: parseFixed("5").bigint,
       redeemedTimestamp: 123456789n,
@@ -1795,25 +1734,27 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
 test("getRedeemedWithdrawalShares should account for withdrawal shares closed to vault shares", async () => {
   // Description:
   // Bob completely redeems 5 withdrawal shares and receives 8 shares that are worth 10 base.
-  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.stubEvents("RedeemWithdrawalShares", { filter: { provider: BOB } }, [
-    {
-      eventName: "RedeemWithdrawalShares",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        asBase: false,
-        vaultSharePrice: parseFixed("1.25").bigint,
-        amount: parseFixed("8").bigint,
-        provider: BOB,
-        withdrawalShareAmount: parseFixed("5").bigint,
-        destination: BOB,
+  contract
+    .onGetEvents("RedeemWithdrawalShares", { filter: { provider: BOB } })
+    .resolves([
+      {
+        eventName: "RedeemWithdrawalShares",
+        blockNumber: 5n,
+        args: {
+          extraData: "0x",
+          asBase: false,
+          vaultSharePrice: parseFixed("1.25").bigint,
+          amount: parseFixed("8").bigint,
+          provider: BOB,
+          withdrawalShareAmount: parseFixed("5").bigint,
+          destination: BOB,
+        },
       },
-    },
-  ]);
+    ]);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
 
   const redeemedWithdrawalShares =
     await readHyperdrive.getRedeemedWithdrawalShares({
@@ -1821,7 +1762,7 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
     });
   expect(redeemedWithdrawalShares).toEqual([
     {
-      hyperdriveAddress: "0x0000000000000000000000000000000000000000",
+      hyperdriveAddress: ZERO_ADDRESS,
       baseAmount: parseFixed("10").bigint,
       withdrawalShareAmount: parseFixed("5").bigint,
       redeemedTimestamp: 123456789n,
