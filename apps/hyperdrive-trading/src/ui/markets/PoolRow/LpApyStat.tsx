@@ -5,44 +5,52 @@ import {
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { SparklesIcon } from "@heroicons/react/16/solid";
+import { ChartBarIcon } from "@heroicons/react/24/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { PropsWithChildren, ReactNode } from "react";
-import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
+import { ReactNode } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 
-export function RewardsTooltip({
+export function LpApyStat({
   hyperdriveAddress,
   chainId,
-  children,
-}: PropsWithChildren<{
+}: {
   hyperdriveAddress: Address;
   chainId: number;
-}>): ReactNode {
+}): ReactNode {
   const hyperdrive = findHyperdriveConfig({
     hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
   const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
-  const { vaultRate: baseRate } = useYieldSourceRate({
-    chainId,
-    hyperdriveAddress,
-  });
-  const isNewPool = useIsNewPool({ hyperdrive });
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
-  if (!appConfigRewards?.length) {
-    return children;
+  const baseApyLabel = lpApy?.lpApy
+    ? // LP APY is always 18 decimals. Safe to hardcode this here.
+      formatRate(lpApy.lpApy)
+    : null;
+  const netApyLabel = lpApy?.netLpApy
+    ? // LP APY is always 18 decimals. Safe to hardcode this here.
+      formatRate(lpApy.netLpApy, 18, false)
+    : null;
+
+  if (!appConfigRewards?.length && netApyLabel) {
+    return <PercentLabel value={netApyLabel} />;
   }
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
-          {children}⚡
+          {netApyLabel ? (
+            <>
+              <PercentLabel value={netApyLabel} />⚡
+            </>
+          ) : null}
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
@@ -51,14 +59,18 @@ export function RewardsTooltip({
             collisionPadding={12}
           >
             <div className="flex justify-between border-b border-neutral-content/30 p-3">
-              <p className="gradient-text text-lg">Rewards</p>
+              <p className="gradient-text text-lg">Rate & Rewards</p>
             </div>
             <div className="flex items-center justify-between border-b border-neutral-content/30 p-3">
-              <div className="flex items-center gap-1">Base APY</div>
+              <div className="flex items-center gap-1">
+                {" "}
+                <ChartBarIcon className="h-4" />
+                Base APY
+              </div>
               <div className="grid justify-items-end">
                 <p className="flex items-center gap-1">
-                  {!isNewPool ? (
-                    baseRate?.formatted
+                  {!lpApy?.isNew && lpApy?.lpApy ? (
+                    baseApyLabel
                   ) : (
                     <>
                       <SparklesIcon className="h-4" />
