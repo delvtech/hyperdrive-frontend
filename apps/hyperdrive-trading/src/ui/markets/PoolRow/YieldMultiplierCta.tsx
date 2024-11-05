@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
-import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
+import { YieldMultiplierStat } from "src/ui/markets/PoolRow/YieldMultiplierStat";
 
 interface YieldMultiplierCtaProps {
   hyperdrive: HyperdriveConfig;
@@ -29,15 +29,10 @@ export function YieldMultiplierCta({
       label={label}
       value={
         multiplier ? (
-          <RewardsTooltip
+          <YieldMultiplierStat
             hyperdriveAddress={hyperdrive.address}
             chainId={hyperdrive.chainId}
-          >
-            {`${multiplier.format({
-              decimals: 2,
-              rounding: "trunc",
-            })}x`}
-          </RewardsTooltip>
+          />
         ) : (
           "-"
         )

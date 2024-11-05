@@ -5,44 +5,52 @@ import {
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { SparklesIcon } from "@heroicons/react/16/solid";
+import { ChartBarIcon } from "@heroicons/react/24/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { PropsWithChildren, ReactNode } from "react";
-import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
+import { ReactNode } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
-import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
-export function RewardsTooltip({
+export function LpApyStat({
   hyperdriveAddress,
   chainId,
-  children,
-}: PropsWithChildren<{
+}: {
   hyperdriveAddress: Address;
   chainId: number;
-}>): ReactNode {
+}): ReactNode {
   const hyperdrive = findHyperdriveConfig({
     hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
-  const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
-  const { vaultRate: baseRate } = useYieldSourceRate({
-    chainId,
-    hyperdriveAddress,
-  });
-  const isNewPool = useIsNewPool({ hyperdrive });
+  const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
-  if (!appConfigRewards?.length) {
-    return children;
+  const baseApyLabel = lpApy?.lpApy
+    ? // LP APY is always 18 decimals. Safe to hardcode this here.
+      formatRate(lpApy.lpApy)
+    : null;
+  const netApyLabel = lpApy?.netLpApy
+    ? // LP APY is always 18 decimals. Safe to hardcode this here.
+      formatRate(lpApy.netLpApy, 18, false)
+    : null;
+
+  if (!appConfigRewards?.length && netApyLabel) {
+    return <PercentLabel value={netApyLabel} />;
   }
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
-          {children}⚡
+          {netApyLabel ? (
+            <>
+              <PercentLabel value={netApyLabel} />⚡
+            </>
+          ) : null}
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
@@ -51,14 +59,18 @@ export function RewardsTooltip({
             collisionPadding={12}
           >
             <div className="flex justify-between border-b border-neutral-content/30 p-3">
-              <p className="gradient-text text-lg">Rewards</p>
+              <p className="gradient-text text-lg">Rate & Rewards</p>
             </div>
             <div className="flex items-center justify-between border-b border-neutral-content/30 p-3">
-              <div className="flex items-center gap-1">Base APY</div>
+              <div className="flex items-center gap-1">
+                {" "}
+                <ChartBarIcon className="h-4" />
+                Base APY
+              </div>
               <div className="grid justify-items-end">
                 <p className="flex items-center gap-1">
-                  {!isNewPool ? (
-                    baseRate?.formatted
+                  {!lpApy?.isNew && lpApy?.lpApy ? (
+                    baseApyLabel
                   ) : (
                     <>
                       <SparklesIcon className="h-4" />
@@ -73,7 +85,7 @@ export function RewardsTooltip({
               if (reward.type === "info") {
                 return (
                   <div
-                    key={reward.iconUrl}
+                    key={reward.message}
                     className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-4">
@@ -92,37 +104,32 @@ export function RewardsTooltip({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
+                })!;
 
-                if (!token) {
-                  return null;
-                }
                 return (
-                  <>
-                    <div
-                      key={token.address}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        <img
-                          src={token.iconUrl}
-                          alt={`${token.name} logo`}
-                          className="h-4"
-                        />
-                        {token.name}
-                      </div>
-
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +
-                          {fixed(reward.apy).format({
-                            percent: true,
-                            decimals: 2,
-                          })}
-                        </p>
-                      </div>
+                  <div
+                    key={reward.tokenAddress}
+                    className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-1">
+                      <img
+                        src={token.iconUrl}
+                        alt={`${token.name} logo`}
+                        className="h-4"
+                      />
+                      {token.name}
                     </div>
-                  </>
+
+                    <div className="grid justify-items-end">
+                      <p className="flex items-center gap-1">
+                        +
+                        {fixed(reward.apy).format({
+                          percent: true,
+                          decimals: 2,
+                        })}
+                      </p>
+                    </div>
+                  </div>
                 );
               }
 
@@ -131,13 +138,10 @@ export function RewardsTooltip({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
-                if (!token) {
-                  return null;
-                }
+                })!;
                 return (
                   <div
-                    key={token?.address}
+                    key={reward.tokenAddress}
                     className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-1">
@@ -172,7 +176,7 @@ export function RewardsTooltip({
               </div>
 
               <div className="grid justify-items-end">
-                <p className="flex items-center gap-1">
+                <div className="flex items-center gap-1">
                   {lpApy?.isNew ? (
                     <div>
                       <SparklesIcon className="h-4" />
@@ -186,7 +190,7 @@ export function RewardsTooltip({
                       })}
                     </div>
                   )}
-                </p>
+                </div>
               </div>
             </div>
           </Tooltip.Content>

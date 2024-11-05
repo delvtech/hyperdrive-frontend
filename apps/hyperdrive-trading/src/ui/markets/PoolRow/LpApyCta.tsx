@@ -2,11 +2,9 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
+import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
-import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 
 interface LpApyCtaProps {
   hyperdrive: HyperdriveConfig;
@@ -26,16 +24,10 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
       isLoading={lpApyStatus === "loading"}
       isNew={lpApy?.isNew}
       value={
-        lpApy && !lpApy?.isNew ? (
-          <RewardsTooltip
-            chainId={hyperdrive.chainId}
-            hyperdriveAddress={hyperdrive.address}
-          >
-            <PercentLabel value={formatRate(lpApy.netLpApy, 18, false)} />
-          </RewardsTooltip>
-        ) : (
-          "-"
-        )
+        <LpApyStat
+          chainId={hyperdrive.chainId}
+          hyperdriveAddress={hyperdrive.address}
+        />
       }
       action={
         <Link

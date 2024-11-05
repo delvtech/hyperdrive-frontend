@@ -14,7 +14,15 @@ export function useYieldSourceRate({
   hyperdriveAddress: Address | undefined;
 }): {
   vaultRate:
-    | { vaultRate: bigint; formatted: string; ratePeriodDays: number }
+    | {
+        vaultRate: bigint;
+        /**
+         * @deprecated format just before showing to the user, don't depend on a formatted value from this hook
+         */
+        formatted: string;
+        ratePeriodDays: number;
+        netVaultRate: bigint;
+      }
     | undefined;
   vaultRateStatus: "error" | "success" | "loading";
 } {
@@ -32,12 +40,13 @@ export function useYieldSourceRate({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const { rate, ratePeriodDays } = await getYieldSourceRate(
+          const { rate, ratePeriodDays, netRate } = await getYieldSourceRate(
             readHyperdrive,
             appConfig,
           );
           return {
             vaultRate: rate,
+            netVaultRate: netRate,
             formatted: formatRate(rate),
             ratePeriodDays,
           };

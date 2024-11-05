@@ -1,16 +1,21 @@
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
   findHyperdriveConfig,
   HyperdriveConfig,
+  rewardFunctions,
 } from "@delvtech/hyperdrive-appconfig";
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
+import { wagmiConfig } from "src/network/wagmiClient";
+import { PublicClient } from "viem";
 
 export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,
   appConfig: AppConfig,
-): Promise<{ rate: bigint; ratePeriodDays: number }> {
+): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
   const hyperdriveChainId = await readHyperdrive.network.getChainId();
   const hyperdrive = findHyperdriveConfig({
     hyperdriveChainId,
@@ -40,10 +45,16 @@ export async function getYieldSourceRate(
       Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),
     );
 
+    const rateSinceInitialization = await readHyperdrive.getYieldSourceRate({
+      blockRange: blocksSinceInitialization,
+    });
     return {
-      rate: await readHyperdrive.getYieldSourceRate({
-        blockRange: blocksSinceInitialization,
-      }),
+      rate: rateSinceInitialization,
+      netRate: await calcNetRate(
+        rateSinceInitialization,
+        appConfig,
+        hyperdrive,
+      ),
       ratePeriodDays: daysSinceInitialization,
     };
   }
@@ -52,11 +63,40 @@ export async function getYieldSourceRate(
     blockRange: numBlocksForHistoricalRate,
   });
 
+  const netRate = await calcNetRate(rate, appConfig, hyperdrive);
+
   return {
     rate,
+    netRate,
     ratePeriodDays:
       appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
   };
+}
+
+async function calcNetRate(
+  rate: bigint,
+  appConfig: AppConfig,
+  hyperdrive: HyperdriveConfig,
+) {
+  let netRate = rate;
+  // TODO: Create an appconfig selector to grab the rewards function from a
+  // given hyperdrive
+  const rewardsFn = appConfig.yieldSources[hyperdrive.yieldSource].rewardsFn;
+  if (rewardsFn) {
+    const publicClient = getPublicClient(wagmiConfig as any, {
+      chainId: hyperdrive.chainId,
+    }) as PublicClient;
+    const rewards = await rewardFunctions[rewardsFn](publicClient);
+    rewards?.forEach((reward) => {
+      if (reward.type === "transferableToken") {
+        netRate = fixed(reward.apy).add(
+          // safe to cast because if we get here then lpApy has been set
+          netRate as bigint,
+        ).bigint;
+      }
+    });
+  }
+  return netRate;
 }
 
 function getNumBlocksForHistoricalRate({
