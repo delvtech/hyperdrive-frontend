@@ -420,36 +420,37 @@ const hyperdriveKindResolvers: Record<
       `Unknown ERC4626Hyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
     );
   },
+  // TODO: Removed from Hyperdrive registry temporarily until we have a better way of handling withdraws.
+  // Will add this back in the near future
+  // StkWellHyperdrive: async (hyperdrive, publicClient) => {
+  //   const hyperdriveName = await publicClient.readContract({
+  //     address: hyperdrive.address,
+  //     abi: hyperdrive.contract.abi,
+  //     functionName: "name",
+  //   });
+  //   // Moonwell Staked WELL
+  //   if (hyperdriveName.includes("Moonwell StkWell")) {
+  //     return getCustomHyperdrive({
+  //       hyperdrive,
+  //       yieldSource: "stkWell",
+  //       baseTokenIconUrl: WELL_ICON_URL,
+  //       sharesTokenIconUrl: WELL_ICON_URL,
+  //       depositOptions: {
+  //         isBaseTokenDepositEnabled: true,
+  //         isShareTokenDepositsEnabled: true,
+  //       },
+  //       withdrawalOptions: {
+  //         isBaseTokenWithdrawalEnabled: false,
+  //         isShareTokenWithdrawalEnabled: true,
+  //       },
+  //       tokenPlaces: 4,
+  //     });
+  //   }
 
-  StkWellHyperdrive: async (hyperdrive, publicClient) => {
-    const hyperdriveName = await publicClient.readContract({
-      address: hyperdrive.address,
-      abi: hyperdrive.contract.abi,
-      functionName: "name",
-    });
-    // Moonwell Staked WELL
-    if (hyperdriveName.includes("Moonwell StkWell")) {
-      return getCustomHyperdrive({
-        hyperdrive,
-        yieldSource: "stkWell",
-        baseTokenIconUrl: WELL_ICON_URL,
-        sharesTokenIconUrl: WELL_ICON_URL,
-        depositOptions: {
-          isBaseTokenDepositEnabled: true,
-          isShareTokenDepositsEnabled: true,
-        },
-        withdrawalOptions: {
-          isBaseTokenWithdrawalEnabled: false,
-          isShareTokenWithdrawalEnabled: true,
-        },
-        tokenPlaces: 4,
-      });
-    }
-
-    throw new Error(
-      `Unknown MoonwellHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
-    );
-  },
+  //   throw new Error(
+  //     `Unknown MoonwellHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
+  //   );
+  // },
 
   AerodromeLpHyperdrive: async (hyperdrive, publicClient) => {
     const hyperdriveName = await publicClient.readContract({
