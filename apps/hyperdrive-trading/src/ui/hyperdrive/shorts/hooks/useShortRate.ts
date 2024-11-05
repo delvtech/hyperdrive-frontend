@@ -79,9 +79,12 @@ export function useShortRate({
           return {
             shortApr: {
               apr: shortApr,
-              formatted: formatRate(shortApr),
+              formatted: formatRate({ rate: shortApr }),
             },
-            shortRoi: { roi: shortRoi, formatted: formatRate(shortRoi) },
+            shortRoi: {
+              roi: shortRoi,
+              formatted: formatRate({ rate: shortRoi }),
+            },
           };
         }
       : undefined,

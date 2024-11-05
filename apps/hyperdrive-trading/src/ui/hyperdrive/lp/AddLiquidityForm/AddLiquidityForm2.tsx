@@ -547,7 +547,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
 
         return (
           <span className="text-h3 font-bold">
-            {formatRate(lpApy?.netLpApy)}
+            {formatRate({ rate: lpApy?.netLpApy })}
           </span>
         );
       })()}
@@ -563,7 +563,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
             {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
             {isNewPool
               ? "✨New✨"
-              : `${formatRate(vaultRate.netVaultRate)} APY`}
+              : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
           </div>
         ) : (
           <Skeleton className="w-42 h-8" />

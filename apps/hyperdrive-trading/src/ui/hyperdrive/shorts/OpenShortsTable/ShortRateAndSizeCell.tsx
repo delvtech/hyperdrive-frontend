@@ -42,7 +42,7 @@ export function ShortRateAndSizeCell({
   return (
     <div className="flex flex-col">
       <div className="flex items-center gap-2 text-md">
-        <p>{`${formatRate(short.fixedRatePaid)} APR`}</p>
+        <p>{`${formatRate({ rate: short.fixedRatePaid })} APR`}</p>
         <div
           data-tip={
             "The difference between the fixed rate you shorted and the current fixed rate."
@@ -58,7 +58,7 @@ export function ShortRateAndSizeCell({
           )}
         >
           <span>{isPositiveChangeInValue ? "+" : ""}</span>
-          {formatRate(rateDifference)}
+          {formatRate({ rate: rateDifference })}
         </div>
       </div>
       <p className="text-neutral-content">{`${formatBalance({

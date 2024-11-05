@@ -29,13 +29,12 @@ export function LpApyStat({
   const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
-  const baseApyLabel = lpApy?.lpApy
-    ? // LP APY is always 18 decimals. Safe to hardcode this here.
-      formatRate(lpApy.lpApy)
-    : null;
+  const baseApyLabel = lpApy?.lpApy ? formatRate({ rate: lpApy.lpApy }) : null;
   const netApyLabel = lpApy?.netLpApy
-    ? // LP APY is always 18 decimals. Safe to hardcode this here.
-      formatRate(lpApy.netLpApy, 18, false)
+    ? formatRate({
+        rate: lpApy.netLpApy,
+        includePercentSign: false,
+      })
     : null;
 
   if (!appConfigRewards?.length && netApyLabel) {
