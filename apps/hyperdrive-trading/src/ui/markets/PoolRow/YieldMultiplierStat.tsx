@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 export function YieldMultiplierStat({
@@ -26,12 +26,11 @@ export function YieldMultiplierStat({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
-  const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
+  const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { vaultRate: yieldSourceRate } = useYieldSourceRate({
     chainId,
     hyperdriveAddress,
   });
-  console.log("yieldSourceRate", yieldSourceRate);
   const isNewPool = useIsNewPool({ hyperdrive });
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
@@ -113,37 +112,32 @@ export function YieldMultiplierStat({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
+                })!;
 
-                if (!token) {
-                  return null;
-                }
                 return (
-                  <>
-                    <div
-                      key={token.address}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        <img
-                          src={token.iconUrl}
-                          alt={`${token.name} logo`}
-                          className="h-4"
-                        />
-                        {token.name}
-                      </div>
-
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +
-                          {fixed(reward.apy).format({
-                            percent: true,
-                            decimals: 2,
-                          })}
-                        </p>
-                      </div>
+                  <div
+                    key={reward.tokenAddress}
+                    className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-1">
+                      <img
+                        src={token.iconUrl}
+                        alt={`${token.name} logo`}
+                        className="h-4"
+                      />
+                      {token.name}
                     </div>
-                  </>
+
+                    <div className="grid justify-items-end">
+                      <p className="flex items-center gap-1">
+                        +
+                        {fixed(reward.apy).format({
+                          percent: true,
+                          decimals: 2,
+                        })}
+                      </p>
+                    </div>
+                  </div>
                 );
               }
 
@@ -152,13 +146,10 @@ export function YieldMultiplierStat({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
-                if (!token) {
-                  return null;
-                }
+                })!;
                 return (
                   <div
-                    key={token?.address}
+                    key={reward.tokenAddress}
                     className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-1">

@@ -1,4 +1,4 @@
-import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 
 import {
@@ -33,12 +33,6 @@ import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
-import { useAeroRate } from "src/ui/rewards/useAeroRate";
-import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import {
-  eligibleForAeroRewards,
-  eligibleMarketsForMorphoVaultRewards,
-} from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -242,21 +236,6 @@ export function OpenShortForm({
       percentage: slippageAsBigInt,
     });
 
-  const { morphoVaultData } = useMorphoVaultRewards({
-    hyperdrive,
-    enabled:
-      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
-        hyperdrive.address,
-      ) ?? false,
-  });
-
-  const { aeroRate } = useAeroRate({
-    hyperdrive,
-    enabled: eligibleForAeroRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
-    ),
-  });
-
   const { openShort, openShortStatus } = useOpenShort({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -393,22 +372,7 @@ export function OpenShortForm({
                   {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
                   {isNewPool
                     ? "✨New✨"
-                    : `${
-                        morphoVaultData || aeroRate
-                          ? `${formatRate(
-                              fixed(vaultRate.vaultRate)
-                                .add(
-                                  parseFixed(
-                                    morphoVaultData.reward?.supplyApr ?? 0,
-                                  ),
-                                )
-                                .add(aeroRate ?? 0n)
-                                .div(parseFixed(100)).bigint,
-                              18,
-                              false,
-                            )}%`
-                          : vaultRate.formatted
-                      } APY`}
+                    : `${formatRate(vaultRate.netVaultRate)} APY`}
                 </>
               ) : null
             }

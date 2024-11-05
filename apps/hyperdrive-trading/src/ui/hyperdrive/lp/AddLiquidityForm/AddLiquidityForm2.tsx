@@ -33,12 +33,6 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
-import { useAeroRate } from "src/ui/rewards/useAeroRate";
-import { useMorphoVaultRewards } from "src/ui/rewards/useMorphoRate";
-import {
-  eligibleForAeroRewards,
-  eligibleMarketsForMorphoVaultRewards,
-} from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
@@ -537,20 +531,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const { morphoVaultData } = useMorphoVaultRewards({
-    hyperdrive,
-    enabled:
-      eligibleMarketsForMorphoVaultRewards[hyperdrive.chainId]?.includes(
-        hyperdrive.address,
-      ) ?? false,
-  });
 
-  const { aeroRate } = useAeroRate({
-    hyperdrive,
-    enabled: eligibleForAeroRewards[hyperdrive.chainId]?.includes(
-      hyperdrive.address,
-    ),
-  });
   const showSkeleton = !lpApy && lpApyStatus === "loading";
 
   return (
@@ -565,7 +546,9 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         }
 
         return (
-          <span className="text-h3 font-bold">{formatRate(lpApy?.lpApy)}</span>
+          <span className="text-h3 font-bold">
+            {formatRate(lpApy?.netLpApy)}
+          </span>
         );
       })()}
       tooltipContent="The annual percentage yield projection for providing liquidity."
@@ -578,17 +561,9 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         vaultRateStatus === "success" && vaultRate ? (
           <div>
             {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
-            {morphoVaultData || aeroRate
-              ? `${formatRate(
-                  fixed(vaultRate.vaultRate)
-                    .add(parseFixed(morphoVaultData.reward?.supplyApr ?? 0))
-                    .add(aeroRate ?? 0n)
-                    .div(parseFixed(100)).bigint,
-                  18,
-                  false,
-                )}%`
-              : vaultRate.formatted}{" "}
-            APY
+            {isNewPool
+              ? "✨New✨"
+              : `${formatRate(vaultRate.netVaultRate)} APY`}
           </div>
         ) : (
           <Skeleton className="w-42 h-8" />

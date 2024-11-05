@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
-import { useAppConfigRewards } from "src/ui/rewards/useAppConfigRewards";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
 export function LpApyStat({
@@ -26,7 +26,7 @@ export function LpApyStat({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
   });
-  const { rewards: appConfigRewards } = useAppConfigRewards(hyperdrive);
+  const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   const baseApyLabel = lpApy?.lpApy
@@ -85,7 +85,7 @@ export function LpApyStat({
               if (reward.type === "info") {
                 return (
                   <div
-                    key={reward.iconUrl}
+                    key={reward.message}
                     className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-4">
@@ -104,37 +104,32 @@ export function LpApyStat({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
+                })!;
 
-                if (!token) {
-                  return null;
-                }
                 return (
-                  <>
-                    <div
-                      key={token.address}
-                      className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-                    >
-                      <div className="flex items-center gap-1">
-                        <img
-                          src={token.iconUrl}
-                          alt={`${token.name} logo`}
-                          className="h-4"
-                        />
-                        {token.name}
-                      </div>
-
-                      <div className="grid justify-items-end">
-                        <p className="flex items-center gap-1">
-                          +
-                          {fixed(reward.apy).format({
-                            percent: true,
-                            decimals: 2,
-                          })}
-                        </p>
-                      </div>
+                  <div
+                    key={reward.tokenAddress}
+                    className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+                  >
+                    <div className="flex items-center gap-1">
+                      <img
+                        src={token.iconUrl}
+                        alt={`${token.name} logo`}
+                        className="h-4"
+                      />
+                      {token.name}
                     </div>
-                  </>
+
+                    <div className="grid justify-items-end">
+                      <p className="flex items-center gap-1">
+                        +
+                        {fixed(reward.apy).format({
+                          percent: true,
+                          decimals: 2,
+                        })}
+                      </p>
+                    </div>
+                  </div>
                 );
               }
 
@@ -143,13 +138,10 @@ export function LpApyStat({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
                   tokens: appConfig.tokens,
-                });
-                if (!token) {
-                  return null;
-                }
+                })!;
                 return (
                   <div
-                    key={token?.address}
+                    key={reward.tokenAddress}
                     className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
                   >
                     <div className="flex items-center gap-1">
@@ -184,7 +176,7 @@ export function LpApyStat({
               </div>
 
               <div className="grid justify-items-end">
-                <p className="flex items-center gap-1">
+                <div className="flex items-center gap-1">
                   {lpApy?.isNew ? (
                     <div>
                       <SparklesIcon className="h-4" />
@@ -198,7 +190,7 @@ export function LpApyStat({
                       })}
                     </div>
                   )}
-                </p>
+                </div>
               </div>
             </div>
           </Tooltip.Content>
