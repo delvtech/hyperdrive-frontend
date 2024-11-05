@@ -49,12 +49,12 @@ export function PrimaryStat({
         {valueLoading ? (
           <Skeleton width={100} className="h-8" />
         ) : (
-          <>
+          <div className="flex items-baseline">
             {value}
             {valueUnit ? (
               <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
             ) : null}
-          </>
+          </div>
         )}
       </div>
       {subValue && (

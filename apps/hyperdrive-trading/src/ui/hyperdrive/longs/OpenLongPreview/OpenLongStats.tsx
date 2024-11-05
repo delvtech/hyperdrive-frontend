@@ -107,19 +107,21 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames("flex text-h3 font-bold", {
-                "text-base-content/80": !amountPaid,
-              })}
+              className={classNames(
+                "flex items-baseline border align-text-bottom text-h3 font-bold",
+                {
+                  "text-base-content/80": !amountPaid,
+                },
+              )}
             >
-              <img
-                src={baseToken.iconUrl}
-                className="mr-1 h-9 rounded-full p-1"
-              />
-              {`${formatBalance({
-                balance: amountPaidInBase + yieldAtMaturity,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
-              })}`}
+              <img src={baseToken.iconUrl} className="mr-1 h-8 rounded-full" />
+              <div className="leading-none flex">
+                {`${formatBalance({
+                  balance: amountPaidInBase + yieldAtMaturity,
+                  decimals: baseToken.decimals,
+                  places: baseToken.places,
+                })}`}
+              </div>
             </span>
           )
         }
@@ -127,7 +129,6 @@ export function OpenLongStats({
         valueContainerClassName="flex items-end flex-wrap"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
-
           isTestnetChain(hyperdrive.chainId)
             ? `Term: ${numDays} days`
             : `$${formatBalance({
