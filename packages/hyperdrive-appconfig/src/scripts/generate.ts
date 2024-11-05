@@ -34,6 +34,15 @@ interface ChainInitializationConfig {
   isTestnet?: boolean;
 }
 
+// This array should usually be empty. It's used for pools that have been added to the registry
+// but we don't want to generate app configs for, or show in the UI.
+const registryAddressesToSkip = [
+  // Mainnet sGYD
+  "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D",
+  // Gnosis sGYD
+  "0x9248f874AaA2c53AD9324d7A2D033ea133443874",
+];
+
 const chainConfigs: ChainInitializationConfig[] = [
   // Testnet chains
   // { // TODO: Re-enable this when needed
@@ -125,6 +134,15 @@ console.log(
   `\n${chalk.white(chalk.underline("Processing reward tokens across all yield sources and chains"))}`,
 );
 await addRewardTokenConfigs({ appConfig: combinedAppConfig });
+
+// Occassionally Hyperdrives have been added to the registry, but the frontend work is not complete.
+// Skipping these allows us to continue to push releases without showing these pools in the UI.
+console.log(
+  `\n${chalk.white(chalk.underline("Removing hyperdrives that have been added to the registry but we don't want to show in the UI"))}`,
+);
+combinedAppConfig.hyperdrives = combinedAppConfig.hyperdrives.filter(
+  (hyperdrive) => !registryAddressesToSkip.includes(hyperdrive.address),
+);
 
 const { mainnetConfig, testnetConfig } =
   getMainnetAndTestnetAppConfigs(combinedAppConfig);
