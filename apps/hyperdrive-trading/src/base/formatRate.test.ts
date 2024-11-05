@@ -28,14 +28,12 @@ test("formatRate should return negative bigints formatted as a percent", async (
   // rounds down
   const value2 = formatRate({
     rate: parseUnits("-1.0281219", 18),
-    decimals: 18,
   });
   expect(value2).toEqual("-102.81");
 
   // rounds up
   const value3 = formatRate({
     rate: parseUnits("-0.0297902", 18),
-    decimals: 18,
   });
   expect(value3).toEqual("-2.98");
 });
