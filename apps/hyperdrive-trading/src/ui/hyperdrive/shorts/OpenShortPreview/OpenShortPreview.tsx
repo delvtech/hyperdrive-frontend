@@ -167,7 +167,7 @@ export function OpenShortPreview({
                   <span className="flex gap-2 text-base-content">
                     <span className="text-neutral-content">{`${fixedApr?.formatted} `}</span>
                     <ArrowRightIcon className="h-4 text-neutral-content" />
-                    {formatRate(spotRateAfterOpen)}
+                    {formatRate({ rate: spotRateAfterOpen })}
                   </span>
                 ) : (
                   "-"
@@ -214,5 +214,5 @@ function getMarketImpactLabel(
   if (isChangeInFixedAprLessThanOneBasisPoint) {
     return "+<0.01%";
   }
-  return `+${formatRate(changeInFixedApr)}`;
+  return `+${formatRate({ rate: changeInFixedApr })}`;
 }
