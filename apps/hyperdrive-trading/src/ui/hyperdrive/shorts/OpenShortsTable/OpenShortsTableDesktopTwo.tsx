@@ -6,7 +6,6 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-viem";
-import { Cog8ToothIcon } from "@heroicons/react/20/solid";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {
@@ -28,6 +27,7 @@ import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell"
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
+import { ManageShortButton } from "src/ui/hyperdrive/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortValue } from "src/ui/hyperdrive/shorts/OpenShortsTable/TotalOpenShortsValue";
 import { usePortfolioShortsData } from "src/ui/portfolio/usePortfolioShortsData";
@@ -372,20 +372,10 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => {
         return (
-          <div className="flex w-full items-center font-inter">
-            <button
-              className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-              onClick={() => {
-                const modalId = `${row.original.assetId}`;
-                (
-                  document.getElementById(modalId) as HTMLDialogElement
-                ).showModal();
-              }}
-            >
-              <Cog8ToothIcon className="h-5" />
-              Manage
-            </button>
-          </div>
+          <ManageShortButton
+            hyperdrive={hyperdrive}
+            assetId={row.original.assetId}
+          />
         );
       },
     }),
