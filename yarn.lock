@@ -1486,7 +1486,7 @@
   dependencies:
     "@delvtech/evm-client" "0.5.1"
 
-"@delvtech/evm-client@0.5.1", "@delvtech/evm-client@^0.5.1":
+"@delvtech/evm-client@0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
   integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==

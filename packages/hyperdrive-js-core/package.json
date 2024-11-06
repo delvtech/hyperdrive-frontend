@@ -11,8 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@delvtech/drift": "^0.0.1-beta.6",
-    "@delvtech/evm-client": "^0.5.1"
+    "@delvtech/drift": "^0.0.1-beta.6"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.6",
@@ -23,7 +22,6 @@
   },
   "devDependencies": {
     "@delvtech/drift": "^0.0.1-beta.6",
-    "@delvtech/evm-client": "^0.5.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
