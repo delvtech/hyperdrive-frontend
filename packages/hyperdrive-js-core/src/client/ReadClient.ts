@@ -33,8 +33,9 @@ export class ReadClient {
     // Override the contract factory to ensure that events are fetched from the
     // earliest block if necessary.
     if (earliestBlock) {
+      const originalContractFactory = this.drift.contract;
       this.drift.contract = (options) => {
-        const contract = this.drift.contract(options);
+        const contract = originalContractFactory(options);
 
         // Override the getEvents method
         const originalGetEvents = contract.getEvents;
