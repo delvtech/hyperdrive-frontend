@@ -1,5 +1,6 @@
 import { fetchAeroRewards } from "src/rewards/aero";
 import { fetchEtherfiRewards } from "src/rewards/etherfi";
+import { fetchGyroscopeRewards } from "src/rewards/gyroscope";
 import { fetchLineaRewards } from "src/rewards/linea";
 import {
   fetchMorphoCbethUsdcRewards,
@@ -16,4 +17,5 @@ export const rewardFunctions = {
   fetchEtherfiRewards,
   fetchMorphoCbethUsdcRewards,
   fetchAeroRewards,
+  fetchGyroscopeRewards,
 } as const;

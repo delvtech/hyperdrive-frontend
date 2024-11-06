@@ -130,4 +130,5 @@ export const sgyd: YieldSource = {
   shortName: "Savings GYD",
   protocol: "gyroscope",
   historicalRatePeriod: 1,
+  rewardsFn: "fetchGyroscopeRewards",
 };

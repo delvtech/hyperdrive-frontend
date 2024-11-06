@@ -435,6 +435,17 @@ export const testnetAppConfig: AppConfig = {
   tokens: [
     {
       chainId: 11155111,
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+    },
+    {
+      chainId: 11155111,
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       decimals: 18,
       places: 4,
@@ -443,17 +454,6 @@ export const testnetAppConfig: AppConfig = {
       iconUrl:
         "data:image/png;base64,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",
       tags: [],
-    },
-    {
-      chainId: 11155111,
-      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
-      decimals: 18,
-      places: 4,
-      name: "RocketPool ETH",
-      symbol: "RETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["liquidStakingToken"],
     },
     {
       chainId: 11155111,
@@ -479,17 +479,6 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
-      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-    },
-    {
-      chainId: 11155111,
       address: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       decimals: 18,
       places: 2,
@@ -497,6 +486,17 @@ export const testnetAppConfig: AppConfig = {
       symbol: "SDAI",
       iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
       tags: [],
+    },
+    {
+      chainId: 11155111,
+      address: "0x4713c86d0e467064A4CD2a974b7fDA79F7efc338",
+      decimals: 18,
+      places: 4,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["liquidStakingToken"],
     },
   ],
   registries: {
@@ -783,6 +783,7 @@ export const testnetAppConfig: AppConfig = {
       shortName: "Savings GYD",
       protocol: "gyroscope",
       historicalRatePeriod: 1,
+      rewardsFn: "fetchGyroscopeRewards",
     },
     gnosisSgyd: {
       chainId: 100,
