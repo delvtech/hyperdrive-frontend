@@ -1,5 +1,5 @@
 import { Drift, ReadWriteAdapter } from "@delvtech/drift";
-import { ReadClient, ReadClientOptions } from "src/client/ReadClient";
+import { ReadClient, ReadClientOptions } from "src/drift/ReadClient";
 
 /**
  * The base options required for all read-write clients.

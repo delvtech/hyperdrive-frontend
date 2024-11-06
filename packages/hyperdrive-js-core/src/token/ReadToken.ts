@@ -1,5 +1,5 @@
 import { ContractReadOptions } from "@delvtech/drift";
-import { ReadClient } from "src/client/ReadClient";
+import { ReadClient } from "src/drift/ReadClient";
 
 export interface ReadToken extends ReadClient {
   address: `0x${string}`;

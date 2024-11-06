@@ -6,7 +6,7 @@ import {
   ReplaceProps,
 } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadWriteContractClientOptions } from "src/client/ContractClient";
+import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";

@@ -1,7 +1,7 @@
 import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadContractClientOptions } from "src/client/ContractClient";
-import { ReadClient } from "src/client/ReadClient";
+import { ReadContractClientOptions } from "src/drift/ContractClient";
+import { ReadClient } from "src/drift/ReadClient";
 import { erc20Abi, Erc20Abi } from "src/token/erc20/abi";
 import { ReadToken } from "src/token/ReadToken";
 

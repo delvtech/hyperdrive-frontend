@@ -18,8 +18,8 @@ import {
   GetCheckpointParams,
   GetCheckpointTimeParams,
 } from "src/checkpoint/types";
-import { ReadContractClientOptions } from "src/client/ContractClient";
-import { ReadClient } from "src/client/ReadClient";
+import { ReadContractClientOptions } from "src/drift/ContractClient";
+import { ReadClient } from "src/drift/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { fixed } from "src/fixed-point";

@@ -5,7 +5,7 @@ import {
   ReadWriteContract,
   ReplaceProps,
 } from "@delvtech/drift";
-import { ReadWriteContractClientOptions } from "src/client/ContractClient";
+import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";

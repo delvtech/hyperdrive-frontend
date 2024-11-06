@@ -1,5 +1,5 @@
 import { ContractWriteOptions, ReplaceProps } from "@delvtech/drift";
-import { ReadWriteClient } from "src/client/ReadWriteClient";
+import { ReadWriteClient } from "src/drift/ReadWriteClient";
 import { ReadToken } from "src/token/ReadToken";
 
 export interface ReadWriteToken

@@ -144,24 +144,22 @@ export { BlockNotFoundError } from "src/errors/BlockNotFoundError";
 export { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 export { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 
-// Client //
+// Drift //
 
 export type {
   ContractClientOptions,
   ReadContractClientOptions,
   ReadWriteContractClientOptions,
-} from "src/client/ContractClient";
-export { ReadClient, type ReadClientOptions } from "src/client/ReadClient";
+} from "src/drift/ContractClient";
+export { ReadClient, type ReadClientOptions } from "src/drift/ReadClient";
 export {
   ReadWriteClient,
   type ReadWriteClientOptions,
-} from "src/client/ReadWriteClient";
+} from "src/drift/ReadWriteClient";
 
 // Base //
 
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { getHprFromApr } from "src/base/getHprFromApr";
 export { getHprFromApy } from "src/base/getHprFromApy";
-
-// types
 export type { Constructor } from "src/base/types";

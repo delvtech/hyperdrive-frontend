@@ -1,7 +1,7 @@
 import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadContractClientOptions } from "src/client/ContractClient";
-import { ReadClient } from "src/client/ReadClient";
+import { ReadContractClientOptions } from "src/drift/ContractClient";
+import { ReadClient } from "src/drift/ReadClient";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { RegistryAbi, registryAbi } from "src/registry/abi";

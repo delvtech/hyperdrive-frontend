@@ -1,5 +1,5 @@
 import { Drift, ReadWriteAdapter } from "@delvtech/drift";
-import { ReadWriteClientOptions } from "src/client/ReadWriteClient";
+import { ReadWriteClientOptions } from "src/drift/ReadWriteClient";
 import { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadEth } from "src/token/eth/ReadEth";

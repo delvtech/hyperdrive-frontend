@@ -4,7 +4,7 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
-import { ReadWriteContractClientOptions } from "src/client/ContractClient";
+import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { Erc20Abi } from "src/token/erc20/abi";
