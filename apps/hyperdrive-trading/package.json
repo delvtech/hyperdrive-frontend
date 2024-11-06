@@ -28,8 +28,8 @@
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
-    "@delvtech/drift": "^0.0.1-beta.7",
-    "@delvtech/drift-viem": "^0.0.1-beta.9",
+    "@delvtech/drift": "^0.0.1-beta.9",
+    "@delvtech/drift-viem": "^0.0.1-beta.11",
     "@delvtech/fixed-point-wasm": "^0.0.6",
     "@delvtech/hyperdrive-appconfig": "^0.0.1",
     "@delvtech/hyperdrive-js-core": "^3.0.6",
