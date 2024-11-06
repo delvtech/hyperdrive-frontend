@@ -48,11 +48,11 @@ export function useFixedRate({
           return {
             fixedApr: {
               apr: fixedApr,
-              formatted: formatRate(fixedApr),
+              formatted: formatRate({ rate: fixedApr }),
             },
             fixedRoi: {
               roi: fixedRoi,
-              formatted: formatRate(fixedRoi),
+              formatted: formatRate({ rate: fixedRoi }),
             },
           };
         }

@@ -24,7 +24,12 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
       label={label}
       value={
         fixedApr ? (
-          <PercentLabel value={formatRate(fixedApr.apr, 18, false)} />
+          <PercentLabel
+            value={formatRate({
+              rate: fixedApr.apr,
+              includePercentSign: false,
+            })}
+          />
         ) : (
           "-"
         )

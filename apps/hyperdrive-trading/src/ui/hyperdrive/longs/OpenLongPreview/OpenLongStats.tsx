@@ -73,14 +73,14 @@ export function OpenLongStats({
           ) : (
             <span className="text-h3 font-bold">
               {bondAmount > 0 ? (
-                `${formatRate(
-                  calculateAprFromPrice({
+                `${formatRate({
+                  rate: calculateAprFromPrice({
                     positionDuration:
                       hyperdrive.poolConfig.positionDuration || 0n,
                     baseAmount: amountPaidInBase,
                     bondAmount: bondAmount,
                   }),
-                )}`
+                })}`
               ) : fixedApr?.formatted ? (
                 `${fixedApr.formatted}`
               ) : (

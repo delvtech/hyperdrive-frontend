@@ -47,7 +47,7 @@ export function useYieldSourceRate({
           return {
             vaultRate: rate,
             netVaultRate: netRate,
-            formatted: formatRate(rate),
+            formatted: formatRate({ rate }),
             ratePeriodDays,
           };
         }
