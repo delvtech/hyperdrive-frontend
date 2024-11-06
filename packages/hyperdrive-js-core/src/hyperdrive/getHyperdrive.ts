@@ -42,13 +42,7 @@ export async function getHyperdrive<T extends Drift = Drift>({
     earliestBlock,
     debugName,
   };
-
-  const kind = await drift.read({
-    abi: hyperdriveAbi,
-    address,
-    fn: "kind",
-    cacheNamespace,
-  });
+  const isReadWrite = isReadWriteOptions(options);
 
   const version = await drift.read({
     abi: hyperdriveAbi,
@@ -56,9 +50,16 @@ export async function getHyperdrive<T extends Drift = Drift>({
     fn: "version",
     cacheNamespace,
   });
-
   const isV1_0_14 = semver.lte(version, "1.0.14");
-  const isReadWrite = isReadWriteOptions(options);
+
+  const kind = isV1_0_14
+    ? undefined
+    : await drift.read({
+        abi: hyperdriveAbi,
+        address,
+        fn: "kind",
+        cacheNamespace,
+      });
 
   switch (kind) {
     case "StETHHyperdrive":
