@@ -33,7 +33,7 @@ export function ShortRateAndSizeCell({
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
-    blockNumber: maturityBlock?.number,
+    block: maturityBlock?.number,
   });
 
   const rateDifference = (fixedApr?.apr || 0n) - short.fixedRatePaid;

@@ -38,7 +38,7 @@ export async function getReadWriteHyperdrive({
     publicClient,
     walletClient,
     cache: sdkCache,
-    namespace: publicClient.chain?.id.toString(),
+    cacheNamespace: publicClient.chain?.id.toString(),
     earliestBlock: hyperdriveConfig.initializationBlock,
   };
 

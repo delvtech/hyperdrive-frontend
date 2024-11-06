@@ -233,7 +233,7 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
             address: connectedAppConfig.registries[chainId],
             publicClient,
             cache: sdkCache,
-            namespace: chainId.toString(),
+            cacheNamespace: chainId.toString(),
           });
 
           return registry.getInstances().then((instances) => {

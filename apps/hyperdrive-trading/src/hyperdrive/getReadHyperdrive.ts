@@ -36,7 +36,7 @@ export async function getReadHyperdrive({
     address: hyperdriveAddress,
     publicClient,
     cache: sdkCache,
-    namespace: publicClient.chain?.id.toString(),
+    cacheNamespace: publicClient.chain?.id.toString(),
     earliestBlock: hyperdriveConfig.initializationBlock,
   };
 

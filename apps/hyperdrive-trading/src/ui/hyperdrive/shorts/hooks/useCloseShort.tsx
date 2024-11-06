@@ -83,27 +83,34 @@ export function useCloseShort({
           destination,
           maturityTime,
         },
-        onTransactionCompleted: (txHash: Hash) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              chainId={chainId}
-              message="Short closed"
-              txHash={txHash}
-            />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: hash,
-              transactionType: "close",
-              positionType: "short",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Short closed"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                },
+              );
+              toastWarpcast();
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "close",
+                  positionType: "short",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 

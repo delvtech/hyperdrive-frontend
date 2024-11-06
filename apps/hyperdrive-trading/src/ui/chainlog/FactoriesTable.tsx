@@ -187,7 +187,7 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
             address: connectedAppConfig.registries[chainId],
             publicClient,
             cache: sdkCache,
-            namespace: chainId.toString(),
+            cacheNamespace: chainId.toString(),
           });
 
           const factoryAddresses = await registry.getFactoryAddresses();

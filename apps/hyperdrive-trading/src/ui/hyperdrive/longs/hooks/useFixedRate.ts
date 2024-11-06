@@ -1,3 +1,4 @@
+import { BlockTag } from "@delvtech/drift";
 import {
   appConfig,
   findHyperdriveConfig,
@@ -14,11 +15,11 @@ import { Address } from "viem";
 export function useFixedRate({
   chainId,
   hyperdriveAddress,
-  blockNumber,
+  block,
 }: {
   chainId: number;
   hyperdriveAddress: Address;
-  blockNumber?: bigint;
+  block?: BlockTag | bigint;
 }): {
   fixedApr: { apr: bigint; formatted: string } | undefined;
   fixedRoi: { roi: bigint; formatted: string } | undefined;
@@ -40,7 +41,7 @@ export function useFixedRate({
     queryKey: makeQueryKey("fixedApr", { chainId, address: hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const fixedApr = await readHyperdrive.getFixedApr({ blockNumber });
+          const fixedApr = await readHyperdrive.getFixedApr({ block });
           const fixedRoi = getHprFromApr(
             fixedApr,
             hyperdrive.poolConfig.positionDuration,

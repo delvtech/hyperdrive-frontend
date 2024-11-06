@@ -92,28 +92,35 @@ export function useAddLiquidity({
           maxApr,
           destination,
         },
-        options: { value: ethValue },
-        onTransactionCompleted: (txHash: Hash) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              chainId={chainId}
-              message="Liquidity added"
-              txHash={txHash}
-            />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: txHash,
-              transactionType: "open",
-              positionType: "lp",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          value: ethValue,
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Liquidity added"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                },
+              );
+              toastWarpcast();
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "open",
+                  positionType: "lp",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 
