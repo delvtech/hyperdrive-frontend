@@ -1,8 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
+import { getHyperdrive, ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";
+import { sdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
 import { usePublicClient, useWalletClient } from "wagmi";
 
@@ -26,11 +25,11 @@ export function useReadWriteHyperdrive({
     enabled,
     queryFn: enabled
       ? () =>
-          getReadWriteHyperdrive({
-            hyperdriveAddress: address,
+          getHyperdrive({
+            address,
             publicClient,
             walletClient,
-            appConfig,
+            cache: sdkCache,
           })
       : undefined,
   });

@@ -1,8 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { getHyperdrive, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { sdkCache } from "src/sdk/sdkCache";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -25,10 +24,10 @@ export function useReadHyperdrive({
     enabled,
     queryFn: enabled
       ? () =>
-          getReadHyperdrive({
-            hyperdriveAddress: address,
+          getHyperdrive({
+            address,
             publicClient,
-            appConfig,
+            cache: sdkCache,
           })
       : undefined,
   });

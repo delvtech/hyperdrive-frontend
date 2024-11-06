@@ -6,14 +6,15 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdrive } from "@delvtech/hyperdrive-viem";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { getPublicClient } from "@wagmi/core";
 import { ReactElement, ReactNode, useMemo } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
 import { wagmiConfig } from "src/network/wagmiClient";
+import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
@@ -345,10 +346,10 @@ function usePoolsList(): {
           const publicClient = getPublicClient(wagmiConfig as any, {
             chainId: hyperdrive.chainId,
           });
-          const readHyperdrive = await getReadHyperdrive({
-            hyperdriveAddress: hyperdrive.address,
-            appConfig: appConfig,
+          const readHyperdrive = await getHyperdrive({
+            address: hyperdrive.address,
             publicClient: publicClient as PublicClient,
+            cache: sdkCache,
           });
 
           // We only show hyperdrives that are not paused

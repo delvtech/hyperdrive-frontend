@@ -1,8 +1,8 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-viem";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
 import { useAccount } from "wagmi";
@@ -45,10 +45,10 @@ export function usePortfolioShortsData(): {
                   };
                 }
 
-                const readHyperdrive = await getReadHyperdrive({
-                  appConfig: appConfigForConnectedChain,
-                  hyperdriveAddress: hyperdrive.address,
+                const readHyperdrive = await getHyperdrive({
+                  address: hyperdrive.address,
                   publicClient,
+                  cache: sdkCache,
                 });
 
                 return {

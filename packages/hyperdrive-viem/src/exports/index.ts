@@ -23,6 +23,12 @@ export {
 
 // Hyperdrive //
 
+export {
+  getHyperdrive,
+  type Hyperdrive,
+  type HyperdriveOptions,
+} from "src/hyperdrive/getHyperdrive";
+
 // base
 export {
   ReadHyperdrive,

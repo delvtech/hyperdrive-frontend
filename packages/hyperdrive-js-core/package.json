@@ -18,7 +18,8 @@
     "@delvtech/hyperdrive-artifacts": "^1.0.18",
     "@delvtech/hyperdrive-wasm": "^0.15.3",
     "lodash.groupby": "^4.6.0",
-    "lodash.mapvalues": "^4.6.0"
+    "lodash.mapvalues": "^4.6.0",
+    "semver": "^7.6.3"
   },
   "devDependencies": {
     "@delvtech/drift": "^0.0.1-beta.7",

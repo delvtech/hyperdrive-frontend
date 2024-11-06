@@ -1,5 +1,11 @@
 // Hyperdrive //
 
+export {
+  getHyperdrive,
+  type Hyperdrive,
+  type HyperdriveOptions,
+} from "src/hyperdrive/getHyperdrive";
+
 export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/base/abi";
 export {
   ReadHyperdrive,
