@@ -1,10 +1,10 @@
 import { Drift, ReadWriteAdapter } from "@delvtech/drift";
+import { ReadWriteClientOptions } from "src/client/ReadWriteClient";
 import { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
-import { ReadWriteModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadEth } from "src/token/eth/ReadEth";
 
-export interface ReadWriteEthOptions extends ReadWriteModelOptions {}
+export interface ReadWriteEthOptions extends ReadWriteClientOptions {}
 
 export class ReadWriteEth extends ReadEth implements ReadWriteToken {
   declare drift: Drift<ReadWriteAdapter>;

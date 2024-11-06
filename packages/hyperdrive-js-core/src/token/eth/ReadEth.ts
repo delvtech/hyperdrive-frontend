@@ -1,10 +1,10 @@
 import { ContractReadOptions } from "@delvtech/drift";
-import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
+import { ReadClient, ReadClientOptions } from "src/client/ReadClient";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadEthOptions extends ReadModelOptions {}
+export interface ReadEthOptions extends ReadClientOptions {}
 
-export class ReadEth extends ReadModel implements ReadToken {
+export class ReadEth extends ReadClient implements ReadToken {
   static address = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
   address = ReadEth.address;
 

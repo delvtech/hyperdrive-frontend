@@ -1,12 +1,13 @@
 import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
+import { ReadContractClientOptions } from "src/client/ContractClient";
+import { ReadClient } from "src/client/ReadClient";
 import { erc20Abi, Erc20Abi } from "src/token/erc20/abi";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadErc20Options extends ReadContractModelOptions {}
+export interface ReadErc20Options extends ReadContractClientOptions {}
 
-export class ReadErc20 extends ReadModel implements ReadToken {
+export class ReadErc20 extends ReadClient implements ReadToken {
   contract: Contract<Erc20Abi>;
 
   constructor({
@@ -14,9 +15,9 @@ export class ReadErc20 extends ReadModel implements ReadToken {
     address,
     cache,
     cacheNamespace,
-    ...modelOptions
+    ...rest
   }: ReadErc20Options) {
-    super({ debugName, ...modelOptions });
+    super({ debugName, ...rest });
     this.contract = this.drift.contract({
       abi: erc20Abi,
       address,

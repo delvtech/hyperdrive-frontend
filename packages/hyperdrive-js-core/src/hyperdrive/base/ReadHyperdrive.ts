@@ -18,6 +18,8 @@ import {
   GetCheckpointParams,
   GetCheckpointTimeParams,
 } from "src/checkpoint/types";
+import { ReadContractClientOptions } from "src/client/ContractClient";
+import { ReadClient } from "src/client/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { fixed } from "src/fixed-point";
@@ -32,7 +34,6 @@ import {
 } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { MarketState, PoolConfig, PoolInfo } from "src/pool/types";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
@@ -42,9 +43,9 @@ import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
-export interface ReadHyperdriveOptions extends ReadContractModelOptions {}
+export interface ReadHyperdriveOptions extends ReadContractClientOptions {}
 
-export class ReadHyperdrive extends ReadModel {
+export class ReadHyperdrive extends ReadClient {
   readonly address: Address;
   readonly contract: ReadContract<HyperdriveAbi>;
 
@@ -57,9 +58,9 @@ export class ReadHyperdrive extends ReadModel {
     cache,
     cacheNamespace,
     drift,
-    ...modelOptions
+    ...rest
   }: ReadHyperdriveOptions) {
-    super({ debugName, drift, ...modelOptions });
+    super({ debugName, drift, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,

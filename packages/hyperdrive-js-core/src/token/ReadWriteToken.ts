@@ -1,9 +1,9 @@
 import { ContractWriteOptions, ReplaceProps } from "@delvtech/drift";
-import { ReadWriteModel } from "src/model/ReadWriteModel";
+import { ReadWriteClient } from "src/client/ReadWriteClient";
 import { ReadToken } from "src/token/ReadToken";
 
 export interface ReadWriteToken
-  extends ReplaceProps<ReadToken, ReadWriteModel> {
+  extends ReplaceProps<ReadToken, ReadWriteClient> {
   /**
    * Give a spending allowance to a given spender.
    * @param spender - The address of the spender.

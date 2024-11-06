@@ -1,14 +1,14 @@
-import { ContractParams, Drift } from "@delvtech/drift";
+import { Drift } from "@delvtech/drift";
 
 /**
- * The base options required for all read models.
+ * The base options required for all read clients.
  */
-export interface ReadModelOptions {
+export interface ReadClientOptions {
   drift: Drift;
 
   /**
    * An arbitrary name for the instance. This is for convenience only (e.g., for
-   * use as a display name or in logging) and has no affect on the model's
+   * use as a display name or in logging) and has no affect on the client's
    * behavior.
    */
   debugName?: string;
@@ -20,13 +20,13 @@ export interface ReadModelOptions {
 }
 
 /**
- * A base class for read-only models.
+ * A base class for read-only clients.
  */
-export class ReadModel {
+export class ReadClient {
   drift: Drift;
   debugName: string;
 
-  constructor({ debugName, drift, earliestBlock }: ReadModelOptions) {
+  constructor({ debugName, drift, earliestBlock }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
 
@@ -55,10 +55,3 @@ export class ReadModel {
     }
   }
 }
-
-/**
- * The options required to create a read model that represents a specific
- * contract.
- */
-export type ReadContractModelOptions = ReadModelOptions &
-  Omit<ContractParams, "abi" | "adapter">;

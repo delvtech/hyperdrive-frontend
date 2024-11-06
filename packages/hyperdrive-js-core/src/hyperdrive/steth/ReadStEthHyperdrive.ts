@@ -8,22 +8,7 @@ import {
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
 
-export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
-  /**
-   * The `StETHHyperdrive` contract stores and operates on Lido balances in
-   * shares. However, since users are most familiar with stETH public balances,
-   * this model will accept and return balances in stETH by default and convert
-   * them to shares when interacting with the contract to ease UI integration.
-   *
-   * To use shares instead of stETH, set this to `true`.
-   *
-   * @default false
-   *
-   * @see
-   * https://docs.lido.fi/guides/lido-tokens-integration-guide#bookkeeping-shares
-   */
-  useSharesAccounting?: boolean;
-}
+export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {}
 
 export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadHyperdrive,
@@ -38,12 +23,12 @@ export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
  */
 export interface ReadStEthHyperdriveMixin {
   /**
-   * Get a model of ETH, the base token for this Hyperdrive instance.
+   * Get a client for ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a model of the Lido stETH token for this Hyperdrive instance.
+   * Get a client for the Lido stETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadStEth>;
 }

@@ -5,13 +5,13 @@ import {
   ReadWriteContract,
   ReplaceProps,
 } from "@delvtech/drift";
+import { ReadWriteContractClientOptions } from "src/client/ContractClient";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 
 export interface ReadWriteFactoryOptions
-  extends ReplaceProps<ReadFactoryOptions, ReadWriteContractModelOptions> {}
+  extends ReplaceProps<ReadFactoryOptions, ReadWriteContractClientOptions> {}
 
 export class ReadWriteFactory extends ReadFactory {
   declare contract: ReadWriteContract<FactoryAbi>;

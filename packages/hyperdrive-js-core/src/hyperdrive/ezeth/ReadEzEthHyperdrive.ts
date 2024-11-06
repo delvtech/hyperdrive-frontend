@@ -19,12 +19,12 @@ export interface ReadEzEthHyperdriveMixin {
   ezEthHyperdriveContract: Contract<EzEthHyperdriveAbi>;
 
   /**
-   * Get a model of ETH, the base token for this Hyperdrive instance.
+   * Get a client for ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a model of the EzETH token for this Hyperdrive instance.
+   * Get a client for the EzETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadErc20>;
 }
@@ -44,9 +44,9 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         address,
         cache,
         cacheNamespace,
-        ...modelOptions
+        ...rest
       } = options as ConstructorParameters<typeof ReadHyperdrive>[0];
-      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      super({ debugName, address, cache, cacheNamespace, ...rest });
       this.ezEthHyperdriveContract = this.drift.contract({
         abi: ezEthHyperdriveAbi,
         address,

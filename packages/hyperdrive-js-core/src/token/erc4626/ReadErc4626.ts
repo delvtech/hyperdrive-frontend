@@ -54,9 +54,9 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
         address,
         cache,
         cacheNamespace,
-        ...modelOptions
+        ...rest
       } = options as ReadErc20Options;
-      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      super({ debugName, address, cache, cacheNamespace, ...rest });
       this.erc4626Contract = this.drift.contract({
         abi: erc4626Abi,
         address,

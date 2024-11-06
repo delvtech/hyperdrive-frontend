@@ -6,15 +6,15 @@ import {
   ReplaceProps,
 } from "@delvtech/drift";
 import { Address } from "abitype";
+import { ReadWriteContractClientOptions } from "src/client/ContractClient";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
 import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
 export interface ReadWriteRegistryOptions
-  extends ReplaceProps<ReadRegistryOptions, ReadWriteContractModelOptions> {}
+  extends ReplaceProps<ReadRegistryOptions, ReadWriteContractClientOptions> {}
 
 export class ReadWriteRegistry extends ReadRegistry {
   declare drift: Drift<ReadWriteAdapter>;

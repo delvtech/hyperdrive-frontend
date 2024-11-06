@@ -15,7 +15,7 @@ export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
  */
 export interface ReadErc4626HyperdriveMixin {
   /**
-   * Get a model of the tokenized vault for this Hyperdrive instance.
+   * Get a client for the tokenized vault for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadErc4626>;
 }

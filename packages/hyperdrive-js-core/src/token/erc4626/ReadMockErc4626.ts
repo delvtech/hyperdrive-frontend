@@ -32,9 +32,9 @@ export function readMockErc4626Mixin<T extends Constructor<ReadErc4626>>(
         address,
         cache,
         cacheNamespace,
-        ...modelOptions
+        ...rest
       } = options as ConstructorParameters<typeof ReadErc4626>[0];
-      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      super({ debugName, address, cache, cacheNamespace, ...rest });
       this.mockErc4626Contract = this.drift.contract({
         abi: mockErc4626Abi,
         address,

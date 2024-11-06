@@ -5,10 +5,10 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
+import { ReadWriteContractClientOptions } from "src/client/ContractClient";
 import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import { NULL_BYTES } from "src/hyperdrive/constants";
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
@@ -18,7 +18,7 @@ type ReadWriteParams<Args> = {
 };
 
 export interface ReadWriteHyperdriveOptions
-  extends ReadWriteContractModelOptions {}
+  extends ReadWriteContractClientOptions {}
 
 export class ReadWriteHyperdrive extends ReadHyperdrive {
   declare drift: Drift<ReadWriteAdapter>;

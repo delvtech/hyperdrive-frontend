@@ -138,18 +138,18 @@ export { BlockNotFoundError } from "src/errors/BlockNotFoundError";
 export { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 export { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 
-// Model //
+// Client //
 
+export type {
+  ContractClientOptions,
+  ReadContractClientOptions,
+  ReadWriteContractClientOptions,
+} from "src/client/ContractClient";
+export { ReadClient, type ReadClientOptions } from "src/client/ReadClient";
 export {
-  ReadModel,
-  type ReadContractModelOptions,
-  type ReadModelOptions,
-} from "src/model/ReadModel";
-export {
-  ReadWriteModel,
-  type ReadWriteContractModelOptions,
-  type ReadWriteModelOptions,
-} from "src/model/ReadWriteModel";
+  ReadWriteClient,
+  type ReadWriteClientOptions,
+} from "src/client/ReadWriteClient";
 
 // Base //
 

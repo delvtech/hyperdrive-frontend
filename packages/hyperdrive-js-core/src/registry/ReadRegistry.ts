@@ -1,17 +1,18 @@
 import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
+import { ReadContractClientOptions } from "src/client/ContractClient";
+import { ReadClient } from "src/client/ReadClient";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { RegistryAbi, registryAbi } from "src/registry/abi";
 import {
   FactoryInfoWithMetadata,
   ReadInstanceInfoWithMetadata,
 } from "src/registry/types";
 
-export interface ReadRegistryOptions extends ReadContractModelOptions {}
+export interface ReadRegistryOptions extends ReadContractClientOptions {}
 
-export class ReadRegistry extends ReadModel {
+export class ReadRegistry extends ReadClient {
   address: Address;
   contract: Contract<RegistryAbi>;
 
@@ -20,9 +21,9 @@ export class ReadRegistry extends ReadModel {
     address,
     cache,
     cacheNamespace,
-    ...modelOptions
+    ...rest
   }: ReadRegistryOptions) {
-    super({ debugName, ...modelOptions });
+    super({ debugName, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: registryAbi,

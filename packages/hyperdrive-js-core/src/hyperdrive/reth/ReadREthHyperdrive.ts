@@ -17,12 +17,12 @@ export class ReadREthHyperdrive extends readREthHyperdriveMixin(
  */
 export interface ReadREthHyperdriveMixin {
   /**
-   * Get a model of ETH, the base token for this Hyperdrive instance.
+   * Get a client for ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a model of the rETH token for this Hyperdrive instance.
+   * Get a client for the rETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadREth>;
 }

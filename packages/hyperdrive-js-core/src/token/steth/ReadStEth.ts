@@ -62,9 +62,9 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
         address,
         cache,
         cacheNamespace,
-        ...modelOptions
+        ...rest
       } = options as ReadErc20Options;
-      super({ debugName, address, cache, cacheNamespace, ...modelOptions });
+      super({ debugName, address, cache, cacheNamespace, ...rest });
       this.stEthContract = this.drift.contract({
         abi: stEthAbi,
         address,

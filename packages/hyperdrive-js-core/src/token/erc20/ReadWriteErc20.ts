@@ -4,12 +4,12 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
-import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
+import { ReadWriteContractClientOptions } from "src/client/ContractClient";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { Erc20Abi } from "src/token/erc20/abi";
 
-export interface ReadWriteErc20Options extends ReadWriteContractModelOptions {}
+export interface ReadWriteErc20Options extends ReadWriteContractClientOptions {}
 
 export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
   declare drift: Drift<ReadWriteAdapter>;

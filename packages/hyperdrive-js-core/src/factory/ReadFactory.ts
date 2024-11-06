@@ -1,12 +1,13 @@
 import { Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
+import { ReadContractClientOptions } from "src/client/ContractClient";
+import { ReadClient } from "src/client/ReadClient";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
-import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 
-export interface ReadFactoryOptions extends ReadContractModelOptions {}
+export interface ReadFactoryOptions extends ReadContractClientOptions {}
 
-export class ReadFactory extends ReadModel {
+export class ReadFactory extends ReadClient {
   address: Address;
   contract: Contract<FactoryAbi>;
 
@@ -15,9 +16,9 @@ export class ReadFactory extends ReadModel {
     address,
     cache,
     cacheNamespace,
-    ...modelOptions
+    ...rest
   }: ReadFactoryOptions) {
-    super({ debugName, ...modelOptions });
+    super({ debugName, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: factoryAbi,
