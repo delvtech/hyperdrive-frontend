@@ -348,7 +348,7 @@ function getColumns({
 
         return (
           <div className="flex flex-col">
-            <div>{formatRate(fixedRate)} APR</div>
+            <div>{formatRate({ rate: fixedRate })} APR</div>
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
                 balance: row.original.details?.bondAmount || 0n,

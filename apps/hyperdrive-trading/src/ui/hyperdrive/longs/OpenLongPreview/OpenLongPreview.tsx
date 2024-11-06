@@ -140,7 +140,7 @@ export function OpenLongPreview({
                   <span className="flex gap-2">
                     <span className="text-base-content/80">{`${fixedApr?.formatted}`}</span>
                     <ArrowRightIcon className="h-4 text-base-content/80" />
-                    {formatRate(spotRateAfterOpen)}
+                    {formatRate({ rate: spotRateAfterOpen })}
                   </span>
                 ) : (
                   "-"
@@ -220,5 +220,5 @@ function getMarketImpactLabel(
   if (isChangeInFixedAprLessThanOneBasisPoint) {
     return "-<0.01%";
   }
-  return `-${formatRate(changeInFixedApr)}`;
+  return `-${formatRate({ rate: changeInFixedApr })}`;
 }

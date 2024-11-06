@@ -1,11 +1,16 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 
-export function formatRate(
-  rate: bigint,
-  decimals = 18,
+/**
+ * Formats a rate represented as an 18 decimal bigint as a percentage string.
+ */
+export function formatRate({
+  rate,
   includePercentSign = true,
-): string {
-  let formatted = fixed(rate, decimals).format({
+}: {
+  rate: bigint;
+  includePercentSign?: boolean;
+}): string {
+  let formatted = fixed(rate).format({
     percent: true,
     decimals: 2,
   });

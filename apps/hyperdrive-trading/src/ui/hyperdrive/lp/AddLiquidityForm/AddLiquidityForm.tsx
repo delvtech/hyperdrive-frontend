@@ -396,7 +396,7 @@ export function AddLiquidityForm({
               lpApy === undefined || lpApy.isNew ? (
                 <div className="flex gap-2">✨New✨</div>
               ) : (
-                `${formatRate(lpApy.lpApy)}`
+                `${formatRate({ rate: lpApy.lpApy })}`
               )
             }
             tooltipContent="The annual percentage yield projection for providing liquidity."

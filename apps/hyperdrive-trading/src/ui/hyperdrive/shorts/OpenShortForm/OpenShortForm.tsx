@@ -372,7 +372,7 @@ export function OpenShortForm({
                   {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
                   {isNewPool
                     ? "✨New✨"
-                    : `${formatRate(vaultRate.netVaultRate)} APY`}
+                    : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
                 </>
               ) : null
             }
@@ -476,7 +476,7 @@ export function OpenShortForm({
             tooltipContent={`The fixed rate you pay upfront that determines the cost-basis of this short.`}
             value={
               <span className="text-h3 font-bold">
-                {formatRate(fixedRatePaid || 0n)}
+                {formatRate({ rate: fixedRatePaid || 0n })}
               </span>
             }
             valueContainerClassName="flex items-end"
