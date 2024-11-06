@@ -1,18 +1,23 @@
-import * as core from "@delvtech/hyperdrive-js-core/factory/model";
-import { viemReadMixin, ViemReadModelOptions } from "src/viem/viemReadMixin";
 import {
+  ReadFactory as BaseReadFactory,
+  ReadFactoryOptions as BaseReadFactoryOptions,
+  ReadWriteFactory as BaseReadWriteFactory,
+  ReadWriteFactoryOptions as BaseReadWriteFactoryOptions,
+} from "@delvtech/hyperdrive-js-core";
+import { ViemReadClientOptions, viemReadMixin } from "src/viem/viemReadMixin";
+import {
+  ViemReadWriteClientOptions,
   viemReadWriteMixin,
-  ViemReadWriteModelOptions,
 } from "src/viem/viemReadWriteMixin";
 
 export interface ReadFactoryOptions
-  extends ViemReadModelOptions<core.ReadFactoryOptions> {}
+  extends ViemReadClientOptions<BaseReadFactoryOptions> {}
 
-export class ReadFactory extends viemReadMixin(core.ReadFactory) {}
+export class ReadFactory extends viemReadMixin(BaseReadFactory) {}
 
 export interface ReadWriteFactoryOptions
-  extends ViemReadWriteModelOptions<core.ReadWriteFactoryOptions> {}
+  extends ViemReadWriteClientOptions<BaseReadWriteFactoryOptions> {}
 
 export class ReadWriteFactory extends viemReadWriteMixin(
-  core.ReadWriteFactory
+  BaseReadWriteFactory,
 ) {}

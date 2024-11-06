@@ -1,58 +1,50 @@
-import {
-  createCachedReadWriteContract,
-  createNetwork,
-} from "@delvtech/evm-client-viem";
+import { Drift, Pretty, ReadWriteAdapter } from "@delvtech/drift";
+import { viemAdapter } from "@delvtech/drift-viem";
 import {
   Constructor,
-  ContractFactoryOptions,
-  ReadWriteContractModelOptions,
-  ReadWriteModelOptions,
+  ReadWriteClient,
+  ReadWriteClientOptions,
 } from "@delvtech/hyperdrive-js-core";
 import { PublicClient, WalletClient } from "viem";
-import { Prettify } from "viem/chains";
 
-export type ViemReadWriteMixin<T extends ReadWriteContractModelConstructor> =
-  new (
-    options: ViemReadWriteModelOptions<ConstructorParameters<T>[0]>
-  ) => InstanceType<T>;
-
-export function viemReadWriteMixin<T extends ReadWriteContractModelConstructor>(
-  Base: T
-): ViemReadWriteMixin<T> {
-  return class extends (Base as Constructor) {
-    constructor(...[options, ...restArgs]: any[]) {
-      const { publicClient, walletClient, cache, namespace, ...restOptions } =
-        options as ViemReadWriteModelOptions<ReadWriteContractModelOptions>;
-      super(
-        {
-          contractFactory: (options: ContractFactoryOptions) => {
-            return createCachedReadWriteContract({
-              publicClient,
-              walletClient,
-              cache,
-              namespace,
-              ...options,
-            });
-          },
-          network: createNetwork(publicClient),
-          ...restOptions,
-        },
-        ...restArgs
-      );
-    }
-  } as ViemReadWriteMixin<T>;
-}
-
-export type ReadWriteContractModelConstructor = new (
-  ...args: [options: ReadWriteContractModelOptions, ...any[]]
-) => any;
-
-export type ViemReadWriteModelOptions<T extends ReadWriteModelOptions> =
-  Prettify<
-    // Replace the properties the wrapper will create with the ones it will use
-    // to create them.
-    Omit<T, "contractFactory" | "network"> & {
+// Replace the `drift` option with `publicClient` and `walletClient`.
+export type ViemReadWriteClientOptions<T extends ReadWriteClientOptions> =
+  Pretty<
+    Omit<T, "drift"> & {
       publicClient: PublicClient;
       walletClient: WalletClient;
     }
   >;
+
+export function viemReadWriteMixin<T extends Constructor<ReadWriteClient>>(
+  Base: T,
+): ViemReadWriteClientConstructor<T> {
+  return class extends (Base as Constructor) {
+    constructor(...[options, ...restArgs]: any[]) {
+      const { publicClient, walletClient, ...restOptions } =
+        options as ViemReadWriteClientOptions<ReadWriteClientOptions>;
+
+      const clientOptions: ReadWriteClientOptions = {
+        // TODO: Fix type casting needed for conflicting viem versions
+        drift: new Drift(
+          viemAdapter({
+            publicClient: publicClient as any,
+            walletClient: walletClient as any,
+          }) as ReadWriteAdapter,
+        ),
+        ...restOptions,
+      };
+
+      super(clientOptions, ...restArgs);
+    }
+  } as ViemReadWriteClientConstructor<T>;
+}
+
+// A `ReadWriteClient` class constructor that takes a `publicClient` instead of
+// a `drift` option.
+export type ViemReadWriteClientConstructor<
+  T extends Constructor<ReadWriteClient>,
+> = Constructor<
+  InstanceType<T>,
+  [options: ViemReadWriteClientOptions<ConstructorParameters<T>[0]>]
+>;

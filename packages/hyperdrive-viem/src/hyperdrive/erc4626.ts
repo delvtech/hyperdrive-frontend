@@ -1,19 +1,24 @@
-import * as core from "@delvtech/hyperdrive-js-core/hyperdrive/model";
+import {
+  ReadErc4626Hyperdrive as BaseReadErc4626Hyperdrive,
+  ReadMockErc4626Hyperdrive as BaseReadMockErc4626Hyperdrive,
+  ReadWriteErc4626Hyperdrive as BaseReadWriteErc4626Hyperdrive,
+  ReadWriteMockErc4626Hyperdrive as BaseReadWriteMockErc4626Hyperdrive,
+} from "@delvtech/hyperdrive-js-core";
 import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 
 export class ReadErc4626Hyperdrive extends viemReadMixin(
-  core.ReadErc4626Hyperdrive
+  BaseReadErc4626Hyperdrive,
 ) {}
 
 export class ReadWriteErc4626Hyperdrive extends viemReadWriteMixin(
-  core.ReadWriteErc4626Hyperdrive
+  BaseReadWriteErc4626Hyperdrive,
 ) {}
 
 export class ReadMockErc4626Hyperdrive extends viemReadMixin(
-  core.ReadMockErc4626Hyperdrive
+  BaseReadMockErc4626Hyperdrive,
 ) {}
 
 export class ReadWriteMockErc4626Hyperdrive extends viemReadWriteMixin(
-  core.ReadWriteMockErc4626Hyperdrive
+  BaseReadWriteMockErc4626Hyperdrive,
 ) {}

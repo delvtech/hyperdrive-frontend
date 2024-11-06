@@ -1,18 +1,23 @@
-import * as core from "@delvtech/hyperdrive-js-core";
-import { viemReadMixin, ViemReadModelOptions } from "src/viem/viemReadMixin";
 import {
+  ReadHyperdrive as BaseReadHyperdrive,
+  ReadHyperdriveOptions as BaseReadHyperdriveOptions,
+  ReadWriteHyperdrive as BaseReadWriteHyperdrive,
+  ReadWriteHyperdriveOptions as BaseReadWriteHyperdriveOptions,
+} from "@delvtech/hyperdrive-js-core";
+import { ViemReadClientOptions, viemReadMixin } from "src/viem/viemReadMixin";
+import {
+  ViemReadWriteClientOptions,
   viemReadWriteMixin,
-  ViemReadWriteModelOptions,
 } from "src/viem/viemReadWriteMixin";
 
 export interface ReadHyperdriveOptions
-  extends ViemReadModelOptions<core.ReadHyperdriveOptions> {}
+  extends ViemReadClientOptions<BaseReadHyperdriveOptions> {}
 
-export class ReadHyperdrive extends viemReadMixin(core.ReadHyperdrive) {}
+export class ReadHyperdrive extends viemReadMixin(BaseReadHyperdrive) {}
 
 export interface ReadWriteHyperdriveOptions
-  extends ViemReadWriteModelOptions<core.ReadWriteHyperdriveOptions> {}
+  extends ViemReadWriteClientOptions<BaseReadWriteHyperdriveOptions> {}
 
 export class ReadWriteHyperdrive extends viemReadWriteMixin(
-  core.ReadWriteHyperdrive
+  BaseReadWriteHyperdrive,
 ) {}
