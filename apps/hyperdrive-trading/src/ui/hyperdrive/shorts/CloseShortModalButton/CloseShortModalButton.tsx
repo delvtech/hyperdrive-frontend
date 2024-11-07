@@ -5,7 +5,7 @@ import {
   findBaseToken,
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-js-core";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";

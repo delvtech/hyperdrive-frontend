@@ -1,10 +1,9 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-viem";
+import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js-core";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { sdkCache } from "src/sdk/sdkCache";
+import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
 import { useAccount } from "wagmi";
 
 type OpenShortPositionsData = {
@@ -17,13 +16,8 @@ export function usePortfolioShortsData(): {
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
-
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
-
-  const clients = usePublicClients(
-    Object.keys(appConfigForConnectedChain.chains).map(Number),
-  );
-  const queryEnabled = !!account && !!appConfigForConnectedChain && !!clients;
+  const queryEnabled = !!account && !!appConfigForConnectedChain;
 
   const { data: openShortPositions, status: openShortPositionsStatus } =
     useQuery({
@@ -33,22 +27,10 @@ export function usePortfolioShortsData(): {
         ? async () =>
             await Promise.all(
               appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-                const publicClient = clients[hyperdrive.chainId]?.publicClient;
-
-                if (!publicClient) {
-                  console.error(
-                    `No public client found for chainId ${hyperdrive.chainId}`,
-                  );
-                  return {
-                    hyperdrive,
-                    openShorts: [],
-                  };
-                }
-
                 const readHyperdrive = await getHyperdrive({
                   address: hyperdrive.address,
-                  publicClient,
-                  cache: sdkCache,
+                  drift: getDrift({ chainId: hyperdrive.chainId }),
+                  earliestBlock: hyperdrive.initializationBlock,
                 });
 
                 return {

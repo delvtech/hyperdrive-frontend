@@ -2,7 +2,7 @@ import {
   appConfig,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { getHprFromApr } from "@delvtech/hyperdrive-viem";
+import { getHprFromApr } from "@delvtech/hyperdrive-js-core";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";

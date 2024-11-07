@@ -4,7 +4,7 @@ import {
   appConfig,
   findBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { ClosedShort } from "@delvtech/hyperdrive-viem";
+import { ClosedShort } from "@delvtech/hyperdrive-js-core";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   createColumnHelper,

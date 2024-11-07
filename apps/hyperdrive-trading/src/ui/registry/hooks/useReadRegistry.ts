@@ -1,21 +1,20 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ReadRegistry } from "@delvtech/hyperdrive-js-core";
 import { useMemo } from "react";
-import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { usePublicClient } from "wagmi";
+import { useDrift } from "src/ui/drift/useDrift";
 
 export function useReadRegistry(chainId: number): ReadRegistry | undefined {
   const { registries } = useAppConfigForConnectedChain();
-  const publicClient = usePublicClient();
+  const drift = useDrift();
   return useMemo(
     () =>
-      publicClient
+      drift
         ? new ReadRegistry({
             address: registries[chainId],
-            publicClient,
-            cache: sdkCache,
+            drift,
+            cacheNamespace: chainId,
           })
         : undefined,
-    [publicClient, registries, chainId],
+    [drift, registries, chainId],
   );
 }

@@ -6,7 +6,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-js-core";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";

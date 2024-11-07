@@ -3,7 +3,7 @@ import {
   appConfig,
   findBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
+import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js-core";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";

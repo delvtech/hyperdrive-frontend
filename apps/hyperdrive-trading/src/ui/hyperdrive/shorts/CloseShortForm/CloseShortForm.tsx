@@ -5,7 +5,10 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-viem";
+import {
+  adjustAmountByPercentage,
+  OpenShort,
+} from "@delvtech/hyperdrive-js-core";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";

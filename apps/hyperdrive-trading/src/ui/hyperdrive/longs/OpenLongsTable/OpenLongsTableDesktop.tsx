@@ -8,7 +8,7 @@ import {
 import {
   calculateAprFromPrice,
   OpenLongPositionReceived,
-} from "@delvtech/hyperdrive-viem";
+} from "@delvtech/hyperdrive-js-core";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {

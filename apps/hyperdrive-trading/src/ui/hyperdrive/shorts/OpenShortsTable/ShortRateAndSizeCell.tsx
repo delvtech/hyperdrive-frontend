@@ -3,7 +3,7 @@ import {
   findBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-js-core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";

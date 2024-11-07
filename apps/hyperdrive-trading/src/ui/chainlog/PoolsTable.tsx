@@ -1,4 +1,4 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ReadRegistry } from "@delvtech/hyperdrive-js-core";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
@@ -9,13 +9,11 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { wagmiConfig } from "src/network/wagmiClient";
+import { getDrift } from "src/drift/getDrift";
 import { Status, decodeInstanceData } from "src/registry/data";
-import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -23,7 +21,7 @@ import { AddressCell } from "src/ui/chainlog/AddressCell";
 import { ChainCell } from "src/ui/chainlog/ChainCell";
 import { PausedCell } from "src/ui/chainlog/PausedCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
-import { Address, PublicClient } from "viem";
+import { Address } from "viem";
 
 export function PoolsTable(): ReactElement {
   const { data = [], isFetching } = usePoolsQuery();
@@ -225,15 +223,9 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
       // requests by 80% and data transfer by 65%.
       Promise.all(
         chainIds.map(async (chainId) => {
-          const publicClient = getPublicClient(wagmiConfig as any, {
-            chainId,
-          }) as PublicClient;
-
           const registry = new ReadRegistry({
             address: connectedAppConfig.registries[chainId],
-            publicClient,
-            cache: sdkCache,
-            cacheNamespace: chainId.toString(),
+            drift: getDrift({ chainId }),
           });
 
           return registry.getInstances().then((instances) => {
