@@ -3,7 +3,6 @@ import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-  TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-js-core";
 import classNames from "classnames";
@@ -23,7 +22,6 @@ interface OpenLongStatsProps {
   bondAmount: bigint;
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
-  activeToken: TokenConfig;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }
@@ -32,7 +30,6 @@ export function OpenLongStats({
   openLongPreviewStatus,
   amountPaid,
   bondAmount,
-  activeToken,
   asBase,
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {

@@ -368,7 +368,6 @@ export function OpenLongForm({
       primaryStats={
         <OpenLongStats
           hyperdrive={hyperdrive}
-          activeToken={activeToken}
           amountPaid={depositAmountAsBigInt || 0n}
           bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}
