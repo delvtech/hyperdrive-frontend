@@ -46,16 +46,7 @@ export function PrimaryStat({
         )}
       </div>
       <div className={valueContainerClassName}>
-        {valueLoading ? (
-          <Skeleton width={100} className="h-8" />
-        ) : (
-          <div className="flex items-baseline">
-            {value}
-            {valueUnit ? (
-              <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
-            ) : null}
-          </div>
-        )}
+        {valueLoading ? <Skeleton width={100} className="h-8" /> : value}
       </div>
       {subValue && (
         <div className="text-sm text-neutral-content">{subValue}</div>

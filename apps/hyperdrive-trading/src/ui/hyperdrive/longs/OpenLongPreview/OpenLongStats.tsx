@@ -108,25 +108,26 @@ export function OpenLongStats({
           ) : (
             <span
               className={classNames(
-                "flex items-baseline border align-text-bottom text-h3 font-bold",
+                "flex items-end border font-bold leading-none",
                 {
                   "text-base-content/80": !amountPaid,
                 },
               )}
             >
               <img src={baseToken.iconUrl} className="mr-1 h-8 rounded-full" />
-              <div className="leading-none flex">
+              <span className="inline-block border align-baseline leading-none">
                 {`${formatBalance({
                   balance: amountPaidInBase + yieldAtMaturity,
                   decimals: baseToken.decimals,
                   places: baseToken.places,
                 })}`}
-              </div>
+              </span>
+              <p className="ml-1 inline-block align-baseline leading-none">
+                {baseToken.symbol}
+              </p>
             </span>
           )
         }
-        valueUnit={`${baseToken.symbol}`}
-        valueContainerClassName="flex items-end flex-wrap"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
           isTestnetChain(hyperdrive.chainId)

@@ -71,6 +71,7 @@ module.exports = {
     lineHeight: {
       // used in FAQ and places where we want more space between full lines of
       // text.
+      none: "1",
       bodyText: "24px",
     },
     fontSize: {
