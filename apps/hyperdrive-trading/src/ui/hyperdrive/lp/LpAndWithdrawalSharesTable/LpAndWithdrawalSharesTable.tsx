@@ -20,6 +20,7 @@ import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { LpCurrentValueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
 import { ManageLpAndWithdrawalSharesButton } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
 import { SizeAndPoolShareCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
+import { TotalLpValue } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { WithdrawalQueueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
@@ -128,6 +129,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
                   {hyperdrive.name.replace(/\d{1,3}d/, "")}
                 </p>
               </div>
+              <TotalLpValue hyperdrive={hyperdrive} />
             </div>
             <OpenLpTableDesktop
               hyperdrive={hyperdrive}
