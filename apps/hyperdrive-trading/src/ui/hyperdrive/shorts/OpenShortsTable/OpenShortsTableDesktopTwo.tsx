@@ -139,7 +139,7 @@ export function OpenShortsContainer(): ReactElement {
               </div>
               <TotalOpenShortValue hyperdrive={hyperdrive} />
             </div>
-            <OpenShortsTableDesktopTwo
+            <OpenShortsTableDesktop
               hyperdrive={hyperdrive}
               openShorts={openShorts}
             />
@@ -150,7 +150,7 @@ export function OpenShortsContainer(): ReactElement {
   );
 }
 
-export function OpenShortsTableDesktopTwo({
+export function OpenShortsTableDesktop({
   hyperdrive,
   openShorts,
 }: {
