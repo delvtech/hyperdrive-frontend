@@ -23,7 +23,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { CurrentShortsValueCell } from "src/ui/hyperdrive/shorts/OpenShortsTable/CurrentShortsValueCell";
@@ -321,7 +321,7 @@ function getColumns({
       header: `Maturity Date`,
       cell: ({ row }) => {
         return (
-          <MaturesOnCellTwo
+          <MaturesOnCell
             hyperdrive={hyperdrive}
             maturity={row.original.maturity}
           />
