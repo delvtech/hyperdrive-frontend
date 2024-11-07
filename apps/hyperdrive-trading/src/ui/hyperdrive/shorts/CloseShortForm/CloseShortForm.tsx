@@ -22,7 +22,7 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits, parseUnits } from "viem";
@@ -151,7 +151,7 @@ export function CloseShortForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="Amount to redeem"
             token={`hy${baseToken.symbol}`}
@@ -183,7 +183,7 @@ export function CloseShortForm({
               </div>
             }
           />
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="You receive"
             token={

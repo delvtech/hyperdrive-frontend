@@ -35,7 +35,7 @@ import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOp
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
@@ -293,7 +293,7 @@ export function OpenShortForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name={`${baseToken.symbol}-input`}
             variant="lighter"
             inputLabel="Earn yield on"
@@ -395,7 +395,7 @@ export function OpenShortForm({
               ) : null
             }
           />
-          <TokenInputTwo
+          <TokenInput
             variant="lighter"
             name={`${baseToken.symbol}-input`}
             token={

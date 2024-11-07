@@ -35,7 +35,7 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
 import {
   TokenChoice,
   TokenPickerTwo,
@@ -250,7 +250,7 @@ export function OpenLongForm({
   return (
     <TransactionView
       tokenInput={
-        <TokenInputTwo
+        <TokenInput
           variant="lighter"
           settings={
             <div className="mb-3 flex w-full items-center justify-between">

@@ -29,7 +29,7 @@ import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice } from "src/ui/token/TokenPicker";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { formatUnits } from "viem";
@@ -237,7 +237,7 @@ export function RemoveLiquidityForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name="Input LP shares"
             token={`${baseToken.symbol}-LP`}
             settings={
@@ -284,7 +284,7 @@ export function RemoveLiquidityForm({
               setAmount(newAmount);
             }}
           />
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="You receive"
             token={

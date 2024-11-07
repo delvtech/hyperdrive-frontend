@@ -35,7 +35,7 @@ import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAdd
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
@@ -238,7 +238,7 @@ export function AddLiquidityForm2({
   return (
     <TransactionView
       tokenInput={
-        <TokenInputTwo
+        <TokenInput
           name={activeToken.symbol}
           variant="lighter"
           value={depositAmount ?? ""}
