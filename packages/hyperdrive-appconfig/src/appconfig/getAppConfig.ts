@@ -538,7 +538,16 @@ const hyperdriveKindResolvers: Record<
         yieldSourceId: "morphoCbethUsdc",
       });
     }
-
+    if (hyperdriveName.includes("Morpho Blue cbBTC/USDC Hyperdrive")) {
+      return getMorphoHyperdrive({
+        hyperdrive,
+        // In Morpho Blue, the base token is the loan token which for this market is USDC
+        baseTokenTags: ["stablecoin"],
+        baseTokenIconUrl: USDC_ICON_URL,
+        baseTokenPlaces: 2,
+        yieldSourceId: "morphoCbbtcUsdc",
+      });
+    }
     throw new Error(
       `Unknown MorphoBlueHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
     );

@@ -10,6 +10,7 @@ declare module "src/yieldSources/types" {
     morphoUsdeDai: "morphoUsdeDai";
     morphoWstethUsdc: "morphoWstethUsdc";
     morphoWstethUsda: "morphoWstethUsda";
+    morphoCbbtcUsdc: "morphoCbbtcUsdc";
     reth: "reth";
     ezeth: "ezeth";
     stusd: "stusd";
@@ -131,4 +132,11 @@ export const sgyd: YieldSource = {
   protocol: "gyroscope",
   historicalRatePeriod: 1,
   rewardsFn: "fetchGyroscopeRewards",
+};
+export const morphoCbbtcUsdc: YieldSource = {
+  chainId: mainnet.id,
+  id: "morphoCbbtcUsdc",
+  shortName: "Morpho cbBTC/USDC",
+  protocol: "morpho",
+  historicalRatePeriod: 1,
 };
