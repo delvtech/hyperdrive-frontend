@@ -1,6 +1,6 @@
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { TabsTwo } from "src/ui/base/components/Tabs/TabsTwo";
+import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { OpenLongsContainer } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktop";
 import { LpAndWithdrawalSharesContainer } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { OpenShortsContainer } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktop";
@@ -12,7 +12,7 @@ export function Portfolio(): ReactElement {
   const activeTab = position ?? "longs";
   return (
     <div className="flex w-full flex-col items-center bg-base-100 py-8">
-      <TabsTwo
+      <Tabs
         activeTabId={activeTab}
         tabs={[
           {
