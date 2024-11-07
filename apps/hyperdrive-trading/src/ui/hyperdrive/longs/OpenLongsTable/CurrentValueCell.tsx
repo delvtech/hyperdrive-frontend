@@ -11,7 +11,7 @@ import Skeleton from "react-loading-skeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 
-export function CurrentValueCellTwo({
+export function CurrentValueCell({
   row,
   hyperdrive,
 }: {
