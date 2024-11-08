@@ -1,8 +1,8 @@
 import {
   AnyReward,
   appConfig,
+  getRewardsFn,
   HyperdriveConfig,
-  rewardFunctions,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
@@ -14,8 +14,10 @@ export function useRewards(hyperdriveConfig: HyperdriveConfig): {
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
-  const rewardsFn =
-    appConfig.yieldSources[hyperdriveConfig.yieldSource].rewardsFn;
+  const rewardsFn = getRewardsFn({
+    yieldSourceId: hyperdriveConfig.yieldSource,
+    appConfig,
+  });
 
   const queryEnabled = !!rewardsFn;
 
@@ -30,7 +32,7 @@ export function useRewards(hyperdriveConfig: HyperdriveConfig): {
           const publicClient = getPublicClient(wagmiConfig as any, {
             chainId: hyperdriveConfig.chainId,
           }) as PublicClient;
-          return rewardFunctions[rewardsFn](publicClient);
+          return rewardsFn(publicClient);
         }
       : undefined,
   });
