@@ -1479,15 +1479,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/drift-viem@^0.0.1-beta.11":
-  version "0.0.1-beta.11"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.0.1-beta.11.tgz#9cba8d1164939fb30f99e6caf8abbcea17ac48de"
-  integrity sha512-bO7eH8ysWKimeuIq3xK8oyG+TDuzoaxOAXnuvoDlot7XuR4Uuqfp4cQuQR8ob0mvIasEh0ZqKp/LoJ2Jn75ykg==
+"@delvtech/drift-viem@^0.0.1-beta.13":
+  version "0.0.1-beta.13"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.0.1-beta.13.tgz#9f5f38a50f72ea887319ea9480559fa01956c29b"
+  integrity sha512-i7PUAmUdq7IRRSjQO4JozV7swvYFcED3X4TT1l5RF0kXAD5drbMHIcpIB1D+2N7V2H2MCd2D4PDWDqVu+Hotzg==
 
-"@delvtech/drift@^0.0.1-beta.9":
-  version "0.0.1-beta.9"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.0.1-beta.9.tgz#802a2d226fe3c19a9e1e5b81982ed8e7a1dd48ee"
-  integrity sha512-XAdRFE3HMlzhnlDEb8ehkOpdcwZSz7v0DZ8l4dvlKAY6jmta2Uew43gAt7UfuO4ATlzWPuw5VhTXf82K0m+stw==
+"@delvtech/drift@^0.0.1-beta.11":
+  version "0.0.1-beta.11"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.0.1-beta.11.tgz#939c2fe6a07dacfa58ba72cf30ba4917fde7e91d"
+  integrity sha512-YjMLT4xJszZPVfNVK+t7rINwereQ4yMgVOS+VNm0NsMqWmv5vXxjnDGtLHg1RyeZy93DVnxPxTFj0YJxB/4t3g==
   dependencies:
     lodash.ismatch "^4.4.0"
     lru-cache "^10.0.1"
