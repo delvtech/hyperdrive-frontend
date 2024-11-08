@@ -5,9 +5,9 @@ import {
   ReadWriteAdapter,
   ReadWriteContract,
 } from "@delvtech/drift";
+import { NULL_BYTES } from "src/base/constants";
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { HyperdriveAbi } from "src/hyperdrive/abi";
-import { NULL_BYTES } from "src/hyperdrive/constants";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";

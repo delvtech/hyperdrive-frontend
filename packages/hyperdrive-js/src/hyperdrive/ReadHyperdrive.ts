@@ -12,12 +12,13 @@ import {
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 import { assertNever } from "src/base/assertNever";
 import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
-import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
+import { MAX_UINT256, NULL_BYTES, SECONDS_PER_YEAR } from "src/base/constants";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
 import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
+import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/assetId/decodeAssetFromTransferSingleEventData";
 import { getCheckpointTime } from "src/hyperdrive/checkpoint/getCheckpointTime";
 import {
   Checkpoint,
@@ -25,8 +26,7 @@ import {
   GetCheckpointParams,
   GetCheckpointTimeParams,
 } from "src/hyperdrive/checkpoint/types";
-import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";
-import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/decodeAssetFromTransferSingleEventData";
+import { MAX_ITERATIONS } from "src/hyperdrive/constants";
 import {
   ClosedLong,
   Long,

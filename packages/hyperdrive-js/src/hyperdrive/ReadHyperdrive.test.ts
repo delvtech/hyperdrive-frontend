@@ -1,8 +1,8 @@
 import { ZERO_ADDRESS } from "@delvtech/drift";
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ALICE, BOB } from "src/base/testing/accounts";
+import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/assetId/decodeAssetFromTransferSingleEventData";
 import { CheckpointEvent } from "src/hyperdrive/checkpoint/types";
-import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/decodeAssetFromTransferSingleEventData";
 import {
   simplePoolConfig30Days,
   simplePoolConfig7Days,
