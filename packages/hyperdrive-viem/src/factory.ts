@@ -3,7 +3,7 @@ import {
   ReadFactoryOptions as BaseReadFactoryOptions,
   ReadWriteFactory as BaseReadWriteFactory,
   ReadWriteFactoryOptions as BaseReadWriteFactoryOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { ViemReadClientOptions, viemReadMixin } from "src/viem/viemReadMixin";
 import {
   ViemReadWriteClientOptions,

@@ -4,7 +4,7 @@ import {
   Constructor,
   ReadClient,
   ReadClientOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { PublicClient } from "viem";
 
 // Replace the `drift` option with `publicClient`.

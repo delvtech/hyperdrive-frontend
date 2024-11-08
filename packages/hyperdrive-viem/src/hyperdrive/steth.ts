@@ -3,7 +3,7 @@ import {
   ReadStEthHyperdriveOptions as BaseReadStEthHyperdriveOptions,
   ReadWriteStEthHyperdrive as BaseReadWriteStEthHyperdrive,
   ReadWriteStEthHyperdriveOptions as BaseReadWriteStEthHyperdriveOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { ViemReadClientOptions, viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 

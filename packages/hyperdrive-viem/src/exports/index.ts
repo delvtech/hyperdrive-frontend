@@ -1,7 +1,7 @@
 import {
   ReadClientOptions as BaseReadClientOptions,
   ReadWriteClientOptions as BaseReadWriteClientOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { ViemReadClientOptions } from "src/viem/viemReadMixin";
 import { ViemReadWriteClientOptions } from "src/viem/viemReadWriteMixin";
 
@@ -145,4 +145,4 @@ export {
   type REthAbi,
   type Short,
   type StEthAbi,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";

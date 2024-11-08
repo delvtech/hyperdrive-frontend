@@ -1,6 +1,6 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
-import { getHyperdrive as baseGetHyperdrive } from "@delvtech/hyperdrive-js-core";
+import { getHyperdrive as baseGetHyperdrive } from "@delvtech/hyperdrive-js";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,

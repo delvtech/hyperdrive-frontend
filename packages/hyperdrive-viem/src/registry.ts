@@ -3,7 +3,7 @@ import {
   ReadRegistryOptions as BaseReadRegistryOptions,
   ReadWriteRegistry as BaseReadWriteRegistry,
   ReadWriteRegistryOptions as BaseReadWriteRegistryOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { ViemReadClientOptions, viemReadMixin } from "src/viem/viemReadMixin";
 import {
   ViemReadWriteClientOptions,

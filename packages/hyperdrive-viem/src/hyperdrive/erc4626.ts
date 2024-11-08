@@ -3,7 +3,7 @@ import {
   ReadMockErc4626Hyperdrive as BaseReadMockErc4626Hyperdrive,
   ReadWriteErc4626Hyperdrive as BaseReadWriteErc4626Hyperdrive,
   ReadWriteMockErc4626Hyperdrive as BaseReadWriteMockErc4626Hyperdrive,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 

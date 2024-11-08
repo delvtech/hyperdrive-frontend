@@ -1,7 +1,7 @@
 import {
   ReadEzEthHyperdrive as BaseReadEzEthHyperdrive,
   ReadWriteEzEthHyperdrive as BaseReadWriteEzEthHyperdrive,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 

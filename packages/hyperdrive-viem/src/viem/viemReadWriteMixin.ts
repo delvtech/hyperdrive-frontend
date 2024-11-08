@@ -4,7 +4,7 @@ import {
   Constructor,
   ReadWriteClient,
   ReadWriteClientOptions,
-} from "@delvtech/hyperdrive-js-core";
+} from "@delvtech/hyperdrive-js";
 import { PublicClient, WalletClient } from "viem";
 
 // Replace the `drift` option with `publicClient` and `walletClient`.
