@@ -1,0 +1,64 @@
+{
+  "name": "@delvtech/hyperdrive-js",
+  "version": "0.0.1",
+  "license": "AGPL-3.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "watch": "npm run build -- --watch",
+    "test": "vitest run",
+    "test:watch": "vitest --reporter=verbose",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@delvtech/drift": "^0.0.1-beta.11"
+  },
+  "dependencies": {
+    "@delvtech/fixed-point-wasm": "^0.0.6",
+    "@delvtech/hyperdrive-artifacts": "^1.0.18",
+    "@delvtech/hyperdrive-wasm": "^0.15.3",
+    "lodash.groupby": "^4.6.0",
+    "lodash.mapvalues": "^4.6.0",
+    "semver": "^7.6.3"
+  },
+  "devDependencies": {
+    "@delvtech/drift": "^0.0.1-beta.11",
+    "@hyperdrive/eslint-config": "*",
+    "@hyperdrive/prettier-config": "*",
+    "@hyperdrive/tsconfig": "*",
+    "@types/lodash.groupby": "^4.6.9",
+    "@types/lodash.mapvalues": "^4.6.9",
+    "@types/sinon": "^17.0.3",
+    "abitype": "^1.0.5",
+    "dotenv": "^16.4.5",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "4.0.0",
+    "sinon": "^18.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.4"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./v1.0.14": {
+      "types": "./dist/v1.0.14.d.ts",
+      "default": "./dist/v1.0.14.js",
+      "require": "./dist/v1.0.14.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
