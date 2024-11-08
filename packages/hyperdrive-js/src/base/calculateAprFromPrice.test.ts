@@ -1,4 +1,4 @@
-import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
+import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
 import { expect, test } from "vitest";
 
 test("calculateAprFromPrice should return fixed rate an open long position is currently earning", async () => {

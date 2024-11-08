@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 
-import { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
+import { calculateMatureLongYieldAfterFees } from "src/hyperdrive/longs/calculateMatureLongYieldAfterFees";
 
 test("calculateMatureLongYieldAfterFees should return the yield a mature long has earned after fees", async () => {
   const value = calculateMatureLongYieldAfterFees({

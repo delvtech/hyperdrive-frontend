@@ -1,6 +1,6 @@
 import { Contract, ContractReadOptions, ReadContract } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
-import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 import {
   EzEthHyperdriveAbi,
   ezEthHyperdriveAbi,

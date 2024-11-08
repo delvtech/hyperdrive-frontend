@@ -1,4 +1,4 @@
-import { AssetType, parseAssetType } from "src/pool/parseAssetType";
+import { AssetType, parseAssetType } from "src/hyperdrive/parseAssetType";
 
 export function decodeAssetFromTransferSingleEventData(
   eventData: `0x${string}`,

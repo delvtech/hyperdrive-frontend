@@ -8,15 +8,15 @@ export {
   type HyperdriveOptions,
 } from "src/hyperdrive/getHyperdrive";
 
-export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/base/abi";
+export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/abi";
 export {
   ReadHyperdrive,
   type ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 export {
   ReadWriteHyperdrive,
   type ReadWriteHyperdriveOptions,
-} from "src/hyperdrive/base/ReadWriteHyperdrive";
+} from "src/hyperdrive/ReadWriteHyperdrive";
 
 // erc-4626
 export { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
@@ -50,27 +50,31 @@ export {
   type ReadWriteStEthHyperdriveOptions,
 } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
 
-export { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
+export { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
 
 // pool
-export type { PoolConfig, PoolInfo } from "src/pool/types";
+export type { PoolConfig, PoolInfo } from "src/hyperdrive/types";
 
 // shorts
-export type { ClosedShort, OpenShort, Short } from "src/shorts/types";
+export type {
+  ClosedShort,
+  OpenShort,
+  Short,
+} from "src/hyperdrive/shorts/types";
 
 // longs
-export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
+export { calculateMatureLongYieldAfterFees } from "src/hyperdrive/longs/calculateMatureLongYieldAfterFees";
 export type {
   ClosedLong,
   Long,
   OpenLongPositionReceived,
-} from "src/longs/types";
+} from "src/hyperdrive/longs/types";
 
 // lp
-export type { ClosedLpShares } from "src/lp/ClosedLpShares";
+export type { ClosedLpShares } from "src/hyperdrive/lp/ClosedLpShares";
 
 // withdrawal shares
-export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
+export type { RedeemedWithdrawalShares } from "src/hyperdrive/withdrawalShares/RedeemedWithdrawalShares";
 
 // Registry //
 

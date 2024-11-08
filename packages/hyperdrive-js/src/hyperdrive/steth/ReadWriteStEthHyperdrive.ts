@@ -3,7 +3,7 @@ import { Constructor } from "src/base/types";
 import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
-} from "src/hyperdrive/base/ReadWriteHyperdrive";
+} from "src/hyperdrive/ReadWriteHyperdrive";
 import {
   ReadStEthHyperdriveMixin,
   readStEthHyperdriveMixin,

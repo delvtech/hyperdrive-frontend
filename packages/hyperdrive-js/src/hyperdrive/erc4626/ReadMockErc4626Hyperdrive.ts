@@ -1,6 +1,6 @@
 import { ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
-import { ReadHyperdriveOptions } from "src/hyperdrive/base/ReadHyperdrive";
+import { ReadHyperdriveOptions } from "src/hyperdrive/ReadHyperdrive";
 import { ReadErc4626Hyperdrive } from "src/hyperdrive/erc4626/ReadErc4626Hyperdrive";
 import { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
 

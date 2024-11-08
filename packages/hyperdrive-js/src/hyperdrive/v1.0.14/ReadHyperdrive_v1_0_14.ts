@@ -4,7 +4,7 @@ import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 
 /**
  * A Hyperdrive instance that is compatible with Hyperdrive <= v1.0.14.

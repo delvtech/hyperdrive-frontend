@@ -4,7 +4,7 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadREth } from "src/token/reth/ReadREth";
 

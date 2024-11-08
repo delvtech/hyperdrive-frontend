@@ -4,7 +4,7 @@ import {
   FunctionReturn,
   Pretty,
 } from "@delvtech/drift";
-import { HyperdriveAbi } from "src/hyperdrive/base/abi";
+import { HyperdriveAbi } from "src/hyperdrive/abi";
 
 export type Checkpoint = Pretty<
   {

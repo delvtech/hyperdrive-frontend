@@ -1,6 +1,6 @@
 import { ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
-import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { readREthHyperdriveMixin } from "src/hyperdrive/reth/ReadREthHyperdrive";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 import { ReadWriteREth } from "src/token/reth/ReadWriteREth";

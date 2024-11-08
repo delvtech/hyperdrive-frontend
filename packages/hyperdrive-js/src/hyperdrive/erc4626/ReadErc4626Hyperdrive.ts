@@ -3,7 +3,7 @@ import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 import { ReadErc4626 } from "src/token/erc4626/ReadErc4626";
 
 export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(

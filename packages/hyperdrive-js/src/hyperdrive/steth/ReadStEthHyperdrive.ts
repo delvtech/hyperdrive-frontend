@@ -4,7 +4,7 @@ import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
 

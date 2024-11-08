@@ -3,7 +3,7 @@ import { Address } from "abitype";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
-import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 
 export interface ReadFactoryOptions extends ReadContractClientOptions {}
 

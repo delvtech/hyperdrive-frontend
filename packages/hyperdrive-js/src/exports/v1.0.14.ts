@@ -1,6 +1,6 @@
 // base
-export { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadHyperdrive_v1_0_14";
-export { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadWriteHyperdrive_v1_0_14";
+export { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadHyperdrive_v1_0_14";
+export { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadWriteHyperdrive_v1_0_14";
 
 // erc-4626
 export { ReadErc4626Hyperdrive_v1_0_14 } from "src/hyperdrive/erc4626/v1.0.14/ReadErc4626Hyperdrive_v1_0_14";

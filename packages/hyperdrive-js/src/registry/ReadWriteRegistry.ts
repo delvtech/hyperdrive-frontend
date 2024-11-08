@@ -8,7 +8,7 @@ import {
 import { Address } from "abitype";
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
-import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
 import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";

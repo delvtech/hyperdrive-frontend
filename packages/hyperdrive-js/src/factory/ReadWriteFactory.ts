@@ -8,7 +8,7 @@ import {
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
-import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 
 export interface ReadWriteFactoryOptions
   extends ReplaceProps<ReadFactoryOptions, ReadWriteContractClientOptions> {}

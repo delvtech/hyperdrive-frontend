@@ -1,4 +1,4 @@
-import { PoolInfo } from "src/pool/types";
+import { PoolInfo } from "src/hyperdrive/types";
 
 export const simplePoolInfo: PoolInfo = {
   shareReserves: 10000000000000000000000000n,

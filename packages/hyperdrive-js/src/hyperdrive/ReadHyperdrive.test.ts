@@ -1,14 +1,14 @@
 import { ZERO_ADDRESS } from "@delvtech/drift";
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ALICE, BOB } from "src/base/testing/accounts";
-import { CheckpointEvent } from "src/checkpoint/types";
-import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
-import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
+import { CheckpointEvent } from "src/hyperdrive/checkpoint/types";
+import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/decodeAssetFromTransferSingleEventData";
 import {
   simplePoolConfig30Days,
   simplePoolConfig7Days,
-} from "src/pool/testing/PoolConfig";
-import { simplePoolInfo } from "src/pool/testing/PoolInfo";
+} from "src/hyperdrive/testing/PoolConfig";
+import { simplePoolInfo } from "src/hyperdrive/testing/PoolInfo";
+import { setupReadHyperdrive } from "src/hyperdrive/testing/setupReadHyperdrive";
 import { assert, expect, test } from "vitest";
 
 test("getVersion should return the parsed version of the contract", async () => {

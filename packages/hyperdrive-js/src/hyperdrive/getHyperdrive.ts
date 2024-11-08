@@ -1,20 +1,20 @@
 import { Drift, ReadWriteAdapter } from "@delvtech/drift";
 import semver from "semver";
-import { hyperdriveAbi } from "src/hyperdrive/base/abi";
+import { hyperdriveAbi } from "src/hyperdrive/abi";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/base/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive";
 import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
-} from "src/hyperdrive/base/ReadWriteHyperdrive";
-import { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadHyperdrive_v1_0_14";
-import { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/base/v1.0.14/ReadWriteHyperdrive_v1_0_14";
+} from "src/hyperdrive/ReadWriteHyperdrive";
 import { ReadStEthHyperdrive } from "src/hyperdrive/steth/ReadStEthHyperdrive";
 import { ReadWriteStEthHyperdrive } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
 import { ReadStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadStEthHyperdrive_v1_0_14";
 import { ReadWriteStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadWriteStEthHyperdrive_v1_0_14";
+import { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadHyperdrive_v1_0_14";
+import { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadWriteHyperdrive_v1_0_14";
 
 export interface HyperdriveOptions<T extends Drift = Drift>
   extends ReadHyperdriveOptions {

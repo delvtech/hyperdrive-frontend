@@ -1,4 +1,4 @@
-import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
+import { calculateShortAccruedYield } from "src/hyperdrive/shorts/calculateShortAccruedYield";
 import { expect, test } from "vitest";
 
 test("calculateShortAccruedYield should return the yield a short has accrued since it was opened", async () => {
