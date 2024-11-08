@@ -29,7 +29,7 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -298,7 +298,7 @@ export function AddLiquidityForm({
             />
           }
           settings={
-            <SlippageSettingsTwo
+            <SlippageSettings
               onSlippageChange={(slippage) => {
                 window.plausible("formChange", {
                   props: {

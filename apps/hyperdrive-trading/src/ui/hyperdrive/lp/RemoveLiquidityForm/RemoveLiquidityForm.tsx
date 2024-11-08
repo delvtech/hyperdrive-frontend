@@ -28,7 +28,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -240,7 +240,7 @@ export function RemoveLiquidityForm({
             name="Input LP shares"
             token={`${baseToken.symbol}-LP`}
             settings={
-              <SlippageSettingsTwo
+              <SlippageSettings
                 onSlippageChange={(slippage) => {
                   window.plausible("formChange", {
                     props: {

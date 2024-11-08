@@ -34,7 +34,7 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -333,7 +333,7 @@ export function OpenShortForm({
             settings={
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
-                <SlippageSettingsTwo
+                <SlippageSettings
                   onSlippageChange={(slippage) => {
                     window.plausible("formChange", {
                       props: {

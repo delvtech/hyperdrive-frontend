@@ -34,7 +34,7 @@ import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import {
   TokenChoice,
@@ -255,7 +255,7 @@ export function OpenLongForm({
           settings={
             <div className="mb-3 flex w-full items-center justify-between">
               <PositionPicker hyperdrive={hyperdrive} />
-              <SlippageSettingsTwo
+              <SlippageSettings
                 onSlippageChange={(slippage) => {
                   window.plausible("formChange", {
                     props: {

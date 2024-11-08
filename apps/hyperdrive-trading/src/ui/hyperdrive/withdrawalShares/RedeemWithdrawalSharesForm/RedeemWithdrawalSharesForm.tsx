@@ -21,7 +21,7 @@ import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalSha
 import { TransactionViewOld } from "src/ui/hyperdrive/TransactionView";
 import { WithdrawTokenPicker } from "src/ui/hyperdrive/WithdrawTokenPicker";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -186,7 +186,7 @@ export function RedeemWithdrawalSharesForm({
           )}
           onChange={(newAmount) => setAmount(newAmount)}
           settings={
-            <SlippageSettingsTwo
+            <SlippageSettings
               onSlippageChange={setSlippage}
               slippage={slippage}
               activeOption={activeSlippageOption}
