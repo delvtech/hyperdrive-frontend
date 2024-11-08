@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import { readREthHyperdriveMixin } from "src/hyperdrive/reth/ReadREthHyperdrive";
@@ -23,7 +23,8 @@ export function readWriteREthHyperdriveMixin<
   return class extends readREthHyperdriveMixin(Base) {
     async getBaseToken(): Promise<ReadWriteEth> {
       return new ReadWriteEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
@@ -33,9 +34,9 @@ export function readWriteREthHyperdriveMixin<
       const { vaultSharesToken } = await this.getPoolConfig(options);
       return new ReadWriteREth({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
   };

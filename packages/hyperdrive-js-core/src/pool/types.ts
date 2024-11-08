@@ -1,4 +1,4 @@
-import { FunctionReturn } from "@delvtech/drift";
+import { FunctionReturn } from "@delvtech/evm-client";
 import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 
 export type PoolConfig = FunctionReturn<HyperdriveAbi, "getPoolConfig">;

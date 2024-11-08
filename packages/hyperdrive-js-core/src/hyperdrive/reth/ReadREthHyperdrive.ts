@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { Constructor } from "src/base/types";
 import {
@@ -17,12 +17,12 @@ export class ReadREthHyperdrive extends readREthHyperdriveMixin(
  */
 export interface ReadREthHyperdriveMixin {
   /**
-   * Get a client for ETH, the base token for this Hyperdrive instance.
+   * Get a model of ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a client for the rETH token for this Hyperdrive instance.
+   * Get a model of the rETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadREth>;
 }
@@ -42,7 +42,8 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
@@ -50,9 +51,9 @@ export function readREthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const { vaultSharesToken } = await this.getPoolConfig(options);
       return new ReadREth({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
 

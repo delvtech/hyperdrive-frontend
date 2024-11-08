@@ -1493,6 +1493,16 @@
     lru-cache "^10.0.1"
     safe-stable-stringify "^2.5.0"
 
+"@delvtech/evm-client@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
+  integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==
+  dependencies:
+    "@types/lodash.ismatch" "^4.4.9"
+    fast-safe-stringify "^2.1.1"
+    lodash.ismatch "^4.4.0"
+    lru-cache "^10.0.1"
+
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -4714,6 +4724,13 @@
   version "4.6.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.groupby/-/lodash.groupby-4.6.9.tgz#ea1aa9da1038ca50894d1fe1a3b5dabdf865d99c"
   integrity sha512-z2xtCX2ko7GrqORnnYea4+ksT7jZNAvaOcLd6mP9M7J09RHvJs06W8BGdQQAX8ARef09VQLdeRilSOcfHlDQJQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.ismatch@^4.4.9":
+  version "4.4.9"
+  resolved "https://registry.yarnpkg.com/@types/lodash.ismatch/-/lodash.ismatch-4.4.9.tgz#97b4317f7dc3975bb51660a0f9a055ac7b67b134"
+  integrity sha512-qWihnStOPKH8urljLGm6ZOEdN/5Bt4vxKR81tL3L4ArUNLvcf9RW3QSnPs21eix5BiqioSWq4aAXD4Iep+d0fw==
   dependencies:
     "@types/lodash" "*"
 
@@ -9258,7 +9275,7 @@ fast-redact@^3.0.0:
   resolved "https://registry.yarnpkg.com/fast-redact/-/fast-redact-3.5.0.tgz#e9ea02f7e57d0cd8438180083e93077e496285e4"
   integrity sha512-dwsoQlS7h9hMeYUq1W++23NDcBLV4KqONnITDV9DjfS3q1SgDGVrBdvvTLUotWtPSD7asWDV9/CmsZPy8Hf70A==
 
-fast-safe-stringify@^2.0.6:
+fast-safe-stringify@^2.0.6, fast-safe-stringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz#c406a83b6e70d9e35ce3b30a81141df30aeba884"
   integrity sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==

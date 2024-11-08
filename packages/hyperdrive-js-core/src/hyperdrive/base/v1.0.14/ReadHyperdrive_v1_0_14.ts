@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { fixed } from "src/fixed-point";
 import {

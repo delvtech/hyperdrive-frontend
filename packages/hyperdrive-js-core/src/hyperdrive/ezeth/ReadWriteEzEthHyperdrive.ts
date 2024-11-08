@@ -1,4 +1,7 @@
-import { ContractReadOptions, ReadWriteContract } from "@delvtech/drift";
+import {
+  CachedReadWriteContract,
+  ContractReadOptions,
+} from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
 import {
@@ -10,12 +13,12 @@ import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
 export class ReadWriteEzEthHyperdrive extends readWriteEzEthHyperdriveMixin(
-  ReadWriteHyperdrive,
+  ReadWriteHyperdrive
 ) {}
 
 export interface ReadWriteEzEthHyperdriveMixin
   extends ReadEzEthHyperdriveMixin {
-  ezEthHyperdriveContract: ReadWriteContract<EzEthHyperdriveAbi>;
+  ezEthHyperdriveContract: CachedReadWriteContract<EzEthHyperdriveAbi>;
   getBaseToken(options?: ContractReadOptions): Promise<ReadWriteEth>;
   getSharesToken(options?: ContractReadOptions): Promise<ReadWriteErc20>;
 }
@@ -24,26 +27,27 @@ export interface ReadWriteEzEthHyperdriveMixin
  * @internal
  */
 export function readWriteEzEthHyperdriveMixin<
-  T extends Constructor<ReadWriteHyperdrive>,
+  T extends Constructor<ReadWriteHyperdrive>
 >(Base: T): Constructor<ReadWriteEzEthHyperdriveMixin> & T {
   return class extends readEzEthHyperdriveMixin(Base) {
-    declare ezEthHyperdriveContract: ReadWriteContract<EzEthHyperdriveAbi>;
+    declare ezEthHyperdriveContract: CachedReadWriteContract<EzEthHyperdriveAbi>;
 
     async getBaseToken(): Promise<ReadWriteEth> {
       return new ReadWriteEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
     async getSharesToken(
-      options?: ContractReadOptions,
+      options?: ContractReadOptions
     ): Promise<ReadWriteErc20> {
       const { vaultSharesToken } = await this.getPoolConfig(options);
       return new ReadWriteErc20({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
   };

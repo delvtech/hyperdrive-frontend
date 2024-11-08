@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -15,7 +15,7 @@ export class ReadErc4626Hyperdrive extends readErc4626HyperdriveMixin(
  */
 export interface ReadErc4626HyperdriveMixin {
   /**
-   * Get a client for the tokenized vault for this Hyperdrive instance.
+   * Get a model of the tokenized vault for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadErc4626>;
 }
@@ -38,9 +38,9 @@ export function readErc4626HyperdriveMixin<
 
       return new ReadErc4626({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
   };

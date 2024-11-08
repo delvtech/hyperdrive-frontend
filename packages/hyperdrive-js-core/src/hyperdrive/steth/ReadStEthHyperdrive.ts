@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { fixed } from "src/fixed-point";
 import {
@@ -8,7 +8,22 @@ import {
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadStEth } from "src/token/steth/ReadStEth";
 
-export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {}
+export interface ReadStEthHyperdriveOptions extends ReadHyperdriveOptions {
+  /**
+   * The `StETHHyperdrive` contract stores and operates on Lido balances in
+   * shares. However, since users are most familiar with stETH public balances,
+   * this model will accept and return balances in stETH by default and convert
+   * them to shares when interacting with the contract to ease UI integration.
+   *
+   * To use shares instead of stETH, set this to `true`.
+   *
+   * @default false
+   *
+   * @see
+   * https://docs.lido.fi/guides/lido-tokens-integration-guide#bookkeeping-shares
+   */
+  useSharesAccounting?: boolean;
+}
 
 export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadHyperdrive,
@@ -23,12 +38,12 @@ export class ReadStEthHyperdrive extends readStEthHyperdriveMixin(
  */
 export interface ReadStEthHyperdriveMixin {
   /**
-   * Get a client for ETH, the base token for this Hyperdrive instance.
+   * Get a model of ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a client for the Lido stETH token for this Hyperdrive instance.
+   * Get a model of the Lido stETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadStEth>;
 }
@@ -48,7 +63,8 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
@@ -56,9 +72,9 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const { vaultSharesToken } = await this.getPoolConfig();
       return new ReadStEth({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
 

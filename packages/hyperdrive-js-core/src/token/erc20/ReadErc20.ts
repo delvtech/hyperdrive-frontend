@@ -1,36 +1,34 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
-import { Address } from "abitype";
-import { ReadContractClientOptions } from "src/drift/ContractClient";
-import { ReadClient } from "src/drift/ReadClient";
+import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
+import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 import { erc20Abi, Erc20Abi } from "src/token/erc20/abi";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadErc20Options extends ReadContractClientOptions {}
+export interface ReadErc20Options extends ReadContractModelOptions {}
 
-export class ReadErc20 extends ReadClient implements ReadToken {
-  contract: Contract<Erc20Abi>;
+export class ReadErc20 extends ReadModel implements ReadToken {
+  contract: CachedReadContract<Erc20Abi>;
 
   constructor({
     debugName = "ERC-20 Token",
     address,
     cache,
-    cacheNamespace,
-    ...rest
+    namespace,
+    ...modelOptions
   }: ReadErc20Options) {
-    super({ debugName, ...rest });
-    this.contract = this.drift.contract({
+    super({ debugName, ...modelOptions });
+    this.contract = this.contractFactory({
       abi: erc20Abi,
       address,
       cache,
-      cacheNamespace,
+      namespace,
     });
   }
 
-  get address(): Address {
+  get address(): `0x${string}` {
     return this.contract.address;
   }
-  get namespace(): PropertyKey | undefined {
-    return this.contract.cacheNamespace;
+  get namespace(): string | undefined {
+    return this.contract.namespace;
   }
 
   getName(): Promise<string> {

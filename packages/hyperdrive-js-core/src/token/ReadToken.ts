@@ -1,7 +1,7 @@
-import { ContractReadOptions } from "@delvtech/drift";
-import { ReadClient } from "src/drift/ReadClient";
+import { ContractReadOptions } from "@delvtech/evm-client";
+import { ReadModel } from "src/model/ReadModel";
 
-export interface ReadToken extends ReadClient {
+export interface ReadToken extends ReadModel {
   address: `0x${string}`;
 
   /**

@@ -1,24 +1,23 @@
 import {
+  CachedReadWriteContract,
   ContractReadOptions,
-  Drift,
-  ReadWriteAdapter,
-  ReadWriteContract,
-  ReplaceProps,
-} from "@delvtech/drift";
+} from "@delvtech/evm-client";
 import { Address } from "abitype";
-import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
+import { Override } from "src/base/types";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
+import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
 import { RegistryAbi } from "src/registry/abi";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
 export interface ReadWriteRegistryOptions
-  extends ReplaceProps<ReadRegistryOptions, ReadWriteContractClientOptions> {}
+  extends Override<ReadRegistryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteRegistry extends ReadRegistry {
-  declare drift: Drift<ReadWriteAdapter>;
-  declare contract: ReadWriteContract<RegistryAbi>;
+  declare contract: CachedReadWriteContract<RegistryAbi>;
+  declare contractFactory: ReadWriteContractFactory;
 
   constructor(options: ReadWriteRegistryOptions) {
     super(options);
@@ -35,9 +34,8 @@ export class ReadWriteRegistry extends ReadRegistry {
       (address) =>
         new ReadWriteFactory({
           address,
-          drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          contractFactory: this.contractFactory,
+          network: this.network,
         }),
     );
   }
@@ -67,9 +65,8 @@ export class ReadWriteRegistry extends ReadRegistry {
       (address) =>
         new ReadWriteHyperdrive({
           address,
-          drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          contractFactory: this.contractFactory,
+          network: this.network,
         }),
     );
   }
@@ -90,9 +87,8 @@ export class ReadWriteRegistry extends ReadRegistry {
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
         address: factory,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        network: this.network,
       }),
     };
   }
@@ -116,9 +112,8 @@ export class ReadWriteRegistry extends ReadRegistry {
       data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
         address: factory,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        network: this.network,
       }),
     }));
   }

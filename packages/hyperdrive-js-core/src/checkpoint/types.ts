@@ -1,18 +1,18 @@
 import {
-  ContractEvent,
   ContractReadOptions,
+  Event,
   FunctionReturn,
-  Pretty,
-} from "@delvtech/drift";
+} from "@delvtech/evm-client";
+import { Prettify } from "src/base/types";
 import { HyperdriveAbi } from "src/hyperdrive/base/abi";
 
-export type Checkpoint = Pretty<
+export type Checkpoint = Prettify<
   {
     checkpointTime: bigint;
   } & FunctionReturn<HyperdriveAbi, "getCheckpoint">
 >;
 
-export type CheckpointEvent = ContractEvent<HyperdriveAbi, "CreateCheckpoint">;
+export type CheckpointEvent = Event<HyperdriveAbi, "CreateCheckpoint">;
 
 export type GetCheckpointTimeParams = (
   | {

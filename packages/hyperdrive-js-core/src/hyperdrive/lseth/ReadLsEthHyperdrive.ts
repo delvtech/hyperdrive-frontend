@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -16,12 +16,12 @@ export class ReadLsEthHyperdrive extends readLsEthHyperdriveMixin(
  */
 export interface ReadLsEthHyperdriveMixin {
   /**
-   * Get a client for ETH, the base token for this Hyperdrive instance.
+   * Get a model of ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a client for the LsETH token for this Hyperdrive instance.
+   * Get a model of the LsETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadLsEth>;
 }
@@ -41,7 +41,8 @@ export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
@@ -50,9 +51,9 @@ export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
 
       return new ReadLsEth({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
   };

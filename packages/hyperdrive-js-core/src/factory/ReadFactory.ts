@@ -1,30 +1,29 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Address } from "abitype";
-import { ReadContractClientOptions } from "src/drift/ContractClient";
-import { ReadClient } from "src/drift/ReadClient";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
+import { ReadContractModelOptions, ReadModel } from "src/model/ReadModel";
 
-export interface ReadFactoryOptions extends ReadContractClientOptions {}
+export interface ReadFactoryOptions extends ReadContractModelOptions {}
 
-export class ReadFactory extends ReadClient {
+export class ReadFactory extends ReadModel {
   address: Address;
-  contract: Contract<FactoryAbi>;
+  contract: CachedReadContract<FactoryAbi>;
 
   constructor({
     debugName = "Hyperdrive Factory",
     address,
     cache,
-    cacheNamespace,
-    ...rest
+    namespace,
+    ...modelOptions
   }: ReadFactoryOptions) {
-    super({ debugName, ...rest });
+    super({ debugName, ...modelOptions });
     this.address = address;
-    this.contract = this.drift.contract({
+    this.contract = this.contractFactory({
       abi: factoryAbi,
       address,
       cache,
-      cacheNamespace,
+      namespace,
     });
   }
 
@@ -99,9 +98,8 @@ export class ReadFactory extends ReadClient {
       (address) =>
         new ReadHyperdrive({
           address,
-          drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          contractFactory: this.contractFactory,
+          network: this.network,
         }),
     );
   }

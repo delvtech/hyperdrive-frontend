@@ -11,18 +11,17 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@delvtech/drift": "^0.0.1-beta.11"
+    "@delvtech/evm-client": "^0.5.1"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.6",
     "@delvtech/hyperdrive-artifacts": "^1.0.18",
     "@delvtech/hyperdrive-wasm": "^0.15.3",
     "lodash.groupby": "^4.6.0",
-    "lodash.mapvalues": "^4.6.0",
-    "semver": "^7.6.3"
+    "lodash.mapvalues": "^4.6.0"
   },
   "devDependencies": {
-    "@delvtech/drift": "^0.0.1-beta.11",
+    "@delvtech/evm-client": "^0.5.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
@@ -48,13 +47,47 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
+    },
+    "./factory/*": {
+      "types": "./dist/factory/*.d.ts",
+      "default": "./dist/factory/*.js"
+    },
+    "./hyperdrive/*": {
+      "types": "./dist/hyperdrive/*.d.ts",
+      "default": "./dist/hyperdrive/*.js"
+    },
+    "./registry/*": {
+      "types": "./dist/registry/*.d.ts",
+      "default": "./dist/registry/*.js"
+    },
+    "./token/*": {
+      "types": "./dist/token/*.d.ts",
+      "default": "./dist/token/*.js"
+    },
+    "./contract": {
+      "types": "./dist/contract.d.ts",
+      "default": "./dist/contract.js"
+    },
+    "./errors": {
+      "types": "./dist/errors.d.ts",
+      "default": "./dist/errors.js"
+    },
+    "./model": {
+      "types": "./dist/model.d.ts",
+      "default": "./dist/model.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "default": "./dist/utils.js"
     },
     "./v1.0.14": {
-      "types": "./dist/v1.0.14.d.ts",
-      "default": "./dist/v1.0.14.js",
-      "require": "./dist/v1.0.14.cjs"
+      "types": "./dist/v1.0.14/index.d.ts",
+      "default": "./dist/v1.0.14/index.js"
+    },
+    "./v1.0.14/*": {
+      "types": "./dist/v1.0.14/*.d.ts",
+      "default": "./dist/v1.0.14/*.js"
     },
     "./package.json": "./package.json"
   },

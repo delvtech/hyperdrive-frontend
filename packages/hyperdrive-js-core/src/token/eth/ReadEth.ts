@@ -1,10 +1,10 @@
-import { ContractReadOptions } from "@delvtech/drift";
-import { ReadClient, ReadClientOptions } from "src/drift/ReadClient";
+import { ContractReadOptions } from "@delvtech/evm-client";
+import { ReadModel, ReadModelOptions } from "src/model/ReadModel";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadEthOptions extends ReadClientOptions {}
+export interface ReadEthOptions extends ReadModelOptions {}
 
-export class ReadEth extends ReadClient implements ReadToken {
+export class ReadEth extends ReadModel implements ReadToken {
   static address = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
   address = ReadEth.address;
 
@@ -42,9 +42,6 @@ export class ReadEth extends ReadClient implements ReadToken {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    return this.drift.getBalance({
-      address: account,
-      ...options,
-    });
+    return this.network.getBalance(account, options);
   }
 }

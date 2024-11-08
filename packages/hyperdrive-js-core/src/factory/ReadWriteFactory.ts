@@ -1,21 +1,20 @@
 import {
+  CachedReadWriteContract,
   ContractReadOptions,
-  Drift,
-  ReadWriteAdapter,
-  ReadWriteContract,
-  ReplaceProps,
-} from "@delvtech/drift";
-import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
+} from "@delvtech/evm-client";
+import { Override } from "src/base/types";
+import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
 import { ReadFactory, ReadFactoryOptions } from "src/factory/ReadFactory";
 import { FactoryAbi } from "src/factory/abi";
 import { ReadWriteHyperdrive } from "src/hyperdrive/base/ReadWriteHyperdrive";
+import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 
 export interface ReadWriteFactoryOptions
-  extends ReplaceProps<ReadFactoryOptions, ReadWriteContractClientOptions> {}
+  extends Override<ReadFactoryOptions, ReadWriteContractModelOptions> {}
 
 export class ReadWriteFactory extends ReadFactory {
-  declare contract: ReadWriteContract<FactoryAbi>;
-  declare drift: Drift<ReadWriteAdapter>;
+  declare contract: CachedReadWriteContract<FactoryAbi>;
+  declare contractFactory: ReadWriteContractFactory;
 
   constructor(options: ReadWriteFactoryOptions) {
     super(options);
@@ -26,17 +25,16 @@ export class ReadWriteFactory extends ReadFactory {
    * deployed by the deployer factory.
    */
   async getInstances(
-    options?: ContractReadOptions,
+    options?: ContractReadOptions
   ): Promise<ReadWriteHyperdrive[]> {
     const hyperdriveAddresses = await this.getInstanceAddresses(options);
     return hyperdriveAddresses.map(
       (address) =>
         new ReadWriteHyperdrive({
           address,
-          drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
-        }),
+          contractFactory: this.contractFactory,
+          network: this.network,
+        })
     );
   }
 }

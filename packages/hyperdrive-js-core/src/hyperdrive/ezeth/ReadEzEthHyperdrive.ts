@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions, ReadContract } from "@delvtech/drift";
+import { CachedReadContract, ContractReadOptions } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import { ReadHyperdrive } from "src/hyperdrive/base/ReadHyperdrive";
 import {
@@ -16,15 +16,15 @@ export class ReadEzEthHyperdrive extends readEzEthHyperdriveMixin(
  * @internal
  */
 export interface ReadEzEthHyperdriveMixin {
-  ezEthHyperdriveContract: Contract<EzEthHyperdriveAbi>;
+  ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
 
   /**
-   * Get a client for ETH, the base token for this Hyperdrive instance.
+   * Get a model of ETH, the base token for this Hyperdrive instance.
    */
   getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
 
   /**
-   * Get a client for the EzETH token for this Hyperdrive instance.
+   * Get a model of the EzETH token for this Hyperdrive instance.
    */
   getSharesToken(options?: ContractReadOptions): Promise<ReadErc20>;
 }
@@ -36,28 +36,29 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
   Base: T,
 ): Constructor<ReadEzEthHyperdriveMixin> & T {
   return class extends Base {
-    ezEthHyperdriveContract: ReadContract<EzEthHyperdriveAbi>;
+    ezEthHyperdriveContract: CachedReadContract<EzEthHyperdriveAbi>;
 
     constructor(...[options]: any[]) {
       const {
         debugName = "EzETH Hyperdrive",
         address,
         cache,
-        cacheNamespace,
-        ...rest
+        namespace,
+        ...modelOptions
       } = options as ConstructorParameters<typeof ReadHyperdrive>[0];
-      super({ debugName, address, cache, cacheNamespace, ...rest });
-      this.ezEthHyperdriveContract = this.drift.contract({
+      super({ debugName, address, cache, namespace, ...modelOptions });
+      this.ezEthHyperdriveContract = this.contractFactory({
         abi: ezEthHyperdriveAbi,
         address,
         cache,
-        cacheNamespace,
+        namespace,
       });
     }
 
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
-        drift: this.drift,
+        contractFactory: this.contractFactory,
+        network: this.network,
       });
     }
 
@@ -65,9 +66,9 @@ export function readEzEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       const { vaultSharesToken } = await this.getPoolConfig();
       return new ReadErc20({
         address: vaultSharesToken,
-        drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        contractFactory: this.contractFactory,
+        namespace: this.contract.namespace,
+        network: this.network,
       });
     }
   };
