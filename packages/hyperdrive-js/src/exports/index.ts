@@ -1,3 +1,5 @@
+export { HyperdriveSdkError } from "src/HyperdriveSdkError";
+
 // Hyperdrive //
 
 export {
@@ -137,12 +139,6 @@ export { ReadWriteREth } from "src/token/reth/ReadWriteREth";
 export { stEthAbi, type StEthAbi } from "src/token/steth/abi";
 export { ReadStEth } from "src/token/steth/ReadStEth";
 export { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
-
-// Errors //
-
-export { BlockNotFoundError } from "src/errors/BlockNotFoundError";
-export { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
-export { MethodNotImplementedError } from "src/errors/MethodNotImplementedError";
 
 // Drift //
 

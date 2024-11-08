@@ -1,4 +1,4 @@
-import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 
 /**
  * Helper function for exhaustive checks of discriminated unions.

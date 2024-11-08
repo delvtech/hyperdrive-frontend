@@ -1,4 +1,4 @@
-import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
+import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 
 export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 export function parseAssetType(identifier: number): AssetType {

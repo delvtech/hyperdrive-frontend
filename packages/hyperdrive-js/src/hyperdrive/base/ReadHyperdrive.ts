@@ -9,6 +9,7 @@ import {
   MergeKeys,
   ReadContract,
 } from "@delvtech/drift";
+import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 import { assertNever } from "src/base/assertNever";
 import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
 import { getCheckpointTime } from "src/checkpoint/getCheckpointTime";
@@ -21,7 +22,6 @@ import {
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
-import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
 import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";

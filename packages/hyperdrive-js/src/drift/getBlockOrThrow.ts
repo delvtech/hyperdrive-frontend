@@ -4,7 +4,7 @@ import {
   Drift,
   GetBlockParams,
 } from "@delvtech/drift";
-import { BlockNotFoundError } from "src/errors/BlockNotFoundError";
+import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 
 export type GetBlockOrThrowParams = GetBlockParams & ContractReadOptions;
 
@@ -20,7 +20,11 @@ export async function getBlockOrThrow(
 ): Promise<Block> {
   const fetched = await drift.getBlock(options);
   if (!fetched) {
-    throw new BlockNotFoundError(options);
+    const block =
+      options?.blockHash ?? options?.blockNumber ?? options?.blockTag;
+    throw new HyperdriveSdkError(
+      `Block${block !== undefined ? ` ${block}` : ""} not found`,
+    );
   }
   return fetched;
 }
