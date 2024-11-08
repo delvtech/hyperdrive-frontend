@@ -8,6 +8,8 @@ export {
   type HyperdriveOptions,
 } from "src/hyperdrive/getHyperdrive";
 
+export type { MarketState, PoolConfig, PoolInfo } from "src/hyperdrive/types";
+
 export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/abi";
 export {
   ReadHyperdrive,
@@ -49,11 +51,6 @@ export {
   ReadWriteStEthHyperdrive,
   type ReadWriteStEthHyperdriveOptions,
 } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
-
-export { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
-
-// pool
-export type { PoolConfig, PoolInfo } from "src/hyperdrive/types";
 
 // shorts
 export type {
@@ -160,6 +157,7 @@ export {
 // Base //
 
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
+export { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
 export { getHprFromApr } from "src/base/getHprFromApr";
 export { getHprFromApy } from "src/base/getHprFromApy";
 export type { Constructor } from "src/base/types";
