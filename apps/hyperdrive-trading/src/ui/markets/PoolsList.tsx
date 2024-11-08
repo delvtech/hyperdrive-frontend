@@ -6,7 +6,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { getHyperdrive } from "@delvtech/hyperdrive-js-core";
+import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";

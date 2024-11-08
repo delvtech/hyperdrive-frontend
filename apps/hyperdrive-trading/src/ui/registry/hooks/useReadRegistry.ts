@@ -1,4 +1,4 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-js-core";
+import { ReadRegistry } from "@delvtech/hyperdrive-js";
 import { useMemo } from "react";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useDrift } from "src/ui/drift/useDrift";

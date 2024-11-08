@@ -1,4 +1,4 @@
-import { PoolInfo } from "@delvtech/hyperdrive-js-core";
+import { PoolInfo } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

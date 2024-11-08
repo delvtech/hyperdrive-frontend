@@ -5,7 +5,7 @@ import {
   getRewardsFn,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";

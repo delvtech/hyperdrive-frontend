@@ -3,7 +3,7 @@ import {
   appConfig,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { getHprFromApr } from "@delvtech/hyperdrive-js-core";
+import { getHprFromApr } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";

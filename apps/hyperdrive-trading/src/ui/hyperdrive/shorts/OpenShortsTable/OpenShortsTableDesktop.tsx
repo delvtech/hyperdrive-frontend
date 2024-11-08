@@ -5,7 +5,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-js-core";
+import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {

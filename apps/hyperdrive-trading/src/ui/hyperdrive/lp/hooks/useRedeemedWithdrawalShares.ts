@@ -1,4 +1,4 @@
-import { RedeemedWithdrawalShares } from "@delvtech/hyperdrive-js-core";
+import { RedeemedWithdrawalShares } from "@delvtech/hyperdrive-js";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

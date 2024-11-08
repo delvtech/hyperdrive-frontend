@@ -2,10 +2,7 @@ import {
   appConfig,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import {
-  getHyperdrive,
-  ReadWriteHyperdrive,
-} from "@delvtech/hyperdrive-js-core";
+import { getHyperdrive, ReadWriteHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteDrift } from "src/ui/drift/useDrift";

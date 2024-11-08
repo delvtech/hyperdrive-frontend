@@ -1,5 +1,5 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,

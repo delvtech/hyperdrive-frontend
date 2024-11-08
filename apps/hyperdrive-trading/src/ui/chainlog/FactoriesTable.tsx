@@ -1,4 +1,4 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-js-core";
+import { ReadRegistry } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import {

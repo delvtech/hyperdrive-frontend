@@ -1,5 +1,5 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js-core";
+import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";

@@ -4,7 +4,7 @@ import {
   findBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { calculateAprFromPrice } from "@delvtech/hyperdrive-js-core";
+import { calculateAprFromPrice } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";

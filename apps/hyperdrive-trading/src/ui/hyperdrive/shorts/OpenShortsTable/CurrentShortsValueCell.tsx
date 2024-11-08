@@ -3,7 +3,7 @@ import {
   findBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-js-core";
+import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
