@@ -82,7 +82,6 @@ export type { BaseReadClientOptions, BaseReadWriteClientOptions };
 
 export {
   adjustAmountByPercentage,
-  BlockNotFoundError,
   calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
   erc20Abi,
@@ -94,7 +93,6 @@ export {
   hyperdriveAbi,
   HyperdriveSdkError,
   lsEthAbi,
-  MethodNotImplementedError,
   mockErc4626Abi,
   ReadClient,
   ReadErc20,
@@ -127,6 +125,7 @@ export {
   type HyperdriveAbi,
   type Long,
   type LsEthAbi,
+  type MarketState,
   type MockErc4626Abi,
   type OpenLongPositionReceived,
   type OpenShort,
