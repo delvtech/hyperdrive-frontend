@@ -32,12 +32,12 @@ export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
 export { yieldSources } from "src/yieldSources/yieldSources";
 
 // rewards
-export { rewardFunctions } from "src/rewards/rewards";
+export { getRewardsFn } from "src/rewards/selectors";
 export type {
   AnyReward,
   InfoReward,
   NonTransferableTokenReward,
-  RewardsResolver as RewardsFn,
+  RewardsResolver,
   TransferableTokenReward,
 } from "src/rewards/types";
 

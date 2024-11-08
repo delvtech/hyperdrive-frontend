@@ -2,8 +2,8 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
   findHyperdriveConfig,
+  getRewardsFn,
   HyperdriveConfig,
-  rewardFunctions,
 } from "@delvtech/hyperdrive-appconfig";
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { getPublicClient } from "@wagmi/core";
@@ -79,14 +79,15 @@ async function calcNetRate(
   hyperdrive: HyperdriveConfig,
 ) {
   let netRate = rate;
-  // TODO: Create an appconfig selector to grab the rewards function from a
-  // given hyperdrive
-  const rewardsFn = appConfig.yieldSources[hyperdrive.yieldSource].rewardsFn;
+  const rewardsFn = getRewardsFn({
+    yieldSourceId: hyperdrive.yieldSource,
+    appConfig,
+  });
   if (rewardsFn) {
     const publicClient = getPublicClient(wagmiConfig as any, {
       chainId: hyperdrive.chainId,
     }) as PublicClient;
-    const rewards = await rewardFunctions[rewardsFn](publicClient);
+    const rewards = await rewardsFn(publicClient);
     rewards?.forEach((reward) => {
       if (reward.type === "transferableToken") {
         netRate = fixed(reward.apy).add(
@@ -115,12 +116,4 @@ function getNumBlocksForHistoricalRate({
     : blocksPerDay * BigInt(historicalRatePeriod);
 
   return numBlocksForHistoricalRate;
-}
-
-function getDaysSinceInitialization({
-  hyperdrive,
-}: {
-  hyperdrive: HyperdriveConfig;
-}): number {
-  return Number(hyperdrive.initializationTimestamp * 1000n) - Date.now();
 }

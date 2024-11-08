@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
+  getRewardsFn,
   HyperdriveConfig,
-  rewardFunctions,
 } from "@delvtech/hyperdrive-appconfig";
 import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { getPublicClient } from "@wagmi/core";
@@ -78,11 +78,12 @@ export async function getLpApy({
     const publicClient = getPublicClient(wagmiConfig as any, {
       chainId: hyperdrive.chainId,
     }) as PublicClient;
-    // TODO: Create an appconfig selector to grab the rewards function from a
-    // given hyperdrive
-    const rewardsFn = appConfig.yieldSources[hyperdrive.yieldSource].rewardsFn;
+    const rewardsFn = getRewardsFn({
+      yieldSourceId: hyperdrive.yieldSource,
+      appConfig,
+    });
     if (rewardsFn) {
-      const rewards = await rewardFunctions[rewardsFn](publicClient);
+      const rewards = await rewardsFn(publicClient);
       rewards?.forEach((reward) => {
         if (reward.type === "transferableToken") {
           netLpApy = fixed(reward.apy).add(
