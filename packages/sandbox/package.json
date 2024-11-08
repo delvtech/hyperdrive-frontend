@@ -1,0 +1,37 @@
+{
+  "name": "@delvtech/sandbox",
+  "version": "0.0.1",
+  "license": "AGPL-3.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "export": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:tsc": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "tsup": "^7.2.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {}
+}

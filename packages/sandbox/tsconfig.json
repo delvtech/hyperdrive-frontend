@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "sourceMap": false,
+    "declarationMap": false,
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "outDir": "dist-tsc"
+  }
+}
