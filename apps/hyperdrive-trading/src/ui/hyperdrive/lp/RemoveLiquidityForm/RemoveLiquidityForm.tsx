@@ -30,8 +30,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice } from "src/ui/token/TokenPicker";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -288,7 +287,7 @@ export function RemoveLiquidityForm({
             name={baseToken.symbol}
             inputLabel="You receive"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
                 onChange={(tokenAddress) => {

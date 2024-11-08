@@ -78,7 +78,7 @@ export function ManageLpAndWithdrawalSharesButton({
         </button>
         {isOpen && (
           <ul className="absolute right-6 top-full z-50 mt-4 w-[300px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1">
-            {balanceOfWithdrawalShares ? (
+            {!balanceOfWithdrawalShares ? (
               <Modal
                 modalId="redeemWithdrawalShares"
                 modalHeader={

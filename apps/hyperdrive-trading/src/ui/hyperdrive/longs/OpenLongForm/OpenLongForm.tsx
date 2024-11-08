@@ -38,9 +38,9 @@ import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
 import {
   TokenChoice,
-  TokenPickerTwo,
+  TokenPicker,
   ZapsTokenPicker,
-} from "src/ui/token/TokenPickerTwo";
+} from "src/ui/token/TokenPicker";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -296,7 +296,7 @@ export function OpenLongForm({
                 }}
               />
             ) : (
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={tokenChoices}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {

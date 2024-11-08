@@ -36,7 +36,7 @@ import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
@@ -298,7 +298,7 @@ export function OpenShortForm({
             variant="lighter"
             inputLabel="Earn yield on"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={[
                   {
                     tokenConfig: baseToken,
@@ -399,7 +399,7 @@ export function OpenShortForm({
             variant="lighter"
             name={`${baseToken.symbol}-input`}
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={tokenOptions}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {

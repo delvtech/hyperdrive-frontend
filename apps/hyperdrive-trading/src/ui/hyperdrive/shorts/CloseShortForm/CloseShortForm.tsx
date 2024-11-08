@@ -23,8 +23,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice } from "src/ui/token/TokenPicker";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -187,7 +186,7 @@ export function CloseShortForm({
             name={baseToken.symbol}
             inputLabel="You receive"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
                 onChange={(tokenAddress) => {
