@@ -15,8 +15,7 @@
     "@delvtech/drift-viem": "^0.0.1-beta.13",
     "@delvtech/fixed-point-wasm": "*",
     "@delvtech/hyperdrive-appconfig": "*",
-    "@delvtech/hyperdrive-viem": "*",
-    "@delvtech/hyperdrive-js-core": "*",
+    "@delvtech/hyperdrive-js": "*",
     "@delvtech/hyperdrive-wasm": "*",
     "viem": "^2.9.2"
   },
