@@ -155,7 +155,6 @@ export function YieldMultiplierStat({
                     <div className="flex items-center gap-1">
                       <img
                         src={appConfig.protocols.morpho.iconUrl}
-                        alt="Morpho logo"
                         className="h-4"
                       />
                       {token.name}
