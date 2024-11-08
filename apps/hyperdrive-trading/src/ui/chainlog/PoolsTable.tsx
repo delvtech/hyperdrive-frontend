@@ -244,13 +244,17 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
             const { data, factory, name, version } = metas[i];
             const { status } = decodeInstanceData(data);
 
-            const { baseToken, vaultSharesToken: vaultToken } =
-              await readHyperdrive.getPoolConfig();
-            const { isPaused } = await readHyperdrive.getMarketState();
-            const [deployerCoordinatorAddress] =
-              await factory.getDeployerCoordinatorAddresses({
+            const [
+              { baseToken, vaultSharesToken: vaultToken },
+              { isPaused },
+              [deployerCoordinatorAddress],
+            ] = await Promise.all([
+              readHyperdrive.getPoolConfig(),
+              readHyperdrive.getMarketState(),
+              factory.getDeployerCoordinatorAddresses({
                 instances: [readHyperdrive.address],
-              });
+              }),
+            ]);
 
             pools.push({
               name,
