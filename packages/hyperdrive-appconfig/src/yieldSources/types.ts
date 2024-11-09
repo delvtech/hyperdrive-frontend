@@ -3,8 +3,8 @@ import { ProtocolId } from "src/protocols";
 import { rewardFunctions } from "src/rewards/rewards";
 
 // Base interface with common properties
-export interface YieldSource<Id extends string = string> {
-  id: Id;
+export interface YieldSourceDefinition {
+  id: string;
   chainId: ChainId;
   shortName: string;
   protocol: ProtocolId;

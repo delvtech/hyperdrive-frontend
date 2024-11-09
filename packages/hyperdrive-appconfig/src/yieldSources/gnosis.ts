@@ -1,7 +1,7 @@
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSourceDefinition } from "src/yieldSources/types";
 import { gnosis } from "viem/chains";
 
-export const gnosisWsteth: YieldSource = {
+export const gnosisWsteth: YieldSourceDefinition = {
   chainId: gnosis.id,
   id: "gnosisWsteth",
   shortName: "Lido wstETH",
@@ -9,7 +9,7 @@ export const gnosisWsteth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const sxdai: YieldSource = {
+export const sxdai: YieldSourceDefinition = {
   chainId: gnosis.id,
   id: "sxdai",
   shortName: "Savings xDAI",
@@ -17,7 +17,7 @@ export const sxdai: YieldSource = {
   historicalRatePeriod: 7,
 };
 
-export const gnosisSgyd: YieldSource = {
+export const gnosisSgyd: YieldSourceDefinition = {
   chainId: gnosis.id,
   id: "gnosisSgyd",
   shortName: "Savings GYD",

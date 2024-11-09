@@ -1,7 +1,7 @@
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSourceDefinition } from "src/yieldSources/types";
 import { linea } from "viem/chains";
 
-export const rseth: YieldSource<"rseth"> = {
+export const rseth: YieldSourceDefinition = {
   chainId: linea.id,
   id: "rseth",
   shortName: "KelpDAO rsETH",
@@ -9,7 +9,7 @@ export const rseth: YieldSource<"rseth"> = {
   historicalRatePeriod: 30,
   rewardsFn: "fetchLineaRewards",
 };
-export const lineaEzeth: YieldSource<"lineaEzeth"> = {
+export const lineaEzeth: YieldSourceDefinition = {
   chainId: linea.id,
   id: "lineaEzeth",
   shortName: "Renzo ezETH",

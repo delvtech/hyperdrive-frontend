@@ -28,9 +28,10 @@ export {
 export type { TokenConfig } from "src/tokens/types";
 
 // yield sources
-export type { YieldSource } from "src/yieldSources/types";
+export type { YieldSourceDefinition } from "src/yieldSources/types";
 export {
   yieldSources,
+  type YieldSource,
   type YieldSourceId,
 } from "src/yieldSources/yieldSources";
 

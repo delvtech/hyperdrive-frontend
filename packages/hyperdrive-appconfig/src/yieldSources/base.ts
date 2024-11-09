@@ -1,7 +1,7 @@
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSourceDefinition } from "src/yieldSources/types";
 import { base } from "viem/chains";
 
-export const morphoCbethUsdc: YieldSource<"morphoCbethUsdc"> = {
+export const morphoCbethUsdc: YieldSourceDefinition = {
   chainId: base.id,
   id: "morphoCbethUsdc",
   shortName: "Morpho cbETH/USDC",
@@ -10,14 +10,14 @@ export const morphoCbethUsdc: YieldSource<"morphoCbethUsdc"> = {
   rewardsFn: "fetchMorphoCbethUsdcRewards",
 };
 
-export const cbeth: YieldSource<"cbeth"> = {
+export const cbeth: YieldSourceDefinition = {
   chainId: base.id,
   id: "cbeth",
   shortName: "cbETH",
   protocol: "coinbase",
   historicalRatePeriod: 1,
 };
-export const mwEth: YieldSource<"mwEth"> = {
+export const mwEth: YieldSourceDefinition = {
   chainId: base.id,
   id: "mwEth",
   shortName: "Moonwell Flagship ETH",
@@ -27,7 +27,7 @@ export const mwEth: YieldSource<"mwEth"> = {
   historicalRatePeriod: 1,
   rewardsFn: "fetchMorphoMwethRewards",
 };
-export const stkWell: YieldSource<"stkWell"> = {
+export const stkWell: YieldSourceDefinition = {
   chainId: base.id,
   id: "stkWell",
   shortName: "Moonwell Staked WELL",
@@ -35,7 +35,7 @@ export const stkWell: YieldSource<"stkWell"> = {
   historicalRatePeriod: 1,
 };
 
-export const snars: YieldSource<"snars"> = {
+export const snars: YieldSourceDefinition = {
   chainId: base.id,
   id: "snars",
   shortName: "Numun Staked nARS",
@@ -43,7 +43,7 @@ export const snars: YieldSource<"snars"> = {
   historicalRatePeriod: 1,
 };
 
-export const mwEurc: YieldSource<"mwEurc"> = {
+export const mwEurc: YieldSourceDefinition = {
   chainId: base.id,
   id: "mwEurc",
   shortName: "Moonwell Flagship EURC",
@@ -52,7 +52,7 @@ export const mwEurc: YieldSource<"mwEurc"> = {
   rewardsFn: "fetchMorphoMweurcRewards",
 };
 
-export const mwUsdc: YieldSource<"mwUsdc"> = {
+export const mwUsdc: YieldSourceDefinition = {
   chainId: base.id,
   id: "mwUsdc",
   shortName: "Moonwell Flagship USDC",
@@ -61,7 +61,7 @@ export const mwUsdc: YieldSource<"mwUsdc"> = {
   rewardsFn: "fetchMorphoMwusdcRewards",
 };
 
-export const aeroUsdcAero: YieldSource<"aeroUsdcAero"> = {
+export const aeroUsdcAero: YieldSourceDefinition = {
   chainId: base.id,
   id: "aeroUsdcAero",
   shortName: "Aerodrome USDC/AERO",

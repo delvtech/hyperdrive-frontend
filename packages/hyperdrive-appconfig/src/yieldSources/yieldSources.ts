@@ -58,3 +58,4 @@ export const yieldSources = {
 } as const;
 
 export type YieldSourceId = keyof typeof yieldSources;
+export type YieldSource = (typeof yieldSources)[YieldSourceId];
