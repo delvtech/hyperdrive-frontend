@@ -1,21 +1,11 @@
-// This interface is intentionally empty to allow for declaration merging with
-
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
 import { rewardFunctions } from "src/rewards/rewards";
 
-export interface YieldSourceIdMap {
-  // This interface is intentionally empty to allow for declaration merging.
-  // DO NOT MODIFY THIS INTERFACE HERE.
-}
-
-// YieldSourceId is a union of all keys in YieldSourceIdMap
-export type YieldSourceId = keyof YieldSourceIdMap;
-
 // Base interface with common properties
-export interface YieldSource {
+export interface YieldSource<Id extends string = string> {
+  id: Id;
   chainId: ChainId;
-  id: YieldSourceId;
   shortName: string;
   protocol: ProtocolId;
   /**

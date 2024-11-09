@@ -1,27 +1,7 @@
+import { YieldSource } from "src/yieldSources/types";
 import { mainnet } from "viem/chains";
 
-import { YieldSource } from "src/yieldSources/types";
-
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    makerDsr: "makerDsr";
-    lidoSteth: "lidoSteth";
-    morphoSusdeDai: "morphoSusdeDai";
-    morphoUsdeDai: "morphoUsdeDai";
-    morphoWstethUsdc: "morphoWstethUsdc";
-    morphoWstethUsda: "morphoWstethUsda";
-    reth: "reth";
-    ezeth: "ezeth";
-    stusd: "stusd";
-    eeth: "eeth";
-    usds: "usds";
-    susds: "susds";
-    susde: "susde";
-    sgyd: "sgyd";
-  }
-}
-
-export const makerDsr: YieldSource = {
+export const makerDsr: YieldSource<"makerDsr"> = {
   chainId: mainnet.id,
   id: "makerDsr",
   shortName: "Maker DSR",
@@ -29,7 +9,7 @@ export const makerDsr: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const lidoSteth: YieldSource = {
+export const lidoSteth: YieldSource<"lidoSteth"> = {
   chainId: mainnet.id,
   id: "lidoSteth",
   shortName: "Lido stETH",
@@ -37,21 +17,21 @@ export const lidoSteth: YieldSource = {
   isSharesPeggedToBase: true,
   historicalRatePeriod: 1,
 };
-export const morphoSusdeDai: YieldSource = {
+export const morphoSusdeDai: YieldSource<"morphoSusdeDai"> = {
   chainId: mainnet.id,
   id: "morphoSusdeDai",
   shortName: "Morpho sUSDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
-export const morphoUsdeDai: YieldSource = {
+export const morphoUsdeDai: YieldSource<"morphoUsdeDai"> = {
   chainId: mainnet.id,
   id: "morphoUsdeDai",
   shortName: "Morpho USDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
-export const morphoWstethUsdc: YieldSource = {
+export const morphoWstethUsdc: YieldSource<"morphoWstethUsdc"> = {
   chainId: mainnet.id,
   id: "morphoWstethUsdc",
   shortName: "Morpho wstETH/USDC",
@@ -59,7 +39,7 @@ export const morphoWstethUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const eeth: YieldSource = {
+export const eeth: YieldSource<"eeth"> = {
   chainId: mainnet.id,
   id: "eeth",
   shortName: "Ether.fi Staked ETH",
@@ -68,7 +48,7 @@ export const eeth: YieldSource = {
   rewardsFn: "fetchEtherfiRewards",
 };
 
-export const morphoWstethUsda: YieldSource = {
+export const morphoWstethUsda: YieldSource<"morphoWstethUsda"> = {
   chainId: mainnet.id,
   id: "morphoWstethUsda",
   shortName: "Morpho wstETH/USDA",
@@ -76,7 +56,7 @@ export const morphoWstethUsda: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const reth: YieldSource = {
+export const reth: YieldSource<"reth"> = {
   chainId: mainnet.id,
   id: "reth",
   shortName: "Rocket Pool ETH",
@@ -84,7 +64,7 @@ export const reth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const ezeth: YieldSource = {
+export const ezeth: YieldSource<"ezeth"> = {
   chainId: mainnet.id,
   id: "ezeth",
   shortName: "Renzo ezETH",
@@ -92,7 +72,7 @@ export const ezeth: YieldSource = {
   historicalRatePeriod: 14,
 };
 
-export const stusd: YieldSource = {
+export const stusd: YieldSource<"stusd"> = {
   chainId: mainnet.id,
   id: "stusd",
   shortName: "Angle stUSD",
@@ -100,7 +80,7 @@ export const stusd: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const usds: YieldSource = {
+export const usds: YieldSource<"usds"> = {
   chainId: mainnet.id,
   id: "usds",
   shortName: "Savings USDS",
@@ -108,7 +88,7 @@ export const usds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const susds: YieldSource = {
+export const susds: YieldSource<"susds"> = {
   chainId: mainnet.id,
   id: "susds",
   shortName: "Staking USDS",
@@ -116,7 +96,7 @@ export const susds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const susde: YieldSource = {
+export const susde: YieldSource<"susde"> = {
   chainId: mainnet.id,
   id: "susde",
   shortName: "Ethena sUSDe",
@@ -124,7 +104,7 @@ export const susde: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const sgyd: YieldSource = {
+export const sgyd: YieldSource<"sgyd"> = {
   chainId: mainnet.id,
   id: "sgyd",
   shortName: "Savings GYD",

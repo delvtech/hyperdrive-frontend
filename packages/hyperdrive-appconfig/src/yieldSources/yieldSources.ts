@@ -56,3 +56,5 @@ export const yieldSources = {
   sgyd,
   gnosisSgyd,
 } as const;
+
+export type YieldSourceId = keyof typeof yieldSources;

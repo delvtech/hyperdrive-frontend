@@ -28,8 +28,11 @@ export {
 export type { TokenConfig } from "src/tokens/types";
 
 // yield sources
-export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
-export { yieldSources } from "src/yieldSources/yieldSources";
+export type { YieldSource } from "src/yieldSources/types";
+export {
+  yieldSources,
+  type YieldSourceId,
+} from "src/yieldSources/yieldSources";
 
 // rewards
 export { getRewardsFn } from "src/rewards/selectors";

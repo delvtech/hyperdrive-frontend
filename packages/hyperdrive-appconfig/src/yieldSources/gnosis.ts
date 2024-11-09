@@ -1,14 +1,6 @@
 import { YieldSource } from "src/yieldSources/types";
 import { gnosis } from "viem/chains";
 
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    gnosisWsteth: "gnosisWsteth";
-    sxdai: "sxdai";
-    gnosisSgyd: "gnosisSgyd";
-  }
-}
-
 export const gnosisWsteth: YieldSource = {
   chainId: gnosis.id,
   id: "gnosisWsteth",
