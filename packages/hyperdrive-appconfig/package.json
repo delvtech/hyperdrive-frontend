@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "generate": "npx tsx ./src/scripts/generate.ts",
-    "build": "tsup src/index.ts --format esm,cjs --clean --dts",
+    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts",
     "watch": "tsup src/index.ts --watch --minify --format esm,cjs --dts",
     "typecheck": "tsc --noEmit"
   },
