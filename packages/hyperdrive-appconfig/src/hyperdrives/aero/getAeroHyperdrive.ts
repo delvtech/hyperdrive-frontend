@@ -3,8 +3,7 @@ import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
 import { TokenConfig } from "src/tokens/types";
-import { YieldSourceId } from "src/yieldSources/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { YieldSourceId, yieldSources } from "src/yieldSources/yieldSources";
 
 export async function getAeroLpHyperdrive({
   hyperdrive,

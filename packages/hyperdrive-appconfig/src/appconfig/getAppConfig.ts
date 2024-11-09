@@ -38,8 +38,7 @@ import {
   WXDAI_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { TokenConfig } from "src/tokens/types";
-import { YieldSourceId } from "src/yieldSources/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { YieldSourceId, yieldSources } from "src/yieldSources/yieldSources";
 import { Address, PublicClient } from "viem";
 
 type HyperdriveConfigResolver = (
