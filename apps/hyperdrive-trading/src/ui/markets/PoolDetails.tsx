@@ -7,7 +7,7 @@ import { AccordionSection2 } from "src/ui/base/components/AccordionSection/Accor
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
-import { AddLiquidityForm2 } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm2";
+import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
@@ -57,7 +57,7 @@ export function PoolDetails({
             case "short":
               return <OpenShortForm hyperdrive={hyperdrive} />;
             case "lp":
-              return <AddLiquidityForm2 hyperdrive={hyperdrive} />;
+              return <AddLiquidityForm hyperdrive={hyperdrive} />;
           }
         })()}
 

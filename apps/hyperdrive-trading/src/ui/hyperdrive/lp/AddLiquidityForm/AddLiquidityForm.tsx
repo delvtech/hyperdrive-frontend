@@ -19,15 +19,20 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
+import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -38,21 +43,23 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   onAddLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- *  @deprecated use AddLiquidityForm2
- */
 export function AddLiquidityForm({
   hyperdrive,
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
+  const connectedChainId = useChainId();
   const { address: account } = useAccount();
+  const { marketState } = useMarketState({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
   const { poolInfo } = usePoolInfo({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -69,10 +76,6 @@ export function AddLiquidityForm({
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
 
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -109,12 +112,6 @@ export function AddLiquidityForm({
       tokenBalance: sharesTokenBalance?.value,
     });
   }
-
-  const { lpShares: lpSharesBalanceOf } = useLpShares({
-    account,
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -173,11 +170,6 @@ export function AddLiquidityForm({
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
-  const { lpApy } = useLpApy({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
     amount: lpSharePrice,
     percentage: slippageAsBigInt,
@@ -218,16 +210,6 @@ export function AddLiquidityForm({
     previewAddLiquidityError,
   } = usePreviewAddLiquidity(addLiquidityParams);
 
-  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const poolShare = calculatePoolShare({
-    lpSharesBalanceOf,
-    lpSharesOut,
-    lpSharesTotalSupply,
-    baseToken,
-  });
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
     chainId: activeToken.chainId,
@@ -258,6 +240,7 @@ export function AddLiquidityForm({
       tokenInput={
         <TokenInput
           name={activeToken.symbol}
+          variant="lighter"
           value={depositAmount ?? ""}
           maxValue={activeTokenBalance?.formatted}
           inputLabel="You deposit"
@@ -298,27 +281,30 @@ export function AddLiquidityForm({
             />
           }
           settings={
-            <SlippageSettings
-              onSlippageChange={(slippage) => {
-                window.plausible("formChange", {
-                  props: {
-                    inputName: "slippage",
-                    inputValue: slippage,
-                    formName,
-                    chainId,
-                    poolAddress,
-                  },
-                });
-                setSlippage(slippage);
-              }}
-              slippage={slippage}
-              activeOption={activeSlippageOption}
-              onActiveOptionChange={setActiveSlippageOption}
-              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
-            />
+            <div className="mb-3 flex w-full items-center justify-between">
+              <PositionPicker hyperdrive={hyperdrive} />
+              <SlippageSettings
+                onSlippageChange={(slippage) => {
+                  window.plausible("formChange", {
+                    props: {
+                      inputName: "slippage",
+                      inputValue: slippage,
+                      formName,
+                      chainId,
+                      poolAddress,
+                    },
+                  });
+                  setSlippage(slippage);
+                }}
+                slippage={slippage}
+                activeOption={activeSlippageOption}
+                onActiveOptionChange={setActiveSlippageOption}
+                tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
+              />
+            </div>
           }
           bottomRightElement={
-            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+            <div className="flex flex-col gap-1 text-sm text-neutral-content">
               <span>
                 {activeTokenBalance
                   ? `Balance: ${formatBalance({
@@ -346,82 +332,16 @@ export function AddLiquidityForm({
       }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
-          <PrimaryStat
-            label="You receive"
-            subValue={
-              addLiquidityPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <span
-                  className={classNames({
-                    "text-base-content/80": !poolShare,
-                  })}
-                >
-                  {poolShare
-                    ? `${fixed(poolShare).format({
-                        decimals: 4,
-                        rounding: "trunc",
-                      })}% of total liquidity`
-                    : undefined}
-                </span>
-              )
-            }
-            valueUnit={`${baseToken.symbol}-LP`}
-            unitClassName="text-xs"
-            value={
-              addLiquidityPreviewStatus === "loading" ? (
-                <Skeleton width={100} />
-              ) : (
-                <p
-                  className={classNames({
-                    "text-base-content/80": !lpSharesOut,
-                    "font-bold": lpSharesOut,
-                  })}
-                >
-                  {lpSharesOut
-                    ? `${formatBalance({
-                        balance: lpSharesOut,
-                        decimals: hyperdrive.decimals,
-                        places: baseToken.places,
-                      })}`
-                    : "0"}
-                </p>
-              )
-            }
+          <YouReceiveStat
+            addLiquidityPreviewStatus={addLiquidityPreviewStatus}
+            lpSharesOut={lpSharesOut}
+            hyperdrive={hyperdrive}
           />
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
-          <PrimaryStat
-            label="LP APY"
-            value={
-              lpApy === undefined || lpApy.isNew ? (
-                <div className="flex gap-2">✨New✨</div>
-              ) : (
-                `${formatRate({ rate: lpApy.lpApy })}`
-              )
-            }
-            tooltipContent="The annual percentage yield projection for providing liquidity."
-            tooltipPosition="left"
-            subValue={
-              vaultRateStatus === "success" && vaultRate ? (
-                <div>
-                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
-                  {vaultRate.formatted || 0} APY
-                </div>
-              ) : (
-                <Skeleton className="w-42 h-8" />
-              )
-            }
-          />
+          <LpApyStat hyperdrive={hyperdrive} />
         </div>
       }
       disclaimer={(() => {
-        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
-          return (
-            <p className="text-center text-sm text-error">
-              Insufficient balance
-            </p>
-          );
-        }
         if (
           previewAddLiquidityError?.message.includes(
             "Not enough lp shares minted.",
@@ -434,28 +354,52 @@ export function AddLiquidityForm({
             </p>
           );
         }
-        if (
-          previewAddLiquidityError?.message.includes("MinimumTransactionAmount")
-        ) {
-          return (
-            <p className="text-center text-sm text-error">
-              Trade does not meet the minimum transaction amount:{" "}
-              {formatBalance({
-                balance: hyperdrive.poolConfig.minimumTransactionAmount,
-                decimals: hyperdrive.decimals,
-                places: activeToken.places,
-              })}{" "}
-              {activeToken.symbol}.
-            </p>
-          );
-        }
       })()}
       actionButton={(() => {
+        if (marketState?.isPaused) {
+          return (
+            <InvalidTransactionButton wide>
+              This market is paused
+            </InvalidTransactionButton>
+          );
+        }
+
         if (!account) {
           return <ConnectWalletButton wide />;
         }
 
-        if (!hasEnoughBalance) {
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
+        }
+        if (!!depositAmountAsBigInt && !hasEnoughBalance) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
+          );
+        }
+        if (
+          previewAddLiquidityError?.message.includes("MinimumTransactionAmount")
+        ) {
+          return (
+            <InvalidTransactionButton wide>
+              Deposit must be greater than{" "}
+              {formatBalance({
+                balance: hyperdrive.poolConfig.minimumTransactionAmount,
+                decimals: hyperdrive.decimals,
+                places: activeToken.places * 2,
+              })}{" "}
+              {activeToken.symbol}
+            </InvalidTransactionButton>
+          );
+        }
+
+        if (!hasEnoughBalance || marketState?.isPaused) {
           return (
             <button
               disabled
@@ -497,6 +441,138 @@ export function AddLiquidityForm({
     />
   );
 }
+
+function YouReceiveStat({
+  addLiquidityPreviewStatus,
+  lpSharesOut,
+  hyperdrive,
+}: {
+  addLiquidityPreviewStatus: string;
+  lpSharesOut: bigint | undefined;
+  hyperdrive: HyperdriveConfig;
+}) {
+  const { address: account } = useAccount();
+  const { lpShares: lpSharesBalanceOf } = useLpShares({
+    account,
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const baseToken = findBaseToken({
+    hyperdriveChainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const poolShare = calculatePoolShare({
+    lpSharesBalanceOf,
+    lpSharesOut,
+    lpSharesTotalSupply,
+    baseToken,
+  });
+  return (
+    <PrimaryStat
+      label="You receive"
+      subValue={
+        addLiquidityPreviewStatus === "loading" ? (
+          <Skeleton width={100} />
+        ) : (
+          <span
+            className={classNames({
+              "text-base-content/80": !poolShare,
+            })}
+          >
+            {poolShare
+              ? `${fixed(poolShare).format({
+                  decimals: 4,
+                  rounding: "trunc",
+                })}% of total liquidity`
+              : undefined}
+          </span>
+        )
+      }
+      valueUnit={`${baseToken.symbol}-LP`}
+      valueContainerClassName="flex items-end flex-wrap"
+      unitClassName="text-xs mb-1"
+      value={
+        addLiquidityPreviewStatus === "loading" ? (
+          <Skeleton width={100} />
+        ) : (
+          <span
+            className={classNames("text-h3", {
+              "text-base-content/80": !lpSharesOut,
+              "font-bold": lpSharesOut,
+            })}
+          >
+            {lpSharesOut
+              ? `${formatBalance({
+                  balance: lpSharesOut,
+                  decimals: hyperdrive.decimals,
+                  places: baseToken.places,
+                })}`
+              : "0"}
+          </span>
+        )
+      }
+    />
+  );
+}
+
+function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
+  const isNewPool = useIsNewPool({ hyperdrive });
+  const { lpApy, lpApyStatus } = useLpApy({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
+
+  const showSkeleton = !lpApy && lpApyStatus === "loading";
+
+  return (
+    <PrimaryStat
+      label="LP APY"
+      value={(() => {
+        if (showSkeleton) {
+          return <Skeleton />;
+        }
+        if (lpApy === undefined || lpApy.isNew) {
+          return <div className="flex gap-2 text-h3 font-bold">✨New✨</div>;
+        }
+
+        return (
+          <span className="text-h3 font-bold">
+            {formatRate({ rate: lpApy?.netLpApy })}
+          </span>
+        );
+      })()}
+      tooltipContent="The annual percentage yield projection for providing liquidity."
+      tooltipPosition="left"
+      valueContainerClassName={classNames({
+        "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent text-h3 font-bold":
+          !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
+      })}
+      subValue={
+        vaultRateStatus === "success" && vaultRate ? (
+          <div>
+            {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
+            {isNewPool
+              ? "✨New✨"
+              : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
+          </div>
+        ) : (
+          <Skeleton className="w-42 h-8" />
+        )
+      }
+    />
+  );
+}
+
 function calculatePoolShare({
   lpSharesBalanceOf,
   lpSharesOut,
