@@ -16,8 +16,7 @@ export function setupReadHyperdrive() {
     drift,
   });
 
-  // The ReadHyperdrive class doesn't infer that the contract is a MockContract,
-  // so we need to cast it to the correct type.
+  // The ReadHyperdrive class doesn't infer that the contract is a MockContract.
   const contract = drift.contract({
     abi: readHyperdrive.contract.abi,
     address: readHyperdrive.contract.address,
