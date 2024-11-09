@@ -1,13 +1,13 @@
-import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: ReactNode;
+  variant?: "default" | "lighter";
   name: string;
   value: string;
-  onChange: (newAmount: string) => void;
+  onChange?: (newAmount: string) => void;
   /**
    * If provided, the MAX button will be shown
    */
@@ -17,9 +17,10 @@ interface TokenInputProps {
    */
   inputLabel?: string;
   /**
-   * Optional stat to show, useful for things like wallet balances
+   * Optional stats to show, useful for things like wallet balances
    */
-  stat?: ReactNode;
+  bottomLeftElement?: ReactNode;
+  bottomRightElement?: ReactNode;
   settings?: ReactNode;
   disabled?: boolean;
   /**
@@ -35,8 +36,10 @@ export function TokenInput({
   name,
   onChange,
   maxValue,
+  variant = "default",
   inputLabel = "Enter amount",
-  stat,
+  bottomLeftElement: bottomLeftStatistic,
+  bottomRightElement: bottomRightStatistic,
   settings,
   hasError = false,
   disabled = false,
@@ -44,97 +47,97 @@ export function TokenInput({
 }: TokenInputProps): ReactElement {
   return (
     <div className="flex w-full flex-col">
-      <label className="daisy-label flex justify-between">
-        <span className="daisy-label-text">{inputLabel}</span>
-      </label>
+      {settings ? settings : null}
 
-      <label className="daisy-join items-center">
-        {typeof token === "string" ? (
-          <div
+      <div
+        className={classNames(
+          "flex h-[117px] flex-col gap-2 rounded-md px-4 py-3 has-[:focus]:ring-2 has-[:focus]:ring-gray-600",
+          {
+            "bg-base-100": variant === "default",
+            "bg-base-200": variant === "lighter",
+          },
+        )}
+      >
+        <label className="text-sm text-neutral-content">{inputLabel}</label>
+        <div className="flex flex-row items-center">
+          <input
+            type="number"
+            // Setting step to `any` allows any number between min and max to be
+            // displayed without triggering the browser's native validation
+            // tooltips. We do this because by default steps are whole numbers.
+            // See:
+            // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number#step
+            step="any"
+            min="0"
+            autoFocus={autoFocus}
+            max={maxValue}
+            name={name}
+            disabled={disabled}
             className={classNames(
-              "daisy-join-item flex h-12 items-center border border-neutral-content/30 px-4",
+              "daisy-input mr-2 h-9 w-full flex-1 p-0 text-h3 focus:outline-none",
+              HIDE_NUMERIC_INPUT_ARROWS_CLASS,
               {
-                "bg-base-100": !disabled,
-                "border-none opacity-20": disabled,
+                "daisy-input-error text-error": hasError,
+                "bg-base-100 focus:border-base-100": variant === "default",
+                "bg-base-200 focus:border-base-200": variant === "lighter",
               },
             )}
-          >
-            {token}
-          </div>
-        ) : (
-          token
-        )}
-        <input
-          type="number"
-          // Setting step to `any` allows any number between min and max to be
-          // displayed without triggering the browser's native validation
-          // tooltips. We do this because by default steps are whole numbers.
-          // See:
-          // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number#step
-          step="any"
-          min="0"
-          autoFocus={autoFocus}
-          max={maxValue}
-          name={name}
-          disabled={disabled}
-          className={classNames(
-            "daisy-input daisy-join-item daisy-input-bordered w-full flex-1",
-            HIDE_NUMERIC_INPUT_ARROWS_CLASS,
-            {
-              "daisy-input-error text-error": hasError,
-            },
-          )}
-          value={value}
-          placeholder="0"
-          onKeyDown={(event) => {
-            // Prevent typing '-' and 'e'
-            if (["-", "e", "E"].includes(event.key)) {
-              event.preventDefault();
-            }
-          }}
-          onChange={(event) => {
-            onChange(event.target.value);
-          }}
-        />
-        {maxValue !== undefined && !disabled ? (
-          <div className="flex justify-around">
-            <button
+            value={value}
+            placeholder="0"
+            onKeyDown={(event) => {
+              // Prevent typing '-' and 'e'
+              if (["-", "e", "E"].includes(event.key)) {
+                event.preventDefault();
+              }
+            }}
+            onChange={(event) => {
+              onChange?.(event.target.value);
+            }}
+          />
+          {typeof token === "string" ? (
+            <div
               className={classNames(
-                "daisy-btn daisy-join-item border-b-neutral-content/30 border-l-base-100 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-base-100 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline active:hover:border-l-base-100",
+                "flex h-12 items-center border-neutral-content/30 px-4",
                 {
-                  "daisy-btn-error": hasError,
+                  "bg-base-100": !disabled,
+                  "border-none opacity-20": disabled,
                 },
               )}
-              onClick={(e) => {
-                e.preventDefault();
-                onChange(maxValue);
-              }}
             >
-              Max
-            </button>
-          </div>
-        ) : null}
-        {settings ? (
-          <div className="daisy-dropdown daisy-dropdown-bottom relative">
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-              className="daisy-btn daisy-join-item border-b-neutral-content/30 border-l-neutral-content/30 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-neutral-content/30 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline"
-            >
-              <Cog6ToothIcon className="h-4" />
-            </button>
-            <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg bg-base-100 p-4 shadow">
-              {settings}
+              {token}
             </div>
+          ) : (
+            token
+          )}
+        </div>
+        <div className="flex w-full justify-between">
+          {bottomLeftStatistic}
+          <div className="flex w-full items-baseline justify-end text-sm">
+            {bottomRightStatistic ? (
+              <label className="text-neutral-content">
+                {bottomRightStatistic}
+              </label>
+            ) : null}
+            {maxValue !== undefined && !disabled ? (
+              <button
+                className={classNames(
+                  "ml-1 text-sm font-semibold text-base-content",
+                  {
+                    "daisy-btn-error": hasError,
+                  },
+                )}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onChange?.(maxValue);
+                }}
+              >
+                Max
+              </button>
+            ) : null}
           </div>
-        ) : null}
-      </label>
-      <label className="daisy-label flex justify-end">
-        {stat ? (
-          <span className="daisy-label-text whitespace-pre-wrap">{stat}</span>
-        ) : null}
-      </label>
+        </div>
+      </div>
     </div>
   );
 }

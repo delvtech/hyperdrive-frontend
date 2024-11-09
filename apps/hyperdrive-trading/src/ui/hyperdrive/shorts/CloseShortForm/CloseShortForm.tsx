@@ -22,9 +22,8 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenChoice } from "src/ui/token/TokenPicker";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -151,7 +150,7 @@ export function CloseShortForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="Amount to redeem"
             token={`hy${baseToken.symbol}`}
@@ -183,11 +182,11 @@ export function CloseShortForm({
               </div>
             }
           />
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="You receive"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
                 onChange={(tokenAddress) => {

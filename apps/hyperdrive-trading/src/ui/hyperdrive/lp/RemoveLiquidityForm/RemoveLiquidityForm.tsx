@@ -28,10 +28,9 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenChoice } from "src/ui/token/TokenPicker";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -237,11 +236,11 @@ export function RemoveLiquidityForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name="Input LP shares"
             token={`${baseToken.symbol}-LP`}
             settings={
-              <SlippageSettingsTwo
+              <SlippageSettings
                 onSlippageChange={(slippage) => {
                   window.plausible("formChange", {
                     props: {
@@ -284,11 +283,11 @@ export function RemoveLiquidityForm({
               setAmount(newAmount);
             }}
           />
-          <TokenInputTwo
+          <TokenInput
             name={baseToken.symbol}
             inputLabel="You receive"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={withdrawTokenChoices}
                 activeTokenAddress={activeWithdrawToken.address}
                 onChange={(tokenAddress) => {

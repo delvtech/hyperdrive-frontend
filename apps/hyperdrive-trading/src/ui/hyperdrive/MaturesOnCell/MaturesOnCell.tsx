@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 
-export function MaturesOnCellTwo({
+export function MaturesOnCell({
   maturity,
   hyperdrive,
 }: {

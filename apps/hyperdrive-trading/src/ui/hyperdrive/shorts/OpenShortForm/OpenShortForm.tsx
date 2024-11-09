@@ -34,9 +34,9 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
-import { SlippageSettingsTwo } from "src/ui/token/SlippageSettingsTwo";
-import { TokenInputTwo } from "src/ui/token/TokenInputTwo";
-import { TokenPickerTwo } from "src/ui/token/TokenPickerTwo";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
@@ -293,12 +293,12 @@ export function OpenShortForm({
     <TransactionView
       tokenInput={
         <div className="flex flex-col gap-3">
-          <TokenInputTwo
+          <TokenInput
             name={`${baseToken.symbol}-input`}
             variant="lighter"
             inputLabel="Earn yield on"
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={[
                   {
                     tokenConfig: baseToken,
@@ -333,7 +333,7 @@ export function OpenShortForm({
             settings={
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
-                <SlippageSettingsTwo
+                <SlippageSettings
                   onSlippageChange={(slippage) => {
                     window.plausible("formChange", {
                       props: {
@@ -395,11 +395,11 @@ export function OpenShortForm({
               ) : null
             }
           />
-          <TokenInputTwo
+          <TokenInput
             variant="lighter"
             name={`${baseToken.symbol}-input`}
             token={
-              <TokenPickerTwo
+              <TokenPicker
                 tokens={tokenOptions}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {

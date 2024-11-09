@@ -29,9 +29,9 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { MaturesOnCellTwo } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
-import { CurrentValueCellTwo } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
+import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
 import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
 import { TotalOpenLongsValue } from "src/ui/hyperdrive/longs/OpenLongsTable/TotalOpenLongsValue";
 import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
@@ -329,7 +329,7 @@ function getColumns({
       header: `Maturity Date`,
       cell: ({ row }) => {
         return (
-          <MaturesOnCellTwo
+          <MaturesOnCell
             hyperdrive={hyperdrive}
             maturity={row.original.maturity}
           />
@@ -384,7 +384,7 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <div>
-            <CurrentValueCellTwo hyperdrive={hyperdrive} row={row.original} />
+            <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
                 balance: row.original.details?.baseAmountPaid || 0n,

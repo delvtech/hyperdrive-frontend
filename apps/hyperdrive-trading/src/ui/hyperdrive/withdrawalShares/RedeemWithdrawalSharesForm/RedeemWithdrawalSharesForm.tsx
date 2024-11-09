@@ -165,7 +165,7 @@ export function RedeemWithdrawalSharesForm({
             ) : undefined
           }
           value={amount ?? ""}
-          stat={
+          bottomRightElement={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
               <span>
                 {`Withdrawable: ${formatBalance({
@@ -176,7 +176,6 @@ export function RedeemWithdrawalSharesForm({
                   places: activeWithdrawToken.places,
                 })} ${activeWithdrawToken.symbol}`}
               </span>
-              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
             </div>
           }
           maxValue={formatUnits(
