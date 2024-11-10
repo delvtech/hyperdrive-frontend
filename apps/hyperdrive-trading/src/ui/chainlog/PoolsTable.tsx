@@ -42,8 +42,6 @@ export function PoolsTable(): ReactElement {
     },
   });
 
-  console.log(data.length);
-
   return (
     <div className="w-full overflow-x-auto">
       {!isFetching && !data.length ? (
