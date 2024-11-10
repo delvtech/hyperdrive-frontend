@@ -193,7 +193,7 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
           const factoryAddresses = await registry.getFactoryAddresses();
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
-          metas.forEach(({ data, name, version }, i) => {
+          for (const [i, { data, name, version }] of metas.entries()) {
             const { status } = decodeFactoryData(data);
             factories.push({
               name,
@@ -202,7 +202,7 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
               version,
               status,
             });
-          });
+          }
         }),
       );
 
