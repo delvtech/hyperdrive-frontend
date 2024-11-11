@@ -1,9 +1,0 @@
-{
-  "root": true,
-  "extends": [
-    "@hyperdrive/eslint-config"
-  ],
-  "ignorePatterns": [
-    "generated.ts"
-  ],
-}
