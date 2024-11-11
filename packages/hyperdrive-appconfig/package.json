@@ -20,7 +20,9 @@
   ],
   "scripts": {
     "generate": "npx tsx ./src/scripts/generate.ts",
-    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts",
+    "build:esm": "tsc --module esnext --outDir dist/esm",
+    "build:commonjs": "tsc --module commonjs --outDir dist/cjs",
+    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts && tsc",
     "watch": "tsup src/index.ts --watch --minify --format esm,cjs --dts",
     "typecheck": "tsc --noEmit"
   },
@@ -39,7 +41,6 @@
     "lodash.camelcase": "^4.3.0",
     "lodash.uniqby": "^4.7.0",
     "prettier-plugin-organize-imports": "3.2.4",
-    "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "tsup": "^7.2.0",
     "tsx": "^4.7.0",
