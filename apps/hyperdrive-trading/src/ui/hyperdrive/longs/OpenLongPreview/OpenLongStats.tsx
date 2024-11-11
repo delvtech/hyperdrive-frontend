@@ -3,9 +3,8 @@ import {
   appConfig,
   findBaseToken,
   HyperdriveConfig,
-  TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { calculateAprFromPrice } from "@delvtech/hyperdrive-viem";
+import { calculateAprFromPrice } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import Skeleton from "react-loading-skeleton";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -23,7 +22,6 @@ interface OpenLongStatsProps {
   bondAmount: bigint;
   amountPaid: bigint;
   openLongPreviewStatus: QueryStatusWithIdle;
-  activeToken: TokenConfig;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
 }
@@ -32,7 +30,6 @@ export function OpenLongStats({
   openLongPreviewStatus,
   amountPaid,
   bondAmount,
-  activeToken,
   asBase,
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {

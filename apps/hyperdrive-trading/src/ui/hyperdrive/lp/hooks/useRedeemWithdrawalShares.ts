@@ -77,17 +77,21 @@ export function useRedeemWithdrawalShares({
           destination,
           asBase,
         },
-        onTransactionCompleted: (transactionHash) => {
-          queryClient.invalidateQueries();
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash,
-              transactionType: "close",
-              positionType: "lp",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "close",
+                  positionType: "lp",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
       addTransaction({

@@ -18,7 +18,7 @@ export async function getGnosisWstethHyperdrive({
   sharesTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const chainId = await hyperdrive.network.getChainId();
+  const chainId = await hyperdrive.drift.getChainId();
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 

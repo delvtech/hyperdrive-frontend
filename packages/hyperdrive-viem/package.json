@@ -12,8 +12,9 @@
     "viem": "^2.7.8"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-js-core": "3.0.6",
-    "@delvtech/evm-client-viem": "^0.6.3"
+    "@delvtech/drift": "^0.0.1-beta.11",
+    "@delvtech/drift-viem": "^0.0.1-beta.13",
+    "@delvtech/hyperdrive-js": "0.0.0"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
@@ -31,33 +32,16 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./factory": {
-      "import": "./dist/factory.js",
-      "require": "./dist/factory.js"
-    },
-    "./hyperdrive": {
-      "import": "./dist/hyperdrive.js",
-      "require": "./dist/hyperdrive.js"
-    },
-    "./registry": {
-      "import": "./dist/registry.js",
-      "require": "./dist/registry.js"
-    },
-    "./token": {
-      "import": "./dist/token.js",
-      "require": "./dist/token.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./v1.0.14": {
-      "import": "./dist/v1.0.14/index.js",
-      "require": "./dist/v1.0.14/index.js"
+      "types": "./dist/v1.0.14.d.ts",
+      "default": "./dist/v1.0.14.js",
+      "require": "./dist/v1.0.14.cjs"
     },
-    "./v1.0.14/*": {
-      "import": "./dist/v1.0.14/*.js",
-      "require": "./dist/v1.0.14/*.js"
-    }
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"

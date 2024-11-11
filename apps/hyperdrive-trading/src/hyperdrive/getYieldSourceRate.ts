@@ -1,3 +1,4 @@
+import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
@@ -5,7 +6,7 @@ import {
   getRewardsFn,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
@@ -16,7 +17,7 @@ export async function getYieldSourceRate(
   readHyperdrive: ReadHyperdrive,
   appConfig: AppConfig,
 ): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
-  const hyperdriveChainId = await readHyperdrive.network.getChainId();
+  const hyperdriveChainId = await readHyperdrive.drift.getChainId();
   const hyperdrive = findHyperdriveConfig({
     hyperdriveChainId,
     hyperdriveAddress: readHyperdrive.address,
@@ -28,7 +29,7 @@ export async function getYieldSourceRate(
     hyperdrive,
   });
 
-  const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
+  const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
   const initializationBlock = hyperdrive.initializationBlock;
 
   const isPoolYoungerThanOneRatePeriod =

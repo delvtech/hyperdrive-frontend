@@ -5,7 +5,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -368,7 +368,6 @@ export function OpenLongForm({
       primaryStats={
         <OpenLongStats
           hyperdrive={hyperdrive}
-          activeToken={activeToken}
           amountPaid={depositAmountAsBigInt || 0n}
           bondAmount={bondsReceived || 0n}
           openLongPreviewStatus={openLongPreviewStatus}

@@ -6,14 +6,13 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
-import { getPublicClient } from "@wagmi/core";
 import { ReactElement, ReactNode, useMemo } from "react";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
-import { wagmiConfig } from "src/network/wagmiClient";
+import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
@@ -21,7 +20,6 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
-import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
 // TODO: Re-implement sorting without blocking the list from rendering.
@@ -342,13 +340,10 @@ function usePoolsList(): {
     queryFn: async () => {
       const pools = await Promise.all(
         appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-          const publicClient = getPublicClient(wagmiConfig as any, {
-            chainId: hyperdrive.chainId,
-          });
-          const readHyperdrive = await getReadHyperdrive({
-            hyperdriveAddress: hyperdrive.address,
-            appConfig: appConfig,
-            publicClient: publicClient as PublicClient,
+          const readHyperdrive = await getHyperdrive({
+            address: hyperdrive.address,
+            drift: getDrift({ chainId: hyperdrive.chainId }),
+            earliestBlock: hyperdrive.initializationBlock,
           });
 
           // We only show hyperdrives that are not paused

@@ -6,7 +6,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { LabelValue } from "src/ui/base/components/LabelValue";

@@ -1,22 +1,21 @@
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { Drift } from "@delvtech/drift";
+import { viemAdapter } from "@delvtech/drift-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { publicClient } from "../client";
 
+const drift = new Drift(viemAdapter({ publicClient }));
+
 const pool = new ReadHyperdrive({
-  address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
-  publicClient,
+  address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
+  drift,
 });
 
 const kind = await pool.getKind();
-const name = await publicClient.readContract({
-  abi: IHyperdrive.abi,
-  address: "0x1cB0E96C07910fee9a22607bb9228c73848903a3",
-  functionName: "name",
-});
 const config = await pool.getPoolConfig();
+
 console.log(`
+  address: ${pool.address}
   kind: ${kind}
-  name: ${name}
   baseToken: ${config.baseToken}
   sharesToken: ${config.vaultSharesToken}
 `);

@@ -1,4 +1,4 @@
-import { ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ReadRegistry } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import {
@@ -8,20 +8,18 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { getPublicClient } from "@wagmi/core";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { wagmiConfig } from "src/network/wagmiClient";
-import { Status, decodeFactoryData } from "src/registry/data";
-import { sdkCache } from "src/sdk/sdkCache";
+import { getDrift } from "src/drift/getDrift";
+import { Status, getStatus } from "src/registry/data";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { AddressCell } from "src/ui/chainlog/AddressCell";
 import { ChainCell } from "src/ui/chainlog/ChainCell";
 import { StatusCell } from "src/ui/chainlog/StatusCell";
-import { Address, PublicClient } from "viem";
+import { Address } from "viem";
 
 export function FactoriesTable(): ReactElement {
   const { data = [], isFetching } = useFactoriesQuery();
@@ -163,7 +161,7 @@ interface Factory {
   status: Status;
 }
 
-function useFactoriesQuery(): UseQueryResult<Factory[], any> {
+function useFactoriesQuery(): UseQueryResult<Factory[]> {
   const connectedAppConfig = useAppConfigForConnectedChain();
   const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
@@ -178,23 +176,16 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
 
       await Promise.all(
         chainIds.map(async (chainId) => {
-          // TODO: Cleanup type casting
-          const publicClient = getPublicClient(wagmiConfig as any, {
-            chainId,
-          }) as PublicClient;
-
           const registry = new ReadRegistry({
             address: connectedAppConfig.registries[chainId],
-            publicClient,
-            cache: sdkCache,
-            namespace: chainId.toString(),
+            drift: getDrift({ chainId }),
           });
 
           const factoryAddresses = await registry.getFactoryAddresses();
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
           for (const [i, { data, name, version }] of metas.entries()) {
-            const { status } = decodeFactoryData(data);
+            const status = getStatus(data);
             factories.push({
               name,
               address: factoryAddresses[i],

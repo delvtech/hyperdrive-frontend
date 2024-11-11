@@ -1,5 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 
 import {
   appConfig,

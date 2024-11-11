@@ -5,7 +5,7 @@ import {
   findToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";

@@ -41,7 +41,7 @@ export async function getAeroLpHyperdrive({
   // safe to cast here because we know the pool was initialized
   const initializationBlock = await hyperdrive.getInitializationBlock();
   const hyperdriveConfig: HyperdriveConfig = {
-    chainId: await hyperdrive.network.getChainId(),
+    chainId: await hyperdrive.drift.getChainId(),
     kind: await hyperdrive.getKind(),
     // safe to cast here because we know the pool was initialized
     initializationBlock: initializationBlock.blockNumber as bigint,

@@ -13,7 +13,7 @@ export async function getTokenConfig({
   places: number;
 }): Promise<TokenConfig> {
   return {
-    chainId: await token.network.getChainId(),
+    chainId: await token.drift.getChainId(),
     address: token.address,
     decimals: await token.getDecimals(),
     places,

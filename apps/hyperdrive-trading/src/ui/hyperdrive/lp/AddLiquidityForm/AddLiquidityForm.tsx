@@ -6,7 +6,7 @@ import {
   findBaseToken,
   findToken,
 } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";

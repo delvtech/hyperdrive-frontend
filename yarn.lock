@@ -1479,14 +1479,21 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.6.3":
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.6.3.tgz#9b45833cd509fe676df5b765126bf6dc3c19413e"
-  integrity sha512-n2qVLGk7v4WPIHsvwaWTmjVyK1pmkzoFu/jqxXhgHD8ArWCccfXu3LGpRUFT7LVI/ksshW7hnMbvJ3r5mpZuzA==
-  dependencies:
-    "@delvtech/evm-client" "0.5.1"
+"@delvtech/drift-viem@^0.0.1-beta.13":
+  version "0.0.1-beta.13"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.0.1-beta.13.tgz#9f5f38a50f72ea887319ea9480559fa01956c29b"
+  integrity sha512-i7PUAmUdq7IRRSjQO4JozV7swvYFcED3X4TT1l5RF0kXAD5drbMHIcpIB1D+2N7V2H2MCd2D4PDWDqVu+Hotzg==
 
-"@delvtech/evm-client@0.5.1", "@delvtech/evm-client@^0.5.1":
+"@delvtech/drift@^0.0.1-beta.11":
+  version "0.0.1-beta.11"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.0.1-beta.11.tgz#939c2fe6a07dacfa58ba72cf30ba4917fde7e91d"
+  integrity sha512-YjMLT4xJszZPVfNVK+t7rINwereQ4yMgVOS+VNm0NsMqWmv5vXxjnDGtLHg1RyeZy93DVnxPxTFj0YJxB/4t3g==
+  dependencies:
+    lodash.ismatch "^4.4.0"
+    lru-cache "^10.0.1"
+    safe-stable-stringify "^2.5.0"
+
+"@delvtech/evm-client@^0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
   integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==
@@ -15002,6 +15009,11 @@ safe-stable-stringify@^2.1.0:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.4.3.tgz#138c84b6f6edb3db5f8ef3ef7115b8f55ccbf886"
   integrity sha512-e2bDA2WJT0wxseVd4lsDP4+3ONX6HpMXQa1ZhFQ7SU+GjvORCmShbCMltrtIDfkYhVHrOcPtj+KhmDBdPdZD1g==
+
+safe-stable-stringify@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.5.0.tgz#4ca2f8e385f2831c432a719b108a3bf7af42a1dd"
+  integrity sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA==
 
 "safer-buffer@>= 2.1.2 < 3":
   version "2.1.2"

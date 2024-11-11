@@ -87,27 +87,31 @@ export function useCloseLong({
           maturityTime,
           asBase,
         },
-        onTransactionCompleted: (txHash: Hash) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              message="Long closed"
-              txHash={hash}
-              chainId={chainId}
-            />,
-            { id: hash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: txHash,
-              transactionType: "close",
-              positionType: "long",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  message="Long closed"
+                  txHash={hash}
+                  chainId={chainId}
+                />,
+                { id: hash, duration: SUCCESS_TOAST_DURATION },
+              );
+              toastWarpcast();
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "close",
+                  positionType: "long",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 

@@ -1,11 +1,14 @@
-import * as core from "@delvtech/hyperdrive-js-core";
+import {
+  ReadEzEthHyperdrive as BaseReadEzEthHyperdrive,
+  ReadWriteEzEthHyperdrive as BaseReadWriteEzEthHyperdrive,
+} from "@delvtech/hyperdrive-js";
 import { viemReadMixin } from "src/viem/viemReadMixin";
 import { viemReadWriteMixin } from "src/viem/viemReadWriteMixin";
 
 export class ReadEzEthHyperdrive extends viemReadMixin(
-  core.ReadEzEthHyperdrive
+  BaseReadEzEthHyperdrive,
 ) {}
 
 export class ReadWriteEzEthHyperdrive extends viemReadWriteMixin(
-  core.ReadWriteEzEthHyperdrive
+  BaseReadWriteEzEthHyperdrive,
 ) {}

@@ -1,5 +1,5 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -72,19 +72,6 @@ export function useOpenShort({
         return;
       }
 
-      const openShortOptions = {
-        value: ethValue
-          ? // Pad the eth value by 1% so that the tx goes through, the
-            // contract will refund any amount that it doesn't spend
-            adjustAmountByPercentage({
-              amount: ethValue,
-              decimals: 18,
-              direction: "up",
-              percentage: parseUnits("1", 18),
-            })
-          : undefined,
-      };
-
       // All shares need to be prepared before going into the sdk
       const finalMaxDeposit = asBase
         ? maxDeposit
@@ -103,28 +90,44 @@ export function useOpenShort({
           minVaultSharePrice,
           maxDeposit: finalMaxDeposit,
         },
-        options: openShortOptions,
-        onTransactionCompleted: (txHash: `0x${string}`) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              chainId={chainId}
-              message="Short opened"
-              txHash={txHash}
-            />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: txHash,
-              transactionType: "open",
-              positionType: "short",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          value: ethValue
+            ? // Pad the eth value by 1% so that the tx goes through, the
+              // contract will refund any amount that it doesn't spend
+              adjustAmountByPercentage({
+                amount: ethValue,
+                decimals: 18,
+                direction: "up",
+                percentage: parseUnits("1", 18),
+              })
+            : undefined,
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Short opened"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                },
+              );
+              toastWarpcast();
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "open",
+                  positionType: "short",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 

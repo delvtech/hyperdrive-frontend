@@ -1,5 +1,5 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { Short } from "@delvtech/hyperdrive-viem";
+import { Short } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";

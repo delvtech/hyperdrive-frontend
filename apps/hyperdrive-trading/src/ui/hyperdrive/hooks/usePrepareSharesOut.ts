@@ -3,7 +3,7 @@ import {
   appConfig,
   findHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";

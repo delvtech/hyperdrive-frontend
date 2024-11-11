@@ -1,54 +1,46 @@
-import {
-  createCachedReadContract,
-  createNetwork,
-} from "@delvtech/evm-client-viem";
+import { Drift, Pretty } from "@delvtech/drift";
+import { viemAdapter } from "@delvtech/drift-viem";
 import {
   Constructor,
-  ContractFactoryOptions,
-  ReadContractModelOptions,
-  ReadModelOptions,
-} from "@delvtech/hyperdrive-js-core";
+  ReadClient,
+  ReadClientOptions,
+} from "@delvtech/hyperdrive-js";
 import { PublicClient } from "viem";
-import { Prettify } from "viem/chains";
 
-export type ViemReadMixin<T extends ReadContractModelConstructor> = new (
-  options: ViemReadModelOptions<ConstructorParameters<T>[0]>
-) => InstanceType<T>;
-
-export function viemReadMixin<T extends ReadContractModelConstructor>(
-  Base: T
-): ViemReadMixin<T> {
-  return class extends (Base as Constructor) {
-    constructor(...[options, ...restArgs]: any[]) {
-      const { publicClient, cache, namespace, ...restOptions } =
-        options as ViemReadModelOptions<ReadContractModelOptions>;
-      super(
-        {
-          contractFactory: (options: ContractFactoryOptions) => {
-            return createCachedReadContract({
-              publicClient,
-              cache,
-              namespace,
-              ...options,
-            });
-          },
-          network: createNetwork(publicClient),
-          ...restOptions,
-        },
-        ...restArgs
-      );
-    }
-  } as ViemReadMixin<T>;
-}
-
-export type ReadContractModelConstructor = new (
-  ...args: [options: ReadContractModelOptions, ...any[]]
-) => any;
-
-export type ViemReadModelOptions<T extends ReadModelOptions> = Prettify<
-  // Replace the properties the mixin will create with the ones it will use to
-  // create them.
-  Omit<T, "contractFactory" | "network"> & {
+// Replace the `drift` option with `publicClient`.
+export type ViemReadClientOptions<T extends ReadClientOptions> = Pretty<
+  Omit<T, "drift"> & {
     publicClient: PublicClient;
   }
 >;
+
+/**
+ * A mixin that overrides a read client's `drift` option with a `publicClient`
+ * option.
+ */
+export function viemReadMixin<T extends Constructor<ReadClient>>(
+  Base: T,
+): ViemReadClientConstructor<T> {
+  return class extends (Base as Constructor) {
+    constructor(...[options, ...restArgs]: any[]) {
+      const { publicClient, ...restOptions } =
+        options as ViemReadClientOptions<ReadClientOptions>;
+
+      const clientOptions: ReadClientOptions = {
+        // TODO: Fix type casting needed for conflicting viem versions
+        drift: new Drift(viemAdapter({ publicClient: publicClient as any })),
+        ...restOptions,
+      };
+
+      super(clientOptions, ...restArgs);
+    }
+  } as ViemReadClientConstructor<T>;
+}
+
+// A `ReadClient` class constructor that takes a `publicClient` instead of a
+// `drift` option.
+export type ViemReadClientConstructor<T extends Constructor<ReadClient>> =
+  Constructor<
+    InstanceType<T>,
+    [options: ViemReadClientOptions<ConstructorParameters<T>[0]>]
+  >;

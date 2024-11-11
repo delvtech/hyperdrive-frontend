@@ -80,27 +80,34 @@ export function useRemoveLiquidity({
           minOutputPerShare: finalMinOutputPerShare,
           destination,
         },
-        onTransactionCompleted: (txHash: Hash) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              chainId={chainId}
-              message="Liquidity removed"
-              txHash={txHash}
-            />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: txHash,
-              transactionType: "close",
-              positionType: "lp",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+        options: {
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Liquidity removed"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                },
+              );
+              toastWarpcast();
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "close",
+                  positionType: "lp",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 

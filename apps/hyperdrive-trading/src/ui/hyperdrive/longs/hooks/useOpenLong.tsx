@@ -89,30 +89,35 @@ export function useOpenLong({
         },
         options: {
           value: ethValue,
-        },
-        onTransactionCompleted: (txHash) => {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast
-              chainId={chainId}
-              message="Long opened"
-              txHash={txHash}
-            />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
-          onExecuted?.(txHash);
-          window.plausible("transactionSuccess", {
-            props: {
-              transactionHash: txHash,
-              transactionType: "open",
-              positionType: "long",
-              poolAddress: hyperdriveAddress,
-              chainId,
-            },
-          });
+          onMined: (receipt) => {
+            queryClient.invalidateQueries();
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Long opened"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                },
+              );
+              setTimeout(() => {
+                toastWarpcast();
+              }, SUCCESS_TOAST_DURATION);
+              onExecuted?.(receipt.transactionHash);
+              window.plausible("transactionSuccess", {
+                props: {
+                  transactionHash: receipt.transactionHash,
+                  transactionType: "open",
+                  positionType: "long",
+                  poolAddress: hyperdriveAddress,
+                  chainId,
+                },
+              });
+            }
+          },
         },
       });
 

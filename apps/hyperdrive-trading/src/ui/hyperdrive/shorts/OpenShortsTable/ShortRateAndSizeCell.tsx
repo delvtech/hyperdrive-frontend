@@ -3,7 +3,7 @@ import {
   findBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
@@ -33,7 +33,7 @@ export function ShortRateAndSizeCell({
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
-    blockNumber: maturityBlock?.number,
+    block: maturityBlock?.number,
   });
 
   const rateDifference = (fixedApr?.apr || 0n) - short.fixedRatePaid;

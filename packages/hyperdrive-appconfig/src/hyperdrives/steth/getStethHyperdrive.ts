@@ -15,7 +15,7 @@ export async function getStethHyperdrive({
   baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
 }> {
-  const chainId = await hyperdrive.network.getChainId();
+  const chainId = await hyperdrive.drift.getChainId();
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
@@ -31,7 +31,7 @@ export async function getStethHyperdrive({
 
   const baseTokenConfig: TokenConfig = {
     address: poolConfig.baseToken,
-    chainId: await hyperdrive.network.getChainId(),
+    chainId: await hyperdrive.drift.getChainId(),
     name: "Ether",
     symbol: "ETH",
     decimals: 18,

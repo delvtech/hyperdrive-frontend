@@ -1,10 +1,12 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { ReadWriteHyperdrive } from "@delvtech/hyperdrive-viem";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
+import { getHyperdrive, ReadWriteHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadWriteHyperdrive } from "src/hyperdrive/getReadWriteHyperdrive";
+import { useReadWriteDrift } from "src/ui/drift/useDrift";
 import { Address } from "viem";
-import { usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive({
   address,
@@ -13,10 +15,9 @@ export function useReadWriteHyperdrive({
   address: Address | undefined;
   chainId: number;
 }): ReadWriteHyperdrive | undefined {
-  const publicClient = usePublicClient({ chainId });
-  const { data: walletClient } = useWalletClient({ chainId });
+  const drift = useReadWriteDrift({ chainId });
 
-  const enabled = !!address && !!publicClient && !!walletClient;
+  const enabled = !!address && !!drift;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadWriteHyperdrive", {
@@ -25,13 +26,18 @@ export function useReadWriteHyperdrive({
     }),
     enabled,
     queryFn: enabled
-      ? () =>
-          getReadWriteHyperdrive({
+      ? () => {
+          const { initializationBlock } = findHyperdriveConfig({
             hyperdriveAddress: address,
-            publicClient,
-            walletClient,
-            appConfig,
-          })
+            hyperdriveChainId: chainId,
+            hyperdrives: appConfig.hyperdrives,
+          });
+          return getHyperdrive({
+            address,
+            drift,
+            earliestBlock: initializationBlock,
+          });
+        }
       : undefined,
   });
 

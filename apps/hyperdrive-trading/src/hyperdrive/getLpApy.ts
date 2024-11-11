@@ -1,10 +1,11 @@
+import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getRewardsFn,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { Block, ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
@@ -45,7 +46,7 @@ export async function getLpApy({
   readHyperdrive: ReadHyperdrive;
   hyperdrive: HyperdriveConfig;
 }): Promise<LpApyResult> {
-  const currentBlock = (await readHyperdrive.network.getBlock()) as Block;
+  const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
   const currentBlockNumber = currentBlock.blockNumber!;
   // Appconfig tells us how many days to look back for historical rates
   const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)

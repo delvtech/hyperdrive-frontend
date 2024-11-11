@@ -1,10 +1,12 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import {
+  appConfig,
+  findHyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
+import { getHyperdrive, ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { useDrift } from "src/ui/drift/useDrift";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
 
 export function useReadHyperdrive({
   chainId,
@@ -13,9 +15,8 @@ export function useReadHyperdrive({
   chainId: number;
   address: Address | undefined;
 }): ReadHyperdrive | undefined {
-  const publicClient = usePublicClient({ chainId });
-
-  const enabled = !!address && !!publicClient;
+  const drift = useDrift({ chainId });
+  const enabled = !!address && !!drift;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadHyperdrive", {
@@ -24,12 +25,18 @@ export function useReadHyperdrive({
     }),
     enabled,
     queryFn: enabled
-      ? () =>
-          getReadHyperdrive({
+      ? () => {
+          const { initializationBlock } = findHyperdriveConfig({
             hyperdriveAddress: address,
-            publicClient,
-            appConfig,
-          })
+            hyperdriveChainId: chainId,
+            hyperdrives: appConfig.hyperdrives,
+          });
+          return getHyperdrive({
+            address,
+            drift,
+            earliestBlock: initializationBlock,
+          });
+        }
       : undefined,
   });
 

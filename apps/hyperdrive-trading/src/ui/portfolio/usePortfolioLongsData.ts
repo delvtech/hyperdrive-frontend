@@ -1,10 +1,12 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { OpenLongPositionReceived } from "@delvtech/hyperdrive-viem";
+import {
+  getHyperdrive,
+  OpenLongPositionReceived,
+} from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { usePublicClients } from "src/ui/hyperdrive/hooks/usePublicClients";
 import { useAccount } from "wagmi";
 
 type OpenLongPositionsData = {
@@ -17,13 +19,8 @@ export function usePortfolioLongsData(): {
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
-
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
-
-  const clients = usePublicClients(
-    Object.keys(appConfigForConnectedChain.chains).map(Number),
-  );
-  const queryEnabled = !!account && !!appConfigForConnectedChain && !!clients;
+  const queryEnabled = !!account && !!appConfigForConnectedChain;
 
   const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
@@ -33,22 +30,10 @@ export function usePortfolioLongsData(): {
         ? async () =>
             await Promise.all(
               appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-                const publicClient = clients[hyperdrive.chainId]?.publicClient;
-
-                if (!publicClient) {
-                  console.error(
-                    `No public client found for chainId ${hyperdrive.chainId}`,
-                  );
-                  return {
-                    hyperdrive,
-                    openLongs: [],
-                  };
-                }
-
-                const readHyperdrive = await getReadHyperdrive({
-                  appConfig: appConfigForConnectedChain,
-                  hyperdriveAddress: hyperdrive.address,
-                  publicClient,
+                const readHyperdrive = await getHyperdrive({
+                  address: hyperdrive.address,
+                  drift: getDrift({ chainId: hyperdrive.chainId }),
+                  earliestBlock: hyperdrive.initializationBlock,
                 });
 
                 const allLongs = await readHyperdrive.getOpenLongPositions({
