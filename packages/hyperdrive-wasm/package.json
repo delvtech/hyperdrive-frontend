@@ -7,17 +7,35 @@
   "version": "0.15.3",
   "license": "AGPL-3.0",
   "files": [
-    "hyperdrive_wasm.js",
-    "hyperdrive_wasm.d.ts"
+    "src/hyperdrive_wasm.js",
+    "src/hyperdrive_wasm.d.ts"
   ],
-  "module": "hyperdrive_wasm.js",
-  "types": "hyperdrive_wasm.d.ts",
+  "types": "src/hyperdrive_wasm.d.ts",
   "sideEffects": [
     "./snippets/*"
   ],
   "type": "module",
-  "main": "hyperdrive_wasm.js",
   "publishConfig": {
     "access": "public"
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.mjs"
+    }
+  },
+  "scripts": {
+    "build:cjs": "babel src/hyperdrive_wasm.js --out-file dist/cjs/index.cjs --env-name cjs",
+    "build:esm": "babel src/hyperdrive_wasm.js --out-file dist/esm/index.mjs --env-name esm",
+    "copy:types": "cp src/hyperdrive_wasm.d.ts dist/index.d.ts && cp src/hyperdrive_wasm.d.ts dist/cjs/index.d.ts && cp src/hyperdrive_wasm.d.ts dist/esm/index.d.ts",
+    "build": "npm run build:cjs && npm run build:esm && npm run copy:types"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-plugin-transform-import-meta": "^2.2.1"
   }
 }
