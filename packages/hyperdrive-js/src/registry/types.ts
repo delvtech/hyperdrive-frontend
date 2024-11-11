@@ -7,15 +7,9 @@ import { RegistryAbi } from "src/registry/abi";
  * The info collected for each Hyperdrive factory along with the metadata
  * associated with each instance.
  */
-export type FactoryInfoWithMetadata = ReplaceProps<
-  FunctionReturn<RegistryAbi, "getFactoryInfoWithMetadata">,
-  {
-    /**
-     * Data about the factory. Different registries can utilize different
-     * schemas for these values.
-     */
-    data: `0x${string}`;
-  }
+export type FactoryInfoWithMetadata = FunctionReturn<
+  RegistryAbi,
+  "getFactoryInfoWithMetadata"
 >;
 
 /**
@@ -25,11 +19,6 @@ export type FactoryInfoWithMetadata = ReplaceProps<
 export type ReadInstanceInfoWithMetadata = ReplaceProps<
   FunctionReturn<RegistryAbi, "getInstanceInfoWithMetadata">,
   {
-    /**
-     * Data about the instance. Different registries can utilize different
-     * schemas for these values.
-     */
-    data: `0x${string}`;
     /**
      * The factory that deployed this instance.
      */

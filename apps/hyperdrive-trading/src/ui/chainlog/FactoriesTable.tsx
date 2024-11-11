@@ -12,7 +12,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
-import { Status, decodeFactoryData } from "src/registry/data";
+import { Status, getStatus } from "src/registry/data";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -161,7 +161,7 @@ interface Factory {
   status: Status;
 }
 
-function useFactoriesQuery(): UseQueryResult<Factory[], any> {
+function useFactoriesQuery(): UseQueryResult<Factory[]> {
   const connectedAppConfig = useAppConfigForConnectedChain();
   const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
@@ -185,7 +185,7 @@ function useFactoriesQuery(): UseQueryResult<Factory[], any> {
           const metas = await registry.getFactoryInfos(factoryAddresses);
 
           for (const [i, { data, name, version }] of metas.entries()) {
-            const { status } = decodeFactoryData(data);
+            const status = getStatus(data);
             factories.push({
               name,
               address: factoryAddresses[i],

@@ -78,22 +78,19 @@ export class ReadWriteRegistry extends ReadRegistry {
     instanceAddress: Address,
     options?: ContractReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata> {
-    const { kind, name, version, data, factory } = await this.contract.read(
+    const { factory, ...rest } = await this.contract.read(
       "getInstanceInfoWithMetadata",
       { _instance: instanceAddress },
       options,
     );
     return {
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
       factory: new ReadWriteFactory({
         address: factory,
         drift: this.drift,
         cache: this.contract.cache,
         cacheNamespace: this.contract.cacheNamespace,
       }),
+      ...rest,
     };
   }
 
@@ -109,17 +106,14 @@ export class ReadWriteRegistry extends ReadRegistry {
       { __instances: instanceAddresses },
       options,
     );
-    return infos.map(({ kind, name, version, data, factory }) => ({
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
+    return infos.map(({ factory, ...rest }) => ({
       factory: new ReadWriteFactory({
         address: factory,
         drift: this.drift,
         cache: this.contract.cache,
         cacheNamespace: this.contract.cacheNamespace,
       }),
+      ...rest,
     }));
   }
 }

@@ -1,6 +1,6 @@
 import { ReadRegistry } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { UseQueryResult, useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
@@ -13,7 +13,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
-import { Status, decodeInstanceData } from "src/registry/data";
+import { getStatus, Status } from "src/registry/data";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -207,7 +207,7 @@ interface Pool {
   vaultToken: Address;
 }
 
-function usePoolsQuery(): UseQueryResult<Pool[], any> {
+function usePoolsQuery(): UseQueryResult<Pool[]> {
   const connectedAppConfig = useAppConfigForConnectedChain();
   const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
@@ -234,7 +234,7 @@ function usePoolsQuery(): UseQueryResult<Pool[], any> {
                 return registry
                   .getInstanceInfo(pool.address)
                   .then(({ data, factory, name, version }) => {
-                    const { status } = decodeInstanceData(data);
+                    const status = getStatus(data);
 
                     return Promise.all([
                       pool.getPoolConfig(),

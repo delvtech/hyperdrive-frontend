@@ -77,17 +77,11 @@ export class ReadRegistry extends ReadClient {
     factoryAddress: Address,
     options?: ContractReadOptions,
   ): Promise<FactoryInfoWithMetadata> {
-    const { kind, name, version, data } = await this.contract.read(
+    return this.contract.read(
       "getFactoryInfoWithMetadata",
       { _factory: factoryAddress },
       options,
     );
-    return {
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
-    };
   }
 
   /**
@@ -98,17 +92,12 @@ export class ReadRegistry extends ReadClient {
     factoryAddresses: Address[],
     options?: ContractReadOptions,
   ): Promise<FactoryInfoWithMetadata[]> {
-    const infos = await this.contract.read(
+    const readonlyInfos = await this.contract.read(
       "getFactoryInfosWithMetadata",
       { __factories: factoryAddresses },
       options,
     );
-    return infos.map(({ kind, name, version, data }) => ({
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
-    }));
+    return readonlyInfos.slice();
   }
 
   /**
@@ -158,22 +147,19 @@ export class ReadRegistry extends ReadClient {
     instanceAddress: Address,
     options?: ContractReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata> {
-    const { kind, name, version, data, factory } = await this.contract.read(
+    const { factory, ...rest } = await this.contract.read(
       "getInstanceInfoWithMetadata",
       { _instance: instanceAddress },
       options,
     );
     return {
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
       factory: new ReadFactory({
         address: factory,
         drift: this.drift,
         cache: this.contract.cache,
         cacheNamespace: this.contract.cacheNamespace,
       }),
+      ...rest,
     };
   }
 
@@ -189,17 +175,14 @@ export class ReadRegistry extends ReadClient {
       { __instances: instanceAddresses },
       options,
     );
-    return infos.map(({ kind, name, version, data, factory }) => ({
-      kind,
-      name,
-      version,
-      data: `0x${data.toString(16)}`,
+    return infos.map(({ factory, ...rest }) => ({
       factory: new ReadFactory({
         address: factory,
         drift: this.drift,
         cache: this.contract.cache,
         cacheNamespace: this.contract.cacheNamespace,
       }),
+      ...rest,
     }));
   }
 }
