@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
-  findYieldSource,
+  getBaseToken,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-js";
@@ -34,7 +34,7 @@ export function OpenLongStats({
   asBase,
   vaultSharePrice,
 }: OpenLongStatsProps): JSX.Element {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -48,7 +48,7 @@ export function OpenLongStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

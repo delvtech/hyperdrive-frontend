@@ -1,8 +1,8 @@
 import {
   AppConfig,
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
@@ -93,15 +93,15 @@ export function OpenShortsContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const baseToken = findBaseToken({
+        const baseToken = getBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
-        const sharesToken = findToken({
+        const sharesToken = getToken({
           chainId: hyperdrive.chainId,
-          tokens: appConfig.tokens,
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+          appConfig,
         });
         const openShorts = openShortPositions?.find(
           (position) =>
@@ -310,7 +310,7 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

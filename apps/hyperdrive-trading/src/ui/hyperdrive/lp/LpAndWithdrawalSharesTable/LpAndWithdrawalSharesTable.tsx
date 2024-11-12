@@ -1,7 +1,7 @@
 import {
   AppConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
@@ -278,10 +278,10 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findBaseToken({
-    appConfig,
+  const baseToken = getBaseToken({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
   });
 
   return [

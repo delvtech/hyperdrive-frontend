@@ -1,8 +1,8 @@
 import {
   AppConfig,
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import {
@@ -101,15 +101,15 @@ export function OpenLongsContainer(): ReactElement {
             position.hyperdrive.address === hyperdrive.address &&
             position.hyperdrive.chainId === hyperdrive.chainId,
         )?.openLongs;
-        const baseToken = findBaseToken({
+        const baseToken = getBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
           appConfig,
         });
-        const sharesToken = findToken({
+        const sharesToken = getToken({
           chainId: hyperdrive.chainId,
-          tokens: appConfig.tokens,
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+          appConfig,
         });
         // Ensure this hyperdrive pool has open positions before rendering.
         if (openLongPositionsStatus === "success" && !openLongs?.length) {
@@ -318,7 +318,7 @@ function getColumns({
   hyperdrive: HyperdriveConfig;
   appConfig: AppConfig;
 }) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

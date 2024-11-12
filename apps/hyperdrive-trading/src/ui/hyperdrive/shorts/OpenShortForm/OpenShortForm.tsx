@@ -3,9 +3,9 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 
 import {
   appConfig,
-  findBaseToken,
-  findToken,
-  findYieldSource,
+  getBaseToken,
+  getToken,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
@@ -69,7 +69,7 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -108,9 +108,9 @@ export function OpenShortForm({
     });
   }
 
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
+    appConfig,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
 
@@ -285,7 +285,7 @@ export function OpenShortForm({
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
 
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

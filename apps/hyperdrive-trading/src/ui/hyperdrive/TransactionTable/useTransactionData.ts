@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -37,10 +34,10 @@ export function useTransactionData({
     address: hyperdriveAddress,
   });
 
-  const { decimals } = findHyperdriveConfig({
+  const { decimals } = getHyperdriveConfig({
     hyperdriveAddress,
     hyperdriveChainId: chainId,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
 
   const { data: longs, status: longEventsStatus } = useQuery({

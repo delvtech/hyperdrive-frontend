@@ -1,6 +1,6 @@
 import {
   appConfig,
-  findBaseToken,
+  getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -17,7 +17,7 @@ export function WithdrawalQueueCell({
 }): JSX.Element {
   const { address: account } = useAccount();
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

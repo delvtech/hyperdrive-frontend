@@ -3,7 +3,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
   makeAddressUrl,
   makeTransactionUrl,
 } from "@delvtech/hyperdrive-appconfig";
@@ -182,7 +182,7 @@ export function TransactionTable({
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -305,7 +305,7 @@ function formatTransactionTableMobileData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

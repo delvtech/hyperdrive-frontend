@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
@@ -38,10 +35,10 @@ export function usePreviewRedeemWithdrawalShares({
     address: hyperdriveAddress,
   });
 
-  const hyperdriveConfig = findHyperdriveConfig({
+  const hyperdriveConfig = getHyperdriveConfig({
     hyperdriveChainId: chainId,
-    hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress,
+    appConfig,
   });
   const queryEnabled =
     !!withdrawalSharesIn &&

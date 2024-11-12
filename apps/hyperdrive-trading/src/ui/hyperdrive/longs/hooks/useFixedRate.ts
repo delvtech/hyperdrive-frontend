@@ -1,8 +1,5 @@
 import { BlockTag } from "@delvtech/drift";
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHprFromApr } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 
@@ -25,11 +22,10 @@ export function useFixedRate({
   fixedRoi: { roi: bigint; formatted: string } | undefined;
   fixedRateStatus: QueryStatusWithIdle;
 } {
-  const { hyperdrives } = appConfig;
-  const hyperdrive = findHyperdriveConfig({
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
-    hyperdrives,
     hyperdriveAddress,
+    appConfig,
   });
   const readHyperdrive = useReadHyperdrive({
     chainId,

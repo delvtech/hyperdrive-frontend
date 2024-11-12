@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getLpApy, LpApyResult } from "src/hyperdrive/getLpApy";
@@ -25,10 +22,10 @@ export function useLpApy({
     chainId,
   });
 
-  const hyperdrive = findHyperdriveConfig({
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
 
   const { data: blockNumber } = useBlockNumber({ chainId });

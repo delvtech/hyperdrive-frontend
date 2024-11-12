@@ -1,5 +1,5 @@
 import { parseFixed } from "@delvtech/fixed-point-wasm";
-import { appConfig, findToken } from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getToken } from "@delvtech/hyperdrive-appconfig";
 import { fetchCoinGeckoPrice } from "src/token/coingecko";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { Address } from "viem";
@@ -26,10 +26,10 @@ export async function getTokenFiatPrice({
   let price = data?.coins?.[defiLlamaTokenId]?.price;
   if (price === undefined) {
     // fallback to coingecko if defillama is not available
-    const tokenConfig = findToken({
+    const tokenConfig = getToken({
       chainId,
       tokenAddress,
-      tokens: appConfig.tokens,
+      appConfig,
     });
     price = await fetchCoinGeckoPrice(tokenConfig!.symbol);
   }

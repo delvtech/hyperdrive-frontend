@@ -1,7 +1,7 @@
 import {
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
@@ -20,7 +20,7 @@ export function AccruedYieldCell({
   const { bondAmount, checkpointTime } = openShort;
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

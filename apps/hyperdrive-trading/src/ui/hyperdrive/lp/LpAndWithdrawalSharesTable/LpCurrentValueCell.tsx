@@ -1,7 +1,7 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
+  getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import classNames from "classnames";
@@ -23,10 +23,10 @@ export function LpCurrentValueCell({
 }): ReactElement {
   const { address: account } = useAccount();
 
-  const baseToken = findBaseToken({
-    appConfig,
+  const baseToken = getBaseToken({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
   });
 
   const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(

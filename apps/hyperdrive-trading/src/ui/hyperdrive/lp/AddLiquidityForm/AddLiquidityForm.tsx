@@ -3,9 +3,9 @@ import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
-  findBaseToken,
-  findToken,
-  findYieldSource,
+  getBaseToken,
+  getToken,
+  getYieldSource,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
@@ -66,14 +66,14 @@ export function AddLiquidityForm({
     chainId: hyperdrive.chainId,
   });
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
+    appConfig,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
 
@@ -458,7 +458,7 @@ function YouReceiveStat({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -534,7 +534,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   });
 
   const showSkeleton = !lpApy && lpApyStatus === "loading";
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

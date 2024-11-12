@@ -2,8 +2,8 @@ import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
@@ -21,15 +21,15 @@ export function CloseShortModalButton({
   short,
   hyperdrive,
 }: CloseShortModalButtonProps): ReactElement {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    appConfig,
   });
   const subHeading = sharesToken
     ? getSubHeadingLabel(baseToken, hyperdrive, sharesToken)

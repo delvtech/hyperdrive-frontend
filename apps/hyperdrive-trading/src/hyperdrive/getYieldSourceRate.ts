@@ -2,9 +2,9 @@ import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
-  findHyperdriveConfig,
-  findYieldSource,
+  getHyperdriveConfig,
   getRewardsFn,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
@@ -19,10 +19,10 @@ export async function getYieldSourceRate(
   appConfig: AppConfig,
 ): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
   const hyperdriveChainId = await readHyperdrive.drift.getChainId();
-  const hyperdrive = findHyperdriveConfig({
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId,
     hyperdriveAddress: readHyperdrive.address,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
 
   const numBlocksForHistoricalRate = getNumBlocksForHistoricalRate({
@@ -67,10 +67,10 @@ export async function getYieldSourceRate(
 
   const netRate = await calcNetRate(rate, appConfig, hyperdrive);
 
-  const yieldSource = findYieldSource({
-    appConfig,
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
   });
 
   return {
@@ -115,7 +115,7 @@ function getNumBlocksForHistoricalRate({
   hyperdrive: HyperdriveConfig;
 }) {
   const blocksPerDay = appConfig.chains[hyperdrive.chainId].dailyAverageBlocks;
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

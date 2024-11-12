@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
@@ -71,7 +71,7 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -97,10 +97,10 @@ export function OpenLongForm({
     });
   }
 
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    appConfig,
   });
 
   if (sharesToken && hyperdrive.depositOptions.isShareTokenDepositsEnabled) {

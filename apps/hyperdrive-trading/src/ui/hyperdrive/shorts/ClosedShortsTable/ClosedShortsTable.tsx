@@ -2,7 +2,7 @@ import {
   AppConfig,
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ClosedShort } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
@@ -35,7 +35,7 @@ function formatClosedShortMobileColumnData(
   hyperdrive: HyperdriveConfig,
   appConfig: AppConfig,
 ) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -112,7 +112,7 @@ function getMobileColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
 }
 
 function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

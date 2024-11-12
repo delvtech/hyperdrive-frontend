@@ -1,7 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
+  getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
@@ -31,7 +31,7 @@ export function TotalOpenLongsValue({
     enabled: openLongsStatus === "success",
     hyperdrive,
   });
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
