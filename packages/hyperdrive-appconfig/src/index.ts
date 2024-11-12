@@ -22,13 +22,6 @@ export { findToken } from "src/tokens/selectors";
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 
 // tokens
-export {
-  AERO_ICON_URL,
-  EETH_ICON_URL,
-  EURC_ICON_URL,
-  USDC_ICON_URL,
-  WELL_ICON_URL,
-} from "src/tokens/tokenIconsUrls";
 export type { TokenConfig } from "src/tokens/types";
 
 // yield sources
