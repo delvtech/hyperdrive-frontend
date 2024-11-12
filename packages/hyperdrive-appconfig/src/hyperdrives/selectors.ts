@@ -2,6 +2,7 @@ import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { findToken } from "src/tokens/selectors";
 import { TokenConfig } from "src/tokens/types";
+import { YieldSourceConfig } from "src/yieldSources/types";
 import { Address, zeroAddress } from "viem";
 
 /**
@@ -30,6 +31,27 @@ export function findHyperdriveConfig({
   }
 
   return hyperdriveConfig;
+}
+
+/**
+ * Finds the YieldSourceConfig for a given hyperdrive
+ */
+export function findYieldSource({
+  hyperdriveChainId,
+  hyperdriveAddress,
+  appConfig,
+}: {
+  hyperdriveChainId: number;
+  hyperdriveAddress: Address;
+  appConfig: AppConfig;
+}): YieldSourceConfig {
+  const hyperdriveConfig = findHyperdriveConfig({
+    hyperdriveChainId: hyperdriveChainId,
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
+
+  return appConfig.yieldSources[hyperdriveConfig.yieldSource];
 }
 
 /**

@@ -11,7 +11,11 @@ export type { ChainConfig } from "src/chains/chains";
 export { isMainnetChain } from "src/chains/isMainnetChain";
 
 // appconfig selectors
-export { findBaseToken, findHyperdriveConfig } from "src/hyperdrives/selectors";
+export {
+  findBaseToken,
+  findHyperdriveConfig,
+  findYieldSource,
+} from "src/hyperdrives/selectors";
 export { findToken } from "src/tokens/selectors";
 
 // hyperdrive
@@ -29,7 +33,6 @@ export type { TokenConfig } from "src/tokens/types";
 
 // yield sources
 export type { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
-export { yieldSources } from "src/yieldSources/yieldSources";
 
 // rewards
 export { getRewardsFn } from "src/rewards/selectors";
