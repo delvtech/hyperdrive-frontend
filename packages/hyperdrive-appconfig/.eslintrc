@@ -1,10 +1,10 @@
 {
   "root": true,
-  "extends": [
-    "@hyperdrive/eslint-config"
-  ],
+  "extends": ["@hyperdrive/eslint-config"],
   "rules": {
     "turbo/no-undeclared-env-vars": "off",
-    "no-console": "off"
-  }
+    // We use relative paths in this to conform to modern ESM import standards
+    "no-restricted-imports": "off",
+    "no-console": "off",
+  },
 }

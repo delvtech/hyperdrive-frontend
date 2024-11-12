@@ -1,4 +1,4 @@
-import { AERO_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { AERO_ICON_URL } from "./tokens/tokenIconsUrls";
 
 export type ProtocolId = keyof typeof protocols;
 export interface Protocol {

@@ -1,6 +1,6 @@
-import { AppConfig } from "src/appconfig/AppConfig";
-import { isTestnetChain } from "src/chains/isTestnetChain";
-import { findToken } from "src/tokens/selectors";
+import { AppConfig } from "../appconfig/AppConfig";
+import { isTestnetChain } from "../chains/isTestnetChain";
+import { findToken } from "../tokens/selectors";
 
 export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
   mainnetConfig: AppConfig;

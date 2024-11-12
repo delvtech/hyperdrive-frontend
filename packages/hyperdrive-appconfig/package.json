@@ -3,15 +3,15 @@
   "version": "0.0.1",
   "license": "AGPL-3.0",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "export": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
       "types": {
-        "import": "./dist/index.d.ts",
-        "require": "./dist/index.d.cts"
+        "import": "./dist/esm/index.d.ts",
+        "require": "./dist/cjs/index.d.ts"
       }
     }
   },
@@ -20,9 +20,10 @@
   ],
   "scripts": {
     "generate": "npx tsx ./src/scripts/generate.ts",
-    "build:esm": "tsc --module esnext --outDir dist/esm",
-    "build:commonjs": "tsc --module commonjs --outDir dist/cjs",
-    "build": "tsup src/index.ts --minify --format esm,cjs --clean --dts && tsc",
+    "build:esm": "tsc",
+    "build:commonjs": "tsc --project tsconfig.cjs.json", 
+    "build2":"yarn run build:esm && yarn run build:commonjs",
+    "build": "tsup src/index.ts --minify --format esm,cjs --clean && tsc --emitDeclarationOnly --outDir dist/esm",
     "watch": "tsup src/index.ts --watch --minify --format esm,cjs --dts",
     "typecheck": "tsc --noEmit"
   },

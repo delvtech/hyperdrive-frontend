@@ -1,21 +1,25 @@
 // appconfigs
-export type { AppConfig } from "src/appconfig/AppConfig";
-export { appConfig } from "src/generated/all.appconfig";
-export { mainnetAppConfig } from "src/generated/mainnet.appconfig";
-export { testnetAppConfig } from "src/generated/testnet.appconfig";
+import { YieldSource, YieldSourceId, YieldSourceIdMap } from "./yieldSources/types";
+import "./yieldSources/yieldSources";
+export type YieldSourceId2 = keyof YieldSourceIdMap;
+
+export type { AppConfig } from "./appconfig/AppConfig";
+export { appConfig } from "./generated/all.appconfig";
+export { mainnetAppConfig } from "./generated/mainnet.appconfig";
+export { testnetAppConfig } from "./generated/testnet.appconfig";
 
 // chains
-export { makeAddressUrl } from "src/chains/blockexplorer/makeAddressUrl";
-export { makeTransactionUrl } from "src/chains/blockexplorer/makeTransactionUrl";
-export type { ChainConfig } from "src/chains/chains";
-export { isMainnetChain } from "src/chains/isMainnetChain";
+export { makeAddressUrl } from "./chains/blockexplorer/makeAddressUrl";
+export { makeTransactionUrl } from "./chains/blockexplorer/makeTransactionUrl";
+export type { ChainConfig } from "./chains/chains";
+export { isMainnetChain } from "./chains/isMainnetChain";
 
 // appconfig selectors
-export { findBaseToken, findHyperdriveConfig } from "src/hyperdrives/selectors";
-export { findToken } from "src/tokens/selectors";
+export { findBaseToken, findHyperdriveConfig } from "./hyperdrives/selectors";
+export { findToken } from "./tokens/selectors";
 
 // hyperdrive
-export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+export type { HyperdriveConfig } from "./hyperdrives/HyperdriveConfig";
 
 // tokens
 export {
@@ -24,23 +28,23 @@ export {
   EURC_ICON_URL,
   USDC_ICON_URL,
   WELL_ICON_URL,
-} from "src/tokens/tokenIconsUrls";
-export type { TokenConfig } from "src/tokens/types";
+} from "./tokens/tokenIconsUrls";
+export type { TokenConfig } from "./tokens/types";
 
 // yield sources
-export type { YieldSource, YieldSourceId } from "src/yieldSources/types";
-export { yieldSources } from "src/yieldSources/yieldSources";
+export { yieldSources } from "./yieldSources/yieldSources";
+export type { YieldSource, YieldSourceId };
 
 // rewards
-export { rewardFunctions } from "src/rewards/rewards";
+export { rewardFunctions } from "./rewards/rewards";
 export type {
   AnyReward,
   InfoReward,
   NonTransferableTokenReward,
   RewardsResolver as RewardsFn,
   TransferableTokenReward,
-} from "src/rewards/types";
+} from "./rewards/types";
 
 // protocols
-export { protocols } from "src/protocols";
-export type { Protocol, ProtocolId } from "src/protocols";
+export { protocols } from "./protocols";
+export type { Protocol, ProtocolId } from "./protocols";

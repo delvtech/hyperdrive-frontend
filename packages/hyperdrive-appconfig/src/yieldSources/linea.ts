@@ -1,7 +1,7 @@
-import { YieldSource } from "src/yieldSources/types";
 import { linea } from "viem/chains";
+import { YieldSource } from "./types";
 
-declare module "src/yieldSources/types" {
+declare module "./types" {
   interface YieldSourceIdMap {
     rseth: "rseth";
     lineaEzeth: "lineaEzeth";

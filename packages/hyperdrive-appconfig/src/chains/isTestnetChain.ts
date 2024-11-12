@@ -1,5 +1,5 @@
-import { isForkChain } from "src/chains/isForkChain";
 import { foundry, sepolia } from "viem/chains";
+import { isForkChain } from "./isForkChain";
 
 /**
  * Checks if the given chain ID corresponds to a testnet chain.

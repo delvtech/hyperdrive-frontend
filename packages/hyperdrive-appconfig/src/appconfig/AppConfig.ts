@@ -1,9 +1,9 @@
 import { Address } from "abitype";
-import { ChainConfig } from "src/chains/chains";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { protocols } from "src/protocols";
-import { TokenConfig } from "src/tokens/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { ChainConfig } from "../chains/chains";
+import { HyperdriveConfig } from "../hyperdrives/HyperdriveConfig";
+import { protocols } from "../protocols";
+import { TokenConfig } from "../tokens/types";
+import { yieldSources } from "../yieldSources/yieldSources";
 
 export interface AppConfig {
   chains: Record<number, ChainConfig>;

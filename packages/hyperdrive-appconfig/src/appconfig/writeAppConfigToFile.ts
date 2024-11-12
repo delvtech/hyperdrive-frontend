@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import fs from "node:fs/promises";
-import { AppConfig } from "src/appconfig/AppConfig";
+import { AppConfig } from "../appconfig/AppConfig";
 
 // Custom replacer function to handle bigint
 function replaceBigIntsWithStrings(key: string, value: any) {
@@ -18,7 +18,7 @@ function generateFileString(appConfig: AppConfig, appConfigName: string) {
 
   const finalOutput = serialized.replace(strictRegex, "$1");
 
-  return `import { AppConfig } from "src/appconfig/AppConfig";
+  return `import { AppConfig } from "../appconfig/AppConfig";
 export const ${appConfigName}: AppConfig = ${finalOutput};`;
 }
 

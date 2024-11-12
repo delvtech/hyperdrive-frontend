@@ -1,4 +1,4 @@
-import { AppConfig } from "src/appconfig/AppConfig";
+import { AppConfig } from "../appconfig/AppConfig";
 export const mainnetAppConfig: AppConfig = {
   hyperdrives: [
     {

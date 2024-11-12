@@ -1,7 +1,7 @@
 import { parseAbi } from "abitype";
-import { fixed, parseFixed } from "src/base/fixedPoint";
-import { RewardsResolver } from "src/rewards/types";
-import { getDefiLlamaTokenPrice } from "src/tokens/prices";
+import { fixed, parseFixed } from "../base/fixedPoint";
+import { RewardsResolver } from "./types";
+import { getDefiLlamaTokenPrice } from "../tokens/prices";
 import { base } from "viem/chains";
 
 const AERO_TOKEN_ADDRESS = "0x940181a94A35A4569E4529A3CDfB74e38FD98631";

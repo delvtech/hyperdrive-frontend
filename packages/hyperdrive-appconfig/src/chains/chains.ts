@@ -1,6 +1,6 @@
-import { cloudChain } from "src/chains/cloudChain";
-import { gnosisFork } from "src/chains/gnosisFork";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
+import { cloudChain } from "./cloudChain";
+import { gnosisFork } from "./gnosisFork";
 
 // Define Chain ID as a union of available chain keys
 export type ChainId =

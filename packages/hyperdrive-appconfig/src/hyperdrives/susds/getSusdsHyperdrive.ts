@@ -1,10 +1,10 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { getTokenConfig } from "src/tokens/getTokenConfig";
-import { TokenConfig } from "src/tokens/types";
-import { YieldSourceId } from "src/yieldSources/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { HyperdriveConfig } from "../HyperdriveConfig";
+import { formatHyperdriveName } from "../formatHyperdriveName";
+import { getTokenConfig } from "../../tokens/getTokenConfig";
+import { TokenConfig } from "../../tokens/types";
+import { YieldSourceId } from "../../yieldSources/types";
+import { yieldSources } from "../../yieldSources/yieldSources";
 
 export async function getSusdsHyperdrive({
   hyperdrive,

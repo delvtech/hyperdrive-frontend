@@ -1,1 +1,1 @@
-import "./merged";
+import "./nested/merged";

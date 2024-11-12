@@ -3,14 +3,13 @@
   "extends": "@hyperdrive/tsconfig/base.json",
   "include": ["src"],
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist/esm",
     "target": "esnext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "paths": {
-      "src/*": ["src/*"]
-    },
+    "sourceMap": false,
+    "declarationMap": false,
     "resolveJsonModule": true
   }
 }

@@ -4,13 +4,11 @@
   "include": ["src"],
   "compilerOptions": {
     "rootDir": "src",
-    "sourceMap": false,
-    "declarationMap": false,
+    "outDir": "dist/cjs",
     "baseUrl": ".",
-    "target": "esnext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "outDir": "dist-tsc"
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true
   }
 }

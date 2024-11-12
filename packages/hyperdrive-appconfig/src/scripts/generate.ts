@@ -1,30 +1,30 @@
 import chalk from "chalk";
 import "dotenv/config";
-import { AppConfig } from "src/appconfig/AppConfig";
-import { getAppConfig } from "src/appconfig/getAppConfig";
-import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestnetAppConfigs";
-import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
+import { AppConfig } from "../appconfig/AppConfig";
+import { getAppConfig } from "../appconfig/getAppConfig";
+import { getMainnetAndTestnetAppConfigs } from "../appconfig/getMainnetAndTestnetAppConfigs";
+import { writeAppConfigToFile } from "../appconfig/writeAppConfigToFile";
 import {
   baseChainConfig,
   ChainId,
   chains,
   gnosisChainConfig,
   lineaChainConfig,
-} from "src/chains/chains";
-import { protocols } from "src/protocols";
+} from "../chains/chains";
+import { protocols } from "../protocols";
 import {
   BASE_REGISTRY_ADDRESS,
   ETHEREUM_REGISTRY_ADDRESS,
   GNOSIS_REGISTRY_ADDRESS,
   LINEA_REGISTRY_ADDRESS,
   SEPOLIA_REGISTRY_ADDRESS,
-} from "src/registries";
-import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardFunctions } from "src/rewards/rewards";
-import { findToken } from "src/tokens/selectors";
-import { yieldSources } from "src/yieldSources/yieldSources";
+} from "../registries";
+import { knownTokenConfigs } from "../rewards/knownTokenConfigs";
+import { rewardFunctions } from "../rewards/rewards";
+import { yieldSources } from "../yieldSources/yieldSources";
 import { Address, Chain, createPublicClient, http, PublicClient } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
+import { findToken } from "../tokens/selectors";
 
 interface ChainInitializationConfig {
   chain: Chain;

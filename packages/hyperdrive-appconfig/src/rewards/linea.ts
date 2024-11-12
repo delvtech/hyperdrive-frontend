@@ -1,5 +1,5 @@
-import { lineaChainConfig } from "src/chains/chains";
-import { RewardsResolver } from "src/rewards/types";
+import { lineaChainConfig } from "../chains/chains";
+import { RewardsResolver } from "./types";
 
 export const fetchLineaRewards: RewardsResolver = async () => {
   return [

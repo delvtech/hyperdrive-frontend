@@ -1,5 +1,5 @@
-import { cloudChain } from "src/chains/cloudChain";
-import { gnosisFork } from "src/chains/gnosisFork";
+import { cloudChain } from "./cloudChain";
+import { gnosisFork } from "./gnosisFork";
 
 /**
  * Checks if the given chain ID corresponds to a fork chain.

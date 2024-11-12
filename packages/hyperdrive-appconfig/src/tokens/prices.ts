@@ -1,6 +1,6 @@
 import { Address } from "abitype";
-import { parseFixed } from "src/base/fixedPoint";
-import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
+import { parseFixed } from "../base/fixedPoint";
+import { ETH_MAGIC_NUMBER } from "./ETH_MAGIC_NUMBER";
 import { base, gnosis, linea, mainnet } from "viem/chains";
 
 /**

@@ -1,13 +1,13 @@
-import { fetchAeroRewards } from "src/rewards/aero";
-import { fetchEtherfiRewards } from "src/rewards/etherfi";
-import { fetchGyroscopeRewards } from "src/rewards/gyroscope";
-import { fetchLineaRewards } from "src/rewards/linea";
+import { fetchAeroRewards } from "./aero";
+import { fetchEtherfiRewards } from "./etherfi";
+import { fetchGyroscopeRewards } from "./gyroscope";
+import { fetchLineaRewards } from "./linea";
 import {
   fetchMorphoCbethUsdcRewards,
   fetchMorphoMwethRewards,
   fetchMorphoMweurcRewards,
   fetchMorphoMwusdcRewards,
-} from "src/rewards/morpho";
+} from "./morpho";
 
 export const rewardFunctions = {
   fetchLineaRewards,

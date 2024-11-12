@@ -1,12 +1,12 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
-import { getTokenConfig } from "src/tokens/getTokenConfig";
-import { CBETH_ICON_URL, ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { TokenConfig } from "src/tokens/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
 import { mainnet } from "viem/chains";
+import { ETH_MAGIC_NUMBER } from "../../tokens/ETH_MAGIC_NUMBER";
+import { getTokenConfig } from "../../tokens/getTokenConfig";
+import { CBETH_ICON_URL, ETH_ICON_URL } from "../../tokens/tokenIconsUrls";
+import { TokenConfig } from "../../tokens/types";
+import { yieldSources } from "../../yieldSources/yieldSources";
+import { HyperdriveConfig } from "../HyperdriveConfig";
+import { formatHyperdriveName } from "../formatHyperdriveName";
 export async function getCbethHyperdrive({
   hyperdrive,
   earliestBlock,

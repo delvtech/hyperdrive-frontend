@@ -1,5 +1,5 @@
 import { ReadToken } from "@delvtech/hyperdrive-viem";
-import { TokenConfig } from "src/tokens/types";
+import { TokenConfig } from "./types";
 
 export async function getTokenConfig({
   token,

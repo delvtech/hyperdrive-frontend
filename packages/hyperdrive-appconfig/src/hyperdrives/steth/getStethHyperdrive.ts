@@ -1,10 +1,10 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import { getTokenConfig } from "src/tokens/getTokenConfig";
-import { ETH_ICON_URL, STETH_ICON_URL } from "src/tokens/tokenIconsUrls";
-import { TokenConfig } from "src/tokens/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { HyperdriveConfig } from "../HyperdriveConfig";
+import { formatHyperdriveName } from "../formatHyperdriveName";
+import { getTokenConfig } from "../../tokens/getTokenConfig";
+import { ETH_ICON_URL, STETH_ICON_URL } from "../../tokens/tokenIconsUrls";
+import { TokenConfig } from "../../tokens/types";
+import { yieldSources } from "../../yieldSources/yieldSources";
 import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   hyperdrive,

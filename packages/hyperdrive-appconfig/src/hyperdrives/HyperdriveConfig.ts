@@ -1,5 +1,5 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { yieldSources } from "../yieldSources/yieldSources";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {

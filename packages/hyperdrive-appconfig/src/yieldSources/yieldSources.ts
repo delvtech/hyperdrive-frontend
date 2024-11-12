@@ -7,9 +7,9 @@ import {
   mwUsdc,
   snars,
   stkWell,
-} from "src/yieldSources/base";
-import { gnosisSgyd, gnosisWsteth, sxdai } from "src/yieldSources/gnosis";
-import { lineaEzeth, rseth } from "src/yieldSources/linea";
+} from "./base";
+import { gnosisSgyd, gnosisWsteth, sxdai } from "./gnosis";
+import { lineaEzeth, rseth } from "./linea";
 import {
   eeth,
   ezeth,
@@ -25,8 +25,8 @@ import {
   susde,
   susds,
   usds,
-} from "src/yieldSources/mainnet";
-import { YieldSource, YieldSourceId } from "src/yieldSources/types";
+} from "./mainnet";
+import { YieldSource, YieldSourceId } from "./types";
 
 export const yieldSources: Record<YieldSourceId, YieldSource> = {
   eeth,

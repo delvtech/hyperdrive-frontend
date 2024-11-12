@@ -1,12 +1,12 @@
 import { Address } from "abitype";
 import { gql, request } from "graphql-request";
-import { fixed, FixedPoint, parseFixed } from "src/base/fixedPoint";
+import { fixed, FixedPoint, parseFixed } from "../base/fixedPoint";
 import {
   AnyReward,
   NonTransferableTokenReward,
   RewardsResolver,
   TransferableTokenReward,
-} from "src/rewards/types";
+} from "./types";
 import { base } from "viem/chains";
 /**
  * Resolver for rewards on Morpho Flagship EURC

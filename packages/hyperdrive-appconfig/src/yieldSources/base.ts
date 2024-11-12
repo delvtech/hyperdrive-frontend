@@ -1,8 +1,8 @@
 import { base } from "viem/chains";
 
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSource } from "./types";
 
-declare module "src/yieldSources/types" {
+declare module "./types" {
   interface YieldSourceIdMap {
     morphoCbethUsdc: "morphoCbethUsdc";
     cbeth: "cbeth";

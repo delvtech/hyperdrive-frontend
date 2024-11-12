@@ -1,11 +1,11 @@
 import { Address } from "abitype";
-import { ChainId } from "src/chains/chains";
+import { ChainId } from "../chains/chains";
 import {
   AERO_ICON_URL,
   MORPHO_ICON_URL,
   WELL_ICON_URL,
-} from "src/tokens/tokenIconsUrls";
-import { TokenConfig } from "src/tokens/types";
+} from "../tokens/tokenIconsUrls";
+import { TokenConfig } from "../tokens/types";
 import { base, mainnet } from "viem/chains";
 
 /**

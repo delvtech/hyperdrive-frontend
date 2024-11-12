@@ -1,16 +1,17 @@
 import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
 import chalk from "chalk";
 import uniqBy from "lodash.uniqby";
-import { AppConfig } from "src/appconfig/AppConfig";
-import { chains } from "src/chains/chains";
-import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { getAeroLpHyperdrive } from "src/hyperdrives/aero/getAeroHyperdrive";
-import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
-import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
-import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
-import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
-import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
-import { protocols } from "src/protocols";
+import { Address, PublicClient } from "viem";
+import { AppConfig } from "../appconfig/AppConfig";
+import { chains } from "../chains/chains";
+import { HyperdriveConfig } from "../hyperdrives/HyperdriveConfig";
+import { getAeroLpHyperdrive } from "../hyperdrives/aero/getAeroHyperdrive";
+import { getCbethHyperdrive } from "../hyperdrives/cbeth/getCbethHyperdrive";
+import { getCustomHyperdrive } from "../hyperdrives/custom/getCustomHyperdrive";
+import { getGnosisWstethHyperdrive } from "../hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
+import { getMorphoHyperdrive } from "../hyperdrives/morpho/getMorphoHyperdrive";
+import { getStethHyperdrive } from "../hyperdrives/steth/getStethHyperdrive";
+import { protocols } from "../protocols";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -36,11 +37,10 @@ import {
   WELL_ICON_URL,
   WETH_ICON_URL,
   WXDAI_ICON_URL,
-} from "src/tokens/tokenIconsUrls";
-import { TokenConfig } from "src/tokens/types";
-import { YieldSourceId } from "src/yieldSources/types";
-import { yieldSources } from "src/yieldSources/yieldSources";
-import { Address, PublicClient } from "viem";
+} from "../tokens/tokenIconsUrls";
+import { TokenConfig } from "../tokens/types";
+import { YieldSourceId } from "../yieldSources/types";
+import { yieldSources } from "../yieldSources/yieldSources";
 
 type HyperdriveConfigResolver = (
   hyperdrive: ReadHyperdrive,

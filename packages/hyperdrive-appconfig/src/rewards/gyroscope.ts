@@ -1,5 +1,5 @@
-import { RewardsResolver } from "src/rewards/types";
-import { GYD_ICON_URL } from "src/tokens/tokenIconsUrls";
+import { RewardsResolver } from "./types";
+import { GYD_ICON_URL } from "../tokens/tokenIconsUrls";
 
 export const fetchGyroscopeRewards: RewardsResolver = async () => {
   return [

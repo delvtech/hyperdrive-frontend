@@ -1,8 +1,9 @@
 // This interface is intentionally empty to allow for declaration merging with
 
-import { ChainId } from "src/chains/chains";
-import { ProtocolId } from "src/protocols";
-import { rewardFunctions } from "src/rewards/rewards";
+import { ChainId } from "../chains/chains";
+import { ProtocolId } from "../protocols";
+import { rewardFunctions } from "../rewards/rewards";
+
 
 export interface YieldSourceIdMap {
   // This interface is intentionally empty to allow for declaration merging.

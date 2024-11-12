@@ -1,7 +1,7 @@
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSource } from "./types";
 import { gnosis } from "viem/chains";
 
-declare module "src/yieldSources/types" {
+declare module "./types" {
   interface YieldSourceIdMap {
     gnosisWsteth: "gnosisWsteth";
     sxdai: "sxdai";
