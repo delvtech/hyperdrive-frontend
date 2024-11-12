@@ -10,6 +10,8 @@ import {
   chains,
   gnosisChainConfig,
   lineaChainConfig,
+  mainnetChainConfig,
+  sepoliaChainConfig,
 } from "src/chains/chains";
 import { protocols } from "src/protocols";
 import {
@@ -61,6 +63,7 @@ const chainConfigs: ChainInitializationConfig[] = [
     rpcUrl: process.env.SEPOLIA_RPC_URL as string,
     registryAddress: SEPOLIA_REGISTRY_ADDRESS,
     isTestnet: true,
+    earliestBlock: sepoliaChainConfig.earliestBlock,
   },
 
   // Mainnet chains
@@ -68,6 +71,7 @@ const chainConfigs: ChainInitializationConfig[] = [
     chain: mainnet,
     rpcUrl: process.env.ETHEREUM_RPC_URL as string,
     registryAddress: ETHEREUM_REGISTRY_ADDRESS,
+    earliestBlock: mainnetChainConfig.earliestBlock,
   },
   {
     chain: gnosis,

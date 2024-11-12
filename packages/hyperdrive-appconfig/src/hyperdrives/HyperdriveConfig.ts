@@ -43,6 +43,12 @@ export interface HyperdriveConfig {
   poolConfig: PoolConfig;
 
   /**
+   * If true, the shares token will be considered 1 to 1 with the
+   * base token. Defaults to false.
+   */
+  isSharesPeggedToBase?: boolean;
+
+  /**
    * For use in cases where the poolConfig.baseToken is the zero address. For
    * example, this tells you what the vaultSharePrice of a hyperdrive is
    * denominated in.

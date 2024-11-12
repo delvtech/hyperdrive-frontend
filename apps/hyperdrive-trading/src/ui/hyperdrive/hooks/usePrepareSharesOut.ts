@@ -2,7 +2,6 @@ import {
   AppConfig,
   appConfig,
   getHyperdriveConfig,
-  getYieldSource,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
@@ -82,12 +81,7 @@ export async function prepareSharesOut({
   // amount then, we convert to base. For example, when preparing lido shares
   // received back from a steth hyperdrive, this will convert lido shares to
   // eth, and since 1 eth = 1 steth we return this as the shares value.
-  const yieldSource = getYieldSource({
-    hyperdriveAddress: hyperdriveConfig.address,
-    hyperdriveChainId: hyperdriveConfig.chainId,
-    appConfig,
-  });
-  if (yieldSource.isSharesPeggedToBase) {
+  if (hyperdriveConfig.isSharesPeggedToBase) {
     return readHyperdrive.convertToBase({
       sharesAmount,
     });

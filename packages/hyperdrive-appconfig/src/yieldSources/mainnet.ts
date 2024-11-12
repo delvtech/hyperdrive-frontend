@@ -15,7 +15,6 @@ export const lidoSteth: YieldSourceConfig = {
   id: "lidoSteth",
   shortName: "Lido stETH",
   protocol: "lido",
-  isSharesPeggedToBase: true,
   historicalRatePeriod: 1,
 };
 export const morphoSusdeDai: YieldSourceConfig = {
