@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useParams } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Helmet } from "react-helmet";
@@ -12,10 +9,10 @@ import { Address } from "viem";
 export function Market(): ReactElement {
   const { address, chainId } = useParams({ from: MARKET_DETAILS_ROUTE });
 
-  const hyperdrive = findHyperdriveConfig({
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: Number(chainId),
-    hyperdrives: appConfig.hyperdrives,
     hyperdriveAddress: address as Address,
+    appConfig,
   });
 
   return (

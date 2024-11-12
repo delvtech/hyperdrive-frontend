@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-js";
@@ -41,7 +41,7 @@ export function CloseShortForm({
   const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems = [];
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
@@ -49,10 +49,10 @@ export function CloseShortForm({
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     defaultItems.push(baseToken);
   }
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    tokens: appConfig.tokens,
+    appConfig,
   });
   if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     defaultItems.push(sharesToken);

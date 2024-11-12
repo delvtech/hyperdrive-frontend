@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findHyperdriveConfig,
-  findToken,
+  getHyperdriveConfig,
+  getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { SparklesIcon } from "@heroicons/react/16/solid";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
@@ -21,10 +21,10 @@ export function LpApyStat({
   hyperdriveAddress: Address;
   chainId: number;
 }): ReactNode {
-  const hyperdrive = findHyperdriveConfig({
-    hyperdrives: appConfig.hyperdrives,
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,
+    appConfig,
   });
   const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
@@ -99,10 +99,10 @@ export function LpApyStat({
                 );
               }
               if (reward.type === "transferableToken") {
-                const token = findToken({
+                const token = getToken({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
-                  tokens: appConfig.tokens,
+                  appConfig,
                 })!;
 
                 return (
@@ -133,10 +133,10 @@ export function LpApyStat({
               }
 
               if (reward.type === "nonTransferableToken") {
-                const token = findToken({
+                const token = getToken({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
-                  tokens: appConfig.tokens,
+                  appConfig,
                 })!;
                 return (
                   <div

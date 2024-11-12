@@ -4,7 +4,7 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
-import { appConfig, findToken } from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getToken } from "@delvtech/hyperdrive-appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
@@ -36,10 +36,10 @@ export function useApproveToken({
   const publicClient = usePublicClient({ chainId: tokenChainId });
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
-  const token = findToken({
+  const token = getToken({
     tokenAddress,
-    tokens: appConfig.tokens,
     chainId: tokenChainId,
+    appConfig,
   });
 
   // Pad the approval amount if on sepolia

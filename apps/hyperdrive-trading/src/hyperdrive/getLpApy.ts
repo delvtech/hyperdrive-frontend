@@ -2,8 +2,8 @@ import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findYieldSource,
   getRewardsFn,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
@@ -50,7 +50,7 @@ export async function getLpApy({
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
   const currentBlockNumber = currentBlock.blockNumber!;
   // Appconfig tells us how many days to look back for historical rates
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

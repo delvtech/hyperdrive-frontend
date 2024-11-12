@@ -1,7 +1,7 @@
 import {
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
@@ -18,7 +18,7 @@ export function CurrentValueCell({
   row: OpenLongPositionReceived;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

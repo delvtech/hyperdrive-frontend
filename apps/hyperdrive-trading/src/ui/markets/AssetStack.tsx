@@ -1,7 +1,7 @@
 import {
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { Address } from "viem";
@@ -14,15 +14,15 @@ export function AssetStack({
   const hyperdrive = appConfig.hyperdrives.find(
     (hyperdrive) => hyperdrive.address === hyperdriveAddress,
   )!;
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    appConfig,
   });
   return (
     <div

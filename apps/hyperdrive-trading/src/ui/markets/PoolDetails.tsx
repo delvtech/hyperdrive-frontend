@@ -1,6 +1,6 @@
 import {
   appConfig,
-  findYieldSource,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
@@ -35,7 +35,7 @@ export function PoolDetails({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

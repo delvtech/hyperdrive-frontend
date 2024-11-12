@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -17,10 +14,10 @@ export function useTradingVolume(
   shortVolume: bigint | undefined;
   tradingVolumeStatus: "loading" | "error" | "success";
 } {
-  const hyperdrive = findHyperdriveConfig({
+  const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
   const readHyperdrive = useReadHyperdrive({
     chainId,

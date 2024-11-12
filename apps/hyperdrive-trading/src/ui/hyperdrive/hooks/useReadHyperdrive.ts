@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive, ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -26,10 +23,10 @@ export function useReadHyperdrive({
     enabled,
     queryFn: enabled
       ? () => {
-          const { initializationBlock } = findHyperdriveConfig({
+          const { initializationBlock } = getHyperdriveConfig({
             hyperdriveAddress: address,
             hyperdriveChainId: chainId,
-            hyperdrives: appConfig.hyperdrives,
+            appConfig,
           });
           return getHyperdrive({
             address,

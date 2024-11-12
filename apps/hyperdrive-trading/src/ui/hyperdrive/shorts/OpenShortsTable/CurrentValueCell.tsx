@@ -1,7 +1,7 @@
 import {
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
@@ -22,7 +22,7 @@ export function CurrentValueCell({
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

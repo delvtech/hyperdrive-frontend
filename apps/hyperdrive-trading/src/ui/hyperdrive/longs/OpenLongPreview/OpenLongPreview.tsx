@@ -3,7 +3,7 @@ import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -32,7 +32,7 @@ export function OpenLongPreview({
   spotRateAfterOpen,
   curveFee,
 }: OpenLongPreviewProps): ReactElement {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

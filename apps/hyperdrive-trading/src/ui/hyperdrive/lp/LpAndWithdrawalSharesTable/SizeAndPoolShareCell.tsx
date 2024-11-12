@@ -1,7 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
+  getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
@@ -23,7 +23,7 @@ export function SizeAndPoolShareCell({
       chainId: hyperdrive.chainId,
     });
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     appConfig,
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,

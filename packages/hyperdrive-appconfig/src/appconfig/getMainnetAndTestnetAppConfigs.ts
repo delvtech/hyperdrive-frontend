@@ -1,6 +1,6 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 import { isTestnetChain } from "src/chains/isTestnetChain";
-import { findToken } from "src/tokens/selectors";
+import { getToken } from "src/tokens/selectors";
 
 export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
   mainnetConfig: AppConfig;
@@ -58,20 +58,20 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
       continue;
     }
 
-    const fallbackBaseToken = findToken({
+    const fallbackBaseToken = getToken({
       chainId: hyperdrive.baseTokenFallback.chainId,
       tokenAddress: hyperdrive.baseTokenFallback.address,
-      tokens: appConfig.tokens,
+      appConfig,
     })!;
 
     const targetAppConfig = isTestnetChain(hyperdrive.chainId)
       ? testnetConfig
       : mainnetConfig;
 
-    const fallbackBaseTokenAlreadyExists = !!findToken({
+    const fallbackBaseTokenAlreadyExists = !!getToken({
       chainId: fallbackBaseToken.chainId,
       tokenAddress: fallbackBaseToken.address,
-      tokens: targetAppConfig.tokens,
+      appConfig: targetAppConfig,
     });
 
     if (!fallbackBaseTokenAlreadyExists) {

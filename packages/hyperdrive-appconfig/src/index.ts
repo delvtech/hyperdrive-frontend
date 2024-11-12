@@ -12,11 +12,11 @@ export { isMainnetChain } from "src/chains/isMainnetChain";
 
 // appconfig selectors
 export {
-  findBaseToken,
-  findHyperdriveConfig,
-  findYieldSource,
+  getBaseToken,
+  getHyperdriveConfig,
+  getYieldSource,
 } from "src/hyperdrives/selectors";
-export { findToken } from "src/tokens/selectors";
+export { getToken } from "src/tokens/selectors";
 
 // hyperdrive
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";

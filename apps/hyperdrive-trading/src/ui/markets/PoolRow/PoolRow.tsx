@@ -1,9 +1,9 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
-  findToken,
-  findYieldSource,
+  getBaseToken,
+  getToken,
+  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ClockIcon } from "@heroicons/react/16/solid";
@@ -29,15 +29,15 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const { chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
 
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
+    appConfig,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
   });
 
@@ -67,7 +67,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
       decimals: hyperdrive.decimals,
     })}`;
   }
-  const yieldSource = findYieldSource({
+  const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,

@@ -1,7 +1,4 @@
-import {
-  appConfig,
-  findHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHprFromApr } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
@@ -62,10 +59,10 @@ export function useShortRate({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const hyperdrive = findHyperdriveConfig({
+          const hyperdrive = getHyperdriveConfig({
             hyperdriveChainId: chainId,
             hyperdriveAddress,
-            hyperdrives,
+            appConfig,
           });
           const shortApr = await readHyperdrive.getImpliedRate({
             bondAmount,

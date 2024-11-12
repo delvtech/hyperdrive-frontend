@@ -1,6 +1,6 @@
 import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { findToken } from "src/tokens/selectors";
+import { getToken } from "src/tokens/selectors";
 import { TokenConfig } from "src/tokens/types";
 import { YieldSourceConfig } from "src/yieldSources/types";
 import { Address, zeroAddress } from "viem";
@@ -9,16 +9,16 @@ import { Address, zeroAddress } from "viem";
  * Returns a strongly typed HyperdriveConfig for the hyperdrive address and
  * chain id
  */
-export function findHyperdriveConfig({
+export function getHyperdriveConfig({
   hyperdriveChainId,
   hyperdriveAddress,
-  hyperdrives,
+  appConfig,
 }: {
   hyperdriveChainId: number;
   hyperdriveAddress: Address;
-  hyperdrives: HyperdriveConfig[];
+  appConfig: AppConfig;
 }): HyperdriveConfig {
-  const hyperdriveConfig = hyperdrives.find(
+  const hyperdriveConfig = appConfig.hyperdrives.find(
     (hyperdriveConfig) =>
       hyperdriveConfig.address === hyperdriveAddress &&
       hyperdriveConfig.chainId === hyperdriveChainId,
@@ -34,9 +34,9 @@ export function findHyperdriveConfig({
 }
 
 /**
- * Finds the YieldSourceConfig for a given hyperdrive
+ * Gets the YieldSourceConfig for a given hyperdrive
  */
-export function findYieldSource({
+export function getYieldSource({
   hyperdriveChainId,
   hyperdriveAddress,
   appConfig,
@@ -45,10 +45,10 @@ export function findYieldSource({
   hyperdriveAddress: Address;
   appConfig: AppConfig;
 }): YieldSourceConfig {
-  const hyperdriveConfig = findHyperdriveConfig({
+  const hyperdriveConfig = getHyperdriveConfig({
     hyperdriveChainId: hyperdriveChainId,
     hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
 
   return appConfig.yieldSources[hyperdriveConfig.yieldSource];
@@ -61,7 +61,7 @@ export function findYieldSource({
  * pool's configuration does not specify a base token (e.g., it is set to the
  * zero address), the function will attempt to return a fallback base token.
  */
-export function findBaseToken({
+export function getBaseToken({
   hyperdriveChainId,
   hyperdriveAddress,
   appConfig,
@@ -70,26 +70,26 @@ export function findBaseToken({
   hyperdriveAddress: Address;
   appConfig: AppConfig;
 }): TokenConfig {
-  const hyperdriveConfig = findHyperdriveConfig({
+  const hyperdriveConfig = getHyperdriveConfig({
     hyperdriveChainId: hyperdriveChainId,
     hyperdriveAddress,
-    hyperdrives: appConfig.hyperdrives,
+    appConfig,
   });
 
   let baseToken: TokenConfig | undefined;
 
   // If there's no base token on pool config, see if there's a fallback
   if (hyperdriveConfig.poolConfig.baseToken !== zeroAddress) {
-    baseToken = findToken({
+    baseToken = getToken({
       chainId: hyperdriveConfig.chainId,
       tokenAddress: hyperdriveConfig.poolConfig.baseToken,
-      tokens: appConfig.tokens,
+      appConfig,
     });
   } else if (hyperdriveConfig.baseTokenFallback) {
-    baseToken = findToken({
+    baseToken = getToken({
       chainId: hyperdriveConfig.baseTokenFallback.chainId,
       tokenAddress: hyperdriveConfig.baseTokenFallback.address,
-      tokens: appConfig.tokens,
+      appConfig,
     });
   }
 

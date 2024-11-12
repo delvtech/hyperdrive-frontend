@@ -1,8 +1,8 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -32,15 +32,15 @@ interface RedeemWithdrawalSharesFormProps {
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
-    tokens: appConfig.tokens,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+    appConfig,
   });
   const items: TokenConfig[] = [baseToken];
   if (sharesToken) {

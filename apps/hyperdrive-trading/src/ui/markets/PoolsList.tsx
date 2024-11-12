@@ -1,8 +1,8 @@
 import {
   appConfig,
   ChainConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -366,7 +366,7 @@ function usePoolsList(): {
 function getDepositAssets(hyperdrive: HyperdriveConfig): TokenConfig[] {
   const depositAssets: TokenConfig[] = [];
   if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
-    const baseToken = findBaseToken({
+    const baseToken = getBaseToken({
       hyperdriveChainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       appConfig,
@@ -375,10 +375,10 @@ function getDepositAssets(hyperdrive: HyperdriveConfig): TokenConfig[] {
   }
 
   if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
-    const sharesToken = findToken({
+    const sharesToken = getToken({
       chainId: hyperdrive.chainId,
       tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-      tokens: appConfig.tokens,
+      appConfig,
     });
     if (sharesToken && sharesToken.address !== ZERO_ADDRESS) {
       depositAssets.push(sharesToken);

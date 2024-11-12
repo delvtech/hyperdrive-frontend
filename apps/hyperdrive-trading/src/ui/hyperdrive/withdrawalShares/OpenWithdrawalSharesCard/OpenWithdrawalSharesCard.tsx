@@ -1,7 +1,7 @@
 import {
   HyperdriveConfig,
   appConfig,
-  findBaseToken,
+  getBaseToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -26,7 +26,7 @@ export function OpenWithdrawalSharesCard({
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,

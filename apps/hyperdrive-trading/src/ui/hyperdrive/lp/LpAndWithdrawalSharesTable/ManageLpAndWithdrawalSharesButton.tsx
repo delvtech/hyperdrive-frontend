@@ -1,7 +1,7 @@
 import {
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { Cog8ToothIcon } from "@heroicons/react/24/solid";
@@ -31,15 +31,15 @@ export function ManageLpAndWithdrawalSharesButton({
   useClickAway(dropdownRef, () => setIsOpen(false));
   const { address: account } = useAccount();
 
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    tokens: appConfig.tokens,
+    appConfig,
   });
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,

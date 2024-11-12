@@ -2,8 +2,8 @@ import {
   HyperdriveConfig,
   TokenConfig,
   appConfig,
-  findBaseToken,
-  findToken,
+  getBaseToken,
+  getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { Long } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
@@ -21,15 +21,15 @@ export function CloseLongModalButton({
   long,
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
-  const baseToken = findBaseToken({
+  const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const sharesToken = findToken({
+  const sharesToken = getToken({
     chainId: hyperdrive.chainId,
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    tokens: appConfig.tokens,
+    appConfig,
   });
 
   const subHeading = sharesToken
