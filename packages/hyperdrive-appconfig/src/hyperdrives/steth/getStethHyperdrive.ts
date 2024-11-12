@@ -68,6 +68,9 @@ export async function getStethHyperdrive({
       isBaseTokenWithdrawalEnabled: false,
       isShareTokenWithdrawalEnabled: true,
     },
+    // steth is pegged to eth, so when using steth (the shares token) we will
+    // treat it as eth and convert that amount to lido shares
+    isSharesPeggedToBase: true,
     poolConfig,
   };
 

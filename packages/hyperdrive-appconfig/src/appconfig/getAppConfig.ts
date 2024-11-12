@@ -562,6 +562,7 @@ export async function getAppConfig({
   const registry = new ReadRegistry({
     address: registryAddress,
     publicClient,
+    earliestBlock,
   });
   const hyperdrives = await registry.getInstances();
 
