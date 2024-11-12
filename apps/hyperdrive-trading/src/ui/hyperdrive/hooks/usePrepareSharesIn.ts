@@ -2,7 +2,6 @@ import {
   AppConfig,
   appConfig,
   getHyperdriveConfig,
-  getYieldSource,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
@@ -76,12 +75,7 @@ export async function prepareSharesIn({
   // If the shares token is pegged to its base token (e.g., stETH to ETH), then
   // we need to treat the amount as if it were base. To get the actual shares
   // amount then, we convert to the shares used by the pool (eg: lidoShares).
-  const yieldSource = getYieldSource({
-    hyperdriveAddress: hyperdriveConfig.address,
-    hyperdriveChainId: hyperdriveConfig.chainId,
-    appConfig,
-  });
-  if (yieldSource.isSharesPeggedToBase) {
+  if (hyperdriveConfig.isSharesPeggedToBase) {
     return readHyperdrive.convertToShares({
       baseAmount: sharesAmount,
     });

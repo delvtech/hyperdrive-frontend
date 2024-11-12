@@ -2,7 +2,6 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
-  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-js";
@@ -48,12 +47,7 @@ export function OpenLongStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const yieldSource = getYieldSource({
-    hyperdriveAddress: hyperdrive.address,
-    hyperdriveChainId: hyperdrive.chainId,
-    appConfig,
-  });
-  const isBaseAmount = asBase || yieldSource.isSharesPeggedToBase;
+  const isBaseAmount = asBase || hyperdrive.isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
     ? amountPaid
     : convertSharesToBase({
