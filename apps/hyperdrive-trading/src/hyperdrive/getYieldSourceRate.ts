@@ -3,6 +3,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
   findHyperdriveConfig,
+  findYieldSource,
   getRewardsFn,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -66,11 +67,16 @@ export async function getYieldSourceRate(
 
   const netRate = await calcNetRate(rate, appConfig, hyperdrive);
 
+  const yieldSource = findYieldSource({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+  });
+
   return {
     rate,
     netRate,
-    ratePeriodDays:
-      appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
+    ratePeriodDays: yieldSource.historicalRatePeriod,
   };
 }
 
@@ -109,8 +115,12 @@ function getNumBlocksForHistoricalRate({
   hyperdrive: HyperdriveConfig;
 }) {
   const blocksPerDay = appConfig.chains[hyperdrive.chainId].dailyAverageBlocks;
-  const historicalRatePeriod =
-    appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod;
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
+  const historicalRatePeriod = yieldSource.historicalRatePeriod;
 
   const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
     ? 1000n // roughly 3 hours for cloudchain

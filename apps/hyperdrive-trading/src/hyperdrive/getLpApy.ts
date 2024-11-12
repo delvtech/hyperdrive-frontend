@@ -2,6 +2,7 @@ import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
+  findYieldSource,
   getRewardsFn,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -49,12 +50,15 @@ export async function getLpApy({
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
   const currentBlockNumber = currentBlock.blockNumber!;
   // Appconfig tells us how many days to look back for historical rates
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
   const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
     ? 1000n // roughly 3 hours for cloudchain
     : appConfig.chains[hyperdrive.chainId].dailyAverageBlocks *
-      BigInt(
-        appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod,
-      );
+      BigInt(yieldSource.historicalRatePeriod);
   const targetFromBlock = currentBlockNumber - numBlocksForHistoricalRate;
 
   let lpApy: bigint | undefined;
@@ -102,8 +106,7 @@ export async function getLpApy({
 
   // If we don't have enough blocks to go back 1 full historical period, then
   // grab the all-time rate instead.
-  let ratePeriodDays =
-    appConfig.yieldSources[hyperdrive.yieldSource].historicalRatePeriod;
+  let ratePeriodDays = yieldSource.historicalRatePeriod;
   if (isPoolYoungerThanOneRatePeriod) {
     ratePeriodDays = convertMillisecondsToDays(
       Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),

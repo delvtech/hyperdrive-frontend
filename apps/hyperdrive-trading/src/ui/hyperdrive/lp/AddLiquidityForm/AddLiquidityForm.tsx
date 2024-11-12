@@ -5,6 +5,7 @@ import {
   appConfig,
   findBaseToken,
   findToken,
+  findYieldSource,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
@@ -533,7 +534,11 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   });
 
   const showSkeleton = !lpApy && lpApyStatus === "loading";
-
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
   return (
     <PrimaryStat
       label="LP APY"
@@ -560,7 +565,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       subValue={
         vaultRateStatus === "success" && vaultRate ? (
           <div>
-            {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
+            {yieldSource.shortName} @{" "}
             {isNewPool
               ? "✨New✨"
               : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
