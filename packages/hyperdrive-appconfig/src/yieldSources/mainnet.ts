@@ -2,25 +2,6 @@ import { mainnet } from "viem/chains";
 
 import { YieldSource } from "src/yieldSources/types";
 
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    makerDsr: "makerDsr";
-    lidoSteth: "lidoSteth";
-    morphoSusdeDai: "morphoSusdeDai";
-    morphoUsdeDai: "morphoUsdeDai";
-    morphoWstethUsdc: "morphoWstethUsdc";
-    morphoWstethUsda: "morphoWstethUsda";
-    reth: "reth";
-    ezeth: "ezeth";
-    stusd: "stusd";
-    eeth: "eeth";
-    usds: "usds";
-    susds: "susds";
-    susde: "susde";
-    sgyd: "sgyd";
-  }
-}
-
 export const makerDsr: YieldSource = {
   chainId: mainnet.id,
   id: "makerDsr",

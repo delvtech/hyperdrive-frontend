@@ -1,13 +1,6 @@
 import { YieldSource } from "src/yieldSources/types";
 import { linea } from "viem/chains";
 
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    rseth: "rseth";
-    lineaEzeth: "lineaEzeth";
-  }
-}
-
 export const rseth: YieldSource = {
   chainId: linea.id,
   id: "rseth",

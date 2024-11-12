@@ -2,19 +2,6 @@ import { base } from "viem/chains";
 
 import { YieldSource } from "src/yieldSources/types";
 
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    morphoCbethUsdc: "morphoCbethUsdc";
-    cbeth: "cbeth";
-    mwEth: "mwEth";
-    mwEurc: "mwEurc";
-    mwUsdc: "mwUsdc";
-    stkWell: "stkWell";
-    snars: "snars";
-    aeroUsdcAero: "aeroUsdcAero";
-  }
-}
-
 export const morphoCbethUsdc: YieldSource = {
   chainId: base.id,
   id: "morphoCbethUsdc",
