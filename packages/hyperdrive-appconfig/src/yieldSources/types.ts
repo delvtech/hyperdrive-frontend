@@ -1,19 +1,43 @@
-// This interface is intentionally empty to allow for declaration merging with
-
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
 import { rewardFunctions } from "src/rewards/rewards";
 
-export interface YieldSourceIdMap {
-  // This interface is intentionally empty to allow for declaration merging.
-  // DO NOT MODIFY THIS INTERFACE HERE.
-}
-
-// YieldSourceId is a union of all keys in YieldSourceIdMap
-export type YieldSourceId = keyof YieldSourceIdMap;
+/**
+ * The comprehensive list of all yield source ids. To add a new yield source,
+ * add the id to this union type, then create the YieldSource object in its
+ * respective file.
+ */
+export type YieldSourceId =
+  | "morphoCbethUsdc"
+  | "cbeth"
+  | "mwEth"
+  | "mwEurc"
+  | "mwUsdc"
+  | "stkWell"
+  | "snars"
+  | "aeroUsdcAero"
+  | "gnosisWsteth"
+  | "sxdai"
+  | "gnosisSgyd"
+  | "rseth"
+  | "lineaEzeth"
+  | "makerDsr"
+  | "lidoSteth"
+  | "morphoSusdeDai"
+  | "morphoUsdeDai"
+  | "morphoWstethUsdc"
+  | "morphoWstethUsda"
+  | "reth"
+  | "ezeth"
+  | "stusd"
+  | "eeth"
+  | "usds"
+  | "susds"
+  | "susde"
+  | "sgyd";
 
 // Base interface with common properties
-export interface YieldSource {
+export interface YieldSourceConfig {
   chainId: ChainId;
   id: YieldSourceId;
   shortName: string;

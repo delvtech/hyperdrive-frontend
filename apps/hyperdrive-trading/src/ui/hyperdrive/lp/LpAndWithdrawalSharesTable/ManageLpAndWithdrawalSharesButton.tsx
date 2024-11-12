@@ -46,7 +46,6 @@ export function ManageLpAndWithdrawalSharesButton({
     account,
     chainId: hyperdrive.chainId,
   });
-  const yieldSource = appConfig.yieldSources[hyperdrive.yieldSource];
 
   const { withdrawalShares: balanceOfWithdrawalShares } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,

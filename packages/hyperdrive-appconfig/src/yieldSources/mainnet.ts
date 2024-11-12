@@ -1,27 +1,8 @@
 import { mainnet } from "viem/chains";
 
-import { YieldSource } from "src/yieldSources/types";
+import { YieldSourceConfig } from "src/yieldSources/types";
 
-declare module "src/yieldSources/types" {
-  interface YieldSourceIdMap {
-    makerDsr: "makerDsr";
-    lidoSteth: "lidoSteth";
-    morphoSusdeDai: "morphoSusdeDai";
-    morphoUsdeDai: "morphoUsdeDai";
-    morphoWstethUsdc: "morphoWstethUsdc";
-    morphoWstethUsda: "morphoWstethUsda";
-    reth: "reth";
-    ezeth: "ezeth";
-    stusd: "stusd";
-    eeth: "eeth";
-    usds: "usds";
-    susds: "susds";
-    susde: "susde";
-    sgyd: "sgyd";
-  }
-}
-
-export const makerDsr: YieldSource = {
+export const makerDsr: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "makerDsr",
   shortName: "Maker DSR",
@@ -29,7 +10,7 @@ export const makerDsr: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const lidoSteth: YieldSource = {
+export const lidoSteth: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "lidoSteth",
   shortName: "Lido stETH",
@@ -37,21 +18,21 @@ export const lidoSteth: YieldSource = {
   isSharesPeggedToBase: true,
   historicalRatePeriod: 1,
 };
-export const morphoSusdeDai: YieldSource = {
+export const morphoSusdeDai: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "morphoSusdeDai",
   shortName: "Morpho sUSDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
-export const morphoUsdeDai: YieldSource = {
+export const morphoUsdeDai: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "morphoUsdeDai",
   shortName: "Morpho USDe/DAI",
   protocol: "morpho",
   historicalRatePeriod: 1,
 };
-export const morphoWstethUsdc: YieldSource = {
+export const morphoWstethUsdc: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "morphoWstethUsdc",
   shortName: "Morpho wstETH/USDC",
@@ -59,7 +40,7 @@ export const morphoWstethUsdc: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const eeth: YieldSource = {
+export const eeth: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "eeth",
   shortName: "Ether.fi Staked ETH",
@@ -68,7 +49,7 @@ export const eeth: YieldSource = {
   rewardsFn: "fetchEtherfiRewards",
 };
 
-export const morphoWstethUsda: YieldSource = {
+export const morphoWstethUsda: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "morphoWstethUsda",
   shortName: "Morpho wstETH/USDA",
@@ -76,7 +57,7 @@ export const morphoWstethUsda: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const reth: YieldSource = {
+export const reth: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "reth",
   shortName: "Rocket Pool ETH",
@@ -84,7 +65,7 @@ export const reth: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const ezeth: YieldSource = {
+export const ezeth: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "ezeth",
   shortName: "Renzo ezETH",
@@ -92,7 +73,7 @@ export const ezeth: YieldSource = {
   historicalRatePeriod: 14,
 };
 
-export const stusd: YieldSource = {
+export const stusd: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "stusd",
   shortName: "Angle stUSD",
@@ -100,7 +81,7 @@ export const stusd: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const usds: YieldSource = {
+export const usds: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "usds",
   shortName: "Savings USDS",
@@ -108,7 +89,7 @@ export const usds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const susds: YieldSource = {
+export const susds: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "susds",
   shortName: "Staking USDS",
@@ -116,7 +97,7 @@ export const susds: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const susde: YieldSource = {
+export const susde: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "susde",
   shortName: "Ethena sUSDe",
@@ -124,7 +105,7 @@ export const susde: YieldSource = {
   historicalRatePeriod: 1,
 };
 
-export const sgyd: YieldSource = {
+export const sgyd: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "sgyd",
   shortName: "Savings GYD",

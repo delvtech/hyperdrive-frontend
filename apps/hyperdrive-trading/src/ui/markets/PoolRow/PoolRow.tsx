@@ -3,6 +3,7 @@ import {
   appConfig,
   findBaseToken,
   findToken,
+  findYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ClockIcon } from "@heroicons/react/16/solid";
@@ -25,7 +26,7 @@ export interface PoolRowProps {
 
 export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
-  const { yieldSources, chains } = appConfig;
+  const { chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
 
   const baseToken = findBaseToken({
@@ -66,6 +67,11 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
       decimals: hyperdrive.decimals,
     })}`;
   }
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
 
   return (
     <Well
@@ -95,9 +101,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
             <AssetStack hyperdriveAddress={hyperdrive.address} />
           </div>
           <div className="flex flex-col gap-1.5">
-            <h4 className="text-left">
-              {yieldSources[hyperdrive.yieldSource].shortName}
-            </h4>
+            <h4 className="text-left">{yieldSource.shortName}</h4>
             <div className="flex flex-wrap gap-5 gap-y-20">
               <div className="flex items-center gap-1.5 text-sm">
                 <ClockIcon className="size-4 text-gray-400/60" />{" "}

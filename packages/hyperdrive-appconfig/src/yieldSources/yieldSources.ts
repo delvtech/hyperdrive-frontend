@@ -26,8 +26,9 @@ import {
   susds,
   usds,
 } from "src/yieldSources/mainnet";
+import { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
-export const yieldSources = {
+export const yieldSources: Record<YieldSourceId, YieldSourceConfig> = {
   eeth,
   makerDsr,
   lidoSteth,
@@ -55,4 +56,4 @@ export const yieldSources = {
   susde,
   sgyd,
   gnosisSgyd,
-} as const;
+};

@@ -5,6 +5,7 @@ import {
   appConfig,
   findBaseToken,
   findToken,
+  findYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { MouseEvent, ReactElement, useState } from "react";
@@ -284,6 +285,12 @@ export function OpenShortForm({
     Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
   );
 
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
+
   // Plausible event props
   const formName = "Open Short";
   const chainId = hyperdrive.chainId;
@@ -369,7 +376,7 @@ export function OpenShortForm({
             bottomRightElement={
               vaultRateStatus === "success" && vaultRate ? (
                 <>
-                  {appConfig.yieldSources[hyperdrive.yieldSource].shortName} @{" "}
+                  {yieldSource.shortName} @{" "}
                   {isNewPool
                     ? "✨New✨"
                     : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
@@ -459,7 +466,7 @@ export function OpenShortForm({
           <PrimaryStat
             label="Exposure Multiplier"
             tooltipContent={`This represents how much exposure you get to ${
-              appConfig.yieldSources[hyperdrive.yieldSource].shortName
+              yieldSource.shortName
             } compared to what you pay to open the short.`}
             value={
               <span className="text-h3 font-bold">{exposureMultiplier}</span>

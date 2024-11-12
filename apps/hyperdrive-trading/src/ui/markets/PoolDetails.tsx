@@ -1,4 +1,8 @@
-import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import {
+  appConfig,
+  findYieldSource,
+  HyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
@@ -31,6 +35,12 @@ export function PoolDetails({
     hyperdriveAddress: hyperdrive.address,
   });
 
+  const yieldSource = findYieldSource({
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+    appConfig,
+  });
+
   return (
     <div className="flex w-[515px] flex-col gap-9">
       <div className="flex flex-col gap-4">
@@ -43,7 +53,7 @@ export function PoolDetails({
         </Link>
         <h1 className="flex items-center gap-2 text-h2">
           <AssetStack hyperdriveAddress={hyperdrive.address} />
-          {appConfig.yieldSources[hyperdrive.yieldSource].shortName}
+          {yieldSource.shortName}
         </h1>
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />

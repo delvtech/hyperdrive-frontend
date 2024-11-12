@@ -1,5 +1,5 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { yieldSources } from "src/yieldSources/yieldSources";
+import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 
 export interface HyperdriveConfig {
@@ -15,7 +15,7 @@ export interface HyperdriveConfig {
   /**
    * The yield source backing the pool,
    */
-  yieldSource: keyof typeof yieldSources;
+  yieldSource: YieldSourceId;
 
   depositOptions: {
     /**

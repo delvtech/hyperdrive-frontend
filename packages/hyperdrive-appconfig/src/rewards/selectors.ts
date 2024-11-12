@@ -11,13 +11,10 @@ export function getRewardsFn({
   yieldSourceId,
   appConfig,
 }: {
-  // TODO: change this type to YieldSourceId once YieldSourceId can be used outside
-  // of the appconfig package.k
-  yieldSourceId: string;
+  yieldSourceId: YieldSourceId;
   appConfig: AppConfig;
 }): RewardsResolver | undefined {
-  // casting this for now because YieldSourceId doesn't work outside of the appconfig package
-  const yieldSource = appConfig.yieldSources[yieldSourceId as YieldSourceId];
+  const yieldSource = appConfig.yieldSources[yieldSourceId];
   if (!yieldSource.rewardsFn) {
     return;
   }
