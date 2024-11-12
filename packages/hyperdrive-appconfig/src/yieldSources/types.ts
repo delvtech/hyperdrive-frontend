@@ -3,8 +3,9 @@ import { ProtocolId } from "src/protocols";
 import { rewardFunctions } from "src/rewards/rewards";
 
 /**
- * The comprehensive list of all yield source ids. These are used to reference a
- * HyperdriveConfig's yield source.
+ * The comprehensive list of all yield source ids. To add a new yield source,
+ * add the id to this union type, then create the YieldSource object in its
+ * respective file.
  */
 export type YieldSourceId =
   | "morphoCbethUsdc"
@@ -36,7 +37,7 @@ export type YieldSourceId =
   | "sgyd";
 
 // Base interface with common properties
-export interface YieldSource {
+export interface YieldSourceConfig {
   chainId: ChainId;
   id: YieldSourceId;
   shortName: string;

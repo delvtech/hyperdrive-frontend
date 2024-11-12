@@ -31,6 +31,7 @@ export function findHyperdriveConfig({
 
   return hyperdriveConfig;
 }
+
 /**
  * Retrieves the base token associated with a specific Hyperdrive address. This
  * token is used to denominate both `vaultSharePrice` and `lpSharePrice`, and

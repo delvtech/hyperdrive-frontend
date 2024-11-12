@@ -26,9 +26,9 @@ import {
   susds,
   usds,
 } from "src/yieldSources/mainnet";
-import { YieldSource, YieldSourceId } from "src/yieldSources/types";
+import { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
-export const yieldSources: Record<YieldSourceId, YieldSource> = {
+export const yieldSources: Record<YieldSourceId, YieldSourceConfig> = {
   eeth,
   makerDsr,
   lidoSteth,
