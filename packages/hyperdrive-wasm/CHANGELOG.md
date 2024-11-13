@@ -1,5 +1,15 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.16.0
+
+### Minor Changes
+
+- c603599: Add commonjs support
+
+### Patch Changes
+
+- 18482c3: Add `shortBondsGivenDeposit` function
+
 ## 0.15.3
 
 ### Patch Changes
