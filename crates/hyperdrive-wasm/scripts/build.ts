@@ -61,7 +61,7 @@ lockfile
 
     // Build the package with the "@delvtech/" scope
     console.log("Building package...");
-    const buildProcessResult = spawnSync(
+    const buildProcessResultEsm = spawnSync(
       "npx",
       [
         "wasm-pack",
@@ -79,10 +79,46 @@ lockfile
     );
 
     // Restore the previous build and exit if the build failed
-    if (buildProcessResult.error) {
+    if (buildProcessResultEsm.error) {
       restoreBackup(outDir, backupPath);
       process.exit(1);
     }
+
+    // Build the package for common js in a tmp directory.
+    const buildProcessResultCjs = spawnSync(
+      "npx",
+      [
+        "wasm-pack",
+        "build",
+        "--target",
+        "nodejs",
+        "--scope",
+        "delvtech",
+        "--out-dir",
+        resolve(outDir, "tmp"),
+      ],
+      {
+        stdio: "inherit",
+      },
+    );
+
+    // Restore the previous build and exit if the build failed
+    if (buildProcessResultCjs.error) {
+      restoreBackup(outDir, backupPath);
+      process.exit(1);
+    }
+
+    // We only need the module and wasmfile for the CJS build so we grab
+    // tme from the tmp directory and then remove the tmp directory.
+    renameSync(
+      resolve(outDir, "tmp", "hyperdrive_wasm.js"),
+      resolve(outDir, "hyperdrive_wasm.cjs"),
+    );
+    renameSync(
+      resolve(outDir, "tmp", "hyperdrive_wasm_bg.wasm"),
+      resolve(outDir, "hyperdrive_wasm_bg_cjs.wasm"),
+    );
+    rmSync(resolve(outDir, "tmp"), { recursive: true });
 
     // Restore the changelog and remove the previous build if it exists
     if (existsSync(backupPath)) {
@@ -98,6 +134,7 @@ lockfile
 
     console.log("Modifying package for increased compatibility...");
 
+    // For ESM:
     // Transform the wasm binary into a base64 string and embed it directly into
     // the module to simplify usage and avoid the need for loader configuration in
     // app bundlers.
@@ -105,7 +142,6 @@ lockfile
     const wasmBase64 = await readFile(wasmPath).then((data) =>
       data.toString("base64"),
     );
-
     const modulePath = resolve(outDir, "hyperdrive_wasm.js");
     appendFileSync(
       modulePath,
@@ -115,6 +151,12 @@ lockfile
   ).buffer;`,
     );
 
+    // For CJS:
+    // Replace the esm wasm file with the cjs wasm file.  CJS can import the
+    // wasm file without a bundler.
+    rmSync(wasmPath);
+    renameSync(resolve(outDir, "hyperdrive_wasm_bg_cjs.wasm"), wasmPath);
+
     // Add type definitions for the added exports
     appendFileSync(
       resolve(outDir, "hyperdrive_wasm.d.ts"),
@@ -122,23 +164,36 @@ lockfile
 declare const wasmBuffer: ArrayBuffer;`,
     );
 
-    // Remove the wasm binary
-    rmSync(wasmPath);
+    // Remove the wasm binary definition file.
     rmSync(resolve(outDir, "hyperdrive_wasm_bg.wasm.d.ts"));
 
+    // Now we'll update the package.json.
     const packageJsonPath = resolve(outDir, "package.json");
     const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
 
-    // Remove the wasm binary from the package.json files list.
-    packageJson.files = packageJson.files.filter(
-      (filename: string) => !filename.startsWith("hyperdrive_wasm_bg.wasm"),
-    );
+    // Add the commonjs module file to the list of files.
+    packageJson.files.push("hyperdrive_wasm.cjs");
 
     // Set the type field to "module"
     packageJson.type = "module";
 
     // Add a main field for improved commonjs compatibility.
-    packageJson.main = "hyperdrive_wasm.js";
+    packageJson.main = "hyperdrive_wasm.cjs";
+    packageJson.types = "hyperdrive_wasm.d.ts";
+
+    // Add exports for both ESM and CJS compatibility for modern node versions.
+    packageJson.exports = {
+      ".": {
+        default: {
+          require: "./hyperdrive_wasm.cjs",
+          import: "./hyperdrive_wasm.js",
+        },
+        types: {
+          require: "./hyperdrive_wasm.d.ts",
+          import: "./hyperdrive_wasm.d.ts",
+        },
+      },
+    };
 
     // Explicitly set the publishConfig access to public to ensure it's published
     // by changesets.

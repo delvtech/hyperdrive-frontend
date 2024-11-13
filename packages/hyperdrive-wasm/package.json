@@ -2,13 +2,16 @@
   "name": "@delvtech/hyperdrive-wasm",
   "collaborators": [
     "Ryan Goree <ryan@delv.tech>",
-    "Danny Delott <dannyd@delv.tech>"
+    "Danny Delott <dannyd@delv.tech>",
+    "Matt Brown <matt@delv.tech>"
   ],
   "version": "0.15.3",
   "license": "AGPL-3.0",
   "files": [
+    "hyperdrive_wasm_bg.wasm",
     "hyperdrive_wasm.js",
-    "hyperdrive_wasm.d.ts"
+    "hyperdrive_wasm.d.ts",
+    "hyperdrive_wasm.cjs"
   ],
   "module": "hyperdrive_wasm.js",
   "types": "hyperdrive_wasm.d.ts",
@@ -16,7 +19,19 @@
     "./snippets/*"
   ],
   "type": "module",
-  "main": "hyperdrive_wasm.js",
+  "main": "hyperdrive_wasm.cjs",
+  "exports": {
+    ".": {
+      "default": {
+        "require": "./hyperdrive_wasm.cjs",
+        "import": "./hyperdrive_wasm.js"
+      },
+      "types": {
+        "require": "./hyperdrive_wasm.d.ts",
+        "import": "./hyperdrive_wasm.d.ts"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   }
