@@ -32,7 +32,7 @@
     "@delvtech/drift-viem": "^0.0.1-beta.13",
     "@delvtech/fixed-point-wasm": "^0.0.7",
     "@delvtech/hyperdrive-appconfig": "^0.1.0",
-    "@delvtech/hyperdrive-js": "^3.1.0",
+    "@delvtech/hyperdrive-js": "^0.0.0",
     "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
     "@radix-ui/react-tooltip": "^1.1.2",
