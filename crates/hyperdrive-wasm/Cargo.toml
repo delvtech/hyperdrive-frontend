@@ -4,7 +4,11 @@ name = "hyperdrive-wasm"
 # the crate's package.json which is managed by changesets.
 version = "0.15.3"
 edition = "2021"
-authors = ["Ryan Goree <ryan@delv.tech>", "Danny Delott <dannyd@delv.tech>"]
+authors = [
+  "Ryan Goree <ryan@delv.tech>",
+  "Danny Delott <dannyd@delv.tech>",
+  "Matt Brown <matt@delv.tech>",
+]
 license = "AGPL-3.0"
 
 [lib]
