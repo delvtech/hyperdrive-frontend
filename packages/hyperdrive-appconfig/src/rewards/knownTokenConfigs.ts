@@ -39,8 +39,8 @@ export const knownTokenConfigs: Record<
       iconUrl: AERO_ICON_URL,
       tags: [],
     },
-    "0x039b598c6b99e70058E1e9021E000BdacD33d026": {
-      address: "0x039b598c6b99e70058E1e9021E000BdacD33d026",
+    "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842": {
+      address: "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842",
       chainId: base.id,
       name: "Morpho Token",
       symbol: "MORPHO",
