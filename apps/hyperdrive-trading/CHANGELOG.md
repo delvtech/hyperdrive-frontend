@@ -14,7 +14,6 @@
 - Updated dependencies [5dddc75]
 - Updated dependencies [6cc29bb]
   - @delvtech/hyperdrive-appconfig@0.1.0
-  - @delvtech/hyperdrive-js@3.1.0
   - @delvtech/fixed-point-wasm@0.0.7
 
 ## 0.0.10
