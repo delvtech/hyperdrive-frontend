@@ -6,11 +6,6 @@
 
 - 7a034fc: Refactored to drift under the hood
 
-### Patch Changes
-
-- Updated dependencies [7a034fc]
-  - @delvtech/hyperdrive-js@3.1.0
-
 ## 3.0.6
 
 ### Patch Changes
