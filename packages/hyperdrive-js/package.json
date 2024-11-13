@@ -1,6 +1,7 @@
 {
   "name": "@delvtech/hyperdrive-js",
   "version": "0.0.0",
+  "private": true,
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
@@ -57,8 +58,5 @@
       "require": "./dist/v1.0.14.cjs"
     },
     "./package.json": "./package.json"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
