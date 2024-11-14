@@ -18,34 +18,59 @@ const script = basename(__filename);
 // SETTINGS
 const DEFAULT_OUT_DIR = "../../packages/hyperdrive-wasm";
 
-// Log usage
-console.log(`
-+
-|  ${script}
-|  Generates a wasm package from the hyperdrive-wasm crate.
-|
-|  Usage: ${script} [out_dir]
-|
-|    out_dir: The output directory for the generated package. (default: ${DEFAULT_OUT_DIR})
-+
-`);
-
 async function main() {
-  let release: () => Promise<void>;
+  // Log usage.
+  console.log(`
+  +
+  |  ${script}
+  |  Generates a wasm package from the hyperdrive-wasm crate.
+  |
+  |  Usage: ${script} [out_dir]
+  |
+  |    out_dir: The output directory for the generated package. (default: ${DEFAULT_OUT_DIR})
+  +
+  `);
+
+  // Try the build.
   try {
-    release = await lockfile
-      // Lock the script to prevent concurrent builds
-      .lock(__filename, {
-        retries: 3,
-        update: 3_000, // 3 seconds
-        stale: 60_000 * 10, // 10 minutes
-      });
+    await build();
   } catch (err) {
     console.error(err);
-    // Ensure the lockfile is released
+    // Ensure the lockfile is released.
     lockfile.unlock(__filename);
     process.exit(1);
   }
+}
+
+main();
+
+/**
+ * Builds a WebAssembly package from the hyperdrive-wasm crate.
+ *
+ * This function performs the following tasks:
+ * - Locks the script to prevent concurrent builds.
+ * - Resolves the output directory and backup path.
+ * - Logs the current version and output directory.
+ * - Updates the version in the Cargo.toml file.
+ * - Creates a backup of the previous build if it exists.
+ * - Builds the package with the "@delvtech/" scope for both ESM and CJS targets.
+ * - Restores the previous build if any build process fails.
+ * - Renames and removes temporary build files.
+ * - Modifies the package for increased compatibility, including transforming
+ *   the wasm binary into a base64 string and embedding it directly in the module.
+ * - Updates the package.json to support both ESM and CJS compatibility, adds
+ *   type definitions, and ensures the package is configured for public publishing.
+ * - Removes unnecessary files such as the gitignore and wasm binary definition.
+ * - Releases the lockfile and exits the process.
+ */
+async function build() {
+  const release = await lockfile
+    // Lock the script to prevent concurrent builds
+    .lock(__filename, {
+      retries: 3,
+      update: 3_000, // 3 seconds
+      stale: 60_000 * 10, // 10 minutes
+    });
 
   const outDir = resolve(process.argv[3] || DEFAULT_OUT_DIR);
   const backupPath = `${outDir}_backup`;
@@ -222,8 +247,6 @@ declare const wasmBuffer: ArrayBuffer;`,
   lockfile.unlock(__filename);
   process.exit(0);
 }
-
-main();
 
 function backupBuild(outDir: string, backupPath: string) {
   // Don't overwrite existing backups
