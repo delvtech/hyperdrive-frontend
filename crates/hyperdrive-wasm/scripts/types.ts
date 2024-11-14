@@ -34,7 +34,6 @@ export interface PackageJson {
   version: string;
   license: string;
   files: string[];
-  module: string;
   types: string;
   sideEffects: string[];
   type: string;
@@ -45,10 +44,7 @@ export interface PackageJson {
         require: string;
         import: string;
       };
-      types: {
-        require: string;
-        import: string;
-      };
+      types: string;
     };
   };
   publishConfig: {

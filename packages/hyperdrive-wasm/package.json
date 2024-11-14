@@ -13,23 +13,19 @@
     "hyperdrive_wasm.d.ts",
     "hyperdrive_wasm_bg.wasm"
   ],
-  "module": "hyperdrive_wasm.js",
-  "types": "hyperdrive_wasm.d.ts",
   "sideEffects": [
     "./snippets/*"
   ],
   "type": "module",
   "main": "hyperdrive_wasm.cjs",
+  "types": "hyperdrive_wasm.d.ts",
   "exports": {
     ".": {
       "default": {
         "require": "./hyperdrive_wasm.cjs",
         "import": "./hyperdrive_wasm.js"
       },
-      "types": {
-        "require": "./hyperdrive_wasm.d.ts",
-        "import": "./hyperdrive_wasm.d.ts"
-      }
+      "types": "./hyperdrive_wasm.d.ts"
     }
   },
   "publishConfig": {

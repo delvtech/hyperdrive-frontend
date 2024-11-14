@@ -11,20 +11,20 @@ const script = basename(__filename);
 
 // SETTINGS
 const DEFAULT_OUT_DIR = "../../packages/hyperdrive-wasm";
-const DEFAULT_TMP_DIR = "tmp";
+const TMP_DIR = "tmp";
 
 async function main() {
   // Log usage.
   console.log(`
-  +
-  |  ${script}
-  |  Generates a wasm package from the hyperdrive-wasm crate.
-  |
-  |  Usage: ${script} [out_dir]
-  |
-  |    out_dir: The output directory for the generated package. (default: ${DEFAULT_OUT_DIR})
-  +
-  `);
++
+|  ${script}
+|  Generates a wasm package from the hyperdrive-wasm crate.
+|
+|  Usage: ${script} [out_dir]
+|
+|    out_dir: The output directory for the generated package. (default: ${DEFAULT_OUT_DIR})
++
+`);
 
   // Try the build.
   try {
@@ -71,8 +71,13 @@ async function build() {
   console.log("Version: ", version);
   console.log("Output Directory: ", outDir, "\n");
 
-  // Update the version in the Cargo.toml file.
+  // Load the Cargo.toml file.
   const cargoManifestPath = resolve(__dirname, "../Cargo.toml");
+  const cargoToml = tomlJson({
+    fileUrl: cargoManifestPath,
+  }) as CargoToml;
+
+  // Update the version in the Cargo.toml file.
   writeFileSync(
     cargoManifestPath,
     readFileSync(cargoManifestPath, "utf8").replace(
@@ -86,13 +91,7 @@ async function build() {
   console.log("Building package...");
   const buildProcessResult = spawnSync(
     "npx",
-    [
-      "wasm-pkg-build",
-      "--modules",
-      "cjs,esm-inline",
-      "--out-dir",
-      DEFAULT_TMP_DIR,
-    ],
+    ["wasm-pkg-build", "--modules", "cjs,esm-inline", "--out-dir", TMP_DIR],
     {
       stdio: "inherit",
     },
@@ -104,22 +103,35 @@ async function build() {
   }
 
   // Copy generated files to the output directory.
+  const filePrefix = cargoToml.package.name.replaceAll("-", "_");
   const fileNames = [
-    { from: "hyperdrive_wasm_web.js", to: "hyperdrive_wasm.js" }, // esm-inline
-    { from: "hyperdrive_wasm.js", to: "hyperdrive_wasm.cjs" }, // cjs
-    { from: "hyperdrive_wasm.d.ts", to: "hyperdrive_wasm.d.ts" }, // types
-    { from: "hyperdrive_wasm_bg.wasm", to: "hyperdrive_wasm_bg.wasm" }, // wasm for cjs
+    {
+      from: `${filePrefix}_web.js`,
+      to: `${filePrefix}.js`,
+    }, // esm-inline
+    {
+      from: `${filePrefix}.js`,
+      to: `${filePrefix}.cjs`,
+    }, // cjs
+    {
+      from: `${filePrefix}.d.ts`,
+      to: `${filePrefix}.d.ts`,
+    }, // types
+    {
+      from: `${filePrefix}_bg.wasm`,
+      to: `${filePrefix}_bg.wasm`,
+    }, // wasm for cjs
   ];
   fileNames.forEach(({ from, to }) => {
-    renameSync(resolve(DEFAULT_TMP_DIR, from), resolve(outDir, to));
+    renameSync(resolve(TMP_DIR, from), resolve(outDir, to));
   });
 
   // Remove the temporary build files.
   console.log("Removing temporary build files...");
-  rmSync(DEFAULT_TMP_DIR, { recursive: true });
+  rmSync(TMP_DIR, { recursive: true });
 
   console.log("Creating package.json...");
-  const packageJson = buildPackageJsonFromCargoToml(fileNames);
+  const packageJson = buildPackageJsonFromCargoToml(cargoToml, fileNames);
 
   // Save the package.json to the output directory.
   writeFileSync(
@@ -135,6 +147,7 @@ async function build() {
 /**
  * Generates a package.json given a list of generated files.
  *
+ * @param cargoToml The parsed Cargo.toml file.k
  * @param fileNames A list of generated files where each item contains the
  *   "from" (the original file name) and "to" (the desired file name in the
  *   output directory) properties.
@@ -142,37 +155,30 @@ async function build() {
  * @returns The generated package.json object.
  */
 function buildPackageJsonFromCargoToml(
+  cargoToml: CargoToml,
   fileNames: { from: string; to: string }[],
 ): PackageJson {
-  // Load the Cargo.toml file.
-  const cargoToml = tomlJson({
-    fileUrl: "Cargo.toml",
-  }) as CargoToml;
-
-  // Now we'll create the package.json.
+  const filePrefix = cargoToml.package.name.replaceAll("-", "_");
+  // Create the package.json.
   const packageJson: PackageJson = {
     name: `@delvtech/${cargoToml.package.name}`,
     collaborators: cargoToml.package.authors.filter(Boolean), // remove empty strings
     version: cargoToml.package.version,
     license: cargoToml.package.license,
     files: fileNames.map(({ to }) => to),
-    module: "hyperdrive_wasm.js",
-    types: "hyperdrive_wasm.d.ts",
     sideEffects: ["./snippets/*"],
     type: "module",
     // Add a main field for improved commonjs compatibility.
-    main: "hyperdrive_wasm.cjs",
+    main: `${filePrefix}.cjs`,
+    types: `${filePrefix}.d.ts`,
     // Add exports for both ESM and CJS compatibility for modern node versions.
     exports: {
       ".": {
         default: {
-          require: "./hyperdrive_wasm.cjs",
-          import: "./hyperdrive_wasm.js",
+          require: `./${filePrefix}.cjs`,
+          import: `./${filePrefix}.js`,
         },
-        types: {
-          require: "./hyperdrive_wasm.d.ts",
-          import: "./hyperdrive_wasm.d.ts",
-        },
+        types: `./${filePrefix}.d.ts`,
       },
     },
     // Explicitly set the publishConfig access to public to ensure it's published

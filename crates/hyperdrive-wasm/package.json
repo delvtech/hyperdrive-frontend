@@ -14,12 +14,9 @@
     "@types/proper-lockfile": "^4.1.4",
     "onchange": "^7.1.0",
     "proper-lockfile": "^4.1.2",
+    "toml-json": "^1.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "wasm-pack": "^0.12.1"
-  },
-  "dependencies": {
-    "toml-json": "^1.1.4",
     "wasm-pkg-build": "^0.5.3"
   }
 }
