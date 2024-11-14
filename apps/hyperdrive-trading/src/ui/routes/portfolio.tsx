@@ -10,6 +10,6 @@ export const Route = createFileRoute(PORTFOLIO_ROUTE)({
     </Page>
   ),
   validateSearch: z.object({
-    position: z.enum(["longs", "shorts", "lp"]).optional(),
+    position: z.enum(["longs", "shorts", "lp", "rewards"]).optional(),
   }),
 });

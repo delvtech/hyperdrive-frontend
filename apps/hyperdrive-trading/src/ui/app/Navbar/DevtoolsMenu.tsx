@@ -17,6 +17,9 @@ export function DevtoolsMenu(): ReactElement {
         Menu Item Name here
         </FeatureFlagMenuItem> */}
         <FeatureFlagMenuItem flagName="zaps">Zaps</FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName="portfolio-rewards">
+          Portfolio Rewards
+        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             throw new Error(
