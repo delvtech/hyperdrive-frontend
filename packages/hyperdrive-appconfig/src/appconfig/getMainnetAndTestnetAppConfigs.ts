@@ -58,26 +58,24 @@ export function getMainnetAndTestnetAppConfigs(appConfig: AppConfig): {
       continue;
     }
 
-    const fallbackBaseToken = appConfig.tokens.find((token) => {
-      return (
-        // safe to cast since we don't get here if there is no baseTokenFallback
-        token.chainId === hyperdrive.baseTokenFallback!.chainId &&
-        token.address === hyperdrive.baseTokenFallback!.address
-      );
-    });
+    const fallbackBaseToken = getToken({
+      chainId: hyperdrive.baseTokenFallback.chainId,
+      tokenAddress: hyperdrive.baseTokenFallback.address,
+      appConfig,
+    })!;
 
     const targetAppConfig = isTestnetChain(hyperdrive.chainId)
       ? testnetConfig
       : mainnetConfig;
 
     const fallbackBaseTokenAlreadyExists = !!getToken({
-      chainId: fallbackBaseToken!.chainId,
-      tokenAddress: fallbackBaseToken!.address,
+      chainId: fallbackBaseToken.chainId,
+      tokenAddress: fallbackBaseToken.address,
       appConfig: targetAppConfig,
     });
 
     if (!fallbackBaseTokenAlreadyExists) {
-      targetAppConfig.tokens.push(fallbackBaseToken!);
+      targetAppConfig.tokens.push(fallbackBaseToken);
     }
   }
 

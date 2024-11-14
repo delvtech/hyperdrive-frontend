@@ -118,7 +118,10 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           <div className="flex flex-col gap-6" key={hyperdrive.address}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1 font-chakraPetch text-h4">
-                <AssetStack hyperdriveAddress={hyperdrive.address} />
+                <AssetStack
+                  hyperdriveAddress={hyperdrive.address}
+                  hyperdriveChainId={hyperdrive.chainId}
+                />
                 <p className="text-h4">
                   {/*
                     This regex removes the term from the hyperdrive name since it's already shown in the table.

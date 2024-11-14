@@ -23,6 +23,7 @@ import {
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
 import { rewardFunctions } from "src/rewards/rewards";
+import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, Chain, createPublicClient, http, PublicClient } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
@@ -194,14 +195,19 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             reward.type === "transferableToken" ||
             reward.type === "nonTransferableToken"
           ) {
-            // Don't use the getToken selector for this, because it expects a
-            // fully populated appConfig
-            const alreadyExists = appConfig.tokens.find(
-              (token) =>
-                token.address.toLowerCase() ==
-                  reward.tokenAddress.toLowerCase() &&
-                token.chainId === reward.chainId,
-            );
+            let alreadyExists = false;
+            try {
+              // This will throw an error if it cannot find the token
+              alreadyExists = !!getToken({
+                chainId: reward.chainId,
+                tokenAddress: reward.tokenAddress,
+                appConfig,
+              });
+            } catch (error) {
+              // Do nothing if this errors, it simply means the reward token is
+              // not already a hyperdrive base or shares token
+            }
+
             if (alreadyExists) {
               return;
             }
@@ -215,7 +221,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             }
 
             throw new Error(
-              `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
+              `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
             );
           }
         });

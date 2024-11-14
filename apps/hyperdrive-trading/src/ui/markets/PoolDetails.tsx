@@ -52,7 +52,10 @@ export function PoolDetails({
           Back to All Pools
         </Link>
         <h1 className="flex items-center gap-2 text-h2">
-          <AssetStack hyperdriveAddress={hyperdrive.address} />
+          <AssetStack
+            hyperdriveAddress={hyperdrive.address}
+            hyperdriveChainId={hyperdrive.chainId}
+          />
           {yieldSource.shortName}
         </h1>
         {marketState?.isPaused && (

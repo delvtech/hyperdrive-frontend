@@ -22,7 +22,6 @@
     "serve": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest --reporter=verbose",
-    "gen:coingecko": "bash ./scripts/generate-coingecko.sh",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "gen:version": "bash ./scripts/generate-version.sh",
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
