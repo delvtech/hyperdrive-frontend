@@ -27,3 +27,31 @@ export interface DependencyDetails {
   features?: string[];
   path?: string;
 }
+
+export interface PackageJson {
+  name: string;
+  collaborators: string[];
+  version: string;
+  license: string;
+  files: string[];
+  module: string;
+  types: string;
+  sideEffects: string[];
+  type: string;
+  main: string;
+  exports: {
+    ".": {
+      default: {
+        require: string;
+        import: string;
+      };
+      types: {
+        require: string;
+        import: string;
+      };
+    };
+  };
+  publishConfig: {
+    access: string;
+  };
+}

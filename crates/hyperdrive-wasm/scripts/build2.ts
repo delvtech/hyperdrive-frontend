@@ -3,7 +3,7 @@ import { spawnSync } from "child_process";
 import { readFileSync, renameSync, rmSync, writeFileSync } from "fs";
 import { basename, resolve } from "path";
 import lockfile from "proper-lockfile";
-import { CargoToml } from "scripts/types";
+import { CargoToml, PackageJson } from "scripts/types";
 import tomlJson from "toml-json";
 import { version } from "../package.json";
 
@@ -35,6 +35,10 @@ async function main() {
     lockfile.unlock(__filename);
     process.exit(1);
   }
+
+  // Ensure the lockfile is released.
+  lockfile.unlock(__filename);
+  process.exit(0);
 }
 
 main();
@@ -78,7 +82,7 @@ async function build() {
     ),
   );
 
-  // Build the package with the "@delvtech/" scope.
+  // Build the hyperdrive-wasm files.
   console.log("Building package...");
   const buildProcessResult = spawnSync(
     "npx",
@@ -94,9 +98,9 @@ async function build() {
     },
   );
 
-  // Restore the previous build and exit if the build failed.
+  // Throw an error if the build failed.
   if (buildProcessResult.error) {
-    process.exit(1);
+    throw buildProcessResult.error;
   }
 
   // Copy generated files to the output directory.
@@ -110,21 +114,45 @@ async function build() {
     renameSync(resolve(DEFAULT_TMP_DIR, from), resolve(outDir, to));
   });
 
-  // Remove the temporary build files
+  // Remove the temporary build files.
   console.log("Removing temporary build files...");
   rmSync(DEFAULT_TMP_DIR, { recursive: true });
 
   console.log("Creating package.json...");
+  const packageJson = buildPackageJsonFromCargoToml(fileNames);
 
-  // Load the Cargo.toml file
+  // Save the package.json to the output directory.
+  writeFileSync(
+    resolve(outDir, "package.json"),
+    JSON.stringify(packageJson, null, 2),
+  );
+
+  // Release the lockfile.
+  release();
+  console.log("Done!");
+}
+
+/**
+ * Generates a package.json given a list of generated files.
+ *
+ * @param fileNames A list of generated files where each item contains the
+ *   "from" (the original file name) and "to" (the desired file name in the
+ *   output directory) properties.
+ *
+ * @returns The generated package.json object.
+ */
+function buildPackageJsonFromCargoToml(
+  fileNames: { from: string; to: string }[],
+): PackageJson {
+  // Load the Cargo.toml file.
   const cargoToml = tomlJson({
     fileUrl: "Cargo.toml",
   }) as CargoToml;
 
   // Now we'll create the package.json.
-  const packageJson = {
+  const packageJson: PackageJson = {
     name: `@delvtech/${cargoToml.package.name}`,
-    collaborators: cargoToml.package.authors.filter(Boolean),
+    collaborators: cargoToml.package.authors.filter(Boolean), // remove empty strings
     version: cargoToml.package.version,
     license: cargoToml.package.license,
     files: fileNames.map(({ to }) => to),
@@ -154,18 +182,5 @@ async function build() {
     },
   };
 
-  // Save the package.json to the output directory.
-  writeFileSync(
-    resolve(outDir, "package.json"),
-    JSON.stringify(packageJson, null, 2),
-  );
-
-  // Release the lockfile.
-  release();
-
-  console.log("Done!");
-
-  // Ensure the lockfile is released.
-  lockfile.unlock(__filename);
-  process.exit(0);
+  return packageJson;
 }
