@@ -32,6 +32,7 @@ export async function getGnosisWstethHyperdrive({
     tags: ["liquidStakingToken"],
     iconUrl: STETH_ICON_URL, // TODO: is there a wsteth icon we should use?
     places: 4,
+    priceOracle: "defillama",
   });
 
   const hyperdriveName = formatHyperdriveName({
@@ -79,6 +80,7 @@ export async function getGnosisWstethHyperdrive({
       places: 4,
       tags: [],
       iconUrl: ETH_ICON_URL,
+      priceOracle: "defillama",
     },
     sharesTokenConfig,
     hyperdriveConfig,

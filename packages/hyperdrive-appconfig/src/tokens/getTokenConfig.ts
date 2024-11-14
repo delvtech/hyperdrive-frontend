@@ -1,16 +1,18 @@
 import { ReadToken } from "@delvtech/hyperdrive-viem";
-import { TokenConfig } from "src/tokens/types";
+import { PriceOracleId, TokenConfig } from "src/tokens/types";
 
 export async function getTokenConfig({
   token,
   iconUrl,
   places,
   tags,
+  priceOracle,
 }: {
   token: ReadToken;
   tags: string[];
   iconUrl: string;
   places: number;
+  priceOracle: PriceOracleId;
 }): Promise<TokenConfig> {
   return {
     chainId: await token.drift.getChainId(),
@@ -21,5 +23,6 @@ export async function getTokenConfig({
     symbol: await token.getSymbol(),
     iconUrl,
     tags,
+    priceOracle,
   };
 }

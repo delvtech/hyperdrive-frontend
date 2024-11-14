@@ -45,6 +45,7 @@ export async function getCustomHyperdrive({
     tags: sharesTokenTags,
     iconUrl: sharesTokenIconUrl,
     places: tokenPlaces,
+    priceOracle: "defillama",
   });
 
   const baseToken = await hyperdrive.getBaseToken();
@@ -53,6 +54,7 @@ export async function getCustomHyperdrive({
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: tokenPlaces,
+    priceOracle: "defillama",
   });
 
   const hyperdriveName = formatHyperdriveName({

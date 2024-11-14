@@ -23,7 +23,6 @@ import {
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
 import { rewardFunctions } from "src/rewards/rewards";
-import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { Address, Chain, createPublicClient, http, PublicClient } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
@@ -195,11 +194,14 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             reward.type === "transferableToken" ||
             reward.type === "nonTransferableToken"
           ) {
-            const alreadyExists = !!getToken({
-              chainId: reward.chainId,
-              tokenAddress: reward.tokenAddress,
-              appConfig,
-            });
+            // Don't use the getToken selector for this, because it expects a
+            // fully populated appConfig
+            const alreadyExists = appConfig.tokens.find(
+              (token) =>
+                token.address.toLowerCase() ==
+                  reward.tokenAddress.toLowerCase() &&
+                token.chainId === reward.chainId,
+            );
             if (alreadyExists) {
               return;
             }
