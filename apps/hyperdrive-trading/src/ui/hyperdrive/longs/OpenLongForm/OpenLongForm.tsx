@@ -126,6 +126,8 @@ export function OpenLongForm({
             address: tokenFromTokenList.address as Address,
             places: 4,
             tags: ["zap"],
+            // TODO: Change this for a "uniswapv3" price oracle
+            priceOracle: "defillama",
           },
         });
       });

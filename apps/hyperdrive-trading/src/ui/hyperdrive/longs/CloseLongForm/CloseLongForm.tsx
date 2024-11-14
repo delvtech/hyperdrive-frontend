@@ -54,9 +54,8 @@ export function CloseLongForm({
     tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
     appConfig,
   });
-  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
-    // Safe to cast: sharesToken must be defined if its enabled for withdrawal
-    defaultItems.push(sharesToken!);
+  if (sharesToken && hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    defaultItems.push(sharesToken);
   }
 
   const { balance: baseTokenBalance } = useTokenBalance({

@@ -26,7 +26,7 @@ export function getHyperdriveConfig({
 
   if (!hyperdriveConfig) {
     throw new Error(
-      `Missing hyperdrive config ${hyperdriveAddress}. Make sure your appconfig's "hyperdrives" property is properly constructed.`,
+      `Missing hyperdrive config ${hyperdriveAddress} for chain ${hyperdriveChainId}. Make sure your appconfig's "hyperdrives" property is properly constructed.`,
     );
   }
 
@@ -76,7 +76,7 @@ export function getBaseToken({
     appConfig,
   });
 
-  let baseToken: TokenConfig | undefined;
+  let baseToken: TokenConfig | null | undefined;
 
   // If there's no base token on pool config, see if there's a fallback
   if (hyperdriveConfig.poolConfig.baseToken !== zeroAddress) {

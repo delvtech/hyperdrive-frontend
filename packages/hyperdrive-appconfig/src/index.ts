@@ -22,6 +22,8 @@ export { getToken } from "src/tokens/selectors";
 export type { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 
 // tokens
+export { priceOracles } from "src/tokens/priceOracles/priceOracles";
+export { getPriceOracleFn } from "src/tokens/selectors";
 export type { TokenConfig } from "src/tokens/types";
 
 // yield sources

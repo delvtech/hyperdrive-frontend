@@ -31,6 +31,7 @@ export async function getMorphoHyperdrive({
     tags: baseTokenTags,
     iconUrl: baseTokenIconUrl,
     places: baseTokenPlaces,
+    priceOracle: "defillama",
   });
 
   const hyperdriveName = formatHyperdriveName({

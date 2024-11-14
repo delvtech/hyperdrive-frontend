@@ -28,6 +28,7 @@ export const knownTokenConfigs: Record<
       places: 4,
       iconUrl: WELL_ICON_URL,
       tags: [],
+      priceOracle: "defillama",
     },
     "0x940181a94A35A4569E4529A3CDfB74e38FD98631": {
       address: "0x940181a94A35A4569E4529A3CDfB74e38FD98631",
@@ -38,6 +39,7 @@ export const knownTokenConfigs: Record<
       places: 4,
       iconUrl: AERO_ICON_URL,
       tags: [],
+      priceOracle: "defillama",
     },
     "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842": {
       address: "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842",
@@ -48,6 +50,7 @@ export const knownTokenConfigs: Record<
       places: 4,
       iconUrl: MORPHO_ICON_URL,
       tags: [],
+      priceOracle: "defillama",
     },
   },
 
@@ -61,6 +64,7 @@ export const knownTokenConfigs: Record<
       places: 4,
       iconUrl: MORPHO_ICON_URL,
       tags: [],
+      priceOracle: "defillama",
     },
   },
 };

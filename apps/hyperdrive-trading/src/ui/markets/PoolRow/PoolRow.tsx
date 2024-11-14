@@ -98,7 +98,10 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
               "w-16"
             }
           >
-            <AssetStack hyperdriveAddress={hyperdrive.address} />
+            <AssetStack
+              hyperdriveAddress={hyperdrive.address}
+              hyperdriveChainId={hyperdrive.chainId}
+            />
           </div>
           <div className="flex flex-col gap-1.5">
             <h4 className="text-left">{yieldSource.shortName}</h4>

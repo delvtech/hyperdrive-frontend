@@ -27,6 +27,7 @@ export async function getStethHyperdrive({
     tags: ["liquidStakingToken"],
     iconUrl: STETH_ICON_URL,
     places: 4,
+    priceOracle: "defillama",
   });
 
   const baseTokenConfig: TokenConfig = {
@@ -38,6 +39,7 @@ export async function getStethHyperdrive({
     places: 4,
     tags: [],
     iconUrl: ETH_ICON_URL,
+    priceOracle: "defillama",
   };
 
   const hyperdriveName = formatHyperdriveName({

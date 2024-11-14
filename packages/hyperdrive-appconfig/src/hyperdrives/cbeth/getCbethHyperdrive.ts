@@ -32,6 +32,7 @@ export async function getCbethHyperdrive({
     tags: ["liquidStakingToken"],
     iconUrl: CBETH_ICON_URL,
     places: 4,
+    priceOracle: "defillama",
   });
 
   const hyperdriveName = formatHyperdriveName({
@@ -77,6 +78,7 @@ export async function getCbethHyperdrive({
       places: 4,
       tags: [],
       iconUrl: ETH_ICON_URL,
+      priceOracle: "defillama",
     },
     sharesTokenConfig,
     hyperdriveConfig,

@@ -99,6 +99,8 @@ export function LpApyStat({
                 );
               }
               if (reward.type === "transferableToken") {
+                // safe to cast because we assume all rewards tokens are
+                // available in appConfig
                 const token = getToken({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,
@@ -133,6 +135,8 @@ export function LpApyStat({
               }
 
               if (reward.type === "nonTransferableToken") {
+                // safe to cast because we assume all rewards tokens are
+                // available in appConfig
                 const token = getToken({
                   tokenAddress: reward.tokenAddress,
                   chainId: reward.chainId,

@@ -195,11 +195,19 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             reward.type === "transferableToken" ||
             reward.type === "nonTransferableToken"
           ) {
-            const alreadyExists = !!getToken({
-              chainId: reward.chainId,
-              tokenAddress: reward.tokenAddress,
-              appConfig,
-            });
+            let alreadyExists = false;
+            try {
+              // This will throw an error if it cannot find the token
+              alreadyExists = !!getToken({
+                chainId: reward.chainId,
+                tokenAddress: reward.tokenAddress,
+                appConfig,
+              });
+            } catch (error) {
+              // Do nothing if this errors, it simply means the reward token is
+              // not already a hyperdrive base or shares token
+            }
+
             if (alreadyExists) {
               return;
             }
@@ -213,7 +221,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             }
 
             throw new Error(
-              `Unkown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
+              `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
             );
           }
         });
