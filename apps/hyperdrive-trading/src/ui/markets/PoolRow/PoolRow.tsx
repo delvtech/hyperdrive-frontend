@@ -50,7 +50,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const isFiatSupported = !isTestnetChain(chainInfo.id);
   const { fiatPrice } = useTokenFiatPrice({
     chainId: baseToken.chainId,
-    tokenAddress: isFiatSupported ? hyperdrive.poolConfig.baseToken : undefined,
+    tokenAddress: isFiatSupported ? baseToken.address : undefined,
   });
   let tvlLabel = `${formatCompact({
     value: presentValue || 0n,
