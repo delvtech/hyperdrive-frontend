@@ -2,7 +2,6 @@
 import { spawnSync } from "child_process";
 import {
   appendFileSync,
-  existsSync,
   readFileSync,
   renameSync,
   rmSync,
@@ -90,9 +89,6 @@ async function build() {
     ),
   );
 
-  // Create a backup of the previous build if it exists
-  backupBuild(outDir, backupPath);
-
   // Build the package with the "@delvtech/" scope
   console.log("Building package...");
   const buildProcessResultEsm = spawnSync(
@@ -114,7 +110,6 @@ async function build() {
 
   // Restore the previous build and exit if the build failed
   if (buildProcessResultEsm.error) {
-    restoreBackup(outDir, backupPath);
     process.exit(1);
   }
 
@@ -138,7 +133,6 @@ async function build() {
 
   // Restore the previous build and exit if the build failed
   if (buildProcessResultCjs.error) {
-    restoreBackup(outDir, backupPath);
     process.exit(1);
   }
 
@@ -153,18 +147,6 @@ async function build() {
     resolve(outDir, "hyperdrive_wasm_bg_cjs.wasm"),
   );
   rmSync(resolve(outDir, "tmp"), { recursive: true });
-
-  // Restore the changelog and remove the previous build if it exists
-  if (existsSync(backupPath)) {
-    const changelogPath = resolve(backupPath, "CHANGELOG.md");
-    if (existsSync(changelogPath)) {
-      console.log("Restoring previous changelog...");
-      renameSync(changelogPath, resolve(outDir, "CHANGELOG.md"));
-    }
-
-    console.log("Removing previous build...");
-    rmSync(backupPath, { recursive: true });
-  }
 
   console.log("Modifying package for increased compatibility...");
 
@@ -246,41 +228,4 @@ declare const wasmBuffer: ArrayBuffer;`,
   // Ensure the lockfile is released
   lockfile.unlock(__filename);
   process.exit(0);
-}
-
-function backupBuild(outDir: string, backupPath: string) {
-  // Don't overwrite existing backups
-  if (!existsSync(outDir) || existsSync(backupPath)) {
-    return;
-  }
-
-  console.log("Creating backup of previous build at: ", backupPath);
-  renameSync(outDir, backupPath);
-
-  // There's an edge case where an npm script is run after the new package.json
-  // is created and the backup is still present. When this happens, yarn
-  // workspaces will throw an error about having multiple packages with the same
-  // name. To avoid this, we temporarily rename the backup package.json.
-  renameSync(
-    resolve(backupPath, "package.json"),
-    resolve(backupPath, "package.json.backup"),
-  );
-}
-
-function restoreBackup(outDir: string, backupPath: string) {
-  if (!existsSync(backupPath)) {
-    return;
-  }
-
-  console.log("Restoring backup of previous build from: ", backupPath);
-
-  if (existsSync(outDir)) {
-    rmSync(outDir, { recursive: true });
-  }
-
-  renameSync(backupPath, outDir);
-  renameSync(
-    resolve(outDir, "package.json.backup"),
-    resolve(outDir, "package.json"),
-  );
 }
