@@ -8,10 +8,10 @@
   "version": "0.15.3",
   "license": "AGPL-3.0",
   "files": [
-    "hyperdrive_wasm_bg.wasm",
     "hyperdrive_wasm.js",
+    "hyperdrive_wasm.cjs",
     "hyperdrive_wasm.d.ts",
-    "hyperdrive_wasm.cjs"
+    "hyperdrive_wasm_bg.wasm"
   ],
   "module": "hyperdrive_wasm.js",
   "types": "hyperdrive_wasm.d.ts",
