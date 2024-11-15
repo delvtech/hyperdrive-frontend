@@ -378,6 +378,19 @@ export class FixedPoint {
 */
   toString(): string;
 /**
+* Get the bigint representation of this fixed-point number converted to a
+* hexadecimal string with the `0x` prefix.
+*
+* @example
+* ```ts
+* const fixed = fixed(1_123456789012345678n);
+* console.log(fixed.toHex());
+* // 0xf9751ff4d94f34e
+* ```
+* @returns {string}
+*/
+  toHex(): string;
+/**
 * Get the float representation of this fixed-point number.
 *
 * __Caution__: This method may lose precision.
@@ -461,6 +474,7 @@ export interface InitOutput {
   readonly fixedpoint_max: (a: number, b: number, c: number, d: number) => void;
   readonly fixedpoint_clamp: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly fixedpoint_toString: (a: number, b: number) => void;
+  readonly fixedpoint_toHex: (a: number, b: number) => void;
   readonly fixedpoint_toNumber: (a: number) => number;
   readonly fixedpoint_is_fixed_point: (a: number) => number;
   readonly fixedpoint_toFixed: (a: number, b: number) => number;
