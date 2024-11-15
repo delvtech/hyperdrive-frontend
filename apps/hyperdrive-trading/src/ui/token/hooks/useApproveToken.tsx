@@ -8,8 +8,8 @@ import { appConfig, getToken } from "@delvtech/hyperdrive-appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, erc20Abi, parseUnits } from "viem";
 import { sepolia } from "viem/chains";
 interface UseTokenApprovalOptions {

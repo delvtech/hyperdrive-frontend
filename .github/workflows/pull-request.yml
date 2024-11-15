@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        task: [format, lint, typecheck, test]
+        task: [format, lint, typecheck, test, depcruise]
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -28,4 +28,9 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Run ${{ matrix.task }}
-        run: yarn ${{ matrix.task }}
+        run: |
+          if [ "${{ matrix.task }}" = "depcruise" ]; then
+            yarn workspace hyperdrive-trading ${{ matrix.task }}
+          else
+            yarn ${{ matrix.task }}
+          fi
