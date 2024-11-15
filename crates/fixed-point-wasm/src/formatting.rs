@@ -17,11 +17,6 @@ impl WasmFixedPoint {
         // parse base options
         let mut base_options = options.obj.parse();
 
-        // modify base options if necessary
-        if options.compact_display().is_none() && options.percent() != Some(true) {
-            base_options.decimals = options.decimals().or(Some(self.decimals));
-        }
-
         // get base format args
         let FormatArgs {
             locales_arr,
