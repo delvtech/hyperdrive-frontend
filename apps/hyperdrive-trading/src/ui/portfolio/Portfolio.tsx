@@ -2,10 +2,10 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
-import { OpenLongsContainer } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTableDesktop";
-import { LpAndWithdrawalSharesContainer } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
-import { OpenShortsContainer } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktop";
+import { OpenLongsContainer } from "src/ui/portfolio/longs/OpenLongsTable/OpenLongsTableDesktop";
+import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
+import { OpenShortsContainer } from "src/ui/portfolio/shorts/OpenShortsTable/OpenShortsTableDesktop";
 
 export function Portfolio(): ReactElement {
   const { position } = useSearch({ from: PORTFOLIO_ROUTE });

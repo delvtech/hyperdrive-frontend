@@ -17,13 +17,13 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { LpCurrentValueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
-import { ManageLpAndWithdrawalSharesButton } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
-import { SizeAndPoolShareCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
-import { TotalLpValue } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/TotalLpValue";
-import { WithdrawalQueueCell } from "src/ui/hyperdrive/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
 import { AssetStack } from "src/ui/markets/AssetStack";
-import { usePortfolioLpData } from "src/ui/portfolio/usePortfolioLpData";
+import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
+import { ManageLpAndWithdrawalSharesButton } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
+import { SizeAndPoolShareCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
+import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
+import { WithdrawalQueueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
+import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { useAccount } from "wagmi";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
