@@ -5,10 +5,7 @@ import {
   getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import {
-  calculateAprFromPrice,
-  OpenLongPositionReceived,
-} from "@delvtech/hyperdrive-js";
+import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Link } from "@tanstack/react-router";
 import {
@@ -21,27 +18,25 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { formatRate } from "src/base/formatRate";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
-import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
-import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
-import { StatusCell } from "src/ui/hyperdrive/longs/OpenLongsTable/StatusCell";
-import { TotalOpenLongsValue } from "src/ui/hyperdrive/longs/OpenLongsTable/TotalOpenLongsValue";
-import { usePortfolioLongsData } from "src/ui/portfolio/usePortfolioLongsData";
+import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
+import { StatusCell } from "src/ui/portfolio/longs/OpenLongsTable/StatusCell";
+import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/CurrentShortsValueCell";
+import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
+import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
+import { TotalOpenShortValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
+import { usePortfolioShortsData } from "src/ui/portfolio/shorts/usePortfolioShortsData";
 import { useAccount } from "wagmi";
-import { ManageLongsButton } from "./ManageLongsButton";
 
-export function OpenLongsContainer(): ReactElement {
+export function OpenShortsContainer(): ReactElement {
+  const { openShortPositions, openShortPositionsStatus } =
+    usePortfolioShortsData();
   const { address: account } = useAccount();
-  const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsData();
   if (!account) {
     return (
       <div className="my-28 flex w-[1036px] flex-col gap-10">
@@ -53,34 +48,36 @@ export function OpenLongsContainer(): ReactElement {
     );
   }
 
-  if (openLongPositionsStatus === "loading") {
+  if (openShortPositionsStatus === "loading") {
     return (
       <div className="flex w-[1036px] flex-col gap-10">
         <LoadingState
-          heading="Loading your Longs..."
-          text="Searching for Long events, calculating current value and PnL..."
+          heading="Loading your Shorts..."
+          text="Searching for Shorts events, calculating current value and PnL..."
         />
       </div>
     );
   }
 
-  if (openLongPositions?.every((position) => position.openLongs.length === 0)) {
+  if (
+    openShortPositions?.every((position) => position.openShorts.length === 0)
+  ) {
     return (
       <div className="my-28 flex w-[1036px] flex-col gap-10">
         <NonIdealState
-          heading="No Longs found"
+          heading="No Shorts found"
           text={
             <p className="max-w-xl">
               Visit the{" "}
               <a
                 className="daisy-link"
-                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 documentation
               </a>{" "}
-              or explore pools to open your first Long position.
+              or explore pools to open your first Short position.
             </p>
           }
           action={
@@ -96,11 +93,6 @@ export function OpenLongsContainer(): ReactElement {
   return (
     <div className="mt-10 flex w-[1036px] flex-col gap-10">
       {appConfig.hyperdrives.map((hyperdrive) => {
-        const openLongs = openLongPositions?.find(
-          (position) =>
-            position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
-        )?.openLongs;
         const baseToken = getBaseToken({
           hyperdriveChainId: hyperdrive.chainId,
           hyperdriveAddress: hyperdrive.address,
@@ -111,8 +103,13 @@ export function OpenLongsContainer(): ReactElement {
           tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
           appConfig,
         });
+        const openShorts = openShortPositions?.find(
+          (position) =>
+            position.hyperdrive.address === hyperdrive.address &&
+            position.hyperdrive.chainId === hyperdrive.chainId,
+        )?.openShorts;
         // Ensure this hyperdrive pool has open positions before rendering.
-        if (openLongPositionsStatus === "success" && !openLongs?.length) {
+        if (openShortPositionsStatus === "success" && !openShorts?.length) {
           return null;
         }
         return (
@@ -140,11 +137,11 @@ export function OpenLongsContainer(): ReactElement {
                 </div>
                 <p className="text-h4">{hyperdrive.name}</p>
               </div>
-              <TotalOpenLongsValue hyperdrive={hyperdrive} />
+              <TotalOpenShortValue hyperdrive={hyperdrive} />
             </div>
-            <OpenLongsTableDesktop
+            <OpenShortsTableDesktop
               hyperdrive={hyperdrive}
-              openLongs={openLongs}
+              openShorts={openShorts}
             />
           </div>
         );
@@ -153,18 +150,18 @@ export function OpenLongsContainer(): ReactElement {
   );
 }
 
-export function OpenLongsTableDesktop({
+export function OpenShortsTableDesktop({
   hyperdrive,
-  openLongs,
+  openShorts,
 }: {
   hyperdrive: HyperdriveConfig;
-  openLongs: OpenLongPositionReceived[] | undefined;
+  openShorts: OpenShort[] | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
 
   const tableInstance = useReactTable({
     columns: getColumns({ hyperdrive, appConfig }),
-    data: openLongs || [],
+    data: openShorts || [],
     initialState: {
       sorting: [
         {
@@ -183,7 +180,7 @@ export function OpenLongsTableDesktop({
       <div className="my-28">
         <NonIdealState
           heading="No wallet connected"
-          text="Connect your wallet to view your Longs"
+          text="Connect your wallet to view your Shorts"
           action={<ConnectWalletButton />}
         />
       </div>
@@ -196,16 +193,11 @@ export function OpenLongsTableDesktop({
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
         return (
-          <CloseLongModalButton
+          <CloseShortModalButton
             key={modalId}
             hyperdrive={hyperdrive}
             modalId={modalId}
-            long={{
-              assetId: row.original.assetId,
-              baseAmountPaid: row.original.details?.baseAmountPaid || 0n,
-              bondAmount: row.original.details?.bondAmount || 0n,
-              maturity: row.original.maturity,
-            }}
+            short={row.original}
           />
         );
       })}
@@ -309,7 +301,7 @@ export function OpenLongsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<OpenLongPositionReceived>();
+const columnHelper = createColumnHelper<OpenShort>();
 
 function getColumns({
   hyperdrive,
@@ -336,58 +328,26 @@ function getColumns({
         );
       },
     }),
-    columnHelper.accessor("details.bondAmount", {
-      id: "fixedRate/size",
-      header: `Fixed Rate / Size`,
-      cell: ({ row }) => {
-        const fixedRate = calculateAprFromPrice({
-          baseAmount: row.original.details?.baseAmountPaid || 0n,
-          bondAmount: row.original.details?.bondAmount || 0n,
-          positionDuration: hyperdrive.poolConfig.positionDuration || 0n,
-        });
-
-        return (
-          <div className="flex flex-col">
-            <div>{formatRate({ rate: fixedRate })} APR</div>
-            <span className="flex font-dmMono text-neutral-content">
-              {formatBalance({
-                balance: row.original.details?.bondAmount || 0n,
-                decimals: baseToken.decimals,
-                places: 2,
-              })}{" "}
-              {`hy${baseToken.symbol}`}
-            </span>
-          </div>
-        );
-      },
-      sortingFn: (rowA, rowB) => {
-        const aFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowA.original.details?.baseAmountPaid || 0n,
-          amountAfter: rowA.original.details?.bondAmount || 0n,
-          days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
-          ),
-        });
-        const bFixedRate = calculateAnnualizedPercentageChange({
-          amountBefore: rowB.original.details?.baseAmountPaid || 0n,
-          amountAfter: rowB.original.details?.bondAmount || 0n,
-          days: convertMillisecondsToDays(
-            Number(hyperdrive.poolConfig.positionDuration * 1000n),
-          ),
-        });
-        return aFixedRate - bFixedRate;
-      },
+    columnHelper.accessor("bondAmount", {
+      id: "rateShorted/size",
+      header: `Rate Shorted / Size`,
+      cell: ({ row }) => (
+        <ShortRateAndSizeCell hyperdrive={hyperdrive} short={row.original} />
+      ),
     }),
-    columnHelper.accessor("details.baseAmountPaid", {
+    columnHelper.accessor("checkpointTime", {
       id: "value/cost",
       header: `Value / Cost (${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
           <div>
-            <CurrentValueCell hyperdrive={hyperdrive} row={row.original} />
+            <CurrentShortsValueCell
+              hyperdrive={hyperdrive}
+              openShort={row.original}
+            />
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: row.original.details?.baseAmountPaid || 0n,
+                balance: row.original.baseAmountPaid,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })}
@@ -402,8 +362,8 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <StatusCell
-            maturity={row.original.maturity}
             chainId={hyperdrive.chainId}
+            maturity={row.original.maturity}
           />
         );
       },
@@ -412,10 +372,9 @@ function getColumns({
       id: "go-to-market",
       cell: ({ row }) => {
         return (
-          <ManageLongsButton
-            assetId={row.original.assetId}
+          <ManageShortButton
             hyperdrive={hyperdrive}
-            key={row.original.assetId}
+            assetId={row.original.assetId}
           />
         );
       },
