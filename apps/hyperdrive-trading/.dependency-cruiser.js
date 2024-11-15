@@ -190,10 +190,15 @@ module.exports = {
     },
 
     /* Which modules to exclude */
-    // exclude : {
-    //   /* path: an array of regular expressions in strings to match against */
-    //   path: '',
-    // },
+    exclude: {
+      /* path: an array of regular expressions in strings to match against */
+
+      path: [
+        // Modules that live in the monorepo should not be cruised, since they
+        // cannot be resolved by dependency-cruiser
+        "^@delvtech\\/.*",
+      ],
+    },
 
     /* Which modules to exclusively include (array of regular expressions in strings)
        dependency-cruiser will skip everything not matching this pattern
@@ -222,7 +227,7 @@ module.exports = {
        true: also detect dependencies that only exist before typescript-to-javascript compilation
        "specify": for each dependency identify whether it only exists before compilation or also after
      */
-    tsPreCompilationDeps: false,
+    // tsPreCompilationDeps: false,
 
     /* list of extensions to scan that aren't javascript or compile-to-javascript.
        Empty by default. Only put extensions in here that you want to take into
