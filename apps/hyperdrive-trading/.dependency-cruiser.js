@@ -1,6 +1,58 @@
 /** @type {import('dependency-cruiser').IConfiguration} */
 module.exports = {
   forbidden: [
+    // Hyperdrive Trading rules
+    {
+      name: "hyperdrive-no-deps-from-base",
+      comment:
+        "Files in 'src/base' are only allowed to import other files within 'src/base'.",
+      severity: "error",
+      from: {
+        path: "^src/base",
+      },
+      to: {
+        pathNot: ["^src/base", "node_modules", "fixed-point-wasm"],
+      },
+    },
+    {
+      name: "hyperdrive-no-deps-from-ui-base",
+      comment:
+        "Files in 'src/ui/base' are only allowed to import other files within 'src/base' and 'src/ui/base'.",
+      severity: "error",
+      from: {
+        path: "^src/ui/base",
+      },
+      to: {
+        pathNot: [
+          "^src/base",
+          "^src/ui/base",
+          "node_modules",
+          "fixed-point-wasm",
+        ],
+      },
+    },
+    {
+      name: "hyperdrive-no-react-from-non-ui",
+      comment: "Only src/ui may import react",
+      severity: "error",
+      from: { pathNot: "src/ui" },
+      to: {
+        path: "node_modules/react",
+      },
+    },
+    {
+      name: "hyperdrive-no-portfolio-imports",
+      comment:
+        "Files in 'src/ui/hyperdrive' are not allowed to import from 'src/ui/portfolio'.",
+      severity: "error",
+      from: {
+        path: "^src/ui/hyperdrive",
+      },
+      to: {
+        path: "^src/ui/portfolio",
+      },
+    },
+    // Default dependency cruiser rules
     {
       name: "no-circular",
       severity: "warn",
