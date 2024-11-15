@@ -28,4 +28,9 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Run ${{ matrix.task }}
-        run: yarn ${{ matrix.task }}
+        run: |
+          if [ "${{ matrix.task }}" = "depcruise" ]; then
+            yarn workspace hyperdrive-trading ${{ matrix.task }}
+          else
+            yarn ${{ matrix.task }}
+          fi
