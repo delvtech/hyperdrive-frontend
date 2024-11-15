@@ -1,5 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import * as hyperwasm from "@delvtech/hyperdrive-wasm";
-
-hyperwasm.initSync(hyperwasm.wasmBuffer);
 
 export { hyperwasm };
