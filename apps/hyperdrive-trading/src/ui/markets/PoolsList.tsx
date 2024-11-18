@@ -323,6 +323,11 @@ function FilterMenuItem({
 //   longPrice: bigint;
 // }
 
+const HIDDEN_POOLS = [
+  // Hide the susde/dai pool on mainnet because the LP APY is -100% after the
+  // only LP yoinked their liquidity while a Long was open.
+  "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
+];
 function usePoolsList(): {
   pools: HyperdriveConfig[] | undefined;
   status: QueryStatus;
@@ -339,21 +344,23 @@ function usePoolsList(): {
     queryKey: ["poolsList", { connectedChainId }],
     queryFn: async () => {
       const pools = await Promise.all(
-        appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-          const readHyperdrive = await getHyperdrive({
-            address: hyperdrive.address,
-            drift: getDrift({ chainId: hyperdrive.chainId }),
-            earliestBlock: hyperdrive.initializationBlock,
-          });
+        appConfigForConnectedChain.hyperdrives
+          .filter((hyperdrive) => !HIDDEN_POOLS.includes(hyperdrive.address))
+          .map(async (hyperdrive) => {
+            const readHyperdrive = await getHyperdrive({
+              address: hyperdrive.address,
+              drift: getDrift({ chainId: hyperdrive.chainId }),
+              earliestBlock: hyperdrive.initializationBlock,
+            });
 
-          // We only show hyperdrives that are not paused
-          const { isPaused } = await readHyperdrive.getMarketState();
-          if (isPaused) {
-            return;
-          }
+            // We only show hyperdrives that are not paused
+            const { isPaused } = await readHyperdrive.getMarketState();
+            if (isPaused) {
+              return;
+            }
 
-          return hyperdrive;
-        }),
+            return hyperdrive;
+          }),
       );
 
       return pools.filter((pool) => !!pool);
