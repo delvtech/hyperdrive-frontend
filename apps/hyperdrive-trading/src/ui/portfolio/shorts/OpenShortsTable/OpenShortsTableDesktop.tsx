@@ -2,12 +2,10 @@ import {
   AppConfig,
   appConfig,
   getBaseToken,
-  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -18,7 +16,6 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -29,126 +26,7 @@ import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalB
 import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
-import { TotalOpenShortValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
-import { usePortfolioShortsData } from "src/ui/portfolio/shorts/usePortfolioShortsData";
 import { useAccount } from "wagmi";
-
-export function OpenShortsContainer(): ReactElement {
-  const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsData();
-  const { address: account } = useAccount();
-  if (!account) {
-    return (
-      <div className="my-28 flex w-[1036px] flex-col gap-10">
-        <NonIdealState
-          heading="No wallet connected"
-          action={<ConnectWalletButton />}
-        />
-      </div>
-    );
-  }
-
-  if (openShortPositionsStatus === "loading") {
-    return (
-      <div className="flex w-[1036px] flex-col gap-10">
-        <LoadingState
-          heading="Loading your Shorts..."
-          text="Searching for Shorts events, calculating current value and PnL..."
-        />
-      </div>
-    );
-  }
-
-  if (
-    openShortPositions?.every((position) => position.openShorts.length === 0)
-  ) {
-    return (
-      <div className="my-28 flex w-[1036px] flex-col gap-10">
-        <NonIdealState
-          heading="No Shorts found"
-          text={
-            <p className="max-w-xl">
-              Visit the{" "}
-              <a
-                className="daisy-link"
-                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                documentation
-              </a>{" "}
-              or explore pools to open your first Short position.
-            </p>
-          }
-          action={
-            <Link className="daisy-btn daisy-btn-primary rounded-full" to="/">
-              View Pools
-            </Link>
-          }
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="mt-10 flex w-[1036px] flex-col gap-10">
-      {appConfig.hyperdrives.map((hyperdrive) => {
-        const baseToken = getBaseToken({
-          hyperdriveChainId: hyperdrive.chainId,
-          hyperdriveAddress: hyperdrive.address,
-          appConfig,
-        });
-        const sharesToken = getToken({
-          chainId: hyperdrive.chainId,
-          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-          appConfig,
-        });
-        const openShorts = openShortPositions?.find(
-          (position) =>
-            position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
-        )?.openShorts;
-        // Ensure this hyperdrive pool has open positions before rendering.
-        if (openShortPositionsStatus === "success" && !openShorts?.length) {
-          return null;
-        }
-        return (
-          <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1 font-chakraPetch text-h4">
-                <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                  {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={baseToken.symbol}
-                    >
-                      <img src={baseToken.iconUrl} className="rounded-full" />
-                    </div>
-                  ) : null}
-                  {sharesToken &&
-                  hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={sharesToken.symbol}
-                    >
-                      <img src={sharesToken.iconUrl} className="rounded-full" />
-                    </div>
-                  ) : null}
-                </div>
-                <p className="text-h4">{hyperdrive.name}</p>
-              </div>
-              <TotalOpenShortValue hyperdrive={hyperdrive} />
-            </div>
-            <OpenShortsTableDesktop
-              hyperdrive={hyperdrive}
-              openShorts={openShorts}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 export function OpenShortsTableDesktop({
   hyperdrive,
