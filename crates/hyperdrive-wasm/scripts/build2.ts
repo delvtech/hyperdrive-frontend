@@ -91,7 +91,7 @@ async function build() {
   console.log("Building package...");
   const buildProcessResult = spawnSync(
     "npx",
-    ["wasm-pkg-build", "--modules", "cjs,esm-inline", "--out-dir", TMP_DIR],
+    ["wasm-pkg-build", "--modules", "cjs,esm-sync", "--out-dir", TMP_DIR],
     {
       stdio: "inherit",
     },
@@ -106,9 +106,9 @@ async function build() {
   const filePrefix = cargoToml.package.name.replaceAll("-", "_");
   const fileNames = [
     {
-      from: `${filePrefix}_web.js`,
+      from: `${filePrefix}_worker.js`,
       to: `${filePrefix}.js`,
-    }, // esm-inline
+    }, // esm-sync
     {
       from: `${filePrefix}.js`,
       to: `${filePrefix}.cjs`,
