@@ -2,7 +2,6 @@ import {
   AppConfig,
   appConfig,
   getBaseToken,
-  getToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import {
@@ -10,7 +9,6 @@ import {
   OpenLongPositionReceived,
 } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -24,7 +22,6 @@ import { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
-import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -33,125 +30,8 @@ import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { CurrentValueCell } from "src/ui/portfolio/longs/OpenLongsTable/CurrentValueCell";
-import { TotalOpenLongsValue } from "src/ui/portfolio/longs/OpenLongsTable/TotalOpenLongsValue";
-import { usePortfolioLongsData } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 import { ManageLongsButton } from "./ManageLongsButton";
-
-export function OpenLongsContainer(): ReactElement {
-  const { address: account } = useAccount();
-  const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsData();
-  if (!account) {
-    return (
-      <div className="my-28 flex w-[1036px] flex-col gap-10">
-        <NonIdealState
-          heading="No wallet connected"
-          action={<ConnectWalletButton />}
-        />
-      </div>
-    );
-  }
-
-  if (openLongPositionsStatus === "loading") {
-    return (
-      <div className="flex w-[1036px] flex-col gap-10">
-        <LoadingState
-          heading="Loading your Longs..."
-          text="Searching for Long events, calculating current value and PnL..."
-        />
-      </div>
-    );
-  }
-
-  if (openLongPositions?.every((position) => position.openLongs.length === 0)) {
-    return (
-      <div className="my-28 flex w-[1036px] flex-col gap-10">
-        <NonIdealState
-          heading="No Longs found"
-          text={
-            <p className="max-w-xl">
-              Visit the{" "}
-              <a
-                className="daisy-link"
-                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                documentation
-              </a>{" "}
-              or explore pools to open your first Long position.
-            </p>
-          }
-          action={
-            <Link className="daisy-btn daisy-btn-primary rounded-full" to="/">
-              View Pools
-            </Link>
-          }
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="mt-10 flex w-[1036px] flex-col gap-10">
-      {appConfig.hyperdrives.map((hyperdrive) => {
-        const openLongs = openLongPositions?.find(
-          (position) =>
-            position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
-        )?.openLongs;
-        const baseToken = getBaseToken({
-          hyperdriveChainId: hyperdrive.chainId,
-          hyperdriveAddress: hyperdrive.address,
-          appConfig,
-        });
-        const sharesToken = getToken({
-          chainId: hyperdrive.chainId,
-          tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-          appConfig,
-        });
-        // Ensure this hyperdrive pool has open positions before rendering.
-        if (openLongPositionsStatus === "success" && !openLongs?.length) {
-          return null;
-        }
-        return (
-          <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1 font-chakraPetch text-h4">
-                <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
-                  {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={baseToken.symbol}
-                    >
-                      <img src={baseToken.iconUrl} className="rounded-full" />
-                    </div>
-                  ) : null}
-                  {sharesToken &&
-                  hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
-                    <div
-                      className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
-                      data-tip={sharesToken.symbol}
-                    >
-                      <img src={sharesToken.iconUrl} className="rounded-full" />
-                    </div>
-                  ) : null}
-                </div>
-                <p className="text-h4">{hyperdrive.name}</p>
-              </div>
-              <TotalOpenLongsValue hyperdrive={hyperdrive} />
-            </div>
-            <OpenLongsTableDesktop
-              hyperdrive={hyperdrive}
-              openLongs={openLongs}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 export function OpenLongsTableDesktop({
   hyperdrive,

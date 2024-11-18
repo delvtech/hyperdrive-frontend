@@ -4,7 +4,6 @@ import {
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { Link } from "@tanstack/react-router";
 import {
   createColumnHelper,
   flexRender,
@@ -17,134 +16,11 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { AssetStack } from "src/ui/markets/AssetStack";
 import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
 import { ManageLpAndWithdrawalSharesButton } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
 import { SizeAndPoolShareCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
-import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { WithdrawalQueueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
-import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { useAccount } from "wagmi";
-
-export function LpAndWithdrawalSharesContainer(): ReactElement {
-  const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
-  const { address: account } = useAccount();
-  if (!account) {
-    return (
-      <div className="my-28 flex w-[1036px] flex-col gap-10">
-        <NonIdealState
-          heading="No wallet connected"
-          action={<ConnectWalletButton />}
-        />
-      </div>
-    );
-  }
-
-  if (openLpPositionStatus === "loading") {
-    return (
-      <div className="flex h-full w-[1036px] flex-col">
-        <LoadingState
-          heading="Loading your LP Positions..."
-          text="Searching for LP events, calculating current value and PnL..."
-        />
-      </div>
-    );
-  }
-  if (openLpPositionStatus === "error") {
-    return (
-      <div className="my-28 flex h-full w-[1036px] flex-col">
-        <NonIdealState
-          heading="Error loading your LP Positions"
-          text="Please refresh the page and try again."
-        />
-      </div>
-    );
-  }
-
-  const hasOpenPositions = openLpPositions?.some(
-    (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
-  );
-
-  if (!hasOpenPositions) {
-    return (
-      <div className="my-28 flex h-full w-[1036px] flex-col">
-        <NonIdealState
-          heading="No LP Positions"
-          text={
-            <p className="max-w-xl">
-              Visit the{" "}
-              <a
-                className="daisy-link"
-                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                documentation
-              </a>{" "}
-              or explore pools to open your first LP position.
-            </p>
-          }
-          action={
-            <Link className="daisy-btn daisy-btn-primary rounded-full" to="/">
-              View Pools
-            </Link>
-          }
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="mt-10 flex w-[1036px] flex-col gap-10">
-      {appConfig.hyperdrives.map((hyperdrive) => {
-        const openLpPosition = openLpPositions?.find(
-          (position) =>
-            position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
-        ) ?? {
-          lpShares: 0n,
-          withdrawalShares: 0n,
-        };
-
-        // Check if this hyperdrive pool has open positions before rendering
-        if (
-          openLpPosition.lpShares === 0n &&
-          openLpPosition.withdrawalShares === 0n
-        ) {
-          return null;
-        }
-
-        return (
-          <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1 font-chakraPetch text-h4">
-                <AssetStack
-                  hyperdriveAddress={hyperdrive.address}
-                  hyperdriveChainId={hyperdrive.chainId}
-                />
-                <p className="text-h4">
-                  {/*
-                    This regex removes the term from the hyperdrive name since it's already shown in the table.
-                    It matches:
-                    - \d{1,3}: 1 to 3 digits
-                    - d: Followed by the letter 'd'
-                  */}
-                  {hyperdrive.name.replace(/\d{1,3}d/, "")}
-                </p>
-              </div>
-              <TotalLpValue hyperdrive={hyperdrive} />
-            </div>
-            <OpenLpTableDesktop
-              hyperdrive={hyperdrive}
-              openLpPosition={openLpPosition}
-              openLpPositionStatus={openLpPositionStatus}
-            />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 export function OpenLpTableDesktop({
   hyperdrive,
@@ -159,7 +35,7 @@ export function OpenLpTableDesktop({
 
   const columns = useMemo(
     () => getColumns({ hyperdrive, appConfig }),
-    [hyperdrive, appConfig],
+    [hyperdrive],
   );
   const data = useMemo(() => [openLpPosition], [openLpPosition]);
   const tableInstance = useReactTable({

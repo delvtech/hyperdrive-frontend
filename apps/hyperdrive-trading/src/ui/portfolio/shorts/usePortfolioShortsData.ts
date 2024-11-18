@@ -6,7 +6,7 @@ import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useAccount } from "wagmi";
 
-type OpenShortPositionsData = {
+export type OpenShortPositionsData = {
   hyperdrive: HyperdriveConfig;
   openShorts: OpenShort[];
 }[];
