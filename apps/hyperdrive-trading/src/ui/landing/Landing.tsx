@@ -4,13 +4,9 @@ import { PoolsList } from "src/ui/markets/PoolsList";
 
 export function Landing(): ReactElement | null {
   return (
-    <div className="flex flex-col items-center gap-4 lg:w-[900px]">
+    <div className="mx-[2vw] flex flex-col gap-4 lg:w-[900px]">
       <Hero />
-      <div className="flex w-full flex-col items-center">
-        <div className="flex w-full flex-col gap-4">
-          <PoolsList />
-        </div>
-      </div>
+      <PoolsList />
     </div>
   );
 }
