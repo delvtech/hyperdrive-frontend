@@ -1,23 +1,24 @@
 import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { PositionContainer } from "src/ui/portfolio/PositionContainer/PositionContainer";
-import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading/PositionTableHeading";
-import { OpenShortsTableDesktop } from "src/ui/portfolio/shorts/OpenShortsTable/OpenShortsTableDesktop";
-import { TotalOpenShortValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
+import { OpenLongsTableDesktop } from "src/ui/portfolio/longs/OpenLongsTable/OpenLongsTableDesktop";
+import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
 import {
-  OpenShortPositionsData,
-  usePortfolioShortsData,
-} from "src/ui/portfolio/shorts/usePortfolioShortsData";
+  OpenLongPositionsData,
+  usePortfolioLongsData,
+} from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { PositionContainer } from "src/ui/portfolio/PositionContainer";
+import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
 
-export function OpenShortsContainer(): ReactElement {
-  const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsData();
+export function OpenLongsContainer(): ReactElement {
   const { address: account } = useAccount();
+  const { openLongPositions, openLongPositionsStatus } =
+    usePortfolioLongsData();
   if (!account) {
     return (
       <PositionContainer className="my-28">
@@ -29,36 +30,32 @@ export function OpenShortsContainer(): ReactElement {
     );
   }
 
-  if (openShortPositionsStatus === "loading") {
+  if (openLongPositionsStatus === "loading") {
     return (
       <PositionContainer>
         <LoadingState
-          heading="Loading your Shorts..."
-          text="Searching for Shorts events, calculating current value and PnL..."
+          heading="Loading your Longs..."
+          text="Searching for Long events, calculating current value and PnL..."
         />
       </PositionContainer>
     );
   }
 
-  if (
-    openShortPositions?.every((position) => position.openShorts.length === 0)
-  ) {
+  if (openLongPositions?.every((position) => !position.openLongs.length)) {
     return (
       <PositionContainer className="my-28">
         <NonIdealState
-          heading="No Shorts found"
+          heading="No Longs found"
           text={
             <p className="max-w-xl">
               Visit the{" "}
-              <a
-                className="daisy-link"
-                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
-                rel="noopener noreferrer"
-                target="_blank"
+              <ExternalLink
+                href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
+                newTab
               >
                 documentation
-              </a>{" "}
-              or explore pools to open your first Short position.
+              </ExternalLink>{" "}
+              or explore pools to open your first Long position.
             </p>
           }
           action={
@@ -73,31 +70,30 @@ export function OpenShortsContainer(): ReactElement {
 
   return (
     <PositionContainer className="mt-10">
-      {openShortPositions &&
+      {openLongPositions &&
         appConfig.hyperdrives
           .filter((hyperdrive) => {
-            const openShorts = findOpenShorts(
-              openShortPositions,
+            const openLongs = findOpenLongs(
+              openLongPositions,
               hyperdrive,
-            )?.openShorts;
+            )?.openLongs;
             // Ensure this hyperdrive pool has open positions before rendering.
-            return openShortPositionsStatus === "success" && openShorts?.length;
+            return openLongPositionsStatus === "success" && openLongs?.length;
           })
           .map((hyperdrive) => {
-            const openShorts = findOpenShorts(
-              openShortPositions,
+            const openLongs = findOpenLongs(
+              openLongPositions,
               hyperdrive,
-            )?.openShorts;
-
+            )?.openLongs;
             return (
               <div className="flex flex-col gap-6" key={hyperdrive.address}>
                 <PositionTableHeading
                   hyperdrive={hyperdrive}
-                  rightElement={<TotalOpenShortValue hyperdrive={hyperdrive} />}
+                  rightElement={<TotalOpenLongsValue hyperdrive={hyperdrive} />}
                 />
-                <OpenShortsTableDesktop
+                <OpenLongsTableDesktop
                   hyperdrive={hyperdrive}
-                  openShorts={openShorts}
+                  openLongs={openLongs}
                 />
               </div>
             );
@@ -106,11 +102,11 @@ export function OpenShortsContainer(): ReactElement {
   );
 }
 
-function findOpenShorts(
-  openShortPositions: OpenShortPositionsData,
+function findOpenLongs(
+  openLongPositions: OpenLongPositionsData,
   hyperdrive: HyperdriveConfig,
 ) {
-  return openShortPositions.find(
+  return openLongPositions.find(
     (position) =>
       position.hyperdrive.address === hyperdrive.address &&
       position.hyperdrive.chainId === hyperdrive.chainId,

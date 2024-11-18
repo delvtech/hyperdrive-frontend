@@ -1,14 +1,15 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
-import { PositionContainer } from "src/ui/portfolio/PositionContainer/PositionContainer";
-import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading/PositionTableHeading";
+import { PositionContainer } from "src/ui/portfolio/PositionContainer";
+import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
@@ -58,14 +59,12 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
           text={
             <p className="max-w-xl">
               Visit the{" "}
-              <a
-                className="daisy-link"
+              <ExternalLink
+                newTab
                 href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 documentation
-              </a>{" "}
+              </ExternalLink>{" "}
               or explore pools to open your first LP position.
             </p>
           }
@@ -105,12 +104,10 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
               hyperdrive={hyperdrive}
               rightElement={<TotalLpValue hyperdrive={hyperdrive} />}
               hyperdriveName={
-                /*
-		      This regex removes the term from the hyperdrive name since it's already shown in the table.
-		      It matches:
-		      - \d{1,3}: 1 to 3 digits
-		      - d: Followed by the letter 'd'
-		    */ hyperdrive.name.replace(/\d{1,3}d/, "")
+                // This regex removes the term (eg: "30d") from the hyperdrive
+                // name since it's already shown in the table.
+                // https://regex101.com/r/f4A3th/1
+                hyperdrive.name.replace(/\d{1,3}d/, "")
               }
             />
             <OpenLpTableDesktop
