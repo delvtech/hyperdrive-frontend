@@ -39,9 +39,7 @@ export function RewardsTableDesktop({
               {headerGroup.headers.map((header, headerIndex) => (
                 <th
                   key={header.id}
-                  className={classNames(
-                    "relative z-10 text-sm font-normal text-neutral-content/70",
-                  )}
+                  className="relative z-10 text-sm font-normal text-neutral-content/70"
                 >
                   <div
                     className={classNames({

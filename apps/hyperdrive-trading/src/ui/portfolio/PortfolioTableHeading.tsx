@@ -9,8 +9,8 @@ export function PortfolioTableHeading({
 }): ReactElement {
   return (
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-1">
-        <div className="font-chakraPetch text-h4">{leftElement}</div>
+      <div className="flex items-center gap-2 font-chakraPetch text-h4">
+        {leftElement}
       </div>
       {rightElement}
     </div>

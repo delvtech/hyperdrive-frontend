@@ -18,15 +18,13 @@ export function PositionTableHeading({
   return (
     <PortfolioTableHeading
       leftElement={
-        <div className="flex items-center gap-1">
+        <>
           <AssetStack
             hyperdriveAddress={hyperdrive.address}
             hyperdriveChainId={hyperdrive.chainId}
           />
-          <p className="font-chakraPetch text-h4">
-            {hyperdriveName ?? hyperdrive.name}
-          </p>
-        </div>
+          {hyperdriveName ?? hyperdrive.name}
+        </>
       }
       rightElement={rightElement}
     />
