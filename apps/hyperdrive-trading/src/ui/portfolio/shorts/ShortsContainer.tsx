@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
+import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { OpenShortsTableDesktop } from "src/ui/portfolio/shorts/OpenShortsTable/OpenShortsTableDesktop";
@@ -20,14 +20,7 @@ export function OpenShortsContainer(): ReactElement {
     usePortfolioShortsData();
   const { address: account } = useAccount();
   if (!account) {
-    return (
-      <PositionContainer className="my-28">
-        <NonIdealState
-          heading="No wallet connected"
-          action={<ConnectWalletButton />}
-        />
-      </PositionContainer>
-    );
+    return <NoWalletConnected />;
   }
 
   if (openShortPositionsStatus === "loading") {
