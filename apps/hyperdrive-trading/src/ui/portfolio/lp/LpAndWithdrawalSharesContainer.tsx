@@ -4,10 +4,10 @@ import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
+import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
@@ -16,14 +16,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
   if (!account) {
-    return (
-      <PositionContainer className="my-28">
-        <NonIdealState
-          heading="No wallet connected"
-          action={<ConnectWalletButton />}
-        />
-      </PositionContainer>
-    );
+    return <NoWalletConnected />;
   }
 
   if (openLpPositionStatus === "loading") {
