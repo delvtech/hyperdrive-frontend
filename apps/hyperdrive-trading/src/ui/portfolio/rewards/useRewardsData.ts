@@ -1,18 +1,21 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Address } from "viem";
+import { Address, zeroAddress } from "viem";
+import { base } from "viem/chains";
 
 interface RewardsResponse {
   userAddress: Address;
   rewards: Reward[];
 }
 
-interface Reward {
+export interface Reward {
   chainId: number;
   claimContract: Address;
-  claimable: string;
-  total: string;
-  claimed: string;
+  claimable: bigint;
+  total: bigint;
+  claimed: bigint;
   claimableLastUpdated: number;
   rewardToken: Address;
   merkleProof: string[] | null;
@@ -25,26 +28,30 @@ function getDummyRewardsResponse(account: Address) {
     rewards: [
       {
         // rewards for this user that they can claim
-        chainId: 8543,
-        claimContract: "0x0000",
-        claimable: "1000000",
-        total: "1000000",
-        claimed: "0",
+        chainId: base.id,
+        claimContract: zeroAddress,
+        claimable: parseFixed("1000000").bigint,
+        total: parseFixed("1000000").bigint,
+        claimed: parseFixed("0").bigint,
         claimableLastUpdated: 123456789,
-        rewardToken: "0xTOKEN_A",
+        rewardToken: appConfig.tokens.find(
+          (token) => token.chainId === 8453 && token.symbol === "MORPHO",
+        )!.address,
         merkleProof: ["0xProof", "0xProof", "0xProof"],
         merkleProofLastUpdated: 123892327,
       },
       {
         // rewards are accumulating, but the merkle root hasn't been added
         // to the claimContract yet
-        chainId: 8543,
-        claimContract: "0x0000",
-        total: "1000000",
-        claimed: "0",
-        claimable: "0",
+        chainId: base.id,
+        claimContract: zeroAddress,
+        total: parseFixed("1000000").bigint,
+        claimed: parseFixed("0").bigint,
+        claimable: parseFixed("0").bigint,
         claimableLastUpdated: 123456789,
-        rewardToken: "0xTOKEN_B",
+        rewardToken: appConfig.tokens.find(
+          (token) => token.chainId === 8453 && token.symbol === "USDC",
+        )!.address,
         merkleProof: null,
         merkleProofLastUpdated: 123892327,
       },
@@ -54,7 +61,11 @@ function getDummyRewardsResponse(account: Address) {
   return dummyRewardsResponse;
 }
 
-export function useRewardsData({ account }: { account: Address | undefined }): {
+export function usePortfolioRewardsData({
+  account,
+}: {
+  account: Address | undefined;
+}): {
   rewards: Reward[] | undefined;
   rewardsStatus: "error" | "success" | "loading";
 } {
