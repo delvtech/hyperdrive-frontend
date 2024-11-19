@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
+import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { useRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
 import { useAccount } from "wagmi";
@@ -39,7 +40,7 @@ export function RewardsContainer(): ReactElement {
 
   const hasClaimableRewards = rewards?.some((reward) => reward);
 
-  if (!hasClaimableRewards) {
+  if (hasClaimableRewards) {
     return (
       <PositionContainer className="my-28">
         <NonIdealState
@@ -59,5 +60,9 @@ export function RewardsContainer(): ReactElement {
     );
   }
 
-  return <PositionContainer className="mt-10">TODO</PositionContainer>;
+  return (
+    <PositionContainer className="mt-10">
+      <PortfolioTableHeading rightElement={null} leftElement={"⚡️ Rewards"} />
+    </PositionContainer>
+  );
 }
