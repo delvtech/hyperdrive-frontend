@@ -1,6 +1,7 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement, ReactNode } from "react";
 import { AssetStack } from "src/ui/markets/AssetStack";
+import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 
 export function PositionTableHeading({
   hyperdrive,
@@ -15,15 +16,17 @@ export function PositionTableHeading({
   rightElement: ReactNode;
 }): ReactElement {
   return (
-    <div className="flex items-center justify-between">
-      <div className="flex items-center gap-1 font-chakraPetch text-h4">
-        <AssetStack
-          hyperdriveAddress={hyperdrive.address}
-          hyperdriveChainId={hyperdrive.chainId}
-        />
-        <p className="text-h4">{hyperdriveName ?? hyperdrive.name}</p>
-      </div>
-      {rightElement}
-    </div>
+    <PortfolioTableHeading
+      leftElement={
+        <>
+          <AssetStack
+            hyperdriveAddress={hyperdrive.address}
+            hyperdriveChainId={hyperdrive.chainId}
+          />
+          {hyperdriveName ?? hyperdrive.name}
+        </>
+      }
+      rightElement={rightElement}
+    />
   );
 }

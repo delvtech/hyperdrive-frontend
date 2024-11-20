@@ -1,15 +1,19 @@
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
+import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
+import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
-import { useRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
+import { RewardsTableDesktop } from "src/ui/portfolio/rewards/RewardsTableDesktop";
+import { usePortfolioRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
 import { useAccount } from "wagmi";
 
 export function RewardsContainer(): ReactElement {
   const { address: account } = useAccount();
-  const { rewards, rewardsStatus } = useRewardsData({ account });
+  const { rewards, rewardsStatus } = usePortfolioRewardsData({ account });
 
   if (!account) {
     return <NoWalletConnected />;
@@ -37,7 +41,7 @@ export function RewardsContainer(): ReactElement {
     );
   }
 
-  const hasClaimableRewards = rewards?.some((reward) => reward);
+  const hasClaimableRewards = !rewards || rewards?.some((reward) => reward);
 
   if (!hasClaimableRewards) {
     return (
@@ -59,5 +63,29 @@ export function RewardsContainer(): ReactElement {
     );
   }
 
-  return <PositionContainer className="mt-10">TODO</PositionContainer>;
+  const rewardsByChain = groupBy(rewards, (reward) => reward.chainId);
+
+  return (
+    <PositionContainer className="mt-10">
+      {Object.entries(rewardsByChain).map(([chainId, rewards]) => {
+        const chainInfo = appConfig.chains[+chainId];
+        return (
+          <div className="flex flex-col gap-6" key={chainId}>
+            <PortfolioTableHeading
+              leftElement={
+                <div className="flex items-center gap-3">
+                  <div className="daisy-avatar w-10">
+                    <img src={chainInfo.iconUrl} className="rounded-full" />
+                  </div>
+                  {chainInfo.name} Rewards
+                </div>
+              }
+              rightElement={null}
+            />
+            <RewardsTableDesktop account={account} rewards={rewards} />
+          </div>
+        );
+      })}
+    </PositionContainer>
+  );
 }
