@@ -33,6 +33,13 @@ import { useChainId } from "wagmi";
 
 // type SortOption = (typeof sortOptions)[number];
 
+const PINNED_POOLS = [
+  // Pin the 182d Savings GYD pool to the top of the list
+  // Remove this pinning on Wednesday, December 4, 2024
+  // https://github.com/delvtech/hyperdrive-frontend/issues/1663
+  "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D",
+];
+
 export function PoolsList(): ReactElement {
   const { pools: hyperdrives, status } = usePoolsList();
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
@@ -107,7 +114,13 @@ export function PoolsList(): ReactElement {
 
       return true;
     })
-    .toSorted((a, b) => a.name.localeCompare(b.name));
+    .toSorted((a, b) => {
+      // Put pinned pools at the top, otherwise sort everything alphabetically
+      if (PINNED_POOLS.includes(a.address)) {
+        return -1;
+      }
+      return a.name.localeCompare(b.name);
+    });
   // .toSorted((a, b) => {
   //   switch (sort) {
   //     case "Chain":
@@ -328,6 +341,7 @@ const HIDDEN_POOLS = [
   // only LP yoinked their liquidity while a Long was open.
   "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
 ];
+
 function usePoolsList(): {
   pools: HyperdriveConfig[] | undefined;
   status: QueryStatus;
