@@ -37,7 +37,8 @@ const PINNED_POOLS = [
   // Pin the 182d Savings GYD pool to the top of the list
   // Remove this pinning on Wednesday, December 4, 2024
   // https://github.com/delvtech/hyperdrive-frontend/issues/1663
-  "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D",
+  "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D", // mainnet
+  "0x9248f874AaA2c53AD9324d7A2D033ea133443874", // gnosis
 ];
 
 export function PoolsList(): ReactElement {
