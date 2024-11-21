@@ -38,10 +38,7 @@ interface ChainInitializationConfig {
 
 // This array should usually be empty. It's used for pools that have been added to the registry
 // but we don't want to generate app configs for, or show in the UI.
-const registryAddressesToSkip = [
-  // Gnosis sGYD
-  "0x9248f874AaA2c53AD9324d7A2D033ea133443874",
-];
+const registryAddressesToSkip: Address[] = [];
 
 const chainConfigs: ChainInitializationConfig[] = [
   // Testnet chains

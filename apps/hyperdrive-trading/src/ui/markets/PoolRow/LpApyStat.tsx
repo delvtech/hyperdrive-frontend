@@ -29,13 +29,17 @@ export function LpApyStat({
   const { rewards: appConfigRewards } = useRewards(hyperdrive);
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
-  const baseApyLabel = lpApy?.lpApy ? formatRate({ rate: lpApy.lpApy }) : null;
-  const netApyLabel = lpApy?.netLpApy
-    ? formatRate({
-        rate: lpApy.netLpApy,
-        includePercentSign: false,
-      })
-    : null;
+  // Explicit check against undefined, since we still want to show zero if the
+  // LP APY is zero
+  const baseApyLabel =
+    lpApy?.lpApy !== undefined ? formatRate({ rate: lpApy.lpApy }) : null;
+  const netApyLabel =
+    lpApy?.netLpApy !== undefined
+      ? formatRate({
+          rate: lpApy.netLpApy,
+          includePercentSign: false,
+        })
+      : null;
 
   if (!appConfigRewards?.length && netApyLabel) {
     return <PercentLabel value={netApyLabel} />;
