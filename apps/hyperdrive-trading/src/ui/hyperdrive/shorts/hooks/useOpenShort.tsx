@@ -14,7 +14,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, Hash, parseUnits } from "viem";
-import { usePublicClient } from "wagmi";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
   chainId: number;
@@ -49,6 +49,7 @@ export function useOpenShort({
   onSubmitted,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,
     address: hyperdriveAddress,
@@ -124,6 +125,7 @@ export function useOpenShort({
                   positionType: "short",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -153,6 +155,7 @@ export function useOpenShort({
           positionType: "short",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

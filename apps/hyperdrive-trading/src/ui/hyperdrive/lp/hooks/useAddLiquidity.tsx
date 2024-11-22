@@ -13,6 +13,8 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, Hash } from "viem";
+import { useAccount } from "wagmi";
+
 interface UseAddLiquidityOptions {
   chainId: number;
   hyperdriveAddress: Address;
@@ -49,6 +51,7 @@ export function useAddLiquidity({
   onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,
     address: hyperdriveAddress,
@@ -117,6 +120,7 @@ export function useAddLiquidity({
                   positionType: "lp",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -146,6 +150,7 @@ export function useAddLiquidity({
           positionType: "lp",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

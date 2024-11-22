@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useAccount } from "wagmi";
 
 // Set in the `index.html` file
 const defaultTitle = document.title;
@@ -18,8 +19,14 @@ function RootComponent() {
     select: (state) => state.location.pathname,
   });
 
+  const { address: account } = useAccount();
   useEffect(() => {
-    window.plausible("pageview", { u: route });
+    window.plausible("pageview", {
+      u: route,
+      props: {
+        connectedWallet: account,
+      },
+    });
   }, [route]);
 
   return (

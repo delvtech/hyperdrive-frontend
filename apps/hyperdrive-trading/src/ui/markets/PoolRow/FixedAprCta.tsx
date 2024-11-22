@@ -6,12 +6,14 @@ import { formatRate } from "src/base/formatRate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
+import { useAccount } from "wagmi";
 
 interface FixedAprCtaProps {
   hyperdrive: HyperdriveConfig;
 }
 
 export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
+  const { address: account } = useAccount();
   const { fixedApr, fixedRateStatus } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -54,6 +56,7 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
                 positionType: "long",
                 statName: label,
                 statValue: fixedApr ? fixed(fixedApr.apr, 18).toString() : "",
+                connectedWallet: account,
               },
             });
           }}

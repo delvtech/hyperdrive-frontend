@@ -10,7 +10,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
@@ -44,6 +44,7 @@ export function useOpenLong({
   onExecuted,
   ethValue,
 }: UseOpenLongOptions): UseOpenLongResult {
+  const { address: account } = useAccount();
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
 
@@ -114,6 +115,7 @@ export function useOpenLong({
                   positionType: "long",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -144,6 +146,7 @@ export function useOpenLong({
           positionType: "long",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

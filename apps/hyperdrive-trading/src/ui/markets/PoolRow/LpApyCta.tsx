@@ -5,12 +5,14 @@ import { ReactElement } from "react";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
+import { useAccount } from "wagmi";
 
 interface LpApyCtaProps {
   hyperdrive: HyperdriveConfig;
 }
 
 export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
+  const { address: account } = useAccount();
   const { lpApy, lpApyStatus } = useLpApy({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
@@ -49,6 +51,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
                 statValue: lpApy?.netLpApy
                   ? fixed(lpApy.netLpApy).toString()
                   : "",
+                connectedWallet: account,
               },
             });
           }}

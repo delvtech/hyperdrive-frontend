@@ -19,6 +19,7 @@ import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
+import { useAccount } from "wagmi";
 
 interface OpenShortPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -35,6 +36,7 @@ export function OpenShortPreview({
   curveFee,
   openShortPreviewStatus,
 }: OpenShortPreviewProps): ReactElement {
+  const { address: account } = useAccount();
   const [isOpen, setIsOpen] = useState(false);
 
   const baseToken = getBaseToken({
@@ -73,6 +75,7 @@ export function OpenShortPreview({
             positionType: "short",
             positionSize: fixed(shortSize ?? 0, baseToken.decimals).toString(),
             feeAmount: fixed(curveFee ?? 0, baseToken.decimals).toString(),
+            connectedWallet: account,
           },
         });
         return true;

@@ -321,6 +321,7 @@ export function OpenShortForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -349,6 +350,7 @@ export function OpenShortForm({
                         formName,
                         chainId,
                         poolAddress,
+                        connectedWallet: account,
                       },
                     });
                     setSlippage(slippage);
@@ -368,6 +370,7 @@ export function OpenShortForm({
                   formName,
                   chainId,
                   poolAddress,
+                  connectedWallet: account,
                 },
               });
               setShortAmount(newAmount);

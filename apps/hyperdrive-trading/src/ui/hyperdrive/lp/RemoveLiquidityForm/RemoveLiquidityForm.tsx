@@ -249,6 +249,7 @@ export function RemoveLiquidityForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setSlippage(slippage);
@@ -278,6 +279,7 @@ export function RemoveLiquidityForm({
                   formName,
                   chainId,
                   poolAddress,
+                  connectedWallet: account,
                 },
               });
               setAmount(newAmount);
@@ -298,6 +300,7 @@ export function RemoveLiquidityForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setActiveWithdrawToken(tokenAddress);

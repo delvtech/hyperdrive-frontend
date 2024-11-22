@@ -274,6 +274,7 @@ export function AddLiquidityForm({
                     formName,
                     chainId,
                     poolAddress,
+                    connectedWallet: account,
                   },
                 });
                 setActiveToken(tokenAddress);
@@ -293,6 +294,7 @@ export function AddLiquidityForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setSlippage(slippage);
@@ -325,6 +327,7 @@ export function AddLiquidityForm({
                 formName,
                 chainId,
                 poolAddress,
+                connectedWallet: account,
               },
             });
             setAmount(newAmount);

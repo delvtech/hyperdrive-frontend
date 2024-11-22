@@ -5,6 +5,7 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { YieldMultiplierStat } from "src/ui/markets/PoolRow/YieldMultiplierStat";
+import { useAccount } from "wagmi";
 
 interface YieldMultiplierCtaProps {
   hyperdrive: HyperdriveConfig;
@@ -13,6 +14,7 @@ interface YieldMultiplierCtaProps {
 export function YieldMultiplierCta({
   hyperdrive,
 }: YieldMultiplierCtaProps): ReactElement {
+  const { address: account } = useAccount();
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -55,6 +57,7 @@ export function YieldMultiplierCta({
                 positionType: "short",
                 statName: label,
                 statValue: multiplier ? multiplier.toString() : "",
+                connectedWallet: account,
               },
             });
           }}
