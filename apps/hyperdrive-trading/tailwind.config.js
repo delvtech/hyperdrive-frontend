@@ -61,6 +61,7 @@ module.exports = {
       },
       // New style variables from latest design
       "inactive-tab": "#C2C7CA",
+      black: "#000000",
       white: "#FFFFFF",
     },
     fontFamily: {

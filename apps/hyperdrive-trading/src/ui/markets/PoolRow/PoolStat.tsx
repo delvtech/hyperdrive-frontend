@@ -31,11 +31,11 @@ export function PoolStat({
   }
 
   return (
-    <div className="flex w-28 flex-col items-start gap-1.5">
+    <div className="flex w-full flex-col items-center gap-1.5 sm:w-28 sm:items-start">
       <p
         data-tip={labelTooltip}
         className={
-          "group daisy-tooltip cursor-help text-sm text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start"
+          "group daisy-tooltip cursor-help text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start sm:text-sm"
         }
       >
         {label}
@@ -47,7 +47,7 @@ export function PoolStat({
       >
         {displayValue}
       </div>
-      {action && <div>{action}</div>}
+      {action}
     </div>
   );
 }

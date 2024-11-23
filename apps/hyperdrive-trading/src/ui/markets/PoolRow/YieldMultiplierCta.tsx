@@ -47,7 +47,7 @@ export function YieldMultiplierCta({
             chainId: hyperdrive.chainId.toString(),
           }}
           search={{ position: "short" }}
-          className="daisy-btn daisy-btn-sm rounded-full bg-gray-600"
+          className="daisy-btn h-10 min-h-10 w-10/12 rounded-full bg-gray-500 sm:daisy-btn-sm hover:bg-gray-500 sm:h-8 sm:w-full sm:bg-gray-600"
           onClick={(e) => {
             e.stopPropagation();
             window.plausible("positionCtaClick", {
