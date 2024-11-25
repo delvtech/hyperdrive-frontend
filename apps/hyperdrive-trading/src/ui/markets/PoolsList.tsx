@@ -8,6 +8,7 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
+import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode, useMemo } from "react";
@@ -148,111 +149,125 @@ export function PoolsList(): ReactElement {
   // });
 
   return (
-    <div className="flex w-full flex-col gap-5">
-      {status === "loading" && !selectedPools ? (
-        <LoadingState />
-      ) : selectedPools ? (
-        <>
-          {/* List controls */}
-          <div className="relative z-20 flex items-center justify-between gap-10">
-            {/* Filters */}
-            <div className="flex items-center gap-2">
-              <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
-              {/* Chain filter */}
-              {filters && filters.chains.length > 1 && (
-                <MultiSelect
-                  title="Filter by chain"
-                  selected={selectedChains || []}
-                  onChange={(chains) => {
-                    window.plausible("filterChange", {
-                      props: {
-                        name: "chain",
-                        value: chains.join(", "),
-                        connectedWallet: account,
-                      },
-                    });
-                    navigate({
-                      search: (current) => {
-                        return {
-                          ...current,
-                          chains,
-                        };
-                      },
-                    });
-                  }}
-                  displayValue={
-                    selectedChains?.length === 1
-                      ? appConfig.chains[selectedChains[0]].name
-                      : `${
-                          selectedChains?.length || filters?.chains.length
-                        } chains`
-                  }
-                  searchEnabled
-                  options={filters.chains.map(({ chain, count }) => {
-                    return {
-                      value: chain.id,
-                      searchValue: chain.name,
-                      label: (
-                        <FilterMenuItem iconSrc={chain.iconUrl} count={count}>
-                          {chain.name}
-                        </FilterMenuItem>
-                      ),
-                    };
-                  })}
-                />
-              )}
+    <>
+      {/* Back to top button */}
+      <button
+        className="daisy-btn daisy-btn-circle fixed bottom-2 left-2 z-50 border-white/10 bg-white/20 text-white backdrop-blur"
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+      >
+        <ArrowUpIcon className="size-5" />
+      </button>
 
-              {/* Assets filter */}
-              {filters && filters.assets.length > 1 && (
-                <MultiSelect
-                  title="Filter by deposit asset"
-                  selected={selectedAssets || []}
-                  onChange={(assets) => {
-                    window.plausible("filterChange", {
-                      props: {
-                        name: "asset",
-                        value: assets.join(", "),
-                        connectedWallet: account,
-                      },
-                    });
-                    navigate({
-                      search: (current) => {
-                        return {
-                          ...current,
-                          assets,
-                        };
-                      },
-                    });
-                  }}
-                  displayValue={
-                    selectedAssets?.length === 1
-                      ? selectedAssets[0]
-                      : `${
-                          selectedAssets?.length || filters.assets.length
-                        } assets`
-                  }
-                  searchEnabled
-                  options={filters.assets.map(({ asset, count }) => {
-                    return {
-                      value: asset.symbol,
-                      label: (
-                        <FilterMenuItem iconSrc={asset.iconUrl} count={count}>
-                          {asset.symbol}
-                        </FilterMenuItem>
-                      ),
-                    };
-                  })}
-                />
-              )}
+      <div className="flex w-full flex-col gap-5">
+        {status === "loading" && !selectedPools ? (
+          <LoadingState />
+        ) : selectedPools ? (
+          <>
+            {/* List controls */}
+            <div className="relative z-20 flex items-center justify-between gap-10">
+              {/* Filters */}
+              <div className="flex items-center gap-2">
+                <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
+                {/* Chain filter */}
+                {filters && filters.chains.length > 1 && (
+                  <MultiSelect
+                    title="Filter by chain"
+                    selected={selectedChains || []}
+                    onChange={(chains) => {
+                      window.plausible("filterChange", {
+                        props: {
+                          name: "chain",
+                          value: chains.join(", "),
+                          connectedWallet: account,
+                        },
+                      });
+                      navigate({
+                        search: (current) => {
+                          return {
+                            ...current,
+                            chains,
+                          };
+                        },
+                      });
+                    }}
+                    displayValue={
+                      selectedChains?.length === 1
+                        ? appConfig.chains[selectedChains[0]].name
+                        : `${
+                            selectedChains?.length || filters?.chains.length
+                          } chains`
+                    }
+                    searchEnabled
+                    options={filters.chains.map(({ chain, count }) => {
+                      return {
+                        value: chain.id,
+                        searchValue: chain.name,
+                        label: (
+                          <FilterMenuItem iconSrc={chain.iconUrl} count={count}>
+                            {chain.name}
+                          </FilterMenuItem>
+                        ),
+                      };
+                    })}
+                  />
+                )}
 
-              <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
-                {selectedPools.length}
-                {selectedPools.length === 1 ? " pool" : " pools"}
-              </span>
-            </div>
+                {/* Assets filter */}
+                {filters && filters.assets.length > 1 && (
+                  <MultiSelect
+                    title="Filter by deposit asset"
+                    selected={selectedAssets || []}
+                    onChange={(assets) => {
+                      window.plausible("filterChange", {
+                        props: {
+                          name: "asset",
+                          value: assets.join(", "),
+                          connectedWallet: account,
+                        },
+                      });
+                      navigate({
+                        search: (current) => {
+                          return {
+                            ...current,
+                            assets,
+                          };
+                        },
+                      });
+                    }}
+                    displayValue={
+                      selectedAssets?.length === 1
+                        ? selectedAssets[0]
+                        : `${
+                            selectedAssets?.length || filters.assets.length
+                          } assets`
+                    }
+                    searchEnabled
+                    options={filters.assets.map(({ asset, count }) => {
+                      return {
+                        value: asset.symbol,
+                        label: (
+                          <FilterMenuItem iconSrc={asset.iconUrl} count={count}>
+                            {asset.symbol}
+                          </FilterMenuItem>
+                        ),
+                      };
+                    })}
+                  />
+                )}
 
-            {/* Sorting */}
-            {/* <div className="daisy-dropdown daisy-dropdown-end">
+                <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
+                  {selectedPools.length}
+                  {selectedPools.length === 1 ? " pool" : " pools"}
+                </span>
+              </div>
+
+              {/* Sorting */}
+              {/* <div className="daisy-dropdown daisy-dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -282,35 +297,36 @@ export function PoolsList(): ReactElement {
                 ))}
               </ul>
             </div> */}
-          </div>
+            </div>
 
-          {!selectedPools.length ? (
-            <Well className="max-w-[90vw]">
-              {hyperdrives?.length ? (
-                <NonIdealState
-                  heading={"No pools found"}
-                  text={"Try adjusting your filters."}
+            {!selectedPools.length ? (
+              <Well className="max-w-[90vw]">
+                {hyperdrives?.length ? (
+                  <NonIdealState
+                    heading={"No pools found"}
+                    text={"Try adjusting your filters."}
+                  />
+                ) : (
+                  <NonIdealState
+                    heading={"No pools available"}
+                    text={"Check back soon!"}
+                  />
+                )}
+              </Well>
+            ) : (
+              selectedPools.map((hyperdrive) => (
+                <PoolRow
+                  // Combine address and chainId for a unique key, as addresses may
+                  // overlap across chains (e.g. cloudchain and mainnet)
+                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+                  hyperdrive={hyperdrive}
                 />
-              ) : (
-                <NonIdealState
-                  heading={"No pools available"}
-                  text={"Check back soon!"}
-                />
-              )}
-            </Well>
-          ) : (
-            selectedPools.map((hyperdrive) => (
-              <PoolRow
-                // Combine address and chainId for a unique key, as addresses may
-                // overlap across chains (e.g. cloudchain and mainnet)
-                key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-                hyperdrive={hyperdrive}
-              />
-            ))
-          )}
-        </>
-      ) : null}
-    </div>
+              ))
+            )}
+          </>
+        ) : null}
+      </div>
+    </>
   );
 }
 
