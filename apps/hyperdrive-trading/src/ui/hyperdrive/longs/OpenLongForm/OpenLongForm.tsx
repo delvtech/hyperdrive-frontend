@@ -266,6 +266,7 @@ export function OpenLongForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setSlippage(slippage);
@@ -291,6 +292,7 @@ export function OpenLongForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -309,6 +311,7 @@ export function OpenLongForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setActiveToken(tokenAddress);
@@ -361,6 +364,7 @@ export function OpenLongForm({
                 formName,
                 chainId,
                 poolAddress,
+                connectedWallet: account,
               },
             });
             setAmount(newAmount);

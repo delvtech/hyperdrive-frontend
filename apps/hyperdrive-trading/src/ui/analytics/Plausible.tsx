@@ -43,18 +43,31 @@ export interface PlausibleEventParamsMap {
      * @see https://plausible.io/docs/custom-locations
      */
     u?: string;
+    props: {
+      connectedWallet: Address | undefined;
+    };
   };
 
   termsAndPrivacyView: void;
   termsAndPrivacyAccept: void;
 
-  walletConnect: void;
-  walletDisconnect: void;
+  walletConnect: {
+    props: {
+      connectedWallet: Address | undefined;
+    };
+  };
+
+  walletDisconnect: {
+    props: {
+      connectedWallet: Address | undefined;
+    };
+  };
 
   externalLinkClick: {
     props: {
       name?: string;
       url: string;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -68,6 +81,7 @@ export interface PlausibleEventParamsMap {
        * The new value of the filter.
        */
       value: string;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -87,6 +101,7 @@ export interface PlausibleEventParamsMap {
        * @example "0.123456789012345678"
        */
       statValue: string;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -96,6 +111,7 @@ export interface PlausibleEventParamsMap {
        * The name of the FAQ section that was opened.
        */
       name: string;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -105,6 +121,7 @@ export interface PlausibleEventParamsMap {
       poolAddress: Address;
       positionType: PositionType;
       prevPositionType: PositionType;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -130,6 +147,7 @@ export interface PlausibleEventParamsMap {
        * The address of the pool associated with the form.
        */
       poolAddress: Address;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -140,6 +158,7 @@ export interface PlausibleEventParamsMap {
       positionType: PositionType;
       positionSize: string;
       feeAmount: string;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -150,6 +169,7 @@ export interface PlausibleEventParamsMap {
       positionType: PositionType;
       poolAddress: Address;
       chainId: number;
+      connectedWallet: Address | undefined;
     };
   };
 
@@ -160,6 +180,7 @@ export interface PlausibleEventParamsMap {
       positionType: PositionType;
       poolAddress: Address;
       chainId: number;
+      connectedWallet: Address | undefined;
     };
   };
 }

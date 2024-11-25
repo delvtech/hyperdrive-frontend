@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, ReactElement, useRef } from "react";
+import { useAccount } from "wagmi";
 
 interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
   href: string;
@@ -26,6 +27,7 @@ export function ExternalLink({
   ...rest
 }: ExternalLinkProps): ReactElement {
   const ref = useRef<HTMLAnchorElement>(null);
+  const { address: connectedWallet } = useAccount();
 
   return (
     <a
@@ -38,6 +40,7 @@ export function ExternalLink({
           props: {
             name: ref.current?.textContent ?? undefined,
             url: rest.href,
+            connectedWallet,
           },
         });
         onClick?.(e);

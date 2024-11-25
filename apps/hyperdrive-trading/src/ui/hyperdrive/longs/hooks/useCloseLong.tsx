@@ -13,7 +13,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, Hash } from "viem";
-import { usePublicClient } from "wagmi";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
@@ -45,6 +45,7 @@ export function useCloseLong({
   onSubmitted,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,
     address: hyperdriveAddress,
@@ -108,6 +109,7 @@ export function useCloseLong({
                   positionType: "long",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -137,6 +139,7 @@ export function useCloseLong({
           positionType: "long",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

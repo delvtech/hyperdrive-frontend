@@ -20,7 +20,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
-import { useChainId } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 // TODO: Re-implement sorting without blocking the list from rendering.
 // const sortOptions = [
@@ -42,6 +42,7 @@ const PINNED_POOLS = [
 ];
 
 export function PoolsList(): ReactElement {
+  const { address: account } = useAccount();
   const { pools: hyperdrives, status } = usePoolsList();
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
     from: LANDING_ROUTE,
@@ -167,6 +168,7 @@ export function PoolsList(): ReactElement {
                       props: {
                         name: "chain",
                         value: chains.join(", "),
+                        connectedWallet: account,
                       },
                     });
                     navigate({
@@ -210,6 +212,7 @@ export function PoolsList(): ReactElement {
                       props: {
                         name: "asset",
                         value: assets.join(", "),
+                        connectedWallet: account,
                       },
                     });
                     navigate({

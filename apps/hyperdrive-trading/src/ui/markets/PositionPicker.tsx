@@ -4,12 +4,14 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { useAccount } from "wagmi";
 
 export function PositionPicker({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const { address: account } = useAccount();
   const { position: activePosition = "long" } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
@@ -60,6 +62,7 @@ export function PositionPicker({
               prevPositionType,
               chainId,
               poolAddress,
+              connectedWallet: account,
             },
           });
         }}
@@ -88,6 +91,7 @@ export function PositionPicker({
               prevPositionType,
               chainId,
               poolAddress,
+              connectedWallet: account,
             },
           });
         }}
@@ -116,6 +120,7 @@ export function PositionPicker({
               prevPositionType,
               chainId,
               poolAddress,
+              connectedWallet: account,
             },
           });
         }}

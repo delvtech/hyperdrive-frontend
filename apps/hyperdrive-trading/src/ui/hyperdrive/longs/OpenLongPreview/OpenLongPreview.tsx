@@ -16,6 +16,7 @@ import { AccordionSection } from "src/ui/base/components/AccordionSection/Accord
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
+import { useAccount } from "wagmi";
 
 interface OpenLongPreviewProps {
   hyperdrive: HyperdriveConfig;
@@ -32,6 +33,7 @@ export function OpenLongPreview({
   spotRateAfterOpen,
   curveFee,
 }: OpenLongPreviewProps): ReactElement {
+  const { address: account } = useAccount();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -54,6 +56,7 @@ export function OpenLongPreview({
             positionType: "long",
             positionSize: fixed(bondAmount, baseToken.decimals).toString(),
             feeAmount: fixed(curveFee ?? 0, baseToken.decimals).toString(),
+            connectedWallet: account,
           },
         });
         return true;

@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UseRedeemWithdrawalSharesOptions {
   chainId: number;
@@ -37,6 +37,7 @@ export function useRedeemWithdrawalShares({
   asBase = true,
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,
     address: hyperdriveAddress,
@@ -88,6 +89,7 @@ export function useRedeemWithdrawalShares({
                   positionType: "lp",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -106,6 +108,7 @@ export function useRedeemWithdrawalShares({
           positionType: "lp",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

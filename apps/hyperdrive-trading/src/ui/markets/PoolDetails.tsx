@@ -16,6 +16,7 @@ import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortF
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { faqData2 } from "src/ui/onboarding/faqData2";
+import { useAccount } from "wagmi";
 
 export function PoolDetails({
   hyperdrive,
@@ -80,6 +81,7 @@ export function PoolDetails({
   );
 }
 function FAQ() {
+  const { address: account } = useAccount();
   return (
     // Add mx-2 so the FAQ lines up with the rest of the form
     <div className="mx-2 flex flex-col gap-6">
@@ -103,6 +105,7 @@ function FAQ() {
               window.plausible("faqOpen", {
                 props: {
                   name: question,
+                  connectedWallet: account,
                 },
               })
             }

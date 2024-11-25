@@ -166,6 +166,7 @@ export function CloseShortForm({
                   formName,
                   chainId,
                   poolAddress,
+                  connectedWallet: account,
                 },
               });
               setAmount(newAmount);
@@ -197,6 +198,7 @@ export function CloseShortForm({
                       formName,
                       chainId,
                       poolAddress,
+                      connectedWallet: account,
                     },
                   });
                   setActiveWithdrawToken(tokenAddress);

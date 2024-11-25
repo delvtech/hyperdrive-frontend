@@ -13,6 +13,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, Hash } from "viem";
+import { useAccount } from "wagmi";
 
 interface UseRemoveLiquidityOptions {
   chainId: number;
@@ -42,6 +43,7 @@ export function useRemoveLiquidity({
   onSubmitted,
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,
     address: hyperdriveAddress,
@@ -104,6 +106,7 @@ export function useRemoveLiquidity({
                   positionType: "lp",
                   poolAddress: hyperdriveAddress,
                   chainId,
+                  connectedWallet: account,
                 },
               });
             }
@@ -133,6 +136,7 @@ export function useRemoveLiquidity({
           positionType: "lp",
           poolAddress: hyperdriveAddress,
           chainId,
+          connectedWallet: account,
         },
       });
     },

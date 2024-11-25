@@ -5,7 +5,7 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";
 import { useClearLocalStorageOnNewVersion } from "src/ui/version/useClearLocalStorageOnNewVersion";
-import { useAccountEffect } from "wagmi";
+import { useAccount, useAccountEffect } from "wagmi";
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -19,9 +19,17 @@ declare module "@tanstack/react-router" {
 
 export function App(): ReactElement | null {
   useClearLocalStorageOnNewVersion();
+
+  const { address: account } = useAccount();
   useAccountEffect({
-    onConnect: () => window.plausible("walletConnect"),
-    onDisconnect: () => window.plausible("walletDisconnect"),
+    onConnect: ({ address }) =>
+      window.plausible("walletConnect", {
+        props: { connectedWallet: address },
+      }),
+    onDisconnect: () =>
+      window.plausible("walletDisconnect", {
+        props: { connectedWallet: account },
+      }),
   });
 
   return (
