@@ -491,7 +491,7 @@ export function OpenShortForm({
             }
             valueContainerClassName="flex items-end"
             valueUnit="APR"
-            unitClassName="text-xs mb-1 font-bold"
+            unitClassName="mb-1 font-bold"
             subValue={
               <>
                 1 hy{baseToken.symbol} ≈{" "}
