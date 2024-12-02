@@ -102,14 +102,11 @@ export function OpenLongStats({
             <Skeleton width={100} />
           ) : (
             <span
-              className={classNames("flex text-h3 font-bold", {
+              className={classNames("flex items-baseline text-h3 font-bold", {
                 "text-base-content/80": !amountPaid,
               })}
             >
-              <img
-                src={baseToken.iconUrl}
-                className="mr-1 h-9 rounded-full p-1"
-              />
+              <img src={baseToken.iconUrl} className="mr-1 h-8 rounded-full" />
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
                 decimals: baseToken.decimals,
@@ -119,7 +116,6 @@ export function OpenLongStats({
           )
         }
         valueUnit={`${baseToken.symbol}`}
-        valueContainerClassName="flex items-end flex-wrap"
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 
