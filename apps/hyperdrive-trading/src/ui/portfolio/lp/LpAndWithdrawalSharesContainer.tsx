@@ -1,16 +1,14 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
+import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
-import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
-import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
+import { OpenLpTableDesktopTwo } from "./LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
@@ -71,9 +69,27 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     );
   }
 
+  const hyperdrivesByYieldSource: Record<string, HyperdriveConfig[]> = {};
+  for (const hyperdrive of appConfig.hyperdrives) {
+    const source = hyperdrive.yieldSource;
+    hyperdrivesByYieldSource[source] = hyperdrivesByYieldSource[source] || [];
+    hyperdrivesByYieldSource[source].push(hyperdrive);
+  }
+
   return (
     <PositionContainer className="mt-10">
-      {appConfig.hyperdrives.map((hyperdrive) => {
+      {Object.entries(hyperdrivesByYieldSource).map(
+        ([yieldSource, hyperdrives]) => (
+          <>
+            <h1>{yieldSource}</h1>
+            <OpenLpTableDesktopTwo
+              hyperdrives={hyperdrives}
+              key={yieldSource}
+            />
+          </>
+        ),
+      )}
+      {/* {appConfig.hyperdrives.map((hyperdrive) => {
         const openLpPosition = openLpPositions?.find(
           (position) =>
             position.hyperdrive.address === hyperdrive.address &&
@@ -110,7 +126,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
             />
           </div>
         );
-      })}
+      })} */}
     </PositionContainer>
   );
 }

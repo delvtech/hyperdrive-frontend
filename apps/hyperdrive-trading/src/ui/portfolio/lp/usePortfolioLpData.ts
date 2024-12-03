@@ -12,6 +12,53 @@ type LpPosition = {
   withdrawalShares: bigint;
 };
 
+export function usePortfolioLpDataTwo(hyperdrives: HyperdriveConfig[]): {
+  openLpPositions: LpPosition[] | undefined;
+  openLpPositionStatus: "error" | "success" | "loading";
+} {
+  const { address: account } = useAccount();
+  const queryEnabled = !!account && !!hyperdrives.length;
+  const { data, status } = useQuery({
+    queryKey: makeQueryKey("portfolioLp", {
+      account,
+      hyperdrives: hyperdrives.map((h) => ({
+        chainId: h.chainId.toString(),
+      })),
+    }),
+    queryFn: queryEnabled
+      ? async () => {
+          const results = await Promise.all(
+            hyperdrives.map(async (hyperdrive) => {
+              const readHyperdrive = await getHyperdrive({
+                address: hyperdrive.address,
+                drift: getDrift({ chainId: hyperdrive.chainId }),
+                earliestBlock: hyperdrive.initializationBlock,
+              });
+
+              const [lpShares, withdrawalShares] = await Promise.all([
+                readHyperdrive.getLpShares({ account }),
+                readHyperdrive.getWithdrawalShares({ account }),
+              ]);
+
+              return {
+                hyperdrive,
+                lpShares,
+                withdrawalShares,
+              };
+            }),
+          );
+          return results;
+        }
+      : undefined,
+    enabled: queryEnabled,
+  });
+
+  return {
+    openLpPositions: data,
+    openLpPositionStatus: status,
+  };
+}
+
 export function usePortfolioLpData(): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
