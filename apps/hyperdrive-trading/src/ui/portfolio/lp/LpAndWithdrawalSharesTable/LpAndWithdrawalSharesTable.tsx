@@ -52,6 +52,7 @@ export function OpenLpTableDesktop({
     data: tableData,
     getCoreRowModel: getCoreRowModel(),
   });
+
   if (!account) {
     return (
       <div className="my-28">
@@ -63,17 +64,13 @@ export function OpenLpTableDesktop({
       </div>
     );
   }
+
   if (openLpPositionStatus === "loading" || !openLpPositions) {
     return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
-  // If openLpPositions for LpShares and WithdrawalShares are 0, don't render the table
-  if (
-    openLpPositions.every(
-      (position) =>
-        position.lpShares === 0n && position.withdrawalShares === 0n,
-    )
-  ) {
+  // Check if there is no data after filtering
+  if (tableData.length === 0) {
     return null;
   }
 
