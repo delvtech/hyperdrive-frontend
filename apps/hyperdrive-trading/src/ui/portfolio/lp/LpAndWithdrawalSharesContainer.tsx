@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { OpenLpTableDesktopTwo } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
+import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
@@ -13,6 +13,18 @@ import { useAccount } from "wagmi";
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
+
+  const hyperdrivesByChainAndYieldSource: Record<string, HyperdriveConfig[]> =
+    {};
+
+  for (const hyperdrive of appConfig.hyperdrives) {
+    const key = `${hyperdrive.chainId}-${hyperdrive.yieldSource}`;
+    if (!hyperdrivesByChainAndYieldSource[key]) {
+      hyperdrivesByChainAndYieldSource[key] = [];
+    }
+    hyperdrivesByChainAndYieldSource[key].push(hyperdrive);
+  }
+
   if (!account) {
     return <NoWalletConnected />;
   }
@@ -69,22 +81,11 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     );
   }
 
-  const hyperdrivesByChainAndYieldSource: Record<string, HyperdriveConfig[]> =
-    {};
-
-  for (const hyperdrive of appConfig.hyperdrives) {
-    const key = `${hyperdrive.chainId}-${hyperdrive.yieldSource}`;
-    if (!hyperdrivesByChainAndYieldSource[key]) {
-      hyperdrivesByChainAndYieldSource[key] = [];
-    }
-    hyperdrivesByChainAndYieldSource[key].push(hyperdrive);
-  }
-
   return (
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenLpTableDesktopTwo hyperdrives={hyperdrives} key={key} />
+          <OpenLpTableDesktop hyperdrives={hyperdrives} key={key} />
         ),
       )}
     </PositionContainer>

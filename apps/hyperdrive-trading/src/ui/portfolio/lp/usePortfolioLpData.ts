@@ -12,7 +12,9 @@ type LpPosition = {
   withdrawalShares: bigint;
 };
 
-export function usePortfolioLpDataTwo(hyperdrives: HyperdriveConfig[]): {
+export function usePortfolioLpDataFromHyperdrives(
+  hyperdrives: HyperdriveConfig[],
+): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
