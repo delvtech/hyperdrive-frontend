@@ -13,6 +13,7 @@ import { OpenLpTableDesktopTwo } from "./LpAndWithdrawalSharesTable/LpAndWithdra
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
+
   if (!account) {
     return <NoWalletConnected />;
   }
@@ -27,6 +28,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
       </PositionContainer>
     );
   }
+
   if (openLpPositionStatus === "error") {
     return (
       <PositionContainer className="my-28">
@@ -69,63 +71,24 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     );
   }
 
-  const hyperdrivesByYieldSource: Record<string, HyperdriveConfig[]> = {};
+  const hyperdrivesByChainAndYieldSource: Record<string, HyperdriveConfig[]> =
+    {};
+
   for (const hyperdrive of appConfig.hyperdrives) {
-    const source = hyperdrive.yieldSource;
-    hyperdrivesByYieldSource[source] = hyperdrivesByYieldSource[source] || [];
-    hyperdrivesByYieldSource[source].push(hyperdrive);
+    const key = `${hyperdrive.chainId}-${hyperdrive.yieldSource}`;
+    if (!hyperdrivesByChainAndYieldSource[key]) {
+      hyperdrivesByChainAndYieldSource[key] = [];
+    }
+    hyperdrivesByChainAndYieldSource[key].push(hyperdrive);
   }
 
   return (
     <PositionContainer className="mt-10">
-      {Object.entries(hyperdrivesByYieldSource).map(
-        ([yieldSource, hyperdrives]) => (
-          <>
-            <OpenLpTableDesktopTwo
-              hyperdrives={hyperdrives}
-              key={yieldSource}
-            />
-          </>
+      {Object.entries(hyperdrivesByChainAndYieldSource).map(
+        ([key, hyperdrives]) => (
+          <OpenLpTableDesktopTwo hyperdrives={hyperdrives} key={key} />
         ),
       )}
-      {/* {appConfig.hyperdrives.map((hyperdrive) => {
-        const openLpPosition = openLpPositions?.find(
-          (position) =>
-            position.hyperdrive.address === hyperdrive.address &&
-            position.hyperdrive.chainId === hyperdrive.chainId,
-        ) ?? {
-          lpShares: 0n,
-          withdrawalShares: 0n,
-        };
-
-        // Check if this hyperdrive pool has open positions before rendering
-        if (
-          openLpPosition.lpShares === 0n &&
-          openLpPosition.withdrawalShares === 0n
-        ) {
-          return null;
-        }
-
-        return (
-          <div className="flex flex-col gap-6" key={hyperdrive.address}>
-            <PositionTableHeading
-              hyperdrive={hyperdrive}
-              rightElement={<TotalLpValue hyperdrive={hyperdrive} />}
-              hyperdriveName={
-                // This regex removes the term (eg: "30d") from the hyperdrive
-                // name since it's already shown in the table.
-                // https://regex101.com/r/f4A3th/1
-                hyperdrive.name.replace(/\d{1,3}d/, "")
-              }
-            />
-            <OpenLpTableDesktop
-              hyperdrive={hyperdrive}
-              openLpPosition={openLpPosition}
-              openLpPositionStatus={openLpPositionStatus}
-            />
-          </div>
-        );
-      })} */}
     </PositionContainer>
   );
 }

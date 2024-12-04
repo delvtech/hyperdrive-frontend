@@ -9,9 +9,31 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
+import { useTotalOpenLpPositions } from "src/ui/hyperdrive/lp/hooks/useTotalOpenLpPositions";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useAccount } from "wagmi";
 import { sepolia } from "wagmi/chains";
+
+export function TotalLpValueTwo({
+  openLpPositions,
+}: {
+  openLpPositions:
+    | {
+        hyperdrive: HyperdriveConfig;
+        lpShares: bigint;
+        withdrawalShares: bigint;
+      }[]
+    | undefined;
+}): ReactElement {
+  const { address: account } = useAccount();
+  const { totalOpenLpPositions, isLoading } = useTotalOpenLpPositions({
+    account,
+    openLpPositions,
+    enabled: !!openLpPositions,
+  });
+  console.log("totalOpenLpPositions", totalOpenLpPositions);
+  return <></>;
+}
 
 export function TotalLpValue({
   hyperdrive,

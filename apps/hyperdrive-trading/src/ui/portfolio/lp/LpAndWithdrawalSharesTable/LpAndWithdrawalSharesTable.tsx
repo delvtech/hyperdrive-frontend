@@ -23,6 +23,7 @@ import { WithdrawalQueueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTa
 import { usePortfolioLpDataTwo } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
+import { TotalLpValueTwo } from "./TotalLpValue";
 
 export function OpenLpTableDesktopTwo({
   hyperdrives,
@@ -87,7 +88,7 @@ export function OpenLpTableDesktopTwo({
     <>
       <PositionTableHeading
         hyperdrive={hyperdrives[0]}
-        rightElement={null}
+        rightElement={<TotalLpValueTwo openLpPositions={openLpPositions} />}
         hyperdriveName={
           // This regex removes the term (eg: "30d") from the hyperdrive
           // name since it's already shown in the table.

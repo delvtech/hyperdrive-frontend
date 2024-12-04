@@ -1,0 +1,84 @@
+import {
+  appConfig,
+  getHyperdriveConfig,
+  HyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
+import { getHyperdrive } from "@delvtech/hyperdrive-js";
+import { useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { getDrift } from "src/drift/getDrift";
+import { Address } from "viem";
+export function useTotalOpenLpPositions({
+  account,
+  openLpPositions,
+  enabled,
+}: {
+  account: Address | undefined;
+  openLpPositions:
+    | {
+        hyperdrive: HyperdriveConfig;
+        lpShares: bigint;
+        withdrawalShares: bigint;
+      }[]
+    | undefined;
+  enabled: boolean;
+}): {
+  totalOpenLpPositions: bigint | undefined;
+  isLoading: boolean;
+  totalOpenLpPositionsError: Error;
+} {
+  const queryEnabled = !!account && !!openLpPositions && enabled;
+
+  const {
+    data: totalOpenLpPositions,
+    isLoading,
+    error: totalOpenLpPositionsError,
+  } = useQuery({
+    queryKey: makeQueryKey("totalLpPositions", {
+      account,
+      openLpPositions: openLpPositions?.map((p) => ({
+        hyperdrive: p.hyperdrive.address,
+        lpShares: p.lpShares.toString(),
+        withdrawalShares: p.withdrawalShares.toString(),
+      })),
+    }),
+    enabled: queryEnabled,
+    queryFn: queryEnabled
+      ? async () => {
+          const previews = await Promise.all(
+            openLpPositions.map(async (position) => {
+              const readHyperdrive = await getHyperdrive({
+                address: position.hyperdrive.address,
+                drift: getDrift({ chainId: position.hyperdrive.chainId }),
+                earliestBlock: position.hyperdrive.initializationBlock,
+              });
+              const preview = await readHyperdrive.getOpenLpPosition({
+                account,
+                asBase: getHyperdriveConfig({
+                  hyperdriveChainId: position.hyperdrive.chainId,
+                  hyperdriveAddress: position.hyperdrive.address,
+                  appConfig,
+                }).withdrawOptions.isBaseTokenWithdrawalEnabled,
+              });
+              return {
+                baseValue: preview.baseValue,
+              };
+            }),
+          );
+
+          let total = 0n;
+          previews.forEach((preview) => {
+            total += preview.baseValue || 0n;
+          });
+
+          return total;
+        }
+      : undefined,
+  });
+
+  return {
+    totalOpenLpPositions,
+    isLoading,
+    totalOpenLpPositionsError: totalOpenLpPositionsError as Error,
+  };
+}
