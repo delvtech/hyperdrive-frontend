@@ -20,11 +20,11 @@ import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
 import { ManageLpAndWithdrawalSharesButton } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
 import { SizeAndPoolShareCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/SizeAndPoolShareCell";
+import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/TotalLpValue";
 import { WithdrawalQueueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
 import { usePortfolioLpDataTwo } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
-import { TotalLpValueTwo } from "./TotalLpValue";
 
 export function OpenLpTableDesktopTwo({
   hyperdrives,
@@ -83,7 +83,7 @@ export function OpenLpTableDesktopTwo({
       <PositionTableHeading
         hyperdrive={hyperdrives[0]}
         rightElement={
-          <TotalLpValueTwo
+          <TotalLpValue
             hyperdrive={hyperdrives[0]}
             openLpPositions={openLpPositions}
           />
