@@ -15,6 +15,7 @@ import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
 import { ManageLpAndWithdrawalSharesButton } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
@@ -64,14 +65,7 @@ export function OpenLpTableDesktopTwo({
     );
   }
   if (openLpPositionStatus === "loading" || !openLpPositions) {
-    return (
-      <div className="my-28">
-        <LoadingState
-          heading="Loading your LP Positions..."
-          text="Searching for LP events, calculating current value and PnL..."
-        />
-      </div>
-    );
+    return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
   // If openLpPositions for LpShares and WithdrawalShares are 0, don't render the table
