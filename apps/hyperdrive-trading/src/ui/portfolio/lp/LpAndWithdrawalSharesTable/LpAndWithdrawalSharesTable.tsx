@@ -88,7 +88,12 @@ export function OpenLpTableDesktopTwo({
     <>
       <PositionTableHeading
         hyperdrive={hyperdrives[0]}
-        rightElement={<TotalLpValueTwo openLpPositions={openLpPositions} />}
+        rightElement={
+          <TotalLpValueTwo
+            hyperdrive={hyperdrives[0]}
+            openLpPositions={openLpPositions}
+          />
+        }
         hyperdriveName={
           // This regex removes the term (eg: "30d") from the hyperdrive
           // name since it's already shown in the table.
