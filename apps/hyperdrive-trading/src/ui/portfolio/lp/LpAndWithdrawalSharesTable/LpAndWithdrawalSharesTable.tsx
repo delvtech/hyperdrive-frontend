@@ -80,6 +80,7 @@ export function OpenLpTableDesktop({
   return (
     <>
       <PositionTableHeading
+        // We only need the first hyperdrive to get the name and yield source metadata
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalLpValue

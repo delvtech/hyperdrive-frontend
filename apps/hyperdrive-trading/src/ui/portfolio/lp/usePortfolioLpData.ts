@@ -62,6 +62,7 @@ export function usePortfolioLpDataFromHyperdrives(
   };
 }
 
+// TODO: This eventually will need to be removed but it's currently being used at the top level of the LP Portfolio container to determine if there are any LP positions to display.
 export function usePortfolioLpData(): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";

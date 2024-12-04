@@ -14,6 +14,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
 
+  // Initialize an empty object to group hyperdrives by chainId and yieldSource
   const hyperdrivesByChainAndYieldSource: Record<string, HyperdriveConfig[]> =
     {};
 
