@@ -27,9 +27,8 @@ export function OpenLpTableDesktopTwo({
   hyperdrives,
 }: {
   hyperdrives: HyperdriveConfig[];
-}): ReactElement {
+}): ReactElement | null {
   const { address: account } = useAccount();
-  const yieldSource = hyperdrives[0].yieldSource;
   const { openLpPositions, openLpPositionStatus } =
     usePortfolioLpDataTwo(hyperdrives);
 
@@ -40,7 +39,9 @@ export function OpenLpTableDesktopTwo({
 
   const tableInstance = useReactTable({
     columns,
-    data: openLpPositions ?? [],
+    data: (openLpPositions ?? []).filter(
+      (position) => position.lpShares > 0n || position.withdrawalShares > 0n,
+    ),
     getCoreRowModel: getCoreRowModel(),
   });
   if (!account) {
@@ -63,6 +64,16 @@ export function OpenLpTableDesktopTwo({
         />
       </div>
     );
+  }
+
+  // If openLpPositions for LpShares and WithdrawalShares are 0, don't render the table
+  if (
+    openLpPositions.every(
+      (position) =>
+        position.lpShares === 0n && position.withdrawalShares === 0n,
+    )
+  ) {
+    return null;
   }
 
   return (
@@ -109,36 +120,37 @@ export function OpenLpTableDesktopTwo({
             </tr>
           ))}
         </thead>
+        <tbody>
+          {tableInstance.getRowModel().rows.map((row, index) => (
+            <tr
+              key={row.id}
+              className={classNames("h-32 !border-b-0 font-dmMono")}
+            >
+              {row.getVisibleCells().map((cell, cellIndex) => (
+                <td
+                  key={cell.id}
+                  className={classNames("text-xs md:text-md", {
+                    "px-10 pb-10": cellIndex === 0, // Add padding only to the first cell to align with header and the top row data of the next column over
+                    "rounded-b-none":
+                      index === tableInstance.getRowModel().rows.length - 1,
+                    "rounded-bl-box":
+                      index === tableInstance.getRowModel().rows.length - 1 &&
+                      cellIndex === 0,
+                    "rounded-br-box":
+                      index === tableInstance.getRowModel().rows.length - 1 &&
+                      cellIndex === row.getVisibleCells().length - 1,
+                    // Right align the values in the Size, Value, and Withdrawal Queue columns
+                    "text-end":
+                      [1, 2, 3].includes(cellIndex) && cellIndex !== 0,
+                  })}
+                >
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
       </table>
-      <tbody>
-        {tableInstance.getRowModel().rows.map((row, index) => (
-          <tr
-            key={row.id}
-            className={classNames("h-32 !border-b-0 font-dmMono")}
-          >
-            {row.getVisibleCells().map((cell, cellIndex) => (
-              <td
-                key={cell.id}
-                className={classNames("text-xs md:text-md", {
-                  "px-10 pb-10": cellIndex === 0, // Add padding only to the first cell to align with header and the top row data of the next column over
-                  "rounded-b-none":
-                    index === tableInstance.getRowModel().rows.length - 1,
-                  "rounded-bl-box":
-                    index === tableInstance.getRowModel().rows.length - 1 &&
-                    cellIndex === 0,
-                  "rounded-br-box":
-                    index === tableInstance.getRowModel().rows.length - 1 &&
-                    cellIndex === row.getVisibleCells().length - 1,
-                  // Right align the values in the Size, Value, and Withdrawal Queue columns
-                  "text-end": [1, 2, 3].includes(cellIndex) && cellIndex !== 0,
-                })}
-              >
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
     </div>
   );
 }
@@ -284,6 +296,11 @@ function getColumnsTwo({
   hyperdrives: HyperdriveConfig[];
   appConfig: AppConfig;
 }) {
+  const baseToken = getBaseToken({
+    hyperdriveAddress: hyperdrives[0].address,
+    hyperdriveChainId: hyperdrives[0].chainId,
+    appConfig,
+  });
   return [
     columnHelperTwo.accessor("hyperdrive.poolConfig.positionDuration", {
       id: "maturationDate",
@@ -300,6 +317,41 @@ function getColumnsTwo({
           </div>
         );
       },
+    }),
+    columnHelperTwo.accessor("lpShares", {
+      id: "size",
+      header: `Size (${baseToken?.symbol}-LP)`,
+      cell: ({ row }) => (
+        <SizeAndPoolShareCell
+          hyperdrive={row.original.hyperdrive}
+          lpShares={row.original.lpShares}
+        />
+      ),
+    }),
+    columnHelperTwo.accessor("lpShares", {
+      id: "value",
+      header: `Value (${baseToken?.symbol})`,
+      cell: ({ row }) => (
+        <LpCurrentValueCell
+          hyperdrive={row.original.hyperdrive}
+          lpShares={row.original.lpShares}
+        />
+      ),
+    }),
+    columnHelperTwo.accessor("withdrawalShares", {
+      id: "withdrawalQueue",
+      header: `Withdrawal Queue`,
+      cell: ({ row }) => (
+        <WithdrawalQueueCell hyperdrive={row.original.hyperdrive} />
+      ),
+    }),
+    columnHelperTwo.display({
+      id: "manage",
+      cell: ({ row }) => (
+        <ManageLpAndWithdrawalSharesButton
+          hyperdrive={row.original.hyperdrive}
+        />
+      ),
     }),
   ];
 }

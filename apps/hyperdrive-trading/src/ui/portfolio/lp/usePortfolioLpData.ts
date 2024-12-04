@@ -23,6 +23,7 @@ export function usePortfolioLpDataTwo(hyperdrives: HyperdriveConfig[]): {
       account,
       hyperdrives: hyperdrives.map((h) => ({
         chainId: h.chainId.toString(),
+        address: h.address,
       })),
     }),
     queryFn: queryEnabled

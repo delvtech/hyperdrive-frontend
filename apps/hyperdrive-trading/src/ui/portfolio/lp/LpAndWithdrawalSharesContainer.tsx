@@ -81,7 +81,6 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
       {Object.entries(hyperdrivesByYieldSource).map(
         ([yieldSource, hyperdrives]) => (
           <>
-            <h1>{yieldSource}</h1>
             <OpenLpTableDesktopTwo
               hyperdrives={hyperdrives}
               key={yieldSource}
