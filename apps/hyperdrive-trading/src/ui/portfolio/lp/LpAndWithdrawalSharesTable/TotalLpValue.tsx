@@ -8,45 +8,52 @@ import {
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
+import { useTotalOpenLpPositions } from "src/ui/hyperdrive/lp/hooks/useTotalOpenLpPositions";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useAccount } from "wagmi";
 import { sepolia } from "wagmi/chains";
 
 export function TotalLpValue({
   hyperdrive,
+  openLpPositions,
 }: {
   hyperdrive: HyperdriveConfig;
+  openLpPositions:
+    | {
+        hyperdrive: HyperdriveConfig;
+        lpShares: bigint;
+        withdrawalShares: bigint;
+      }[]
+    | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { totalOpenLpPositions, isLoading: isLoadingTotalOpenLpPositions } =
+    useTotalOpenLpPositions({
+      account,
+      openLpPositions,
+      enabled: !!openLpPositions,
+    });
   const chainInfo = appConfig.chains[hyperdrive.chainId];
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { baseValue, openLpPositionStatus } = useOpenLpPosition({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-    chainId: hyperdrive.chainId,
-  });
-
   const { fiatPrice } = useTokenFiatPrice({
     chainId: baseToken.chainId,
     tokenAddress: baseToken.address,
   });
   const isFiatPriceEnabled = chainInfo.id !== sepolia.id;
-
   return (
     <div className="flex items-center gap-2">
       <img src={chainInfo.iconUrl} className="size-7 rounded-full" />
       <p className="flex gap-2 font-dmMono text-h4">
-        {openLpPositionStatus === "loading" ? (
+        {isLoadingTotalOpenLpPositions ? (
           <Skeleton className="w-24" />
         ) : isFiatPriceEnabled ? (
           `$${formatBalance({
             balance: fiatPrice
-              ? fixed(baseValue, baseToken.decimals).mul(
+              ? fixed(totalOpenLpPositions ?? 0n, baseToken.decimals).mul(
                   fiatPrice,
                   baseToken.decimals,
                 ).bigint
@@ -56,7 +63,7 @@ export function TotalLpValue({
           })}`
         ) : (
           `${formatBalance({
-            balance: baseValue,
+            balance: totalOpenLpPositions ?? 0n,
             decimals: hyperdrive.decimals,
             places: baseToken?.places,
           })} ${baseToken.symbol}`
