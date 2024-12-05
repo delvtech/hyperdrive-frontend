@@ -40,6 +40,9 @@ export type LpApyResult = {
     }
 );
 
+/**
+ * Calculates APY metrics for a Hyperdrive liquidity pool
+ */
 export async function getLpApy({
   readHyperdrive,
   hyperdrive,
@@ -47,71 +50,70 @@ export async function getLpApy({
   readHyperdrive: ReadHyperdrive;
   hyperdrive: HyperdriveConfig;
 }): Promise<LpApyResult> {
+  // Get current block and configuration
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
   const currentBlockNumber = currentBlock.blockNumber!;
-  // Appconfig tells us how many days to look back for historical rates
+  const chainConfig = appConfig.chains[hyperdrive.chainId];
+
+  // Get yield source and calculate historical block range
   const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,
   });
+
   const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
     ? 1000n // roughly 3 hours for cloudchain
-    : appConfig.chains[hyperdrive.chainId].dailyAverageBlocks *
-      BigInt(yieldSource.historicalRatePeriod);
+    : chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
+
   const targetFromBlock = currentBlockNumber - numBlocksForHistoricalRate;
+
+  // Check if pool is newer than one day
+  const blocksSinceInitialization =
+    currentBlockNumber - hyperdrive.initializationBlock;
+  const isNew = blocksSinceInitialization < chainConfig.dailyAverageBlocks;
 
   let lpApy: bigint | undefined;
   let netLpApy: bigint | undefined;
 
-  const blocksSinceInitialization =
-    (currentBlockNumber || 0n) - hyperdrive.initializationBlock;
-  const isYoungerThanOneDay =
-    blocksSinceInitialization <
-    appConfig.chains[hyperdrive.chainId].dailyAverageBlocks;
-
-  // if the pool was deployed less than one day ago, it's new.
-  if (!isYoungerThanOneDay) {
-    const lpApyResult = await readHyperdrive.getLpApy({
-      fromBlock: [31337].includes(hyperdrive.chainId)
-        ? // local devnets don't have a lot of blocks, so start from the beginning
-          1n
-        : targetFromBlock,
-    });
+  // Calculate APY for established pools
+  if (!isNew) {
+    // Calculate base LP APY
+    const fromBlock = [31337].includes(hyperdrive.chainId)
+      ? 1n
+      : targetFromBlock;
+    const lpApyResult = await readHyperdrive.getLpApy({ fromBlock });
     lpApy = lpApyResult.lpApy;
     netLpApy = lpApy;
+
+    // Add rewards APY if available
     const publicClient = getPublicClient(wagmiConfig as any, {
       chainId: hyperdrive.chainId,
     }) as PublicClient;
+
     const rewardsFn = getRewardsFn({
       yieldSourceId: hyperdrive.yieldSource,
       appConfig,
     });
+
     if (rewardsFn) {
       const rewards = await rewardsFn(publicClient);
       rewards?.forEach((reward) => {
         if (reward.type === "transferableToken") {
-          netLpApy = fixed(reward.apy).add(
-            // safe to cast because if we get here then lpApy has been set
-            netLpApy as bigint,
-          ).bigint;
+          netLpApy = fixed(reward.apy).add(netLpApy as bigint).bigint;
         }
       });
     }
   }
 
-  // Figure out if the pool is younger than 1 rate period
+  // Calculate rate period based on pool age
   const isPoolYoungerThanOneRatePeriod =
     hyperdrive.initializationBlock > targetFromBlock;
-
-  // If we don't have enough blocks to go back 1 full historical period, then
-  // grab the all-time rate instead.
-  let ratePeriodDays = yieldSource.historicalRatePeriod;
-  if (isPoolYoungerThanOneRatePeriod) {
-    ratePeriodDays = convertMillisecondsToDays(
-      Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),
-    );
-  }
+  const ratePeriodDays = isPoolYoungerThanOneRatePeriod
+    ? convertMillisecondsToDays(
+        Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),
+      )
+    : yieldSource.historicalRatePeriod;
 
   return {
     lpApy,

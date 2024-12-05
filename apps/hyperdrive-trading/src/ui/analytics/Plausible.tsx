@@ -115,6 +115,13 @@ export interface PlausibleEventParamsMap {
     };
   };
 
+  aboutPoolOpen: {
+    props: {
+      chainId: number;
+      poolAddress: Address;
+    };
+  };
+
   positionTypeChange: {
     props: {
       chainId: number;

@@ -14,9 +14,6 @@ export interface Reward {
   chainId: number;
   claimContract: Address;
   claimable: bigint;
-  total: bigint;
-  claimed: bigint;
-  claimableLastUpdated: number;
   rewardToken: Address;
   merkleProof: string[] | null;
   merkleProofLastUpdated: number;
@@ -31,9 +28,6 @@ function getDummyRewardsResponse(account: Address) {
         chainId: base.id,
         claimContract: zeroAddress,
         claimable: parseFixed("1000000").bigint,
-        total: parseFixed("1000000").bigint,
-        claimed: parseFixed("0").bigint,
-        claimableLastUpdated: 123456789,
         rewardToken: appConfig.tokens.find(
           (token) => token.chainId === 8453 && token.symbol === "MORPHO",
         )!.address,
@@ -45,10 +39,7 @@ function getDummyRewardsResponse(account: Address) {
         // to the claimContract yet
         chainId: base.id,
         claimContract: zeroAddress,
-        total: parseFixed("1000000").bigint,
-        claimed: parseFixed("0").bigint,
         claimable: parseFixed("0").bigint,
-        claimableLastUpdated: 123456789,
         rewardToken: appConfig.tokens.find(
           (token) => token.chainId === 8453 && token.symbol === "USDC",
         )!.address,
