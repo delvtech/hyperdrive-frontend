@@ -11,7 +11,7 @@ import { Address } from "viem";
 export function useTotalOpenLpPositions({
   account,
   openLpPositions,
-  enabled,
+  enabled = true,
 }: {
   account: Address | undefined;
   openLpPositions:

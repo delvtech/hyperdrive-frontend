@@ -75,7 +75,7 @@ export function OpenLpTableDesktop({
   }
 
   return (
-    <>
+    <div className="flex flex-col gap-6">
       <PositionTableHeading
         // We only need the first hyperdrive to get the name and yield source metadata
         hyperdrive={hyperdrives[0]}
@@ -167,7 +167,7 @@ export function OpenLpTableDesktop({
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 }
 

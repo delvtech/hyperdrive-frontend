@@ -1,5 +1,6 @@
-import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
+import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -9,22 +10,14 @@ import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { useAccount } from "wagmi";
-
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
 
-  // Initialize an empty object to group hyperdrives by chainId and yieldSource
-  const hyperdrivesByChainAndYieldSource: Record<string, HyperdriveConfig[]> =
-    {};
-
-  for (const hyperdrive of appConfig.hyperdrives) {
-    const key = `${hyperdrive.chainId}-${hyperdrive.yieldSource}`;
-    if (!hyperdrivesByChainAndYieldSource[key]) {
-      hyperdrivesByChainAndYieldSource[key] = [];
-    }
-    hyperdrivesByChainAndYieldSource[key].push(hyperdrive);
-  }
+  const hyperdrivesByChainAndYieldSource = groupBy(
+    appConfig.hyperdrives,
+    (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,
+  );
 
   if (!account) {
     return <NoWalletConnected />;
