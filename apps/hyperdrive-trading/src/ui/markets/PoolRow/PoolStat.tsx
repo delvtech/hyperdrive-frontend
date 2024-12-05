@@ -31,7 +31,7 @@ export function PoolStat({
   }
 
   return (
-    <div className="flex w-full flex-col items-center gap-1.5 sm:w-28 sm:items-start">
+    <div className="flex shrink-0 flex-col items-center gap-1.5 sm:items-start">
       <p
         data-tip={labelTooltip}
         className={

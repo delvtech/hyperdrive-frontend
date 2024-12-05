@@ -8,13 +8,16 @@ import { SparklesIcon } from "@heroicons/react/16/solid";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { ReactNode } from "react";
+import { formatRate } from "src/base/formatRate";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { GradientBadge } from "src/ui/base/components/GradientBadge";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
-export function YieldMultiplierStat({
+export function VariableApyStat({
   hyperdriveAddress,
   chainId,
 }: {
@@ -39,18 +42,40 @@ export function YieldMultiplierStat({
 
   const multiplierLabel =
     longPriceStatus === "success" && longPrice
-      ? `${calculateMarketYieldMultiplier(longPrice).format({ decimals: 2, rounding: "trunc" })}x`
+      ? `${calculateMarketYieldMultiplier(longPrice).format({ decimals: 1 })}x`
       : undefined;
 
-  if (!appConfigRewards?.length && multiplierLabel) {
-    return multiplierLabel;
+  if (!appConfigRewards?.length && multiplierLabel && yieldSourceRate) {
+    return (
+      <div className="flex items-center gap-2 whitespace-nowrap">
+        <PercentLabel
+          value={formatRate({
+            rate: yieldSourceRate.netVaultRate,
+            includePercentSign: false,
+          })}
+          className="text-h4"
+        />
+        <GradientBadge>{multiplierLabel}</GradientBadge>
+      </div>
+    );
   }
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
-        <Tooltip.Trigger className="flex items-center gap-1 whitespace-nowrap">
-          {multiplierLabel}⚡
+        <Tooltip.Trigger className="flex items-center gap-2 whitespace-nowrap">
+          {yieldSourceRate ? (
+            <PercentLabel
+              value={formatRate({
+                rate: yieldSourceRate.netVaultRate,
+                includePercentSign: false,
+              })}
+              className="text-h4"
+            />
+          ) : (
+            "-"
+          )}
+          <GradientBadge>{multiplierLabel}</GradientBadge>⚡
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content

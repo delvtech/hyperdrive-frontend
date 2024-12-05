@@ -17,7 +17,7 @@ import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { FixedAprCta } from "src/ui/markets/PoolRow/FixedAprCta";
 import { LpApyCta } from "src/ui/markets/PoolRow/LpApyCta";
-import { YieldMultiplierCta } from "src/ui/markets/PoolRow/YieldMultiplierCta";
+import { VariableApyCta } from "src/ui/markets/PoolRow/VariableApyCta";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 export interface PoolRowProps {
@@ -90,7 +90,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     >
       <div className="flex flex-col justify-between gap-6 pt-2 sm:pt-0 lg:flex-row lg:gap-4">
         {/* Left side */}
-        <div className="flex flex-col items-center sm:flex-row sm:gap-6 lg:w-[440px]">
+        <div className="flex shrink-0 flex-col items-center sm:flex-row sm:gap-6 lg:w-[440px]">
           <div
             className={
               // Set a fixed width so pools with one or two asset icons still
@@ -174,10 +174,16 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
         </div>
 
         {/* Right side */}
-        <div className="flex shrink-0 flex-col items-center justify-between gap-6 sm:flex-row sm:gap-10 lg:items-end lg:justify-start">
-          <FixedAprCta hyperdrive={hyperdrive} />
-          <YieldMultiplierCta hyperdrive={hyperdrive} />
-          <LpApyCta hyperdrive={hyperdrive} />
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:gap-12 lg:items-end lg:justify-start">
+          <div className="w-full lg:w-[112px]">
+            <FixedAprCta hyperdrive={hyperdrive} />
+          </div>
+          <div className="w-full lg:w-[181px]">
+            <VariableApyCta hyperdrive={hyperdrive} />
+          </div>
+          <div className="w-full lg:w-[122px]">
+            <LpApyCta hyperdrive={hyperdrive} />
+          </div>
         </div>
       </div>
     </Well>
