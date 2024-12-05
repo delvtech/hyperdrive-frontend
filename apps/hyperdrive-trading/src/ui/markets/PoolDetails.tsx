@@ -1,14 +1,21 @@
 import {
   appConfig,
+  getBaseToken,
+  getToken,
   getYieldSource,
   HyperdriveConfig,
+  makeAddressUrl,
 } from "@delvtech/hyperdrive-appconfig";
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import CustomBanner from "src/ui/base/components/CustomBanner";
+import { LabelValue } from "src/ui/base/components/LabelValue";
+import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
@@ -75,7 +82,128 @@ export function PoolDetails({
           }
         })()}
 
+        <AboutThisPool hyperdrive={hyperdrive} />
         <FAQ />
+      </div>
+    </div>
+  );
+}
+function AboutThisPool({
+  hyperdrive,
+}: {
+  hyperdrive: HyperdriveConfig;
+}): ReactElement {
+  const baseToken = getBaseToken({
+    appConfig,
+    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrive.chainId,
+  });
+  const sharesToken = getToken({
+    appConfig,
+    chainId: hyperdrive.chainId,
+    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
+  });
+  const chainConfig = appConfig.chains[hyperdrive.chainId];
+  return (
+    // Add mx-2 so this lines up with the rest of the form
+    <div className="mx-2 flex flex-col gap-6">
+      <div className="flex flex-col gap-6">
+        <AccordionSection2
+          heading={
+            <div
+              className={classNames(
+                "pb-1 text-left text-md font-normal text-base-content/80 hover:text-white group-data-[open]:text-white",
+              )}
+            >
+              <h4>Pool Information</h4>
+            </div>
+          }
+          onChange={(open) =>
+            open &&
+            window.plausible("aboutPoolOpen", {
+              props: {
+                chainId: hyperdrive.chainId,
+                poolAddress: hyperdrive.address,
+              },
+            })
+          }
+        >
+          <div className="flex flex-col gap-4 text-md leading-bodyText text-base-content/80">
+            <LabelValue
+              label="Chain"
+              value={
+                <div className="flex items-center gap-2">
+                  <img
+                    src={chainConfig.iconUrl}
+                    className="size-6 rounded-full"
+                  />
+                  {chainConfig.name}
+                </div>
+              }
+            />
+            <LabelValue
+              label="Pool address"
+              value={
+                <ExternalLink
+                  href={makeAddressUrl(hyperdrive.address, chainConfig)}
+                  className="daisy-link"
+                  newTab
+                >
+                  <div className="flex items-center gap-2">
+                    {formatAddress(hyperdrive.address)}
+                    <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
+                  </div>
+                </ExternalLink>
+              }
+            />
+            <LabelValue
+              label="Base token"
+              value={
+                <ExternalLink
+                  href={makeAddressUrl(baseToken.address, chainConfig)}
+                  className="daisy-link"
+                  newTab
+                >
+                  <div
+                    className="daisy-tooltip daisy-tooltip-left flex items-center gap-2"
+                    data-tip={baseToken.name}
+                  >
+                    <img
+                      src={baseToken.iconUrl}
+                      className="size-6 rounded-full"
+                    />
+                    {formatAddress(baseToken.address)}
+                    <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
+                  </div>
+                </ExternalLink>
+              }
+            />
+            {sharesToken ? (
+              <LabelValue
+                label="Shares token"
+                value={
+                  <ExternalLink
+                    href={makeAddressUrl(sharesToken.address, chainConfig)}
+                    newTab
+                    className="daisy-link"
+                  >
+                    <div
+                      className="daisy-tooltip daisy-tooltip-left flex items-center gap-2"
+                      data-tip={sharesToken.name}
+                    >
+                      <img
+                        src={sharesToken.iconUrl}
+                        className="size-6 rounded-full"
+                      />
+                      {formatAddress(sharesToken.address)}
+                      <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
+                    </div>
+                  </ExternalLink>
+                }
+              />
+            ) : null}
+          </div>
+        </AccordionSection2>
       </div>
     </div>
   );
