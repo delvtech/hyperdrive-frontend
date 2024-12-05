@@ -45,14 +45,14 @@ export function useTotalOpenLpPositions({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const previews = await Promise.all(
+          const openLpPositionValues = await Promise.all(
             openLpPositions.map(async (position) => {
               const readHyperdrive = await getHyperdrive({
                 address: position.hyperdrive.address,
                 drift: getDrift({ chainId: position.hyperdrive.chainId }),
                 earliestBlock: position.hyperdrive.initializationBlock,
               });
-              const preview = await readHyperdrive.getOpenLpPosition({
+              const openLpPosition = await readHyperdrive.getOpenLpPosition({
                 account,
                 asBase: getHyperdriveConfig({
                   hyperdriveChainId: position.hyperdrive.chainId,
@@ -61,14 +61,14 @@ export function useTotalOpenLpPositions({
                 }).withdrawOptions.isBaseTokenWithdrawalEnabled,
               });
               return {
-                baseValue: preview.baseValue,
+                baseValue: openLpPosition.baseValue,
               };
             }),
           );
 
           let total = 0n;
-          previews.forEach((preview) => {
-            total += preview.baseValue || 0n;
+          openLpPositionValues.forEach((openLpPositionValue) => {
+            total += openLpPositionValue.baseValue || 0n;
           });
 
           return total;
