@@ -8,14 +8,17 @@ import {
   baseChainConfig,
   ChainId,
   chains,
+  cloudChainConfig,
   gnosisChainConfig,
   lineaChainConfig,
   mainnetChainConfig,
   sepoliaChainConfig,
 } from "src/chains/chains";
+import { cloudChain } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 import {
   BASE_REGISTRY_ADDRESS,
+  CLOUDCHAIN_REGISTRY_ADDRESS,
   ETHEREUM_REGISTRY_ADDRESS,
   GNOSIS_REGISTRY_ADDRESS,
   LINEA_REGISTRY_ADDRESS,
@@ -25,6 +28,7 @@ import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
 import { rewardFunctions } from "src/rewards/rewards";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
+import { zaps } from "src/zaps/zaps";
 import { Address, Chain, createPublicClient, http, PublicClient } from "viem";
 import { base, gnosis, linea, mainnet, sepolia } from "viem/chains";
 
@@ -42,12 +46,14 @@ const registryAddressesToSkip: Address[] = [];
 
 const chainConfigs: ChainInitializationConfig[] = [
   // Testnet chains
-  // { // TODO: Re-enable this when needed
-  //   chain: cloudChain,
-  //   rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,
-  //   registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
-  //   isTestnet: true,
-  // },
+  {
+    // TODO: Re-enable this when needed
+    chain: cloudChain,
+    rpcUrl: process.env.CLOUDCHAIN_RPC_URL as string,
+    registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
+    isTestnet: true,
+    earliestBlock: cloudChainConfig.earliestBlock,
+  },
   // { // TODO: Re-enable this when needed
   //   chain: gnosisFork,
   //   rpcUrl: process.env.GNOSIS_FORK_RPC_URL as string,
@@ -100,6 +106,7 @@ const combinedAppConfig: AppConfig = {
   protocols,
   yieldSources,
   chains,
+  zaps,
 };
 
 // Generate an app config for each chain in the list above

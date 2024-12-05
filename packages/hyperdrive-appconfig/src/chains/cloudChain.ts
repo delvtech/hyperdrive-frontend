@@ -5,7 +5,7 @@ export const cloudChain = defineChain({
   name: "CloudChain",
   nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
   rpcUrls: {
-    public: { http: [process.env.CLOUDCHAIN_NODE_RPC_URL as string] },
-    default: { http: [process.env.CLOUDCHAIN_NODE_RPC_URL as string] },
+    public: { http: [process.env.CLOUDCHAIN_RPC_URL as string] },
+    default: { http: [process.env.CLOUDCHAIN_RPC_URL as string] },
   },
 });
