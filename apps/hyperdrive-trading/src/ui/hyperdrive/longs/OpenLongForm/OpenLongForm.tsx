@@ -60,6 +60,11 @@ export function OpenLongForm({
     chainId: hyperdrive.chainId,
   });
 
+  // const { zaps, zapsStatus } = useZapsName({
+  //   hyperdrive,
+  // });
+  // console.log("zaps", zaps);
+
   const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
 
   const { tokenList } = useTokenList({
@@ -116,7 +121,8 @@ export function OpenLongForm({
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
-          tokenFromTokenList.chainId === hyperdrive.chainId,
+          // TODO: Remove this once we have zap support for cloudchain
+          tokenFromTokenList.chainId !== 707,
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({

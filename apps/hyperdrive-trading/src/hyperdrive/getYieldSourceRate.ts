@@ -10,7 +10,6 @@ import {
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { isForkChain } from "src/chains/isForkChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";
 
@@ -122,9 +121,11 @@ function getNumBlocksForHistoricalRate({
   });
   const historicalRatePeriod = yieldSource.historicalRatePeriod;
 
-  const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
-    ? 1000n // roughly 3 hours for cloudchain
-    : blocksPerDay * BigInt(historicalRatePeriod);
+  // const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
+  //   ? 1000n // roughly 3 hours for cloudchain
+  //   : blocksPerDay * BigInt(historicalRatePeriod);
+  const numBlocksForHistoricalRate =
+    blocksPerDay * BigInt(historicalRatePeriod);
 
   return numBlocksForHistoricalRate;
 }

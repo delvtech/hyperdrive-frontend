@@ -9,7 +9,6 @@ import {
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { isForkChain } from "src/chains/isForkChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";
 
@@ -62,9 +61,11 @@ export async function getLpApy({
     appConfig,
   });
 
-  const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
-    ? 1000n // roughly 3 hours for cloudchain
-    : chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
+  const numBlocksForHistoricalRate =
+    chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
+  // const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
+  //   ? 1000n // roughly 3 hours for cloudchain
+  //   : chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
 
   const targetFromBlock = currentBlockNumber - numBlocksForHistoricalRate;
 

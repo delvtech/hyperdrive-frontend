@@ -202,7 +202,7 @@ export function ZapsTokenPicker({
               <li className="flex h-8 items-center px-4">No matches</li>
             ) : (
               filteredTokens.map(({ tokenConfig }) => (
-                <li key={tokenConfig?.address}>
+                <li key={`${tokenConfig?.address}-${tokenConfig?.chainId}`}>
                   <button
                     type="button"
                     onClick={() => {
