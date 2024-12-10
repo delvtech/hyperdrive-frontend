@@ -3,7 +3,7 @@ import {
   ChartBarIcon,
 } from "@heroicons/react/16/solid";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, LinkProps, useRouterState } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -12,9 +12,11 @@ import { useAnalyticsUrl } from "src/ui/analytics/useMarketAnalyticsUrl";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
+import { POINTS_MARKETS_ROUTE } from "src/ui/markets/routes";
 import { MINT_ROUTE } from "src/ui/mint/routes";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { sepolia } from "viem/chains";
@@ -25,6 +27,8 @@ export function Navbar(): ReactElement {
   const chainId = useChainId();
   const { isReadOnly } = useRegionInfo();
   const isTestnet = isTestnetChain(chainId);
+  const { isFlagEnabled: isPointsMarketsEnabled } =
+    useFeatureFlag("points-markets");
 
   const analyticsUrl = useAnalyticsUrl();
 
@@ -38,37 +42,13 @@ export function Navbar(): ReactElement {
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
         <div className="ml-16 flex gap-8">
-          <Link to={LANDING_ROUTE} className="hidden sm:inline">
-            <span
-              className={classNames("text-md", {
-                "text-white": location.pathname === LANDING_ROUTE,
-                "text-neutral-content": location.pathname !== LANDING_ROUTE,
-              })}
-            >
-              All Pools
-            </span>
-          </Link>
-          <Link to={PORTFOLIO_ROUTE}>
-            <span
-              className={classNames("text-md", {
-                "text-white": location.pathname === PORTFOLIO_ROUTE,
-                "text-neutral-content": location.pathname !== PORTFOLIO_ROUTE,
-              })}
-            >
-              Portfolio
-            </span>
-          </Link>
+          <NavbarLink to={LANDING_ROUTE} label="All Pools" />
+          {isPointsMarketsEnabled ? (
+            <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
+          ) : null}
+          <NavbarLink to={PORTFOLIO_ROUTE} label="Portfolio" />
           {isTestnet ? (
-            <Link to={MINT_ROUTE}>
-              <span
-                className={classNames("text-md", {
-                  "text-white": location.pathname === MINT_ROUTE,
-                  "text-neutral-content": location.pathname !== MINT_ROUTE,
-                })}
-              >
-                Mint Tokens
-              </span>
-            </Link>
+            <NavbarLink to={MINT_ROUTE} label="Mint Tokens" />
           ) : null}
         </div>
       </div>
@@ -94,5 +74,28 @@ export function Navbar(): ReactElement {
         {!isReadOnly && <ConnectButton showBalance={false} />}
       </div>
     </div>
+  );
+}
+
+function NavbarLink({ to, label }: { label: string } & LinkProps) {
+  const { location } = useRouterState();
+  return (
+    <Link
+      to={
+        // safe to cast because LinkProps["to"] provides typesafety to the
+        // caller
+        to as any
+      }
+      className="hidden sm:inline"
+    >
+      <span
+        className={classNames("text-md", {
+          "text-white": location.pathname === to,
+          "text-neutral-content": location.pathname !== to,
+        })}
+      >
+        {label}
+      </span>
+    </Link>
   );
 }
