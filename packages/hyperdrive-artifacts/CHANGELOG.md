@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 1.0.20
+
+### Patch Changes
+
+- Update artifacts to v1.0.20
+
 ## 1.0.18
 
 ### Patch Changes

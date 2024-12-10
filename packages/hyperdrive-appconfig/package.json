@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.6",
-    "@delvtech/hyperdrive-artifacts": "^1.0.18",
+    "@delvtech/hyperdrive-artifacts": "^1.0.20",
     "@delvtech/hyperdrive-viem": "^3.0.6",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
