@@ -8,6 +8,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAnalyticsUrl } from "src/ui/analytics/useMarketAnalyticsUrl";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
@@ -24,6 +25,8 @@ export function Navbar(): ReactElement {
   const chainId = useChainId();
   const { isReadOnly } = useRegionInfo();
   const isTestnet = isTestnetChain(chainId);
+
+  const analyticsUrl = useAnalyticsUrl();
 
   return (
     <div className="daisy-navbar">
@@ -72,7 +75,7 @@ export function Navbar(): ReactElement {
       <div className="daisy-navbar-end gap-2 sm:gap-8">
         <ExternalLink
           newTab
-          href="https://hyperdrive.blockanalitica.com"
+          href={analyticsUrl}
           className="daisy-btn rounded-full text-accent"
         >
           <span className="hidden sm:inline">Analytics</span>
