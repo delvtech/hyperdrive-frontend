@@ -10,9 +10,9 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { RewardsResponse } from "src/rewards/generated/RewardsClient";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { Reward } from "src/ui/portfolio/rewards/useRewardsData";
 import { Address } from "viem";
 
 export function RewardsTableDesktop({
@@ -20,11 +20,11 @@ export function RewardsTableDesktop({
   rewards,
 }: {
   account: Address;
-  rewards: Reward[] | undefined;
+  rewards: RewardsResponse | undefined;
 }): ReactElement {
   const tableInstance = useReactTable({
     columns: getColumns(),
-    data: rewards || [],
+    data: rewards?.rewards || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -130,7 +130,7 @@ export function RewardsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<Reward>();
+const columnHelper = createColumnHelper<RewardsResponse["rewards"]>();
 
 function getColumns() {
   return [

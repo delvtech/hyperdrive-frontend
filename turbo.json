@@ -31,7 +31,8 @@
         "VITE_ROLLBAR_ENV",
         "VITE_SEPOLIA_RPC_URL",
         "VITE_VPN_SCREEN_URL",
-        "VITE_WALLET_CONNECT_PROJECT_ID"
+        "VITE_WALLET_CONNECT_PROJECT_ID",
+        "VITE_REWARDS_BASE_URL"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
