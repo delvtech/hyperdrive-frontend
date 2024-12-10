@@ -6,6 +6,9 @@ module.exports = {
       ...constructs,
       TypeField: ({ key, value, readonly, optional }) => {
         let fieldValue = value;
+        // Convert vanilla string to the appropriate address type
+        // NOTE: Matt will standardize all address fields in swagger.json to use
+        // the -Address suffix
         if (
           key.endsWith("Address") ||
           key.endsWith("Contract") ||
@@ -24,5 +27,6 @@ module.exports = {
       },
     };
   },
-  // TODO: Convert fields ending with "-Amount" from string to bigint
+  // TODO: Convert fields ending with "-Amount" from string to bigint. This will
+  // require post-processing in the api client
 };

@@ -21,5 +21,11 @@ else
     exit 1
 fi
 
-npx swagger-typescript-api -p $SWAGGER_FILE -o $OUTPUT_DIR -n $TYPES_FILE --api-class-name RewardsApi   --custom-config $CUSTOM_CONFIG
+npx swagger-typescript-api \
+  -p $SWAGGER_FILE \
+  -o $OUTPUT_DIR \
+  -n $TYPES_FILE \
+  --api-class-name RewardsApi \
+  --custom-config $CUSTOM_CONFIG \
+  --unwrap-response-data
 
