@@ -167,7 +167,7 @@ export function AddLiquidityForm({
   const lpSharePrice = !isBaseActiveToken
     ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
         poolInfo?.vaultSharePrice || 0n,
-        baseToken.decimals,
+        baseToken.decimals
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
@@ -253,7 +253,7 @@ export function AddLiquidityForm({
                   balance:
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
-                          activeTokenPrice,
+                          activeTokenPrice
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
@@ -336,19 +336,23 @@ export function AddLiquidityForm({
       }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
-          <YouReceiveStat
-            addLiquidityPreviewStatus={addLiquidityPreviewStatus}
-            lpSharesOut={lpSharesOut}
-            hyperdrive={hyperdrive}
-          />
+          <div className="flex-1">
+            <YouReceiveStat
+              addLiquidityPreviewStatus={addLiquidityPreviewStatus}
+              lpSharesOut={lpSharesOut}
+              hyperdrive={hyperdrive}
+            />
+          </div>
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
-          <LpApyStat hyperdrive={hyperdrive} />
+          <div className="flex-1">
+            <LpApyStat hyperdrive={hyperdrive} />
+          </div>
         </div>
       }
       disclaimer={(() => {
         if (
           previewAddLiquidityError?.message.includes(
-            "Not enough lp shares minted.",
+            "Not enough lp shares minted."
           )
         ) {
           return (
