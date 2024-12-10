@@ -1,33 +1,5 @@
 export const Address = {
-    abi: [
-        {
-            "type": "error",
-            "name": "AddressEmptyCode",
-            "inputs": [
-                {
-                    "name": "target",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ]
-        },
-        {
-            "type": "error",
-            "name": "AddressInsufficientBalance",
-            "inputs": [
-                {
-                    "name": "account",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ]
-        },
-        {
-            "type": "error",
-            "name": "FailedInnerCall",
-            "inputs": []
-        }
-    ],
-    bytecode: '0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212208a95db0c986f1c26a7d7b2d08b9470e506089f6649c35f68160ed6d1e6dd430a64736f6c63430008160033',
+    abi: [],
+    bytecode: '0x60556032600b8282823980515f1a607314602657634e487b7160e01b5f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212208a6033904973a8903efa4738fe05fee0cb1c3bc94c879c58f0ef1f82d138f40264736f6c63430008160033',
     methodIdentifiers: {}
 };

@@ -60,7 +60,7 @@ function processOutDir() {
   for entry in "$dir"/*; do
 
     # Ignore test contract directories which end with ".t.sol"
-    if [[ "$entry" == *".t.sol" ]]; then
+    if [[ "$entry" == *".t.sol" ]] || [[ "$entry" == *"build-info" ]]; then
       continue
     fi
 

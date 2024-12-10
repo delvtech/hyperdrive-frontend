@@ -509,6 +509,10 @@ export declare const ERC4626HyperdriveDeployerCoordinator: {
         }];
     }, {
         readonly type: "error";
+        readonly name: "ApprovalFailed";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
         readonly name: "DeploymentAlreadyExists";
         readonly inputs: readonly [];
     }, {

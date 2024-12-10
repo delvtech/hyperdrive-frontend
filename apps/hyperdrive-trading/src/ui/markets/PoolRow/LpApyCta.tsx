@@ -3,7 +3,6 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
-import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { useAccount } from "wagmi";
 
@@ -26,10 +25,11 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
       isLoading={lpApyStatus === "loading"}
       isNew={lpApy?.isNew}
       value={
-        <LpApyStat
-          chainId={hyperdrive.chainId}
-          hyperdriveAddress={hyperdrive.address}
-        />
+        null
+        // <LpApyStat
+        //   chainId={hyperdrive.chainId}
+        //   hyperdriveAddress={hyperdrive.address}
+        // />
       }
       action={
         <Link

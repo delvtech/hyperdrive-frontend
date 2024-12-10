@@ -415,6 +415,37 @@ export const IHyperdriveGovernedRegistry = {
         },
         {
             "type": "function",
+            "name": "initialize",
+            "inputs": [
+                {
+                    "name": "_name",
+                    "type": "string",
+                    "internalType": "string"
+                },
+                {
+                    "name": "_admin",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "isInitialized",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "kind",
             "inputs": [],
             "outputs": [
@@ -495,6 +526,19 @@ export const IHyperdriveGovernedRegistry = {
         },
         {
             "type": "function",
+            "name": "updateName",
+            "inputs": [
+                {
+                    "name": "_name",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "version",
             "inputs": [],
             "outputs": [
@@ -540,6 +584,25 @@ export const IHyperdriveGovernedRegistry = {
         },
         {
             "type": "event",
+            "name": "Initialized",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "indexed": true,
+                    "internalType": "string"
+                },
+                {
+                    "name": "admin",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
             "name": "InstanceInfoUpdated",
             "inputs": [
                 {
@@ -559,6 +622,19 @@ export const IHyperdriveGovernedRegistry = {
                     "type": "address",
                     "indexed": true,
                     "internalType": "address"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "NameUpdated",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "indexed": true,
+                    "internalType": "string"
                 }
             ],
             "anonymous": false
@@ -585,6 +661,11 @@ export const IHyperdriveGovernedRegistry = {
         },
         {
             "type": "error",
+            "name": "RegistryAlreadyInitialized",
+            "inputs": []
+        },
+        {
+            "type": "error",
             "name": "Unauthorized",
             "inputs": []
         }
@@ -606,11 +687,14 @@ export const IHyperdriveGovernedRegistry = {
         "getInstancesInRange(uint256,uint256)": "bc30e7a1",
         "getNumberOfFactories()": "f59d00b9",
         "getNumberOfInstances()": "6e95d67c",
+        "initialize(string,address)": "7ab4339d",
+        "isInitialized()": "392e53cd",
         "kind()": "04baa00b",
         "name()": "06fdde03",
         "setFactoryInfo(address[],uint128[])": "e967e388",
         "setInstanceInfo(address[],uint128[],address[])": "1ff30ad2",
         "updateAdmin(address)": "e2f273bd",
+        "updateName(string)": "84da92a7",
         "version()": "54fd4d50"
     }
 };

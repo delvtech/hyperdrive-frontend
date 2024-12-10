@@ -434,6 +434,11 @@ export const IERC4626HyperdriveDeployerCoordinator = {
         },
         {
             "type": "error",
+            "name": "ApprovalFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
             "name": "DeploymentAlreadyExists",
             "inputs": []
         },

@@ -2,6 +2,19 @@ export const IChainlinkAggregatorV3 = {
     abi: [
         {
             "type": "function",
+            "name": "aggregator",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "decimals",
             "inputs": [],
             "outputs": [
@@ -114,6 +127,7 @@ export const IChainlinkAggregatorV3 = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
+        "aggregator()": "245a7bfc",
         "decimals()": "313ce567",
         "description()": "7284e416",
         "getRoundData(uint80)": "9a6fc8f5",

@@ -43,6 +43,7 @@ import {
 } from "src/ui/token/TokenPicker";
 import { Address, formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
+// import { useZapsName } from "../../zaps/hooks/useZapsName";
 
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
