@@ -5,6 +5,7 @@ import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import FarcasterIcon from "src/ui/base/icons/farcaster";
 import LinkedInIcon from "src/ui/base/icons/linkedin";
 import XIcon from "src/ui/base/icons/x";
+import { CHAINLOG_ROUTE } from "src/ui/chainlog/routes";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 export default function Footer(): ReactElement {
@@ -85,7 +86,7 @@ export default function Footer(): ReactElement {
         >
           Whitepaper
         </ExternalLink>
-        <Link to="/chainlog" className="daisy-link-hover daisy-link">
+        <Link to={CHAINLOG_ROUTE} className="daisy-link-hover daisy-link">
           Chainlog
         </Link>
         <ExternalLink
