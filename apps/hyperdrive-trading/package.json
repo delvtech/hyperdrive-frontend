@@ -25,7 +25,8 @@
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "gen:version": "bash ./scripts/generate-version.sh",
-    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
+    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh",
+    "gen:rewards-swagger": "bash ./scripts/generate-rewards-swagger.sh"
   },
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
@@ -77,6 +78,7 @@
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
+    "swagger-typescript-api": "^13.0.23",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@tanstack/eslint-plugin-query": "^5.28.11",
