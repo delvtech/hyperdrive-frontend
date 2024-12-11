@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { RewardsResponse } from "src/rewards/generated/RewardsClient";
+import { Rewards } from "src/rewards/generated/RewardsClient";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
@@ -20,11 +20,11 @@ export function RewardsTableDesktop({
   rewards,
 }: {
   account: Address;
-  rewards: RewardsResponse | undefined;
+  rewards: Rewards;
 }): ReactElement {
   const tableInstance = useReactTable({
     columns: getColumns(),
-    data: rewards?.rewards || [],
+    data: rewards || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -130,7 +130,9 @@ export function RewardsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<RewardsResponse["rewards"]>();
+// TODO: Remove this type once the swagger is defined properly
+type Reward = NonNullable<Rewards[number]>;
+const columnHelper = createColumnHelper<Reward>();
 
 function getColumns() {
   return [
@@ -141,7 +143,7 @@ function getColumns() {
         const token = getToken({
           appConfig,
           chainId: row.original.chainId,
-          tokenAddress: row.original.rewardToken,
+          tokenAddress: row.original.rewardTokenAddress,
         })!;
         return (
           <div className="flex items-center gap-2 font-inter">
@@ -158,13 +160,13 @@ function getColumns() {
         const token = getToken({
           appConfig,
           chainId: row.original.chainId,
-          tokenAddress: row.original.rewardToken,
+          tokenAddress: row.original.rewardTokenAddress,
         })!;
         return (
           <div className="flex flex-col">
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: row.original.claimable || 0n,
+                balance: BigInt(row.original.claimable) || 0n,
                 decimals: token.decimals,
                 places: token.places,
               })}{" "}

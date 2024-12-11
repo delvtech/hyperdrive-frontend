@@ -7,13 +7,7 @@ module.exports = {
       TypeField: ({ key, value, readonly, optional }) => {
         let fieldValue = value;
         // Convert vanilla string to the appropriate address type
-        // NOTE: Matt will standardize all address fields in swagger.json to use
-        // the -Address suffix
-        if (
-          key.endsWith("Address") ||
-          key.endsWith("Contract") ||
-          key.endsWith("Token")
-        ) {
+        if (key.endsWith("Address")) {
           fieldValue = "`0x${string}`";
         }
 

@@ -14,34 +14,36 @@ export interface RewardsResponse {
    * The user's blockchain address.
    * @example "0x1234567890abcdef1234567890abcdef12345678"
    */
-  userAddress?: `0x${string}`;
-  rewards?: {
-    /** @example 1 */
-    chainId?: number;
-    /**
-     * Address of the claim contract.
-     * @example "0x0000000000000000000000000000000000000000"
-     */
-    claimContract?: `0x${string}`;
-    /**
-     * Amount of tokens claimable.
-     * @example "1000000000000000000"
-     */
-    claimable?: string;
-    /**
-     * Token address of the reward.
-     * @example "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842"
-     */
-    rewardToken?: `0x${string}`;
-    /** @example ["0xProof1","0xProof2","0xProof3"] */
-    merkleProof?: `0x${string}`[];
-    /**
-     * Timestamp of the last merkle proof update.
-     * @example 123892327
-     */
-    merkleProofLastUpdated?: number;
-  }[];
+  userAddress: `0x${string}`;
+  rewards: Rewards;
 }
+
+export type Rewards = {
+  /** @example 1 */
+  chainId: number;
+  /**
+   * Address of the claim contract.
+   * @example "0x0000000000000000000000000000000000000000"
+   */
+  claimContractAddress: `0x${string}`;
+  /**
+   * Amount of tokens claimable.
+   * @example "1000000000000000000"
+   */
+  claimable: string;
+  /**
+   * Token address of the reward.
+   * @example "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842"
+   */
+  rewardTokenAddress: `0x${string}`;
+  /** @example ["0xProof1","0xProof2","0xProof3"] */
+  merkleProof: `0x${string}`[];
+  /**
+   * Timestamp of the last merkle proof update.
+   * @example 123892327
+   */
+  merkleProofLastUpdated: number;
+}[];
 
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;

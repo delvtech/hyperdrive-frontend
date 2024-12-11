@@ -1,9 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import {
-  RewardsApi,
-  RewardsResponse,
-} from "src/rewards/generated/RewardsClient";
+import { Rewards, RewardsApi } from "src/rewards/generated/RewardsClient";
 import { Address } from "viem";
 
 export function usePortfolioRewardsData({
@@ -11,7 +8,7 @@ export function usePortfolioRewardsData({
 }: {
   account: Address | undefined;
 }): {
-  rewards: RewardsResponse | undefined;
+  rewards: Rewards | undefined;
   rewardsStatus: "error" | "success" | "loading";
 } {
   const queryEnabled = !!account;
@@ -22,7 +19,8 @@ export function usePortfolioRewardsData({
           const rewardsApi = new RewardsApi({
             baseUrl: import.meta.env.VITE_REWARDS_BASE_URL,
           });
-          return rewardsApi.get.rewardsDetail(account);
+          const response = await rewardsApi.get.rewardsDetail(account);
+          return response.rewards;
         }
       : undefined,
     enabled: queryEnabled,
