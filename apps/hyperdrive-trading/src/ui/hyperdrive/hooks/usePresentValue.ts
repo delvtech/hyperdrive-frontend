@@ -1,5 +1,5 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -19,7 +19,7 @@ export function usePresentValue({
   });
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
-    queryKey: makeQueryKey("present-value", { chainId, hyperdriveAddress }),
+    queryKey: makeQueryKey2("presentValue", { chainId, hyperdriveAddress }),
     queryFn: queryEnabled ? () => readHyperdrive.getPresentValue() : undefined,
     enabled: queryEnabled,
   });

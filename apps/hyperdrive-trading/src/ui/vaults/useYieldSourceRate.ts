@@ -1,7 +1,7 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -33,11 +33,8 @@ export function useYieldSourceRate({
 
   const queryEnabled = !!hyperdriveAddress && !!readHyperdrive;
   const { data, status: vaultRateStatus } = useQuery({
+    queryKey: makeQueryKey2("vaultRate", { chainId, hyperdriveAddress }),
     enabled: queryEnabled,
-    queryKey: makeQueryKey("vaultRate", {
-      chainId,
-      hyperdriveAddress,
-    }),
     queryFn: queryEnabled
       ? async () => {
           const { rate, ratePeriodDays, netRate } = await getYieldSourceRate(

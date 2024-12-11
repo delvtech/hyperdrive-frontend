@@ -1,0 +1,27 @@
+import "src/base/makeQueryKey";
+import { Address } from "viem";
+interface HyperdriveQueryKeys {
+  poolInfo: { chainId: number; hyperdriveAddress: Address };
+  currentLongPrice: {
+    chainId: number;
+    hyperdriveAddress: Address;
+  };
+  presentValue: {
+    chainId: number;
+    hyperdriveAddress: Address;
+  };
+  fixedApr: {
+    chainId: number;
+    hyperdriveAddress: Address;
+  };
+  lpApy: {
+    chainId: number;
+    hyperdriveAddress: Address;
+    blockNumber: bigint | undefined;
+  };
+}
+declare module "src/base/makeQueryKey" {
+  interface QueryKeys {
+    hyperdrive: HyperdriveQueryKeys;
+  }
+}
