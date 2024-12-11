@@ -1,6 +1,7 @@
+import { TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
-import type { TokenList } from "@uniswap/token-lists";
-
+import { TokenList } from "@uniswap/token-lists";
+import { Address } from "viem";
 const TOKEN_LIST_URL = "https://ipfs.io/ipns/tokens.uniswap.org";
 
 export function useTokenList({
@@ -10,10 +11,10 @@ export function useTokenList({
   chainId?: number;
   enabled: boolean;
 }): {
-  tokenList: TokenList["tokens"] | undefined;
+  tokenList: TokenConfig[];
   isLoading: boolean;
 } {
-  const { data: tokenList, isLoading } = useQuery({
+  const { data: tokenList, isLoading } = useQuery<TokenList>({
     queryKey: ["tokenList", chainId],
     enabled,
     staleTime: Infinity,
@@ -21,8 +22,18 @@ export function useTokenList({
     queryFn: () => fetch(TOKEN_LIST_URL).then((res) => res.json()),
   });
 
+  const formattedTokenList: TokenConfig[] =
+    tokenList?.tokens?.map((token) => ({
+      ...token,
+      address: token.address as Address,
+      iconUrl: token.logoURI ?? "",
+      places: 2,
+      priceOracle: "defillama",
+      tags: token.tags ?? [],
+    })) ?? [];
+
   return {
-    tokenList: tokenList?.tokens,
+    tokenList: formattedTokenList,
     isLoading,
   };
 }

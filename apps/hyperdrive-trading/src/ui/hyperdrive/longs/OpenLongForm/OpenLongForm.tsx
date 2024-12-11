@@ -27,7 +27,6 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { useOpenLongZap } from "src/ui/hyperdrive/zaps/hooks/useOpenLongZap";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -130,7 +129,7 @@ export function OpenLongForm({
         tokenChoices.push({
           tokenConfig: {
             ...tokenFromTokenList,
-            iconUrl: tokenFromTokenList.logoURI ?? "",
+            iconUrl: tokenFromTokenList.iconUrl ?? "",
             address: tokenFromTokenList.address as Address,
             places: 4,
             tags: ["zap"],
@@ -258,15 +257,15 @@ export function OpenLongForm({
   const chainId = hyperdrive.chainId;
   const poolAddress = hyperdrive.address;
 
-  const { openLongZap } = useOpenLongZap({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-    amount: depositAmountAsBigInt || 0n,
-    asBase: activeToken.address === baseToken.address,
-    tokenIn: activeToken.address,
-    minBondsOut: bondsReceivedAfterSlippage || 0n,
-    minSharePrice: poolInfo?.vaultSharePrice || 0n,
-  });
+  // const { openLongZap } = useOpenLongZap({
+  //   hyperdriveAddress: hyperdrive.address,
+  //   chainId: hyperdrive.chainId,
+  //   amount: depositAmountAsBigInt || 0n,
+  //   asBase: activeToken.address === baseToken.address,
+  //   tokenIn: activeToken.address,
+  //   minBondsOut: bondsReceivedAfterSlippage || 0n,
+  //   minSharePrice: poolInfo?.vaultSharePrice || 0n,
+  // });
 
   return (
     <TransactionView
