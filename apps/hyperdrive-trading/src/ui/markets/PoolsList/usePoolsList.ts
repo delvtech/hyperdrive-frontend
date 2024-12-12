@@ -127,7 +127,7 @@ function useSortedPools({
               const publicClient = getPublicClient(wagmiConfig as any, {
                 chainId: hyperdrive.chainId,
               }) as PublicClient;
-              const [fixedApr, lpApy, tvl, yieldSource, longPrice] =
+              const [fixedApr, lpApy, tvl, yieldSourceRate, longPrice] =
                 await Promise.all([
                   readHyperdrive.getFixedApr(),
                   getLpApy({ hyperdrive, readHyperdrive }),
@@ -145,7 +145,7 @@ function useSortedPools({
                 fixedApr,
                 lpApy,
                 tvl,
-                yieldSource,
+                yieldSourceRate,
                 longPrice,
               };
             }),
@@ -164,6 +164,10 @@ function useSortedPools({
               return Number(b.fixedApr - a.fixedApr);
             case "LP APY":
               return Number((b.lpApy.lpApy ?? 0n) - (a.lpApy.lpApy ?? 0n));
+            case "Variable APY":
+              return Number(
+                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
+              );
             case "Yield Multiplier":
               return Number(
                 calculateMarketYieldMultiplier(b.longPrice).bigint -
