@@ -33,9 +33,23 @@ export function makeQueryKey2<
   queryId: QueryId;
   params: QueryKeys[QueryNamespace][QueryId];
 }): QueryKey {
-  return ["app", namespace, queryId, createSerializableKey(params as any)];
+  return [
+    ...makeNamespaceQueryKey({ namespace, queryId }),
+    createSerializableKey(params as any),
+  ];
 }
 
+/**
+ * Returns the query key for a given namespace and optional queryId, used for
+ * partial matching in tanstack query.
+ *
+ * Example:
+ * // matches all token queries
+ * const queryKey = makeNamespaceQueryKey({ namespace: "tokens" });
+ *
+ * // matches all tokenFiatPrice queries
+ * const queryKey = makeNamespaceQueryKey({ namespace: "tokens", queryId: "tokenFiatPrice" });
+ */
 export function makeNamespaceQueryKey<
   QueryNamespace extends keyof QueryKeys,
   QueryId extends keyof QueryKeys[QueryNamespace],
