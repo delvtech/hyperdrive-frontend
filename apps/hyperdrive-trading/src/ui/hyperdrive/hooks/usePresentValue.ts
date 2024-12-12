@@ -35,17 +35,6 @@ export function usePresentValue({
     address: hyperdriveAddress,
   });
   const queryEnabled = !!readHyperdrive;
-  const isFiatSupported = !isTestnetChain(chainId);
-  const hyperdriveConfig = getHyperdriveConfig({
-    appConfig,
-    hyperdriveAddress,
-    hyperdriveChainId: chainId,
-  });
-  const baseToken = getBaseToken({
-    hyperdriveChainId: chainId,
-    hyperdriveAddress,
-    appConfig,
-  });
   const { data, status } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "hyperdrive",
