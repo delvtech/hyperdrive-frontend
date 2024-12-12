@@ -31,20 +31,31 @@ export function useTokenFiatPrice({
             chainId,
           }) as PublicClient;
 
-          const priceOracleFn = getPriceOracleFn({
-            chainId,
-            tokenAddress,
-            appConfig,
-          });
-
-          return priceOracleFn({
-            chainId,
-            denomination: "usd",
-            publicClient,
-            tokenAddress,
-          });
+          return getTokenFiatPrice({ chainId, tokenAddress, publicClient });
         }
       : undefined,
   });
   return { fiatPrice: data };
+}
+export function getTokenFiatPrice({
+  chainId,
+  tokenAddress,
+  publicClient,
+}: {
+  chainId: number;
+  tokenAddress: Address;
+  publicClient: PublicClient;
+}): Promise<bigint> {
+  const priceOracleFn = getPriceOracleFn({
+    chainId,
+    tokenAddress,
+    appConfig,
+  });
+
+  return priceOracleFn({
+    chainId,
+    denomination: "usd",
+    publicClient,
+    tokenAddress,
+  });
 }
