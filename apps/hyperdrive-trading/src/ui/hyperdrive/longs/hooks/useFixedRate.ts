@@ -34,7 +34,11 @@ export function useFixedRate({
 
   const queryEnabled = !!readHyperdrive;
   const { data, status, fetchStatus } = useQuery({
-    queryKey: makeQueryKey2("fixedApr", { chainId, hyperdriveAddress }),
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "fixedApr",
+      params: { chainId, hyperdriveAddress },
+    }),
     queryFn: queryEnabled
       ? async () => {
           const fixedApr = await readHyperdrive.getFixedApr({ block });

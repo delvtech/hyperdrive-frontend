@@ -34,10 +34,14 @@ export function useLpApy({
   });
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data, status } = useQuery({
-    queryKey: makeQueryKey2("lpApy", {
-      blockNumber,
-      chainId,
-      hyperdriveAddress,
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "lpApy",
+      params: {
+        blockNumber,
+        chainId,
+        hyperdriveAddress,
+      },
     }),
     queryFn: queryEnabled
       ? async () =>

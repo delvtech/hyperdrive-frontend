@@ -25,11 +25,11 @@ import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
+import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
@@ -167,7 +167,7 @@ export function AddLiquidityForm({
   const lpSharePrice = !isBaseActiveToken
     ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
         poolInfo?.vaultSharePrice || 0n,
-        baseToken.decimals
+        baseToken.decimals,
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
@@ -253,7 +253,7 @@ export function AddLiquidityForm({
                   balance:
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
-                          activeTokenPrice
+                          activeTokenPrice,
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
@@ -352,7 +352,7 @@ export function AddLiquidityForm({
       disclaimer={(() => {
         if (
           previewAddLiquidityError?.message.includes(
-            "Not enough lp shares minted."
+            "Not enough lp shares minted.",
           )
         ) {
           return (

@@ -22,9 +22,13 @@ export function useRewards(hyperdriveConfig: HyperdriveConfig): {
   const queryEnabled = !!rewardsFn;
 
   const { data: rewards, status } = useQuery({
-    queryKey: makeQueryKey2("rewards", {
-      chainId: hyperdriveConfig.chainId,
-      hyperdriveAddress: hyperdriveConfig.address,
+    queryKey: makeQueryKey2({
+      namespace: "rewards",
+      queryId: "rewards",
+      params: {
+        chainId: hyperdriveConfig.chainId,
+        hyperdriveAddress: hyperdriveConfig.address,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled

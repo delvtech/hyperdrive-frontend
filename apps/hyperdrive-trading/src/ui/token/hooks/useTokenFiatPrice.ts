@@ -19,7 +19,11 @@ export function useTokenFiatPrice({
     !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
 
   const { data } = useQuery({
-    queryKey: makeQueryKey2("tokenFiatPrice", { chainId, tokenAddress }),
+    queryKey: makeQueryKey2({
+      namespace: "tokens",
+      queryId: "tokenFiatPrice",
+      params: { chainId, tokenAddress },
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
