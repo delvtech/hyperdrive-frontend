@@ -14,10 +14,13 @@ import { isForkChain } from "src/chains/isForkChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";
 
-export async function getYieldSourceRate(
-  readHyperdrive: ReadHyperdrive,
-  appConfig: AppConfig,
-): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
+export async function getYieldSourceRate({
+  readHyperdrive,
+  appConfig,
+}: {
+  readHyperdrive: ReadHyperdrive;
+  appConfig: AppConfig;
+}): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
   const hyperdriveChainId = await readHyperdrive.drift.getChainId();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId,

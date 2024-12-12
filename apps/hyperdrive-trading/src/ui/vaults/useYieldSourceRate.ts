@@ -41,10 +41,10 @@ export function useYieldSourceRate({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const { rate, ratePeriodDays, netRate } = await getYieldSourceRate(
+          const { rate, ratePeriodDays, netRate } = await getYieldSourceRate({
             readHyperdrive,
             appConfig,
-          );
+          });
           return {
             vaultRate: rate,
             netVaultRate: netRate,
