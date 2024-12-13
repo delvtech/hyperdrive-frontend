@@ -35,6 +35,7 @@ import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTo
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -535,13 +536,13 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { rewards } = useRewards(hyperdrive);
 
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
 
-  const showSkeleton = !lpApy && lpApyStatus === "loading";
   const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
@@ -549,18 +550,15 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   });
   return (
     <PrimaryStat
+      valueLoading={!lpApy && lpApyStatus === "loading"}
       alignment="right"
       label="LP APY"
       value={(() => {
-        if (showSkeleton) {
-          return <Skeleton />;
-        }
-
         return (
           <span className="text-h3 font-bold">
             {isNewPool ? (
               "✨New✨"
-            ) : (
+            ) : rewards?.length ? (
               <RewardsTooltip
                 hyperdriveAddress={hyperdrive.address}
                 baseRate={lpApy?.lpApy}
@@ -572,11 +570,15 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
                 </span>
                 ⚡
               </RewardsTooltip>
+            ) : (
+              <span className="gradient-text">
+                {formatRate({ rate: lpApy?.netLpApy ?? 0n })}
+              </span>
             )}
           </span>
         );
       })()}
-      tooltipContent="The annual percentage yield projection for providing liquidity."
+      tooltipContent="The projected annual percentage yield for providing liquidity."
       tooltipPosition="left"
       subValue={
         vaultRateStatus === "success" && vaultRate ? (
