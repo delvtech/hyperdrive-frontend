@@ -19,6 +19,7 @@ import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -495,15 +496,14 @@ export function OpenShortForm({
             }
             unitClassName="mb-1 font-bold"
             subValue={
-              <div
-                data-tip={
-                  "Short positions provide the fixed rate to Long positions. Opening a Short is a one-time cost."
-                }
-                className="daisy-tooltip daisy-tooltip-top flex cursor-help items-center gap-1 before:border"
+              <Tooltip
+                position="top"
+                tooltip="Short positions provide the fixed rate to Long positions. Opening a Short is a one-time cost."
+                className="gap-1 before:text-left"
               >
                 What am I paying for?{" "}
                 <InformationCircleIcon className="size-4 text-neutral-content" />
-              </div>
+              </Tooltip>
             }
           />
         </div>

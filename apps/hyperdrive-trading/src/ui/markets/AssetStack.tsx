@@ -5,6 +5,7 @@ import {
   getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { Address } from "viem";
 
 export function AssetStack({
@@ -37,20 +38,20 @@ export function AssetStack({
       }
     >
       {hyperdrive.depositOptions.isBaseTokenDepositEnabled ? (
-        <div
-          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 overflow-visible bg-[#ffffff] before:bg-base-100"
-          data-tip={baseToken.symbol}
+        <Tooltip
+          className="daisy-avatar w-12 overflow-visible bg-[#ffffff]"
+          tooltip={baseToken.symbol}
         >
           <img src={baseToken.iconUrl} className="rounded-full" />
-        </div>
+        </Tooltip>
       ) : null}
       {sharesToken && hyperdrive.depositOptions.isShareTokenDepositsEnabled ? (
-        <div
-          className="daisy-avatar daisy-tooltip daisy-tooltip-top w-12 overflow-visible before:bg-base-100"
-          data-tip={sharesToken.symbol}
+        <Tooltip
+          className="daisy-avatar w-12 overflow-visible bg-[#ffffff]"
+          tooltip={sharesToken.symbol}
         >
           <img src={sharesToken.iconUrl} className="rounded-full bg-base-100" />
-        </div>
+        </Tooltip>
       ) : null}
     </div>
   );

@@ -8,6 +8,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 
@@ -65,34 +66,31 @@ export function CurrentValueCell({
          TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
          have calcMaxCloseLong */}
         {previewCloseLongError ? (
-          <span
-            className="daisy-tooltip before:z-10 before:border before:font-inter"
-            data-tip="This position cannot be fully closed at this time"
+          <Tooltip
+            className="before:z-10 before:font-inter"
+            tooltip="This position cannot be fully closed at this time"
           >
             <ExclamationTriangleIcon className="size-4 text-warning" />
-          </span>
+          </Tooltip>
         ) : (
           ""
         )}{" "}
         {currentValueLabel}
       </span>
-      <div
-        data-tip={"Profit/Loss since open, after closing fees."}
-        className={classNames(
-          "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-          {
-            "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-              isPositiveChangeInValue,
-            "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-              !isPositiveChangeInValue && profitLoss !== "-0",
-          },
-        )}
+      <Tooltip
+        tooltip="Profit/Loss since open, after closing fees."
+        className={classNames("text-xs before:font-inter", {
+          "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+            isPositiveChangeInValue,
+          "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+            !isPositiveChangeInValue && profitLoss !== "-0",
+        })}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {baseAmountOut
           ? `${profitLoss === "-0" ? "0" : profitLoss}`
           : undefined}
-      </div>
+      </Tooltip>
     </div>
   );
 }
