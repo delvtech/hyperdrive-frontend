@@ -34,6 +34,7 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -554,22 +555,29 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         if (showSkeleton) {
           return <Skeleton />;
         }
-        if (lpApy === undefined || lpApy.isNew) {
-          return <div className="flex gap-2 text-h3 font-bold">✨New✨</div>;
-        }
 
         return (
           <span className="text-h3 font-bold">
-            {formatRate({ rate: lpApy?.netLpApy })}
+            {isNewPool ? (
+              "✨New✨"
+            ) : (
+              <RewardsTooltip
+                hyperdriveAddress={hyperdrive.address}
+                baseRate={lpApy?.lpApy}
+                netRate={lpApy?.netLpApy}
+                chainId={hyperdrive.chainId}
+              >
+                <span className="gradient-text">
+                  {formatRate({ rate: lpApy?.netLpApy ?? 0n })}
+                </span>
+                ⚡
+              </RewardsTooltip>
+            )}
           </span>
         );
       })()}
       tooltipContent="The annual percentage yield projection for providing liquidity."
       tooltipPosition="left"
-      valueContainerClassName={classNames({
-        "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent text-h3 font-bold":
-          !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
-      })}
       subValue={
         vaultRateStatus === "success" && vaultRate ? (
           <div>

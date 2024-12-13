@@ -78,7 +78,7 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+  const { vaultRate } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });

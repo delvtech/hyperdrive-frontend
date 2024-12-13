@@ -45,7 +45,8 @@ export function LpApyStat({
     >
       {netApyLabel ? (
         <>
-          <PercentLabel value={netApyLabel} />⚡
+          <PercentLabel value={netApyLabel} />
+          <span className="mx-1">⚡</span>
         </>
       ) : null}
     </RewardsTooltip>

@@ -44,16 +44,14 @@ export function RewardsTooltip({
 
   if (!appConfigRewards?.length && multiplierLabel && (!netRate || !baseRate)) {
     return (
-      <div className="flex items-center gap-2 whitespace-nowrap">
-        {children}
-      </div>
+      <div className="flex items-center whitespace-nowrap">{children}</div>
     );
   }
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
-        <Tooltip.Trigger className="flex items-center gap-2 whitespace-nowrap">
+        <Tooltip.Trigger className="flex items-center whitespace-nowrap">
           {children}
         </Tooltip.Trigger>
         <Tooltip.Portal>
