@@ -6,7 +6,7 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";
 
@@ -22,9 +22,13 @@ export function useRewards(hyperdriveConfig: HyperdriveConfig): {
   const queryEnabled = !!rewardsFn;
 
   const { data: rewards, status } = useQuery({
-    queryKey: makeQueryKey("rewards", {
-      hyperdriveAddress: hyperdriveConfig.address,
-      chainId: hyperdriveConfig.chainId,
+    queryKey: makeQueryKey2({
+      namespace: "rewards",
+      queryId: "rewards",
+      params: {
+        chainId: hyperdriveConfig.chainId,
+        hyperdriveAddress: hyperdriveConfig.address,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled

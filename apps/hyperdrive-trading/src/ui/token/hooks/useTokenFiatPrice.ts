@@ -2,11 +2,10 @@ import { appConfig, getPriceOracleFn } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Address, PublicClient } from "viem";
-
 export function useTokenFiatPrice({
   tokenAddress,
   chainId,
@@ -20,7 +19,11 @@ export function useTokenFiatPrice({
     !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
 
   const { data } = useQuery({
-    queryKey: makeQueryKey("tokenFiatPrice", { chainId, tokenAddress }),
+    queryKey: makeQueryKey2({
+      namespace: "tokens",
+      queryId: "tokenFiatPrice",
+      params: { chainId, tokenAddress },
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
@@ -28,20 +31,31 @@ export function useTokenFiatPrice({
             chainId,
           }) as PublicClient;
 
-          const priceOracleFn = getPriceOracleFn({
-            chainId,
-            tokenAddress,
-            appConfig,
-          });
-
-          return priceOracleFn({
-            chainId,
-            denomination: "usd",
-            publicClient,
-            tokenAddress,
-          });
+          return getTokenFiatPrice({ chainId, tokenAddress, publicClient });
         }
       : undefined,
   });
   return { fiatPrice: data };
+}
+export function getTokenFiatPrice({
+  chainId,
+  tokenAddress,
+  publicClient,
+}: {
+  chainId: number;
+  tokenAddress: Address;
+  publicClient: PublicClient;
+}): Promise<bigint> {
+  const priceOracleFn = getPriceOracleFn({
+    chainId,
+    tokenAddress,
+    appConfig,
+  });
+
+  return priceOracleFn({
+    chainId,
+    denomination: "usd",
+    publicClient,
+    tokenAddress,
+  });
 }

@@ -2,7 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { useAccount } from "wagmi";

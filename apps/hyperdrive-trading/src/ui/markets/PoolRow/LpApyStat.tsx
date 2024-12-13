@@ -9,7 +9,7 @@ import { ChartBarIcon } from "@heroicons/react/24/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { ReactNode } from "react";
 import { formatRate } from "src/base/formatRate";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";

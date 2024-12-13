@@ -1,4 +1,3 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
@@ -19,7 +18,7 @@ import { FixedAprCta } from "src/ui/markets/PoolRow/FixedAprCta";
 import { LpApyCta } from "src/ui/markets/PoolRow/LpApyCta";
 import { VariableApyCta } from "src/ui/markets/PoolRow/VariableApyCta";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -48,22 +47,14 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     hyperdriveAddress: hyperdrive.address,
   });
   const isFiatSupported = !isTestnetChain(chainInfo.id);
-  const { fiatPrice } = useTokenFiatPrice({
-    chainId: baseToken.chainId,
-    tokenAddress: isFiatSupported ? baseToken.address : undefined,
-  });
   let tvlLabel = `${formatCompact({
-    value: presentValue || 0n,
+    value: presentValue?.base || 0n,
     decimals: hyperdrive.decimals,
   })} ${baseToken.symbol}`;
 
   if (isFiatSupported) {
-    const presentValueFiat =
-      presentValue && fiatPrice && isFiatSupported
-        ? fixed(presentValue, hyperdrive.decimals).mul(fiatPrice).bigint
-        : 0n;
     tvlLabel = `$${formatCompact({
-      value: presentValueFiat || 0n,
+      value: presentValue?.fiat || 0n,
       decimals: hyperdrive.decimals,
     })}`;
   }
