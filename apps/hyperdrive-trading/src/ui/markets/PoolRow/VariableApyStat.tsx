@@ -8,6 +8,7 @@ import { SparklesIcon } from "@heroicons/react/16/solid";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { ReactNode } from "react";
+import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { GradientBadge } from "src/ui/base/components/GradientBadge";
@@ -30,10 +31,11 @@ export function VariableApyStat({
     appConfig,
   });
   const { rewards: appConfigRewards } = useRewards(hyperdrive);
-  const { vaultRate: yieldSourceRate } = useYieldSourceRate({
-    chainId,
-    hyperdriveAddress,
-  });
+  const { vaultRate: yieldSourceRate, vaultRateStatus: yieldSourceRateStatus } =
+    useYieldSourceRate({
+      chainId,
+      hyperdriveAddress,
+    });
   const isNewPool = useIsNewPool({ hyperdrive });
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
@@ -64,16 +66,16 @@ export function VariableApyStat({
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className="flex items-center gap-2 whitespace-nowrap">
-          {yieldSourceRate ? (
+          {yieldSourceRateStatus === "success" ? (
             <PercentLabel
               value={formatRate({
-                rate: yieldSourceRate.netVaultRate,
+                rate: yieldSourceRate?.netVaultRate ?? 0n,
                 includePercentSign: false,
               })}
               className="text-h4"
             />
           ) : (
-            "-"
+            <Skeleton width={100} />
           )}
           <GradientBadge>{multiplierLabel}</GradientBadge>⚡
         </Tooltip.Trigger>

@@ -7,7 +7,7 @@ import { Link } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";

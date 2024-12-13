@@ -8,6 +8,7 @@ import {
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { MouseEvent, ReactElement, useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
@@ -29,6 +30,7 @@ import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -178,6 +180,11 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
     asBase: activeToken.address === baseToken.address,
+  });
+
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
   });
 
   const hasEnoughBalance = getHasEnoughBalance({
@@ -376,18 +383,10 @@ export function OpenShortForm({
               setShortAmount(newAmount);
               setActiveInput("bonds");
             }}
-            bottomRightElement={
-              vaultRateStatus === "success" && vaultRate ? (
-                <>
-                  {yieldSource.shortName} @{" "}
-                  {isNewPool
-                    ? "✨New✨"
-                    : `${formatRate({ rate: vaultRate.netVaultRate })} APY`}
-                </>
-              ) : null
-            }
             bottomLeftElement={
-              // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
+              // Defillama fetches the token price via {chain}:{tokenAddress}.
+              // Since the token address differs on testnet, price display is
+              // disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (
                 <label className="text-sm text-neutral-content">
                   {`$${formatBalance({
@@ -467,41 +466,44 @@ export function OpenShortForm({
       primaryStats={
         <div className="flex justify-between px-4 py-8">
           <PrimaryStat
-            label="Exposure Multiplier"
-            tooltipContent={`This represents how much exposure you get to ${
-              yieldSource.shortName
-            } compared to what you pay to open the short.`}
+            label="Variable APY"
             value={
-              <span className="text-h3 font-bold">{exposureMultiplier}</span>
+              <span className="text-h3 font-bold">
+                {isNewPool
+                  ? "✨New✨"
+                  : `${formatRate({ rate: vaultRate?.netVaultRate ?? 0n })}`}
+              </span>
             }
-            valueContainerClassName="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent flex items-end"
-            valueUnit="x"
+            valueContainerClassName="flex items-end"
             unitClassName="text-h3 font-bold"
-            subValue={`Matures on ${maturesOnLabel}`}
+            subValue={
+              <span className="gradient-text">
+                <span className="font-bold">{`${exposureMultiplier}x`}</span>{" "}
+                capital exposure
+              </span>
+            }
             valueLoading={longPriceStatus === "loading"}
           />
           <div className="daisy-divider daisy-divider-horizontal" />
           <PrimaryStat
-            label="Rate you pay"
-            tooltipContent={`The fixed rate you pay upfront that determines the cost-basis of this short.`}
+            alignment="right"
+            label="Fixed APR Cost"
             value={
               <span className="text-h3 font-bold">
-                {formatRate({ rate: fixedRatePaid || 0n })}
+                {formatRate({ rate: fixedRatePaid || fixedApr?.apr || 0n })}
               </span>
             }
-            valueContainerClassName="flex items-end"
-            valueUnit="APR"
             unitClassName="mb-1 font-bold"
             subValue={
-              <>
-                1 hy{baseToken.symbol} ≈{" "}
-                {formatBalance({
-                  balance: longPrice ?? 0n,
-                  decimals: 18, // prices are always 18 decimals regardless of the base token,
-                  places: baseToken.places,
-                })}{" "}
-                {baseToken.symbol}
-              </>
+              <div
+                data-tip={
+                  "Short positions provide the fixed rate to Long positions. Opening a Short is a one-time cost."
+                }
+                className="daisy-tooltip daisy-tooltip-top flex cursor-help items-center gap-1 before:border"
+              >
+                What am I paying for?{" "}
+                <InformationCircleIcon className="size-4 text-neutral-content" />
+              </div>
             }
           />
         </div>
@@ -549,7 +551,7 @@ export function OpenShortForm({
                 includeCommas: true,
                 places: activeToken.places,
               })}{" "}
-              hy{baseToken.symbol}
+              {baseToken.symbol}
             </InvalidTransactionButton>
           );
         }

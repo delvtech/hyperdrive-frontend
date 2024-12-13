@@ -5,6 +5,7 @@ import Skeleton from "react-loading-skeleton";
 
 export function PrimaryStat({
   label,
+  alignment = "left",
   value,
   valueUnit,
   subValue,
@@ -14,7 +15,8 @@ export function PrimaryStat({
   unitClassName,
   valueLoading = false,
 }: {
-  label: string;
+  alignment?: "left" | "right";
+  label: ReactNode;
   value: ReactNode;
   valueUnit?: ReactNode;
   subValue?: ReactNode;
@@ -25,7 +27,12 @@ export function PrimaryStat({
   valueLoading?: boolean;
 }): JSX.Element {
   return (
-    <div className="flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1">
+    <div
+      className={classNames(
+        "flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1",
+        { "items-end": alignment === "right" },
+      )}
+    >
       <div className="flex gap-1">
         <p className="max-w-40 text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
