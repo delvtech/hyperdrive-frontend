@@ -37,6 +37,7 @@ import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -470,9 +471,18 @@ export function OpenShortForm({
             label="Variable APY"
             value={
               <span className="text-h3 font-bold">
-                {isNewPool
-                  ? "✨New✨"
-                  : `${formatRate({ rate: vaultRate?.netVaultRate ?? 0n })}`}
+                {isNewPool ? (
+                  "✨New✨"
+                ) : (
+                  <RewardsTooltip
+                    hyperdriveAddress={hyperdrive.address}
+                    baseRate={vaultRate?.vaultRate}
+                    netRate={vaultRate?.netVaultRate}
+                    chainId={hyperdrive.chainId}
+                  >
+                    {formatRate({ rate: vaultRate?.netVaultRate ?? 0n })}⚡
+                  </RewardsTooltip>
+                )}
               </span>
             }
             valueContainerClassName="flex items-end"
