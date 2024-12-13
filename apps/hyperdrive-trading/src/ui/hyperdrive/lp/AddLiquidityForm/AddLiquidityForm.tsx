@@ -339,15 +339,15 @@ export function AddLiquidityForm({
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
           <div className="flex-1">
+            <LpApyStat hyperdrive={hyperdrive} />
+          </div>
+          <div className="daisy-divider daisy-divider-horizontal mx-0" />
+          <div className="flex-1">
             <YouReceiveStat
               addLiquidityPreviewStatus={addLiquidityPreviewStatus}
               lpSharesOut={lpSharesOut}
               hyperdrive={hyperdrive}
             />
-          </div>
-          <div className="daisy-divider daisy-divider-horizontal mx-0" />
-          <div className="flex-1">
-            <LpApyStat hyperdrive={hyperdrive} />
           </div>
         </div>
       }
@@ -484,6 +484,7 @@ function YouReceiveStat({
   });
   return (
     <PrimaryStat
+      alignment="right"
       label="You receive"
       subValue={
         addLiquidityPreviewStatus === "loading" ? (
@@ -551,7 +552,6 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   return (
     <PrimaryStat
       valueLoading={!lpApy && lpApyStatus === "loading"}
-      alignment="right"
       label="LP APY"
       value={(() => {
         return (
