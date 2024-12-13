@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 
 export interface PoolStatProps {
   label: string;
@@ -32,14 +33,15 @@ export function PoolStat({
 
   return (
     <div className="flex shrink-0 flex-col items-center gap-1.5 sm:items-start">
-      <p
-        data-tip={labelTooltip}
+      <Tooltip
         className={
-          "group daisy-tooltip cursor-help text-neutral-content before:z-40 before:max-w-56 before:p-2 before:text-start sm:text-sm"
+          "group text-neutral-content before:z-40 before:max-w-56 before:text-start sm:text-sm"
         }
+        tooltip={labelTooltip}
       >
         {label}
-      </p>
+      </Tooltip>
+
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
           "gradient-text": variant === "gradient",

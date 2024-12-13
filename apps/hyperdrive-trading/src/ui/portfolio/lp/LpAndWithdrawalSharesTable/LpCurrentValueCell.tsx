@@ -9,6 +9,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
 import { formatRate } from "src/base/formatRate";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -89,25 +90,23 @@ export function LpCurrentValueCell({
         <>
           {openLpPositionStatus === "loading" ? (
             <Skeleton className="w-12" />
-          ) : (
-            baseValue && (
-              <div
-                data-tip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
-                className={classNames(
-                  "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-                  {
-                    "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-                      isPositiveChangeInValue,
-                    "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-                      !isPositiveChangeInValue && profitLoss !== "0",
-                  },
-                )}
-              >
-                <span>{isPositiveChangeInValue ? "+" : "-"}</span>
-                {profitLoss === null ? <Skeleton /> : profitLoss.toString()}
-              </div>
-            )
-          )}
+          ) : baseValue ? (
+            <Tooltip
+              tooltip="Profit/Loss since open, after closing fees. Assuming any outstanding withdrawal shares are redeemed at current price."
+              className={classNames(
+                "text-xs before:z-10 before:text-start before:font-inter",
+                {
+                  "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+                    isPositiveChangeInValue,
+                  "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+                    !isPositiveChangeInValue && profitLoss !== "0",
+                },
+              )}
+            >
+              <span>{isPositiveChangeInValue ? "+" : "-"}</span>
+              {profitLoss === null ? <Skeleton /> : profitLoss.toString()}
+            </Tooltip>
+          ) : null}
         </>
       </span>
       <span className="text-neutral-content">

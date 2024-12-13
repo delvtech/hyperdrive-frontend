@@ -1,6 +1,7 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactNode } from "react";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 
 export function LabelValue({
   size = "medium",
@@ -29,25 +30,20 @@ export function LabelValue({
         "text-sm": size === "small",
       })}
     >
-      <div
-        className={classNames(
-          "flex items-center text-neutral-content before:bg-base-100",
-          {
-            "group daisy-tooltip cursor-help": tooltipContent,
-            "daisy-tooltip-top": tooltipPosition === "top",
-            "daisy-tooltip-bottom": tooltipPosition === "bottom",
-            "daisy-tooltip-left": tooltipPosition === "left",
-            "daisy-tooltip-right": tooltipPosition === "right",
+      {tooltipContent ? (
+        <Tooltip
+          position={tooltipPosition}
+          className={classNames("group text-left text-neutral-content", {
             "before:w-64": tooltipSize === "small",
-          },
-        )}
-        data-tip={tooltipContent}
-      >
-        {label}
-        {tooltipContent ? (
+          })}
+          tooltip={tooltipContent}
+        >
+          {label}
           <InformationCircleIcon className="ml-1.5 w-5 opacity-50 transition duration-150 ease-in-out group-hover:opacity-100 lg:inline-block" />
-        ) : null}
-      </div>
+        </Tooltip>
+      ) : (
+        <div className="text-neutral-content">{label}</div>
+      )}
       <div>{value}</div>
     </div>
   );

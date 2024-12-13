@@ -8,6 +8,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useEstimateShortMarketValue } from "src/ui/hyperdrive/shorts/hooks/useEstimateShortMarketValue";
@@ -80,12 +81,12 @@ export function CurrentValueCell({
          TODO: Add "Current withdrawabale amount: xxx" to the tooltip once we
          have calcMaxCloseShort */}
         {previewCloseShortError ? (
-          <span
-            className="daisy-tooltip before:font-normal"
-            data-tip="This position cannot be fully closed at this time"
+          <Tooltip
+            className="before:text-start before:font-normal"
+            tooltip="This position cannot be fully closeat this time "
           >
             <ExclamationTriangleIcon className="size-4 text-warning" />
-          </span>
+          </Tooltip>
         ) : (
           ""
         )}{" "}
@@ -94,22 +95,19 @@ export function CurrentValueCell({
 
       {/* the current value of the user's position */}
       {currentValueInBase && openShort.bondAmount !== 0n ? (
-        <div
-          data-tip={"Profit/Loss since open, after closing fees."}
-          className={classNames(
-            "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
-            {
-              "text-success": isPositiveChangeInValue,
-              "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
-            },
-          )}
+        <Tooltip
+          tooltip={"Profit/Loss since open, after closing fees."}
+          className={classNames("mt-1 flex text-xs", {
+            "text-success": isPositiveChangeInValue,
+            "text-error": !isPositiveChangeInValue && profitLoss !== "-0",
+          })}
         >
           {/* the Profit/Loss badge indicator */}
           <span>{isPositiveChangeInValue ? "+" : ""}</span>
           {profitLoss
             ? `${profitLoss === "-0" ? "" : `${profitLoss} ${baseToken.symbol}`}`
             : undefined}
-        </div>
+        </Tooltip>
       ) : (
         ""
       )}
