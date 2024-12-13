@@ -61,7 +61,7 @@ export function OpenLongStats({
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
-        label="Your Fixed APR"
+        label="Fixed APR"
         value={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
