@@ -38,6 +38,7 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -69,6 +70,7 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
   });
 
+  const { rewards } = useRewards(hyperdrive);
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -78,7 +80,7 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+  const { vaultRate } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -473,7 +475,7 @@ export function OpenShortForm({
               <span className="text-h3 font-bold">
                 {isNewPool ? (
                   "✨New✨"
-                ) : (
+                ) : rewards?.length ? (
                   <RewardsTooltip
                     hyperdriveAddress={hyperdrive.address}
                     baseRate={vaultRate?.vaultRate}
@@ -482,6 +484,8 @@ export function OpenShortForm({
                   >
                     {formatRate({ rate: vaultRate?.netVaultRate ?? 0n })}⚡
                   </RewardsTooltip>
+                ) : (
+                  formatRate({ rate: vaultRate?.netVaultRate ?? 0n })
                 )}
               </span>
             }

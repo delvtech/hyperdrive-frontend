@@ -4,7 +4,6 @@ import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { GradientBadge } from "src/ui/base/components/GradientBadge";
-import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
@@ -23,13 +22,12 @@ export function VariableApyStat({
     hyperdriveChainId: chainId,
     appConfig,
   });
-  const { rewards: appConfigRewards } = useRewards(hyperdrive);
+  const { rewards } = useRewards(hyperdrive);
   const { vaultRate: yieldSourceRate, vaultRateStatus: yieldSourceRateStatus } =
     useYieldSourceRate({
       chainId,
       hyperdriveAddress,
     });
-  const isNewPool = useIsNewPool({ hyperdrive });
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -40,7 +38,10 @@ export function VariableApyStat({
       ? `${calculateMarketYieldMultiplier(longPrice).format({ decimals: 1 })}x`
       : undefined;
 
-  if (!appConfigRewards?.length && multiplierLabel && yieldSourceRate) {
+  if (yieldSourceRateStatus !== "success") {
+    return <Skeleton width={100} />;
+  }
+  if (!rewards?.length && multiplierLabel && yieldSourceRate) {
     return (
       <div className="flex items-center gap-2 whitespace-nowrap">
         <PercentLabel
@@ -48,7 +49,7 @@ export function VariableApyStat({
             rate: yieldSourceRate.netVaultRate,
             includePercentSign: false,
           })}
-          className="text-h4"
+          className="mr-1 text-h4"
         />
         <GradientBadge>{multiplierLabel}</GradientBadge>
       </div>
@@ -62,18 +63,15 @@ export function VariableApyStat({
       baseRate={yieldSourceRate?.vaultRate}
       netRate={yieldSourceRate?.netVaultRate}
     >
-      {yieldSourceRateStatus === "success" ? (
-        <PercentLabel
-          value={formatRate({
-            rate: yieldSourceRate?.netVaultRate ?? 0n,
-            includePercentSign: false,
-          })}
-          className="text-h4"
-        />
-      ) : (
-        <Skeleton width={100} />
-      )}
-      <GradientBadge>{multiplierLabel}</GradientBadge>⚡
+      <PercentLabel
+        value={formatRate({
+          rate: yieldSourceRate?.netVaultRate ?? 0n,
+          includePercentSign: false,
+        })}
+        className="mr-2 text-h4"
+      />
+      <GradientBadge>{multiplierLabel}</GradientBadge>
+      <span className="mx-1">⚡</span>
     </RewardsTooltip>
   );
 }
