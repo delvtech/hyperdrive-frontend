@@ -548,6 +548,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   });
   return (
     <PrimaryStat
+      alignment="right"
       label="LP APY"
       value={(() => {
         if (showSkeleton) {

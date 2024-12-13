@@ -61,7 +61,7 @@ export function OpenLongStats({
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
-        label="Your Fixed Rate"
+        label="Your Fixed APR"
         value={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
@@ -84,7 +84,6 @@ export function OpenLongStats({
             </span>
           )
         }
-        valueUnit="APR"
         subValue={
           openLongPreviewStatus === "loading" ? (
             <Skeleton width={100} />
@@ -96,6 +95,7 @@ export function OpenLongStats({
       />
       <div className="daisy-divider daisy-divider-horizontal mx-0" />
       <PrimaryStat
+        alignment="right"
         label="Receive at Maturity"
         value={
           openLongPreviewStatus === "loading" ? (
