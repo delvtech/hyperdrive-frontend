@@ -21,7 +21,7 @@ export type YieldSourceId =
   | "gnosisSgyd"
   | "rseth"
   | "lineaEzeth"
-  | "makerDsr"
+  | "skyDsr"
   | "lidoSteth"
   | "morphoSusdeDai"
   | "morphoUsdeDai"

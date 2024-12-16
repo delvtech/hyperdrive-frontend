@@ -2,11 +2,11 @@ import { mainnet } from "viem/chains";
 
 import { YieldSourceConfig } from "src/yieldSources/types";
 
-export const makerDsr: YieldSourceConfig = {
+export const skyDsr: YieldSourceConfig = {
   chainId: mainnet.id,
-  id: "makerDsr",
-  shortName: "Maker DSR",
-  protocol: "maker",
+  id: "skyDsr",
+  shortName: "Sky DAI Savings Rate",
+  protocol: "sky",
   historicalRatePeriod: 1,
 };
 

@@ -283,7 +283,7 @@ const hyperdriveKindResolvers: Record<
     ) {
       return getCustomHyperdrive({
         hyperdrive,
-        yieldSource: "makerDsr",
+        yieldSource: "skyDsr",
         depositOptions: {
           isBaseTokenDepositEnabled: true,
           isShareTokenDepositsEnabled: true,

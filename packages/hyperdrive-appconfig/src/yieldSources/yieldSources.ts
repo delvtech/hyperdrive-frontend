@@ -14,13 +14,13 @@ import {
   eeth,
   ezeth,
   lidoSteth,
-  makerDsr,
   morphoSusdeDai,
   morphoUsdeDai,
   morphoWstethUsda,
   morphoWstethUsdc,
   reth,
   sgyd,
+  skyDsr,
   stusd,
   susde,
   susds,
@@ -30,7 +30,7 @@ import { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
 export const yieldSources: Record<YieldSourceId, YieldSourceConfig> = {
   eeth,
-  makerDsr,
+  skyDsr,
   lidoSteth,
   morphoSusdeDai,
   morphoUsdeDai,
