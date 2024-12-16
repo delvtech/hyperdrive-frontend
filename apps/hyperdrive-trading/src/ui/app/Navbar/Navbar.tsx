@@ -6,6 +6,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Link, useRouterState } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { isForkChain } from "src/chains/isForkChain";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
@@ -23,7 +24,7 @@ export function Navbar(): ReactElement {
   const { location } = useRouterState();
   const chainId = useChainId();
   const { isReadOnly } = useRegionInfo();
-  const isTestnet = isTestnetChain(chainId);
+  const canMintTokens = isTestnetChain(chainId) && !isForkChain(chainId);
 
   return (
     <div className="daisy-navbar">
@@ -55,7 +56,7 @@ export function Navbar(): ReactElement {
               Portfolio
             </span>
           </Link>
-          {isTestnet ? (
+          {canMintTokens ? (
             <Link to={MINT_ROUTE}>
               <span
                 className={classNames("text-md", {

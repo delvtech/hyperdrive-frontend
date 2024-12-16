@@ -6,6 +6,7 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
+import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -124,9 +125,9 @@ export function OpenLongForm({
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
           // TODO: Remove this once we have zap support for cloudchain
-          tokenFromTokenList.chainId !== 707,
+          tokenFromTokenList.chainId === hyperdrive.chainId
       )
-      .map((tokenFromTokenList) => {
+      .forEach((tokenFromTokenList) => {
         tokenChoices.push({
           tokenConfig: {
             ...tokenFromTokenList,
@@ -140,6 +141,13 @@ export function OpenLongForm({
         });
       });
   }
+  let activeTokenChoices = tokenChoices.map((token) => token.tokenConfig);
+  if (isZapsEnabled) {
+    activeTokenChoices = uniqBy(
+      [...activeTokenChoices, ...tokenList],
+      "address"
+    );
+  }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -147,10 +155,8 @@ export function OpenLongForm({
       defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
         ? baseToken.address
         : hyperdrive.poolConfig.vaultSharesToken,
-      tokens: tokenChoices.map((token) => token.tokenConfig),
+      tokens: activeTokenChoices,
     });
-
-  console.log("activeToken", activeToken.name);
 
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
@@ -251,7 +257,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals,
+      activeToken.decimals
     );
   }
 
@@ -269,6 +275,10 @@ export function OpenLongForm({
     minBondsOut: bondsReceivedAfterSlippage || 0n,
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
   });
+
+  const isZapping =
+    activeToken.address !== baseToken.address &&
+    activeToken.address !== sharesToken?.address;
 
   return (
     <TransactionView
@@ -355,7 +365,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18, // prices are always in 18 decimals
+                          18 // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
