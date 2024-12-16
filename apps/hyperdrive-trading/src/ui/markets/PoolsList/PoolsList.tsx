@@ -4,7 +4,7 @@ import {
   BarsArrowDownIcon,
 } from "@heroicons/react/20/solid";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -13,24 +13,25 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
-import {
-  sortOptions,
-  usePoolsList,
-} from "src/ui/markets/PoolsList/usePoolsList";
+import { sortOptions, usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { useAccount } from "wagmi";
 
 export function PoolsList(): ReactElement {
   const { address: account } = useAccount();
+  const { chains: selectedChains, assets: selectedAssets } = useSearch({
+    from: LANDING_ROUTE,
+  });
   const {
     filters,
     status,
     pools,
-    selectedChains,
-    selectedAssets,
     sortOption,
     setSortOption,
     isSortingEnabled,
-  } = usePoolsList();
+  } = usePoolsList({
+    selectedChains,
+    selectedAssets,
+  });
 
   const navigate = useNavigate({ from: LANDING_ROUTE });
 

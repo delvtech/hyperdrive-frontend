@@ -3,19 +3,40 @@ import {
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { Link } from "@tanstack/react-router";
+import { Link, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
-import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { usePoolsList } from "src/ui/markets/hooks/usePoolsList";
+import {
+  MARKET_DETAILS_ROUTE,
+  POINTS_MARKETS_ROUTE,
+} from "src/ui/markets/routes";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
 export function PointsMarkets(): ReactElement | null {
-  const appConfig = useAppConfigForConnectedChain();
-  const hyperdrives = appConfig.hyperdrives;
+  const { chains: selectedChains, assets: selectedAssets } = useSearch({
+    from: POINTS_MARKETS_ROUTE,
+  });
+  const {
+    filters,
+    status,
+    pools,
+    sortOption,
+    setSortOption,
+    isSortingEnabled,
+  } = usePoolsList({
+    selectedChains,
+    selectedAssets,
+  });
+  // Only show pools that have a points reward type
+  const poolsWithPoints = pools
+    ? pools.filter((pool) => pool.rewards?.find(({ type }) => type === "info"))
+    : [];
+
   return (
     <div className="mx-[2vw] mt-4 space-y-8 lg:w-[1064px]">
       <div className="space-y-4">
@@ -28,21 +49,9 @@ export function PointsMarkets(): ReactElement | null {
         </p>
       </div>
       <div className="flex flex-wrap gap-8">
-        {hyperdrives
-          .filter((hyperdrive) => {
-            const yieldSource = getYieldSource({
-              hyperdriveChainId: hyperdrive.chainId,
-              hyperdriveAddress: hyperdrive.address,
-              appConfig,
-            });
-            return !!yieldSource.rewardsFn;
-          })
-          .map((hyperdrive) => (
-            <PointsMarketCard
-              key={hyperdrive.address}
-              hyperdrive={hyperdrive}
-            />
-          ))}
+        {poolsWithPoints.map((hyperdrive) => (
+          <PointsMarketCard key={hyperdrive.address} hyperdrive={hyperdrive} />
+        ))}
       </div>
     </div>
   );

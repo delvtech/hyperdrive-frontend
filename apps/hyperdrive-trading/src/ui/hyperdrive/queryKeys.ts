@@ -1,6 +1,10 @@
 import "src/base/makeQueryKey";
 import { Address } from "viem";
 interface HyperdriveQueryKeys {
+  unpausedPools: {
+    chainId: number;
+    filterPoolsWithoutRewards?: boolean;
+  };
   poolInfo: { chainId: number; hyperdriveAddress: Address };
   currentLongPrice: {
     chainId: number;
