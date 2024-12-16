@@ -163,7 +163,9 @@ function useSortedPools({
             case "Fixed APR":
               return Number(b.fixedApr - a.fixedApr);
             case "LP APY":
-              return Number((b.lpApy.lpApy ?? 0n) - (a.lpApy.lpApy ?? 0n));
+              return Number(
+                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
+              );
             case "Variable APY":
               return Number(
                 b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
