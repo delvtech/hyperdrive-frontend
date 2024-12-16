@@ -27,6 +27,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useOpenLongZap } from "src/ui/hyperdrive/zaps/hooks/useOpenLongZap";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -123,7 +124,7 @@ export function OpenLongForm({
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
           // TODO: Remove this once we have zap support for cloudchain
-          tokenFromTokenList.chainId !== 707
+          tokenFromTokenList.chainId !== 707,
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -148,6 +149,8 @@ export function OpenLongForm({
         : hyperdrive.poolConfig.vaultSharesToken,
       tokens: tokenChoices.map((token) => token.tokenConfig),
     });
+
+  console.log("activeToken", activeToken.name);
 
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
@@ -248,7 +251,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -257,15 +260,15 @@ export function OpenLongForm({
   const chainId = hyperdrive.chainId;
   const poolAddress = hyperdrive.address;
 
-  // const { openLongZap } = useOpenLongZap({
-  //   hyperdriveAddress: hyperdrive.address,
-  //   chainId: hyperdrive.chainId,
-  //   amount: depositAmountAsBigInt || 0n,
-  //   asBase: activeToken.address === baseToken.address,
-  //   tokenIn: activeToken.address,
-  //   minBondsOut: bondsReceivedAfterSlippage || 0n,
-  //   minSharePrice: poolInfo?.vaultSharePrice || 0n,
-  // });
+  const openLongZap = useOpenLongZap({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+    amount: depositAmountAsBigInt || 0n,
+    asBase: activeToken.address === baseToken.address,
+    tokenIn: activeToken,
+    minBondsOut: bondsReceivedAfterSlippage || 0n,
+    minSharePrice: poolInfo?.vaultSharePrice || 0n,
+  });
 
   return (
     <TransactionView
@@ -352,7 +355,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18 // prices are always in 18 decimals
+                          18, // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,

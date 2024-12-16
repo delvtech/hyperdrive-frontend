@@ -10,7 +10,12 @@ export {
 
 export type { MarketState, PoolConfig, PoolInfo } from "src/hyperdrive/types";
 
-export { hyperdriveAbi, type HyperdriveAbi } from "src/hyperdrive/abi";
+export {
+  hyperdriveAbi,
+  zapAbi,
+  type HyperdriveAbi,
+  type ZapAbi,
+} from "src/hyperdrive/abi";
 export {
   ReadHyperdrive,
   type ReadHyperdriveOptions,
