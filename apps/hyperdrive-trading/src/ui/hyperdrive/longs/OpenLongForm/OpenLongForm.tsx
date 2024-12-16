@@ -273,7 +273,7 @@ export function OpenLongForm({
   const chainId = hyperdrive.chainId;
   const poolAddress = hyperdrive.address;
 
-  const openLongZap = useOpenLongZap({
+  const { openLongZap, status: openLongZapStatus } = useOpenLongZap({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
     amount: depositAmountAsBigInt || 0n,
@@ -489,8 +489,13 @@ export function OpenLongForm({
             disabled={!openLong}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
-              openLong?.();
-              onOpenLong?.(e);
+              if (isZapping) {
+                openLongZap();
+                onOpenLong?.(e);
+              } else {
+                openLong?.();
+                onOpenLong?.(e);
+              }
             }}
           >
             Open Long
