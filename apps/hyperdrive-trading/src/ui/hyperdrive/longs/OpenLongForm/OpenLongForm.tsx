@@ -162,12 +162,19 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
     chainId: activeToken.chainId,
   });
+
+  const zapsConfig = appConfig.zaps[hyperdrive.chainId];
+  const isZapping =
+    activeToken.address !== baseToken.address &&
+    activeToken.address !== sharesToken?.address;
+  const spender = isZapping ? zapsConfig.address : hyperdrive.address;
+
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
     enabled: requiresAllowance,
-    spender: hyperdrive.address,
+    spender,
     tokenAddress: activeToken.address,
     tokenChainId: activeToken.chainId,
   });
@@ -275,10 +282,6 @@ export function OpenLongForm({
     minBondsOut: bondsReceivedAfterSlippage || 0n,
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
   });
-
-  const isZapping =
-    activeToken.address !== baseToken.address &&
-    activeToken.address !== sharesToken?.address;
 
   return (
     <TransactionView
@@ -469,7 +472,7 @@ export function OpenLongForm({
         if (!hasEnoughAllowance) {
           return (
             <ApproveTokenChoices
-              spender={hyperdrive.address}
+              spender={spender}
               token={activeToken}
               amountAsBigInt={depositAmountAsBigInt}
               amount={depositAmount}
