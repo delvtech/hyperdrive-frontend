@@ -57,7 +57,7 @@ export function usePoolsList({
   sortOption: SortOption | undefined;
   setSortOption: (option: SortOption | undefined) => void;
 } {
-  const { unpausedPools } = useUnpausedPools();
+  const { unpausedPools, status } = useUnpausedPools();
 
   const filters = usePoolListFilters({ hyperdrives: unpausedPools });
 
@@ -73,15 +73,18 @@ export function usePoolsList({
   // responsible for fetching the specific data they need.
   const [sortOption, setSortOption] = useState<SortOption | undefined>();
   const isFetching = useIsFetching({ stale: true });
-  const isSortingEnabled = !isFetching;
-  const { sortedPools, status } = useSortedPools({
-    pools: selectedPools,
-    enabled: isSortingEnabled,
-    sortOption,
-  });
+  // const isSortingEnabled = !isFetching;
+  const isSortingEnabled = false; // TODO: Figure out why this puts us into infinite loops
+
+  // const { sortedPools, status } = useSortedPools({
+  //   pools: selectedPools,
+  //   enabled: isSortingEnabled,
+  //   sortOption,
+  // });
 
   return {
-    pools: isSortingEnabled ? sortedPools : selectedPools,
+    // pools: isSortingEnabled ? sortedPools : selectedPools,
+    pools: selectedPools,
     filters,
     status,
     sortOption,
