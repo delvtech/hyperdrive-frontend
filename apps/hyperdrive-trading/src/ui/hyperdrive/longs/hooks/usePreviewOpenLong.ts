@@ -1,15 +1,24 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
+import { fixed } from "@delvtech/fixed-point-wasm";
+import {
+  appConfig,
+  getBaseToken,
+  getToken,
+} from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { parseUnits } from "src/base/parseUnits";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { getTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
 interface UsePreviewOpenLongOptions {
   chainId: number;
   hyperdriveAddress: Address;
   amountIn: bigint | undefined;
+  tokenAddress: Address;
   asBase: boolean;
 }
 
@@ -26,11 +35,24 @@ export function usePreviewOpenLong({
   hyperdriveAddress,
   chainId,
   amountIn,
+  tokenAddress,
   asBase,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readHyperdrive = useReadHyperdrive({
     chainId,
     address: hyperdriveAddress,
+  });
+
+  const baseToken = getBaseToken({
+    appConfig,
+    hyperdriveAddress,
+    hyperdriveChainId: chainId,
+  });
+
+  const sharesToken = getToken({
+    appConfig,
+    tokenAddress,
+    chainId,
   });
 
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
@@ -46,18 +68,44 @@ export function usePreviewOpenLong({
       amountIn: amountIn?.toString(),
       asBase,
       blockNumber: blockNumber?.toString(),
+      tokenAddress,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          let finalAmountIn = amountIn;
+          const isZapToken = ![
+            baseToken.address,
+            sharesToken?.address,
+          ].includes(tokenAddress);
+          const zapTokenPrice = await getTokenFiatPrice({
+            chainId,
+            tokenAddress,
+          });
+          const baseTokenPrice = await getTokenFiatPrice({
+            chainId,
+            tokenAddress: baseToken.address,
+          });
+          if (isZapToken && zapTokenPrice && baseTokenPrice) {
+            const zapTokenInDai = fixed(amountIn).div(zapTokenPrice);
+            const amountOutMinimum = adjustAmountByPercentage({
+              amount: zapTokenInDai.bigint,
+              percentage: parseUnits("0.5", 18),
+              decimals: 18,
+              direction: "down",
+            });
+
+            // Use this amount in the previewOpenLong amountIn
+            finalAmountIn = (amountOutMinimum * BigInt(1e18)) / baseTokenPrice;
+          }
           return readHyperdrive.previewOpenLong({
             amountIn: asBase
-              ? amountIn
+              ? finalAmountIn
               : await prepareSharesIn({
                   chainId,
                   appConfig,
                   readHyperdrive,
-                  sharesAmount: amountIn,
+                  sharesAmount: finalAmountIn,
                 }),
             asBase,
           });

@@ -217,6 +217,7 @@ export function OpenLongForm({
   } = usePreviewOpenLong({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    tokenAddress: activeToken.address,
     amountIn: depositAmountAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
@@ -283,6 +284,27 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
   });
 
+  // Base token price
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    chainId: hyperdrive.chainId,
+    tokenAddress: baseToken.address,
+  });
+  let zapTokenAmountInBase = 0n;
+  if (
+    isZapping &&
+    activeTokenPrice &&
+    baseTokenPrice &&
+    depositAmountAsBigInt
+  ) {
+    // const fiatValueOfDepositAmount = depositAmountAsBigInt * activeToken.fiatPrice
+    // const equivalentAmountOfBase = fiatValueOfDepositAmount / baseTokenPrice
+    const fiatValueOfDepositAmount = fixed(
+      depositAmountAsBigInt,
+      activeToken.decimals
+    ).mul(activeTokenPrice);
+    const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
+    zapTokenAmountInBase = equivalentAmountOfBase.bigint;
+  }
   return (
     <TransactionView
       tokenInput={
@@ -486,7 +508,7 @@ export function OpenLongForm({
 
         return (
           <button
-            disabled={!openLong}
+            disabled={isZapping ? !openLongZap : !openLong}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               if (isZapping) {
