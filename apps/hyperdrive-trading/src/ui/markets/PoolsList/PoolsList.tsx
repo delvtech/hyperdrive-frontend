@@ -20,6 +20,7 @@ export function PoolsList(): ReactElement {
   const { address: account } = useAccount();
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
     from: LANDING_ROUTE,
+    structuralSharing: true,
   });
   const {
     filters,

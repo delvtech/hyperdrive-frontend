@@ -8,12 +8,12 @@ import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { QueryStatus } from "@tanstack/query-core";
 import { useIsFetching, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
-import { getLpApy } from "src/hyperdrive/getLpApy";
+import { getLpApy, LpApyResult } from "src/hyperdrive/getLpApy";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { getPresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
@@ -61,11 +61,15 @@ export function usePoolsList({
 
   const filters = usePoolListFilters({ hyperdrives: unpausedPools });
 
-  const selectedPools = getSelectedPools({
-    hyperdrives: unpausedPools,
-    selectedChains,
-    selectedAssets,
-  });
+  const selectedPools = useMemo(
+    () =>
+      getSelectedPools({
+        hyperdrives: unpausedPools,
+        selectedChains,
+        selectedAssets,
+      }),
+    [unpausedPools, selectedChains, selectedAssets],
+  );
 
   // Sorting is disabled any time we're fetching data. This is because sorting
   // requires fetching a significant amount of data, and we want the List to load
@@ -99,53 +103,23 @@ function useSortedPools({
   sortOption: SortOption | undefined;
 }) {
   const queryEnabled = !!pools && enabled;
-  const { data: sortedPools, status } = useQuery({
-    enabled: queryEnabled,
-    queryKey: makeQueryKey2({
-      namespace: "markets",
-      queryId: "poolListData",
-      params: {
-        hypedrives: pools,
-      },
-    }),
-    queryFn: queryEnabled
-      ? async () => {
-          return Promise.all(
-            pools.map(async (hyperdrive) => {
-              const readHyperdrive = await getHyperdrive({
-                address: hyperdrive.address,
-                drift: getDrift({ chainId: hyperdrive.chainId }),
-                earliestBlock: hyperdrive.initializationBlock,
-              });
-              const publicClient = getPublicClient(wagmiConfig as any, {
-                chainId: hyperdrive.chainId,
-              }) as PublicClient;
-              const [fixedApr, lpApy, tvl, yieldSourceRate, longPrice] =
-                await Promise.all([
-                  readHyperdrive.getFixedApr(),
-                  getLpApy({ hyperdrive, readHyperdrive }),
-                  getPresentValue({
-                    hyperdriveAddress: hyperdrive.address,
-                    chainId: hyperdrive.chainId,
-                    publicClient,
-                    readHyperdrive,
-                  }),
-                  getYieldSourceRate({ readHyperdrive, appConfig }),
-                  readHyperdrive.getLongPrice(),
-                ]);
-              return {
-                hyperdrive,
-                fixedApr,
-                lpApy,
-                tvl,
-                yieldSourceRate,
-                longPrice,
-              };
-            }),
-          );
-        }
-      : undefined,
-    select: (poolsWithData) => {
+  // Selector must be memoized so that it's not returning a new array on every
+  // render
+  const sortPools = useCallback(
+    (
+      poolsWithData: {
+        hyperdrive: HyperdriveConfig;
+        fixedApr: bigint;
+        lpApy: LpApyResult;
+        tvl: { base: bigint; fiat: bigint | undefined };
+        yieldSourceRate: {
+          rate: bigint;
+          ratePeriodDays: number;
+          netRate: bigint;
+        };
+        longPrice: bigint;
+      }[],
+    ): HyperdriveConfig[] => {
       return poolsWithData
         .toSorted((a, b) => {
           switch (sortOption) {
@@ -178,6 +152,86 @@ function useSortedPools({
         })
         .map((pool) => pool.hyperdrive);
     },
+    [sortOption],
+  );
+  const { data: sortedPools, status } = useQuery({
+    enabled: queryEnabled,
+    queryKey: makeQueryKey2({
+      namespace: "markets",
+      queryId: "poolListData",
+      params: {
+        hypedrives: pools,
+      },
+    }),
+    queryFn: queryEnabled
+      ? async () => {
+          const poolsWithData = await Promise.all(
+            pools.map(async (hyperdrive) => {
+              const readHyperdrive = await getHyperdrive({
+                address: hyperdrive.address,
+                drift: getDrift({ chainId: hyperdrive.chainId }),
+                earliestBlock: hyperdrive.initializationBlock,
+              });
+              const publicClient = getPublicClient(wagmiConfig as any, {
+                chainId: hyperdrive.chainId,
+              }) as PublicClient;
+              const [fixedApr, lpApy, tvl, yieldSourceRate, longPrice] =
+                await Promise.all([
+                  readHyperdrive.getFixedApr(),
+                  getLpApy({ hyperdrive, readHyperdrive }),
+                  getPresentValue({
+                    hyperdriveAddress: hyperdrive.address,
+                    chainId: hyperdrive.chainId,
+                    publicClient,
+                    readHyperdrive,
+                  }),
+                  getYieldSourceRate({ readHyperdrive, appConfig }),
+                  readHyperdrive.getLongPrice(),
+                ]);
+
+              return {
+                hyperdrive,
+                fixedApr,
+                lpApy,
+                tvl,
+                yieldSourceRate,
+                longPrice,
+              };
+            }),
+          );
+          return poolsWithData
+            .toSorted((a, b) => {
+              switch (sortOption) {
+                case "Chain":
+                  const chainA = appConfig.chains[a.hyperdrive.chainId] || {};
+                  const chainB = appConfig.chains[b.hyperdrive.chainId] || {};
+                  return chainA.name.localeCompare(chainB.name);
+                case "Fixed APR":
+                  return Number(b.fixedApr - a.fixedApr);
+                case "LP APY":
+                  return Number(
+                    (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
+                  );
+                case "Variable APY":
+                  return Number(
+                    b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
+                  );
+                case "Yield Multiplier":
+                  return Number(
+                    calculateMarketYieldMultiplier(b.longPrice).bigint -
+                      calculateMarketYieldMultiplier(a.longPrice).bigint,
+                  );
+                case "TVL":
+                  return fixed(b.tvl.fiat ?? 0)
+                    .sub(a.tvl.fiat ?? 0)
+                    .toNumber();
+                default:
+                  return 0;
+              }
+            })
+            .map((pool) => pool.hyperdrive);
+        }
+      : undefined,
   });
 
   return {
