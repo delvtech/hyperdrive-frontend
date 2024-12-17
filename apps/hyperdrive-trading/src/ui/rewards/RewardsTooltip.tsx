@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getHyperdriveConfig,
@@ -38,10 +38,13 @@ export function RewardsTooltip({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const multiplierLabel =
+  const multiplier =
     longPriceStatus === "success" && longPrice
-      ? `${calculateMarketYieldMultiplier(longPrice).format({ decimals: 1 })}x`
-      : undefined;
+      ? calculateMarketYieldMultiplier(longPrice)
+      : null;
+  const multiplierLabel = multiplier
+    ? `${multiplier.format({ decimals: 1 })}x`
+    : undefined;
 
   if (!appConfigRewards?.length && multiplierLabel && (!netRate || !baseRate)) {
     return (
@@ -200,7 +203,10 @@ export function RewardsTooltip({
 
                       <div className="grid justify-items-end">
                         <p className="flex items-center gap-1">
-                          +{reward.pointMultiplier.toString()}x
+                          {multiplier
+                            ?.mul(parseFixed(reward.pointMultiplier))
+                            .format({ decimals: 0 })}
+                          x
                         </p>
                       </div>
                     </div>

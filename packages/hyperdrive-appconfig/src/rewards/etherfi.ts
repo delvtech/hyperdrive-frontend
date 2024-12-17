@@ -4,10 +4,10 @@ import { EETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 export const fetchEtherfiRewards: RewardsResolver = async () => {
   return [
     {
-      type: "info",
+      type: "pointMultiplier",
       iconUrl: EETH_ICON_URL,
-      message:
-        "eEther.fi loyalty points earned in this pool will be boosted 2x.",
+      pointMultiplier: 2n,
+      pointTokenLabel: "Ether.fi Loyalty Points",
     },
   ];
 };

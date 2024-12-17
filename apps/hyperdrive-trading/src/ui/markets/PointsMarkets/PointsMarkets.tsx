@@ -34,7 +34,9 @@ export function PointsMarkets(): ReactElement | null {
   });
   // Only show pools that have a points reward type
   const poolsWithPoints = pools
-    ? pools.filter((pool) => pool.rewards?.find(({ type }) => type === "info"))
+    ? pools.filter((pool) =>
+        pool.rewards?.find(({ type }) => type === "pointMultiplier"),
+      )
     : [];
 
   return (
