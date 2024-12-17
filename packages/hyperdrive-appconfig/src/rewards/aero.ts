@@ -51,7 +51,7 @@ export const fetchAeroRewards: RewardsResolver = async (publicClient) => {
 
   return [
     {
-      type: "transferableToken",
+      type: "apy",
       apy: apr.bigint,
       chainId: base.id,
       tokenAddress: AERO_TOKEN_ADDRESS,

@@ -111,7 +111,7 @@ export function RewardsTooltip({
                   </div>
                 );
               }
-              if (reward.type === "transferableToken") {
+              if (reward.type === "apy") {
                 // safe to cast because we assume all rewards tokens are
                 // available in appConfig
                 const token = getToken({
@@ -147,7 +147,7 @@ export function RewardsTooltip({
                 );
               }
 
-              if (reward.type === "nonTransferableToken") {
+              if (reward.type === "tokenAmount") {
                 // safe to cast because we assume all rewards tokens are
                 // available in appConfig
                 const token = getToken({

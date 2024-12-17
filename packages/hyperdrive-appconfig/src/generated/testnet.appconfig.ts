@@ -436,6 +436,10 @@ export const testnetAppConfig: AppConfig = {
   ],
   tokens: [
     {
+<<<<<<< HEAD
+=======
+      chainId: 11155111,
+>>>>>>> 1cfeacc0 (Refactor type field for rewards)
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       chainId: 11155111,
       name: "Ether",

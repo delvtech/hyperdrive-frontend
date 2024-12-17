@@ -34,9 +34,9 @@ export { getRewardsFn } from "src/rewards/selectors";
 export type {
   AnyReward,
   InfoReward,
-  NonTransferableTokenReward,
+  TokenAmountReward as NonTransferableTokenReward,
   RewardsResolver,
-  TransferableTokenReward,
+  ApyReward as TransferableTokenReward,
 } from "src/rewards/types";
 
 // protocols

@@ -99,7 +99,7 @@ export async function getLpApy({
     if (rewardsFn) {
       const rewards = await rewardsFn(publicClient);
       rewards?.forEach((reward) => {
-        if (reward.type === "transferableToken") {
+        if (reward.type === "apy") {
           netLpApy = fixed(reward.apy).add(netLpApy as bigint).bigint;
         }
       });
