@@ -1,9 +1,12 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import {
+  AnyReward,
+  appConfig,
+  HyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { QueryStatus } from "@tanstack/query-core";
 import { useIsFetching, useQuery } from "@tanstack/react-query";
-import { useSearch } from "@tanstack/react-router";
 import { getPublicClient } from "@wagmi/core";
 import { useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
@@ -13,15 +16,13 @@ import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
-import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getPresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
-import { LANDING_ROUTE } from "src/ui/landing/routes";
+import { useUnpausedPools } from "src/ui/hyperdrive/hooks/useUnpausedPools";
 import {
   PoolListFilters,
   usePoolListFilters,
 } from "src/ui/markets/PoolsList/usePoolListFilters";
 import { PublicClient } from "viem";
-import { useChainId } from "wagmi";
 
 const PINNED_POOLS = [
   // Pin the 182d Savings GYD pool to the top of the list
@@ -29,12 +30,6 @@ const PINNED_POOLS = [
   // https://github.com/delvtech/hyperdrive-frontend/issues/1663
   "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D", // mainnet
   "0x9248f874AaA2c53AD9324d7A2D033ea133443874", // gnosis
-];
-
-const HIDDEN_POOLS = [
-  // Hide the susde/dai pool on mainnet because the LP APY is -100% after the
-  // only LP yoinked their liquidity while a Long was open.
-  "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
 ];
 
 export const sortOptions = [
@@ -48,21 +43,21 @@ export const sortOptions = [
 
 type SortOption = (typeof sortOptions)[number];
 
-export function usePoolsList(): {
-  pools: HyperdriveConfig[] | undefined;
-  selectedChains: number[] | undefined;
+export function usePoolsList({
+  selectedAssets,
+  selectedChains,
+}: {
   selectedAssets: string[] | undefined;
+  selectedChains: number[] | undefined;
+}): {
+  pools: (HyperdriveConfig & { rewards?: AnyReward[] })[] | undefined;
   filters: PoolListFilters | undefined;
   status: QueryStatus;
   isSortingEnabled: boolean;
   sortOption: SortOption | undefined;
   setSortOption: (option: SortOption | undefined) => void;
 } {
-  const { data: unpausedPools } = useUnpausedPools();
-
-  const { chains: selectedChains, assets: selectedAssets } = useSearch({
-    from: LANDING_ROUTE,
-  });
+  const { unpausedPools } = useUnpausedPools();
 
   const filters = usePoolListFilters({ hyperdrives: unpausedPools });
 
@@ -92,8 +87,6 @@ export function usePoolsList(): {
     sortOption,
     setSortOption,
     isSortingEnabled,
-    selectedAssets,
-    selectedChains,
   };
 }
 function useSortedPools({
@@ -228,44 +221,4 @@ function getSelectedPools({
       }
       return a.name.localeCompare(b.name);
     });
-}
-
-function useUnpausedPools() {
-  // Only show testnet and fork pools if the user is connected to a testnet
-  // chain
-  const appConfigForConnectedChain = useAppConfigForConnectedChain();
-
-  // Use the chain id in the query key to make sure the pools list updates when
-  // you switch chains
-  const connectedChainId = useChainId();
-  return useQuery({
-    queryKey: makeQueryKey2({
-      namespace: "markets",
-      queryId: "poolList",
-      params: { chainId: connectedChainId },
-    }),
-    queryFn: async () => {
-      const pools = await Promise.all(
-        appConfigForConnectedChain.hyperdrives
-          .filter((hyperdrive) => !HIDDEN_POOLS.includes(hyperdrive.address))
-          .map(async (hyperdrive) => {
-            const readHyperdrive = await getHyperdrive({
-              address: hyperdrive.address,
-              drift: getDrift({ chainId: hyperdrive.chainId }),
-              earliestBlock: hyperdrive.initializationBlock,
-            });
-
-            // We only show hyperdrives that are not paused
-            const { isPaused } = await readHyperdrive.getMarketState();
-            if (isPaused) {
-              return;
-            }
-
-            return hyperdrive;
-          }),
-      );
-
-      return pools.filter((pool) => !!pool);
-    },
-  });
 }
