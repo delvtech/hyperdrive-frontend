@@ -6,6 +6,8 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
+import Skeleton from "react-loading-skeleton";
+import { formatRate } from "src/base/formatRate";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -163,11 +165,11 @@ function PointsMarketCardBanner({
 
 function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { address: account } = useAccount();
-  const { lpApy } = useLpApy({
+  const { lpApy, lpApyStatus } = useLpApy({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { vaultRate } = useYieldSourceRate({
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -236,8 +238,24 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         col1={
           <span className="text-sm text-neutral-content">Variable APY</span>
         }
-        col2={<span className="mr-5 text-sm">13.84%</span>}
-        col3={<span className="mr-3 text-sm">13.84%</span>}
+        col2={
+          <span className="mr-5 text-sm">
+            {vaultRateStatus !== "success" ? (
+              <Skeleton width={100} />
+            ) : (
+              formatRate({ rate: vaultRate!.netVaultRate })
+            )}
+          </span>
+        }
+        col3={
+          <span className="mr-3 text-sm">
+            {lpApyStatus !== "success" ? (
+              <Skeleton width={100} />
+            ) : (
+              formatRate({ rate: lpApy!.netLpApy! })
+            )}
+          </span>
+        }
       />
       <PointsMarketRow
         col1={
