@@ -4,7 +4,7 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
@@ -24,7 +24,6 @@ const HIDDEN_POOLS = [
  */
 export function useUnpausedPools(): {
   unpausedPools: HyperdriveConfig[] | undefined;
-  status: QueryStatus;
 } {
   // Only show testnet and fork pools if the user is connected to a testnet
   // chain
@@ -33,7 +32,7 @@ export function useUnpausedPools(): {
   // Use the chain id in the query key to make sure the pools list updates when
   // you switch chains
   const connectedChainId = useChainId();
-  const { data: unpausedPools, status } = useQuery({
+  const { data: unpausedPools } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "hyperdrive",
       queryId: "unpausedPools",
@@ -77,5 +76,5 @@ export function useUnpausedPools(): {
       return unpausedPools;
     },
   });
-  return { unpausedPools, status };
+  return { unpausedPools };
 }
