@@ -99,7 +99,7 @@ async function calcNetRate(
     }) as PublicClient;
     const rewards = await rewardsFn(publicClient);
     rewards?.forEach((reward) => {
-      if (reward.type === "transferableToken") {
+      if (reward.type === "apy") {
         netRate = fixed(reward.apy).add(
           // safe to cast because if we get here then lpApy has been set
           netRate as bigint,
