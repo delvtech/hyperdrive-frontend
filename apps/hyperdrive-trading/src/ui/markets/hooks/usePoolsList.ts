@@ -57,7 +57,7 @@ export function usePoolsList({
   sortOption: SortOption | undefined;
   setSortOption: (option: SortOption | undefined) => void;
 } {
-  const { unpausedPools, status } = useUnpausedPools();
+  const { unpausedPools } = useUnpausedPools();
 
   const filters = usePoolListFilters({ hyperdrives: unpausedPools });
 
@@ -73,18 +73,15 @@ export function usePoolsList({
   // responsible for fetching the specific data they need.
   const [sortOption, setSortOption] = useState<SortOption | undefined>();
   const isFetching = useIsFetching({ stale: true });
-  // const isSortingEnabled = !isFetching;
-  const isSortingEnabled = false; // TODO: Figure out why this puts us into infinite loops
-
-  // const { sortedPools, status } = useSortedPools({
-  //   pools: selectedPools,
-  //   enabled: isSortingEnabled,
-  //   sortOption,
-  // });
+  const isSortingEnabled = !isFetching;
+  const { sortedPools, status } = useSortedPools({
+    pools: selectedPools,
+    enabled: isSortingEnabled,
+    sortOption,
+  });
 
   return {
-    // pools: isSortingEnabled ? sortedPools : selectedPools,
-    pools: selectedPools,
+    pools: isSortingEnabled ? sortedPools : selectedPools,
     filters,
     status,
     sortOption,
@@ -172,9 +169,15 @@ function useSortedPools({
                   calculateMarketYieldMultiplier(a.longPrice).bigint,
               );
             case "TVL":
-              return fixed(b.tvl.fiat ?? 0)
-                .sub(a.tvl.fiat ?? 0)
-                .toNumber();
+              const tvlA =
+                b.tvl.fiat ??
+                fixed(b.tvl.base).div(b.hyperdrive.decimals, 0) ??
+                0;
+              const tvlB =
+                a.tvl.fiat ??
+                fixed(a.tvl.base).div(a.hyperdrive.decimals, 0) ??
+                0;
+              return fixed(tvlA).sub(tvlB).toNumber();
             default:
               return 0;
           }

@@ -46,7 +46,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const isFiatSupported = !isTestnetChain(chainInfo.id);
+  const isFiatSupported = !isTestnetChain(chainInfo.id) && presentValue?.fiat;
   let tvlLabel = `${formatCompact({
     value: presentValue?.base || 0n,
     decimals: hyperdrive.decimals,

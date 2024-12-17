@@ -1,7 +1,11 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
-import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
+import {
+  AdjustmentsHorizontalIcon,
+  BarsArrowDownIcon,
+} from "@heroicons/react/20/solid";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
+import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
@@ -9,7 +13,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
-import { usePoolsList } from "src/ui/markets/hooks/usePoolsList";
+import { sortOptions, usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { useAccount } from "wagmi";
 
 export function PoolsList(): ReactElement {
@@ -150,7 +154,7 @@ export function PoolsList(): ReactElement {
               </div>
 
               {/* Sorting */}
-              {/* <div className="daisy-dropdown daisy-dropdown-end">
+              <div className="daisy-dropdown daisy-dropdown-end">
                 <div
                   tabIndex={0}
                   role="button"
@@ -187,7 +191,7 @@ export function PoolsList(): ReactElement {
                     </li>
                   ))}
                 </ul>
-              </div> */}
+              </div>
             </div>
 
             {!pools.length ? (
