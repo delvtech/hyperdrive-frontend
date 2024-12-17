@@ -169,9 +169,15 @@ function useSortedPools({
                   calculateMarketYieldMultiplier(a.longPrice).bigint,
               );
             case "TVL":
-              return fixed(b.tvl.fiat ?? 0)
-                .sub(a.tvl.fiat ?? 0)
-                .toNumber();
+              const tvlA =
+                b.tvl.fiat ??
+                fixed(b.tvl.base).div(b.hyperdrive.decimals, 0) ??
+                0;
+              const tvlB =
+                a.tvl.fiat ??
+                fixed(a.tvl.base).div(a.hyperdrive.decimals, 0) ??
+                0;
+              return fixed(tvlA).sub(tvlB).toNumber();
             default:
               return 0;
           }

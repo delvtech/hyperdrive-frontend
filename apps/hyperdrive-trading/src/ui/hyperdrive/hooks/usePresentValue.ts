@@ -92,8 +92,9 @@ export function getPresentValue({
         chainId: baseToken.chainId,
         publicClient,
         tokenAddress: baseToken.address,
-      })
+      }).catch(() => undefined)
     : Promise.resolve(undefined);
+
   return Promise.all([readHyperdrive.getPresentValue(), fiatPricePromise]).then(
     ([presentValue, fiatPrice]) => {
       const presentValueFiat = fiatPrice
