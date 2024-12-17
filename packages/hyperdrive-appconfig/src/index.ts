@@ -33,10 +33,11 @@ export type { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 export { getRewardsFn } from "src/rewards/selectors";
 export type {
   AnyReward,
+  ApyReward,
   InfoReward,
-  TokenAmountReward as NonTransferableTokenReward,
+  PointMultiplierReward,
   RewardsResolver,
-  ApyReward as TransferableTokenReward,
+  TokenAmountReward,
 } from "src/rewards/types";
 
 // protocols
