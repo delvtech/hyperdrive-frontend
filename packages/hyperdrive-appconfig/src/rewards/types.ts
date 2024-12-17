@@ -27,6 +27,20 @@ export interface TokenAmountReward {
   chainId: number;
 }
 
+export interface PointMultiplierReward {
+  type: "pointMultiplier";
+  /**
+   * The multiplier for the point reward, eg: 2n means "2x"
+   */
+  pointMultiplier: bigint;
+
+  /**
+   * The name for the point token, such as "Ether.fi Loyalty Points" or "SPIN Rewards"
+   */
+  pointTokenLabel: string;
+  iconUrl: string;
+}
+
 /**
  * Info rewards are used when reward details are unclear. They display a message
  * to the user, such as "This pool is eligible for L-XPL Rewards."
@@ -37,7 +51,11 @@ export interface InfoReward {
   iconUrl: string;
 }
 
-export type AnyReward = ApyReward | TokenAmountReward | InfoReward;
+export type AnyReward =
+  | ApyReward
+  | TokenAmountReward
+  | PointMultiplierReward
+  | InfoReward;
 
 export type RewardsResolver = (
   publicClient: PublicClient,
