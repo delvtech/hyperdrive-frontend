@@ -1,5 +1,5 @@
 use delv_core::{
-    conversions::{ToBigInt, ToI256, ToU256},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
 use js_sys::BigInt;
@@ -27,7 +27,6 @@ pub fn maxLong(params: IMaxLongParams) -> Result<BigInt, Error> {
     let result_fp = state
         .calculate_max_long(
             params.budget().to_u256()?,
-            params.checkpoint_exposure().to_i256()?,
             params.max_iterations().map(|x| x.into()),
         )
         .to_result()?;

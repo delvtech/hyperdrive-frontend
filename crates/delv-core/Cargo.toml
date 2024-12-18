@@ -16,4 +16,4 @@ thiserror = "1.0"
 wasm-bindgen = "0.2.92"
 
 # internal
-fixedpointmath = "0.18.1"
+fixedpointmath = { git = "https://github.com/delvtech/hyperdrive-rs.git", branch = "dpaiton/remove-checkpoint-exposure" }

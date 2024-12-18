@@ -1680,7 +1680,6 @@ export class ReadHyperdrive extends ReadClient {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
     const latestCheckpoint = await this.getCheckpoint({ options });
-    const checkpointExposure = await this.getCheckpointExposure({ options });
 
     let targetBaseAmount = amountIn;
     if (!asBase) {
@@ -1693,7 +1692,6 @@ export class ReadHyperdrive extends ReadClient {
     const absoluteMaxBondAmount = hyperwasm.absoluteMaxShort({
       poolInfo,
       poolConfig,
-      checkpointExposure,
     });
 
     return hyperwasm.shortBondsGivenDeposit({

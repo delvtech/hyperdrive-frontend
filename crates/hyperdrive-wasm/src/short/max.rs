@@ -1,5 +1,5 @@
 use delv_core::{
-    conversions::{ToBigInt, ToI256, ToU256},
+    conversions::{ToBigInt, ToU256},
     error::{Error, ToResult},
 };
 use fixedpointmath::Fixed;
@@ -36,7 +36,6 @@ pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
         .calculate_max_short(
             params.budget().to_u256()?,
             params.open_vault_share_price().to_u256()?,
-            params.checkpoint_exposure().to_i256()?,
             match params.conservative_price() {
                 Some(price) => Some(price.to_u256()?.fixed()),
                 None => None,
@@ -50,9 +49,13 @@ pub fn maxShort(params: IMaxShortParams) -> Result<BigInt, Error> {
 
 #[ts(extends = IStateParams)]
 struct AbsoluteMaxShortParams {
-    /// The exposure of the pool's current checkpoint.
-    checkpoint_exposure: BigInt,
+    /// The tolerance in bonds, i.e., how close to insolvency the pool should
+    /// be after the short is opened.
+    /// @default 1e9
+    bond_tolerance: Option<BigInt>,
     /// The maximum number of iterations to run the Newton's method for.
+    // Decreasing this will speed up the run, but will likely require a higher
+    // bond_tolerance.
     max_iterations: Option<usize>,
 }
 
@@ -61,13 +64,13 @@ struct AbsoluteMaxShortParams {
 #[wasm_bindgen(skip_jsdoc)]
 pub fn absoluteMaxShort(params: IAbsoluteMaxShortParams) -> Result<BigInt, Error> {
     let state = params.to_state()?;
+    let bond_tolerance = match params.bond_tolerance() {
+        Some(bond_tolerance) => Some(bond_tolerance.to_u256()?.fixed()),
+        None => None,
+    };
 
     let result_fp = state
-        .calculate_absolute_max_short(
-            state.calculate_spot_price().to_result()?,
-            params.checkpoint_exposure().to_i256()?,
-            params.max_iterations(),
-        )
+        .calculate_absolute_max_short(bond_tolerance, params.max_iterations())
         .to_result()?;
 
     result_fp.to_bigint()

@@ -1098,9 +1098,8 @@ checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
 name = "fixedpointmath"
-version = "0.18.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6785f80cdc238aed242b49e34c8a54dc4de1ef0976b29e1d7c43c96c307238a8"
+version = "0.20.1"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?branch=dpaiton/remove-checkpoint-exposure#c2dcff68dd5fc38298b4b699a523680995d289aa"
 dependencies = [
  "ethers",
  "eyre",
@@ -1476,9 +1475,8 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-math"
-version = "0.18.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "840c7e4b0f28aee06a29179d0116b9b5fd6c546d4b5b6d95a544f47f70a779a8"
+version = "0.20.1"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?branch=dpaiton/remove-checkpoint-exposure#c2dcff68dd5fc38298b4b699a523680995d289aa"
 dependencies = [
  "ethers",
  "eyre",
@@ -1507,9 +1505,8 @@ dependencies = [
 
 [[package]]
 name = "hyperdrive-wrappers"
-version = "0.18.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e110927ab1700a706688c41cb9a9f33985dd4d04cc684988fda716874689850"
+version = "0.20.1"
+source = "git+https://github.com/delvtech/hyperdrive-rs.git?branch=dpaiton/remove-checkpoint-exposure#c2dcff68dd5fc38298b4b699a523680995d289aa"
 dependencies = [
  "dotenv",
  "ethers",

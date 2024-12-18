@@ -30,9 +30,9 @@ wasm-bindgen = "0.2.92"
 getrandom = { version = "0.2", features = ["js"] }
 
 # internal
-fixedpointmath = "0.18.1"
-hyperdrive-math = "0.18.1"
-hyperdrive-wrappers = "0.18.1"
+fixedpointmath = { git = "https://github.com/delvtech/hyperdrive-rs.git", branch = "dpaiton/remove-checkpoint-exposure" }
+hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", branch = "dpaiton/remove-checkpoint-exposure" }
+hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", branch = "dpaiton/remove-checkpoint-exposure" }
 
 # workspace
 delv-core = { path = "../delv-core" }

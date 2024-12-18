@@ -41,7 +41,7 @@ pub fn getVersion() -> String {
 pub fn spotPrice(params: IStateParams) -> Result<BigInt, Error> {
     params
         .to_state()?
-        .calculate_spot_price()
+        .calculate_spot_price_down()
         .to_result()?
         .to_bigint()
 }

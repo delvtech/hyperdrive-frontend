@@ -69,7 +69,7 @@ pub fn calcShortMarketValue(params: ICloseShortParams) -> Result<BigInt, Error> 
     let current_time = params.current_time().to_u256()?.fixed();
 
     // p is the current pool spot price
-    let spot_price = state.calculate_spot_price().to_result()?;
+    let spot_price = state.calculate_spot_price_down().to_result()?;
 
     // t is the time remaining (maturity_time - latest_checkpoint) /
     // position_duration
