@@ -66,7 +66,9 @@ export function useUnpausedPools(): {
                 appConfig: appConfigForConnectedChain,
               });
 
-              const rewards = !rewardsFn ? [] : await rewardsFn(publicClient);
+              const rewards = !rewardsFn
+                ? []
+                : await rewardsFn(publicClient).catch(() => []);
 
               return { ...hyperdrive, rewards };
             }),

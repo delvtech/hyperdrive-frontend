@@ -1,12 +1,17 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   getYieldSource,
   HyperdriveConfig,
+  PointMultiplierReward,
 } from "@delvtech/hyperdrive-appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
+import Skeleton from "react-loading-skeleton";
+import { formatRate } from "src/base/formatRate";
+import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePoolsList } from "src/ui/markets/hooks/usePoolsList";
@@ -14,6 +19,7 @@ import {
   MARKET_DETAILS_ROUTE,
   POINTS_MARKETS_ROUTE,
 } from "src/ui/markets/routes";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
@@ -110,7 +116,27 @@ function PointsMarketCardBanner({
 }: {
   hyperdrive: HyperdriveConfig;
 }) {
-  const multipliers = [{ multiplier: "64x", label: "SPIN Rewards" }];
+  const { rewards } = useRewards(hyperdrive);
+  const { longPrice } = useCurrentLongPrice({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+  const pointRewards = rewards?.filter(
+    ({ type }) => type === "pointMultiplier",
+  ) as PointMultiplierReward[] | undefined;
+
+  const multipliers =
+    longPrice && pointRewards
+      ? pointRewards.map(({ pointMultiplier, pointTokenLabel }) => {
+          const capitalMultiplier = calculateMarketYieldMultiplier(longPrice);
+          return {
+            multiplier: capitalMultiplier
+              .mul(parseFixed(pointMultiplier))
+              .format({ decimals: 0 }),
+            label: pointTokenLabel,
+          };
+        })
+      : [];
   return (
     <div className="flex w-full items-center justify-between rounded-xl bg-base-200 p-5">
       <div className="flex w-full flex-col items-center justify-center gap-1.5">
@@ -124,7 +150,7 @@ function PointsMarketCardBanner({
               className="flex w-full flex-col items-center justify-center gap-1.5"
             >
               <div className="font-chakraPetch text-h4 font-medium">
-                {multiplier}
+                {multiplier}x
               </div>
               <p className="font-medium text-neutral-content sm:text-sm">
                 {label}
@@ -139,11 +165,11 @@ function PointsMarketCardBanner({
 
 function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { address: account } = useAccount();
-  const { lpApy } = useLpApy({
+  const { lpApy, lpApyStatus } = useLpApy({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { vaultRate } = useYieldSourceRate({
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -212,8 +238,24 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         col1={
           <span className="text-sm text-neutral-content">Variable APY</span>
         }
-        col2={<span className="mr-5 text-sm">13.84%</span>}
-        col3={<span className="mr-3 text-sm">13.84%</span>}
+        col2={
+          <span className="mr-5 text-sm">
+            {vaultRateStatus !== "success" ? (
+              <Skeleton width={100} />
+            ) : (
+              formatRate({ rate: vaultRate!.netVaultRate })
+            )}
+          </span>
+        }
+        col3={
+          <span className="mr-3 text-sm">
+            {lpApyStatus !== "success" ? (
+              <Skeleton width={100} />
+            ) : (
+              formatRate({ rate: lpApy!.netLpApy! })
+            )}
+          </span>
+        }
       />
       <PointsMarketRow
         col1={
