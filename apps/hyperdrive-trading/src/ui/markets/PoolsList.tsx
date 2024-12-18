@@ -1,8 +1,6 @@
 import {
   appConfig,
   ChainConfig,
-  getBaseToken,
-  getToken,
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -12,8 +10,8 @@ import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode, useMemo } from "react";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { getDrift } from "src/drift/getDrift";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
@@ -402,28 +400,4 @@ function usePoolsList(): {
   });
 
   return { pools: data, status };
-}
-
-function getDepositAssets(hyperdrive: HyperdriveConfig): TokenConfig[] {
-  const depositAssets: TokenConfig[] = [];
-  if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
-    const baseToken = getBaseToken({
-      hyperdriveChainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
-      appConfig,
-    });
-    depositAssets.push(baseToken);
-  }
-
-  if (hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
-    const sharesToken = getToken({
-      chainId: hyperdrive.chainId,
-      tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-      appConfig,
-    });
-    if (sharesToken && sharesToken.address !== ZERO_ADDRESS) {
-      depositAssets.push(sharesToken);
-    }
-  }
-  return depositAssets;
 }
