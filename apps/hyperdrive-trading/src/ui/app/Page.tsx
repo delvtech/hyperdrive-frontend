@@ -6,6 +6,7 @@ import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 import { useAddressScreen } from "src/ui/compliance/hooks/useAddressScreen";
 import { useVpnScreen } from "src/ui/compliance/hooks/useVpnScreen";
+import { MilesBanner } from "src/ui/rewards/MilesBanner";
 
 export function Page({ children }: PropsWithChildren): ReactElement {
   // compliance
@@ -16,6 +17,7 @@ export function Page({ children }: PropsWithChildren): ReactElement {
     <div className="flex min-h-screen flex-col items-center justify-between gap-9">
       <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
+        <MilesBanner />
 
         {/* compliance */}
         <TermsOfUseAndPrivacyPolicyModal />

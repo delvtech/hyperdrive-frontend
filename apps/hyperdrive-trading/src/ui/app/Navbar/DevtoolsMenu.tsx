@@ -25,6 +25,13 @@ export function DevtoolsMenu(): ReactElement {
         </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
+            window.localStorage.clear();
+            location.reload();
+          }}
+          title={"Clear prefs"}
+        />
+        <MenuItem
+          onClick={() => {
             throw new Error(
               `Rollbar Test Error: Thrown in ${import.meta.env.VITE_ROLLBAR_ENV as string} environment on Rollbar.`,
             );
