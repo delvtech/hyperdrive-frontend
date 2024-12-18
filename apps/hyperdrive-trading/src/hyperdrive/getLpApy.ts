@@ -3,6 +3,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getRewardsFn,
+  getRewardsFn2,
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -90,6 +91,18 @@ export async function getLpApy({
     const publicClient = getPublicClient(wagmiConfig as any, {
       chainId: hyperdrive.chainId,
     }) as PublicClient;
+    // Collect all reward functions into a single array and deduplicate them
+    const rewardTypes = ["long", "short", "lp"] as const;
+    const uniqueRewardFns = Array.from(
+      new Set(rewardTypes.flatMap((type) => hyperdrive.rewards?.[type] ?? [])),
+    );
+
+    // Process the deduplicated reward functions
+    const allRewards = (
+      await Promise.all(
+        uniqueRewardFns.map((rewardFn) => getRewardsFn2({ rewardFn })),
+      )
+    ).filter(Boolean);
 
     const rewardsFn = getRewardsFn({
       yieldSourceId: hyperdrive.yieldSource,
@@ -97,7 +110,7 @@ export async function getLpApy({
     });
 
     if (rewardsFn) {
-      const rewards = await rewardsFn(publicClient);
+      const rewards = await rewardsFn(publicClient).catch(() => []);
       rewards?.forEach((reward) => {
         if (reward.type === "apy") {
           netLpApy = fixed(reward.apy).add(netLpApy as bigint).bigint;

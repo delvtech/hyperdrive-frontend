@@ -32,12 +32,13 @@ export function LpApyStat({
         })
       : null;
 
-  if (!appConfigRewards?.length && netApyLabel) {
-    return <PercentLabel value={netApyLabel} />;
-  }
+  // if (!appConfigRewards?.length && netApyLabel) {
+  //   return <PercentLabel value={netApyLabel} />;
+  // }
 
   return (
     <RewardsTooltip
+      showMiles
       chainId={hyperdrive.chainId}
       hyperdriveAddress={hyperdrive.address}
       baseRate={lpApy?.lpApy}

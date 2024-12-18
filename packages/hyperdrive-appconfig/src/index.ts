@@ -30,7 +30,7 @@ export type { TokenConfig } from "src/tokens/types";
 export type { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
 // rewards
-export { getRewardsFn } from "src/rewards/selectors";
+export { getRewardsFn, getRewardsFn2 } from "src/rewards/selectors";
 export type {
   AnyReward,
   ApyReward,
