@@ -48,6 +48,9 @@ module.exports = {
       "warpcast-purple": "#472b92",
       "farcaster-purple": "#8A63D2",
 
+      "hypervue-red": "#E26360",
+      "hypervue-pink": "#DC70D4",
+
       gray: {
         50: "#EFF4F6",
         100: "#BDD2DB",

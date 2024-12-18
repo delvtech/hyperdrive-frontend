@@ -1,16 +1,19 @@
+import classNames from "classnames";
 import { ReactNode } from "react";
 
 export default function CustomBanner({
   icon,
   description,
+  className,
 }: {
   icon?: ReactNode;
-  description: string;
+  description: ReactNode;
+  className?: string;
 }): JSX.Element {
   return (
-    <div className="daisy-alert">
+    <div className={classNames("daisy-alert", className)}>
       {icon}
-      <span>{description}</span>
+      {description}
     </div>
   );
 }
