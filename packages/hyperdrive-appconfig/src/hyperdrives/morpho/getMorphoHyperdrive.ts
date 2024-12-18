@@ -12,12 +12,14 @@ export async function getMorphoHyperdrive({
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
+  rewards,
 }: {
   hyperdrive: ReadHyperdrive;
   yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
+  rewards?: HyperdriveConfig["rewards"];
 }): Promise<{
   baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
@@ -64,6 +66,10 @@ export async function getMorphoHyperdrive({
     },
     poolConfig,
   };
+
+  if (rewards) {
+    hyperdriveConfig.rewards = rewards;
+  }
 
   return {
     baseTokenConfig,

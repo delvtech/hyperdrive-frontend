@@ -6,6 +6,8 @@ import { YieldSourceId } from "src/yieldSources/types";
 /**
  * Find the rewards resolver for a given yield source. This will return
  * `undefined` if no rewards function exists for this yield source.
+ *
+ * @deprecated rewards have moved to HyperdriveConfig
  */
 export function getRewardsFn({
   yieldSourceId,
@@ -19,4 +21,12 @@ export function getRewardsFn({
     return;
   }
   return rewardFunctions[yieldSource.rewardsFn];
+}
+
+export function getRewardsFn2({
+  rewardFn,
+}: {
+  rewardFn: keyof typeof rewardFunctions;
+}): RewardsResolver | undefined {
+  return rewardFunctions[rewardFn];
 }
