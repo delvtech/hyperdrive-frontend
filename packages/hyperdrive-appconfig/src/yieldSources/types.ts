@@ -47,5 +47,8 @@ export interface YieldSourceConfig {
    * used to calculate LP APY and Yield Source APYs.
    */
   historicalRatePeriod: number;
+  /**
+   * @deprecated rewards has moved to HyperdriveConfig
+   */
   rewardsFn?: keyof typeof rewardFunctions;
 }

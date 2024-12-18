@@ -19,6 +19,7 @@ interface GetHyperdriveConfigParams {
   tokenPlaces: number;
   sharesTokenTags?: string[];
   baseTokenTags?: string[];
+  rewards?: HyperdriveConfig["rewards"];
 }
 
 export async function getCustomHyperdrive({
@@ -32,6 +33,7 @@ export async function getCustomHyperdrive({
   tokenPlaces,
   sharesTokenTags = [],
   baseTokenTags = [],
+  rewards,
 }: GetHyperdriveConfigParams): Promise<{
   sharesTokenConfig: TokenConfig;
   baseTokenConfig: TokenConfig;
@@ -81,6 +83,10 @@ export async function getCustomHyperdrive({
     withdrawOptions: withdrawalOptions,
     poolConfig,
   };
+
+  if (rewards) {
+    hyperdriveConfig.rewards = rewards;
+  }
 
   return {
     sharesTokenConfig,

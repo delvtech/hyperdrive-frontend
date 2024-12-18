@@ -77,6 +77,10 @@ const hyperdriveKindResolvers: Record<
         isBaseTokenWithdrawalEnabled: false,
         isShareTokenWithdrawalEnabled: true,
       },
+      rewards: {
+        short: ["fetchLineaRewards"],
+        lp: ["fetchLineaRewards"],
+      },
       earliestBlock,
     });
   },
@@ -92,6 +96,10 @@ const hyperdriveKindResolvers: Record<
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
+      },
+      rewards: {
+        short: ["fetchLineaRewards"],
+        lp: ["fetchLineaRewards"],
       },
       withdrawalOptions: {
         isBaseTokenWithdrawalEnabled: false,
@@ -138,6 +146,10 @@ const hyperdriveKindResolvers: Record<
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
+      },
+      rewards: {
+        short: ["fetchEtherfiRewards"],
+        lp: ["fetchEtherfiRewards"],
       },
       withdrawalOptions: {
         isBaseTokenWithdrawalEnabled: false,
@@ -217,6 +229,10 @@ const hyperdriveKindResolvers: Record<
         withdrawalOptions: {
           isBaseTokenWithdrawalEnabled: true,
           isShareTokenWithdrawalEnabled: true,
+        },
+        rewards: {
+          short: ["fetchGyroscopeRewards"],
+          lp: ["fetchGyroscopeRewards"],
         },
         earliestBlock,
       });
@@ -354,6 +370,10 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 4,
+        rewards: {
+          short: ["fetchMorphoMwethRewards"],
+          lp: ["fetchMorphoMwethRewards"],
+        },
       });
     }
 
@@ -373,6 +393,10 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 2,
+        rewards: {
+          short: ["fetchMorphoMwusdcRewards"],
+          lp: ["fetchMorphoMwusdcRewards"],
+        },
       });
     }
 
@@ -392,6 +416,10 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 2,
+        rewards: {
+          short: ["fetchMorphoMweurcRewards"],
+          lp: ["fetchMorphoMweurcRewards"],
+        },
       });
     }
 
@@ -465,6 +493,10 @@ const hyperdriveKindResolvers: Record<
         yieldSourceId: "aeroUsdcAero",
         baseTokenPlaces: 9, // aero lp tokens are super small
         baseTokenTags: [],
+        rewards: {
+          short: ["fetchAeroRewards"],
+          lp: ["fetchAeroRewards"],
+        },
       });
     }
     throw new Error(
@@ -536,6 +568,10 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: USDC_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoCbethUsdc",
+        rewards: {
+          short: ["fetchMorphoCbethUsdcRewards"],
+          lp: ["fetchMorphoCbethUsdcRewards"],
+        },
       });
     }
 

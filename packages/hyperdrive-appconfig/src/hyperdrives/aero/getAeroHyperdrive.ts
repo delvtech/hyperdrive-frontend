@@ -12,12 +12,14 @@ export async function getAeroLpHyperdrive({
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
+  rewards,
 }: {
   hyperdrive: ReadHyperdrive;
   yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
+  rewards?: HyperdriveConfig["rewards"];
 }): Promise<{
   baseTokenConfig: TokenConfig;
   hyperdriveConfig: HyperdriveConfig;
@@ -62,6 +64,10 @@ export async function getAeroLpHyperdrive({
     },
     poolConfig,
   };
+
+  if (rewards) {
+    hyperdriveConfig.rewards = rewards;
+  }
 
   return {
     baseTokenConfig,
