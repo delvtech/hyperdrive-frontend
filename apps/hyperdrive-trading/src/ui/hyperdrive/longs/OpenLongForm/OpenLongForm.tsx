@@ -9,6 +9,7 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -164,9 +165,11 @@ export function OpenLongForm({
   });
 
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
-  const isZapping =
-    activeToken.address !== baseToken.address &&
-    activeToken.address !== sharesToken?.address;
+  const depositAssets = getDepositAssets(hyperdrive);
+  const isZapping = !depositAssets.some(
+    (asset) => asset.address === activeToken.address,
+  );
+
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -277,7 +280,6 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
     amount: depositAmountAsBigInt || 0n,
-    asBase: activeToken.address === baseToken.address,
     tokenIn: activeToken,
     minBondsOut: bondsReceivedAfterSlippage || 0n,
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
@@ -511,9 +513,11 @@ export function OpenLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               if (isZapping) {
+                console.log("zapping");
                 openLongZap();
                 onOpenLong?.(e);
               } else {
+                console.log("not zapping");
                 openLong?.();
                 onOpenLong?.(e);
               }

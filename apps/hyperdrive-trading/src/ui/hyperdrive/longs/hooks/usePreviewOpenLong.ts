@@ -87,7 +87,7 @@ export function usePreviewOpenLong({
               chainId: 1,
               tokenAddress,
             });
-            // TODO: Use the correct token decimals
+            // TODO: Use the correct token decimals, this only works for USDC
             const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(amountIn, 6);
 
             // Get the fiat price of the base token.
@@ -109,7 +109,6 @@ export function usePreviewOpenLong({
           }
 
           const finalAsBase = asBase || isZapToken;
-          console.log("finalAsBase?:", finalAsBase);
           return readHyperdrive.previewOpenLong({
             amountIn: finalAsBase
               ? finalAmountIn
