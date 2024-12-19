@@ -125,7 +125,7 @@ export function OpenLongForm({
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
           // TODO: Remove this once we have zap support for cloudchain
-          tokenFromTokenList.chainId === hyperdrive.chainId
+          tokenFromTokenList.chainId === hyperdrive.chainId,
       )
       .forEach((tokenFromTokenList) => {
         tokenChoices.push({
@@ -145,7 +145,7 @@ export function OpenLongForm({
   if (isZapsEnabled) {
     activeTokenChoices = uniqBy(
       [...activeTokenChoices, ...tokenList],
-      "address"
+      "address",
     );
   }
 
@@ -178,7 +178,6 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
     tokenChainId: activeToken.chainId,
   });
-
   const {
     amount: depositAmount,
     amountAsBigInt: depositAmountAsBigInt,
@@ -265,7 +264,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -300,7 +299,7 @@ export function OpenLongForm({
     // const equivalentAmountOfBase = fiatValueOfDepositAmount / baseTokenPrice
     const fiatValueOfDepositAmount = fixed(
       depositAmountAsBigInt,
-      activeToken.decimals
+      activeToken.decimals,
     ).mul(activeTokenPrice);
     const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
     zapTokenAmountInBase = equivalentAmountOfBase.bigint;
@@ -390,7 +389,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18 // prices are always in 18 decimals
+                          18, // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
