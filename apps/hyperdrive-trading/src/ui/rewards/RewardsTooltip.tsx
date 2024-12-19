@@ -12,6 +12,7 @@ import { assertNever } from "src/base/assertNever";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { HyperVueMilesIconUrl } from "src/ui/rewards/HyperVueMilesIconUrl";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 export function RewardsTooltip({
@@ -19,11 +20,18 @@ export function RewardsTooltip({
   chainId,
   baseRate,
   netRate,
+  showMiles,
   children,
 }: PropsWithChildren<{
   hyperdriveAddress: Address;
   baseRate: bigint | undefined;
   netRate: bigint | undefined;
+  /**
+   * @deprecated This is a temporary prop that will be removed once appconfig
+   * changes have been made to move rewards onto HyperdriveConfig based on
+   * position type.
+   */
+  showMiles?: boolean;
   chainId: number;
 }>): ReactNode {
   const hyperdrive = getHyperdriveConfig({
@@ -232,6 +240,18 @@ export function RewardsTooltip({
                 </p>
               </div>
             </div>
+            {showMiles ? (
+              <div className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={HyperVueMilesIconUrl}
+                    alt={`HyperVue Miles`}
+                    className="h-6 rounded-full"
+                  />
+                  <p className="">Earns 1 Mile per day for every $1 supplied</p>
+                </div>
+              </div>
+            ) : null}
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>

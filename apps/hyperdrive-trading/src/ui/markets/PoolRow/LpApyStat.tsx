@@ -41,6 +41,7 @@ export function LpApyStat({
       chainId={hyperdrive.chainId}
       hyperdriveAddress={hyperdrive.address}
       baseRate={lpApy?.lpApy}
+      showMiles
       netRate={lpApy?.netLpApy}
     >
       {netApyLabel ? (
