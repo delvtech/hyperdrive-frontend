@@ -50,7 +50,7 @@ export function usePoolsList({
   selectedAssets: string[] | undefined;
   selectedChains: number[] | undefined;
 }): {
-  pools: (HyperdriveConfig & { rewards?: AnyReward[] })[] | undefined;
+  pools: (HyperdriveConfig & { rewardsAmount?: AnyReward[] })[] | undefined;
   filters: PoolListFilters | undefined;
   status: QueryStatus;
   isSortingEnabled: boolean;

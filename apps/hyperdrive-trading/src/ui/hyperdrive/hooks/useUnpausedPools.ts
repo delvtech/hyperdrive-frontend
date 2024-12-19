@@ -39,7 +39,9 @@ export function useUnpausedPools(): {
       params: { chainId: connectedChainId },
     }),
     queryFn: async () => {
-      const unpausedPools: (HyperdriveConfig & { rewards: AnyReward[] })[] = (
+      const unpausedPools: (HyperdriveConfig & {
+        rewardsAmount: AnyReward[];
+      })[] = (
         await Promise.all(
           appConfigForConnectedChain.hyperdrives
             .filter((hyperdrive) => !HIDDEN_POOLS.includes(hyperdrive.address))
@@ -70,7 +72,7 @@ export function useUnpausedPools(): {
                 ? []
                 : await rewardsFn(publicClient).catch(() => []);
 
-              return { ...hyperdrive, rewards };
+              return { ...hyperdrive, rewardsAmount: rewards };
             }),
         )
       ).filter((pool) => !!pool);
