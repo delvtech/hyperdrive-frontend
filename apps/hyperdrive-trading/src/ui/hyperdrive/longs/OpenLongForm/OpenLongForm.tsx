@@ -436,6 +436,7 @@ export function OpenLongForm({
           openLongPreviewStatus={openLongPreviewStatus}
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
+          activeToken={activeToken}
         />
       }
       transactionPreview={

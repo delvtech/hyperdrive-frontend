@@ -10,14 +10,19 @@ import { Address, PublicClient } from "viem";
 export function useTokenFiatPrice({
   tokenAddress,
   chainId,
+  enabled = true,
 }: {
   tokenAddress: Address | undefined;
   chainId: number;
+  enabled?: boolean;
 }): {
   fiatPrice: bigint | undefined;
 } {
   const queryEnabled =
-    !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
+    !isTestnetChain(chainId) &&
+    !!tokenAddress &&
+    tokenAddress !== ZERO_ADDRESS &&
+    enabled;
 
   const { data } = useQuery({
     queryKey: makeQueryKey("tokenFiatPrice", { chainId, tokenAddress }),
