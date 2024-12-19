@@ -1,22 +1,24 @@
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getStatus } from "src/base/queryStatus";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useBlockNumber } from "wagmi";
 
-interface UsePreviewOpenShortOptions {
+type UsePreviewOpenShortOptions = {
   chainId: number;
   hyperdriveAddress: Address;
-  amountOfBondsToShort: bigint | undefined;
   asBase: boolean;
-}
+  amountToDeposit?: bigint | undefined;
+  amountOfBondsToShort?: bigint | undefined;
+};
 
 interface UsePreviewOpenShortResult {
   status: MutationStatus;
   traderDeposit: bigint | undefined;
+  shortedBonds: bigint | undefined;
   spotPriceAfterOpen: bigint | undefined;
   spotRateAfterOpen: bigint | undefined;
   curveFee: bigint | undefined;
@@ -27,6 +29,7 @@ export function usePreviewOpenShort({
   chainId,
   hyperdriveAddress,
   amountOfBondsToShort,
+  amountToDeposit,
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readHyperdrive = useReadHyperdrive({
@@ -34,7 +37,8 @@ export function usePreviewOpenShort({
     address: hyperdriveAddress,
   });
 
-  const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
+  const queryEnabled =
+    !!readHyperdrive && (!!amountOfBondsToShort || !!amountToDeposit);
   const { data: blockNumber } = useBlockNumber({
     watch: false,
     query: { enabled: queryEnabled },
@@ -42,18 +46,30 @@ export function usePreviewOpenShort({
   });
 
   const { data, status, fetchStatus } = useQuery({
-    queryKey: makeQueryKey("previewOpenShort", {
-      chainId,
-      hyperdriveAddress,
-      amountBondShorts: amountOfBondsToShort?.toString(),
-      asBase,
-      blockNumber: blockNumber?.toString(),
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "previewOpenShort",
+      params: {
+        chainId,
+        hyperdriveAddress,
+        amountOfBondsToShort,
+        asBase,
+        blockNumber,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          const finalShortBonds =
+            amountOfBondsToShort ??
+            (await readHyperdrive.getShortBondsGivenDeposit({
+              // queryEnabled checks that one of the two is truthy
+              amountIn: amountToDeposit as bigint,
+              asBase,
+            }));
+
           const result = await readHyperdrive.previewOpenShort({
-            amountOfBondsToShort,
+            amountOfBondsToShort: finalShortBonds,
             asBase,
           });
 
@@ -67,12 +83,17 @@ export function usePreviewOpenShort({
                 sharesAmount: result.traderDeposit,
               });
 
-          return { ...result, traderDeposit: finalTraderDeposit };
+          return {
+            ...result,
+            shortedBonds: finalShortBonds,
+            traderDeposit: finalTraderDeposit,
+          };
         }
       : undefined,
   });
   return {
     traderDeposit: data?.traderDeposit,
+    shortedBonds: data?.shortedBonds,
     spotPriceAfterOpen: data?.spotPriceAfterOpen,
     spotRateAfterOpen: data?.spotRateAfterOpen,
     curveFee: data?.curveFee,

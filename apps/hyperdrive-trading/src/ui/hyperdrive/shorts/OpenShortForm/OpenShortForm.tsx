@@ -5,7 +5,6 @@ import {
   appConfig,
   getBaseToken,
   getToken,
-  getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
@@ -21,7 +20,6 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
@@ -183,6 +181,7 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     amountOfBondsToShort: amountOfBondsToShortAsBigInt,
+    amountToDeposit: amountToPayAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
 
@@ -292,15 +291,15 @@ export function OpenShortForm({
           rounding: "trunc",
         });
 
-  const maturesOnLabel = formatDate(
-    Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
-  );
+  // const maturesOnLabel = formatDate(
+  //   Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
+  // );
 
-  const yieldSource = getYieldSource({
-    hyperdriveAddress: hyperdrive.address,
-    hyperdriveChainId: hyperdrive.chainId,
-    appConfig,
-  });
+  // const yieldSource = getYieldSource({
+  //   hyperdriveAddress: hyperdrive.address,
+  //   hyperdriveChainId: hyperdrive.chainId,
+  //   appConfig,
+  // });
 
   // Plausible event props
   const formName = "Open Short";
@@ -315,6 +314,7 @@ export function OpenShortForm({
             name={`${baseToken.symbol}-input`}
             variant="lighter"
             inputLabel="Earn yield on"
+            disabled
             token={
               <TokenPicker
                 tokens={[
@@ -428,12 +428,12 @@ export function OpenShortForm({
                 : formatUnits(traderDeposit || 0n, activeToken.decimals)
             }
             // This input is disabled until the getMaxShort is fixed on the sdk.
-            disabled
+            // disabled
             // maxValue={maxButtonValue}
-            // onChange={(newAmount) => {
-            //   setActiveInput("budget");
-            //   setPaymentAmount(newAmount);
-            // }}
+            onChange={(newAmount) => {
+              setActiveInput("budget");
+              setPaymentAmount(newAmount);
+            }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (

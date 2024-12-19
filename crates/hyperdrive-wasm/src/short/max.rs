@@ -63,15 +63,15 @@ struct AbsoluteMaxShortParams {
 /// state of the pool.
 #[wasm_bindgen(skip_jsdoc)]
 pub fn absoluteMaxShort(params: IAbsoluteMaxShortParams) -> Result<BigInt, Error> {
-    let state = params.to_state()?;
-    let bond_tolerance = match params.bond_tolerance() {
-        Some(bond_tolerance) => Some(bond_tolerance.to_u256()?.fixed()),
-        None => None,
-    };
-
-    let result_fp = state
-        .calculate_absolute_max_short(bond_tolerance, params.max_iterations())
-        .to_result()?;
-
-    result_fp.to_bigint()
+    params
+        .to_state()?
+        .calculate_absolute_max_short(
+            match params.bond_tolerance() {
+                Some(tolerance) => Some(tolerance.to_u256()?.fixed()),
+                None => None,
+            },
+            params.max_iterations(),
+        )
+        .to_result()?
+        .to_bigint()
 }
