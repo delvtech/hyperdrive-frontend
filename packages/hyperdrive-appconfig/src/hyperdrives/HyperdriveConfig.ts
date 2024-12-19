@@ -2,7 +2,6 @@ import { PoolConfig } from "@delvtech/hyperdrive-viem";
 import { rewardFunctions } from "src/rewards/rewards";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
-navigator;
 
 export interface HyperdriveConfig {
   chainId: number;
