@@ -43,7 +43,7 @@ export function SlippageSettings({
         />
       </button>
       {isDropdownOpen && (
-        <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg border bg-base-100 p-4 shadow">
+        <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg border border-base-200 bg-base-100 p-4 shadow">
           <div className="flex items-center">
             <span className="ml-1">Max. Slippage</span>
             <Tooltip className="ml-1 before:text-start" tooltip={tooltip}>
