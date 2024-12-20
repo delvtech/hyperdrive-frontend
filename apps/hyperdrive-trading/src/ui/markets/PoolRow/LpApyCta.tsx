@@ -7,6 +7,7 @@ import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { HyperVueMilesIconUrl } from "src/ui/rewards/HyperVueMilesIconUrl";
+import { RewardsTooltipContent } from "src/ui/rewards/RewardsTooltip/RewardsTooltipContent";
 import { useAccount } from "wagmi";
 
 interface LpApyCtaProps {
@@ -25,6 +26,15 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
   return (
     <PoolStat
       label={label}
+      overlay={
+        <RewardsTooltipContent
+          chainId={hyperdrive.chainId}
+          hyperdriveAddress={hyperdrive.address}
+          baseRate={lpApy?.lpApy}
+          showMiles
+          netRate={lpApy?.netLpApy}
+        />
+      }
       isLoading={lpApyStatus === "loading"}
       isNew={lpApy?.isNew}
       value={

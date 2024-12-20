@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
-import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { Address } from "viem";
 
@@ -36,20 +35,10 @@ export function LpApyStat({
     return <PercentLabel value={netApyLabel} />;
   }
 
-  return (
-    <RewardsTooltip
-      chainId={hyperdrive.chainId}
-      hyperdriveAddress={hyperdrive.address}
-      baseRate={lpApy?.lpApy}
-      showMiles
-      netRate={lpApy?.netLpApy}
-    >
-      {netApyLabel ? (
-        <>
-          <PercentLabel value={netApyLabel} />
-          <span className="mx-1">⚡</span>
-        </>
-      ) : null}
-    </RewardsTooltip>
-  );
+  return netApyLabel ? (
+    <div className="flex">
+      <PercentLabel value={netApyLabel} />
+      <span className="mx-1">⚡</span>
+    </div>
+  ) : null;
 }
