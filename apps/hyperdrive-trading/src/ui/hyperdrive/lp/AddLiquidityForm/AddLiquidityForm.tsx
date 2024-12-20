@@ -34,7 +34,7 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
-import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip/RewardsTooltip";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";

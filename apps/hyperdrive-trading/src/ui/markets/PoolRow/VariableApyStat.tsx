@@ -6,7 +6,6 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { GradientBadge } from "src/ui/base/components/GradientBadge";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
-import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip";
 import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
@@ -57,12 +56,7 @@ export function VariableApyStat({
   }
 
   return (
-    <RewardsTooltip
-      chainId={chainId}
-      hyperdriveAddress={hyperdriveAddress}
-      baseRate={yieldSourceRate?.vaultRate}
-      netRate={yieldSourceRate?.netVaultRate}
-    >
+    <div className="flex">
       <PercentLabel
         value={formatRate({
           rate: yieldSourceRate?.netVaultRate ?? 0n,
@@ -72,6 +66,6 @@ export function VariableApyStat({
       />
       <GradientBadge>{multiplierLabel}</GradientBadge>
       <span className="mx-1">⚡</span>
-    </RewardsTooltip>
+    </div>
   );
 }
