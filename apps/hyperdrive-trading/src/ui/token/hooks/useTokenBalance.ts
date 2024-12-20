@@ -49,7 +49,7 @@ export function useTokenBalance({
     functionName: "balanceOf",
     args: account ? [account] : undefined,
     query: {
-      enabled: account && !isEth && !isZeroAddress,
+      enabled: !!account && !isEth && !isZeroAddress,
     },
   });
 
