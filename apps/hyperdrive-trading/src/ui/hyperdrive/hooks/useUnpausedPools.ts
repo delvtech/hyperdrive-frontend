@@ -5,12 +5,11 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
-import { getPublicClient } from "@wagmi/core";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
-import { wagmiConfig } from "src/network/wagmiClient";
+import { queryClient } from "src/network/queryClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { PublicClient } from "viem";
+import { makeRewardsQuery } from "src/ui/rewards/useRewards";
 import { useChainId } from "wagmi";
 
 const HIDDEN_POOLS = [
@@ -59,10 +58,6 @@ export function useUnpausedPools(): {
               }
 
               // Resolve the rewards information and include it for consumers
-              const publicClient = getPublicClient(wagmiConfig as any, {
-                chainId: hyperdrive.chainId,
-              }) as PublicClient;
-
               const rewardsFn = getRewardsFn({
                 yieldSourceId: hyperdrive.yieldSource,
                 appConfig: appConfigForConnectedChain,
@@ -70,7 +65,16 @@ export function useUnpausedPools(): {
 
               const rewards = !rewardsFn
                 ? []
-                : await rewardsFn(publicClient).catch(() => []);
+                : await (async () => {
+                    return queryClient
+                      .fetchQuery(
+                        makeRewardsQuery({
+                          hyperdriveAddress: hyperdrive.address,
+                          chainId: hyperdrive.chainId,
+                        }),
+                      )
+                      .catch(() => []);
+                  })();
 
               return { ...hyperdrive, rewardsAmount: rewards };
             }),

@@ -8,11 +8,10 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
-import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { isForkChain } from "src/chains/isForkChain";
-import { wagmiConfig } from "src/network/wagmiClient";
-import { PublicClient } from "viem";
+import { queryClient } from "src/network/queryClient";
+import { makeRewardsQuery } from "src/ui/rewards/useRewards";
 
 export async function getYieldSourceRate({
   readHyperdrive,
@@ -94,10 +93,12 @@ async function calcNetRate(
     appConfig,
   });
   if (rewardsFn) {
-    const publicClient = getPublicClient(wagmiConfig as any, {
-      chainId: hyperdrive.chainId,
-    }) as PublicClient;
-    const rewards = await rewardsFn(publicClient);
+    const rewards = await queryClient.fetchQuery(
+      makeRewardsQuery({
+        chainId: hyperdrive.chainId,
+        hyperdriveAddress: hyperdrive.address,
+      }),
+    );
     rewards?.forEach((reward) => {
       if (reward.type === "apy") {
         netRate = fixed(reward.apy).add(

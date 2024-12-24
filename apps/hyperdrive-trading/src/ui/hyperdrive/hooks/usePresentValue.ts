@@ -10,9 +10,10 @@ import { getPublicClient } from "@wagmi/core";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { getTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+import { makeTokenFiatPriceQuery } from "src/ui/token/hooks/useTokenFiatPrice";
 import { Address, PublicClient } from "viem";
 
 export function usePresentValue({
@@ -88,11 +89,14 @@ export function getPresentValue({
   const isFiatSupported =
     !isTestnetChain(chainId) && baseToken.address !== ZERO_ADDRESS;
   const fiatPricePromise = isFiatSupported
-    ? getTokenFiatPrice({
-        chainId: baseToken.chainId,
-        publicClient,
-        tokenAddress: baseToken.address,
-      }).catch(() => undefined)
+    ? queryClient
+        .fetchQuery(
+          makeTokenFiatPriceQuery({
+            chainId: baseToken.chainId,
+            tokenAddress: baseToken.address,
+          }),
+        )
+        .catch(() => undefined)
     : Promise.resolve(undefined);
 
   return Promise.all([readHyperdrive.getPresentValue(), fiatPricePromise]).then(
