@@ -141,6 +141,9 @@ export { stEthAbi, type StEthAbi } from "src/token/steth/abi";
 export { ReadStEth } from "src/token/steth/ReadStEth";
 export { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
+// zaps
+export { zapAbi, type ZapAbi } from "src/hyperdrive/zaps/abi";
+
 // Drift //
 
 export type {
