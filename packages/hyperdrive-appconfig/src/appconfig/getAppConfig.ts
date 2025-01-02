@@ -10,8 +10,10 @@ import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
+import { AnyRewardKey } from "src/hyperdrives/rewards";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
+import { RewardResolverKey } from "src/rewards/rewards";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -64,7 +66,7 @@ const hyperdriveKindResolvers: Record<
         isBaseTokenWithdrawalEnabled: false,
         isShareTokenWithdrawalEnabled: true,
       },
-      rewards: {
+      rewardsMap: {
         short: ["fetchLineaRewards"],
         lp: ["fetchLineaRewards"],
       },
@@ -84,7 +86,7 @@ const hyperdriveKindResolvers: Record<
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
       },
-      rewards: {
+      rewardsMap: {
         short: ["fetchLineaRewards"],
         lp: ["fetchLineaRewards"],
       },
@@ -134,7 +136,7 @@ const hyperdriveKindResolvers: Record<
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
       },
-      rewards: {
+      rewardsMap: {
         short: ["fetchEtherfiRewards"],
         lp: ["fetchEtherfiRewards"],
       },
@@ -218,7 +220,7 @@ const hyperdriveKindResolvers: Record<
           isBaseTokenWithdrawalEnabled: true,
           isShareTokenWithdrawalEnabled: true,
         },
-        rewards: {
+        rewardsMap: {
           short: ["fetchGyroscopeRewards"],
           lp: ["fetchGyroscopeRewards"],
         },
@@ -358,7 +360,7 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 4,
-        rewards: {
+        rewardsMap: {
           short: ["fetchMorphoMwethRewards"],
           lp: ["fetchMorphoMwethRewards"],
         },
@@ -381,7 +383,7 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 2,
-        rewards: {
+        rewardsMap: {
           short: ["fetchMorphoMwusdcRewards"],
           lp: ["fetchMorphoMwusdcRewards"],
         },
@@ -404,7 +406,7 @@ const hyperdriveKindResolvers: Record<
           isShareTokenWithdrawalEnabled: true,
         },
         tokenPlaces: 2,
-        rewards: {
+        rewardsMap: {
           short: ["fetchMorphoMweurcRewards"],
           lp: ["fetchMorphoMweurcRewards"],
         },
@@ -481,7 +483,7 @@ const hyperdriveKindResolvers: Record<
         yieldSourceId: "aeroUsdcAero",
         baseTokenPlaces: 9, // aero lp tokens are super small
         baseTokenTags: [],
-        rewards: {
+        rewardsMap: {
           short: ["fetchAeroRewards"],
           lp: ["fetchAeroRewards"],
         },
@@ -556,7 +558,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenIconUrl: USDC_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoCbethUsdc",
-        rewards: {
+        rewardsMap: {
           short: ["fetchMorphoCbethUsdcRewards"],
           lp: ["fetchMorphoCbethUsdcRewards"],
         },
@@ -579,6 +581,7 @@ export async function getAppConfig({
   earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
+  let allRewards: Record<AnyRewardKey, RewardResolverKey[]> = {};
   const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure
@@ -599,7 +602,7 @@ export async function getAppConfig({
         throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);
       }
 
-      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig, rewards } =
         await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
 
       // Not all hyperdrives have a base or shares token, so only add them if
@@ -609,6 +612,14 @@ export async function getAppConfig({
       }
       if (sharesTokenConfig) {
         tokens.push(sharesTokenConfig);
+      }
+
+      if (rewards) {
+        console.log("rewards", rewards);
+        allRewards = {
+          ...allRewards,
+          ...rewards,
+        };
       }
 
       return hyperdriveConfig;
@@ -625,7 +636,7 @@ export async function getAppConfig({
     yieldSources,
     chains,
     zaps,
-    rewards: {},
+    rewards: allRewards,
   };
 
   return config;

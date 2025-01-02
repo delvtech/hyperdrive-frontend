@@ -1,9 +1,13 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import retry from "p-retry";
+import { HyperdriveConfigResolverResult } from "src/appconfig/HyperdriveConfigResolver";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
+import {
+  HyperdriveRewardsMap,
+  parseHyperdriveRewardsMap,
+} from "src/hyperdrives/rewards";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
-import { TokenConfig } from "src/tokens/types";
 import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 
@@ -13,18 +17,15 @@ export async function getMorphoHyperdrive({
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
-  rewards,
+  rewardsMap,
 }: {
   hyperdrive: ReadHyperdrive;
   yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
-  rewards?: HyperdriveConfig["rewards"];
-}): Promise<{
-  baseTokenConfig: TokenConfig;
-  hyperdriveConfig: HyperdriveConfig;
-}> {
+  rewardsMap?: HyperdriveRewardsMap;
+}): Promise<HyperdriveConfigResolverResult> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
@@ -54,8 +55,9 @@ export async function getMorphoHyperdrive({
       },
     },
   );
+  const chainId = await hyperdrive.drift.getChainId();
   const hyperdriveConfig: HyperdriveConfig = {
-    chainId: await hyperdrive.drift.getChainId(),
+    chainId,
     kind: await hyperdrive.getKind(),
     // safe to cast here because we know the pool was initialized
     initializationBlock: initializationBlock.blockNumber as bigint,
@@ -78,12 +80,17 @@ export async function getMorphoHyperdrive({
     poolConfig,
   };
 
-  if (rewards) {
-    hyperdriveConfig.rewards = rewards;
-  }
+  const rewards = rewardsMap
+    ? parseHyperdriveRewardsMap({
+        hyperdriveAddress: hyperdrive.address,
+        chainId,
+        rewardsMap,
+      })
+    : undefined;
 
   return {
     baseTokenConfig,
     hyperdriveConfig,
+    rewards,
   };
 }

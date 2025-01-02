@@ -1,8 +1,12 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { HyperdriveConfigResolverResult } from "src/appconfig/HyperdriveConfigResolver";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
+import {
+  HyperdriveRewardsMap,
+  parseHyperdriveRewardsMap,
+} from "src/hyperdrives/rewards";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
-import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
@@ -19,7 +23,7 @@ interface GetHyperdriveConfigParams {
   tokenPlaces: number;
   sharesTokenTags?: string[];
   baseTokenTags?: string[];
-  rewards?: HyperdriveConfig["rewards"];
+  rewardsMap?: HyperdriveRewardsMap;
 }
 
 export async function getCustomHyperdrive({
@@ -33,12 +37,8 @@ export async function getCustomHyperdrive({
   tokenPlaces,
   sharesTokenTags = [],
   baseTokenTags = [],
-  rewards,
-}: GetHyperdriveConfigParams): Promise<{
-  sharesTokenConfig: TokenConfig;
-  baseTokenConfig: TokenConfig;
-  hyperdriveConfig: HyperdriveConfig;
-}> {
+  rewardsMap,
+}: GetHyperdriveConfigParams): Promise<HyperdriveConfigResolverResult> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
   const sharesToken = await hyperdrive.getSharesToken();
@@ -68,8 +68,9 @@ export async function getCustomHyperdrive({
     fromBlock: earliestBlock,
   });
 
+  const chainId = await hyperdrive.drift.getChainId();
   const hyperdriveConfig: HyperdriveConfig = {
-    chainId: await hyperdrive.drift.getChainId(),
+    chainId,
     kind: await hyperdrive.getKind(),
     address: hyperdrive.address,
     version: version.string,
@@ -84,13 +85,18 @@ export async function getCustomHyperdrive({
     poolConfig,
   };
 
-  if (rewards) {
-    hyperdriveConfig.rewards = rewards;
-  }
+  const rewards = rewardsMap
+    ? parseHyperdriveRewardsMap({
+        hyperdriveAddress: hyperdrive.address,
+        chainId,
+        rewardsMap,
+      })
+    : {};
 
   return {
     sharesTokenConfig,
     baseTokenConfig,
     hyperdriveConfig,
+    rewards,
   };
 }

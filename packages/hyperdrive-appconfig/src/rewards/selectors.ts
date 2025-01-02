@@ -1,5 +1,5 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-import { RewardFunctionKey, rewardFunctions } from "src/rewards/rewards";
+import { RewardResolverKey, rewardFunctions } from "src/rewards/rewards";
 import { RewardsResolver } from "src/rewards/types";
 import { YieldSourceId } from "src/yieldSources/types";
 
@@ -26,7 +26,7 @@ export function getRewardsFn({
 export function getRewardsFn2({
   rewardFn,
 }: {
-  rewardFn: RewardFunctionKey;
+  rewardFn: RewardResolverKey;
 }): RewardsResolver | undefined {
   return rewardFunctions[rewardFn];
 }

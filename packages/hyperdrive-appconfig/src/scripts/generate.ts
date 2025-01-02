@@ -108,6 +108,7 @@ const combinedAppConfig: AppConfig = {
   yieldSources,
   chains,
   zaps,
+  rewards: {},
 };
 
 // Generate an app config for each chain in the list above
@@ -134,6 +135,10 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   combinedAppConfig.hyperdrives.push(...appConfig.hyperdrives);
   combinedAppConfig.tokens.push(...appConfig.tokens);
   combinedAppConfig.registries[chain.id] = registryAddress;
+  combinedAppConfig.rewards = {
+    ...combinedAppConfig.rewards,
+    ...appConfig.rewards,
+  };
 }
 
 // All appconfigs have been built and combined, now let's process rewards
