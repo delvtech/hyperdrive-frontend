@@ -54,7 +54,7 @@ export const appConfig: AppConfig = {
       initializationBlock: 20180617n,
       initializationTimestamp: 1719462275n,
       decimals: 18,
-      yieldSource: "makerDsr",
+      yieldSource: "skyDsr",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -2621,7 +2621,6 @@ export const appConfig: AppConfig = {
     {
       address: "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842",
       chainId: 8453,
-      address: "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42",
       decimals: 6,
       places: 2,
       name: "EURC",

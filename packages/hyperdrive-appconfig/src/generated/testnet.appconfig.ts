@@ -54,7 +54,7 @@ export const testnetAppConfig: AppConfig = {
       initializationBlock: 20180617n,
       initializationTimestamp: 1719462275n,
       decimals: 18,
-      yieldSource: "makerDsr",
+      yieldSource: "skyDsr",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
