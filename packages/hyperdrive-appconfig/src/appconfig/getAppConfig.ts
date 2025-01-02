@@ -2,6 +2,7 @@ import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
 import chalk from "chalk";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
+import { HyperdriveConfigResolver } from "src/appconfig/HyperdriveConfigResolver";
 import { chains } from "src/chains/chains";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getAeroLpHyperdrive } from "src/hyperdrives/aero/getAeroHyperdrive";
@@ -42,20 +43,6 @@ import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
 import { Address, PublicClient } from "viem";
-type HyperdriveConfigResolver = (
-  hyperdrive: ReadHyperdrive,
-  publicClient: PublicClient,
-  /**
-   * Block number to clamp the beginning of event requests to. This is useful
-   * for L2s that have too many blocks where the default "earliest" blockTag
-   * would timeout.
-   */
-  earliestBlock?: bigint,
-) => Promise<{
-  hyperdriveConfig: HyperdriveConfig;
-  sharesTokenConfig?: TokenConfig;
-  baseTokenConfig?: TokenConfig;
-}>;
 
 const hyperdriveKindResolvers: Record<
   string /* kind */,
