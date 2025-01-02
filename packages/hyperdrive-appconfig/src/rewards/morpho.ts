@@ -213,16 +213,28 @@ async function fetchMorphoVaultRewards(
   // Morpho Vaults have the ability to earn rewards for deposits into the vault
   // as well as the rewards for the allocations the vault makes into underlying
   // Morpho markets.
-  const vaultRewards = response.vaultByAddress.state.rewards.map((reward) =>
-    parseVaultReward({
-      reward,
-      vaultCollateralAsset: response.vaultByAddress.asset,
-    }),
-  );
+  const vaultRewards = response.vaultByAddress.state.rewards
+    .filter(
+      (reward) =>
+        // vaults might be earning dust, which should be skipped for the
+        // purposes of displaying rewards
+        reward.supplyApr && reward.supplyApr > 0.001,
+    )
+    .map((reward) =>
+      parseVaultReward({
+        reward,
+        vaultCollateralAsset: response.vaultByAddress.asset,
+      }),
+    );
 
   const marketAllocationRewards = parseAllocationRewards({
     totalAssetsUsd: parseFixed(response.vaultByAddress.state.totalAssetsUsd),
-    marketAllocations: response.vaultByAddress.state.allocation,
+    marketAllocations: response.vaultByAddress.state.allocation.filter(
+      (allocation) =>
+        // markets might be supplying dust to the older underlying vaults,
+        // which should be skipped for the purposes of displaying rewards
+        allocation.supplyAssetsUsd > 1,
+    ),
     vaultCollateralAsset: response.vaultByAddress.asset,
   });
 

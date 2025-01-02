@@ -1,4 +1,5 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import retry from "p-retry";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
@@ -42,7 +43,17 @@ export async function getMorphoHyperdrive({
   });
 
   // safe to cast here because we know the pool was initialized
-  const initializationBlock = await hyperdrive.getInitializationBlock();
+  const initializationBlock = await retry(
+    async () => hyperdrive.getInitializationBlock(),
+    {
+      // sometimes this fails to find the block due to alchemy blips, retry a
+      // few times in this case
+      retries: 5,
+      onFailedAttempt: () => {
+        console.log("Retrying getInitializationBlock...");
+      },
+    },
+  );
   const hyperdriveConfig: HyperdriveConfig = {
     chainId: await hyperdrive.drift.getChainId(),
     kind: await hyperdrive.getKind(),
