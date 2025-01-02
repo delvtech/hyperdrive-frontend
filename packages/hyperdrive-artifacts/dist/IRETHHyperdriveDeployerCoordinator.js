@@ -434,6 +434,11 @@ export const IRETHHyperdriveDeployerCoordinator = {
         },
         {
             "type": "error",
+            "name": "ApprovalFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
             "name": "DeploymentAlreadyExists",
             "inputs": []
         },

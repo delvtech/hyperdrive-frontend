@@ -266,6 +266,26 @@ export declare const IPool: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "getBorrowLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getBridgeLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "getConfiguration";
         readonly inputs: readonly [{
             readonly name: "asset";
@@ -320,6 +340,60 @@ export declare const IPool: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "getEModeLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getFlashLoanLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getLiquidationGracePeriod";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint40";
+            readonly internalType: "uint40";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getLiquidationLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "getPoolLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "getReserveAddressById";
         readonly inputs: readonly [{
             readonly name: "id";
@@ -343,7 +417,7 @@ export declare const IPool: {
         readonly outputs: readonly [{
             readonly name: "";
             readonly type: "tuple";
-            readonly internalType: "struct DataTypes.ReserveData";
+            readonly internalType: "struct DataTypes.ReserveDataLegacy";
             readonly components: readonly [{
                 readonly name: "configuration";
                 readonly type: "tuple";
@@ -414,6 +488,94 @@ export declare const IPool: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "getReserveDataExtended";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "tuple";
+            readonly internalType: "struct DataTypes.ReserveData";
+            readonly components: readonly [{
+                readonly name: "configuration";
+                readonly type: "tuple";
+                readonly internalType: "struct DataTypes.ReserveConfigurationMap";
+                readonly components: readonly [{
+                    readonly name: "data";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }, {
+                readonly name: "liquidityIndex";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "currentLiquidityRate";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "variableBorrowIndex";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "currentVariableBorrowRate";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "currentStableBorrowRate";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "lastUpdateTimestamp";
+                readonly type: "uint40";
+                readonly internalType: "uint40";
+            }, {
+                readonly name: "id";
+                readonly type: "uint16";
+                readonly internalType: "uint16";
+            }, {
+                readonly name: "liquidationGracePeriodUntil";
+                readonly type: "uint40";
+                readonly internalType: "uint40";
+            }, {
+                readonly name: "aTokenAddress";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "stableDebtTokenAddress";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "variableDebtTokenAddress";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "interestRateStrategyAddress";
+                readonly type: "address";
+                readonly internalType: "address";
+            }, {
+                readonly name: "accruedToTreasury";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "unbacked";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "isolationModeTotalDebt";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }, {
+                readonly name: "virtualUnderlyingBalance";
+                readonly type: "uint128";
+                readonly internalType: "uint128";
+            }];
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "getReserveNormalizedIncome";
         readonly inputs: readonly [{
             readonly name: "asset";
@@ -442,6 +604,16 @@ export declare const IPool: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "getReservesCount";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "getReservesList";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -450,6 +622,16 @@ export declare const IPool: {
             readonly internalType: "address[]";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getSupplyLogic";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
         readonly name: "getUserAccountData";
@@ -515,6 +697,20 @@ export declare const IPool: {
             readonly name: "";
             readonly type: "uint256";
             readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "getVirtualUnderlyingBalance";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint128";
+            readonly internalType: "uint128";
         }];
         readonly stateMutability: "view";
     }, {
@@ -754,6 +950,20 @@ export declare const IPool: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "setLiquidationGracePeriod";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "until";
+            readonly type: "uint40";
+            readonly internalType: "uint40";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "setReserveInterestRateStrategyAddress";
         readonly inputs: readonly [{
             readonly name: "asset";
@@ -861,6 +1071,40 @@ export declare const IPool: {
             readonly name: "interestRateMode";
             readonly type: "uint256";
             readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "swapToVariable";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "user";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "syncIndexesState";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "syncRatesState";
+        readonly inputs: readonly [{
+            readonly name: "asset";
+            readonly type: "address";
+            readonly internalType: "address";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -1332,16 +1576,27 @@ export declare const IPool: {
         readonly "finalizeTransfer(address,address,address,uint256,uint256,uint256)": "d5ed3933";
         readonly "flashLoan(address,address[],uint256[],uint256[],address,bytes,uint16)": "ab9c4b5d";
         readonly "flashLoanSimple(address,address,uint256,bytes,uint16)": "42b0b77c";
+        readonly "getBorrowLogic()": "2be29fa7";
+        readonly "getBridgeLogic()": "df374c36";
         readonly "getConfiguration(address)": "c44b11f7";
         readonly "getEModeCategoryData(uint8)": "6c6f6ae1";
+        readonly "getEModeLogic()": "f32b9a73";
+        readonly "getFlashLoanLogic()": "348fde0f";
+        readonly "getLiquidationGracePeriod(address)": "5c9a8b18";
+        readonly "getLiquidationLogic()": "911a3413";
+        readonly "getPoolLogic()": "d3350155";
         readonly "getReserveAddressById(uint16)": "52751797";
         readonly "getReserveData(address)": "35ea6a75";
+        readonly "getReserveDataExtended(address)": "8381995f";
         readonly "getReserveNormalizedIncome(address)": "d15e0053";
         readonly "getReserveNormalizedVariableDebt(address)": "386497fd";
+        readonly "getReservesCount()": "72218d04";
         readonly "getReservesList()": "d1946dbc";
+        readonly "getSupplyLogic()": "870e7744";
         readonly "getUserAccountData(address)": "bf92857c";
         readonly "getUserConfiguration(address)": "4417a583";
         readonly "getUserEMode(address)": "eddf1b79";
+        readonly "getVirtualUnderlyingBalance(address)": "6fb07f96";
         readonly "initReserve(address,address,address,address,address)": "7a708e92";
         readonly "liquidationCall(address,address,address,uint256,bool)": "00a718a9";
         readonly "mintToTreasury(address[])": "9cd19996";
@@ -1353,12 +1608,16 @@ export declare const IPool: {
         readonly "rescueTokens(address,address,uint256)": "cea9d26f";
         readonly "resetIsolationModeTotalDebt(address)": "e43e88a1";
         readonly "setConfiguration(address,(uint256))": "f51e435b";
+        readonly "setLiquidationGracePeriod(address,uint40)": "b1a99e26";
         readonly "setReserveInterestRateStrategyAddress(address,address)": "1d2118f9";
         readonly "setUserEMode(uint8)": "28530a47";
         readonly "setUserUseReserveAsCollateral(address,bool)": "5a3b74b9";
         readonly "supply(address,uint256,address,uint16)": "617ba037";
         readonly "supplyWithPermit(address,uint256,address,uint16,uint256,uint8,bytes32,bytes32)": "02c205f0";
         readonly "swapBorrowRateMode(address,uint256)": "94ba89a2";
+        readonly "swapToVariable(address,address)": "2520d5ee";
+        readonly "syncIndexesState(address)": "ab2b51f6";
+        readonly "syncRatesState(address)": "98c7da4e";
         readonly "updateBridgeProtocolFee(uint256)": "3036b439";
         readonly "updateFlashloanPremiums(uint128,uint128)": "bcb6e522";
         readonly "withdraw(address,uint256,address)": "69328dec";

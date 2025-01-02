@@ -1398,6 +1398,10 @@ export declare const MockERC4626Hyperdrive: {
         readonly type: "error";
         readonly name: "UnexpectedSuccess";
         readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsupportedToken";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

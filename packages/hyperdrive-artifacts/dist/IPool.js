@@ -342,6 +342,32 @@ export const IPool = {
         },
         {
             "type": "function",
+            "name": "getBorrowLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getBridgeLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "getConfiguration",
             "inputs": [
                 {
@@ -414,6 +440,77 @@ export const IPool = {
         },
         {
             "type": "function",
+            "name": "getEModeLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getFlashLoanLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getLiquidationGracePeriod",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint40",
+                    "internalType": "uint40"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getLiquidationLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getPoolLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "getReserveAddressById",
             "inputs": [
                 {
@@ -445,7 +542,7 @@ export const IPool = {
                 {
                     "name": "",
                     "type": "tuple",
-                    "internalType": "struct DataTypes.ReserveData",
+                    "internalType": "struct DataTypes.ReserveDataLegacy",
                     "components": [
                         {
                             "name": "configuration",
@@ -536,6 +633,119 @@ export const IPool = {
         },
         {
             "type": "function",
+            "name": "getReserveDataExtended",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "tuple",
+                    "internalType": "struct DataTypes.ReserveData",
+                    "components": [
+                        {
+                            "name": "configuration",
+                            "type": "tuple",
+                            "internalType": "struct DataTypes.ReserveConfigurationMap",
+                            "components": [
+                                {
+                                    "name": "data",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "liquidityIndex",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "currentLiquidityRate",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "variableBorrowIndex",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "currentVariableBorrowRate",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "currentStableBorrowRate",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "lastUpdateTimestamp",
+                            "type": "uint40",
+                            "internalType": "uint40"
+                        },
+                        {
+                            "name": "id",
+                            "type": "uint16",
+                            "internalType": "uint16"
+                        },
+                        {
+                            "name": "liquidationGracePeriodUntil",
+                            "type": "uint40",
+                            "internalType": "uint40"
+                        },
+                        {
+                            "name": "aTokenAddress",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "stableDebtTokenAddress",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "variableDebtTokenAddress",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "interestRateStrategyAddress",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "accruedToTreasury",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "unbacked",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "isolationModeTotalDebt",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        },
+                        {
+                            "name": "virtualUnderlyingBalance",
+                            "type": "uint128",
+                            "internalType": "uint128"
+                        }
+                    ]
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "getReserveNormalizedIncome",
             "inputs": [
                 {
@@ -574,6 +784,19 @@ export const IPool = {
         },
         {
             "type": "function",
+            "name": "getReservesCount",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "getReservesList",
             "inputs": [],
             "outputs": [
@@ -584,6 +807,19 @@ export const IPool = {
                 }
             ],
             "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getSupplyLogic",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
         },
         {
             "type": "function",
@@ -670,6 +906,25 @@ export const IPool = {
                     "name": "",
                     "type": "uint256",
                     "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getVirtualUnderlyingBalance",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint128",
+                    "internalType": "uint128"
                 }
             ],
             "stateMutability": "view"
@@ -979,6 +1234,24 @@ export const IPool = {
         },
         {
             "type": "function",
+            "name": "setLiquidationGracePeriod",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "until",
+                    "type": "uint40",
+                    "internalType": "uint40"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "setReserveInterestRateStrategyAddress",
             "inputs": [
                 {
@@ -1115,6 +1388,50 @@ export const IPool = {
                     "name": "interestRateMode",
                     "type": "uint256",
                     "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "swapToVariable",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "syncIndexesState",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "syncRatesState",
+            "inputs": [
+                {
+                    "name": "asset",
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
             "outputs": [],
@@ -1699,16 +2016,27 @@ export const IPool = {
         "finalizeTransfer(address,address,address,uint256,uint256,uint256)": "d5ed3933",
         "flashLoan(address,address[],uint256[],uint256[],address,bytes,uint16)": "ab9c4b5d",
         "flashLoanSimple(address,address,uint256,bytes,uint16)": "42b0b77c",
+        "getBorrowLogic()": "2be29fa7",
+        "getBridgeLogic()": "df374c36",
         "getConfiguration(address)": "c44b11f7",
         "getEModeCategoryData(uint8)": "6c6f6ae1",
+        "getEModeLogic()": "f32b9a73",
+        "getFlashLoanLogic()": "348fde0f",
+        "getLiquidationGracePeriod(address)": "5c9a8b18",
+        "getLiquidationLogic()": "911a3413",
+        "getPoolLogic()": "d3350155",
         "getReserveAddressById(uint16)": "52751797",
         "getReserveData(address)": "35ea6a75",
+        "getReserveDataExtended(address)": "8381995f",
         "getReserveNormalizedIncome(address)": "d15e0053",
         "getReserveNormalizedVariableDebt(address)": "386497fd",
+        "getReservesCount()": "72218d04",
         "getReservesList()": "d1946dbc",
+        "getSupplyLogic()": "870e7744",
         "getUserAccountData(address)": "bf92857c",
         "getUserConfiguration(address)": "4417a583",
         "getUserEMode(address)": "eddf1b79",
+        "getVirtualUnderlyingBalance(address)": "6fb07f96",
         "initReserve(address,address,address,address,address)": "7a708e92",
         "liquidationCall(address,address,address,uint256,bool)": "00a718a9",
         "mintToTreasury(address[])": "9cd19996",
@@ -1720,12 +2048,16 @@ export const IPool = {
         "rescueTokens(address,address,uint256)": "cea9d26f",
         "resetIsolationModeTotalDebt(address)": "e43e88a1",
         "setConfiguration(address,(uint256))": "f51e435b",
+        "setLiquidationGracePeriod(address,uint40)": "b1a99e26",
         "setReserveInterestRateStrategyAddress(address,address)": "1d2118f9",
         "setUserEMode(uint8)": "28530a47",
         "setUserUseReserveAsCollateral(address,bool)": "5a3b74b9",
         "supply(address,uint256,address,uint16)": "617ba037",
         "supplyWithPermit(address,uint256,address,uint16,uint256,uint8,bytes32,bytes32)": "02c205f0",
         "swapBorrowRateMode(address,uint256)": "94ba89a2",
+        "swapToVariable(address,address)": "2520d5ee",
+        "syncIndexesState(address)": "ab2b51f6",
+        "syncRatesState(address)": "98c7da4e",
         "updateBridgeProtocolFee(uint256)": "3036b439",
         "updateFlashloanPremiums(uint128,uint128)": "bcb6e522",
         "withdraw(address,uint256,address)": "69328dec"

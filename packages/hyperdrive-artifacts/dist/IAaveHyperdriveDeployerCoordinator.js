@@ -444,6 +444,11 @@ export const IAaveHyperdriveDeployerCoordinator = {
         },
         {
             "type": "error",
+            "name": "ApprovalFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
             "name": "DeploymentAlreadyExists",
             "inputs": []
         },
