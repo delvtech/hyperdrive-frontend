@@ -1,6 +1,16 @@
 export declare const IChainlinkAggregatorV3: {
     abi: readonly [{
         readonly type: "function";
+        readonly name: "aggregator";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "decimals";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -88,6 +98,7 @@ export declare const IChainlinkAggregatorV3: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "aggregator()": "245a7bfc";
         readonly "decimals()": "313ce567";
         readonly "description()": "7284e416";
         readonly "getRoundData(uint80)": "9a6fc8f5";

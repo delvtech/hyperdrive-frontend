@@ -780,6 +780,10 @@ export declare const ERC4626Target1: {
         readonly type: "error";
         readonly name: "UnsafeCastToUint128";
         readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsupportedToken";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

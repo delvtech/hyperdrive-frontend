@@ -311,6 +311,30 @@ export declare const IHyperdriveGovernedRegistry: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "initialize";
+        readonly inputs: readonly [{
+            readonly name: "_name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }, {
+            readonly name: "_admin";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "isInitialized";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "kind";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -373,6 +397,16 @@ export declare const IHyperdriveGovernedRegistry: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "updateName";
+        readonly inputs: readonly [{
+            readonly name: "_name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "version";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -408,6 +442,21 @@ export declare const IHyperdriveGovernedRegistry: {
         readonly anonymous: false;
     }, {
         readonly type: "event";
+        readonly name: "Initialized";
+        readonly inputs: readonly [{
+            readonly name: "name";
+            readonly type: "string";
+            readonly indexed: true;
+            readonly internalType: "string";
+        }, {
+            readonly name: "admin";
+            readonly type: "address";
+            readonly indexed: true;
+            readonly internalType: "address";
+        }];
+        readonly anonymous: false;
+    }, {
+        readonly type: "event";
         readonly name: "InstanceInfoUpdated";
         readonly inputs: readonly [{
             readonly name: "instance";
@@ -427,6 +476,16 @@ export declare const IHyperdriveGovernedRegistry: {
         }];
         readonly anonymous: false;
     }, {
+        readonly type: "event";
+        readonly name: "NameUpdated";
+        readonly inputs: readonly [{
+            readonly name: "name";
+            readonly type: "string";
+            readonly indexed: true;
+            readonly internalType: "string";
+        }];
+        readonly anonymous: false;
+    }, {
         readonly type: "error";
         readonly name: "EndIndexTooLarge";
         readonly inputs: readonly [];
@@ -441,6 +500,10 @@ export declare const IHyperdriveGovernedRegistry: {
     }, {
         readonly type: "error";
         readonly name: "InvalidIndexes";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "RegistryAlreadyInitialized";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -464,11 +527,14 @@ export declare const IHyperdriveGovernedRegistry: {
         readonly "getInstancesInRange(uint256,uint256)": "bc30e7a1";
         readonly "getNumberOfFactories()": "f59d00b9";
         readonly "getNumberOfInstances()": "6e95d67c";
+        readonly "initialize(string,address)": "7ab4339d";
+        readonly "isInitialized()": "392e53cd";
         readonly "kind()": "04baa00b";
         readonly "name()": "06fdde03";
         readonly "setFactoryInfo(address[],uint128[])": "e967e388";
         readonly "setInstanceInfo(address[],uint128[],address[])": "1ff30ad2";
         readonly "updateAdmin(address)": "e2f273bd";
+        readonly "updateName(string)": "84da92a7";
         readonly "version()": "54fd4d50";
     };
 };

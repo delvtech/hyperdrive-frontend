@@ -1477,6 +1477,10 @@ export declare const ERC4626Target0: {
         readonly type: "error";
         readonly name: "UnsafeCastToInt256";
         readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "UnsupportedToken";
+        readonly inputs: readonly [];
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

@@ -352,6 +352,10 @@ export declare const IEzETHHyperdriveDeployerCoordinator: {
         readonly stateMutability: "pure";
     }, {
         readonly type: "error";
+        readonly name: "ApprovalFailed";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
         readonly name: "DeploymentAlreadyExists";
         readonly inputs: readonly [];
     }, {
