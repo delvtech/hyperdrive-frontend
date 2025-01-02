@@ -638,6 +638,7 @@ export async function getAppConfig({
     yieldSources,
     chains,
     zaps,
+    rewards: {},
   };
 
   return config;
