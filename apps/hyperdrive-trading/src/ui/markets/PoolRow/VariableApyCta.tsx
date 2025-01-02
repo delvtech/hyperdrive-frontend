@@ -5,6 +5,8 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { VariableApyStat } from "src/ui/markets/PoolRow/VariableApyStat";
+import { RewardsTooltipContent } from "src/ui/rewards/RewardsTooltip/RewardsTooltipContent";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
@@ -17,7 +19,7 @@ export function VariableApyCta({
 }: YieldMultiplierCtaProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { vaultRate } = useYieldSourceRate({
+  const { vaultRate: yieldSourceRate } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
@@ -25,9 +27,10 @@ export function VariableApyCta({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { rewards } = useRewards(hyperdrive);
 
-  const label = vaultRate
-    ? `Variable APY (${vaultRate.ratePeriodDays}d)`
+  const label = yieldSourceRate
+    ? `Variable APY (${yieldSourceRate.ratePeriodDays}d)`
     : "Variable APY";
   const multiplier =
     longPriceStatus === "success" && longPrice
@@ -37,6 +40,16 @@ export function VariableApyCta({
   return (
     <PoolStat
       label={label}
+      overlay={
+        rewards?.length ? (
+          <RewardsTooltipContent
+            chainId={hyperdrive.chainId}
+            hyperdriveAddress={hyperdrive.address}
+            baseRate={yieldSourceRate?.vaultRate}
+            netRate={yieldSourceRate?.netVaultRate}
+          />
+        ) : null
+      }
       value={
         <VariableApyStat
           hyperdriveAddress={hyperdrive.address}

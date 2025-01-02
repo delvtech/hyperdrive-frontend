@@ -1,12 +1,11 @@
 import { appConfig, getPriceOracleFn } from "@delvtech/hyperdrive-appconfig";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Address, PublicClient } from "viem";
-
 export function useTokenFiatPrice({
   tokenAddress,
   chainId,
@@ -18,14 +17,29 @@ export function useTokenFiatPrice({
 }): {
   fiatPrice: bigint | undefined;
 } {
+  const { data } = useQuery(makeTokenFiatPriceQuery({ chainId, tokenAddress }));
+  return { fiatPrice: data };
+}
+export function makeTokenFiatPriceQuery({
+  chainId,
+  tokenAddress,
+}: {
+  chainId: number;
+  tokenAddress: Address | undefined;
+}): UseQueryOptions<bigint> {
   const queryEnabled =
     !isTestnetChain(chainId) &&
     !!tokenAddress &&
     tokenAddress !== ZERO_ADDRESS &&
     enabled;
 
-  const { data } = useQuery({
-    queryKey: makeQueryKey("tokenFiatPrice", { chainId, tokenAddress }),
+  return {
+    queryKey: makeQueryKey2({
+      namespace: "tokens",
+      queryId: "tokenFiatPrice",
+      params: { chainId, tokenAddress },
+    }),
+    staleTime: Infinity,
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
@@ -47,8 +61,7 @@ export function useTokenFiatPrice({
           });
         }
       : undefined,
-  });
-  return { fiatPrice: data };
+  };
 }
 
 export async function getTokenFiatPrice({

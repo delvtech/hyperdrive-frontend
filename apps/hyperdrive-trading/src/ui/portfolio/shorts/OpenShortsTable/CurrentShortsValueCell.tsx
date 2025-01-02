@@ -8,6 +8,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/16/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useEstimateShortMarketValue } from "src/ui/hyperdrive/shorts/hooks/useEstimateShortMarketValue";
@@ -79,32 +80,29 @@ export function CurrentShortsValueCell({
     <div className={"flex items-center gap-2"}>
       <span className="flex items-center gap-2 text-md">
         {previewCloseShortError ? (
-          <span
-            className="daisy-tooltip before:z-10 before:border before:font-inter"
-            data-tip="This position cannot be fully closed at this time"
+          <Tooltip
+            className="before:z-10 before:text-start before:font-inter"
+            tooltip="This position cannot be fully closed at this time"
           >
             <ExclamationTriangleIcon className="size-4 text-warning" />
-          </span>
+          </Tooltip>
         ) : (
           ""
         )}{" "}
         {currentValueLabel}
       </span>
-      <div
-        data-tip={"Profit/Loss since open, after closing fees."}
-        className={classNames(
-          "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
-          {
-            "rounded-md border border-success/20 bg-success/20 px-1 text-success":
-              isPositiveChangeInValue,
-            "rounded-md border border-error/20 bg-error/20 px-1 text-error":
-              !isPositiveChangeInValue && profitLoss !== "-0",
-          },
-        )}
+      <Tooltip
+        tooltip={"Profit/Loss since open, after closing fees."}
+        className={classNames("text-xs before:z-10 before:font-inter", {
+          "rounded-md border border-success/20 bg-success/20 px-1 text-success":
+            isPositiveChangeInValue,
+          "rounded-md border border-error/20 bg-error/20 px-1 text-error":
+            !isPositiveChangeInValue && profitLoss !== "-0",
+        })}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {profitLoss}
-      </div>
+      </Tooltip>
     </div>
   );
 }

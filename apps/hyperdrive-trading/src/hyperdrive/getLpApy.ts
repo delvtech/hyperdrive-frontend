@@ -7,10 +7,9 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
-import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { wagmiConfig } from "src/network/wagmiClient";
-import { PublicClient } from "viem";
+import { queryClient } from "src/network/queryClient";
+import { makeRewardsQuery } from "src/ui/rewards/useRewards";
 
 export type LpApyResult = {
   ratePeriodDays: number;
@@ -88,19 +87,20 @@ export async function getLpApy({
     netLpApy = lpApy;
 
     // Add rewards APY if available
-    const publicClient = getPublicClient(wagmiConfig as any, {
-      chainId: hyperdrive.chainId,
-    }) as PublicClient;
-
     const rewardsFn = getRewardsFn({
       yieldSourceId: hyperdrive.yieldSource,
       appConfig,
     });
 
     if (rewardsFn) {
-      const rewards = await rewardsFn(publicClient);
+      const rewards = await queryClient.fetchQuery(
+        makeRewardsQuery({
+          chainId: hyperdrive.chainId,
+          hyperdriveAddress: hyperdrive.address,
+        }),
+      );
       rewards?.forEach((reward) => {
-        if (reward.type === "transferableToken") {
+        if (reward.type === "apy") {
           netLpApy = fixed(reward.apy).add(netLpApy as bigint).bigint;
         }
       });

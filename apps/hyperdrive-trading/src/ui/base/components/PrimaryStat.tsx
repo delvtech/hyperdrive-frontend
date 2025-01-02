@@ -2,9 +2,11 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 
 export function PrimaryStat({
   label,
+  alignment = "left",
   value,
   valueUnit,
   subValue,
@@ -14,7 +16,8 @@ export function PrimaryStat({
   unitClassName,
   valueLoading = false,
 }: {
-  label: string;
+  alignment?: "left" | "right";
+  label: ReactNode;
   value: ReactNode;
   valueUnit?: ReactNode;
   subValue?: ReactNode;
@@ -25,24 +28,22 @@ export function PrimaryStat({
   valueLoading?: boolean;
 }): JSX.Element {
   return (
-    <div className="flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1">
+    <div
+      className={classNames(
+        "flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1",
+        { "items-end": alignment === "right" },
+      )}
+    >
       <div className="flex gap-1">
         <p className="max-w-40 text-sm text-neutral-content">{label}</p>
         {tooltipContent && (
-          <div
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top before:border",
-              {
-                "daisy-tooltip-top": tooltipPosition === "top",
-                "daisy-tooltip-bottom": tooltipPosition === "bottom",
-                "daisy-tooltip-left": tooltipPosition === "left",
-                "daisy-tooltip-right": tooltipPosition === "right",
-              },
-            )}
-            data-tip={tooltipContent}
+          <Tooltip
+            position={tooltipPosition}
+            tooltip={tooltipContent}
+            className="before:text-left"
           >
             <InformationCircleIcon className="size-4 text-neutral-content" />
-          </div>
+          </Tooltip>
         )}
       </div>
       <div className={valueContainerClassName}>

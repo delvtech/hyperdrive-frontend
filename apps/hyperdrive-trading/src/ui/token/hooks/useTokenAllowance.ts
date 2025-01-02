@@ -26,7 +26,7 @@ export function useTokenAllowance({
 
   const { data, status } = useReadContract({
     query: {
-      enabled,
+      enabled: queryEnabled,
     },
     address: tokenAddress,
     chainId: tokenChainId,

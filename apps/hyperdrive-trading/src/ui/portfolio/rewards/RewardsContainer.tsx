@@ -63,7 +63,9 @@ export function RewardsContainer(): ReactElement {
     );
   }
 
-  const rewardsByChain = groupBy(rewards, (reward) => reward.chainId);
+  const rewardsByChain = rewards
+    ? groupBy(rewards, (reward) => reward.chainId)
+    : [];
 
   return (
     <PositionContainer className="mt-10">

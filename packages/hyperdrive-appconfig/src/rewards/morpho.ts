@@ -3,9 +3,9 @@ import { gql, request } from "graphql-request";
 import { fixed, FixedPoint, parseFixed } from "src/base/fixedPoint";
 import {
   AnyReward,
-  NonTransferableTokenReward,
+  ApyReward,
   RewardsResolver,
-  TransferableTokenReward,
+  TokenAmountReward,
 } from "src/rewards/types";
 import { base } from "viem/chains";
 /**
@@ -117,8 +117,8 @@ async function fetchMorphoMarketRewards(
 
   return response.market.state.rewards.map((reward) => {
     if (reward.supplyApr) {
-      const transferableTokenReward: TransferableTokenReward = {
-        type: "transferableToken",
+      const transferableTokenReward: ApyReward = {
+        type: "apy",
         apy: parseFixed(reward.supplyApr).bigint,
         tokenAddress: reward.asset.address,
         chainId: reward.asset.chain.id,
@@ -126,8 +126,8 @@ async function fetchMorphoMarketRewards(
       return transferableTokenReward;
     }
 
-    const nontransferableTokenReward: NonTransferableTokenReward = {
-      type: "nonTransferableToken",
+    const nontransferableTokenReward: TokenAmountReward = {
+      type: "tokenAmount",
       tokenAddress: reward.asset.address,
       tokensPerThousandUsd:
         // MORPHO amounts are provided with 15 decimals of precision from
@@ -235,11 +235,11 @@ function parseVaultReward({
 }: {
   reward: MorphoReward;
   vaultCollateralAsset: MorphoVaultRewardsResponse["vaultByAddress"]["asset"];
-}): NonTransferableTokenReward | TransferableTokenReward {
+}): TokenAmountReward | ApyReward {
   // Supply APR only exists if the reward token is actually worth something
   if (reward.supplyApr) {
-    const transferableTokenReward: TransferableTokenReward = {
-      type: "transferableToken",
+    const transferableTokenReward: ApyReward = {
+      type: "apy",
       apy: parseFixed(reward.supplyApr).bigint,
       tokenAddress: reward.asset.address,
       chainId: reward.asset.chain.id,
@@ -248,8 +248,8 @@ function parseVaultReward({
   }
 
   // Without a supply APR, the reward token is just some nontransferable token.
-  const nontransferableTokenReward: NonTransferableTokenReward = {
-    type: "nonTransferableToken",
+  const nontransferableTokenReward: TokenAmountReward = {
+    type: "tokenAmount",
     // Morpho non-transferable token rewards are based on assets deposited
     // for 1 year
     depositDurationDays: 365,
@@ -274,7 +274,7 @@ function parseAllocationRewards({
   totalAssetsUsd: FixedPoint;
   marketAllocations: MarketAllocation[];
   vaultCollateralAsset: MorphoVaultRewardsResponse["vaultByAddress"]["asset"];
-}): (NonTransferableTokenReward | TransferableTokenReward)[] {
+}): (TokenAmountReward | ApyReward)[] {
   const allocationsWithVaultAdjustedRewards = marketAllocations.map(
     (allocation) => {
       // Step 1: Calculate the percentage of the vault's total assets allocated
@@ -364,9 +364,9 @@ function parseAllocationRewards({
   const transferableTokenRewards = Object.entries(rewardApyTotals).flatMap(
     ([chainId, reward]) => {
       return Object.entries(reward).map(
-        ([tokenAddress, rewardApy]): TransferableTokenReward => {
+        ([tokenAddress, rewardApy]): ApyReward => {
           return {
-            type: "transferableToken",
+            type: "apy",
             apy: rewardApy.bigint,
             tokenAddress: tokenAddress as Address, // Safe to cast since Object.entries assumes all keys are strings
             chainId: Number(chainId),
@@ -379,12 +379,9 @@ function parseAllocationRewards({
   const nonTransferableTokenRewards = Object.entries(rewardTokenTotals).flatMap(
     ([chainId, rewardEmissions]) => {
       return Object.entries(rewardEmissions).map(
-        ([
-          tokenAddress,
-          rewardTokensPerThousandUsd,
-        ]): NonTransferableTokenReward => {
+        ([tokenAddress, rewardTokensPerThousandUsd]): TokenAmountReward => {
           return {
-            type: "nonTransferableToken",
+            type: "tokenAmount",
             // Morpho non-transferable token rewards are based on assets deposited
             // for 1 year
             depositDurationDays: 365,

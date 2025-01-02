@@ -15,6 +15,7 @@ import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { LabelValue } from "src/ui/base/components/LabelValue";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
@@ -164,9 +165,10 @@ function AboutThisPool({
                   className="daisy-link"
                   newTab
                 >
-                  <div
-                    className="daisy-tooltip daisy-tooltip-left flex items-center gap-2"
-                    data-tip={baseToken.name}
+                  <Tooltip
+                    position="left"
+                    className="gap-2"
+                    tooltip={baseToken.name}
                   >
                     <img
                       src={baseToken.iconUrl}
@@ -174,7 +176,7 @@ function AboutThisPool({
                     />
                     {formatAddress(baseToken.address)}
                     <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
-                  </div>
+                  </Tooltip>
                 </ExternalLink>
               }
             />
@@ -187,9 +189,10 @@ function AboutThisPool({
                     newTab
                     className="daisy-link"
                   >
-                    <div
-                      className="daisy-tooltip daisy-tooltip-left flex items-center gap-2"
-                      data-tip={sharesToken.name}
+                    <Tooltip
+                      position="left"
+                      className="gap-2"
+                      tooltip={sharesToken.name}
                     >
                       <img
                         src={sharesToken.iconUrl}
@@ -197,7 +200,7 @@ function AboutThisPool({
                       />
                       {formatAddress(sharesToken.address)}
                       <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
-                    </div>
+                    </Tooltip>
                   </ExternalLink>
                 }
               />

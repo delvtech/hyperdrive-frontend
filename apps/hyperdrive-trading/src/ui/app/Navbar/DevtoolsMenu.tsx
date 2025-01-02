@@ -20,6 +20,16 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="portfolio-rewards">
           Portfolio Rewards
         </FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName="points-markets">
+          Points markets
+        </FeatureFlagMenuItem>
+        <MenuItem
+          onClick={() => {
+            window.localStorage.clear();
+            location.reload();
+          }}
+          title={"Clear prefs"}
+        />
         <MenuItem
           onClick={() => {
             throw new Error(

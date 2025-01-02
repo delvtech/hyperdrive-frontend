@@ -1,6 +1,6 @@
 import { PoolInfo } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 export function usePoolInfo({
@@ -20,9 +20,13 @@ export function usePoolInfo({
   });
   const queryEnabled = !!readHyperdrive && !!enabled;
   const { data: poolInfo } = useQuery({
-    queryKey: makeQueryKey("poolInfo", {
-      chainId,
-      hyperdriveAddress,
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "poolInfo",
+      params: {
+        chainId,
+        hyperdriveAddress,
+      },
     }),
     queryFn: queryEnabled ? () => readHyperdrive.getPoolInfo() : undefined,
     enabled: queryEnabled,

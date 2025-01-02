@@ -4,7 +4,7 @@ import { getHprFromApr } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -34,7 +34,11 @@ export function useFixedRate({
 
   const queryEnabled = !!readHyperdrive;
   const { data, status, fetchStatus } = useQuery({
-    queryKey: makeQueryKey("fixedApr", { chainId, address: hyperdriveAddress }),
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "fixedApr",
+      params: { chainId, hyperdriveAddress },
+    }),
     queryFn: queryEnabled
       ? async () => {
           const fixedApr = await readHyperdrive.getFixedApr({ block });

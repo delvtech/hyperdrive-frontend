@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { PoolsList } from "src/ui/markets/PoolsList";
+import { PoolsList } from "src/ui/markets/PoolsList/PoolsList";
 
 export function Landing(): ReactElement | null {
   return (

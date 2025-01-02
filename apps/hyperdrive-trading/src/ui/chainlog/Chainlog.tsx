@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
+import { CHAINLOG_ROUTE } from "src/ui/chainlog/routes";
 import { useChainId } from "wagmi";
 import { FactoriesTable } from "./FactoriesTable";
 
@@ -13,7 +14,7 @@ export function Chainlog(): ReactElement {
   const chainId = useChainId();
 
   const registryAddress = appConfig.registries[chainId];
-  const { tab = "pools", version } = useSearch({ from: "/chainlog" });
+  const { tab = "pools", version } = useSearch({ from: CHAINLOG_ROUTE });
 
   return (
     <div className="flex w-full justify-center">
@@ -46,7 +47,8 @@ export function Chainlog(): ReactElement {
               label: "Pools",
               onClick: () => {
                 navigate({
-                  search: () => ({ tab: "pools", version }),
+                  to: CHAINLOG_ROUTE,
+                  search: { tab: "pools", version },
                 });
               },
             },
@@ -56,7 +58,8 @@ export function Chainlog(): ReactElement {
               label: "Factories",
               onClick: () => {
                 navigate({
-                  search: () => ({ tab: "factories", version }),
+                  to: CHAINLOG_ROUTE,
+                  search: { tab: "factories", version },
                 });
               },
             },

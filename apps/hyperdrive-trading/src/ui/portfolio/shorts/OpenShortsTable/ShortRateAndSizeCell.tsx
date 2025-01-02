@@ -7,6 +7,7 @@ import { OpenShort } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useBlock } from "wagmi";
@@ -43,12 +44,10 @@ export function ShortRateAndSizeCell({
     <div className="flex flex-col">
       <div className="flex items-center gap-2 text-md">
         <p>{`${formatRate({ rate: short.fixedRatePaid })} APR`}</p>
-        <div
-          data-tip={
-            "The difference between the fixed rate you shorted and the current fixed rate."
-          }
+        <Tooltip
+          tooltip="The difference between the fixed rate you shorted and the current fixed rate."
           className={classNames(
-            "daisy-tooltip daisy-tooltip-left flex text-xs before:border before:font-inter",
+            "z-10 text-xs before:text-start before:font-inter",
             {
               "rounded-md border border-success/20 bg-success/20 px-1 text-success":
                 isPositiveChangeInValue,
@@ -59,7 +58,7 @@ export function ShortRateAndSizeCell({
         >
           <span>{isPositiveChangeInValue ? "+" : ""}</span>
           {formatRate({ rate: rateDifference })}
-        </div>
+        </Tooltip>
       </div>
       <p className="text-neutral-content">{`${formatBalance({
         balance: short.bondAmount,

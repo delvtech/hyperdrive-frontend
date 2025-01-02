@@ -4,9 +4,10 @@ import { GYD_ICON_URL } from "src/tokens/tokenIconsUrls";
 export const fetchGyroscopeRewards: RewardsResolver = async () => {
   return [
     {
-      type: "info",
-      message: "This pool is eligible for 2x SPIN Rewards",
+      type: "pointMultiplier",
       iconUrl: GYD_ICON_URL,
+      pointMultiplier: 2n,
+      pointTokenLabel: "SPIN Rewards",
     },
   ];
 };

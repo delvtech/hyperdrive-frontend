@@ -25,7 +25,8 @@
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "gen:version": "bash ./scripts/generate-version.sh",
-    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
+    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh",
+    "gen:rewards-swagger": "bash ./scripts/generate-rewards-swagger.sh"
   },
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
@@ -40,9 +41,9 @@
     "@rollbar/react": "^0.11.1",
     "@tanstack/query-core": "^4.36.1",
     "@tanstack/react-query": "^4.29.12",
-    "@tanstack/react-router": "^1.9.0",
-    "@tanstack/react-table": "^8.10.3",
-    "@tanstack/router-devtools": "^1.9.0",
+    "@tanstack/react-router": "^1.87.7",
+    "@tanstack/router-devtools": "^1.87.7",
+    "@tanstack/react-table": "^8.20.5",
     "@types/d3-format": "^3.0.4",
     "@types/lodash.groupby": "^4.6.9",
     "@types/lodash.sortby": "^4.7.9",
@@ -81,10 +82,11 @@
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
+    "swagger-typescript-api": "^13.0.23",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@tanstack/eslint-plugin-query": "^5.28.11",
-    "@tanstack/router-vite-plugin": "^1.8.2",
+    "@tanstack/router-vite-plugin": "^1.87.7",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.10",
     "@types/react-helmet": "^6.1.6",

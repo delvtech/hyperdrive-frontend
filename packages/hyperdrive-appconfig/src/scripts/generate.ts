@@ -195,10 +195,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
         const rewards = await rewardFn(publicClient);
 
         rewards.map((reward) => {
-          if (
-            reward.type === "transferableToken" ||
-            reward.type === "nonTransferableToken"
-          ) {
+          if (reward.type === "tokenAmount" || reward.type === "apy") {
             let alreadyExists = false;
             try {
               // This will throw an error if it cannot find the token

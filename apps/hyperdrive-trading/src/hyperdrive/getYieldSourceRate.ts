@@ -8,15 +8,17 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
-import { getPublicClient } from "@wagmi/core";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { wagmiConfig } from "src/network/wagmiClient";
-import { PublicClient } from "viem";
+import { queryClient } from "src/network/queryClient";
+import { makeRewardsQuery } from "src/ui/rewards/useRewards";
 
-export async function getYieldSourceRate(
-  readHyperdrive: ReadHyperdrive,
-  appConfig: AppConfig,
-): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
+export async function getYieldSourceRate({
+  readHyperdrive,
+  appConfig,
+}: {
+  readHyperdrive: ReadHyperdrive;
+  appConfig: AppConfig;
+}): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
   const hyperdriveChainId = await readHyperdrive.drift.getChainId();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId,
@@ -90,12 +92,14 @@ async function calcNetRate(
     appConfig,
   });
   if (rewardsFn) {
-    const publicClient = getPublicClient(wagmiConfig as any, {
-      chainId: hyperdrive.chainId,
-    }) as PublicClient;
-    const rewards = await rewardsFn(publicClient);
+    const rewards = await queryClient.fetchQuery(
+      makeRewardsQuery({
+        chainId: hyperdrive.chainId,
+        hyperdriveAddress: hyperdrive.address,
+      }),
+    );
     rewards?.forEach((reward) => {
-      if (reward.type === "transferableToken") {
+      if (reward.type === "apy") {
         netRate = fixed(reward.apy).add(
           // safe to cast because if we get here then lpApy has been set
           netRate as bigint,

@@ -1,4 +1,3 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
@@ -10,6 +9,7 @@ import { ClockIcon } from "@heroicons/react/16/solid";
 import { useNavigate } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
@@ -19,7 +19,7 @@ import { FixedAprCta } from "src/ui/markets/PoolRow/FixedAprCta";
 import { LpApyCta } from "src/ui/markets/PoolRow/LpApyCta";
 import { VariableApyCta } from "src/ui/markets/PoolRow/VariableApyCta";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
-import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
 }
@@ -47,23 +47,15 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const isFiatSupported = !isTestnetChain(chainInfo.id);
-  const { fiatPrice } = useTokenFiatPrice({
-    chainId: baseToken.chainId,
-    tokenAddress: isFiatSupported ? baseToken.address : undefined,
-  });
+  const isFiatSupported = !isTestnetChain(chainInfo.id) && presentValue?.fiat;
   let tvlLabel = `${formatCompact({
-    value: presentValue || 0n,
+    value: presentValue?.base || 0n,
     decimals: hyperdrive.decimals,
   })} ${baseToken.symbol}`;
 
   if (isFiatSupported) {
-    const presentValueFiat =
-      presentValue && fiatPrice && isFiatSupported
-        ? fixed(presentValue, hyperdrive.decimals).mul(fiatPrice).bigint
-        : 0n;
     tvlLabel = `$${formatCompact({
-      value: presentValueFiat || 0n,
+      value: presentValue?.fiat || 0n,
       decimals: hyperdrive.decimals,
     })}`;
   }
@@ -135,24 +127,16 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                 <div className="flex items-center gap-1.5 text-sm">
                   <span className="text-gray-400/60">Deposit</span>{" "}
                   <span className="text-neutral-content">
-                    {(() => {
-                      const depositTokens = [];
-                      if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
-                        depositTokens.push(baseToken.symbol);
-                      }
-                      if (
-                        hyperdrive.depositOptions.isShareTokenDepositsEnabled
-                      ) {
-                        depositTokens.push(sharesToken?.symbol);
-                      }
-                      return depositTokens.join(", ");
-                    })()}
+                    {getDepositAssets(hyperdrive)
+                      .map(({ symbol }) => symbol)
+                      .join(", ")}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 text-sm">
                   <span className="text-gray-400/60">Withdraw</span>{" "}
                   <span className="text-neutral-content">
                     {(() => {
+                      // TODO: Make a getWithdrawAssets util
                       const withdrawTokens = [];
                       if (
                         hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled

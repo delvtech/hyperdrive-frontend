@@ -4,6 +4,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import classNames from "classnames";
 import { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 /**
@@ -29,7 +30,7 @@ export function AccordionSection({
         className="min-h-0"
       />
       <div className="daisy-collapse-title mb-3 min-h-0 p-0 font-medium">
-        <div className="flex items-center gap-4">{heading}</div>
+        {heading}
       </div>
       <div className="daisy-collapse-content space-y-2 px-0">{children}</div>
     </div>
@@ -39,10 +40,12 @@ export function AccordionSection({
 export function AccordionSection2({
   heading,
   children,
+  underlined = true,
   onChange,
 }: PropsWithChildren<{
   heading: ReactNode;
   isExpanded?: boolean;
+  underlined?: boolean;
   onChange?: (isOpen?: boolean) => void;
 }>): ReactElement {
   return (
@@ -50,7 +53,9 @@ export function AccordionSection2({
       {({ open }) => (
         <>
           <DisclosureButton
-            className="group flex justify-between border-b border-base-content/10 p-0 pb-2"
+            className={classNames("group flex justify-between p-0 pb-2", {
+              "border-b border-base-content/10": underlined,
+            })}
             onClick={() => onChange?.(!open)}
           >
             {heading}

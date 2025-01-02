@@ -25,15 +25,17 @@ import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
-import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
+import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
+import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip/RewardsTooltip";
+import { useRewards } from "src/ui/rewards/useRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -336,13 +338,17 @@ export function AddLiquidityForm({
       }
       primaryStats={
         <div className="flex flex-row justify-between px-4 py-8">
-          <YouReceiveStat
-            addLiquidityPreviewStatus={addLiquidityPreviewStatus}
-            lpSharesOut={lpSharesOut}
-            hyperdrive={hyperdrive}
-          />
+          <div className="flex-1">
+            <LpApyStat hyperdrive={hyperdrive} />
+          </div>
           <div className="daisy-divider daisy-divider-horizontal mx-0" />
-          <LpApyStat hyperdrive={hyperdrive} />
+          <div className="flex-1">
+            <YouReceiveStat
+              addLiquidityPreviewStatus={addLiquidityPreviewStatus}
+              lpSharesOut={lpSharesOut}
+              hyperdrive={hyperdrive}
+            />
+          </div>
         </div>
       }
       disclaimer={(() => {
@@ -478,6 +484,7 @@ function YouReceiveStat({
   });
   return (
     <PrimaryStat
+      alignment="right"
       label="You receive"
       subValue={
         addLiquidityPreviewStatus === "loading" ? (
@@ -530,13 +537,13 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+  const { rewards } = useRewards(hyperdrive);
 
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
 
-  const showSkeleton = !lpApy && lpApyStatus === "loading";
   const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
@@ -544,27 +551,36 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   });
   return (
     <PrimaryStat
+      valueLoading={!lpApy && lpApyStatus === "loading"}
       label="LP APY"
       value={(() => {
-        if (showSkeleton) {
-          return <Skeleton />;
-        }
-        if (lpApy === undefined || lpApy.isNew) {
-          return <div className="flex gap-2 text-h3 font-bold">✨New✨</div>;
-        }
-
         return (
           <span className="text-h3 font-bold">
-            {formatRate({ rate: lpApy?.netLpApy })}
+            {isNewPool ? (
+              "✨New✨"
+            ) : rewards?.length ? (
+              <RewardsTooltip
+                showMiles
+                hyperdriveAddress={hyperdrive.address}
+                baseRate={lpApy?.lpApy}
+                netRate={lpApy?.netLpApy}
+                chainId={hyperdrive.chainId}
+              >
+                <span className="gradient-text">
+                  {formatRate({ rate: lpApy?.netLpApy ?? 0n })}
+                </span>
+                ⚡
+              </RewardsTooltip>
+            ) : (
+              <span className="gradient-text">
+                {formatRate({ rate: lpApy?.netLpApy ?? 0n })}
+              </span>
+            )}
           </span>
         );
       })()}
-      tooltipContent="The annual percentage yield projection for providing liquidity."
+      tooltipContent="The projected annual percentage yield for providing liquidity."
       tooltipPosition="left"
-      valueContainerClassName={classNames({
-        "bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent text-h3 font-bold":
-          !isNewPool, // Don't use gradient text when displaying NEW, the emojis give enough emphasis.
-      })}
       subValue={
         vaultRateStatus === "success" && vaultRate ? (
           <div>

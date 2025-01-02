@@ -4,8 +4,8 @@ import { Address, PublicClient } from "viem";
  * Transferable token rewards apply to tokens with a known fiat price,
  * allowing their APY to be added to the hyperdrive pool’s overall APY.
  */
-export interface TransferableTokenReward {
-  type: "transferableToken";
+export interface ApyReward {
+  type: "apy";
   /**
    * The apy of the token reward in 18-decimal precision
    */
@@ -19,12 +19,26 @@ export interface TransferableTokenReward {
  * or are non-transferable. They display the number of tokens rewarded per
  * thousand dollars deposited. For example: 36.23 tokens per $1k/year.
  */
-export interface NonTransferableTokenReward {
-  type: "nonTransferableToken";
+export interface TokenAmountReward {
+  type: "tokenAmount";
   tokenAddress: Address;
   tokensPerThousandUsd: bigint;
   depositDurationDays: number; // 365 = 1 year
   chainId: number;
+}
+
+export interface PointMultiplierReward {
+  type: "pointMultiplier";
+  /**
+   * The multiplier for the point reward, eg: 2n means "2x"
+   */
+  pointMultiplier: bigint;
+
+  /**
+   * The name for the point token, such as "Ether.fi Loyalty Points" or "SPIN Rewards"
+   */
+  pointTokenLabel: string;
+  iconUrl: string;
 }
 
 /**
@@ -38,8 +52,9 @@ export interface InfoReward {
 }
 
 export type AnyReward =
-  | TransferableTokenReward
-  | NonTransferableTokenReward
+  | ApyReward
+  | TokenAmountReward
+  | PointMultiplierReward
   | InfoReward;
 
 export type RewardsResolver = (

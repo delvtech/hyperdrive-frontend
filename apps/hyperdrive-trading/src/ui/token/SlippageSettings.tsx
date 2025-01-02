@@ -5,6 +5,7 @@ import {
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { PercentInput } from "src/ui/base/components/PercentInput";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 
 export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
 
@@ -42,15 +43,12 @@ export function SlippageSettings({
         />
       </button>
       {isDropdownOpen && (
-        <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg border bg-base-100 p-4 shadow">
+        <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] min-w-64 justify-evenly rounded-lg border border-base-200 bg-base-100 p-4 shadow">
           <div className="flex items-center">
             <span className="ml-1">Max. Slippage</span>
-            <div
-              className="daisy-tooltip ml-1 before:w-48 before:border before:text-xs"
-              data-tip={tooltip}
-            >
+            <Tooltip className="ml-1 before:text-start" tooltip={tooltip}>
               <InformationCircleIcon className="size-4" />
-            </div>
+            </Tooltip>
           </div>
           <div className="flex flex-row items-center justify-between">
             <div className="daisy-tabs daisy-tabs-xs my-4">
