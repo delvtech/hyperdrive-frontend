@@ -218,7 +218,7 @@ async function fetchMorphoVaultRewards(
       (reward) =>
         // vaults might be earning dust, which should be skipped for the
         // purposes of displaying rewards
-        reward.supplyApr && reward.supplyApr > 0.001,
+        reward.supplyApr && reward.supplyApr > 0.01,
     )
     .map((reward) =>
       parseVaultReward({
