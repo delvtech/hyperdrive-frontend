@@ -41,7 +41,7 @@ import {
   TokenPicker,
   ZapsTokenPicker,
 } from "src/ui/token/TokenPicker";
-import { Address, formatUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenLongFormProps {
@@ -120,15 +120,7 @@ export function OpenLongForm({
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
-          tokenConfig: {
-            ...tokenFromTokenList,
-            iconUrl: tokenFromTokenList.logoURI ?? "",
-            address: tokenFromTokenList.address as Address,
-            places: 4,
-            tags: ["zap"],
-            // TODO: Change this for a "uniswapv3" price oracle
-            priceOracle: "defillama",
-          },
+          tokenConfig: tokenFromTokenList,
         });
       });
   }
