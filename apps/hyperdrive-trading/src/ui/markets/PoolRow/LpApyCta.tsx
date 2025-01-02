@@ -3,6 +3,7 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
@@ -21,6 +22,8 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
     chainId: hyperdrive.chainId,
   });
 
+  const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
+
   const label = lpApy ? `LP APY (${lpApy.ratePeriodDays}d)` : "LP APY";
 
   return (
@@ -38,10 +41,13 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
       isLoading={lpApyStatus === "loading"}
       isNew={lpApy?.isNew}
       value={
-        <LpApyStat
-          chainId={hyperdrive.chainId}
-          hyperdriveAddress={hyperdrive.address}
-        />
+        // TODO: LP APY stat is broken on cloudchain due to issues with the mainnet fork blocktimes. This can be removed once zaps are fully implemented.
+        isZapsEnabled ? null : (
+          <LpApyStat
+            chainId={hyperdrive.chainId}
+            hyperdriveAddress={hyperdrive.address}
+          />
+        )
       }
       action={
         <div className="daisy-indicator">

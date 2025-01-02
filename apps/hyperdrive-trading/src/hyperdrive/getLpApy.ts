@@ -8,7 +8,6 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { isForkChain } from "src/chains/isForkChain";
 import { queryClient } from "src/network/queryClient";
 import { makeRewardsQuery } from "src/ui/rewards/useRewards";
 
@@ -61,9 +60,8 @@ export async function getLpApy({
     appConfig,
   });
 
-  const numBlocksForHistoricalRate = isForkChain(hyperdrive.chainId)
-    ? 1000n // roughly 3 hours for cloudchain
-    : chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
+  const numBlocksForHistoricalRate =
+    chainConfig.dailyAverageBlocks * BigInt(yieldSource.historicalRatePeriod);
 
   const targetFromBlock = currentBlockNumber - numBlocksForHistoricalRate;
 
