@@ -40,8 +40,8 @@ import {
 import { TokenConfig } from "src/tokens/types";
 import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
+import { zaps } from "src/zaps/zaps";
 import { Address, PublicClient } from "viem";
-
 type HyperdriveConfigResolver = (
   hyperdrive: ReadHyperdrive,
   publicClient: PublicClient,
@@ -204,6 +204,7 @@ const hyperdriveKindResolvers: Record<
     if (hyperdriveName.includes("sGYD Hyperdrive")) {
       const yieldSourceByChainId: Record<number, YieldSourceId> = {
         1: "sgyd",
+        707: "sgyd", // cloudchain is a mainnet fork
         100: "gnosisSgyd",
       };
       const yieldSource =
@@ -636,6 +637,7 @@ export async function getAppConfig({
     protocols,
     yieldSources,
     chains,
+    zaps,
   };
 
   return config;
