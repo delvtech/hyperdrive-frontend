@@ -55,7 +55,7 @@ export function Well<T extends ElementType = "div">({
     return (
       <Component
         className={classNames(
-          "group relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-xl p-[1.5px] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-xl hover:shadow-primary/5",
+          "group relative z-10 flex cursor-pointer items-center overflow-hidden rounded-xl p-[1.5px] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-xl hover:shadow-primary/5",
         )}
         onClick={onClick}
         disabled={disabled}

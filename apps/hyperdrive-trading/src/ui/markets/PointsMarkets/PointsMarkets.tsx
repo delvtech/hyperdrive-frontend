@@ -3,7 +3,7 @@ import {
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { Link, useSearch } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
@@ -43,7 +43,7 @@ export function PointsMarkets(): ReactElement | null {
     : [];
 
   return (
-    <div className="mx-[2vw] mt-4 space-y-8 lg:w-[1064px]">
+    <div className="mx-[2vw] mt-4 space-y-8 lg:w-[1080px]">
       <div className="space-y-4">
         <h1 className="gradient-text text-h4 font-medium md:text-h4">
           Points Markets
@@ -53,7 +53,7 @@ export function PointsMarkets(): ReactElement | null {
           exposure to points and rewards.
         </p>
       </div>
-      <div className="flex flex-wrap gap-8">
+      <div className="flex w-full flex-wrap gap-8">
         {poolsWithPoints.map((hyperdrive) => (
           <PointsMarketCard key={hyperdrive.address} hyperdrive={hyperdrive} />
         ))}
@@ -67,8 +67,24 @@ function PointsMarketCard({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const navigate = useNavigate();
   return (
-    <Well as="div" className="w-[514px] shrink-0 gap-6">
+    <Well
+      as="div"
+      className="w-[514px] shrink-0 gap-6"
+      onClick={() => {
+        // Clicking on the card will navigate you to the LP tab by default
+        navigate({
+          to: MARKET_DETAILS_ROUTE,
+          resetScroll: true,
+          params: {
+            address: hyperdrive.address,
+            chainId: hyperdrive.chainId.toString(),
+          },
+          search: { position: "lp" },
+        });
+      }}
+    >
       <PointsMarketCardHeader hyperdrive={hyperdrive} />
       <PointsMarketCardBanner hyperdrive={hyperdrive} />
       <PointsMarketTable hyperdrive={hyperdrive} />
