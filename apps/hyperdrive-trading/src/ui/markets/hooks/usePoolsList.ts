@@ -11,6 +11,7 @@ import { getPublicClient } from "@wagmi/core";
 import { useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isForkChain } from "src/chains/isForkChain";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
@@ -73,6 +74,7 @@ export function usePoolsList({
   // TODO: Remove this once zaps fully enabled
   const chainId = useChainId();
   const isConnectedToForkChain = isForkChain(chainId);
+  const isTestnet = isTestnetChain(chainId);
 
   // Sorting is disabled any time we're fetching data. This is because sorting
   // requires fetching a significant amount of data, and we want the List to load
@@ -83,7 +85,7 @@ export function usePoolsList({
     // don't treat stale queries as fetching, since we have data we can show
     stale: false,
   });
-  const isSortingEnabled = !isFetching && !isConnectedToForkChain;
+  const isSortingEnabled = !isFetching && !isConnectedToForkChain && !isTestnet;
   const { sortedPools, status } = useSortedPools({
     pools: selectedPools,
     enabled: isSortingEnabled,
@@ -151,7 +153,7 @@ function useSortedPools({
                 yieldSourceRate,
                 longPrice,
               };
-            }),
+            })
           );
         }
       : undefined,
@@ -167,16 +169,16 @@ function useSortedPools({
               return Number(b.fixedApr - a.fixedApr);
             case "LP APY":
               return Number(
-                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
+                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n)
               );
             case "Variable APY":
               return Number(
-                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
+                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate
               );
             case "Yield Multiplier":
               return Number(
                 calculateMarketYieldMultiplier(b.longPrice).bigint -
-                  calculateMarketYieldMultiplier(a.longPrice).bigint,
+                  calculateMarketYieldMultiplier(a.longPrice).bigint
               );
             case "TVL":
               const tvlA =
