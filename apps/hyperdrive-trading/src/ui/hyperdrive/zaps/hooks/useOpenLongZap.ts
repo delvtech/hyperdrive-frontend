@@ -47,7 +47,6 @@ export function useOpenLongZap({
   // TODO: Need some logic to determine if base deposits are enabled on this pool.
   const asBase = true;
 
-  // get block timestamp
   const { data: block } = useBlock({ blockNumber });
   const zapsConfig = appConfig.zaps[chainId];
   const publicClient = usePublicClient({ chainId });

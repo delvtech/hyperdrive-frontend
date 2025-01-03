@@ -67,28 +67,3 @@ export function makeTokenFiatPriceQuery({
       : undefined,
   };
 }
-
-export async function getTokenFiatPrice({
-  chainId,
-  tokenAddress,
-}: {
-  chainId: number;
-  tokenAddress: Address;
-}): Promise<bigint> {
-  const publicClient = getPublicClient(wagmiConfig as any, {
-    chainId,
-  }) as PublicClient;
-
-  const priceOracleFn = getPriceOracleFn({
-    chainId,
-    tokenAddress,
-    appConfig,
-  });
-
-  return priceOracleFn({
-    chainId,
-    denomination: "usd",
-    publicClient,
-    tokenAddress,
-  });
-}
