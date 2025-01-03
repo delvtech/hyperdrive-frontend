@@ -18,8 +18,6 @@ import {
   usePublicClient,
   useWalletClient,
 } from "wagmi";
-const { VITE_CUSTOM_CHAIN_NODE_RPC_URL, VITE_CUSTOM_CHAIN_CHAIN_ID } =
-  import.meta.env;
 
 interface UseOpenLongZapOptions {
   hyperdriveAddress: Address;
@@ -64,9 +62,7 @@ export function useOpenLongZap({
     !!zapsConfig && !!account && !!publicClient && !!walletClient && !!enabled;
   const { mutate: openLongZap, status } = useMutation({
     mutationFn: async () => {
-      console.log({ zapsConfig, account, publicClient, walletClient, enabled });
       if (!mutationEnabled) {
-        console.log("Mutation not enabled");
         return;
       }
       const drift = new Drift(
@@ -78,7 +74,6 @@ export function useOpenLongZap({
       if (!block?.timestamp) {
         return;
       }
-      console.log("Executing openLongZap");
 
       const testHash = await drift
         .write({

@@ -257,7 +257,7 @@ export function OpenLongForm({
     );
   }
 
-  const { openLongZap, status: openLongZapStatus } = useOpenLongZap({
+  const { openLongZap } = useOpenLongZap({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
     amount: depositAmountAsBigInt || 0n,
@@ -266,7 +266,6 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
   });
 
-  // Base token price
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     chainId: hyperdrive.chainId,
     tokenAddress: baseToken.address,
@@ -278,8 +277,6 @@ export function OpenLongForm({
     baseTokenPrice &&
     depositAmountAsBigInt
   ) {
-    // const fiatValueOfDepositAmount = depositAmountAsBigInt * activeToken.fiatPrice
-    // const equivalentAmountOfBase = fiatValueOfDepositAmount / baseTokenPrice
     const fiatValueOfDepositAmount = fixed(
       depositAmountAsBigInt,
       activeToken.decimals
@@ -501,11 +498,9 @@ export function OpenLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
               if (isZapping) {
-                console.log("zapping");
                 openLongZap();
                 onOpenLong?.(e);
               } else {
-                console.log("not zapping");
                 openLong?.();
                 onOpenLong?.(e);
               }

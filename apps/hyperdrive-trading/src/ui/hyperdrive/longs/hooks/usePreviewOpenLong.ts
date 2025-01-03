@@ -3,6 +3,7 @@ import {
   appConfig,
   getBaseToken,
   getHyperdriveConfig,
+  getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -61,13 +62,16 @@ export function usePreviewOpenLong({
   );
 
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
+    // This hook should only be enabled if the token is a zap token.
+    // For testing purposes we are grabbing the token price from mainnet.
     chainId: 1,
     tokenAddress,
     enabled: isZapToken,
   });
 
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
-    chainId: 1,
+    // For testing purposes on zaps we are grabbing the token price from mainnet.
+    chainId: isZapToken ? 1 : baseToken.chainId,
     tokenAddress: baseToken.address,
     enabled: true,
   });
@@ -93,19 +97,21 @@ export function usePreviewOpenLong({
           let finalAmountIn = amountIn;
 
           if (isZapToken) {
-            // Get the fiat price of the zap token. ~$4000 for something like WETH, $1 for DAI.
-
-            // TODO: Use the correct token decimals, this only works for USDC
-            const fiatValueOfZapAmount = fixed(zapTokenPrice ?? 0n).mul(
-              amountIn,
-              6
-            );
+            const zapToken = getToken({
+              appConfig,
+              chainId: 1,
+              tokenAddress,
+            });
+            const fiatValueOfZapAmount =
+              zapTokenPrice && zapToken
+                ? fixed(zapTokenPrice).mul(amountIn, zapToken.decimals)
+                : 0n;
 
             // Get the fiat price of the base token.
-            const baseTokenFiatPrice = baseTokenPrice ?? 0n;
-            // zap amount converted to base
             const zapAmountInBase =
-              fiatValueOfZapAmount.div(baseTokenFiatPrice);
+              fiatValueOfZapAmount && baseTokenPrice
+                ? fiatValueOfZapAmount.div(baseTokenPrice)
+                : 0n;
 
             // apply slippage to the base amount
             // (1 - slippageAmount) * baseAmount

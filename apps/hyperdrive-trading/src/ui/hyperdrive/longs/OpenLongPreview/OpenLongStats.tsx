@@ -53,6 +53,8 @@ export function OpenLongStats({
   );
 
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
+    // This hook should only be enabled if the token is a zap token.
+    // For testing purposes we are grabbing the token price from mainnet.
     chainId: 1,
     tokenAddress: activeToken.address,
     enabled: isZapToken,
@@ -65,7 +67,8 @@ export function OpenLongStats({
   });
 
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
-    chainId: 1,
+    // For testing purposes on zaps we are grabbing the token price from mainnet.
+    chainId: isZapToken ? 1 : hyperdrive.chainId,
     tokenAddress: baseToken.address,
     enabled: true,
   });
