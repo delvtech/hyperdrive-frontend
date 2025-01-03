@@ -615,7 +615,6 @@ export async function getAppConfig({
       }
 
       if (rewards) {
-        console.log("rewards", rewards);
         allRewards = {
           ...allRewards,
           ...rewards,
