@@ -72,7 +72,10 @@ export function usePoolsList({
   // as fast as possible. Instead, the individual PoolRow components are
   // responsible for fetching the specific data they need.
   const [sortOption, setSortOption] = useState<SortOption | undefined>();
-  const isFetching = useIsFetching({ stale: true });
+  const isFetching = useIsFetching({
+    // don't treat stale queries as fetching, since we have data we can show
+    stale: false,
+  });
   const isSortingEnabled = !isFetching;
   const { sortedPools, status } = useSortedPools({
     pools: selectedPools,
