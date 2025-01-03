@@ -49,8 +49,8 @@ export function PointsMarkets(): ReactElement | null {
           Points Markets
         </h1>
         <p className="font-inter text-lg leading-bodyText text-neutral-content">
-          Maximize your returns on DeFi&apos;s top yield sources and boost your
-          exposure to points and rewards.
+          Boost your exposure to points and rewards on DeFi&apos;s top yield
+          sources.
         </p>
       </div>
       <div className="flex w-full flex-wrap gap-8">
