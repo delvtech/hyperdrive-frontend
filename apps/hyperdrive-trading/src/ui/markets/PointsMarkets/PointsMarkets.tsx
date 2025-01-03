@@ -1,25 +1,22 @@
-import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   getYieldSource,
   HyperdriveConfig,
-  PointMultiplierReward,
 } from "@delvtech/hyperdrive-appconfig";
-import { Link, useSearch } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
-import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { usePoolsList } from "src/ui/markets/hooks/usePoolsList";
+import { usePointsMultipliers } from "src/ui/markets/PointsMarkets/usePointsMultipliers";
 import {
   MARKET_DETAILS_ROUTE,
   POINTS_MARKETS_ROUTE,
 } from "src/ui/markets/routes";
-import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
@@ -46,17 +43,17 @@ export function PointsMarkets(): ReactElement | null {
     : [];
 
   return (
-    <div className="mx-[2vw] mt-4 space-y-8 lg:w-[1064px]">
+    <div className="mx-[2vw] mt-4 space-y-8 lg:w-[1080px]">
       <div className="space-y-4">
         <h1 className="gradient-text text-h4 font-medium md:text-h4">
           Points Markets
         </h1>
         <p className="font-inter text-lg leading-bodyText text-neutral-content">
-          Maximize your returns on DeFi&apos;s top yield sources and boost your
-          exposure to points and rewards.
+          Boost your exposure to points and rewards on DeFi&apos;s top yield
+          sources.
         </p>
       </div>
-      <div className="flex flex-wrap gap-8">
+      <div className="flex w-full flex-wrap gap-8">
         {poolsWithPoints.map((hyperdrive) => (
           <PointsMarketCard key={hyperdrive.address} hyperdrive={hyperdrive} />
         ))}
@@ -70,8 +67,24 @@ function PointsMarketCard({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const navigate = useNavigate();
   return (
-    <Well as="div" className="w-[514px] shrink-0 gap-6">
+    <Well
+      as="div"
+      className="w-[514px] shrink-0 gap-6"
+      onClick={() => {
+        // Clicking on the card will navigate you to the LP tab by default
+        navigate({
+          to: MARKET_DETAILS_ROUTE,
+          resetScroll: true,
+          params: {
+            address: hyperdrive.address,
+            chainId: hyperdrive.chainId.toString(),
+          },
+          search: { position: "lp" },
+        });
+      }}
+    >
       <PointsMarketCardHeader hyperdrive={hyperdrive} />
       <PointsMarketCardBanner hyperdrive={hyperdrive} />
       <PointsMarketTable hyperdrive={hyperdrive} />
@@ -116,27 +129,7 @@ function PointsMarketCardBanner({
 }: {
   hyperdrive: HyperdriveConfig;
 }) {
-  const { rewards } = useRewards(hyperdrive);
-  const { longPrice } = useCurrentLongPrice({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-  const pointRewards = rewards?.filter(
-    ({ type }) => type === "pointMultiplier",
-  ) as PointMultiplierReward[] | undefined;
-
-  const multipliers =
-    longPrice && pointRewards
-      ? pointRewards.map(({ pointMultiplier, pointTokenLabel }) => {
-          const capitalMultiplier = calculateMarketYieldMultiplier(longPrice);
-          return {
-            multiplier: capitalMultiplier
-              .mul(parseFixed(pointMultiplier))
-              .format({ decimals: 0 }),
-            label: pointTokenLabel,
-          };
-        })
-      : [];
+  const multipliers = usePointsMultipliers({ hyperdrive });
   return (
     <div className="flex w-full items-center justify-between rounded-xl bg-base-200 p-5">
       <div className="flex w-full flex-col items-center justify-center gap-1.5">
@@ -144,7 +137,7 @@ function PointsMarketCardBanner({
           Earn up to
         </p>
         <div className="flex w-full justify-between">
-          {multipliers.map(({ multiplier, label }) => (
+          {multipliers?.map(({ multiplier, label }) => (
             <div
               key={label}
               className="flex w-full flex-col items-center justify-center gap-1.5"
@@ -173,6 +166,8 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+
+  const multipliers = usePointsMultipliers({ hyperdrive });
   return (
     <div className="flex flex-col gap-3">
       <PointsMarketRow
@@ -264,9 +259,15 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
           </span>
         }
         col2={
-          <span className="gradient-text mr-5 text-sm font-medium">64x</span>
+          <span className="gradient-text mr-5 text-sm font-medium">
+            {multipliers?.[0].multiplier}x
+          </span>
         }
-        col3={<span className="mr-3 text-sm">Up to 64x</span>}
+        col3={
+          <span className="mr-3 text-sm">
+            Up to {multipliers?.[0].multiplier}x
+          </span>
+        }
       />
       <PointsMarketRow
         col1={<span className="text-sm text-neutral-content">Term</span>}
