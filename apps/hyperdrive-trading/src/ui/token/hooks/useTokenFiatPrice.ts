@@ -17,7 +17,7 @@ export function useTokenFiatPrice({
 }): {
   fiatPrice: bigint | undefined;
 } {
-  const { data, error } = useQuery(
+  const { data } = useQuery(
     makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled })
   );
   return { fiatPrice: data };
