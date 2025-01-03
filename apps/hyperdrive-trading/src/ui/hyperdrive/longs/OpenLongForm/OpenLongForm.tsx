@@ -28,6 +28,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useOpenLongZap } from "src/ui/hyperdrive/zaps/hooks/useOpenLongZap";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -118,7 +119,7 @@ export function OpenLongForm({
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
-          tokenFromTokenList.chainId === hyperdrive.chainId,
+          tokenFromTokenList.chainId === hyperdrive.chainId
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -131,7 +132,7 @@ export function OpenLongForm({
   if (isZapsEnabled) {
     activeTokenChoices = uniqBy(
       [...activeTokenChoices, ...tokenList],
-      "address",
+      "address"
     );
   }
 
@@ -151,7 +152,7 @@ export function OpenLongForm({
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
   const depositAssets = getDepositAssets(hyperdrive);
   const isZapping = !depositAssets.some(
-    (asset) => asset.address === activeToken.address,
+    (asset) => asset.address === activeToken.address
   );
 
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
@@ -252,8 +253,39 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals,
+      activeToken.decimals
     );
+  }
+
+  const { openLongZap, status: openLongZapStatus } = useOpenLongZap({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+    amount: depositAmountAsBigInt || 0n,
+    tokenIn: activeToken,
+    minBondsOut: bondsReceivedAfterSlippage || 0n,
+    minSharePrice: poolInfo?.vaultSharePrice || 0n,
+  });
+
+  // Base token price
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    chainId: hyperdrive.chainId,
+    tokenAddress: baseToken.address,
+  });
+  let zapTokenAmountInBase = 0n;
+  if (
+    isZapping &&
+    activeTokenPrice &&
+    baseTokenPrice &&
+    depositAmountAsBigInt
+  ) {
+    // const fiatValueOfDepositAmount = depositAmountAsBigInt * activeToken.fiatPrice
+    // const equivalentAmountOfBase = fiatValueOfDepositAmount / baseTokenPrice
+    const fiatValueOfDepositAmount = fixed(
+      depositAmountAsBigInt,
+      activeToken.decimals
+    ).mul(activeTokenPrice);
+    const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
+    zapTokenAmountInBase = equivalentAmountOfBase.bigint;
   }
 
   // Plausible event props
@@ -346,7 +378,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18, // prices are always in 18 decimals
+                          18 // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
@@ -391,6 +423,7 @@ export function OpenLongForm({
           openLongPreviewStatus={openLongPreviewStatus}
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
+          activeToken={activeToken}
         />
       }
       transactionPreview={
@@ -450,7 +483,7 @@ export function OpenLongForm({
         if (!hasEnoughAllowance) {
           return (
             <ApproveTokenChoices
-              spender={hyperdrive.address}
+              spender={spender}
               token={activeToken}
               amountAsBigInt={depositAmountAsBigInt}
               amount={depositAmount}
@@ -464,11 +497,18 @@ export function OpenLongForm({
 
         return (
           <button
-            disabled={!openLong}
+            disabled={isZapping ? !openLongZap : !openLong}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
-              openLong?.();
-              onOpenLong?.(e);
+              if (isZapping) {
+                console.log("zapping");
+                openLongZap();
+                onOpenLong?.(e);
+              } else {
+                console.log("not zapping");
+                openLong?.();
+                onOpenLong?.(e);
+              }
             }}
           >
             Open Long

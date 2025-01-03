@@ -48,14 +48,28 @@ export function usePreviewOpenLong({
     hyperdriveChainId: chainId,
   });
 
-  const zapTokenPrice = useTokenFiatPrice({
+  const depositAssets = getDepositAssets(
+    getHyperdriveConfig({
+      hyperdriveChainId: chainId,
+      hyperdriveAddress,
+      appConfig,
+    })
+  );
+
+  const isZapToken = !depositAssets.some(
+    (asset) => asset.address === tokenAddress
+  );
+
+  const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
     chainId: 1,
     tokenAddress,
+    enabled: isZapToken,
   });
 
-  const baseTokenPrice = useTokenFiatPrice({
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     chainId: 1,
     tokenAddress: baseToken.address,
+    enabled: true,
   });
 
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
@@ -78,30 +92,17 @@ export function usePreviewOpenLong({
       ? async () => {
           let finalAmountIn = amountIn;
 
-          const depositAssets = getDepositAssets(
-            getHyperdriveConfig({
-              hyperdriveChainId: chainId,
-              hyperdriveAddress,
-              appConfig,
-            }),
-          );
-
-          // TODO: Determine the best way to access the shares token on this pool. TokenAddress points to the zap token, but we need to get the shares token.
-          const isZapToken = !depositAssets.some(
-            (asset) => asset.address === tokenAddress,
-          );
-
           if (isZapToken) {
             // Get the fiat price of the zap token. ~$4000 for something like WETH, $1 for DAI.
 
             // TODO: Use the correct token decimals, this only works for USDC
-            const fiatValueOfZapAmount = fixed(
-              zapTokenPrice.fiatPrice ?? 0n,
-            ).mul(amountIn, 6);
+            const fiatValueOfZapAmount = fixed(zapTokenPrice ?? 0n).mul(
+              amountIn,
+              6
+            );
 
             // Get the fiat price of the base token.
-            const baseTokenFiatPrice = baseTokenPrice.fiatPrice ?? 0n;
-
+            const baseTokenFiatPrice = baseTokenPrice ?? 0n;
             // zap amount converted to base
             const zapAmountInBase =
               fiatValueOfZapAmount.div(baseTokenFiatPrice);

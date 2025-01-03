@@ -9,24 +9,33 @@ import { Address, PublicClient } from "viem";
 export function useTokenFiatPrice({
   tokenAddress,
   chainId,
+  enabled = true,
 }: {
   tokenAddress: Address | undefined;
   chainId: number;
+  enabled?: boolean;
 }): {
   fiatPrice: bigint | undefined;
 } {
-  const { data } = useQuery(makeTokenFiatPriceQuery({ chainId, tokenAddress }));
+  const { data, error } = useQuery(
+    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled })
+  );
   return { fiatPrice: data };
 }
 export function makeTokenFiatPriceQuery({
   chainId,
   tokenAddress,
+  enabled,
 }: {
   chainId: number;
   tokenAddress: Address | undefined;
+  enabled?: boolean;
 }): UseQueryOptions<bigint> {
   const queryEnabled =
-    !isTestnetChain(chainId) && !!tokenAddress && tokenAddress !== ZERO_ADDRESS;
+    !isTestnetChain(chainId) &&
+    !!tokenAddress &&
+    tokenAddress !== ZERO_ADDRESS &&
+    enabled;
 
   return {
     queryKey: makeQueryKey2({
@@ -57,4 +66,29 @@ export function makeTokenFiatPriceQuery({
         }
       : undefined,
   };
+}
+
+export async function getTokenFiatPrice({
+  chainId,
+  tokenAddress,
+}: {
+  chainId: number;
+  tokenAddress: Address;
+}): Promise<bigint> {
+  const publicClient = getPublicClient(wagmiConfig as any, {
+    chainId,
+  }) as PublicClient;
+
+  const priceOracleFn = getPriceOracleFn({
+    chainId,
+    tokenAddress,
+    appConfig,
+  });
+
+  return priceOracleFn({
+    chainId,
+    denomination: "usd",
+    publicClient,
+    tokenAddress,
+  });
 }
