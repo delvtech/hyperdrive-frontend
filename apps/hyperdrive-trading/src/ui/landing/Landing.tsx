@@ -9,7 +9,7 @@ export function Landing(): ReactElement | null {
           Hyperdrive Pools
         </h1>
         <p className="font-inter text-lg leading-bodyText text-neutral-content">
-          Earn predictable fixed rate yield or multiply your capital exposure to
+          Earn predictable fixed rate yield or multiply your exposure to
           DeFi&apos;s top variable rates.
         </p>
       </div>
