@@ -11,7 +11,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { getStatus, Status } from "src/registry/data";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -212,9 +212,12 @@ function usePoolsQuery(): UseQueryResult<Pool[]> {
   const chainIds = Object.keys(connectedAppConfig.registries).map(Number);
 
   return useQuery({
-    queryKey: makeQueryKey("chainlog", {
-      tab: "pools",
-      chainIds,
+    queryKey: makeQueryKey2({
+      namespace: "chainlog",
+      queryId: "pools",
+      params: {
+        chainIds,
+      },
     }),
     placeholderData: [],
     queryFn: async () =>

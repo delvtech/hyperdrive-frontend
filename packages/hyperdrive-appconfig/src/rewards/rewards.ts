@@ -19,3 +19,5 @@ export const rewardFunctions = {
   fetchAeroRewards,
   fetchGyroscopeRewards,
 } as const;
+
+export type RewardResolverKey = keyof typeof rewardFunctions;
