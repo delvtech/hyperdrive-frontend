@@ -9,6 +9,7 @@ import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -146,12 +147,21 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
     chainId: activeToken.chainId,
   });
+
+  const zapsConfig = appConfig.zaps[hyperdrive.chainId];
+  const depositAssets = getDepositAssets(hyperdrive);
+  const isZapping = !depositAssets.some(
+    (asset) => asset.address === activeToken.address,
+  );
+
+  const spender = isZapping ? zapsConfig.address : hyperdrive.address;
+
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
     enabled: requiresAllowance,
-    spender: hyperdrive.address,
+    spender,
     tokenAddress: activeToken.address,
     tokenChainId: activeToken.chainId,
   });
@@ -194,6 +204,7 @@ export function OpenLongForm({
   } = usePreviewOpenLong({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    tokenAddress: activeToken.address,
     amountIn: depositAmountAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
