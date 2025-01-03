@@ -6,6 +6,7 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
+import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -125,13 +126,21 @@ export function OpenLongForm({
       });
   }
 
+  let activeTokenChoices = tokenChoices.map((token) => token.tokenConfig);
+  if (isZapsEnabled) {
+    activeTokenChoices = uniqBy(
+      [...activeTokenChoices, ...tokenList],
+      "address",
+    );
+  }
+
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
       defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
         ? baseToken.address
         : hyperdrive.poolConfig.vaultSharesToken,
-      tokens: tokenChoices.map((token) => token.tokenConfig),
+      tokens: activeTokenChoices,
     });
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
