@@ -5,9 +5,11 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
+import { Fade } from "react-awesome-reveal";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
@@ -54,9 +56,17 @@ export function PointsMarkets(): ReactElement | null {
         </p>
       </div>
       <div className="flex w-full flex-wrap gap-8">
-        {poolsWithPoints.map((hyperdrive) => (
-          <PointsMarketCard key={hyperdrive.address} hyperdrive={hyperdrive} />
-        ))}
+        {status === "loading" && !pools ? (
+          <div className="flex w-full justify-center">
+            <LoadingState />
+          </div>
+        ) : poolsWithPoints.length ? (
+          poolsWithPoints.map((hyperdrive) => (
+            <Fade triggerOnce duration={500} key={hyperdrive.address}>
+              <PointsMarketCard hyperdrive={hyperdrive} />
+            </Fade>
+          ))
+        ) : null}
       </div>
     </div>
   );
