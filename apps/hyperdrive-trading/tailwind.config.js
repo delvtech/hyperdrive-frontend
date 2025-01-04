@@ -67,6 +67,14 @@ module.exports = {
       black: "#000000",
       white: "#FFFFFF",
     },
+    dropShadow: {
+      glow: [
+        "0 0px 5px rgba(255, 255, 255, 0.4)", // Intense white inner glow
+        "0 0px 15px rgba(255, 255, 255, 0.6)", // Softer white mid glow
+        "0 0px 30px rgba(0, 150, 255, 0.5)", // Bluish neon outer glow
+        "0 0px 50px rgba(0, 150, 255, 0.4)", // Diffused bluish neon
+      ],
+    },
     fontFamily: {
       chakraPetch: ["Chakra Petch"],
       inter: ["Inter"],
