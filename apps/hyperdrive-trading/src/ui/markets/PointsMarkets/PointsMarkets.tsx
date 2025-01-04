@@ -240,11 +240,9 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         }
       />
       <PointsMarketRow
-        col1={
-          <span className="text-sm text-neutral-content">Variable APY</span>
-        }
+        col1={<span className="text-neutral-content">Variable APY</span>}
         col2={
-          <span className="mr-5 text-sm">
+          <span className="mr-5">
             {vaultRateStatus !== "success" ? (
               <Skeleton width={100} />
             ) : (
@@ -253,7 +251,7 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
           </span>
         }
         col3={
-          <span className="mr-3 text-sm">
+          <span className="mr-3">
             {lpApyStatus !== "success" ? (
               <Skeleton width={100} />
             ) : (
@@ -264,27 +262,23 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       />
       <PointsMarketRow
         col1={
-          <span className="text-sm text-neutral-content">
+          <div className="w-[140px] text-neutral-content">
             Rewards Multiplier
-          </span>
+          </div>
         }
         col2={
-          <span className="gradient-text mr-5 text-sm font-medium">
+          <span className="gradient-text mr-5 font-medium">
             {multipliers?.[0].multiplier}x
           </span>
         }
         col3={
-          <span className="mr-3 text-sm">
-            Up to {multipliers?.[0].multiplier}x
-          </span>
+          <span className="mr-3">Up to {multipliers?.[0].multiplier}x</span>
         }
       />
       <PointsMarketRow
-        col1={<span className="text-sm text-neutral-content">Term</span>}
-        col2={
-          <span className="mr-5 text-sm text-neutral-content">182 days</span>
-        }
-        col3={<span className="mr-3 text-sm">∞</span>}
+        col1={<span className="text-neutral-content">Term</span>}
+        col2={<span className="mr-5 text-neutral-content">182 days</span>}
+        col3={<span className="mr-3">∞</span>}
       />
     </div>
   );
