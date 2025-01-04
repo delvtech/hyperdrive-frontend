@@ -5,9 +5,11 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, ReactNode } from "react";
+import { Fade } from "react-awesome-reveal";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
+import LoadingState from "src/ui/base/components/LoadingState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
@@ -54,9 +56,17 @@ export function PointsMarkets(): ReactElement | null {
         </p>
       </div>
       <div className="flex w-full flex-wrap gap-8">
-        {poolsWithPoints.map((hyperdrive) => (
-          <PointsMarketCard key={hyperdrive.address} hyperdrive={hyperdrive} />
-        ))}
+        {status === "loading" && !pools ? (
+          <div className="flex w-full justify-center">
+            <LoadingState />
+          </div>
+        ) : poolsWithPoints.length ? (
+          poolsWithPoints.map((hyperdrive) => (
+            <Fade triggerOnce duration={500} key={hyperdrive.address}>
+              <PointsMarketCard hyperdrive={hyperdrive} />
+            </Fade>
+          ))
+        ) : null}
       </div>
     </div>
   );
@@ -142,7 +152,7 @@ function PointsMarketCardBanner({
               key={label}
               className="flex w-full flex-col items-center justify-center gap-1.5"
             >
-              <div className="font-chakraPetch text-h4 font-medium">
+              <div className="font-chakraPetch text-h4 font-medium drop-shadow-glow">
                 {multiplier}x
               </div>
               <p className="font-medium text-neutral-content sm:text-sm">
@@ -230,11 +240,9 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         }
       />
       <PointsMarketRow
-        col1={
-          <span className="text-sm text-neutral-content">Variable APY</span>
-        }
+        col1={<span className="text-neutral-content">Variable APY</span>}
         col2={
-          <span className="mr-5 text-sm">
+          <span className="mr-5">
             {vaultRateStatus !== "success" ? (
               <Skeleton width={100} />
             ) : (
@@ -243,7 +251,7 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
           </span>
         }
         col3={
-          <span className="mr-3 text-sm">
+          <span className="mr-3">
             {lpApyStatus !== "success" ? (
               <Skeleton width={100} />
             ) : (
@@ -254,27 +262,23 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       />
       <PointsMarketRow
         col1={
-          <span className="text-sm text-neutral-content">
+          <div className="w-[140px] text-neutral-content">
             Rewards Multiplier
-          </span>
+          </div>
         }
         col2={
-          <span className="gradient-text mr-5 text-sm font-medium">
+          <span className="gradient-text mr-5 font-medium">
             {multipliers?.[0].multiplier}x
           </span>
         }
         col3={
-          <span className="mr-3 text-sm">
-            Up to {multipliers?.[0].multiplier}x
-          </span>
+          <span className="mr-3">Up to {multipliers?.[0].multiplier}x</span>
         }
       />
       <PointsMarketRow
-        col1={<span className="text-sm text-neutral-content">Term</span>}
-        col2={
-          <span className="mr-5 text-sm text-neutral-content">182 days</span>
-        }
-        col3={<span className="mr-3 text-sm">∞</span>}
+        col1={<span className="text-neutral-content">Term</span>}
+        col2={<span className="mr-5 text-neutral-content">182 days</span>}
+        col3={<span className="mr-3">∞</span>}
       />
     </div>
   );
