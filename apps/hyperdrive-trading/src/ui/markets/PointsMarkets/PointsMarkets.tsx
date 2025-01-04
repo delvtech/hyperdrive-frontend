@@ -152,7 +152,7 @@ function PointsMarketCardBanner({
               key={label}
               className="flex w-full flex-col items-center justify-center gap-1.5"
             >
-              <div className="font-chakraPetch text-h4 font-medium">
+              <div className="font-chakraPetch text-h4 font-medium drop-shadow-glow">
                 {multiplier}x
               </div>
               <p className="font-medium text-neutral-content sm:text-sm">
