@@ -9,28 +9,36 @@ export function MilesBanner(): ReactElement | null {
   if (isBannerDismissed) {
     return null;
   }
+
   return (
     <CustomBanner
-      className="gradient-hypervue rounded-none"
-      icon={<img src="/hyperdrive-solo-logo-white.svg" className="size-8" />}
+      className="gradient-hypervue"
       description={
-        <div className="flex w-full justify-between">
-          <span className="text-base-content">
-            You can now earn Miles by providing liquidity on Hyperdrive! Learn
-            more about the{" "}
-            <ExternalLink
-              newTab
-              href="https://mirror.xyz/0xdB081d7cedeDB2cFb4fff2330D9a31f54A025E38/qVENDIYTfUiZw6QZroXBpNxF8UjTGV8YkVq0lOaTznU"
-              className="daisy-link font-medium text-white"
-            >
-              HyperVue Foundation points program
-            </ExternalLink>
-            .
-          </span>
-          <button onClick={() => setIsBannerDismissed(true)}>
+        <>
+          <div className="flex w-full justify-between">
+            <div className="flex w-full flex-1 items-center justify-center gap-4">
+              <img src="/hyperdrive-solo-logo-white.svg" className="size-8" />
+              <span className="text-base-content">
+                You can now earn Miles by providing liquidity on Hyperdrive!
+                Learn more about the{" "}
+                <ExternalLink
+                  newTab
+                  href="https://mirror.xyz/0xdB081d7cedeDB2cFb4fff2330D9a31f54A025E38/qVENDIYTfUiZw6QZroXBpNxF8UjTGV8YkVq0lOaTznU"
+                  className="daisy-link font-medium text-white"
+                >
+                  HyperVue Foundation points program
+                </ExternalLink>
+                .
+              </span>
+            </div>
+          </div>
+          <button
+            className="justify-self-end"
+            onClick={() => setIsBannerDismissed(true)}
+          >
             <XMarkIcon className="h-6 cursor-pointer" />
           </button>
-        </div>
+        </>
       }
     />
   );
