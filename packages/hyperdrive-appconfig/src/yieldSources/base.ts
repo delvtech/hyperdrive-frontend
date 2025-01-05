@@ -41,7 +41,7 @@ export const snars: YieldSourceConfig = {
   id: "snars",
   shortName: "Numun Staked nARS",
   protocol: "numun",
-  historicalRatePeriod: 1,
+  historicalRatePeriod: 30,
 };
 
 export const mwEurc: YieldSourceConfig = {
