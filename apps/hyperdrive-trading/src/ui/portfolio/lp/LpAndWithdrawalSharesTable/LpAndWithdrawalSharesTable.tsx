@@ -14,7 +14,6 @@ import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
 import { ManageLpAndWithdrawalSharesButton } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/ManageLpAndWithdrawalSharesButton";
@@ -31,8 +30,7 @@ export function OpenLpTableDesktop({
   hyperdrives: HyperdriveConfig[];
 }): ReactElement | null {
   const { address: account } = useAccount();
-  const { openLpPositions, openLpPositionStatus } =
-    usePortfolioLpDataFromHyperdrives(hyperdrives);
+  const { openLpPositions } = usePortfolioLpDataFromHyperdrives(hyperdrives);
 
   const columns = useMemo(
     () => getColumns({ hyperdrives, appConfig }),
@@ -63,10 +61,6 @@ export function OpenLpTableDesktop({
         />
       </div>
     );
-  }
-
-  if (openLpPositionStatus === "loading" || !openLpPositions) {
-    return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
   // Check if there is no data after filtering
