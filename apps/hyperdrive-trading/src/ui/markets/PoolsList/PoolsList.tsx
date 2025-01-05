@@ -7,6 +7,7 @@ import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
+import { Fade } from "react-awesome-reveal";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -209,14 +210,16 @@ export function PoolsList(): ReactElement {
                 )}
               </Well>
             ) : (
-              pools.map((hyperdrive) => (
-                <PoolRow
-                  // Combine address and chainId for a unique key, as addresses may
-                  // overlap across chains (e.g. cloudchain and mainnet)
-                  key={`${hyperdrive.address}-${hyperdrive.chainId}`}
-                  hyperdrive={hyperdrive}
-                />
-              ))
+              <Fade triggerOnce damping={0} duration={500}>
+                {pools.map((hyperdrive) => (
+                  <PoolRow
+                    // Combine address and chainId for a unique key, as addresses may
+                    // overlap across chains (e.g. cloudchain and mainnet)
+                    key={`${hyperdrive.address}-${hyperdrive.chainId}`}
+                    hyperdrive={hyperdrive}
+                  />
+                ))}
+              </Fade>
             )}
           </>
         ) : null}
