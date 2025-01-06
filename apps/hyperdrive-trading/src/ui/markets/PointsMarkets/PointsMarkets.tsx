@@ -27,14 +27,7 @@ export function PointsMarkets(): ReactElement | null {
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
     from: POINTS_MARKETS_ROUTE,
   });
-  const {
-    filters,
-    status,
-    pools,
-    sortOption,
-    setSortOption,
-    isSortingEnabled,
-  } = usePoolsList({
+  const { status, pools } = usePoolsList({
     selectedChains,
     selectedAssets,
   });
@@ -178,7 +171,6 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const multipliers = usePointsMultipliers({ hyperdrive });
   return (
     <div className="flex flex-col gap-3">
       <PointsMarketRow
@@ -262,21 +254,6 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
         }
       />
       <PointsMarketRow
-        col1={
-          <div className="w-[140px] text-neutral-content">
-            Rewards Multiplier
-          </div>
-        }
-        col2={
-          <span className="gradient-text mr-5 font-medium">
-            {multipliers?.[0].multiplier}x
-          </span>
-        }
-        col3={
-          <span className="mr-3">Up to {multipliers?.[0].multiplier}x</span>
-        }
-      />
-      <PointsMarketRow
         col1={<span className="text-neutral-content">Term</span>}
         col2={
           <span className="mr-5 text-neutral-content">
@@ -285,7 +262,7 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
             )}
           </span>
         }
-        col3={<span className="mr-3">∞</span>}
+        col3={<span className="mr-3 text-neutral-content">Never expires</span>}
       />
     </div>
   );
