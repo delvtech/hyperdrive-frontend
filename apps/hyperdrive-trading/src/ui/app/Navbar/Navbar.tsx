@@ -12,7 +12,6 @@ import { useAnalyticsUrl } from "src/ui/analytics/useMarketAnalyticsUrl";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
@@ -23,12 +22,9 @@ import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-  const { location } = useRouterState();
   const chainId = useChainId();
   const { isReadOnly } = useRegionInfo();
   const isTestnet = isTestnetChain(chainId);
-  const { isFlagEnabled: isPointsMarketsEnabled } =
-    useFeatureFlag("points-markets");
 
   const analyticsUrl = useAnalyticsUrl();
 
@@ -43,9 +39,7 @@ export function Navbar(): ReactElement {
         </Link>
         <div className="ml-16 flex gap-8">
           <NavbarLink to={LANDING_ROUTE} label="All Pools" />
-          {isPointsMarketsEnabled ? (
-            <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
-          ) : null}
+          <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
           <NavbarLink to={PORTFOLIO_ROUTE} label="Portfolio" />
           {isTestnet ? (
             <NavbarLink to={MINT_ROUTE} label="Mint Tokens" />
