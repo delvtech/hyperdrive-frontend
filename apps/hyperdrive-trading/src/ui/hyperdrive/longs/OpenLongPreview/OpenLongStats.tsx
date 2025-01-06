@@ -70,7 +70,6 @@ export function OpenLongStats({
     // For testing purposes on zaps we are grabbing the token price from mainnet.
     chainId: isZapToken ? 1 : hyperdrive.chainId,
     tokenAddress: baseToken.address,
-    enabled: true,
   });
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,

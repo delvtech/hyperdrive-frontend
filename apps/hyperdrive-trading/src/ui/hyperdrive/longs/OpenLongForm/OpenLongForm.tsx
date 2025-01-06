@@ -499,11 +499,10 @@ export function OpenLongForm({
             onClick={(e) => {
               if (isZapping) {
                 openLongZap();
-                onOpenLong?.(e);
               } else {
                 openLong?.();
-                onOpenLong?.(e);
               }
+              onOpenLong?.(e);
             }}
           >
             Open Long

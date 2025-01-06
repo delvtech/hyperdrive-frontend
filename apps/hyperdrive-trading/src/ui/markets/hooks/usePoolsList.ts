@@ -10,7 +10,6 @@ import { useIsFetching, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { isForkChain } from "src/chains/isForkChain";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
@@ -73,7 +72,6 @@ export function usePoolsList({
   // Disable sorting if connected to a fork chain
   // TODO: Remove this once zaps fully enabled
   const chainId = useChainId();
-  const isConnectedToForkChain = isForkChain(chainId);
   const isTestnet = isTestnetChain(chainId);
 
   // Sorting is disabled any time we're fetching data. This is because sorting
@@ -85,7 +83,7 @@ export function usePoolsList({
     // don't treat stale queries as fetching, since we have data we can show
     stale: false,
   });
-  const isSortingEnabled = !isFetching && !isConnectedToForkChain && !isTestnet;
+  const isSortingEnabled = !isFetching && !isTestnet;
   const { sortedPools, status } = useSortedPools({
     pools: selectedPools,
     enabled: isSortingEnabled,
