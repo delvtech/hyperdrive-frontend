@@ -13,6 +13,7 @@ import LoadingState from "src/ui/base/components/LoadingState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { AssetStack } from "src/ui/markets/AssetStack";
+import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { usePointsMultipliers } from "src/ui/markets/PointsMarkets/usePointsMultipliers";
 import {
@@ -277,7 +278,13 @@ function PointsMarketTable({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
       />
       <PointsMarketRow
         col1={<span className="text-neutral-content">Term</span>}
-        col2={<span className="mr-5 text-neutral-content">182 days</span>}
+        col2={
+          <span className="mr-5 text-neutral-content">
+            {formatTermLength2(
+              Number(hyperdrive.poolConfig.positionDuration * 1000n),
+            )}
+          </span>
+        }
         col3={<span className="mr-3">∞</span>}
       />
     </div>
