@@ -11,6 +11,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { Fade } from "react-awesome-reveal";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import CustomBanner from "src/ui/base/components/CustomBanner";
@@ -72,16 +73,18 @@ export function PoolDetails({
         )}
       </div>
       <div className="flex flex-col gap-16">
-        {(() => {
-          switch (activePosition) {
-            case "long":
-              return <OpenLongForm hyperdrive={hyperdrive} />;
-            case "short":
-              return <OpenShortForm hyperdrive={hyperdrive} />;
-            case "lp":
-              return <AddLiquidityForm hyperdrive={hyperdrive} />;
-          }
-        })()}
+        <Fade triggerOnce duration={500}>
+          {(() => {
+            switch (activePosition) {
+              case "long":
+                return <OpenLongForm hyperdrive={hyperdrive} />;
+              case "short":
+                return <OpenShortForm hyperdrive={hyperdrive} />;
+              case "lp":
+                return <AddLiquidityForm hyperdrive={hyperdrive} />;
+            }
+          })()}
+        </Fade>
 
         <AboutThisPool hyperdrive={hyperdrive} />
         <FAQ />
