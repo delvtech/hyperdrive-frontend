@@ -6,8 +6,10 @@ import {
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
+import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
@@ -26,6 +28,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpen
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { OpenLongStats } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongStats";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useOpenLongZap } from "src/ui/hyperdrive/zaps/hooks/useOpenLongZap";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
@@ -116,7 +119,7 @@ export function OpenLongForm({
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
-          tokenFromTokenList.chainId === hyperdrive.chainId,
+          tokenFromTokenList.chainId === hyperdrive.chainId
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -125,24 +128,41 @@ export function OpenLongForm({
       });
   }
 
+  let activeTokenChoices = tokenChoices.map((token) => token.tokenConfig);
+  if (isZapsEnabled) {
+    activeTokenChoices = uniqBy(
+      [...activeTokenChoices, ...tokenList],
+      "address"
+    );
+  }
+
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
       defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
         ? baseToken.address
         : hyperdrive.poolConfig.vaultSharesToken,
-      tokens: tokenChoices.map((token) => token.tokenConfig),
+      tokens: activeTokenChoices,
     });
   const { fiatPrice: activeTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeToken.address,
     chainId: activeToken.chainId,
   });
+
+  const zapsConfig = appConfig.zaps[hyperdrive.chainId];
+  const depositAssets = getDepositAssets(hyperdrive);
+  const isZapping = !depositAssets.some(
+    (asset) => asset.address === activeToken.address
+  );
+
+  const spender = isZapping ? zapsConfig.address : hyperdrive.address;
+
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
     enabled: requiresAllowance,
-    spender: hyperdrive.address,
+    spender,
     tokenAddress: activeToken.address,
     tokenChainId: activeToken.chainId,
   });
@@ -185,6 +205,7 @@ export function OpenLongForm({
   } = usePreviewOpenLong({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
+    tokenAddress: activeToken.address,
     amountIn: depositAmountAsBigInt,
     asBase: activeToken.address === baseToken.address,
   });
@@ -232,8 +253,36 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals,
+      activeToken.decimals
     );
+  }
+
+  const { openLongZap } = useOpenLongZap({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+    amount: depositAmountAsBigInt || 0n,
+    tokenIn: activeToken,
+    minBondsOut: bondsReceivedAfterSlippage || 0n,
+    minSharePrice: poolInfo?.vaultSharePrice || 0n,
+  });
+
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    chainId: hyperdrive.chainId,
+    tokenAddress: baseToken.address,
+  });
+  let zapTokenAmountInBase = 0n;
+  if (
+    isZapping &&
+    activeTokenPrice &&
+    baseTokenPrice &&
+    depositAmountAsBigInt
+  ) {
+    const fiatValueOfDepositAmount = fixed(
+      depositAmountAsBigInt,
+      activeToken.decimals
+    ).mul(activeTokenPrice);
+    const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
+    zapTokenAmountInBase = equivalentAmountOfBase.bigint;
   }
 
   // Plausible event props
@@ -326,7 +375,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18, // prices are always in 18 decimals
+                          18 // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
@@ -371,6 +420,7 @@ export function OpenLongForm({
           openLongPreviewStatus={openLongPreviewStatus}
           asBase={activeToken.address === baseToken.address}
           vaultSharePrice={poolInfo?.vaultSharePrice}
+          activeToken={activeToken}
         />
       }
       transactionPreview={
@@ -430,7 +480,7 @@ export function OpenLongForm({
         if (!hasEnoughAllowance) {
           return (
             <ApproveTokenChoices
-              spender={hyperdrive.address}
+              spender={spender}
               token={activeToken}
               amountAsBigInt={depositAmountAsBigInt}
               amount={depositAmount}
@@ -444,10 +494,14 @@ export function OpenLongForm({
 
         return (
           <button
-            disabled={!openLong}
+            disabled={isZapping ? !openLongZap : !openLong}
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             onClick={(e) => {
-              openLong?.();
+              if (isZapping) {
+                openLongZap();
+              } else {
+                openLong?.();
+              }
               onOpenLong?.(e);
             }}
           >

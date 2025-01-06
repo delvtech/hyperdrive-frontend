@@ -1,8 +1,10 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
+  getHyperdriveConfig,
   HyperdriveConfig,
+  TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { calculateAprFromPrice } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
@@ -12,6 +14,7 @@ import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -24,6 +27,7 @@ interface OpenLongStatsProps {
   openLongPreviewStatus: QueryStatusWithIdle;
   asBase: boolean;
   vaultSharePrice: bigint | undefined;
+  activeToken: TokenConfig;
 }
 export function OpenLongStats({
   hyperdrive,
@@ -32,20 +36,54 @@ export function OpenLongStats({
   bondAmount,
   asBase,
   vaultSharePrice,
+  activeToken,
 }: OpenLongStatsProps): JSX.Element {
+  let finalAmountPaid = amountPaid;
+
+  const depositAssets = getDepositAssets(
+    getHyperdriveConfig({
+      hyperdriveChainId: hyperdrive.chainId,
+      hyperdriveAddress: hyperdrive.address,
+      appConfig,
+    })
+  );
+
+  const isZapToken = !depositAssets.some(
+    (asset) => asset.address === activeToken.address
+  );
+
+  const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
+    // This hook should only be enabled if the token is a zap token.
+    // For testing purposes we are grabbing the token price from mainnet.
+    chainId: 1,
+    tokenAddress: activeToken.address,
+    enabled: isZapToken,
+  });
+
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     appConfig,
   });
+
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
-    chainId: baseToken.chainId,
+    // For testing purposes on zaps we are grabbing the token price from mainnet.
+    chainId: isZapToken ? 1 : hyperdrive.chainId,
     tokenAddress: baseToken.address,
   });
   const { fixedApr } = useFixedRate({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
+
+  if (isZapToken && zapTokenPrice && baseTokenPrice) {
+    const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(amountPaid, 6);
+    const zapAmountInBase = fiatValueOfZapAmount.div(baseTokenPrice);
+    const slipageAmount = parseFixed("0.005");
+    finalAmountPaid = parseFixed("1")
+      .sub(slipageAmount)
+      .mul(zapAmountInBase).bigint;
+  }
 
   const isBaseAmount = asBase || hyperdrive.isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
@@ -72,7 +110,7 @@ export function OpenLongStats({
                   rate: calculateAprFromPrice({
                     positionDuration:
                       hyperdrive.poolConfig.positionDuration || 0n,
-                    baseAmount: amountPaidInBase,
+                    baseAmount: finalAmountPaid,
                     bondAmount: bondAmount,
                   }),
                 })}`
@@ -125,7 +163,7 @@ export function OpenLongStats({
                 balance: baseTokenPrice
                   ? fixed(
                       amountPaidInBase + yieldAtMaturity,
-                      baseToken.decimals,
+                      baseToken.decimals
                     ).mul(baseTokenPrice).bigint
                   : 0n,
                 decimals: baseToken.decimals,

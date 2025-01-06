@@ -10,6 +10,7 @@ import { useIsFetching, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
+import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
@@ -23,6 +24,7 @@ import {
   usePoolListFilters,
 } from "src/ui/markets/PoolsList/usePoolListFilters";
 import { PublicClient } from "viem";
+import { useChainId } from "wagmi";
 
 const PINNED_POOLS = [
   // Pin the 182d Savings GYD pool to the top of the list
@@ -67,6 +69,11 @@ export function usePoolsList({
     selectedAssets,
   });
 
+  // Disable sorting if connected to a fork chain
+  // TODO: Remove this once zaps fully enabled
+  const chainId = useChainId();
+  const isTestnet = isTestnetChain(chainId);
+
   // Sorting is disabled any time we're fetching data. This is because sorting
   // requires fetching a significant amount of data, and we want the List to load
   // as fast as possible. Instead, the individual PoolRow components are
@@ -76,7 +83,7 @@ export function usePoolsList({
     // don't treat stale queries as fetching, since we have data we can show
     stale: false,
   });
-  const isSortingEnabled = !isFetching;
+  const isSortingEnabled = !isFetching && !isTestnet;
   const { sortedPools, status } = useSortedPools({
     pools: selectedPools,
     enabled: isSortingEnabled,
@@ -144,7 +151,7 @@ function useSortedPools({
                 yieldSourceRate,
                 longPrice,
               };
-            }),
+            })
           );
         }
       : undefined,
@@ -160,16 +167,16 @@ function useSortedPools({
               return Number(b.fixedApr - a.fixedApr);
             case "LP APY":
               return Number(
-                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
+                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n)
               );
             case "Variable APY":
               return Number(
-                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
+                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate
               );
             case "Yield Multiplier":
               return Number(
                 calculateMarketYieldMultiplier(b.longPrice).bigint -
-                  calculateMarketYieldMultiplier(a.longPrice).bigint,
+                  calculateMarketYieldMultiplier(a.longPrice).bigint
               );
             case "TVL":
               const tvlA =
