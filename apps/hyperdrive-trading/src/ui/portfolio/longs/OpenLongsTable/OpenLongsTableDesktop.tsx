@@ -4,13 +4,9 @@ import {
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import {
-  calculateAprFromPrice,
-  OpenLongPositionReceived,
-} from "@delvtech/hyperdrive-js";
+import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  ColumnDef,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -20,13 +16,10 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
-import { formatRate } from "src/base/formatRate";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
-import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { useAccount } from "wagmi";
 
@@ -34,19 +27,16 @@ export function OpenLongsTableDesktop({
   hyperdrives,
 }: {
   hyperdrives: HyperdriveConfig[];
-}): ReactElement {
+}): ReactElement | null {
   const { address: account } = useAccount();
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsDataFromHyperdrives(hyperdrives);
-  console.log(openLongPositions, "openLongPositions");
+  // console.log(openLongPositions, "openLongPositions");
   const columns = useMemo(() => {
     return getColumns({ hyperdrives, appConfig });
   }, [hyperdrives]);
   const tableInstance = useReactTable({
-    columns: columns as ColumnDef<{
-      hyperdrive: HyperdriveConfig;
-      openLongs: OpenLongPositionReceived[];
-    }>[],
+    columns: columns,
     data: openLongPositions || [],
     initialState: {
       sorting: [
@@ -75,6 +65,10 @@ export function OpenLongsTableDesktop({
 
   if (openLongPositionsStatus === "loading") {
     return <TableSkeleton numColumns={columns.length} numRows={5} />;
+  }
+
+  if (openLongPositions?.length === 0) {
+    return null;
   }
 
   return (
@@ -216,68 +210,71 @@ function getColumns({
     appConfig,
   });
   return [
-    columnHelper.accessor("openLongs.details.assetId", {
+    columnHelper.accessor("openLongs.assetId", {
       id: "maturationDate",
       header: `Maturity Date`,
       cell: ({ row, getValue }) => {
         const openLong = row.original.openLongs.find(
           (openLong) => openLong.assetId === getValue(),
         );
-        return (
-          <MaturesOnCell
-            hyperdrive={row.original.hyperdrive}
-            maturity={openLong?.maturity || 0n}
-          />
-        );
-      },
-    }),
-    columnHelper.accessor("openLongs.details.assetId", {
-      id: "fixedRate/size",
-      header: `Fixed Rate / Size`,
-      cell: ({ row, getValue }) => {
-        const openLong = row.original.openLongs.find(
-          (openLong) => openLong.assetId === getValue(),
-        );
-        const fixedRate = calculateAprFromPrice({
-          baseAmount: openLong?.details?.baseAmountPaid || 0n,
-          bondAmount: openLong?.details?.bondAmount || 0n,
-          positionDuration:
-            row.original.hyperdrive.poolConfig.positionDuration || 0n,
-        });
+        console.log(row.original, "row.original");
+        console.log(openLong, "openLong");
         return <h1>Hello</h1>;
-        return (
-          <div className="flex flex-col">
-            <div>{formatRate({ rate: fixedRate })} APR</div>
-            <span className="flex font-dmMono text-neutral-content">
-              {formatBalance({
-                balance: openLong?.details?.bondAmount || 0n,
-                decimals: baseToken.decimals,
-                places: 2,
-              })}{" "}
-              {`hy${baseToken.symbol}`}
-            </span>
-          </div>
-        );
+        // return (
+        //   <MaturesOnCell
+        //     hyperdrive={row.original.hyperdrive}
+        //     maturity={openLong?.maturity || 0n}
+        //   />
+        // );
       },
-      // sortingFn: (rowA, rowB, {}) => {
-
-      //   const aFixedRate = calculateAnnualizedPercentageChange({
-      //     amountBefore: aOpenLong?.details?.baseAmountPaid || 0n,
-      //     amountAfter: aOpenLong?.details?.bondAmount || 0n,
-      //     days: convertMillisecondsToDays(
-      //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
-      //     ),
-      //   });
-      //   const bFixedRate = calculateAnnualizedPercentageChange({
-      //     amountBefore: rowB.original.details?.baseAmountPaid || 0n,
-      //     amountAfter: rowB.original.details?.bondAmount || 0n,
-      //     days: convertMillisecondsToDays(
-      //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
-      //     ),
-      //   });
-      //   return aFixedRate - bFixedRate;
-      // },
     }),
+    // columnHelper.accessor("openLongs.details.assetId", {
+    //   id: "fixedRate/size",
+    //   header: `Fixed Rate / Size`,
+    //   cell: ({ row, getValue }) => {
+    //     const openLong = row.original.openLongs.find(
+    //       (openLong) => openLong.assetId === getValue(),
+    //     );
+    //     const fixedRate = calculateAprFromPrice({
+    //       baseAmount: openLong?.details?.baseAmountPaid || 0n,
+    //       bondAmount: openLong?.details?.bondAmount || 0n,
+    //       positionDuration:
+    //         row.original.hyperdrive.poolConfig.positionDuration || 0n,
+    //     });
+    //     return <h1>Hello</h1>;
+    //     return (
+    //       <div className="flex flex-col">
+    //         <div>{formatRate({ rate: fixedRate })} APR</div>
+    //         <span className="flex font-dmMono text-neutral-content">
+    //           {formatBalance({
+    //             balance: openLong?.details?.bondAmount || 0n,
+    //             decimals: baseToken.decimals,
+    //             places: 2,
+    //           })}{" "}
+    //           {`hy${baseToken.symbol}`}
+    //         </span>
+    //       </div>
+    //     );
+    //   },
+    // sortingFn: (rowA, rowB, {}) => {
+
+    //   const aFixedRate = calculateAnnualizedPercentageChange({
+    //     amountBefore: aOpenLong?.details?.baseAmountPaid || 0n,
+    //     amountAfter: aOpenLong?.details?.bondAmount || 0n,
+    //     days: convertMillisecondsToDays(
+    //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
+    //     ),
+    //   });
+    //   const bFixedRate = calculateAnnualizedPercentageChange({
+    //     amountBefore: rowB.original.details?.baseAmountPaid || 0n,
+    //     amountAfter: rowB.original.details?.bondAmount || 0n,
+    //     days: convertMillisecondsToDays(
+    //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
+    //     ),
+    //   });
+    //   return aFixedRate - bFixedRate;
+    // },
+    // }),
     // columnHelper.accessor("openLongs.details.assetId", {
     //   id: "value/cost",
     //   header: `Value / Cost (${baseToken.symbol})`,
