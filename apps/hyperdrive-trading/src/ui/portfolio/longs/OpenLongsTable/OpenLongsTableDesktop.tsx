@@ -26,9 +26,12 @@ import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
 import { CurrentValueCell } from "./CurrentValueCell";
 import { ManageLongsButton } from "./ManageLongsButton";
@@ -48,7 +51,9 @@ export function OpenLongsTableDesktop({
     (openLong) => openLong.openLongs.length > 0,
   );
 
-  const flattenedOpenLongsData: FlattenedOpenLong[] = useMemo(() => {
+  const flattenedOpenLongsData:
+    | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
+    | undefined = useMemo(() => {
     if (!openLongPositions) {
       return [];
     }
@@ -59,6 +64,14 @@ export function OpenLongsTableDesktop({
       })),
     );
   }, [openLongPositions]);
+
+  const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
+    account,
+    longs: flattenedOpenLongsData,
+    enabled: openLongPositionsStatus === "success",
+  });
+
+  console.log(totalOpenLongsValue, "totalOpenLongsValue");
 
   // console.log(openLongPositions, "openLongPositions");
   const columns = useMemo(() => {
@@ -102,6 +115,22 @@ export function OpenLongsTableDesktop({
 
   return (
     <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
+      <PositionTableHeading
+        // We only need the first hyperdrive to get the name and yield source metadata
+        hyperdrive={hyperdrives[0]}
+        rightElement={
+          <TotalOpenLongsValue
+            hyperdrives={hyperdrives}
+            openLongs={flattenedOpenLongsData}
+          />
+        }
+        hyperdriveName={
+          // This regex removes the term (eg: "30d") from the hyperdrive
+          // name since it's already shown in the table.
+          // https://regex101.com/r/f4A3th/1
+          hyperdrives[0].name.replace(/\d{1,3}d/, "")
+        }
+      />
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map(({ original }) => {
         const modalId = `${original.assetId}`;
@@ -219,7 +248,9 @@ export function OpenLongsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<FlattenedOpenLong>();
+const columnHelper = createColumnHelper<
+  OpenLongPositionReceived & { hyperdrive: HyperdriveConfig }
+>();
 
 function getColumns({
   hyperdrives,
