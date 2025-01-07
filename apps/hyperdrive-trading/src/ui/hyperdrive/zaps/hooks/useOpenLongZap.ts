@@ -8,7 +8,6 @@ import {
 import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useMutation } from "@tanstack/react-query";
 import { FeeAmount } from "@uniswap/v3-sdk";
-import { MAX_UINT256 } from "src/base/constants";
 
 import { Address, encodePacked, WalletClient } from "viem";
 import {
@@ -50,7 +49,7 @@ export function useOpenLongZap({
   const { data: block } = useBlock({ blockNumber });
   const zapsConfig = appConfig.zaps[chainId];
   const publicClient = usePublicClient({ chainId });
-  const walletClient = useWalletClient({ chainId });
+  const { data: walletClient } = useWalletClient({ chainId });
 
   const baseToken = getBaseToken({
     hyperdriveChainId: chainId,
@@ -68,7 +67,7 @@ export function useOpenLongZap({
         viemAdapter({
           publicClient,
           walletClient: walletClient as any as WalletClient,
-        })
+        }),
       );
       if (!block?.timestamp) {
         return;
@@ -95,7 +94,7 @@ export function useOpenLongZap({
               // Can put this as a tag in tokenconfig.
               isRebasing: tokenIn
                 ? rebasingTokenSymbols.includes(
-                    tokenIn.symbol.toLocaleLowerCase()
+                    tokenIn.symbol.toLocaleLowerCase(),
                   )
                 : false,
               // TODO: Determine when and which tokens to wrap.
@@ -110,13 +109,17 @@ export function useOpenLongZap({
                 amountIn: amount,
 
                 // TODO: Adjust this for slippage
-                amountOutMinimum: MAX_UINT256,
+                amountOutMinimum: 1n,
 
                 // Deadline is 1 minute from the current block timestamp. TODO: Determine if this is correct or needs to be dynamic.
                 deadline: block.timestamp + 1n * 60n,
                 path: encodePacked(
                   ["address", "uint256", "address"],
-                  [tokenIn.address, BigInt(FeeAmount.LOWEST), baseToken.address]
+                  [
+                    tokenIn.address,
+                    BigInt(FeeAmount.LOWEST),
+                    baseToken.address,
+                  ],
                 ),
                 recipient: zapsConfig.address,
               },
