@@ -4,7 +4,10 @@ import {
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
-import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
+import {
+  calculateAprFromPrice,
+  OpenLongPositionReceived,
+} from "@delvtech/hyperdrive-js";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   createColumnHelper,
@@ -16,12 +19,22 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
+import { formatRate } from "src/base/formatRate";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
+import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
+import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { useAccount } from "wagmi";
+import { CurrentValueCell } from "./CurrentValueCell";
+import { ManageLongsButton } from "./ManageLongsButton";
+type FlattenedOpenLong = OpenLongPositionReceived & {
+  hyperdrive: HyperdriveConfig;
+};
 
 export function OpenLongsTableDesktop({
   hyperdrives,
@@ -31,13 +44,29 @@ export function OpenLongsTableDesktop({
   const { address: account } = useAccount();
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsDataFromHyperdrives(hyperdrives);
+  const openLongPositionsExist = openLongPositions?.some(
+    (openLong) => openLong.openLongs.length > 0,
+  );
+
+  const flattenedOpenLongsData: FlattenedOpenLong[] = useMemo(() => {
+    if (!openLongPositions) {
+      return [];
+    }
+    return openLongPositions.flatMap(({ hyperdrive, openLongs }) =>
+      openLongs.map((openLong) => ({
+        ...openLong,
+        hyperdrive,
+      })),
+    );
+  }, [openLongPositions]);
+
   // console.log(openLongPositions, "openLongPositions");
   const columns = useMemo(() => {
     return getColumns({ hyperdrives, appConfig });
   }, [hyperdrives]);
   const tableInstance = useReactTable({
     columns: columns,
-    data: openLongPositions || [],
+    data: flattenedOpenLongsData,
     initialState: {
       sorting: [
         {
@@ -67,31 +96,29 @@ export function OpenLongsTableDesktop({
     return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
-  if (openLongPositions?.length === 0) {
+  if (!openLongPositionsExist) {
     return null;
   }
 
   return (
     <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
-      {/* {tableInstance.getRowModel().rows.map(({ getValue, original, id }) => {
-        const value = getValue();
-        console.log(id);
-        // const modalId = `${original.}`;
-        // return (
-        //   <CloseLongModalButton
-        //     key={modalId}
-        //     hyperdrive={original.hyperdrive}
-        //     modalId={modalId}
-        //     long={{
-        //       assetId: getValue(),
-        //       baseAmountPaid: original.details?.baseAmountPaid || 0n,
-        //       bondAmount: original.details?.bondAmount || 0n,
-        //       maturity: original.maturity,
-        //     }}
-        //   />
-        // );
-      })} */}
+      {tableInstance.getRowModel().rows.map(({ original }) => {
+        const modalId = `${original.assetId}`;
+        return (
+          <CloseLongModalButton
+            key={modalId}
+            hyperdrive={original.hyperdrive}
+            modalId={modalId}
+            long={{
+              assetId: original.assetId,
+              baseAmountPaid: original.details?.baseAmountPaid || 0n,
+              bondAmount: original.details?.bondAmount || 0n,
+              maturity: original.maturity,
+            }}
+          />
+        );
+      })}
       <table className="daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -192,10 +219,7 @@ export function OpenLongsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<{
-  hyperdrive: HyperdriveConfig;
-  openLongs: OpenLongPositionReceived[];
-}>();
+const columnHelper = createColumnHelper<FlattenedOpenLong>();
 
 function getColumns({
   hyperdrives,
@@ -209,127 +233,104 @@ function getColumns({
     hyperdriveAddress: hyperdrives[0].address,
     appConfig,
   });
+
   return [
-    columnHelper.accessor("openLongs.assetId", {
+    columnHelper.accessor("maturity", {
       id: "maturationDate",
       header: `Maturity Date`,
       cell: ({ row, getValue }) => {
-        const openLong = row.original.openLongs.find(
-          (openLong) => openLong.assetId === getValue(),
+        return (
+          <MaturesOnCell
+            hyperdrive={row.original.hyperdrive}
+            maturity={getValue()}
+          />
         );
-        console.log(row.original, "row.original");
-        console.log(openLong, "openLong");
-        return <h1>Hello</h1>;
-        // return (
-        //   <MaturesOnCell
-        //     hyperdrive={row.original.hyperdrive}
-        //     maturity={openLong?.maturity || 0n}
-        //   />
-        // );
       },
     }),
-    // columnHelper.accessor("openLongs.details.assetId", {
-    //   id: "fixedRate/size",
-    //   header: `Fixed Rate / Size`,
-    //   cell: ({ row, getValue }) => {
-    //     const openLong = row.original.openLongs.find(
-    //       (openLong) => openLong.assetId === getValue(),
-    //     );
-    //     const fixedRate = calculateAprFromPrice({
-    //       baseAmount: openLong?.details?.baseAmountPaid || 0n,
-    //       bondAmount: openLong?.details?.bondAmount || 0n,
-    //       positionDuration:
-    //         row.original.hyperdrive.poolConfig.positionDuration || 0n,
-    //     });
-    //     return <h1>Hello</h1>;
-    //     return (
-    //       <div className="flex flex-col">
-    //         <div>{formatRate({ rate: fixedRate })} APR</div>
-    //         <span className="flex font-dmMono text-neutral-content">
-    //           {formatBalance({
-    //             balance: openLong?.details?.bondAmount || 0n,
-    //             decimals: baseToken.decimals,
-    //             places: 2,
-    //           })}{" "}
-    //           {`hy${baseToken.symbol}`}
-    //         </span>
-    //       </div>
-    //     );
-    //   },
-    // sortingFn: (rowA, rowB, {}) => {
-
-    //   const aFixedRate = calculateAnnualizedPercentageChange({
-    //     amountBefore: aOpenLong?.details?.baseAmountPaid || 0n,
-    //     amountAfter: aOpenLong?.details?.bondAmount || 0n,
-    //     days: convertMillisecondsToDays(
-    //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
-    //     ),
-    //   });
-    //   const bFixedRate = calculateAnnualizedPercentageChange({
-    //     amountBefore: rowB.original.details?.baseAmountPaid || 0n,
-    //     amountAfter: rowB.original.details?.bondAmount || 0n,
-    //     days: convertMillisecondsToDays(
-    //       Number(hyperdrive.poolConfig.positionDuration * 1000n),
-    //     ),
-    //   });
-    //   return aFixedRate - bFixedRate;
-    // },
-    // }),
-    // columnHelper.accessor("openLongs.details.assetId", {
-    //   id: "value/cost",
-    //   header: `Value / Cost (${baseToken.symbol})`,
-    //   cell: ({ row, getValue }) => {
-    //     const openLong = row.original.openLongs.find(
-    //       (openLong) => openLong.assetId === getValue(),
-    //     );
-
-    //     if (!openLong) {
-    //       return <LoadingState />;
-    //     }
-
-    //     return (
-    //       <div>
-    //         <CurrentValueCell
-    //           hyperdrive={row.original.hyperdrive}
-    //           row={openLong}
-    //         />
-    //         <span className="flex font-dmMono text-neutral-content">
-    //           {formatBalance({
-    //             balance: openLong.details?.baseAmountPaid || 0n,
-    //             decimals: baseToken.decimals,
-    //             places: baseToken.places,
-    //           })}
-    //         </span>
-    //       </div>
-    //     );
-    //   },
-    // }),
-    // columnHelper.accessor("openLongs.details.assetId", {
-    //   id: "value",
-    //   header: `Status`,
-    //   cell: ({ row, getValue }) => {
-    //     const openLong = row.original.openLongs.find(
-    //       (openLong) => openLong.assetId === getValue(),
-    //     );
-    //     return (
-    //       <StatusCell
-    //         maturity={openLong?.maturity || 0n}
-    //         chainId={row.original.hyperdrive.chainId}
-    //       />
-    //     );
-    //   },
-    // }),
-    // columnHelper.accessor("openLongs.details.assetId", {
-    //   id: "go-to-market",
-    //   cell: ({ row, getValue }) => {
-    //     return (
-    //       <ManageLongsButton
-    //         assetId={getValue()}
-    //         hyperdrive={row.original.hyperdrive}
-    //         key={getValue()}
-    //       />
-    //     );
-    //   },
-    // }),
+    columnHelper.accessor("details.bondAmount", {
+      id: "fixedRate/size",
+      header: `Fixed Rate / Size`,
+      cell: ({ row, getValue }) => {
+        const fixedRate = calculateAprFromPrice({
+          baseAmount: row.original.details?.baseAmountPaid || 0n,
+          bondAmount: getValue() || 0n,
+          positionDuration:
+            row.original.hyperdrive.poolConfig.positionDuration || 0n,
+        });
+        return (
+          <div className="flex flex-col">
+            <div>{formatRate({ rate: fixedRate })} APR</div>
+            <span className="flex font-dmMono text-neutral-content">
+              {formatBalance({
+                balance: getValue() || 0n,
+                decimals: baseToken.decimals,
+                places: 2,
+              })}{" "}
+              {`hy${baseToken.symbol}`}
+            </span>
+          </div>
+        );
+      },
+      sortingFn: (rowA, rowB) => {
+        const aFixedRate = calculateAprFromPrice({
+          baseAmount: rowA.original.details?.baseAmountPaid || 0n,
+          bondAmount: rowA.original.details?.bondAmount || 0n,
+          positionDuration:
+            rowA.original.hyperdrive.poolConfig.positionDuration || 0n,
+        });
+        const bFixedRate = calculateAprFromPrice({
+          baseAmount: rowB.original.details?.baseAmountPaid || 0n,
+          bondAmount: rowB.original.details?.bondAmount || 0n,
+          positionDuration:
+            rowB.original.hyperdrive.poolConfig.positionDuration || 0n,
+        });
+        return Number(aFixedRate - bFixedRate);
+      },
+    }),
+    columnHelper.accessor("details.baseAmountPaid", {
+      id: "value/cost",
+      header: `Value / Cost (${baseToken.symbol})`,
+      cell: ({ row, getValue }) => {
+        return (
+          <div>
+            <CurrentValueCell
+              hyperdrive={row.original.hyperdrive}
+              row={row.original}
+            />
+            <span className="flex font-dmMono text-neutral-content">
+              {formatBalance({
+                balance: getValue() || 0n,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })}
+            </span>
+          </div>
+        );
+      },
+    }),
+    columnHelper.accessor("maturity", {
+      id: "value",
+      header: `Status`,
+      cell: ({ row, getValue }) => {
+        return (
+          <StatusCell
+            maturity={getValue()}
+            chainId={row.original.hyperdrive.chainId}
+          />
+        );
+      },
+    }),
+    columnHelper.accessor("assetId", {
+      id: "go-to-market",
+      cell: ({ row, getValue }) => {
+        return (
+          <ManageLongsButton
+            assetId={getValue()}
+            hyperdrive={row.original.hyperdrive}
+            key={getValue()}
+          />
+        );
+      },
+    }),
   ];
 }
