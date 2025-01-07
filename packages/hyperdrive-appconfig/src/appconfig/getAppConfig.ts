@@ -10,10 +10,10 @@ import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
-import { AnyRewardKey } from "src/hyperdrives/rewards";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers/resolvers";
+import { AnyRewardId } from "src/rewards/rewards";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -581,7 +581,7 @@ export async function getAppConfig({
   earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
-  let allRewards: Record<AnyRewardKey, RewardResolverKey[]> = {};
+  let allRewards: Record<AnyRewardId, RewardResolverKey[]> = {};
   const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure

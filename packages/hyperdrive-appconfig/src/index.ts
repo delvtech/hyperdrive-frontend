@@ -30,6 +30,12 @@ export type { TokenConfig } from "src/tokens/types";
 export type { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
 // rewards
+export {
+  makeOpenLongRewardId as makeLongRewardId,
+  makeAddLiquidityRewardId as makeLpRewardId,
+  makeOpenShortRewardId as makeShortRewardId,
+} from "src/rewards/hyperdrive";
+export type { AnyRewardId } from "src/rewards/rewards";
 export { getRewardsFn, getRewardsFn2 } from "src/rewards/selectors";
 export type {
   AnyReward,

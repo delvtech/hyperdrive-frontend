@@ -26,7 +26,7 @@ import {
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardFunctions } from "src/rewards/rewards";
+import { rewardFunctions } from "src/rewards/resolvers/resolvers";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";

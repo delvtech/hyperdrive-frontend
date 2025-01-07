@@ -1,5 +1,8 @@
 import { AppConfig } from "src/appconfig/AppConfig";
-import { RewardResolverKey, rewardFunctions } from "src/rewards/rewards";
+import {
+  RewardResolverKey,
+  rewardFunctions,
+} from "src/rewards/resolvers/resolvers";
 import { RewardsResolver } from "src/rewards/types";
 import { YieldSourceId } from "src/yieldSources/types";
 

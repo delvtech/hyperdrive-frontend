@@ -6,7 +6,7 @@ import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import {
   HyperdriveRewardsMap,
   parseHyperdriveRewardsMap,
-} from "src/hyperdrives/rewards";
+} from "src/rewards/hyperdrive";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
 import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";

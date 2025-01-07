@@ -1,23 +1,13 @@
-import { fetchAeroRewards } from "src/rewards/aero";
-import { fetchEtherfiRewards } from "src/rewards/etherfi";
-import { fetchGyroscopeRewards } from "src/rewards/gyroscope";
-import { fetchLineaRewards } from "src/rewards/linea";
 import {
-  fetchMorphoCbethUsdcRewards,
-  fetchMorphoMwethRewards,
-  fetchMorphoMweurcRewards,
-  fetchMorphoMwusdcRewards,
-} from "src/rewards/morpho";
+  AddLiquidityRewardId,
+  OpenLongRewardId,
+  OpenShortRewardId,
+} from "src/rewards/hyperdrive";
 
-export const rewardFunctions = {
-  fetchLineaRewards,
-  fetchMorphoMweurcRewards,
-  fetchMorphoMwusdcRewards,
-  fetchMorphoMwethRewards,
-  fetchEtherfiRewards,
-  fetchMorphoCbethUsdcRewards,
-  fetchAeroRewards,
-  fetchGyroscopeRewards,
-} as const;
-
-export type RewardResolverKey = keyof typeof rewardFunctions;
+// Add new reward ids to this single union type as needed. For example, if we
+// end up with a vaults page and the vaults can earn rewards, then we'd add a
+// VaultRewardId to this type.
+export type AnyRewardId =
+  | OpenLongRewardId
+  | OpenShortRewardId
+  | AddLiquidityRewardId;

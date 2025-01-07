@@ -1,5 +1,5 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers/resolvers";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 
@@ -41,6 +41,10 @@ export interface HyperdriveConfig {
     isShareTokenWithdrawalEnabled?: boolean;
   };
 
+  /**
+   * @deprecated get rewards for specific positons in the top-level rewards
+   * object instead
+   */
   rewards?: {
     long?: RewardResolverKey[];
     short?: RewardResolverKey[];
