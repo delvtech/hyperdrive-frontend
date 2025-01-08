@@ -41,6 +41,9 @@ export interface HyperdriveConfig {
     isShareTokenWithdrawalEnabled?: boolean;
   };
 
+  /**
+   * @deprecated use rewards system on top-level instead
+   */
   rewards?: {
     long?: RewardResolverKey[];
     short?: RewardResolverKey[];
