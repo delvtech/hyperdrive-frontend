@@ -1,14 +1,11 @@
-import { appConfig, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import {
-  OpenLongPositionsData,
-  usePortfolioLongsData,
-} from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { usePortfolioLongsData } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { useAccount } from "wagmi";
@@ -69,50 +66,10 @@ export function OpenLongsContainer(): ReactElement {
   return (
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
-        ([key, hyperdrives]) => {
-          const [chainId, yieldSource] = key.split("-");
-          return <OpenLongsTableDesktop hyperdrives={hyperdrives} key={key} />;
-        },
+        ([key, hyperdrives]) => (
+          <OpenLongsTableDesktop hyperdrives={hyperdrives} key={key} />
+        ),
       )}
-      {/* {openLongPositions &&
-        appConfig.hyperdrives
-          .filter((hyperdrive) => {
-            const openLongs = findOpenLongs(
-              openLongPositions,
-              hyperdrive,
-            )?.openLongs;
-            // Ensure this hyperdrive pool has open positions before rendering.
-            return openLongPositionsStatus === "success" && openLongs?.length;
-          })
-          .map((hyperdrive) => {
-            const openLongs = findOpenLongs(
-              openLongPositions,
-              hyperdrive,
-            )?.openLongs;
-            return (
-              <div className="flex flex-col gap-6" key={hyperdrive.address}>
-                <PositionTableHeading
-                  hyperdrive={hyperdrive}
-                  rightElement={<TotalOpenLongsValue hyperdrive={hyperdrive} />}
-                />
-                <OpenLongsTableDesktop
-                  hyperdrive={hyperdrive}
-                  openLongs={openLongs}
-                />
-              </div>
-            );
-          })} */}
     </PositionContainer>
-  );
-}
-
-function findOpenLongs(
-  openLongPositions: OpenLongPositionsData,
-  hyperdrive: HyperdriveConfig,
-) {
-  return openLongPositions.find(
-    (position) =>
-      position.hyperdrive.address === hyperdrive.address &&
-      position.hyperdrive.chainId === hyperdrive.chainId,
   );
 }
