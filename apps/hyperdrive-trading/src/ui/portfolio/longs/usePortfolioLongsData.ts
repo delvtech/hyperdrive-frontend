@@ -67,7 +67,9 @@ export function usePortfolioLongsData(): {
 export function usePortfolioLongsDataFromHyperdrives(
   hyperdrives: HyperdriveConfig[],
 ): {
-  openLongPositions: OpenLongPositionsData | undefined;
+  openLongPositions:
+    | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
+    | undefined;
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const { address: account } = useAccount();
@@ -96,6 +98,7 @@ export function usePortfolioLongsDataFromHyperdrives(
                 const openLongs = await Promise.all(
                   allLongs.map(async (long) => ({
                     ...long,
+                    hyperdrive,
                     details: await readHyperdrive.getOpenLongDetails({
                       assetId: long.assetId,
                       account: account,
@@ -103,13 +106,10 @@ export function usePortfolioLongsDataFromHyperdrives(
                   })),
                 );
 
-                return {
-                  hyperdrive,
-                  openLongs,
-                };
+                return openLongs;
               }),
             );
-            return results;
+            return results.flat();
           }
         : undefined,
       enabled: queryEnabled,

@@ -28,15 +28,12 @@ import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { CurrentValueCell } from "src/ui/portfolio/longs/OpenLongsTable/CurrentValueCell";
+import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageLongsButton";
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { useAccount } from "wagmi";
-import { CurrentValueCell } from "./CurrentValueCell";
-import { ManageLongsButton } from "./ManageLongsButton";
-type FlattenedOpenLong = OpenLongPositionReceived & {
-  hyperdrive: HyperdriveConfig;
-};
 
 export function OpenLongsTableDesktop({
   hyperdrives,
@@ -47,26 +44,15 @@ export function OpenLongsTableDesktop({
   const { openLongPositions, openLongPositionsStatus } =
     usePortfolioLongsDataFromHyperdrives(hyperdrives);
   const openLongPositionsExist = openLongPositions?.some(
-    (openLong) => openLong.openLongs.length > 0,
+    (position) => position.details !== undefined,
   );
-
-  const flattenedOpenLongsData = useMemo(() => {
-    return (
-      openLongPositions?.flatMap(({ hyperdrive, openLongs }) =>
-        openLongs.map((openLong) => ({
-          ...openLong,
-          hyperdrive,
-        })),
-      ) || []
-    );
-  }, [openLongPositions]);
 
   const columns = useMemo(() => {
     return getColumns({ hyperdrives, appConfig });
   }, [hyperdrives]);
   const tableInstance = useReactTable({
     columns: columns,
-    data: flattenedOpenLongsData,
+    data: openLongPositions || [],
     initialState: {
       sorting: [
         {
@@ -108,7 +94,7 @@ export function OpenLongsTableDesktop({
         rightElement={
           <TotalOpenLongsValue
             hyperdrives={hyperdrives}
-            openLongs={flattenedOpenLongsData}
+            openLongs={openLongPositions}
           />
         }
         hyperdriveName={
@@ -276,7 +262,7 @@ function getColumns({
       cell: ({ row, getValue }) => {
         const fixedRate = calculateAprFromPrice({
           baseAmount: row.original.details?.baseAmountPaid || 0n,
-          bondAmount: getValue() || 0n,
+          bondAmount: getValue(),
           positionDuration:
             row.original.hyperdrive.poolConfig.positionDuration || 0n,
         });
@@ -322,7 +308,7 @@ function getColumns({
             />
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: getValue() || 0n,
+                balance: getValue(),
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })}
