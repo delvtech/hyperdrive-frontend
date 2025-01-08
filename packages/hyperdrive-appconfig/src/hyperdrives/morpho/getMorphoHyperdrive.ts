@@ -1,13 +1,9 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import retry from "p-retry";
-import { HyperdriveConfigResolverResult } from "src/appconfig/HyperdriveConfigResolver";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  HyperdriveRewardsMap,
-  parseHyperdriveRewardsMap,
-} from "src/hyperdrives/rewards";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
+import { TokenConfig } from "src/tokens/types";
 import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 
@@ -17,15 +13,16 @@ export async function getMorphoHyperdrive({
   baseTokenTags,
   baseTokenIconUrl,
   baseTokenPlaces,
-  rewardsMap,
 }: {
   hyperdrive: ReadHyperdrive;
   yieldSourceId: YieldSourceId;
   baseTokenTags: string[];
   baseTokenIconUrl: string;
   baseTokenPlaces: number;
-  rewardsMap?: HyperdriveRewardsMap;
-}): Promise<HyperdriveConfigResolverResult> {
+}): Promise<{
+  baseTokenConfig: TokenConfig;
+  hyperdriveConfig: HyperdriveConfig;
+}> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
 
@@ -80,17 +77,8 @@ export async function getMorphoHyperdrive({
     poolConfig,
   };
 
-  const rewards = rewardsMap
-    ? parseHyperdriveRewardsMap({
-        hyperdriveAddress: hyperdrive.address,
-        chainId,
-        rewardsMap,
-      })
-    : undefined;
-
   return {
     baseTokenConfig,
     hyperdriveConfig,
-    rewards,
   };
 }

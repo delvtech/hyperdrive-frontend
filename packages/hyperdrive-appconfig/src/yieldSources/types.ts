@@ -1,6 +1,6 @@
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers";
 
 /**
  * The comprehensive list of all yield source ids. To add a new yield source,

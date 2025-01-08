@@ -26,7 +26,7 @@ import {
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardFunctions } from "src/rewards/rewards";
+import { rewardResolvers } from "src/rewards/resolvers";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
@@ -196,7 +196,7 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
     Object.entries(yieldSources)
       .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
       .map(async ([unusedKey, yieldSource]) => {
-        const rewardFn = rewardFunctions[yieldSource.rewardsFn!]; // safe to cast due to filter above
+        const rewardFn = rewardResolvers[yieldSource.rewardsFn!]; // safe to cast due to filter above
         const publicClient = publicClients[yieldSource.chainId];
         const rewards = await rewardFn(publicClient);
 

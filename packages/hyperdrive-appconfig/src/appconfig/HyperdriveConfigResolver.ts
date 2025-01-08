@@ -1,7 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { AnyRewardKey } from "src/hyperdrives/rewards";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { AnyRewardId } from "src/rewards/actions/types";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import { TokenConfig } from "src/tokens/types";
 import { PublicClient } from "viem";
 
@@ -9,7 +9,7 @@ export interface HyperdriveConfigResolverResult {
   hyperdriveConfig: HyperdriveConfig;
   sharesTokenConfig?: TokenConfig;
   baseTokenConfig?: TokenConfig;
-  rewards?: Record<AnyRewardKey, RewardResolverKey[]>;
+  rewards?: Record<AnyRewardId, RewardResolverKey[]>;
 }
 
 export type HyperdriveConfigResolver = (
