@@ -1,12 +1,8 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
-import { HyperdriveConfigResolverResult } from "src/appconfig/HyperdriveConfigResolver";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
-import {
-  HyperdriveRewardsMap,
-  parseHyperdriveRewardsMap,
-} from "src/hyperdrives/rewards";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
+import { TokenConfig } from "src/tokens/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 
 type DepositOptions = HyperdriveConfig["depositOptions"];
@@ -23,7 +19,6 @@ interface GetHyperdriveConfigParams {
   tokenPlaces: number;
   sharesTokenTags?: string[];
   baseTokenTags?: string[];
-  rewardsMap?: HyperdriveRewardsMap;
 }
 
 export async function getCustomHyperdrive({
@@ -37,8 +32,11 @@ export async function getCustomHyperdrive({
   tokenPlaces,
   sharesTokenTags = [],
   baseTokenTags = [],
-  rewardsMap,
-}: GetHyperdriveConfigParams): Promise<HyperdriveConfigResolverResult> {
+}: GetHyperdriveConfigParams): Promise<{
+  sharesTokenConfig: TokenConfig;
+  baseTokenConfig: TokenConfig;
+  hyperdriveConfig: HyperdriveConfig;
+}> {
   const version = await hyperdrive.getVersion();
   const poolConfig = await hyperdrive.getPoolConfig();
   const sharesToken = await hyperdrive.getSharesToken();
@@ -85,18 +83,9 @@ export async function getCustomHyperdrive({
     poolConfig,
   };
 
-  const rewards = rewardsMap
-    ? parseHyperdriveRewardsMap({
-        hyperdriveAddress: hyperdrive.address,
-        chainId,
-        rewardsMap,
-      })
-    : {};
-
   return {
     sharesTokenConfig,
     baseTokenConfig,
     hyperdriveConfig,
-    rewards,
   };
 }

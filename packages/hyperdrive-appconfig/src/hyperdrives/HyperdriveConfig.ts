@@ -1,5 +1,4 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { RewardResolverKey } from "src/rewards/rewards";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 
@@ -39,12 +38,6 @@ export interface HyperdriveConfig {
      */
     isBaseTokenWithdrawalEnabled: boolean;
     isShareTokenWithdrawalEnabled?: boolean;
-  };
-
-  rewards?: {
-    long?: RewardResolverKey[];
-    short?: RewardResolverKey[];
-    lp?: RewardResolverKey[];
   };
 
   poolConfig: PoolConfig;
