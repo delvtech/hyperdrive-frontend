@@ -5,7 +5,7 @@ import { Address } from "viem";
  */
 export type OpenShortRewardId = `hyperdrive:open-short:${number}:${Address}`;
 
-export function makeOpenShortRewardId({
+export function getOpenShortRewardId({
   chainId,
   hyperdriveAddress,
 }: {

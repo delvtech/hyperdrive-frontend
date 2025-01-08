@@ -6,7 +6,7 @@ import { Address } from "viem";
 export type AddLiquidityRewardId =
   `hyperdrive:add-liquidity:${number}:${Address}`;
 
-export function makeAddLiquidityRewardId({
+export function getAddLiquidityRewardId({
   chainId,
   hyperdriveAddress,
 }: {
