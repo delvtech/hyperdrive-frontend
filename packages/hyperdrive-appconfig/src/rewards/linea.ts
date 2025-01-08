@@ -4,8 +4,9 @@ import { RewardsResolver } from "src/rewards/types";
 export const fetchLineaRewards: RewardsResolver = async () => {
   return [
     {
-      type: "info",
-      message: "This pool is eligible for LXP-L Rewards",
+      type: "pointMultiplier",
+      pointMultiplier: 1n,
+      pointTokenLabel: "LXP-L Rewards",
       iconUrl: lineaChainConfig.iconUrl,
     },
   ];
