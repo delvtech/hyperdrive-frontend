@@ -13,7 +13,7 @@ export const skyDsr: YieldSourceConfig = {
 export const lidoSteth: YieldSourceConfig = {
   chainId: mainnet.id,
   id: "lidoSteth",
-  shortName: "Lido stETH",
+  shortName: "Lido Flagship stETH",
   protocol: "lido",
   historicalRatePeriod: 1,
 };
