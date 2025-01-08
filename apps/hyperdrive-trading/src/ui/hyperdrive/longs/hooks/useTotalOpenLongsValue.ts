@@ -4,7 +4,7 @@ import {
   getHyperdrive,
 } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { Address } from "viem";
 export function useTotalOpenLongsValueTwo({
@@ -22,25 +22,19 @@ export function useTotalOpenLongsValueTwo({
   isLoading: boolean;
   totalOpenLongsValueError: Error;
 } {
-  // const readHyperdrive = useReadHyperdrive({
-  //   chainId: hyperdrive.chainId,
-  //   address: hyperdrive.address,
-  // });
-  // const { poolInfo } = usePoolInfo({
-  //   chainId: hyperdrive.chainId,
-  //   hyperdriveAddress: hyperdrive.address,
-  // });
   const queryEnabled = !!account && !!longs && enabled;
   const {
     data: totalOpenLongsValue,
     isLoading,
     error: totalOpenLongsValueError,
   } = useQuery({
-    queryKey: makeQueryKey("totalLongsValue", {
-      longs: longs?.map((long) => ({
-        assedId: long.assetId,
-      })),
-      account,
+    queryKey: makeQueryKey2({
+      namespace: "portfolio",
+      queryId: "totalOpenLongsValue",
+      params: {
+        account,
+        longs,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
