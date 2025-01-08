@@ -42,7 +42,6 @@ export function useOpenLongZap({
 }: UseOpenLongZapOptions): any {
   const { address: account } = useAccount();
   const { data: blockNumber } = useBlockNumber();
-
   // TODO: Need some logic to determine if base deposits are enabled on this pool.
   const asBase = true;
 
@@ -72,47 +71,35 @@ export function useOpenLongZap({
       if (!block?.timestamp) {
         return;
       }
-
-      const testHash = await drift
-        .write({
+      console.log("Source Amount:", amount);
+      try {
+        const { request, result } = await publicClient.simulateContract({
           abi: zapAbi,
           address: zapsConfig.address,
-          fn: "openLongZap",
-          args: {
-            _hyperdrive: hyperdriveAddress,
-            _minOutput: minBondsOut,
-            _minVaultSharePrice: minSharePrice,
-            _hyperdriveOptions: {
+          functionName: "openLongZap",
+          account,
+          args: [
+            hyperdriveAddress,
+            minBondsOut,
+            minSharePrice,
+            {
               destination: account,
               asBase,
               extraData: "0x",
             },
-            _zapInOptions: {
-              // TODO: Determine how to decide if a token is rebasing or not. Does
-              // Uniswap V3 sdk have a way to check?
-              // Only yield baring tokens will be rebasing.
-              // Can put this as a tag in tokenconfig.
+            {
               isRebasing: tokenIn
                 ? rebasingTokenSymbols.includes(
                     tokenIn.symbol.toLocaleLowerCase(),
                   )
                 : false,
-              // TODO: Determine when and which tokens to wrap.
               shouldWrap: false,
-              // The amount of source tokens that should be swapped. In most
-              // cases, this should be equal to the `swapParams.amountIn`, but
-              // in the case of wrapped tokens, this amount will supersede that
-              // quantity. // Clarify with Alex.
               sourceAmount: amount,
               sourceAsset: tokenIn.address,
               swapParams: {
                 amountIn: amount,
-
-                // TODO: Adjust this for slippage
                 amountOutMinimum: 1n,
-
-                // Deadline is 1 minute from the current block timestamp. TODO: Determine if this is correct or needs to be dynamic.
-                deadline: block.timestamp + 1n * 60n,
+                deadline: block.timestamp + 60n,
                 path: encodePacked(
                   ["address", "uint256", "address"],
                   [
@@ -124,15 +111,74 @@ export function useOpenLongZap({
                 recipient: zapsConfig.address,
               },
             },
-          },
-        })
-        .catch((e) => {
-          console.log("Drift err: ", e);
-          return "0x";
-          // throw e;
+          ],
         });
+        const hash = await walletClient.writeContract(request);
+        console.log("Hash:", hash);
+      } catch (e) {
+        console.error(e);
+        return "0x";
+      }
+
+      // const testHash = await drift
+      //   .write({
+      //     abi: zapAbi,
+      //     address: zapsConfig.address,
+      //     fn: "openLongZap",
+      //     args: {
+      //       _hyperdrive: hyperdriveAddress,
+      //       _minOutput: minBondsOut,
+      //       _minVaultSharePrice: minSharePrice,
+      //       _hyperdriveOptions: {
+      //         destination: account,
+      //         asBase,
+      //         extraData: "0x",
+      //       },
+      //       _zapInOptions: {
+      //         // TODO: Determine how to decide if a token is rebasing or not. Does
+      //         // Uniswap V3 sdk have a way to check?
+      //         // Only yield baring tokens will be rebasing.
+      //         // Can put this as a tag in tokenconfig.
+      //         isRebasing: tokenIn
+      //           ? rebasingTokenSymbols.includes(
+      //               tokenIn.symbol.toLocaleLowerCase(),
+      //             )
+      //           : false,
+      //         // TODO: Determine when and which tokens to wrap.
+      //         shouldWrap: false,
+      //         // The amount of source tokens that should be swapped. In most
+      //         // cases, this should be equal to the `swapParams.amountIn`, but
+      //         // in the case of wrapped tokens, this amount will supersede that
+      //         // quantity. // Clarify with Alex.
+      //         sourceAmount: amount,
+      //         sourceAsset: tokenIn.address,
+      //         swapParams: {
+      //           amountIn: amount,
+
+      //           // TODO: Adjust this for slippage
+      //           amountOutMinimum: 1n,
+
+      //           // Deadline is 1 minute from the current block timestamp. TODO: Determine if this is correct or needs to be dynamic.
+      //           deadline: block.timestamp + 1n * 60n,
+      //           path: encodePacked(
+      //             ["address", "uint256", "address"],
+      //             [
+      //               tokenIn.address,
+      //               BigInt(FeeAmount.LOWEST),
+      //               baseToken.address,
+      //             ],
+      //           ),
+      //           recipient: zapsConfig.address,
+      //         },
+      //       },
+      //     },
+      //   })
+      //   .catch((e) => {
+      //     console.log("Drift err: ", e);
+      //     return "0x";
+      //     // throw e;
+      //   });
     },
   });
-
   return { openLongZap, status };
 }

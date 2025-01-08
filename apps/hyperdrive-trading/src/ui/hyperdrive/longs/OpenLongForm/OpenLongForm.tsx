@@ -119,7 +119,7 @@ export function OpenLongForm({
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
-          tokenFromTokenList.chainId === hyperdrive.chainId
+          tokenFromTokenList.chainId === hyperdrive.chainId,
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -132,7 +132,7 @@ export function OpenLongForm({
   if (isZapsEnabled) {
     activeTokenChoices = uniqBy(
       [...activeTokenChoices, ...tokenList],
-      "address"
+      "address",
     );
   }
 
@@ -152,7 +152,7 @@ export function OpenLongForm({
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
   const depositAssets = getDepositAssets(hyperdrive);
   const isZapping = !depositAssets.some(
-    (asset) => asset.address === activeToken.address
+    (asset) => asset.address === activeToken.address,
   );
 
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
@@ -166,6 +166,34 @@ export function OpenLongForm({
     tokenAddress: activeToken.address,
     tokenChainId: activeToken.chainId,
   });
+
+  console.log("Active token", activeToken.name);
+  const { tokenAllowance: poolAllowance } = useTokenAllowance({
+    account,
+    enabled: true,
+    spender: hyperdrive.address,
+    tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
+  });
+  console.log("Pool allowance", poolAllowance);
+
+  const { tokenAllowance: zapAllowance } = useTokenAllowance({
+    account,
+    enabled: true,
+    spender: zapsConfig.address,
+    tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
+  });
+  console.log("Zap allowance", zapAllowance);
+
+  const { tokenAllowance: poolToZapAllowance } = useTokenAllowance({
+    account: zapsConfig.address,
+    enabled: true,
+    spender: hyperdrive.address,
+    tokenAddress: activeToken.address,
+    tokenChainId: activeToken.chainId,
+  });
+  console.log("Pool's allowance to spend zap balance", poolToZapAllowance);
 
   const {
     amount: depositAmount,
@@ -253,7 +281,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -279,7 +307,7 @@ export function OpenLongForm({
   ) {
     const fiatValueOfDepositAmount = fixed(
       depositAmountAsBigInt,
-      activeToken.decimals
+      activeToken.decimals,
     ).mul(activeTokenPrice);
     const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
     zapTokenAmountInBase = equivalentAmountOfBase.bigint;
@@ -375,7 +403,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18 // prices are always in 18 decimals
+                          18, // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
