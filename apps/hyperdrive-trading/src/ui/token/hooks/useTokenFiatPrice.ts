@@ -18,14 +18,14 @@ export function useTokenFiatPrice({
   fiatPrice: bigint | undefined;
 } {
   const { data } = useQuery(
-    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled })
+    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled }),
   );
   return { fiatPrice: data };
 }
 export function makeTokenFiatPriceQuery({
   chainId,
   tokenAddress,
-  enabled,
+  enabled = true,
 }: {
   chainId: number;
   tokenAddress: Address | undefined;
