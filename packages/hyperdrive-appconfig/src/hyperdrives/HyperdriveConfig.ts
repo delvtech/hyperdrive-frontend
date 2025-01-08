@@ -1,5 +1,5 @@
 import { PoolConfig } from "@delvtech/hyperdrive-viem";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 

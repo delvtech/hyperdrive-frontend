@@ -1,7 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { AnyRewardKey } from "src/hyperdrives/rewards";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import { TokenConfig } from "src/tokens/types";
 import { PublicClient } from "viem";
 

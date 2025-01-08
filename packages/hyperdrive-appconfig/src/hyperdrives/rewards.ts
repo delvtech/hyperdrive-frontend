@@ -1,4 +1,4 @@
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import { Address } from "viem";
 
 export type LongRewardKey = `hyperdrive/long/${number}/${Address}`;

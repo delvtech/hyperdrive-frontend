@@ -13,7 +13,7 @@ import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive"
 import { AnyRewardKey } from "src/hyperdrives/rewards";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
