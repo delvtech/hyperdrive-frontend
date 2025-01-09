@@ -10,10 +10,11 @@ import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getGnosisWstethHyperdrive } from "src/hyperdrives/gnosisWsteth/getGnosisWstethHyperdrive";
 import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive";
-import { AnyRewardKey } from "src/hyperdrives/rewards";
+import { parseHyperdriveRewardsMap } from "src/hyperdrives/rewards";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
-import { RewardResolverKey } from "src/rewards/rewards";
+import { AnyRewardId } from "src/rewards/actions/types";
+import { RewardResolverKey } from "src/rewards/resolvers";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -51,51 +52,73 @@ const hyperdriveKindResolvers: Record<
   HyperdriveConfigResolver
 > = {
   RsETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
-    return getCustomHyperdrive({
-      hyperdrive,
-      yieldSource: "rseth",
-      baseTokenIconUrl: ETH_ICON_URL,
-      sharesTokenIconUrl: RSETH_ICON_URL,
-      tokenPlaces: 4,
-      sharesTokenTags: ["liquidStakingToken"],
-      depositOptions: {
-        isBaseTokenDepositEnabled: true,
-        isShareTokenDepositsEnabled: true,
-      },
-      withdrawalOptions: {
-        isBaseTokenWithdrawalEnabled: false,
-        isShareTokenWithdrawalEnabled: true,
-      },
-      rewardsMap: {
-        short: ["fetchLineaRewards"],
-        lp: ["fetchLineaRewards"],
-      },
-      earliestBlock,
-    });
+    const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+      await getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "rseth",
+        baseTokenIconUrl: ETH_ICON_URL,
+        sharesTokenIconUrl: RSETH_ICON_URL,
+        tokenPlaces: 4,
+        sharesTokenTags: ["liquidStakingToken"],
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        earliestBlock,
+      });
+
+    return {
+      hyperdriveConfig,
+      baseTokenConfig,
+      sharesTokenConfig,
+      rewards: parseHyperdriveRewardsMap({
+        hyperdriveAddress: hyperdrive.address,
+        chainId: publicClient.chain?.id as number,
+        rewardsMap: {
+          short: ["fetchLineaRewards"],
+          lp: ["fetchLineaRewards"],
+        },
+      }),
+    };
   },
 
   EzETHLineaHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
-    return getCustomHyperdrive({
-      hyperdrive,
-      yieldSource: "lineaEzeth",
-      baseTokenIconUrl: ETH_ICON_URL,
-      sharesTokenIconUrl: EZETH_ICON_URL,
-      tokenPlaces: 4,
-      sharesTokenTags: ["liquidStakingToken"],
-      depositOptions: {
-        isBaseTokenDepositEnabled: false,
-        isShareTokenDepositsEnabled: true,
-      },
-      rewardsMap: {
-        short: ["fetchLineaRewards"],
-        lp: ["fetchLineaRewards"],
-      },
-      withdrawalOptions: {
-        isBaseTokenWithdrawalEnabled: false,
-        isShareTokenWithdrawalEnabled: true,
-      },
-      earliestBlock,
-    });
+    const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+      await getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "lineaEzeth",
+        baseTokenIconUrl: ETH_ICON_URL,
+        sharesTokenIconUrl: EZETH_ICON_URL,
+        tokenPlaces: 4,
+        sharesTokenTags: ["liquidStakingToken"],
+        depositOptions: {
+          isBaseTokenDepositEnabled: false,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
+        earliestBlock,
+      });
+
+    return {
+      hyperdriveConfig,
+      baseTokenConfig,
+      sharesTokenConfig,
+      rewards: parseHyperdriveRewardsMap({
+        hyperdriveAddress: hyperdrive.address,
+        chainId: publicClient.chain?.id as number,
+        rewardsMap: {
+          short: ["fetchLineaRewards"],
+          lp: ["fetchLineaRewards"],
+        },
+      }),
+    };
   },
   ChainlinkHyperdrive: async (hyperdrive, publicClient, earliestBlock) => {
     const hyperdriveName = await publicClient.readContract({
@@ -124,27 +147,38 @@ const hyperdriveKindResolvers: Record<
       `Unknown ChainklinkHyperdrive, name: ${hyperdriveName}, sharesTokenSymbol: ${sharesTokenSymbol}, hyperdrive address: ${hyperdrive.address}.`,
     );
   },
-  EETHHyperdrive: async (hyperdrive) =>
-    getCustomHyperdrive({
-      hyperdrive,
-      yieldSource: "eeth",
-      baseTokenIconUrl: ETH_ICON_URL,
-      sharesTokenIconUrl: EETH_ICON_URL,
-      sharesTokenTags: ["liquidStakingToken"],
-      tokenPlaces: 4,
-      depositOptions: {
-        isBaseTokenDepositEnabled: true,
-        isShareTokenDepositsEnabled: true,
-      },
-      rewardsMap: {
-        short: ["fetchEtherfiRewards"],
-        lp: ["fetchEtherfiRewards"],
-      },
-      withdrawalOptions: {
-        isBaseTokenWithdrawalEnabled: false,
-        isShareTokenWithdrawalEnabled: true,
-      },
-    }),
+  EETHHyperdrive: async (hyperdrive, publicClient) => {
+    const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+      await getCustomHyperdrive({
+        hyperdrive,
+        yieldSource: "eeth",
+        baseTokenIconUrl: ETH_ICON_URL,
+        sharesTokenIconUrl: EETH_ICON_URL,
+        sharesTokenTags: ["liquidStakingToken"],
+        tokenPlaces: 4,
+        depositOptions: {
+          isBaseTokenDepositEnabled: true,
+          isShareTokenDepositsEnabled: true,
+        },
+        withdrawalOptions: {
+          isBaseTokenWithdrawalEnabled: false,
+          isShareTokenWithdrawalEnabled: true,
+        },
+      });
+    return {
+      hyperdriveConfig,
+      baseTokenConfig,
+      sharesTokenConfig,
+      rewards: parseHyperdriveRewardsMap({
+        chainId: publicClient.chain?.id as number,
+        hyperdriveAddress: hyperdrive.address,
+        rewardsMap: {
+          short: ["fetchEtherfiRewards"],
+          lp: ["fetchEtherfiRewards"],
+        },
+      }),
+    };
+  },
   EzETHHyperdrive: async (hyperdrive: ReadHyperdrive) =>
     getCustomHyperdrive({
       hyperdrive,
@@ -204,28 +238,38 @@ const hyperdriveKindResolvers: Record<
           `Unsupported chainId for sGYD Hyperdrive: ${publicClient.chain?.id}`,
         );
       }
-      return getCustomHyperdrive({
-        hyperdrive,
-        yieldSource,
-        baseTokenIconUrl: GYD_ICON_URL,
-        sharesTokenIconUrl: SGYD_ICON_URL,
-        tokenPlaces: 2,
-        baseTokenTags: ["stablecoin"],
-        sharesTokenTags: [],
-        depositOptions: {
-          isBaseTokenDepositEnabled: true,
-          isShareTokenDepositsEnabled: true,
-        },
-        withdrawalOptions: {
-          isBaseTokenWithdrawalEnabled: true,
-          isShareTokenWithdrawalEnabled: true,
-        },
-        rewardsMap: {
-          short: ["fetchGyroscopeRewards"],
-          lp: ["fetchGyroscopeRewards"],
-        },
-        earliestBlock,
-      });
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+        await getCustomHyperdrive({
+          hyperdrive,
+          yieldSource,
+          baseTokenIconUrl: GYD_ICON_URL,
+          sharesTokenIconUrl: SGYD_ICON_URL,
+          tokenPlaces: 2,
+          baseTokenTags: ["stablecoin"],
+          sharesTokenTags: [],
+          depositOptions: {
+            isBaseTokenDepositEnabled: true,
+            isShareTokenDepositsEnabled: true,
+          },
+          withdrawalOptions: {
+            isBaseTokenWithdrawalEnabled: true,
+            isShareTokenWithdrawalEnabled: true,
+          },
+          earliestBlock,
+        });
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        sharesTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          chainId: publicClient.chain?.id as number,
+          hyperdriveAddress: hyperdrive.address,
+          rewardsMap: {
+            short: ["fetchGyroscopeRewards"],
+            lp: ["fetchGyroscopeRewards"],
+          },
+        }),
+      };
     }
 
     // Ethena sUSDe
@@ -346,71 +390,101 @@ const hyperdriveKindResolvers: Record<
 
     // Moonwell ETH
     if (hyperdriveName.includes("Moonwell ETH Hyperdrive")) {
-      return getCustomHyperdrive({
-        hyperdrive,
-        yieldSource: "mwEth",
-        baseTokenIconUrl: WETH_ICON_URL,
-        sharesTokenIconUrl: WELL_ICON_URL,
-        depositOptions: {
-          isBaseTokenDepositEnabled: true,
-          isShareTokenDepositsEnabled: true,
-        },
-        withdrawalOptions: {
-          isBaseTokenWithdrawalEnabled: true,
-          isShareTokenWithdrawalEnabled: true,
-        },
-        tokenPlaces: 4,
-        rewardsMap: {
-          short: ["fetchMorphoMwethRewards"],
-          lp: ["fetchMorphoMwethRewards"],
-        },
-      });
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+        await getCustomHyperdrive({
+          hyperdrive,
+          yieldSource: "mwEth",
+          baseTokenIconUrl: WETH_ICON_URL,
+          sharesTokenIconUrl: WELL_ICON_URL,
+          depositOptions: {
+            isBaseTokenDepositEnabled: true,
+            isShareTokenDepositsEnabled: true,
+          },
+          withdrawalOptions: {
+            isBaseTokenWithdrawalEnabled: true,
+            isShareTokenWithdrawalEnabled: true,
+          },
+          tokenPlaces: 4,
+        });
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        sharesTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          hyperdriveAddress: hyperdrive.address,
+          chainId: publicClient.chain?.id as number,
+          rewardsMap: {
+            short: ["fetchMorphoMwethRewards"],
+            lp: ["fetchMorphoMwethRewards"],
+          },
+        }),
+      };
     }
 
     if (hyperdriveName.includes("Moonwell USDC Hyperdrive")) {
-      return getCustomHyperdrive({
-        hyperdrive,
-        yieldSource: "mwUsdc",
-        baseTokenIconUrl: USDC_ICON_URL,
-        sharesTokenIconUrl: WELL_ICON_URL,
-        baseTokenTags: ["stablecoin"],
-        depositOptions: {
-          isBaseTokenDepositEnabled: true,
-          isShareTokenDepositsEnabled: true,
-        },
-        withdrawalOptions: {
-          isBaseTokenWithdrawalEnabled: true,
-          isShareTokenWithdrawalEnabled: true,
-        },
-        tokenPlaces: 2,
-        rewardsMap: {
-          short: ["fetchMorphoMwusdcRewards"],
-          lp: ["fetchMorphoMwusdcRewards"],
-        },
-      });
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+        await getCustomHyperdrive({
+          hyperdrive,
+          yieldSource: "mwUsdc",
+          baseTokenIconUrl: USDC_ICON_URL,
+          sharesTokenIconUrl: WELL_ICON_URL,
+          baseTokenTags: ["stablecoin"],
+          depositOptions: {
+            isBaseTokenDepositEnabled: true,
+            isShareTokenDepositsEnabled: true,
+          },
+          withdrawalOptions: {
+            isBaseTokenWithdrawalEnabled: true,
+            isShareTokenWithdrawalEnabled: true,
+          },
+          tokenPlaces: 2,
+        });
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        sharesTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          hyperdriveAddress: hyperdrive.address,
+          chainId: publicClient.chain?.id as number,
+          rewardsMap: {
+            short: ["fetchMorphoMwusdcRewards"],
+            lp: ["fetchMorphoMwusdcRewards"],
+          },
+        }),
+      };
     }
 
     if (hyperdriveName.includes("Moonwell EURC Hyperdrive")) {
-      return getCustomHyperdrive({
-        hyperdrive,
-        yieldSource: "mwEurc",
-        baseTokenIconUrl: EURC_ICON_URL,
-        sharesTokenIconUrl: WELL_ICON_URL,
-        baseTokenTags: ["stablecoin"],
-        depositOptions: {
-          isBaseTokenDepositEnabled: true,
-          isShareTokenDepositsEnabled: true,
-        },
-        withdrawalOptions: {
-          isBaseTokenWithdrawalEnabled: true,
-          isShareTokenWithdrawalEnabled: true,
-        },
-        tokenPlaces: 2,
-        rewardsMap: {
-          short: ["fetchMorphoMweurcRewards"],
-          lp: ["fetchMorphoMweurcRewards"],
-        },
-      });
+      const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig } =
+        await getCustomHyperdrive({
+          hyperdrive,
+          yieldSource: "mwEurc",
+          baseTokenIconUrl: EURC_ICON_URL,
+          sharesTokenIconUrl: WELL_ICON_URL,
+          baseTokenTags: ["stablecoin"],
+          depositOptions: {
+            isBaseTokenDepositEnabled: true,
+            isShareTokenDepositsEnabled: true,
+          },
+          withdrawalOptions: {
+            isBaseTokenWithdrawalEnabled: true,
+            isShareTokenWithdrawalEnabled: true,
+          },
+          tokenPlaces: 2,
+        });
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        sharesTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          chainId: publicClient.chain?.id as number,
+          hyperdriveAddress: hyperdrive.address,
+          rewardsMap: {
+            short: ["fetchMorphoMweurcRewards"],
+            lp: ["fetchMorphoMweurcRewards"],
+          },
+        }),
+      };
     }
 
     if (hyperdriveName.includes("Num Finance snARS")) {
@@ -477,17 +551,25 @@ const hyperdriveKindResolvers: Record<
       functionName: "name",
     });
     if (hyperdriveName.includes("Aerodrome LP")) {
-      return getAeroLpHyperdrive({
+      const { hyperdriveConfig, baseTokenConfig } = await getAeroLpHyperdrive({
         hyperdrive,
         baseTokenIconUrl: AERO_ICON_URL,
         yieldSourceId: "aeroUsdcAero",
         baseTokenPlaces: 9, // aero lp tokens are super small
         baseTokenTags: [],
-        rewardsMap: {
-          short: ["fetchAeroRewards"],
-          lp: ["fetchAeroRewards"],
-        },
       });
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          chainId: publicClient.chain?.id as number,
+          hyperdriveAddress: hyperdrive.address,
+          rewardsMap: {
+            short: ["fetchAeroRewards"],
+            lp: ["fetchAeroRewards"],
+          },
+        }),
+      };
     }
     throw new Error(
       `Unknown AeroLpHyperdrive, name: ${hyperdriveName}, hyperdrive address: ${hyperdrive.address}.`,
@@ -552,17 +634,26 @@ const hyperdriveKindResolvers: Record<
     }
 
     if (hyperdriveName.includes("Morpho Blue cbETH/USDC Hyperdrive")) {
-      return getMorphoHyperdrive({
+      const { hyperdriveConfig, baseTokenConfig } = await getMorphoHyperdrive({
         hyperdrive,
         baseTokenTags: ["stablecoin"],
         baseTokenIconUrl: USDC_ICON_URL,
         baseTokenPlaces: 2,
         yieldSourceId: "morphoCbethUsdc",
-        rewardsMap: {
-          short: ["fetchMorphoCbethUsdcRewards"],
-          lp: ["fetchMorphoCbethUsdcRewards"],
-        },
       });
+
+      return {
+        hyperdriveConfig,
+        baseTokenConfig,
+        rewards: parseHyperdriveRewardsMap({
+          chainId: publicClient.chain?.id as number,
+          hyperdriveAddress: hyperdrive.address,
+          rewardsMap: {
+            short: ["fetchMorphoCbethUsdcRewards"],
+            lp: ["fetchMorphoCbethUsdcRewards"],
+          },
+        }),
+      };
     }
 
     throw new Error(
@@ -581,7 +672,7 @@ export async function getAppConfig({
   earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
-  let allRewards: Record<AnyRewardKey, RewardResolverKey[]> = {};
+  let allRewards: Record<AnyRewardId, RewardResolverKey[]> = {};
   const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure

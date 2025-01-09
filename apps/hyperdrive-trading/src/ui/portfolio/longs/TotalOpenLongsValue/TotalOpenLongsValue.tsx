@@ -4,45 +4,42 @@ import {
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useAccount } from "wagmi";
 
 export function TotalOpenLongsValue({
-  hyperdrive,
+  hyperdrives,
+  openLongs,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrives: HyperdriveConfig[];
+  openLongs:
+    | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
+    | undefined;
 }): ReactElement {
   const { address: account } = useAccount();
-
-  const { openLongs, openLongsStatus } = useOpenLongs({
-    account,
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
 
   const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
     account,
     longs: openLongs,
-    enabled: openLongsStatus === "success",
-    hyperdrive,
+    enabled: !!openLongs,
   });
   const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrives[0].chainId,
+    hyperdriveAddress: hyperdrives[0].address,
     appConfig,
   });
-  const chainInfo = appConfig.chains[hyperdrive.chainId];
+  const chainInfo = appConfig.chains[hyperdrives[0].chainId];
 
   const { fiatPrice } = useTokenFiatPrice({
     chainId: baseToken.chainId,
     tokenAddress: baseToken.address,
   });
-  const isFiatPriceEnabled = !isTestnetChain(hyperdrive.chainId);
+  const isFiatPriceEnabled = !isTestnetChain(hyperdrives[0].chainId);
 
   return (
     <div className="flex items-center gap-2">
@@ -57,8 +54,8 @@ export function TotalOpenLongsValue({
                     baseToken?.decimals,
                   ).bigint
                 : 0n,
-            decimals: hyperdrive.decimals,
-            places: 2,
+            decimals: baseToken?.decimals,
+            places: baseToken?.places,
             includeCommas: true,
           })}`}{" "}
         </p>
