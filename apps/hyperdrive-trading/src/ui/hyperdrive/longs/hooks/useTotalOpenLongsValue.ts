@@ -54,6 +54,7 @@ export function useTotalOpenLongsValueTwo({
               return preview.amountOut;
             }),
           );
+
           let total = 0n;
           openLongPositionValues.forEach((value) => {
             total += value;
