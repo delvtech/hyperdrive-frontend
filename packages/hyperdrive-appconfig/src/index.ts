@@ -35,6 +35,7 @@ export {
   getOpenShortRewardResolvers,
   getYieldSourceRewardsFn as getRewardsFn,
   getRewardsFn2,
+  getYieldSourceRewardResolvers,
 } from "src/rewards/selectors";
 export type {
   AnyReward,
