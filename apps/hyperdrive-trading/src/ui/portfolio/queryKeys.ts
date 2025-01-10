@@ -2,6 +2,7 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import "src/base/makeQueryKey";
 import { Address } from "viem";
+import { OpenShortPositionsData } from "./shorts/usePortfolioShortsData";
 
 interface PortfolioQueryKeys {
   openLongPositions: {
@@ -12,6 +13,16 @@ interface PortfolioQueryKeys {
     account: Address | undefined;
     longs:
       | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
+      | undefined;
+  };
+  openShortPositions: {
+    account: Address | undefined;
+    hyperdrives: HyperdriveConfig[];
+  };
+  totalOpenShortsValue: {
+    account: Address | undefined;
+    shorts:
+      | (OpenShortPositionsData & { hyperdrive: HyperdriveConfig })[]
       | undefined;
   };
 }

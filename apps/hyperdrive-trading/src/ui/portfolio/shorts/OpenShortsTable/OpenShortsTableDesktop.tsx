@@ -18,6 +18,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
@@ -26,20 +27,23 @@ import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalB
 import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
+import { usePortfolioShortsDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsData";
 import { useAccount } from "wagmi";
 
 export function OpenShortsTableDesktop({
-  hyperdrive,
-  openShorts,
+  hyperdrives,
 }: {
-  hyperdrive: HyperdriveConfig;
-  openShorts: OpenShort[] | undefined;
-}): ReactElement {
+  hyperdrives: HyperdriveConfig[];
+}): ReactElement | null {
   const { address: account } = useAccount();
-
+  const { openShortPositions, openShortPositionsStatus } =
+    usePortfolioShortsDataFromHyperdrives(hyperdrives);
+  const openShortPositionsExist =
+    openShortPositions && openShortPositions.length > 0;
+  const columns = getColumns({ hyperdrives, appConfig });
   const tableInstance = useReactTable({
-    columns: getColumns({ hyperdrive, appConfig }),
-    data: openShorts || [],
+    columns,
+    data: openShortPositions || [],
     initialState: {
       sorting: [
         {
@@ -65,6 +69,14 @@ export function OpenShortsTableDesktop({
     );
   }
 
+  if (!openShortPositionsExist) {
+    return null;
+  }
+
+  if (openShortPositionsStatus === "loading") {
+    return <TableSkeleton numColumns={columns.length} numRows={5} />;
+  }
+
   return (
     <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
@@ -73,7 +85,7 @@ export function OpenShortsTableDesktop({
         return (
           <CloseShortModalButton
             key={modalId}
-            hyperdrive={hyperdrive}
+            hyperdrive={row.original.hyperdrive}
             modalId={modalId}
             short={row.original}
           />
@@ -179,29 +191,31 @@ export function OpenShortsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<OpenShort>();
+const columnHelper = createColumnHelper<
+  OpenShort & { hyperdrive: HyperdriveConfig }
+>();
 
 function getColumns({
-  hyperdrive,
+  hyperdrives,
   appConfig,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrives: HyperdriveConfig[];
   appConfig: AppConfig;
 }) {
   const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
+    hyperdriveChainId: hyperdrives[0].chainId,
+    hyperdriveAddress: hyperdrives[0].address,
     appConfig,
   });
   return [
-    columnHelper.accessor("assetId", {
+    columnHelper.accessor("maturity", {
       id: "maturationDate",
       header: `Maturity Date`,
-      cell: ({ row }) => {
+      cell: ({ row, getValue }) => {
         return (
           <MaturesOnCell
-            hyperdrive={hyperdrive}
-            maturity={row.original.maturity}
+            hyperdrive={row.original.hyperdrive}
+            maturity={getValue()}
           />
         );
       },
@@ -210,7 +224,10 @@ function getColumns({
       id: "rateShorted/size",
       header: `Rate Shorted / Size`,
       cell: ({ row }) => (
-        <ShortRateAndSizeCell hyperdrive={hyperdrive} short={row.original} />
+        <ShortRateAndSizeCell
+          hyperdrive={row.original.hyperdrive}
+          short={row.original}
+        />
       ),
     }),
     columnHelper.accessor("checkpointTime", {
@@ -220,7 +237,7 @@ function getColumns({
         return (
           <div>
             <CurrentShortsValueCell
-              hyperdrive={hyperdrive}
+              hyperdrive={row.original.hyperdrive}
               openShort={row.original}
             />
             <span className="flex font-dmMono text-neutral-content">
@@ -235,12 +252,12 @@ function getColumns({
       },
     }),
     columnHelper.display({
-      id: "value",
+      id: "status",
       header: `Status`,
       cell: ({ row }) => {
         return (
           <StatusCell
-            chainId={hyperdrive.chainId}
+            chainId={row.original.hyperdrive.chainId}
             maturity={row.original.maturity}
           />
         );
@@ -251,7 +268,7 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <ManageShortButton
-            hyperdrive={hyperdrive}
+            hyperdrive={row.original.hyperdrive}
             assetId={row.original.assetId}
           />
         );
