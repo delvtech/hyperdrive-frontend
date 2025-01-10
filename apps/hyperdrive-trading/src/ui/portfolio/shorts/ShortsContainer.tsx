@@ -47,6 +47,7 @@ export function OpenShortsContainer(): ReactElement {
               <ExternalLink
                 newTab
                 href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/shorts-variable-rates"
+                className="daisy-link"
               >
                 documentation
               </ExternalLink>{" "}

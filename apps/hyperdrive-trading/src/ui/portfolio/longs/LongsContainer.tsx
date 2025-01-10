@@ -47,6 +47,7 @@ export function OpenLongsContainer(): ReactElement {
               <ExternalLink
                 href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/longs-fixed-rates"
                 newTab
+                className="daisy-link"
               >
                 documentation
               </ExternalLink>{" "}
