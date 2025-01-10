@@ -59,6 +59,7 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
               <ExternalLink
                 newTab
                 href="https://docs.hyperdrive.box/hyperdrive-overview/position-types/liquidity-provider"
+                className="daisy-link"
               >
                 documentation
               </ExternalLink>{" "}
