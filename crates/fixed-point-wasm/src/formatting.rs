@@ -99,9 +99,7 @@ impl WasmFixedPoint {
             )?;
         }
 
-        if options.trailing_zeros == Some(true)
-            || (decimals.is_some() && options.trailing_zeros != Some(false))
-        {
+        if options.trailing_zeros == Some(true) {
             Reflect::set(
                 &options_obj,
                 &"minimumFractionDigits".into(),
