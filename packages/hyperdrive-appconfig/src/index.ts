@@ -30,9 +30,10 @@ export type { TokenConfig } from "src/tokens/types";
 export type { YieldSourceConfig, YieldSourceId } from "src/yieldSources/types";
 
 // rewards
+export type { RewardResolverKey } from "src/rewards/resolvers";
 export {
-  getAddLiquidityRewardResolvers,
-  getOpenShortRewardResolvers,
+  getAddLiquidityRewardResolverIds,
+  getOpenShortRewardResolverIds,
   getYieldSourceRewardsFn as getRewardsFn,
   getRewardsFn2,
   getYieldSourceRewardResolvers,
