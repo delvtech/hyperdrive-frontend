@@ -170,7 +170,6 @@ where
 macro_rules! try_bigint {
     ($value:expr) => {{
         let location = std::panic::Location::caller();
-        // FIXME: Is this going to result in "self" being printed?
         let string = stringify!($value);
         BigInt::from_str(string)
             .map_err(|_| $crate::type_error_at!(location, "Invalid BigInt: {}", string))
@@ -194,14 +193,16 @@ pub trait ToBigInt {
 impl ToBigInt for String {
     #[track_caller]
     fn to_bigint(&self) -> Result<BigInt, Error> {
-        try_bigint!(self)
+        let location = std::panic::Location::caller();
+        BigInt::from_str(self).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
     }
 }
 
 impl ToBigInt for &str {
     #[track_caller]
     fn to_bigint(&self) -> Result<BigInt, Error> {
-        try_bigint!(self)
+        let location = std::panic::Location::caller();
+        BigInt::from_str(self).map_err(|_| type_error_at!(location, "Invalid BigInt: {}", self))
     }
 }
 
