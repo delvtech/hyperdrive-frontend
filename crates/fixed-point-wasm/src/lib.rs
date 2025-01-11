@@ -5,6 +5,7 @@ use core::fmt;
 
 use delv_core::{
     conversions::{ToBigInt, ToI256},
+    error,
     error::{Error, ToResult},
 };
 use ethers::types::I256;
@@ -384,6 +385,21 @@ impl WasmFixedPoint {
         str[..str.len() - decimals_delta as usize].to_string()
     }
 
+    /// Get the scaled hexadecimal string representation of this fixed-point
+    /// number with the `0x` prefix.
+    ///
+    /// @example
+    /// ```ts
+    /// const num = fixed(1_123456789012345678n);
+    /// console.log(num.toHex());
+    /// // 0xf9751ff4d94f34e
+    /// ```
+    #[wasm_bindgen(js_name = toHex)]
+    pub fn to_hex(&self) -> Result<String, Error> {
+        let hex = self.bigint()?.to_string(16).map_err(|e| error!("{e:?}"))?;
+        Ok(JsString::from("0x").concat(&hex).into())
+    }
+
     /// Get the float representation of this fixed-point number.
     ///
     /// __Caution__: This method may lose precision.
@@ -391,8 +407,8 @@ impl WasmFixedPoint {
     /// @example
     ///
     /// ```ts
-    /// const fixed = fixed(1_123456789012345678n);
-    /// console.log(fixed.toNumber());
+    /// const num = fixed(1_123456789012345678n);
+    /// console.log(num.toNumber());
     /// // 1.1234567890123457
     /// ```
     #[wasm_bindgen(skip_jsdoc, js_name = toNumber)]
