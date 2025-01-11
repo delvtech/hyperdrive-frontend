@@ -78,7 +78,6 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPo
     let mut s = value.to_string().as_string().unwrap_or_default();
 
     if s.contains("e") {
-        s = value.as_string().unwrap_or_default();
         let mut parts = s.split("e");
         let mantissa_str = parts.next().unwrap_or_default();
         let exponent_str = parts.next().unwrap_or_default();
