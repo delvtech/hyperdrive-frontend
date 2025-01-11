@@ -71,7 +71,7 @@ pub fn fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, E
 pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPoint, Error> {
     // If the value is already a fixed-point number, it's already scaled.
     if value.is_fixed_point() == Some(true) {
-        return fixed(value, decimals);
+        return WasmFixedPoint::new(value, decimals);
     }
 
     let decimals = decimals.unwrap_or(INNER_DECIMALS);
@@ -81,17 +81,17 @@ pub fn parse_fixed(value: Numberish, decimals: Option<u8>) -> Result<WasmFixedPo
         let mut parts = s.split("e");
         let mantissa_str = parts.next().unwrap_or_default();
         let exponent_str = parts.next().unwrap_or_default();
-        let exponent = u8::from_str_radix(exponent_str, 10).to_result()?;
+        let exponent = i8::from_str_radix(exponent_str, 10).to_result()?;
         let mut mantissa_parts = mantissa_str.split(".");
         let int_str = mantissa_parts.next().unwrap_or_default();
         let fraction_str = mantissa_parts.next().unwrap_or_default();
         let mut inner = I256::from_dec_str(&format!("{int_str}{fraction_str}"))
             .to_result()?
             .fixed();
-        let fraction_digits = fraction_str.len() as u8;
+        let fraction_digits = fraction_str.len() as i8;
 
         if fraction_digits > exponent {
-            inner /= (10u32.pow((fraction_digits - exponent) as u32)).into();
+            inner /= (10u128.pow((fraction_digits - exponent) as u32)).into();
             return Ok(WasmFixedPoint { inner, decimals });
         }
 
