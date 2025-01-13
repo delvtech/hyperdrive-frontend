@@ -4,39 +4,35 @@ import {
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { sepolia } from "viem/chains";
 import { useAccount } from "wagmi";
 
-export function TotalOpenShortValue({
-  hyperdrive,
+export function TotalOpenShortsValue({
+  hyperdrives,
+  openShorts,
 }: {
-  hyperdrive: HyperdriveConfig;
+  hyperdrives: HyperdriveConfig[];
+  openShorts: (OpenShort & { hyperdrive: HyperdriveConfig })[] | undefined;
 }): ReactElement {
   {
     const { address: account } = useAccount();
 
-    const { openShorts, openShortsStatus } = useOpenShorts({
-      account,
-      chainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
-    });
     const { totalOpenShortsValue, isLoading } = useTotalOpenShortsValue({
-      hyperdrive,
       account,
       shorts: openShorts,
-      enabled: openShortsStatus === "success",
+      enabled: !!openShorts,
     });
     const baseToken = getBaseToken({
-      hyperdriveChainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
+      hyperdriveChainId: hyperdrives[0].chainId,
+      hyperdriveAddress: hyperdrives[0].address,
       appConfig,
     });
-    const chainInfo = appConfig.chains[hyperdrive.chainId];
+    const chainInfo = appConfig.chains[hyperdrives[0].chainId];
 
     const { fiatPrice } = useTokenFiatPrice({
       chainId: baseToken.chainId,
@@ -57,8 +53,8 @@ export function TotalOpenShortValue({
                       baseToken.decimals,
                     ).bigint
                   : 0n,
-              decimals: hyperdrive.decimals,
-              places: 2,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
               includeCommas: true,
             })}`}{" "}
           </p>

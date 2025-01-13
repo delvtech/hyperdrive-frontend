@@ -1,58 +1,53 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
-import { Short } from "@delvtech/hyperdrive-js";
+import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
+import { getDrift } from "src/drift/getDrift";
 import { Address } from "viem";
 
 export function useTotalOpenShortsValue({
-  hyperdrive,
   account,
   shorts,
   enabled,
 }: {
-  hyperdrive: HyperdriveConfig;
   account: Address | undefined;
-  shorts: Short[] | undefined;
+  shorts: (OpenShort & { hyperdrive: HyperdriveConfig })[] | undefined;
   enabled: boolean;
 }): { totalOpenShortsValue: bigint | undefined; isLoading: boolean } {
-  const readHyperdrive = useReadHyperdrive({
-    chainId: hyperdrive.chainId,
-    address: hyperdrive.address,
-  });
-  const { poolInfo } = usePoolInfo({
-    hyperdriveAddress: hyperdrive.address,
-    chainId: hyperdrive.chainId,
-  });
-
-  const queryEnabled =
-    !!account && !!shorts && !!readHyperdrive && !!poolInfo && enabled;
+  const queryEnabled = !!account && !!shorts && enabled;
 
   const { data: totalOpenShortsValue, isLoading } = useQuery({
-    queryKey: makeQueryKey("totalOpenShortsValue", {
-      chainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
-      account,
+    queryKey: makeQueryKey2({
+      namespace: "portfolio",
+      queryId: "totalOpenShortsValue",
+      params: {
+        account,
+        shorts,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const previews = await Promise.all(
-            shorts.map((short) =>
-              readHyperdrive.previewCloseShort({
+          const openShortPositionValues = await Promise.all(
+            shorts.map(async (short) => {
+              const readHyperdrive = await getHyperdrive({
+                address: short.hyperdrive.address,
+                drift: getDrift({ chainId: short.hyperdrive.chainId }),
+                earliestBlock: short.hyperdrive.initializationBlock,
+              });
+              const preview = await readHyperdrive.previewCloseShort({
                 maturityTime: short.maturity,
                 shortAmountIn: short.bondAmount,
                 asBase: true,
-              }),
-            ),
+              });
+              return preview.amountOut;
+            }),
           );
 
           let total = 0n;
-          previews.forEach((preview) => {
-            total += preview.amountOut;
+          openShortPositionValues.forEach((value) => {
+            total += value;
           });
-
           return total;
         }
       : undefined,
