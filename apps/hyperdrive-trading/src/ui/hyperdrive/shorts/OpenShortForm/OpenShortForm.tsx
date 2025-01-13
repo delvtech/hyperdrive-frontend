@@ -512,7 +512,7 @@ export function OpenShortForm({
             subValue={
               <Tooltip
                 position="top"
-                tooltip="Short positions provide the fixed rate to Long positions. Opening a Short is a one-time cost."
+                tooltip="Short positions provide the fixed rate yield to Long positions. Opening a Short is a one-time cost."
                 className="gap-1 before:text-left"
               >
                 What am I paying for?{" "}

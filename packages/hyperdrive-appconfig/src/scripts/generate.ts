@@ -124,6 +124,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
         `\nGenerating app config for ${chain.name}, chain id: ${chalk.yellow(chain.id)}`,
       ),
     ),
+    chalk.reset(`\nRPC URL: ${rpcUrl}`),
   );
   const appConfig = await getAppConfig({
     registryAddress,

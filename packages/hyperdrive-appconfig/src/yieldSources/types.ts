@@ -48,7 +48,7 @@ export interface YieldSourceConfig {
    */
   historicalRatePeriod: number;
   /**
-   * @deprecated rewards has moved to HyperdriveConfig
+   * @deprecated rewards has moved to top-level
    */
   rewardsFn?: RewardResolverKey;
 }

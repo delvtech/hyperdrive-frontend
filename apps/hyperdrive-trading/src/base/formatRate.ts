@@ -13,6 +13,7 @@ export function formatRate({
   let formatted = fixed(rate).format({
     percent: true,
     decimals: 2,
+    trailingZeros: true,
   });
 
   if (formatted === "-0.00%") {
