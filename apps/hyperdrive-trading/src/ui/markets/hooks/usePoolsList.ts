@@ -15,8 +15,8 @@ import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getLpApy } from "src/hyperdrive/getLpApy";
-import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { wagmiConfig } from "src/network/wagmiClient";
+import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
 import { getPresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useUnpausedPools } from "src/ui/hyperdrive/hooks/useUnpausedPools";
 import {
@@ -151,7 +151,7 @@ function useSortedPools({
                 yieldSourceRate,
                 longPrice,
               };
-            })
+            }),
           );
         }
       : undefined,
@@ -167,16 +167,16 @@ function useSortedPools({
               return Number(b.fixedApr - a.fixedApr);
             case "LP APY":
               return Number(
-                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n)
+                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
               );
             case "Variable APY":
               return Number(
-                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate
+                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
               );
             case "Yield Multiplier":
               return Number(
                 calculateMarketYieldMultiplier(b.longPrice).bigint -
-                  calculateMarketYieldMultiplier(a.longPrice).bigint
+                  calculateMarketYieldMultiplier(a.longPrice).bigint,
               );
             case "TVL":
               const tvlA =

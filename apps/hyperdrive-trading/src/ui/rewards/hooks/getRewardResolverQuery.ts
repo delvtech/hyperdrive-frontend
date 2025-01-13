@@ -1,7 +1,7 @@
 import {
   AnyReward,
-  getRewardsFn2,
-  RewardResolverKey,
+  getRewardsResolver,
+  RewardResolverId,
 } from "@delvtech/hyperdrive-appconfig";
 import { UseQueryOptions } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
@@ -28,9 +28,9 @@ export function getRewardResolverQuery({
   chainId,
 }: {
   chainId: number;
-  resolverId: RewardResolverKey;
+  resolverId: RewardResolverId;
 }): UseQueryOptions<AnyReward[]> {
-  const resolver = getRewardsFn2({ rewardFn: resolverId });
+  const resolver = getRewardsResolver({ resolverId });
   const queryEnabled = !!resolver;
   return {
     queryKey: makeQueryKey2({

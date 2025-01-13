@@ -2,7 +2,7 @@ import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
+import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 

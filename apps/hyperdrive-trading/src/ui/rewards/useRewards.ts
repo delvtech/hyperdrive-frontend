@@ -10,6 +10,11 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { Address, PublicClient } from "viem";
 
+/**
+ * @deprecated use a more specific rewards hook, eg: useAddLiquidityRewards or
+ * useOpenShortRewards
+ *
+ */
 export function makeRewardsQuery({
   hyperdriveAddress,
   chainId,

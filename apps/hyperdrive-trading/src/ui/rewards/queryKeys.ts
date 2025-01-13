@@ -1,4 +1,7 @@
-import { RewardResolverKey } from "@delvtech/hyperdrive-appconfig";
+import {
+  RewardResolverId,
+  YieldSourceId,
+} from "@delvtech/hyperdrive-appconfig";
 import "src/base/makeQueryKey";
 import { Address } from "viem";
 
@@ -12,11 +15,11 @@ interface RewardsQueryKeys {
   };
 
   rewardResolver: {
-    resolverId: RewardResolverKey;
+    resolverId: RewardResolverId;
   };
 
-  // TODO: We may not openShortRewards and addLiquidityRewards, as these queries
-  // are just list wrappers around the `rewardResolver` query above
+  // TODO: We may not need these as these queries are just list wrappers around
+  // the `rewardResolver` query above
   openShortRewards: {
     chainId: number;
     hyperdriveAddress: Address;
@@ -24,6 +27,10 @@ interface RewardsQueryKeys {
   addLiquidityRewards: {
     chainId: number;
     hyperdriveAddress: Address;
+  };
+  yieldSourceRewards: {
+    chainId: number;
+    yieldSourceId: YieldSourceId;
   };
 }
 
