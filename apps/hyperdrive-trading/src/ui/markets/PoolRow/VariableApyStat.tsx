@@ -6,7 +6,7 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { GradientBadge } from "src/ui/base/components/GradientBadge";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { Address } from "viem";
 export function VariableApyStat({
@@ -21,7 +21,7 @@ export function VariableApyStat({
     hyperdriveChainId: chainId,
     appConfig,
   });
-  const { rewards } = useRewards(hyperdrive);
+  const { rewards } = useOpenShortRewards({ hyperdriveConfig: hyperdrive });
   const { vaultRate: yieldSourceRate, vaultRateStatus: yieldSourceRateStatus } =
     useYieldSourceRate({
       chainId,

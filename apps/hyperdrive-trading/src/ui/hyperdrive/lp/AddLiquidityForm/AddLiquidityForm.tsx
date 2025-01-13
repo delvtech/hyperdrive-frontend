@@ -35,7 +35,7 @@ import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTo
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip/RewardsTooltip";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -537,7 +537,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { rewards } = useRewards(hyperdrive);
+  const { rewards } = useAddLiquidityRewards({ hyperdriveConfig: hyperdrive });
 
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
@@ -560,6 +560,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
               "✨New✨"
             ) : rewards?.length ? (
               <RewardsTooltip
+                position="addLiquidity"
                 showMiles
                 hyperdriveAddress={hyperdrive.address}
                 baseRate={lpApy?.lpApy}

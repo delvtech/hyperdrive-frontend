@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
 import { Address } from "viem";
 
 export function LpApyStat({
@@ -18,7 +18,9 @@ export function LpApyStat({
     hyperdriveChainId: chainId,
     appConfig,
   });
-  const { rewards: appConfigRewards } = useRewards(hyperdrive);
+  const { rewards: appConfigRewards } = useAddLiquidityRewards({
+    hyperdriveConfig: hyperdrive,
+  });
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
 
   // Explicit check against undefined, since we still want to show zero if the

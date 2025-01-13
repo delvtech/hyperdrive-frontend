@@ -5,8 +5,8 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { VariableApyStat } from "src/ui/markets/PoolRow/VariableApyStat";
+import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
 import { RewardsTooltipContent } from "src/ui/rewards/RewardsTooltip/RewardsTooltipContent";
-import { useRewards } from "src/ui/rewards/useRewards";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount } from "wagmi";
 
@@ -27,7 +27,7 @@ export function VariableApyCta({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { rewards } = useRewards(hyperdrive);
+  const { rewards } = useOpenShortRewards({ hyperdriveConfig: hyperdrive });
 
   const label = yieldSourceRate
     ? `Variable APY (${yieldSourceRate.ratePeriodDays}d)`
@@ -44,6 +44,7 @@ export function VariableApyCta({
         rewards?.length ? (
           <RewardsTooltipContent
             chainId={hyperdrive.chainId}
+            position="openShort"
             hyperdriveAddress={hyperdrive.address}
             baseRate={yieldSourceRate?.vaultRate}
             netRate={yieldSourceRate?.netVaultRate}

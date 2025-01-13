@@ -11,19 +11,20 @@ import { assertNever } from "src/base/assertNever";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { HyperVueMilesIconUrl } from "src/ui/rewards/HyperVueMilesIconUrl";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
+import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
 import { Address } from "viem";
 
 export function RewardsTooltipContent({
   hyperdriveAddress,
+  position,
   chainId,
   baseRate,
   netRate,
-  showMiles,
 }: {
   hyperdriveAddress: Address;
   chainId: number;
+  position: "addLiquidity" | "openShort";
   baseRate: bigint | undefined;
   netRate: bigint | undefined;
   /**
@@ -38,7 +39,17 @@ export function RewardsTooltipContent({
     hyperdriveChainId: chainId,
     appConfig,
   });
-  const { rewards: appConfigRewards } = useRewards(hyperdrive);
+  // Get the correct rewards for the given position
+  const { rewards: shortRewards } = useOpenShortRewards({
+    hyperdriveConfig: hyperdrive,
+    enabled: position === "openShort",
+  });
+  const { rewards: addLiquidityRewards } = useAddLiquidityRewards({
+    hyperdriveConfig: hyperdrive,
+    enabled: position === "addLiquidity",
+  });
+  const rewards = position === "openShort" ? shortRewards : addLiquidityRewards;
+
   const isNewPool = useIsNewPool({ hyperdrive });
   const { longPrice, longPriceStatus } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
@@ -83,25 +94,11 @@ export function RewardsTooltipContent({
           </p>
         </div>
       </div>
-
-      {appConfigRewards?.map((reward) => {
+      {rewards?.map((reward) => {
         switch (reward.type) {
           case "info":
-            return (
-              <div
-                key={reward.iconUrl}
-                className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
-              >
-                <div className="flex items-center gap-4">
-                  <img
-                    src={reward.iconUrl}
-                    alt={`${reward.message}`}
-                    className="h-8"
-                  />
-                  <p>{reward.message}</p>
-                </div>
-              </div>
-            );
+            // info rewards are rendered below the net rewards row at the end
+            return null;
           case "apy": {
             // safe to cast because we assume all rewards tokens are
             // available in appConfig
@@ -203,7 +200,6 @@ export function RewardsTooltipContent({
             assertNever(reward);
         }
       })}
-
       <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
         <div className="flex items-center gap-1">
           <SparklesIcon className="h-4" />
@@ -219,18 +215,25 @@ export function RewardsTooltipContent({
           </p>
         </div>
       </div>
-      {showMiles ? (
-        <div className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
-          <div className="flex items-center gap-4">
-            <img
-              src={HyperVueMilesIconUrl}
-              alt={`HyperVue Miles`}
-              className="h-6 rounded-full"
-            />
-            <p className="">Earns 1 Mile per day for every $1 supplied</p>
-          </div>
-        </div>
-      ) : null}
+      {rewards
+        ?.filter((reward) => reward.type === "info")
+        .map((reward) => {
+          return (
+            <div
+              key={reward.iconUrl}
+              className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+            >
+              <div className="flex items-center gap-4">
+                <img
+                  src={reward.iconUrl}
+                  alt={`${reward.message}`}
+                  className="h-8 rounded-full"
+                />
+                <p>{reward.message}</p>
+              </div>
+            </div>
+          );
+        })}
     </>
   );
 }

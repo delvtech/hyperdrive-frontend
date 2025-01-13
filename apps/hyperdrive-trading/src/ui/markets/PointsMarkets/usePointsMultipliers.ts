@@ -5,14 +5,14 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
 
 export function usePointsMultipliers({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): { multiplier: string; label: string }[] | undefined {
-  const { rewards } = useRewards(hyperdrive);
+  const { rewards } = useAddLiquidityRewards({ hyperdriveConfig: hyperdrive });
   const { longPrice } = useCurrentLongPrice({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
