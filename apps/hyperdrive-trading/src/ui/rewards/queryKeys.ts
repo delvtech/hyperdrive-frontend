@@ -14,6 +14,9 @@ interface RewardsQueryKeys {
   rewardResolver: {
     resolverId: RewardResolverKey;
   };
+
+  // TODO: We may not openShortRewards and addLiquidityRewards, as these queries
+  // are just list wrappers around the `rewardResolver` query above
   openShortRewards: {
     chainId: number;
     hyperdriveAddress: Address;

@@ -9,6 +9,20 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { PublicClient } from "viem";
 
+/**
+ * Takes a given rewards resolver id from appConfig and returns the query object
+ * for requesting the rewards.
+ *
+ * For example:
+ * const { data } = useQuery(
+ *   getRewardResolverQuery({
+ *     resolverId: 'fetchLineaRewards',
+ *     chainId: linea.id,
+ *     appConfig
+ *   })
+ * );
+ * ```
+ */
 export function getRewardResolverQuery({
   resolverId,
   chainId,
