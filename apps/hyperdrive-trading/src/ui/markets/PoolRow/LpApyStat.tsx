@@ -18,7 +18,7 @@ export function LpApyStat({
     hyperdriveChainId: chainId,
     appConfig,
   });
-  const { rewards: appConfigRewards } = useAddLiquidityRewards({
+  const { rewards } = useAddLiquidityRewards({
     hyperdriveConfig: hyperdrive,
   });
   const { lpApy } = useLpApy({ chainId, hyperdriveAddress });
@@ -33,7 +33,7 @@ export function LpApyStat({
         })
       : null;
 
-  if (!appConfigRewards?.length && netApyLabel) {
+  if (!rewards?.length && netApyLabel) {
     return <PercentLabel value={netApyLabel} />;
   }
 
