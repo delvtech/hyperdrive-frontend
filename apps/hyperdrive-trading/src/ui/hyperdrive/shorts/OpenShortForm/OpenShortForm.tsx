@@ -38,7 +38,7 @@ import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip/RewardsTooltip";
-import { useRewards } from "src/ui/rewards/useRewards";
+import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -70,7 +70,7 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
   });
 
-  const { rewards } = useRewards(hyperdrive);
+  const { rewards } = useOpenShortRewards({ hyperdriveConfig: hyperdrive });
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -478,6 +478,7 @@ export function OpenShortForm({
                 ) : rewards?.length ? (
                   <RewardsTooltip
                     hyperdriveAddress={hyperdrive.address}
+                    position="openShort"
                     baseRate={vaultRate?.vaultRate}
                     netRate={vaultRate?.netVaultRate}
                     chainId={hyperdrive.chainId}

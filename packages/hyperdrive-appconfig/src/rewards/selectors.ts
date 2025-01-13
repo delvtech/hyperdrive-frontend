@@ -56,7 +56,7 @@ export function getYieldSourceRewardResolvers({
   return resolvers.map((resolver) => rewardResolvers[resolver]);
 }
 
-export function getOpenShortRewardResolvers({
+export function getOpenShortRewardResolverIds({
   hyperdriveAddress,
   chainId,
   appConfig,
@@ -64,21 +64,16 @@ export function getOpenShortRewardResolvers({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardsResolver[] | undefined {
+}): RewardResolverKey[] | undefined {
   const openShortRewardId = getOpenShortRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  const resolvers = appConfig.rewards[openShortRewardId];
-  if (!resolvers) {
-    return;
-  }
-
-  return resolvers.map((resolver) => rewardResolvers[resolver]);
+  return appConfig.rewards[openShortRewardId];
 }
 
-export function getAddLiquidityRewardResolvers({
+export function getAddLiquidityRewardResolverIds({
   hyperdriveAddress,
   chainId,
   appConfig,
@@ -86,16 +81,11 @@ export function getAddLiquidityRewardResolvers({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardsResolver[] | undefined {
-  const addLiquidityRewardId = getAddLiquidityRewardId({
+}): RewardResolverKey[] | undefined {
+  const addLiquidityId = getAddLiquidityRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  const resolvers = appConfig.rewards[addLiquidityRewardId];
-  if (!resolvers) {
-    return;
-  }
-
-  return resolvers.map((resolver) => rewardResolvers[resolver]);
+  return appConfig.rewards[addLiquidityId];
 }

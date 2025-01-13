@@ -30,8 +30,8 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
         <RewardsTooltipContent
           chainId={hyperdrive.chainId}
           hyperdriveAddress={hyperdrive.address}
+          position="addLiquidity"
           baseRate={lpApy?.lpApy}
-          showMiles
           netRate={lpApy?.netLpApy}
         />
       }
