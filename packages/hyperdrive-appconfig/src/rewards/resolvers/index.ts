@@ -22,4 +22,4 @@ export const rewardResolvers = {
   fetchHypervueMilesRewards,
 } as const;
 
-export type RewardResolverKey = keyof typeof rewardResolvers;
+export type RewardResolverId = keyof typeof rewardResolvers;

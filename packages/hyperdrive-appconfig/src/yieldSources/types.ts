@@ -1,6 +1,6 @@
 import { ChainId } from "src/chains/chains";
 import { ProtocolId } from "src/protocols";
-import { RewardResolverKey } from "src/rewards/resolvers";
+import { RewardResolverId } from "src/rewards/resolvers";
 
 /**
  * The comprehensive list of all yield source ids. To add a new yield source,
@@ -50,5 +50,5 @@ export interface YieldSourceConfig {
   /**
    * @deprecated rewards has moved to top-level
    */
-  rewardsFn?: RewardResolverKey;
+  rewardsFn?: RewardResolverId;
 }

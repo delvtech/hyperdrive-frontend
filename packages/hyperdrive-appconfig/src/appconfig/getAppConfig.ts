@@ -15,7 +15,7 @@ import { protocols } from "src/protocols";
 import { AnyRewardId } from "src/rewards/actions/types";
 import { getYieldSourceRewardId } from "src/rewards/actions/yieldSource";
 import { parseHyperdriveRewardsMap } from "src/rewards/hyperdrive";
-import { RewardResolverKey } from "src/rewards/resolvers";
+import { RewardResolverId } from "src/rewards/resolvers";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -948,7 +948,7 @@ export async function getAppConfig({
   earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
-  let allRewards: Record<AnyRewardId, RewardResolverKey[]> = {};
+  let allRewards: Record<AnyRewardId, RewardResolverId[]> = {};
   const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure

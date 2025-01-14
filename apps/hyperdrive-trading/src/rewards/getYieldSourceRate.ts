@@ -3,15 +3,19 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
   getHyperdriveConfig,
-  getRewardsFn,
   getYieldSource,
+  getYieldSourceRewardResolverIds,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { queryClient } from "src/network/queryClient";
-import { makeRewardsQuery } from "src/ui/rewards/useRewards";
+import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 
+/**
+ * Returns the yield source rate and net rate which includes rewards for the
+ * given hyperdrive.
+ */
 export async function getYieldSourceRate({
   readHyperdrive,
   appConfig,
@@ -87,23 +91,28 @@ async function calcNetRate(
   hyperdrive: HyperdriveConfig,
 ) {
   let netRate = rate;
-  const rewardsFn = getRewardsFn({
+
+  const resolverIds = getYieldSourceRewardResolverIds({
     yieldSourceId: hyperdrive.yieldSource,
+    chainId: hyperdrive.chainId,
     appConfig,
   });
-  if (rewardsFn) {
-    const rewards = await queryClient.fetchQuery(
-      makeRewardsQuery({
-        chainId: hyperdrive.chainId,
-        hyperdriveAddress: hyperdrive.address,
-      }),
+
+  if (resolverIds) {
+    const rewards = await Promise.all(
+      resolverIds.map((resolverId) =>
+        queryClient.fetchQuery(
+          getRewardResolverQuery({
+            chainId: hyperdrive.chainId,
+            resolverId,
+          }),
+        ),
+      ),
     );
-    rewards?.forEach((reward) => {
+
+    rewards.flat().forEach((reward) => {
       if (reward.type === "apy") {
-        netRate = fixed(reward.apy).add(
-          // safe to cast because if we get here then lpApy has been set
-          netRate as bigint,
-        ).bigint;
+        netRate = fixed(reward.apy).add(netRate).bigint;
       }
     });
   }

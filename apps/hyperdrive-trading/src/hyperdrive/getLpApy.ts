@@ -2,14 +2,14 @@ import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
-  getRewardsFn,
+  getAddLiquidityRewardResolverIds,
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { queryClient } from "src/network/queryClient";
-import { makeRewardsQuery } from "src/ui/rewards/useRewards";
+import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 
 export type LpApyResult = {
   ratePeriodDays: number;
@@ -84,18 +84,26 @@ export async function getLpApy({
     netLpApy = lpApy;
 
     // Add rewards APY if available
-    const rewardsFn = getRewardsFn({
-      yieldSourceId: hyperdrive.yieldSource,
+    const resolverIds = getAddLiquidityRewardResolverIds({
+      hyperdriveAddress: hyperdrive.address,
+      chainId: hyperdrive.chainId,
       appConfig,
     });
 
-    if (rewardsFn) {
-      const rewards = await queryClient.fetchQuery(
-        makeRewardsQuery({
-          chainId: hyperdrive.chainId,
-          hyperdriveAddress: hyperdrive.address,
-        }),
-      );
+    if (resolverIds?.length) {
+      const rewards = (
+        await Promise.all(
+          resolverIds.map((resolverId) =>
+            queryClient.fetchQuery(
+              getRewardResolverQuery({
+                resolverId,
+                chainId: hyperdrive.chainId,
+              }),
+            ),
+          ),
+        )
+      ).flat();
+
       rewards?.forEach((reward) => {
         if (reward.type === "apy") {
           netLpApy = fixed(reward.apy).add(netLpApy as bigint).bigint;
