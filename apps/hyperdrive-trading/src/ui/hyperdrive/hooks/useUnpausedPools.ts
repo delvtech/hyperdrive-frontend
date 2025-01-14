@@ -1,6 +1,7 @@
 import {
   AnyReward,
-  getRewardsFn,
+  appConfig,
+  getAddLiquidityRewardResolverIds,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
@@ -9,7 +10,7 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { makeRewardsQuery } from "src/ui/rewards/useRewards";
+import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 import { useChainId } from "wagmi";
 
 const HIDDEN_POOLS = [
@@ -58,23 +59,27 @@ export function useUnpausedPools(): {
               }
 
               // Resolve the rewards information and include it for consumers
-              const rewardsFn = getRewardsFn({
-                yieldSourceId: hyperdrive.yieldSource,
-                appConfig: appConfigForConnectedChain,
+              // Add rewards APY if available
+              const resolverIds = getAddLiquidityRewardResolverIds({
+                hyperdriveAddress: hyperdrive.address,
+                chainId: hyperdrive.chainId,
+                appConfig,
               });
 
-              const rewards = !rewardsFn
+              const rewards = !resolverIds?.length
                 ? []
-                : await (async () => {
-                    return queryClient
-                      .fetchQuery(
-                        makeRewardsQuery({
-                          hyperdriveAddress: hyperdrive.address,
-                          chainId: hyperdrive.chainId,
-                        }),
-                      )
-                      .catch(() => []);
-                  })();
+                : (
+                    await Promise.all(
+                      resolverIds.map((resolverId) =>
+                        queryClient.fetchQuery(
+                          getRewardResolverQuery({
+                            resolverId,
+                            chainId: hyperdrive.chainId,
+                          }),
+                        ),
+                      ),
+                    ).catch(() => [])
+                  ).flat();
 
               return { ...hyperdrive, rewardsAmount: rewards };
             }),
