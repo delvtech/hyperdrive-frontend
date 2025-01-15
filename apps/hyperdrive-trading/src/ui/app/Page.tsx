@@ -5,12 +5,10 @@ import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 import { useAddressScreen } from "src/ui/compliance/hooks/useAddressScreen";
-import { useVpnScreen } from "src/ui/compliance/hooks/useVpnScreen";
 import { MilesBanner } from "src/ui/rewards/MilesBanner";
 
 export function Page({ children }: PropsWithChildren): ReactElement {
   // compliance
-  useVpnScreen();
   useAddressScreen();
 
   return (
