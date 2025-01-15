@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 
 export function NoWalletConnected(): ReactElement {
