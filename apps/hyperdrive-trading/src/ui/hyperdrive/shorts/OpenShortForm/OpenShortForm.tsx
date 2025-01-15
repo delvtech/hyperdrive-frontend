@@ -544,7 +544,7 @@ export function OpenShortForm({
         }
 
         if (!account) {
-          return <ConnectWalletButton wide />;
+          return <ConnectWalletButton wide regionSensitive />;
         }
 
         if (connectedChainId !== hyperdrive.chainId) {
