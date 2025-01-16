@@ -13,8 +13,8 @@ import { getMorphoHyperdrive } from "src/hyperdrives/morpho/getMorphoHyperdrive"
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols";
 import { AnyRewardId } from "src/rewards/actions/types";
-import { getYieldSourceRewardId } from "src/rewards/actions/yieldSource";
-import { parseHyperdriveRewardsMap } from "src/rewards/hyperdrive";
+import { getYieldSourceRewards } from "src/rewards/actions/yieldSource";
+import { getHyperdriveRewards } from "src/rewards/hyperdrive";
 import { RewardResolverId } from "src/rewards/resolvers";
 import {
   AERO_ICON_URL,
@@ -78,13 +78,14 @@ const hyperdriveKindResolvers: Record<
       sharesTokenConfig,
       rewards: {
         // Yield Source Rewards
-        [getYieldSourceRewardId({
+        ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "rseth",
-        })]: ["fetchLineaRewards"],
+          rewards: ["fetchLineaRewards"],
+        }),
 
         // Hyperdrive Rewards
-        ...parseHyperdriveRewardsMap({
+        ...getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
@@ -122,12 +123,13 @@ const hyperdriveKindResolvers: Record<
       sharesTokenConfig,
       rewards: {
         // yield source rewards
-        [getYieldSourceRewardId({
+        ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "lineaEzeth",
-        })]: ["fetchLineaRewards"],
+          rewards: ["fetchLineaRewards"],
+        }),
         // hyperdrive rewards
-        ...parseHyperdriveRewardsMap({
+        ...getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
@@ -155,7 +157,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenConfig,
         hyperdriveConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
@@ -175,7 +177,7 @@ const hyperdriveKindResolvers: Record<
         baseTokenConfig,
         hyperdriveConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
@@ -215,13 +217,14 @@ const hyperdriveKindResolvers: Record<
       sharesTokenConfig,
       rewards: {
         // yield source rewards
-        [getYieldSourceRewardId({
+        ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "eeth",
-        })]: ["fetchEtherfiRewards"],
+          rewards: ["fetchEtherfiRewards"],
+        }),
 
         // hyperdrive rewards
-        ...parseHyperdriveRewardsMap({
+        ...getHyperdriveRewards({
           chainId: publicClient.chain?.id as number,
           hyperdriveAddress: hyperdrive.address,
           rewardsMap: {
@@ -254,7 +257,7 @@ const hyperdriveKindResolvers: Record<
       hyperdriveConfig,
       baseTokenConfig,
       sharesTokenConfig,
-      rewards: parseHyperdriveRewardsMap({
+      rewards: getHyperdriveRewards({
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
@@ -286,7 +289,7 @@ const hyperdriveKindResolvers: Record<
       hyperdriveConfig,
       baseTokenConfig,
       sharesTokenConfig,
-      rewards: parseHyperdriveRewardsMap({
+      rewards: getHyperdriveRewards({
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
@@ -303,7 +306,7 @@ const hyperdriveKindResolvers: Record<
       baseTokenConfig,
       hyperdriveConfig,
       sharesTokenConfig,
-      rewards: parseHyperdriveRewardsMap({
+      rewards: getHyperdriveRewards({
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
@@ -359,13 +362,14 @@ const hyperdriveKindResolvers: Record<
         sharesTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             yieldSourceId: yieldSource,
             chainId: hyperdriveConfig.chainId,
-          })]: ["fetchGyroscopeRewards"],
+            rewards: ["fetchGyroscopeRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
@@ -400,7 +404,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -433,7 +437,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -483,7 +487,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -517,7 +521,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -550,7 +554,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -584,13 +588,14 @@ const hyperdriveKindResolvers: Record<
         sharesTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwEth",
-          })]: ["fetchMorphoMwethRewards"],
+            rewards: ["fetchMorphoMwethRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
@@ -626,13 +631,14 @@ const hyperdriveKindResolvers: Record<
         sharesTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwUsdc",
-          })]: ["fetchMorphoMwusdcRewards"],
+            rewards: ["fetchMorphoMwusdcRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
@@ -668,13 +674,14 @@ const hyperdriveKindResolvers: Record<
         sharesTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwEurc",
-          })]: ["fetchMorphoMweurcRewards"],
+            rewards: ["fetchMorphoMweurcRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
@@ -709,7 +716,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveConfig,
         baseTokenConfig,
         sharesTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
@@ -776,13 +783,14 @@ const hyperdriveKindResolvers: Record<
         baseTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             yieldSourceId: "aeroUsdcAero",
             chainId: hyperdriveConfig.chainId,
-          })]: ["fetchAeroRewards"],
+            rewards: ["fetchAeroRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
@@ -827,7 +835,7 @@ const hyperdriveKindResolvers: Record<
       return {
         hyperdriveConfig,
         baseTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -848,7 +856,7 @@ const hyperdriveKindResolvers: Record<
       return {
         hyperdriveConfig,
         baseTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -869,7 +877,7 @@ const hyperdriveKindResolvers: Record<
       return {
         hyperdriveConfig,
         baseTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -890,7 +898,7 @@ const hyperdriveKindResolvers: Record<
       return {
         hyperdriveConfig,
         baseTokenConfig,
-        rewards: parseHyperdriveRewardsMap({
+        rewards: getHyperdriveRewards({
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
@@ -914,13 +922,14 @@ const hyperdriveKindResolvers: Record<
         baseTokenConfig,
         rewards: {
           // yield source rewards
-          [getYieldSourceRewardId({
+          ...getYieldSourceRewards({
             yieldSourceId: "morphoCbethUsdc",
             chainId: hyperdriveConfig.chainId,
-          })]: ["fetchMorphoCbethUsdcRewards"],
+            rewards: ["fetchMorphoCbethUsdcRewards"],
+          }),
 
           // hyperdrive rewards
-          ...parseHyperdriveRewardsMap({
+          ...getHyperdriveRewards({
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {

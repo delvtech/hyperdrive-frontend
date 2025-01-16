@@ -12,7 +12,7 @@ export interface HyperdriveRewardsMap {
 /**
  * Parse a hyperdrive's rewards into the reward system
  */
-export function parseHyperdriveRewardsMap({
+export function getHyperdriveRewards({
   hyperdriveAddress,
   chainId,
   rewardsMap,
@@ -20,7 +20,6 @@ export function parseHyperdriveRewardsMap({
   hyperdriveAddress: Address;
   chainId: number;
   rewardsMap: {
-    long?: RewardResolverId[];
     short?: RewardResolverId[];
     lp?: RewardResolverId[];
   };
