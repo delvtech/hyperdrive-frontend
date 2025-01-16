@@ -11,6 +11,7 @@ import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -19,12 +20,18 @@ import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
+import {
+  TokenChoice,
+  TokenPicker,
+  ZapsTokenPicker,
+} from "src/ui/token/TokenPicker";
+import { useTokenList } from "src/ui/tokenlist/useTokenList";
 import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { useAccount, useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -38,13 +45,21 @@ export function CloseLongForm({
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { address: account } = useAccount();
-
+  const connectedChainId = useChainId();
   const defaultItems: TokenConfig[] = [];
   const baseToken = getBaseToken({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,
   });
+
+  const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
+
+  const { tokenList } = useTokenList({
+    chainId: hyperdrive.chainId,
+    enabled: isZapsEnabled,
+  });
+
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     defaultItems.push(baseToken);
   }
@@ -68,13 +83,12 @@ export function CloseLongForm({
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: defaultItems,
+    items: isZapsEnabled ? [...defaultItems, ...tokenList] : defaultItems,
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? hyperdrive.poolConfig.baseToken
       : hyperdrive.poolConfig.vaultSharesToken,
   });
-
   const { fiatPrice: activeWithdrawTokenPrice } = useTokenFiatPrice({
     tokenAddress: activeWithdrawToken.address,
     chainId: activeWithdrawToken.chainId,
@@ -130,6 +144,16 @@ export function CloseLongForm({
     },
   });
 
+  const { closeLongZap, status: closeLongZapStatus } = useCloseLongZap({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+    maturityTime: long.maturity,
+    tokenOut: activeWithdrawToken,
+    bondAmountIn: bondAmountAsBigInt,
+    minAmountOut: minAmountOutAfterSlippage,
+    destination: account,
+  });
+
   const withdrawTokenChoices: TokenChoice[] = [];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
@@ -137,7 +161,13 @@ export function CloseLongForm({
       tokenBalance: baseTokenBalance?.value,
     });
   }
-
+  if (isZapsEnabled) {
+    tokenList?.map((tokenFromTokenList) => {
+      withdrawTokenChoices.push({
+        tokenConfig: tokenFromTokenList,
+      });
+    });
+  }
   if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       // Safe to cast: sharesToken must be defined if its enabled for withdrawal
@@ -194,23 +224,44 @@ export function CloseLongForm({
               name={baseToken.symbol}
               inputLabel="You receive"
               token={
-                <TokenPicker
-                  tokens={withdrawTokenChoices}
-                  activeTokenAddress={activeWithdrawToken.address}
-                  onChange={(tokenAddress) => {
-                    window.plausible("formChange", {
-                      props: {
-                        inputName: "token",
-                        inputValue: tokenAddress,
-                        formName,
-                        chainId,
-                        poolAddress,
-                        connectedWallet: account,
-                      },
-                    });
-                    setActiveWithdrawToken(tokenAddress);
-                  }}
-                />
+                isZapsEnabled ? (
+                  <ZapsTokenPicker
+                    tokens={withdrawTokenChoices}
+                    activeTokenAddress={activeWithdrawToken.address}
+                    onChange={(tokenAddress) => {
+                      window.plausible("formChange", {
+                        props: {
+                          inputName: "token",
+                          inputValue: tokenAddress,
+                          formName,
+                          chainId,
+                          poolAddress,
+                          connectedWallet: account,
+                        },
+                      });
+
+                      setActiveWithdrawToken(tokenAddress);
+                    }}
+                  />
+                ) : (
+                  <TokenPicker
+                    tokens={withdrawTokenChoices}
+                    activeTokenAddress={activeWithdrawToken.address}
+                    onChange={(tokenAddress) => {
+                      window.plausible("formChange", {
+                        props: {
+                          inputName: "token",
+                          inputValue: tokenAddress,
+                          formName,
+                          chainId,
+                          poolAddress,
+                          connectedWallet: account,
+                        },
+                      });
+                      setActiveWithdrawToken(tokenAddress);
+                    }}
+                  />
+                )
               }
               value={
                 withdrawAmount
@@ -227,10 +278,10 @@ export function CloseLongForm({
                         activeWithdrawTokenPrice && bondAmountAsBigInt
                           ? fixed(
                               bondAmountAsBigInt,
-                              activeWithdrawToken.decimals,
+                              activeWithdrawToken.decimals
                             ).mul(
                               activeWithdrawTokenPrice,
-                              activeWithdrawToken.decimals,
+                              activeWithdrawToken.decimals
                             ).bigint
                           : 0n,
                       decimals: activeWithdrawToken.decimals,
@@ -303,7 +354,11 @@ export function CloseLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!closeLong || isAmountLargerThanPositionSize}
             onClick={(e) => {
-              closeLong?.();
+              if (isZapsEnabled) {
+                closeLongZap?.();
+              } else {
+                closeLong?.();
+              }
               onCloseLong?.(e);
             }}
           >

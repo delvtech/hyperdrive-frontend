@@ -8,7 +8,10 @@ import {
 import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
 import {
   useAccount,
@@ -44,7 +47,6 @@ export function useCloseLongZap({
 } {
   const { address: account } = useAccount();
   const publicClient = usePublicClient();
-  const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
   const { data: walletClient } = useWalletClient({ chainId });
   const zapsConfig = appConfig.zaps[chainId];
@@ -97,7 +99,47 @@ export function useCloseLongZap({
               recipient: zapsConfig.address,
             },
           },
+          onMined(receipt) {
+            if (receipt?.status === "success") {
+              toast.success(
+                <TransactionToast
+                  chainId={chainId}
+                  message="Long closed"
+                  txHash={receipt.transactionHash}
+                />,
+                {
+                  id: receipt.transactionHash,
+                  duration: SUCCESS_TOAST_DURATION,
+                }
+              );
+            }
+          },
         });
+        toast.loading(
+          <TransactionToast
+            chainId={chainId}
+            txHash={hash}
+            message="Closing a Long..."
+          />,
+          { id: hash }
+        );
+
+        addTransaction({
+          hash: hash,
+          description: "Close Long",
+        });
+
+        window.plausible("transactionSubmit", {
+          props: {
+            transactionHash: hash,
+            transactionType: "close",
+            positionType: "long",
+            poolAddress: hyperdriveAddress,
+            chainId,
+            connectedWallet: account,
+          },
+        });
+        return hash;
       } catch (error) {
         console.error("Drift error:", error);
         return "0x";
@@ -106,7 +148,7 @@ export function useCloseLongZap({
   });
 
   return {
-    closeLongZap: () => {},
-    status: "idle",
+    closeLongZap: closeLongZapMutation.mutate,
+    status: closeLongZapMutation.status,
   };
 }

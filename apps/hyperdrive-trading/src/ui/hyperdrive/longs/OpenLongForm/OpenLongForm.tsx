@@ -7,7 +7,7 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import uniqBy from "lodash.uniqby";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useEffect } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -112,6 +112,10 @@ export function OpenLongForm({
       tokenBalance: sharesTokenBalance?.value,
     });
   }
+
+  useEffect(() => {
+    console.log(tokenChoices, "tokenChoices");
+  }, [tokenChoices]);
 
   if (isZapsEnabled) {
     tokenList
