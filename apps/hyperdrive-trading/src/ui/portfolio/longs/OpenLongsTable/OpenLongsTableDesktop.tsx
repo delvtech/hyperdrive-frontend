@@ -20,11 +20,11 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { formatRate } from "src/base/formatRate";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";

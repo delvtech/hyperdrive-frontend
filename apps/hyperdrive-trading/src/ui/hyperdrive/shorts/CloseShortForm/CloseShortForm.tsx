@@ -8,13 +8,13 @@ import {
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";

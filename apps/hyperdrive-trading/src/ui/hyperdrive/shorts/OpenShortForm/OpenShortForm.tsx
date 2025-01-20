@@ -17,6 +17,7 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
@@ -24,7 +25,8 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
+import { RestrictedRegionButton } from "src/ui/compliance/RestrictedRegionButton";
+import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
@@ -63,6 +65,8 @@ export function OpenShortForm({
   hyperdrive,
   onOpenShort,
 }: OpenShortPositionFormProps): ReactElement {
+  const { isReadOnly } = useRegionInfo();
+
   const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const { marketState } = useMarketState({
@@ -541,6 +545,10 @@ export function OpenShortForm({
               This market is paused
             </InvalidTransactionButton>
           );
+        }
+
+        if (isReadOnly) {
+          return <RestrictedRegionButton wide />;
         }
 
         if (!account) {
