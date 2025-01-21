@@ -1,4 +1,5 @@
 import { AppConfig } from "src/appconfig/AppConfig";
+import { EMPTY_ARRAY } from "src/base/constants";
 import { getAddLiquidityRewardId } from "src/rewards/actions/lp";
 import { getOpenShortRewardId } from "src/rewards/actions/short";
 import { getYieldSourceRewardId } from "src/rewards/actions/yieldSource";
@@ -15,6 +16,22 @@ export function getRewardsResolver({
   return rewardResolvers[resolverId];
 }
 
+export function getRewardResolvers({
+  resolverIds,
+}: {
+  resolverIds: RewardResolverId[];
+}): RewardsResolver[] {
+  const resolvers = resolverIds
+    .map((resolverId) => getRewardsResolver({ resolverId }))
+    .filter((resolver) => !!resolver);
+
+  if (resolvers.length) {
+    return resolvers;
+  }
+
+  return EMPTY_ARRAY;
+}
+
 export function getYieldSourceRewardResolverIds({
   yieldSourceId,
   chainId,
@@ -23,12 +40,12 @@ export function getYieldSourceRewardResolverIds({
   yieldSourceId: YieldSourceId;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardResolverId[] {
   const yieldSourceRewardId = getYieldSourceRewardId({
     chainId,
     yieldSourceId,
   });
-  return appConfig.rewards[yieldSourceRewardId];
+  return appConfig.rewards[yieldSourceRewardId] ?? EMPTY_ARRAY;
 }
 
 export function getOpenShortRewardResolverIds({
@@ -39,13 +56,13 @@ export function getOpenShortRewardResolverIds({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardResolverId[] {
   const openShortRewardId = getOpenShortRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[openShortRewardId];
+  return appConfig.rewards[openShortRewardId] ?? EMPTY_ARRAY;
 }
 
 export function getAddLiquidityRewardResolverIds({
@@ -56,11 +73,11 @@ export function getAddLiquidityRewardResolverIds({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardResolverId[] {
   const addLiquidityId = getAddLiquidityRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[addLiquidityId];
+  return appConfig.rewards[addLiquidityId] ?? EMPTY_ARRAY;
 }

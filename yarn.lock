@@ -5149,6 +5149,13 @@
   dependencies:
     "@types/lodash" "*"
 
+"@types/lodash.uniq@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@types/lodash.uniq/-/lodash.uniq-4.5.9.tgz#9a5390422c003ca6d0219207ed6c9c38e37a783f"
+  integrity sha512-2Vd5avnDMNLbDSnUwwgwExKXvX9W3CN72rodT+ikGqGHXn7gVK6BM6Z+kHonbpGgCI2BzM+QDMHrkgKoofOi6A==
+  dependencies:
+    "@types/lodash" "*"
+
 "@types/lodash.uniqby@^4.7.9":
   version "4.7.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.uniqby/-/lodash.uniqby-4.7.9.tgz#10bacba9cf3263c6e07ae11d953de6ada6605104"
