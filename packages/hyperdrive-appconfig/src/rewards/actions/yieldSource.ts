@@ -1,3 +1,4 @@
+import { RewardResolverId } from "src/rewards/resolvers";
 import { YieldSourceId } from "src/yieldSources/types";
 
 /**
@@ -13,4 +14,18 @@ export function getYieldSourceRewardId({
   yieldSourceId: YieldSourceId;
 }): YieldSourceRewardId {
   return `yieldSource:${chainId}:${yieldSourceId}`;
+}
+
+export function getYieldSourceRewards({
+  chainId,
+  yieldSourceId,
+  rewards,
+}: {
+  chainId: number;
+  yieldSourceId: YieldSourceId;
+  rewards: RewardResolverId[];
+}): Record<YieldSourceRewardId, RewardResolverId[]> {
+  return {
+    [getYieldSourceRewardId({ chainId, yieldSourceId })]: rewards,
+  };
 }

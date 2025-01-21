@@ -13,19 +13,17 @@ import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useRegionInfo } from "src/ui/compliance/hooks/useRegionInfo";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { POINTS_MARKETS_ROUTE } from "src/ui/markets/routes";
 import { MINT_ROUTE } from "src/ui/mint/routes";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
+
 export function Navbar(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const chainId = useChainId();
-  const { isReadOnly } = useRegionInfo();
   const isTestnet = isTestnetChain(chainId);
-
   const analyticsUrl = useAnalyticsUrl();
 
   return (
@@ -65,7 +63,7 @@ export function Navbar(): ReactElement {
           <DevtoolsMenu />
         ) : null}
 
-        {!isReadOnly && <ConnectButton showBalance={false} />}
+        <ConnectButton showBalance={false} />
       </div>
     </div>
   );

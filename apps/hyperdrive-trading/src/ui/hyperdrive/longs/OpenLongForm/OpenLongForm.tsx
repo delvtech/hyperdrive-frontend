@@ -13,12 +13,12 @@ import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
-import { ConnectWalletButton } from "src/ui/compliance/ConnectWallet";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
@@ -123,7 +123,7 @@ export function OpenLongForm({
         (tokenFromTokenList) =>
           tokenFromTokenList.address !== baseToken.address &&
           tokenFromTokenList.address !== sharesToken?.address &&
-          tokenFromTokenList.chainId === hyperdrive.chainId
+          tokenFromTokenList.chainId === hyperdrive.chainId,
       )
       .map((tokenFromTokenList) => {
         tokenChoices.push({
@@ -136,7 +136,7 @@ export function OpenLongForm({
   if (isZapsEnabled) {
     activeTokenChoices = uniqBy(
       [...activeTokenChoices, ...tokenList],
-      "address"
+      "address",
     );
   }
 
@@ -156,7 +156,7 @@ export function OpenLongForm({
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
   const depositAssets = getDepositAssets(hyperdrive);
   const isZapping = !depositAssets.some(
-    (asset) => asset.address === activeToken.address
+    (asset) => asset.address === activeToken.address,
   );
 
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
@@ -257,7 +257,7 @@ export function OpenLongForm({
       activeTokenBalance.value > activeTokenMaxTradeSize
         ? activeTokenMaxTradeSize
         : activeTokenBalance?.value,
-      activeToken.decimals
+      activeToken.decimals,
     );
   }
 
@@ -283,7 +283,7 @@ export function OpenLongForm({
   ) {
     const fiatValueOfDepositAmount = fixed(
       depositAmountAsBigInt,
-      activeToken.decimals
+      activeToken.decimals,
     ).mul(activeTokenPrice);
     const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
     zapTokenAmountInBase = equivalentAmountOfBase.bigint;
@@ -379,7 +379,7 @@ export function OpenLongForm({
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
                           activeTokenPrice,
-                          18 // prices are always in 18 decimals
+                          18, // prices are always in 18 decimals
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
