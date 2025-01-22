@@ -18,7 +18,7 @@ export default function Footer(): ReactElement {
           to="/"
           className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
         >
-          <HyperdriveLogo />
+          <HyperdriveLogo width={160} />
         </Link>
         <span className="text-neutral-content">Yield, Your Way.</span>
         <div className="mt-2 flex flex-row gap-3">
