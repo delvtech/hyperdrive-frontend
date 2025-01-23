@@ -16,5 +16,18 @@ export const walletClient = process.env.WALLET_PRIVATE_KEY
         process.env.WALLET_PRIVATE_KEY as `0x${string}`,
       ),
       transport: http(process.env.RPC_URL),
+      chain: {
+        id: 707,
+        name: "CloudChain",
+        nativeCurrency: {
+          decimals: 18,
+          name: "Ether",
+          symbol: "ETH",
+        },
+        rpcUrls: {
+          public: { http: [process.env.RPC_URL as string] },
+          default: { http: [process.env.RPC_URL as string] },
+        },
+      },
     })
   : undefined;

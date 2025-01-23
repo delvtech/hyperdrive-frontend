@@ -1,5 +1,6 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
@@ -11,6 +12,8 @@ import { MutationStatus } from "@tanstack/query-core";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
 import {
@@ -59,9 +62,55 @@ export function useCloseLongZap({
     hyperdriveAddress,
     appConfig,
   });
+
+  const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
+    tokenAddress: tokenOut.address,
+    chainId,
+    enabled: true,
+  });
+
+  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
+    tokenAddress: baseToken.address,
+    chainId,
+    enabled: true,
+  });
+
+  // If the user is trying to swap 100 hydai for 98 USDC, 100 is the bondAmountIn. We need to convert this bondAmountIn to the baseToken to pass to swap params.
+
+  const { amountOut: previewBaseTokenAmountOut } = usePreviewCloseLong({
+    hyperdriveAddress,
+    chainId,
+    tokenOutAddress: baseToken.address,
+    maturityTime,
+    bondAmountIn,
+    asBase: true,
+    enabled: true,
+  });
+
+  console.log(
+    "previewBaseTokenAmountOut",
+    fixed(previewBaseTokenAmountOut ?? 0n).format(),
+  );
+
   const closeLongZapMutation = useMutation({
     mutationFn: async () => {
-      if (!isMutationEnabled || !block?.timestamp) {
+      if (
+        !isMutationEnabled ||
+        !block?.timestamp ||
+        !maturityTime ||
+        !bondAmountIn ||
+        !minAmountOut ||
+        !previewBaseTokenAmountOut
+      ) {
+        console.log(
+          "bailing early",
+          isMutationEnabled,
+          block?.timestamp,
+          maturityTime,
+          bondAmountIn,
+          minAmountOut,
+          previewBaseTokenAmountOut,
+        );
         return;
       }
 
@@ -69,33 +118,41 @@ export function useCloseLongZap({
         viemAdapter({
           publicClient,
           walletClient: walletClient as WalletClient,
-        })
+        }),
       );
 
       try {
-        const hash = await drift.write({
+        const hash = await drift.simulateWrite({
           abi: zapAbi,
           address: zapsConfig.address,
           fn: "closeLongZap",
+          from: account,
           args: {
             _hyperdrive: hyperdriveAddress,
-            _minOutput: minAmountOut ?? 1n,
-            _maturityTime: maturityTime ?? block?.timestamp,
-            _bondAmount: bondAmountIn ?? 1n,
+            _minOutput: 0n,
+            _maturityTime: maturityTime,
+            _bondAmount: bondAmountIn,
+            // zap contract should receive the tokens from closing the long,
+            // because it will then zap them to whatever the user wants
             _options: {
-              destination: destination ?? account,
+              destination: zapsConfig.address,
               asBase,
               extraData: "0x",
             },
             _shouldWrap: false,
+            // NOTE: _swapParams only knows about uniswap, so this will be a
+            // swap for base tokens -> zap token
             _swapParams: {
-              amountIn: bondAmountIn ?? 1n,
-              amountOutMinimum: minAmountOut ?? 1n,
+              amountIn: previewBaseTokenAmountOut, // amount of base token
+              // amountOutMinimum: minAmountOut ?? 1n,
+              amountOutMinimum: 1n,
               deadline: block?.timestamp + 60n,
               path: encodePacked(
                 ["address", "uint24", "address"],
-                [baseToken.address, 100, tokenOut.address]
+                [baseToken.address, 100, tokenOut.address],
               ),
+              // The recipient of the uniswap swap should be the user as the
+              // final step
               recipient: destination ?? account,
             },
           },
@@ -110,36 +167,36 @@ export function useCloseLongZap({
                 {
                   id: receipt.transactionHash,
                   duration: SUCCESS_TOAST_DURATION,
-                }
+                },
               );
             }
           },
         });
-        toast.loading(
-          <TransactionToast
-            chainId={chainId}
-            txHash={hash}
-            message="Closing a Long..."
-          />,
-          { id: hash }
-        );
+        //   toast.loading(
+        //     <TransactionToast
+        //       chainId={chainId}
+        //       txHash={hash}
+        //       message="Closing a Long..."
+        //     />,
+        //     { id: hash },
+        //   );
 
-        addTransaction({
-          hash: hash,
-          description: "Close Long",
-        });
+        //   addTransaction({
+        //     hash: hash,
+        //     description: "Close Long",
+        //   });
 
-        window.plausible("transactionSubmit", {
-          props: {
-            transactionHash: hash,
-            transactionType: "close",
-            positionType: "long",
-            poolAddress: hyperdriveAddress,
-            chainId,
-            connectedWallet: account,
-          },
-        });
-        return hash;
+        //   window.plausible("transactionSubmit", {
+        //     props: {
+        //       transactionHash: hash,
+        //       transactionType: "close",
+        //       positionType: "long",
+        //       poolAddress: hyperdriveAddress,
+        //       chainId,
+        //       connectedWallet: account,
+        //     },
+        //   });
+        //   return hash;
       } catch (error) {
         console.error("Drift error:", error);
         return "0x";
