@@ -146,7 +146,7 @@ export function OpenShortPreview({
           />
           <LabelValue
             label="Short APR"
-            tooltipContent="Your annualized return on this position assuming the current yield source rate stays the same for one year"
+            tooltipContent="Your annualized return on this position assuming the current variable rate stays the same for one year"
             tooltipPosition="right"
             tooltipSize="small"
             value={

@@ -17,5 +17,6 @@ export function formatCompact({
   return fixed(value, decimals).format({
     compactDisplay: "short",
     decimals: 2,
+    trailingZeros: true,
   });
 }
