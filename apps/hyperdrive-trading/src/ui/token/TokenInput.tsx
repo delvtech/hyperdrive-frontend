@@ -38,8 +38,8 @@ export function TokenInput({
   maxValue,
   variant = "default",
   inputLabel = "Enter amount",
-  bottomLeftElement: bottomLeftStatistic,
-  bottomRightElement: bottomRightStatistic,
+  bottomLeftElement,
+  bottomRightElement,
   settings,
   hasError = false,
   disabled = false,
@@ -111,11 +111,11 @@ export function TokenInput({
           )}
         </div>
         <div className="flex w-full justify-between">
-          {bottomLeftStatistic}
+          {bottomLeftElement}
           <div className="flex w-full items-baseline justify-end text-sm">
-            {bottomRightStatistic ? (
+            {bottomRightElement ? (
               <label className="text-neutral-content">
-                {bottomRightStatistic}
+                {bottomRightElement}
               </label>
             ) : null}
             {maxValue !== undefined && !disabled ? (

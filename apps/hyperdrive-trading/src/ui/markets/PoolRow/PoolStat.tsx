@@ -32,7 +32,7 @@ export function PoolStat({
   }
 
   const poolStat = (
-    <div className="flex shrink-0 flex-col items-center gap-1.5 sm:items-start">
+    <div className="flex w-full shrink-0 flex-col items-center gap-1.5 sm:items-start">
       <div className={"text-neutral-content"}>{label}</div>
       <div
         className={classNames("font-dmMono text-h4 font-medium", {
@@ -49,7 +49,7 @@ export function PoolStat({
     return (
       <Tooltip.Provider>
         <Tooltip.Root>
-          <Tooltip.Trigger className="flex items-center whitespace-nowrap">
+          <Tooltip.Trigger className="flex w-full items-center whitespace-nowrap">
             {poolStat}
           </Tooltip.Trigger>
           <Tooltip.Portal>

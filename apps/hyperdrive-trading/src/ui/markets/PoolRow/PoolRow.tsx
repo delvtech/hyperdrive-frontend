@@ -80,7 +80,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
         });
       }}
     >
-      <div className="flex flex-col justify-between gap-6 pt-2 sm:pt-0 lg:flex-row lg:gap-4">
+      <div className="flex flex-col justify-between gap-6 pt-2 sm:pt-0 lg:flex-row lg:gap-0">
         {/* Left side */}
         <div className="flex shrink-0 flex-col items-center sm:flex-row sm:gap-6 lg:w-[440px]">
           <div
