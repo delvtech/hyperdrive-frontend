@@ -11,7 +11,7 @@ export function useTokenList({
   enabled = true,
 }: {
   chainId?: number;
-  enabled: boolean;
+  enabled?: boolean;
 }): {
   tokenList: TokenConfig[];
   isLoading: boolean;

@@ -96,7 +96,7 @@ export function useCloseLongZap({
                 ["address", "uint24", "address"],
                 [baseToken.address, 100, tokenOut.address]
               ),
-              recipient: zapsConfig.address,
+              recipient: destination ?? account,
             },
           },
           onMined(receipt) {

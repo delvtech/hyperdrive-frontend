@@ -9,6 +9,8 @@ const defiLlamaChainNameIdentifier: Record<number, string> = {
   [gnosis.id]: "gnosis",
   [linea.id]: "linea",
   [base.id]: "base",
+  // Fork chain should default to the public chain it forks from
+  707: "ethereum",
 };
 
 export const fetchDefiLlamaTokenPrice: PriceOracleFn = async ({
@@ -18,14 +20,17 @@ export const fetchDefiLlamaTokenPrice: PriceOracleFn = async ({
   // Always use mainnet ETH as the reference for native ETH price, regardless of
   // the current chain.
   let defiLlamaTokenId = `${defiLlamaChainNameIdentifier[chainId]}:${tokenAddress}`;
+  console.log("defiLlamaTokenId", defiLlamaTokenId);
   if (tokenAddress === ETH_MAGIC_NUMBER) {
     defiLlamaTokenId = `ethereum:${ETH_MAGIC_NUMBER}`;
   }
 
   const response = await fetch(
-    `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`,
+    `https://coins.llama.fi/prices/current/${defiLlamaTokenId}`
   );
+
   const data = await response.json();
+  console.log("data", data);
   const price = data?.coins?.[defiLlamaTokenId]?.price;
   return parseFixed(price).bigint;
 };
