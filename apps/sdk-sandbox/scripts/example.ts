@@ -42,7 +42,7 @@ const txReceipt = await new Promise(async (resolve, reject) => {
     },
   });
 });
-console.log("txReceipt", txReceipt);
+// console.log("txReceipt", txReceipt);
 // const events = await pool.contract.getEvents("OpenLong", {
 //   fromBlock: block?.number,
 //   toBlock: "latest",
@@ -53,11 +53,11 @@ const positions = await pool.getOpenLongPositions({
   options: { block: "latest" },
 });
 console.log("positions", positions);
-const [{ assetId, maturity: maturityTime, value: balanceOfBonds }] = positions;
+// const [{ assetId, maturity: maturityTime, value: balanceOfBonds }] = positions;
 // console.log("asssetId", assetId, maturityTime, balanceOfBonds);
-// const assetId =
-//   452312848583266388373324160190187140051835877600158453279131187532663200256n;
-// const maturityTime = 1752537600n;
+const assetId =
+  452312848583266388373324160190187140051835877600158453279131187532663977856n;
+const maturityTime = 1753315200n;
 // approve zaps to spend the long
 const approvalReceipt = await poolContract.write("setApproval", {
   amount: maxInt256,
@@ -66,7 +66,7 @@ const approvalReceipt = await poolContract.write("setApproval", {
 });
 
 // use the zap contract to close the long out to a different
-const bondsToClose = BigInt(10e18);
+const bondsToClose = BigInt(100e18);
 // const bondsToClose = balanceOfBonds;
 // get the amount of base out if you close all the bonds directly on hyperdrive
 const { result: previewBaseAmountOut } = await publicClient.simulateContract({
@@ -111,9 +111,9 @@ try {
         path: encodePacked(
           ["address", "uint24", "address"],
           [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
             100,
-            "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC - We need to ensure this is a valid pool with enough liquidity to facilitate the swap
           ],
         ),
         recipient: walletClient?.account.address as `0x${string}`,
