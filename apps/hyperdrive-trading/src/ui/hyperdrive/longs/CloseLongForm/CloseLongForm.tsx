@@ -194,15 +194,11 @@ export function CloseLongForm({
     enabled: requiresAllowance,
   });
 
-  console.log(bondAllowance, "bondAllowance");
-
   const hasEnoughAllowance = getHasEnoughAllowance({
     requiresAllowance,
     allowance: bondAllowance,
     amount: bondAmountAsBigInt,
   });
-
-  console.log(hasEnoughAllowance, "hasEnoughAllowance");
 
   // Plausible event props
   const formName = "Close Long";
