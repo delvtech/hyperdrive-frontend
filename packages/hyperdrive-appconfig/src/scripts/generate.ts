@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import "dotenv/config";
+import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestnetAppConfigs";
@@ -26,7 +27,6 @@ import {
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardResolvers } from "src/rewards/resolvers";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
@@ -144,7 +144,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
 
 // All appconfigs have been built and combined, now let's process rewards
 console.log(
-  `\n${chalk.white(chalk.underline("Processing reward tokens across all yield sources and chains"))}`,
+  `\n${chalk.white(chalk.underline("Requesting rewards and token configs for reward tokens..."))}`,
 );
 await addRewardTokenConfigs({ appConfig: combinedAppConfig });
 
@@ -193,46 +193,57 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
       transport: http(rpcUrl),
     });
   });
+
+  const uniqResolvers = uniqBy(
+    Object.values(appConfig.rewards).flatMap((rewardConfigs) => rewardConfigs),
+    (r) => r.id,
+  );
+
   await Promise.all(
-    Object.entries(yieldSources)
-      .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
-      .map(async ([unusedKey, yieldSource]) => {
-        const rewardFn = rewardResolvers[yieldSource.rewardsFn!].resolver; // safe to cast due to filter above
-        const publicClient = publicClients[yieldSource.chainId];
-        const rewards = await rewardFn(publicClient);
+    uniqResolvers.map(async (rewardConfig) => {
+      const rewardFn = rewardConfig.resolver;
 
-        rewards.map((reward) => {
-          if (reward.type === "tokenAmount" || reward.type === "apy") {
-            let alreadyExists = false;
-            try {
-              // This will throw an error if it cannot find the token
-              alreadyExists = !!getToken({
-                chainId: reward.chainId,
-                tokenAddress: reward.tokenAddress,
-                appConfig,
-              });
-            } catch (error) {
-              // Do nothing if this errors, it simply means the reward token is
-              // not already a hyperdrive base or shares token
-            }
+      // for each chain id you can call the resolver with, call it and get the rewards
+      const rewards = (
+        await Promise.all(
+          rewardConfig.chainIds.map((chainId) =>
+            rewardFn(publicClients[chainId]),
+          ),
+        )
+      ).flat();
 
-            if (alreadyExists) {
-              return;
-            }
-
-            const knownTokenConfig =
-              knownTokenConfigs[reward.chainId][reward.tokenAddress];
-
-            if (knownTokenConfig) {
-              appConfig.tokens.push(knownTokenConfig);
-              return;
-            }
-
-            throw new Error(
-              `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
-            );
+      rewards.map((reward) => {
+        if (reward.type === "tokenAmount" || reward.type === "apy") {
+          let alreadyExists = false;
+          try {
+            // This will throw an error if it cannot find the token
+            alreadyExists = !!getToken({
+              chainId: reward.chainId,
+              tokenAddress: reward.tokenAddress,
+              appConfig,
+            });
+          } catch (error) {
+            // Do nothing if this errors, it simply means the reward token is
+            // not already a hyperdrive base or shares token
           }
-        });
-      }),
+
+          if (alreadyExists) {
+            return;
+          }
+
+          const knownTokenConfig =
+            knownTokenConfigs[reward.chainId][reward.tokenAddress];
+
+          if (knownTokenConfig) {
+            appConfig.tokens.push(knownTokenConfig);
+            return;
+          }
+
+          throw new Error(
+            `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
+          );
+        }
+      });
+    }),
   );
 }
