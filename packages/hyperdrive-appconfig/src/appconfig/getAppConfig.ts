@@ -220,7 +220,7 @@ const hyperdriveKindResolvers: Record<
         ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "eeth",
-          rewards: ["fetchEtherfiRewards"],
+          rewards: ["etherfiRewards"],
         }),
 
         // hyperdrive rewards
@@ -228,8 +228,8 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           hyperdriveAddress: hyperdrive.address,
           rewardsMap: {
-            short: ["fetchEtherfiRewards"],
-            lp: ["fetchEtherfiRewards", "fetchHypervueMilesRewards"],
+            short: ["etherfiRewards"],
+            lp: ["etherfiRewards", "fetchHypervueMilesRewards"],
           },
         }),
       },
@@ -677,7 +677,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwEurc",
-            rewards: ["fetchMorphoMweurcRewards"],
+            rewards: ["morphoMweurcRewards"],
           }),
 
           // hyperdrive rewards
@@ -685,8 +685,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchMorphoMweurcRewards"],
-              lp: ["fetchMorphoMweurcRewards", "fetchHypervueMilesRewards"],
+              short: ["morphoMweurcRewards"],
+              lp: ["morphoMweurcRewards", "fetchHypervueMilesRewards"],
             },
           }),
         },
@@ -786,7 +786,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             yieldSourceId: "aeroUsdcAero",
             chainId: hyperdriveConfig.chainId,
-            rewards: ["fetchAeroRewards"],
+            rewards: ["aeroRewards"],
           }),
 
           // hyperdrive rewards
@@ -794,8 +794,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchAeroRewards"],
-              lp: ["fetchAeroRewards", "fetchHypervueMilesRewards"],
+              short: ["aeroRewards"],
+              lp: ["aeroRewards", "fetchHypervueMilesRewards"],
             },
           }),
         },

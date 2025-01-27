@@ -5,8 +5,8 @@ import { fetchDefiLlamaTokenPrice } from "src/tokens/priceOracles/defillama";
 import { base } from "viem/chains";
 
 const AERO_TOKEN_ADDRESS = "0x940181a94A35A4569E4529A3CDfB74e38FD98631";
-export const fetchAeroRewards: RewardConfig = {
-  id: "fetchAeroRewards",
+export const aeroRewards: RewardConfig = {
+  id: "aeroRewards",
   chainIds: [base.id],
   resolver: async (publicClient) => {
     // Amount of AERO rewarded per second (~1.9 AERO per second)

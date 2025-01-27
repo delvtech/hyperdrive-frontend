@@ -1,25 +1,25 @@
-import { fetchAeroRewards } from "src/rewards/resolvers/aero";
-import { fetchEtherfiRewards } from "src/rewards/resolvers/etherfi";
-import { fetchGyroscopeRewards } from "src/rewards/resolvers/gyroscope";
-import { fetchHypervueMilesRewards } from "src/rewards/resolvers/hypervueMiles";
-import { fetchLineaRewards } from "src/rewards/resolvers/linea";
+import { aeroRewards } from "src/rewards/resolvers/aero";
+import { etherfiRewards } from "src/rewards/resolvers/etherfi";
+import { gyroscopeRewards } from "src/rewards/resolvers/gyroscope";
+import { hypervueMilesRewards } from "src/rewards/resolvers/hypervueMiles";
+import { lineaRewards } from "src/rewards/resolvers/linea";
 import {
-  fetchMorphoCbethUsdcRewards,
-  fetchMorphoMwethRewards,
-  fetchMorphoMweurcRewards,
-  fetchMorphoMwusdcRewards,
+  morphoCbethUsdcRewards,
+  morphoMwethRewards,
+  morphoMweurcRewards,
+  morphoMwusdcRewards,
 } from "src/rewards/resolvers/morpho";
 
 export const rewardResolvers = {
-  fetchLineaRewards,
-  fetchMorphoMweurcRewards,
-  fetchMorphoMwusdcRewards,
-  fetchMorphoMwethRewards,
-  fetchEtherfiRewards,
-  fetchMorphoCbethUsdcRewards,
-  fetchAeroRewards,
-  fetchGyroscopeRewards,
-  fetchHypervueMilesRewards,
+  lineaRewards,
+  morphoMweurcRewards,
+  morphoMwusdcRewards,
+  morphoMwethRewards,
+  etherfiRewards,
+  morphoCbethUsdcRewards,
+  aeroRewards,
+  gyroscopeRewards,
+  hypervueMilesRewards,
 } as const;
 
 export type RewardResolverId = keyof typeof rewardResolvers;

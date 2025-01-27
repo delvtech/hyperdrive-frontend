@@ -12,8 +12,8 @@ import { base } from "viem/chains";
  * Resolver for rewards on Morpho Flagship EURC
  * https://app.morpho.org/vault?vault=0xf24608E0CCb972b0b0f4A6446a0BBf58c701a026&network=base
  */
-export const fetchMorphoMweurcRewards: RewardConfig = {
-  id: "fetchMorphoMweurcRewards",
+export const morphoMweurcRewards: RewardConfig = {
+  id: "morphoMweurcRewards",
   chainIds: [base.id],
   resolver: async () => {
     return fetchMorphoVaultRewards(
@@ -26,8 +26,8 @@ export const fetchMorphoMweurcRewards: RewardConfig = {
  * Resolver for rewards on Morpho Flagship USDC
  * https://app.morpho.org/vault?vault=0xc1256Ae5FF1cf2719D4937adb3bbCCab2E00A2Ca&network=base
  */
-export const fetchMorphoMwusdcRewards: RewardConfig = {
-  id: "fetchMorphoMwusdcRewards",
+export const morphoMwusdcRewards: RewardConfig = {
+  id: "morphoMwusdcRewards",
   chainIds: [base.id],
   resolver: async () => {
     return fetchMorphoVaultRewards(
@@ -41,8 +41,8 @@ export const fetchMorphoMwusdcRewards: RewardConfig = {
  * Resolver for rewards on Morpho Flagship ETH
  * https://app.morpho.org/vault?vault=0xa0E430870c4604CcfC7B38Ca7845B1FF653D0ff1&network=base
  */
-export const fetchMorphoMwethRewards: RewardConfig = {
-  id: "fetchMorphoMwethRewards",
+export const morphoMwethRewards: RewardConfig = {
+  id: "morphoMwethRewards",
   chainIds: [base.id],
   resolver: async () => {
     return fetchMorphoVaultRewards(
@@ -56,8 +56,8 @@ export const fetchMorphoMwethRewards: RewardConfig = {
  * Resolver for rewards on Morpho Market cbETH/USDC
  * https://app.morpho.org/market?id=0x1c21c59df9db44bf6f645d854ee710a8ca17b479451447e9f56758aee10a2fad&network=base
  */
-export const fetchMorphoCbethUsdcRewards: RewardConfig = {
-  id: "fetchMorphoCbethUsdcRewards",
+export const morphoCbethUsdcRewards: RewardConfig = {
+  id: "morphoCbethUsdcRewards",
   chainIds: [base.id],
   resolver: async () => {
     return fetchMorphoMarketRewards("ffbf9c87-73ed-4188-aa50-20b1e1101a15");

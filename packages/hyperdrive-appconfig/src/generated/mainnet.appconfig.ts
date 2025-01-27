@@ -1919,12 +1919,12 @@ export const mainnetAppConfig: AppConfig = {
     "hyperdrive:add-liquidity:707:0x7548c4F665402BAb3a4298B88527824B7b18Fe27": [
       "fetchHypervueMilesRewards",
     ],
-    "yieldSource:707:eeth": ["fetchEtherfiRewards"],
+    "yieldSource:707:eeth": ["etherfiRewards"],
     "hyperdrive:open-short:707:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
-      "fetchEtherfiRewards",
+      "etherfiRewards",
     ],
     "hyperdrive:add-liquidity:707:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
-      "fetchEtherfiRewards",
+      "etherfiRewards",
       "fetchHypervueMilesRewards",
     ],
     "hyperdrive:add-liquidity:707:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
@@ -1967,12 +1967,12 @@ export const mainnetAppConfig: AppConfig = {
       ["fetchHypervueMilesRewards"],
     "hyperdrive:add-liquidity:11155111:0x54A93937EE00838d659795b9bbbe904a00DdF278":
       ["fetchHypervueMilesRewards"],
-    "yieldSource:1:eeth": ["fetchEtherfiRewards"],
+    "yieldSource:1:eeth": ["etherfiRewards"],
     "hyperdrive:open-short:1:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
-      "fetchEtherfiRewards",
+      "etherfiRewards",
     ],
     "hyperdrive:add-liquidity:1:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
-      "fetchEtherfiRewards",
+      "etherfiRewards",
       "fetchHypervueMilesRewards",
     ],
     "hyperdrive:add-liquidity:1:0xd7e470043241C10970953Bd8374ee6238e77D735": [
@@ -2048,12 +2048,12 @@ export const mainnetAppConfig: AppConfig = {
     ],
     "hyperdrive:add-liquidity:8453:0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137":
       ["fetchMorphoCbethUsdcRewards", "fetchHypervueMilesRewards"],
-    "yieldSource:8453:aeroUsdcAero": ["fetchAeroRewards"],
+    "yieldSource:8453:aeroUsdcAero": ["aeroRewards"],
     "hyperdrive:open-short:8453:0x9bAdB6A21FbA04EE94fde3E85F7d170E90394c89": [
-      "fetchAeroRewards",
+      "aeroRewards",
     ],
     "hyperdrive:add-liquidity:8453:0x9bAdB6A21FbA04EE94fde3E85F7d170E90394c89":
-      ["fetchAeroRewards", "fetchHypervueMilesRewards"],
+      ["aeroRewards", "fetchHypervueMilesRewards"],
     "hyperdrive:add-liquidity:8453:0x2a1ca35Ded36C531F77c614b5AAA0d4F86edbB06":
       ["fetchHypervueMilesRewards"],
     "yieldSource:8453:mwUsdc": ["fetchMorphoMwusdcRewards"],
@@ -2062,12 +2062,12 @@ export const mainnetAppConfig: AppConfig = {
     ],
     "hyperdrive:add-liquidity:8453:0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a":
       ["fetchMorphoMwusdcRewards", "fetchHypervueMilesRewards"],
-    "yieldSource:8453:mwEurc": ["fetchMorphoMweurcRewards"],
+    "yieldSource:8453:mwEurc": ["morphoMweurcRewards"],
     "hyperdrive:open-short:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25": [
-      "fetchMorphoMweurcRewards",
+      "morphoMweurcRewards",
     ],
     "hyperdrive:add-liquidity:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25":
-      ["fetchMorphoMweurcRewards", "fetchHypervueMilesRewards"],
+      ["morphoMweurcRewards", "fetchHypervueMilesRewards"],
     "yieldSource:8453:mwEth": ["fetchMorphoMwethRewards"],
     "hyperdrive:open-short:8453:0xceD9F810098f8329472AEFbaa1112534E96A5c7b": [
       "fetchMorphoMwethRewards",
