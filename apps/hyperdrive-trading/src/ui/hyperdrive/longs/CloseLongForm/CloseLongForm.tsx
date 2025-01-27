@@ -125,6 +125,7 @@ export function CloseLongForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
+    tokenOutAddress: activeWithdrawToken.address,
     bondAmountIn: bondAmountAsBigInt,
     asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
   });
