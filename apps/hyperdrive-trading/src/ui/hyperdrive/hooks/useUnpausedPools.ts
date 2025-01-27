@@ -11,13 +11,10 @@ import { getDrift } from "src/drift/getDrift";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
+import { Address } from "viem";
 import { useChainId } from "wagmi";
 
-const HIDDEN_POOLS = [
-  // Hide the susde/dai pool on mainnet because the LP APY is -100% after the
-  // only LP yoinked their liquidity while a Long was open.
-  "0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30",
-];
+const HIDDEN_POOLS: Address[] = [];
 /**
  * Returns a list of hyperdrives that are not paused or hidden. Optionally you
  * can specify if you want to filter out hyperdrives that have rewards
