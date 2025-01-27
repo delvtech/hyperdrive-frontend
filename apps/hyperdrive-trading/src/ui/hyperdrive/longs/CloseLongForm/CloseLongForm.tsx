@@ -2,6 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   appConfig,
   getBaseToken,
+  getHyperdriveConfig,
   getToken,
   HyperdriveConfig,
   TokenConfig,
@@ -9,6 +10,9 @@ import {
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -16,12 +20,15 @@ import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
+import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInput } from "src/ui/token/TokenInput";
 import {
@@ -73,12 +80,6 @@ export function CloseLongForm({
     defaultItems.push(sharesToken);
   }
 
-  const { balance: baseTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: hyperdrive.poolConfig.baseToken,
-    decimals: hyperdrive.decimals,
-  });
-
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
@@ -112,6 +113,7 @@ export function CloseLongForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
+    tokenOutAddress: activeWithdrawToken.address,
     bondAmountIn: bondAmountAsBigInt,
     asBase: activeWithdrawToken.address === hyperdrive.poolConfig.baseToken,
   });
@@ -158,7 +160,6 @@ export function CloseLongForm({
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
       tokenConfig: baseToken,
-      tokenBalance: baseTokenBalance?.value,
     });
   }
   if (isZapsEnabled) {
@@ -178,6 +179,37 @@ export function CloseLongForm({
   const isAmountLargerThanPositionSize = !!(
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
+
+  const depositAssets = getDepositAssets(
+    getHyperdriveConfig({
+      hyperdriveChainId: hyperdrive.chainId,
+      hyperdriveAddress: hyperdrive.address,
+      appConfig,
+    }),
+  );
+
+  const zapsConfig = appConfig.zaps[hyperdrive.chainId];
+  const isZapping = !depositAssets.some(
+    (asset) => asset.address === activeWithdrawToken.address,
+  );
+
+  const spender = isZapping ? zapsConfig.address : hyperdrive.address;
+
+  // ETH doesn't require allowance
+  const requiresAllowance = activeWithdrawToken.address !== ETH_MAGIC_NUMBER;
+  const { tokenAllowance: bondAllowance } = useTokenAllowance({
+    account,
+    spender,
+    tokenAddress: activeWithdrawToken.address,
+    tokenChainId: activeWithdrawToken.chainId,
+    enabled: requiresAllowance,
+  });
+
+  const hasEnoughAllowance = getHasEnoughAllowance({
+    requiresAllowance,
+    allowance: bondAllowance,
+    amount: bondAmountAsBigInt,
+  });
 
   // Plausible event props
   const formName = "Close Long";
@@ -278,10 +310,10 @@ export function CloseLongForm({
                         activeWithdrawTokenPrice && bondAmountAsBigInt
                           ? fixed(
                               bondAmountAsBigInt,
-                              activeWithdrawToken.decimals
+                              activeWithdrawToken.decimals,
                             ).mul(
                               activeWithdrawTokenPrice,
-                              activeWithdrawToken.decimals
+                              activeWithdrawToken.decimals,
                             ).bigint
                           : 0n,
                       decimals: activeWithdrawToken.decimals,
@@ -346,9 +378,39 @@ export function CloseLongForm({
         if (!account) {
           return <ConnectWalletButton />;
         }
+
+        if (connectedChainId !== hyperdrive.chainId) {
+          return (
+            <SwitchNetworksButton
+              targetChainId={hyperdrive.chainId}
+              targetChainName={appConfig.chains[hyperdrive.chainId].name}
+            />
+          );
+        }
+
+        if (!!bondAmountAsBigInt && isAmountLargerThanPositionSize) {
+          return (
+            <InvalidTransactionButton wide>
+              Insufficient balance
+            </InvalidTransactionButton>
+          );
+        }
+
+        if (!hasEnoughAllowance) {
+          return (
+            <ApproveTokenChoices
+              spender={spender}
+              token={activeWithdrawToken}
+              amountAsBigInt={bondAmountAsBigInt}
+              amount={bondAmount}
+            />
+          );
+        }
+
         if (closeLongStatus === "loading") {
           return <LoadingButton label="Closing Long" variant="primary" />;
         }
+
         return (
           <button
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
