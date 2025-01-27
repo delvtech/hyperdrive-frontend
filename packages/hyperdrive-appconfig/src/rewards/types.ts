@@ -57,6 +57,12 @@ export type AnyReward =
   | PointMultiplierReward
   | InfoReward;
 
-export type RewardsResolver = (
+export type RewardResolver = (
   publicClient: PublicClient,
 ) => Promise<AnyReward[]>;
+
+export interface RewardConfig {
+  id: string;
+  chainIds: number[];
+  resolver: RewardResolver;
+}

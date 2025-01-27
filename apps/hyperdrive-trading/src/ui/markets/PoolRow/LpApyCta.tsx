@@ -44,7 +44,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
         />
       }
       action={
-        <div className="daisy-indicator">
+        <div className="daisy-indicator w-full sm:w-auto">
           <span className="daisy-badge daisy-indicator-item p-0">
             <Tooltip
               position="left"
@@ -60,7 +60,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
               chainId: hyperdrive.chainId.toString(),
             }}
             search={{ position: "lp" }}
-            className="daisy-btn h-10 min-h-10 w-full rounded-full bg-gray-500 sm:daisy-btn-sm hover:bg-gray-500 sm:h-8 sm:bg-gray-600 md:w-32"
+            className="daisy-btn h-10 min-h-10 w-full rounded-full bg-gray-500 sm:daisy-btn-sm hover:bg-gray-400 sm:h-8 sm:bg-gray-600 sm:hover:bg-gray-500 md:w-32"
             onClick={(e) => {
               e.stopPropagation();
               window.plausible("positionCtaClick", {

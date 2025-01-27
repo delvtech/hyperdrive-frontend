@@ -3,7 +3,7 @@ import { getAddLiquidityRewardId } from "src/rewards/actions/lp";
 import { getOpenShortRewardId } from "src/rewards/actions/short";
 import { getYieldSourceRewardId } from "src/rewards/actions/yieldSource";
 import { RewardResolverId, rewardResolvers } from "src/rewards/resolvers";
-import { RewardsResolver } from "src/rewards/types";
+import { RewardResolver } from "src/rewards/types";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 
@@ -11,8 +11,8 @@ export function getRewardsResolver({
   resolverId,
 }: {
   resolverId: RewardResolverId;
-}): RewardsResolver | undefined {
-  return rewardResolvers[resolverId];
+}): RewardResolver | undefined {
+  return rewardResolvers[resolverId].resolver;
 }
 
 export function getYieldSourceRewardResolverIds({

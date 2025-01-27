@@ -47,7 +47,7 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
             chainId: hyperdrive.chainId.toString(),
           }}
           search={{ position: "long" }}
-          className="daisy-btn h-10 min-h-10 w-full rounded-full bg-gray-500 sm:daisy-btn-sm hover:bg-gray-500 sm:h-8 sm:bg-gray-600 md:w-28"
+          className="daisy-btn h-10 min-h-10 w-full rounded-full bg-gray-500 sm:daisy-btn-sm hover:bg-gray-400 sm:h-8 sm:bg-gray-600 sm:hover:bg-gray-500 md:w-28"
           onClick={(e) => {
             e.stopPropagation();
             window.plausible("positionCtaClick", {

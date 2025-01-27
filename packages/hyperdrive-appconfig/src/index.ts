@@ -42,7 +42,8 @@ export type {
   ApyReward,
   InfoReward,
   PointMultiplierReward,
-  RewardsResolver,
+  RewardConfig,
+  RewardResolver,
   TokenAmountReward,
 } from "src/rewards/types";
 
