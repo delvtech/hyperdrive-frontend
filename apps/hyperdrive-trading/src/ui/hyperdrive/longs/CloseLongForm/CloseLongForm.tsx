@@ -10,6 +10,9 @@ import {
 import { adjustAmountByPercentage, Long } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -18,15 +21,11 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-// import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
-import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
-import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
-import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
-import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -99,7 +98,7 @@ export function CloseLongForm({
     }),
   );
 
-  const isZapToken = !depositAssets.some(
+  const isZapping = !depositAssets.some(
     (asset) => asset.address === activeWithdrawToken.address,
   );
 
@@ -158,17 +157,6 @@ export function CloseLongForm({
     },
   });
 
-  // TODO: Implement zapping in upcoming PR
-  // const { closeLongZap, status: closeLongZapStatus } = useCloseLongZap({
-  //   hyperdriveAddress: hyperdrive.address,
-  //   chainId: hyperdrive.chainId,
-  //   maturityTime: long.maturity,
-  //   tokenOut: activeWithdrawToken,
-  //   bondAmountIn: bondAmountAsBigInt,
-  //   minAmountOut: minAmountOutAfterSlippage,
-  //   destination: account,
-  // });
-
   const withdrawTokenChoices: TokenChoice[] = [];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     withdrawTokenChoices.push({
@@ -193,20 +181,28 @@ export function CloseLongForm({
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
 
-  const { tokenAllowance: bondAllowance } = useTokenAllowance({
-    account,
-    spender: hyperdrive.address,
-    tokenAddress: hyperdrive.address,
-    tokenChainId: hyperdrive.chainId,
-    enabled: !!account,
-  });
+  const zapsConfig = appConfig.zaps[hyperdrive.chainId];
+  const spender = isZapping ? zapsConfig.address : hyperdrive.address;
+
   // ETH doesn't require allowance
   const requiresAllowance = activeWithdrawToken.address !== ETH_MAGIC_NUMBER;
+  const { tokenAllowance: bondAllowance } = useTokenAllowance({
+    account,
+    spender,
+    tokenAddress: activeWithdrawToken.address,
+    tokenChainId: activeWithdrawToken.chainId,
+    enabled: requiresAllowance,
+  });
+
+  console.log(bondAllowance, "bondAllowance");
+
   const hasEnoughAllowance = getHasEnoughAllowance({
     requiresAllowance,
     allowance: bondAllowance,
     amount: bondAmountAsBigInt,
   });
+
+  console.log(hasEnoughAllowance, "hasEnoughAllowance");
 
   // Plausible event props
   const formName = "Close Long";
@@ -393,10 +389,10 @@ export function CloseLongForm({
           );
         }
 
-        if (isZapToken && !!bondAmountAsBigInt && !hasEnoughAllowance) {
+        if (!hasEnoughAllowance) {
           return (
             <ApproveTokenChoices
-              spender={hyperdrive.address}
+              spender={spender}
               token={activeWithdrawToken}
               amountAsBigInt={bondAmountAsBigInt}
               amount={bondAmount}
