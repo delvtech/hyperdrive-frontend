@@ -1,8 +1,8 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
@@ -15,6 +15,7 @@ export function OpenShortsContainer(): ReactElement | null {
   const { address: account } = useAccount();
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsData();
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
     (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,
