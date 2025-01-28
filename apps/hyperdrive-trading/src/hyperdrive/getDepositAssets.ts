@@ -1,14 +1,17 @@
 import { ZERO_ADDRESS } from "@delvtech/drift";
 import {
+  AppConfig,
   HyperdriveConfig,
   TokenConfig,
-  appConfig,
   getBaseToken,
   getToken,
 } from "@delvtech/hyperdrive-appconfig";
 
 // TODO: Move this to the appconfig
-export function getDepositAssets(hyperdrive: HyperdriveConfig): TokenConfig[] {
+export function getDepositAssets(
+  hyperdrive: HyperdriveConfig,
+  appConfig: AppConfig,
+): TokenConfig[] {
   const depositAssets: TokenConfig[] = [];
   if (hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
     const baseToken = getBaseToken({
