@@ -4,7 +4,7 @@ import {
   AppConfig,
   getHyperdriveConfig,
   getYieldSource,
-  getYieldSourceRewardResolverIds,
+  getYieldSourceRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
@@ -92,19 +92,19 @@ async function calcNetRate(
 ) {
   let netRate = rate;
 
-  const resolverIds = getYieldSourceRewardResolverIds({
+  const rewardConfigs = getYieldSourceRewardConfigs({
     yieldSourceId: hyperdrive.yieldSource,
     chainId: hyperdrive.chainId,
     appConfig,
   });
 
-  if (resolverIds) {
+  if (rewardConfigs?.length) {
     const rewards = await Promise.all(
-      resolverIds.map((resolverId) =>
+      rewardConfigs.map((rewardConfig) =>
         queryClient.fetchQuery(
           getRewardResolverQuery({
             chainId: hyperdrive.chainId,
-            resolverId,
+            rewardConfig,
           }),
         ),
       ),
