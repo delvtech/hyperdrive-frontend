@@ -6,11 +6,6 @@ import { base } from "viem/chains";
 
 const AERO_TOKEN_ADDRESS = "0x940181a94A35A4569E4529A3CDfB74e38FD98631";
 
-export const aeroRewards: RewardConfig = {
-  resolverId: "fetchAeroRewards",
-  chainIds: [base.id],
-};
-
 export const gaugeAbi = [
   "function rewardRate() view returns (uint256)",
   "function totalSupply() view returns (uint256)",
@@ -68,4 +63,10 @@ export const fetchAeroRewards: RewardResolver = async (publicClient) => {
       tokenAddress: AERO_TOKEN_ADDRESS,
     },
   ];
+};
+
+export const aeroRewards: RewardConfig = {
+  id: "aeroRewards",
+  chainIds: [base.id],
+  resolver: fetchAeroRewards,
 };

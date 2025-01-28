@@ -27,7 +27,7 @@ import {
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { getRewardsResolver } from "src/rewards/selectors";
+import { rewardConfigs } from "src/rewards/resolvers";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
@@ -56,7 +56,8 @@ const chainConfigs: ChainInitializationConfig[] = [
     isTestnet: true,
     earliestBlock: cloudChainConfig.earliestBlock,
   },
-  // { // TODO: Re-enable this when needed
+  // {
+  // TODO: Re-enable this when needed
   //   chain: gnosisFork,
   //   rpcUrl: process.env.GNOSIS_FORK_RPC_URL as string,
   //   registryAddress: GNOSIS_FORK_REGISTRY_ADDRESS,
@@ -200,14 +201,14 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
   // and we don't want to run the same resolver multiple times.
   const uniqueResolvers = uniqBy(
     Object.values(appConfig.rewards).flatMap((rewardConfigs) => rewardConfigs),
-    (r) => r.resolverId,
+    (r) => r,
   );
+  console.log("uniqueResolvers", uniqueResolvers);
 
   await Promise.all(
-    uniqueResolvers.map(async (rewardConfig) => {
-      const rewardFn = getRewardsResolver({
-        resolverId: rewardConfig.resolverId,
-      })!;
+    uniqueResolvers.map(async (rewardConfigId) => {
+      const rewardConfig = rewardConfigs[rewardConfigId];
+      const rewardFn = rewardConfig.resolver;
 
       // for each chain id you can call the resolver with, call it and get the rewards
       const rewards = (
@@ -241,6 +242,10 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
             knownTokenConfigs[reward.chainId][reward.tokenAddress];
 
           if (knownTokenConfig) {
+            console.log(
+              "pushing in known token config",
+              knownTokenConfig.symbol,
+            );
             appConfig.tokens.push(knownTokenConfig);
             return;
           }

@@ -2,11 +2,6 @@ import { RewardConfig, RewardResolver } from "src/rewards/types";
 import { EETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { mainnet } from "viem/chains";
 
-export const etherfiRewards: RewardConfig = {
-  resolverId: "fetchEtherfiRewards",
-  chainIds: [mainnet.id],
-};
-
 export const fetchEtherfiRewards: RewardResolver = async () => {
   return [
     {
@@ -16,4 +11,10 @@ export const fetchEtherfiRewards: RewardResolver = async () => {
       pointTokenLabel: "Ether.fi Loyalty Points",
     },
   ];
+};
+
+export const etherfiRewards: RewardConfig = {
+  id: "etherfiRewards",
+  chainIds: [mainnet.id],
+  resolver: fetchEtherfiRewards,
 };
