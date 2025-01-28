@@ -53,7 +53,10 @@ export function PoolsList(): ReactElement {
 
       <div className="flex w-full flex-col gap-5">
         {status === "loading" && !pools ? (
-          <LoadingState />
+          <LoadingState
+            heading="Loading pools..."
+            text="Calculating yield rates, pool data, and rewards..."
+          />
         ) : pools ? (
           <>
             {/* List controls */}

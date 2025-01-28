@@ -52,7 +52,10 @@ export function PointsMarkets(): ReactElement | null {
       <div className="flex w-full flex-wrap gap-8">
         {status === "loading" && !pools ? (
           <div className="flex w-full justify-center">
-            <LoadingState />
+            <LoadingState
+              heading="Loading pools..."
+              text="Calculating yield rates, pool data, and rewards..."
+            />
           </div>
         ) : poolsWithPoints.length ? (
           poolsWithPoints.map((hyperdrive) => (
