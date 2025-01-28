@@ -1,18 +1,18 @@
 import { lineaChainConfig } from "src/chains/chains";
-import { RewardConfig } from "src/rewards/types";
+import { RewardConfig, RewardResolver } from "src/rewards/types";
 import { linea } from "viem/chains";
 
-export const fetchLineaRewards: RewardConfig = {
-  id: "fetchLineaRewards",
+export const lineaRewards: RewardConfig = {
+  resolverId: "fetchLineaRewards",
   chainIds: [linea.id],
-  resolver: async () => {
-    return [
-      {
-        type: "pointMultiplier",
-        pointMultiplier: 1n,
-        pointTokenLabel: "LXP-L Rewards",
-        iconUrl: lineaChainConfig.iconUrl,
-      },
-    ];
-  },
+};
+export const fetchLineaRewards: RewardResolver = async () => {
+  return [
+    {
+      type: "pointMultiplier",
+      pointMultiplier: 1n,
+      pointTokenLabel: "LXP-L Rewards",
+      iconUrl: lineaChainConfig.iconUrl,
+    },
+  ];
 };

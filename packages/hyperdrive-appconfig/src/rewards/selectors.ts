@@ -12,7 +12,7 @@ export function getRewardsResolver({
 }: {
   resolverId: RewardResolverId;
 }): RewardResolver | undefined {
-  return rewardResolvers[resolverId].resolver;
+  return rewardResolvers[resolverId];
 }
 
 export function getYieldSourceRewardResolverIds({
@@ -28,7 +28,9 @@ export function getYieldSourceRewardResolverIds({
     chainId,
     yieldSourceId,
   });
-  return appConfig.rewards[yieldSourceRewardId];
+  return appConfig.rewards[yieldSourceRewardId].map(
+    ({ resolverId }) => resolverId,
+  );
 }
 
 export function getOpenShortRewardResolverIds({
@@ -45,7 +47,9 @@ export function getOpenShortRewardResolverIds({
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[openShortRewardId];
+  return appConfig.rewards[openShortRewardId].map(
+    ({ resolverId }) => resolverId,
+  );
 }
 
 export function getAddLiquidityRewardResolverIds({
@@ -62,5 +66,5 @@ export function getAddLiquidityRewardResolverIds({
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[addLiquidityId];
+  return appConfig.rewards[addLiquidityId].map(({ resolverId }) => resolverId);
 }
