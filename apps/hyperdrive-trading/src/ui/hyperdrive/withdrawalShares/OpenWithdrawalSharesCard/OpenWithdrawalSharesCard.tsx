@@ -1,10 +1,7 @@
-import {
-  HyperdriveConfig,
-  appConfig,
-  getBaseToken,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
@@ -25,7 +22,7 @@ export function OpenWithdrawalSharesCard({
   hyperdrive,
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
-
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

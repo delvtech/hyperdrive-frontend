@@ -1,9 +1,5 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
-import {
-  HyperdriveConfig,
-  appConfig,
-  getBaseToken,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
@@ -11,6 +7,7 @@ import { ReactElement, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { AccordionSection2 } from "src/ui/base/components/AccordionSection/AccordionSection";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -38,7 +35,7 @@ export function OpenShortPreview({
 }: OpenShortPreviewProps): ReactElement {
   const { address: account } = useAccount();
   const [isOpen, setIsOpen] = useState(false);
-
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
