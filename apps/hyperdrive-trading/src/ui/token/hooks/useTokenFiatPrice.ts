@@ -3,7 +3,7 @@ import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { isTestnetChain } from "src/chains/isTestnetChain";
+import { isTestnetChain2 } from "src/chains/isTestnetChain";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address, PublicClient } from "viem";
@@ -20,10 +20,11 @@ export function useTokenFiatPrice({
 } {
   const appConfig = useAppConfigForConnectedChain();
   const { data } = useQuery(
-    makeTokenFiatPriceQuery({ appConfig, chainId, tokenAddress, enabled }),
+    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled, appConfig }),
   );
   return { fiatPrice: data };
 }
+
 export function makeTokenFiatPriceQuery({
   appConfig,
   chainId,
@@ -36,7 +37,7 @@ export function makeTokenFiatPriceQuery({
   enabled?: boolean;
 }): UseQueryOptions<bigint> {
   const queryEnabled =
-    !isTestnetChain(chainId) &&
+    !isTestnetChain2(chainId) &&
     !!tokenAddress &&
     tokenAddress !== ZERO_ADDRESS &&
     enabled;
