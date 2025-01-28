@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
-import { useAppConfigForConnectedChain } from "../appconfig/useAppConfigForConnectedChain";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 
 export function ChainCell({ chainId }: { chainId: number }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
