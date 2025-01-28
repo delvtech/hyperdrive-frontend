@@ -1,7 +1,4 @@
-import {
-  RewardResolverId,
-  YieldSourceId,
-} from "@delvtech/hyperdrive-appconfig";
+import { RewardConfigId, YieldSourceId } from "@delvtech/hyperdrive-appconfig";
 import "src/base/makeQueryKey";
 import { Address } from "viem";
 
@@ -15,7 +12,8 @@ interface RewardsQueryKeys {
   };
 
   rewardResolver: {
-    resolverId: RewardResolverId;
+    rewardConfigId: RewardConfigId;
+    chainId: number;
   };
 
   // TODO: We may not need these as these queries are just list wrappers around

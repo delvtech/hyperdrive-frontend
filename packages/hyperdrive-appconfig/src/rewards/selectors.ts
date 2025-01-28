@@ -2,20 +2,20 @@ import { AppConfig } from "src/appconfig/AppConfig";
 import { getAddLiquidityRewardId } from "src/rewards/actions/lp";
 import { getOpenShortRewardId } from "src/rewards/actions/short";
 import { getYieldSourceRewardId } from "src/rewards/actions/yieldSource";
-import { RewardResolverId, rewardResolvers } from "src/rewards/resolvers";
-import { RewardResolver } from "src/rewards/types";
+import { RewardConfigId, rewardConfigs } from "src/rewards/resolvers";
+import { RewardConfig } from "src/rewards/types";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 
-export function getRewardsResolver({
-  resolverId,
+export function getRewardConfig({
+  rewardConfigId,
 }: {
-  resolverId: RewardResolverId;
-}): RewardResolver | undefined {
-  return rewardResolvers[resolverId].resolver;
+  rewardConfigId: RewardConfigId;
+}): RewardConfig | undefined {
+  return rewardConfigs[rewardConfigId];
 }
 
-export function getYieldSourceRewardResolverIds({
+export function getYieldSourceRewardConfigs({
   yieldSourceId,
   chainId,
   appConfig,
@@ -23,15 +23,17 @@ export function getYieldSourceRewardResolverIds({
   yieldSourceId: YieldSourceId;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardConfig[] | undefined {
   const yieldSourceRewardId = getYieldSourceRewardId({
     chainId,
     yieldSourceId,
   });
-  return appConfig.rewards[yieldSourceRewardId];
+  return appConfig.rewards[yieldSourceRewardId]
+    ?.map((rewardConfigId) => getRewardConfig({ rewardConfigId }))
+    .filter(Boolean) as RewardConfig[];
 }
 
-export function getOpenShortRewardResolverIds({
+export function getOpenShortRewardConfigs({
   hyperdriveAddress,
   chainId,
   appConfig,
@@ -39,16 +41,18 @@ export function getOpenShortRewardResolverIds({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardConfig[] | undefined {
   const openShortRewardId = getOpenShortRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[openShortRewardId];
+  return appConfig.rewards[openShortRewardId]
+    ?.map((rewardConfigId) => getRewardConfig({ rewardConfigId }))
+    .filter(Boolean) as RewardConfig[];
 }
 
-export function getAddLiquidityRewardResolverIds({
+export function getAddLiquidityRewardConfigs({
   hyperdriveAddress,
   chainId,
   appConfig,
@@ -56,11 +60,13 @@ export function getAddLiquidityRewardResolverIds({
   hyperdriveAddress: Address;
   chainId: number;
   appConfig: AppConfig;
-}): RewardResolverId[] | undefined {
+}): RewardConfig[] | undefined {
   const addLiquidityId = getAddLiquidityRewardId({
     chainId,
     hyperdriveAddress,
   });
 
-  return appConfig.rewards[addLiquidityId];
+  return appConfig.rewards[addLiquidityId]
+    ?.map((rewardConfigId) => getRewardConfig({ rewardConfigId }))
+    .filter(Boolean) as RewardConfig[];
 }

@@ -8,7 +8,6 @@ export const morphoCbethUsdc: YieldSourceConfig = {
   shortName: "Morpho cbETH/USDC",
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchMorphoCbethUsdcRewards",
 };
 
 export const cbeth: YieldSourceConfig = {
@@ -26,7 +25,6 @@ export const mwEth: YieldSourceConfig = {
   // should be morpho
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchMorphoMwethRewards",
 };
 export const stkWell: YieldSourceConfig = {
   chainId: base.id,
@@ -50,7 +48,6 @@ export const mwEurc: YieldSourceConfig = {
   shortName: "Moonwell Flagship EURC",
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchMorphoMweurcRewards",
 };
 
 export const mwUsdc: YieldSourceConfig = {
@@ -59,7 +56,6 @@ export const mwUsdc: YieldSourceConfig = {
   shortName: "Moonwell Flagship USDC",
   protocol: "morpho",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchMorphoMwusdcRewards",
 };
 
 export const aeroUsdcAero: YieldSourceConfig = {
@@ -68,5 +64,4 @@ export const aeroUsdcAero: YieldSourceConfig = {
   shortName: "Aerodrome USDC/AERO",
   protocol: "aerodrome",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchAeroRewards",
 };

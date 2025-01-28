@@ -1,7 +1,7 @@
 import {
   AnyReward,
   appConfig,
-  getYieldSourceRewardResolverIds,
+  getYieldSourceRewardConfigs,
   YieldSourceId,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
@@ -21,13 +21,13 @@ export function useYieldSourceRewards({
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
-  const resolverIds = getYieldSourceRewardResolverIds({
+  const rewardConfigs = getYieldSourceRewardConfigs({
     yieldSourceId,
     chainId,
     appConfig,
   });
 
-  const queryEnabled = !!resolverIds?.length && enabled;
+  const queryEnabled = !!rewardConfigs?.length && enabled;
   const { data: rewards, status } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "rewards",
@@ -44,10 +44,10 @@ export function useYieldSourceRewards({
           // TODO: We might be re-inventing useQueries here..
           return (
             await Promise.all(
-              resolverIds.map((resolver) =>
+              rewardConfigs.map((rewardConfig) =>
                 queryClient.fetchQuery(
                   getRewardResolverQuery({
-                    resolverId: resolver,
+                    rewardConfig,
                     chainId,
                   }),
                 ),

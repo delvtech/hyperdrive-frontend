@@ -1,8 +1,4 @@
-import {
-  AnyReward,
-  getRewardsResolver,
-  RewardResolverId,
-} from "@delvtech/hyperdrive-appconfig";
+import { AnyReward, RewardConfig } from "@delvtech/hyperdrive-appconfig";
 import { UseQueryOptions } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
@@ -24,31 +20,27 @@ import { PublicClient } from "viem";
  * ```
  */
 export function getRewardResolverQuery({
-  resolverId,
+  rewardConfig,
   chainId,
 }: {
   chainId: number;
-  resolverId: RewardResolverId;
+  rewardConfig: RewardConfig;
 }): UseQueryOptions<AnyReward[]> {
-  const resolver = getRewardsResolver({ resolverId });
-  const queryEnabled = !!resolver;
   return {
     queryKey: makeQueryKey2({
       namespace: "rewards",
       queryId: "rewardResolver",
       params: {
-        resolverId,
+        rewardConfigId: rewardConfig.id,
+        chainId: chainId,
       },
     }),
-    enabled: queryEnabled,
     staleTime: Infinity,
-    queryFn: queryEnabled
-      ? async () => {
-          const publicClient = getPublicClient(wagmiConfig as any, {
-            chainId,
-          }) as PublicClient;
-          return resolver(publicClient);
-        }
-      : undefined,
+    queryFn: async () => {
+      const publicClient = getPublicClient(wagmiConfig as any, {
+        chainId,
+      }) as PublicClient;
+      return rewardConfig.resolver(publicClient);
+    },
   };
 }

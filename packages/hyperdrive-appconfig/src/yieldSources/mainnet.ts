@@ -45,7 +45,6 @@ export const eeth: YieldSourceConfig = {
   shortName: "Ether.fi Staked ETH",
   protocol: "etherFi",
   historicalRatePeriod: 30,
-  rewardsFn: "fetchEtherfiRewards",
 };
 
 export const morphoWstethUsda: YieldSourceConfig = {
@@ -110,5 +109,4 @@ export const sgyd: YieldSourceConfig = {
   shortName: "Savings GYD",
   protocol: "gyroscope",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchGyroscopeRewards",
 };
