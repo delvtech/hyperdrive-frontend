@@ -23,5 +23,4 @@ export const gnosisSgyd: YieldSourceConfig = {
   shortName: "Savings GYD",
   protocol: "gyroscope",
   historicalRatePeriod: 1,
-  rewardsFn: "fetchGyroscopeRewards",
 };

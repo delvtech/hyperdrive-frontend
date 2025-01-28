@@ -15,7 +15,18 @@ import { protocols } from "src/protocols";
 import { AnyRewardId } from "src/rewards/actions/types";
 import { getYieldSourceRewards } from "src/rewards/actions/yieldSource";
 import { getHyperdriveRewards } from "src/rewards/hyperdrive";
-import { RewardResolverId } from "src/rewards/resolvers";
+import { RewardConfigId } from "src/rewards/resolvers";
+import { aeroRewards } from "src/rewards/resolvers/aero";
+import { etherfiRewards } from "src/rewards/resolvers/etherfi";
+import { gyroscopeRewards } from "src/rewards/resolvers/gyroscope";
+import { hypervueMilesRewards } from "src/rewards/resolvers/hypervueMiles";
+import { lineaRewards } from "src/rewards/resolvers/linea";
+import {
+  morphoCbethUsdcRewards,
+  morphoMwethRewards,
+  morphoMweurcRewards,
+  morphoMwusdcRewards,
+} from "src/rewards/resolvers/morpho";
 import {
   AERO_ICON_URL,
   DAI_ICON_URL,
@@ -81,7 +92,7 @@ const hyperdriveKindResolvers: Record<
         ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "rseth",
-          rewards: ["fetchLineaRewards"],
+          rewards: [lineaRewards.id],
         }),
 
         // Hyperdrive Rewards
@@ -89,8 +100,8 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            short: ["fetchLineaRewards"],
-            lp: ["fetchLineaRewards", "fetchHypervueMilesRewards"],
+            short: [lineaRewards.id],
+            lp: [lineaRewards.id, hypervueMilesRewards.id],
           },
         }),
       },
@@ -126,15 +137,15 @@ const hyperdriveKindResolvers: Record<
         ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "lineaEzeth",
-          rewards: ["fetchLineaRewards"],
+          rewards: [lineaRewards.id],
         }),
         // hyperdrive rewards
         ...getHyperdriveRewards({
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            short: ["fetchLineaRewards"],
-            lp: ["fetchLineaRewards", "fetchHypervueMilesRewards"],
+            short: [lineaRewards.id],
+            lp: [lineaRewards.id, hypervueMilesRewards.id],
           },
         }),
       },
@@ -161,7 +172,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -181,7 +192,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -220,7 +231,7 @@ const hyperdriveKindResolvers: Record<
         ...getYieldSourceRewards({
           chainId: hyperdriveConfig.chainId,
           yieldSourceId: "eeth",
-          rewards: ["fetchEtherfiRewards"],
+          rewards: [etherfiRewards.id],
         }),
 
         // hyperdrive rewards
@@ -228,8 +239,8 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           hyperdriveAddress: hyperdrive.address,
           rewardsMap: {
-            short: ["fetchEtherfiRewards"],
-            lp: ["fetchEtherfiRewards", "fetchHypervueMilesRewards"],
+            short: [etherfiRewards.id],
+            lp: [etherfiRewards.id, hypervueMilesRewards.id],
           },
         }),
       },
@@ -261,7 +272,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
-          lp: ["fetchHypervueMilesRewards"],
+          lp: [hypervueMilesRewards.id],
         },
       }),
     };
@@ -293,7 +304,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
-          lp: ["fetchHypervueMilesRewards"],
+          lp: [hypervueMilesRewards.id],
         },
       }),
     };
@@ -310,7 +321,7 @@ const hyperdriveKindResolvers: Record<
         hyperdriveAddress: hyperdriveConfig.address,
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
-          lp: ["fetchHypervueMilesRewards"],
+          lp: [hypervueMilesRewards.id],
         },
       }),
     };
@@ -365,7 +376,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             yieldSourceId: yieldSource,
             chainId: hyperdriveConfig.chainId,
-            rewards: ["fetchGyroscopeRewards"],
+            rewards: [gyroscopeRewards.id],
           }),
 
           // hyperdrive rewards
@@ -373,8 +384,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchGyroscopeRewards"],
-              lp: ["fetchGyroscopeRewards", "fetchHypervueMilesRewards"],
+              short: [gyroscopeRewards.id],
+              lp: [gyroscopeRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -408,7 +419,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -441,7 +452,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -491,7 +502,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -525,7 +536,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -558,7 +569,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -591,7 +602,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwEth",
-            rewards: ["fetchMorphoMwethRewards"],
+            rewards: [morphoMwethRewards.id],
           }),
 
           // hyperdrive rewards
@@ -599,8 +610,8 @@ const hyperdriveKindResolvers: Record<
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
-              short: ["fetchMorphoMwethRewards"],
-              lp: ["fetchMorphoMwethRewards", "fetchHypervueMilesRewards"],
+              short: [morphoMwethRewards.id],
+              lp: [morphoMwethRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -634,7 +645,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwUsdc",
-            rewards: ["fetchMorphoMwusdcRewards"],
+            rewards: [morphoMwusdcRewards.id],
           }),
 
           // hyperdrive rewards
@@ -642,8 +653,8 @@ const hyperdriveKindResolvers: Record<
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
-              short: ["fetchMorphoMwusdcRewards"],
-              lp: ["fetchMorphoMwusdcRewards", "fetchHypervueMilesRewards"],
+              short: [morphoMwusdcRewards.id],
+              lp: [morphoMwusdcRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -677,7 +688,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             chainId: hyperdriveConfig.chainId,
             yieldSourceId: "mwEurc",
-            rewards: ["fetchMorphoMweurcRewards"],
+            rewards: [morphoMweurcRewards.id],
           }),
 
           // hyperdrive rewards
@@ -685,8 +696,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchMorphoMweurcRewards"],
-              lp: ["fetchMorphoMweurcRewards", "fetchHypervueMilesRewards"],
+              short: [morphoMweurcRewards.id],
+              lp: [morphoMweurcRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -720,7 +731,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -786,7 +797,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             yieldSourceId: "aeroUsdcAero",
             chainId: hyperdriveConfig.chainId,
-            rewards: ["fetchAeroRewards"],
+            rewards: [aeroRewards.id],
           }),
 
           // hyperdrive rewards
@@ -794,8 +805,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchAeroRewards"],
-              lp: ["fetchAeroRewards", "fetchHypervueMilesRewards"],
+              short: [aeroRewards.id],
+              lp: [aeroRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -839,7 +850,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -860,7 +871,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -881,7 +892,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -902,7 +913,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdriveConfig.address,
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
-            lp: ["fetchHypervueMilesRewards"],
+            lp: [hypervueMilesRewards.id],
           },
         }),
       };
@@ -925,7 +936,7 @@ const hyperdriveKindResolvers: Record<
           ...getYieldSourceRewards({
             yieldSourceId: "morphoCbethUsdc",
             chainId: hyperdriveConfig.chainId,
-            rewards: ["fetchMorphoCbethUsdcRewards"],
+            rewards: [morphoCbethUsdcRewards.id],
           }),
 
           // hyperdrive rewards
@@ -933,8 +944,8 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: ["fetchMorphoCbethUsdcRewards"],
-              lp: ["fetchMorphoCbethUsdcRewards", "fetchHypervueMilesRewards"],
+              short: [morphoCbethUsdcRewards.id],
+              lp: [morphoCbethUsdcRewards.id, hypervueMilesRewards.id],
             },
           }),
         },
@@ -957,7 +968,7 @@ export async function getAppConfig({
   earliestBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
-  let allRewards: Record<AnyRewardId, RewardResolverId[]> = {};
+  let allRewards: Record<AnyRewardId, RewardConfigId[]> = {};
   const chainId = publicClient.chain?.id as number;
 
   // Get ReadHyperdrive instances from the registry to ensure
