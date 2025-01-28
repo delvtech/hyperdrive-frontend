@@ -7,7 +7,6 @@ export const rseth: YieldSourceConfig = {
   shortName: "KelpDAO rsETH",
   protocol: "kelpDao",
   historicalRatePeriod: 30,
-  rewardsFn: "fetchLineaRewards",
 };
 export const lineaEzeth: YieldSourceConfig = {
   chainId: linea.id,
@@ -15,5 +14,4 @@ export const lineaEzeth: YieldSourceConfig = {
   shortName: "Renzo ezETH",
   protocol: "renzo",
   historicalRatePeriod: 14,
-  rewardsFn: "fetchLineaRewards",
 };
