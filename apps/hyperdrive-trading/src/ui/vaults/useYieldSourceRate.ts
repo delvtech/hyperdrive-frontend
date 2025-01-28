@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useAppConfigForConnectedChain } from "../appconfig/useAppConfigForConnectedChain";
 
 export function useYieldSourceRate({
   chainId,
