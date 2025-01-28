@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -12,6 +11,7 @@ import { calculateRatio } from "src/base/calculateRatio";
 import { calculateValueFromPrice } from "src/base/calculateValueFromPrice";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -45,6 +45,7 @@ export function RemoveLiquidityForm({
   lpShares,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const baseToken = getBaseToken({

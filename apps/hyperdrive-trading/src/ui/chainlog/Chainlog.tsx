@@ -1,8 +1,9 @@
-import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
+import { makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { PoolsTable } from "src/ui/chainlog/PoolsTable";
 import { CHAINLOG_ROUTE } from "src/ui/chainlog/routes";
@@ -12,7 +13,7 @@ import { FactoriesTable } from "./FactoriesTable";
 export function Chainlog(): ReactElement {
   const navigate = useNavigate();
   const chainId = useChainId();
-
+  const appConfig = useAppConfigForConnectedChain();
   const registryAddress = appConfig.registries[chainId];
   const { tab = "pools", version } = useSearch({ from: CHAINLOG_ROUTE });
 

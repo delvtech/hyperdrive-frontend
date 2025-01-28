@@ -1,11 +1,12 @@
 import { BlockTag } from "@delvtech/drift";
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHprFromApr } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -22,6 +23,7 @@ export function useFixedRate({
   fixedRoi: { roi: bigint; formatted: string } | undefined;
   fixedRateStatus: QueryStatusWithIdle;
 } {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdriveAddress,

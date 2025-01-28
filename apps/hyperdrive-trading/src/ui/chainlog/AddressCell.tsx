@@ -1,6 +1,7 @@
-import { appConfig, makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
+import { makeAddressUrl } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
 
@@ -11,6 +12,7 @@ export function AddressCell({
   address: Address;
   chainId: number;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   return (
     <ExternalLink
       href={makeAddressUrl(address, appConfig.chains[chainId])}
