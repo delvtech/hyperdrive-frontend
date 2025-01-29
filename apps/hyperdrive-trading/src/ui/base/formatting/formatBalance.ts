@@ -21,5 +21,6 @@ export function formatBalance({
     decimals: places,
     rounding: "trunc",
     group: includeCommas,
+    trailingZeros: true,
   });
 }
