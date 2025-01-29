@@ -10,15 +10,18 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
+import { Address } from "viem";
 
 export interface CloseShortModalButtonProps {
   modalId: string;
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   short: OpenShort;
 }
 export function CloseShortModalButton({
   modalId,
   short,
+  account,
   hyperdrive,
 }: CloseShortModalButtonProps): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
@@ -44,6 +47,7 @@ export function CloseShortModalButton({
       modalId={modalId}
       modalContent={
         <CloseShortForm
+          account={account}
           hyperdrive={hyperdrive}
           short={short}
           onCloseShort={(e) => {

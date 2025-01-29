@@ -35,7 +35,7 @@ export function Portfolio(): ReactElement {
     },
     {
       id: "shorts",
-      content: <OpenShortsContainer />,
+      content: <OpenShortsContainer account={account} />,
       label: "Short",
       onClick: () => {
         navigate({
