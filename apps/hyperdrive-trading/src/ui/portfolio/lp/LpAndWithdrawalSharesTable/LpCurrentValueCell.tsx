@@ -10,16 +10,17 @@ import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLpPosition } from "src/ui/hyperdrive/lp/hooks/useOpenLpPosition";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function LpCurrentValueCell({
   hyperdrive,
+  account,
   lpShares,
 }: {
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   lpShares: bigint;
 }): ReactElement {
-  const { address: account } = useAccount();
   const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveAddress: hyperdrive.address,

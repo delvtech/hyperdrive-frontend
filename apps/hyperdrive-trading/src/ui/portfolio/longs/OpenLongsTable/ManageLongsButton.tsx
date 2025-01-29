@@ -4,15 +4,20 @@ import { Link } from "@tanstack/react-router";
 import { ReactElement, useRef, useState } from "react";
 import { useClickAway } from "react-use";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { Address } from "viem";
+import { useAccount } from "wagmi";
 
 export function ManageLongsButton({
   hyperdrive,
   assetId,
+  account: accountFromProps,
 }: {
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   assetId: bigint;
 }): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
+  const { address: connectedAccount } = useAccount();
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickAway(dropdownRef, () => setIsOpen(false));
   return (
@@ -29,17 +34,19 @@ export function ManageLongsButton({
       </button>
       {isOpen && (
         <ul className="absolute right-6 top-full z-50 mt-4 w-[300px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1">
-          <button
-            className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
-            onClick={() => {
-              const modalId = `${assetId}`;
-              (
-                document.getElementById(modalId) as HTMLDialogElement
-              ).showModal();
-            }}
-          >
-            Close Long
-          </button>
+          {accountFromProps !== connectedAccount ? null : (
+            <button
+              className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
+              onClick={() => {
+                const modalId = `${assetId}`;
+                (
+                  document.getElementById(modalId) as HTMLDialogElement
+                ).showModal();
+              }}
+            >
+              Close Long
+            </button>
+          )}
           <Link
             className="m-0 flex h-[52px] w-full flex-row items-center justify-start p-0 text-start hover:bg-neutral hover:text-neutral-content"
             to={MARKET_DETAILS_ROUTE}

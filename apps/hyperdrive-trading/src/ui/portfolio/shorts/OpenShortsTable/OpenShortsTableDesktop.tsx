@@ -30,20 +30,21 @@ import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/Manag
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortsValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
 import { usePortfolioShortsDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsData";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function OpenShortsTableDesktop({
   hyperdrives,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
 }): ReactElement | null {
-  const { address: account } = useAccount();
   const appConfig = useAppConfigForConnectedChain();
   const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsDataFromHyperdrives(hyperdrives);
+    usePortfolioShortsDataFromHyperdrives({ hyperdrives, account });
   const openShortPositionsExist =
     openShortPositions && openShortPositions.length > 0;
-  const columns = getColumns({ hyperdrives, appConfig });
+  const columns = getColumns({ account, hyperdrives, appConfig });
   const tableInstance = useReactTable({
     columns,
     data: openShortPositions || [],
@@ -87,6 +88,7 @@ export function OpenShortsTableDesktop({
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalOpenShortsValue
+            account={account}
             hyperdrives={hyperdrives}
             openShorts={openShortPositions}
           />
@@ -105,6 +107,7 @@ export function OpenShortsTableDesktop({
           return (
             <CloseShortModalButton
               key={modalId}
+              account={account}
               hyperdrive={row.original.hyperdrive}
               modalId={modalId}
               short={row.original}
@@ -220,9 +223,11 @@ const columnHelper = createColumnHelper<
 >();
 
 function getColumns({
+  account,
   hyperdrives,
   appConfig,
 }: {
+  account: Address | undefined;
   hyperdrives: HyperdriveConfig[];
   appConfig: AppConfig;
 }) {
@@ -292,6 +297,7 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <ManageShortButton
+            account={account}
             hyperdrive={row.original.hyperdrive}
             assetId={row.original.assetId}
           />

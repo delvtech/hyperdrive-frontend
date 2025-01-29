@@ -6,18 +6,19 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalOpenShortsValue";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
+import { Address } from "viem";
 import { sepolia } from "viem/chains";
-import { useAccount } from "wagmi";
 
 export function TotalOpenShortsValue({
+  account,
   hyperdrives,
   openShorts,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   openShorts: (OpenShort & { hyperdrive: HyperdriveConfig })[] | undefined;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
-  const { address: account } = useAccount();
 
   const { totalOpenShortsValue, isLoading } = useTotalOpenShortsValue({
     account,

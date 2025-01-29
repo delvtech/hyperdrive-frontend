@@ -9,12 +9,15 @@ import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { OpenShortsTableDesktop } from "src/ui/portfolio/shorts/OpenShortsTable/OpenShortsTableDesktop";
 import { usePortfolioShortsData } from "src/ui/portfolio/shorts/usePortfolioShortsData";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
-export function OpenShortsContainer(): ReactElement | null {
-  const { address: account } = useAccount();
+export function OpenShortsContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement | null {
   const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsData();
+    usePortfolioShortsData({ account });
   const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
@@ -70,7 +73,11 @@ export function OpenShortsContainer(): ReactElement | null {
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenShortsTableDesktop hyperdrives={hyperdrives} key={key} />
+          <OpenShortsTableDesktop
+            account={account}
+            hyperdrives={hyperdrives}
+            key={key}
+          />
         ),
       )}
     </PositionContainer>

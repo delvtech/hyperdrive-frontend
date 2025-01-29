@@ -35,7 +35,7 @@ export function Portfolio(): ReactElement {
     },
     {
       id: "shorts",
-      content: <OpenShortsContainer />,
+      content: <OpenShortsContainer account={account} />,
       label: "Short",
       onClick: () => {
         navigate({
@@ -45,7 +45,7 @@ export function Portfolio(): ReactElement {
     },
     {
       id: "lp",
-      content: <LpAndWithdrawalSharesContainer />,
+      content: <LpAndWithdrawalSharesContainer account={account} />,
       label: "LP",
       onClick: () => {
         navigate({
@@ -57,7 +57,7 @@ export function Portfolio(): ReactElement {
   if (isPortfolioRewardsFeatureFlagEnabled) {
     tabs.push({
       id: "rewards",
-      content: <RewardsContainer />,
+      content: <RewardsContainer account={account} />,
       label: "Rewards",
       onClick: () => {
         navigate({

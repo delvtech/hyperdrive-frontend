@@ -24,21 +24,22 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useChainId } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
   // TODO: Refactor this to only need the positionSize and maturity time
   short: OpenShort;
+  account: Address | undefined;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseShortForm({
   hyperdrive,
+  account,
   short,
 }: CloseShortFormProps): ReactElement {
-  const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems = [];
   const appConfig = useAppConfigForConnectedChain();
