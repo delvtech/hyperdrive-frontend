@@ -9,10 +9,13 @@ import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { RewardsTableDesktop } from "src/ui/portfolio/rewards/RewardsTableDesktop";
 import { usePortfolioRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
-export function RewardsContainer(): ReactElement {
-  const { address: account } = useAccount();
+export function RewardsContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement {
   const { rewards, rewardsStatus } = usePortfolioRewardsData({ account });
   const appConfig = useAppConfigForConnectedChain();
   if (!account) {

@@ -57,7 +57,7 @@ export function Portfolio(): ReactElement {
   if (isPortfolioRewardsFeatureFlagEnabled) {
     tabs.push({
       id: "rewards",
-      content: <RewardsContainer />,
+      content: <RewardsContainer account={account} />,
       label: "Rewards",
       onClick: () => {
         navigate({

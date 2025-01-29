@@ -31,7 +31,10 @@ export function OpenLpTableDesktop({
   hyperdrives: HyperdriveConfig[];
   account: Address | undefined;
 }): ReactElement | null {
-  const { openLpPositions } = usePortfolioLpDataFromHyperdrives(hyperdrives);
+  const { openLpPositions } = usePortfolioLpDataFromHyperdrives({
+    hyperdrives,
+    account,
+  });
   const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(
     () => getColumns({ account, hyperdrives, appConfig }),

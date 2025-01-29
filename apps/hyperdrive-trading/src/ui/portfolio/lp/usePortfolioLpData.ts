@@ -5,7 +5,6 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address } from "viem";
-import { useAccount } from "wagmi";
 
 type LpPosition = {
   hyperdrive: HyperdriveConfig;
@@ -13,13 +12,16 @@ type LpPosition = {
   withdrawalShares: bigint;
 };
 
-export function usePortfolioLpDataFromHyperdrives(
-  hyperdrives: HyperdriveConfig[],
-): {
+export function usePortfolioLpDataFromHyperdrives({
+  hyperdrives,
+  account,
+}: {
+  hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
+}): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
   const queryEnabled = !!account && !!hyperdrives.length;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", {
