@@ -10,229 +10,229 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./ui/routes/__root";
-import { Route as ChainlogImport } from "./ui/routes/chainlog";
-import { Route as ErrorImport } from "./ui/routes/error";
-import { Route as IndexImport } from "./ui/routes/index";
-import { Route as IneligibleImport } from "./ui/routes/ineligible";
-import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
-import { Route as MintImport } from "./ui/routes/mint";
-import { Route as PointsmarketsImport } from "./ui/routes/points_markets";
-import { Route as PortfolioImport } from "./ui/routes/portfolio";
-import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
+import { Route as rootRoute } from './ui/routes/__root'
+import { Route as RestrictedcountriesImport } from './ui/routes/restricted_countries'
+import { Route as PortfolioImport } from './ui/routes/portfolio'
+import { Route as PointsmarketsImport } from './ui/routes/points_markets'
+import { Route as MintImport } from './ui/routes/mint'
+import { Route as IneligibleImport } from './ui/routes/ineligible'
+import { Route as ErrorImport } from './ui/routes/error'
+import { Route as ChainlogImport } from './ui/routes/chainlog'
+import { Route as IndexImport } from './ui/routes/index'
+import { Route as MarketChainIdAddressImport } from './ui/routes/market.$chainId.$address'
 
 // Create/Update Routes
 
 const RestrictedcountriesRoute = RestrictedcountriesImport.update({
-  id: "/restricted_countries",
-  path: "/restricted_countries",
+  id: '/restricted_countries',
+  path: '/restricted_countries',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const PortfolioRoute = PortfolioImport.update({
-  id: "/portfolio",
-  path: "/portfolio",
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const PointsmarketsRoute = PointsmarketsImport.update({
-  id: "/points_markets",
-  path: "/points_markets",
+  id: '/points_markets',
+  path: '/points_markets',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const MintRoute = MintImport.update({
-  id: "/mint",
-  path: "/mint",
+  id: '/mint',
+  path: '/mint',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const IneligibleRoute = IneligibleImport.update({
-  id: "/ineligible",
-  path: "/ineligible",
+  id: '/ineligible',
+  path: '/ineligible',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const ErrorRoute = ErrorImport.update({
-  id: "/error",
-  path: "/error",
+  id: '/error',
+  path: '/error',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const ChainlogRoute = ChainlogImport.update({
-  id: "/chainlog",
-  path: "/chainlog",
+  id: '/chainlog',
+  path: '/chainlog',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const IndexRoute = IndexImport.update({
-  id: "/",
-  path: "/",
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const MarketChainIdAddressRoute = MarketChainIdAddressImport.update({
-  id: "/market/$chainId/$address",
-  path: "/market/$chainId/$address",
+  id: '/market/$chainId/$address',
+  path: '/market/$chainId/$address',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/";
-      path: "/";
-      fullPath: "/";
-      preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/chainlog": {
-      id: "/chainlog";
-      path: "/chainlog";
-      fullPath: "/chainlog";
-      preLoaderRoute: typeof ChainlogImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/error": {
-      id: "/error";
-      path: "/error";
-      fullPath: "/error";
-      preLoaderRoute: typeof ErrorImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/ineligible": {
-      id: "/ineligible";
-      path: "/ineligible";
-      fullPath: "/ineligible";
-      preLoaderRoute: typeof IneligibleImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/mint": {
-      id: "/mint";
-      path: "/mint";
-      fullPath: "/mint";
-      preLoaderRoute: typeof MintImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/points_markets": {
-      id: "/points_markets";
-      path: "/points_markets";
-      fullPath: "/points_markets";
-      preLoaderRoute: typeof PointsmarketsImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/portfolio": {
-      id: "/portfolio";
-      path: "/portfolio";
-      fullPath: "/portfolio";
-      preLoaderRoute: typeof PortfolioImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/restricted_countries": {
-      id: "/restricted_countries";
-      path: "/restricted_countries";
-      fullPath: "/restricted_countries";
-      preLoaderRoute: typeof RestrictedcountriesImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/market/$chainId/$address": {
-      id: "/market/$chainId/$address";
-      path: "/market/$chainId/$address";
-      fullPath: "/market/$chainId/$address";
-      preLoaderRoute: typeof MarketChainIdAddressImport;
-      parentRoute: typeof rootRoute;
-    };
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/chainlog': {
+      id: '/chainlog'
+      path: '/chainlog'
+      fullPath: '/chainlog'
+      preLoaderRoute: typeof ChainlogImport
+      parentRoute: typeof rootRoute
+    }
+    '/error': {
+      id: '/error'
+      path: '/error'
+      fullPath: '/error'
+      preLoaderRoute: typeof ErrorImport
+      parentRoute: typeof rootRoute
+    }
+    '/ineligible': {
+      id: '/ineligible'
+      path: '/ineligible'
+      fullPath: '/ineligible'
+      preLoaderRoute: typeof IneligibleImport
+      parentRoute: typeof rootRoute
+    }
+    '/mint': {
+      id: '/mint'
+      path: '/mint'
+      fullPath: '/mint'
+      preLoaderRoute: typeof MintImport
+      parentRoute: typeof rootRoute
+    }
+    '/points_markets': {
+      id: '/points_markets'
+      path: '/points_markets'
+      fullPath: '/points_markets'
+      preLoaderRoute: typeof PointsmarketsImport
+      parentRoute: typeof rootRoute
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioImport
+      parentRoute: typeof rootRoute
+    }
+    '/restricted_countries': {
+      id: '/restricted_countries'
+      path: '/restricted_countries'
+      fullPath: '/restricted_countries'
+      preLoaderRoute: typeof RestrictedcountriesImport
+      parentRoute: typeof rootRoute
+    }
+    '/market/$chainId/$address': {
+      id: '/market/$chainId/$address'
+      path: '/market/$chainId/$address'
+      fullPath: '/market/$chainId/$address'
+      preLoaderRoute: typeof MarketChainIdAddressImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute;
-  "/chainlog": typeof ChainlogRoute;
-  "/error": typeof ErrorRoute;
-  "/ineligible": typeof IneligibleRoute;
-  "/mint": typeof MintRoute;
-  "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
-  "/restricted_countries": typeof RestrictedcountriesRoute;
-  "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
+  '/': typeof IndexRoute
+  '/chainlog': typeof ChainlogRoute
+  '/error': typeof ErrorRoute
+  '/ineligible': typeof IneligibleRoute
+  '/mint': typeof MintRoute
+  '/points_markets': typeof PointsmarketsRoute
+  '/portfolio': typeof PortfolioRoute
+  '/restricted_countries': typeof RestrictedcountriesRoute
+  '/market/$chainId/$address': typeof MarketChainIdAddressRoute
 }
 
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute;
-  "/chainlog": typeof ChainlogRoute;
-  "/error": typeof ErrorRoute;
-  "/ineligible": typeof IneligibleRoute;
-  "/mint": typeof MintRoute;
-  "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
-  "/restricted_countries": typeof RestrictedcountriesRoute;
-  "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
+  '/': typeof IndexRoute
+  '/chainlog': typeof ChainlogRoute
+  '/error': typeof ErrorRoute
+  '/ineligible': typeof IneligibleRoute
+  '/mint': typeof MintRoute
+  '/points_markets': typeof PointsmarketsRoute
+  '/portfolio': typeof PortfolioRoute
+  '/restricted_countries': typeof RestrictedcountriesRoute
+  '/market/$chainId/$address': typeof MarketChainIdAddressRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  "/": typeof IndexRoute;
-  "/chainlog": typeof ChainlogRoute;
-  "/error": typeof ErrorRoute;
-  "/ineligible": typeof IneligibleRoute;
-  "/mint": typeof MintRoute;
-  "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
-  "/restricted_countries": typeof RestrictedcountriesRoute;
-  "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/chainlog': typeof ChainlogRoute
+  '/error': typeof ErrorRoute
+  '/ineligible': typeof IneligibleRoute
+  '/mint': typeof MintRoute
+  '/points_markets': typeof PointsmarketsRoute
+  '/portfolio': typeof PortfolioRoute
+  '/restricted_countries': typeof RestrictedcountriesRoute
+  '/market/$chainId/$address': typeof MarketChainIdAddressRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | "/"
-    | "/chainlog"
-    | "/error"
-    | "/ineligible"
-    | "/mint"
-    | "/points_markets"
-    | "/portfolio"
-    | "/restricted_countries"
-    | "/market/$chainId/$address";
-  fileRoutesByTo: FileRoutesByTo;
+    | '/'
+    | '/chainlog'
+    | '/error'
+    | '/ineligible'
+    | '/mint'
+    | '/points_markets'
+    | '/portfolio'
+    | '/restricted_countries'
+    | '/market/$chainId/$address'
+  fileRoutesByTo: FileRoutesByTo
   to:
-    | "/"
-    | "/chainlog"
-    | "/error"
-    | "/ineligible"
-    | "/mint"
-    | "/points_markets"
-    | "/portfolio"
-    | "/restricted_countries"
-    | "/market/$chainId/$address";
+    | '/'
+    | '/chainlog'
+    | '/error'
+    | '/ineligible'
+    | '/mint'
+    | '/points_markets'
+    | '/portfolio'
+    | '/restricted_countries'
+    | '/market/$chainId/$address'
   id:
-    | "__root__"
-    | "/"
-    | "/chainlog"
-    | "/error"
-    | "/ineligible"
-    | "/mint"
-    | "/points_markets"
-    | "/portfolio"
-    | "/restricted_countries"
-    | "/market/$chainId/$address";
-  fileRoutesById: FileRoutesById;
+    | '__root__'
+    | '/'
+    | '/chainlog'
+    | '/error'
+    | '/ineligible'
+    | '/mint'
+    | '/points_markets'
+    | '/portfolio'
+    | '/restricted_countries'
+    | '/market/$chainId/$address'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  ChainlogRoute: typeof ChainlogRoute;
-  ErrorRoute: typeof ErrorRoute;
-  IneligibleRoute: typeof IneligibleRoute;
-  MintRoute: typeof MintRoute;
-  PointsmarketsRoute: typeof PointsmarketsRoute;
-  PortfolioRoute: typeof PortfolioRoute;
-  RestrictedcountriesRoute: typeof RestrictedcountriesRoute;
-  MarketChainIdAddressRoute: typeof MarketChainIdAddressRoute;
+  IndexRoute: typeof IndexRoute
+  ChainlogRoute: typeof ChainlogRoute
+  ErrorRoute: typeof ErrorRoute
+  IneligibleRoute: typeof IneligibleRoute
+  MintRoute: typeof MintRoute
+  PointsmarketsRoute: typeof PointsmarketsRoute
+  PortfolioRoute: typeof PortfolioRoute
+  RestrictedcountriesRoute: typeof RestrictedcountriesRoute
+  MarketChainIdAddressRoute: typeof MarketChainIdAddressRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -245,11 +245,11 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   RestrictedcountriesRoute: RestrictedcountriesRoute,
   MarketChainIdAddressRoute: MarketChainIdAddressRoute,
-};
+}
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {

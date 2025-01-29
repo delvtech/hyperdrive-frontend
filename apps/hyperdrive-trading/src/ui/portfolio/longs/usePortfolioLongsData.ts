@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey, makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
+import { Address } from "viem";
 import { useAccount } from "wagmi";
 
 export type OpenLongPositionsData = {
@@ -14,11 +15,16 @@ export type OpenLongPositionsData = {
   openLongs: OpenLongPositionReceived[];
 }[];
 
-export function usePortfolioLongsData(): {
+export function usePortfolioLongsData({
+  account: accountFromProps,
+}: {
+  account?: Address;
+}): {
   openLongPositions: OpenLongPositionsData | undefined;
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
+  const { address: connectedAccount } = useAccount();
+  const account = accountFromProps ?? connectedAccount;
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!appConfigForConnectedChain;
 
@@ -44,7 +50,7 @@ export function usePortfolioLongsData(): {
                     ...long,
                     details: await readHyperdrive.getOpenLongDetails({
                       assetId: long.assetId,
-                      account: account,
+                      account,
                     }),
                   })),
                 );
