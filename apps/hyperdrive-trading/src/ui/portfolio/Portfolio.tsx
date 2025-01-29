@@ -1,4 +1,4 @@
-import { useNavigate, useSearch } from "@tanstack/react-router";
+import { Navigate, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -7,21 +7,29 @@ import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdra
 import { RewardsContainer } from "src/ui/portfolio/rewards/RewardsContainer";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { OpenShortsContainer } from "src/ui/portfolio/shorts/ShortsContainer";
+import { Address } from "viem";
+import { useAccount } from "wagmi";
 
 export function Portfolio(): ReactElement {
-  const { position } = useSearch({ from: PORTFOLIO_ROUTE });
-  const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
+  const { position, account: accountFromRoute } = useSearch({
+    from: PORTFOLIO_ROUTE,
+  });
   const activeTab = position ?? "longs";
+
+  const { address: connectedAccount } = useAccount();
+  const account = (accountFromRoute ?? connectedAccount) as Address | undefined;
+  const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
+
   const { isFlagEnabled: isPortfolioRewardsFeatureFlagEnabled } =
     useFeatureFlag("portfolio-rewards");
   const tabs = [
     {
       id: "longs",
-      content: <OpenLongsContainer />,
+      content: <OpenLongsContainer account={account} />,
       label: "Long",
       onClick: () => {
         navigate({
-          search: () => ({ position: "longs" }),
+          search: (prev) => ({ ...prev, position: "longs" }),
         });
       },
     },
@@ -31,7 +39,7 @@ export function Portfolio(): ReactElement {
       label: "Short",
       onClick: () => {
         navigate({
-          search: () => ({ position: "shorts" }),
+          search: (prev) => ({ ...prev, position: "shorts" }),
         });
       },
     },
@@ -41,7 +49,7 @@ export function Portfolio(): ReactElement {
       label: "LP",
       onClick: () => {
         navigate({
-          search: () => ({ position: "lp" }),
+          search: (prev) => ({ ...prev, position: "lp" }),
         });
       },
     },
@@ -53,13 +61,19 @@ export function Portfolio(): ReactElement {
       label: "Rewards",
       onClick: () => {
         navigate({
-          search: () => ({ position: "rewards" }),
+          search: (prev) => ({ ...prev, position: "rewards" }),
         });
       },
     });
   }
   return (
     <div className="flex w-full flex-col items-center bg-base-100 py-8">
+      {!accountFromRoute && connectedAccount ? (
+        <Navigate
+          from={PORTFOLIO_ROUTE}
+          search={(prev) => ({ ...prev, account })}
+        />
+      ) : null}
       <Tabs activeTabId={activeTab} tabs={tabs} />
     </div>
   );

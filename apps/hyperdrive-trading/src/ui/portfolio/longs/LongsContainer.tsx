@@ -8,14 +8,19 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { usePortfolioLongsData } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 import { OpenLongsTableDesktop } from "./OpenLongsTable/OpenLongsTableDesktop";
 
-export function OpenLongsContainer(): ReactElement {
-  const { address: account } = useAccount();
-  const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsData();
+export function OpenLongsContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
+  const { openLongPositions, openLongPositionsStatus } = usePortfolioLongsData({
+    account,
+  });
+
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
     (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,
@@ -68,7 +73,11 @@ export function OpenLongsContainer(): ReactElement {
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenLongsTableDesktop hyperdrives={hyperdrives} key={key} />
+          <OpenLongsTableDesktop
+            key={key}
+            hyperdrives={hyperdrives}
+            account={account}
+          />
         ),
       )}
     </PositionContainer>
