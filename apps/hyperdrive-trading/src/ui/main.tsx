@@ -37,8 +37,8 @@ logAppVersion();
 root.render(
   <WagmiProvider config={wagmiConfig}>
     <Plausible />
-    <ToastProvider />
     <QueryClientProvider client={queryClient}>
+      <ToastProvider />
       <RainbowKitProvider
         appInfo={{
           appName: "Hyperdrive",
