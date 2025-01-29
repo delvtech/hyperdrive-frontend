@@ -34,7 +34,7 @@ export function ManageShortButton({
       </button>
       {isOpen && (
         <ul className="absolute right-6 top-full z-50 mt-4 w-[300px] rounded-box border border-neutral-content/20 bg-neutral px-4 py-1">
-          {accountFromProps !== connectedAccount ? null : (
+          {accountFromProps === connectedAccount && (
             <button
               className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
               onClick={() => {
