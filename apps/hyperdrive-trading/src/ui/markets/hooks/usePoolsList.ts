@@ -139,6 +139,7 @@ function useSortedPools({
                   readHyperdrive.getFixedApr(),
                   getLpApy({ hyperdrive, readHyperdrive, appConfig }),
                   getPresentValue({
+                    appConfig,
                     hyperdriveAddress: hyperdrive.address,
                     chainId: hyperdrive.chainId,
                     publicClient,

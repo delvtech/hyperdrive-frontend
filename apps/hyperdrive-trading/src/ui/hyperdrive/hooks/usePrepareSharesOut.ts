@@ -1,12 +1,9 @@
-import {
-  AppConfig,
-  appConfig,
-  getHyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { AppConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -28,6 +25,8 @@ export function usePrepareSharesOut({
     chainId,
     address: hyperdriveAddress,
   });
+
+  const appConfig = useAppConfigForConnectedChain();
 
   const queryEnabled =
     !!readHyperdrive && sharesAmount !== undefined && enabled;
