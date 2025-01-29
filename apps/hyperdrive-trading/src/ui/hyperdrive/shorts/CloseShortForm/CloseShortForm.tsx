@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -8,6 +7,7 @@ import {
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -41,6 +41,7 @@ export function CloseShortForm({
   const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems = [];
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

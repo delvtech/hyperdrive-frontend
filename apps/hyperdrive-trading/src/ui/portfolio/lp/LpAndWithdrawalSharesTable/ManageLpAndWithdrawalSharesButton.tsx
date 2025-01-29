@@ -1,5 +1,4 @@
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -9,6 +8,7 @@ import { Link } from "@tanstack/react-router";
 import { ReactElement, useRef, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useClickAway } from "react-use";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -30,7 +30,7 @@ export function ManageLpAndWithdrawalSharesButton({
   const dropdownRef = useRef<HTMLDivElement>(null);
   useClickAway(dropdownRef, () => setIsOpen(false));
   const { address: account } = useAccount();
-
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

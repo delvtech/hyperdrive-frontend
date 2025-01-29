@@ -1,14 +1,11 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getHyperdriveConfig,
-  getToken,
-} from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig, getToken } from "@delvtech/hyperdrive-appconfig";
 import { SparklesIcon } from "@heroicons/react/16/solid";
 import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
 import { assertNever } from "src/base/assertNever";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
@@ -34,6 +31,7 @@ export function RewardsTooltipContent({
    */
   showMiles?: boolean;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,

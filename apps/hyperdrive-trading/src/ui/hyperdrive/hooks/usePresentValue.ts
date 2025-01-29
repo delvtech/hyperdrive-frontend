@@ -1,6 +1,6 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
+  AppConfig,
   getBaseToken,
   getHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -12,6 +12,7 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { queryClient } from "src/network/queryClient";
 import { wagmiConfig } from "src/network/wagmiClient";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { makeTokenFiatPriceQuery } from "src/ui/token/hooks/useTokenFiatPrice";
 import { Address, PublicClient } from "viem";
@@ -35,6 +36,7 @@ export function usePresentValue({
     chainId,
     address: hyperdriveAddress,
   });
+  const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
     queryKey: makeQueryKey2({
@@ -49,6 +51,7 @@ export function usePresentValue({
           }) as PublicClient;
 
           return getPresentValue({
+            appConfig,
             hyperdriveAddress,
             chainId,
             publicClient,
@@ -66,11 +69,13 @@ export function usePresentValue({
 }
 
 export function getPresentValue({
+  appConfig,
   hyperdriveAddress,
   chainId,
   publicClient,
   readHyperdrive,
 }: {
+  appConfig: AppConfig;
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   chainId: number;
@@ -92,6 +97,7 @@ export function getPresentValue({
     ? queryClient
         .fetchQuery(
           makeTokenFiatPriceQuery({
+            appConfig,
             chainId: baseToken.chainId,
             tokenAddress: baseToken.address,
           }),

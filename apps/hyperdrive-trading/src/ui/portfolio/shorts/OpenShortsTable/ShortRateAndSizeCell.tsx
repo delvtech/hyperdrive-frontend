@@ -1,12 +1,9 @@
-import {
-  appConfig,
-  getBaseToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -19,6 +16,7 @@ export function ShortRateAndSizeCell({
   hyperdrive: HyperdriveConfig;
   short: OpenShort;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

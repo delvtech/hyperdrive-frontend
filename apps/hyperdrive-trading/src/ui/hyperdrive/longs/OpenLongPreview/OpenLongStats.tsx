@@ -1,6 +1,5 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getHyperdriveConfig,
   HyperdriveConfig,
@@ -15,6 +14,7 @@ import { QueryStatusWithIdle } from "src/base/queryStatus";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
@@ -40,16 +40,18 @@ export function OpenLongStats({
 }: OpenLongStatsProps): JSX.Element {
   let finalAmountPaid = amountPaid;
 
+  const appConfig = useAppConfigForConnectedChain();
   const depositAssets = getDepositAssets(
     getHyperdriveConfig({
       hyperdriveChainId: hyperdrive.chainId,
       hyperdriveAddress: hyperdrive.address,
       appConfig,
-    })
+    }),
+    appConfig,
   );
 
   const isZapToken = !depositAssets.some(
-    (asset) => asset.address === activeToken.address
+    (asset) => asset.address === activeToken.address,
   );
 
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
@@ -163,7 +165,7 @@ export function OpenLongStats({
                 balance: baseTokenPrice
                   ? fixed(
                       amountPaidInBase + yieldAtMaturity,
-                      baseToken.decimals
+                      baseToken.decimals,
                     ).mul(baseTokenPrice).bigint
                   : 0n,
                 decimals: baseToken.decimals,

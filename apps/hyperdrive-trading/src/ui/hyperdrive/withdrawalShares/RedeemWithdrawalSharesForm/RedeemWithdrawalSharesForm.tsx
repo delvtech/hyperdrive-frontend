@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -9,6 +8,7 @@ import {
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -32,6 +32,7 @@ interface RedeemWithdrawalSharesFormProps {
 export function RedeemWithdrawalSharesForm({
   hyperdrive,
 }: RedeemWithdrawalSharesFormProps): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

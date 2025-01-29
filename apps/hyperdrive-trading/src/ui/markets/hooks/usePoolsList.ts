@@ -1,7 +1,7 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AnyReward,
-  appConfig,
+  AppConfig,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
@@ -17,6 +17,7 @@ import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getLpApy } from "src/hyperdrive/getLpApy";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getPresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useUnpausedPools } from "src/ui/hyperdrive/hooks/useUnpausedPools";
 import {
@@ -63,10 +64,12 @@ export function usePoolsList({
 
   const filters = usePoolListFilters({ hyperdrives: unpausedPools });
 
+  const appConfig = useAppConfigForConnectedChain();
   const selectedPools = getSelectedPools({
     hyperdrives: unpausedPools,
     selectedChains,
     selectedAssets,
+    appConfig,
   });
 
   // Disable sorting if connected to a fork chain
@@ -108,6 +111,7 @@ function useSortedPools({
   enabled: boolean;
   sortOption: SortOption | undefined;
 }) {
+  const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!pools && enabled;
   const { data: sortedPools, status } = useQuery({
     enabled: queryEnabled,
@@ -133,8 +137,9 @@ function useSortedPools({
               const [fixedApr, lpApy, tvl, yieldSourceRate, longPrice] =
                 await Promise.all([
                   readHyperdrive.getFixedApr(),
-                  getLpApy({ hyperdrive, readHyperdrive }),
+                  getLpApy({ hyperdrive, readHyperdrive, appConfig }),
                   getPresentValue({
+                    appConfig,
                     hyperdriveAddress: hyperdrive.address,
                     chainId: hyperdrive.chainId,
                     publicClient,
@@ -206,10 +211,12 @@ function getSelectedPools({
   hyperdrives,
   selectedChains,
   selectedAssets,
+  appConfig,
 }: {
   hyperdrives: HyperdriveConfig[] | undefined;
   selectedChains: number[] | undefined;
   selectedAssets: string[] | undefined;
+  appConfig: AppConfig;
 }) {
   return hyperdrives
     ?.filter((hyperdrive) => {
@@ -220,7 +227,7 @@ function getSelectedPools({
         return false;
       }
 
-      const depositAssets = getDepositAssets(hyperdrive);
+      const depositAssets = getDepositAssets(hyperdrive, appConfig);
       if (
         selectedAssets?.length &&
         !depositAssets.some(({ symbol }) => selectedAssets.includes(symbol))

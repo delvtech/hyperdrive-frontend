@@ -1,10 +1,10 @@
 import {
-  appConfig,
   getBaseToken,
   getHyperdriveConfig,
   getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { Address } from "viem";
 
@@ -15,6 +15,7 @@ export function AssetStack({
   hyperdriveAddress: Address;
   hyperdriveChainId: number;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress,
     appConfig,

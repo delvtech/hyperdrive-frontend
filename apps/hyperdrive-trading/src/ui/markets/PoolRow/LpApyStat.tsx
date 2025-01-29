@@ -1,6 +1,7 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactNode } from "react";
 import { formatRate } from "src/base/formatRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
@@ -13,6 +14,7 @@ export function LpApyStat({
   hyperdriveAddress: Address;
   chainId: number;
 }): ReactNode {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,

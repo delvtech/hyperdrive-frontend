@@ -2,7 +2,6 @@ import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   HyperdriveConfig,
   TokenConfig,
-  appConfig,
   getBaseToken,
   getToken,
   getYieldSource,
@@ -16,6 +15,7 @@ import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -58,6 +58,7 @@ export function AddLiquidityForm({
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const connectedChainId = useChainId();
+  const appConfig = useAppConfigForConnectedChain();
   const { address: account } = useAccount();
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
@@ -461,6 +462,7 @@ function YouReceiveStat({
   lpSharesOut: bigint | undefined;
   hyperdrive: HyperdriveConfig;
 }) {
+  const appConfig = useAppConfigForConnectedChain();
   const { address: account } = useAccount();
   const { lpShares: lpSharesBalanceOf } = useLpShares({
     account,
@@ -532,6 +534,7 @@ function YouReceiveStat({
 }
 
 function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
+  const appConfig = useAppConfigForConnectedChain();
   const isNewPool = useIsNewPool({ hyperdrive });
   const { lpApy, lpApyStatus } = useLpApy({
     chainId: hyperdrive.chainId,

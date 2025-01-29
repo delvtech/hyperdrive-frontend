@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -13,6 +12,7 @@ import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
@@ -62,7 +62,7 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-
+  const appConfig = useAppConfigForConnectedChain();
   const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
 
   const { tokenList } = useTokenList({
@@ -150,7 +150,7 @@ export function OpenLongForm({
   });
 
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
-  const depositAssets = getDepositAssets(hyperdrive);
+  const depositAssets = getDepositAssets(hyperdrive, appConfig);
   const isZapping = !depositAssets.some(
     (asset) => asset.address === activeToken.address,
   );

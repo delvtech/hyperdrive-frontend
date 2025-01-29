@@ -1,13 +1,10 @@
-import {
-  HyperdriveConfig,
-  appConfig,
-  getBaseToken,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -22,7 +19,7 @@ export function CurrentValueCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
-
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

@@ -1,7 +1,7 @@
 import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
+  AppConfig,
   getAddLiquidityRewardConfigs,
   getYieldSource,
   HyperdriveConfig,
@@ -44,9 +44,11 @@ export type LpApyResult = {
 export async function getLpApy({
   readHyperdrive,
   hyperdrive,
+  appConfig,
 }: {
   readHyperdrive: ReadHyperdrive;
   hyperdrive: HyperdriveConfig;
+  appConfig: AppConfig;
 }): Promise<LpApyResult> {
   // Get current block and configuration
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;

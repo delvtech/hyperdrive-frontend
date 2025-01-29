@@ -1,6 +1,7 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, BlockTag } from "viem";
 
@@ -14,6 +15,7 @@ export function useTradingVolume(
   shortVolume: bigint | undefined;
   tradingVolumeStatus: "loading" | "error" | "success";
 } {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
     hyperdriveAddress,

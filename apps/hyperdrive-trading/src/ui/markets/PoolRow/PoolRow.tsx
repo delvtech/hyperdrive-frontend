@@ -1,5 +1,4 @@
 import {
-  appConfig,
   getBaseToken,
   getToken,
   getYieldSource,
@@ -10,6 +9,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
@@ -26,6 +26,7 @@ export interface PoolRowProps {
 
 export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
+  const appConfig = useAppConfigForConnectedChain();
   const { chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
 
@@ -127,7 +128,7 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
                 <div className="flex items-center gap-1.5 text-sm">
                   <span className="text-gray-400/60">Deposit</span>{" "}
                   <span className="text-neutral-content">
-                    {getDepositAssets(hyperdrive)
+                    {getDepositAssets(hyperdrive, appConfig)
                       .map(({ symbol }) => symbol)
                       .join(", ")}
                   </span>

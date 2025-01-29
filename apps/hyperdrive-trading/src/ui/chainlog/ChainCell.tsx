@@ -1,8 +1,9 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 
 export function ChainCell({ chainId }: { chainId: number }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const { iconUrl, name } = appConfig.chains[chainId] || {};
   return (
     <ExternalLink

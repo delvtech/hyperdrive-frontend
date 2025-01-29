@@ -1,6 +1,5 @@
 import {
   AppConfig,
-  appConfig,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -20,6 +19,7 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { formatRate } from "src/base/formatRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -47,6 +47,7 @@ export function OpenLongsTableDesktop({
     (position) => position.details !== undefined,
   );
 
+  const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(() => {
     return getColumns({ hyperdrives, appConfig });
   }, [hyperdrives]);

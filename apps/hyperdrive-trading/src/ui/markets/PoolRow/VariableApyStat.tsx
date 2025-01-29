@@ -1,8 +1,9 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { GradientBadge } from "src/ui/base/components/GradientBadge";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
@@ -16,6 +17,7 @@ export function VariableApyStat({
   hyperdriveAddress: Address;
   chainId: number;
 }): ReactNode {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,

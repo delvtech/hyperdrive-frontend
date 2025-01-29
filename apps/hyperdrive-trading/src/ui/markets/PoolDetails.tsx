@@ -1,5 +1,4 @@
 import {
-  appConfig,
   getBaseToken,
   getToken,
   getYieldSource,
@@ -26,6 +25,7 @@ import { AssetStack } from "src/ui/markets/AssetStack";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { faqData2 } from "src/ui/onboarding/faqData2";
 import { useAccount } from "wagmi";
+import { useAppConfigForConnectedChain } from "../appconfig/useAppConfigForConnectedChain";
 
 export function PoolDetails({
   hyperdrive,
@@ -39,6 +39,7 @@ export function PoolDetails({
   } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
+  const appConfig = useAppConfigForConnectedChain();
 
   const { marketState } = useMarketState({
     chainId: hyperdrive.chainId,
@@ -97,6 +98,7 @@ function AboutThisPool({
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     appConfig,
     hyperdriveAddress: hyperdrive.address,

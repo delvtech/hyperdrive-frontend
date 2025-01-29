@@ -1,12 +1,12 @@
 import {
   AnyReward,
-  appConfig,
   getYieldSourceRewardConfigs,
   YieldSourceId,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { queryClient } from "src/network/queryClient";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 
 export function useYieldSourceRewards({
@@ -21,6 +21,7 @@ export function useYieldSourceRewards({
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
+  const appConfig = useAppConfigForConnectedChain();
   const rewardConfigs = getYieldSourceRewardConfigs({
     yieldSourceId,
     chainId,

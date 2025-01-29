@@ -1,8 +1,8 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
@@ -13,7 +13,7 @@ import { useAccount } from "wagmi";
 export function LpAndWithdrawalSharesContainer(): ReactElement {
   const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
   const { address: account } = useAccount();
-
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
     (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,
