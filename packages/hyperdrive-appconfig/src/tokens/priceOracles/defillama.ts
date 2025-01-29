@@ -9,6 +9,7 @@ const defiLlamaChainNameIdentifier: Record<number, string> = {
   [gnosis.id]: "gnosis",
   [linea.id]: "linea",
   [base.id]: "base",
+  [707]: "ethereum",
 };
 
 export const fetchDefiLlamaTokenPrice: PriceOracleFn = async ({

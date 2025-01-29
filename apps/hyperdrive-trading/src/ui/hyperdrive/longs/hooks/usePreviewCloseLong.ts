@@ -93,6 +93,8 @@ export function usePreviewCloseLong({
       maturityTime: maturityTime?.toString(),
       bondAmountIn: bondAmountIn?.toString(),
       asBase,
+      zapTokenPrice: zapTokenPrice?.toString(),
+      baseTokenPrice: baseTokenPrice?.toString(),
       tokenAddress: tokenOutAddress,
     }),
     enabled: queryEnabled,
@@ -130,7 +132,7 @@ export function usePreviewCloseLong({
           const result = await readHyperdrive.previewCloseLong({
             maturityTime,
             bondAmountIn,
-            asBase: isZapping,
+            asBase,
           });
           if (!asBase) {
             return {
