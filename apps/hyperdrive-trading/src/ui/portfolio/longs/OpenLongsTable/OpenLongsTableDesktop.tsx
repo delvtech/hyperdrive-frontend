@@ -50,8 +50,8 @@ export function OpenLongsTableDesktop({
 
   const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(() => {
-    return getColumns({ hyperdrives, appConfig });
-  }, [hyperdrives]);
+    return getColumns({ account, hyperdrives, appConfig });
+  }, [hyperdrives, account]);
   const tableInstance = useReactTable({
     columns: columns,
     data: openLongPositions || [],
@@ -236,9 +236,11 @@ const columnHelper = createColumnHelper<
 
 function getColumns({
   hyperdrives,
+  account,
   appConfig,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   appConfig: AppConfig;
 }) {
   const baseToken = getBaseToken({
@@ -339,6 +341,7 @@ function getColumns({
         return (
           <ManageLongsButton
             assetId={getValue()}
+            account={account}
             hyperdrive={row.original.hyperdrive}
             key={getValue()}
           />

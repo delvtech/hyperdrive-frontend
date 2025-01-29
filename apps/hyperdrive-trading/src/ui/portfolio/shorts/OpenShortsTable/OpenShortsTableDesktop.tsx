@@ -44,7 +44,7 @@ export function OpenShortsTableDesktop({
     usePortfolioShortsDataFromHyperdrives({ hyperdrives, account });
   const openShortPositionsExist =
     openShortPositions && openShortPositions.length > 0;
-  const columns = getColumns({ hyperdrives, appConfig });
+  const columns = getColumns({ account, hyperdrives, appConfig });
   const tableInstance = useReactTable({
     columns,
     data: openShortPositions || [],
@@ -223,9 +223,11 @@ const columnHelper = createColumnHelper<
 >();
 
 function getColumns({
+  account,
   hyperdrives,
   appConfig,
 }: {
+  account: Address | undefined;
   hyperdrives: HyperdriveConfig[];
   appConfig: AppConfig;
 }) {
@@ -295,6 +297,7 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <ManageShortButton
+            account={account}
             hyperdrive={row.original.hyperdrive}
             assetId={row.original.assetId}
           />

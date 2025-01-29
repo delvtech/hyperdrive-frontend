@@ -7,14 +7,16 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenLpPositions } from "src/ui/hyperdrive/lp/hooks/useTotalOpenLpPositions";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 import { sepolia } from "wagmi/chains";
 
 export function TotalLpValue({
   hyperdrive,
+  account,
   openLpPositions,
 }: {
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   openLpPositions:
     | {
         hyperdrive: HyperdriveConfig;
@@ -23,7 +25,6 @@ export function TotalLpValue({
       }[]
     | undefined;
 }): ReactElement {
-  const { address: account } = useAccount();
   const { totalOpenLpPositions, isLoading: isLoadingTotalOpenLpPositions } =
     useTotalOpenLpPositions({
       account,

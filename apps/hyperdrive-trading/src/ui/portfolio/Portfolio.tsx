@@ -45,7 +45,7 @@ export function Portfolio(): ReactElement {
     },
     {
       id: "lp",
-      content: <LpAndWithdrawalSharesContainer />,
+      content: <LpAndWithdrawalSharesContainer account={account} />,
       label: "LP",
       onClick: () => {
         navigate({

@@ -22,19 +22,20 @@ import { TotalLpValue } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/Tot
 import { WithdrawalQueueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/WithdrawalQueueCell";
 import { usePortfolioLpDataFromHyperdrives } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function OpenLpTableDesktop({
   hyperdrives,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
 }): ReactElement | null {
-  const { address: account } = useAccount();
   const { openLpPositions } = usePortfolioLpDataFromHyperdrives(hyperdrives);
   const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(
-    () => getColumns({ hyperdrives, appConfig }),
-    [hyperdrives],
+    () => getColumns({ account, hyperdrives, appConfig }),
+    [hyperdrives, account],
   );
 
   const tableData = useMemo(
@@ -75,6 +76,7 @@ export function OpenLpTableDesktop({
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalLpValue
+            account={account}
             hyperdrive={hyperdrives[0]}
             openLpPositions={openLpPositions}
           />
@@ -173,9 +175,11 @@ const columnHelper = createColumnHelper<{
 
 function getColumns({
   hyperdrives,
+  account,
   appConfig,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   appConfig: AppConfig;
 }) {
   const baseToken = getBaseToken({
@@ -215,6 +219,7 @@ function getColumns({
       header: `Value (${baseToken?.symbol})`,
       cell: ({ row }) => (
         <LpCurrentValueCell
+          account={account}
           hyperdrive={row.original.hyperdrive}
           lpShares={row.original.lpShares}
         />
@@ -224,13 +229,17 @@ function getColumns({
       id: "withdrawalQueue",
       header: `Withdrawal Queue`,
       cell: ({ row }) => (
-        <WithdrawalQueueCell hyperdrive={row.original.hyperdrive} />
+        <WithdrawalQueueCell
+          account={account}
+          hyperdrive={row.original.hyperdrive}
+        />
       ),
     }),
     columnHelper.display({
       id: "manage",
       cell: ({ row }) => (
         <ManageLpAndWithdrawalSharesButton
+          account={account}
           hyperdrive={row.original.hyperdrive}
         />
       ),

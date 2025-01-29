@@ -9,10 +9,15 @@ import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTab
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
-import { useAccount } from "wagmi";
-export function LpAndWithdrawalSharesContainer(): ReactElement {
-  const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
-  const { address: account } = useAccount();
+import { Address } from "viem";
+export function LpAndWithdrawalSharesContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement {
+  const { openLpPositions, openLpPositionStatus } = usePortfolioLpData({
+    account,
+  });
   const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
@@ -80,7 +85,11 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenLpTableDesktop hyperdrives={hyperdrives} key={key} />
+          <OpenLpTableDesktop
+            account={account}
+            hyperdrives={hyperdrives}
+            key={key}
+          />
         ),
       )}
     </PositionContainer>
