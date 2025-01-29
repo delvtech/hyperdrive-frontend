@@ -7,7 +7,7 @@ import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdra
 import { RewardsContainer } from "src/ui/portfolio/rewards/RewardsContainer";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { OpenShortsContainer } from "src/ui/portfolio/shorts/ShortsContainer";
-import { Address } from "viem";
+import { Address, getAddress } from "viem";
 import { useAccount } from "wagmi";
 
 export function Portfolio(): ReactElement {
@@ -17,7 +17,15 @@ export function Portfolio(): ReactElement {
   const activeTab = position ?? "longs";
 
   const { address: connectedAccount } = useAccount();
-  const account = (accountFromRoute ?? connectedAccount) as Address | undefined;
+
+  // The account address from the route needs to be checksummed before it's
+  // used, otherwise addresses will not be equal when used for caching or
+  // comparison purposes.
+  const rawAccount = (accountFromRoute ?? connectedAccount) as
+    | Address
+    | undefined;
+  const account = rawAccount ? getAddress(rawAccount) : undefined;
+
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
 
   const { isFlagEnabled: isPortfolioRewardsFeatureFlagEnabled } =
@@ -71,7 +79,7 @@ export function Portfolio(): ReactElement {
       {!accountFromRoute && connectedAccount ? (
         <Navigate
           from={PORTFOLIO_ROUTE}
-          search={(prev) => ({ ...prev, account })}
+          search={(prev) => ({ ...prev, account: connectedAccount })}
         />
       ) : null}
       <Tabs activeTabId={activeTab} tabs={tabs} />
