@@ -19,6 +19,19 @@
     // scanning. Arrow functions can still be used as anonymous functions.
     "func-style": ["error", "declaration"],
     "react-refresh/only-export-components": "warn",
-    "no-restricted-imports": ["error", { "paths": [{ "name": "@delvtech/hyperdrive-appconfig", "importNames": ["appConfig"] }] }]
+    // Restrict importing `appConfig` from `@delvtech/hyperdrive-appconfig`
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@delvtech/hyperdrive-appconfig",
+            "importNames": ["appConfig"],
+            "message": "Importing `appConfig` from `@delvtech/hyperdrive-appconfig` is restricted. Please use the new `useAppConfigForConnectedChain` hook instead."
+          }
+        ],
+        "patterns": []
+      }
+    ]
   },
 }
