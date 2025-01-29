@@ -52,7 +52,7 @@ export function TotalOpenShortsValue({
                   ).bigint
                 : 0n,
             decimals: baseToken.decimals,
-            places: baseToken.places,
+            places: 2, // fiat is always 2 decimals for display
             includeCommas: true,
           })}`}{" "}
         </p>

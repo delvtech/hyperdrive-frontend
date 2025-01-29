@@ -58,7 +58,7 @@ export function TotalLpValue({
                 ).bigint
               : 0n,
             decimals: hyperdrive.decimals,
-            places: baseToken?.places,
+            places: 2, // fiat is always 2 decimals for display
           })}`
         ) : (
           `${formatBalance({
