@@ -33,16 +33,17 @@ import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageL
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function OpenLongsTableDesktop({
   hyperdrives,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
 }): ReactElement | null {
-  const { address: account } = useAccount();
   const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsDataFromHyperdrives(hyperdrives);
+    usePortfolioLongsDataFromHyperdrives({ hyperdrives, account });
   const openLongPositionsExist = openLongPositions?.some(
     (position) => position.details !== undefined,
   );
@@ -94,6 +95,7 @@ export function OpenLongsTableDesktop({
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalOpenLongsValue
+            account={account}
             hyperdrives={hyperdrives}
             openLongs={openLongPositions}
           />
@@ -112,6 +114,7 @@ export function OpenLongsTableDesktop({
           return (
             <CloseLongModalButton
               key={modalId}
+              account={account}
               hyperdrive={original.hyperdrive}
               modalId={modalId}
               long={{

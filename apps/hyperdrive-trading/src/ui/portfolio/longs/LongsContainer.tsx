@@ -14,7 +14,7 @@ import { OpenLongsTableDesktop } from "./OpenLongsTable/OpenLongsTableDesktop";
 export function OpenLongsContainer({
   account,
 }: {
-  account?: Address;
+  account: Address | undefined;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
   const { openLongPositions, openLongPositionsStatus } = usePortfolioLongsData({
@@ -73,7 +73,11 @@ export function OpenLongsContainer({
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenLongsTableDesktop hyperdrives={hyperdrives} key={key} />
+          <OpenLongsTableDesktop
+            key={key}
+            hyperdrives={hyperdrives}
+            account={account}
+          />
         ),
       )}
     </PositionContainer>

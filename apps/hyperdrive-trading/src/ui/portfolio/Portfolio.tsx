@@ -17,7 +17,7 @@ export function Portfolio(): ReactElement {
   const activeTab = position ?? "longs";
 
   const { address: connectedAccount } = useAccount();
-  const account = accountFromRoute ?? connectedAccount;
+  const account = (accountFromRoute ?? connectedAccount) as Address | undefined;
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
 
   const { isFlagEnabled: isPortfolioRewardsFeatureFlagEnabled } =
@@ -25,11 +25,11 @@ export function Portfolio(): ReactElement {
   const tabs = [
     {
       id: "longs",
-      content: <OpenLongsContainer account={account as Address} />,
+      content: <OpenLongsContainer account={account} />,
       label: "Long",
       onClick: () => {
         navigate({
-          search: () => ({ position: "longs" }),
+          search: (prev) => ({ ...prev, position: "longs" }),
         });
       },
     },
@@ -39,7 +39,7 @@ export function Portfolio(): ReactElement {
       label: "Short",
       onClick: () => {
         navigate({
-          search: () => ({ position: "shorts" }),
+          search: (prev) => ({ ...prev, position: "shorts" }),
         });
       },
     },
@@ -49,7 +49,7 @@ export function Portfolio(): ReactElement {
       label: "LP",
       onClick: () => {
         navigate({
-          search: () => ({ position: "lp" }),
+          search: (prev) => ({ ...prev, position: "lp" }),
         });
       },
     },
@@ -61,7 +61,7 @@ export function Portfolio(): ReactElement {
       label: "Rewards",
       onClick: () => {
         navigate({
-          search: () => ({ position: "rewards" }),
+          search: (prev) => ({ ...prev, position: "rewards" }),
         });
       },
     });

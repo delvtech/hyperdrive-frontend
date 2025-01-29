@@ -7,19 +7,19 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function TotalOpenLongsValue({
   hyperdrives,
   openLongs,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   openLongs:
     | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
     | undefined;
 }): ReactElement {
-  const { address: account } = useAccount();
-
   const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
     account,
     longs: openLongs,

@@ -36,21 +36,22 @@ import {
   ZapsTokenPicker,
 } from "src/ui/token/TokenPicker";
 import { useTokenList } from "src/ui/tokenlist/useTokenList";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
+  account: Address | undefined;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseLongForm({
   hyperdrive,
+  account,
   long,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
-  const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems: TokenConfig[] = [];
   const appConfig = useAppConfigForConnectedChain();
