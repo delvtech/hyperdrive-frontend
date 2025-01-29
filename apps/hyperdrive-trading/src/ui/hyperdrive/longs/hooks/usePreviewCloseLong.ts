@@ -4,7 +4,7 @@ import {
   getHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -87,15 +87,19 @@ export function usePreviewCloseLong({
   });
 
   const { data, status, fetchStatus, error } = useQuery({
-    queryKey: makeQueryKey("previewCloseLong", {
-      chainId,
-      hyperdriveAddress,
-      maturityTime: maturityTime?.toString(),
-      bondAmountIn: bondAmountIn?.toString(),
-      asBase,
-      zapTokenPrice: zapTokenPrice?.toString(),
-      baseTokenPrice: baseTokenPrice?.toString(),
-      tokenAddress: tokenOutAddress,
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "previewCloseLong",
+      params: {
+        chainId,
+        hyperdriveAddress: hyperdriveAddress!,
+        maturityTime,
+        bondAmountIn,
+        asBase,
+        zapTokenPrice,
+        baseTokenPrice,
+        tokenOutAddress,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
