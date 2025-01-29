@@ -32,6 +32,7 @@ export function CurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
     bondAmountIn: row.details?.bondAmount || 0n,
+    tokenOutAddress: baseToken.address,
   });
 
   const currentValueLabel = formatBalance({

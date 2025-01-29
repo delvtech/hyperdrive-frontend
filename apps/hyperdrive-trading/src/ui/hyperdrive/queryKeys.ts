@@ -23,6 +23,16 @@ interface HyperdriveQueryKeys {
     hyperdriveAddress: Address;
     blockNumber: bigint | undefined;
   };
+  previewCloseLong: {
+    chainId: number;
+    hyperdriveAddress: Address;
+    maturityTime: bigint | undefined;
+    bondAmountIn: bigint | undefined;
+    asBase: boolean;
+    zapTokenPrice: bigint | undefined;
+    baseTokenPrice: bigint | undefined;
+    tokenOutAddress: Address | undefined;
+  };
 }
 declare module "src/base/makeQueryKey" {
   interface QueryKeys {
