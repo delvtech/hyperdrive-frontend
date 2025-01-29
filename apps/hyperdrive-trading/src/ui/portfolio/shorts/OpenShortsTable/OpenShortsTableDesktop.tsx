@@ -19,7 +19,6 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
@@ -40,8 +39,10 @@ export function OpenShortsTableDesktop({
   account: Address | undefined;
 }): ReactElement | null {
   const appConfig = useAppConfigForConnectedChain();
-  const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsDataFromHyperdrives({ hyperdrives, account });
+  const { openShortPositions } = usePortfolioShortsDataFromHyperdrives({
+    hyperdrives,
+    account,
+  });
   const openShortPositionsExist =
     openShortPositions && openShortPositions.length > 0;
   const columns = getColumns({ account, hyperdrives, appConfig });
@@ -75,10 +76,6 @@ export function OpenShortsTableDesktop({
 
   if (!openShortPositionsExist) {
     return null;
-  }
-
-  if (openShortPositionsStatus === "loading") {
-    return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
   return (

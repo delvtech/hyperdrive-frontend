@@ -23,7 +23,6 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
@@ -42,8 +41,10 @@ export function OpenLongsTableDesktop({
   hyperdrives: HyperdriveConfig[];
   account: Address | undefined;
 }): ReactElement | null {
-  const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsDataFromHyperdrives({ hyperdrives, account });
+  const { openLongPositions } = usePortfolioLongsDataFromHyperdrives({
+    hyperdrives,
+    account,
+  });
   const openLongPositionsExist = openLongPositions?.some(
     (position) => position.details !== undefined,
   );
@@ -78,10 +79,6 @@ export function OpenLongsTableDesktop({
         />
       </div>
     );
-  }
-
-  if (openLongPositionsStatus === "loading") {
-    return <TableSkeleton numColumns={columns.length} numRows={5} />;
   }
 
   if (!openLongPositionsExist) {
