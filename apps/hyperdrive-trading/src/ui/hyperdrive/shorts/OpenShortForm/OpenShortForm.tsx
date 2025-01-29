@@ -1,13 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
-
 import {
-  appConfig,
   getBaseToken,
   getToken,
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { MouseEvent, ReactElement, useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
@@ -17,6 +15,7 @@ import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYi
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -73,7 +72,7 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-
+  const appConfig = useAppConfigForConnectedChain();
   const { rewards } = useOpenShortRewards({ hyperdriveConfig: hyperdrive });
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,

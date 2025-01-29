@@ -1,12 +1,12 @@
 import {
   HyperdriveConfig,
   TokenConfig,
-  appConfig,
   getBaseToken,
   getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
@@ -21,6 +21,7 @@ export function CloseShortModalButton({
   short,
   hyperdrive,
 }: CloseShortModalButtonProps): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

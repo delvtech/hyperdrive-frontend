@@ -1,5 +1,4 @@
 import {
-  appConfig,
   getHyperdriveConfig,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -7,6 +6,7 @@ import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address } from "viem";
 export function useTotalOpenLpPositions({
   account,
@@ -28,7 +28,7 @@ export function useTotalOpenLpPositions({
   totalOpenLpPositionsError: Error;
 } {
   const queryEnabled = !!account && !!openLpPositions && enabled;
-
+  const appConfig = useAppConfigForConnectedChain();
   const {
     data: totalOpenLpPositions,
     isLoading,

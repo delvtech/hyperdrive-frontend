@@ -1,6 +1,5 @@
 import {
   AppConfig,
-  appConfig,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -16,6 +15,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -38,6 +38,7 @@ export function OpenShortsTableDesktop({
   hyperdrives: HyperdriveConfig[];
 }): ReactElement | null {
   const { address: account } = useAccount();
+  const appConfig = useAppConfigForConnectedChain();
   const { openShortPositions, openShortPositionsStatus } =
     usePortfolioShortsDataFromHyperdrives(hyperdrives);
   const openShortPositionsExist =

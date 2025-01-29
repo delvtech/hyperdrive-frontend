@@ -1,6 +1,5 @@
 import {
   AppConfig,
-  appConfig,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -13,6 +12,7 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { LpCurrentValueCell } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpCurrentValueCell";
@@ -31,7 +31,7 @@ export function OpenLpTableDesktop({
 }): ReactElement | null {
   const { address: account } = useAccount();
   const { openLpPositions } = usePortfolioLpDataFromHyperdrives(hyperdrives);
-
+  const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(
     () => getColumns({ hyperdrives, appConfig }),
     [hyperdrives],

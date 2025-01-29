@@ -1,6 +1,5 @@
 import {
   AnyReward,
-  appConfig,
   getAddLiquidityRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -24,7 +23,7 @@ export function useUnpausedPools(): {
 } {
   // Only show testnet and fork pools if the user is connected to a testnet
   // chain
-  const appConfigForConnectedChain = useAppConfigForConnectedChain();
+  const appConfig = useAppConfigForConnectedChain();
 
   // Use the chain id in the query key to make sure the pools list updates when
   // you switch chains
@@ -40,7 +39,7 @@ export function useUnpausedPools(): {
         rewardsAmount: AnyReward[];
       })[] = (
         await Promise.all(
-          appConfigForConnectedChain.hyperdrives
+          appConfig.hyperdrives
             .filter((hyperdrive) => !HIDDEN_POOLS.includes(hyperdrive.address))
             .map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({

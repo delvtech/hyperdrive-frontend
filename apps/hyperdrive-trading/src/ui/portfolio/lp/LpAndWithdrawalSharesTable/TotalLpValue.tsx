@@ -1,12 +1,9 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getBaseToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenLpPositions } from "src/ui/hyperdrive/lp/hooks/useTotalOpenLpPositions";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -33,6 +30,7 @@ export function TotalLpValue({
       openLpPositions,
       enabled: !!openLpPositions,
     });
+  const appConfig = useAppConfigForConnectedChain();
   const chainInfo = appConfig.chains[hyperdrive.chainId];
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,

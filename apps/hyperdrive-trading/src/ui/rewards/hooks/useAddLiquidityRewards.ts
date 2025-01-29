@@ -1,12 +1,12 @@
 import {
   AnyReward,
-  appConfig,
   getAddLiquidityRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { queryClient } from "src/network/queryClient";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 
 export function useAddLiquidityRewards({
@@ -19,6 +19,7 @@ export function useAddLiquidityRewards({
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
+  const appConfig = useAppConfigForConnectedChain();
   const rewardConfigs = getAddLiquidityRewardConfigs({
     hyperdriveAddress: hyperdriveConfig.address,
     chainId: hyperdriveConfig.chainId,
