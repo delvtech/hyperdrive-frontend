@@ -13,9 +13,10 @@ import {
   gnosisChainConfig,
   lineaChainConfig,
   mainnetChainConfig,
+  rewardsMainnetForkChainConfig,
   sepoliaChainConfig,
 } from "src/chains/chains";
-import { cloudChain } from "src/chains/cloudChain";
+import { cloudChain, rewardsMainnetFork } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 
 import {
@@ -55,6 +56,14 @@ const chainConfigs: ChainInitializationConfig[] = [
     registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
     isTestnet: true,
     earliestBlock: cloudChainConfig.earliestBlock,
+  },
+  {
+    // TODO: Re-enable this when needed
+    chain: rewardsMainnetFork,
+    rpcUrl: process.env.REWARDS_MAINNET_FORK_RPC_URL as string,
+    registryAddress: ETHEREUM_REGISTRY_ADDRESS,
+    isTestnet: true,
+    earliestBlock: rewardsMainnetForkChainConfig.earliestBlock,
   },
   // {
   // TODO: Re-enable this when needed
