@@ -4,6 +4,7 @@ import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { HyperdriveConfigResolver } from "src/appconfig/HyperdriveConfigResolver";
 import { chains } from "src/chains/chains";
+import { cloudChain, rewardsMainnetFork } from "src/chains/cloudChain";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getAeroLpHyperdrive } from "src/hyperdrives/aero/getAeroHyperdrive";
 import { getCbethHyperdrive } from "src/hyperdrives/cbeth/getCbethHyperdrive";
@@ -58,6 +59,7 @@ import { YieldSourceId } from "src/yieldSources/types";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
 import { Address, PublicClient } from "viem";
+import { gnosis, mainnet } from "viem/chains";
 
 const hyperdriveKindResolvers: Record<
   string /* kind */,
@@ -336,9 +338,10 @@ const hyperdriveKindResolvers: Record<
 
     if (hyperdriveName.includes("sGYD Hyperdrive")) {
       const yieldSourceByChainId: Record<number, YieldSourceId> = {
-        1: "sgyd",
-        707: "sgyd", // cloudchain is a mainnet fork
-        100: "gnosisSgyd",
+        [mainnet.id]: "sgyd",
+        [cloudChain.id]: "sgyd", // cloudchain is a mainnet fork
+        [rewardsMainnetFork.id]: "sgyd",
+        [gnosis.id]: "gnosisSgyd",
       };
       const yieldSource =
         yieldSourceByChainId[publicClient.chain?.id as number];
@@ -983,7 +986,6 @@ export async function getAppConfig({
   const configs: HyperdriveConfig[] = await Promise.all(
     hyperdrives.map(async (hyperdrive) => {
       const kind = await hyperdrive.getKind();
-      console.log(chalk.blue(kind), chalk.yellow(chainId), hyperdrive.address);
       const hyperdriveResolver = hyperdriveKindResolvers[kind];
       if (!hyperdriveResolver) {
         throw new Error(`Missing resolver for hyperdrive kind: ${kind}.`);
@@ -991,6 +993,11 @@ export async function getAppConfig({
 
       const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig, rewards } =
         await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
+      console.log(
+        chalk.yellow(hyperdriveConfig.name),
+        chalk.blue(kind),
+        hyperdrive.address,
+      );
 
       // Not all hyperdrives have a base or shares token, so only add them if
       // they exist. (Note: `tokens` is deduped at the end)

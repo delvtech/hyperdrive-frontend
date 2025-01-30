@@ -212,7 +212,11 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
     Object.values(appConfig.rewards).flatMap((rewardConfigs) => rewardConfigs),
     (r) => r,
   );
-  console.log("uniqueResolvers", uniqueResolvers);
+  console.log(
+    chalk.yellow(uniqueResolvers.length),
+    "reward resolvers found: ",
+    uniqueResolvers.join(", "),
+  );
 
   await Promise.all(
     uniqueResolvers.map(async (rewardConfigId) => {
@@ -252,8 +256,8 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
 
           if (knownTokenConfig) {
             console.log(
-              "pushing in known token config",
-              knownTokenConfig.symbol,
+              "Reward token found:",
+              chalk.yellow(knownTokenConfig.symbol),
             );
             appConfig.tokens.push(knownTokenConfig);
             return;
