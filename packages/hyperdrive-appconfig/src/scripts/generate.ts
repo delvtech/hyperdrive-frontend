@@ -13,9 +13,10 @@ import {
   gnosisChainConfig,
   lineaChainConfig,
   mainnetChainConfig,
+  rewardsMainnetForkChainConfig,
   sepoliaChainConfig,
 } from "src/chains/chains";
-import { cloudChain } from "src/chains/cloudChain";
+import { cloudChain, rewardsMainnetFork } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 
 import {
@@ -55,6 +56,14 @@ const chainConfigs: ChainInitializationConfig[] = [
     registryAddress: CLOUDCHAIN_REGISTRY_ADDRESS,
     isTestnet: true,
     earliestBlock: cloudChainConfig.earliestBlock,
+  },
+  {
+    // TODO: Re-enable this when needed
+    chain: rewardsMainnetFork,
+    rpcUrl: process.env.REWARDS_MAINNET_FORK_RPC_URL as string,
+    registryAddress: ETHEREUM_REGISTRY_ADDRESS,
+    isTestnet: true,
+    earliestBlock: rewardsMainnetForkChainConfig.earliestBlock,
   },
   // {
   // TODO: Re-enable this when needed
@@ -203,7 +212,11 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
     Object.values(appConfig.rewards).flatMap((rewardConfigs) => rewardConfigs),
     (r) => r,
   );
-  console.log("uniqueResolvers", uniqueResolvers);
+  console.log(
+    chalk.yellow(uniqueResolvers.length),
+    "reward resolvers found: ",
+    uniqueResolvers.join(", "),
+  );
 
   await Promise.all(
     uniqueResolvers.map(async (rewardConfigId) => {
@@ -243,8 +256,8 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
 
           if (knownTokenConfig) {
             console.log(
-              "pushing in known token config",
-              knownTokenConfig.symbol,
+              "Reward token found:",
+              chalk.yellow(knownTokenConfig.symbol),
             );
             appConfig.tokens.push(knownTokenConfig);
             return;
