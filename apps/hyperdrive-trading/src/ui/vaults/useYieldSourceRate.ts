@@ -1,8 +1,8 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
@@ -30,7 +30,7 @@ export function useYieldSourceRate({
     chainId,
     address: hyperdriveAddress,
   });
-
+  const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!hyperdriveAddress && !!readHyperdrive;
   const { data, status: vaultRateStatus } = useQuery({
     queryKey: makeQueryKey2({

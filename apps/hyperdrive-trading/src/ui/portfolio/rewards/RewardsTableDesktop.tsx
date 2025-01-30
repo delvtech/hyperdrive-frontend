@@ -1,4 +1,4 @@
-import { appConfig, getToken } from "@delvtech/hyperdrive-appconfig";
+import { AppConfig, getToken } from "@delvtech/hyperdrive-appconfig";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   createColumnHelper,
@@ -11,6 +11,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { Rewards } from "src/rewards/generated/RewardsClient";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address } from "viem";
@@ -22,8 +23,9 @@ export function RewardsTableDesktop({
   account: Address;
   rewards: Rewards;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const tableInstance = useReactTable({
-    columns: getColumns(),
+    columns: getColumns(appConfig),
     data: rewards || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -134,7 +136,7 @@ export function RewardsTableDesktop({
 type Reward = NonNullable<Rewards[number]>;
 const columnHelper = createColumnHelper<Reward>();
 
-function getColumns() {
+function getColumns(appConfig: AppConfig) {
   return [
     columnHelper.display({
       id: "asset",

@@ -1,12 +1,11 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useAccount, useBlockNumber, usePublicClient } from "wagmi";
-
 interface UsePreviewAddLiquidityOptions {
   chainId: number;
   hyperdriveAddress: Address;
@@ -60,7 +59,7 @@ export function usePreviewAddLiquidity({
     watch: false,
     query: { enabled: queryEnabled },
   });
-
+  const appConfig = useAppConfigForConnectedChain();
   const { data, status, fetchStatus, error } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
       hyperdrive: hyperdriveAddress,

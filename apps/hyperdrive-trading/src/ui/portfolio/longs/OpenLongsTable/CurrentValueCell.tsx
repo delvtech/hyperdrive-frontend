@@ -1,13 +1,10 @@
-import {
-  HyperdriveConfig,
-  appConfig,
-  getBaseToken,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
@@ -19,6 +16,7 @@ export function CurrentValueCell({
   row: OpenLongPositionReceived;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -34,6 +32,7 @@ export function CurrentValueCell({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.maturity,
     bondAmountIn: row.details?.bondAmount || 0n,
+    tokenOutAddress: baseToken.address,
   });
 
   const currentValueLabel = formatBalance({

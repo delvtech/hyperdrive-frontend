@@ -1,19 +1,24 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { OpenLpTableDesktop } from "src/ui/portfolio/lp/LpAndWithdrawalSharesTable/LpAndWithdrawalSharesTable";
 import { usePortfolioLpData } from "src/ui/portfolio/lp/usePortfolioLpData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
-import { useAccount } from "wagmi";
-export function LpAndWithdrawalSharesContainer(): ReactElement {
-  const { openLpPositions, openLpPositionStatus } = usePortfolioLpData();
-  const { address: account } = useAccount();
-
+import { Address } from "viem";
+export function LpAndWithdrawalSharesContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement {
+  const { openLpPositions, openLpPositionStatus } = usePortfolioLpData({
+    account,
+  });
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
     (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,
@@ -80,7 +85,11 @@ export function LpAndWithdrawalSharesContainer(): ReactElement {
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives]) => (
-          <OpenLpTableDesktop hyperdrives={hyperdrives} key={key} />
+          <OpenLpTableDesktop
+            account={account}
+            hyperdrives={hyperdrives}
+            key={key}
+          />
         ),
       )}
     </PositionContainer>

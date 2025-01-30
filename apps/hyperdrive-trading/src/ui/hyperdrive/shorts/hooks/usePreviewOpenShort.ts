@@ -1,7 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getStatus } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -33,7 +33,7 @@ export function usePreviewOpenShort({
     chainId,
     address: hyperdriveAddress,
   });
-
+  const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
   const { data: blockNumber } = useBlockNumber({
     watch: false,

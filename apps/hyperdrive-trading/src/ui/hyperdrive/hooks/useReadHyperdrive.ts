@@ -1,7 +1,8 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive, ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useDrift } from "src/ui/drift/useDrift";
 import { Address } from "viem";
 
@@ -14,7 +15,7 @@ export function useReadHyperdrive({
 }): ReadHyperdrive | undefined {
   const drift = useDrift({ chainId });
   const enabled = !!address && !!drift;
-
+  const appConfig = useAppConfigForConnectedChain();
   const { data } = useQuery({
     queryKey: makeQueryKey("getReadHyperdrive", {
       chainId,

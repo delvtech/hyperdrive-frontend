@@ -1,6 +1,5 @@
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getHyperdriveConfig,
   getToken,
@@ -9,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -43,6 +43,7 @@ export function usePreviewOpenLong({
     address: hyperdriveAddress,
   });
 
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     appConfig,
     hyperdriveAddress,
@@ -54,11 +55,12 @@ export function usePreviewOpenLong({
       hyperdriveChainId: chainId,
       hyperdriveAddress,
       appConfig,
-    })
+    }),
+    appConfig,
   );
 
   const isZapToken = !depositAssets.some(
-    (asset) => asset.address === tokenAddress
+    (asset) => asset.address === tokenAddress,
   );
 
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({

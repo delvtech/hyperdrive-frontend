@@ -1,7 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -28,6 +28,7 @@ export function useEstimateShortMarketValue({
   asBase = true,
   enabled = true,
 }: UseEstimateShortMarketValue): UseEstimateShortMarketValueResult {
+  const appConfig = useAppConfigForConnectedChain();
   const readHyperdrive = useReadHyperdrive({
     chainId,
     address: hyperdriveAddress,

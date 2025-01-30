@@ -1,4 +1,3 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import {
   AdjustmentsHorizontalIcon,
   BarsArrowDownIcon,
@@ -8,6 +7,7 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { Fade } from "react-awesome-reveal";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { MultiSelect } from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -16,9 +16,9 @@ import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
 import { sortOptions, usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { useAccount } from "wagmi";
-
 export function PoolsList(): ReactElement {
   const { address: account } = useAccount();
+  const appConfig = useAppConfigForConnectedChain();
   const { chains: selectedChains, assets: selectedAssets } = useSearch({
     from: LANDING_ROUTE,
   });
@@ -53,7 +53,10 @@ export function PoolsList(): ReactElement {
 
       <div className="flex w-full flex-col gap-5">
         {status === "loading" && !pools ? (
-          <LoadingState />
+          <LoadingState
+            heading="Loading pools..."
+            text="Calculating yield rates, pool data, and rewards..."
+          />
         ) : pools ? (
           <>
             {/* List controls */}

@@ -1,26 +1,30 @@
 import {
   HyperdriveConfig,
   TokenConfig,
-  appConfig,
   getBaseToken,
   getToken,
 } from "@delvtech/hyperdrive-appconfig";
 import { Long } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { ModalHeader } from "src/ui/base/components/Modal/ModalHeader";
 import { CloseLongForm } from "src/ui/hyperdrive/longs/CloseLongForm/CloseLongForm";
+import { Address } from "viem";
 
 export interface CloseLongModalButtonProps {
   modalId: string;
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   long: Long;
 }
 export function CloseLongModalButton({
   modalId,
   long,
+  account,
   hyperdrive,
 }: CloseLongModalButtonProps): ReactElement {
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -44,6 +48,7 @@ export function CloseLongModalButton({
         <div>
           <CloseLongForm
             hyperdrive={hyperdrive}
+            account={account}
             long={long}
             onCloseLong={(e) => {
               // preventDefault since we don't want to close the modal while the

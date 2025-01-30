@@ -1,12 +1,12 @@
 import { getAddLiquidityRewardId } from "src/rewards/actions/lp";
 import { getOpenShortRewardId } from "src/rewards/actions/short";
 import { AnyRewardId } from "src/rewards/actions/types";
-import { RewardResolverId } from "src/rewards/resolvers";
+import { RewardConfigId } from "src/rewards/resolvers";
 import { Address } from "viem";
 
 export interface HyperdriveRewardsMap {
-  short?: RewardResolverId[];
-  lp?: RewardResolverId[];
+  short?: RewardConfigId[];
+  lp?: RewardConfigId[];
 }
 
 /**
@@ -20,11 +20,11 @@ export function getHyperdriveRewards({
   hyperdriveAddress: Address;
   chainId: number;
   rewardsMap: {
-    short?: RewardResolverId[];
-    lp?: RewardResolverId[];
+    short?: RewardConfigId[];
+    lp?: RewardConfigId[];
   };
-}): Record<AnyRewardId, RewardResolverId[]> {
-  const rewards: Record<AnyRewardId, RewardResolverId[]> = {};
+}): Record<AnyRewardId, RewardConfigId[]> {
+  const rewards: Record<AnyRewardId, RewardConfigId[]> = {};
   rewardsMap?.short?.forEach((reward) => {
     const key = getOpenShortRewardId({ hyperdriveAddress, chainId });
     rewards[key] = [...(rewards[key] || []), reward];

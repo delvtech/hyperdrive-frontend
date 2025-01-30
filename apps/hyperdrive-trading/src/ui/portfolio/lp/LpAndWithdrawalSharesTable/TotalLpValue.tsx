@@ -1,23 +1,22 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getBaseToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenLpPositions } from "src/ui/hyperdrive/lp/hooks/useTotalOpenLpPositions";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 import { sepolia } from "wagmi/chains";
 
 export function TotalLpValue({
   hyperdrive,
+  account,
   openLpPositions,
 }: {
   hyperdrive: HyperdriveConfig;
+  account: Address | undefined;
   openLpPositions:
     | {
         hyperdrive: HyperdriveConfig;
@@ -26,13 +25,13 @@ export function TotalLpValue({
       }[]
     | undefined;
 }): ReactElement {
-  const { address: account } = useAccount();
   const { totalOpenLpPositions, isLoading: isLoadingTotalOpenLpPositions } =
     useTotalOpenLpPositions({
       account,
       openLpPositions,
       enabled: !!openLpPositions,
     });
+  const appConfig = useAppConfigForConnectedChain();
   const chainInfo = appConfig.chains[hyperdrive.chainId];
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
@@ -59,7 +58,7 @@ export function TotalLpValue({
                 ).bigint
               : 0n,
             decimals: hyperdrive.decimals,
-            places: baseToken?.places,
+            places: 2, // fiat is always 2 decimals for display
           })}`
         ) : (
           `${formatBalance({

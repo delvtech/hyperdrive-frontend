@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import "dotenv/config";
+import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { getMainnetAndTestnetAppConfigs } from "src/appconfig/getMainnetAndTestnetAppConfigs";
@@ -12,9 +13,10 @@ import {
   gnosisChainConfig,
   lineaChainConfig,
   mainnetChainConfig,
+  rewardsMainnetForkChainConfig,
   sepoliaChainConfig,
 } from "src/chains/chains";
-import { cloudChain } from "src/chains/cloudChain";
+import { cloudChain, rewardsMainnetFork } from "src/chains/cloudChain";
 import { protocols } from "src/protocols";
 
 import {
@@ -26,7 +28,7 @@ import {
   SEPOLIA_REGISTRY_ADDRESS,
 } from "src/registries";
 import { knownTokenConfigs } from "src/rewards/knownTokenConfigs";
-import { rewardResolvers } from "src/rewards/resolvers";
+import { rewardConfigs } from "src/rewards/resolvers";
 import { getToken } from "src/tokens/selectors";
 import { yieldSources } from "src/yieldSources/yieldSources";
 import { zaps } from "src/zaps/zaps";
@@ -55,7 +57,16 @@ const chainConfigs: ChainInitializationConfig[] = [
     isTestnet: true,
     earliestBlock: cloudChainConfig.earliestBlock,
   },
-  // { // TODO: Re-enable this when needed
+  {
+    // TODO: Re-enable this when needed
+    chain: rewardsMainnetFork,
+    rpcUrl: process.env.REWARDS_MAINNET_FORK_RPC_URL as string,
+    registryAddress: ETHEREUM_REGISTRY_ADDRESS,
+    isTestnet: true,
+    earliestBlock: rewardsMainnetForkChainConfig.earliestBlock,
+  },
+  // {
+  // TODO: Re-enable this when needed
   //   chain: gnosisFork,
   //   rpcUrl: process.env.GNOSIS_FORK_RPC_URL as string,
   //   registryAddress: GNOSIS_FORK_REGISTRY_ADDRESS,
@@ -193,46 +204,70 @@ async function addRewardTokenConfigs({ appConfig }: { appConfig: AppConfig }) {
       transport: http(rpcUrl),
     });
   });
+
+  // Get all unique reward resolvers the entire rewards system. This is
+  // necessary because different hyperdrives may have the same reward resolver
+  // and we don't want to run the same resolver multiple times.
+  const uniqueResolvers = uniqBy(
+    Object.values(appConfig.rewards).flatMap((rewardConfigs) => rewardConfigs),
+    (r) => r,
+  );
+  console.log(
+    chalk.yellow(uniqueResolvers.length),
+    "reward resolvers found: ",
+    uniqueResolvers.join(", "),
+  );
+
   await Promise.all(
-    Object.entries(yieldSources)
-      .filter(([unusedKey, yieldSource]) => yieldSource.rewardsFn)
-      .map(async ([unusedKey, yieldSource]) => {
-        const rewardFn = rewardResolvers[yieldSource.rewardsFn!].resolver; // safe to cast due to filter above
-        const publicClient = publicClients[yieldSource.chainId];
-        const rewards = await rewardFn(publicClient);
+    uniqueResolvers.map(async (rewardConfigId) => {
+      const rewardConfig = rewardConfigs[rewardConfigId];
+      const rewardFn = rewardConfig.resolver;
 
-        rewards.map((reward) => {
-          if (reward.type === "tokenAmount" || reward.type === "apy") {
-            let alreadyExists = false;
-            try {
-              // This will throw an error if it cannot find the token
-              alreadyExists = !!getToken({
-                chainId: reward.chainId,
-                tokenAddress: reward.tokenAddress,
-                appConfig,
-              });
-            } catch (error) {
-              // Do nothing if this errors, it simply means the reward token is
-              // not already a hyperdrive base or shares token
-            }
+      // for each chain id you can call the resolver with, call it and get the rewards
+      const rewards = (
+        await Promise.all(
+          rewardConfig.chainIds.map((chainId) =>
+            rewardFn(publicClients[chainId]),
+          ),
+        )
+      ).flat();
 
-            if (alreadyExists) {
-              return;
-            }
-
-            const knownTokenConfig =
-              knownTokenConfigs[reward.chainId][reward.tokenAddress];
-
-            if (knownTokenConfig) {
-              appConfig.tokens.push(knownTokenConfig);
-              return;
-            }
-
-            throw new Error(
-              `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
-            );
+      rewards.map((reward) => {
+        if (reward.type === "tokenAmount" || reward.type === "apy") {
+          let alreadyExists = false;
+          try {
+            // This will throw an error if it cannot find the token
+            alreadyExists = !!getToken({
+              chainId: reward.chainId,
+              tokenAddress: reward.tokenAddress,
+              appConfig,
+            });
+          } catch (error) {
+            // Do nothing if this errors, it simply means the reward token is
+            // not already a hyperdrive base or shares token
           }
-        });
-      }),
+
+          if (alreadyExists) {
+            return;
+          }
+
+          const knownTokenConfig =
+            knownTokenConfigs[reward.chainId][reward.tokenAddress];
+
+          if (knownTokenConfig) {
+            console.log(
+              "Reward token found:",
+              chalk.yellow(knownTokenConfig.symbol),
+            );
+            appConfig.tokens.push(knownTokenConfig);
+            return;
+          }
+
+          throw new Error(
+            `Unknown reward token found ${reward.tokenAddress} on chain ${reward.chainId}. You must hardcode a tokenConfig for address inside knownTokenConfigs.`,
+          );
+        }
+      });
+    }),
   );
 }

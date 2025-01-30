@@ -1,33 +1,31 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getBaseToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { OpenLongPositionReceived } from "@delvtech/hyperdrive-js";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useTotalOpenLongsValueTwo } from "src/ui/hyperdrive/longs/hooks/useTotalOpenLongsValue";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function TotalOpenLongsValue({
   hyperdrives,
   openLongs,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   openLongs:
     | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
     | undefined;
 }): ReactElement {
-  const { address: account } = useAccount();
-
   const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
     account,
     longs: openLongs,
     enabled: !!openLongs,
   });
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrives[0].chainId,
     hyperdriveAddress: hyperdrives[0].address,
@@ -55,7 +53,7 @@ export function TotalOpenLongsValue({
                   ).bigint
                 : 0n,
             decimals: baseToken?.decimals,
-            places: baseToken?.places,
+            places: 2, // fiat is always 2 decimals for display
             includeCommas: true,
           })}`}{" "}
         </p>

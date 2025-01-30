@@ -4,7 +4,7 @@ import {
   getHyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
-import { makeQueryKey } from "src/base/makeQueryKey";
+import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { QueryStatusWithIdle, getStatus } from "src/base/queryStatus";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -12,7 +12,6 @@ import { prepareSharesOut } from "src/ui/hyperdrive/hooks/usePrepareSharesOut";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { Address } from "viem";
-
 interface UsePreviewCloseLongOptions {
   chainId: number;
   hyperdriveAddress: Address | undefined;
@@ -69,9 +68,9 @@ export function usePreviewCloseLong({
     appConfig,
   });
 
-  const depositAssets = getDepositAssets(hyperdriveConfig);
+  const depositAssets = getDepositAssets(hyperdriveConfig, appConfig);
   const isZapping = !depositAssets.some(
-    (asset) => asset.address === tokenOutAddress
+    (asset) => asset.address === tokenOutAddress,
   );
 
   // If we're zapping, we'll need to convert the zap token to fiat and then into
@@ -90,13 +89,19 @@ export function usePreviewCloseLong({
   });
 
   const { data, status, fetchStatus, error } = useQuery({
-    queryKey: makeQueryKey("previewCloseLong", {
-      chainId,
-      hyperdriveAddress,
-      maturityTime: maturityTime?.toString(),
-      bondAmountIn: bondAmountIn?.toString(),
-      asBase,
-      tokenAddress: tokenOutAddress,
+    queryKey: makeQueryKey2({
+      namespace: "hyperdrive",
+      queryId: "previewCloseLong",
+      params: {
+        chainId,
+        hyperdriveAddress: hyperdriveAddress!,
+        maturityTime,
+        bondAmountIn,
+        asBase,
+        zapTokenPrice,
+        baseTokenPrice,
+        tokenOutAddress,
+      },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -112,7 +117,7 @@ export function usePreviewCloseLong({
             const fiatValueOfAmountOut = baseTokenPrice
               ? fixed(baseTokenPrice).mul(
                   resultInBase.amountOut,
-                  hyperdriveConfig.decimals
+                  hyperdriveConfig.decimals,
                 )
               : 0n;
 
@@ -120,7 +125,7 @@ export function usePreviewCloseLong({
             const zapAmountOut = zapTokenPrice
               ? fixed(fiatValueOfAmountOut).div(
                   zapTokenPrice,
-                  hyperdriveConfig.decimals
+                  hyperdriveConfig.decimals,
                 )
               : 0n;
 

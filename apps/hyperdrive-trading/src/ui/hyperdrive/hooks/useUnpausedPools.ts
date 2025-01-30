@@ -1,7 +1,6 @@
 import {
   AnyReward,
-  appConfig,
-  getAddLiquidityRewardResolverIds,
+  getAddLiquidityRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
@@ -24,7 +23,7 @@ export function useUnpausedPools(): {
 } {
   // Only show testnet and fork pools if the user is connected to a testnet
   // chain
-  const appConfigForConnectedChain = useAppConfigForConnectedChain();
+  const appConfig = useAppConfigForConnectedChain();
 
   // Use the chain id in the query key to make sure the pools list updates when
   // you switch chains
@@ -40,7 +39,7 @@ export function useUnpausedPools(): {
         rewardsAmount: AnyReward[];
       })[] = (
         await Promise.all(
-          appConfigForConnectedChain.hyperdrives
+          appConfig.hyperdrives
             .filter((hyperdrive) => !HIDDEN_POOLS.includes(hyperdrive.address))
             .map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({
@@ -57,20 +56,20 @@ export function useUnpausedPools(): {
 
               // Resolve the rewards information and include it for consumers
               // Add rewards APY if available
-              const resolverIds = getAddLiquidityRewardResolverIds({
+              const rewardConfigs = getAddLiquidityRewardConfigs({
                 hyperdriveAddress: hyperdrive.address,
                 chainId: hyperdrive.chainId,
                 appConfig,
               });
 
-              const rewards = !resolverIds?.length
+              const rewards = !rewardConfigs?.length
                 ? []
                 : (
                     await Promise.all(
-                      resolverIds.map((resolverId) =>
+                      rewardConfigs.map((rewardConfig) =>
                         queryClient.fetchQuery(
                           getRewardResolverQuery({
-                            resolverId,
+                            rewardConfig,
                             chainId: hyperdrive.chainId,
                           }),
                         ),

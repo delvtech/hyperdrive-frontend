@@ -1,6 +1,5 @@
 import {
   AppConfig,
-  appConfig,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -20,10 +19,10 @@ import {
 import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { formatRate } from "src/base/formatRate";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
@@ -33,23 +32,27 @@ import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageL
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
 import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function OpenLongsTableDesktop({
   hyperdrives,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
 }): ReactElement | null {
-  const { address: account } = useAccount();
-  const { openLongPositions, openLongPositionsStatus } =
-    usePortfolioLongsDataFromHyperdrives(hyperdrives);
+  const { openLongPositions } = usePortfolioLongsDataFromHyperdrives({
+    hyperdrives,
+    account,
+  });
   const openLongPositionsExist = openLongPositions?.some(
     (position) => position.details !== undefined,
   );
 
+  const appConfig = useAppConfigForConnectedChain();
   const columns = useMemo(() => {
-    return getColumns({ hyperdrives, appConfig });
-  }, [hyperdrives]);
+    return getColumns({ account, hyperdrives, appConfig });
+  }, [hyperdrives, account]);
   const tableInstance = useReactTable({
     columns: columns,
     data: openLongPositions || [],
@@ -78,10 +81,6 @@ export function OpenLongsTableDesktop({
     );
   }
 
-  if (openLongPositionsStatus === "loading") {
-    return <TableSkeleton numColumns={columns.length} numRows={5} />;
-  }
-
   if (!openLongPositionsExist) {
     return null;
   }
@@ -93,6 +92,7 @@ export function OpenLongsTableDesktop({
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalOpenLongsValue
+            account={account}
             hyperdrives={hyperdrives}
             openLongs={openLongPositions}
           />
@@ -111,6 +111,7 @@ export function OpenLongsTableDesktop({
           return (
             <CloseLongModalButton
               key={modalId}
+              account={account}
               hyperdrive={original.hyperdrive}
               modalId={modalId}
               long={{
@@ -232,9 +233,11 @@ const columnHelper = createColumnHelper<
 
 function getColumns({
   hyperdrives,
+  account,
   appConfig,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
   appConfig: AppConfig;
 }) {
   const baseToken = getBaseToken({
@@ -335,6 +338,7 @@ function getColumns({
         return (
           <ManageLongsButton
             assetId={getValue()}
+            account={account}
             hyperdrive={row.original.hyperdrive}
             key={getValue()}
           />

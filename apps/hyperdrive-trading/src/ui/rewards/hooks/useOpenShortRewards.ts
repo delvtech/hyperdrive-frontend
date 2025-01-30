@@ -1,12 +1,12 @@
 import {
   AnyReward,
-  appConfig,
-  getOpenShortRewardResolverIds,
+  getOpenShortRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { queryClient } from "src/network/queryClient";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 
 export function useOpenShortRewards({
@@ -19,13 +19,14 @@ export function useOpenShortRewards({
   rewards: AnyReward[] | undefined;
   status: "error" | "success" | "loading";
 } {
-  const resolverIds = getOpenShortRewardResolverIds({
+  const appConfig = useAppConfigForConnectedChain();
+  const rewardConfigs = getOpenShortRewardConfigs({
     hyperdriveAddress: hyperdriveConfig.address,
     chainId: hyperdriveConfig.chainId,
     appConfig,
   });
 
-  const queryEnabled = !!resolverIds?.length && enabled;
+  const queryEnabled = !!rewardConfigs?.length && enabled;
   const { data: rewards, status } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "rewards",
@@ -42,10 +43,10 @@ export function useOpenShortRewards({
           // TODO: We might be re-inventing useQueries here..
           return (
             await Promise.all(
-              resolverIds.map((resolver) =>
+              rewardConfigs.map((rewardConfig) =>
                 queryClient.fetchQuery(
                   getRewardResolverQuery({
-                    resolverId: resolver,
+                    rewardConfig,
                     chainId: hyperdriveConfig.chainId,
                   }),
                 ),

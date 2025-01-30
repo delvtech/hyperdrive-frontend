@@ -1,6 +1,5 @@
 import {
   AppConfig,
-  appConfig,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -16,10 +15,10 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
-import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
@@ -30,19 +29,23 @@ import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/Manag
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortsValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
 import { usePortfolioShortsDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsData";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export function OpenShortsTableDesktop({
   hyperdrives,
+  account,
 }: {
   hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
 }): ReactElement | null {
-  const { address: account } = useAccount();
-  const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsDataFromHyperdrives(hyperdrives);
+  const appConfig = useAppConfigForConnectedChain();
+  const { openShortPositions } = usePortfolioShortsDataFromHyperdrives({
+    hyperdrives,
+    account,
+  });
   const openShortPositionsExist =
     openShortPositions && openShortPositions.length > 0;
-  const columns = getColumns({ hyperdrives, appConfig });
+  const columns = getColumns({ account, hyperdrives, appConfig });
   const tableInstance = useReactTable({
     columns,
     data: openShortPositions || [],
@@ -75,10 +78,6 @@ export function OpenShortsTableDesktop({
     return null;
   }
 
-  if (openShortPositionsStatus === "loading") {
-    return <TableSkeleton numColumns={columns.length} numRows={5} />;
-  }
-
   return (
     <div className="flex flex-col gap-6">
       <PositionTableHeading
@@ -86,6 +85,7 @@ export function OpenShortsTableDesktop({
         hyperdrive={hyperdrives[0]}
         rightElement={
           <TotalOpenShortsValue
+            account={account}
             hyperdrives={hyperdrives}
             openShorts={openShortPositions}
           />
@@ -104,6 +104,7 @@ export function OpenShortsTableDesktop({
           return (
             <CloseShortModalButton
               key={modalId}
+              account={account}
               hyperdrive={row.original.hyperdrive}
               modalId={modalId}
               short={row.original}
@@ -219,9 +220,11 @@ const columnHelper = createColumnHelper<
 >();
 
 function getColumns({
+  account,
   hyperdrives,
   appConfig,
 }: {
+  account: Address | undefined;
   hyperdrives: HyperdriveConfig[];
   appConfig: AppConfig;
 }) {
@@ -291,6 +294,7 @@ function getColumns({
       cell: ({ row }) => {
         return (
           <ManageShortButton
+            account={account}
             hyperdrive={row.original.hyperdrive}
             assetId={row.original.assetId}
           />

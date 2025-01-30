@@ -1,11 +1,11 @@
 import {
-  appConfig,
   ChainConfig,
   HyperdriveConfig,
   TokenConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { useMemo } from "react";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 
 export interface PoolListFilters {
   chains: {
@@ -27,6 +27,7 @@ export function usePoolListFilters({
 }: {
   hyperdrives: HyperdriveConfig[] | undefined;
 }): PoolListFilters | undefined {
+  const appConfig = useAppConfigForConnectedChain();
   return useMemo(() => {
     if (!hyperdrives) {
       return;
@@ -46,7 +47,7 @@ export function usePoolListFilters({
     } = {};
 
     for (const hyperdrive of hyperdrives) {
-      const depositAssets = getDepositAssets(hyperdrive);
+      const depositAssets = getDepositAssets(hyperdrive, appConfig);
       chainsById[hyperdrive.chainId] ||= {
         chain: appConfig.chains[hyperdrive.chainId],
         count: 0,

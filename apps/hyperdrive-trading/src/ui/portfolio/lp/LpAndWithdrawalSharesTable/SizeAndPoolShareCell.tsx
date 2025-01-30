@@ -1,15 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getBaseToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { calculateRatio } from "src/base/calculateRatio";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
-
 export function SizeAndPoolShareCell({
   hyperdrive,
   lpShares,
@@ -22,7 +18,7 @@ export function SizeAndPoolShareCell({
       hyperdriveAddress: hyperdrive.address,
       chainId: hyperdrive.chainId,
     });
-
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     appConfig,
     hyperdriveAddress: hyperdrive.address,

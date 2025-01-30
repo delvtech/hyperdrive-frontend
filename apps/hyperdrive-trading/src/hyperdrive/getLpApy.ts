@@ -1,8 +1,8 @@
 import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
-  getAddLiquidityRewardResolverIds,
+  AppConfig,
+  getAddLiquidityRewardConfigs,
   getYieldSource,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -44,9 +44,11 @@ export type LpApyResult = {
 export async function getLpApy({
   readHyperdrive,
   hyperdrive,
+  appConfig,
 }: {
   readHyperdrive: ReadHyperdrive;
   hyperdrive: HyperdriveConfig;
+  appConfig: AppConfig;
 }): Promise<LpApyResult> {
   // Get current block and configuration
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
@@ -84,19 +86,19 @@ export async function getLpApy({
     netLpApy = lpApy;
 
     // Add rewards APY if available
-    const resolverIds = getAddLiquidityRewardResolverIds({
+    const rewardConfigs = getAddLiquidityRewardConfigs({
       hyperdriveAddress: hyperdrive.address,
       chainId: hyperdrive.chainId,
       appConfig,
     });
 
-    if (resolverIds?.length) {
+    if (rewardConfigs?.length) {
       const rewards = (
         await Promise.all(
-          resolverIds.map((resolverId) =>
+          rewardConfigs.map((rewardConfig) =>
             queryClient.fetchQuery(
               getRewardResolverQuery({
-                resolverId,
+                rewardConfig,
                 chainId: hyperdrive.chainId,
               }),
             ),

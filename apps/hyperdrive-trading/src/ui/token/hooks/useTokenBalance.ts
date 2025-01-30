@@ -1,7 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address, erc20Abi, formatUnits } from "viem";
 import { useBalance, useChainId, useReadContract } from "wagmi";
 
@@ -31,7 +31,7 @@ export function useTokenBalance({
 } {
   const isEth = tokenAddress === ETH_MAGIC_NUMBER;
   const isZeroAddress = tokenAddress === ZERO_ADDRESS;
-
+  const appConfig = useAppConfigForConnectedChain();
   const chainId = useChainId();
 
   const { data: ethBalance, status: ethBalanceStatus } = useBalance({

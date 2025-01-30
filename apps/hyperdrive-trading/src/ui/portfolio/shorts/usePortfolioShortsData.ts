@@ -4,18 +4,21 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey, makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 export type OpenShortPositionsData = {
   hyperdrive: HyperdriveConfig;
   openShorts: OpenShort[];
 }[];
 
-export function usePortfolioShortsData(): {
+export function usePortfolioShortsData({
+  account,
+}: {
+  account: Address | undefined;
+}): {
   openShortPositions: OpenShortPositionsData | undefined;
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!appConfigForConnectedChain;
 
@@ -49,15 +52,18 @@ export function usePortfolioShortsData(): {
   };
 }
 
-export function usePortfolioShortsDataFromHyperdrives(
-  hyperdrives: HyperdriveConfig[],
-): {
+export function usePortfolioShortsDataFromHyperdrives({
+  hyperdrives,
+  account,
+}: {
+  hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
+}): {
   openShortPositions:
     | (OpenShort & { hyperdrive: HyperdriveConfig })[]
     | undefined;
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
   const queryEnabled = !!account && !!hyperdrives.length;
   const { data: openShortPositions, status: openShortPositionsStatus } =
     useQuery({

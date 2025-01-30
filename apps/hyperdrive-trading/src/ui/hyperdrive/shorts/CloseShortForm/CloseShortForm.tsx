@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getToken,
   HyperdriveConfig,
@@ -8,6 +7,7 @@ import {
 import { adjustAmountByPercentage, OpenShort } from "@delvtech/hyperdrive-js";
 import { MouseEvent, ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -24,23 +24,25 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useChainId } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: HyperdriveConfig;
   // TODO: Refactor this to only need the positionSize and maturity time
   short: OpenShort;
+  account: Address | undefined;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseShortForm({
   hyperdrive,
+  account,
   short,
 }: CloseShortFormProps): ReactElement {
-  const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems = [];
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,

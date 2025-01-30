@@ -1,14 +1,11 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
-import {
-  appConfig,
-  getBaseToken,
-  TokenConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus, useMutation } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
@@ -48,6 +45,7 @@ export function useOpenLongZap({
   const { address: account } = useAccount();
   const { data: blockNumber } = useBlockNumber();
   const { data: block } = useBlock({ blockNumber });
+  const appConfig = useAppConfigForConnectedChain();
   const zapsConfig = appConfig.zaps[chainId];
   const publicClient = usePublicClient({ chainId });
   const { data: walletClient } = useWalletClient({ chainId });
@@ -71,7 +69,7 @@ export function useOpenLongZap({
         viemAdapter({
           publicClient,
           walletClient: walletClient as WalletClient,
-        })
+        }),
       );
 
       try {
@@ -101,7 +99,7 @@ export function useOpenLongZap({
                 deadline: block.timestamp + 60n, // 1 minute from block timestamp
                 path: encodePacked(
                   ["address", "uint24", "address"],
-                  [tokenIn.address, 100, baseToken.address]
+                  [tokenIn.address, 100, baseToken.address],
                 ),
                 recipient: zapsConfig.address,
               },
@@ -118,7 +116,7 @@ export function useOpenLongZap({
                 {
                   id: receipt.transactionHash,
                   duration: SUCCESS_TOAST_DURATION,
-                }
+                },
               );
             }
           },
@@ -129,7 +127,7 @@ export function useOpenLongZap({
             txHash={hash}
             message="Opening a Long..."
           />,
-          { id: hash }
+          { id: hash },
         );
 
         addTransaction({

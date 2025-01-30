@@ -1,7 +1,7 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import groupBy from "lodash.groupby";
 import { ReactElement } from "react";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
@@ -9,12 +9,15 @@ import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { RewardsTableDesktop } from "src/ui/portfolio/rewards/RewardsTableDesktop";
 import { usePortfolioRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
-export function RewardsContainer(): ReactElement {
-  const { address: account } = useAccount();
+export function RewardsContainer({
+  account,
+}: {
+  account: Address | undefined;
+}): ReactElement {
   const { rewards, rewardsStatus } = usePortfolioRewardsData({ account });
-
+  const appConfig = useAppConfigForConnectedChain();
   if (!account) {
     return <NoWalletConnected />;
   }

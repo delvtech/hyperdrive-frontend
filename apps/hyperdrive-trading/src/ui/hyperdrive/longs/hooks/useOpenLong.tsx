@@ -1,9 +1,9 @@
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
@@ -47,7 +47,7 @@ export function useOpenLong({
   const { address: account } = useAccount();
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
-
+  const appConfig = useAppConfigForConnectedChain();
   const queryClient = useQueryClient();
   const readWriteHyperdrive = useReadWriteHyperdrive({
     chainId,

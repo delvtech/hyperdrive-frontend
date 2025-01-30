@@ -1,7 +1,8 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getLpApy, LpApyResult } from "src/hyperdrive/getLpApy";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
@@ -20,6 +21,8 @@ export function useLpApy({
     hyperdriveAddress,
     chainId,
   });
+
+  const appConfig = useAppConfigForConnectedChain();
 
   const hyperdrive = getHyperdriveConfig({
     hyperdriveChainId: chainId,
@@ -48,6 +51,7 @@ export function useLpApy({
           getLpApy({
             readHyperdrive,
             hyperdrive,
+            appConfig,
           })
       : undefined,
     enabled: queryEnabled,

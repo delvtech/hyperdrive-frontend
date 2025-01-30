@@ -4,10 +4,11 @@ import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { usePublicClient, useWriteContract } from "wagmi";
 
-import { appConfig, getToken } from "@delvtech/hyperdrive-appconfig";
+import { getToken } from "@delvtech/hyperdrive-appconfig";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, erc20Abi, parseUnits } from "viem";
@@ -34,6 +35,7 @@ export function useApproveToken({
   const { writeContract, status } = useWriteContract();
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient({ chainId: tokenChainId });
+  const appConfig = useAppConfigForConnectedChain();
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
   const token = getToken({

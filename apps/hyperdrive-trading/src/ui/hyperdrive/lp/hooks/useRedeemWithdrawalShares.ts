@@ -1,6 +1,5 @@
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 
-import { appConfig } from "@delvtech/hyperdrive-appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
@@ -9,10 +8,10 @@ import {
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { parseError } from "src/network/parseError";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { prepareSharesIn } from "src/ui/hyperdrive/hooks/usePrepareSharesIn";
 import { Address } from "viem";
 import { useAccount, usePublicClient } from "wagmi";
-
 interface UseRedeemWithdrawalSharesOptions {
   chainId: number;
   hyperdriveAddress: Address;
@@ -44,7 +43,7 @@ export function useRedeemWithdrawalShares({
   });
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
-
+  const appConfig = useAppConfigForConnectedChain();
   const addTransaction = useAddRecentTransaction();
   const mutationEnabled =
     !!withdrawalSharesIn &&

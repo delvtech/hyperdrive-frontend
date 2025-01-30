@@ -4,6 +4,7 @@ import {
   mainnetAppConfig,
   testnetAppConfig,
 } from "@delvtech/hyperdrive-appconfig";
+import uniqBy from "lodash.uniqby";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useTokenList } from "src/ui/tokenlist/useTokenList";
 import { useChainId } from "wagmi";
@@ -24,7 +25,10 @@ export function useAppConfigForConnectedChain(): AppConfig {
   if (tokenList) {
     return {
       ...appConfig,
-      tokens: [...appConfig.tokens, ...tokenList],
+      tokens: uniqBy(
+        [...appConfig.tokens, ...tokenList],
+        (token) => `${token.address}-${token.chainId}`,
+      ),
     };
   }
 

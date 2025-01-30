@@ -1,6 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
-  appConfig,
   getBaseToken,
   getHyperdriveConfig,
   getToken,
@@ -13,6 +12,7 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
@@ -37,23 +37,25 @@ import {
   ZapsTokenPicker,
 } from "src/ui/token/TokenPicker";
 import { useTokenList } from "src/ui/tokenlist/useTokenList";
-import { formatUnits, parseUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useChainId } from "wagmi";
 
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
+  account: Address | undefined;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseLongForm({
   hyperdrive,
+  account,
   long,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
-  const { address: account } = useAccount();
   const connectedChainId = useChainId();
   const defaultItems: TokenConfig[] = [];
+  const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
@@ -186,6 +188,7 @@ export function CloseLongForm({
       hyperdriveAddress: hyperdrive.address,
       appConfig,
     }),
+    appConfig,
   );
 
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];

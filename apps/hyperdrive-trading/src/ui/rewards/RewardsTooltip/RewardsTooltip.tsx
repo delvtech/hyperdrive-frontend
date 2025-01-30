@@ -1,7 +1,8 @@
-import { appConfig, getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { PropsWithChildren, ReactNode } from "react";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useAddLiquidityRewards } from "src/ui/rewards/hooks/useAddLiquidityRewards";
 import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
@@ -28,6 +29,7 @@ export function RewardsTooltip({
   showMiles?: boolean;
   chainId: number;
 }>): ReactNode {
+  const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({
     hyperdriveAddress: hyperdriveAddress,
     hyperdriveChainId: chainId,

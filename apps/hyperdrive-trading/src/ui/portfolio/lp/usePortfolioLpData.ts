@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { useAccount } from "wagmi";
+import { Address } from "viem";
 
 type LpPosition = {
   hyperdrive: HyperdriveConfig;
@@ -12,13 +12,16 @@ type LpPosition = {
   withdrawalShares: bigint;
 };
 
-export function usePortfolioLpDataFromHyperdrives(
-  hyperdrives: HyperdriveConfig[],
-): {
+export function usePortfolioLpDataFromHyperdrives({
+  hyperdrives,
+  account,
+}: {
+  hyperdrives: HyperdriveConfig[];
+  account: Address | undefined;
+}): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
   const queryEnabled = !!account && !!hyperdrives.length;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", {
@@ -63,11 +66,14 @@ export function usePortfolioLpDataFromHyperdrives(
 }
 
 // TODO: This eventually will need to be removed but it's currently being used at the top level of the LP Portfolio container to determine if there are any LP positions to display.
-export function usePortfolioLpData(): {
+export function usePortfolioLpData({
+  account,
+}: {
+  account: Address | undefined;
+}): {
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
-  const { address: account } = useAccount();
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled =
     !!account && !!appConfigForConnectedChain.hyperdrives.length;

@@ -1,4 +1,5 @@
-import { HyperdriveConfig, appConfig } from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useBlockNumber } from "wagmi";
 
 /**
@@ -15,6 +16,8 @@ export function useIsNewPool({
 
   const blocksSinceInitialization =
     (currentBlockNumber || 0n) - hyperdrive.initializationBlock;
+
+  const appConfig = useAppConfigForConnectedChain();
 
   // if the pool was deployed less than one day ago, it's new.
   const isYoungerThanOneDay =

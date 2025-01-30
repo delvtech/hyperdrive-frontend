@@ -1,3 +1,4 @@
+import { RewardConfigId } from "src/rewards/resolvers";
 import { Address, PublicClient } from "viem";
 
 /**
@@ -62,7 +63,8 @@ export type RewardResolver = (
 ) => Promise<AnyReward[]>;
 
 export interface RewardConfig {
-  id: string;
+  id: RewardConfigId;
   chainIds: number[];
+
   resolver: RewardResolver;
 }
