@@ -140,8 +140,6 @@ function getColumns(appConfig: AppConfig) {
       id: "asset",
       header: "Asset",
       cell: ({ row }) => {
-        console.log("row", row, appConfig);
-
         const token = getToken({
           appConfig,
           chainId: row.original.chainId,
