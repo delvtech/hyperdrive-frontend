@@ -14,8 +14,8 @@ export function usePortfolioRewardsData({
   const queryEnabled = !!account;
   const { data: rewards, status: rewardsStatus } = useQuery({
     queryKey: makeQueryKey2({
-      namespace: "rewards",
-      queryId: "userRewards",
+      namespace: "portfolio",
+      queryId: "unclaimedRewards",
       params: { account },
     }),
     queryFn: queryEnabled
