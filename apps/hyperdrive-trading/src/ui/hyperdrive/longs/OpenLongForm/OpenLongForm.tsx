@@ -1,9 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  getBaseToken,
-  getToken,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import uniqBy from "lodash.uniqby";
 import { MouseEvent, ReactElement } from "react";
@@ -21,6 +17,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useTokenDepositOptions } from "src/ui/hyperdrive/hooks/useTokenDepositOptions";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -34,15 +31,10 @@ import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
-import {
-  TokenChoice,
-  TokenPicker,
-  ZapsTokenPicker,
-} from "src/ui/token/TokenPicker";
+import { TokenPicker, ZapsTokenPicker } from "src/ui/token/TokenPicker";
 import { useTokenList } from "src/ui/tokenlist/useTokenList";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
@@ -74,44 +66,12 @@ export function OpenLongForm({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
-  const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
+
+  const { baseToken, tokenOptions, sharesToken } = useTokenDepositOptions({
+    account,
+    hyperdrive,
     appConfig,
   });
-
-  const { balance: baseTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
-  });
-
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    decimals: hyperdrive.decimals,
-  });
-
-  const tokenChoices: TokenChoice[] = [];
-  if (baseToken && hyperdrive.depositOptions.isBaseTokenDepositEnabled) {
-    tokenChoices.push({
-      tokenConfig: baseToken,
-      tokenBalance: baseTokenBalance?.value,
-    });
-  }
-
-  const sharesToken = getToken({
-    chainId: hyperdrive.chainId,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    appConfig,
-  });
-
-  if (sharesToken && hyperdrive.depositOptions.isShareTokenDepositsEnabled) {
-    tokenChoices.push({
-      tokenConfig: sharesToken,
-      tokenBalance: sharesTokenBalance?.value,
-    });
-  }
 
   if (isZapsEnabled) {
     tokenList
@@ -122,13 +82,14 @@ export function OpenLongForm({
           tokenFromTokenList.chainId === hyperdrive.chainId,
       )
       .map((tokenFromTokenList) => {
-        tokenChoices.push({
+        tokenOptions.push({
+          tokenBalance: undefined,
           tokenConfig: tokenFromTokenList,
         });
       });
   }
 
-  let activeTokenChoices = tokenChoices.map((token) => token.tokenConfig);
+  let activeTokenChoices = tokenOptions.map((token) => token.tokenConfig);
   if (isZapsEnabled) {
     activeTokenChoices = uniqBy(
       [...activeTokenChoices, ...tokenList],
@@ -323,7 +284,7 @@ export function OpenLongForm({
           token={
             isZapsEnabled ? (
               <ZapsTokenPicker
-                tokens={tokenChoices}
+                tokens={tokenOptions}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {
@@ -342,7 +303,7 @@ export function OpenLongForm({
               />
             ) : (
               <TokenPicker
-                tokens={tokenChoices}
+                tokens={tokenOptions}
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   window.plausible("formChange", {

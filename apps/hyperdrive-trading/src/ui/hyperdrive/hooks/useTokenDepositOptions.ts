@@ -22,6 +22,7 @@ export function useTokenDepositOptions({
 }): {
   baseTokenDepositEnabled: boolean;
   baseToken: TokenConfig;
+  sharesToken: TokenConfig | undefined;
   tokenOptions: {
     tokenConfig: TokenConfig;
     tokenBalance: bigint | undefined;
@@ -69,5 +70,5 @@ export function useTokenDepositOptions({
       tokenBalance: sharesTokenBalance?.value,
     });
   }
-  return { baseTokenDepositEnabled, baseToken, tokenOptions };
+  return { baseTokenDepositEnabled, baseToken, tokenOptions, sharesToken };
 }
