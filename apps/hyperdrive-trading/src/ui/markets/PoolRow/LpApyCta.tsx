@@ -2,7 +2,6 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
-import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
@@ -46,12 +45,7 @@ export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
       action={
         <div className="daisy-indicator w-full sm:w-auto">
           <span className="daisy-badge daisy-indicator-item p-0">
-            <Tooltip
-              position="left"
-              tooltip="Earns 1 Mile per day for every $1 supplied"
-            >
-              <img src={HyperVueMilesIconUrl} className="size-6 rounded-full" />
-            </Tooltip>
+            <img src={HyperVueMilesIconUrl} className="size-6 rounded-full" />
           </span>
           <Link
             to="/market/$chainId/$address"
