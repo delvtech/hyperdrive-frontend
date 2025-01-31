@@ -1,10 +1,5 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  getBaseToken,
-  getToken,
-  getYieldSource,
-  HyperdriveConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { MouseEvent, ReactElement, useState } from "react";
@@ -21,7 +16,6 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
 import { RestrictedRegionButton } from "src/ui/compliance/RestrictedRegionButton";
@@ -31,6 +25,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useTokenDepositOptions } from "src/ui/hyperdrive/hooks/useTokenDepositOptions";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -73,15 +68,16 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
   });
   const appConfig = useAppConfigForConnectedChain();
+  const { baseToken, baseTokenDepositEnabled, tokenOptions } =
+    useTokenDepositOptions({
+      hyperdrive,
+      account,
+      appConfig,
+    });
   const { rewards } = useOpenShortRewards({ hyperdriveConfig: hyperdrive });
   const { poolInfo } = usePoolInfo({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
-  });
-  const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-    appConfig,
   });
   const { vaultRate } = useYieldSourceRate({
     chainId: hyperdrive.chainId,
@@ -97,38 +93,6 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
   });
-
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    decimals: hyperdrive.decimals,
-  });
-
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-  const shareTokenDepositsEnabled =
-    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
-  const tokenOptions = [];
-
-  if (baseTokenDepositEnabled) {
-    tokenOptions.push({
-      tokenConfig: baseToken,
-      tokenBalance: baseTokenBalance?.value,
-    });
-  }
-
-  const sharesToken = getToken({
-    chainId: hyperdrive.chainId,
-    appConfig,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-  });
-
-  if (sharesToken && shareTokenDepositsEnabled) {
-    tokenOptions.push({
-      tokenConfig: sharesToken,
-      tokenBalance: sharesTokenBalance?.value,
-    });
-  }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -294,16 +258,6 @@ export function OpenShortForm({
           decimals: 2,
           rounding: "trunc",
         });
-
-  const maturesOnLabel = formatDate(
-    Date.now() + Number(hyperdrive.poolConfig.positionDuration * 1000n),
-  );
-
-  const yieldSource = getYieldSource({
-    hyperdriveAddress: hyperdrive.address,
-    hyperdriveChainId: hyperdrive.chainId,
-    appConfig,
-  });
 
   // Plausible event props
   const formName = "Open Short";
