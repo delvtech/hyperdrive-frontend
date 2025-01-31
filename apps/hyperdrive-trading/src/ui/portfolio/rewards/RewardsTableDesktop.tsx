@@ -10,7 +10,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Rewards } from "src/rewards/generated/RewardsClient";
+import { Reward } from "src/rewards/generated/RewardsClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -21,9 +21,9 @@ export function RewardsTableDesktop({
   rewards,
 }: {
   account: Address;
-  rewards: Rewards;
+  rewards: Reward[];
 }): ReactElement {
-  const appConfig = useAppConfigForConnectedChain();
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
   const tableInstance = useReactTable({
     columns: getColumns(appConfig),
     data: rewards || [],
@@ -132,8 +132,6 @@ export function RewardsTableDesktop({
   );
 }
 
-// TODO: Remove this type once the swagger is defined properly
-type Reward = NonNullable<Rewards[number]>;
 const columnHelper = createColumnHelper<Reward>();
 
 function getColumns(appConfig: AppConfig) {
@@ -142,6 +140,8 @@ function getColumns(appConfig: AppConfig) {
       id: "asset",
       header: "Asset",
       cell: ({ row }) => {
+        console.log("row", row, appConfig);
+
         const token = getToken({
           appConfig,
           chainId: row.original.chainId,
@@ -168,7 +168,7 @@ function getColumns(appConfig: AppConfig) {
           <div className="flex flex-col">
             <span className="flex font-dmMono text-neutral-content">
               {formatBalance({
-                balance: BigInt(row.original.claimable) || 0n,
+                balance: BigInt(row.original.claimableAmount) || 0n,
                 decimals: token.decimals,
                 places: token.places,
               })}{" "}

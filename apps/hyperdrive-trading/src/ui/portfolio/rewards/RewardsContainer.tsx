@@ -17,7 +17,7 @@ export function RewardsContainer({
   account: Address | undefined;
 }): ReactElement {
   const { rewards, rewardsStatus } = usePortfolioRewardsData({ account });
-  const appConfig = useAppConfigForConnectedChain();
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
   if (!account) {
     return <NoWalletConnected />;
   }
