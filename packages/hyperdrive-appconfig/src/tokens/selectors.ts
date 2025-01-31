@@ -14,9 +14,9 @@ export function getToken({
   chainId: number;
   tokenAddress: Address;
   appConfig: AppConfig;
-}): TokenConfig | null {
+}): TokenConfig | undefined {
   if (tokenAddress === zeroAddress) {
-    return null;
+    return;
   }
 
   const token = appConfig.tokens.find(

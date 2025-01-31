@@ -3,7 +3,6 @@ import {
   HyperdriveConfig,
   TokenConfig,
   getBaseToken,
-  getToken,
   getYieldSource,
 } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
@@ -27,6 +26,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useTokenDepositOptions } from "src/ui/hyperdrive/hooks/useTokenDepositOptions";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
@@ -43,7 +43,6 @@ import { TokenPicker } from "src/ui/token/TokenPicker";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { useAccount, useChainId } from "wagmi";
@@ -69,53 +68,12 @@ export function AddLiquidityForm({
     chainId: hyperdrive.chainId,
   });
 
-  const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-    appConfig,
-  });
-  const sharesToken = getToken({
-    chainId: hyperdrive.chainId,
-    appConfig,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-  });
-
-  const { balance: baseTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
-  });
-
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: hyperdrive.poolConfig.vaultSharesToken,
-    decimals: hyperdrive.decimals,
-  });
-
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-  const shareTokenDepositsEnabled =
-    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
-
-  const { fixedApr } = useFixedRate({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
-
-  const tokenOptions = [];
-  if (baseTokenDepositEnabled) {
-    tokenOptions.push({
-      tokenConfig: baseToken,
-      tokenBalance: baseTokenBalance?.value,
+  const { baseTokenDepositEnabled, baseToken, tokenOptions } =
+    useTokenDepositOptions({
+      hyperdrive,
+      account,
+      appConfig,
     });
-  }
-
-  if (sharesToken && shareTokenDepositsEnabled) {
-    tokenOptions.push({
-      tokenConfig: sharesToken,
-      tokenBalance: sharesTokenBalance?.value,
-    });
-  }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -188,6 +146,10 @@ export function AddLiquidityForm({
   // rate gaurd @ 5% = 0.05
   // minApr = .1 * (1 - .05)
   // maxApr = .1 * (1 + .05)
+  const { fixedApr } = useFixedRate({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+  });
   const rateGuard = parseFixed(0.05).bigint; // 5% as an 18 digit number
   const minApr = fixedApr
     ? fixed(fixedApr.apr).mul(BigInt(1e18) - rateGuard).bigint
