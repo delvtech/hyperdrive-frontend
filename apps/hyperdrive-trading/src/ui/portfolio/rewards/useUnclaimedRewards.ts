@@ -3,7 +3,7 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { Reward, RewardsApi } from "src/rewards/generated/RewardsClient";
 import { Address } from "viem";
 
-export function usePortfolioRewardsData({
+export function useUnclaimedRewards({
   account,
 }: {
   account: Address | undefined;

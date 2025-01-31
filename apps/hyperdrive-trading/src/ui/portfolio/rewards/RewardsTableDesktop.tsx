@@ -24,6 +24,7 @@ export function RewardsTableDesktop({
   rewards: Reward[];
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
+  const { claimReward } = useClaimRewards({ reward });
   const tableInstance = useReactTable({
     columns: getColumns(appConfig),
     data: rewards || [],

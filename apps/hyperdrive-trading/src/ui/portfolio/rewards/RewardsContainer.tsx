@@ -8,7 +8,7 @@ import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { RewardsTableDesktop } from "src/ui/portfolio/rewards/RewardsTableDesktop";
-import { usePortfolioRewardsData } from "src/ui/portfolio/rewards/useRewardsData";
+import { useUnclaimedRewards } from "src/ui/portfolio/rewards/useUnclaimedRewards";
 import { Address } from "viem";
 
 export function RewardsContainer({
@@ -16,7 +16,7 @@ export function RewardsContainer({
 }: {
   account: Address | undefined;
 }): ReactElement {
-  const { rewards, rewardsStatus } = usePortfolioRewardsData({ account });
+  const { rewards, rewardsStatus } = useUnclaimedRewards({ account });
   const appConfig = useAppConfigForConnectedChain({ strict: false });
   if (!account) {
     return <NoWalletConnected />;
