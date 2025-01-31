@@ -14,6 +14,9 @@ interface PortfolioQueryKeys {
       | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
       | undefined;
   };
+  unclaimedRewards: {
+    account: Address | undefined;
+  };
   openShortPositions: {
     account: Address | undefined;
     hyperdrives: HyperdriveConfig[];

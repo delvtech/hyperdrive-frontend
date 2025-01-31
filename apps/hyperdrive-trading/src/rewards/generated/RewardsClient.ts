@@ -15,10 +15,10 @@ export interface RewardsResponse {
    * @example "0x1234567890abcdef1234567890abcdef12345678"
    */
   userAddress: `0x${string}`;
-  rewards: Rewards;
+  rewards: Reward[];
 }
 
-export type Rewards = {
+export interface Reward {
   /** @example 1 */
   chainId: number;
   /**
@@ -30,7 +30,7 @@ export type Rewards = {
    * Amount of tokens claimable.
    * @example "1000000000000000000"
    */
-  claimable: string;
+  claimableAmount: string;
   /**
    * Token address of the reward.
    * @example "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842"
@@ -43,7 +43,7 @@ export type Rewards = {
    * @example 123892327
    */
   merkleProofLastUpdated: number;
-}[];
+}
 
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
@@ -303,13 +303,28 @@ export class RewardsApi<
     /**
      * @description Returns the rewards associated with a specific address.
      *
-     * @name RewardsDetail
+     * @name RewardsUserDetail
      * @summary Get rewards for an address.
-     * @request GET:/get/rewards/{address}
+     * @request GET:/get/rewards/user/{address}
      */
-    rewardsDetail: (address: string, params: RequestParams = {}) =>
+    rewardsUserDetail: (address: string, params: RequestParams = {}) =>
       this.request<RewardsResponse, void>({
-        path: `/get/rewards/${address}`,
+        path: `/get/rewards/user/${address}`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * @description Returns mocked rewards from mainnet_test.json for a specific address.
+     *
+     * @name RewardsStubDetail
+     * @summary Get stubbed rewards for an address.
+     * @request GET:/get/rewards/stub/{address}
+     */
+    rewardsStubDetail: (address: string, params: RequestParams = {}) =>
+      this.request<RewardsResponse, void>({
+        path: `/get/rewards/stub/${address}`,
         method: "GET",
         format: "json",
         ...params,
