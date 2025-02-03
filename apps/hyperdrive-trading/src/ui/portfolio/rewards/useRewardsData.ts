@@ -24,7 +24,7 @@ export function usePortfolioRewardsData({
             baseUrl: import.meta.env.VITE_REWARDS_BASE_URL,
           });
           try {
-            const response = await rewardsApi.get.rewardsStubDetail(account);
+            const response = await rewardsApi.get.rewardsUserDetail(account);
             return response.rewards;
           } catch (error: any) {
             // This throws a 404 if the account does not have any rewards, which
