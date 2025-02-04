@@ -53,8 +53,7 @@ export function TotalLpValue({
           `$${formatBalance({
             balance: fiatPrice
               ? fixed(totalOpenLpPositions ?? 0n, baseToken.decimals).mul(
-                  fiatPrice,
-                  baseToken.decimals,
+                  fiatPrice, // fiat price is always 18 decimals
                 ).bigint
               : 0n,
             decimals: hyperdrive.decimals,
