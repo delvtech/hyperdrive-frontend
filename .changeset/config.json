@@ -6,11 +6,15 @@
     ["@delvtech/hyperdrive-wasm", "hyperdrive-wasm"],
     ["@delvtech/fixed-point-wasm", "fixed-point-wasm"]
   ],
-  "linked": [["@delvtech/hyperdrive-viem", "@delvtech/hyperdrive-js"]],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "privatePackages": {
     "version": false
-  }
+  },
+  "ignore": [
+    "@delvtech/hyperdrive-js",
+    "@delvtech/hyperdrive-js-core",
+    "@delvtech/hyperdrive-viem"
+  ]
 }
