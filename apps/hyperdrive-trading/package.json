@@ -37,7 +37,7 @@
     "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
     "@radix-ui/react-tooltip": "^1.1.2",
-    "@rainbow-me/rainbowkit": "^2.1.3",
+    "@rainbow-me/rainbowkit": "^2.2.3",
     "@rollbar/react": "^0.11.1",
     "@tanstack/query-core": "^4.36.1",
     "@tanstack/react-query": "^4.29.12",
@@ -52,7 +52,7 @@
     "@uniswap/v3-sdk": "^3.19.0",
     "@usecapsule/rainbowkit-wallet": "^0.9.4",
     "@usecapsule/react-sdk": "^3.17.0",
-    "@wagmi/core": "^2.6.9",
+    "@wagmi/core": "^2.16.3",
     "assert-never": "^1.2.1",
     "buffer": "^6.0.3",
     "calendar-link": "^2.6.0",
@@ -77,8 +77,8 @@
     "react-use": "^17.4.2",
     "rollbar": "^2.26.4",
     "semver": "^7.6.3",
-    "viem": "^2.7.8",
-    "wagmi": "^2.5.12",
+    "viem": "^2.22.19",
+    "wagmi": "^2.14.9",
     "zod": "^3.23.8"
   },
   "devDependencies": {
