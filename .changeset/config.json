@@ -12,9 +12,5 @@
   "privatePackages": {
     "version": false
   },
-  "ignore": [
-    "@delvtech/hyperdrive-js",
-    "@delvtech/hyperdrive-js-core",
-    "@delvtech/hyperdrive-viem"
-  ]
+  "ignore": ["@delvtech/hyperdrive-js-core"]
 }
