@@ -8,6 +8,7 @@ import {
 } from "@rainbow-me/rainbowkit/wallets";
 import { cloudChain } from "src/chains/cloudChain";
 import { gnosisFork } from "src/chains/gnosisFork";
+import { rewardsFork } from "src/chains/rewardsFork";
 import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Chain, http, Transport } from "viem";
@@ -17,6 +18,8 @@ const {
   VITE_LOCALHOST_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_CHAIN_ID,
+  VITE_REWARDS_FORK_NODE_RPC_URL,
+  VITE_REWARDS_FORK_CHAIN_ID,
   VITE_WALLET_CONNECT_PROJECT_ID,
   VITE_SEPOLIA_RPC_URL,
   VITE_MAINNET_RPC_URL,
@@ -87,6 +90,11 @@ const chainConfigs: Record<string, WagmiClientConfig> = {
     rpcUrl: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
     chain: cloudChain,
     chainId: VITE_CUSTOM_CHAIN_CHAIN_ID,
+  },
+  rewardsFork: {
+    rpcUrl: VITE_REWARDS_FORK_NODE_RPC_URL,
+    chain: rewardsFork,
+    chainId: VITE_REWARDS_FORK_CHAIN_ID,
   },
   sepolia: {
     rpcUrl: VITE_SEPOLIA_RPC_URL,
