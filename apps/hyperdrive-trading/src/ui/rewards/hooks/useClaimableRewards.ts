@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { Reward, RewardsApi } from "src/rewards/generated/RewardsClient";
 import { Address } from "viem";
+import { usePublicClient } from "wagmi";
 
-export function usePortfolioRewardsData({
+export function useClaimableRewards({
   account,
 }: {
   account: Address | undefined;
@@ -11,18 +12,21 @@ export function usePortfolioRewardsData({
   rewards: Reward[] | undefined;
   rewardsStatus: "error" | "success" | "loading";
 } {
-  const queryEnabled = !!account;
+  const publicClient = usePublicClient();
+  const queryEnabled = !!account && !!publicClient;
   const { data: rewards, status: rewardsStatus } = useQuery({
     queryKey: makeQueryKey2({
-      namespace: "portfolio",
+      namespace: "rewards",
       queryId: "unclaimedRewards",
       params: { account },
     }),
+    enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const rewardsApi = new RewardsApi({
             baseUrl: import.meta.env.VITE_REWARDS_BASE_URL,
           });
+
           try {
             const response = await rewardsApi.get.rewardsStubDetail(account);
             return response.rewards;
@@ -37,7 +41,6 @@ export function usePortfolioRewardsData({
           }
         }
       : undefined,
-    enabled: queryEnabled,
   });
 
   return {

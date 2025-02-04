@@ -1,3 +1,4 @@
+import { rewardsMainnetFork } from "src/chains/cloudChain";
 import {
   AERO_ICON_URL,
   MORPHO_ICON_URL,
@@ -50,6 +51,17 @@ export const knownTokenConfigs2: TokenConfig[] = [
   {
     address: "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
     chainId: mainnet.id,
+    name: "Morpho Token",
+    symbol: "MORPHO",
+    decimals: 18,
+    places: 4,
+    iconUrl: MORPHO_ICON_URL,
+    tags: [],
+    priceOracle: "defillama",
+  },
+  {
+    address: "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+    chainId: rewardsMainnetFork.id,
     name: "Morpho Token",
     symbol: "MORPHO",
     decimals: 18,
