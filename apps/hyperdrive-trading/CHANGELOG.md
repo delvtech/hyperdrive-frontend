@@ -1,5 +1,26 @@
 # hyperdrive-trading
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [b367983]
+- Updated dependencies [de68405]
+- Updated dependencies [7a034fc]
+- Updated dependencies [d8ec43c]
+- Updated dependencies [9bf1e70]
+- Updated dependencies [c9acbb5]
+- Updated dependencies [f758752]
+- Updated dependencies [18482c3]
+- Updated dependencies [5dddc75]
+- Updated dependencies [6cc29bb]
+- Updated dependencies [c9acbb5]
+- Updated dependencies [c605fa0]
+- Updated dependencies [d1889f5]
+  - @delvtech/hyperdrive-appconfig@0.1.0
+  - @delvtech/hyperdrive-js@0.0.1
+  - @delvtech/fixed-point-wasm@0.0.7
+
 ## 0.0.10
 
 ### Patch Changes

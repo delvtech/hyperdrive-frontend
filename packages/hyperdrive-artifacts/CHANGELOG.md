@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 1.0.19
+
+### Patch Changes
+
+- 6da6183: Update version to v1.0.20
+
 ## 1.0.18
 
 ### Patch Changes

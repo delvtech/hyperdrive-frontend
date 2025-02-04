@@ -1,6 +1,6 @@
 {
   "name": "hyperdrive-wasm",
-  "version": "0.15.3",
+  "version": "0.16.0",
   "private": true,
   "license": "AGPL-3.0",
   "scripts": {
