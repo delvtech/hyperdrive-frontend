@@ -57,51 +57,56 @@ interface WagmiClientConfig {
 *   }
 */
 
-const chainConfigs: Record<string, WagmiClientConfig> = {
-  // mainnet chains
-  mainnet: {
-    rpcUrl: VITE_MAINNET_RPC_URL,
-    chain: mainnet,
-    wallets: [capsuleWallet],
-  },
-  gnosis: {
-    rpcUrl: VITE_GNOSIS_NODE_RPC_URL,
-    chain: gnosis,
-  },
-  linea: {
-    rpcUrl: VITE_LINEA_RPC_URL,
-    chain: linea,
-  },
-  base: {
-    rpcUrl: VITE_BASE_RPC_URL,
-    chain: base,
-  },
-  // testnet chains
-  foundry: {
-    rpcUrl: VITE_LOCALHOST_NODE_RPC_URL,
-    chain: foundry,
-  },
-  gnosisFork: {
-    rpcUrl: VITE_GNOSIS_FORK_NODE_RPC_URL,
-    chain: gnosisFork,
-    chainId: VITE_GNOSIS_FORK_CHAIN_ID,
-  },
-  cloudChain: {
-    rpcUrl: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-    chain: cloudChain,
-    chainId: VITE_CUSTOM_CHAIN_CHAIN_ID,
-  },
-  rewardsFork: {
-    rpcUrl: VITE_REWARDS_FORK_NODE_RPC_URL,
-    chain: rewardsFork,
-    chainId: VITE_REWARDS_FORK_CHAIN_ID,
-  },
-  sepolia: {
-    rpcUrl: VITE_SEPOLIA_RPC_URL,
-    chain: sepolia,
-    wallets: [capsuleWallet],
-  },
-};
+const chainConfigs: Record<string, WagmiClientConfig> = Object.fromEntries(
+  Object.entries({
+    // mainnet chains
+    mainnet: {
+      rpcUrl: VITE_MAINNET_RPC_URL,
+      chain: mainnet,
+      wallets: [capsuleWallet],
+    },
+    gnosis: {
+      rpcUrl: VITE_GNOSIS_NODE_RPC_URL,
+      chain: gnosis,
+    },
+    linea: {
+      rpcUrl: VITE_LINEA_RPC_URL,
+      chain: linea,
+    },
+    base: {
+      rpcUrl: VITE_BASE_RPC_URL,
+      chain: base,
+    },
+    // testnet chains
+    foundry: {
+      rpcUrl: VITE_LOCALHOST_NODE_RPC_URL,
+      chain: foundry,
+    },
+    gnosisFork: {
+      rpcUrl: VITE_GNOSIS_FORK_NODE_RPC_URL,
+      chain: gnosisFork,
+      chainId: VITE_GNOSIS_FORK_CHAIN_ID,
+    },
+    cloudChain: {
+      rpcUrl: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
+      chain: cloudChain,
+      chainId: VITE_CUSTOM_CHAIN_CHAIN_ID,
+    },
+    rewardsFork: {
+      rpcUrl: VITE_REWARDS_FORK_NODE_RPC_URL,
+      chain: rewardsFork,
+      chainId: VITE_REWARDS_FORK_CHAIN_ID,
+    },
+    sepolia: {
+      rpcUrl: VITE_SEPOLIA_RPC_URL,
+      chain: sepolia,
+      wallets: [capsuleWallet],
+    },
+  }).filter(
+    // Remove configs that don't have a proper RPC URL defined in the .env
+    ([_, config]) => config.rpcUrl !== undefined,
+  ),
+);
 
 const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
