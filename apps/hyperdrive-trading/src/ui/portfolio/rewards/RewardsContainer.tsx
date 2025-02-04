@@ -8,7 +8,7 @@ import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PortfolioTableHeading } from "src/ui/portfolio/PortfolioTableHeading";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { RewardsTableDesktop } from "src/ui/portfolio/rewards/RewardsTableDesktop";
-import { useUnclaimedRewards } from "src/ui/portfolio/rewards/useUnclaimedRewards";
+import { useClaimableRewards } from "src/ui/rewards/hooks/useClaimableRewards";
 import { Address } from "viem";
 
 export function RewardsContainer({
@@ -16,8 +16,15 @@ export function RewardsContainer({
 }: {
   account: Address | undefined;
 }): ReactElement {
-  const { rewards, rewardsStatus } = useUnclaimedRewards({ account });
-  const appConfig = useAppConfigForConnectedChain({ strict: false });
+  const { rewards, rewardsStatus } = useClaimableRewards({ account });
+
+  const appConfig = useAppConfigForConnectedChain({
+    // Set this to false so that we can reference mainnet token configs from the
+    // rewards endpoint on a mainnet fork. This `strict` flag can be removed
+    // once we're live.
+    strict: false,
+  });
+
   if (!account) {
     return <NoWalletConnected />;
   }

@@ -111,7 +111,6 @@ export function usePortfolioLongsDataFromHyperdrives({
                     }),
                   })),
                 );
-                console.log("openLongs", openLongs);
 
                 return openLongs;
               }),
