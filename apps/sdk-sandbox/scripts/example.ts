@@ -27,6 +27,7 @@ const zapContract = await drift.contract({
 
 const assetId: bigint =
   452312848583266388373324160190187140051835877600158453279131187532665101056n;
+const maturity = 1754438400n;
 async function openLongPosition() {
   try {
     const beforeDetails = await pool.getOpenLongDetails({
@@ -36,47 +37,188 @@ async function openLongPosition() {
     });
     console.log("openLongDetails before", beforeDetails);
 
-    const txReceipt = await new Promise(async (resolve, reject) => {
-      const receipt = await pool.openLong({
-        args: {
-          amount: BigInt(3e18), // 3 base tokens (DAI)
+    // // Open with Viem still reverts.
+    // publicClient.estimateGas({
+
+    //     abi: pool.contract.abi,
+    //     address: pool.address,
+    //     functionName: "openLong",
+    //     account: walletClient?.account.address as Address,
+    //     // gas: BigInt(6825329375n),
+    //     gas: 16125042n,
+
+    //     args: [
+    //       BigInt(3e18),
+    //       1n,
+    //       1n,
+    //       {
+    //         asBase: true,
+    //         destination: walletClient?.account.address as Address,
+    //         extraData: "0x",
+    //       },
+    //     ],
+
+    // })
+    const { result, request } = await publicClient.simulateContract({
+      abi: pool.contract.abi,
+      address: pool.address,
+      functionName: "openLong",
+      account: walletClient?.account.address as Address,
+      // gas: BigInt(6825329375n),
+      gas: 16125042n,
+
+      args: [
+        BigInt(3e18),
+        1n,
+        1n,
+        {
           asBase: true,
           destination: walletClient?.account.address as Address,
           extraData: "0x",
-          minBondsOut: 1n, // Minimum bonds to accept
-          minVaultSharePrice: 1n,
         },
-        options: {
-          onMined: async (receipt) => {
-            resolve(receipt);
-          },
-        },
-      });
+      ],
     });
+    // console.log("openLong simulate result:", result);
+    const openTxHash = await walletClient?.writeContract(request);
+    if (!openTxHash) {
+      throw new Error("No open transaction hash received");
+    }
+    const txReceipt = await publicClient.waitForTransactionReceipt({
+      hash: openTxHash,
+    });
+    await drift.cache.clear();
 
-    // console.log("txReceipt status", txReceipt.status);
+    // console.log("Open position tx receipt", txReceipt);
 
-    // Get the OpenLong event from this tx
-    // const openLongEvents = await pool.contract.getEvents("OpenLong", {
-    //   filter: { trader: walletClient?.account.address as Address },
-    // });
-    // console.log(
-    //   "Open Long Event",
-    //   openLongEvents
-    //     .sort(
-    //       (a, b) => Number(b.blockNumber || 0n) - Number(a.blockNumber || 0n),
-    //     )
-    //     .map((b) => b.blockNumber),
+    // const txReceipt: TransactionReceipt | undefined = await new Promise(
+    //   async (resolve, reject) => {
+    //     const hash = await pool
+    //       .openLong({
+    //         args: {
+    //           amount: BigInt(3e18), // 3 base tokens (DAI)
+    //           asBase: true,
+    //           destination: walletClient?.account.address as Address,
+    //           extraData: "0x",
+    //           minBondsOut: 1n, // Minimum bonds to accept
+    //           minVaultSharePrice: 1n,
+    //         },
+    //         options: {
+    //           onMined: async (receipt) => {
+    //             pool.contract.cache.clear();
+    //             resolve(receipt);
+    //           },
+    //         },
+    //       })
+    //       .catch((err) => {
+    //         reject(err);
+    //       });
+
+    //     console.log(`Open position tx hash: ${hash}`);
+    //   },
     // );
+
+    if (!txReceipt) {
+      throw new Error("No open transaction receipt received");
+    }
+
+    console.log("txReceipt status", txReceipt.status);
+
+    if (txReceipt.status !== "success") {
+      console.error("Open Transaction failed:", txReceipt);
+      throw new Error("Open Transaction failed");
+    }
 
     const afterDetails = await pool.getOpenLongDetails({
       account: walletClient?.account.address as Address,
       assetId,
-      options: { block: "latest" },
     });
     console.log("openLongDetails after", afterDetails);
 
-    // console.log("Successfully opened long position:", txReceipt);
+    // // Close Long Position via Zap
+    const approvalReceipt = await poolContract.write("setApproval", {
+      amount: maxInt256,
+      tokenID: assetId,
+      operator: zapsConfig.address,
+    });
+
+    console.log(`Approval tx hash: ${approvalReceipt}`);
+
+    // Get the amount of base out if closing directly
+    const { result: previewBaseAmountOut } =
+      await publicClient.simulateContract({
+        abi: pool.contract.abi,
+        address: pool.address,
+        functionName: "closeLong",
+        account: walletClient?.account.address as Address,
+        args: [
+          maturity,
+          BigInt(4e18), // 4 base tokens (DAI)
+          1n,
+          {
+            asBase: true,
+            destination: walletClient?.account.address as Address,
+            extraData: "0x",
+          },
+        ],
+      });
+
+    console.log(`Preview base out: ${fixed(previewBaseAmountOut).format()}`);
+
+    // Execute the zap close
+    const swapTx = await walletClient
+      ?.writeContract({
+        abi: zapAbi,
+        address: zapsConfig.address,
+        functionName: "closeLongZap",
+        gas: 16125042n,
+        args: [
+          pool.address,
+          maturity,
+          BigInt(4e18), // 4 base tokens (DAI)
+          1n,
+          {
+            destination: zapsConfig.address,
+            asBase: true,
+            extraData: "0x",
+          },
+          {
+            amountIn: previewBaseAmountOut,
+            amountOutMinimum: 1n,
+            deadline: (await publicClient.getBlock()).timestamp + 60n,
+            path: encodePacked(
+              ["address", "uint24", "address"],
+              [
+                "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
+                100, // 0.01% fee tier
+                "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
+              ],
+            ),
+            recipient: walletClient?.account.address as `0x${string}`,
+          },
+          false,
+        ],
+      })
+      .catch((err) => {
+        console.error("closeLongZap failed", err);
+        throw err;
+      });
+
+    if (!swapTx) {
+      throw new Error("No close position transaction hash received");
+    }
+
+    const receipt = await publicClient.waitForTransactionReceipt({
+      hash: swapTx,
+    });
+    await drift.cache.clear();
+
+    const openLongDetails = await pool.getOpenLongDetails({
+      account: walletClient?.account.address as Address,
+      assetId,
+    });
+
+    console.log("openLongDetails after zap close", openLongDetails);
+
     return txReceipt;
   } catch (error) {
     console.error("Failed to open long position:", error);
@@ -186,3 +328,31 @@ async function main() {
 }
 
 main().catch(console.error);
+
+/*
+Restarting 'scripts/example.ts'
+transfersReceived 96
+openLongDetails before {
+  assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+  maturity: 1754438400n,
+  baseAmountPaid: 118000000000000000000n,
+  bondAmount: 121879719632238431723n
+}
+txReceipt status success
+transfersReceived 97
+openLongDetails after {
+  assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+  maturity: 1754438400n,
+  baseAmountPaid: 121000000000000000000n,
+  bondAmount: 124977388484359446326n
+}
+Approval tx hash: 0x19ad6bd981198c208eec628f7bf9b446cbf62b075c49a93a3a3006131fc93d7d
+Preview base out: 3.871364705390474
+transfersReceived 97
+openLongDetails after zap close {
+  assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+  maturity: 1754438400n,
+  baseAmountPaid: 121000000000000000000n,
+  bondAmount: 124977388484359446326n
+}
+*/

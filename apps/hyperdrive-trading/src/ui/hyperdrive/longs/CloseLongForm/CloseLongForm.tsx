@@ -419,11 +419,12 @@ export function CloseLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!closeLong || isAmountLargerThanPositionSize}
             onClick={(e) => {
-              if (isZapsEnabled) {
-                closeLongZap?.();
-              } else {
-                closeLong?.();
-              }
+              closeLong?.();
+              // if (isZapsEnabled) {
+              //   closeLongZap?.();
+              // } else {
+              //   closeLong?.();
+              // }
               onCloseLong?.(e);
             }}
           >

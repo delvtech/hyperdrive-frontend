@@ -786,22 +786,39 @@ export class ReadHyperdrive extends ReadClient {
       toBlock: options?.block,
     });
     console.log("transfersReceived", transfersReceived.length);
+
     const transfersSent = await this.contract.getEvents("TransferSingle", {
       filter: { from: account },
       toBlock: options?.block,
     });
+    console.log("transfersSent", transfersSent.length);
 
-    const longsReceived = transfersReceived.filter((event) => {
-      const { assetType } = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`,
-      );
+    // The issue:
+    // Before:
+    //   transfersReceived 132
+    //   transfersSent 36
+    //   baseAmountPaid: 216320799616589377447n,
+    //   bondAmount: 223384732144048570947n
+    // After open:
+    //   transfersReceived 133 -> Went up, so something new to add
+    //   transfersSent 36
+    //   baseAmountPaid: 219320799616589377447n,
+    //   bondAmount: 226482246322955242779n -> ✅ went up
+    // After close:
+    //   transfersReceived 133 -> Didn't change, so nothing new to add
+    //   transfersSent 37 -> Went up, so something new to subtract
+    //   baseAmountPaid: 219320799616589377447n,
+    //   bondAmount: 226482246322955242779n -> ❌ Didn't go down
+
+    const longsReceived = [...transfersReceived].filter((event) => {
+      const { assetType, timestamp, assetPrefix } =
+        decodeAssetFromTransferSingleEventData(event.data as `0x${string}`);
       return assetType === "LONG";
     });
 
-    const longsSent = transfersSent.filter((event) => {
-      const { assetType } = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`,
-      );
+    const longsSent = [...transfersSent].filter((event) => {
+      const { assetType, timestamp, assetPrefix } =
+        decodeAssetFromTransferSingleEventData(event.data as `0x${string}`);
       return assetType === "LONG";
     });
 
@@ -845,16 +862,20 @@ export class ReadHyperdrive extends ReadClient {
           delete openLongs[assetId];
           return;
         }
+
         // otherwise just subtract the amount of bonds they closed and baseAmount
         // they received back from the running total
         const updatedLong: OpenLongPositionReceivedWithoutDetails = {
           ...long,
           value: long.value - event.args.value,
         };
+
         openLongs[assetId] = updatedLong;
       }
     });
-    return Object.values(openLongs).filter((long) => long.value);
+
+    return Object.values(openLongs);
+    // return Object.values(openLongs).filter((long) => long.value);
   }
 
   async getOpenLongDetails({
@@ -880,12 +901,156 @@ export class ReadHyperdrive extends ReadClient {
     }
 
     const openLongEvents = await this.contract.getEvents("OpenLong", {
-      filter: { trader: account },
+      filter: { trader: account, assetId },
     });
 
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
-      filter: { trader: account },
+      filter: { trader: account, assetId },
     });
+
+    // More transfers out of a bond then CloseLong events, in those transfers,
+    // we can see how many bonds were closed, but we can't see how much the zap
+    // contract will end up sending us in assets.
+
+    // Zap Close results in a TransferSingle event that Looks like:
+    // {
+    //   args: {
+    //     operator: '0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666',
+    //     from: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
+    //     to: '0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666',
+    //     id: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+    //     value: 4000000000000000000n
+    //   },
+    //   blockNumber: 21784962n,
+    //   data: '0x0100000000000000000000000000000000000000000000000000000068929b000000000000000000000000000000000000000000000000003782dace9d900000',
+    //   eventName: 'TransferSingle',
+    //   transactionHash: '0xa80fea0cf3ee415a533286afd5510ffce2e72cd5233677e147b84df31792d9cf'
+    // }
+    const zapAddress = "0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666";
+    const transfersSent = await this.contract.getEvents("TransferSingle", {
+      filter: {
+        from: account,
+        to: zapAddress,
+      },
+      toBlock: options?.block,
+    });
+    const isMissingEvents = transfersSent.length > closeLongEvents.length;
+
+    if (isMissingEvents) {
+      const allZapCloseLongEvents = await this.contract.getEvents("CloseLong", {
+        filter: {
+          trader: zapAddress,
+          assetId,
+        },
+      });
+
+      let totalZapCloseValue = 0n;
+      for (const event of allZapCloseLongEvents) {
+        totalZapCloseValue += event.args.bondAmount;
+      }
+      console.log("Total bonds closed by zap:", totalZapCloseValue);
+
+      // Group close events by block
+      const closeLongEventsByBlock: Record<
+        number,
+        { blockNumber: bigint; transactionHash: `0x${string}` }[]
+      > = {};
+      for (const event of closeLongEvents) {
+        if (event.blockNumber !== undefined) {
+          closeLongEventsByBlock[Number(event.blockNumber)] ||= [];
+          closeLongEventsByBlock[Number(event.blockNumber)].push({
+            blockNumber: event.blockNumber,
+            transactionHash: event.transactionHash as `0x${string}`,
+          });
+        }
+      }
+
+      // Find missing block ranges
+      const blockRangesToFetch: [
+        from: bigint | BlockTag,
+        to: bigint | BlockTag,
+      ][] = [];
+      let pendingBlockRange: [from: bigint | BlockTag, to: bigint | BlockTag] =
+        [0n, 0n];
+
+      for (const transfer of transfersSent) {
+        const closeEventsForThisBlock =
+          closeLongEventsByBlock[Number(transfer.blockNumber)] || [];
+        const matchingCloseEvent = closeEventsForThisBlock.find(
+          ({ transactionHash }) => transactionHash === transfer.transactionHash,
+        );
+
+        if (!matchingCloseEvent) {
+          pendingBlockRange[0] = transfer.blockNumber!;
+        } else {
+          pendingBlockRange[1] = transfer.blockNumber! - 1n;
+          blockRangesToFetch.push(pendingBlockRange);
+          pendingBlockRange = [0n, 0n];
+        }
+      }
+      if (pendingBlockRange[0] !== 0n) {
+        blockRangesToFetch.push([pendingBlockRange[0], "latest"]);
+      }
+
+      const accountTransactionHashes = transfersSent.map(
+        ({ transactionHash }) => transactionHash,
+      );
+
+      const eventsInMissingRanges = await Promise.all(
+        blockRangesToFetch.map(async ([from, to]) => {
+          // For each range of transfer out blocks not accounted for in the
+          // close long events, we need to find out many assets were sent to the
+          // account from the zap contract.
+          //
+          // - The zap contract doesn't emit events, so we can't look there.
+          //
+          // - We don't know what token the zap sent to us after the pool sent it
+          // the bonds, so we can't look for events on a specific token.
+          // return eventsInRange;
+          //
+          // The zap contract will close the long on our behalf, so can we see
+          // the pools CloseLong events where the trader is the zap contract and
+          // confirm it's the one for us?
+
+          const allZapClosesInRange = await this.contract.getEvents(
+            "CloseLong",
+            {
+              filter: {
+                trader: zapAddress,
+                assetId,
+              },
+              fromBlock: from,
+              toBlock: to,
+            },
+          );
+
+          // Only return those that were done in the same transaction as the
+          // account's transfers
+          return allZapClosesInRange.filter(({ transactionHash }) =>
+            accountTransactionHashes.includes(transactionHash as `0x${string}`),
+          );
+        }),
+      );
+
+      let totalMissingCloseBonds = 0n;
+      for (const missingEvent of eventsInMissingRanges.flat()) {
+        totalMissingCloseBonds += missingEvent.args.bondAmount;
+      }
+
+      console.log("blockRangesToFetch", blockRangesToFetch);
+      console.log(
+        "eventsInMissingRanges.length",
+        eventsInMissingRanges.flat().length,
+      );
+      console.log(
+        "missing events length:",
+        transfersSent.length - closeLongEvents.length,
+      );
+      console.log("Total unaccounted for bonds:", totalMissingCloseBonds);
+    }
+
+    console.log("openLongEvents", openLongEvents.length);
+    console.log("closeLongEvents", closeLongEvents.length);
 
     const allOpenLongDetails = this._calcOpenLongs({
       openLongEvents,
@@ -896,14 +1061,59 @@ export class ReadHyperdrive extends ReadClient {
       (details) =>
         details.assetId.toString() === longPosition.assetId.toString(),
     );
+
     // If no details exists for the position, the user must have just received
     // some longs via transfer but never opened them themselves.
     // OR If the amounts aren't the same, then they may have opened some and
     // received some from another wallet. In this case, we still can't be sure
     // of the details, so we return undefined.
-    if (!openLongDetails || openLongDetails.bondAmount !== longPosition.value) {
+    if (
+      !openLongDetails
+      // This is an edge case that is breaking the zap close function
+      // || openLongDetails.bondAmount !== longPosition.value
+    ) {
       return;
     }
+
+    console.log("Bond value from getOpenLongPositions", longPosition);
+    console.log(
+      "Bond value from getOpenLongDetails",
+      openLongDetails.bondAmount,
+    );
+    const diff = openLongDetails.bondAmount - longPosition.value;
+    console.log("Diff", diff);
+
+    // After open:
+
+    // Total unaccounted for bonds: 4000000000000000000n
+    // openLongEvents 144
+    // closeLongEvents 1
+    // Bond value from getOpenLongPositions 112610912798026423370n
+    // Bond value from getOpenLongDetails 452610912798026423370n
+    // Diff 340000000000000000000n
+
+    // After close:
+
+    // Total unaccounted for bonds: 4000000000000000000n
+    // openLongEvents 144
+    // closeLongEvents 1
+    // Bond value from getOpenLongPositions 108610912798026423370n
+    // Bond value from getOpenLongDetails 452610912798026423370n
+    // Diff 344000000000000000000n
+
+    // getOpenLongPositions {
+    //   '452312848583266388373324160190187140051835877600158453279131187532665101056': {
+    //     assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+    //     maturity: 1754438400n,
+    //     value: 121726443245231180174n
+    //   }
+    // }
+    // returned from this fn {
+    //   assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
+    //   maturity: 1754438400n,
+    //   baseAmountPaid: 288320799616589377447n,
+    //   bondAmount: 297726443245231180174n
+    // }
 
     return openLongDetails;
   }
