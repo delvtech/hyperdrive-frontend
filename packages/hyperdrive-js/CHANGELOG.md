@@ -14,4 +14,4 @@
 - Updated dependencies [c605fa0]
   - @delvtech/hyperdrive-wasm@0.16.0
   - @delvtech/fixed-point-wasm@0.0.7
-  - @delvtech/hyperdrive-artifacts@1.0.19
+  - @delvtech/hyperdrive-artifacts@1.0.20
