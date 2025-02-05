@@ -21,6 +21,10 @@ export function OpenLongsContainer({
     account,
   });
 
+  console.log("openLongPositions", openLongPositions);
+
+  // return <div>Hello</div>;
+
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
     (hyperdrive) => `${hyperdrive.chainId}-${hyperdrive.yieldSource}`,

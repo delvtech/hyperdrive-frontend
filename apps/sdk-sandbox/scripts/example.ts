@@ -12,6 +12,7 @@ const drift = new Drift(viemAdapter({ publicClient, walletClient }));
 const pool = new ReadWriteHyperdrive({
   address: "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
   drift,
+  earliestBlock: 20180617n,
 });
 
 const poolContract = drift.contract({
@@ -24,14 +25,21 @@ const zapContract = await drift.contract({
   abi: zapAbi,
 });
 
+const assetId: bigint =
+  452312848583266388373324160190187140051835877600158453279131187532665014656n;
 async function openLongPosition() {
   try {
-    console.log("Opening new long position...");
+    const beforeDetails = await pool.getOpenLongDetails({
+      account: walletClient?.account.address as Address,
+      assetId,
+      options: { block: "latest" },
+    });
+    console.log("openLongDetails before", beforeDetails);
 
     const txReceipt = await new Promise(async (resolve, reject) => {
       const receipt = await pool.openLong({
         args: {
-          amount: BigInt(100e18), // 100 base tokens (DAI)
+          amount: BigInt(3e18), // 3 base tokens (DAI)
           asBase: true,
           destination: walletClient?.account.address as Address,
           extraData: "0x",
@@ -46,7 +54,27 @@ async function openLongPosition() {
       });
     });
 
-    console.log("Successfully opened long position:", txReceipt);
+    // Get the OpenLong event from this tx
+    // const openLongEvents = await pool.contract.getEvents("OpenLong", {
+    //   filter: { trader: walletClient?.account.address as Address },
+    // });
+    // console.log(
+    //   "Open Long Event",
+    //   openLongEvents
+    //     .sort(
+    //       (a, b) => Number(b.blockNumber || 0n) - Number(a.blockNumber || 0n),
+    //     )
+    //     .map((b) => b.blockNumber),
+    // );
+
+    const afterDetails = await pool.getOpenLongDetails({
+      account: walletClient?.account.address as Address,
+      assetId,
+      options: { block: "latest" },
+    });
+    console.log("openLongDetails after", afterDetails);
+
+    // console.log("Successfully opened long position:", txReceipt);
     return txReceipt;
   } catch (error) {
     console.error("Failed to open long position:", error);
@@ -62,9 +90,9 @@ async function closeAllPositions() {
   const manualPositions = [
     {
       assetId:
-        452312848583266388373324160190187140051835877600158453279131187532664064256n,
-      maturity: 1753401600n,
-      bondAmount: 101562312083297992826n, // 100 bonds (adjust this to your actual position size)
+        452312848583266388373324160190187140051835877600158453279131187532664323456n,
+      maturity: 1753660800n,
+      bondAmount: 93219890613508425843n, // 100 bonds (adjust this to your actual position size)
     },
     // Add other positions manually here
   ];
@@ -136,6 +164,11 @@ async function closeAllPositions() {
         ],
       });
 
+      const openLongDetails = await pool.getOpenLongDetails({
+        account: walletClient?.account.address as Address,
+        assetId,
+      });
+      console.log("openLongDetails", openLongDetails);
       console.log(`Closed position tx hash: ${swapTx}`);
     } catch (error) {
       console.error(`Failed to close position ${position.assetId}:`, error);

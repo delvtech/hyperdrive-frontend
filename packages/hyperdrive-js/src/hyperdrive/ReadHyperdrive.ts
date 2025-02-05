@@ -785,6 +785,7 @@ export class ReadHyperdrive extends ReadClient {
       filter: { to: account },
       toBlock: options?.block,
     });
+    console.log("transfersReceived", transfersReceived.length);
     const transfersSent = await this.contract.getEvents("TransferSingle", {
       filter: { from: account },
       toBlock: options?.block,
@@ -819,7 +820,7 @@ export class ReadHyperdrive extends ReadClient {
       const long: OpenLongPositionReceivedWithoutDetails = openLongs[
         assetId
       ] || {
-        assetId,
+        assetId: event.args.id,
         maturity: decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
         ).timestamp,
