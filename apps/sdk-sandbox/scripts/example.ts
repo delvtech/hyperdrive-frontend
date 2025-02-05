@@ -26,7 +26,7 @@ const zapContract = await drift.contract({
 });
 
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665014656n;
+  452312848583266388373324160190187140051835877600158453279131187532665101056n;
 async function openLongPosition() {
   try {
     const beforeDetails = await pool.getOpenLongDetails({
@@ -53,6 +53,8 @@ async function openLongPosition() {
         },
       });
     });
+
+    // console.log("txReceipt status", txReceipt.status);
 
     // Get the OpenLong event from this tx
     // const openLongEvents = await pool.contract.getEvents("OpenLong", {
