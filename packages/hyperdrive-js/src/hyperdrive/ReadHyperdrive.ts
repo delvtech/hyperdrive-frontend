@@ -781,6 +781,7 @@ export class ReadHyperdrive extends ReadClient {
     account: `0x${string}`;
     options?: ContractReadOptions;
   }): Promise<OpenLongPositionReceivedWithoutDetails[]> {
+    console.group("getOpenLongPositions");
     const transfersReceived = await this.contract.getEvents("TransferSingle", {
       filter: { to: account },
       toBlock: options?.block,
@@ -792,23 +793,6 @@ export class ReadHyperdrive extends ReadClient {
       toBlock: options?.block,
     });
     console.log("transfersSent", transfersSent.length);
-
-    // The issue:
-    // Before:
-    //   transfersReceived 132
-    //   transfersSent 36
-    //   baseAmountPaid: 216320799616589377447n,
-    //   bondAmount: 223384732144048570947n
-    // After open:
-    //   transfersReceived 133 -> Went up, so something new to add
-    //   transfersSent 36
-    //   baseAmountPaid: 219320799616589377447n,
-    //   bondAmount: 226482246322955242779n -> ✅ went up
-    // After close:
-    //   transfersReceived 133 -> Didn't change, so nothing new to add
-    //   transfersSent 37 -> Went up, so something new to subtract
-    //   baseAmountPaid: 219320799616589377447n,
-    //   bondAmount: 226482246322955242779n -> ❌ Didn't go down
 
     const longsReceived = [...transfersReceived].filter((event) => {
       const { assetType, timestamp, assetPrefix } =
@@ -859,6 +843,8 @@ export class ReadHyperdrive extends ReadClient {
         // If a user closes their whole position, we should remove the whole
         // position since it's basically starting over
         if (event.args.value === long.value) {
+          // TODO: Could this be keeping the net from going negative, causing
+          // the diff to be inflated since all neg values are swallowed up?
           delete openLongs[assetId];
           return;
         }
@@ -874,6 +860,7 @@ export class ReadHyperdrive extends ReadClient {
       }
     });
 
+    console.groupEnd();
     return Object.values(openLongs);
     // return Object.values(openLongs).filter((long) => long.value);
   }
@@ -891,7 +878,6 @@ export class ReadHyperdrive extends ReadClient {
       account,
       options,
     });
-
     const longPosition = allLongPositions.find((p) => p.assetId === assetId);
 
     if (!longPosition) {
@@ -903,29 +889,11 @@ export class ReadHyperdrive extends ReadClient {
     const openLongEvents = await this.contract.getEvents("OpenLong", {
       filter: { trader: account, assetId },
     });
-
     const closeLongEvents = await this.contract.getEvents("CloseLong", {
       filter: { trader: account, assetId },
     });
 
-    // More transfers out of a bond then CloseLong events, in those transfers,
-    // we can see how many bonds were closed, but we can't see how much the zap
-    // contract will end up sending us in assets.
-
-    // Zap Close results in a TransferSingle event that Looks like:
-    // {
-    //   args: {
-    //     operator: '0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666',
-    //     from: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266',
-    //     to: '0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666',
-    //     id: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
-    //     value: 4000000000000000000n
-    //   },
-    //   blockNumber: 21784962n,
-    //   data: '0x0100000000000000000000000000000000000000000000000000000068929b000000000000000000000000000000000000000000000000003782dace9d900000',
-    //   eventName: 'TransferSingle',
-    //   transactionHash: '0xa80fea0cf3ee415a533286afd5510ffce2e72cd5233677e147b84df31792d9cf'
-    // }
+    // Get transfers to zap
     const zapAddress = "0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666";
     const transfersSent = await this.contract.getEvents("TransferSingle", {
       filter: {
@@ -936,7 +904,9 @@ export class ReadHyperdrive extends ReadClient {
     });
     const isMissingEvents = transfersSent.length > closeLongEvents.length;
 
+    // Get zap close events not accounted for
     if (isMissingEvents) {
+      console.group("Missing events, checking for zap close events");
       const allZapCloseLongEvents = await this.contract.getEvents("CloseLong", {
         filter: {
           trader: zapAddress,
@@ -948,7 +918,8 @@ export class ReadHyperdrive extends ReadClient {
       for (const event of allZapCloseLongEvents) {
         totalZapCloseValue += event.args.bondAmount;
       }
-      console.log("Total bonds closed by zap:", totalZapCloseValue);
+      console.log("allZapCloseLongEvents:", allZapCloseLongEvents.length);
+      console.log("totalZapCloseValue:", totalZapCloseValue);
 
       // Group close events by block
       const closeLongEventsByBlock: Record<
@@ -957,39 +928,53 @@ export class ReadHyperdrive extends ReadClient {
       > = {};
       for (const event of closeLongEvents) {
         if (event.blockNumber !== undefined) {
-          closeLongEventsByBlock[Number(event.blockNumber)] ||= [];
-          closeLongEventsByBlock[Number(event.blockNumber)].push({
+          const key = Number(event.blockNumber);
+          closeLongEventsByBlock[key] ||= [];
+          closeLongEventsByBlock[key].push({
             blockNumber: event.blockNumber,
             transactionHash: event.transactionHash as `0x${string}`,
           });
+        } else {
+          console.log("Missing block number:", event);
         }
       }
+      const accountCloseLongEventsBlocks = Object.keys(
+        closeLongEventsByBlock,
+      ).map(Number);
+      console.log("accountCloseLongEventsBlocks", accountCloseLongEventsBlocks);
 
       // Find missing block ranges
-      const blockRangesToFetch: [
-        from: bigint | BlockTag,
-        to: bigint | BlockTag,
-      ][] = [];
-      let pendingBlockRange: [from: bigint | BlockTag, to: bigint | BlockTag] =
-        [0n, 0n];
+      const blockRangesToFetch: { from: bigint; to: bigint | BlockTag }[] = [];
+      let currentRange: { from: bigint; to: bigint | BlockTag } | null = null;
 
       for (const transfer of transfersSent) {
+        const block = transfer.blockNumber!;
         const closeEventsForThisBlock =
-          closeLongEventsByBlock[Number(transfer.blockNumber)] || [];
-        const matchingCloseEvent = closeEventsForThisBlock.find(
+          closeLongEventsByBlock[Number(block)] || [];
+        const hasMatching = closeEventsForThisBlock.find(
           ({ transactionHash }) => transactionHash === transfer.transactionHash,
         );
 
-        if (!matchingCloseEvent) {
-          pendingBlockRange[0] = transfer.blockNumber!;
+        if (!hasMatching) {
+          // Start a new range if one isn’t active
+          if (currentRange === null) {
+            currentRange = { from: block, to: "latest" };
+          }
+          // Otherwise, continue the current range (could update 'to' to block)
+          else {
+            currentRange.to = block; // extend to current block
+          }
         } else {
-          pendingBlockRange[1] = transfer.blockNumber! - 1n;
-          blockRangesToFetch.push(pendingBlockRange);
-          pendingBlockRange = [0n, 0n];
+          // If a matching event is found and a range is active, finalize that range
+          if (currentRange !== null) {
+            currentRange.to = block - 1n;
+            blockRangesToFetch.push(currentRange);
+            currentRange = null;
+          }
         }
       }
-      if (pendingBlockRange[0] !== 0n) {
-        blockRangesToFetch.push([pendingBlockRange[0], "latest"]);
+      if (currentRange !== null) {
+        blockRangesToFetch.push(currentRange);
       }
 
       const accountTransactionHashes = transfersSent.map(
@@ -997,21 +982,12 @@ export class ReadHyperdrive extends ReadClient {
       );
 
       const eventsInMissingRanges = await Promise.all(
-        blockRangesToFetch.map(async ([from, to]) => {
-          // For each range of transfer out blocks not accounted for in the
-          // close long events, we need to find out many assets were sent to the
-          // account from the zap contract.
-          //
-          // - The zap contract doesn't emit events, so we can't look there.
-          //
-          // - We don't know what token the zap sent to us after the pool sent it
-          // the bonds, so we can't look for events on a specific token.
-          // return eventsInRange;
-          //
-          // The zap contract will close the long on our behalf, so can we see
-          // the pools CloseLong events where the trader is the zap contract and
-          // confirm it's the one for us?
-
+        blockRangesToFetch.map(async (range) => {
+          console.group(
+            "Fetching zap close events for block range",
+            range.from,
+            range.to,
+          );
           const allZapClosesInRange = await this.contract.getEvents(
             "CloseLong",
             {
@@ -1019,45 +995,46 @@ export class ReadHyperdrive extends ReadClient {
                 trader: zapAddress,
                 assetId,
               },
-              fromBlock: from,
-              toBlock: to,
+              fromBlock: range.from,
+              toBlock: range.to,
             },
           );
 
           // Only return those that were done in the same transaction as the
           // account's transfers
-          return allZapClosesInRange.filter(({ transactionHash }) =>
-            accountTransactionHashes.includes(transactionHash as `0x${string}`),
+          const zapClosesInRangeForAccount = allZapClosesInRange.filter(
+            ({ transactionHash }) =>
+              accountTransactionHashes.includes(
+                transactionHash as `0x${string}`,
+              ),
           );
+          console.log("allZapClosesInRange", allZapClosesInRange.length);
+          console.log(
+            "zapClosesInRangeForAccount",
+            zapClosesInRangeForAccount.length,
+          );
+          console.groupEnd();
+
+          return zapClosesInRangeForAccount;
         }),
       );
 
-      let totalMissingCloseBonds = 0n;
+      let totalZapClosedForAccount = 0n;
       for (const missingEvent of eventsInMissingRanges.flat()) {
-        totalMissingCloseBonds += missingEvent.args.bondAmount;
+        totalZapClosedForAccount += missingEvent.args.bondAmount;
       }
-
-      console.log("blockRangesToFetch", blockRangesToFetch);
-      console.log(
-        "eventsInMissingRanges.length",
-        eventsInMissingRanges.flat().length,
-      );
-      console.log(
-        "missing events length:",
-        transfersSent.length - closeLongEvents.length,
-      );
-      console.log("Total unaccounted for bonds:", totalMissingCloseBonds);
+      console.log("totalZapClosedForAccount:", totalZapClosedForAccount);
+      console.groupEnd();
     }
 
-    console.log("openLongEvents", openLongEvents.length);
-    console.log("closeLongEvents", closeLongEvents.length);
-
-    const allOpenLongDetails = this._calcOpenLongs({
+    // Calculate net values for each open long
+    const allCalculatedLongs = this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
     });
 
-    const openLongDetails = allOpenLongDetails.find(
+    // Find the net value for the given asset
+    const calculatedLong = allCalculatedLongs.find(
       (details) =>
         details.assetId.toString() === longPosition.assetId.toString(),
     );
@@ -1068,54 +1045,21 @@ export class ReadHyperdrive extends ReadClient {
     // received some from another wallet. In this case, we still can't be sure
     // of the details, so we return undefined.
     if (
-      !openLongDetails
+      !calculatedLong
       // This is an edge case that is breaking the zap close function
       // || openLongDetails.bondAmount !== longPosition.value
     ) {
       return;
     }
 
-    console.log("Bond value from getOpenLongPositions", longPosition);
-    console.log(
-      "Bond value from getOpenLongDetails",
-      openLongDetails.bondAmount,
-    );
-    const diff = openLongDetails.bondAmount - longPosition.value;
+    console.group("getOpenLongDetails summary");
+    console.log("getOpenLongPositions value", longPosition.value);
+    console.log("calculatedLong", calculatedLong);
+    const diff = calculatedLong.bondAmount - longPosition.value;
     console.log("Diff", diff);
+    console.groupEnd();
 
-    // After open:
-
-    // Total unaccounted for bonds: 4000000000000000000n
-    // openLongEvents 144
-    // closeLongEvents 1
-    // Bond value from getOpenLongPositions 112610912798026423370n
-    // Bond value from getOpenLongDetails 452610912798026423370n
-    // Diff 340000000000000000000n
-
-    // After close:
-
-    // Total unaccounted for bonds: 4000000000000000000n
-    // openLongEvents 144
-    // closeLongEvents 1
-    // Bond value from getOpenLongPositions 108610912798026423370n
-    // Bond value from getOpenLongDetails 452610912798026423370n
-    // Diff 344000000000000000000n
-
-    // getOpenLongPositions {
-    //   '452312848583266388373324160190187140051835877600158453279131187532665101056': {
-    //     assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
-    //     maturity: 1754438400n,
-    //     value: 121726443245231180174n
-    //   }
-    // }
-    // returned from this fn {
-    //   assetId: 452312848583266388373324160190187140051835877600158453279131187532665101056n,
-    //   maturity: 1754438400n,
-    //   baseAmountPaid: 288320799616589377447n,
-    //   bondAmount: 297726443245231180174n
-    // }
-
-    return openLongDetails;
+    return calculatedLong;
   }
   /**
    * @deprecated Use ReadHyperdrive.getOpenLongPositions and ReadHyperdrive.getOpenLongDetails instead to retrieve all longs opened or received by a user.

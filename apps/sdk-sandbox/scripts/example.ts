@@ -38,27 +38,6 @@ async function openLongPosition() {
     console.log("openLongDetails before", beforeDetails);
 
     // // Open with Viem still reverts.
-    // publicClient.estimateGas({
-
-    //     abi: pool.contract.abi,
-    //     address: pool.address,
-    //     functionName: "openLong",
-    //     account: walletClient?.account.address as Address,
-    //     // gas: BigInt(6825329375n),
-    //     gas: 16125042n,
-
-    //     args: [
-    //       BigInt(3e18),
-    //       1n,
-    //       1n,
-    //       {
-    //         asBase: true,
-    //         destination: walletClient?.account.address as Address,
-    //         extraData: "0x",
-    //       },
-    //     ],
-
-    // })
     const { result, request } = await publicClient.simulateContract({
       abi: pool.contract.abi,
       address: pool.address,
@@ -87,8 +66,6 @@ async function openLongPosition() {
       hash: openTxHash,
     });
     await drift.cache.clear();
-
-    // console.log("Open position tx receipt", txReceipt);
 
     // const txReceipt: TransactionReceipt | undefined = await new Promise(
     //   async (resolve, reject) => {
@@ -134,7 +111,7 @@ async function openLongPosition() {
     });
     console.log("openLongDetails after", afterDetails);
 
-    // // Close Long Position via Zap
+    // Close Long Position via Zap
     const approvalReceipt = await poolContract.write("setApproval", {
       amount: maxInt256,
       tokenID: assetId,
