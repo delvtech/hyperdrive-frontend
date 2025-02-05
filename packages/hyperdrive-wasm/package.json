@@ -5,7 +5,7 @@
     "Danny Delott <dannyd@delv.tech>",
     "Matt Brown <matt@delv.tech>"
   ],
-  "version": "0.15.3",
+  "version": "0.16.0",
   "license": "AGPL-3.0",
   "files": [
     "hyperdrive_wasm.js",

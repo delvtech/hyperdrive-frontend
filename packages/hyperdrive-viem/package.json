@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-viem",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
     "@delvtech/drift-viem": "^0.0.1-beta.13",
-    "@delvtech/hyperdrive-js": "0.0.0"
+    "@delvtech/hyperdrive-js": "0.0.1"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",

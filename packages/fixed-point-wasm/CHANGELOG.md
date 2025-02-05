@@ -1,5 +1,14 @@
 # @delvtech/fixed-point-wasm
 
+## 0.0.7
+
+### Patch Changes
+
+- c9acbb5: Fixed the `trailingZeros` option of the `format` method to actually be `false` by default as its doc comment states.
+- 18482c3: Add `absDiff` method
+- c9acbb5: Added `toHex()` method.
+- c605fa0: Added support for negative exponents to `parseFixed`, e.g., `parseFixed(1e-18)`.
+
 ## 0.0.6
 
 ### Patch Changes
