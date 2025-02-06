@@ -44,13 +44,20 @@ import { hyperwasm } from "src/hyperwasm";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
-export interface ReadHyperdriveOptions extends ReadContractClientOptions {}
+export interface ReadHyperdriveOptions extends ReadContractClientOptions {
+  zapAddress?: Address;
+}
 
 export class ReadHyperdrive extends ReadClient {
   readonly address: Address;
   readonly contract: ReadContract<HyperdriveAbi>;
+
+  /**
+   * The optional address of the zap contract.
+   */
   readonly zapAddress?: Address;
   readonly zapContract?: ReadContract<ZapAbi>;
+
   /**
    * @hidden
    */
@@ -785,7 +792,6 @@ export class ReadHyperdrive extends ReadClient {
     return Object.values(openLongs).filter((long) => long.bondAmount > 0n);
   }
 
-  // TODO: Rename this to getOpenLongs once this function replaces the existing getOpenLongs
   async getOpenLongPositions({
     account,
     options,
@@ -797,86 +803,55 @@ export class ReadHyperdrive extends ReadClient {
       filter: { to: account },
       toBlock: options?.block,
     });
-    console.log("transfersReceived", transfersReceived.length);
-
     const transfersSent = await this.contract.getEvents("TransferSingle", {
       filter: { from: account },
       toBlock: options?.block,
     });
-    console.log("transfersSent", transfersSent.length);
 
-    const longsReceived = transfersReceived.filter((event) => {
-      const { assetType, timestamp, assetPrefix } =
-        decodeAssetFromTransferSingleEventData(event.data as `0x${string}`);
+    const isLongEvent = (
+      event: ContractEvent<HyperdriveAbi, "TransferSingle">,
+    ) => {
+      const { assetType } = decodeAssetFromTransferSingleEventData(
+        event.data as `0x${string}`,
+      );
       return assetType === "LONG";
-    });
+    };
+    const longsReceived = transfersReceived.filter(isLongEvent);
+    const longsSent = transfersSent.filter(isLongEvent);
 
-    // log the latest event
-
-    const longsSent = transfersSent.filter((event) => {
-      const { assetType, timestamp, assetPrefix } =
-        decodeAssetFromTransferSingleEventData(event.data as `0x${string}`);
-      return assetType === "LONG";
-    });
-
-    // Put open and long events in block order. We spread openLongEvents first
-    // since you have to open a long before you can close one.
-    const orderedLongEvents = [...longsReceived, ...longsSent].sort(
+    const orderedEvents = [...longsReceived, ...longsSent].sort(
       (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
     const openLongs: Record<string, OpenLongPositionReceivedWithoutDetails> =
       {};
 
-    orderedLongEvents.forEach((event) => {
-      const assetId = event.args.id.toString();
+    for (const event of orderedEvents) {
+      const assetIdStr = event.args.id.toString();
+      const assetData = decodeAssetFromTransferSingleEventData(
+        event.data as `0x${string}`,
+      );
 
-      const long: OpenLongPositionReceivedWithoutDetails = openLongs[
-        assetId
-      ] || {
+      const position = openLongs[assetIdStr] ?? {
         assetId: event.args.id,
-        maturity: decodeAssetFromTransferSingleEventData(
-          event.data as `0x${string}`,
-        ).timestamp,
+        maturity: assetData.timestamp,
         value: 0n,
       };
 
-      const isLongReceived = event.args.to === account;
-      if (isLongReceived) {
-        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
-          ...long,
-          value: long.value + event.args.value,
-        };
-        openLongs[assetId] = updatedLong;
-        return;
-      }
-
-      const isLongSent = event.args.from === account;
-      if (isLongSent) {
-        // If a user closes their whole position, we should remove the whole
-        // position since it's basically starting over
-        if (event.args.value === long.value) {
-          // TODO: Could this be keeping the net from going negative, causing
-          // the diff to be inflated since all neg values are swallowed up?
-          delete openLongs[assetId];
-          return;
+      if (event.args.to === account) {
+        position.value += event.args.value;
+      } else if (event.args.from === account) {
+        position.value -= event.args.value;
+        if (position.value === 0n) {
+          delete openLongs[assetIdStr];
+          continue;
         }
-
-        // otherwise just subtract the amount of bonds they closed and baseAmount
-        // they received back from the running total
-        const updatedLong: OpenLongPositionReceivedWithoutDetails = {
-          ...long,
-          value: long.value - event.args.value,
-        };
-
-        openLongs[assetId] = updatedLong;
       }
-    });
+      openLongs[assetIdStr] = position;
+    }
 
-    return Object.values(openLongs);
-    // return Object.values(openLongs).filter((long) => long.value);
+    return Object.values(openLongs).filter((long) => long.value > 0n);
   }
-
   async getOpenLongDetails({
     assetId,
     account,
@@ -885,19 +860,17 @@ export class ReadHyperdrive extends ReadClient {
     assetId: bigint;
     account: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<Long | undefined> {
-    const allLongPositions = await this.getOpenLongPositions({
-      account,
-      options,
-    });
-    const longPosition = allLongPositions.find((p) => p.assetId === assetId);
-
-    if (!longPosition) {
+  }): Promise<Long> {
+    // Ensure the account has an open long position for this asset.
+    const allPositions = await this.getOpenLongPositions({ account, options });
+    const position = allPositions.find((p) => p.assetId === assetId);
+    if (!position) {
       throw new HyperdriveSdkError(
         `No position with asset id: ${assetId} found for account ${account}`,
       );
     }
 
+    // Fetch the standard OpenLong and CloseLong events.
     const openLongEvents = await this.contract.getEvents("OpenLong", {
       filter: { trader: account, assetId },
     });
@@ -905,53 +878,36 @@ export class ReadHyperdrive extends ReadClient {
       filter: { trader: account, assetId },
     });
 
-    // Get transfers to zap
-    const zapAddress = "0x6662a80a8d2DEA71065Cb38eE8B931dB0105d666";
-    const transfersSentToZapContract = await this.contract.getEvents(
-      "TransferSingle",
-      {
-        filter: {
-          from: account,
-          to: zapAddress,
-        },
-        toBlock: options?.block,
-      },
-    );
+    // Handle transfers sent to the auxiliary contract.
+    const transfersSentToAux = await this.contract.getEvents("TransferSingle", {
+      filter: { from: account, to: this.zapAddress },
+      toBlock: options?.block,
+    });
 
-    // Get zap close events not accounted for
-    if (transfersSentToZapContract.length) {
-      const accountTransactionHashes = transfersSentToZapContract.map(
+    if (transfersSentToAux.length) {
+      const accountTxHashes = transfersSentToAux.map(
         ({ transactionHash }) => transactionHash,
       );
-
-      const allZapClosesInRange = await this.contract.getEvents("CloseLong", {
-        filter: {
-          trader: zapAddress,
-          assetId,
-        },
-        fromBlock: transfersSentToZapContract[0].blockNumber,
-        toBlock: transfersSentToZapContract.at(-1)?.blockNumber,
+      // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
+      const allAuxCloses = await this.contract.getEvents("CloseLong", {
+        filter: { trader: this.zapAddress, assetId },
+        fromBlock: transfersSentToAux[0].blockNumber,
+        toBlock: transfersSentToAux.at(-1)?.blockNumber,
       });
-
-      // Only return those that were done in the same transaction as the
-      // account's transfers
-      const zapClosesForAccount = allZapClosesInRange.filter(
-        ({ transactionHash }) =>
-          accountTransactionHashes.includes(transactionHash as `0x${string}`),
+      // Only include events that occurred in the same transactions.
+      const auxClosesForAccount = allAuxCloses.filter(({ transactionHash }) =>
+        accountTxHashes.includes(transactionHash as `0x${string}`),
       );
-
-      for (const missingEvent of zapClosesForAccount) {
-        closeLongEvents.push(missingEvent);
+      for (const event of auxClosesForAccount) {
+        closeLongEvents.push(event);
       }
     }
 
-    // Calculate net values for each open long
+    // Calculate net open long using the helper.
     const calculatedLongs = this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
     });
-
-    // The events were filtered by assetId, so there should only be one long.
     return calculatedLongs[0];
   }
   /**

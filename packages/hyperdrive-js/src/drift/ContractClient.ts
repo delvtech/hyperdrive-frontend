@@ -13,11 +13,6 @@ export interface ContractClientOptions {
   address: Address;
 
   /**
-   * The optional address of the zap contract.
-   */
-  zapAddress?: Address;
-
-  /**
    * The cache to use for the contract.
    */
   cache?: SimpleCache;
