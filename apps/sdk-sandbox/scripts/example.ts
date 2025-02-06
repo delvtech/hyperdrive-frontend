@@ -26,8 +26,8 @@ const zapContract = await drift.contract({
 });
 
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665101056n;
-const maturity = 1754438400n;
+  452312848583266388373324160190187140051835877600158453279131187532665187456n;
+const maturity = 1754524800n;
 async function openLongPosition() {
   try {
     const beforeDetails = await pool.getOpenLongDetails({
@@ -66,33 +66,6 @@ async function openLongPosition() {
       hash: openTxHash,
     });
     await drift.cache.clear();
-
-    // const txReceipt: TransactionReceipt | undefined = await new Promise(
-    //   async (resolve, reject) => {
-    //     const hash = await pool
-    //       .openLong({
-    //         args: {
-    //           amount: BigInt(3e18), // 3 base tokens (DAI)
-    //           asBase: true,
-    //           destination: walletClient?.account.address as Address,
-    //           extraData: "0x",
-    //           minBondsOut: 1n, // Minimum bonds to accept
-    //           minVaultSharePrice: 1n,
-    //         },
-    //         options: {
-    //           onMined: async (receipt) => {
-    //             pool.contract.cache.clear();
-    //             resolve(receipt);
-    //           },
-    //         },
-    //       })
-    //       .catch((err) => {
-    //         reject(err);
-    //       });
-
-    //     console.log(`Open position tx hash: ${hash}`);
-    //   },
-    // );
 
     if (!txReceipt) {
       throw new Error("No open transaction receipt received");
@@ -263,6 +236,7 @@ async function closeAllPositions() {
           position.bondAmount,
           1n,
           {
+            // When zapping out to close, you must pass the zaps address as the destination. There is no check in the contract to ensurethe destination is not the zaps address.
             destination: zapsConfig.address,
             asBase: true,
             extraData: "0x",
