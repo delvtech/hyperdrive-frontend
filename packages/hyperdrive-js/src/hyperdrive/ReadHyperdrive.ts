@@ -770,7 +770,7 @@ export class ReadHyperdrive extends ReadClient {
       }
     });
 
-    return Object.values(openLongs).filter((long) => long.bondAmount);
+    return Object.values(openLongs).filter((long) => long.bondAmount > 0n);
   }
 
   // TODO: Rename this to getOpenLongs once this function replaces the existing getOpenLongs
