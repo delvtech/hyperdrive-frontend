@@ -16,6 +16,7 @@ import { MAX_UINT256, NULL_BYTES, SECONDS_PER_YEAR } from "src/base/constants";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
+import { zapAbi, ZapAbi } from "src/exports";
 import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/assetId/decodeAssetFromTransferSingleEventData";
@@ -48,7 +49,8 @@ export interface ReadHyperdriveOptions extends ReadContractClientOptions {}
 export class ReadHyperdrive extends ReadClient {
   readonly address: Address;
   readonly contract: ReadContract<HyperdriveAbi>;
-
+  readonly zapAddress?: Address;
+  readonly zapContract?: ReadContract<ZapAbi>;
   /**
    * @hidden
    */
@@ -58,16 +60,26 @@ export class ReadHyperdrive extends ReadClient {
     cache,
     cacheNamespace,
     drift,
+    zapAddress,
     ...rest
   }: ReadHyperdriveOptions) {
     super({ debugName, drift, ...rest });
     this.address = address;
+    this.zapAddress = zapAddress;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,
       address,
       cache,
       cacheNamespace,
     });
+    if (zapAddress) {
+      this.zapContract = this.drift.contract({
+        abi: zapAbi,
+        address: zapAddress,
+        cache,
+        cacheNamespace,
+      });
+    }
   }
 
   async getKind(): Promise<string> {
