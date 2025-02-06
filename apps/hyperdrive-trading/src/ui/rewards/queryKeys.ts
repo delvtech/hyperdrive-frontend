@@ -16,6 +16,15 @@ interface RewardsQueryKeys {
     chainId: number;
   };
 
+  /**
+   * The `unclaimedRewards` query fetches the total unclaimed rewards for a
+   * given account across all hyperdrives and chains.
+   *
+   */
+  unclaimedRewards: {
+    account: Address | undefined;
+  };
+
   // TODO: We may not need these as these queries are just list wrappers around
   // the `rewardResolver` query above
   openShortRewards: {

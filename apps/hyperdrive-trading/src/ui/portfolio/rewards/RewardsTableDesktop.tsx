@@ -10,11 +10,18 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Reward } from "src/rewards/generated/RewardsClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { useClaimReward } from "src/ui/rewards/hooks/useClaimReward";
+import { useClaimedRewards } from "src/ui/rewards/hooks/useClaimedRewards";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address } from "viem";
+import { useChainId } from "wagmi";
 
 export function RewardsTableDesktop({
   account,
@@ -25,7 +32,7 @@ export function RewardsTableDesktop({
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
   const tableInstance = useReactTable({
-    columns: getColumns(appConfig),
+    columns: getColumns({ account, appConfig }),
     data: rewards || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -85,7 +92,7 @@ export function RewardsTableDesktop({
             const isLastRow =
               index === tableInstance.getRowModel().rows.length - 1;
             return (
-              <tr key={row.id} className="h-32 !border-b-0 font-dmMono">
+              <tr key={row.id} className="h-32 !border-b-0">
                 {row.getVisibleCells().map((cell, cellIndex) => (
                   <td
                     className={classNames(
@@ -134,21 +141,42 @@ export function RewardsTableDesktop({
 
 const columnHelper = createColumnHelper<Reward>();
 
-function getColumns(appConfig: AppConfig) {
+function getColumns({
+  account,
+  appConfig,
+}: {
+  account: Address | undefined;
+  appConfig: AppConfig;
+}) {
   return [
     columnHelper.display({
       id: "asset",
       header: "Asset",
+      size: 200,
       cell: ({ row }) => {
+        return <AssetCell reward={row.original} account={account} />;
+      },
+    }),
+    columnHelper.display({
+      id: "pendingRewards",
+      header: "Pending Earnings",
+      size: 200,
+      cell: ({ row }) => {
+        const reward = row.original;
         const token = getToken({
           appConfig,
-          chainId: row.original.chainId,
-          tokenAddress: row.original.rewardTokenAddress,
+          chainId: reward.chainId,
+          tokenAddress: reward.rewardTokenAddress,
         })!;
         return (
-          <div className="flex items-center gap-2 font-inter">
-            <img src={token.iconUrl} className="size-10" />
-            {token.name}
+          <div className="flex flex-col">
+            <span className="flex font-dmMono text-neutral-content">
+              {`${formatBalance({
+                balance: BigInt(reward.pendingAmount),
+                decimals: token.decimals,
+                places: token.places,
+              })}`}
+            </span>
           </div>
         );
       },
@@ -156,35 +184,160 @@ function getColumns(appConfig: AppConfig) {
     columnHelper.display({
       id: "claimable",
       header: "Claimable",
+      size: 200,
       cell: ({ row }) => {
-        const token = getToken({
-          appConfig,
-          chainId: row.original.chainId,
-          tokenAddress: row.original.rewardTokenAddress,
-        })!;
-        return (
-          <div className="flex flex-col">
-            <span className="flex font-dmMono text-neutral-content">
-              {formatBalance({
-                balance: BigInt(row.original.claimableAmount) || 0n,
-                decimals: token.decimals,
-                places: token.places,
-              })}{" "}
-              {token.symbol}
-            </span>
-          </div>
-        );
+        return <ClaimableAmount account={account} reward={row.original} />;
       },
     }),
     columnHelper.display({
       id: "claim",
+      size: 200,
+      header: "Actions",
       cell: ({ row }) => {
-        return (
-          <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 font-inter hover:bg-gray-700">
-            Claim Rewards
-          </button>
-        );
+        return <ClaimRewardsButton account={account} reward={row.original} />;
       },
     }),
   ];
+}
+function AssetCell({
+  account,
+  reward,
+}: {
+  reward: Reward;
+  account: Address | undefined;
+}) {
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
+  const token = getToken({
+    appConfig,
+    chainId: reward.chainId,
+    tokenAddress: reward.rewardTokenAddress,
+  })!;
+  const { balance } = useTokenBalance({
+    account,
+    tokenAddress: reward.rewardTokenAddress,
+    decimals: token.decimals,
+    tokenChainId: reward.chainId,
+  });
+  return (
+    <Tooltip
+      position="bottom"
+      tooltip={`Wallet balance: ${formatBalance({
+        balance: balance?.value || 0n,
+        decimals: token.decimals,
+        places: token.places,
+      })} ${token.symbol}`}
+    >
+      <div className="flex items-center gap-2 font-inter">
+        <img src={token.iconUrl} className="size-14" />
+        <div className="flex flex-col gap-1">{token.name}</div>
+      </div>
+    </Tooltip>
+  );
+}
+
+function ClaimRewardsButton({
+  account,
+  reward,
+}: {
+  account: Address | undefined;
+  reward: Reward;
+}): ReactElement {
+  const connectedChainId = useChainId();
+  const { claimed } = useClaimedRewards({
+    rewardTokenAddress: reward.rewardTokenAddress,
+    claimContractAddress: reward.claimContractAddress,
+    account,
+  });
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
+
+  const { claim, pendingWalletSignatureStatus, isTransactionMined } =
+    useClaimReward({
+      account,
+      reward,
+    });
+
+  if (connectedChainId !== reward.chainId) {
+    return (
+      <SwitchNetworksButton
+        wide={false}
+        targetChainId={reward.chainId}
+        targetChainName={appConfig.chains[reward.chainId].name}
+      />
+    );
+  }
+
+  // If the reward is already claimed, disable the button
+  if (BigInt(reward.claimableAmount) === claimed) {
+    return (
+      <button
+        disabled
+        className="daisy-btn daisy-btn-disabled daisy-btn-ghost rounded-full bg-gray-600 font-inter"
+      >
+        Claim Reward
+      </button>
+    );
+  }
+
+  // If the tx is pending a signature or is still being mined, disable the button
+  if (
+    pendingWalletSignatureStatus === "loading" ||
+    (pendingWalletSignatureStatus === "success" && !isTransactionMined)
+  ) {
+    return (
+      <button
+        disabled
+        className="daisy-btn daisy-btn-disabled daisy-btn-ghost rounded-full bg-gray-600 font-inter"
+      >
+        Claiming...
+      </button>
+    );
+  }
+
+  return (
+    <button
+      className={classNames(
+        "daisy-btn daisy-btn-ghost rounded-full bg-gray-600 font-inter hover:bg-gray-700",
+      )}
+      onClick={claim}
+    >
+      Claim Reward
+    </button>
+  );
+}
+
+function ClaimableAmount({
+  account,
+  reward,
+}: {
+  account: Address | undefined;
+  reward: Reward;
+}): ReactElement {
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
+  const token = getToken({
+    appConfig,
+    chainId: reward.chainId,
+    tokenAddress: reward.rewardTokenAddress,
+  })!;
+
+  const { claimed, status } = useClaimedRewards({
+    rewardTokenAddress: reward.rewardTokenAddress,
+    claimContractAddress: reward.claimContractAddress,
+    account,
+  });
+
+  return (
+    <div className="flex flex-col">
+      <span className="flex font-dmMono text-neutral-content">
+        {status === "loading" ? (
+          <Skeleton className="w-24" />
+        ) : (
+          `${formatBalance({
+            balance: BigInt(reward.claimableAmount) - (claimed || 0n)!,
+            decimals: token.decimals,
+            places: token.places,
+          })}`
+        )}
+      </span>
+    </div>
+  );
 }

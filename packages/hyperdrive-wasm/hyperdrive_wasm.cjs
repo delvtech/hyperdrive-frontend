@@ -158,111 +158,6 @@ function debugString(val) {
   return className;
 }
 /**
-* Calculates the curve fee paid in bonds by traders when they open a long.
-*/
-
-/**
-* Calculates the governance fee paid in bonds by traders when they open a
-* long.
-*/
-
-/**
-* Calculates the curve fee paid in shares or base by traders when they close a
-* long.
-*/
-
-/**
-* Calculates the flat fee paid in shares or base by traders when they close a
-* long.
-*/
-
-/**
-* Calculates the max amount of base that can be used to open a long given a
-* budget.
-*/
-
-/**
-* Calculates the amount of shares the trader will receive after fees for
-* closing a short
-*/
-
-/**
-* Calculates the market value of a short position using the equation:
-* market_estimate = yield_accrued + trading_proceeds - curve_fees_paid +
-* flat_fees_returned
-*
-* yield_accrued      = dy * (c-c0)/c0 trading_proceeds   = dy * (1 - p) * t
-* curve_fees_paid    = trading_proceeds * curve_fee flat_fees_returned = dy *
-* t * flat_fee
-*
-* dy = bond amount c  = closeVaultSharePrice (current if non-matured, or
-* checkpoint's if matured) c0 = openVaultSharePrice p  = spotPrice t  =
-* timeRemaining
-*/
-
-/**
-* Calculates the long amount that will be opened for a given base amount.
-*/
-
-/**
-* Calculates the spot price after opening a Hyperdrive long.
-*/
-
-/**
-* Calculates the amount of lp shares the trader will receive after adding
-* liquidity.
-*/
-
-/**
-*/
-
-/**
-* Calculates the curve fee paid by the trader when they open a short.
-*/
-
-/**
-* Calculates the governance fee paid by the trader when they open a short.
-*/
-
-/**
-* Calculates the curve fee paid by the trader when they close a short.
-*/
-
-/**
-* Calculates the flat fee paid by the trader when they close a short.
-*/
-
-/**
-* Calculates the max amount of bonds that can be shorted given a budget and
-* the current state of the pool.
-*/
-
-/**
-* Calculates the max amount of bonds that can be shorted given the current
-* state of the pool.
-*/
-
-/**
-* Calculates the amount of base the trader will need to deposit for a short of
-* a given size.
-*/
-
-/**
-* Calculates the spot price after opening the short on the YieldSpace curve
-* and before calculating the fees.
-*/
-
-/**
-* Calculate the implied rate of opening a short at a given size. This rate is
-* calculated as an APY.
-*/
-
-/**
-* Calculates the amount of bonds that will be shorted given a target base
-* deposit amount.
-*/
-
-/**
 */
 
 /**
@@ -297,6 +192,111 @@ function debugString(val) {
 
 /**
 * Calculate an APR from a fixed price.
+*/
+
+/**
+* Calculates the amount of lp shares the trader will receive after adding
+* liquidity.
+*/
+
+/**
+* Calculates the max amount of bonds that can be shorted given a budget and
+* the current state of the pool.
+*/
+
+/**
+* Calculates the max amount of bonds that can be shorted given the current
+* state of the pool.
+*/
+
+/**
+* Calculates the amount of base the trader will need to deposit for a short of
+* a given size.
+*/
+
+/**
+* Calculates the spot price after opening the short on the YieldSpace curve
+* and before calculating the fees.
+*/
+
+/**
+* Calculate the implied rate of opening a short at a given size. This rate is
+* calculated as an APY.
+*/
+
+/**
+* Calculates the amount of bonds that will be shorted given a target base
+* deposit amount.
+*/
+
+/**
+* Calculates the curve fee paid in bonds by traders when they open a long.
+*/
+
+/**
+* Calculates the governance fee paid in bonds by traders when they open a
+* long.
+*/
+
+/**
+* Calculates the curve fee paid in shares or base by traders when they close a
+* long.
+*/
+
+/**
+* Calculates the flat fee paid in shares or base by traders when they close a
+* long.
+*/
+
+/**
+*/
+
+/**
+* Calculates the curve fee paid by the trader when they open a short.
+*/
+
+/**
+* Calculates the governance fee paid by the trader when they open a short.
+*/
+
+/**
+* Calculates the curve fee paid by the trader when they close a short.
+*/
+
+/**
+* Calculates the flat fee paid by the trader when they close a short.
+*/
+
+/**
+* Calculates the amount of shares the trader will receive after fees for
+* closing a short
+*/
+
+/**
+* Calculates the market value of a short position using the equation:
+* market_estimate = yield_accrued + trading_proceeds - curve_fees_paid +
+* flat_fees_returned
+*
+* yield_accrued      = dy * (c-c0)/c0 trading_proceeds   = dy * (1 - p) * t
+* curve_fees_paid    = trading_proceeds * curve_fee flat_fees_returned = dy *
+* t * flat_fee
+*
+* dy = bond amount c  = closeVaultSharePrice (current if non-matured, or
+* checkpoint's if matured) c0 = openVaultSharePrice p  = spotPrice t  =
+* timeRemaining
+*/
+
+/**
+* Calculates the max amount of base that can be used to open a long given a
+* budget.
+*/
+
+/**
+* Calculates the long amount that will be opened for a given base amount.
+*/
+
+/**
+* Calculates the spot price after opening a Hyperdrive long.
 */
 
 function handleError(f, args) {
@@ -404,321 +404,6 @@ function handleError(f, args) {
 ;
 ;
 ;
-module.exports.openLongCurveFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.openLongCurveFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.openLongGovernanceFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.openLongGovernanceFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.closeLongCurveFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.closeLongCurveFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.closeLongFlatFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.closeLongFlatFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.maxLong = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.maxLong(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcCloseShort = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcCloseShort(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcShortMarketValue = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcShortMarketValue(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcOpenLong = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcOpenLong(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.spotPriceAfterLong = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.spotPriceAfterLong(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcAddLiquidity = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcAddLiquidity(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcCloseLong = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcCloseLong(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.openShortCurveFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.openShortCurveFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.openShortGovernanceFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.openShortGovernanceFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.closeShortCurveFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.closeShortCurveFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.closeShortFlatFee = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.closeShortFlatFee(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.maxShort = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.maxShort(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.absoluteMaxShort = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.absoluteMaxShort(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcOpenShort = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcOpenShort(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.spotPriceAfterShort = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.spotPriceAfterShort(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.calcImpliedRate = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.calcImpliedRate(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
-module.exports.shortBondsGivenDeposit = function (params) {
-  try {
-    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-    wasm.shortBondsGivenDeposit(retptr, addHeapObject(params));
-    var r0 = getInt32Memory0()[retptr / 4 + 0];
-    var r1 = getInt32Memory0()[retptr / 4 + 1];
-    var r2 = getInt32Memory0()[retptr / 4 + 2];
-    if (r2) {
-      throw takeObject(r1);
-    }
-    return takeObject(r0);
-  } finally {
-    wasm.__wbindgen_add_to_stack_pointer(16);
-  }
-};
 module.exports.initialize = function () {
   wasm.initialize();
 };
@@ -843,15 +528,326 @@ module.exports.calcAprGivenFixedPrice = function (params) {
     wasm.__wbindgen_add_to_stack_pointer(16);
   }
 };
+module.exports.calcAddLiquidity = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcAddLiquidity(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.maxShort = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.maxShort(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.absoluteMaxShort = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.absoluteMaxShort(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcOpenShort = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcOpenShort(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.spotPriceAfterShort = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.spotPriceAfterShort(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcImpliedRate = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcImpliedRate(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.shortBondsGivenDeposit = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.shortBondsGivenDeposit(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.openLongCurveFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.openLongCurveFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.openLongGovernanceFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.openLongGovernanceFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.closeLongCurveFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.closeLongCurveFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.closeLongFlatFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.closeLongFlatFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcCloseLong = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcCloseLong(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.openShortCurveFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.openShortCurveFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.openShortGovernanceFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.openShortGovernanceFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.closeShortCurveFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.closeShortCurveFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.closeShortFlatFee = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.closeShortFlatFee(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcCloseShort = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcCloseShort(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcShortMarketValue = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcShortMarketValue(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.maxLong = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.maxLong(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.calcOpenLong = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.calcOpenLong(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
+module.exports.spotPriceAfterLong = function (params) {
+  try {
+    const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+    wasm.spotPriceAfterLong(retptr, addHeapObject(params));
+    var r0 = getInt32Memory0()[retptr / 4 + 0];
+    var r1 = getInt32Memory0()[retptr / 4 + 1];
+    var r2 = getInt32Memory0()[retptr / 4 + 2];
+    if (r2) {
+      throw takeObject(r1);
+    }
+    return takeObject(r0);
+  } finally {
+    wasm.__wbindgen_add_to_stack_pointer(16);
+  }
+};
 module.exports.__wbindgen_object_drop_ref = function (arg0) {
   takeObject(arg0);
 };
 module.exports.__wbindgen_string_new = function (arg0, arg1) {
   const ret = getStringFromWasm0(arg0, arg1);
-  return addHeapObject(ret);
-};
-module.exports.__wbg_baseamount_4ece0044229bd079 = function (arg0) {
-  const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
 module.exports.__wbg_poolinfo_f674b4ff47cf3881 = function (arg0) {
@@ -862,48 +858,32 @@ module.exports.__wbg_poolconfig_53703338b5baf6f9 = function (arg0) {
   const ret = getObject(arg0).poolConfig;
   return addHeapObject(ret);
 };
-module.exports.__wbg_baseamount_2b6e384359c0e45c = function (arg0) {
-  const ret = getObject(arg0).baseAmount;
+module.exports.__wbg_apr_7e7d9dd9b3e90490 = function (arg0) {
+  const ret = getObject(arg0).apr;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_3bcab989220c86b6 = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
+module.exports.__wbg_positionduration_f0bbb71e645a1bab = function (arg0) {
+  const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_maturitytime_4917f699576a2e24 = function (arg0) {
-  const ret = getObject(arg0).maturityTime;
+module.exports.__wbg_apy_6d35982fcbcc9287 = function (arg0) {
+  const ret = getObject(arg0).apy;
   return addHeapObject(ret);
 };
-module.exports.__wbg_currenttime_3e344686dfd0784f = function (arg0) {
+module.exports.__wbg_positionduration_42689bcde8452f52 = function (arg0) {
+  const ret = getObject(arg0).positionDuration;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_currenttime_d9a6c391fb7a27a7 = function (arg0) {
   const ret = getObject(arg0).currentTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_budget_43d76e32c997fa9f = function (arg0) {
-  const ret = getObject(arg0).budget;
+module.exports.__wbg_price_e357b0329781bed9 = function (arg0) {
+  const ret = getObject(arg0).price;
   return addHeapObject(ret);
 };
-module.exports.__wbg_checkpointexposure_71dfa8c199e26a34 = function (arg0) {
-  const ret = getObject(arg0).checkpointExposure;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_maxiterations_2e7c3e15dc92cbc3 = function (arg0) {
-  const ret = getObject(arg0).maxIterations;
-  return isLikeNone(ret) ? 0xFFFFFF : ret;
-};
-module.exports.__wbg_openvaultshareprice_014a2cf5f27c8693 = function (arg0) {
-  const ret = getObject(arg0).openVaultSharePrice;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_closevaultshareprice_f8afd37e1ebaaa0e = function (arg0) {
-  const ret = getObject(arg0).closeVaultSharePrice;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_baseamount_b5e1e85d42170391 = function (arg0) {
-  const ret = getObject(arg0).baseAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_baseamount_8faddf517c21e61f = function (arg0) {
-  const ret = getObject(arg0).baseAmount;
+module.exports.__wbg_positionduration_4b733b17ff9b63ac = function (arg0) {
+  const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
 module.exports.__wbg_currenttime_57a06c053653e1e1 = function (arg0) {
@@ -929,30 +909,6 @@ module.exports.__wbg_minapr_c86cf17354483eee = function (arg0) {
 module.exports.__wbg_maxapr_8ab14316b2b102e4 = function (arg0) {
   const ret = getObject(arg0).maxApr;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
-};
-module.exports.__wbg_curve_eb2742840ebcb56c = function (arg0) {
-  const ret = getObject(arg0).curve;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_flat_cf06809b26a0e357 = function (arg0) {
-  const ret = getObject(arg0).flat;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_governancelp_69beec7767be8c46 = function (arg0) {
-  const ret = getObject(arg0).governanceLP;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_governancezombie_6a8c970793fd9a97 = function (arg0) {
-  const ret = getObject(arg0).governanceZombie;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_bondamount_5cdfc1bca38de684 = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_bondamount_18359b2503f6d4db = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
-  return addHeapObject(ret);
 };
 module.exports.__wbg_budget_7ff300c4bccac295 = function (arg0) {
   const ret = getObject(arg0).budget;
@@ -982,6 +938,102 @@ module.exports.__wbg_maxiterations_77a1bff238c55759 = function (arg0, arg1) {
   const ret = getObject(arg1).maxIterations;
   getInt32Memory0()[arg0 / 4 + 1] = isLikeNone(ret) ? 0 : ret;
   getInt32Memory0()[arg0 / 4 + 0] = !isLikeNone(ret);
+};
+module.exports.__wbg_bondamount_75e8b0532b4f6e97 = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_openvaultshareprice_2f866dce6a452451 = function (arg0) {
+  const ret = getObject(arg0).openVaultSharePrice;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_bondamount_9bad012cec592b12 = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_bondamount_8f42bffe79e7c78e = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_openvaultshareprice_992040d441c1d176 = function (arg0) {
+  const ret = getObject(arg0).openVaultSharePrice;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_variableapy_03eefdcc15e11a42 = function (arg0) {
+  const ret = getObject(arg0).variableApy;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_targetbaseamount_3c3c8d8ad95b7605 = function (arg0) {
+  const ret = getObject(arg0).targetBaseAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_openvaultshareprice_a36fb3fade3b9c84 = function (arg0) {
+  const ret = getObject(arg0).openVaultSharePrice;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_absolutemaxbondamount_d2e197b014725c10 = function (arg0) {
+  const ret = getObject(arg0).absoluteMaxBondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_maybetolerance_df507747e3830c21 = function (arg0) {
+  const ret = getObject(arg0).maybeTolerance;
+  return isLikeNone(ret) ? 0 : addHeapObject(ret);
+};
+module.exports.__wbg_maybemaxiterations_189430699f3f4593 = function (arg0) {
+  const ret = getObject(arg0).maybeMaxIterations;
+  return isLikeNone(ret) ? 0xFFFFFF : ret;
+};
+module.exports.__wbg_curve_eb2742840ebcb56c = function (arg0) {
+  const ret = getObject(arg0).curve;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_flat_cf06809b26a0e357 = function (arg0) {
+  const ret = getObject(arg0).flat;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_governancelp_69beec7767be8c46 = function (arg0) {
+  const ret = getObject(arg0).governanceLP;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_governancezombie_6a8c970793fd9a97 = function (arg0) {
+  const ret = getObject(arg0).governanceZombie;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_baseamount_4ece0044229bd079 = function (arg0) {
+  const ret = getObject(arg0).baseAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_baseamount_2b6e384359c0e45c = function (arg0) {
+  const ret = getObject(arg0).baseAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_bondamount_3bcab989220c86b6 = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_maturitytime_4917f699576a2e24 = function (arg0) {
+  const ret = getObject(arg0).maturityTime;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_currenttime_3e344686dfd0784f = function (arg0) {
+  const ret = getObject(arg0).currentTime;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_bondamount_5cdfc1bca38de684 = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_bondamount_18359b2503f6d4db = function (arg0) {
+  const ret = getObject(arg0).bondAmount;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_openvaultshareprice_014a2cf5f27c8693 = function (arg0) {
+  const ret = getObject(arg0).openVaultSharePrice;
+  return addHeapObject(ret);
+};
+module.exports.__wbg_closevaultshareprice_f8afd37e1ebaaa0e = function (arg0) {
+  const ret = getObject(arg0).closeVaultSharePrice;
+  return addHeapObject(ret);
 };
 module.exports.__wbg_initialvaultshareprice_80f1d02bab6f097b = function (arg0) {
   const ret = getObject(arg0).initialVaultSharePrice;
@@ -1131,76 +1183,24 @@ module.exports.__wbg_zombiesharereserves_0c3cb87347c4e8bb = function (arg0) {
   const ret = getObject(arg0).zombieShareReserves;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_75e8b0532b4f6e97 = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
+module.exports.__wbg_budget_43d76e32c997fa9f = function (arg0) {
+  const ret = getObject(arg0).budget;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_2f866dce6a452451 = function (arg0) {
-  const ret = getObject(arg0).openVaultSharePrice;
+module.exports.__wbg_checkpointexposure_71dfa8c199e26a34 = function (arg0) {
+  const ret = getObject(arg0).checkpointExposure;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_9bad012cec592b12 = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_bondamount_8f42bffe79e7c78e = function (arg0) {
-  const ret = getObject(arg0).bondAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_openvaultshareprice_992040d441c1d176 = function (arg0) {
-  const ret = getObject(arg0).openVaultSharePrice;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_variableapy_03eefdcc15e11a42 = function (arg0) {
-  const ret = getObject(arg0).variableApy;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_targetbaseamount_3c3c8d8ad95b7605 = function (arg0) {
-  const ret = getObject(arg0).targetBaseAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_openvaultshareprice_a36fb3fade3b9c84 = function (arg0) {
-  const ret = getObject(arg0).openVaultSharePrice;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_absolutemaxbondamount_d2e197b014725c10 = function (arg0) {
-  const ret = getObject(arg0).absoluteMaxBondAmount;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_maybetolerance_df507747e3830c21 = function (arg0) {
-  const ret = getObject(arg0).maybeTolerance;
-  return isLikeNone(ret) ? 0 : addHeapObject(ret);
-};
-module.exports.__wbg_maybemaxiterations_189430699f3f4593 = function (arg0) {
-  const ret = getObject(arg0).maybeMaxIterations;
+module.exports.__wbg_maxiterations_2e7c3e15dc92cbc3 = function (arg0) {
+  const ret = getObject(arg0).maxIterations;
   return isLikeNone(ret) ? 0xFFFFFF : ret;
 };
-module.exports.__wbg_apr_7e7d9dd9b3e90490 = function (arg0) {
-  const ret = getObject(arg0).apr;
+module.exports.__wbg_baseamount_b5e1e85d42170391 = function (arg0) {
+  const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_positionduration_f0bbb71e645a1bab = function (arg0) {
-  const ret = getObject(arg0).positionDuration;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_apy_6d35982fcbcc9287 = function (arg0) {
-  const ret = getObject(arg0).apy;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_positionduration_42689bcde8452f52 = function (arg0) {
-  const ret = getObject(arg0).positionDuration;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_currenttime_d9a6c391fb7a27a7 = function (arg0) {
-  const ret = getObject(arg0).currentTime;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_price_e357b0329781bed9 = function (arg0) {
-  const ret = getObject(arg0).price;
-  return addHeapObject(ret);
-};
-module.exports.__wbg_positionduration_4b733b17ff9b63ac = function (arg0) {
-  const ret = getObject(arg0).positionDuration;
+module.exports.__wbg_baseamount_8faddf517c21e61f = function (arg0) {
+  const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
 module.exports.__wbg_new_abda76e883ba8a5f = function () {

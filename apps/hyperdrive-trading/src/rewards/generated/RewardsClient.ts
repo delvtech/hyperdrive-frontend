@@ -32,6 +32,11 @@ export interface Reward {
    */
   claimableAmount: string;
   /**
+   * Amount of tokens pending, not yet claimable.
+   * @example "1000000000000000000"
+   */
+  pendingAmount: string;
+  /**
    * Token address of the reward.
    * @example "0xBAa5CC21fd487B8Fcc2F632f3F4E8D37262a0842"
    */

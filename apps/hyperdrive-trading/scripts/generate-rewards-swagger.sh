@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the URL and output file path
-URL="https://rewards.hyperdrive.money/swagger.json"
+URL="https://rewards.hyperdrive.box/swagger.json"
 OUTPUT_DIR="src/rewards/generated"
 SWAGGER_FILE="$OUTPUT_DIR/rewards-swagger.json"
 TYPES_FILE="RewardsClient.ts"
