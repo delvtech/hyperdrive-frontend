@@ -16,7 +16,6 @@ import { MAX_UINT256, NULL_BYTES, SECONDS_PER_YEAR } from "src/base/constants";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
-import { zapAbi, ZapAbi } from "src/exports";
 import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/assetId/decodeAssetFromTransferSingleEventData";
@@ -45,7 +44,7 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export interface ReadHyperdriveOptions extends ReadContractClientOptions {
-  zapAddress?: Address;
+  auxiliaryContractAddress?: Address;
 }
 
 export class ReadHyperdrive extends ReadClient {
@@ -53,10 +52,9 @@ export class ReadHyperdrive extends ReadClient {
   readonly contract: ReadContract<HyperdriveAbi>;
 
   /**
-   * The optional address of the zap contract.
+   * The optional address of an auxiliary contract such as a zap contract.
    */
-  readonly zapAddress?: Address;
-  readonly zapContract?: ReadContract<ZapAbi>;
+  readonly auxiliaryContractAddress?: Address;
 
   /**
    * @hidden
@@ -67,26 +65,18 @@ export class ReadHyperdrive extends ReadClient {
     cache,
     cacheNamespace,
     drift,
-    zapAddress,
+    auxiliaryContractAddress,
     ...rest
   }: ReadHyperdriveOptions) {
     super({ debugName, drift, ...rest });
     this.address = address;
-    this.zapAddress = zapAddress;
+    this.auxiliaryContractAddress = auxiliaryContractAddress;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,
       address,
       cache,
       cacheNamespace,
     });
-    if (zapAddress) {
-      this.zapContract = this.drift.contract({
-        abi: zapAbi,
-        address: zapAddress,
-        cache,
-        cacheNamespace,
-      });
-    }
   }
 
   async getKind(): Promise<string> {
@@ -789,7 +779,7 @@ export class ReadHyperdrive extends ReadClient {
       }
     });
 
-    return Object.values(openLongs).filter((long) => long.bondAmount > 0n);
+    return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
   async getOpenLongPositions({
@@ -819,6 +809,8 @@ export class ReadHyperdrive extends ReadClient {
     const longsReceived = transfersReceived.filter(isLongEvent);
     const longsSent = transfersSent.filter(isLongEvent);
 
+    // Put open and long events in block order. We spread openLongEvents first
+    // since you have to open a long before you can close one.
     const orderedEvents = [...longsReceived, ...longsSent].sort(
       (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
@@ -827,14 +819,11 @@ export class ReadHyperdrive extends ReadClient {
       {};
 
     for (const event of orderedEvents) {
-      const assetIdStr = event.args.id.toString();
-      const assetData = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`,
-      );
-
-      const position = openLongs[assetIdStr] ?? {
+      const position = openLongs[event.args.id.toString()] ?? {
         assetId: event.args.id,
-        maturity: assetData.timestamp,
+        maturity: decodeAssetFromTransferSingleEventData(
+          event.data as `0x${string}`,
+        ).timestamp,
         value: 0n,
       };
 
@@ -843,14 +832,14 @@ export class ReadHyperdrive extends ReadClient {
       } else if (event.args.from === account) {
         position.value -= event.args.value;
         if (position.value === 0n) {
-          delete openLongs[assetIdStr];
+          delete openLongs[event.args.id.toString()];
           continue;
         }
       }
-      openLongs[assetIdStr] = position;
+      openLongs[event.args.id.toString()] = position;
     }
 
-    return Object.values(openLongs).filter((long) => long.value > 0n);
+    return Object.values(openLongs).filter((long) => long.value);
   }
   async getOpenLongDetails({
     assetId,
@@ -878,9 +867,9 @@ export class ReadHyperdrive extends ReadClient {
       filter: { trader: account, assetId },
     });
 
-    // Handle transfers sent to the auxiliary contract.
+    // Handle transfers sent to the  contract.
     const transfersSentToAux = await this.contract.getEvents("TransferSingle", {
-      filter: { from: account, to: this.zapAddress },
+      filter: { from: account, to: this.auxiliaryContractAddress },
       toBlock: options?.block,
     });
 
@@ -890,7 +879,7 @@ export class ReadHyperdrive extends ReadClient {
       );
       // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
       const allAuxCloses = await this.contract.getEvents("CloseLong", {
-        filter: { trader: this.zapAddress, assetId },
+        filter: { trader: this.auxiliaryContractAddress, assetId },
         fromBlock: transfersSentToAux[0].blockNumber,
         toBlock: transfersSentToAux.at(-1)?.blockNumber,
       });

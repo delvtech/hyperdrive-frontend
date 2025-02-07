@@ -27,7 +27,7 @@ const writePool = new ReadWriteHyperdrive({
 const readPool = new ReadHyperdrive({
   address: poolAddress,
   drift,
-  zapAddress: zapsConfig.address,
+  auxiliaryContractAddress: zapsConfig.address,
   earliestBlock,
 });
 
@@ -190,9 +190,9 @@ async function closeAllPositions() {
   const manualPositions = [
     {
       assetId:
-        452312848583266388373324160190187140051835877600158453279131187532664323456n,
-      maturity: 1753660800n,
-      bondAmount: 93219890613508425843n, // Example: 100 bonds
+        452312848583266388373324160190187140051835877600158453279131187532665273856n,
+      maturity: 1754611200n,
+      bondAmount: 104902143926345435824n, // Example: 100 bonds
     },
     // Add more positions as needed
   ];
@@ -276,8 +276,8 @@ async function closeAllPositions() {
 
 async function main() {
   // Uncomment the function call you need
-  await openLongPosition();
-  // await closeAllPositions();
+  // await openLongPosition();
+  await closeAllPositions();
 }
 
 main().catch(console.error);
