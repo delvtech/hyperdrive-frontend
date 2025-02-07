@@ -44,7 +44,7 @@ import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
 export interface ReadHyperdriveOptions extends ReadContractClientOptions {
-  auxiliaryContractAddress?: Address;
+  zapContractAddress?: Address;
 }
 
 export class ReadHyperdrive extends ReadClient {
@@ -54,7 +54,7 @@ export class ReadHyperdrive extends ReadClient {
   /**
    * The optional address of an auxiliary contract such as a zap contract.
    */
-  readonly auxiliaryContractAddress?: Address;
+  readonly zapContractAddress?: Address;
 
   /**
    * @hidden
@@ -65,12 +65,12 @@ export class ReadHyperdrive extends ReadClient {
     cache,
     cacheNamespace,
     drift,
-    auxiliaryContractAddress,
+    zapContractAddress,
     ...rest
   }: ReadHyperdriveOptions) {
     super({ debugName, drift, ...rest });
     this.address = address;
-    this.auxiliaryContractAddress = auxiliaryContractAddress;
+    this.zapContractAddress = zapContractAddress;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,
       address,
@@ -798,14 +798,6 @@ export class ReadHyperdrive extends ReadClient {
       toBlock: options?.block,
     });
 
-    const isLongEvent = (
-      event: ContractEvent<HyperdriveAbi, "TransferSingle">,
-    ) => {
-      const { assetType } = decodeAssetFromTransferSingleEventData(
-        event.data as `0x${string}`,
-      );
-      return assetType === "LONG";
-    };
     const longsReceived = transfersReceived.filter(isLongEvent);
     const longsSent = transfersSent.filter(isLongEvent);
 
@@ -869,7 +861,7 @@ export class ReadHyperdrive extends ReadClient {
 
     // Handle transfers sent to the  contract.
     const transfersSentToAux = await this.contract.getEvents("TransferSingle", {
-      filter: { from: account, to: this.auxiliaryContractAddress },
+      filter: { from: account, to: this.zapContractAddress },
       toBlock: options?.block,
     });
 
@@ -879,7 +871,7 @@ export class ReadHyperdrive extends ReadClient {
       );
       // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
       const allAuxCloses = await this.contract.getEvents("CloseLong", {
-        filter: { trader: this.auxiliaryContractAddress, assetId },
+        filter: { trader: this.zapContractAddress, assetId },
         fromBlock: transfersSentToAux[0].blockNumber,
         toBlock: transfersSentToAux.at(-1)?.blockNumber,
       });
@@ -2068,4 +2060,13 @@ function calculateApyFromPrice({
   const priceRatio = fixed(endPrice).div(startPrice);
   const yearFraction = fixed(timeFrame).div(SECONDS_PER_YEAR);
   return priceRatio.pow(fixed(1e18).div(yearFraction)).sub(1e18).bigint;
+}
+
+function isLongEvent(
+  event: ContractEvent<HyperdriveAbi, "TransferSingle">,
+): boolean {
+  const { assetType } = decodeAssetFromTransferSingleEventData(
+    event.data as `0x${string}`,
+  );
+  return assetType === "LONG";
 }
