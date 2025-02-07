@@ -173,7 +173,7 @@ export function OpenShortForm({
     amount: traderDeposit || 0n,
     decimals: activeToken.decimals,
     direction: "up",
-    percentage: 1n,
+    percentage: 2n,
   });
   const hasEnoughAllowance = getHasEnoughAllowance({
     allowance: activeTokenAllowance,
