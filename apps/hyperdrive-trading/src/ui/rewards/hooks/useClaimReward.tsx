@@ -8,7 +8,7 @@ import { getToken } from "@delvtech/hyperdrive-appconfig";
 import { hyperdriveRewardsAbi } from "@delvtech/hyperdrive-js";
 import { useCallback, useState } from "react";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { Reward } from "src/rewards/generated/RewardsClient";
+import { Reward } from "src/rewards/generated/HyperdriveRewardsApi";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import TransactionToast from "src/ui/transactions/TransactionToast";

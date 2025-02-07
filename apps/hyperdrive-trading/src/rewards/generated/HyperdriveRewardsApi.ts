@@ -301,7 +301,7 @@ export class HttpClient<SecurityDataType = unknown> {
  *
  * API documentation for Hyperdrive Rewards
  */
-export class RewardsApi<
+export class HyperdriveRewardsApi<
   SecurityDataType extends unknown,
 > extends HttpClient<SecurityDataType> {
   get = {
