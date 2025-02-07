@@ -38,8 +38,8 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665187456n;
-const maturity = 1754524800n;
+  452312848583266388373324160190187140051835877600158453279131187532665273856n;
+const maturity = 1754611200n;
 
 async function openLongPosition() {
   try {
@@ -55,6 +55,7 @@ async function openLongPosition() {
     const { result, request } = await publicClient.simulateContract({
       abi: writePool.contract.abi,
       address: poolAddress,
+      chain: publicClient.chain,
       functionName: "openLong",
       account,
       gas: 16125042n,
@@ -70,7 +71,9 @@ async function openLongPosition() {
       ],
     });
 
-    const openTxHash = await walletClient?.writeContract(request);
+    const openTxHash = await walletClient?.writeContract({
+      ...request,
+    });
     if (!openTxHash) throw new Error("No open transaction hash received");
 
     const txReceipt = await publicClient.waitForTransactionReceipt({
@@ -104,6 +107,7 @@ async function openLongPosition() {
       await publicClient.simulateContract({
         abi: writePool.contract.abi,
         address: poolAddress,
+        chain: publicClient.chain,
         functionName: "closeLong",
         account,
         args: [
