@@ -187,6 +187,15 @@ export function OpenShortForm({
     budget: MAX_UINT256,
   });
 
+  const { maxBondsOut: maxBondsOutFromBudget } = useMaxShort({
+    chainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    budget: activeTokenBalance?.value || 0n,
+  });
+  console.log(maxBondsOutFromBudget);
+  console.log(activeTokenBalance?.value);
+  console.log(maxBondsOut);
+
   const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
     chainId: hyperdrive.chainId,
     hyperdriveAddress: hyperdrive.address,
@@ -239,15 +248,13 @@ export function OpenShortForm({
   // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
   // Max button is wired up to the user's balance, or the pool's max long.
   // Whichever is smallest.
-  // let maxButtonValue = "0";
-  // if (activeTokenBalance && maxBondsOut) {
-  //   maxButtonValue = formatUnits(
-  //     activeTokenBalance.value > maxBondsOut
-  //       ? maxBondsOut
-  //       : activeTokenBalance?.value,
-  //     activeToken.decimals,
-  //   );
-  // }
+  let maxButtonValue = "0";
+  if (maxBondsOutFromBudget && maxBondsOut) {
+    maxButtonValue = formatUnits(
+      maxBondsOutFromBudget > maxBondsOut ? maxBondsOut : maxBondsOutFromBudget,
+      activeToken.decimals,
+    );
+  }
 
   const exposureMultiplier =
     amountOfBondsToShortAsBigInt && traderDeposit
@@ -306,6 +313,7 @@ export function OpenShortForm({
                   ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
                   : ""
             }
+            maxValue={maxButtonValue}
             settings={
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
