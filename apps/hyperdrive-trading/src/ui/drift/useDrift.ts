@@ -1,7 +1,7 @@
-import { Drift, ReadWriteAdapter } from "@delvtech/drift";
+import { createDrift, Drift, ReadWriteAdapter } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
 import { useMemo } from "react";
-import { getDriftOptions } from "src/drift/getDrift";
+import { driftCache } from "src/network/drift";
 import {
   usePublicClient,
   UsePublicClientParameters,
@@ -18,10 +18,11 @@ export function useDrift(
   return useMemo(
     () =>
       publicClient
-        ? new Drift(
-            viemAdapter({ publicClient, walletClient }),
-            getDriftOptions({ chainId: publicClient.chain.id }),
-          )
+        ? createDrift({
+            adapter: viemAdapter({ publicClient, walletClient }),
+            chainId: publicClient.chain.id,
+            cache: driftCache,
+          })
         : undefined,
     [publicClient, walletClient],
   );
@@ -32,14 +33,14 @@ export function useReadWriteDrift(
 ): Drift<ReadWriteAdapter> | undefined {
   const publicClient = usePublicClient(params);
   const { data: walletClient } = useWalletClient(params);
-
   return useMemo(
     () =>
       publicClient && walletClient
-        ? new Drift(
-            viemAdapter({ publicClient, walletClient }),
-            getDriftOptions({ chainId: publicClient.chain.id }),
-          )
+        ? createDrift({
+            adapter: viemAdapter({ publicClient, walletClient }),
+            chainId: publicClient.chain.id,
+            cache: driftCache,
+          })
         : undefined,
     [publicClient, walletClient],
   );

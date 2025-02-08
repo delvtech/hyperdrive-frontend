@@ -5,7 +5,7 @@ import {
 import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { getDrift } from "src/drift/getDrift";
+import { getDrift } from "src/network/drift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address } from "viem";
 export function useTotalOpenLpPositions({
