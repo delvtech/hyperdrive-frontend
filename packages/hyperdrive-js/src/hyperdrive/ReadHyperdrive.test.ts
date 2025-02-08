@@ -160,7 +160,7 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
 });
 
 test("getShortAccruedYield should return the amount of yield a non-mature position has earned", async () => {
-  const { contract, hyperdrive: readHyperdrive } = setupReadHyperdrive();
+  const { contract, drift, hyperdrive: readHyperdrive } = setupReadHyperdrive();
 
   contract.onRead("getPoolConfig").resolves({
     ...simplePoolConfig7Days,
@@ -181,6 +181,8 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
     lastWeightedSpotPriceUpdateTime: 0n,
   });
 
+  drift.onGetBlock().resolves(createStubBlock());
+
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: BigInt(Date.now()) / 1000n,
     bondAmount: parseFixed("100").bigint,
@@ -193,7 +195,7 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
 });
 
 test("getShortAccruedYield should return the amount of yield a mature position has earned", async () => {
-  const { contract, hyperdrive: readHyperdrive } = setupReadHyperdrive();
+  const { contract, drift, hyperdrive: readHyperdrive } = setupReadHyperdrive();
 
   contract.onRead("getPoolConfig").resolves({
     ...simplePoolConfig7Days,
@@ -214,6 +216,8 @@ test("getShortAccruedYield should return the amount of yield a mature position h
     weightedSpotPrice: 0n,
     lastWeightedSpotPriceUpdateTime: 0n,
   });
+
+  drift.onGetBlock().resolves(createStubBlock());
 
   const accruedYield = await readHyperdrive.getShortAccruedYield({
     checkpointTime: 1n,
