@@ -6,25 +6,43 @@ import {
 } from "@delvtech/drift";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 
-export type GetBlockOrThrowParams = GetBlockParams & ContractReadOptions;
+export type GetBlockOrThrowParams = GetBlockParams | ContractReadOptions;
 
 /**
- * A utility that tries to fetch a block from a given network and throws an
- * error if no block is found. Useful for unified error handling when fetching
- * blocks that may not exist.
- * @throws `BlockNotFoundError`
+ * A utility that tries to fetch a block from a given drift instance and throws
+ * an error if no block is found. Useful for unified error handling when
+ * fetching blocks that may not exist.
+ *
+ * @throws {HyperdriveSdkError}
  */
 export async function getBlockOrThrow(
   drift: Drift,
-  options?: GetBlockOrThrowParams,
+  params?: GetBlockOrThrowParams,
 ): Promise<Block> {
-  const fetched = await drift.getBlock(options);
-  if (!fetched) {
-    const block =
-      options?.blockHash ?? options?.blockNumber ?? options?.blockTag;
+  let _options: GetBlockParams = {};
+
+  // If given contract read options, extract the block options
+  if (params && "block" in params) {
+    // The `block` option can either be a block number or a block tag
+    if (typeof params.block === "bigint") {
+      _options.blockNumber = params.block;
+    } else {
+      _options.blockTag = params.block;
+    }
+  } else {
+    // Otherwise, use the params as the block options
+    _options = params as GetBlockParams;
+  }
+
+  const block = await drift.getBlock(_options);
+
+  if (!block) {
+    const blockLabel =
+      _options?.blockHash ?? _options?.blockNumber ?? _options?.blockTag;
     throw new HyperdriveSdkError(
-      `Block${block !== undefined ? ` ${block}` : ""} not found`,
+      `Block${blockLabel !== undefined ? ` ${blockLabel}` : ""} not found`,
     );
   }
-  return fetched;
+
+  return block;
 }
