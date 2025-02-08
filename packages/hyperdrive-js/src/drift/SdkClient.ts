@@ -90,8 +90,9 @@ export type SdkContractConfig<A extends Adapter = Adapter> =
 /**
  * Params for write operations on an {@linkcode SdkClient}.
  *
- * @template T Additional parameters for the write operation.
+ * @template Args Additional parameters for the write operation.
  */
-export type SdkWriteParams<T extends object> = T & {
+export type SdkWriteParams<Args> = {
+  args: Args;
   options?: ContractWriteOptions & OnMinedParam;
 };

@@ -35,7 +35,7 @@ export class ReadWriteHyperdrive<
    * @param time - The time (in seconds) of the checkpoint to create.
    */
   async checkpoint({
-    time,
+    args: { time },
     options,
   }: SdkWriteParams<{ time: number }>): Promise<`0x${string}`> {
     this.contract.client;
@@ -57,7 +57,7 @@ export class ReadWriteHyperdrive<
    * @param paused - True to pause all deposits and false to unpause them
    */
   async pause({
-    paused,
+    args: { paused },
     options,
   }: SdkWriteParams<{
     paused: boolean;
@@ -87,11 +87,13 @@ export class ReadWriteHyperdrive<
    * @returns The initial number of LP shares created.
    */
   async initialize({
-    contribution,
-    apr,
-    destination,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      contribution,
+      apr,
+      destination,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     contribution: bigint;
@@ -132,12 +134,14 @@ export class ReadWriteHyperdrive<
    *
    */
   async openLong({
-    destination,
-    amount,
-    minBondsOut,
-    minVaultSharePrice,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      destination,
+      amount,
+      minBondsOut,
+      minVaultSharePrice,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     destination: `0x${string}`;
@@ -176,12 +180,14 @@ export class ReadWriteHyperdrive<
    * @return traderDeposit - The amount the user deposited for this trade.
    */
   async openShort({
-    destination,
-    bondAmount,
-    minVaultSharePrice,
-    maxDeposit,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      destination,
+      bondAmount,
+      minVaultSharePrice,
+      maxDeposit,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     destination: `0x${string}`;
@@ -220,12 +226,14 @@ export class ReadWriteHyperdrive<
    * @return The amount of underlying asset the user receives.
    */
   async closeLong({
-    maturityTime,
-    bondAmountIn,
-    minAmountOut,
-    destination,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     maturityTime: bigint;
@@ -264,12 +272,14 @@ export class ReadWriteHyperdrive<
    * @return The amount of base tokens produced by closing this short
    */
   async closeShort({
-    maturityTime,
-    bondAmountIn,
-    minAmountOut,
-    destination,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      maturityTime,
+      bondAmountIn,
+      minAmountOut,
+      destination,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     maturityTime: bigint;
@@ -309,13 +319,15 @@ export class ReadWriteHyperdrive<
    * @return lpShares The number of LP tokens created
    */
   async addLiquidity({
-    destination,
-    contribution,
-    minApr,
-    minLpSharePrice,
-    maxApr,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      destination,
+      contribution,
+      minApr,
+      minLpSharePrice,
+      maxApr,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     destination: `0x${string}`;
@@ -357,11 +369,13 @@ export class ReadWriteHyperdrive<
    * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
   async removeLiquidity({
-    destination,
-    lpSharesIn,
-    minOutputPerShare,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      destination,
+      lpSharesIn,
+      minOutputPerShare,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     destination: `0x${string}`;
@@ -398,11 +412,13 @@ export class ReadWriteHyperdrive<
    * @return sharesRedeemed The amount of withdrawal shares that were redeemed.
    */
   async redeemWithdrawalShares({
-    withdrawalSharesIn,
-    minOutputPerShare,
-    destination,
-    asBase = true,
-    extraData = NULL_BYTES,
+    args: {
+      withdrawalSharesIn,
+      minOutputPerShare,
+      destination,
+      asBase = true,
+      extraData = NULL_BYTES,
+    },
     options,
   }: SdkWriteParams<{
     withdrawalSharesIn: bigint;

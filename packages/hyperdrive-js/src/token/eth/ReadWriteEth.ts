@@ -9,7 +9,7 @@ export class ReadWriteEth<A extends ReadWriteAdapter = ReadWriteAdapter>
 {
   /**
    * This method is not available for the native ETH token.
-   * @throws A {@linkcode HyperdriveSdkError}
+   * @throws {HyperdriveSdkError}
    */
   async approve(): Promise<`0x${string}`> {
     throw new HyperdriveSdkError(
