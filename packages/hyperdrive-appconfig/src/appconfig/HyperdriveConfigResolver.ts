@@ -1,4 +1,4 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { AnyRewardId } from "src/rewards/actions/types";
 import { RewardConfigId } from "src/rewards/resolvers";

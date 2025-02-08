@@ -1,4 +1,4 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
@@ -44,7 +44,7 @@ export async function getCbethHyperdrive({
     chainId,
     kind: await hyperdrive.getKind(),
     // safe to cast here because we know the pool was initialized
-    initializationBlock: initializationBlock.blockNumber as bigint,
+    initializationBlock: initializationBlock.number as bigint,
     initializationTimestamp: initializationBlock.timestamp,
     address: hyperdrive.address,
     version: version.string,

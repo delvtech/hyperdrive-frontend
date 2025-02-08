@@ -1,4 +1,4 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import retry from "p-retry";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
@@ -57,7 +57,7 @@ export async function getMorphoHyperdrive({
     chainId,
     kind: await hyperdrive.getKind(),
     // safe to cast here because we know the pool was initialized
-    initializationBlock: initializationBlock.blockNumber as bigint,
+    initializationBlock: initializationBlock.number as bigint,
     initializationTimestamp: initializationBlock.timestamp,
     address: hyperdrive.address,
     version: version.string,
