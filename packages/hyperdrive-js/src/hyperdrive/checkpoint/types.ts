@@ -1,6 +1,6 @@
 import {
-  ContractEvent,
   ContractReadOptions,
+  EventLog,
   FunctionReturn,
   Pretty,
 } from "@delvtech/drift";
@@ -12,7 +12,7 @@ export type Checkpoint = Pretty<
   } & FunctionReturn<HyperdriveAbi, "getCheckpoint">
 >;
 
-export type CheckpointEvent = ContractEvent<HyperdriveAbi, "CreateCheckpoint">;
+export type CheckpointEvent = EventLog<HyperdriveAbi, "CreateCheckpoint">;
 
 export type GetCheckpointTimeParams = (
   | {

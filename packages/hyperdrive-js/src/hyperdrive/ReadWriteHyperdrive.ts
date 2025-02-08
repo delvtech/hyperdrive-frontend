@@ -1,36 +1,16 @@
-import {
-  ContractReadOptions,
-  ContractWriteOptions,
-  Drift,
-  ReadWriteAdapter,
-  ReadWriteContract,
-} from "@delvtech/drift";
+import { ContractReadOptions, ReadWriteAdapter } from "@delvtech/drift";
 import { NULL_BYTES } from "src/base/constants";
-import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
-import { HyperdriveAbi } from "src/hyperdrive/abi";
+import { SdkWriteParams } from "src/drift/SdkClient";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
-type ReadWriteParams<Args> = {
-  args: Args;
-  options?: ContractWriteOptions;
-};
-
-export interface ReadWriteHyperdriveOptions
-  extends ReadWriteContractClientOptions {}
-
-export class ReadWriteHyperdrive extends ReadHyperdrive {
-  declare drift: Drift<ReadWriteAdapter>;
-  declare contract: ReadWriteContract<HyperdriveAbi>;
-
-  constructor(options: ReadWriteHyperdriveOptions) {
-    super(options);
-  }
-
+export class ReadWriteHyperdrive<
+  A extends ReadWriteAdapter = ReadWriteAdapter,
+> extends ReadHyperdrive<A> {
   async getBaseToken(
     options?: ContractReadOptions,
-  ): Promise<ReadWriteErc20 | ReadWriteEth> {
+  ): Promise<ReadWriteErc20<A> | ReadWriteEth<A>> {
     const address = await this.contract.read("baseToken", {}, options);
     return address === ReadWriteEth.address
       ? new ReadWriteEth({
@@ -39,17 +19,14 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       : new ReadWriteErc20({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         });
   }
 
-  async getSharesToken(): Promise<ReadWriteErc20> {
+  async getSharesToken(): Promise<ReadWriteErc20<A>> {
     const address = await this.contract.read("vaultSharesToken");
     return new ReadWriteErc20({
       address,
       drift: this.drift,
-      cacheNamespace: this.contract.cacheNamespace,
     });
   }
 
@@ -60,7 +37,8 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   async checkpoint({
     args: { time },
     options,
-  }: ReadWriteParams<{ time: number }>): Promise<`0x${string}`> {
+  }: SdkWriteParams<{ time: number }>): Promise<`0x${string}`> {
+    this.contract.client;
     return this.contract.write(
       "checkpoint",
       { _checkpointTime: BigInt(time), _maxIterations: 4n },
@@ -81,7 +59,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   async pause({
     args: { paused },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     paused: boolean;
   }>): Promise<`0x${string}`> {
     return this.contract.write(
@@ -117,7 +95,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     contribution: bigint;
     apr: bigint;
     destination: `0x${string}`;
@@ -165,7 +143,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     destination: `0x${string}`;
     amount: bigint;
     minVaultSharePrice: bigint;
@@ -211,7 +189,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     destination: `0x${string}`;
     minVaultSharePrice: bigint;
     bondAmount: bigint;
@@ -257,7 +235,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
@@ -303,7 +281,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     maturityTime: bigint;
     bondAmountIn: bigint;
     minAmountOut: bigint;
@@ -351,7 +329,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     destination: `0x${string}`;
     contribution: bigint;
     minApr: bigint;
@@ -399,7 +377,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     destination: `0x${string}`;
     lpSharesIn: bigint;
     minOutputPerShare: bigint;
@@ -442,7 +420,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       extraData = NULL_BYTES,
     },
     options,
-  }: ReadWriteParams<{
+  }: SdkWriteParams<{
     withdrawalSharesIn: bigint;
     minOutputPerShare: bigint;
     destination: `0x${string}`;

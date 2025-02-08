@@ -1,30 +1,23 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Adapter, Contract, ContractReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadContractClientOptions } from "src/drift/ContractClient";
-import { ReadClient } from "src/drift/ReadClient";
+import { SdkClient, SdkContractConfig } from "src/drift/SdkClient";
 import { FactoryAbi, factoryAbi } from "src/factory/abi";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 
-export interface ReadFactoryOptions extends ReadContractClientOptions {}
-
-export class ReadFactory extends ReadClient {
+export class ReadFactory<A extends Adapter = Adapter> extends SdkClient<A> {
   address: Address;
-  contract: Contract<FactoryAbi>;
+  contract: Contract<FactoryAbi, A>;
 
   constructor({
     debugName = "Hyperdrive Factory",
     address,
-    cache,
-    cacheNamespace,
     ...rest
-  }: ReadFactoryOptions) {
+  }: SdkContractConfig<A>) {
     super({ debugName, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: factoryAbi,
       address,
-      cache,
-      cacheNamespace,
     });
   }
 
@@ -93,15 +86,15 @@ export class ReadFactory extends ReadClient {
    * Get a {@linkcode ReadHyperdrive} instance for each Hyperdrive instance
    * deployed by the deployer factory.
    */
-  async getInstances(options?: ContractReadOptions): Promise<ReadHyperdrive[]> {
+  async getInstances(
+    options?: ContractReadOptions,
+  ): Promise<ReadHyperdrive<A>[]> {
     const hyperdriveAddresses = await this.getInstanceAddresses(options);
     return hyperdriveAddresses.map(
       (address) =>
         new ReadHyperdrive({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         }),
     );
   }

@@ -1,34 +1,15 @@
-import {
-  ContractWriteOptions,
-  Drift,
-  ReadWriteAdapter,
-  ReadWriteContract,
-} from "@delvtech/drift";
-import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
-import { ReadWriteToken } from "src/token/ReadWriteToken";
+import { ReadWriteAdapter } from "@delvtech/drift";
+import { ApproveParams, ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
-import { Erc20Abi } from "src/token/erc20/abi";
 
-export interface ReadWriteErc20Options extends ReadWriteContractClientOptions {}
-
-export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
-  declare drift: Drift<ReadWriteAdapter>;
-  declare contract: ReadWriteContract<Erc20Abi>;
-
-  constructor(options: ReadWriteErc20Options) {
-    super(options);
-  }
-
+export class ReadWriteErc20<A extends ReadWriteAdapter = ReadWriteAdapter>
+  extends ReadErc20<A>
+  implements ReadWriteToken<A>
+{
   async approve({
-    spender,
-    amount,
+    args: { spender, amount },
     options,
-  }: {
-    owner?: `0x${string}`;
-    spender: `0x${string}`;
-    amount: bigint;
-    options?: ContractWriteOptions;
-  }): Promise<`0x${string}`> {
+  }: ApproveParams): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "approve",
       { spender, amount },

@@ -1,101 +1,65 @@
-import { Drift, ReadWriteAdapter } from "@delvtech/drift";
+import { Adapter, createDrift, Drift, ReadWriteAdapter } from "@delvtech/drift";
 import semver from "semver";
+import { SdkContractConfig } from "src/drift/SdkClient";
 import { hyperdriveAbi } from "src/hyperdrive/abi";
-import {
-  ReadHyperdrive,
-  ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive";
-import {
-  ReadWriteHyperdrive,
-  ReadWriteHyperdriveOptions,
-} from "src/hyperdrive/ReadWriteHyperdrive";
-import { ReadStEthHyperdrive } from "src/hyperdrive/steth/ReadStEthHyperdrive";
-import { ReadWriteStEthHyperdrive } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
-import { ReadStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadStEthHyperdrive_v1_0_14";
-import { ReadWriteStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadWriteStEthHyperdrive_v1_0_14";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadHyperdrive_v1_0_14";
 import { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadWriteHyperdrive_v1_0_14";
 
-export interface HyperdriveOptions<T extends Drift = Drift>
-  extends ReadHyperdriveOptions {
-  drift: T;
-}
+export type Hyperdrive<A extends Adapter = Adapter> = A extends ReadWriteAdapter
+  ? ReadWriteHyperdrive
+  : ReadHyperdrive;
 
-export type Hyperdrive<T extends Drift = Drift> =
-  T extends Drift<ReadWriteAdapter> ? ReadWriteHyperdrive : ReadHyperdrive;
+export type GetHyperdriveParams<A extends Adapter = Adapter> =
+  A extends ReadWriteAdapter ? SdkContractConfig<A> : SdkContractConfig<A>;
 
-export async function getHyperdrive<T extends Drift = Drift>({
+export async function getHyperdrive<A extends Adapter = Adapter>({
   address,
-  drift,
-  cache = drift.cache,
-  cacheNamespace,
+  drift = createDrift() as Drift<A>,
   earliestBlock,
   debugName,
-}: HyperdriveOptions<T>): Promise<Hyperdrive<T>> {
-  cacheNamespace ??= await drift.getChainId();
-
-  const options: HyperdriveOptions<T> = {
-    address,
-    drift,
-    cache,
-    cacheNamespace,
-    earliestBlock,
-    debugName,
-  };
-  const isReadWrite = isReadWriteOptions(options);
+}: GetHyperdriveParams<A>): Promise<Hyperdrive<A>> {
+  const isReadWrite = drift.isReadWrite();
 
   const version = await drift.read({
     abi: hyperdriveAbi,
     address,
     fn: "version",
-    cacheNamespace,
   });
   const isV1_0_14 = semver.lte(version, "1.0.14");
 
-  const kind = isV1_0_14
-    ? undefined
-    : await drift.read({
-        abi: hyperdriveAbi,
-        address,
-        fn: "kind",
-        cacheNamespace,
-      });
-
-  switch (kind) {
-    case "StETHHyperdrive":
-      if (isReadWrite && isV1_0_14) {
-        return new ReadWriteStEthHyperdrive_v1_0_14(options);
-      }
-
-      if (isReadWrite) {
-        return new ReadWriteStEthHyperdrive(options);
-      }
-
-      if (isV1_0_14) {
-        return new ReadStEthHyperdrive_v1_0_14(options) as any;
-      }
-
-      return new ReadStEthHyperdrive(options) as any;
-
-    default:
-      if (isReadWrite && isV1_0_14) {
-        return new ReadWriteHyperdrive_v1_0_14(options);
-      }
-
-      if (isReadWrite) {
-        return new ReadWriteHyperdrive(options);
-      }
-
-      if (isV1_0_14) {
-        return new ReadHyperdrive_v1_0_14(options) as any;
-      }
-
-      return new ReadHyperdrive(options) as any;
+  if (isReadWrite && isV1_0_14) {
+    return new ReadWriteHyperdrive_v1_0_14({
+      address,
+      drift,
+      earliestBlock,
+      debugName,
+    });
   }
-}
 
-function isReadWriteOptions(
-  options: HyperdriveOptions,
-): options is ReadWriteHyperdriveOptions {
-  return typeof options.drift.write === "function";
+  if (isReadWrite) {
+    return new ReadWriteHyperdrive({
+      address,
+      drift,
+      earliestBlock,
+      debugName,
+    });
+  }
+
+  if (isV1_0_14) {
+    return new ReadHyperdrive_v1_0_14({
+      address,
+      drift,
+      earliestBlock,
+      debugName,
+    }) as Hyperdrive as Hyperdrive<A>;
+  }
+
+  return new ReadHyperdrive({
+    address,
+    drift,
+    earliestBlock,
+    debugName,
+  }) as Hyperdrive as Hyperdrive<A>;
 }

@@ -1,14 +1,15 @@
-import { ContractReadOptions } from "@delvtech/drift";
-import { ReadClient, ReadClientOptions } from "src/drift/ReadClient";
+import { Adapter, ContractReadOptions } from "@delvtech/drift";
+import { SdkClient, SdkClientConfig } from "src/drift/SdkClient";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadEthOptions extends ReadClientOptions {}
-
-export class ReadEth extends ReadClient implements ReadToken {
+export class ReadEth<A extends Adapter = Adapter>
+  extends SdkClient<A>
+  implements ReadToken<A>
+{
   static address = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
   address = ReadEth.address;
 
-  constructor({ debugName = "ETH", ...restOptions }: ReadEthOptions) {
+  constructor({ debugName = "ETH", ...restOptions }: SdkClientConfig<A>) {
     super({ debugName, ...restOptions });
   }
 

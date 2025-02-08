@@ -12,7 +12,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { getDrift } from "src/drift/getDrift";
+import { getDrift } from "src/network/drift";
 import { getStatus, Status } from "src/registry/data";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";

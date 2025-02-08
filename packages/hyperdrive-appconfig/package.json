@@ -25,9 +25,10 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@delvtech/drift": "^0.1.1",
     "@delvtech/fixed-point-wasm": "^0.0.7",
     "@delvtech/hyperdrive-artifacts": "^1.0.20",
-    "@delvtech/hyperdrive-viem": "^3.1.0",
+    "@delvtech/hyperdrive-js": "^0.0.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

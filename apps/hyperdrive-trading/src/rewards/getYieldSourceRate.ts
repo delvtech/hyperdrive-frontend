@@ -39,14 +39,13 @@ export async function getYieldSourceRate({
   const initializationBlock = hyperdrive.initializationBlock;
 
   const isPoolYoungerThanOneRatePeriod =
-    initializationBlock >
-    currentBlock.blockNumber! - numBlocksForHistoricalRate;
+    initializationBlock > currentBlock.number! - numBlocksForHistoricalRate;
 
   // If we don't have enough blocks to go back 1 full historical period, then
   // grab the all-time rate instead.
   if (isPoolYoungerThanOneRatePeriod) {
     const blocksSinceInitialization =
-      currentBlock.blockNumber! - initializationBlock;
+      currentBlock.number! - initializationBlock;
 
     const daysSinceInitialization = convertMillisecondsToDays(
       Date.now() - Number(hyperdrive.initializationTimestamp * 1000n),

@@ -11,6 +11,5 @@
   "updateInternalDependencies": "patch",
   "privatePackages": {
     "version": false
-  },
-  "ignore": ["@delvtech/hyperdrive-js-core"]
+  }
 }

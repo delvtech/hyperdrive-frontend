@@ -1,4 +1,4 @@
-import { ReadToken } from "@delvtech/hyperdrive-viem";
+import { ReadToken } from "@delvtech/hyperdrive-js";
 import { PriceOracleId, TokenConfig } from "src/tokens/types";
 
 export async function getTokenConfig({

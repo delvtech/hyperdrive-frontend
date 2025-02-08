@@ -1,6 +1,7 @@
 {
   "dotenv.enableAutocloaking": false,
   "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.autoImportFileExcludePatterns": ["**/exports/**"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },

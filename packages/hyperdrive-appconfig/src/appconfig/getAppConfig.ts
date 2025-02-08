@@ -1,4 +1,4 @@
-import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-js";
 import chalk from "chalk";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
@@ -978,7 +978,7 @@ export async function getAppConfig({
   // that only registered pools are delivered to the frontend
   const registry = new ReadRegistry({
     address: registryAddress,
-    publicClient,
+    rpcUrl: publicClient.transport.url,
     earliestBlock,
   });
   const hyperdrives = await registry.getInstances();

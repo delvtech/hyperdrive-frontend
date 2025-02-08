@@ -1,26 +1,15 @@
-import {
-  ContractReadOptions,
-  Drift,
-  ReadWriteAdapter,
-  ReadWriteContract,
-  ReplaceProps,
-} from "@delvtech/drift";
+import { ContractReadOptions, ReadWriteAdapter } from "@delvtech/drift";
 import { Address } from "abitype";
-import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
+import { SdkContractConfig } from "src/drift/SdkClient";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
 import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
-import { ReadRegistry, ReadRegistryOptions } from "src/registry/ReadRegistry";
-import { RegistryAbi } from "src/registry/abi";
+import { ReadRegistry } from "src/registry/ReadRegistry";
 import { ReadWriteInstanceInfoWithMetadata } from "src/registry/types";
 
-export interface ReadWriteRegistryOptions
-  extends ReplaceProps<ReadRegistryOptions, ReadWriteContractClientOptions> {}
-
-export class ReadWriteRegistry extends ReadRegistry {
-  declare drift: Drift<ReadWriteAdapter>;
-  declare contract: ReadWriteContract<RegistryAbi>;
-
-  constructor(options: ReadWriteRegistryOptions) {
+export class ReadWriteRegistry<
+  A extends ReadWriteAdapter = ReadWriteAdapter,
+> extends ReadRegistry<A> {
+  constructor(options: SdkContractConfig<A>) {
     super(options);
   }
 
@@ -29,15 +18,13 @@ export class ReadWriteRegistry extends ReadRegistry {
    */
   async getFactories(
     options?: ContractReadOptions,
-  ): Promise<ReadWriteFactory[]> {
+  ): Promise<ReadWriteFactory<A>[]> {
     const factoryAddresses = await this.getFactoryAddresses(options);
     return factoryAddresses.map(
       (address) =>
         new ReadWriteFactory({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         }),
     );
   }
@@ -48,7 +35,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    */
   async getInstances(
     options?: ContractReadOptions,
-  ): Promise<ReadWriteHyperdrive[]> {
+  ): Promise<ReadWriteHyperdrive<A>[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
 
     if (count === 0n) {
@@ -68,8 +55,6 @@ export class ReadWriteRegistry extends ReadRegistry {
         new ReadWriteHyperdrive({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         }),
     );
   }
@@ -77,7 +62,7 @@ export class ReadWriteRegistry extends ReadRegistry {
   async getInstanceInfo(
     instanceAddress: Address,
     options?: ContractReadOptions,
-  ): Promise<ReadWriteInstanceInfoWithMetadata> {
+  ): Promise<ReadWriteInstanceInfoWithMetadata<A>> {
     const { factory, ...rest } = await this.contract.read(
       "getInstanceInfoWithMetadata",
       { _instance: instanceAddress },
@@ -87,8 +72,6 @@ export class ReadWriteRegistry extends ReadRegistry {
       factory: new ReadWriteFactory({
         address: factory,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
       }),
       ...rest,
     };
@@ -100,7 +83,7 @@ export class ReadWriteRegistry extends ReadRegistry {
   async getInstanceInfos(
     instanceAddresses: Address[],
     options?: ContractReadOptions,
-  ): Promise<ReadWriteInstanceInfoWithMetadata[]> {
+  ): Promise<ReadWriteInstanceInfoWithMetadata<A>[]> {
     const infos = await this.contract.read(
       "getInstanceInfosWithMetadata",
       { __instances: instanceAddresses },
@@ -110,8 +93,6 @@ export class ReadWriteRegistry extends ReadRegistry {
       factory: new ReadWriteFactory({
         address: factory,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
       }),
       ...rest,
     }));
