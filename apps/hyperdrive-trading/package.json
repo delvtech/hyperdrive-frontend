@@ -29,8 +29,8 @@
     "gen:swagger": "bash ./scripts/generate-swagger.sh"
   },
   "dependencies": {
-    "@delvtech/drift": "^0.0.1-beta.11",
-    "@delvtech/drift-viem": "^0.0.1-beta.13",
+    "@delvtech/drift": "^0.1.1",
+    "@delvtech/drift-viem": "^0.1.1",
     "@delvtech/fixed-point-wasm": "^0.0.7",
     "@delvtech/hyperdrive-appconfig": "^0.1.0",
     "@delvtech/hyperdrive-js": "^0.0.1",
