@@ -10,10 +10,8 @@
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "@delvtech/drift": "^0.1.1"
-  },
   "dependencies": {
+    "@delvtech/drift": "^0.1.1",
     "@delvtech/fixed-point-wasm": "^0.0.7",
     "@delvtech/hyperdrive-artifacts": "^1.0.20",
     "@delvtech/hyperdrive-wasm": "^0.16.0",
@@ -22,7 +20,6 @@
     "semver": "^7.6.3"
   },
   "devDependencies": {
-    "@delvtech/drift": "^0.1.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
