@@ -52,7 +52,7 @@ export async function getLpApy({
 }): Promise<LpApyResult> {
   // Get current block and configuration
   const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
-  const currentBlockNumber = currentBlock.blockNumber!;
+  const currentBlockNumber = currentBlock.number!;
   const chainConfig = appConfig.chains[hyperdrive.chainId];
 
   // Get yield source and calculate historical block range
