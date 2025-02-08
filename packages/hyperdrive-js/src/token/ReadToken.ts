@@ -1,7 +1,7 @@
-import { ContractReadOptions } from "@delvtech/drift";
-import { ReadClient } from "src/drift/ReadClient";
+import { Adapter, ContractReadOptions } from "@delvtech/drift";
+import { SdkClient } from "src/drift/SdkClient";
 
-export interface ReadToken extends ReadClient {
+export interface ReadToken<A extends Adapter = Adapter> extends SdkClient<A> {
   address: `0x${string}`;
 
   /**

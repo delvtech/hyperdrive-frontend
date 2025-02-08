@@ -1,20 +1,20 @@
 import {
+  Adapter,
   Address,
   Block,
   BlockTag,
-  ContractEvent,
+  Contract,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
+  EventLog,
   MergeKeys,
-  ReadContract,
 } from "@delvtech/drift";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 import { assertNever } from "src/base/assertNever";
 import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
 import { MAX_UINT256, NULL_BYTES, SECONDS_PER_YEAR } from "src/base/constants";
-import { ReadContractClientOptions } from "src/drift/ContractClient";
-import { ReadClient } from "src/drift/ReadClient";
+import { SdkClient, SdkContractConfig } from "src/drift/SdkClient";
 import { getBlockOrThrow } from "src/drift/getBlockOrThrow";
 import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
@@ -43,13 +43,13 @@ import { hyperwasm } from "src/hyperwasm";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
 
-export interface ReadHyperdriveOptions extends ReadContractClientOptions {
+export interface ReadHyperdriveOptions {
   zapContractAddress?: Address;
 }
 
-export class ReadHyperdrive extends ReadClient {
+export class ReadHyperdrive<A extends Adapter = Adapter> extends SdkClient<A> {
   readonly address: Address;
-  readonly contract: ReadContract<HyperdriveAbi>;
+  readonly contract: Contract<HyperdriveAbi, A>;
 
   /**
    * The optional address of an auxiliary contract such as a zap contract.
@@ -62,20 +62,15 @@ export class ReadHyperdrive extends ReadClient {
   constructor({
     debugName = "Hyperdrive",
     address,
-    cache,
-    cacheNamespace,
-    drift,
     zapContractAddress,
     ...rest
-  }: ReadHyperdriveOptions) {
-    super({ debugName, drift, ...rest });
+  }: SdkContractConfig<A> & ReadHyperdriveOptions) {
+    super({ debugName, ...rest });
     this.address = address;
     this.zapContractAddress = zapContractAddress;
     this.contract = this.drift.contract({
       abi: hyperdriveAbi,
       address,
-      cache,
-      cacheNamespace,
     });
   }
 
@@ -111,7 +106,7 @@ export class ReadHyperdrive extends ReadClient {
    * the address returned by the contract is not the ETH address, it is assumed
    * to be an ERC20 token.
    */
-  async getBaseToken(): Promise<ReadErc20 | ReadEth> {
+  async getBaseToken(): Promise<ReadErc20<A> | ReadEth<A>> {
     const address = await this.contract.read("baseToken");
     return address === ReadEth.address
       ? new ReadEth({
@@ -120,8 +115,6 @@ export class ReadHyperdrive extends ReadClient {
       : new ReadErc20({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         });
   }
 
@@ -132,13 +125,11 @@ export class ReadHyperdrive extends ReadClient {
    * The share token is assumed to be an ERC20 token. This can be overwritten
    * in instances of Hyperdrive to return custom tokens.
    */
-  async getSharesToken(): Promise<ReadErc20> {
+  async getSharesToken(): Promise<ReadErc20<A>> {
     const address = await this.contract.read("vaultSharesToken");
     return new ReadErc20({
       address,
       drift: this.drift,
-      cache: this.contract.cache,
-      cacheNamespace: this.contract.cacheNamespace,
     });
   }
 
@@ -222,9 +213,8 @@ export class ReadHyperdrive extends ReadClient {
     const currentBlock = await getBlockOrThrow(this.drift, options);
     // Clamp the start block to the pool's initialization block if the
     // blockRange is too big.
-    let startBlockNumber = currentBlock.blockNumber! - blockRange;
-    const { blockNumber: initializationBlock } =
-      await this.getInitializationBlock();
+    let startBlockNumber = currentBlock.number! - blockRange;
+    const { number: initializationBlock } = await this.getInitializationBlock();
     if (initializationBlock && initializationBlock > startBlockNumber) {
       startBlockNumber = initializationBlock;
     }
@@ -634,12 +624,9 @@ export class ReadHyperdrive extends ReadClient {
       ContractGetEventsOptions<HyperdriveAbi, "RemoveLiquidity"> &
       ContractGetEventsOptions<HyperdriveAbi, "RedeemWithdrawalShares">,
   ): Promise<{
-    addLiquidity: ContractEvent<HyperdriveAbi, "AddLiquidity">[];
-    removeLiquidity: ContractEvent<HyperdriveAbi, "RemoveLiquidity">[];
-    redeemWithdrawalShares: ContractEvent<
-      HyperdriveAbi,
-      "RedeemWithdrawalShares"
-    >[];
+    addLiquidity: EventLog<HyperdriveAbi, "AddLiquidity">[];
+    removeLiquidity: EventLog<HyperdriveAbi, "RemoveLiquidity">[];
+    redeemWithdrawalShares: EventLog<HyperdriveAbi, "RedeemWithdrawalShares">[];
   }> {
     const addLiquidityEvents = await this.contract.getEvents(
       "AddLiquidity",
@@ -679,8 +666,7 @@ export class ReadHyperdrive extends ReadClient {
   }): Promise<{ lpApy: bigint }> {
     // If the 24 hour rate doesn't exist, assume the pool was initialized less
     // than 24 hours before and try to get the all-time rate until toBlock
-    const { blockNumber: initializationBlock } =
-      await this.getInitializationBlock();
+    const { number: initializationBlock } = await this.getInitializationBlock();
     if (initializationBlock && initializationBlock > fromBlock) {
       fromBlock = initializationBlock;
     }
@@ -724,8 +710,8 @@ export class ReadHyperdrive extends ReadClient {
     openLongEvents,
     closeLongEvents,
   }: {
-    openLongEvents: ContractEvent<HyperdriveAbi, "OpenLong">[];
-    closeLongEvents: ContractEvent<HyperdriveAbi, "CloseLong">[];
+    openLongEvents: EventLog<HyperdriveAbi, "OpenLong">[];
+    closeLongEvents: EventLog<HyperdriveAbi, "CloseLong">[];
   }): Long[] {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
@@ -964,8 +950,8 @@ export class ReadHyperdrive extends ReadClient {
     hyperdriveAddress: Address;
     checkpointDuration: bigint;
     positionDuration: bigint;
-    openShortEvents: ContractEvent<typeof hyperdriveAbi, "OpenShort">[];
-    closeShortEvents: ContractEvent<typeof hyperdriveAbi, "CloseShort">[];
+    openShortEvents: EventLog<typeof hyperdriveAbi, "OpenShort">[];
+    closeShortEvents: EventLog<typeof hyperdriveAbi, "CloseShort">[];
   }): Promise<OpenShort[]> {
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
@@ -1330,11 +1316,8 @@ export class ReadHyperdrive extends ReadClient {
     addLiquidityEvents,
     removeLiquidityEvents,
   }: {
-    addLiquidityEvents: ContractEvent<typeof hyperdriveAbi, "AddLiquidity">[];
-    removeLiquidityEvents: ContractEvent<
-      typeof hyperdriveAbi,
-      "RemoveLiquidity"
-    >[];
+    addLiquidityEvents: EventLog<typeof hyperdriveAbi, "AddLiquidity">[];
+    removeLiquidityEvents: EventLog<typeof hyperdriveAbi, "RemoveLiquidity">[];
   }) {
     const combinedEventsInOrder = [
       ...addLiquidityEvents,
@@ -2063,7 +2046,7 @@ function calculateApyFromPrice({
 }
 
 function isLongEvent(
-  event: ContractEvent<HyperdriveAbi, "TransferSingle">,
+  event: EventLog<HyperdriveAbi, "TransferSingle">,
 ): boolean {
   const { assetType } = decodeAssetFromTransferSingleEventData(
     event.data as `0x${string}`,

@@ -1,37 +1,22 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { Adapter, ContractReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { fixed } from "src/fixed-point";
-import {
-  ReadHyperdrive,
-  ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 
 /**
  * A Hyperdrive instance that is compatible with Hyperdrive <= v1.0.14.
  */
-export class ReadHyperdrive_v1_0_14 extends readHyperdriveMixin_v1_0_14(
-  ReadHyperdrive,
-) {}
+export class ReadHyperdrive_v1_0_14<
+  A extends Adapter = Adapter,
+> extends V1_0_14Mixin(ReadHyperdrive)<A> {}
 
 /**
  * Overrides for compatibility with Hyperdrive <= v1.0.14.
  */
-export function readHyperdriveMixin_v1_0_14<
-  T extends Constructor<ReadHyperdrive>,
->(Base: T): T {
+export function V1_0_14Mixin<T extends Constructor<ReadHyperdrive>>(
+  Base: T,
+): T {
   return class extends Base {
-    /**
-     * @hidden
-     */
-    constructor(...[options]: any[]) {
-      const { debugName = "Hyperdrive v1.0.14", ...restOptions } =
-        options as ReadHyperdriveOptions;
-      super({
-        debugName,
-        ...restOptions,
-      });
-    }
-
     async convertToBase({
       sharesAmount,
       options,

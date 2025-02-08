@@ -1,18 +1,12 @@
-import { Drift, ReadWriteAdapter } from "@delvtech/drift";
-import { ReadWriteClientOptions } from "src/drift/ReadWriteClient";
+import { ReadWriteAdapter } from "@delvtech/drift";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 
-export interface ReadWriteEthOptions extends ReadWriteClientOptions {}
-
-export class ReadWriteEth extends ReadEth implements ReadWriteToken {
-  declare drift: Drift<ReadWriteAdapter>;
-
-  constructor(options: ReadWriteEthOptions) {
-    super(options);
-  }
-
+export class ReadWriteEth<A extends ReadWriteAdapter = ReadWriteAdapter>
+  extends ReadEth<A>
+  implements ReadWriteToken<A>
+{
   /**
    * This method is not available for the native ETH token.
    * @throws A {@linkcode HyperdriveSdkError}
@@ -22,15 +16,4 @@ export class ReadWriteEth extends ReadEth implements ReadWriteToken {
       "This method is not available for the native ETH token.",
     );
   }
-}
-
-export interface MethodNotImplementedErrorOptions {
-  /**
-   * The name of the object that the method was not implemented in.
-   */
-  objectName: string;
-  /**
-   * The name of the method that was not implemented.
-   */
-  methodName: string;
 }
