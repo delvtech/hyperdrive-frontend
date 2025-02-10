@@ -266,8 +266,8 @@ function ClaimRewardsButton({
     );
   }
 
-  // If the reward is already claimed, disable the button
-  if (BigInt(reward.claimableAmount) === claimed) {
+  // If the reward is already claimed, or no merkle exists yet, disable the button
+  if (BigInt(reward.claimableAmount) === claimed || !reward.merkleProof) {
     return (
       <button
         disabled
