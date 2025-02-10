@@ -2,13 +2,10 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { MerklApi } from "@merkl/api";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { isForkChain } from "src/chains/isForkChain";
-import { rewardsFork } from "src/chains/rewardsFork";
 import {
   HyperdriveRewardsApi,
   Reward,
 } from "src/rewards/generated/HyperdriveRewardsApi";
-import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address, Hash } from "viem";
 import { base, gnosis, linea, mainnet } from "viem/chains";
 import { usePublicClient } from "wagmi";
@@ -23,21 +20,18 @@ export function useClaimableRewards({
 } {
   const publicClient = usePublicClient();
   const queryEnabled = !!account && !!publicClient;
-  const appConfig = useAppConfigForConnectedChain({ strict: false });
-  const chainIds = Object.keys(appConfig.chains).map(Number);
   const { data: rewards, status: rewardsStatus } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "rewards",
       queryId: "unclaimedRewards",
-      params: { account, chainIds },
+      params: { account },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const hyperdriveRewards = await fetchHyperdriveRewardApi(account);
 
-          // TODO: Add mile rewards
-          const mileRewards = await fetchMileRewards(account, chainIds);
+          const mileRewards = await fetchMileRewards(account);
           const allRewards = [...hyperdriveRewards, ...mileRewards];
 
           return allRewards;
@@ -91,17 +85,14 @@ const merkl = MerklApi("https://api.merkl.xyz").v4;
  */
 const MerklDistributorsByChain: Record<number, Address> = {
   [mainnet.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
-  [rewardsFork.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [gnosis.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [base.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [linea.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
 };
 
-async function fetchMileRewards(
-  account: Address,
-  chainIds: number[],
-): Promise<Reward[]> {
-  console.log("chainIds", chainIds);
+async function fetchMileRewards(account: Address): Promise<Reward[]> {
+  const chainIds = [mainnet.id, gnosis.id, linea.id, base.id];
+
   // Request miles earned on each chain. We have to call this once per chain
   // since the merkl api is buggy, despite accepting an array of chain ids. If
   // this gets fixed, we can remove the Promise.all and simplify this logic.
@@ -114,7 +105,7 @@ async function fetchMileRewards(
           })
           .rewards.get({
             query: {
-              chainId: [isForkChain(chainId) ? gnosis.id : chainId],
+              chainId: [chainId],
             },
           });
 
@@ -122,11 +113,18 @@ async function fetchMileRewards(
       }),
     )
   )
-    .filter(({ data }) => data?.length)
+    .filter(
+      ({ data }) =>
+        data?.length &&
+        // since we only request a single chain id, we can just grab the first
+        // data item
+        data[0].rewards.find(
+          (d) => d.token.symbol === "Miles" && !!Number(d.amount),
+        ),
+    )
     .map(({ data, chainId }) => {
-      // since we only use a single chain id, we can just grab the first data item
       const rewards = data![0].rewards.find(
-        (d) => d.token.symbol === "Miles" && !!Number(d.pending),
+        (d) => d.token.symbol === "Miles" && !!Number(d.amount),
       );
       return {
         chainId,
