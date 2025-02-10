@@ -33,7 +33,7 @@ export function useReadHyperdrive({
             address,
             drift,
             earliestBlock: initializationBlock,
-            zapContractAddress: appConfig.zaps[chainId].address,
+            zapContractAddress: appConfig.zaps[chainId]?.address,
           });
         }
       : undefined,

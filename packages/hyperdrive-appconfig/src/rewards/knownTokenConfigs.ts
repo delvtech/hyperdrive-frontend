@@ -20,7 +20,7 @@ export const knownTokenConfigs2: TokenConfig[] = [
     address: "0x79385D4B4c531bBbDa25C4cFB749781Bd9E23039",
     chainId: gnosis.id,
     decimals: 18,
-    name: "Miles",
+    name: "Hyperdrive Miles",
     symbol: "MILES",
     places: 4,
     iconUrl: HyperVueMilesIconUrl,
@@ -28,10 +28,11 @@ export const knownTokenConfigs2: TokenConfig[] = [
     priceOracle: "defillama",
   },
   {
+    // TODO: Remove this once we stop the mainnet fork
     address: "0x79385D4B4c531bBbDa25C4cFB749781Bd9E23039",
     chainId: rewardsMainnetFork.id,
     decimals: 18,
-    name: "Miles",
+    name: "Hyperdrive Miles",
     symbol: "MILES",
     places: 4,
     iconUrl: HyperVueMilesIconUrl,
