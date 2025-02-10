@@ -43,7 +43,6 @@ export function usePortfolioLongsData({
                 const allLongs = await readHyperdrive.getOpenLongPositions({
                   account,
                 });
-                console.log("allLongs", allLongs);
                 const openLongs = await Promise.all(
                   allLongs.map(async (long) => ({
                     ...long,
@@ -54,7 +53,6 @@ export function usePortfolioLongsData({
                   })),
                 );
 
-                console.log("all Open Longs", openLongs);
                 return {
                   hyperdrive,
                   openLongs,

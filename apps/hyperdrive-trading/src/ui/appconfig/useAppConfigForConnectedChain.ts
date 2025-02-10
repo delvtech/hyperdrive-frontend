@@ -2,7 +2,6 @@ import {
   AppConfig,
   // eslint-disable-next-line no-restricted-imports
   appConfig as appConfigFromImport,
-  HyperdriveConfig,
   isMainnetChain,
   mainnetAppConfig,
   testnetAppConfig,
@@ -40,12 +39,6 @@ export function useAppConfigForConnectedChain(
   if (tokenList) {
     return {
       ...appConfig,
-      hyperdrives: [
-        appConfig.hyperdrives.find(
-          (hyperdrive) =>
-            hyperdrive.address === "0x324395D5d835F84a02A75Aa26814f6fD22F25698",
-        ) as HyperdriveConfig,
-      ],
       tokens: uniqBy(
         [...appConfig.tokens, ...tokenList],
         (token) => `${token.address}-${token.chainId}`,

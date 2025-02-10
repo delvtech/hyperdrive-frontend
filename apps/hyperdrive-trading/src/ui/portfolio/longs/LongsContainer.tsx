@@ -5,11 +5,11 @@ import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { usePortfolioLongsData } from "src/ui/portfolio/longs/usePortfolioLongsData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { Address } from "viem";
 import { OpenLongsTableDesktop } from "./OpenLongsTable/OpenLongsTableDesktop";
-import { usePortfolioLongsData } from "./usePortfolioLongsData";
 
 export function OpenLongsContainer({
   account,
@@ -20,8 +20,6 @@ export function OpenLongsContainer({
   const { openLongPositions, openLongPositionsStatus } = usePortfolioLongsData({
     account,
   });
-
-  console.log("openLongPositions", openLongPositions);
 
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
