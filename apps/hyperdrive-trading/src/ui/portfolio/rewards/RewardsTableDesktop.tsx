@@ -228,7 +228,7 @@ function AssetCell({
       })} ${token.symbol}`}
     >
       <div className="flex items-center gap-2 font-inter">
-        <img src={token.iconUrl} className="size-14" />
+        <img src={token.iconUrl} className="size-10 rounded-full" />
         <div className="flex flex-col gap-1">{token.name}</div>
       </div>
     </Tooltip>
