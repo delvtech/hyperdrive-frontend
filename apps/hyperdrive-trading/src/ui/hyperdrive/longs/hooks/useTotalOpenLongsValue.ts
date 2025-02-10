@@ -6,6 +6,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address } from "viem";
 export function useTotalOpenLongsValueTwo({
   account,
@@ -22,6 +23,7 @@ export function useTotalOpenLongsValueTwo({
   isLoading: boolean;
   totalOpenLongsValueError: Error;
 } {
+  const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!longs && enabled;
   const {
     data: totalOpenLongsValue,
@@ -45,6 +47,8 @@ export function useTotalOpenLongsValueTwo({
                 address: long.hyperdrive.address,
                 drift: getDrift({ chainId: long.hyperdrive.chainId }),
                 earliestBlock: long.hyperdrive.initializationBlock,
+                zapContractAddress:
+                  appConfig.zaps[long.hyperdrive.chainId].address,
               });
               const preview = await readHyperdrive.previewCloseLong({
                 maturityTime: long.details?.maturity || 0n,

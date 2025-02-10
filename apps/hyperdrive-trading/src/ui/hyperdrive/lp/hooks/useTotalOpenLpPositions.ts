@@ -51,6 +51,8 @@ export function useTotalOpenLpPositions({
                 address: position.hyperdrive.address,
                 drift: getDrift({ chainId: position.hyperdrive.chainId }),
                 earliestBlock: position.hyperdrive.initializationBlock,
+                zapContractAddress:
+                  appConfig.zaps[position.hyperdrive.chainId].address,
               });
               const openLpPosition = await readHyperdrive.getOpenLpPosition({
                 account,
