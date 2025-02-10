@@ -1,6 +1,9 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { MerklApi } from "@merkl/api";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
+import { isForkChain } from "src/chains/isForkChain";
+import { rewardsFork } from "src/chains/rewardsFork";
 import {
   HyperdriveRewardsApi,
   Reward,
@@ -20,7 +23,7 @@ export function useClaimableRewards({
 } {
   const publicClient = usePublicClient();
   const queryEnabled = !!account && !!publicClient;
-  const appConfig = useAppConfigForConnectedChain();
+  const appConfig = useAppConfigForConnectedChain({ strict: false });
   const chainIds = Object.keys(appConfig.chains).map(Number);
   const { data: rewards, status: rewardsStatus } = useQuery({
     queryKey: makeQueryKey2({
@@ -32,9 +35,11 @@ export function useClaimableRewards({
     queryFn: queryEnabled
       ? async () => {
           const hyperdriveRewards = await fetchHyperdriveRewardApi(account);
+
           // TODO: Add mile rewards
-          // const mileRewards = await fetchMileRewards(account, chainIds);
-          const allRewards = [...hyperdriveRewards];
+          const mileRewards = await fetchMileRewards(account, chainIds);
+          const allRewards = [...hyperdriveRewards, ...mileRewards];
+
           return allRewards;
         }
       : undefined,
@@ -55,12 +60,17 @@ async function fetchHyperdriveRewardApi(account: Address): Promise<Reward[]> {
   });
 
   try {
-    const response = await rewardsApi.get.rewardsStubDetail(account);
-    return response.rewards;
+    const response = await rewardsApi.get.rewardsUserDetail(account);
+    // TODO: Remove this once claimbableAmount is no longer formatted server side
+    return response.rewards.map((r) => ({
+      ...r,
+      claimableAmount: parseFixed(r.claimableAmount).bigint.toString(),
+    }));
   } catch (error: any) {
     // This throws a 404 if the account does not have any rewards, which
     // is fine, just return an empty array and display no rewards
     if (error.error.error === "No rewards found for this address") {
+      console.log("No rewards found for this address");
       return [];
     }
     // There are no other well-known errors we can catch, so re-throw
@@ -81,6 +91,7 @@ const merkl = MerklApi("https://api.merkl.xyz").v4;
  */
 const MerklDistributorsByChain: Record<number, Address> = {
   [mainnet.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
+  [rewardsFork.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [gnosis.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [base.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [linea.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
@@ -90,6 +101,7 @@ async function fetchMileRewards(
   account: Address,
   chainIds: number[],
 ): Promise<Reward[]> {
+  console.log("chainIds", chainIds);
   // Request miles earned on each chain. We have to call this once per chain
   // since the merkl api is buggy, despite accepting an array of chain ids. If
   // this gets fixed, we can remove the Promise.all and simplify this logic.
@@ -102,7 +114,7 @@ async function fetchMileRewards(
           })
           .rewards.get({
             query: {
-              chainId: [chainId],
+              chainId: [isForkChain(chainId) ? gnosis.id : chainId],
             },
           });
 
