@@ -52,7 +52,7 @@ export class ReadHyperdrive extends ReadClient {
   readonly contract: ReadContract<HyperdriveAbi>;
 
   /**
-   * The optional address of an auxiliary contract such as a zap contract.
+   * The optional address of the zap contract.
    */
   readonly zapContractAddress?: Address;
 
@@ -873,7 +873,7 @@ export class ReadHyperdrive extends ReadClient {
         const accountTxHashes = transfersSentToZap.map(
           ({ transactionHash }) => transactionHash,
         );
-        // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
+        // Fetch CloseLong events emitted by the zap contract in the relevant block range.
         const allZapCloses = await this.contract.getEvents("CloseLong", {
           filter: { trader: this.zapContractAddress, assetId },
           fromBlock: transfersSentToZap[0].blockNumber,

@@ -37,7 +37,8 @@ export function usePortfolioLongsData({
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
                   zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
 
                 const allLongs = await readHyperdrive.getOpenLongPositions({
@@ -99,7 +100,8 @@ export function usePortfolioLongsDataFromHyperdrives({
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
                   zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
                 const allLongs = await readHyperdrive.getOpenLongPositions({
                   account,

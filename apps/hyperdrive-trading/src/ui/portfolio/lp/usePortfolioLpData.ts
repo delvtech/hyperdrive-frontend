@@ -41,7 +41,7 @@ export function usePortfolioLpDataFromHyperdrives({
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
                 zapContractAddress:
-                  appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                  appConfigForConnectedChain.zaps[hyperdrive.chainId]?.address,
               });
 
               const [lpShares, withdrawalShares] = await Promise.all([
@@ -92,7 +92,7 @@ export function usePortfolioLpData({
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
                 zapContractAddress:
-                  appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                  appConfigForConnectedChain.zaps[hyperdrive.chainId]?.address,
               });
 
               const [lpShares, withdrawalShares] = await Promise.all([

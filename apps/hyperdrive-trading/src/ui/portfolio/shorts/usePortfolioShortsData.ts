@@ -35,7 +35,8 @@ export function usePortfolioShortsData({
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
                   zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
 
                 return {
@@ -84,7 +85,8 @@ export function usePortfolioShortsDataFromHyperdrives({
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
                   zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
                 const openShorts = await readHyperdrive.getOpenShorts({
                   account,
