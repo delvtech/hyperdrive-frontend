@@ -7,7 +7,7 @@ module.exports = {
       TypeField: ({ key, value, readonly, optional }) => {
         let fieldValue = value;
         // Convert vanilla string to the appropriate address type
-        if (key.endsWith("Address")) {
+        if (key.toLowerCase().endsWith("address")) {
           fieldValue = "`0x${string}`";
         }
 

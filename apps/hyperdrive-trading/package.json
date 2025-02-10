@@ -26,7 +26,7 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "gen:version": "bash ./scripts/generate-version.sh",
     "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh",
-    "gen:rewards-swagger": "bash ./scripts/generate-rewards-swagger.sh"
+    "gen:swagger": "bash ./scripts/generate-swagger.sh"
   },
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
@@ -47,6 +47,7 @@
     "@types/d3-format": "^3.0.4",
     "@types/lodash.groupby": "^4.6.9",
     "@types/lodash.sortby": "^4.7.9",
+    "@merkl/api": "^0.10.412",
     "@types/lodash.uniqby": "^4.7.9",
     "@uniswap/token-lists": "^1.0.0-beta.34",
     "@uniswap/v3-sdk": "^3.19.0",

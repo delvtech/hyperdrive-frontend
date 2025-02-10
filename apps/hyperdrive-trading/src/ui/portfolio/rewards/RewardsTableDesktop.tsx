@@ -11,7 +11,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Reward } from "src/rewards/generated/RewardsClient";
+import { Reward } from "src/rewards/generated/HyperdriveRewardsApi";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";

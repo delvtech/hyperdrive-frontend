@@ -27,7 +27,7 @@ const writePool = new ReadWriteHyperdrive({
 const readPool = new ReadHyperdrive({
   address: poolAddress,
   drift,
-  zapAddress: zapsConfig.address,
+  auxiliaryContractAddress: zapsConfig.address,
   earliestBlock,
 });
 
@@ -38,8 +38,8 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665187456n;
-const maturity = 1754524800n;
+  452312848583266388373324160190187140051835877600158453279131187532665273856n;
+const maturity = 1754611200n;
 
 async function openLongPosition() {
   try {
@@ -55,6 +55,7 @@ async function openLongPosition() {
     const { result, request } = await publicClient.simulateContract({
       abi: writePool.contract.abi,
       address: poolAddress,
+      chain: publicClient.chain,
       functionName: "openLong",
       account,
       gas: 16125042n,
@@ -70,7 +71,9 @@ async function openLongPosition() {
       ],
     });
 
-    const openTxHash = await walletClient?.writeContract(request);
+    const openTxHash = await walletClient?.writeContract({
+      ...request,
+    });
     if (!openTxHash) throw new Error("No open transaction hash received");
 
     const txReceipt = await publicClient.waitForTransactionReceipt({
@@ -104,6 +107,7 @@ async function openLongPosition() {
       await publicClient.simulateContract({
         abi: writePool.contract.abi,
         address: poolAddress,
+        chain: publicClient.chain,
         functionName: "closeLong",
         account,
         args: [
@@ -123,6 +127,7 @@ async function openLongPosition() {
     const swapTx = await walletClient
       ?.writeContract({
         abi: zapAbi,
+        chain: publicClient.chain,
         address: zapsConfig.address,
         functionName: "closeLongZap",
         gas: 16125042n,
@@ -185,9 +190,9 @@ async function closeAllPositions() {
   const manualPositions = [
     {
       assetId:
-        452312848583266388373324160190187140051835877600158453279131187532664323456n,
-      maturity: 1753660800n,
-      bondAmount: 93219890613508425843n, // Example: 100 bonds
+        452312848583266388373324160190187140051835877600158453279131187532665273856n,
+      maturity: 1754611200n,
+      bondAmount: 104902143926345435824n, // Example: 100 bonds
     },
     // Add more positions as needed
   ];
@@ -227,6 +232,7 @@ async function closeAllPositions() {
       // Execute zap close for the position
       const swapTx = await walletClient?.writeContract({
         abi: zapAbi,
+        chain: publicClient.chain,
         address: zapsConfig.address,
         functionName: "closeLongZap",
         args: [
@@ -270,8 +276,8 @@ async function closeAllPositions() {
 
 async function main() {
   // Uncomment the function call you need
-  await openLongPosition();
-  // await closeAllPositions();
+  // await openLongPosition();
+  await closeAllPositions();
 }
 
 main().catch(console.error);
