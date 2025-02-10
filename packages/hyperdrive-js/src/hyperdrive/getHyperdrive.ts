@@ -31,6 +31,7 @@ export async function getHyperdrive<T extends Drift = Drift>({
   cacheNamespace,
   earliestBlock,
   debugName,
+  zapContractAddress,
 }: HyperdriveOptions<T>): Promise<Hyperdrive<T>> {
   cacheNamespace ??= await drift.getChainId();
 
@@ -41,6 +42,7 @@ export async function getHyperdrive<T extends Drift = Drift>({
     cacheNamespace,
     earliestBlock,
     debugName,
+    zapContractAddress,
   };
   const isReadWrite = isReadWriteOptions(options);
 

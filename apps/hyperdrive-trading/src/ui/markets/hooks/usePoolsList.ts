@@ -130,6 +130,7 @@ function useSortedPools({
                 address: hyperdrive.address,
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
+                zapContractAddress: appConfig.zaps[hyperdrive.chainId].address,
               });
               const publicClient = getPublicClient(wagmiConfig as any, {
                 chainId: hyperdrive.chainId,

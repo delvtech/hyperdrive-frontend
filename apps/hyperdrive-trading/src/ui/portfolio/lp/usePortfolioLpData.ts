@@ -22,6 +22,7 @@ export function usePortfolioLpDataFromHyperdrives({
   openLpPositions: LpPosition[] | undefined;
   openLpPositionStatus: "error" | "success" | "loading";
 } {
+  const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!hyperdrives.length;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("portfolioLp", {
@@ -39,6 +40,8 @@ export function usePortfolioLpDataFromHyperdrives({
                 address: hyperdrive.address,
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
+                zapContractAddress:
+                  appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
               });
 
               const [lpShares, withdrawalShares] = await Promise.all([
@@ -88,6 +91,8 @@ export function usePortfolioLpData({
                 address: hyperdrive.address,
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
+                zapContractAddress:
+                  appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
               });
 
               const [lpShares, withdrawalShares] = await Promise.all([

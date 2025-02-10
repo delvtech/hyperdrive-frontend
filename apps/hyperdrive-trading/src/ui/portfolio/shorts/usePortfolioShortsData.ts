@@ -34,6 +34,8 @@ export function usePortfolioShortsData({
                   address: hyperdrive.address,
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
+                  zapContractAddress:
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
                 });
 
                 return {
@@ -64,6 +66,7 @@ export function usePortfolioShortsDataFromHyperdrives({
     | undefined;
   openShortPositionsStatus: "error" | "success" | "loading";
 } {
+  const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!hyperdrives.length;
   const { data: openShortPositions, status: openShortPositionsStatus } =
     useQuery({
@@ -80,6 +83,8 @@ export function usePortfolioShortsDataFromHyperdrives({
                   address: hyperdrive.address,
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
+                  zapContractAddress:
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId].address,
                 });
                 const openShorts = await readHyperdrive.getOpenShorts({
                   account,

@@ -859,28 +859,33 @@ export class ReadHyperdrive extends ReadClient {
       filter: { trader: account, assetId },
     });
 
-    // Handle transfers sent to the  contract.
-    const transfersSentToAux = await this.contract.getEvents("TransferSingle", {
-      filter: { from: account, to: this.zapContractAddress },
-      toBlock: options?.block,
-    });
+    if (this.zapContractAddress) {
+      // Handle transfers sent to the zap contract.
+      const transfersSentToZap = await this.contract.getEvents(
+        "TransferSingle",
+        {
+          filter: { from: account, to: this.zapContractAddress },
+          toBlock: options?.block,
+        },
+      );
 
-    if (transfersSentToAux.length) {
-      const accountTxHashes = transfersSentToAux.map(
-        ({ transactionHash }) => transactionHash,
-      );
-      // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
-      const allAuxCloses = await this.contract.getEvents("CloseLong", {
-        filter: { trader: this.zapContractAddress, assetId },
-        fromBlock: transfersSentToAux[0].blockNumber,
-        toBlock: transfersSentToAux.at(-1)?.blockNumber,
-      });
-      // Only include events that occurred in the same transactions.
-      const auxClosesForAccount = allAuxCloses.filter(({ transactionHash }) =>
-        accountTxHashes.includes(transactionHash as `0x${string}`),
-      );
-      for (const event of auxClosesForAccount) {
-        closeLongEvents.push(event);
+      if (transfersSentToZap.length) {
+        const accountTxHashes = transfersSentToZap.map(
+          ({ transactionHash }) => transactionHash,
+        );
+        // Fetch CloseLong events emitted by the auxiliary contract in the relevant block range.
+        const allZapCloses = await this.contract.getEvents("CloseLong", {
+          filter: { trader: this.zapContractAddress, assetId },
+          fromBlock: transfersSentToZap[0].blockNumber,
+          toBlock: transfersSentToZap.at(-1)?.blockNumber,
+        });
+        // Only include events that occurred in the same transactions.
+        const zapClosesForAccount = allZapCloses.filter(({ transactionHash }) =>
+          accountTxHashes.includes(transactionHash as `0x${string}`),
+        );
+        for (const event of zapClosesForAccount) {
+          closeLongEvents.push(event);
+        }
       }
     }
 
