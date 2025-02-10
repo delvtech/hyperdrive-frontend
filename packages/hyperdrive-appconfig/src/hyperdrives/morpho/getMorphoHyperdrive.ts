@@ -46,7 +46,7 @@ export async function getMorphoHyperdrive({
     {
       // sometimes this fails to find the block due to alchemy blips, retry a
       // few times in this case
-      retries: 5,
+      retries: 15,
       onFailedAttempt: () => {
         console.log("Retrying getInitializationBlock...");
       },

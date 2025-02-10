@@ -23,7 +23,6 @@ interface RewardsQueryKeys {
    */
   unclaimedRewards: {
     account: Address | undefined;
-    chainIds: number[];
   };
 
   // TODO: We may not need these as these queries are just list wrappers around
