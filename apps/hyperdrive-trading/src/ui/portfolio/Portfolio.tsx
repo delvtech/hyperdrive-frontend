@@ -1,7 +1,6 @@
 import { Navigate, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { OpenLongsContainer } from "src/ui/portfolio/longs/LongsContainer";
 import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdrawalSharesContainer";
 import { RewardsContainer } from "src/ui/portfolio/rewards/RewardsContainer";
@@ -28,8 +27,6 @@ export function Portfolio(): ReactElement {
 
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
 
-  const { isFlagEnabled: isPortfolioRewardsFeatureFlagEnabled } =
-    useFeatureFlag("portfolio-rewards");
   const tabs = [
     {
       id: "longs",
@@ -61,9 +58,7 @@ export function Portfolio(): ReactElement {
         });
       },
     },
-  ];
-  if (isPortfolioRewardsFeatureFlagEnabled) {
-    tabs.push({
+    {
       id: "rewards",
       content: <RewardsContainer account={account} />,
       label: "Rewards",
@@ -72,8 +67,9 @@ export function Portfolio(): ReactElement {
           search: (prev) => ({ ...prev, position: "rewards" }),
         });
       },
-    });
-  }
+    },
+  ];
+
   return (
     <div className="flex w-full flex-col items-center bg-base-100 py-8">
       {!accountFromRoute && connectedAccount ? (
