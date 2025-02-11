@@ -1,6 +1,6 @@
 // Abi for the Merkl Distributor contract: https://app.merkl.xyz/status
 
-export const MerklDistributorAbi = [
+export const merklDistributorAbi = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   { inputs: [], name: "InvalidDispute", type: "error" },
   { inputs: [], name: "InvalidLengths", type: "error" },
