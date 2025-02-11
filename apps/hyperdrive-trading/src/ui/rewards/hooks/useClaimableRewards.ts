@@ -3,10 +3,8 @@ import { MerklApi } from "@merkl/api";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { rewardsFork } from "src/chains/rewardsFork";
-import {
-  HyperdriveRewardsApi,
-  Reward,
-} from "src/rewards/generated/HyperdriveRewardsApi";
+import { ClaimableReward } from "src/rewards/ClaimableReward";
+import { HyperdriveRewardsApi } from "src/rewards/generated/HyperdriveRewardsApi";
 import { Address, Hash } from "viem";
 import { gnosis } from "viem/chains";
 import { usePublicClient } from "wagmi";
@@ -16,7 +14,7 @@ export function useClaimableRewards({
 }: {
   account: Address | undefined;
 }): {
-  rewards: Reward[] | undefined;
+  rewards: ClaimableReward[] | undefined;
   rewardsStatus: "error" | "success" | "loading";
 } {
   const publicClient = usePublicClient();
@@ -49,7 +47,9 @@ export function useClaimableRewards({
  * Rewards that come from the Hyperdrive Rewards API server. This server also
  * defines the shape used for rewards everywhere else in the app.
  */
-async function fetchHyperdriveRewardApi(account: Address): Promise<Reward[]> {
+async function fetchHyperdriveRewardApi(
+  account: Address,
+): Promise<ClaimableReward[]> {
   const rewardsApi = new HyperdriveRewardsApi({
     baseUrl: import.meta.env.VITE_REWARDS_BASE_URL,
   });
@@ -60,6 +60,7 @@ async function fetchHyperdriveRewardApi(account: Address): Promise<Reward[]> {
     return response.rewards.map((r) => ({
       ...r,
       chainId: rewardsFork.id,
+      merkleType: "HyperdriveMerkle",
       claimableAmount: parseFixed(r.claimableAmount).bigint.toString(),
     }));
   } catch (error: any) {
@@ -89,7 +90,7 @@ const MerklDistributorsByChain: Record<number, Address> = {
   [gnosis.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
 };
 
-async function fetchMileRewards(account: Address): Promise<Reward[]> {
+async function fetchMileRewards(account: Address): Promise<ClaimableReward[]> {
   // Merkl.xyz accumulates Miles across all chains and hyperdrives onto Gnosis
   // chain only. This makes things easier for turning them into HD later if
   // they're all just on one chain.
@@ -121,15 +122,18 @@ async function fetchMileRewards(account: Address): Promise<Reward[]> {
         // since we only request a single chain id, we can just grab the first
         // data item
         data[0].rewards.find(
+          // Merkl.xyz has something called HYPOINTS too, but we only care about
+          // Miles
           (d) => d.token.symbol === "Miles" && !!Number(d.amount),
         ),
     )
-    .map(({ data, chainId }) => {
+    .map(({ data, chainId }): ClaimableReward => {
       const rewards = data![0].rewards.find(
         (d) => d.token.symbol === "Miles" && !!Number(d.amount),
       );
       return {
         chainId,
+        merkleType: "MerklXyz",
         merkleProof: rewards?.proofs as Hash[],
         claimableAmount: rewards?.amount.toString() || "0",
         pendingAmount: rewards?.pending.toString() || "0",
