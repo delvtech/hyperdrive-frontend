@@ -9,7 +9,7 @@ export const fetchHypervueMilesRewards: RewardResolver = async () => {
     {
       type: "info",
       iconUrl: HyperVueMilesIconUrl,
-      message: "Earns 1 Mile per day for every $1 supplied",
+      message: "Earns 1 Mile per year for every $1 supplied",
     },
   ];
 };
