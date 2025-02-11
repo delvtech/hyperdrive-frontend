@@ -5,6 +5,7 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { rewardsFork } from "src/chains/rewardsFork";
 import { ClaimableReward } from "src/rewards/ClaimableReward";
 import { HyperdriveRewardsApi } from "src/rewards/generated/HyperdriveRewardsApi";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { Address, Hash } from "viem";
 import { gnosis } from "viem/chains";
 import { usePublicClient } from "wagmi";
@@ -19,6 +20,8 @@ export function useClaimableRewards({
 } {
   const publicClient = usePublicClient();
   const queryEnabled = !!account && !!publicClient;
+  const { isFlagEnabled: isHyperdriveApiRewardsEnabled } =
+    useFeatureFlag("portfolio-rewards");
   const { data: rewards, status: rewardsStatus } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "rewards",
@@ -28,10 +31,13 @@ export function useClaimableRewards({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const hyperdriveRewards = await fetchHyperdriveRewardApi(account);
-
           const mileRewards = await fetchMileRewards(account);
-          const allRewards = [...hyperdriveRewards, ...mileRewards];
+
+          const allRewards = [...mileRewards];
+          if (isHyperdriveApiRewardsEnabled) {
+            const hyperdriveRewards = await fetchHyperdriveRewardApi(account);
+            allRewards.push(...hyperdriveRewards);
+          }
 
           return allRewards;
         }
