@@ -2,12 +2,13 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { MerklApi } from "@merkl/api";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
+import { rewardsFork } from "src/chains/rewardsFork";
 import {
   HyperdriveRewardsApi,
   Reward,
 } from "src/rewards/generated/HyperdriveRewardsApi";
 import { Address, Hash } from "viem";
-import { base, gnosis, linea, mainnet } from "viem/chains";
+import { gnosis } from "viem/chains";
 import { usePublicClient } from "wagmi";
 
 export function useClaimableRewards({
@@ -58,6 +59,7 @@ async function fetchHyperdriveRewardApi(account: Address): Promise<Reward[]> {
     // TODO: Remove this once claimbableAmount is no longer formatted server side
     return response.rewards.map((r) => ({
       ...r,
+      chainId: rewardsFork.id,
       claimableAmount: parseFixed(r.claimableAmount).bigint.toString(),
     }));
   } catch (error: any) {
@@ -84,14 +86,13 @@ const merkl = MerklApi("https://api.merkl.xyz").v4;
  * See: https://app.merkl.xyz/status
  */
 const MerklDistributorsByChain: Record<number, Address> = {
-  [mainnet.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
   [gnosis.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
-  [base.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
-  [linea.id]: "0x3Ef3D8bA38EBe18DB133cEc108f4D14CE00Dd9Ae",
 };
 
 async function fetchMileRewards(account: Address): Promise<Reward[]> {
-  const chainIds = [mainnet.id, gnosis.id, linea.id, base.id];
+  // Merkl.xyz distributes Miles on Gnosis chain only. They do a calculation
+  // across every hyperdrive to make sure points are counted across all chains.
+  const chainIds = [gnosis.id];
 
   // Request miles earned on each chain. We have to call this once per chain
   // since the merkl api is buggy, despite accepting an array of chain ids. If

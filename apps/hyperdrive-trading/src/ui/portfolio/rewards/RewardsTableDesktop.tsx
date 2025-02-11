@@ -247,6 +247,7 @@ function ClaimRewardsButton({
     rewardTokenAddress: reward.rewardTokenAddress,
     claimContractAddress: reward.claimContractAddress,
     account,
+    chainId: reward.chainId,
   });
   const appConfig = useAppConfigForConnectedChain({ strict: false });
 
@@ -273,7 +274,7 @@ function ClaimRewardsButton({
         disabled
         className="daisy-btn daisy-btn-disabled daisy-btn-ghost rounded-full bg-gray-600 font-inter"
       >
-        Claim Reward
+        Claim Rewards
       </button>
     );
   }
@@ -300,7 +301,7 @@ function ClaimRewardsButton({
       )}
       onClick={claim}
     >
-      Claim Reward
+      Claim Rewards
     </button>
   );
 }
@@ -323,6 +324,7 @@ function ClaimableAmount({
     rewardTokenAddress: reward.rewardTokenAddress,
     claimContractAddress: reward.claimContractAddress,
     account,
+    chainId: reward.chainId,
   });
 
   return (
