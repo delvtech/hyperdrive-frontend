@@ -90,8 +90,9 @@ const MerklDistributorsByChain: Record<number, Address> = {
 };
 
 async function fetchMileRewards(account: Address): Promise<Reward[]> {
-  // Merkl.xyz distributes Miles on Gnosis chain only. They do a calculation
-  // across every hyperdrive to make sure points are counted across all chains.
+  // Merkl.xyz accumulates Miles across all chains and hyperdrives onto Gnosis
+  // chain only. This makes things easier for turning them into HD later if
+  // they're all just on one chain.
   const chainIds = [gnosis.id];
 
   // Request miles earned on each chain. We have to call this once per chain
