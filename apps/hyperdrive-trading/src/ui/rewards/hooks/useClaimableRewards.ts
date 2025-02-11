@@ -54,25 +54,14 @@ async function fetchHyperdriveRewardApi(
     baseUrl: import.meta.env.VITE_REWARDS_BASE_URL,
   });
 
-  try {
-    const response = await rewardsApi.get.rewardsUserDetail(account);
-    // TODO: Remove this once claimbableAmount is no longer formatted server side
-    return response.rewards.map((r) => ({
-      ...r,
-      chainId: rewardsFork.id,
-      merkleType: "HyperdriveMerkle",
-      claimableAmount: parseFixed(r.claimableAmount).bigint.toString(),
-    }));
-  } catch (error: any) {
-    // This throws a 404 if the account does not have any rewards, which
-    // is fine, just return an empty array and display no rewards
-    if (error.error.error === "No rewards found for this address") {
-      console.log("No rewards found for this address");
-      return [];
-    }
-    // There are no other well-known errors we can catch, so re-throw
-    throw error;
-  }
+  const response = await rewardsApi.get.rewardsUserDetail(account);
+  // TODO: Remove this once claimbableAmount is no longer formatted server side
+  return response.rewards.map((r) => ({
+    ...r,
+    chainId: rewardsFork.id,
+    merkleType: "HyperdriveMerkle",
+    claimableAmount: parseFixed(r.claimableAmount).bigint.toString(),
+  }));
 }
 /**
  *
