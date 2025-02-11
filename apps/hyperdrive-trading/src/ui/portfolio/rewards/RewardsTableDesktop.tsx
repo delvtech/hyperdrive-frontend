@@ -11,6 +11,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { ClaimableReward } from "src/rewards/ClaimableReward";
 import { Reward } from "src/rewards/generated/HyperdriveRewardsApi";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -28,7 +29,7 @@ export function RewardsTableDesktop({
   rewards,
 }: {
   account: Address;
-  rewards: Reward[];
+  rewards: ClaimableReward[];
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
   const tableInstance = useReactTable({
@@ -139,7 +140,7 @@ export function RewardsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<Reward>();
+const columnHelper = createColumnHelper<ClaimableReward>();
 
 function getColumns({
   account,
@@ -240,7 +241,7 @@ function ClaimRewardsButton({
   reward,
 }: {
   account: Address | undefined;
-  reward: Reward;
+  reward: ClaimableReward;
 }): ReactElement {
   const connectedChainId = useChainId();
   const { claimed } = useClaimedRewards({
