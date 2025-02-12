@@ -44,6 +44,7 @@ export function usePreviewOpenLong({
   });
 
   const appConfig = useAppConfigForConnectedChain();
+
   const baseToken = getBaseToken({
     appConfig,
     hyperdriveAddress,
@@ -66,16 +67,15 @@ export function usePreviewOpenLong({
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
     // This hook should only be enabled if the token is a zap token.
     // For testing purposes we are grabbing the token price from mainnet.
-    chainId: 1,
+    chainId: 707,
     tokenAddress,
     enabled: isZapToken,
   });
 
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     // For testing purposes on zaps we are grabbing the token price from mainnet.
-    chainId: isZapToken ? 1 : baseToken.chainId,
+    chainId: isZapToken ? 707 : baseToken.chainId,
     tokenAddress: baseToken.address,
-    enabled: true,
   });
 
   const queryEnabled = amountIn !== undefined && !!readHyperdrive;
@@ -84,6 +84,7 @@ export function usePreviewOpenLong({
     chainId: chainId,
     query: { enabled: queryEnabled },
   });
+
   const { data, status, fetchStatus } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       chainId,
@@ -92,6 +93,8 @@ export function usePreviewOpenLong({
       asBase,
       blockNumber: blockNumber?.toString(),
       tokenAddress,
+      baseTokenPrice: baseTokenPrice?.toString(),
+      zapTokenPrice: zapTokenPrice?.toString(),
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -101,7 +104,7 @@ export function usePreviewOpenLong({
           if (isZapToken) {
             const zapToken = getToken({
               appConfig,
-              chainId: 1,
+              chainId,
               tokenAddress,
             });
             const fiatValueOfZapAmount =
