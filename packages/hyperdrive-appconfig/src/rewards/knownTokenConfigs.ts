@@ -1,11 +1,12 @@
 import { rewardsMainnetFork } from "src/chains/cloudChain";
+import { HyperVueMilesIconUrl } from "src/rewards/resolvers/hypervueMiles";
 import {
   AERO_ICON_URL,
   MORPHO_ICON_URL,
   WELL_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import { TokenConfig } from "src/tokens/types";
-import { base, mainnet } from "viem/chains";
+import { base, gnosis, mainnet } from "viem/chains";
 
 /**
  * Yield sources may offer rewards in tokens that are not part of Hyperdrive.
@@ -15,6 +16,29 @@ import { base, mainnet } from "viem/chains";
  */
 
 export const knownTokenConfigs2: TokenConfig[] = [
+  {
+    address: "0x79385D4B4c531bBbDa25C4cFB749781Bd9E23039",
+    chainId: gnosis.id,
+    decimals: 18,
+    name: "Hyperdrive Miles",
+    symbol: "MILES",
+    places: 4,
+    iconUrl: HyperVueMilesIconUrl,
+    tags: [],
+    priceOracle: "defillama",
+  },
+  {
+    // TODO: Remove this once we stop the mainnet fork
+    address: "0x79385D4B4c531bBbDa25C4cFB749781Bd9E23039",
+    chainId: rewardsMainnetFork.id,
+    decimals: 18,
+    name: "Hyperdrive Miles",
+    symbol: "MILES",
+    places: 4,
+    iconUrl: HyperVueMilesIconUrl,
+    tags: [],
+    priceOracle: "defillama",
+  },
   {
     address: "0xA88594D404727625A9437C3f886C7643872296AE",
     chainId: base.id,

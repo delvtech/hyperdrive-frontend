@@ -7,12 +7,15 @@ import { usePublicClient, useWriteContract } from "wagmi";
 import { getToken } from "@delvtech/hyperdrive-appconfig";
 import { hyperdriveRewardsAbi } from "@delvtech/hyperdrive-js";
 import { useCallback, useState } from "react";
+import { assertNever } from "src/base/assertNever";
 import { QueryStatusWithIdle } from "src/base/queryStatus";
-import { Reward } from "src/rewards/generated/HyperdriveRewardsApi";
+import { ClaimableReward } from "src/rewards/ClaimableReward";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { merklDistributorAbi } from "src/ui/rewards/merklDistributorAbi";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address } from "viem";
+import { WriteContractVariables } from "wagmi/query";
 
 export function useClaimReward({
   account,
@@ -20,7 +23,7 @@ export function useClaimReward({
   enabled = true,
 }: {
   account: Address | undefined;
-  reward: Reward;
+  reward: ClaimableReward;
   enabled?: boolean;
 }): {
   claim: (() => void) | undefined;
@@ -44,63 +47,46 @@ export function useClaimReward({
       return;
     }
 
-    return writeContract(
-      {
-        abi: hyperdriveRewardsAbi,
-        address: reward.claimContractAddress,
-        chainId: reward.chainId,
-        functionName: "claim",
-        args: [
-          account,
-          reward.rewardTokenAddress,
-          BigInt(reward.claimableAmount), // must be the claimable amount, since it's baked into the merkle proof
-          reward.merkleProof,
-        ],
-      },
-      {
-        onSuccess: async (hash) => {
-          addRecentTransaction({
-            hash,
-            description: "Claim Reward",
-          });
-          setIsTransactionMined(false);
-          toast.loading(
-            <TransactionToast
-              chainId={reward.chainId}
-              message={`Claiming ${token?.symbol} reward...`}
-              txHash={hash}
-            />,
-            { id: hash },
-          );
+    const claimArgs = getClaimArgs(account, reward);
+    writeContract(claimArgs as any, {
+      onSuccess: async (hash) => {
+        addRecentTransaction({
+          hash,
+          description: "Claim Reward",
+        });
+        setIsTransactionMined(false);
+        toast.loading(
+          <TransactionToast
+            chainId={reward.chainId}
+            message={`Claiming ${token?.symbol} reward...`}
+            txHash={hash}
+          />,
+          { id: hash },
+        );
 
-          await waitForTransactionAndInvalidateCache({
-            publicClient,
-            hash,
-            queryClient,
-          });
-          setIsTransactionMined(true);
+        await waitForTransactionAndInvalidateCache({
+          publicClient,
+          hash,
+          queryClient,
+        });
+        setIsTransactionMined(true);
 
-          toast.success(
-            <TransactionToast
-              chainId={reward.chainId}
-              message={`Claimed ${token?.symbol} reward`}
-              txHash={hash}
-            />,
-            { id: hash, duration: SUCCESS_TOAST_DURATION },
-          );
-        },
+        toast.success(
+          <TransactionToast
+            chainId={reward.chainId}
+            message={`Claimed ${token?.symbol} reward`}
+            txHash={hash}
+          />,
+          { id: hash, duration: SUCCESS_TOAST_DURATION },
+        );
       },
-    );
+    });
   }, [
     account,
     addRecentTransaction,
     publicClient,
     queryEnabled,
-    reward.chainId,
-    reward.claimContractAddress,
-    reward.claimableAmount,
-    reward.merkleProof,
-    reward.rewardTokenAddress,
+    reward,
     token?.symbol,
     writeContract,
   ]);
@@ -110,4 +96,53 @@ export function useClaimReward({
     pendingWalletSignatureStatus: status,
     isTransactionMined,
   };
+}
+
+function getClaimArgs(account: Address, reward: ClaimableReward) {
+  switch (reward.merkleType) {
+    case "HyperdriveMerkle": {
+      const claimArgs: WriteContractVariables<
+        typeof hyperdriveRewardsAbi,
+        "claim",
+        any,
+        any,
+        any
+      > = {
+        address: reward.claimContractAddress,
+        abi: hyperdriveRewardsAbi,
+        functionName: "claim",
+        args: [
+          account,
+          reward.rewardTokenAddress,
+          BigInt(reward.claimableAmount),
+          reward.merkleProof,
+        ],
+      };
+
+      return claimArgs;
+    }
+    case "MerklXyz": {
+      const claimArgs: WriteContractVariables<
+        typeof merklDistributorAbi,
+        "claim",
+        any,
+        any,
+        any
+      > = {
+        address: reward.claimContractAddress,
+        abi: merklDistributorAbi,
+        functionName: "claim",
+        args: [
+          [account],
+          [reward.rewardTokenAddress],
+          [BigInt(reward.claimableAmount)],
+          [reward.merkleProof],
+        ],
+      };
+
+      return claimArgs;
+    }
+    default:
+      assertNever(reward.merkleType);
+  }
 }

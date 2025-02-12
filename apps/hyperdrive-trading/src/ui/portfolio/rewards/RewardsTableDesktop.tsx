@@ -11,6 +11,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { ClaimableReward } from "src/rewards/ClaimableReward";
 import { Reward } from "src/rewards/generated/HyperdriveRewardsApi";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
@@ -28,7 +29,7 @@ export function RewardsTableDesktop({
   rewards,
 }: {
   account: Address;
-  rewards: Reward[];
+  rewards: ClaimableReward[];
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
   const tableInstance = useReactTable({
@@ -139,7 +140,7 @@ export function RewardsTableDesktop({
   );
 }
 
-const columnHelper = createColumnHelper<Reward>();
+const columnHelper = createColumnHelper<ClaimableReward>();
 
 function getColumns({
   account,
@@ -228,7 +229,7 @@ function AssetCell({
       })} ${token.symbol}`}
     >
       <div className="flex items-center gap-2 font-inter">
-        <img src={token.iconUrl} className="size-14" />
+        <img src={token.iconUrl} className="size-10 rounded-full" />
         <div className="flex flex-col gap-1">{token.name}</div>
       </div>
     </Tooltip>
@@ -240,13 +241,14 @@ function ClaimRewardsButton({
   reward,
 }: {
   account: Address | undefined;
-  reward: Reward;
+  reward: ClaimableReward;
 }): ReactElement {
   const connectedChainId = useChainId();
   const { claimed } = useClaimedRewards({
     rewardTokenAddress: reward.rewardTokenAddress,
     claimContractAddress: reward.claimContractAddress,
     account,
+    chainId: reward.chainId,
   });
   const appConfig = useAppConfigForConnectedChain({ strict: false });
 
@@ -273,7 +275,7 @@ function ClaimRewardsButton({
         disabled
         className="daisy-btn daisy-btn-disabled daisy-btn-ghost rounded-full bg-gray-600 font-inter"
       >
-        Claim Reward
+        Claim Rewards
       </button>
     );
   }
@@ -300,7 +302,7 @@ function ClaimRewardsButton({
       )}
       onClick={claim}
     >
-      Claim Reward
+      Claim Rewards
     </button>
   );
 }
@@ -323,6 +325,7 @@ function ClaimableAmount({
     rewardTokenAddress: reward.rewardTokenAddress,
     claimContractAddress: reward.claimContractAddress,
     account,
+    chainId: reward.chainId,
   });
 
   return (

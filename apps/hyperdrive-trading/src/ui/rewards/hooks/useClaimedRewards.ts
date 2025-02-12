@@ -5,10 +5,12 @@ import { useReadContract } from "wagmi";
 export function useClaimedRewards({
   rewardTokenAddress,
   claimContractAddress,
+  chainId,
   account,
 }: {
   rewardTokenAddress: Address | undefined;
   claimContractAddress: Address | undefined;
+  chainId: number | undefined;
   account: Address | undefined;
 }): { claimed: bigint | undefined; status: "loading" | "error" | "success" } {
   const enabled = !!rewardTokenAddress && !!account;
@@ -16,6 +18,7 @@ export function useClaimedRewards({
     address: claimContractAddress,
     abi: hyperdriveRewardsAbi,
     functionName: "claimed",
+    chainId,
     args: enabled ? [account, rewardTokenAddress] : undefined,
     query: {
       enabled,
