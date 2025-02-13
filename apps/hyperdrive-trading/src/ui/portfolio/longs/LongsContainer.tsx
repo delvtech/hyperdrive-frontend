@@ -74,7 +74,7 @@ export function OpenLongsContainer({
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
         ([key, hyperdrives], i) => (
           <OpenLongsTableDesktop
-            key={`${hyperdrives[i].chainId}-${hyperdrives[i].yieldSource}-${i}`}
+            key={i}
             hyperdrives={hyperdrives}
             account={account}
           />
