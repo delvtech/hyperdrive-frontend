@@ -38,8 +38,8 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665273856n;
-const maturity = 1754611200n;
+  452312848583266388373324160190187140051835877600158453279131187532665705856n;
+const maturity = 1755043200n;
 
 async function openLongPosition() {
   try {
@@ -112,7 +112,7 @@ async function openLongPosition() {
         account,
         args: [
           maturity,
-          BigInt(40e18), // 40 base tokens (DAI)
+          BigInt(1e18), // 40 base tokens (DAI)
           1n,
           {
             asBase: true,

@@ -1,5 +1,6 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { getBaseToken, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
@@ -74,12 +75,17 @@ export function useCloseLongZap({
 
   // If the user is trying to swap 100 hydai for 98 USDC, 100 is the bondAmountIn. We need to convert this bondAmountIn to the baseToken to pass to swap params.
 
+  const bondAmountInAsBase =
+    bondAmountIn && baseTokenPrice
+      ? fixed(bondAmountIn).div(baseTokenPrice).bigint
+      : undefined;
+
   const { amountOut: previewBaseTokenAmountOut } = usePreviewCloseLong({
     hyperdriveAddress,
     chainId,
     tokenOutAddress: baseToken.address,
     maturityTime,
-    bondAmountIn,
+    bondAmountIn: bondAmountInAsBase ?? 0n,
     asBase: true,
     enabled: true,
   });
@@ -112,9 +118,9 @@ export function useCloseLongZap({
           from: account,
           args: {
             _hyperdrive: hyperdriveAddress,
-            _minOutput: 0n,
+            _minOutput: minAmountOut ?? 1n,
             _maturityTime: maturityTime,
-            _bondAmount: bondAmountIn,
+            _bondAmount: bondAmountInAsBase ?? 0n,
             // zap contract should receive the tokens from closing the long,
             // because it will then zap them to whatever the user wants
             _options: {
