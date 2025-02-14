@@ -225,7 +225,12 @@ export function PoolsList(): ReactElement {
               </Fade>
             )}
           </>
-        ) : null}
+        ) : (
+          <NonIdealState
+            heading="Error loading pools"
+            text="Please try again"
+          />
+        )}
       </div>
     </>
   );

@@ -324,11 +324,17 @@ function parseAllocationRewards({
           // Calculate "Reward rates" (like APR) for tokens that have monetary
           // value, based on the vault's allocated assets.
           if (reward.supplyApr) {
+            const vaultAdjustedRewardRate = percentOfVaultAllocatedToMarket.mul(
+              // The supplyAPR is provided as a javascript number from the
+              // Morpho endpoint, which could end up having more than 18 numbers
+              // after the decimal point.  Since fixed=-point-wasm doesn't like
+              // that, we must make sure to truncate the supplyApr before using
+              // it.
+              parseFixed(truncateTo18Decimals(reward.supplyApr)),
+            );
             return {
               reward,
-              vaultAdjustedRewardRate: percentOfVaultAllocatedToMarket.mul(
-                parseFixed(reward.supplyApr),
-              ),
+              vaultAdjustedRewardRate,
             };
           }
 
@@ -428,4 +434,12 @@ function parseAllocationRewards({
   );
 
   return [...transferableTokenRewards, ...nonTransferableTokenRewards];
+}
+
+/**
+ * Truncates a number to no more than 18 decimal places after the decimal point.
+ * This prevents fixed point wasm errors, "Exponent 18 is too small for I256"
+ */
+function truncateTo18Decimals(num: number) {
+  return Math.floor(num * 1e18) / 1e18;
 }
