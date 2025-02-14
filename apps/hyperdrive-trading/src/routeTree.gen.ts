@@ -15,6 +15,7 @@ import { Route as ChainlogImport } from "./ui/routes/chainlog";
 import { Route as ErrorImport } from "./ui/routes/error";
 import { Route as IndexImport } from "./ui/routes/index";
 import { Route as IneligibleImport } from "./ui/routes/ineligible";
+import { Route as LeaderboardImport } from "./ui/routes/leaderboard";
 import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
 import { Route as MintImport } from "./ui/routes/mint";
 import { Route as PointsmarketsImport } from "./ui/routes/points_markets";
@@ -44,6 +45,12 @@ const PointsmarketsRoute = PointsmarketsImport.update({
 const MintRoute = MintImport.update({
   id: "/mint",
   path: "/mint",
+  getParentRoute: () => rootRoute,
+} as any);
+
+const LeaderboardRoute = LeaderboardImport.update({
+  id: "/leaderboard",
+  path: "/leaderboard",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -109,6 +116,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IneligibleImport;
       parentRoute: typeof rootRoute;
     };
+    "/leaderboard": {
+      id: "/leaderboard";
+      path: "/leaderboard";
+      fullPath: "/leaderboard";
+      preLoaderRoute: typeof LeaderboardImport;
+      parentRoute: typeof rootRoute;
+    };
     "/mint": {
       id: "/mint";
       path: "/mint";
@@ -154,6 +168,7 @@ export interface FileRoutesByFullPath {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
   "/portfolio": typeof PortfolioRoute;
@@ -166,6 +181,7 @@ export interface FileRoutesByTo {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
   "/portfolio": typeof PortfolioRoute;
@@ -179,6 +195,7 @@ export interface FileRoutesById {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
   "/portfolio": typeof PortfolioRoute;
@@ -193,6 +210,7 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/leaderboard"
     | "/mint"
     | "/points_markets"
     | "/portfolio"
@@ -204,6 +222,7 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/leaderboard"
     | "/mint"
     | "/points_markets"
     | "/portfolio"
@@ -215,6 +234,7 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/leaderboard"
     | "/mint"
     | "/points_markets"
     | "/portfolio"
@@ -228,6 +248,7 @@ export interface RootRouteChildren {
   ChainlogRoute: typeof ChainlogRoute;
   ErrorRoute: typeof ErrorRoute;
   IneligibleRoute: typeof IneligibleRoute;
+  LeaderboardRoute: typeof LeaderboardRoute;
   MintRoute: typeof MintRoute;
   PointsmarketsRoute: typeof PointsmarketsRoute;
   PortfolioRoute: typeof PortfolioRoute;
@@ -240,6 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChainlogRoute: ChainlogRoute,
   ErrorRoute: ErrorRoute,
   IneligibleRoute: IneligibleRoute,
+  LeaderboardRoute: LeaderboardRoute,
   MintRoute: MintRoute,
   PointsmarketsRoute: PointsmarketsRoute,
   PortfolioRoute: PortfolioRoute,
@@ -261,6 +283,7 @@ export const routeTree = rootRoute
         "/chainlog",
         "/error",
         "/ineligible",
+        "/leaderboard",
         "/mint",
         "/points_markets",
         "/portfolio",
@@ -279,6 +302,9 @@ export const routeTree = rootRoute
     },
     "/ineligible": {
       "filePath": "ineligible.tsx"
+    },
+    "/leaderboard": {
+      "filePath": "leaderboard.tsx"
     },
     "/mint": {
       "filePath": "mint.tsx"

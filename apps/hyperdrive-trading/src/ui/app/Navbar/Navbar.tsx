@@ -17,6 +17,7 @@ import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { POINTS_MARKETS_ROUTE } from "src/ui/markets/routes";
 import { MINT_ROUTE } from "src/ui/mint/routes";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
+import { POINTS_LEADERBOARD_ROUTE } from "src/ui/rewards/routes";
 import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
@@ -39,6 +40,7 @@ export function Navbar(): ReactElement {
           <NavbarLink to={LANDING_ROUTE} label="All Pools" />
           <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
           <NavbarLink to={PORTFOLIO_ROUTE} label="Portfolio" />
+          <NavbarLink to={POINTS_LEADERBOARD_ROUTE} label="Leaderboard" />
           {isTestnet ? (
             <NavbarLink to={MINT_ROUTE} label="Mint Tokens" />
           ) : null}
