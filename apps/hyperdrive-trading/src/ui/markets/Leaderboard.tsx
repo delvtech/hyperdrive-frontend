@@ -157,6 +157,14 @@ const addrethTheme: ThemeDeclaration = {
 };
 function getColumns(appConfig: AppConfig) {
   return [
+    columnHelper.accessor((row) => row.rank, {
+      id: "rank",
+      header: "Rank",
+      cell: ({ getValue }) => {
+        const rank = getValue();
+        return `#${rank}`;
+      },
+    }),
     columnHelper.accessor((row) => row.address, {
       header: "Address",
       cell: ({ getValue }) => {

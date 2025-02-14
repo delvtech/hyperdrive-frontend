@@ -15,7 +15,9 @@ export const merklApi = MerklApi("https://api.merkl.xyz").v4;
 export interface LeaderboardEntry {
   address: Address;
   balance: bigint;
+  rank: number;
 }
+
 export async function fetchMilesLeaderboard(): Promise<LeaderboardEntry[]> {
   const opportunitiesResponse = await fetch(
     "https://api.merkl.xyz/v4/opportunities/campaigns?tokenAddress=0x79385D4B4c531bBbDa25C4cFB749781Bd9E23039",
@@ -59,7 +61,8 @@ export async function fetchMilesLeaderboard(): Promise<LeaderboardEntry[]> {
       address: user as Address,
       balance: totalRewards,
     }))
-    .toSorted((a, b) => Number(b.balance - a.balance));
+    .toSorted((a, b) => Number(b.balance - a.balance))
+    .map((entry, i) => ({ ...entry, rank: i + 1 })) as LeaderboardEntry[];
 
   return rewardsByUser;
 }
