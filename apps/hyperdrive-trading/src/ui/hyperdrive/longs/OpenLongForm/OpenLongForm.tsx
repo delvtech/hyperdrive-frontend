@@ -422,11 +422,14 @@ export function OpenLongForm({
             <InvalidTransactionButton wide>
               Pool limit exceeded. Max long is{" "}
               {formatBalance({
-                balance: maxBondsOut || 0n,
+                balance:
+                  activeToken.address === sharesToken?.address
+                    ? maxSharesIn || 0n
+                    : maxBaseIn || 0n,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })}{" "}
-              hy{baseToken.symbol}
+              {activeToken.symbol}
             </InvalidTransactionButton>
           );
         }
