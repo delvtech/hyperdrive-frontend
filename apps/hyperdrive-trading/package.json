@@ -32,6 +32,7 @@
     "@delvtech/drift": "^0.0.1-beta.11",
     "@delvtech/drift-viem": "^0.0.1-beta.13",
     "@delvtech/fixed-point-wasm": "^0.0.7",
+    "addreth": "3.0.1",
     "@delvtech/hyperdrive-appconfig": "^0.1.0",
     "@delvtech/hyperdrive-js": "^0.0.1",
     "@headlessui/react": "^2.1.5",
