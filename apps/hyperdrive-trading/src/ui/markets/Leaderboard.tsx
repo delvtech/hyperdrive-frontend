@@ -12,6 +12,7 @@ import { Addreth, ThemeDeclaration } from "addreth";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { fetchMilesLeaderboard, LeaderboardEntry } from "src/rewards/merkl";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -46,8 +47,14 @@ export function Leaderboard(): ReactElement | null {
           Miles Leaderboard
         </h1>
         <p className="font-inter text-lg leading-bodyText text-neutral-content">
-          Live rankings of the top Miles earners on Hyperdrive. Add liquidity to
-          any Hyperdrive pool to earn Miles!
+          Live rankings of the top Miles earners on Hyperdrive through the{" "}
+          <ExternalLink
+            newTab
+            href="https://mirror.xyz/0xdB081d7cedeDB2cFb4fff2330D9a31f54A025E38/qVENDIYTfUiZw6QZroXBpNxF8UjTGV8YkVq0lOaTznU"
+            className="daisy-link text-white"
+          >
+            HyperVue Foundation points program
+          </ExternalLink>
         </p>
       </div>
       <div className="w-full overflow-x-auto">
