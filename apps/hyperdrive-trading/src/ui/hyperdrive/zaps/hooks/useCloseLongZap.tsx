@@ -1,16 +1,13 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
 import { fixed } from "@delvtech/fixed-point-wasm";
-import {
-  appConfig,
-  getBaseToken,
-  TokenConfig,
-} from "@delvtech/hyperdrive-appconfig";
+import { getBaseToken, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -52,6 +49,7 @@ export function useCloseLongZap({
   const publicClient = usePublicClient();
   const addTransaction = useAddRecentTransaction();
   const { data: walletClient } = useWalletClient({ chainId });
+  const appConfig = useAppConfigForConnectedChain();
   const zapsConfig = appConfig.zaps[chainId];
   const { data: blockNumber } = useBlockNumber();
   const { data: block } = useBlock({ blockNumber });
