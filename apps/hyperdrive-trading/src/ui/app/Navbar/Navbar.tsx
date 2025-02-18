@@ -62,7 +62,7 @@ export function Navbar(): ReactElement {
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
         </ExternalLink>
 
-        {chainId === sepolia.id && <VersionPicker />}
+        {chainId === sepolia.id ? <VersionPicker /> : null}
 
         {import.meta.env.DEV && !isTailwindSmall ? <DevtoolsMenu /> : null}
 
@@ -101,7 +101,14 @@ export function Navbar(): ReactElement {
 function NavbarLink({ to, label }: { label: string } & LinkProps) {
   const { location } = useRouterState();
   return (
-    <Link to={to as any} className="hidden md:inline">
+    <Link
+      to={
+        // safe to cast because LinkProps["to"] provides typesafety to the
+        // caller
+        to as any
+      }
+      className="hidden sm:inline"
+    >
       <span
         className={classNames("text-md", {
           "text-white": location.pathname === to,
