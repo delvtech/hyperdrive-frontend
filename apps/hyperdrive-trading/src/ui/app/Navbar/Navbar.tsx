@@ -12,12 +12,14 @@ import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAnalyticsUrl } from "src/ui/analytics/useMarketAnalyticsUrl";
 import { DevtoolsMenu } from "src/ui/app/Navbar/DevtoolsMenu";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
+import VersionPicker from "src/ui/base/components/VersionPicker";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { POINTS_MARKETS_ROUTE } from "src/ui/markets/routes";
 import { MINT_ROUTE } from "src/ui/mint/routes";
 import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { POINTS_LEADERBOARD_ROUTE } from "src/ui/rewards/routes";
+import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
 export function Navbar(): ReactElement {
@@ -39,7 +41,7 @@ export function Navbar(): ReactElement {
         </Link>
 
         {/* Full Navbar for Desktop */}
-        <div className="ml-16 hidden gap-8 md:flex">
+        <div className="ml-16 hidden gap-8 lg:flex">
           <NavbarLink to={LANDING_ROUTE} label="All Pools" />
           <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
           <NavbarLink to={PORTFOLIO_ROUTE} label="Portfolio" />
@@ -60,7 +62,7 @@ export function Navbar(): ReactElement {
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
         </ExternalLink>
 
-        {/* {chainId === sepolia.id && <VersionPicker />} */}
+        {chainId === sepolia.id && <VersionPicker />}
 
         {import.meta.env.DEV && (
           <div className="hidden md:block">
@@ -73,7 +75,7 @@ export function Navbar(): ReactElement {
           showBalance={false}
         />
         {/* Hamburger Menu for Mobile */}
-        <div className="daisy-dropdown daisy-dropdown-end md:hidden">
+        <div className="daisy-dropdown daisy-dropdown-end lg:hidden">
           <label tabIndex={0} className="daisy-btn daisy-btn-ghost">
             <Bars3Icon className="h-6" />
           </label>
