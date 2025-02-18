@@ -64,11 +64,7 @@ export function Navbar(): ReactElement {
 
         {chainId === sepolia.id && <VersionPicker />}
 
-        {import.meta.env.DEV && (
-          <div className="hidden md:block">
-            <DevtoolsMenu />
-          </div>
-        )}
+        {import.meta.env.DEV && !isTailwindSmall ? <DevtoolsMenu /> : null}
 
         <ConnectButton
           accountStatus={isTailwindSmall ? "avatar" : "full"}
