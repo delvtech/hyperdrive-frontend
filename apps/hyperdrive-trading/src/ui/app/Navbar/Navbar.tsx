@@ -1,5 +1,6 @@
 import {
   ArrowTopRightOnSquareIcon,
+  Bars3Icon,
   ChartBarIcon,
 } from "@heroicons/react/16/solid";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -22,38 +23,40 @@ import { sepolia } from "viem/chains";
 import { useChainId } from "wagmi";
 
 export function Navbar(): ReactElement {
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const chainId = useChainId();
   const isTestnet = isTestnetChain(chainId);
   const analyticsUrl = useAnalyticsUrl();
+  const isTailwindSmall = useIsTailwindSmallScreen();
 
   return (
     <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
-        <Link to="/" className="hidden items-center sm:inline-flex">
+        {/* Desktop Logo */}
+        <Link to="/" className="hidden md:inline-flex">
           <HyperdriveLogo />
         </Link>
-        <Link to="/" className="inline-flex items-center sm:hidden">
+        {/* Mobile Logo */}
+        <Link to="/" className="inline-flex items-center md:hidden">
           <img className="h-8" src="/hyperdrive-solo-logo-white.svg" />
         </Link>
-        <div className="ml-16 flex gap-8">
+
+        {/* Full Navbar for Desktop */}
+        <div className="ml-16 hidden gap-8 lg:flex">
           <NavbarLink to={LANDING_ROUTE} label="All Pools" />
           <NavbarLink to={POINTS_MARKETS_ROUTE} label="Points Markets" />
           <NavbarLink to={PORTFOLIO_ROUTE} label="Portfolio" />
           <NavbarLink to={POINTS_LEADERBOARD_ROUTE} label="Leaderboard" />
-          {isTestnet ? (
-            <NavbarLink to={MINT_ROUTE} label="Mint Tokens" />
-          ) : null}
+          {isTestnet && <NavbarLink to={MINT_ROUTE} label="Mint Tokens" />}
         </div>
       </div>
-      <div className="daisy-navbar-end gap-2 sm:gap-8">
+      <div className="daisy-navbar-end gap-2 md:gap-8">
         <ExternalLink
           newTab
           href={analyticsUrl}
           className="daisy-btn rounded-full text-accent"
         >
-          <span className="hidden sm:inline">Analytics</span>
-          <span className="inline sm:hidden">
+          <span className="hidden md:inline">Analytics</span>
+          <span className="inline md:hidden">
             <ChartBarIcon className="inline h-6" />
           </span>
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
@@ -61,11 +64,35 @@ export function Navbar(): ReactElement {
 
         {chainId === sepolia.id ? <VersionPicker /> : null}
 
-        {import.meta.env.DEV && !isTailwindSmallScreen ? (
-          <DevtoolsMenu />
-        ) : null}
+        {import.meta.env.DEV && !isTailwindSmall ? <DevtoolsMenu /> : null}
 
-        <ConnectButton showBalance={false} />
+        <ConnectButton
+          accountStatus={isTailwindSmall ? "avatar" : "full"}
+          showBalance={false}
+        />
+        {/* Hamburger Menu for Mobile */}
+        <div className="daisy-dropdown daisy-dropdown-end lg:hidden">
+          <label tabIndex={0} className="daisy-btn daisy-btn-ghost">
+            <Bars3Icon className="h-6" />
+          </label>
+          <ul
+            tabIndex={0}
+            className="daisy-menu daisy-dropdown-content daisy-dropdown-end mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+          >
+            <li className="daisy-dropdown-item">
+              <Link to={LANDING_ROUTE}>All Pools</Link>
+            </li>
+            <li className="daisy-dropdown-item">
+              <Link to={POINTS_LEADERBOARD_ROUTE}>Leaderboard</Link>
+            </li>
+            <li className="daisy-dropdown-item">
+              <Link to={POINTS_MARKETS_ROUTE}>Points Markets</Link>
+            </li>
+            <li className="daisy-dropdown-item">
+              <Link to={PORTFOLIO_ROUTE}>Portfolio</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
