@@ -12,6 +12,8 @@ export default function LoadingState({
       <NonIdealState
         heading={heading}
         action={
+          // Use the action prop to position the spinner below the heading, preventing layout shifts.
+          // This ensures a smooth transition when LoadingState is replaced by NonIdealState due to an empty request result.
           <div className="daisy-loading daisy-loading-spinner daisy-loading-lg text-primary" />
         }
         text={text || null}
