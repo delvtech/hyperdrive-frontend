@@ -1685,29 +1685,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/drift-viem@^0.0.1-beta.13":
-  version "0.0.1-beta.13"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.0.1-beta.13.tgz#9f5f38a50f72ea887319ea9480559fa01956c29b"
-  integrity sha512-i7PUAmUdq7IRRSjQO4JozV7swvYFcED3X4TT1l5RF0kXAD5drbMHIcpIB1D+2N7V2H2MCd2D4PDWDqVu+Hotzg==
+"@delvtech/drift-viem@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.2.0.tgz#93bd9db373e4c2237151cdaf2b108f23a1c6c766"
+  integrity sha512-rAs0E5jfYWzj0OaN+oUTjtGFZuCoWoKdRasry5J0TtnaMemiXoEcpNDgBWPJUgni6joBbRrBkEx9kau2nHNYEw==
 
-"@delvtech/drift-viem@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.1.1.tgz#413e5d3748ba1bffc1de107dd197daeacffb5bb7"
-  integrity sha512-E8qqSSJoe8S/c8uSOYZCf5mRULgvHnAupmHzIU8NyQGFjQILDZNeUy2KB4OOPkBEaPqVJN4SYhRyFr5GqFc9KQ==
-
-"@delvtech/drift@^0.0.1-beta.11":
-  version "0.0.1-beta.11"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.0.1-beta.11.tgz#939c2fe6a07dacfa58ba72cf30ba4917fde7e91d"
-  integrity sha512-YjMLT4xJszZPVfNVK+t7rINwereQ4yMgVOS+VNm0NsMqWmv5vXxjnDGtLHg1RyeZy93DVnxPxTFj0YJxB/4t3g==
-  dependencies:
-    lodash.ismatch "^4.4.0"
-    lru-cache "^10.0.1"
-    safe-stable-stringify "^2.5.0"
-
-"@delvtech/drift@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.1.1.tgz#c5549758b58890b843e9648c1295b8c675ab9dd2"
-  integrity sha512-/Rv50QsM3TKg4EfwzPmmAsEWnIJgFXNtqm+BYs1IQhoyqL9dxXf4EoFcQ623IqkTjTQJPrP69w8HzT7rc+S/gQ==
+"@delvtech/drift@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.2.0.tgz#dec25dafb3ada00454fc89b8dc11c61b2a70b456"
+  integrity sha512-5hU1s2Bx4QUWxVKMIpjMidzQkQ/GJUp1TeymFwSV+gt8aV/SKIfKTTxsMJDp/q2Vs/ncahdfmrWjBwg9ua/zmA==
   dependencies:
     lodash.ismatch "^4.4.0"
     lru-cache "^11.0.2"
@@ -14782,7 +14768,7 @@ lru-cache@10.2.2:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.2.tgz#48206bc114c1252940c41b25b41af5b545aca878"
   integrity sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==
 
-lru-cache@^10.0.1, lru-cache@^10.2.0, "lru-cache@^9.1.1 || ^10.0.0":
+lru-cache@^10.2.0, "lru-cache@^9.1.1 || ^10.0.0":
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.0.tgz#0bd445ca57363465900f4d1f9bd8db343a4d95c3"
   integrity sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==

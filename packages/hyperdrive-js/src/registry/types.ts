@@ -2,7 +2,7 @@ import {
   Adapter,
   FunctionReturn,
   ReadWriteAdapter,
-  ReplaceProps,
+  Replace,
 } from "@delvtech/drift";
 import { ReadFactory } from "src/factory/ReadFactory";
 import { ReadWriteFactory } from "src/factory/ReadWriteFactory";
@@ -21,21 +21,20 @@ export type FactoryInfoWithMetadata = FunctionReturn<
  * The info related to each Hyperdrive instance along with the metadata
  * associated with each instance.
  */
-export type ReadInstanceInfoWithMetadata<A extends Adapter = Adapter> =
-  ReplaceProps<
-    FunctionReturn<RegistryAbi, "getInstanceInfoWithMetadata">,
-    {
-      /**
-       * The factory that deployed this instance.
-       */
-      factory: ReadFactory<A>;
-    }
-  >;
+export type ReadInstanceInfoWithMetadata<A extends Adapter = Adapter> = Replace<
+  FunctionReturn<RegistryAbi, "getInstanceInfoWithMetadata">,
+  {
+    /**
+     * The factory that deployed this instance.
+     */
+    factory: ReadFactory<A>;
+  }
+>;
 
 /** {@inheritDoc ReadInstanceInfoWithMetadata} */
 export type ReadWriteInstanceInfoWithMetadata<
   A extends ReadWriteAdapter = ReadWriteAdapter,
-> = ReplaceProps<
+> = Replace<
   ReadInstanceInfoWithMetadata<A>,
   {
     /** {@inheritDoc ReadInstanceInfoWithMetadata.factory} */

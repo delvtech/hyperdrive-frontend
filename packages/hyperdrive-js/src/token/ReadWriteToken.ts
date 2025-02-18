@@ -1,9 +1,9 @@
-import { ReadWriteAdapter, ReplaceProps } from "@delvtech/drift";
+import { ReadWriteAdapter, Replace } from "@delvtech/drift";
 import { SdkClient, SdkWriteParams } from "src/drift/SdkClient";
 import { ReadToken } from "src/token/ReadToken";
 
 export interface ReadWriteToken<A extends ReadWriteAdapter = ReadWriteAdapter>
-  extends ReplaceProps<ReadToken<A>, SdkClient<A>> {
+  extends Replace<ReadToken<A>, SdkClient<A>> {
   /**
    * Give a spending allowance to a given spender.
    * @returns The transaction hash.

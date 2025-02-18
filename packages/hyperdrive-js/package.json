@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@delvtech/drift": "^0.1.1",
+    "@delvtech/drift": "^0.2.0",
     "@delvtech/fixed-point-wasm": "^0.0.7",
     "@delvtech/hyperdrive-artifacts": "^1.0.20",
     "@delvtech/hyperdrive-wasm": "^0.16.0",

@@ -68,6 +68,16 @@ export class SdkClient<A extends Adapter = Adapter> {
   }
 }
 
+/**
+ * Params for write operations on an {@linkcode SdkClient}.
+ *
+ * @template Args Additional parameters for the write operation.
+ */
+export type SdkWriteParams<Args> = {
+  args: Args;
+  options?: ContractWriteOptions & OnMinedParam;
+};
+
 // Contract //
 
 /**
@@ -86,13 +96,3 @@ export interface SdkContractOptions {
  */
 export type SdkContractConfig<A extends Adapter = Adapter> =
   SdkClientConfig<A> & SdkContractOptions;
-
-/**
- * Params for write operations on an {@linkcode SdkClient}.
- *
- * @template Args Additional parameters for the write operation.
- */
-export type SdkWriteParams<Args> = {
-  args: Args;
-  options?: ContractWriteOptions & OnMinedParam;
-};
