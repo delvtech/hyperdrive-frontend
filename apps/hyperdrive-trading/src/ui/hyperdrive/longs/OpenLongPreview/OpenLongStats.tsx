@@ -57,7 +57,7 @@ export function OpenLongStats({
   const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
     // This hook should only be enabled if the token is a zap token.
     // For testing purposes we are grabbing the token price from mainnet.
-    chainId: 1,
+    chainId: 707,
     tokenAddress: activeToken.address,
     enabled: isZapToken,
   });
@@ -70,7 +70,7 @@ export function OpenLongStats({
 
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     // For testing purposes on zaps we are grabbing the token price from mainnet.
-    chainId: isZapToken ? 1 : hyperdrive.chainId,
+    chainId: isZapToken ? 707 : hyperdrive.chainId,
     tokenAddress: baseToken.address,
   });
   const { fixedApr } = useFixedRate({
@@ -79,7 +79,10 @@ export function OpenLongStats({
   });
 
   if (isZapToken && zapTokenPrice && baseTokenPrice) {
-    const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(amountPaid, 6);
+    const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(
+      amountPaid,
+      activeToken.decimals,
+    );
     const zapAmountInBase = fiatValueOfZapAmount.div(baseTokenPrice);
     const slipageAmount = parseFixed("0.005");
     finalAmountPaid = parseFixed("1")
@@ -98,6 +101,7 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
+
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
@@ -112,6 +116,7 @@ export function OpenLongStats({
                   rate: calculateAprFromPrice({
                     positionDuration:
                       hyperdrive.poolConfig.positionDuration || 0n,
+                    // TODO: When zapping, the final amount paid should be converted to base
                     baseAmount: finalAmountPaid,
                     bondAmount: bondAmount,
                   }),

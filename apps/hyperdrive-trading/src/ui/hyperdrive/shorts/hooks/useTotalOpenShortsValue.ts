@@ -3,6 +3,7 @@ import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
+import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Address } from "viem";
 
 export function useTotalOpenShortsValue({
@@ -15,7 +16,7 @@ export function useTotalOpenShortsValue({
   enabled: boolean;
 }): { totalOpenShortsValue: bigint | undefined; isLoading: boolean } {
   const queryEnabled = !!account && !!shorts && enabled;
-
+  const appConfig = useAppConfigForConnectedChain();
   const { data: totalOpenShortsValue, isLoading } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "portfolio",
@@ -34,6 +35,8 @@ export function useTotalOpenShortsValue({
                 address: short.hyperdrive.address,
                 drift: getDrift({ chainId: short.hyperdrive.chainId }),
                 earliestBlock: short.hyperdrive.initializationBlock,
+                zapContractAddress:
+                  appConfig.zaps[short.hyperdrive.chainId].address,
               });
               const preview = await readHyperdrive.previewCloseShort({
                 maturityTime: short.maturity,

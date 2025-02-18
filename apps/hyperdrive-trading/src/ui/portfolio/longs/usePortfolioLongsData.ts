@@ -24,7 +24,6 @@ export function usePortfolioLongsData({
 } {
   const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const queryEnabled = !!account && !!appConfigForConnectedChain;
-
   const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
       queryKey: makeQueryKey("portfolioLongs", { account }),
@@ -37,6 +36,9 @@ export function usePortfolioLongsData({
                   address: hyperdrive.address,
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
+                  zapContractAddress:
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
 
                 const allLongs = await readHyperdrive.getOpenLongPositions({
@@ -51,6 +53,7 @@ export function usePortfolioLongsData({
                     }),
                   })),
                 );
+
                 return {
                   hyperdrive,
                   openLongs,
@@ -80,7 +83,7 @@ export function usePortfolioLongsDataFromHyperdrives({
   openLongPositionsStatus: "error" | "success" | "loading";
 } {
   const queryEnabled = !!account && !!hyperdrives.length;
-
+  const appConfigForConnectedChain = useAppConfigForConnectedChain();
   const { data: openLongPositions, status: openLongPositionsStatus } = useQuery(
     {
       queryKey: makeQueryKey2({
@@ -96,6 +99,9 @@ export function usePortfolioLongsDataFromHyperdrives({
                   address: hyperdrive.address,
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
+                  zapContractAddress:
+                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                      ?.address,
                 });
                 const allLongs = await readHyperdrive.getOpenLongPositions({
                   account,

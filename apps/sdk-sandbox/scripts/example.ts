@@ -27,7 +27,7 @@ const writePool = new ReadWriteHyperdrive({
 const readPool = new ReadHyperdrive({
   address: poolAddress,
   drift,
-  auxiliaryContractAddress: zapsConfig.address,
+  zapContractAddress: zapsConfig.address,
   earliestBlock,
 });
 

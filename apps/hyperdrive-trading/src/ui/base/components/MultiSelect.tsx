@@ -102,7 +102,7 @@ export function MultiSelect<T extends OptionValue>({
               title={selected.length ? "Deselect all" : "Select all"}
               onClick={() =>
                 onChange(
-                  selected.length ? [] : options.map(({ value }) => value)
+                  selected.length ? [] : options.map(({ value }) => value),
                 )
               }
             >
@@ -112,7 +112,7 @@ export function MultiSelect<T extends OptionValue>({
                   {
                     "!fill-aquamarine opacity-100 group-hover:-translate-y-1 group-hover:!opacity-0":
                       selected.length,
-                  }
+                  },
                 )}
               />
               <XMarkIcon
@@ -121,7 +121,7 @@ export function MultiSelect<T extends OptionValue>({
                   {
                     "group-hover:translate-y-0 group-hover:opacity-100":
                       selected.length,
-                  }
+                  },
                 )}
               />
             </button>
@@ -141,9 +141,9 @@ export function MultiSelect<T extends OptionValue>({
                       onChange(
                         isSelected
                           ? selected.filter(
-                              (optionValue) => optionValue !== option.value
+                              (optionValue) => optionValue !== option.value,
                             )
-                          : [...selected, option.value]
+                          : [...selected, option.value],
                       );
                     }}
                     className="group flex min-w-max cursor-pointer items-center justify-between gap-3 whitespace-nowrap pl-4 pr-2 text-left"

@@ -46,6 +46,7 @@ export function useUnpausedPools(): {
                 address: hyperdrive.address,
                 drift: getDrift({ chainId: hyperdrive.chainId }),
                 earliestBlock: hyperdrive.initializationBlock,
+                zapContractAddress: appConfig.zaps[hyperdrive.chainId]?.address,
               });
 
               // We only show hyperdrives that are not paused
