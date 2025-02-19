@@ -44,14 +44,17 @@ const maturity = 1755648000n;
 async function executeZapOpenAndClose() {
   try {
     const account = walletClient?.account.address as Address;
+    console.log("[START] Account:", account);
 
+    // Get initial open long details
     const beforeDetails = await readPool.getOpenLongDetails({
       account,
       assetId,
       options: { block: "latest" },
     });
-    console.log("openLongDetails before:", beforeDetails);
+    console.log("openLongDetails BEFORE openLong:", beforeDetails);
 
+    // Open Long
     const { result, request } = await publicClient.simulateContract({
       abi: writePool.contract.abi,
       address: poolAddress,
@@ -70,11 +73,13 @@ async function executeZapOpenAndClose() {
         },
       ],
     });
+    console.log("Simulated openLong result:", result);
 
     const openTxHash = await walletClient?.writeContract({
       ...request,
     });
     if (!openTxHash) throw new Error("No open transaction hash received");
+    console.log("Open Long tx hash:", openTxHash);
 
     const txReceipt = await publicClient.waitForTransactionReceipt({
       hash: openTxHash,
@@ -88,11 +93,12 @@ async function executeZapOpenAndClose() {
     }
     console.log("Open tx receipt status:", txReceipt.status);
 
+    // Get open long details after opening
     const afterDetails = await readPool.getOpenLongDetails({
       account,
       assetId,
     });
-    console.log("openLongDetails after:", afterDetails);
+    console.log("openLongDetails AFTER openLong:", afterDetails);
 
     // Approve zap (auxiliary) contract to manage the long position
     const approvalReceipt = await writePool.contract.write("setApproval", {
@@ -112,7 +118,7 @@ async function executeZapOpenAndClose() {
         account,
         args: [
           maturity,
-          BigInt(5e18), // 1 base token
+          BigInt(5e18), // 5 base token (example)
           1n,
           {
             asBase: true,
@@ -121,9 +127,50 @@ async function executeZapOpenAndClose() {
           },
         ],
       });
-    console.log("Preview base out:", fixed(previewBaseAmountOut).format());
+    console.log("Preview base out (raw):", previewBaseAmountOut);
+    console.log(
+      "Preview base out (formatted):",
+      fixed(previewBaseAmountOut).format(),
+    );
+
+    // Prepare zap swap parameters
+    const blockData = await publicClient.getBlock();
+    const deadline = blockData.timestamp + 60n;
+    const swapPath = encodePacked(
+      ["address", "uint24", "address"],
+      [
+        "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
+        100, // fee tier
+        "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
+      ],
+    );
+    console.table({
+      previewBaseTokenAmountOut: previewBaseAmountOut.toString(),
+      amountOutMinimum: "1",
+      deadline: deadline.toString(),
+      swapPath,
+      recipient: account,
+    });
 
     // Execute the zap close operation
+    console.log("[CALL] closeLongZap with parameters:");
+    console.log("  poolAddress:", poolAddress);
+    console.log("  maturity:", maturity);
+    console.log("  bondAmount:", BigInt(5e18).toString());
+    console.log("  minOutput:", "1");
+    console.log("  options:", {
+      destination: zapsConfig.address,
+      asBase: true,
+      extraData: "0x",
+    });
+    console.log("  swapParams:", {
+      amountIn: previewBaseAmountOut.toString(),
+      amountOutMinimum: "1",
+      deadline: deadline.toString(),
+      path: swapPath,
+      recipient: account,
+    });
+
     const swapTx = await walletClient
       ?.writeContract({
         abi: zapAbi,
@@ -134,7 +181,7 @@ async function executeZapOpenAndClose() {
         args: [
           poolAddress,
           maturity,
-          BigInt(5e18), // 1 base token
+          BigInt(5e18), // 5 base token
           1n,
           {
             destination: zapsConfig.address,
@@ -144,15 +191,8 @@ async function executeZapOpenAndClose() {
           {
             amountIn: previewBaseAmountOut,
             amountOutMinimum: 1n,
-            deadline: (await publicClient.getBlock()).timestamp + 60n,
-            path: encodePacked(
-              ["address", "uint24", "address"],
-              [
-                "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
-                100, // 0.01% fee tier
-                "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
-              ],
-            ),
+            deadline,
+            path: swapPath,
             recipient: account,
           },
           false,
@@ -163,24 +203,27 @@ async function executeZapOpenAndClose() {
         throw err;
       });
     if (!swapTx) throw new Error("No close position transaction hash received");
+    console.log("closeLongZap tx hash:", swapTx);
 
     const receipt = await publicClient.waitForTransactionReceipt({
       hash: swapTx,
     });
+    console.log("closeLongZap receipt:", receipt);
     await drift.cache.clear();
 
     const openLongDetailsAfterZap = await readPool.getOpenLongDetails({
       account,
       assetId,
     });
-    console.log("openLongDetails after zap close:", openLongDetailsAfterZap);
+    console.log("openLongDetails AFTER zap close:", openLongDetailsAfterZap);
 
     return txReceipt;
   } catch (error) {
-    console.error("Failed to open long position:", error);
+    console.error("Failed to execute zap open/close:", error);
     throw error;
   }
 }
+
 async function main() {
   await executeZapOpenAndClose();
 }

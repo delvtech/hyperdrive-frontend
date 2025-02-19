@@ -20,6 +20,7 @@ import {
   usePublicClient,
   useWalletClient,
 } from "wagmi";
+
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
   chainId: number;
@@ -31,6 +32,7 @@ interface UseCloseLongOptions {
   asBase?: boolean;
   enabled?: boolean;
 }
+
 export function useCloseLongZap({
   hyperdriveAddress,
   chainId,
@@ -73,13 +75,13 @@ export function useCloseLongZap({
     enabled: true,
   });
 
-  // If the user is trying to swap 100 hydai for 98 USDC, 100 is the bondAmountIn. We need to convert this bondAmountIn to the baseToken to pass to swap params.
-
+  // Convert bondAmountIn to base token units if possible.
   const bondAmountInAsBase =
     bondAmountIn && baseTokenPrice
       ? fixed(bondAmountIn).div(baseTokenPrice).bigint
       : undefined;
 
+  // Use the preview hook to compute how many base tokens are expected.
   const { amountOut: previewBaseTokenAmountOut } = usePreviewCloseLong({
     hyperdriveAddress,
     chainId,
@@ -100,8 +102,30 @@ export function useCloseLongZap({
         !minAmountOut ||
         !previewBaseTokenAmountOut
       ) {
+        console.log("Mutation disabled or missing required parameters:");
+        console.table({
+          isMutationEnabled,
+          blockTimestamp: block?.timestamp,
+          maturityTime,
+          bondAmountIn: bondAmountIn?.toString(),
+          minAmountOut: minAmountOut?.toString(),
+          bondAmountInAsBase: bondAmountInAsBase?.toString(),
+          previewBaseTokenAmountOut: previewBaseTokenAmountOut?.toString(),
+        });
         return;
       }
+
+      // Log all the parameters before making the call.
+      console.table({
+        account,
+        hyperdriveAddress,
+        maturityTime: maturityTime.toString(),
+        bondAmountInAsBase: (bondAmountInAsBase ?? 0n).toString(),
+        minOutput: (minAmountOut ?? 1n).toString(),
+        previewBaseTokenAmountOut: previewBaseTokenAmountOut.toString(),
+        asBase,
+        recipient: destination ?? account,
+      });
 
       const drift = new Drift(
         viemAdapter({
@@ -135,13 +159,11 @@ export function useCloseLongZap({
               amountIn: previewBaseTokenAmountOut, // amount of base token
               // amountOutMinimum: minAmountOut ?? 1n,
               amountOutMinimum: 1n,
-              deadline: block?.timestamp + 60n,
+              deadline: block.timestamp + 60n,
               path: encodePacked(
                 ["address", "uint24", "address"],
                 [baseToken.address, 100, tokenOut.address],
               ),
-              // The recipient of the uniswap swap should be the user as the
-              // final step
               recipient: destination ?? account,
             },
           },
