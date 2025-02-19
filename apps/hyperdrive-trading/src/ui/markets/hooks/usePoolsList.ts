@@ -27,8 +27,9 @@ import {
 import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
-const PINNED_POOLS = [
+export const PINNED_POOLS = [
   // The Big Short Energy marketing campaign applies to these two pools.
+  // https://docs.google.com/document/d/1DfLpTAhUldTf2jIYo_7DL8VC0NPopPwKLN2yxa49PAU/edit?tab=t.0
   "0x324395D5d835F84a02A75Aa26814f6fD22F25698", // 182d Sky DAI Savings Rate
   "0xEe9BFf933aDD313C4289E98dA80fEfbF9d5Cd9Ba", // 182d Savings xDAI
 ];
@@ -237,10 +238,18 @@ function getSelectedPools({
       return true;
     })
     .toSorted((a, b) => {
-      // Put pinned pools at the top, otherwise sort everything alphabetically
-      if (PINNED_POOLS.includes(a.address)) {
+      const aIsPinned = PINNED_POOLS.includes(a.address);
+      const bIsPinned = PINNED_POOLS.includes(b.address);
+      if (aIsPinned && !bIsPinned) {
         return -1;
       }
-      return a.name.localeCompare(b.name);
+      if (!aIsPinned && bIsPinned) {
+        return 1;
+      }
+      // The name of a pool always starts with the term, eg: `182d` or `91d`. We
+      // should remove this before sorting alphabetically.
+      const aName = a.name.replace(/^\d+d /, "");
+      const bName = b.name.replace(/^\d+d /, "");
+      return aName.localeCompare(bName);
     });
 }
