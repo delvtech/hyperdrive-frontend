@@ -38,8 +38,8 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532666224256n;
-const maturity = 1755561600n;
+  452312848583266388373324160190187140051835877600158453279131187532666310656n;
+const maturity = 1755648000n;
 
 async function executeZapOpenAndClose() {
   try {
@@ -60,7 +60,7 @@ async function executeZapOpenAndClose() {
       account,
       gas: 16125042n,
       args: [
-        BigInt(10e18), // 2 base token
+        BigInt(10e18), // 10 base token
         1n,
         1n,
         {
@@ -181,103 +181,8 @@ async function executeZapOpenAndClose() {
     throw error;
   }
 }
-
-async function closeAllPositions() {
-  const account = walletClient?.account.address as Address;
-  const block = await publicClient.getBlock();
-
-  // Example: manually defined positions
-  const manualPositions = [
-    {
-      assetId:
-        452312848583266388373324160190187140051835877600158453279131187532666224256n,
-      maturity: 1755561600n,
-      bondAmount: 10083400762435469296n, // Example: 10 bonds
-    },
-    // Add more positions as needed
-  ];
-
-  for (const position of manualPositions) {
-    try {
-      console.log("\nProcessing position:", position);
-
-      // Approve zap contract to manage the position
-      const approvalReceipt = await poolContract.write("setApproval", {
-        amount: maxInt256,
-        tokenID: position.assetId,
-        operator: zapsConfig.address,
-      });
-      console.log("Approval tx hash:", approvalReceipt);
-
-      // Preview base out from closeLong
-      const { result: previewBaseAmountOut } =
-        await publicClient.simulateContract({
-          abi: writePool.contract.abi,
-          address: poolAddress,
-          functionName: "closeLong",
-          account,
-          args: [
-            position.maturity,
-            position.bondAmount,
-            1n,
-            {
-              asBase: true,
-              destination: account,
-              extraData: "0x",
-            },
-          ],
-        });
-      console.log("Preview base out:", fixed(previewBaseAmountOut).format());
-
-      // Execute zap close for the position
-      const swapTx = await walletClient?.writeContract({
-        abi: zapAbi,
-        chain: publicClient.chain,
-        address: zapsConfig.address,
-        functionName: "closeLongZap",
-        args: [
-          poolAddress,
-          position.maturity,
-          position.bondAmount,
-          1n,
-          {
-            destination: zapsConfig.address,
-            asBase: true,
-            extraData: "0x",
-          },
-          {
-            amountIn: previewBaseAmountOut,
-            amountOutMinimum: 1n,
-            deadline: (await publicClient.getBlock()).timestamp + 60n,
-            path: encodePacked(
-              ["address", "uint24", "address"],
-              [
-                "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-                100,
-                "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-              ],
-            ),
-            recipient: account,
-          },
-          false,
-        ],
-      });
-      const openLongDetails = await writePool.getOpenLongDetails({
-        account,
-        assetId: position.assetId,
-      });
-      console.log("openLongDetails:", openLongDetails);
-      console.log("Closed position tx hash:", swapTx);
-    } catch (error) {
-      console.error(`Failed to close position ${position.assetId}:`, error);
-    }
-  }
-}
-
 async function main() {
-  // Uncomment the function call you need
   await executeZapOpenAndClose();
-  // await closeAllPositions();
 }
 
 main().catch(console.error);
