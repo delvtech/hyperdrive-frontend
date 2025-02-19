@@ -28,11 +28,9 @@ import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
 const PINNED_POOLS = [
-  // Pin the 182d Savings GYD pool to the top of the list
-  // Remove this pinning on Wednesday, December 4, 2024
-  // https://github.com/delvtech/hyperdrive-frontend/issues/1663
-  "0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D", // mainnet
-  "0x9248f874AaA2c53AD9324d7A2D033ea133443874", // gnosis
+  // The Big Short Energy marketing campaign applies to these two pools.
+  "0x324395D5d835F84a02A75Aa26814f6fD22F25698", // 182d Sky DAI Savings Rate
+  "0xEe9BFf933aDD313C4289E98dA80fEfbF9d5Cd9Ba", // 182d Savings xDAI
 ];
 
 export const sortOptions = [
