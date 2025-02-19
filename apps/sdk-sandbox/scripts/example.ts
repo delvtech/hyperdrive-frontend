@@ -38,10 +38,10 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532665705856n;
-const maturity = 1755043200n;
+  452312848583266388373324160190187140051835877600158453279131187532666224256n;
+const maturity = 1755561600n;
 
-async function openLongPosition() {
+async function executeZapOpenAndClose() {
   try {
     const account = walletClient?.account.address as Address;
 
@@ -60,7 +60,7 @@ async function openLongPosition() {
       account,
       gas: 16125042n,
       args: [
-        BigInt(30e18), // 30 base tokens (DAI)
+        BigInt(10e18), // 2 base token
         1n,
         1n,
         {
@@ -112,7 +112,7 @@ async function openLongPosition() {
         account,
         args: [
           maturity,
-          BigInt(1e18), // 40 base tokens (DAI)
+          BigInt(5e18), // 1 base token
           1n,
           {
             asBase: true,
@@ -134,7 +134,7 @@ async function openLongPosition() {
         args: [
           poolAddress,
           maturity,
-          BigInt(40e18),
+          BigInt(5e18), // 1 base token
           1n,
           {
             destination: zapsConfig.address,
@@ -190,9 +190,9 @@ async function closeAllPositions() {
   const manualPositions = [
     {
       assetId:
-        452312848583266388373324160190187140051835877600158453279131187532665273856n,
-      maturity: 1754611200n,
-      bondAmount: 104902143926345435824n, // Example: 100 bonds
+        452312848583266388373324160190187140051835877600158453279131187532666224256n,
+      maturity: 1755561600n,
+      bondAmount: 10083400762435469296n, // Example: 10 bonds
     },
     // Add more positions as needed
   ];
@@ -276,8 +276,8 @@ async function closeAllPositions() {
 
 async function main() {
   // Uncomment the function call you need
-  // await openLongPosition();
-  await closeAllPositions();
+  await executeZapOpenAndClose();
+  // await closeAllPositions();
 }
 
 main().catch(console.error);
