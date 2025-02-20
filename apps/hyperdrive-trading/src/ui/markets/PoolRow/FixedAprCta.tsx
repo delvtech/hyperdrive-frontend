@@ -38,7 +38,6 @@ export function FixedAprCta({ hyperdrive }: FixedAprCtaProps): ReactElement {
         )
       }
       isLoading={fixedRateStatus === "loading"}
-      variant="gradient"
       action={
         <Link
           to="/market/$chainId/$address"
