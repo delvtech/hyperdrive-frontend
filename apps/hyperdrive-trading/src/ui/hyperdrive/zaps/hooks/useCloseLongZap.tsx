@@ -66,7 +66,6 @@ export function useCloseLongZap({
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     tokenAddress: baseToken.address,
     chainId,
-    enabled: true,
   });
 
   // Convert bondAmountIn to base token
@@ -82,7 +81,6 @@ export function useCloseLongZap({
     maturityTime,
     bondAmountIn: bondAmountInAsBase ?? 0n,
     asBase: true,
-    enabled: true,
   });
 
   const closeLongZapMutation = useMutation({

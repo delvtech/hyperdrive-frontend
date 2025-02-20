@@ -420,11 +420,7 @@ export function CloseLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!closeLong || isAmountLargerThanPositionSize}
             onClick={(e) => {
-              if (
-                isZapsEnabled &&
-                activeWithdrawToken.address !== baseToken.address &&
-                activeWithdrawToken.address !== sharesToken?.address
-              ) {
+              if (isZapsEnabled && isZapping) {
                 closeLongZap?.();
               } else {
                 closeLong?.();
