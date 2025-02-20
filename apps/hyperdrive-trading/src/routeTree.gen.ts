@@ -11,16 +11,16 @@
 // Import Routes
 
 import { Route as rootRoute } from "./ui/routes/__root";
-import { Route as ChainlogImport } from "./ui/routes/chainlog";
-import { Route as ErrorImport } from "./ui/routes/error";
-import { Route as IndexImport } from "./ui/routes/index";
-import { Route as IneligibleImport } from "./ui/routes/ineligible";
-import { Route as LeaderboardImport } from "./ui/routes/leaderboard";
-import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
-import { Route as MintImport } from "./ui/routes/mint";
-import { Route as PointsmarketsImport } from "./ui/routes/points_markets";
-import { Route as PortfolioImport } from "./ui/routes/portfolio";
 import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
+import { Route as PortfolioImport } from "./ui/routes/portfolio";
+import { Route as PointsmarketsImport } from "./ui/routes/points_markets";
+import { Route as MintImport } from "./ui/routes/mint";
+import { Route as LeaderboardImport } from "./ui/routes/leaderboard";
+import { Route as IneligibleImport } from "./ui/routes/ineligible";
+import { Route as ErrorImport } from "./ui/routes/error";
+import { Route as ChainlogImport } from "./ui/routes/chainlog";
+import { Route as IndexImport } from "./ui/routes/index";
+import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
 
 // Create/Update Routes
 
