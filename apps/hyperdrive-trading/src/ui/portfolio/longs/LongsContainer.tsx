@@ -72,9 +72,9 @@ export function OpenLongsContainer({
   return (
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
-        ([key, hyperdrives]) => (
+        ([key, hyperdrives], i) => (
           <OpenLongsTableDesktop
-            key={key}
+            key={i}
             hyperdrives={hyperdrives}
             account={account}
           />

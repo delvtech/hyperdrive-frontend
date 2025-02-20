@@ -26,6 +26,7 @@ import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
@@ -184,6 +185,16 @@ export function CloseLongForm({
   const isAmountLargerThanPositionSize = !!(
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
+
+  const { closeLongZap } = useCloseLongZap({
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+    maturityTime: long.maturity,
+    tokenOut: activeWithdrawToken,
+    bondAmountIn: bondAmountAsBigInt,
+    minAmountOut: minAmountOutAfterSlippage,
+    destination: account,
+  });
 
   const zapsConfig = appConfig.zaps[hyperdrive.chainId];
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
@@ -409,7 +420,11 @@ export function CloseLongForm({
             className="daisy-btn daisy-btn-circle daisy-btn-primary w-full disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
             disabled={!closeLong || isAmountLargerThanPositionSize}
             onClick={(e) => {
-              closeLong?.();
+              if (isZapsEnabled && isZapping) {
+                closeLongZap?.();
+              } else {
+                closeLong?.();
+              }
               onCloseLong?.(e);
             }}
           >
