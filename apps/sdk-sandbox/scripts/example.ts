@@ -7,6 +7,7 @@ import {
   ReadWriteHyperdrive,
   zapAbi,
 } from "@delvtech/hyperdrive-js";
+import { ethers } from "ethers";
 import { Address, encodePacked, maxInt256 } from "viem";
 import { publicClient, walletClient } from "../client";
 
@@ -15,6 +16,17 @@ const drift = new Drift(viemAdapter({ publicClient, walletClient }));
 
 const poolAddress = "0x324395D5d835F84a02A75Aa26814f6fD22F25698";
 const earliestBlock = 20180617n;
+
+async function fetchSwapPath() {
+  const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
+
+  // const router = new AlphaRouter({
+  //   chainId: 707,
+  //   provider,
+  // });
+
+  // console.log(router, "router");
+}
 
 // Write instance for transactions
 const writePool = new ReadWriteHyperdrive({
@@ -38,8 +50,8 @@ const poolContract = drift.contract({
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532666310656n;
-const maturity = 1755648000n;
+  452312848583266388373324160190187140051835877600158453279131187532666397056n;
+const maturity = 1755734400n;
 
 async function executeZapOpenAndClose() {
   try {
@@ -63,7 +75,7 @@ async function executeZapOpenAndClose() {
       account,
       gas: 16125042n,
       args: [
-        BigInt(10e18), // 10 base token
+        BigInt(2e18), // 2 base token
         1n,
         1n,
         {
@@ -73,7 +85,6 @@ async function executeZapOpenAndClose() {
         },
       ],
     });
-    console.log("Simulated openLong result:", result);
 
     const openTxHash = await walletClient?.writeContract({
       ...request,
@@ -118,7 +129,7 @@ async function executeZapOpenAndClose() {
         account,
         args: [
           maturity,
-          BigInt(5e18), // 5 base token (example)
+          BigInt(1e18), // 1 base token (example)
           1n,
           {
             asBase: true,
@@ -127,10 +138,10 @@ async function executeZapOpenAndClose() {
           },
         ],
       });
-    console.log("Preview base out (raw):", previewBaseAmountOut);
+    // console.log("Preview base out (raw):", previewBaseAmountOut);
     console.log(
       "Preview base out (formatted):",
-      fixed(previewBaseAmountOut).format(),
+      fixed(previewBaseAmountOut).format()
     );
 
     // Prepare zap swap parameters
@@ -142,34 +153,8 @@ async function executeZapOpenAndClose() {
         "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
         100, // fee tier
         "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
-      ],
+      ]
     );
-    console.table({
-      previewBaseTokenAmountOut: previewBaseAmountOut.toString(),
-      amountOutMinimum: "1",
-      deadline: deadline.toString(),
-      swapPath,
-      recipient: account,
-    });
-
-    // Execute the zap close operation
-    console.log("[CALL] closeLongZap with parameters:");
-    console.log("  poolAddress:", poolAddress);
-    console.log("  maturity:", maturity);
-    console.log("  bondAmount:", BigInt(5e18).toString());
-    console.log("  minOutput:", "1");
-    console.log("  options:", {
-      destination: zapsConfig.address,
-      asBase: true,
-      extraData: "0x",
-    });
-    console.log("  swapParams:", {
-      amountIn: previewBaseAmountOut.toString(),
-      amountOutMinimum: "1",
-      deadline: deadline.toString(),
-      path: swapPath,
-      recipient: account,
-    });
 
     const swapTx = await walletClient
       ?.writeContract({
@@ -181,7 +166,7 @@ async function executeZapOpenAndClose() {
         args: [
           poolAddress,
           maturity,
-          BigInt(5e18), // 5 base token
+          BigInt(1e18), // 1 base token
           1n,
           {
             destination: zapsConfig.address,
@@ -208,7 +193,6 @@ async function executeZapOpenAndClose() {
     const receipt = await publicClient.waitForTransactionReceipt({
       hash: swapTx,
     });
-    console.log("closeLongZap receipt:", receipt);
     await drift.cache.clear();
 
     const openLongDetailsAfterZap = await readPool.getOpenLongDetails({
@@ -225,7 +209,8 @@ async function executeZapOpenAndClose() {
 }
 
 async function main() {
-  await executeZapOpenAndClose();
+  // await executeZapOpenAndClose();
+  await fetchSwapPath();
 }
 
 main().catch(console.error);
