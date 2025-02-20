@@ -63,25 +63,18 @@ export function useCloseLongZap({
     appConfig: appConfig,
   });
 
-  const { fiatPrice: zapTokenPrice } = useTokenFiatPrice({
-    tokenAddress: tokenOut.address,
-    chainId,
-    enabled: true,
-  });
-
   const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
     tokenAddress: baseToken.address,
     chainId,
     enabled: true,
   });
 
-  // Convert bondAmountIn to base token units if possible.
+  // Convert bondAmountIn to base token
   const bondAmountInAsBase =
     bondAmountIn && baseTokenPrice
       ? fixed(bondAmountIn).div(baseTokenPrice).bigint
       : undefined;
 
-  // Use the preview hook to compute how many base tokens are expected.
   const { amountOut: previewBaseTokenAmountOut } = usePreviewCloseLong({
     hyperdriveAddress,
     chainId,
@@ -102,30 +95,8 @@ export function useCloseLongZap({
         !minAmountOut ||
         !previewBaseTokenAmountOut
       ) {
-        console.log("Mutation disabled or missing required parameters:");
-        console.table({
-          isMutationEnabled,
-          blockTimestamp: block?.timestamp,
-          maturityTime,
-          bondAmountIn: bondAmountIn?.toString(),
-          minAmountOut: minAmountOut?.toString(),
-          bondAmountInAsBase: bondAmountInAsBase?.toString(),
-          previewBaseTokenAmountOut: previewBaseTokenAmountOut?.toString(),
-        });
         return;
       }
-
-      // Log all the parameters before making the call.
-      console.table({
-        account,
-        hyperdriveAddress,
-        maturityTime: maturityTime.toString(),
-        bondAmountInAsBase: (bondAmountInAsBase ?? 0n).toString(),
-        minOutput: (minAmountOut ?? 1n).toString(),
-        previewBaseTokenAmountOut: previewBaseTokenAmountOut.toString(),
-        asBase,
-        recipient: destination ?? account,
-      });
 
       const drift = new Drift(
         viemAdapter({

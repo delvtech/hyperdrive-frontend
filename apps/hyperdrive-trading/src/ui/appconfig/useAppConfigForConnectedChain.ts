@@ -36,23 +36,15 @@ export function useAppConfigForConnectedChain(
     chainId: connectedChainId,
     enabled: isFlagEnabled,
   });
-  return {
-    ...appConfig,
-    hyperdrives: appConfig.hyperdrives.filter(
-      (hyperdrive) => hyperdrive.chainId === 707,
-    ),
+  if (tokenList) {
+    return {
+      ...appConfig,
+      tokens: uniqBy(
+        [...appConfig.tokens, ...tokenList],
+        (token) => `${token.address}-${token.chainId}`,
+      ),
+    };
+  }
 
-    // hyperdrives: [
-    //   appConfig.hyperdrives.find(
-    //     (hyperdrive) =>
-    //       hyperdrive.address === "0xd7e470043241C10970953Bd8374ee6238e77D735",
-    //   ) as HyperdriveConfig,
-    // ],
-    tokens: uniqBy(
-      [...appConfig.tokens, ...tokenList],
-      (token) => `${token.address}-${token.chainId}`,
-    ),
-  };
-
-  // return appConfigFromImport;
+  return appConfigFromImport;
 }

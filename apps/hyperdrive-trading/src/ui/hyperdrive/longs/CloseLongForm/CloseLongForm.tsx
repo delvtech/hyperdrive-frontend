@@ -186,7 +186,7 @@ export function CloseLongForm({
     bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
   );
 
-  const { closeLongZap, status: closeLongZapStatus } = useCloseLongZap({
+  const { closeLongZap } = useCloseLongZap({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
     maturityTime: long.maturity,
