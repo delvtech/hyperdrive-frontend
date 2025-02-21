@@ -469,7 +469,7 @@ function YouReceiveStat({
       valueContainerClassName="flex items-end flex-wrap"
       unitClassName="text-xs mb-1"
       value={
-        addLiquidityPreviewStatus !== "loading" ? (
+        addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={200} />
         ) : (
           <ResponsiveText

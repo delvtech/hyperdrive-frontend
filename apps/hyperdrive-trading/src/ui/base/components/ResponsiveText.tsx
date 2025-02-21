@@ -3,7 +3,6 @@ import { ReactNode, useLayoutEffect, useRef, useState } from "react";
 interface ResponsiveTextProps {
   children: ReactNode;
   className?: string;
-  style?: React.CSSProperties; // applied to the container
   minFontSize?: number;
   maxFontSize?: number;
 }
