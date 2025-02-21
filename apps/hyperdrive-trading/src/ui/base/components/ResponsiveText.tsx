@@ -1,5 +1,5 @@
+import classNames from "classnames";
 import { ReactNode, useLayoutEffect, useRef, useState } from "react";
-
 interface ResponsiveTextProps {
   children: ReactNode;
   className?: string;
@@ -47,7 +47,7 @@ export function ResponsiveText({
     <div ref={containerRef} className="w-full max-w-48 overflow-hidden">
       <span
         ref={textRef}
-        className={`inline-block whitespace-nowrap ${className || ""}`}
+        className={classNames("inline-block whitespace-nowrap", className)}
         style={{ fontSize: `${fontSize}px` }}
       >
         {children}
