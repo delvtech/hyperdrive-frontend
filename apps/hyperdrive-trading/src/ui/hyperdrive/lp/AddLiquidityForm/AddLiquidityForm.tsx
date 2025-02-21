@@ -467,7 +467,7 @@ function YouReceiveStat({
       }
       valueUnit={`${baseToken.symbol}-LP`}
       valueContainerClassName="flex items-end flex-wrap"
-      unitClassName="text-xs mb-1"
+      unitClassName="text-xs mb-1 flex w-full justify-end"
       value={
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={200} />
