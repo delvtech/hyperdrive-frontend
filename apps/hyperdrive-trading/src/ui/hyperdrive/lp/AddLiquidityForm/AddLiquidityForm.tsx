@@ -466,14 +466,15 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueContainerClassName="flex items-end flex-wrap"
-      unitClassName="text-xs mb-1 flex w-full justify-end"
+      valueContainerClassName="flex items-end flex-wrap w-full justify-end"
+      unitClassName="text-xs mb-1 w-full text-right"
+      valueClassName="w-full justify-end flex"
       value={
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={200} />
         ) : (
           <ResponsiveText
-            className={classNames("text-h3", {
+            className={classNames("w-full text-right text-h3", {
               "text-base-content/80": !lpSharesOut,
               "font-bold": lpSharesOut,
             })}
