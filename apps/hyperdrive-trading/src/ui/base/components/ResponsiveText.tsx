@@ -46,18 +46,11 @@ export function ResponsiveText({
   }, [children, minFontSize, maxFontSize]);
 
   return (
-    <div
-      ref={containerRef}
-      style={{ width: "100%", overflow: "hidden", ...style }}
-    >
+    <div ref={containerRef} className="w-full max-w-48 overflow-hidden">
       <span
         ref={textRef}
-        className={className}
-        style={{
-          fontSize: `${fontSize}px`,
-          display: "inline-block",
-          whiteSpace: "nowrap",
-        }}
+        className={`inline-block whitespace-nowrap ${className || ""}`}
+        style={{ fontSize: `${fontSize}px` }}
       >
         {children}
       </span>
