@@ -472,7 +472,12 @@ function YouReceiveStat({
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={100} />
         ) : (
-          <ResponsiveText className="text-h3 font-bold text-base-content">
+          <ResponsiveText
+            className={classNames("text-h3", {
+              "text-base-content/80": !lpSharesOut,
+              "font-bold": lpSharesOut,
+            })}
+          >
             {lpSharesOut
               ? `${formatBalance({
                   balance: lpSharesOut,
