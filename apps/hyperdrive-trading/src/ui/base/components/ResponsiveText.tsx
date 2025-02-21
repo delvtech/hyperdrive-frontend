@@ -11,7 +11,6 @@ interface ResponsiveTextProps {
 export function ResponsiveText({
   children,
   className,
-  style,
   minFontSize = 12,
   maxFontSize = 32,
 }: ResponsiveTextProps): JSX.Element {
@@ -21,28 +20,28 @@ export function ResponsiveText({
 
   useLayoutEffect(() => {
     function adjustFontSize() {
-      if (containerRef.current && textRef.current) {
-        // Temporarily set to max to measure natural width
-        textRef.current.style.fontSize = `${maxFontSize}px`;
-        const containerWidth = containerRef.current.clientWidth;
-        const textWidth = textRef.current.scrollWidth;
-        let newFontSize = maxFontSize;
-        if (containerWidth && textWidth > containerWidth) {
-          newFontSize = Math.max(
-            minFontSize,
-            maxFontSize * (containerWidth / textWidth)
-          );
-        }
-        setFontSize(newFontSize);
+      if (!containerRef.current || !textRef.current) {
+        return;
       }
+
+      // Measure at max font size
+      textRef.current.style.fontSize = `${maxFontSize}px`;
+      const containerWidth = containerRef.current.clientWidth;
+      const textWidth = textRef.current.scrollWidth;
+
+      // Calculate new font size
+      const scaledSize = maxFontSize * (containerWidth / textWidth);
+      const newSize =
+        textWidth > containerWidth
+          ? Math.max(minFontSize, scaledSize)
+          : maxFontSize;
+
+      setFontSize(newSize);
     }
-    // Use requestAnimationFrame to ensure layout is settled
-    const rafId = requestAnimationFrame(adjustFontSize);
+
+    adjustFontSize();
     window.addEventListener("resize", adjustFontSize);
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("resize", adjustFontSize);
-    };
+    return () => window.removeEventListener("resize", adjustFontSize);
   }, [children, minFontSize, maxFontSize]);
 
   return (
