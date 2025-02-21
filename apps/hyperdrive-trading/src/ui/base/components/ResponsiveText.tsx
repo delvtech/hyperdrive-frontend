@@ -13,7 +13,7 @@ export function ResponsiveText({
   className,
   style,
   minFontSize = 12,
-  maxFontSize = 48,
+  maxFontSize = 32,
 }: ResponsiveTextProps): JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -26,7 +26,6 @@ export function ResponsiveText({
         textRef.current.style.fontSize = `${maxFontSize}px`;
         const containerWidth = containerRef.current.clientWidth;
         const textWidth = textRef.current.scrollWidth;
-        console.log("containerWidth", containerWidth, "textWidth", textWidth);
         let newFontSize = maxFontSize;
         if (containerWidth && textWidth > containerWidth) {
           newFontSize = Math.max(
