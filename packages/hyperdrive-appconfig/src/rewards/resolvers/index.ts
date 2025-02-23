@@ -1,5 +1,9 @@
 import { aeroRewards, fetchAeroRewards } from "src/rewards/resolvers/aero";
 import {
+  bigShortEnergyRewards,
+  fetchBigShortEnergyRewards,
+} from "src/rewards/resolvers/bigShortEnergy";
+import {
   etherfiRewards,
   fetchEtherfiRewards,
 } from "src/rewards/resolvers/etherfi";
@@ -33,6 +37,7 @@ export const rewardConfigs = {
   morphoCbethUsdcRewards,
   gyroscopeRewards,
   hypervueMilesRewards,
+  bigShortEnergyRewards,
 } as const;
 
 export type RewardConfigId = keyof typeof rewardConfigs;
@@ -47,6 +52,7 @@ export const rewardResolvers = {
   fetchAeroRewards,
   fetchGyroscopeRewards,
   fetchHypervueMilesRewards,
+  fetchBigShortEnergyRewards,
 } as const;
 
 export type RewardResolverId = keyof typeof rewardResolvers;
