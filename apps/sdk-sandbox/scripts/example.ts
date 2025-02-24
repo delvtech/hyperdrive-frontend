@@ -5,8 +5,9 @@ import { ReadHyperdrive, ReadWriteHyperdrive } from "@delvtech/hyperdrive-js";
 import { CurrencyAmount, Percent, Token, TradeType } from "@uniswap/sdk-core";
 import { AlphaRouter, SwapType } from "@uniswap/smart-order-router";
 import { ethers } from "ethers";
+import fs from "fs";
 import { publicClient, walletClient } from "../client";
-
+import { executeZapOpenAndClose } from "./executeZapAndClose";
 const zapsConfig = appConfig.zaps[707];
 const drift = new Drift(viemAdapter({ publicClient, walletClient }));
 
@@ -33,7 +34,7 @@ const poolContract = drift.contract({
   address: poolAddress,
 });
 
-async function fetchSwapPath() {
+async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
   const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
   const router = new AlphaRouter({
     chainId: 1,
@@ -41,6 +42,70 @@ async function fetchSwapPath() {
   });
 
   // Define tokens
+
+  // Swap amount: 1 DAI
+  const amountIn = ethers.utils.parseUnits("1", 18);
+  const currencyAmountIn = CurrencyAmount.fromRawAmount(
+    tokenIn,
+    amountIn.toString()
+  );
+
+  // Fetch the route for an exact input swap
+  const route = await router.route(
+    currencyAmountIn,
+    tokenOut,
+    TradeType.EXACT_INPUT,
+    {
+      recipient: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", // replace with your address
+      slippageTolerance: new Percent(50, 10000), // 0.50% tolerance
+      deadline: Math.floor(Date.now() / 1000) + 1800, // 30 min deadline
+      type: SwapType.SWAP_ROUTER_02,
+    }
+  );
+
+  if (route) {
+    // Extract the V3 route (which contains tokenPath and poolIdentifiers)
+    const v3Route = route.route.find((r) => r.protocol === "V3");
+    console.log(v3Route, "v3Route");
+
+    const routeJson = JSON.stringify(route, null, 2);
+    fs.writeFileSync("uniswap-route.json", routeJson);
+    console.log("Route details written to uniswap-route.json");
+    if (v3Route) {
+      const tokenPath = v3Route.tokenPath;
+      const pools = v3Route.route.pools; // each pool contains its fee
+      console.log(
+        "V3 tokenPath:",
+        tokenPath.map((t) => t.address)
+      );
+
+      // Build arrays of types and values for solidityPack
+      const types: string[] = [];
+      const values: (string | number)[] = [];
+
+      for (let i = 0; i < tokenPath.length; i++) {
+        // Add token address
+        types.push("address");
+        values.push(tokenPath[i].address);
+        // For every hop except the last, add the fee from the corresponding pool
+        if (i < tokenPath.length - 1) {
+          const fee = pools[i].fee;
+          types.push("uint24");
+          values.push(fee);
+        }
+      }
+
+      const encodedPath = ethers.utils.solidityPack(types, values);
+      return encodedPath;
+    } else {
+      console.log("No V3 route found in the swap path.");
+    }
+  } else {
+    console.log("No swap path found.");
+  }
+}
+
+async function main() {
   const DAI = new Token(
     1,
     "0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -55,37 +120,13 @@ async function fetchSwapPath() {
     "USDC",
     "USD Coin"
   );
-  // Swap amount: 1 DAI
-  const amountIn = ethers.utils.parseUnits("1", 18);
-  const currencyAmountIn = CurrencyAmount.fromRawAmount(
-    DAI,
-    amountIn.toString()
-  );
-
-  // Fetch the route for an exact input swap
-  const route = await router.route(
-    currencyAmountIn,
-    USDC,
-    TradeType.EXACT_INPUT,
-    {
-      recipient: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266", // replace with your address
-      slippageTolerance: new Percent(50, 10000), // 0.50% tolerance
-      deadline: Math.floor(Date.now() / 1000) + 1800, // 30 min deadline
-      type: SwapType.SWAP_ROUTER_02,
-    }
-  );
-
-  if (route) {
-    console.log("Swap path found:");
-    console.log(route.route[0]);
-  } else {
-    console.log("No swap path found.");
-  }
-}
-
-async function main() {
   // await executeZapOpenAndClose();
-  await fetchSwapPath();
+  const encodedPath = await fetchSwapPath(DAI, USDC);
+  if (!encodedPath) {
+    console.log("No encoded path found");
+    return;
+  }
+  await executeZapOpenAndClose(encodedPath as `0x${string}`);
 }
 
 main().catch(console.error);

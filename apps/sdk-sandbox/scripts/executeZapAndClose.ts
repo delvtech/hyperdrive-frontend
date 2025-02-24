@@ -7,7 +7,7 @@ import {
   ReadWriteHyperdrive,
   zapAbi,
 } from "@delvtech/hyperdrive-js";
-import { Address, encodePacked, maxInt256 } from "viem";
+import { Address, maxInt256 } from "viem";
 import { publicClient, walletClient } from "../client";
 
 const zapsConfig = appConfig.zaps[707];
@@ -18,8 +18,8 @@ const earliestBlock = 20180617n;
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532666397056n;
-const maturity = 1755734400n;
+  452312848583266388373324160190187140051835877600158453279131187532666742656n;
+const maturity = 1756080000n;
 
 const writePool = new ReadWriteHyperdrive({
   address: poolAddress,
@@ -40,7 +40,7 @@ const poolContract = drift.contract({
   address: poolAddress,
 });
 
-async function executeZapOpenAndClose() {
+export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
   try {
     const account = walletClient?.account.address as Address;
     console.log("[START] Account:", account);
@@ -134,14 +134,6 @@ async function executeZapOpenAndClose() {
     // Prepare zap swap parameters
     const blockData = await publicClient.getBlock();
     const deadline = blockData.timestamp + 60n;
-    const swapPath = encodePacked(
-      ["address", "uint24", "address"],
-      [
-        "0x6B175474E89094C44Da98b954EedeAC495271d0F", // DAI
-        100, // fee tier
-        "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", // USDC
-      ]
-    );
 
     const swapTx = await walletClient
       ?.writeContract({
