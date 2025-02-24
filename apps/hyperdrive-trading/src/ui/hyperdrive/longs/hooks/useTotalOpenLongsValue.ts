@@ -53,7 +53,6 @@ export function useTotalOpenLongsValueTwo({
                 bondAmountIn: long.details?.bondAmount || 0n,
                 asBase: true,
               });
-              console.log(preview.amountOut, "preview.amountOut");
               return preview.amountOut;
             }),
           );
