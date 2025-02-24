@@ -128,7 +128,6 @@ export async function fetchMileRewards(
         merkleProof: rewards?.proofs as Hash[],
         claimableAmount: rewards?.amount.toString() || "0",
         pendingAmount: rewards?.pending.toString() || "0",
-        merkleProofLastUpdated: 0,
         rewardTokenAddress: rewards?.token.address as `0x${string}`,
         // TODO: This won't use the same abi as the hyperdrive rewards api, so
         // we'll need to account for this somehow
