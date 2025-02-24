@@ -47,8 +47,6 @@ export function useTotalOpenLongsValueTwo({
                 address: long.hyperdrive.address,
                 drift: getDrift({ chainId: long.hyperdrive.chainId }),
                 earliestBlock: long.hyperdrive.initializationBlock,
-                zapContractAddress:
-                  appConfig.zaps[long.hyperdrive.chainId].address,
               });
               const preview = await readHyperdrive.previewCloseLong({
                 maturityTime: long.details?.maturity || 0n,

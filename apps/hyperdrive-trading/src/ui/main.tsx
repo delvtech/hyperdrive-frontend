@@ -3,6 +3,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import "@usecapsule/react-sdk/styles.css";
 
+import * as Tooltip from "@radix-ui/react-tooltip";
 import {
   ErrorBoundary as RollbarErrorBoundary,
   Provider as RollbarProvider,
@@ -72,7 +73,9 @@ root.render(
           >
             <RollbarErrorBoundary>
               <RegionInfoProvider>
-                <App />
+                <Tooltip.Provider>
+                  <App />
+                </Tooltip.Provider>
               </RegionInfoProvider>
             </RollbarErrorBoundary>
           </RollbarProvider>

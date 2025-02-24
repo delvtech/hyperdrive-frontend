@@ -47,22 +47,20 @@ export function PoolStat({
 
   if (overlay) {
     return (
-      <Tooltip.Provider>
-        <Tooltip.Root>
-          <Tooltip.Trigger className="flex w-full items-center whitespace-nowrap">
-            {poolStat}
-          </Tooltip.Trigger>
-          <Tooltip.Portal>
-            <Tooltip.Content
-              className="z-20 h-fit w-72 rounded-[0.6rem] bg-base-200 px-3 py-2 shadow-2xl"
-              sideOffset={5}
-              collisionPadding={12}
-            >
-              {overlay}
-            </Tooltip.Content>
-          </Tooltip.Portal>
-        </Tooltip.Root>
-      </Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger className="flex w-full items-center whitespace-nowrap">
+          {poolStat}
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Content
+            className="z-20 h-fit w-72 rounded-[0.6rem] bg-base-200 px-3 py-2 shadow-2xl"
+            sideOffset={5}
+            collisionPadding={12}
+          >
+            {overlay}
+          </Tooltip.Content>
+        </Tooltip.Portal>
+      </Tooltip.Root>
     );
   }
 

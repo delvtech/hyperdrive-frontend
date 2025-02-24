@@ -35,8 +35,6 @@ export function useTotalOpenShortsValue({
                 address: short.hyperdrive.address,
                 drift: getDrift({ chainId: short.hyperdrive.chainId }),
                 earliestBlock: short.hyperdrive.initializationBlock,
-                zapContractAddress:
-                  appConfig.zaps[short.hyperdrive.chainId].address,
               });
               const preview = await readHyperdrive.previewCloseShort({
                 maturityTime: short.maturity,
