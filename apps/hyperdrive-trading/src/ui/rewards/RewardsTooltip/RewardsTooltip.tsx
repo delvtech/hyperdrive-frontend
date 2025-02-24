@@ -67,27 +67,25 @@ export function RewardsTooltip({
   }
 
   return (
-    <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger className="flex items-center whitespace-nowrap">
-          {children}
-        </Tooltip.Trigger>
-        <Tooltip.Portal>
-          <Tooltip.Content
-            className="z-20 h-fit w-72 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
-            sideOffset={5}
-            collisionPadding={12}
-          >
-            <RewardsTooltipContent
-              chainId={chainId}
-              position={position}
-              hyperdriveAddress={hyperdriveAddress}
-              baseRate={baseRate}
-              netRate={netRate}
-            />
-          </Tooltip.Content>
-        </Tooltip.Portal>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+    <Tooltip.Root>
+      <Tooltip.Trigger className="flex items-center whitespace-nowrap">
+        {children}
+      </Tooltip.Trigger>
+      <Tooltip.Portal>
+        <Tooltip.Content
+          className="z-20 h-fit w-72 rounded-box bg-base-200 px-3 py-2 shadow-2xl"
+          sideOffset={5}
+          collisionPadding={12}
+        >
+          <RewardsTooltipContent
+            chainId={chainId}
+            position={position}
+            hyperdriveAddress={hyperdriveAddress}
+            baseRate={baseRate}
+            netRate={netRate}
+          />
+        </Tooltip.Content>
+      </Tooltip.Portal>
+    </Tooltip.Root>
   );
 }
