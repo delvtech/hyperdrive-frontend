@@ -18,6 +18,7 @@ import { getYieldSourceRewards } from "src/rewards/actions/yieldSource";
 import { getHyperdriveRewards } from "src/rewards/hyperdrive";
 import { RewardConfigId } from "src/rewards/resolvers";
 import { aeroRewards } from "src/rewards/resolvers/aero";
+import { bigShortEnergyRewards } from "src/rewards/resolvers/bigShortEnergy";
 import { etherfiRewards } from "src/rewards/resolvers/etherfi";
 import { gyroscopeRewards } from "src/rewards/resolvers/gyroscope";
 import { hypervueMilesRewards } from "src/rewards/resolvers/hypervueMiles";
@@ -506,6 +507,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesRewards.id],
+            short: [bigShortEnergyRewards.id],
           },
         }),
       };
@@ -540,6 +542,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesRewards.id],
+            short: [bigShortEnergyRewards.id],
           },
         }),
       };

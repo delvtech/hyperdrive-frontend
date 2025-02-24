@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "example": "tsx -r dotenv/config scripts/example.ts",
+    "merkl": "tsx -r dotenv/config scripts/merkl.ts",
     "example:watch": "tsx -r dotenv/config --watch scripts/example.ts",
     "fixed-point": "tsx -r dotenv/config scripts/fixed-point.ts",
     "fixed-point:watch": "tsx -r dotenv/config --watch scripts/fixed-point.ts"

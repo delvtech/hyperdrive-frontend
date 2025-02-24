@@ -6,6 +6,7 @@ import {
 } from "@delvtech/hyperdrive-appconfig";
 import { ClockIcon } from "@heroicons/react/16/solid";
 import { useNavigate } from "@tanstack/react-router";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
@@ -15,20 +16,31 @@ import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { AssetStack } from "src/ui/markets/AssetStack";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
+import { PINNED_POOLS } from "src/ui/markets/hooks/usePoolsList";
 import { FixedAprCta } from "src/ui/markets/PoolRow/FixedAprCta";
 import { LpApyCta } from "src/ui/markets/PoolRow/LpApyCta";
 import { VariableApyCta } from "src/ui/markets/PoolRow/VariableApyCta";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { gnosis, mainnet } from "viem/chains";
 
 export interface PoolRowProps {
   hyperdrive: HyperdriveConfig;
 }
+
+const pinnedBorderClassNames: Record<number, string> = {
+  [mainnet.id]:
+    "!border !border-[#617fea]/30 !bg-[#151f2b] !shadow-lg !shadow-[#617fea]/5",
+  [gnosis.id]:
+    "!border !border-primary/20 !bg-[#102223] !shadow-lg !shadow-primary/5",
+};
 
 export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
   const appConfig = useAppConfigForConnectedChain();
   const { chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
+
+  const isPinned = PINNED_POOLS.includes(hyperdrive.address);
 
   const baseToken = getBaseToken({
     hyperdriveChainId: hyperdrive.chainId,
@@ -70,6 +82,9 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
     <Well
       as="div"
       block
+      className={classNames({
+        [pinnedBorderClassNames[hyperdrive.chainId]]: isPinned,
+      })}
       onClick={() => {
         navigate({
           to: MARKET_DETAILS_ROUTE,

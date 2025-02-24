@@ -17,7 +17,6 @@ interface WellProps<T extends ElementType = "div"> {
    *   `button` when interactive (has an onClick prop).
    */
   as?: T;
-  interactive?: boolean;
   elevation?: "flat" | "elevated";
   transparent?: boolean;
   block?: boolean;
@@ -28,7 +27,6 @@ interface WellProps<T extends ElementType = "div"> {
 export function Well<T extends ElementType = "div">({
   as,
   disabled,
-  interactive,
   elevation = "elevated",
   transparent,
   children,
@@ -39,7 +37,7 @@ export function Well<T extends ElementType = "div">({
 }: PropsWithChildren<WellProps<T>> &
   Omit<ComponentProps<T>, keyof WellProps<T>>): ReactElement {
   const Component = as || (onClick ? "button" : "div");
-  const isInteractive = !disabled && (interactive || onClick);
+  const isInteractive = !disabled && onClick;
   const innerClassName = classNames(
     "daisy-card p-4 lg:p-8 border border-1 border-base-200",
     {
