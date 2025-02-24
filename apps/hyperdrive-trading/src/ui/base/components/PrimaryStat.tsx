@@ -14,6 +14,7 @@ export function PrimaryStat({
   tooltipPosition = "top",
   valueContainerClassName,
   unitClassName,
+  valueClassName,
   valueLoading = false,
 }: {
   alignment?: "left" | "right";
@@ -25,6 +26,7 @@ export function PrimaryStat({
   tooltipPosition?: "top" | "bottom" | "left" | "right";
   valueContainerClassName?: string;
   unitClassName?: string;
+  valueClassName?: string;
   valueLoading?: boolean;
 }): JSX.Element {
   return (
@@ -51,7 +53,7 @@ export function PrimaryStat({
           <Skeleton width={100} className="h-8" />
         ) : (
           <div className="flex flex-wrap items-baseline">
-            {value}
+            <div className={valueClassName}>{value}</div>
             {valueUnit ? (
               <div className={`ml-1 ${unitClassName}`}>{valueUnit}</div>
             ) : null}

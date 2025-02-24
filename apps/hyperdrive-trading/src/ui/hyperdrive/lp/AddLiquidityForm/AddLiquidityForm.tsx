@@ -18,6 +18,7 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
+import { ResponsiveText } from "src/ui/base/components/ResponsiveText";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
@@ -454,11 +455,7 @@ function YouReceiveStat({
         addLiquidityPreviewStatus === "loading" ? (
           <Skeleton width={100} />
         ) : (
-          <span
-            className={classNames({
-              "text-base-content/80": !poolShare,
-            })}
-          >
+          <span className={classNames({ "text-base-content/80": !poolShare })}>
             {poolShare
               ? `${fixed(poolShare).format({
                   decimals: 4,
@@ -469,14 +466,15 @@ function YouReceiveStat({
         )
       }
       valueUnit={`${baseToken.symbol}-LP`}
-      valueContainerClassName="flex items-end flex-wrap"
-      unitClassName="text-xs mb-1"
+      valueContainerClassName="flex items-end flex-wrap w-full justify-end"
+      unitClassName="text-xs mb-1 w-full text-right"
+      valueClassName="w-full justify-end flex"
       value={
         addLiquidityPreviewStatus === "loading" ? (
-          <Skeleton width={100} />
+          <Skeleton width={200} />
         ) : (
-          <span
-            className={classNames("text-h3", {
+          <ResponsiveText
+            className={classNames("w-full text-right text-h3", {
               "text-base-content/80": !lpSharesOut,
               "font-bold": lpSharesOut,
             })}
@@ -488,7 +486,7 @@ function YouReceiveStat({
                   places: baseToken.places,
                 })}`
               : "0"}
-          </span>
+          </ResponsiveText>
         )
       }
     />

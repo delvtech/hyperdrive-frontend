@@ -25,8 +25,7 @@
     "test:watch": "vitest --reporter=verbose",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "gen:version": "bash ./scripts/generate-version.sh",
-    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh",
-    "gen:swagger": "bash ./scripts/generate-swagger.sh"
+    "gen:walletconnect": "bash ./scripts/generate-walletconnect.sh"
   },
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
@@ -48,7 +47,7 @@
     "@types/d3-format": "^3.0.4",
     "@types/lodash.groupby": "^4.6.9",
     "@types/lodash.sortby": "^4.7.9",
-    "@merkl/api": "^0.10.412",
+    "@merkl/api": "^0.14.4",
     "@types/lodash.uniqby": "^4.7.9",
     "@uniswap/token-lists": "^1.0.0-beta.34",
     "@uniswap/v3-sdk": "^3.19.0",
@@ -105,7 +104,6 @@
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "swagger-typescript-api": "^13.0.23",
     "tailwindcss": "^3.4.7",
     "tailwindcss-debug-screens": "2.2.1",
     "typescript": "^5.5.4",
