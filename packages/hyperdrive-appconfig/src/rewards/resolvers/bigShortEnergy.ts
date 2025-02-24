@@ -69,11 +69,10 @@ function getAprAndBaseToken(data: MerklV3RewardsResult): {
     .value();
 
   return {
-    apr: parseFixed(
+    apr: parseFixed(apr)
       // the apr is returned from merkl already formatted as a percent, so we
       // need to divide by 100
-      apr / 100,
-    ).bigint,
+      .div(100, 0).bigint,
     baseToken,
   };
 }
