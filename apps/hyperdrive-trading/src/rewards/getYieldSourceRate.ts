@@ -3,8 +3,8 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
   getHyperdriveConfig,
+  getOpenShortRewardConfigs,
   getYieldSource,
-  getYieldSourceRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
@@ -92,8 +92,8 @@ async function calcNetRate(
 ) {
   let netRate = rate;
 
-  const rewardConfigs = getYieldSourceRewardConfigs({
-    yieldSourceId: hyperdrive.yieldSource,
+  const rewardConfigs = getOpenShortRewardConfigs({
+    hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
     appConfig,
   });
