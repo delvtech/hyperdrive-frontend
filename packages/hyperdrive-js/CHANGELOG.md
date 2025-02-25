@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js
 
+## 0.0.2
+
+### Patch Changes
+
+- 722047a: Add zap logic to ReadHyperdrive
+
 ## 0.0.1
 
 ### Patch Changes
