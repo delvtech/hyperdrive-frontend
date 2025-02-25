@@ -41,13 +41,11 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
     provider,
   });
 
-  // Define tokens
-
   // Swap amount: 1 DAI
   const amountIn = ethers.utils.parseUnits("1", 18);
   const currencyAmountIn = CurrencyAmount.fromRawAmount(
     tokenIn,
-    amountIn.toString()
+    amountIn.toString(),
   );
 
   // Fetch the route for an exact input swap
@@ -60,7 +58,7 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
       slippageTolerance: new Percent(50, 10000), // 0.50% tolerance
       deadline: Math.floor(Date.now() / 1000) + 1800, // 30 min deadline
       type: SwapType.SWAP_ROUTER_02,
-    }
+    },
   );
 
   if (route) {
@@ -76,7 +74,7 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
       const pools = v3Route.route.pools; // each pool contains its fee
       console.log(
         "V3 tokenPath:",
-        tokenPath.map((t) => t.address)
+        tokenPath.map((t) => t.address),
       );
 
       // Build arrays of types and values for solidityPack
@@ -94,8 +92,8 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
           values.push(fee);
         }
       }
-
       const encodedPath = ethers.utils.solidityPack(types, values);
+      console.log("EncodedPath", encodedPath);
       return encodedPath;
     } else {
       console.log("No V3 route found in the swap path.");
@@ -111,14 +109,14 @@ async function main() {
     "0x6B175474E89094C44Da98b954EedeAC495271d0F",
     18,
     "DAI",
-    "Dai Stablecoin"
+    "Dai Stablecoin",
   );
   const USDC = new Token(
     1,
     "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
     6,
     "USDC",
-    "USD Coin"
+    "USD Coin",
   );
   // await executeZapOpenAndClose();
   const encodedPath = await fetchSwapPath(DAI, USDC);

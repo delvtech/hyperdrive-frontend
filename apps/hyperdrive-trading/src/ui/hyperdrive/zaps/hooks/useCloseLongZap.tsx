@@ -6,6 +6,7 @@ import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation } from "@tanstack/react-query";
+import { Token } from "@uniswap/sdk-core";
 import toast from "react-hot-toast";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
@@ -20,6 +21,7 @@ import {
   usePublicClient,
   useWalletClient,
 } from "wagmi";
+import { fetchUniswapPath } from "../fetchUniswapPath";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
@@ -55,6 +57,7 @@ export function useCloseLongZap({
   const zapsConfig = appConfig.zaps[chainId];
   const { data: blockNumber } = useBlockNumber();
   const { data: block } = useBlock({ blockNumber });
+
   const isMutationEnabled =
     !!zapsConfig && !!account && !!publicClient && !!walletClient && enabled;
   const baseToken = getBaseToken({
@@ -103,6 +106,24 @@ export function useCloseLongZap({
         }),
       );
 
+      const swapPath = await fetchUniswapPath({
+        tokenIn: new Token(
+          1,
+          "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          18,
+          "DAI",
+          "Dai Stablecoin",
+        ),
+        tokenOut: new Token(
+          1,
+          "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          6,
+          "USDC",
+          "USD Coin",
+        ),
+        recipient: destination ?? account,
+      });
+
       try {
         const hash = await drift.write({
           abi: zapAbi,
@@ -129,10 +150,12 @@ export function useCloseLongZap({
               // amountOutMinimum: minAmountOut ?? 1n,
               amountOutMinimum: 1n,
               deadline: block.timestamp + 60n,
-              path: encodePacked(
-                ["address", "uint24", "address"],
-                [baseToken.address, 100, tokenOut.address],
-              ),
+              path: swapPath
+                ? swapPath
+                : encodePacked(
+                    ["address", "uint24", "address"],
+                    [baseToken.address, 100, tokenOut.address],
+                  ),
               recipient: destination ?? account,
             },
           },
