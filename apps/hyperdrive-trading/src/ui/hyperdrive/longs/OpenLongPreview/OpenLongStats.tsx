@@ -104,14 +104,6 @@ export function OpenLongStats({
     finalAmountPaid = amountPaidInBase;
   }
 
-  console.log("asBase: ", asBase);
-  console.log("isBaseAmount: ", isBaseAmount);
-  console.log("amountPaidInBase: ", amountPaidInBase);
-  console.log(
-    "hyperdrive.isSharesPeggedToBase: ",
-    hyperdrive.isSharesPeggedToBase,
-  );
-
   return (
     <div className="flex flex-row justify-between px-4 py-8">
       <PrimaryStat
