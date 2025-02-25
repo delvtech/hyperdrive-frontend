@@ -1,5 +1,12 @@
 # hyperdrive-trading
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [722047a]
+  - @delvtech/hyperdrive-js@0.0.2
+
 ## 0.0.11
 
 ### Patch Changes
