@@ -11,7 +11,10 @@ import {
 import { Addreth, ThemeDeclaration } from "addreth";
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { fetchMilesLeaderboard, LeaderboardEntry } from "src/rewards/merkl";
+import {
+  fetchMilesLeaderboard,
+  LeaderboardEntry,
+} from "src/rewards/milesLeaderboard";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
