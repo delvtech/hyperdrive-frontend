@@ -63,10 +63,9 @@ export async function fetchMerklRewards(
 ): Promise<ClaimableReward[]> {
   // url encoded comma-separated list of unique chain ids to check for rewards
   const chainIds = encodeURIComponent(
-    new Set(merklRewards.flatMap((r) => r.rewardChainIds))
-      .values()
-      .toArray()
-      .join(","),
+    [...new Set(merklRewards.flatMap((r) => r.rewardChainIds)).values()].join(
+      ",",
+    ),
   );
 
   const response = await fetchJson<{ rewards: MerklUserReward[] }[]>(
