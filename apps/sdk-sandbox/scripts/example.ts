@@ -5,7 +5,6 @@ import { ReadHyperdrive, ReadWriteHyperdrive } from "@delvtech/hyperdrive-js";
 import { CurrencyAmount, Percent, Token, TradeType } from "@uniswap/sdk-core";
 import { AlphaRouter, SwapType } from "@uniswap/smart-order-router";
 import { ethers } from "ethers";
-import fs from "fs";
 import { publicClient, walletClient } from "../client";
 import { executeZapOpenAndClose } from "./executeZapAndClose";
 const zapsConfig = appConfig.zaps[707];
@@ -66,9 +65,6 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
     const v3Route = route.route.find((r) => r.protocol === "V3");
     console.log(v3Route, "v3Route");
 
-    const routeJson = JSON.stringify(route, null, 2);
-    fs.writeFileSync("uniswap-route.json", routeJson);
-    console.log("Route details written to uniswap-route.json");
     if (v3Route) {
       const tokenPath = v3Route.tokenPath;
       const pools = v3Route.route.pools; // each pool contains its fee
