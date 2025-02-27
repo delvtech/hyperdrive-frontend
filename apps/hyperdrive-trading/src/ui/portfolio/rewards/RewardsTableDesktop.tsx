@@ -11,7 +11,7 @@ import {
 import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
-import { ClaimableReward, Reward } from "src/rewards/ClaimableReward";
+import { ClaimableReward } from "src/rewards/ClaimableReward";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
@@ -203,7 +203,7 @@ function AssetCell({
   account,
   reward,
 }: {
-  reward: Reward;
+  reward: ClaimableReward;
   account: Address | undefined;
 }) {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
@@ -311,7 +311,7 @@ function ClaimableAmount({
   reward,
 }: {
   account: Address | undefined;
-  reward: Reward;
+  reward: ClaimableReward;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain({ strict: false });
   const token = getToken({
