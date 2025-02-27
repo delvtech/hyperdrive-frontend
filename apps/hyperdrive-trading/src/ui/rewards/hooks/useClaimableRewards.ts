@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { ClaimableReward } from "src/rewards/ClaimableReward";
-import { fetchMileRewards } from "src/rewards/merkl";
+import { fetchMerklRewards } from "src/rewards/merklUserRewards";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -24,12 +24,7 @@ export function useClaimableRewards({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const mileRewards = await fetchMileRewards(account);
-
-          // TODO: Add merkl reawrds for 3rd party rewards here
-          const allRewards = [...mileRewards];
-
-          return allRewards;
+          return fetchMerklRewards(account);
         }
       : undefined,
   });

@@ -33,7 +33,7 @@ export const fetchBigShortEnergyRewards: RewardResolver = async (
     {
       chainId,
       type: "apy",
-      apy: BigInt(apr),
+      apy: apr,
       tokenAddress: baseToken,
     },
   ];
@@ -68,5 +68,11 @@ function getAprAndBaseToken(data: MerklV3RewardsResult): {
     .first()
     .value();
 
-  return { apr: parseFixed(apr).bigint, baseToken };
+  return {
+    apr: parseFixed(apr)
+      // the apr is returned from merkl already formatted as a percent, so we
+      // need to divide by 100
+      .div(100, 0).bigint,
+    baseToken,
+  };
 }

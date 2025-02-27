@@ -1,4 +1,4 @@
-export interface Reward {
+export interface ClaimableReward {
   /** @example 1 */
   chainId: number;
   /**
@@ -23,8 +23,4 @@ export interface Reward {
   rewardTokenAddress: `0x${string}`;
   /** @example ["0xProof1","0xProof2","0xProof3"] */
   merkleProof: `0x${string}`[];
-}
-
-export interface ClaimableReward extends Reward {
-  merkleType: "HyperdriveMerkle" | "MerklXyz";
 }

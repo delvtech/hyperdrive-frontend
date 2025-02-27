@@ -78,18 +78,6 @@ export function OpenLongStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  if (isZapToken && zapTokenPrice && baseTokenPrice) {
-    const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(
-      amountPaid,
-      activeToken.decimals,
-    );
-    const zapAmountInBase = fiatValueOfZapAmount.div(baseTokenPrice);
-    const slipageAmount = parseFixed("0.005");
-    finalAmountPaid = parseFixed("1")
-      .sub(slipageAmount)
-      .mul(zapAmountInBase).bigint;
-  }
-
   const isBaseAmount = asBase || hyperdrive.isSharesPeggedToBase;
   const amountPaidInBase = isBaseAmount
     ? amountPaid
@@ -101,6 +89,20 @@ export function OpenLongStats({
   const yieldAtMaturity = bondAmount - amountPaidInBase;
   const termLengthMS = Number(hyperdrive.poolConfig.positionDuration * 1000n);
   const numDays = convertMillisecondsToDays(termLengthMS);
+
+  if (isZapToken && zapTokenPrice && baseTokenPrice) {
+    const fiatValueOfZapAmount = fixed(zapTokenPrice).mul(
+      amountPaid,
+      activeToken.decimals,
+    );
+    const zapAmountInBase = fiatValueOfZapAmount.div(baseTokenPrice);
+    const slipageAmount = parseFixed("0.005");
+    finalAmountPaid = parseFixed("1")
+      .sub(slipageAmount)
+      .mul(zapAmountInBase).bigint;
+  } else {
+    finalAmountPaid = amountPaidInBase;
+  }
 
   return (
     <div className="flex flex-row justify-between px-4 py-8">
