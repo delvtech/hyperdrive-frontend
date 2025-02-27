@@ -40,6 +40,8 @@ export async function fetchMilesLeaderboard(): Promise<LeaderboardEntry[]> {
         const rewards = (await rewardsResponse.json()) as {
           recipient: Address;
           amount: string;
+          pending: string;
+          claimed: string;
         }[];
         return rewards;
       }),
@@ -48,10 +50,16 @@ export async function fetchMilesLeaderboard(): Promise<LeaderboardEntry[]> {
 
   const rewardsByUser = Object.entries(groupBy(users, (user) => user.recipient))
     .map(([user, rewards]) => {
-      const totalRewards = rewards.reduce(
-        (total, reward) => total + BigInt(reward.amount),
-        0n,
-      );
+      const totalRewards = rewards.reduce((total, reward) => {
+        // All time rewards can be calculated by combining amounts that are
+        // pending, claimable, and already claimed
+        return (
+          total +
+          BigInt(reward.amount) +
+          BigInt(reward.pending) +
+          BigInt(reward.claimed)
+        );
+      }, 0n);
       return { user, totalRewards };
     })
     .filter(({ totalRewards }) => totalRewards > 0n)
