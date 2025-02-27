@@ -996,39 +996,15 @@ export const testnetAppConfig: AppConfig = {
   ],
   tokens: [
     {
-      chainId: 707,
       address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      chainId: 707,
+      name: "Ether",
+      symbol: "ETH",
       decimals: 18,
       places: 4,
-      name: "Ethereum",
-      symbol: "ETH",
+      tags: [],
       iconUrl:
         "data:image/png;base64,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",
-      tags: [],
-      priceOracle: "defillama",
-    },
-    {
-      chainId: 707,
-      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
-      decimals: 18,
-      places: 4,
-      name: "ether.fi ETH",
-      symbol: "eETH",
-      iconUrl:
-        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
-      tags: ["liquidStakingToken"],
-      priceOracle: "defillama",
-    },
-    {
-      chainId: 707,
-      address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
-      decimals: 18,
-      places: 4,
-      name: "Renzo Restaked ETH",
-      symbol: "ezETH",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: ["liquidStakingToken"],
       priceOracle: "defillama",
     },
     {
@@ -1069,13 +1045,37 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 707,
-      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+      address: "0x35fA164735182de50811E8e2E824cFb9B6118ac2",
       decimals: 18,
+      places: 4,
+      name: "ether.fi ETH",
+      symbol: "eETH",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/33049/standard/ether.fi_eETH.png",
+      tags: ["liquidStakingToken"],
+      priceOracle: "defillama",
+    },
+    {
+      chainId: 707,
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      decimals: 6,
       places: 2,
-      name: "Savings Dai",
-      symbol: "sDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: [],
+      name: "USD Coin",
+      symbol: "USDC",
+      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
+      tags: ["stablecoin"],
+      priceOracle: "defillama",
+    },
+    {
+      chainId: 707,
+      address: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
+      decimals: 18,
+      places: 4,
+      name: "Renzo Restaked ETH",
+      symbol: "ezETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: ["liquidStakingToken"],
       priceOracle: "defillama",
     },
     {
@@ -1104,13 +1104,13 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 707,
-      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      decimals: 6,
+      address: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+      decimals: 18,
       places: 2,
-      name: "USD Coin",
-      symbol: "USDC",
-      iconUrl: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=033",
-      tags: ["stablecoin"],
+      name: "Savings Dai",
+      symbol: "sDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      tags: [],
       priceOracle: "defillama",
     },
     {
@@ -1211,30 +1211,6 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
-      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: ["stablecoin"],
-      priceOracle: "defillama",
-    },
-    {
-      chainId: 11155111,
-      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
-      decimals: 18,
-      places: 4,
-      name: "Renzo ezETH",
-      symbol: "ezETH",
-      iconUrl:
-        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
-      tags: ["liquidStakingToken"],
-      priceOracle: "defillama",
-    },
-    {
-      chainId: 11155111,
       address: "0x7c485f458aD1F32FF66BC45306fd32974C963c32",
       decimals: 18,
       places: 4,
@@ -1247,6 +1223,18 @@ export const testnetAppConfig: AppConfig = {
     },
     {
       chainId: 11155111,
+      address: "0xe8b99bF4249D90C0eB900651F92485F7160A0513",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: ["stablecoin"],
+      priceOracle: "defillama",
+    },
+    {
+      chainId: 11155111,
       address: "0xFF8AFe6bb92eB9D8e80c607bbe5bbb78BF1201Df",
       decimals: 18,
       places: 2,
@@ -1254,6 +1242,18 @@ export const testnetAppConfig: AppConfig = {
       symbol: "SDAI",
       iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
       tags: [],
+      priceOracle: "defillama",
+    },
+    {
+      chainId: 11155111,
+      address: "0xDD0D63E304F3D9d9E54d8945bE95011867c80E4f",
+      decimals: 18,
+      places: 4,
+      name: "Renzo ezETH",
+      symbol: "ezETH",
+      iconUrl:
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF85MDZfMTgwNikiPgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjExMSIgc3Ryb2tlPSIjQTNEQTJGIiBzdHJva2Utd2lkdGg9IjgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjUuNSA0MC41QzEyNC41MDMgNjAuNjU5OCAxMjQuMTcgODAuOTkzMSAxMjQuNSAxMDEuNUMxMjMuNTA4IDEwMS4zMjggMTIyLjg0MiAxMDEuNjYyIDEyMi41IDEwMi41QzEwNi4wNyAxMDkuNTQ3IDg5LjczNjUgMTE2Ljg4IDczLjUgMTI0LjVDNzIuODkzMyAxMjQuMzc2IDcyLjU2IDEyNC4wNDMgNzIuNSAxMjMuNUM4OS4xNTI5IDk0Ljg2MTggMTA2LjMyIDY2LjUyODUgMTI0IDM4LjVDMTI0LjcxNyAzOS4wNDQyIDEyNS4yMTcgMzkuNzEwOSAxMjUuNSA0MC41WiIgZmlsbD0iI0MxRUM2OCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNS41IDQwLjVDMTQyLjMwOCA2OC4xMDMgMTU5LjE0MSA5NS43Njk2IDE3NiAxMjMuNUMxNzYuNzQgMTI0Ljc0OSAxNzYuNTczIDEyNS43NDkgMTc1LjUgMTI2LjVDMTc0LjA5MyAxMjQuMzg2IDE3Mi4wOTMgMTIyLjg4NiAxNjkuNSAxMjJDMTU0LjUwNSAxMTUuMzk0IDEzOS41MDUgMTA4Ljg5NCAxMjQuNSAxMDIuNUMxMjQuNSAxMDIuMTY3IDEyNC41IDEwMS44MzMgMTI0LjUgMTAxLjVDMTI0LjE3IDgwLjk5MzEgMTI0LjUwMyA2MC42NTk4IDEyNS41IDQwLjVaIiBmaWxsPSIjOTBDMjJBIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIyLjUgMTAyLjVDMTIyLjg0MiAxMDEuNjYyIDEyMy41MDggMTAxLjMyOCAxMjQuNSAxMDEuNUMxMjQuNSAxMDEuODMzIDEyNC41IDEwMi4xNjcgMTI0LjUgMTAyLjVDMTI0LjE3IDEyMC4zNDEgMTI0LjUwMyAxMzguMDA4IDEyNS41IDE1NS41QzEyNS4xNTggMTU2LjMzOCAxMjQuNDkyIDE1Ni42NzIgMTIzLjUgMTU2LjVDMTIzLjgzIDEzOC4zMjYgMTIzLjQ5NyAxMjAuMzI2IDEyMi41IDEwMi41WiIgZmlsbD0iI0M4RUE4MCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyMi41IDEwMi41QzEyMy40OTcgMTIwLjMyNiAxMjMuODMgMTM4LjMyNiAxMjMuNSAxNTYuNUMxMDYuNTE3IDE0Ni41MjcgODkuNTE3MSAxMzYuNTI3IDcyLjQ5OTkgMTI2LjVDNzEuMjI0IDEyNS4zODYgNzEuMjI0IDEyNC4zODYgNzIuNDk5OSAxMjMuNUM3Mi41NTk5IDEyNC4wNDMgNzIuODkzMiAxMjQuMzc2IDczLjQ5OTkgMTI0LjVDODkuNzM2NCAxMTYuODggMTA2LjA3IDEwOS41NDcgMTIyLjUgMTAyLjVaIiBmaWxsPSIjRTJGNkI5Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTI0LjUgMTAyLjVDMTM5LjUwNSAxMDguODk0IDE1NC41MDUgMTE1LjM5NCAxNjkuNSAxMjJDMTcyLjA5MyAxMjIuODg2IDE3NC4wOTMgMTI0LjM4NiAxNzUuNSAxMjYuNUMxNTguODE2IDEzNi4xOTQgMTQyLjE0OSAxNDUuODYxIDEyNS41IDE1NS41QzEyNC41MDMgMTM4LjAwOCAxMjQuMTcgMTIwLjM0MSAxMjQuNSAxMDIuNVoiIGZpbGw9IiNBM0RBMkYiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMjQuNSAxNjYuNUMxMjQuNSAxODAuNSAxMjQuNSAxOTQuNSAxMjQuNSAyMDguNUMxMjMuNjcxIDIwOS4zMzIgMTIyLjgzOCAyMDguOTk5IDEyMiAyMDcuNUMxMDUuMTY1IDE4My4zOCA4OC40OTgzIDE1OS4zOCA3MiAxMzUuNUM4OS4xNDM3IDE0Ni40ODYgMTA2LjY0NCAxNTYuODE5IDEyNC41IDE2Ni41WiIgZmlsbD0iI0MxRUI2OSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyNC41IDIwOC41QzEyNC41IDE5NC41IDEyNC41IDE4MC41IDEyNC41IDE2Ni41QzE0MS44NzkgMTU1LjgzNSAxNTkuMjEzIDE0NS44MzUgMTc2LjUgMTM2LjVDMTU5LjQ5NyAxNjAuODIxIDE0Mi4xNjQgMTg0LjgyMSAxMjQuNSAyMDguNVoiIGZpbGw9IiM2RDhFMjEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MDZfMTgwNiI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=",
+      tags: ["liquidStakingToken"],
       priceOracle: "defillama",
     },
     {
@@ -1618,135 +1618,221 @@ export const testnetAppConfig: AppConfig = {
     },
   },
   rewards: {
+    "hyperdrive:open-short:707:0xd7e470043241C10970953Bd8374ee6238e77D735": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0xd7e470043241C10970953Bd8374ee6238e77D735": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
+      "hypervueMilesLpRewards",
+    ],
     "hyperdrive:open-short:707:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
       "etherfiRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:707:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
       "etherfiRewards",
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:add-liquidity:707:0x4c3054e51b46BE3191be9A05e73D73F1a2147854": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0xd7e470043241C10970953Bd8374ee6238e77D735": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:open-short:707:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
-      "bigShortEnergyRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:707:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
-      "hypervueMilesLpRewards",
+    "hyperdrive:open-short:707:0xc8D47DE20F7053Cc02504600596A647A482Bbc46": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:707:0xc8D47DE20F7053Cc02504600596A647A482Bbc46": [
       "hypervueMilesLpRewards",
     ],
+    "hyperdrive:open-short:707:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0x4c3054e51b46BE3191be9A05e73D73F1a2147854": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0x4c3054e51b46BE3191be9A05e73D73F1a2147854": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0x7548c4F665402BAb3a4298B88527824B7b18Fe27": [
+      "hypervueMilesShortRewards",
+    ],
     "hyperdrive:add-liquidity:707:0x7548c4F665402BAb3a4298B88527824B7b18Fe27": [
       "hypervueMilesLpRewards",
     ],
+    "hyperdrive:open-short:707:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
+      "bigShortEnergyRewards",
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:707:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0x05b65FA90AD702e6Fd0C3Bd7c4c9C47BAB2BEa6b": [
+      "hypervueMilesShortRewards",
+    ],
     "hyperdrive:add-liquidity:707:0x05b65FA90AD702e6Fd0C3Bd7c4c9C47BAB2BEa6b": [
       "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:707:0x8f2AC104e07d94488a1821E5A393351FCA9239aa": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:707:0x8f2AC104e07d94488a1821E5A393351FCA9239aa": [
       "hypervueMilesLpRewards",
     ],
     "hyperdrive:open-short:707:0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D": [
       "gyroscopeRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:707:0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D": [
       "gyroscopeRewards",
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:add-liquidity:11155111:0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0x87621c072B1967730b70F4c0536D739c2053d34c":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0x51C054F75b2c4b53E8E5114430C3ded4572473D8":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0x0399BBA8DE5959007148a95ADaaD04eA3172513E":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:11155111:0x54A93937EE00838d659795b9bbbe904a00DdF278":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:open-short:11155111:0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2":
-      ["bigShortEnergyRewards"],
-    "hyperdrive:add-liquidity:11155111:0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:open-short:11155111:0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3":
-      ["bigShortEnergyRewards"],
-    "hyperdrive:add-liquidity:11155111:0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3":
-      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8":
+      ["hypervueMilesShortRewards"],
     "hyperdrive:add-liquidity:11155111:0x8DFc7c74331162FE2FCc2Ee83173d806E4Ca2CE8":
       ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0xb59b98209e82Fc0549Bb2572809B7CD10289Bb91":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3":
+      ["bigShortEnergyRewards", "hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0xC7cb718D5f1c5B4839045aed2620FABc1cF13CD3":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0xE352F4D16C7Ee4162d1aa54b77A15d4DA8f35f4b":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0x1F5625B9d2B1c02b06bcA6F95BEE71b9700Bf95D":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x54A93937EE00838d659795b9bbbe904a00DdF278":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0x54A93937EE00838d659795b9bbbe904a00DdF278":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x0399BBA8DE5959007148a95ADaaD04eA3172513E":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0x0399BBA8DE5959007148a95ADaaD04eA3172513E":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x87621c072B1967730b70F4c0536D739c2053d34c":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0x87621c072B1967730b70F4c0536D739c2053d34c":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0x51C054F75b2c4b53E8E5114430C3ded4572473D8":
+      ["hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0x51C054F75b2c4b53E8E5114430C3ded4572473D8":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:11155111:0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2":
+      ["bigShortEnergyRewards", "hypervueMilesShortRewards"],
+    "hyperdrive:add-liquidity:11155111:0xfA8dB2177F1e1eE4327c9b9d1389b1173bC5A5e2":
+      ["hypervueMilesLpRewards"],
+    "hyperdrive:open-short:1:0xd7e470043241C10970953Bd8374ee6238e77D735": [
+      "hypervueMilesShortRewards",
+    ],
     "hyperdrive:add-liquidity:1:0xd7e470043241C10970953Bd8374ee6238e77D735": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:1:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
       "hypervueMilesLpRewards",
     ],
     "hyperdrive:open-short:1:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
       "etherfiRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x158Ed87D7E529CFE274f3036ade49975Fb10f030": [
       "etherfiRewards",
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:add-liquidity:1:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
-      "hypervueMilesLpRewards",
-    ],
-    "hyperdrive:add-liquidity:1:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
-      "hypervueMilesLpRewards",
+    "hyperdrive:open-short:1:0xc8D47DE20F7053Cc02504600596A647A482Bbc46": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0xc8D47DE20F7053Cc02504600596A647A482Bbc46": [
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:add-liquidity:1:0xA29A771683b4857bBd16e1e4f27D5B6bfF53209B": [
+    "hyperdrive:open-short:1:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:1:0xd41225855A5c5Ba1C672CcF4d72D1822a5686d30": [
       "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:1:0xca5dB9Bb25D09A9bF3b22360Be3763b5f2d13589": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0x7548c4F665402BAb3a4298B88527824B7b18Fe27": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x7548c4F665402BAb3a4298B88527824B7b18Fe27": [
       "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:1:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
+      "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0x4c3054e51b46BE3191be9A05e73D73F1a2147854": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x4c3054e51b46BE3191be9A05e73D73F1a2147854": [
       "hypervueMilesLpRewards",
     ],
     "hyperdrive:open-short:1:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
       "bigShortEnergyRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x324395D5d835F84a02A75Aa26814f6fD22F25698": [
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:add-liquidity:1:0xA4090183878d5B7b6Ad104863743dd7E58985321": [
-      "hypervueMilesLpRewards",
+    "hyperdrive:open-short:1:0x8f2AC104e07d94488a1821E5A393351FCA9239aa": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x8f2AC104e07d94488a1821E5A393351FCA9239aa": [
       "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:1:0x05b65FA90AD702e6Fd0C3Bd7c4c9C47BAB2BEa6b": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0x05b65FA90AD702e6Fd0C3Bd7c4c9C47BAB2BEa6b": [
       "hypervueMilesLpRewards",
     ],
     "hyperdrive:open-short:1:0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D": [
       "gyroscopeRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:1:0xf1232Dc21eADAf503D82f1e1361CfF2BBf40394D": [
       "gyroscopeRewards",
       "hypervueMilesLpRewards",
+    ],
+    "hyperdrive:open-short:100:0x2f840f1575EE77adAa43415Ac5953F7Db9F8C6ba": [
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:100:0x2f840f1575EE77adAa43415Ac5953F7Db9F8C6ba": [
       "hypervueMilesLpRewards",
     ],
     "hyperdrive:open-short:100:0x9248f874AaA2c53AD9324d7A2D033ea133443874": [
       "gyroscopeRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:100:0x9248f874AaA2c53AD9324d7A2D033ea133443874": [
       "gyroscopeRewards",
@@ -1754,48 +1840,62 @@ export const testnetAppConfig: AppConfig = {
     ],
     "hyperdrive:open-short:100:0xEe9BFf933aDD313C4289E98dA80fEfbF9d5Cd9Ba": [
       "bigShortEnergyRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:100:0xEe9BFf933aDD313C4289E98dA80fEfbF9d5Cd9Ba": [
       "hypervueMilesLpRewards",
     ],
-    "hyperdrive:open-short:59144:0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777": [
-      "lineaRewards",
-    ],
-    "hyperdrive:add-liquidity:59144:0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777":
-      ["lineaRewards", "hypervueMilesLpRewards"],
     "hyperdrive:open-short:59144:0x1cB0E96C07910fee9a22607bb9228c73848903a3": [
       "lineaRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:59144:0x1cB0E96C07910fee9a22607bb9228c73848903a3":
       ["lineaRewards", "hypervueMilesLpRewards"],
-    "hyperdrive:open-short:8453:0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137": [
-      "morphoCbethUsdcRewards",
+    "hyperdrive:open-short:59144:0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777": [
+      "lineaRewards",
+      "hypervueMilesShortRewards",
     ],
-    "hyperdrive:add-liquidity:8453:0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137":
-      ["morphoCbethUsdcRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:add-liquidity:59144:0xB56e0Bf37c4747AbbC3aA9B8084B0d9b9A336777":
+      ["lineaRewards", "hypervueMilesLpRewards"],
     "hyperdrive:open-short:8453:0x9bAdB6A21FbA04EE94fde3E85F7d170E90394c89": [
       "aeroRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:8453:0x9bAdB6A21FbA04EE94fde3E85F7d170E90394c89":
       ["aeroRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:open-short:8453:0x2a1ca35Ded36C531F77c614b5AAA0d4F86edbB06": [
+      "hypervueMilesShortRewards",
+    ],
     "hyperdrive:add-liquidity:8453:0x2a1ca35Ded36C531F77c614b5AAA0d4F86edbB06":
       ["hypervueMilesLpRewards"],
-    "hyperdrive:open-short:8453:0xceD9F810098f8329472AEFbaa1112534E96A5c7b": [
-      "morphoMwethRewards",
+    "hyperdrive:open-short:8453:0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137": [
+      "morphoCbethUsdcRewards",
+      "hypervueMilesShortRewards",
     ],
-    "hyperdrive:add-liquidity:8453:0xceD9F810098f8329472AEFbaa1112534E96A5c7b":
-      ["morphoMwethRewards", "hypervueMilesLpRewards"],
-    "hyperdrive:add-liquidity:8453:0x1243C06146ACa2D4Aaf8F9860F6D8d59d636d46C":
-      ["hypervueMilesLpRewards"],
-    "hyperdrive:open-short:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25": [
-      "morphoMweurcRewards",
-    ],
-    "hyperdrive:add-liquidity:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25":
-      ["morphoMweurcRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:add-liquidity:8453:0xFcdaF9A4A731C24ed2E1BFd6FA918d9CF7F50137":
+      ["morphoCbethUsdcRewards", "hypervueMilesLpRewards"],
     "hyperdrive:open-short:8453:0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a": [
       "morphoMwusdcRewards",
+      "hypervueMilesShortRewards",
     ],
     "hyperdrive:add-liquidity:8453:0xD9b66D9a819B36ECEfC26B043eF3B422d5A6123a":
       ["morphoMwusdcRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:open-short:8453:0xceD9F810098f8329472AEFbaa1112534E96A5c7b": [
+      "morphoMwethRewards",
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:8453:0xceD9F810098f8329472AEFbaa1112534E96A5c7b":
+      ["morphoMwethRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:open-short:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25": [
+      "morphoMweurcRewards",
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:8453:0xdd8E1B14A04cbdD98dfcAF3F0Db84A80Bfb8FC25":
+      ["morphoMweurcRewards", "hypervueMilesLpRewards"],
+    "hyperdrive:open-short:8453:0x1243C06146ACa2D4Aaf8F9860F6D8d59d636d46C": [
+      "hypervueMilesShortRewards",
+    ],
+    "hyperdrive:add-liquidity:8453:0x1243C06146ACa2D4Aaf8F9860F6D8d59d636d46C":
+      ["hypervueMilesLpRewards"],
   },
 };

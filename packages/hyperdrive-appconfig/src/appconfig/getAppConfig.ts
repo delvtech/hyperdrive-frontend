@@ -20,7 +20,10 @@ import { aeroRewards } from "src/rewards/resolvers/aero";
 import { bigShortEnergyRewards } from "src/rewards/resolvers/bigShortEnergy";
 import { etherfiRewards } from "src/rewards/resolvers/etherfi";
 import { gyroscopeRewards } from "src/rewards/resolvers/gyroscope";
-import { hypervueMilesLpRewards } from "src/rewards/resolvers/hypervueMiles";
+import {
+  hypervueMilesLpRewards,
+  hypervueMilesShortRewards,
+} from "src/rewards/resolvers/hypervueMiles";
 import { lineaRewards } from "src/rewards/resolvers/linea";
 import {
   morphoCbethUsdcRewards,
@@ -95,7 +98,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            short: [lineaRewards.id],
+            short: [lineaRewards.id, hypervueMilesShortRewards.id],
             lp: [lineaRewards.id, hypervueMilesLpRewards.id],
           },
         }),
@@ -133,7 +136,7 @@ const hyperdriveKindResolvers: Record<
           hyperdriveAddress: hyperdrive.address,
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
-            short: [lineaRewards.id],
+            short: [lineaRewards.id, hypervueMilesShortRewards.id],
             lp: [lineaRewards.id, hypervueMilesLpRewards.id],
           },
         }),
@@ -162,6 +165,7 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -182,6 +186,7 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -221,7 +226,7 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           hyperdriveAddress: hyperdrive.address,
           rewardsMap: {
-            short: [etherfiRewards.id],
+            short: [etherfiRewards.id, hypervueMilesShortRewards.id],
             lp: [etherfiRewards.id, hypervueMilesLpRewards.id],
           },
         }),
@@ -255,6 +260,7 @@ const hyperdriveKindResolvers: Record<
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
           lp: [hypervueMilesLpRewards.id],
+          short: [hypervueMilesShortRewards.id],
         },
       }),
     };
@@ -287,6 +293,7 @@ const hyperdriveKindResolvers: Record<
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
           lp: [hypervueMilesLpRewards.id],
+          short: [hypervueMilesShortRewards.id],
         },
       }),
     };
@@ -304,6 +311,7 @@ const hyperdriveKindResolvers: Record<
         chainId: hyperdriveConfig.chainId,
         rewardsMap: {
           lp: [hypervueMilesLpRewards.id],
+          short: [hypervueMilesShortRewards.id],
         },
       }),
     };
@@ -360,7 +368,7 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: [gyroscopeRewards.id],
+              short: [gyroscopeRewards.id, hypervueMilesShortRewards.id],
               lp: [gyroscopeRewards.id, hypervueMilesLpRewards.id],
             },
           }),
@@ -396,6 +404,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -429,6 +438,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -479,7 +489,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
-            short: [bigShortEnergyRewards.id],
+            short: [bigShortEnergyRewards.id, hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -514,7 +524,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
-            short: [bigShortEnergyRewards.id],
+            short: [bigShortEnergyRewards.id, hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -548,6 +558,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -581,7 +592,7 @@ const hyperdriveKindResolvers: Record<
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
-              short: [morphoMwethRewards.id],
+              short: [morphoMwethRewards.id, hypervueMilesShortRewards.id],
               lp: [morphoMwethRewards.id, hypervueMilesLpRewards.id],
             },
           }),
@@ -617,7 +628,7 @@ const hyperdriveKindResolvers: Record<
             hyperdriveAddress: hyperdrive.address,
             chainId: publicClient.chain?.id as number,
             rewardsMap: {
-              short: [morphoMwusdcRewards.id],
+              short: [morphoMwusdcRewards.id, hypervueMilesShortRewards.id],
               lp: [morphoMwusdcRewards.id, hypervueMilesLpRewards.id],
             },
           }),
@@ -653,7 +664,7 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: [morphoMweurcRewards.id],
+              short: [morphoMweurcRewards.id, hypervueMilesShortRewards.id],
               lp: [morphoMweurcRewards.id, hypervueMilesLpRewards.id],
             },
           }),
@@ -689,6 +700,7 @@ const hyperdriveKindResolvers: Record<
           chainId: publicClient.chain?.id as number,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -755,7 +767,7 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: [aeroRewards.id],
+              short: [aeroRewards.id, hypervueMilesShortRewards.id],
               lp: [aeroRewards.id, hypervueMilesLpRewards.id],
             },
           }),
@@ -801,6 +813,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -822,6 +835,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -843,6 +857,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -864,6 +879,7 @@ const hyperdriveKindResolvers: Record<
           chainId: hyperdriveConfig.chainId,
           rewardsMap: {
             lp: [hypervueMilesLpRewards.id],
+            short: [hypervueMilesShortRewards.id],
           },
         }),
       };
@@ -887,7 +903,7 @@ const hyperdriveKindResolvers: Record<
             chainId: publicClient.chain?.id as number,
             hyperdriveAddress: hyperdrive.address,
             rewardsMap: {
-              short: [morphoCbethUsdcRewards.id],
+              short: [morphoCbethUsdcRewards.id, hypervueMilesShortRewards.id],
               lp: [morphoCbethUsdcRewards.id, hypervueMilesLpRewards.id],
             },
           }),

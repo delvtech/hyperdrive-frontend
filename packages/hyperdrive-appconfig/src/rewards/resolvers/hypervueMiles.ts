@@ -18,3 +18,18 @@ export const hypervueMilesLpRewards: RewardConfig = {
   chainIds: [mainnet.id, gnosis.id, linea.id, base.id],
   resolver: fetchHypervueMilesLpRewards,
 };
+
+export const fetchHypervueMilesShortRewards: RewardResolver = async () => {
+  return [
+    {
+      type: "info",
+      iconUrl: HyperVueMilesIconUrl,
+      message: "Earns 1 Mile per year for every $1 of exposure",
+    },
+  ];
+};
+export const hypervueMilesShortRewards: RewardConfig = {
+  id: "hypervueMilesShortRewards",
+  chainIds: [mainnet.id, gnosis.id, linea.id, base.id],
+  resolver: fetchHypervueMilesShortRewards,
+};
