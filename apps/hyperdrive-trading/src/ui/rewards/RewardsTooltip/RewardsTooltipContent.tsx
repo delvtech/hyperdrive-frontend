@@ -24,12 +24,6 @@ export function RewardsTooltipContent({
   position: "addLiquidity" | "openShort";
   baseRate: bigint | undefined;
   netRate: bigint | undefined;
-  /**
-   * @deprecated This is a temporary prop that will be removed once appconfig
-   * changes have been made to move rewards onto HyperdriveConfig based on
-   * position type.
-   */
-  showMiles?: boolean;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
   const hyperdrive = getHyperdriveConfig({

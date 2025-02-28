@@ -12,8 +12,10 @@ import {
   gyroscopeRewards,
 } from "src/rewards/resolvers/gyroscope";
 import {
-  fetchHypervueMilesRewards,
-  hypervueMilesRewards,
+  fetchHypervueMilesLpRewards,
+  fetchHypervueMilesShortRewards,
+  hypervueMilesLpRewards,
+  hypervueMilesShortRewards,
 } from "src/rewards/resolvers/hypervueMiles";
 import { fetchLineaRewards, lineaRewards } from "src/rewards/resolvers/linea";
 import {
@@ -36,7 +38,8 @@ export const rewardConfigs = {
   morphoMwethRewards,
   morphoCbethUsdcRewards,
   gyroscopeRewards,
-  hypervueMilesRewards,
+  hypervueMilesLpRewards,
+  hypervueMilesShortRewards,
   bigShortEnergyRewards,
 } as const;
 
@@ -51,7 +54,8 @@ export const rewardResolvers = {
   fetchMorphoCbethUsdcRewards,
   fetchAeroRewards,
   fetchGyroscopeRewards,
-  fetchHypervueMilesRewards,
+  fetchHypervueMilesLpRewards,
+  fetchHypervueMilesShortRewards,
   fetchBigShortEnergyRewards,
 } as const;
 
