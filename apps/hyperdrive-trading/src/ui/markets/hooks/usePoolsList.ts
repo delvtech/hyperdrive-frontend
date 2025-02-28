@@ -183,7 +183,20 @@ function useSortedPools({
                 calculateMarketYieldMultiplier(b.longPrice).bigint -
                   calculateMarketYieldMultiplier(a.longPrice).bigint,
               );
+
+            // By default we sort by TVL, with the caveat that pinned pools
+            // should always be at the top
             case "TVL":
+            default: {
+              const aIsPinned = PINNED_POOLS.includes(a.hyperdrive.address);
+              const bIsPinned = PINNED_POOLS.includes(b.hyperdrive.address);
+              if (aIsPinned && !bIsPinned && !sortOption) {
+                return -1;
+              }
+              if (!aIsPinned && bIsPinned && !sortOption) {
+                return 1;
+              }
+
               const tvlA =
                 b.tvl.fiat ??
                 fixed(b.tvl.base).div(b.hyperdrive.decimals, 0) ??
@@ -193,8 +206,7 @@ function useSortedPools({
                 fixed(a.tvl.base).div(a.hyperdrive.decimals, 0) ??
                 0;
               return fixed(tvlA).sub(tvlB).toNumber();
-            default:
-              return 0;
+            }
           }
         })
         .map((pool) => pool.hyperdrive);
