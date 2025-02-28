@@ -5,6 +5,7 @@ interface VaultQueryKeys {
   vaultRate: {
     chainId: number;
     hyperdriveAddress: Address | undefined;
+    excludeBigShortEnergy: boolean;
   };
 }
 

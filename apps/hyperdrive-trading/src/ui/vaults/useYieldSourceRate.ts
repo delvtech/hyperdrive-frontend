@@ -9,8 +9,10 @@ import { Address } from "viem";
 export function useYieldSourceRate({
   chainId,
   hyperdriveAddress,
+  excludeBigShortEnergy = false,
 }: {
   chainId: number;
+  excludeBigShortEnergy?: boolean;
   hyperdriveAddress: Address | undefined;
 }): {
   vaultRate:
@@ -36,7 +38,7 @@ export function useYieldSourceRate({
     queryKey: makeQueryKey2({
       namespace: "vaults",
       queryId: "vaultRate",
-      params: { chainId, hyperdriveAddress },
+      params: { chainId, hyperdriveAddress, excludeBigShortEnergy },
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
@@ -44,6 +46,7 @@ export function useYieldSourceRate({
           const { rate, ratePeriodDays, netRate } = await getYieldSourceRate({
             readHyperdrive,
             appConfig,
+            excludeBigShortEnergy,
           });
           return {
             vaultRate: rate,
