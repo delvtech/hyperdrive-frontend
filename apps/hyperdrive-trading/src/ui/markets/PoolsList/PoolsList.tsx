@@ -2,6 +2,7 @@ import { parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   AdjustmentsHorizontalIcon,
   BarsArrowDownIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/20/solid";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
@@ -10,7 +11,10 @@ import { ReactElement, ReactNode } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
-import { MultiSelect } from "src/ui/base/components/MultiSelect";
+import {
+  MultiSelect,
+  MultiSelectButton,
+} from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
@@ -71,14 +75,26 @@ export function PoolsList(): ReactElement {
         ) : pools ? (
           <>
             {/* List controls */}
-            <div className="relative z-20 flex items-center justify-between gap-2">
+            <div className="relative z-20 flex items-stretch justify-between gap-2">
               {/* Filters */}
-              <div className="flex items-center gap-2">
-                <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
+              <div className="flex items-stretch gap-2">
+                <AdjustmentsHorizontalIcon className="hidden size-5 sm:mr-1 sm:block" />
                 {/* Chain filter */}
                 {filters && filters.chains.length > 1 && (
                   <MultiSelect
-                    title="Filter by chain"
+                    button={
+                      <MultiSelectButton
+                        title="Filter by chain"
+                        className="h-full py-2 sm:py-0"
+                      >
+                        {selectedChains?.length === 1
+                          ? appConfig.chains[selectedChains[0]].name
+                          : `${
+                              selectedChains?.length || filters?.chains.length
+                            } chains`}
+                        <ChevronDownIcon className="hidden size-5 sm:block" />
+                      </MultiSelectButton>
+                    }
                     selected={selectedChains || []}
                     onChange={(chains) => {
                       window.plausible("filterChange", {
@@ -97,13 +113,6 @@ export function PoolsList(): ReactElement {
                         },
                       });
                     }}
-                    displayValue={
-                      selectedChains?.length === 1
-                        ? appConfig.chains[selectedChains[0]].name
-                        : `${
-                            selectedChains?.length || filters?.chains.length
-                          } chains`
-                    }
                     searchEnabled
                     options={filters.chains.map(({ chain, count }) => {
                       return {
@@ -122,7 +131,19 @@ export function PoolsList(): ReactElement {
                 {/* Assets filter */}
                 {filters && filters.assets.length > 1 && (
                   <MultiSelect
-                    title="Filter by deposit asset"
+                    button={
+                      <MultiSelectButton
+                        title="Filter by deposit asset"
+                        className="h-full py-2 sm:py-0"
+                      >
+                        {selectedAssets?.length === 1
+                          ? selectedAssets[0]
+                          : `${
+                              selectedAssets?.length || filters.assets.length
+                            } assets`}
+                        <ChevronDownIcon className="hidden size-5 sm:block" />
+                      </MultiSelectButton>
+                    }
                     selected={selectedAssets || []}
                     onChange={(assets) => {
                       window.plausible("filterChange", {
@@ -141,13 +162,6 @@ export function PoolsList(): ReactElement {
                         },
                       });
                     }}
-                    displayValue={
-                      selectedAssets?.length === 1
-                        ? selectedAssets[0]
-                        : `${
-                            selectedAssets?.length || filters.assets.length
-                          } assets`
-                    }
                     searchEnabled
                     options={filters.assets.map(({ asset, count }) => {
                       return {
@@ -162,10 +176,12 @@ export function PoolsList(): ReactElement {
                   />
                 )}
 
-                {/* Low TVL filter */}
-                <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600">
-                  <label className="flex cursor-pointer items-center gap-2">
-                    <span className="daisy-label-text">Hide low TVL</span>
+                {/* Hide low TVL filter */}
+                <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600 py-2 sm:py-1">
+                  <label className="flex h-full cursor-pointer flex-col content-center items-center gap-2 sm:flex-row">
+                    <span className="daisy-label-text text-nowrap text-center">
+                      Hide ow TVL
+                    </span>
                     <input
                       type="checkbox"
                       title={`Show pools with less than ${lowTvlThreshold.format()} in TVL`}
@@ -206,7 +222,7 @@ export function PoolsList(): ReactElement {
                   role="button"
                   title="Sort by"
                   className={classNames(
-                    "daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600",
+                    "daisy-btn daisy-btn-outline daisy-btn-sm flex h-full items-center justify-center border-gray-600 py-2 sm:py-0",
                     {
                       "daisy-btn-disabled": !isSortingEnabled,
                     },
