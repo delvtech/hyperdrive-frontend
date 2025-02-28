@@ -1,4 +1,4 @@
-import { fixed } from "@delvtech/fixed-point-wasm";
+import { fixed, FixedPoint } from "@delvtech/fixed-point-wasm";
 import {
   AnyReward,
   AppConfig,
@@ -48,9 +48,14 @@ type SortOption = (typeof sortOptions)[number];
 export function usePoolsList({
   selectedAssets,
   selectedChains,
+  hideLowTvl,
 }: {
   selectedAssets: string[] | undefined;
   selectedChains: number[] | undefined;
+  hideLowTvl?: {
+    enabled: boolean | undefined;
+    threshold: FixedPoint;
+  };
 }): {
   pools: (HyperdriveConfig & { rewardsAmount?: AnyReward[] })[] | undefined;
   filters: PoolListFilters | undefined;
@@ -76,10 +81,11 @@ export function usePoolsList({
   const chainId = useChainId();
   const isTestnet = isTestnetChain(chainId);
 
-  // Sorting is disabled any time we're fetching data. This is because sorting
-  // requires fetching a significant amount of data, and we want the List to load
-  // as fast as possible. Instead, the individual PoolRow components are
-  // responsible for fetching the specific data they need.
+  // Sorting and filtering based on async data is disabled any time we're
+  // fetching data. This is because sorting requires fetching a significant
+  // amount of data, and we want the List to load as fast as possible. Instead,
+  // the individual PoolRow components are responsible for fetching the specific
+  // data they need.
   const [sortOption, setSortOption] = useState<SortOption | undefined>();
   const isFetching = useIsFetching({
     // don't treat stale queries as fetching, since we have data we can show
@@ -90,6 +96,9 @@ export function usePoolsList({
     pools: selectedPools,
     enabled: isSortingEnabled,
     sortOption,
+    filters: {
+      tvl: hideLowTvl?.enabled ? hideLowTvl?.threshold : undefined,
+    },
   });
 
   return {
@@ -101,14 +110,19 @@ export function usePoolsList({
     isSortingEnabled,
   };
 }
+
 function useSortedPools({
   pools,
   enabled,
   sortOption,
+  filters,
 }: {
   pools: HyperdriveConfig[] | undefined;
   enabled: boolean;
   sortOption: SortOption | undefined;
+  filters: {
+    tvl?: FixedPoint;
+  };
 }) {
   const appConfig = useAppConfigForConnectedChain();
   const queryEnabled = !!pools && enabled;
@@ -161,7 +175,15 @@ function useSortedPools({
         }
       : undefined,
     select: (poolsWithData) => {
-      return poolsWithData
+      const filteredPools = !!filters.tvl
+        ? poolsWithData.filter((pool) => {
+            const tvl = pool.tvl.fiat
+              ? fixed(pool.tvl.fiat)
+              : fixed(pool.tvl.base, pool.hyperdrive.decimals);
+            return tvl.gte(filters.tvl!);
+          })
+        : poolsWithData;
+      return filteredPools
         .toSorted((a, b) => {
           switch (sortOption) {
             case "Chain":
