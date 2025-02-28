@@ -19,8 +19,10 @@ import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQu
 export async function getYieldSourceRate({
   readHyperdrive,
   appConfig,
+  excludeBigShortEnergy = false,
 }: {
   readHyperdrive: ReadHyperdrive;
+  excludeBigShortEnergy?: boolean;
   appConfig: AppConfig;
 }): Promise<{ rate: bigint; ratePeriodDays: number; netRate: bigint }> {
   const hyperdriveChainId = await readHyperdrive.drift.getChainId();
@@ -57,11 +59,12 @@ export async function getYieldSourceRate({
     });
     return {
       rate: rateSinceInitialization,
-      netRate: await calcNetRate(
-        rateSinceInitialization,
+      netRate: await calcNetRate({
+        rate: rateSinceInitialization,
         appConfig,
         hyperdrive,
-      ),
+        excludeBigShortEnergy,
+      }),
       ratePeriodDays: daysSinceInitialization,
     };
   }
@@ -70,7 +73,12 @@ export async function getYieldSourceRate({
     blockRange: numBlocksForHistoricalRate,
   });
 
-  const netRate = await calcNetRate(rate, appConfig, hyperdrive);
+  const netRate = await calcNetRate({
+    rate,
+    appConfig,
+    hyperdrive,
+    excludeBigShortEnergy,
+  });
 
   const yieldSource = getYieldSource({
     hyperdriveAddress: hyperdrive.address,
@@ -85,11 +93,17 @@ export async function getYieldSourceRate({
   };
 }
 
-async function calcNetRate(
-  rate: bigint,
-  appConfig: AppConfig,
-  hyperdrive: HyperdriveConfig,
-) {
+async function calcNetRate({
+  rate,
+  appConfig,
+  hyperdrive,
+  excludeBigShortEnergy,
+}: {
+  rate: bigint;
+  appConfig: AppConfig;
+  excludeBigShortEnergy: boolean;
+  hyperdrive: HyperdriveConfig;
+}) {
   let netRate = rate;
 
   const rewardConfigs = getOpenShortRewardConfigs({
@@ -100,14 +114,23 @@ async function calcNetRate(
 
   if (rewardConfigs?.length) {
     const rewards = await Promise.all(
-      rewardConfigs.map((rewardConfig) =>
-        queryClient.fetchQuery(
-          getRewardResolverQuery({
-            chainId: hyperdrive.chainId,
-            rewardConfig,
-          }),
+      rewardConfigs
+        .filter((rewardConfig) => {
+          if (!excludeBigShortEnergy) {
+            return true;
+          }
+          return (
+            excludeBigShortEnergy && rewardConfig.id !== "bigShortEnergyRewards"
+          );
+        })
+        .map((rewardConfig) =>
+          queryClient.fetchQuery(
+            getRewardResolverQuery({
+              chainId: hyperdrive.chainId,
+              rewardConfig,
+            }),
+          ),
         ),
-      ),
     );
 
     rewards.flat().forEach((reward) => {

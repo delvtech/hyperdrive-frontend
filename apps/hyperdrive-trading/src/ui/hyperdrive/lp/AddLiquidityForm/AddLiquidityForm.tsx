@@ -129,7 +129,7 @@ export function AddLiquidityForm({
   const lpSharePrice = !isBaseActiveToken
     ? fixed(poolInfo?.lpSharePrice || 0n, baseToken.decimals).div(
         poolInfo?.vaultSharePrice || 0n,
-        baseToken.decimals
+        baseToken.decimals,
       ).bigint
     : poolInfo?.lpSharePrice || 0n;
 
@@ -219,7 +219,7 @@ export function AddLiquidityForm({
                   balance:
                     activeTokenPrice && depositAmountAsBigInt
                       ? fixed(depositAmountAsBigInt, activeToken.decimals).mul(
-                          activeTokenPrice
+                          activeTokenPrice,
                         ).bigint
                       : 0n,
                   decimals: activeToken.decimals,
@@ -318,7 +318,7 @@ export function AddLiquidityForm({
       disclaimer={(() => {
         if (
           previewAddLiquidityError?.message.includes(
-            "Not enough lp shares minted."
+            "Not enough lp shares minted.",
           )
         ) {
           return (
@@ -505,6 +505,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
+    excludeBigShortEnergy: true,
   });
 
   const yieldSource = getYieldSource({
