@@ -13,5 +13,6 @@ export const Route = createFileRoute(LANDING_ROUTE)({
   validateSearch: z.object({
     chains: z.array(z.number()).optional(),
     assets: z.array(z.string()).optional(),
+    lowTvl: z.boolean().optional(),
   }),
 });

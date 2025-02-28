@@ -1,3 +1,4 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   AdjustmentsHorizontalIcon,
   BarsArrowDownIcon,
@@ -16,10 +17,15 @@ import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
 import { sortOptions, usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { useAccount } from "wagmi";
+
 export function PoolsList(): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfigForConnectedChain();
-  const { chains: selectedChains, assets: selectedAssets } = useSearch({
+  const {
+    chains: selectedChains,
+    assets: selectedAssets,
+    lowTvl,
+  } = useSearch({
     from: LANDING_ROUTE,
   });
   const {
@@ -32,6 +38,10 @@ export function PoolsList(): ReactElement {
   } = usePoolsList({
     selectedChains,
     selectedAssets,
+    lowTvl: {
+      enabled: lowTvl,
+      threshold: parseFixed(10_000),
+    },
   });
 
   const navigate = useNavigate({ from: LANDING_ROUTE });
@@ -151,6 +161,36 @@ export function PoolsList(): ReactElement {
                   />
                 )}
 
+                {/* Low TVL filter */}
+                <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600">
+                  <label className="flex cursor-pointer items-center gap-2">
+                    <span className="daisy-label-text">Low TVL</span>
+                    <input
+                      type="checkbox"
+                      className="daisy-toggle daisy-toggle-sm"
+                      defaultChecked={lowTvl}
+                      onChange={(e) => {
+                        window.plausible("filterChange", {
+                          props: {
+                            name: "lowTvl",
+                            value: String(e.target.checked),
+                            connectedWallet: account,
+                          },
+                        });
+                        navigate({
+                          search: (current) => {
+                            return {
+                              ...current,
+                              lowTvl: e.target.checked,
+                            };
+                          },
+                        });
+                      }}
+                    />
+                  </label>
+                </span>
+
+                {/* Matching pools count */}
                 <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
                   {pools.length}
                   {pools.length === 1 ? " pool" : " pools"}
