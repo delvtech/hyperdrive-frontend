@@ -71,7 +71,7 @@ export function PoolsList(): ReactElement {
         ) : pools ? (
           <>
             {/* List controls */}
-            <div className="relative z-20 flex items-center justify-between gap-10">
+            <div className="relative z-20 flex items-center justify-between gap-2">
               {/* Filters */}
               <div className="flex items-center gap-2">
                 <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
@@ -165,7 +165,7 @@ export function PoolsList(): ReactElement {
                 {/* Low TVL filter */}
                 <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600">
                   <label className="flex cursor-pointer items-center gap-2">
-                    <span className="daisy-label-text">Low TVL</span>
+                    <span className="daisy-label-text">Hide low TVL</span>
                     <input
                       type="checkbox"
                       title={`Show pools with less than ${lowTvlThreshold.format()} in TVL`}
