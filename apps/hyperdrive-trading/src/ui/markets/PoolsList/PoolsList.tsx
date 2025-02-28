@@ -28,6 +28,7 @@ export function PoolsList(): ReactElement {
   } = useSearch({
     from: LANDING_ROUTE,
   });
+  const lowTvlThreshold = parseFixed(10_000);
   const {
     filters,
     status,
@@ -40,7 +41,7 @@ export function PoolsList(): ReactElement {
     selectedAssets,
     lowTvl: {
       enabled: lowTvl,
-      threshold: parseFixed(10_000),
+      threshold: lowTvlThreshold,
     },
   });
 
@@ -167,6 +168,7 @@ export function PoolsList(): ReactElement {
                     <span className="daisy-label-text">Low TVL</span>
                     <input
                       type="checkbox"
+                      title={`Show pools with less than ${lowTvlThreshold.format()} in TVL`}
                       className="daisy-toggle daisy-toggle-sm"
                       defaultChecked={lowTvl}
                       onChange={(e) => {
