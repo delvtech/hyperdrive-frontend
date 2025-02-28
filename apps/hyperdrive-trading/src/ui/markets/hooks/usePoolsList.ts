@@ -48,11 +48,11 @@ type SortOption = (typeof sortOptions)[number];
 export function usePoolsList({
   selectedAssets,
   selectedChains,
-  lowTvl,
+  hideLowTvl,
 }: {
   selectedAssets: string[] | undefined;
   selectedChains: number[] | undefined;
-  lowTvl: {
+  hideLowTvl?: {
     enabled: boolean | undefined;
     threshold: FixedPoint;
   };
@@ -97,7 +97,7 @@ export function usePoolsList({
     enabled: isSortingEnabled,
     sortOption,
     filters: {
-      tvl: lowTvl.enabled ? fixed(0) : lowTvl.threshold,
+      tvl: hideLowTvl?.enabled ? hideLowTvl?.threshold : undefined,
     },
   });
 
@@ -121,7 +121,7 @@ function useSortedPools({
   enabled: boolean;
   sortOption: SortOption | undefined;
   filters: {
-    tvl: FixedPoint;
+    tvl?: FixedPoint;
   };
 }) {
   const appConfig = useAppConfigForConnectedChain();
@@ -175,13 +175,15 @@ function useSortedPools({
         }
       : undefined,
     select: (poolsWithData) => {
-      return poolsWithData
-        .filter((pool) => {
-          const tvl = pool.tvl.fiat
-            ? fixed(pool.tvl.fiat)
-            : fixed(pool.tvl.base, pool.hyperdrive.decimals);
-          return tvl.gte(filters.tvl);
-        })
+      const filteredPools = !!filters.tvl
+        ? poolsWithData.filter((pool) => {
+            const tvl = pool.tvl.fiat
+              ? fixed(pool.tvl.fiat)
+              : fixed(pool.tvl.base, pool.hyperdrive.decimals);
+            return tvl.gte(filters.tvl!);
+          })
+        : poolsWithData;
+      return filteredPools
         .toSorted((a, b) => {
           switch (sortOption) {
             case "Chain":

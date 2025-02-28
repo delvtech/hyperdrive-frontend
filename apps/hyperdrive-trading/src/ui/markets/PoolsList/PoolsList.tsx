@@ -28,7 +28,7 @@ export function PoolsList(): ReactElement {
   const {
     chains: selectedChains,
     assets: selectedAssets,
-    lowTvl,
+    hideLowTvl = true,
   } = useSearch({
     from: LANDING_ROUTE,
   });
@@ -43,8 +43,8 @@ export function PoolsList(): ReactElement {
   } = usePoolsList({
     selectedChains,
     selectedAssets,
-    lowTvl: {
-      enabled: lowTvl,
+    hideLowTvl: {
+      enabled: hideLowTvl,
       threshold: lowTvlThreshold,
     },
   });
@@ -180,17 +180,17 @@ export function PoolsList(): ReactElement {
                 <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600 py-2 sm:py-1">
                   <label className="flex h-full cursor-pointer flex-col content-center items-center gap-2 sm:flex-row">
                     <span className="daisy-label-text text-nowrap text-center">
-                      Hide ow TVL
+                      Hide low TVL
                     </span>
                     <input
                       type="checkbox"
-                      title={`Show pools with less than ${lowTvlThreshold.format()} in TVL`}
+                      title={`Hide pools with less than ${lowTvlThreshold.format()} in TVL`}
                       className="daisy-toggle daisy-toggle-sm"
-                      defaultChecked={lowTvl}
+                      defaultChecked={hideLowTvl}
                       onChange={(e) => {
                         window.plausible("filterChange", {
                           props: {
-                            name: "lowTvl",
+                            name: "Hide low TVL",
                             value: String(e.target.checked),
                             connectedWallet: account,
                           },
@@ -199,7 +199,7 @@ export function PoolsList(): ReactElement {
                           search: (current) => {
                             return {
                               ...current,
-                              lowTvl: e.target.checked,
+                              hideLowTvl: e.target.checked,
                             };
                           },
                         });
