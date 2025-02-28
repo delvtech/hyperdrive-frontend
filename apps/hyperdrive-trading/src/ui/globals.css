@@ -55,7 +55,4 @@ div[data-rk] {
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
-  .gradient-hypervue {
-    @apply from-hypervue-red to-hypervue-pink bg-gradient-to-r;
-  }
 }
