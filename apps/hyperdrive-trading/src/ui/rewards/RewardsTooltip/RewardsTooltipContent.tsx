@@ -5,6 +5,7 @@ import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
 import { assertNever } from "src/base/assertNever";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
@@ -104,6 +105,11 @@ export function RewardsTooltipContent({
               appConfig,
             })!;
 
+            const formattedApy = fixed(reward.apy).format({
+              percent: true,
+              decimals: 2,
+            });
+
             return (
               <div
                 key={reward.tokenAddress}
@@ -119,13 +125,18 @@ export function RewardsTooltipContent({
                 </div>
 
                 <div className="grid justify-items-end">
-                  <p className="flex items-center gap-1">
-                    +
-                    {fixed(reward.apy).format({
-                      percent: true,
-                      decimals: 2,
-                    })}
-                  </p>
+                  {reward.moreInfoUrl ? (
+                    <ExternalLink
+                      className="daisy-link-hover flex items-center gap-1"
+                      href={reward.moreInfoUrl}
+                      newTab
+                      icon
+                    >
+                      +{formattedApy}
+                    </ExternalLink>
+                  ) : (
+                    <p className="flex items-center gap-1">+{formattedApy}</p>
+                  )}
                 </div>
               </div>
             );
