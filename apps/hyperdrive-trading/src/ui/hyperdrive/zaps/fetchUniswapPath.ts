@@ -5,10 +5,12 @@ import { ethers } from "ethers";
 export async function fetchUniswapPath({
   tokenIn,
   tokenOut,
+  amountIn,
   recipient,
 }: {
   tokenIn: Token;
   tokenOut: Token;
+  amountIn: bigint;
   recipient: `0x${string}` | undefined;
 }): Promise<`0x${string}` | undefined> {
   const provider = new ethers.providers.JsonRpcProvider(
@@ -21,7 +23,6 @@ export async function fetchUniswapPath({
 
   // Set swap amount: 1 tokenIn (adjust decimals as needed)
   // TODO: make this dynamic based on the amount of tokens in the zap
-  const amountIn = ethers.utils.parseUnits("1", tokenIn.decimals);
   const currencyAmountIn = CurrencyAmount.fromRawAmount(
     tokenIn,
     amountIn.toString(),

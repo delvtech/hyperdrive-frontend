@@ -108,21 +108,40 @@ export function useCloseLongZap({
 
       const swapPath = await fetchUniswapPath({
         tokenIn: new Token(
-          1,
-          "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-          18,
-          "DAI",
-          "Dai Stablecoin",
+          1, // TODO: Use the chainId from the current chain
+          baseToken.address,
+          baseToken.decimals,
+          baseToken.symbol,
+          baseToken.name,
         ),
         tokenOut: new Token(
-          1,
-          "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          6,
-          "USDC",
-          "USD Coin",
+          1, // TODO: Use the chainId from the current chain
+          tokenOut.address,
+          tokenOut.decimals,
+          tokenOut.symbol,
+          tokenOut.name,
         ),
         recipient: destination ?? account,
+        amountIn: previewBaseTokenAmountOut,
       });
+
+      // Use the fetched Uniswap path if available, otherwise fall back to direct path
+      const swapPathForParams = swapPath
+        ? swapPath // Uniswap optimal path
+        : encodePacked(
+            // Direct path between tokens with 1% fee
+            ["address", "uint24", "address"],
+            [baseToken.address, 100, tokenOut.address],
+          );
+
+      // Log which path is being used
+      console.log(
+        "Using path:",
+        swapPath ? "Uniswap optimal route" : "Direct fallback route",
+        "\nPath value:",
+        swapPathForParams,
+      );
+      console.log("Swap path used:", swapPathForParams);
 
       try {
         const hash = await drift.write({
@@ -150,12 +169,7 @@ export function useCloseLongZap({
               // amountOutMinimum: minAmountOut ?? 1n,
               amountOutMinimum: 1n,
               deadline: block.timestamp + 60n,
-              path: swapPath
-                ? swapPath
-                : encodePacked(
-                    ["address", "uint24", "address"],
-                    [baseToken.address, 100, tokenOut.address],
-                  ),
+              path: swapPathForParams,
               recipient: destination ?? account,
             },
           },
