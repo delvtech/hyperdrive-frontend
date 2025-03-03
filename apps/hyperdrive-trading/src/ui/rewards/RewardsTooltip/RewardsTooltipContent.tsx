@@ -131,6 +131,7 @@ export function RewardsTooltipContent({
                       href={reward.moreInfoUrl}
                       newTab
                       icon
+                      analyticsName={`Rewards info: ${token.name}`}
                     >
                       +{formattedApy}
                     </ExternalLink>
