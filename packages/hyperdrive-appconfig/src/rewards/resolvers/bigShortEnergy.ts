@@ -35,6 +35,7 @@ export const fetchBigShortEnergyRewards: RewardResolver = async (
       type: "apy",
       apy: apr,
       tokenAddress: baseToken,
+      moreInfoUrl: "https://blog.delv.tech/big-short-energy-2/",
     },
   ];
 };
