@@ -10,8 +10,7 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
    */
   newTab?: boolean;
   /**
-   * The icon to display next to the link text or `true` to use the default
-   * external link icon.
+   * The icon to display next to the link text or `true` for the default icon.
    */
   icon?: ReactElement | boolean;
   /**
