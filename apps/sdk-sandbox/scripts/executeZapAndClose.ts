@@ -18,8 +18,8 @@ const earliestBlock = 20180617n;
 
 // SAMPLE ASSET ID AND MATURITY
 const assetId: bigint =
-  452312848583266388373324160190187140051835877600158453279131187532666742656n;
-const maturity = 1756080000n;
+  452312848583266388373324160190187140051835877600158453279131187532667347456n;
+const maturity = 1756684800n;
 
 const writePool = new ReadWriteHyperdrive({
   address: poolAddress,
@@ -128,7 +128,7 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
     // console.log("Preview base out (raw):", previewBaseAmountOut);
     console.log(
       "Preview base out (formatted):",
-      fixed(previewBaseAmountOut).format()
+      fixed(previewBaseAmountOut).format(),
     );
 
     // Prepare zap swap parameters
@@ -172,6 +172,7 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
     const receipt = await publicClient.waitForTransactionReceipt({
       hash: swapTx,
     });
+    console.log("Receipt status after zap close:", receipt.status);
     await drift.cache.clear();
 
     const openLongDetailsAfterZap = await readPool.getOpenLongDetails({
