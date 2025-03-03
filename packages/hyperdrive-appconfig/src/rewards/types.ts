@@ -52,11 +52,17 @@ export interface InfoReward {
   iconUrl: string;
 }
 
-export type AnyReward =
+export type AnyReward = (
   | ApyReward
   | TokenAmountReward
   | PointMultiplierReward
-  | InfoReward;
+  | InfoReward
+) & {
+  /**
+   * The URL to link to for more information about the reward.
+   */
+  moreInfoUrl?: string;
+};
 
 export type RewardResolver = (
   publicClient: PublicClient,

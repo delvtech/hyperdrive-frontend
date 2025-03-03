@@ -5,6 +5,7 @@ import { ChartBarIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
 import { assertNever } from "src/base/assertNever";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { useIsNewPool } from "src/ui/hyperdrive/hooks/useIsNewPool";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
@@ -53,7 +54,11 @@ export function RewardsTooltipContent({
       ? calculateMarketYieldMultiplier(longPrice)
       : null;
   return (
-    <>
+    <div
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+    >
       <div className="flex justify-between border-b border-neutral-content/30 p-3">
         <p className="gradient-text text-lg">Rate & Rewards</p>
       </div>
@@ -100,6 +105,11 @@ export function RewardsTooltipContent({
               appConfig,
             })!;
 
+            const formattedApy = fixed(reward.apy).format({
+              percent: true,
+              decimals: 2,
+            });
+
             return (
               <div
                 key={reward.tokenAddress}
@@ -115,13 +125,19 @@ export function RewardsTooltipContent({
                 </div>
 
                 <div className="grid justify-items-end">
-                  <p className="flex items-center gap-1">
-                    +
-                    {fixed(reward.apy).format({
-                      percent: true,
-                      decimals: 2,
-                    })}
-                  </p>
+                  {reward.moreInfoUrl ? (
+                    <ExternalLink
+                      className="daisy-link-hover flex items-center gap-1"
+                      href={reward.moreInfoUrl}
+                      newTab
+                      icon
+                      analyticsName={`Rewards info: ${token.name}`}
+                    >
+                      +{formattedApy}
+                    </ExternalLink>
+                  ) : (
+                    <p className="flex items-center gap-1">+{formattedApy}</p>
+                  )}
                 </div>
               </div>
             );
@@ -192,7 +208,7 @@ export function RewardsTooltipContent({
             assertNever(reward);
         }
       })}
-      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none">
+      <div className="flex items-center justify-between border-b border-neutral-content/30 p-3 [&:last-child]:border-none">
         <div className="flex items-center gap-1">
           <SparklesIcon className="h-4" />
           Net APY
@@ -213,7 +229,7 @@ export function RewardsTooltipContent({
           return (
             <div
               key={reward.iconUrl}
-              className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:nth-last-child(2)]:border-none"
+              className="flex flex-col items-start justify-start gap-2 border-b border-neutral-content/30 p-3 [&:last-child]:border-none"
             >
               <div className="flex items-center gap-4">
                 <img
@@ -226,6 +242,6 @@ export function RewardsTooltipContent({
             </div>
           );
         })}
-    </>
+    </div>
   );
 }

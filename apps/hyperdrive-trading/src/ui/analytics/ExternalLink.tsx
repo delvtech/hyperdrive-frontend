@@ -1,3 +1,5 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
+import classNames from "classnames";
 import { ComponentPropsWithoutRef, ReactElement, useRef } from "react";
 import { useAccount } from "wagmi";
 
@@ -7,6 +9,15 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
    * A convenience prop to set the `target` attribute to `_blank` if `true`.
    */
   newTab?: boolean;
+  /**
+   * The icon to display next to the link text or `true` for the default icon.
+   */
+  icon?: ReactElement | boolean;
+  /**
+   * The name to use for the Plausible analytics event. Defaults to the link
+   * text.
+   */
+  analyticsName?: string;
 }
 
 /**
@@ -21,9 +32,12 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
 export function ExternalLink({
   target,
   newTab = target === "_blank",
+  icon,
+  analyticsName,
   rel = "",
   onClick,
   children,
+  className,
   ...rest
 }: ExternalLinkProps): ReactElement {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -38,15 +52,21 @@ export function ExternalLink({
       onClick={(e) => {
         window.plausible("externalLinkClick", {
           props: {
-            name: ref.current?.textContent ?? undefined,
+            name: analyticsName ?? ref.current?.textContent ?? undefined,
             url: rest.href,
             connectedWallet,
           },
         });
         onClick?.(e);
       }}
+      className={classNames("group", className)}
     >
       {children}
+      {icon === true ? (
+        <ArrowTopRightOnSquareIcon className="size-4 opacity-60 group-hover:opacity-100" />
+      ) : (
+        icon && icon
+      )}
     </a>
   );
 }
