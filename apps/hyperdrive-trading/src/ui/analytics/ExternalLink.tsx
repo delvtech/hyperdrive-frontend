@@ -14,6 +14,11 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
    * external link icon.
    */
   icon?: ReactElement | boolean;
+  /**
+   * The name to use for the Plausible analytics event. Defaults to the link
+   * text.
+   */
+  analyticsName?: string;
 }
 
 /**
@@ -29,6 +34,7 @@ export function ExternalLink({
   target,
   newTab = target === "_blank",
   icon,
+  analyticsName,
   rel = "",
   onClick,
   children,
@@ -47,7 +53,7 @@ export function ExternalLink({
       onClick={(e) => {
         window.plausible("externalLinkClick", {
           props: {
-            name: ref.current?.textContent ?? undefined,
+            name: analyticsName ?? ref.current?.textContent ?? undefined,
             url: rest.href,
             connectedWallet,
           },
