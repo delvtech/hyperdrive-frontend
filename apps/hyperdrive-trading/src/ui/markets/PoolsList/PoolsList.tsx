@@ -75,7 +75,7 @@ export function PoolsList(): ReactElement {
         ) : pools ? (
           <>
             {/* List controls */}
-            <div className="relative z-20 flex items-stretch justify-between gap-2">
+            <div className="relative z-20 flex items-stretch justify-between gap-2 sm:items-center">
               {/* Filters */}
               <div className="flex items-stretch gap-2">
                 <AdjustmentsHorizontalIcon className="hidden size-5 sm:mr-1 sm:block" />
