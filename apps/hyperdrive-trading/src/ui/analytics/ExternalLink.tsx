@@ -1,3 +1,5 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
+import classNames from "classnames";
 import { ComponentPropsWithoutRef, ReactElement, useRef } from "react";
 import { useAccount } from "wagmi";
 
@@ -7,6 +9,11 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
    * A convenience prop to set the `target` attribute to `_blank` if `true`.
    */
   newTab?: boolean;
+  /**
+   * The icon to display next to the link text or `true` to use the default
+   * external link icon.
+   */
+  icon?: ReactElement | boolean;
 }
 
 /**
@@ -21,9 +28,11 @@ interface ExternalLinkProps extends ComponentPropsWithoutRef<"a"> {
 export function ExternalLink({
   target,
   newTab = target === "_blank",
+  icon,
   rel = "",
   onClick,
   children,
+  className,
   ...rest
 }: ExternalLinkProps): ReactElement {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -45,8 +54,14 @@ export function ExternalLink({
         });
         onClick?.(e);
       }}
+      className={classNames("group", className)}
     >
       {children}
+      {icon === true ? (
+        <ArrowTopRightOnSquareIcon className="size-4 opacity-60 group-hover:opacity-100" />
+      ) : (
+        icon && icon
+      )}
     </a>
   );
 }
