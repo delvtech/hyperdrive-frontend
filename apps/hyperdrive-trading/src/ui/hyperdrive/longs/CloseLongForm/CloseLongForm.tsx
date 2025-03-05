@@ -200,7 +200,8 @@ export function CloseLongForm({
   const spender = isZapping ? zapsConfig.address : hyperdrive.address;
 
   // ETH doesn't require allowance
-  const requiresAllowance = activeWithdrawToken.address !== ETH_MAGIC_NUMBER;
+  const requiresAllowance =
+    activeWithdrawToken.address !== ETH_MAGIC_NUMBER && isZapping;
   const { tokenAllowance: bondAllowance } = useTokenAllowance({
     account,
     spender,
