@@ -40,7 +40,15 @@ export function getRewardResolverQuery({
       const publicClient = getPublicClient(wagmiConfig as any, {
         chainId,
       }) as PublicClient;
-      return rewardConfig.resolver(publicClient);
+      let rewards: AnyReward[] = [];
+      try {
+        // We use try/catch here because some reward resolvers might throw an
+        // error intermittently, and we don't want to stop the entire query
+        rewards = await rewardConfig.resolver(publicClient);
+      } catch (e) {
+        console.warn("Error loading rewards", e);
+      }
+      return rewards;
     },
   };
 }
