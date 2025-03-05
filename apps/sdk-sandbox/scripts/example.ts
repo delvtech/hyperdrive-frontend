@@ -40,8 +40,8 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
     provider,
   });
 
-  // Swap amount: 1 DAI
-  const amountIn = ethers.utils.parseUnits("1", 18);
+  // Swap amount: 100 DAI
+  const amountIn = ethers.utils.parseUnits("100", 18);
   const currencyAmountIn = CurrencyAmount.fromRawAmount(
     tokenIn,
     amountIn.toString(),
@@ -63,7 +63,6 @@ async function fetchSwapPath(tokenIn: Token, tokenOut: Token) {
   if (route) {
     // Extract the V3 route (which contains tokenPath and poolIdentifiers)
     const v3Route = route.route.find((r) => r.protocol === "V3");
-    console.log(v3Route, "v3Route");
 
     if (v3Route) {
       const tokenPath = v3Route.tokenPath;
