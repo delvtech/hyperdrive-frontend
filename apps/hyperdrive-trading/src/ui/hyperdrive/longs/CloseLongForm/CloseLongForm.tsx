@@ -401,7 +401,7 @@ export function CloseLongForm({
           );
         }
 
-        if (!hasEnoughAllowance) {
+        if (!hasEnoughAllowance && isZapping) {
           return (
             <ApproveTokenChoices
               spender={spender}
