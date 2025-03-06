@@ -23,7 +23,7 @@ const assetId: bigint =
 const maturity = 1756944000n;
 
 const defaultOpenLongAmount = BigInt(20e18);
-const defaultCloseLongAmount = BigInt(26e18);
+const defaultCloseLongAmount = BigInt(10e18);
 
 const writePool = new ReadWriteHyperdrive({
   address: poolAddress,
@@ -134,45 +134,40 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
     // console.log("openLongDetails AFTER openLong:", afterDetails);
 
     // Approve zap (auxiliary) contract to manage the long position
-    // const approvalReceipt = await writePool.contract.write(
-    //   "setApprovalForAll",
-    //   {
-    //     operator: zapsConfig.address,
-    //     approved: true,
-    //   },
-    // );
+    const approvalReceipt = await writePool.contract.write(
+      "setApprovalForAll",
+      {
+        operator: zapsConfig.address,
+        approved: true,
+      },
+    );
 
     const approveAssetId = await writePool.contract.write("setApproval", {
       operator: zapsConfig.address,
       tokenID: assetId,
       amount: maxInt256,
     });
-    // await publicClient.waitForTransactionReceipt({
-    //   hash: approvalReceipt,
-    // });
+    await publicClient.waitForTransactionReceipt({
+      hash: approvalReceipt,
+    });
     await publicClient.waitForTransactionReceipt({
       hash: approveAssetId,
     });
 
-    // const allowanceOfZapsToSpend = await publicClient.readContract({
-    //   address: poolAddress,
-    //   abi: poolContract.abi,
-    //   functionName: "isApprovedForAll",
-    //   args: [account, zapsConfig.address],
-    // });
-    // console.log("allowanceOfZapsToSpend", allowanceOfZapsToSpend);
-
-    const approvalReceipt = await writePool.contract.write(
-      "setApprovalForAll",
-      {
-        operator: zapsConfig.address,
-        approved: false,
-      },
-    );
-
-    await publicClient.waitForTransactionReceipt({
-      hash: approvalReceipt,
+    const allowanceOfZapsToSpend = await publicClient.readContract({
+      address: poolAddress,
+      abi: poolContract.abi,
+      functionName: "isApprovedForAll",
+      args: [account, zapsConfig.address],
     });
+    console.log("allowanceOfZapsToSpend", allowanceOfZapsToSpend);
+
+    // const approvalReceipt = await walletClient?.writeContract({
+    //   abi: writePool.contract.abi,
+    //   address: poolAddress,
+    //   functionName: "setApproval",
+    //   args: [maxInt256, assetId, zapsConfig.address],
+    // });
 
     console.log("Approval tx hash:", approvalReceipt);
 
