@@ -2,20 +2,21 @@
   "name": "hyperdrive-wasm",
   "version": "0.16.0",
   "private": true,
+  "type": "module",
   "license": "AGPL-3.0",
   "scripts": {
-    "build": "ts-node scripts/build.ts ../../packages/hyperdrive-wasm",
+    "build": "tsx scripts/build.ts ../../packages/hyperdrive-wasm",
     "watch": "npm run build && onchange 'src/**/*.rs' -- npm run build"
   },
   "devDependencies": {
     "@hyperdrive/tsconfig": "*",
-    "@types/node": "^20.12.8",
+    "@types/node": "^22.13.9",
     "@types/proper-lockfile": "^4.1.4",
     "onchange": "^7.1.0",
     "proper-lockfile": "^4.1.2",
-    "toml-json": "^1.1.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
+    "smol-toml": "^1.3.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
     "wasm-pkg-build": "^0.5.3"
   }
 }

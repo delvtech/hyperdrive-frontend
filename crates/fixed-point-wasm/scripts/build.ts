@@ -110,9 +110,6 @@ try {
     JSON.stringify(packageJson, null, 2),
   );
 
-  // Remove the .gitignore, we want the compiled wasm to be checked in
-  rmSync(resolve(outDir, ".gitignore"));
-
   // Release the lockfile
   release();
   console.log("Done!");

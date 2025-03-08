@@ -850,356 +850,356 @@ module.exports.__wbindgen_string_new = function (arg0, arg1) {
   const ret = getStringFromWasm0(arg0, arg1);
   return addHeapObject(ret);
 };
-module.exports.__wbg_poolinfo_f674b4ff47cf3881 = function (arg0) {
+module.exports.__wbg_poolinfo_d1c50339108cb204 = function (arg0) {
   const ret = getObject(arg0).poolInfo;
   return addHeapObject(ret);
 };
-module.exports.__wbg_poolconfig_53703338b5baf6f9 = function (arg0) {
+module.exports.__wbg_poolconfig_cf01275bd19467e3 = function (arg0) {
   const ret = getObject(arg0).poolConfig;
   return addHeapObject(ret);
 };
-module.exports.__wbg_apr_7e7d9dd9b3e90490 = function (arg0) {
+module.exports.__wbg_apr_ea5e5661d2eb210b = function (arg0) {
   const ret = getObject(arg0).apr;
   return addHeapObject(ret);
 };
-module.exports.__wbg_positionduration_f0bbb71e645a1bab = function (arg0) {
+module.exports.__wbg_positionduration_5d4801d01ff684a7 = function (arg0) {
   const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_apy_6d35982fcbcc9287 = function (arg0) {
+module.exports.__wbg_apy_e81b159d41ac05bb = function (arg0) {
   const ret = getObject(arg0).apy;
   return addHeapObject(ret);
 };
-module.exports.__wbg_positionduration_42689bcde8452f52 = function (arg0) {
+module.exports.__wbg_positionduration_0f708452e312bbf9 = function (arg0) {
   const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_currenttime_d9a6c391fb7a27a7 = function (arg0) {
+module.exports.__wbg_currenttime_be9f32cac3d32fae = function (arg0) {
   const ret = getObject(arg0).currentTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_price_e357b0329781bed9 = function (arg0) {
+module.exports.__wbg_price_302b243339b584ad = function (arg0) {
   const ret = getObject(arg0).price;
   return addHeapObject(ret);
 };
-module.exports.__wbg_positionduration_4b733b17ff9b63ac = function (arg0) {
+module.exports.__wbg_positionduration_de7f72119ffda336 = function (arg0) {
   const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_currenttime_57a06c053653e1e1 = function (arg0) {
+module.exports.__wbg_currenttime_4147f7fa260720e2 = function (arg0) {
   const ret = getObject(arg0).currentTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_contribution_2b4f07f35fa385fe = function (arg0) {
+module.exports.__wbg_contribution_ce6db9a0cd13654b = function (arg0) {
   const ret = getObject(arg0).contribution;
   return addHeapObject(ret);
 };
-module.exports.__wbg_asbase_c51dd8355d10c11f = function (arg0) {
+module.exports.__wbg_asbase_64ffe5935d105a21 = function (arg0) {
   const ret = getObject(arg0).asBase;
   return isLikeNone(ret) ? 0xFFFFFF : ret ? 1 : 0;
 };
-module.exports.__wbg_minlpshareprice_745cf415e75f8a01 = function (arg0) {
+module.exports.__wbg_minlpshareprice_e9866265f546af38 = function (arg0) {
   const ret = getObject(arg0).minLpSharePrice;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
-module.exports.__wbg_minapr_c86cf17354483eee = function (arg0) {
+module.exports.__wbg_minapr_1d7f6c030aa25b3e = function (arg0) {
   const ret = getObject(arg0).minApr;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
-module.exports.__wbg_maxapr_8ab14316b2b102e4 = function (arg0) {
+module.exports.__wbg_maxapr_6d6e07a592274f09 = function (arg0) {
   const ret = getObject(arg0).maxApr;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
-module.exports.__wbg_budget_7ff300c4bccac295 = function (arg0) {
+module.exports.__wbg_budget_f96051b09f55775c = function (arg0) {
   const ret = getObject(arg0).budget;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_2998a5471c105e58 = function (arg0) {
+module.exports.__wbg_openvaultshareprice_dcc48d765c59e58c = function (arg0) {
   const ret = getObject(arg0).openVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_checkpointexposure_4a32fedd5e95730c = function (arg0) {
+module.exports.__wbg_checkpointexposure_707cda52ec17c2d4 = function (arg0) {
   const ret = getObject(arg0).checkpointExposure;
   return addHeapObject(ret);
 };
-module.exports.__wbg_conservativeprice_a8b6132d42841d20 = function (arg0) {
+module.exports.__wbg_conservativeprice_5d36b9a584baadf7 = function (arg0) {
   const ret = getObject(arg0).conservativePrice;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
-module.exports.__wbg_maxiterations_f617db5d18287e9a = function (arg0) {
+module.exports.__wbg_maxiterations_a3dae0873cf00796 = function (arg0) {
   const ret = getObject(arg0).maxIterations;
   return isLikeNone(ret) ? 0xFFFFFF : ret;
 };
-module.exports.__wbg_checkpointexposure_e64f06867a56e8a3 = function (arg0) {
+module.exports.__wbg_checkpointexposure_1d1902acb7eea276 = function (arg0) {
   const ret = getObject(arg0).checkpointExposure;
   return addHeapObject(ret);
 };
-module.exports.__wbg_maxiterations_77a1bff238c55759 = function (arg0, arg1) {
+module.exports.__wbg_maxiterations_655eb33a3d8fca51 = function (arg0, arg1) {
   const ret = getObject(arg1).maxIterations;
   getInt32Memory0()[arg0 / 4 + 1] = isLikeNone(ret) ? 0 : ret;
   getInt32Memory0()[arg0 / 4 + 0] = !isLikeNone(ret);
 };
-module.exports.__wbg_bondamount_75e8b0532b4f6e97 = function (arg0) {
+module.exports.__wbg_bondamount_39949cf2713240c0 = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_2f866dce6a452451 = function (arg0) {
+module.exports.__wbg_openvaultshareprice_07553e2c7ba55424 = function (arg0) {
   const ret = getObject(arg0).openVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_9bad012cec592b12 = function (arg0) {
+module.exports.__wbg_bondamount_80bd054fa5e57795 = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_8f42bffe79e7c78e = function (arg0) {
+module.exports.__wbg_bondamount_45f632e33d563dad = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_992040d441c1d176 = function (arg0) {
+module.exports.__wbg_openvaultshareprice_8122157ff7aa0c9f = function (arg0) {
   const ret = getObject(arg0).openVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_variableapy_03eefdcc15e11a42 = function (arg0) {
+module.exports.__wbg_variableapy_f79f84b536b46a47 = function (arg0) {
   const ret = getObject(arg0).variableApy;
   return addHeapObject(ret);
 };
-module.exports.__wbg_targetbaseamount_3c3c8d8ad95b7605 = function (arg0) {
+module.exports.__wbg_targetbaseamount_516a89103df73064 = function (arg0) {
   const ret = getObject(arg0).targetBaseAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_a36fb3fade3b9c84 = function (arg0) {
+module.exports.__wbg_openvaultshareprice_81b43695851056c2 = function (arg0) {
   const ret = getObject(arg0).openVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_absolutemaxbondamount_d2e197b014725c10 = function (arg0) {
+module.exports.__wbg_absolutemaxbondamount_e580d568ee040ef5 = function (arg0) {
   const ret = getObject(arg0).absoluteMaxBondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_maybetolerance_df507747e3830c21 = function (arg0) {
+module.exports.__wbg_maybetolerance_6d3c852834cc587f = function (arg0) {
   const ret = getObject(arg0).maybeTolerance;
   return isLikeNone(ret) ? 0 : addHeapObject(ret);
 };
-module.exports.__wbg_maybemaxiterations_189430699f3f4593 = function (arg0) {
+module.exports.__wbg_maybemaxiterations_7becd5ca1400f61c = function (arg0) {
   const ret = getObject(arg0).maybeMaxIterations;
   return isLikeNone(ret) ? 0xFFFFFF : ret;
 };
-module.exports.__wbg_curve_eb2742840ebcb56c = function (arg0) {
+module.exports.__wbg_curve_d4852b09915609fe = function (arg0) {
   const ret = getObject(arg0).curve;
   return addHeapObject(ret);
 };
-module.exports.__wbg_flat_cf06809b26a0e357 = function (arg0) {
+module.exports.__wbg_flat_f1fb64e297ce3608 = function (arg0) {
   const ret = getObject(arg0).flat;
   return addHeapObject(ret);
 };
-module.exports.__wbg_governancelp_69beec7767be8c46 = function (arg0) {
+module.exports.__wbg_governancelp_20658b3a41401e71 = function (arg0) {
   const ret = getObject(arg0).governanceLP;
   return addHeapObject(ret);
 };
-module.exports.__wbg_governancezombie_6a8c970793fd9a97 = function (arg0) {
+module.exports.__wbg_governancezombie_7cb0dd066e9bc29e = function (arg0) {
   const ret = getObject(arg0).governanceZombie;
   return addHeapObject(ret);
 };
-module.exports.__wbg_baseamount_4ece0044229bd079 = function (arg0) {
+module.exports.__wbg_baseamount_6bdb37f8cf16a62f = function (arg0) {
   const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_baseamount_2b6e384359c0e45c = function (arg0) {
+module.exports.__wbg_baseamount_67a1ec449e4a8fda = function (arg0) {
   const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_3bcab989220c86b6 = function (arg0) {
+module.exports.__wbg_bondamount_6ff5d93ad16e9c3f = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_maturitytime_4917f699576a2e24 = function (arg0) {
+module.exports.__wbg_maturitytime_714a397c17c3b958 = function (arg0) {
   const ret = getObject(arg0).maturityTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_currenttime_3e344686dfd0784f = function (arg0) {
+module.exports.__wbg_currenttime_211c409d4e3cc661 = function (arg0) {
   const ret = getObject(arg0).currentTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_5cdfc1bca38de684 = function (arg0) {
+module.exports.__wbg_bondamount_395143df49a9c10f = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondamount_18359b2503f6d4db = function (arg0) {
+module.exports.__wbg_bondamount_f06ea3415611e19e = function (arg0) {
   const ret = getObject(arg0).bondAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_openvaultshareprice_014a2cf5f27c8693 = function (arg0) {
+module.exports.__wbg_openvaultshareprice_e57e6ea2b5bb73cf = function (arg0) {
   const ret = getObject(arg0).openVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_closevaultshareprice_f8afd37e1ebaaa0e = function (arg0) {
+module.exports.__wbg_closevaultshareprice_ab051d805b460aba = function (arg0) {
   const ret = getObject(arg0).closeVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_initialvaultshareprice_80f1d02bab6f097b = function (arg0) {
+module.exports.__wbg_initialvaultshareprice_3a3f860bfb9dee04 = function (arg0) {
   const ret = getObject(arg0).initialVaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_minimumsharereserves_dafc122b333170de = function (arg0) {
+module.exports.__wbg_minimumsharereserves_c97e03f796a1f173 = function (arg0) {
   const ret = getObject(arg0).minimumShareReserves;
   return addHeapObject(ret);
 };
-module.exports.__wbg_minimumtransactionamount_341002ea641383d9 = function (arg0) {
+module.exports.__wbg_minimumtransactionamount_3c1ab7b38606a7a3 = function (arg0) {
   const ret = getObject(arg0).minimumTransactionAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_circuitbreakerdelta_8fe51e10c8d4c18a = function (arg0) {
+module.exports.__wbg_circuitbreakerdelta_eb8afe641128a095 = function (arg0) {
   const ret = getObject(arg0).circuitBreakerDelta;
   return addHeapObject(ret);
 };
-module.exports.__wbg_positionduration_f46c3bbd10d78a53 = function (arg0) {
+module.exports.__wbg_positionduration_17206d28262060f6 = function (arg0) {
   const ret = getObject(arg0).positionDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_checkpointduration_cbc655f040932234 = function (arg0) {
+module.exports.__wbg_checkpointduration_3724b58b6a0f7e1a = function (arg0) {
   const ret = getObject(arg0).checkpointDuration;
   return addHeapObject(ret);
 };
-module.exports.__wbg_timestretch_2be55cd5cf37cb9e = function (arg0) {
+module.exports.__wbg_timestretch_45005af88610590f = function (arg0) {
   const ret = getObject(arg0).timeStretch;
   return addHeapObject(ret);
 };
-module.exports.__wbg_fees_1f98991d4d602650 = function (arg0) {
+module.exports.__wbg_fees_a78115ca3fb6ae73 = function (arg0) {
   const ret = getObject(arg0).fees;
   return addHeapObject(ret);
 };
-module.exports.__wbg_checkpointrewarder_029db606d3fbf350 = function (arg0, arg1) {
+module.exports.__wbg_checkpointrewarder_a600e31536240197 = function (arg0, arg1) {
   const ret = getObject(arg1).checkpointRewarder;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_feecollector_d575523eef9ec83a = function (arg0, arg1) {
+module.exports.__wbg_feecollector_21321ea3f6baf5b9 = function (arg0, arg1) {
   const ret = getObject(arg1).feeCollector;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_sweepcollector_57ae70ac80d457d5 = function (arg0, arg1) {
+module.exports.__wbg_sweepcollector_e3d7a2b012a5066e = function (arg0, arg1) {
   const ret = getObject(arg1).sweepCollector;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_governance_65707d475e34bee1 = function (arg0, arg1) {
+module.exports.__wbg_governance_59542dfd5eb2f8c2 = function (arg0, arg1) {
   const ret = getObject(arg1).governance;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_basetoken_7b5e1420855478e7 = function (arg0, arg1) {
+module.exports.__wbg_basetoken_61f50370a0057676 = function (arg0, arg1) {
   const ret = getObject(arg1).baseToken;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_vaultsharestoken_e27fe9173be44106 = function (arg0, arg1) {
+module.exports.__wbg_vaultsharestoken_1187935d83cb98ab = function (arg0, arg1) {
   const ret = getObject(arg1).vaultSharesToken;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_linkerfactory_93da8c0071e26eda = function (arg0, arg1) {
+module.exports.__wbg_linkerfactory_2d721a3cea8520e4 = function (arg0, arg1) {
   const ret = getObject(arg1).linkerFactory;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_linkercodehash_957563aafd8c1751 = function (arg0, arg1) {
+module.exports.__wbg_linkercodehash_57a63fa4ef9fd58b = function (arg0, arg1) {
   const ret = getObject(arg1).linkerCodeHash;
   const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
   const len1 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len1;
   getInt32Memory0()[arg0 / 4 + 0] = ptr1;
 };
-module.exports.__wbg_lptotalsupply_823eefe4f00aa977 = function (arg0) {
+module.exports.__wbg_lptotalsupply_ad1a760795273a86 = function (arg0) {
   const ret = getObject(arg0).lpTotalSupply;
   return addHeapObject(ret);
 };
-module.exports.__wbg_lpshareprice_f887619b5932ca30 = function (arg0) {
+module.exports.__wbg_lpshareprice_d9b39949e33a06e8 = function (arg0) {
   const ret = getObject(arg0).lpSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_bondreserves_bceb7aec3912ba6b = function (arg0) {
+module.exports.__wbg_bondreserves_159480d77ed8f09c = function (arg0) {
   const ret = getObject(arg0).bondReserves;
   return addHeapObject(ret);
 };
-module.exports.__wbg_sharereserves_67e9b017ec505f41 = function (arg0) {
+module.exports.__wbg_sharereserves_fa39ec77de114a06 = function (arg0) {
   const ret = getObject(arg0).shareReserves;
   return addHeapObject(ret);
 };
-module.exports.__wbg_shareadjustment_810469030b2053ab = function (arg0) {
+module.exports.__wbg_shareadjustment_70c8024ab89b7821 = function (arg0) {
   const ret = getObject(arg0).shareAdjustment;
   return addHeapObject(ret);
 };
-module.exports.__wbg_vaultshareprice_9a73f604734fba08 = function (arg0) {
+module.exports.__wbg_vaultshareprice_466cbbb5755d50de = function (arg0) {
   const ret = getObject(arg0).vaultSharePrice;
   return addHeapObject(ret);
 };
-module.exports.__wbg_longexposure_816cba497f771bd5 = function (arg0) {
+module.exports.__wbg_longexposure_1a8fd022c16f1e41 = function (arg0) {
   const ret = getObject(arg0).longExposure;
   return addHeapObject(ret);
 };
-module.exports.__wbg_longsoutstanding_db5d35f065955e30 = function (arg0) {
+module.exports.__wbg_longsoutstanding_da3f5f624fddf653 = function (arg0) {
   const ret = getObject(arg0).longsOutstanding;
   return addHeapObject(ret);
 };
-module.exports.__wbg_longaveragematuritytime_ee2f1fb2959d827a = function (arg0) {
+module.exports.__wbg_longaveragematuritytime_60d5e28e7ef6ed58 = function (arg0) {
   const ret = getObject(arg0).longAverageMaturityTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_shortsoutstanding_525bea9b067db5aa = function (arg0) {
+module.exports.__wbg_shortsoutstanding_9f1bf6839ed7bf12 = function (arg0) {
   const ret = getObject(arg0).shortsOutstanding;
   return addHeapObject(ret);
 };
-module.exports.__wbg_shortaveragematuritytime_247f928bf48ad17c = function (arg0) {
+module.exports.__wbg_shortaveragematuritytime_ae7f2a1e3d547192 = function (arg0) {
   const ret = getObject(arg0).shortAverageMaturityTime;
   return addHeapObject(ret);
 };
-module.exports.__wbg_withdrawalsharesreadytowithdraw_723419c69269b4a6 = function (arg0) {
+module.exports.__wbg_withdrawalsharesreadytowithdraw_8ef2dd51f43ba439 = function (arg0) {
   const ret = getObject(arg0).withdrawalSharesReadyToWithdraw;
   return addHeapObject(ret);
 };
-module.exports.__wbg_withdrawalsharesproceeds_6995611d9e31abd2 = function (arg0) {
+module.exports.__wbg_withdrawalsharesproceeds_9b11adf03591d399 = function (arg0) {
   const ret = getObject(arg0).withdrawalSharesProceeds;
   return addHeapObject(ret);
 };
-module.exports.__wbg_zombiebaseproceeds_158e847c735fef65 = function (arg0) {
+module.exports.__wbg_zombiebaseproceeds_a168facf4faba434 = function (arg0) {
   const ret = getObject(arg0).zombieBaseProceeds;
   return addHeapObject(ret);
 };
-module.exports.__wbg_zombiesharereserves_0c3cb87347c4e8bb = function (arg0) {
+module.exports.__wbg_zombiesharereserves_e325c92cd907163f = function (arg0) {
   const ret = getObject(arg0).zombieShareReserves;
   return addHeapObject(ret);
 };
-module.exports.__wbg_budget_43d76e32c997fa9f = function (arg0) {
+module.exports.__wbg_budget_f0625c53486693e2 = function (arg0) {
   const ret = getObject(arg0).budget;
   return addHeapObject(ret);
 };
-module.exports.__wbg_checkpointexposure_71dfa8c199e26a34 = function (arg0) {
+module.exports.__wbg_checkpointexposure_28fc9d166dc2d912 = function (arg0) {
   const ret = getObject(arg0).checkpointExposure;
   return addHeapObject(ret);
 };
-module.exports.__wbg_maxiterations_2e7c3e15dc92cbc3 = function (arg0) {
+module.exports.__wbg_maxiterations_2103e72d3a59378a = function (arg0) {
   const ret = getObject(arg0).maxIterations;
   return isLikeNone(ret) ? 0xFFFFFF : ret;
 };
-module.exports.__wbg_baseamount_b5e1e85d42170391 = function (arg0) {
+module.exports.__wbg_baseamount_3eac047b98e9d287 = function (arg0) {
   const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
-module.exports.__wbg_baseamount_8faddf517c21e61f = function (arg0) {
+module.exports.__wbg_baseamount_01d607b23ea12c99 = function (arg0) {
   const ret = getObject(arg0).baseAmount;
   return addHeapObject(ret);
 };
