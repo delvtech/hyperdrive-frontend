@@ -1,4 +1,4 @@
-import { parseFixed } from "src/base/fixedPoint";
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { ETH_MAGIC_NUMBER } from "src/tokens/ETH_MAGIC_NUMBER";
 import { PriceOracleFn } from "src/tokens/types";
 import { base, gnosis, linea, mainnet } from "viem/chains";
