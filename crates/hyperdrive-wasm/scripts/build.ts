@@ -177,8 +177,8 @@ function buildPackageJsonFromCargoToml(
         default: {
           require: `./${filePrefix}.cjs`,
           import: `./${filePrefix}.js`,
+          types: `./${filePrefix}.d.ts`,
         },
-        types: `./${filePrefix}.d.ts`,
       },
     },
     // Explicitly set the publishConfig access to public to ensure it's published

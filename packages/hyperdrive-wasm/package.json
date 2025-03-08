@@ -23,9 +23,9 @@
     ".": {
       "default": {
         "require": "./hyperdrive_wasm.cjs",
-        "import": "./hyperdrive_wasm.js"
-      },
-      "types": "./hyperdrive_wasm.d.ts"
+        "import": "./hyperdrive_wasm.js",
+        "types": "./hyperdrive_wasm.d.ts"
+      }
     }
   },
   "publishConfig": {
