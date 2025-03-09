@@ -7,6 +7,7 @@ import {
   ContractWriteOptions,
   Event,
 } from "@delvtech/evm-client";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { Address } from "abitype";
 import { assertNever } from "src/base/assertNever";
 import { MAX_UINT256, SECONDS_PER_YEAR } from "src/base/constants";
@@ -21,7 +22,6 @@ import {
 import { HyperdriveSdkError } from "src/errors/HyperdriveSdkError";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
-import { fixed } from "src/fixed-point";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/base/abi";
 import { MAX_ITERATIONS, NULL_BYTES } from "src/hyperdrive/constants";
 import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";

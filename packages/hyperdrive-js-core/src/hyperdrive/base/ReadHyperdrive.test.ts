@@ -1,6 +1,6 @@
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { CheckpointEvent } from "src/checkpoint/types";
-import { fixed, parseFixed } from "src/fixed-point";
 import { setupReadHyperdrive } from "src/hyperdrive/base/testing/setupReadHyperdrive";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import {

@@ -1,12 +1,14 @@
 #!/usr/bin/env node
-import { spawnSync } from "child_process";
-import { readFileSync, renameSync, rmSync, writeFileSync } from "fs";
-import { basename, resolve } from "path";
+import { spawnSync } from "node:child_process";
+import { readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { basename, dirname, resolve } from "node:path";
 import lockfile from "proper-lockfile";
 import { CargoToml, PackageJson } from "scripts/types";
-import tomlJson from "toml-json";
+import { parse } from "smol-toml";
 import { version } from "../package.json";
 
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = dirname(__filename);
 const script = basename(__filename);
 
 // SETTINGS
@@ -73,11 +75,11 @@ async function build() {
 
   // Load the Cargo.toml file.
   const cargoManifestPath = resolve(__dirname, "../Cargo.toml");
-  const cargoToml = tomlJson({
-    fileUrl: cargoManifestPath,
-  }) as CargoToml;
+  const cargoTomlSrc = readFileSync(cargoManifestPath, "utf8");
+  const cargoToml = parse(cargoTomlSrc) as unknown as CargoToml;
 
   // Update the version in the Cargo.toml file.
+  cargoToml.package.version = version;
   writeFileSync(
     cargoManifestPath,
     readFileSync(cargoManifestPath, "utf8").replace(
@@ -177,8 +179,8 @@ function buildPackageJsonFromCargoToml(
         default: {
           require: `./${filePrefix}.cjs`,
           import: `./${filePrefix}.js`,
+          types: `./${filePrefix}.d.ts`,
         },
-        types: `./${filePrefix}.d.ts`,
       },
     },
     // Explicitly set the publishConfig access to public to ensure it's published

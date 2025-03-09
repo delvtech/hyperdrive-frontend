@@ -1,6 +1,6 @@
+import { fixed, FixedPoint, parseFixed } from "@delvtech/fixed-point-wasm";
 import { Address } from "abitype";
 import { gql, request } from "graphql-request";
-import { fixed, FixedPoint, parseFixed } from "src/base/fixedPoint";
 import {
   AnyReward,
   ApyReward,

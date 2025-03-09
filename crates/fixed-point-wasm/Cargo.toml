@@ -2,9 +2,10 @@
 name = "fixed-point-wasm"
 # This version will be overwritten by the build script to match the version in
 # the crate's package.json which is managed by changesets.
-version = "0.0.6"
+version = "0.0.7"
 edition = "2021"
 license = "AGPL-3.0"
+authors = ["Ryan Goree <ryan@delv.tech>"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -28,5 +29,5 @@ rand = "0.8.5"
 fixedpointmath = "0.18.1"
 
 # workspace
-ts-macro = { path = "../ts-macro" }
 delv-core = { path = "../delv-core" }
+ts-macro = { path = "../ts-macro" }

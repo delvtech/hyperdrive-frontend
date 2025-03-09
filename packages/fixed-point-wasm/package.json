@@ -1,18 +1,31 @@
 {
   "name": "@delvtech/fixed-point-wasm",
+  "collaborators": [
+    "Ryan Goree <ryan@delv.tech>"
+  ],
   "version": "0.0.7",
   "license": "AGPL-3.0",
   "files": [
     "fixed_point_wasm.js",
-    "fixed_point_wasm.d.ts"
+    "fixed_point_wasm.cjs",
+    "fixed_point_wasm.d.ts",
+    "fixed_point_wasm_bg.wasm"
   ],
-  "module": "fixed_point_wasm.js",
-  "types": "fixed_point_wasm.d.ts",
   "sideEffects": [
     "./snippets/*"
   ],
   "type": "module",
-  "main": "fixed_point_wasm.js",
+  "main": "fixed_point_wasm.cjs",
+  "types": "fixed_point_wasm.d.ts",
+  "exports": {
+    ".": {
+      "default": {
+        "require": "./fixed_point_wasm.cjs",
+        "import": "./fixed_point_wasm.js",
+        "types": "./fixed_point_wasm.d.ts"
+      }
+    }
+  },
   "publishConfig": {
     "access": "public"
   }

@@ -1,5 +1,5 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
-import { parseFixed } from "src/fixed-point";
 import { expect, test } from "vitest";
 
 test("should return adjusted amount down when given a basic input", () => {
