@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-appconfig
 
+## 0.1.1
+
+### Patch Changes
+
+- 91c7f98: Added optional `moreInfoUrl` to `AnyRewards`
+
 ## 0.1.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # @delvtech/hyperdrive-js
 
+## 0.0.2
+
+### Patch Changes
+
+- 722047a: Add zap logic to ReadHyperdrive
+- Updated dependencies [a2fc913]
+- Updated dependencies [a2fc913]
+  - @delvtech/hyperdrive-wasm@0.16.1
+  - @delvtech/fixed-point-wasm@0.0.8
+
 ## 0.0.1
 
 ### Patch Changes

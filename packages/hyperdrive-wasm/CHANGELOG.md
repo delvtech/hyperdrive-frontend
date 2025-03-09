@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-wasm
 
+## 0.16.1
+
+### Patch Changes
+
+- a2fc913: Fixed type resolution.
+
 ## 0.16.0
 
 ### Minor Changes
