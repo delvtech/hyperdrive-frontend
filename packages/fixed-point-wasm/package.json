@@ -3,7 +3,7 @@
   "collaborators": [
     "Ryan Goree <ryan@delv.tech>"
   ],
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "AGPL-3.0",
   "files": [
     "fixed_point_wasm.js",

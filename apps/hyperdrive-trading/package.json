@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-trading",
   "description": "Trading interface for the hyperdrive protocol.",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "license": "AGPL-3.0",
   "author": {
@@ -30,10 +30,10 @@
   "dependencies": {
     "@delvtech/drift": "^0.0.1-beta.11",
     "@delvtech/drift-viem": "^0.0.1-beta.13",
-    "@delvtech/fixed-point-wasm": "^0.0.7",
+    "@delvtech/fixed-point-wasm": "^0.0.8",
     "addreth": "3.0.1",
-    "@delvtech/hyperdrive-appconfig": "^0.1.0",
-    "@delvtech/hyperdrive-js": "^0.0.1",
+    "@delvtech/hyperdrive-appconfig": "^0.1.1",
+    "@delvtech/hyperdrive-js": "^0.0.2",
     "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
     "@radix-ui/react-tooltip": "^1.1.8",
