@@ -6,6 +6,16 @@ interface BaseReward {
    * The URL to link to for more information about the reward.
    */
   moreInfoUrl?: string;
+
+  /**
+   * When the reward period starts, in seconds
+   */
+  startTimestamp?: number;
+
+  /**
+   * When the reward period ends, in seconds
+   */
+  endTimestamp?: number;
 }
 
 /**
