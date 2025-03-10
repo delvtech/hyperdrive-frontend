@@ -76,6 +76,8 @@
     "react-hot-toast": "^2.4.0",
     "react-loading-skeleton": "^3.3.1",
     "react-use": "^17.4.2",
+    "@floating-ui/react": "0.27.5",
+    "@floating-ui/react-dom": "2.1.2",
     "rollbar": "^2.26.4",
     "semver": "^7.6.3",
     "viem": "^2.22.19",
