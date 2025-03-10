@@ -4,7 +4,6 @@
 
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable react-refresh/only-export-components */
 import {
   autoUpdate,
   flip,
@@ -12,16 +11,16 @@ import {
   FloatingPortal,
   offset,
   Placement,
+  safePolygon,
   shift,
-  useClick,
   useDismiss,
   useFloating,
+  useHover,
   useId,
   useInteractions,
   useMergeRefs,
   useRole,
 } from "@floating-ui/react";
-import "@floating-ui/react-dom";
 import * as React from "react";
 
 interface PopoverOptions {
@@ -32,7 +31,7 @@ interface PopoverOptions {
   onOpenChange?: (open: boolean) => void;
 }
 
-export function usePopover({
+function usePopover({
   initialOpen = false,
   placement = "bottom",
   modal,
@@ -66,13 +65,15 @@ export function usePopover({
 
   const context = data.context;
 
-  const click = useClick(context, {
-    enabled: controlledOpen == null,
+  const hover = useHover(context, {
+    // allows the popover to remain open while user's cursor is inside it
+    // https://floating-ui.com/docs/usehover#handleclose
+    handleClose: safePolygon(),
   });
   const dismiss = useDismiss(context);
   const role = useRole(context);
 
-  const interactions = useInteractions([click, dismiss, role]);
+  const interactions = useInteractions([hover, dismiss, role]);
 
   return React.useMemo(
     () => ({
@@ -101,7 +102,7 @@ type ContextType =
 
 const PopoverContext = React.createContext<ContextType>(null);
 
-export function usePopoverContext() {
+function usePopoverContext() {
   const context = React.useContext(PopoverContext);
 
   if (context == null) {
