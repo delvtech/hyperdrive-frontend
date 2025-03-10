@@ -33,6 +33,7 @@
     "@delvtech/fixed-point-wasm": "^0.0.8",
     "@delvtech/hyperdrive-appconfig": "^0.1.1",
     "@delvtech/hyperdrive-js": "^0.0.2",
+    "@emotion/react": "^11.14.0",
     "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.0.16",
     "@merkl/api": "^0.14.4",
