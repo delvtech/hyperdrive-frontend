@@ -14,19 +14,12 @@ export function RewardsTooltip({
   chainId,
   baseRate,
   netRate,
-  showMiles,
   children,
 }: PropsWithChildren<{
   hyperdriveAddress: Address;
   position: "addLiquidity" | "openShort";
   baseRate: bigint | undefined;
   netRate: bigint | undefined;
-  /**
-   * @deprecated This is a temporary prop that will be removed once appconfig
-   * changes have been made to move rewards onto HyperdriveConfig based on
-   * position type.
-   */
-  showMiles?: boolean;
   chainId: number;
 }>): ReactNode {
   const appConfig = useAppConfigForConnectedChain();
