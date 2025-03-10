@@ -525,7 +525,6 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
             ) : rewards?.length ? (
               <RewardsTooltip
                 position="addLiquidity"
-                showMiles
                 hyperdriveAddress={hyperdrive.address}
                 baseRate={lpApy?.lpApy}
                 netRate={lpApy?.netLpApy}
