@@ -6,10 +6,12 @@ import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation } from "@tanstack/react-query";
+import { Token } from "@uniswap/sdk-core";
 import toast from "react-hot-toast";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { fetchUniswapPath } from "src/ui/hyperdrive/zaps/fetchUniswapPath";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
@@ -55,6 +57,7 @@ export function useCloseLongZap({
   const zapsConfig = appConfig.zaps[chainId];
   const { data: blockNumber } = useBlockNumber();
   const { data: block } = useBlock({ blockNumber });
+
   const isMutationEnabled =
     !!zapsConfig && !!account && !!publicClient && !!walletClient && enabled;
   const baseToken = getBaseToken({
@@ -103,6 +106,25 @@ export function useCloseLongZap({
         }),
       );
 
+      const swapPath = await fetchUniswapPath({
+        tokenIn: new Token(
+          1, // TODO: Use the chainId from the current chain
+          baseToken.address,
+          baseToken.decimals,
+          baseToken.symbol,
+          baseToken.name,
+        ),
+        tokenOut: new Token(
+          1, // TODO: Use the chainId from the current chain
+          tokenOut.address,
+          tokenOut.decimals,
+          tokenOut.symbol,
+          tokenOut.name,
+        ),
+        recipient: destination ?? account,
+        amountIn: previewBaseTokenAmountOut,
+      });
+
       try {
         const hash = await drift.write({
           abi: zapAbi,
@@ -126,13 +148,16 @@ export function useCloseLongZap({
             // swap for base tokens -> zap token
             _swapParams: {
               amountIn: previewBaseTokenAmountOut, // amount of base token
-              // amountOutMinimum: minAmountOut ?? 1n,
-              amountOutMinimum: 1n,
+              amountOutMinimum: minAmountOut ?? 1n,
               deadline: block.timestamp + 60n,
-              path: encodePacked(
-                ["address", "uint24", "address"],
-                [baseToken.address, 100, tokenOut.address],
-              ),
+              // Use the fetched Uniswap path if available, otherwise fall back to direct path
+              path: swapPath
+                ? swapPath
+                : encodePacked(
+                    // Direct path between tokens with 1% fee
+                    ["address", "uint24", "address"],
+                    [baseToken.address, 100, tokenOut.address],
+                  ),
               recipient: destination ?? account,
             },
           },

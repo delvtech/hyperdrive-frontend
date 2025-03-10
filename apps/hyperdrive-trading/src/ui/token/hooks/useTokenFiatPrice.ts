@@ -20,7 +20,7 @@ export function useTokenFiatPrice({
 } {
   const appConfig = useAppConfigForConnectedChain();
   const { data } = useQuery(
-    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled, appConfig }),
+    makeTokenFiatPriceQuery({ chainId, tokenAddress, enabled, appConfig })
   );
   return { fiatPrice: data };
 }
@@ -65,7 +65,7 @@ export function makeTokenFiatPriceQuery({
           return priceOracleFn({
             chainId,
             denomination: "usd",
-            publicClient,
+            publicClient: publicClient as any,
             tokenAddress,
           });
         }

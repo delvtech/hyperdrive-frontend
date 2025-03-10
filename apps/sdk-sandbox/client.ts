@@ -16,6 +16,7 @@ export const publicClient: PublicClient = createPublicClient({
       symbol: "ETH",
       decimals: 18,
     },
+    testnet: true,
     rpcUrls: {
       default: {
         http: [process.env.RPC_URL!],

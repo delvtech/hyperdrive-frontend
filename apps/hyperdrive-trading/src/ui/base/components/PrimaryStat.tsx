@@ -33,7 +33,7 @@ export function PrimaryStat({
     <div
       className={classNames(
         "flex min-w-0 flex-1 shrink-0 flex-col justify-between gap-1",
-        { "items-end": alignment === "right" }
+        { "items-end": alignment === "right" },
       )}
     >
       <div className="flex gap-1">

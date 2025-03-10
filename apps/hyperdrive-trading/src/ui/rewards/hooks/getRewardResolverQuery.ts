@@ -44,7 +44,7 @@ export function getRewardResolverQuery({
       try {
         // We use try/catch here because some reward resolvers might throw an
         // error intermittently, and we don't want to stop the entire query
-        rewards = await rewardConfig.resolver(publicClient);
+        rewards = await rewardConfig.resolver(publicClient as any);
       } catch (e) {
         console.warn("Error loading rewards", e);
       }
