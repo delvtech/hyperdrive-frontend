@@ -125,24 +125,6 @@ export function useCloseLongZap({
         amountIn: previewBaseTokenAmountOut,
       });
 
-      // Use the fetched Uniswap path if available, otherwise fall back to direct path
-      const swapPathForParams = swapPath
-        ? swapPath // Uniswap optimal path
-        : encodePacked(
-            // Direct path between tokens with 1% fee
-            ["address", "uint24", "address"],
-            [baseToken.address, 100, tokenOut.address],
-          );
-
-      // Log which path is being used
-      console.log(
-        "Using path:",
-        swapPath ? "Uniswap optimal route" : "Direct fallback route",
-        "\nPath value:",
-        swapPathForParams,
-      );
-      console.log("Swap path used:", swapPathForParams);
-
       try {
         const hash = await drift.write({
           abi: zapAbi,
@@ -166,10 +148,16 @@ export function useCloseLongZap({
             // swap for base tokens -> zap token
             _swapParams: {
               amountIn: previewBaseTokenAmountOut, // amount of base token
-              // amountOutMinimum: minAmountOut ?? 1n,
-              amountOutMinimum: 1n,
+              amountOutMinimum: minAmountOut ?? 1n,
               deadline: block.timestamp + 60n,
-              path: swapPathForParams,
+              // Use the fetched Uniswap path if available, otherwise fall back to direct path
+              path: swapPath
+                ? swapPath
+                : encodePacked(
+                    // Direct path between tokens with 1% fee
+                    ["address", "uint24", "address"],
+                    [baseToken.address, 100, tokenOut.address],
+                  ),
               recipient: destination ?? account,
             },
           },

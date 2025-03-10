@@ -20,7 +20,6 @@ export function OpenLongsContainer({
   const { openLongPositions, openLongPositionsStatus } = usePortfolioLongsData({
     account,
   });
-  console.log(openLongPositions);
 
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
