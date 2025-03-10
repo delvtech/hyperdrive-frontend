@@ -181,7 +181,15 @@ export const PopoverContent = React.forwardRef<
 
   return (
     <FloatingPortal>
-      <FloatingFocusManager context={floatingContext} modal={context.modal}>
+      <FloatingFocusManager
+        initialFocus={
+          /* Don't set an initial focus element prevents focus styling from
+           * appearing inside the popover when opened */
+          -1
+        }
+        context={floatingContext}
+        modal={context.modal}
+      >
         <div
           ref={ref}
           style={{ ...context.floatingStyles, ...style }}

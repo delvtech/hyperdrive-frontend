@@ -55,7 +55,7 @@ export function PoolStat({
         <PopoverTrigger className="flex w-full items-center whitespace-nowrap">
           {poolStat}
         </PopoverTrigger>
-        <PopoverContent className="h-fit w-72 rounded-[0.6rem] bg-base-200 px-3 py-2 shadow-2xl">
+        <PopoverContent className="z-20 h-fit w-72 rounded-[0.6rem] bg-base-200 px-3 py-2 shadow-2xl">
           {overlay}
         </PopoverContent>
       </Popover>
