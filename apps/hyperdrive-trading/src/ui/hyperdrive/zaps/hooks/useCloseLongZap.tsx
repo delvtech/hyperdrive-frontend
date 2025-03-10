@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { fetchUniswapPath } from "src/ui/hyperdrive/zaps/fetchUniswapPath";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
@@ -21,7 +22,6 @@ import {
   usePublicClient,
   useWalletClient,
 } from "wagmi";
-import { fetchUniswapPath } from "../fetchUniswapPath";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;

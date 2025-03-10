@@ -57,7 +57,6 @@ export async function fetchSwapPath(
       }
 
       const encodedPath = ethers.utils.solidityPack(types, values);
-      console.log("EncodedPath:", encodedPath);
       return encodedPath;
     } else {
       console.log("No V3 route found in the swap path.");

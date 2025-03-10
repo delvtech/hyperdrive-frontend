@@ -21,7 +21,6 @@ export async function fetchUniswapPath({
     provider,
   });
 
-  // Set swap amount: 1 tokenIn (adjust decimals as needed)
   // TODO: make this dynamic based on the amount of tokens in the zap
   const currencyAmountIn = CurrencyAmount.fromRawAmount(
     tokenIn,
@@ -40,8 +39,6 @@ export async function fetchUniswapPath({
       type: SwapType.SWAP_ROUTER_02,
     },
   );
-
-  console.log(routeResult, "routeResult");
 
   if (!routeResult) {
     console.log("No route found");
@@ -73,6 +70,5 @@ export async function fetchUniswapPath({
   }
 
   const encodedPath = ethers.utils.solidityPack(types, values) as `0x${string}`;
-  console.log(encodedPath, "Found an encoded path");
   return encodedPath;
 }
