@@ -13,18 +13,18 @@ export async function fetchUniswapPath({
   amountIn: bigint;
   recipient: `0x${string}` | undefined;
 }): Promise<`0x${string}` | undefined> {
-  const provider = new ethers.providers.JsonRpcProvider(
-    import.meta.env.VITE_MAINNET_RPC_URL!,
+  const provider = new ethers.JsonRpcProvider(
+    import.meta.env.VITE_MAINNET_RPC_URL!
   );
   const router = new AlphaRouter({
     chainId: 1,
-    provider,
+    provider: provider as any,
   });
 
   // TODO: make this dynamic based on the amount of tokens in the zap
   const currencyAmountIn = CurrencyAmount.fromRawAmount(
     tokenIn,
-    amountIn.toString(),
+    amountIn.toString()
   );
 
   // Fetch the route for an exact input swap
@@ -37,7 +37,7 @@ export async function fetchUniswapPath({
       slippageTolerance: new Percent(50, 10000), // 0.50% tolerance
       deadline: Math.floor(Date.now() / 1000) + 1800, // 30 min deadline
       type: SwapType.SWAP_ROUTER_02,
-    },
+    }
   );
 
   if (!routeResult) {
@@ -69,6 +69,6 @@ export async function fetchUniswapPath({
     }
   }
 
-  const encodedPath = ethers.utils.solidityPack(types, values) as `0x${string}`;
+  const encodedPath = ethers.solidityPacked(types, values) as `0x${string}`;
   return encodedPath;
 }
