@@ -24,7 +24,4 @@ export default defineConfig({
     }),
   ],
   publicDir: "src/public",
-  test: {
-    setupFiles: "src/testing/setupTests.ts",
-  },
 });

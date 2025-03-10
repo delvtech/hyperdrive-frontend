@@ -5,7 +5,7 @@
     "Danny Delott <dannyd@delv.tech>",
     "Matt Brown <matt@delv.tech>"
   ],
-  "version": "0.16.0",
+  "version": "0.16.1",
   "license": "AGPL-3.0",
   "files": [
     "hyperdrive_wasm.js",
@@ -23,9 +23,9 @@
     ".": {
       "default": {
         "require": "./hyperdrive_wasm.cjs",
-        "import": "./hyperdrive_wasm.js"
-      },
-      "types": "./hyperdrive_wasm.d.ts"
+        "import": "./hyperdrive_wasm.js",
+        "types": "./hyperdrive_wasm.d.ts"
+      }
     }
   },
   "publishConfig": {

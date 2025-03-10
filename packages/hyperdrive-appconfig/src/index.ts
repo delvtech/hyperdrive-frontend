@@ -35,7 +35,6 @@ export {
   getAddLiquidityRewardConfigs,
   getOpenShortRewardConfigs,
   getRewardConfig,
-  getYieldSourceRewardConfigs,
 } from "src/rewards/selectors";
 export type {
   AnyReward,

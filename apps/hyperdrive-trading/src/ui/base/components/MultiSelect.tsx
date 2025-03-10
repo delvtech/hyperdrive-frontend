@@ -6,26 +6,42 @@ import {
 } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import Fuse from "fuse.js";
-import { ReactElement, ReactNode, useMemo, useRef, useState } from "react";
+import {
+  PropsWithChildren,
+  ReactElement,
+  ReactNode,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { OneOf } from "viem";
 
-export interface MultiSelectProps<T extends OptionValue> {
+export type MultiSelectProps<T extends OptionValue> = {
   selected: T[];
-  /**
-   * The value to show inside the button, representing the selected value, e.g.,
-   * `"4 selected"`.
-   */
-  displayValue: ReactNode;
   options: MultiSelectOption<T>[];
   onChange: (selected: T[]) => void;
-  /**
-   * The value to use for the button's `title` attribute.
-   */
-  title?: string;
   className?: string;
   searchEnabled?: boolean;
-}
+} & OneOf<
+  | {
+      // The button that will open the dropdown
+      button: ReactNode;
+    }
+  | {
+      /**
+       * The value to show inside the button, representing the selected value, e.g.,
+       * `"4 selected"`.
+       */
+      displayValue: ReactNode;
+      /**
+       * The value to use for the button's `title` attribute.
+       */
+      title?: string;
+    }
+>;
 
 export function MultiSelect<T extends OptionValue>({
+  button,
   displayValue,
   selected,
   options,
@@ -54,15 +70,12 @@ export function MultiSelect<T extends OptionValue>({
 
   return (
     <div className={classNames("daisy-dropdown", className)}>
-      <div
-        tabIndex={0}
-        role="button"
-        title={title}
-        className="daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600"
-      >
-        {displayValue}
-        <ChevronDownIcon className="size-5" />
-      </div>
+      {button || (
+        <MultiSelectButton title={title}>
+          {displayValue}
+          <ChevronDownIcon className="hidden size-5 sm:block" />
+        </MultiSelectButton>
+      )}
       <div
         tabIndex={0}
         className="daisy-menu daisy-dropdown-content z-[1] mt-1 gap-2 rounded-lg border border-base-200 bg-base-100 p-2 shadow"
@@ -163,6 +176,29 @@ export function MultiSelect<T extends OptionValue>({
           )}
         </ul>
       </div>
+    </div>
+  );
+}
+
+export function MultiSelectButton({
+  title,
+  className,
+  children,
+}: PropsWithChildren<{
+  title?: string;
+  className?: string;
+}>): ReactNode {
+  return (
+    <div
+      tabIndex={0}
+      role="button"
+      title={title}
+      className={classNames(
+        "daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600 py-1",
+        className,
+      )}
+    >
+      {children}
     </div>
   );
 }

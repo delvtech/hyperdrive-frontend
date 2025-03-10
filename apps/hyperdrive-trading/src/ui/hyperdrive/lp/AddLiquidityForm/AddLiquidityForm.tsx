@@ -505,6 +505,7 @@ function LpApyStat({ hyperdrive }: { hyperdrive: HyperdriveConfig }) {
   const { vaultRate, vaultRateStatus } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
+    excludeBigShortEnergy: true,
   });
 
   const yieldSource = getYieldSource({

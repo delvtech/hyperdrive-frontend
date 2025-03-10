@@ -1,4 +1,5 @@
-import { fixed } from "src/fixed-point";
+import { fixed } from "@delvtech/fixed-point-wasm";
+
 export function calculateMatureLongYieldAfterFees({
   flatFee,
   bondAmount,

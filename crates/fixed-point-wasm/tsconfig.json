@@ -6,10 +6,10 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "target": "ESNext",
-    "module": "NodeNext",
+    "module": "ESNext",
     "resolveJsonModule": true
   }
 }

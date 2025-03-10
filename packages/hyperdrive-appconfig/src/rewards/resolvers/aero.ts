@@ -1,5 +1,5 @@
+import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { parseAbi } from "abitype";
-import { fixed, parseFixed } from "src/base/fixedPoint";
 import { RewardConfig, RewardResolver } from "src/rewards/types";
 import { fetchDefiLlamaTokenPrice } from "src/tokens/priceOracles/defillama";
 import { base } from "viem/chains";

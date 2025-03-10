@@ -1,4 +1,4 @@
-import { fixed } from "src/fixed-point";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { hyperwasm } from "src/hyperwasm";
 
 /**

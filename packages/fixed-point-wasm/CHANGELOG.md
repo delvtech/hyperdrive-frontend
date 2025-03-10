@@ -1,5 +1,11 @@
 # @delvtech/fixed-point-wasm
 
+## 0.0.8
+
+### Patch Changes
+
+- a2fc913: Added support for CJS and removed the need to initiate the package (e.g., `initSync(wasmBuffer)`). This also fixes errors related to a missing '.wasm' module in frameworks like Next.
+
 ## 0.0.7
 
 ### Patch Changes

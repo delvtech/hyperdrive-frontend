@@ -1,6 +1,6 @@
 import { ContractReadOptions } from "@delvtech/evm-client";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { Constructor } from "src/base/types";
-import { fixed } from "src/fixed-point";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,

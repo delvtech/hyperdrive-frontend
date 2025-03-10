@@ -24,7 +24,7 @@
     "postinstall": "npx husky",
     "typecheck": "turbo run typecheck",
     "reset-node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && yarn cache clean && yarn",
-    "release": "yarn build:packages && changeset publish"
+    "release": "sh scripts/release.sh"
   },
   "devDependencies": {
     "@hyperdrive/prettier-config": "*",

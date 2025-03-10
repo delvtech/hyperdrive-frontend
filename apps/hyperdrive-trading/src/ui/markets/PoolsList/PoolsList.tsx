@@ -1,6 +1,8 @@
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import {
   AdjustmentsHorizontalIcon,
   BarsArrowDownIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/20/solid";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useSearch } from "@tanstack/react-router";
@@ -9,19 +11,28 @@ import { ReactElement, ReactNode } from "react";
 import { Fade } from "react-awesome-reveal";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
-import { MultiSelect } from "src/ui/base/components/MultiSelect";
+import {
+  MultiSelect,
+  MultiSelectButton,
+} from "src/ui/base/components/MultiSelect";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
 import { LANDING_ROUTE } from "src/ui/landing/routes";
 import { PoolRow } from "src/ui/markets/PoolRow/PoolRow";
 import { sortOptions, usePoolsList } from "src/ui/markets/hooks/usePoolsList";
 import { useAccount } from "wagmi";
+
 export function PoolsList(): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfigForConnectedChain();
-  const { chains: selectedChains, assets: selectedAssets } = useSearch({
+  const {
+    chains: selectedChains,
+    assets: selectedAssets,
+    hideLowTvl = true,
+  } = useSearch({
     from: LANDING_ROUTE,
   });
+  const lowTvlThreshold = parseFixed(10_000);
   const {
     filters,
     status,
@@ -32,6 +43,10 @@ export function PoolsList(): ReactElement {
   } = usePoolsList({
     selectedChains,
     selectedAssets,
+    hideLowTvl: {
+      enabled: hideLowTvl,
+      threshold: lowTvlThreshold,
+    },
   });
 
   const navigate = useNavigate({ from: LANDING_ROUTE });
@@ -60,14 +75,26 @@ export function PoolsList(): ReactElement {
         ) : pools ? (
           <>
             {/* List controls */}
-            <div className="relative z-20 flex items-center justify-between gap-10">
+            <div className="relative z-20 flex items-stretch justify-between gap-2 sm:items-center">
               {/* Filters */}
-              <div className="flex items-center gap-2">
-                <AdjustmentsHorizontalIcon className="size-5 sm:mr-1" />
+              <div className="flex items-stretch gap-2 sm:items-center">
+                <AdjustmentsHorizontalIcon className="hidden size-5 sm:mr-1 sm:block" />
                 {/* Chain filter */}
                 {filters && filters.chains.length > 1 && (
                   <MultiSelect
-                    title="Filter by chain"
+                    button={
+                      <MultiSelectButton
+                        title="Filter by chain"
+                        className="h-full py-2 sm:py-0"
+                      >
+                        {selectedChains?.length === 1
+                          ? appConfig.chains[selectedChains[0]].name
+                          : `${
+                              selectedChains?.length || filters?.chains.length
+                            } chains`}
+                        <ChevronDownIcon className="hidden size-5 sm:block" />
+                      </MultiSelectButton>
+                    }
                     selected={selectedChains || []}
                     onChange={(chains) => {
                       window.plausible("filterChange", {
@@ -86,13 +113,6 @@ export function PoolsList(): ReactElement {
                         },
                       });
                     }}
-                    displayValue={
-                      selectedChains?.length === 1
-                        ? appConfig.chains[selectedChains[0]].name
-                        : `${
-                            selectedChains?.length || filters?.chains.length
-                          } chains`
-                    }
                     searchEnabled
                     options={filters.chains.map(({ chain, count }) => {
                       return {
@@ -111,7 +131,19 @@ export function PoolsList(): ReactElement {
                 {/* Assets filter */}
                 {filters && filters.assets.length > 1 && (
                   <MultiSelect
-                    title="Filter by deposit asset"
+                    button={
+                      <MultiSelectButton
+                        title="Filter by deposit asset"
+                        className="h-full py-2 sm:py-0"
+                      >
+                        {selectedAssets?.length === 1
+                          ? selectedAssets[0]
+                          : `${
+                              selectedAssets?.length || filters.assets.length
+                            } assets`}
+                        <ChevronDownIcon className="hidden size-5 sm:block" />
+                      </MultiSelectButton>
+                    }
                     selected={selectedAssets || []}
                     onChange={(assets) => {
                       window.plausible("filterChange", {
@@ -130,13 +162,6 @@ export function PoolsList(): ReactElement {
                         },
                       });
                     }}
-                    displayValue={
-                      selectedAssets?.length === 1
-                        ? selectedAssets[0]
-                        : `${
-                            selectedAssets?.length || filters.assets.length
-                          } assets`
-                    }
                     searchEnabled
                     options={filters.assets.map(({ asset, count }) => {
                       return {
@@ -151,6 +176,39 @@ export function PoolsList(): ReactElement {
                   />
                 )}
 
+                {/* Hide low TVL filter */}
+                <span className="daisy-badge flex h-auto items-center self-stretch border-gray-600 py-2 sm:py-1">
+                  <label className="flex h-full cursor-pointer flex-col content-center items-center gap-2 sm:flex-row">
+                    <span className="daisy-label-text text-nowrap text-center">
+                      Hide low TVL
+                    </span>
+                    <input
+                      type="checkbox"
+                      title={`Hide pools with less than ${lowTvlThreshold.format()} in TVL`}
+                      className="daisy-toggle daisy-toggle-sm"
+                      defaultChecked={hideLowTvl}
+                      onChange={(e) => {
+                        window.plausible("filterChange", {
+                          props: {
+                            name: "Hide low TVL",
+                            value: String(e.target.checked),
+                            connectedWallet: account,
+                          },
+                        });
+                        navigate({
+                          search: (current) => {
+                            return {
+                              ...current,
+                              hideLowTvl: e.target.checked,
+                            };
+                          },
+                        });
+                      }}
+                    />
+                  </label>
+                </span>
+
+                {/* Matching pools count */}
                 <span className="daisy-badge hidden h-auto items-center self-stretch text-neutral-content sm:flex">
                   {pools.length}
                   {pools.length === 1 ? " pool" : " pools"}
@@ -164,7 +222,7 @@ export function PoolsList(): ReactElement {
                   role="button"
                   title="Sort by"
                   className={classNames(
-                    "daisy-btn daisy-btn-outline daisy-btn-sm flex items-center justify-center border-gray-600",
+                    "daisy-btn daisy-btn-outline daisy-btn-sm flex h-full items-center justify-center border-gray-600 py-2 sm:py-0",
                     {
                       "daisy-btn-disabled": !isSortingEnabled,
                     },
