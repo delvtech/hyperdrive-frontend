@@ -13,9 +13,15 @@ export const fetchHypervueMilesLpRewards: RewardResolver = async () => {
     },
   ];
 };
+
+/**
+ * Hypervue Miles are rewarded to all chains that Hyperdrive is deployed on.
+ * They can be collected off of gnosischain.
+ */
+const chainIds = [mainnet.id, gnosis.id, linea.id, base.id];
 export const hypervueMilesLpRewards: RewardConfig = {
   id: "hypervueMilesLpRewards",
-  chainIds: [mainnet.id, gnosis.id, linea.id, base.id],
+  chainIds,
   resolver: fetchHypervueMilesLpRewards,
 };
 
@@ -30,6 +36,6 @@ export const fetchHypervueMilesShortRewards: RewardResolver = async () => {
 };
 export const hypervueMilesShortRewards: RewardConfig = {
   id: "hypervueMilesShortRewards",
-  chainIds: [mainnet.id, gnosis.id, linea.id, base.id],
+  chainIds,
   resolver: fetchHypervueMilesShortRewards,
 };

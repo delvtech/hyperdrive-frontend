@@ -1,11 +1,28 @@
 import { RewardConfigId } from "src/rewards/resolvers";
 import { Address, PublicClient } from "viem";
 
+interface BaseReward {
+  /**
+   * The URL to link to for more information about the reward.
+   */
+  moreInfoUrl?: string;
+
+  /**
+   * When the reward period starts, in seconds
+   */
+  startTimestamp?: number;
+
+  /**
+   * When the reward period ends, in seconds
+   */
+  endTimestamp?: number;
+}
+
 /**
  * Transferable token rewards apply to tokens with a known fiat price,
  * allowing their APY to be added to the hyperdrive pool’s overall APY.
  */
-export interface ApyReward {
+export interface ApyReward extends BaseReward {
   type: "apy";
   /**
    * The apy of the token reward in 18-decimal precision
@@ -20,7 +37,7 @@ export interface ApyReward {
  * or are non-transferable. They display the number of tokens rewarded per
  * thousand dollars deposited. For example: 36.23 tokens per $1k/year.
  */
-export interface TokenAmountReward {
+export interface TokenAmountReward extends BaseReward {
   type: "tokenAmount";
   tokenAddress: Address;
   tokensPerThousandUsd: bigint;
@@ -28,7 +45,7 @@ export interface TokenAmountReward {
   chainId: number;
 }
 
-export interface PointMultiplierReward {
+export interface PointMultiplierReward extends BaseReward {
   type: "pointMultiplier";
   /**
    * The multiplier for the point reward, eg: 2n means "2x"
@@ -46,23 +63,17 @@ export interface PointMultiplierReward {
  * Info rewards are used when reward details are unclear. They display a message
  * to the user, such as "This pool is eligible for L-XPL Rewards."
  */
-export interface InfoReward {
+export interface InfoReward extends BaseReward {
   type: "info";
   message: string;
   iconUrl: string;
 }
 
-export type AnyReward = (
+export type AnyReward =
   | ApyReward
   | TokenAmountReward
   | PointMultiplierReward
-  | InfoReward
-) & {
-  /**
-   * The URL to link to for more information about the reward.
-   */
-  moreInfoUrl?: string;
-};
+  | InfoReward;
 
 export type RewardResolver = (
   publicClient: PublicClient,
