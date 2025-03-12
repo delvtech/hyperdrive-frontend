@@ -1,5 +1,6 @@
 import { Drift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
+import { fixed } from "@delvtech/fixed-point-wasm";
 import { appConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import {
   ReadHyperdrive,
@@ -51,6 +52,14 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
     "USD Coin",
   );
 
+  const balanceOfUsdc = await publicClient.readContract({
+    address: USDC.address as `0x${string}`,
+    abi: erc20Abi,
+    functionName: "balanceOf",
+    args: [walletClient?.account.address as Address],
+  });
+  console.log("Balance of USDC:", balanceOfUsdc);
+
   const account = walletClient?.account.address as Address;
   if (!account) throw new Error("No account found");
   console.log("[START] Account:", account);
@@ -62,7 +71,7 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
   });
 
   // Amount you want to zap into liquidity.
-  const liquidityAmount = BigInt(20e18);
+  const liquidityAmount = BigInt(20e6);
 
   // Approve DAI for the zap contract.
   const approveTx = await walletClient?.writeContract({
@@ -118,33 +127,18 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
           ),
           recipient: zapsConfig.address as `0x${string}`,
           deadline,
-          amountIn: BigInt(50e18),
+          amountIn: liquidityAmount,
           amountOutMinimum: 1n,
         },
         sourceAsset:
           "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" as `0x${string}`,
-        sourceAmount: BigInt(50e18),
+        sourceAmount: liquidityAmount,
         shouldWrap: false,
         isRebasing: false,
       },
     },
   });
 
-  // const swapTx = await walletClient?.writeContract({
-  //   abi: zapAbi,
-  //   chain: publicClient.chain,
-  //   address: zapsConfig.address,
-  //   functionName: "addLiquidityZap",
-  //   gas: 20000000n,
-  //   args: [
-  //     poolAddress,
-  //     minLpSharePrice,
-  //     minApr,
-  //     maxApr,
-  //     hyperdriveOptions,
-  //     zapInOptions,
-  //   ],
-  // });
   if (!swapTx)
     throw new Error("No add liquidity zap transaction hash received");
   console.log("addLiquidityZap tx hash:", swapTx);
@@ -153,6 +147,14 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
     hash: swapTx,
   });
   console.log("Receipt status after add liquidity zap:", receipt.status);
+
+  const balanceOfLp = await publicClient.readContract({
+    address: poolAddress,
+    abi: writePool.contract.abi,
+    functionName: "balanceOf",
+    args: [0n, account],
+  });
+  console.log("Balance of LP:", fixed(balanceOfLp).format());
 
   // Optionally, you can query for LP share balances here.
 }

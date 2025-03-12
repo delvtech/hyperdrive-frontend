@@ -41,7 +41,7 @@ const poolContract = drift.contract({
   address: poolAddress,
 });
 
-export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
+export async function executeAddLiquidity(swapPath: `0x${string}`) {
   console.log("swapPath", swapPath);
   try {
     const account = walletClient?.account.address as Address;
