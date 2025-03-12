@@ -22,7 +22,7 @@ const assetId: bigint =
 const maturity = 1756944000n;
 
 const defaultOpenLongAmount = BigInt(20e18);
-const defaultCloseLongAmount = BigInt(26e18);
+const defaultCloseLongAmount = BigInt(30e18);
 
 // Hyperdrive Instances
 const writePool = new ReadWriteHyperdrive({
@@ -114,7 +114,7 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
         poolAddress,
         maturity,
         defaultCloseLongAmount,
-        0n,
+        1n,
         {
           destination: zapsConfig.address,
           asBase: true,
@@ -157,7 +157,10 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
       functionName: "balanceOf",
       args: [account],
     });
-    console.log("usdcBalanceAfterZap", fixed(usdcBalanceAfterZap, 6).format());
+    console.log(
+      "afterZapBalanceOfUsdc",
+      fixed(usdcBalanceAfterZap, 6).format(),
+    );
   } catch (error) {
     console.error("Failed to execute zap open/close:", error);
     throw error;
