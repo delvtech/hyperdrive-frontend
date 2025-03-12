@@ -39,10 +39,6 @@ export async function fetchSwapPath(
     if (v3Route) {
       const tokenPath = v3Route.tokenPath;
       const pools = v3Route.route.pools;
-      console.log(
-        "V3 tokenPath:",
-        tokenPath.map((t) => t.address),
-      );
 
       const types: string[] = [];
       const values: (string | number)[] = [];

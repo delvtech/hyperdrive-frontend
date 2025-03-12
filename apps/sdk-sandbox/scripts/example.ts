@@ -8,7 +8,7 @@ import {
   zapAbi,
 } from "@delvtech/hyperdrive-js";
 import { Token } from "@uniswap/sdk-core";
-import { Address, encodePacked, erc20Abi, maxInt256 } from "viem";
+import { Address, erc20Abi, maxInt256 } from "viem";
 import { publicClient, walletClient } from "../client";
 import { fetchSwapPath } from "./fetchSwapPath";
 
@@ -115,16 +115,7 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
       },
       _zapInOptions: {
         swapParams: {
-          path: encodePacked(
-            ["address", "uint24", "address"],
-            [
-              // USDC
-              "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-              100,
-              // Base token
-              baseToken.address,
-            ],
-          ),
+          path: (await fetchSwapPath(USDC, DAI)) as `0x${string}`,
           recipient: zapsConfig.address as `0x${string}`,
           deadline,
           amountIn: liquidityAmount,
