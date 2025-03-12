@@ -1,6 +1,7 @@
 import {
   AppConfig,
   getBaseToken,
+  getOpenShortRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
@@ -62,6 +63,14 @@ export function OpenShortsTableDesktop({
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
+  const poolHasRewards = hyperdrives.some((hyperdrive) => {
+    const rewardConfigs = getOpenShortRewardConfigs({
+      appConfig,
+      chainId: hyperdrive.chainId,
+      hyperdriveAddress: hyperdrive.address,
+    });
+    return !!rewardConfigs?.length;
+  });
 
   if (!account) {
     return (
@@ -98,7 +107,7 @@ export function OpenShortsTableDesktop({
           hyperdrives[0].name.replace(/\d{1,3}d/, "")
         }
       />
-      <PoolHasRewardsBanner />
+      {poolHasRewards ? <PoolHasRewardsBanner /> : null}
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
         {tableInstance.getRowModel().rows.map((row) => {

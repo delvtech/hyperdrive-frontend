@@ -1,5 +1,6 @@
 import {
   AppConfig,
+  getAddLiquidityRewardConfigs,
   getBaseToken,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
@@ -73,6 +74,15 @@ export function OpenLpTableDesktop({
     return null;
   }
 
+  const poolHasRewards = hyperdrives.some((hyperdrive) => {
+    const rewardConfigs = getAddLiquidityRewardConfigs({
+      appConfig,
+      chainId: hyperdrive.chainId,
+      hyperdriveAddress: hyperdrive.address,
+    });
+    return !!rewardConfigs?.length;
+  });
+
   return (
     <div className="flex flex-col gap-6">
       <PositionTableHeading
@@ -92,7 +102,7 @@ export function OpenLpTableDesktop({
           hyperdrives[0].name.replace(/\d{1,3}d/, "")
         }
       />
-      <PoolHasRewardsBanner />
+      {poolHasRewards ? <PoolHasRewardsBanner /> : null}
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         <table className="daisy-table daisy-table-lg">
           <thead>
