@@ -3,6 +3,7 @@ import { viemAdapter } from "@delvtech/drift-viem";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { appConfig, getBaseToken } from "@delvtech/hyperdrive-appconfig";
 import {
+  hyperdriveAbi,
   ReadHyperdrive,
   ReadWriteHyperdrive,
   zapAbi,
@@ -146,6 +147,96 @@ async function executeAddLiquidityZap(swapPath: `0x${string}`) {
     args: [0n, account],
   });
   console.log("Balance of LP:", fixed(balanceOfLp).format());
+
+  // Ininitiate a closeLpZap
+
+  const approveLpTokenTx = await walletClient?.writeContract({
+    abi: hyperdriveAbi,
+    chain: publicClient.chain,
+    address: poolAddress,
+    functionName: "setApprovalForAll",
+    args: [zapsConfig.address, true],
+  });
+  if (!approveLpTokenTx)
+    throw new Error("No approve liquidity token transaction hash received");
+  const approveLpTokenReceipt = await publicClient.waitForTransactionReceipt({
+    hash: approveLpTokenTx,
+  });
+  console.log("APPROVE LP TOKEN TX STATUS:", approveLpTokenReceipt.status);
+
+  // Approve the zap contract to spend DAI
+  const approveZapTx = await walletClient?.writeContract({
+    abi: erc20Abi,
+    chain: publicClient.chain,
+    address: DAI.address as `0x${string}`,
+    functionName: "approve",
+    args: [zapsConfig.address, maxInt256],
+  });
+  if (!approveZapTx)
+    throw new Error("No approve zap transaction hash received");
+  const approveZapReceipt = await publicClient.waitForTransactionReceipt({
+    hash: approveZapTx,
+  });
+  console.log("APPROVE ZAP TX STATUS:", approveZapReceipt.status);
+
+  const closeLpZapTx = await drift.write({
+    abi: zapAbi,
+    address: zapsConfig.address,
+    fn: "removeLiquidityZap",
+    gas: 20000000n,
+    args: {
+      _hyperdrive: poolAddress,
+      _lpShares: balanceOfLp,
+      _minOutputPerShare: 1n,
+      _options: {
+        destination: zapsConfig.address as `0x${string}`,
+        asBase: true,
+        extraData: "0x",
+      },
+      _swapParams: {
+        path: (await fetchSwapPath(DAI, USDC)) as `0x${string}`,
+        recipient: account as `0x${string}`,
+        deadline,
+        amountIn: balanceOfLp,
+        amountOutMinimum: 1n,
+      },
+      _shouldWrap: false,
+    },
+  });
+
+  if (!closeLpZapTx)
+    throw new Error("No close liquidity zap transaction hash received");
+  console.log("removeLiquidityZap tx hash:", closeLpZapTx);
+
+  const closeLpZapReceipt = await publicClient.waitForTransactionReceipt({
+    hash: closeLpZapTx,
+  });
+  console.log(
+    "Receipt status after close liquidity zap:",
+    closeLpZapReceipt.status,
+  );
+
+  const balanceOfUsdcAfterClose = await publicClient.readContract({
+    address: USDC.address as `0x${string}`,
+    abi: erc20Abi,
+    functionName: "balanceOf",
+    args: [account],
+  });
+  console.log(
+    "Balance of USDC after close liquidity zap:",
+    balanceOfUsdcAfterClose,
+  );
+
+  const balanceOfLpAfterClose = await publicClient.readContract({
+    address: poolAddress,
+    abi: writePool.contract.abi,
+    functionName: "balanceOf",
+    args: [0n, account],
+  });
+  console.log(
+    "Balance of LP after close liquidity zap:",
+    balanceOfLpAfterClose,
+  );
 
   // Optionally, you can query for LP share balances here.
 }
