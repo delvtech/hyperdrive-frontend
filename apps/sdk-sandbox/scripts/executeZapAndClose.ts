@@ -10,6 +10,7 @@ import {
 import { Address, erc20Abi, maxInt256 } from "viem";
 import { publicClient, walletClient } from "../client";
 
+// Config & Constants
 const zapsConfig = appConfig.zaps[707];
 const drift = new Drift(viemAdapter({ publicClient, walletClient }));
 
@@ -23,6 +24,7 @@ const maturity = 1756944000n;
 const defaultOpenLongAmount = BigInt(20e18);
 const defaultCloseLongAmount = BigInt(26e18);
 
+// Hyperdrive Instances
 const writePool = new ReadWriteHyperdrive({
   address: poolAddress,
   drift,
@@ -36,6 +38,7 @@ const readPool = new ReadHyperdrive({
   earliestBlock,
 });
 
+// Pool contract instance
 const poolContract = drift.contract({
   abi: writePool.contract.abi,
   address: poolAddress,
@@ -43,6 +46,7 @@ const poolContract = drift.contract({
 
 export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
   console.log("swapPath", swapPath);
+
   try {
     const account = walletClient?.account.address as Address;
     console.log("[START] Account:", account);
@@ -68,14 +72,11 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
       tokenID: assetId,
       amount: maxInt256,
     });
-    await publicClient.waitForTransactionReceipt({ hash: approveAssetId });
-
-    const revokeApproval = await writePool.contract.write("setApprovalForAll", {
-      operator: zapsConfig.address,
-      approved: false,
+    const approvalReceipt = await publicClient.waitForTransactionReceipt({
+      hash: approveAssetId,
     });
-    await publicClient.waitForTransactionReceipt({ hash: revokeApproval });
-    console.log("Approval tx hash:", revokeApproval);
+
+    console.log("Status of approval tx:", approvalReceipt.status);
 
     // Preview closeLong base amount out
     const { result: previewBaseAmountOut } =
@@ -137,6 +138,7 @@ export async function executeZapOpenAndClose(swapPath: `0x${string}`) {
     });
     console.log("Receipt status after zap close:", receipt.status);
 
+    // Clear cache after transaction
     await drift.cache.clear();
 
     // Log final balances
