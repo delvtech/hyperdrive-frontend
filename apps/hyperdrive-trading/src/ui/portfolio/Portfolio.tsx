@@ -1,4 +1,4 @@
-import { Navigate, useNavigate, useSearch } from "@tanstack/react-router";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { OpenLongsContainer } from "src/ui/portfolio/longs/LongsContainer";
@@ -72,12 +72,6 @@ export function Portfolio(): ReactElement {
 
   return (
     <div className="flex w-full flex-col items-center bg-base-100 py-8">
-      {!accountFromRoute && connectedAccount ? (
-        <Navigate
-          from={PORTFOLIO_ROUTE}
-          search={(prev) => ({ ...prev, account: connectedAccount })}
-        />
-      ) : null}
       <Tabs activeTabId={activeTab} tabs={tabs} />
     </div>
   );
