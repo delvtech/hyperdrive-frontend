@@ -146,7 +146,7 @@ export function OpenLongForm({
     amount: depositAmountAsBigInt,
   });
 
-  const { maxBaseIn, maxSharesIn, maxBondsOut } = useMaxLong({
+  const { maxBaseIn, maxSharesIn } = useMaxLong({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
   });
