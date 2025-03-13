@@ -68,7 +68,14 @@ const chainConfigs: Record<string, WagmiClientConfig> = Object.fromEntries(
     },
     linea: {
       rpcUrl: VITE_LINEA_RPC_URL,
-      chain: linea,
+      chain: {
+        // Rainbowkit does not have a built-in linea icon, so we need to add one:
+        // see: https://www.rainbowkit.com/docs/custom-chains
+        ...linea,
+        iconUrl:
+          "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMxMjEyMTIiLz4KPG1hc2sgaWQ9Im1hc2swXzI0OTlfNjExIiBzdHlsZT0ibWFzay10eXBlOmx1bWluYW5jZSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMTAiIHk9IjciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNiI+CjxwYXRoIGQ9Ik0yNC45NjkyIDdIMTBWMjIuNjM2M0gyNC45NjkyVjdaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfMjQ5OV82MTEpIj4KPHBhdGggZD0iTTIyLjQzMiAyMi42MzYySDEwVjkuNTM3MjNIMTIuODQ0NFYyMC4wOTc2SDIyLjQzMlYyMi42MzQ5VjIyLjYzNjJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjIuNDMxOSAxMi4wNzQ1QzIzLjgzMzIgMTIuMDc0NSAyNC45NjkyIDEwLjkzODUgMjQuOTY5MiA5LjUzNzI3QzI0Ljk2OTIgOC4xMzU5NyAyMy44MzMyIDcgMjIuNDMxOSA3QzIxLjAzMDUgNyAxOS44OTQ3IDguMTM1OTcgMTkuODk0NyA5LjUzNzI3QzE5Ljg5NDcgMTAuOTM4NSAyMS4wMzA1IDEyLjA3NDUgMjIuNDMxOSAxMi4wNzQ1WiIgZmlsbD0id2hpdGUiLz4KPC9nPgo8L3N2Zz4K",
+        iconBackground: "#ffffff",
+      },
     },
     base: {
       rpcUrl: VITE_BASE_RPC_URL,
@@ -86,7 +93,11 @@ const chainConfigs: Record<string, WagmiClientConfig> = Object.fromEntries(
     },
     cloudChain: {
       rpcUrl: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-      chain: cloudChain,
+      chain: {
+        ...cloudChain,
+        iconUrl: "/cloudchain.svg",
+        iconBackground: "#ffffff",
+      },
       chainId: VITE_CUSTOM_CHAIN_CHAIN_ID,
     },
     sepolia: {
