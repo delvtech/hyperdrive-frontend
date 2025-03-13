@@ -227,25 +227,6 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.vaultSharePrice || 0n,
   });
 
-  const { fiatPrice: baseTokenPrice } = useTokenFiatPrice({
-    chainId: hyperdrive.chainId,
-    tokenAddress: baseToken.address,
-  });
-  let zapTokenAmountInBase = 0n;
-  if (
-    isZapping &&
-    activeTokenPrice &&
-    baseTokenPrice &&
-    depositAmountAsBigInt
-  ) {
-    const fiatValueOfDepositAmount = fixed(
-      depositAmountAsBigInt,
-      activeToken.decimals,
-    ).mul(activeTokenPrice);
-    const equivalentAmountOfBase = fiatValueOfDepositAmount.div(baseTokenPrice);
-    zapTokenAmountInBase = equivalentAmountOfBase.bigint;
-  }
-
   // Plausible event props
   const formName = "Open Long";
   const chainId = hyperdrive.chainId;
