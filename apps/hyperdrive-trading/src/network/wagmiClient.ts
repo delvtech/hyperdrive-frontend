@@ -93,7 +93,11 @@ const chainConfigs: Record<string, WagmiClientConfig> = Object.fromEntries(
     },
     cloudChain: {
       rpcUrl: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-      chain: cloudChain,
+      chain: {
+        ...cloudChain,
+        iconUrl: "/cloudchain.svg",
+        iconBackground: "#ffffff",
+      },
       chainId: VITE_CUSTOM_CHAIN_CHAIN_ID,
     },
     sepolia: {
