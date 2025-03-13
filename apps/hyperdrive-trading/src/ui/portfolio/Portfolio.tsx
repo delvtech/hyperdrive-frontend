@@ -1,5 +1,6 @@
 import { Navigate, useNavigate, useSearch } from "@tanstack/react-router";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useMemo } from "react";
+import { usePrevious } from "react-use";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
 import { OpenLongsContainer } from "src/ui/portfolio/longs/LongsContainer";
 import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdrawalSharesContainer";
@@ -27,48 +28,54 @@ export function Portfolio(): ReactElement {
 
   const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
 
-  const tabs = [
-    {
-      id: "longs",
-      content: <OpenLongsContainer account={account} />,
-      label: "Long",
-      onClick: () => {
-        navigate({
-          search: (prev) => ({ ...prev, position: "longs" }),
-        });
+  // Update the search params if the user switches wallets
+  useSyncRouteWithAccountChange();
+
+  const tabs = useMemo(
+    () => [
+      {
+        id: "longs",
+        content: <OpenLongsContainer account={account} />,
+        label: "Long",
+        onClick: () => {
+          navigate({
+            search: (prev) => ({ ...prev, position: "longs" }),
+          });
+        },
       },
-    },
-    {
-      id: "shorts",
-      content: <OpenShortsContainer account={account} />,
-      label: "Short",
-      onClick: () => {
-        navigate({
-          search: (prev) => ({ ...prev, position: "shorts" }),
-        });
+      {
+        id: "shorts",
+        content: <OpenShortsContainer account={account} />,
+        label: "Short",
+        onClick: () => {
+          navigate({
+            search: (prev) => ({ ...prev, position: "shorts" }),
+          });
+        },
       },
-    },
-    {
-      id: "lp",
-      content: <LpAndWithdrawalSharesContainer account={account} />,
-      label: "LP",
-      onClick: () => {
-        navigate({
-          search: (prev) => ({ ...prev, position: "lp" }),
-        });
+      {
+        id: "lp",
+        content: <LpAndWithdrawalSharesContainer account={account} />,
+        label: "LP",
+        onClick: () => {
+          navigate({
+            search: (prev) => ({ ...prev, position: "lp" }),
+          });
+        },
       },
-    },
-    {
-      id: "rewards",
-      content: <RewardsContainer account={account} />,
-      label: "Rewards",
-      onClick: () => {
-        navigate({
-          search: (prev) => ({ ...prev, position: "rewards" }),
-        });
+      {
+        id: "rewards",
+        content: <RewardsContainer account={account} />,
+        label: "Rewards",
+        onClick: () => {
+          navigate({
+            search: (prev) => ({ ...prev, position: "rewards" }),
+          });
+        },
       },
-    },
-  ];
+    ],
+    [account, navigate],
+  );
 
   return (
     <div className="flex w-full flex-col items-center bg-base-100 py-8">
@@ -81,4 +88,26 @@ export function Portfolio(): ReactElement {
       <Tabs activeTabId={activeTab} tabs={tabs} />
     </div>
   );
+}
+/**
+ * Updates the search params if the user switches wallets
+ */
+function useSyncRouteWithAccountChange() {
+  const { address: connectedAccount } = useAccount();
+  const navigate = useNavigate({ from: PORTFOLIO_ROUTE });
+  const prevConnectedAccount = usePrevious(connectedAccount);
+
+  // If the user switches wallets, it should update the search params as it
+  // takes precedent over whatever account is currently being displayed, be it
+  // the previously connected account or the one from the route.
+  const walletChanged =
+    prevConnectedAccount && connectedAccount !== prevConnectedAccount;
+
+  useEffect(() => {
+    if (walletChanged) {
+      navigate({
+        search: (prev) => ({ ...prev, account: connectedAccount }),
+      });
+    }
+  }, [connectedAccount, navigate, prevConnectedAccount, walletChanged]);
 }
