@@ -86,6 +86,7 @@
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
+    "@welldone-software/why-did-you-render": "^10.0.1",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@tanstack/eslint-plugin-query": "^5.28.11",

@@ -1,3 +1,8 @@
+// Importing Why Did You Render (WDYR) must happen before anything that
+// imports React. This is because WDYR monkeypatches React's render method to
+// detect unnecessary re-renders.
+import "src/ui/base/debugging/wdyr";
+
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import "@usecapsule/react-sdk/styles.css";
