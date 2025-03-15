@@ -1,7 +1,7 @@
 # @delvtech/hyperdrive-artifacts
 
-Build artifacts, including ABIs and Bytecodes, for the [Hyperdrive
-AMM](https://github.com/delvtech/hyperdrive) contracts.
+Strongly typed build artifacts, including ABIs and Bytecodes, for the
+[Hyperdrive AMM](https://github.com/delvtech/hyperdrive) contracts.
 
 ## Install
 
@@ -22,25 +22,18 @@ const hyperdriveAbi = IHyperdrive.abi;
 const hyperdriveBytecode = IHyperdrive.bytecode;
 ```
 
-## Building
+## Generating TypeScript Files
 
-The build script takes the git ref to clone and compile as the first positional
+The generate script takes the git ref to clone and compile as the first positional
 argument. This means you can change the version of the contract to generate
 artifacts for in the `package.json`:
 
 ```json
-  "build:src": "sh scripts/build_src.sh v0.9.0"
+  "generate": "sh scripts/generate.sh v1.0.20"
 ```
 
 Then run:
 
 ```sh
-yarn workspace @delvtech/hyperdrive-artifacts build:src
-```
-
-If the `src` directory already exists from a previous build, you can force a new
-build by running:
-
-```sh
-yarn workspace @delvtech/hyperdrive-artifacts build:new
+yarn workspace @delvtech/hyperdrive-artifacts generate
 ```
