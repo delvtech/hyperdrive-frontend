@@ -8,13 +8,13 @@ import { getHyperdrive } from "@delvtech/hyperdrive-js";
 import { QueryStatus } from "@tanstack/query-core";
 import { useIsFetching, useQuery } from "@tanstack/react-query";
 import { getPublicClient } from "@wagmi/core";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDrift } from "src/drift/getDrift";
 import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
-import { getLpApy } from "src/hyperdrive/getLpApy";
+import { getLpApy, LpApyResult } from "src/hyperdrive/getLpApy";
 import { wagmiConfig } from "src/network/wagmiClient";
 import { getYieldSourceRate } from "src/rewards/getYieldSourceRate";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -111,6 +111,22 @@ export function usePoolsList({
   };
 }
 
+type PoolsListResult = {
+  hyperdrive: HyperdriveConfig;
+  fixedApr: bigint;
+  lpApy: LpApyResult;
+  tvl: {
+    base: bigint;
+    fiat: bigint | undefined;
+  };
+  yieldSourceRate: {
+    rate: bigint;
+    ratePeriodDays: number;
+    netRate: bigint;
+  };
+  longPrice: bigint;
+}[];
+
 function useSortedPools({
   pools,
   enabled,
@@ -174,65 +190,70 @@ function useSortedPools({
           );
         }
       : undefined,
-    select: (poolsWithData) => {
-      const filteredPools = !!filters.tvl
-        ? poolsWithData.filter((pool) => {
-            const tvl = pool.tvl.fiat
-              ? fixed(pool.tvl.fiat)
-              : fixed(pool.tvl.base, pool.hyperdrive.decimals);
-            return tvl.gte(filters.tvl!);
-          })
-        : poolsWithData;
-      return filteredPools
-        .toSorted((a, b) => {
-          switch (sortOption) {
-            case "Chain":
-              const chainA = appConfig.chains[a.hyperdrive.chainId] || {};
-              const chainB = appConfig.chains[b.hyperdrive.chainId] || {};
-              return chainA.name.localeCompare(chainB.name);
-            case "Fixed APR":
-              return Number(b.fixedApr - a.fixedApr);
-            case "LP APY":
-              return Number(
-                (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
-              );
-            case "Variable APY":
-              return Number(
-                b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
-              );
-            case "Yield Multiplier":
-              return Number(
-                calculateMarketYieldMultiplier(b.longPrice).bigint -
-                  calculateMarketYieldMultiplier(a.longPrice).bigint,
-              );
+    // Memoize this to prevent unnecessary re-renders when a new list is
+    // returned
+    select: useCallback(
+      (poolsWithData: PoolsListResult) => {
+        const filteredPools = !!filters.tvl
+          ? poolsWithData.filter((pool) => {
+              const tvl = pool.tvl.fiat
+                ? fixed(pool.tvl.fiat)
+                : fixed(pool.tvl.base, pool.hyperdrive.decimals);
+              return tvl.gte(filters.tvl!);
+            })
+          : poolsWithData;
+        return filteredPools
+          .toSorted((a, b) => {
+            switch (sortOption) {
+              case "Chain":
+                const chainA = appConfig.chains[a.hyperdrive.chainId] || {};
+                const chainB = appConfig.chains[b.hyperdrive.chainId] || {};
+                return chainA.name.localeCompare(chainB.name);
+              case "Fixed APR":
+                return Number(b.fixedApr - a.fixedApr);
+              case "LP APY":
+                return Number(
+                  (b.lpApy.netLpApy ?? 0n) - (a.lpApy.netLpApy ?? 0n),
+                );
+              case "Variable APY":
+                return Number(
+                  b.yieldSourceRate.netRate - a.yieldSourceRate.netRate,
+                );
+              case "Yield Multiplier":
+                return Number(
+                  calculateMarketYieldMultiplier(b.longPrice).bigint -
+                    calculateMarketYieldMultiplier(a.longPrice).bigint,
+                );
 
-            // By default we sort by TVL, with the caveat that pinned pools
-            // should always be at the top
-            case "TVL":
-            default: {
-              const aIsPinned = PINNED_POOLS.includes(a.hyperdrive.address);
-              const bIsPinned = PINNED_POOLS.includes(b.hyperdrive.address);
-              if (aIsPinned && !bIsPinned && !sortOption) {
-                return -1;
-              }
-              if (!aIsPinned && bIsPinned && !sortOption) {
-                return 1;
-              }
+              // By default we sort by TVL, with the caveat that pinned pools
+              // should always be at the top
+              case "TVL":
+              default: {
+                const aIsPinned = PINNED_POOLS.includes(a.hyperdrive.address);
+                const bIsPinned = PINNED_POOLS.includes(b.hyperdrive.address);
+                if (aIsPinned && !bIsPinned && !sortOption) {
+                  return -1;
+                }
+                if (!aIsPinned && bIsPinned && !sortOption) {
+                  return 1;
+                }
 
-              const tvlA =
-                b.tvl.fiat ??
-                fixed(b.tvl.base).div(b.hyperdrive.decimals, 0) ??
-                0;
-              const tvlB =
-                a.tvl.fiat ??
-                fixed(a.tvl.base).div(a.hyperdrive.decimals, 0) ??
-                0;
-              return fixed(tvlA).sub(tvlB).toNumber();
+                const tvlA =
+                  b.tvl.fiat ??
+                  fixed(b.tvl.base).div(b.hyperdrive.decimals, 0) ??
+                  0;
+                const tvlB =
+                  a.tvl.fiat ??
+                  fixed(a.tvl.base).div(a.hyperdrive.decimals, 0) ??
+                  0;
+                return fixed(tvlA).sub(tvlB).toNumber();
+              }
             }
-          }
-        })
-        .map((pool) => pool.hyperdrive);
-    },
+          })
+          .map((pool) => pool.hyperdrive);
+      },
+      [appConfig.chains, filters.tvl, sortOption],
+    ),
   });
 
   return {
