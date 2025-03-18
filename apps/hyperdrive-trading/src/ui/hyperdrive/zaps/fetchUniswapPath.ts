@@ -34,7 +34,7 @@ export async function fetchUniswapPath({
     TradeType.EXACT_INPUT,
     {
       recipient: recipient ?? "0x0000000000000000000000000000000000000000",
-      slippageTolerance: new Percent(100, 10000), // 1.00% tolerance
+      slippageTolerance: new Percent(500, 10000), // 5.00% tolerance
       deadline: Math.floor(Date.now() / 1000) + 1800, // 30 min deadline
       type: SwapType.SWAP_ROUTER_02,
     },

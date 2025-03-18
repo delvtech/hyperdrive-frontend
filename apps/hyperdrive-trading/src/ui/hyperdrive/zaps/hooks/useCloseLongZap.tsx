@@ -109,17 +109,17 @@ export function useCloseLongZap({
       const swapPath = await fetchUniswapPath({
         tokenIn: new Token(
           1,
-          "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-          18,
-          "DAI",
-          "Dai Stablecoin",
+          baseToken.address,
+          baseToken.decimals,
+          baseToken.symbol,
+          baseToken.name,
         ),
         tokenOut: new Token(
           1,
-          "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-          6,
-          "USDC",
-          "USD Coin",
+          tokenOut.address,
+          tokenOut.decimals,
+          tokenOut.symbol,
+          tokenOut.name,
         ),
         amountIn: previewBaseTokenAmountOut,
         recipient: destination ?? account,
@@ -133,6 +133,7 @@ export function useCloseLongZap({
           address: zapsConfig.address,
           fn: "closeLongZap",
           from: account,
+          gas: 1_000_000n,
           args: {
             _hyperdrive: hyperdriveAddress,
             _minOutput: minAmountOut ?? 1n,
@@ -150,7 +151,7 @@ export function useCloseLongZap({
             // swap for base tokens -> zap token
             _swapParams: {
               amountIn: previewBaseTokenAmountOut, // amount of base token
-              amountOutMinimum: minAmountOut ?? 1n,
+              amountOutMinimum: 0n,
               deadline: block.timestamp + 60n,
               // Use the fetched Uniswap path if available, otherwise fall back to direct path
               path: swapPath
