@@ -64,6 +64,7 @@
     "d3-format": "^3.1.0",
     "daisyui": "^4.12.2",
     "dnum": "^2.9.0",
+    "ethers": "^5.7.2",
     "fuse.js": "^7.0.0",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",

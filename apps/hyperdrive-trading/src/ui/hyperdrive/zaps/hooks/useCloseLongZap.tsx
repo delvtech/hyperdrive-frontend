@@ -6,10 +6,12 @@ import { zapAbi } from "@delvtech/hyperdrive-js";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation } from "@tanstack/react-query";
+import { Token } from "@uniswap/sdk-core";
 import toast from "react-hot-toast";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { fetchUniswapPath } from "src/ui/hyperdrive/zaps/fetchUniswapPath";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import TransactionToast from "src/ui/transactions/TransactionToast";
 import { Address, encodePacked, WalletClient } from "viem";
@@ -104,6 +106,27 @@ export function useCloseLongZap({
         }),
       );
 
+      const swapPath = await fetchUniswapPath({
+        tokenIn: new Token(
+          1,
+          "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          18,
+          "DAI",
+          "Dai Stablecoin",
+        ),
+        tokenOut: new Token(
+          1,
+          "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          6,
+          "USDC",
+          "USD Coin",
+        ),
+        amountIn: previewBaseTokenAmountOut,
+        recipient: destination ?? account,
+      });
+
+      console.log(swapPath, "swapPath");
+
       try {
         const hash = await drift.write({
           abi: zapAbi,
@@ -130,11 +153,13 @@ export function useCloseLongZap({
               amountOutMinimum: minAmountOut ?? 1n,
               deadline: block.timestamp + 60n,
               // Use the fetched Uniswap path if available, otherwise fall back to direct path
-              path: encodePacked(
-                // Direct path between tokens with 1% fee
-                ["address", "uint24", "address"],
-                [baseToken.address, 100, tokenOut.address],
-              ),
+              path: swapPath
+                ? swapPath
+                : encodePacked(
+                    // Direct path between tokens with 1% fee
+                    ["address", "uint24", "address"],
+                    [baseToken.address, 100, tokenOut.address],
+                  ),
               recipient: destination ?? account,
             },
           },
