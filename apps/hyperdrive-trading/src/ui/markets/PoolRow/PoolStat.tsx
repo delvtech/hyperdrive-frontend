@@ -14,7 +14,6 @@ export interface PoolStatProps {
   isLoading?: boolean;
   isNew?: boolean;
   variant?: "default" | "gradient";
-  action?: ReactNode;
 }
 
 export function PoolStat({
@@ -24,7 +23,6 @@ export function PoolStat({
   isNew = false,
   variant = "default",
   isLoading = false,
-  action,
 }: PoolStatProps): ReactElement {
   let displayValue;
   if (isLoading) {
@@ -45,7 +43,6 @@ export function PoolStat({
       >
         {displayValue}
       </div>
-      {action}
     </div>
   );
 

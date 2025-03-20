@@ -174,14 +174,14 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
         </div>
 
         {/* Right side */}
-        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:gap-12 lg:items-end lg:justify-start">
-          <div className="w-full lg:w-[112px]">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:gap-12 lg:items-start lg:justify-start">
+          <div className="size-full border-r border-gray-500/20 lg:w-[112px]">
             <FixedAprCta hyperdrive={hyperdrive} />
           </div>
-          <div className="w-full lg:w-[181px]">
+          <div className="size-full border-r border-gray-500/20 lg:w-[181px]">
             <VariableApyCta hyperdrive={hyperdrive} />
           </div>
-          <div className="w-full lg:w-[122px]">
+          <div className="size-full lg:w-[122px]">
             <LpApyCta hyperdrive={hyperdrive} />
           </div>
         </div>
