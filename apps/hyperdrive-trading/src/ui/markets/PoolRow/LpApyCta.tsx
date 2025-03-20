@@ -4,14 +4,12 @@ import { useLpApy } from "src/ui/hyperdrive/lp/hooks/useLpApy";
 import { LpApyStat } from "src/ui/markets/PoolRow/LpApyStat";
 import { PoolStat } from "src/ui/markets/PoolRow/PoolStat";
 import { RewardsTooltipContent } from "src/ui/rewards/RewardsTooltip/RewardsTooltipContent";
-import { useAccount } from "wagmi";
 
 interface LpApyCtaProps {
   hyperdrive: HyperdriveConfig;
 }
 
 export function LpApyCta({ hyperdrive }: LpApyCtaProps): ReactElement {
-  const { address: account } = useAccount();
   const { lpApy, lpApyStatus } = useLpApy({
     hyperdriveAddress: hyperdrive.address,
     chainId: hyperdrive.chainId,
