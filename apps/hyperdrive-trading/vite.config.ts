@@ -12,7 +12,14 @@ export default defineConfig({
     target: "esnext",
   },
   plugins: [
-    react(),
+    react({
+      jsxImportSource:
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
+        process.env.NODE_ENV === "development"
+          ? "@welldone-software/why-did-you-render"
+          : "react",
+    }),
+
     tsconfigPaths(),
     TanStackRouterVite({ routesDirectory: "./src/ui/routes" }),
     nodePolyfills({
