@@ -239,10 +239,9 @@ impl TsType {
                     }
                     // a & b join c | d -> (a & b & c) | d
                     Self::Union(mut union_types) => {
-                        let first_member = union_types.remove(0);
-                        let intersection = Self::Intersection(types);
-                        let intersected_member = intersection.and(first_member);
-                        union_types.insert(0, intersected_member);
+                        let first_union_member = union_types.remove(0);
+                        let intersection = Self::Intersection(types).and(first_union_member);
+                        union_types.insert(0, intersection);
                         Ok(Self::Union(union_types))
                     }
                     // a & b join _ -> a & b & _
@@ -258,7 +257,10 @@ impl TsType {
                 Ok(Self::Tuple(types))
             }
             // (a | b) join c -> (a | b | c)
-            Self::Paren(inner) => inner.join(other),
+            Self::Paren(inner) => {
+                let joined = inner.join(other)?;
+                Ok(Self::Paren(Box::new(joined)))
+            }
             _ => Err("Type does not support joining."),
         }
     }
@@ -304,22 +306,22 @@ impl TsType {
                 '|' => {
                     // push pending as union or an empty union since types can
                     // start with `|`
-                    let member = match pending_type {
+                    let members = match pending_type {
                         Some(ty) => vec![ty],
                         None => vec![],
                     };
-                    let mut _union = Self::Union(member);
+                    let mut _union = Self::Union(members);
                     pending_stack.push(_union);
                     pending_type = None;
                 }
                 '&' => {
                     // push pending as union or an empty union since types can
                     // start with `&`
-                    let member = match pending_type {
+                    let members = match pending_type {
                         Some(ty) => vec![ty],
                         None => vec![],
                     };
-                    let intersection = Self::Intersection(member);
+                    let intersection = Self::Intersection(members);
                     pending_stack.push(intersection);
                     pending_type = None;
                 }
@@ -328,8 +330,8 @@ impl TsType {
                     if pending_type.is_none() {
                         return Err(type_error_at!(location, "Unexpected `<` found."));
                     }
-                    let inner = pending_type.unwrap();
-                    let generic = inner.as_generic(vec![]);
+                    let pending = pending_type.unwrap();
+                    let generic = pending.as_generic(vec![]);
                     pending_stack.push(generic);
                     pending_type = None;
                 }
@@ -339,13 +341,13 @@ impl TsType {
                     if pending_type.is_none() {
                         return Err(type_error_at!(location, "Unexpected `,` found."));
                     }
-                    let mut inner = pending_type.unwrap();
+                    let mut pending = pending_type.unwrap();
 
                     loop {
                         let top = pending_stack.pop().unwrap();
-                        inner = top.join(inner).unwrap();
+                        pending = top.join(pending).unwrap();
 
-                        match inner {
+                        match pending {
                             Self::Generic(_, _) => break,
                             Self::IndexedAccess(_, _) => break,
                             Self::Tuple(_) => break,
@@ -356,7 +358,7 @@ impl TsType {
                             return Err(type_error_at!(location, "Unexpected `,` found."));
                         }
                     }
-                    pending_stack.push(inner);
+                    pending_stack.push(pending);
                     pending_type = None;
                 }
                 '>' => {
@@ -365,20 +367,21 @@ impl TsType {
                     if pending_type.is_none() {
                         return Err(type_error_at!(location, "Unexpected `>` found."));
                     };
-                    let mut ty = pending_type.unwrap();
+                    let mut pending = pending_type.unwrap();
+
                     loop {
                         let top = pending_stack.pop().unwrap();
-                        ty = top.join(ty).unwrap();
+                        pending = top.join(pending).unwrap();
 
-                        if let Self::Generic(_, _) = ty {
+                        if let Self::Generic(_, _) = pending {
                             break;
                         }
 
                         if pending_stack.is_empty() {
-                            return Err(type_error_at!(location, "Unexpected `,` found."));
+                            return Err(type_error_at!(location, "Unexpected `>` found."));
                         }
                     }
-                    pending_type = Some(ty);
+                    pending_type = Some(pending);
                 }
                 '[' => {
                     if pending_type.is_none() {
@@ -395,19 +398,19 @@ impl TsType {
                     if pending_type.is_none() {
                         return Err(type_error_at!(location, "Unexpected `]` found."));
                     };
-                    let mut ty = pending_type.unwrap();
+                    let mut pending = pending_type.unwrap();
 
                     // If there's an ambiguous bracket, it's an array, otherwise
                     // it's the end of a bracketed type on the stack.
                     if ambiguous_bracket {
-                        pending_type = Some(ty.in_array());
+                        pending_type = Some(pending.in_array());
                         ambiguous_bracket = false;
                     } else {
                         loop {
                             let top = pending_stack.pop().unwrap();
-                            ty = top.join(ty).unwrap();
+                            pending = top.join(pending).unwrap();
 
-                            match ty {
+                            match pending {
                                 Self::IndexedAccess(_, _) => break,
                                 Self::Tuple(_) => break,
                                 _ => {}
@@ -417,7 +420,7 @@ impl TsType {
                                 return Err(type_error_at!(location, "Unexpected `]` found."));
                             }
                         }
-                        pending_type = Some(ty);
+                        pending_type = Some(pending);
                     }
                 }
                 '(' => {
@@ -777,6 +780,13 @@ fn match_simple_type(rust_type: &str) -> Option<TsType> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_join_parens() {
+        let parens = ts_type!((string | number));
+        let joined = parens.join(ts_type!(boolean)).unwrap();
+        assert_eq!(joined, ts_type!((string | number | boolean)));
+    }
 
     #[test]
     fn test_formatting() {
