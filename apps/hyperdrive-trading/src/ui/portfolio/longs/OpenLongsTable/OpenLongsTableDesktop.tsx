@@ -107,7 +107,7 @@ export function OpenLongsTableDesktop({
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
         {tableInstance.getRowModel().rows.map(({ original }) => {
-          const modalId = `${original.assetId}`;
+          const modalId = `${original.hyperdrive.address}-${original.assetId}`;
           return (
             <CloseLongModalButton
               key={modalId}
