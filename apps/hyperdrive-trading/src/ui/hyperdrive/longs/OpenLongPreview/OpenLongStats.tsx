@@ -16,6 +16,7 @@ import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { PrimaryStat } from "src/ui/base/components/PrimaryStat";
+import { Tooltip } from "src/ui/base/components/Tooltip/Tooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatDate } from "src/ui/base/formatting/formatDate";
 import { useFixedRate } from "src/ui/hyperdrive/longs/hooks/useFixedRate";
@@ -153,7 +154,15 @@ export function OpenLongStats({
                 "text-base-content/80": !amountPaid,
               })}
             >
-              <img src={baseToken.iconUrl} className="mr-1 h-8 rounded-full" />
+              <Tooltip
+                tooltip={baseToken.symbol}
+                className="self-center font-normal"
+              >
+                <img
+                  src={baseToken.iconUrl}
+                  className="mr-1.5 size-7 rounded-full"
+                />
+              </Tooltip>
               {`${formatBalance({
                 balance: amountPaidInBase + yieldAtMaturity,
                 decimals: baseToken.decimals,
@@ -162,7 +171,6 @@ export function OpenLongStats({
             </span>
           )
         }
-        valueUnit={`${baseToken.symbol}`}
         subValue={
           // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, term length is displayed instead.
 
