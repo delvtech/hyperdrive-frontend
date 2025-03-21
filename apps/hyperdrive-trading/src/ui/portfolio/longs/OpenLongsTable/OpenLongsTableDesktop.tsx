@@ -332,15 +332,15 @@ function getColumns({
         );
       },
     }),
-    columnHelper.accessor("assetId", {
+    columnHelper.display({
       id: "go-to-market",
-      cell: ({ row, getValue }) => {
+      cell: ({ row }) => {
         return (
           <ManageLongsButton
-            assetId={getValue()}
+            assetId={row.original.assetId}
             account={account}
             hyperdrive={row.original.hyperdrive}
-            key={getValue()}
+            key={row.original.assetId}
           />
         );
       },

@@ -469,7 +469,7 @@ export function OpenLongForm({
               onOpenLong?.(e);
             }}
           >
-            Open Long
+            Buy Fixed
           </button>
         );
       })()}

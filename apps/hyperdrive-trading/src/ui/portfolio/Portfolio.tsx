@@ -36,7 +36,7 @@ export function Portfolio(): ReactElement {
       {
         id: "longs",
         content: <OpenLongsContainer account={account} />,
-        label: "Long",
+        label: "Fixed Rates",
         onClick: () => {
           navigate({
             search: (prev) => ({ ...prev, position: "longs" }),

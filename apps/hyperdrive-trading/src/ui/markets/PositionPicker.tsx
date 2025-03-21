@@ -67,7 +67,7 @@ export function PositionPicker({
           });
         }}
       >
-        Long
+        Fixed
       </Link>
       <Link
         className={classNames(
