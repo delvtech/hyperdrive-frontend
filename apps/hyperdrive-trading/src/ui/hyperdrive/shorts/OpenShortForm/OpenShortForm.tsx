@@ -1,7 +1,11 @@
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
+import {
+  getYieldSource,
+  HyperdriveConfig,
+} from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import { MouseEvent, ReactElement } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
@@ -67,6 +71,12 @@ export function OpenShortForm({
     chainId: hyperdrive.chainId,
   });
   const appConfig = useAppConfigForConnectedChain();
+  const yieldSource = getYieldSource({
+    hyperdriveChainId: hyperdrive.chainId,
+    hyperdriveAddress: hyperdrive.address,
+    appConfig,
+  });
+
   const { baseToken, baseTokenDepositEnabled, tokenOptions } =
     useTokenDepositOptions({
       hyperdrive,
@@ -385,59 +395,85 @@ export function OpenShortForm({
         </div>
       }
       primaryStats={
-        <div className="flex justify-between px-4 py-8">
-          <PrimaryStat
-            label="Variable APY"
-            value={
-              <span className="text-h3 font-bold">
-                {isNewPool ? (
-                  "✨New✨"
-                ) : rewards?.length ? (
-                  <RewardsTooltip
-                    hyperdriveAddress={hyperdrive.address}
-                    position="openShort"
-                    baseRate={vaultRate?.vaultRate}
-                    netRate={vaultRate?.netVaultRate}
-                    chainId={hyperdrive.chainId}
-                  >
-                    {formatRate({ rate: shortApr?.apr ?? 0n })}⚡
-                  </RewardsTooltip>
-                ) : (
-                  `${formatRate({ rate: shortApr?.apr ?? 0n })}`
-                )}
-              </span>
-            }
-            valueContainerClassName="flex items-end"
-            unitClassName="text-h3 font-bold"
-            subValue={
-              <span className="gradient-text">
-                <span className="font-bold">≈ {`${exposureMultiplier}x`}</span>{" "}
-                capital exposure
-              </span>
-            }
-            valueLoading={longPriceStatus === "loading"}
-          />
-          <div className="daisy-divider daisy-divider-horizontal" />
-          <PrimaryStat
-            alignment="right"
-            label="Fixed APR Cost"
-            value={
-              <span className="text-h3 font-bold">
-                {formatRate({ rate: fixedRatePaid || fixedApr?.apr || 0n })}
-              </span>
-            }
-            unitClassName="mb-1 font-bold"
-            subValue={
-              <Tooltip
-                position="top"
-                tooltip="Short positions provide the fixed rate yield to Long positions. Opening a Short is a one-time cost."
-                className="gap-1 before:text-left"
-              >
-                What am I paying for?{" "}
-                <InformationCircleIcon className="size-4 text-neutral-content" />
-              </Tooltip>
-            }
-          />
+        // TOOD: Make this it's own component, OpenShortStats
+        <div className="flex flex-col gap-4 py-8">
+          <div className="flex w-full justify-between px-4">
+            <PrimaryStat
+              label="Variable APY"
+              value={
+                <span className="text-h3 font-bold">
+                  {isNewPool ? (
+                    "✨New✨"
+                  ) : rewards?.length ? (
+                    <RewardsTooltip
+                      hyperdriveAddress={hyperdrive.address}
+                      position="openShort"
+                      baseRate={vaultRate?.vaultRate}
+                      netRate={vaultRate?.netVaultRate}
+                      chainId={hyperdrive.chainId}
+                    >
+                      {formatRate({ rate: shortApr?.apr ?? 0n })}⚡
+                    </RewardsTooltip>
+                  ) : (
+                    `${formatRate({ rate: shortApr?.apr ?? 0n })}`
+                  )}
+                </span>
+              }
+              valueContainerClassName="flex items-end"
+              unitClassName="text-h3 font-bold"
+              subValue={
+                <span
+                  className={classNames("gradient-text", {
+                    invisible: !shortApr?.apr,
+                  })}
+                >
+                  <span className="font-bold">
+                    ≈ {`${exposureMultiplier}x`}
+                  </span>{" "}
+                  capital exposure
+                </span>
+              }
+              valueLoading={longPriceStatus === "loading"}
+            />
+            <div className="daisy-divider daisy-divider-horizontal" />
+            <PrimaryStat
+              alignment="right"
+              label="Fixed APR Cost"
+              value={
+                <span className="text-h3 font-bold">
+                  {formatRate({ rate: fixedRatePaid || fixedApr?.apr || 0n })}
+                </span>
+              }
+              unitClassName="mb-1 font-bold"
+              subValue={
+                <Tooltip
+                  position="top"
+                  tooltip="Short positions provide the fixed rate yield to Long positions. Opening a Short is a one-time cost."
+                  className="gap-1 before:text-left"
+                >
+                  What am I paying for?{" "}
+                  <InformationCircleIcon className="size-4 text-neutral-content" />
+                </Tooltip>
+              }
+            />
+          </div>
+          {!!amountOfBondsToShortAsBigInt && hasEnoughLiquidity ? (
+            <div className="flex items-center rounded-md bg-base-200 py-3">
+              <p className="mx-4 text-sm leading-bodyText text-neutral-content">
+                Earn{" "}
+                <span className="font-bold text-white">
+                  {formatRate({ rate: shortApr?.apr ?? 0n })}
+                </span>{" "}
+                if <span className="font-bold">{yieldSource.shortName}</span>{" "}
+                remains constant at{" "}
+                <span className="mx-0.5 font-bold text-white">
+                  {vaultRate?.netVaultRate
+                    ? formatRate({ rate: vaultRate.netVaultRate })
+                    : null}
+                </span>
+              </p>
+            </div>
+          ) : null}
         </div>
       }
       transactionPreview={
