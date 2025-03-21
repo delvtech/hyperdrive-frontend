@@ -2,7 +2,7 @@ import { fixed } from "@delvtech/fixed-point-wasm";
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import { MouseEvent, ReactElement, useState } from "react";
+import { MouseEvent, ReactElement } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatRate } from "src/base/formatRate";
 import { isTestnetChain } from "src/chains/isTestnetChain";
@@ -32,6 +32,7 @@ import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/Open
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
+import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { PositionPicker } from "src/ui/markets/PositionPicker";
 import { RewardsTooltip } from "src/ui/rewards/RewardsTooltip/RewardsTooltip";
 import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
@@ -47,8 +48,6 @@ import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
-
-(window as any).fixed = fixed;
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -122,20 +121,10 @@ export function OpenShortForm({
     tokenChainId: activeToken.chainId,
   });
 
-  // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
-  const [activeInput, setActiveInput] = useState<"bonds" | "budget">("bonds");
-
   const {
     amount: amountOfBondsToShort,
     amountAsBigInt: amountOfBondsToShortAsBigInt,
     setAmount: setShortAmount,
-  } = useNumericInput({
-    decimals: hyperdrive.decimals,
-  });
-  const {
-    amount: amountToPay,
-    amountAsBigInt: amountToPayAsBigInt,
-    setAmount: setPaymentAmount,
   } = useNumericInput({
     decimals: hyperdrive.decimals,
   });
@@ -187,15 +176,21 @@ export function OpenShortForm({
     budget: MAX_UINT256,
   });
 
-  const { maxBondsOut: maxBondsOutFromPayment } = useMaxShort({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-    budget: amountToPayAsBigInt || 0n,
-  });
-
   const hasEnoughLiquidity = getIsValidTradeSize({
     tradeAmount: amountOfBondsToShortAsBigInt,
     maxTradeSize: maxBondsOut,
+  });
+
+  const defaultBondAmount =
+    hyperdrive.decimals > 6 ? BigInt(1e15) : BigInt(1e6);
+  const { shortApr, shortRateStatus } = useShortRate({
+    chainId: hyperdrive.chainId,
+    // show the market short rate (aka bond amount of 1) if the user hasn't
+    // already entered a short size
+    bondAmount: amountOfBondsToShortAsBigInt || defaultBondAmount,
+    hyperdriveAddress: hyperdrive.address,
+    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+    variableApy: vaultRate?.netVaultRate,
   });
 
   const {
@@ -232,22 +227,8 @@ export function OpenShortForm({
     },
     onExecuted: () => {
       setShortAmount("");
-      setPaymentAmount("");
     },
   });
-
-  // TODO: Implement the two way input switch once getMaxShort is fixed on the sdk
-  // Max button is wired up to the user's balance, or the pool's max long.
-  // Whichever is smallest.
-  // let maxButtonValue = "0";
-  // if (activeTokenBalance && maxBondsOut) {
-  //   maxButtonValue = formatUnits(
-  //     activeTokenBalance.value > maxBondsOut
-  //       ? maxBondsOut
-  //       : activeTokenBalance?.value,
-  //     activeToken.decimals,
-  //   );
-  // }
 
   const exposureMultiplier =
     amountOfBondsToShortAsBigInt && traderDeposit
@@ -293,19 +274,10 @@ export function OpenShortForm({
                     },
                   });
                   setActiveToken(tokenAddress);
-
-                  // TODO: Determine if there is a bug here.
-                  setPaymentAmount("0");
                 }}
               />
             }
-            value={
-              activeInput === "bonds"
-                ? amountOfBondsToShort || ""
-                : maxBondsOutFromPayment
-                  ? formatUnits(maxBondsOutFromPayment, baseToken.decimals)
-                  : ""
-            }
+            value={amountOfBondsToShort || ""}
             settings={
               <div className="mb-3 flex w-full items-center justify-between">
                 <PositionPicker hyperdrive={hyperdrive} />
@@ -342,7 +314,6 @@ export function OpenShortForm({
                 },
               });
               setShortAmount(newAmount);
-              setActiveInput("bonds");
             }}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}.
@@ -366,6 +337,7 @@ export function OpenShortForm({
             }
           />
           <TokenInput
+            disabled
             variant="lighter"
             name={`${baseToken.symbol}-input`}
             token={
@@ -374,23 +346,11 @@ export function OpenShortForm({
                 activeTokenAddress={activeToken.address}
                 onChange={(tokenAddress) => {
                   setActiveToken(tokenAddress);
-                  setPaymentAmount("0");
                 }}
               />
             }
             inputLabel="You pay"
-            value={
-              activeInput === "budget"
-                ? amountToPay || "0"
-                : formatUnits(traderDeposit || 0n, activeToken.decimals)
-            }
-            // This input is disabled until the getMaxShort is fixed on the sdk.
-            disabled
-            // maxValue={maxButtonValue}
-            // onChange={(newAmount) => {
-            //   setActiveInput("budget");
-            //   setPaymentAmount(newAmount);
-            // }}
+            value={formatUnits(traderDeposit || 0n, activeToken.decimals)}
             bottomLeftElement={
               // Defillama fetches the token price via {chain}:{tokenAddress}. Since the token address differs on testnet, price display is disabled there.
               !isTestnetChain(hyperdrive.chainId) ? (
@@ -440,10 +400,10 @@ export function OpenShortForm({
                     netRate={vaultRate?.netVaultRate}
                     chainId={hyperdrive.chainId}
                   >
-                    {formatRate({ rate: vaultRate?.netVaultRate ?? 0n })}⚡
+                    {formatRate({ rate: shortApr?.apr ?? 0n })}⚡
                   </RewardsTooltip>
                 ) : (
-                  formatRate({ rate: vaultRate?.netVaultRate ?? 0n })
+                  `${formatRate({ rate: shortApr?.apr ?? 0n })}`
                 )}
               </span>
             }
@@ -451,7 +411,7 @@ export function OpenShortForm({
             unitClassName="text-h3 font-bold"
             subValue={
               <span className="gradient-text">
-                <span className="font-bold">{`${exposureMultiplier}x`}</span>{" "}
+                <span className="font-bold">≈ {`${exposureMultiplier}x`}</span>{" "}
                 capital exposure
               </span>
             }

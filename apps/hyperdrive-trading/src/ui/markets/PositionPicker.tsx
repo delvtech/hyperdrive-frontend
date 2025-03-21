@@ -26,7 +26,7 @@ export function PositionPicker({
   const poolAddress = hyperdrive.address;
 
   return (
-    <div className="flex gap-2.5">
+    <div className="flex gap-4">
       {/* TODO: Implement the term picker button */}
       <button
         className={classNames(
@@ -96,7 +96,7 @@ export function PositionPicker({
           });
         }}
       >
-        Variable
+        Short
       </Link>
       <Link
         className={classNames(
