@@ -1,22 +1,21 @@
 export const faqData2 = [
   {
-    question: "How can I get fixed rates?",
+    question: "How do fixed rates work?",
     answer: (
       <>
-        <p>Open a Long and hold it to maturity.</p>
         <p>
-          When you open a Long in Hyperdrive, you&apos;re buying tokens at a
-          discount. These tokens are redeemable at maturity for their full
-          value, giving you a fixed return.
+          When you open a fixed rate position in Hyperdrive, you&apos;re buying
+          tokens at a discount. These tokens are redeemable at maturity for
+          their full value, giving you a fixed return.
         </p>
         <p>
-          Opening Longs has an immediate impact on the market. If more people
-          open Longs, the fixed rate goes down. If they close Longs, the fixed
-          rate goes up.
+          Opening a fixed rate position has an immediate impact on the market.
+          If more people buy the fixed rate, the fixed rate goes down. If they
+          close their position, the fixed rate goes up.
         </p>
         <p>
-          Users can also take speculative Long positions where they bet on the
-          short-term movement of rates. Read our docs to learn more about{" "}
+          Users can also take speculative fixed rate positions where they bet on
+          the short-term movement of rates. Read our docs to learn more about{" "}
           <a
             className="daisy-link hover:text-white"
             rel="noreferrer"
