@@ -38,7 +38,7 @@ export function ManageShortButton({
             <button
               className="m-0 flex h-[52px] w-full flex-row items-center justify-start border-b-2 border-b-neutral-content/20 p-0 text-start hover:bg-neutral hover:text-neutral-content"
               onClick={() => {
-                const modalId = `${assetId}`;
+                const modalId = `${hyperdrive.address}-${assetId}`;
                 (
                   document.getElementById(modalId) as HTMLDialogElement
                 ).showModal();
