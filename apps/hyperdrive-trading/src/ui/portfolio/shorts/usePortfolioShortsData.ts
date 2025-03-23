@@ -84,6 +84,7 @@ export function usePortfolioShortsDataFromHyperdrives({
                   address: hyperdrive.address,
                   drift: getDrift({ chainId: hyperdrive.chainId }),
                   earliestBlock: hyperdrive.initializationBlock,
+                  debugName: hyperdrive.name,
                   zapContractAddress:
                     appConfigForConnectedChain.zaps[hyperdrive.chainId]
                       ?.address,

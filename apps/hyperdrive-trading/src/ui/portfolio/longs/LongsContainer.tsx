@@ -41,7 +41,10 @@ export function OpenLongsContainer({
     );
   }
 
-  if (openLongPositions?.every((position) => !position.openLongs.length)) {
+  if (
+    !openLongPositions ||
+    openLongPositions.every((position) => !position.openLongs.length)
+  ) {
     return (
       <PositionContainer className="my-28">
         <NonIdealState
