@@ -40,7 +40,8 @@ export function OpenShortsContainer({
   }
 
   if (
-    openShortPositions?.every((position) => position.openShorts.length === 0)
+    !openShortPositions ||
+    openShortPositions.every((position) => position.openShorts.length === 0)
   ) {
     return (
       <PositionContainer className="my-28">

@@ -987,7 +987,6 @@ export class ReadHyperdrive extends ReadClient {
       });
 
       // Create a default empty short that we will update based on the events
-      // const short: OpenShort = openShorts[assetId] || {
       openShorts[assetId] = openShorts[assetId] || {
         hyperdriveAddress,
         assetId: event.args.assetId,
