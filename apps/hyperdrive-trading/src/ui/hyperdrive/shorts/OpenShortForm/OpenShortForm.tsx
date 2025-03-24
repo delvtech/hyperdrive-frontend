@@ -244,9 +244,9 @@ export function OpenShortForm({
     amountOfBondsToShortAsBigInt && traderDeposit
       ? fixed(amountOfBondsToShortAsBigInt, activeToken.decimals)
           .div(traderDeposit, activeToken.decimals)
-          .format({ decimals: 2, rounding: "trunc" })
+          .format({ decimals: 1, rounding: "trunc" })
       : calculateMarketYieldMultiplier(longPrice ?? 0n).format({
-          decimals: 2,
+          decimals: 1,
           rounding: "trunc",
         });
 
@@ -430,7 +430,7 @@ export function OpenShortForm({
                   <span className="font-bold">
                     ≈ {`${exposureMultiplier}x`}
                   </span>{" "}
-                  capital exposure
+                  yield exposure
                 </span>
               }
               valueLoading={longPriceStatus === "loading"}
