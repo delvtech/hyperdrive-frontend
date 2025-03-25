@@ -3,9 +3,9 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { PropsWithChildren, ReactElement } from "react";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
+import CustomBanner from "src/ui/base/components/CustomBanner";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 import { useAddressScreen } from "src/ui/compliance/hooks/useAddressScreen";
-import { MilesBanner } from "src/ui/rewards/MilesBanner";
 
 export function Page({ children }: PropsWithChildren): ReactElement {
   // compliance
@@ -15,7 +15,19 @@ export function Page({ children }: PropsWithChildren): ReactElement {
     <div className="flex min-h-screen flex-col items-center justify-between gap-9">
       <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
-        <MilesBanner />
+        {/* <MilesBanner /> */}
+        <CustomBanner
+          className="bg-error/20"
+          description={
+            <div className="flex w-full flex-1 items-center justify-center gap-4">
+              <span>
+                In an abundance of caution, Hyperdrive pools have been paused
+                while we investigate a potential vulnerability. We are not aware
+                of any loss in user funds at this time.
+              </span>
+            </div>
+          }
+        />
 
         {/* compliance */}
         <TermsOfUseAndPrivacyPolicyModal />
