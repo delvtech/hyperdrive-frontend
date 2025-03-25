@@ -8,9 +8,6 @@ import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForC
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-/**
- * Returns the list of shorts that the account currently has open.
- */
 export function useShortRate({
   bondAmount,
   timestamp,
