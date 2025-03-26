@@ -22,8 +22,9 @@ export function Page({ children }: PropsWithChildren): ReactElement {
             <div className="flex w-full flex-1 items-center justify-center gap-4">
               <span>
                 In an abundance of caution, Hyperdrive pools have been paused
-                while we investigate a potential vulnerability. We are not aware
-                of any loss in user funds at this time.
+                while we investigate a potential vulnerability. Users can still
+                withdraw deposits and close positions. We are not aware of any
+                loss in user funds at this time.
               </span>
             </div>
           }
