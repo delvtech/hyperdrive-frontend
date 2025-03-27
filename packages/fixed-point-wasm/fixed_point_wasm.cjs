@@ -641,7 +641,7 @@ class FixedPoint {
   mulDown(other, decimals) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.fixedpoint_mul(retptr, this.__wbg_ptr, addHeapObject(other), isLikeNone(decimals) ? 0xFFFFFF : decimals);
+      wasm.fixedpoint_mulDown(retptr, this.__wbg_ptr, addHeapObject(other), isLikeNone(decimals) ? 0xFFFFFF : decimals);
       var r0 = getInt32Memory0()[retptr / 4 + 0];
       var r1 = getInt32Memory0()[retptr / 4 + 1];
       var r2 = getInt32Memory0()[retptr / 4 + 2];
@@ -695,7 +695,7 @@ class FixedPoint {
   divDown(other, decimals) {
     try {
       const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-      wasm.fixedpoint_div(retptr, this.__wbg_ptr, addHeapObject(other), isLikeNone(decimals) ? 0xFFFFFF : decimals);
+      wasm.fixedpoint_divDown(retptr, this.__wbg_ptr, addHeapObject(other), isLikeNone(decimals) ? 0xFFFFFF : decimals);
       var r0 = getInt32Memory0()[retptr / 4 + 0];
       var r1 = getInt32Memory0()[retptr / 4 + 1];
       var r2 = getInt32Memory0()[retptr / 4 + 2];
