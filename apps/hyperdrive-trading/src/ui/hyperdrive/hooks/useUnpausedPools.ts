@@ -9,6 +9,7 @@ import { makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { getRewardResolverQuery } from "src/ui/rewards/hooks/getRewardResolverQuery";
 import { Address } from "viem";
 import { useChainId } from "wagmi";
@@ -24,6 +25,8 @@ export function useUnpausedPools(): {
   // Only show testnet and fork pools if the user is connected to a testnet
   // chain
   const appConfig = useAppConfigForConnectedChain();
+  const { isFlagEnabled: showPausedPools } =
+    useFeatureFlag("show-paused-pools");
 
   // Use the chain id in the query key to make sure the pools list updates when
   // you switch chains
@@ -32,7 +35,7 @@ export function useUnpausedPools(): {
     queryKey: makeQueryKey2({
       namespace: "hyperdrive",
       queryId: "unpausedPools",
-      params: { chainId: connectedChainId },
+      params: { chainId: connectedChainId, showPausedPools },
     }),
     queryFn: async () => {
       const unpausedPools: (HyperdriveConfig & {
@@ -50,9 +53,11 @@ export function useUnpausedPools(): {
               });
 
               // We only show hyperdrives that are not paused
-              const { isPaused } = await readHyperdrive.getMarketState();
-              if (isPaused) {
-                return;
+              if (!showPausedPools) {
+                const { isPaused } = await readHyperdrive.getMarketState();
+                if (isPaused) {
+                  return;
+                }
               }
 
               // Resolve the rewards information and include it for consumers
