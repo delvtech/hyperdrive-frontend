@@ -17,11 +17,8 @@ export function DevtoolsMenu(): ReactElement {
         Menu Item Name here
         </FeatureFlagMenuItem> */}
         <FeatureFlagMenuItem flagName="zaps">Zaps</FeatureFlagMenuItem>
-        <FeatureFlagMenuItem flagName="miles-leaderboard">
-          Leaderboard
-        </FeatureFlagMenuItem>
-        <FeatureFlagMenuItem flagName="portfolio-rewards">
-          Portfolio Rewards
+        <FeatureFlagMenuItem flagName="show-paused-pools">
+          Show paused pools
         </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {

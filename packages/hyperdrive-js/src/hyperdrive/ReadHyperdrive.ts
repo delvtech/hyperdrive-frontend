@@ -192,7 +192,7 @@ export class ReadHyperdrive extends ReadClient {
 
     if (!events.length || events[0].blockNumber === undefined) {
       throw new HyperdriveSdkError(
-        "Pool has not been initialized, no block found.",
+        `Pool has not been initialized, no block found. ${this.address}`,
       );
     }
     const blockNumber = events[0].blockNumber;

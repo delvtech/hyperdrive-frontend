@@ -4,6 +4,7 @@ interface HyperdriveQueryKeys {
   unpausedPools: {
     chainId: number;
     filterPoolsWithoutRewards?: boolean;
+    showPausedPools?: boolean;
   };
   poolInfo: { chainId: number; hyperdriveAddress: Address };
   currentLongPrice: {
