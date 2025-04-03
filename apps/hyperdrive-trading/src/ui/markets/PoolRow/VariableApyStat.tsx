@@ -3,9 +3,7 @@ import { getHyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
-import { calculateMarketYieldMultiplier } from "src/hyperdrive/calculateMarketYieldMultiplier";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useShortRate } from "src/ui/hyperdrive/shorts/hooks/useShortRate";
 import { PercentLabel } from "src/ui/markets/PoolRow/PercentLabel";
 import { useOpenShortRewards } from "src/ui/rewards/hooks/useOpenShortRewards";
@@ -30,10 +28,6 @@ export function VariableApyStat({
       chainId,
       hyperdriveAddress,
     });
-  const { longPrice, longPriceStatus } = useCurrentLongPrice({
-    chainId: hyperdrive.chainId,
-    hyperdriveAddress: hyperdrive.address,
-  });
 
   const { shortApr, shortRateStatus } = useShortRate({
     chainId: hyperdrive.chainId,
@@ -43,11 +37,6 @@ export function VariableApyStat({
     timestamp: BigInt(Math.floor(Date.now() / 1000)),
     variableApy: yieldSourceRate?.netVaultRate,
   });
-
-  const multiplierLabel =
-    longPriceStatus === "success" && longPrice
-      ? `${calculateMarketYieldMultiplier(longPrice).format({ decimals: 0 })}x`
-      : undefined;
 
   if (yieldSourceRateStatus !== "success" || shortRateStatus !== "success") {
     return <Skeleton width={100} />;
@@ -64,7 +53,6 @@ export function VariableApyStat({
         />
         {rewards?.length ? <span className="mx-1">⚡</span> : null}
       </div>
-      <span className="gradient-text text-left font-inter text-md font-medium">{`Up to ${multiplierLabel} exposure`}</span>
     </div>
   );
 }

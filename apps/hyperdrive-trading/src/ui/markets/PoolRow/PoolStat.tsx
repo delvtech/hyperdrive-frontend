@@ -12,6 +12,11 @@ export interface PoolStatProps {
   overlay?: ReactNode;
   value: ReactNode;
   isLoading?: boolean;
+
+  /**
+   * @deprecated
+   */
+  action?: ReactNode;
   isNew?: boolean;
   variant?: "default" | "gradient";
 }
@@ -22,6 +27,7 @@ export function PoolStat({
   overlay,
   isNew = false,
   variant = "default",
+  action,
   isLoading = false,
 }: PoolStatProps): ReactElement {
   let displayValue;
@@ -43,6 +49,7 @@ export function PoolStat({
       >
         {displayValue}
       </div>
+      {action}
     </div>
   );
 

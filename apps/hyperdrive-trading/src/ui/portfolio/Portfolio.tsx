@@ -2,6 +2,7 @@ import { Navigate, useNavigate, useSearch } from "@tanstack/react-router";
 import { ReactElement, useEffect, useMemo } from "react";
 import { usePrevious } from "react-use";
 import { Tabs } from "src/ui/base/components/Tabs/Tabs";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { OpenLongsContainer } from "src/ui/portfolio/longs/LongsContainer";
 import { LpAndWithdrawalSharesContainer } from "src/ui/portfolio/lp/LpAndWithdrawalSharesContainer";
 import { RewardsContainer } from "src/ui/portfolio/rewards/RewardsContainer";
@@ -15,7 +16,7 @@ export function Portfolio(): ReactElement {
     from: PORTFOLIO_ROUTE,
   });
   const activeTab = position ?? "longs";
-
+  const { isFlagEnabled: isNewDesign } = useFeatureFlag("new-design");
   const { address: connectedAccount } = useAccount();
 
   // The account address from the route needs to be checksummed before it's
@@ -36,7 +37,7 @@ export function Portfolio(): ReactElement {
       {
         id: "longs",
         content: <OpenLongsContainer account={account} />,
-        label: "Fixed Rates",
+        label: isNewDesign ? "Fixed Rates" : "Long",
         onClick: () => {
           navigate({
             search: (prev) => ({ ...prev, position: "longs" }),
