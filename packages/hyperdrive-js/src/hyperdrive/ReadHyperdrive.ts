@@ -10,6 +10,7 @@ import {
   ReadContract,
 } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
+import retry from "p-retry";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
 import { assertNever } from "src/base/assertNever";
 import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
@@ -188,13 +189,34 @@ export class ReadHyperdrive extends ReadClient {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
   }): Promise<Block> {
-    const events = await this.contract.getEvents("Initialize", options);
+    const events = await retry(
+      async () => {
+        // On Gnosischain, the Initialize event request sometimes comes back as
+        // an empty array due to Alchemy blips. We throw an error in this case
+        // so that we trigger a retry.
+        const events = await this.contract.getEvents("Initialize", options);
+        if (!events.length || events[0].blockNumber === undefined) {
+          // We need to clear the cache otherwise we'll get the same empty array
+          // back from the cache.
+          this.contract.cache.clear();
+          throw new HyperdriveSdkError(
+            `Pool has not been initialized, no block found. ${this.address}`,
+          );
+        }
+        return events;
+      },
+      {
+        retries: 10,
+        onFailedAttempt: async (error) => {
+          // TODO: Remove retry logic all together once we stop seeing retry
+          // logs in the console all the time.
+          console.log(
+            `getInitializationBlock failed on Hyperdrive ${this.address}, chainId: ${await this.drift.getChainId()}. There are ${error.retriesLeft} retries left.`,
+          );
+        },
+      },
+    );
 
-    if (!events.length || events[0].blockNumber === undefined) {
-      throw new HyperdriveSdkError(
-        `Pool has not been initialized, no block found. ${this.address}`,
-      );
-    }
     const blockNumber = events[0].blockNumber;
 
     return getBlockOrThrow(this.drift, { blockNumber });

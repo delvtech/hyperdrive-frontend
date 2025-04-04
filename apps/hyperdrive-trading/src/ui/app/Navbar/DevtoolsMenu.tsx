@@ -20,6 +20,9 @@ export function DevtoolsMenu(): ReactElement {
         <FeatureFlagMenuItem flagName="show-paused-pools">
           Show paused pools
         </FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName="new-design">
+          New design
+        </FeatureFlagMenuItem>
         <MenuItem
           onClick={() => {
             window.localStorage.clear();

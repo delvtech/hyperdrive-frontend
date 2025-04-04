@@ -49,6 +49,7 @@ export function OpenLongForm({
   onOpenLong,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
+  const { isFlagEnabled: isNewDesign } = useFeatureFlag("new-design");
   const connectedChainId = useChainId();
   const { marketState } = useMarketState({
     hyperdriveAddress: hyperdrive.address,
@@ -450,7 +451,7 @@ export function OpenLongForm({
               onOpenLong?.(e);
             }}
           >
-            Buy Fixed
+            {isNewDesign ? "Buy Fixed" : "Open Long"}
           </button>
         );
       })()}

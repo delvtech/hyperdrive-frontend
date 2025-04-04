@@ -12,6 +12,7 @@ import { isTestnetChain } from "src/chains/isTestnetChain";
 import { getDepositAssets } from "src/hyperdrive/getDepositAssets";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { Well } from "src/ui/base/components/Well/Well";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { AssetStack } from "src/ui/markets/AssetStack";
@@ -37,6 +38,7 @@ const pinnedBorderClassNames: Record<number, string> = {
 export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
   const navigate = useNavigate();
   const appConfig = useAppConfigForConnectedChain();
+  const { isFlagEnabled: isNewDesign } = useFeatureFlag("new-design");
   const { chains } = appConfig;
   const chainInfo = chains[hyperdrive.chainId];
 
@@ -175,13 +177,29 @@ export function PoolRow({ hyperdrive }: PoolRowProps): ReactElement {
 
         {/* Right side */}
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:gap-12 lg:items-start lg:justify-start">
-          <div className="size-full border-r border-gray-500/20 lg:w-[112px]">
+          <div
+            className={
+              isNewDesign
+                ? "size-full border-r border-gray-500/20 lg:w-[112px]"
+                : "w-full lg:w-[112px]"
+            }
+          >
             <FixedAprCta hyperdrive={hyperdrive} />
           </div>
-          <div className="size-full border-r border-gray-500/20 lg:w-[181px]">
+          <div
+            className={
+              isNewDesign
+                ? "size-full border-r border-gray-500/20 lg:w-[181px]"
+                : "w-full lg:w-[181px]"
+            }
+          >
             <VariableApyCta hyperdrive={hyperdrive} />
           </div>
-          <div className="size-full lg:w-[122px]">
+          <div
+            className={
+              isNewDesign ? "size-full lg:w-[122px]" : "w-full lg:w-[122px]"
+            }
+          >
             <LpApyCta hyperdrive={hyperdrive} />
           </div>
         </div>

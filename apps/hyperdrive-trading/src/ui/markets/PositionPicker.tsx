@@ -2,6 +2,7 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { Link, useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatTermLength2 } from "src/ui/markets/formatTermLength";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useAccount } from "wagmi";
@@ -12,6 +13,7 @@ export function PositionPicker({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { isFlagEnabled: isNewDesign } = useFeatureFlag("new-design");
   const { position: activePosition = "long" } = useSearch({
     from: MARKET_DETAILS_ROUTE,
   });
@@ -67,7 +69,7 @@ export function PositionPicker({
           });
         }}
       >
-        Fixed
+        {isNewDesign ? "Fixed" : "Long"}
       </Link>
       <Link
         className={classNames(
