@@ -1,0 +1,5 @@
+dist
+node_modules
+
+# Ignore temporary clones created by the build script
+*_temp

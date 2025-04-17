@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.turbo
+.vscode
+
+# contains no src files
+packages/hyperdrive-artifacts
+
+# generated files
+packages/hyperdrive-wasm
+packages/fixed-point-wasm
