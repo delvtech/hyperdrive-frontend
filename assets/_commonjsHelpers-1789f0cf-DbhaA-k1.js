@@ -1,0 +1,1 @@
+import{a as o}from"./index-DaWYiYoD.js";var l=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof o<"u"?o:typeof self<"u"?self:{};function f(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}export{l as c,f as g};
