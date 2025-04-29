@@ -15,11 +15,11 @@ import { Route as ChainlogImport } from "./ui/routes/chainlog";
 import { Route as ErrorImport } from "./ui/routes/error";
 import { Route as IndexImport } from "./ui/routes/index";
 import { Route as IneligibleImport } from "./ui/routes/ineligible";
+import { Route as LandingImport } from "./ui/routes/landing";
 import { Route as LeaderboardImport } from "./ui/routes/leaderboard";
 import { Route as MarketChainIdAddressImport } from "./ui/routes/market.$chainId.$address";
 import { Route as MintImport } from "./ui/routes/mint";
 import { Route as PointsmarketsImport } from "./ui/routes/points_markets";
-import { Route as PortfolioImport } from "./ui/routes/portfolio";
 import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_countries";
 
 // Create/Update Routes
@@ -27,12 +27,6 @@ import { Route as RestrictedcountriesImport } from "./ui/routes/restricted_count
 const RestrictedcountriesRoute = RestrictedcountriesImport.update({
   id: "/restricted_countries",
   path: "/restricted_countries",
-  getParentRoute: () => rootRoute,
-} as any);
-
-const PortfolioRoute = PortfolioImport.update({
-  id: "/portfolio",
-  path: "/portfolio",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -51,6 +45,12 @@ const MintRoute = MintImport.update({
 const LeaderboardRoute = LeaderboardImport.update({
   id: "/leaderboard",
   path: "/leaderboard",
+  getParentRoute: () => rootRoute,
+} as any);
+
+const LandingRoute = LandingImport.update({
+  id: "/landing",
+  path: "/landing",
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -116,6 +116,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IneligibleImport;
       parentRoute: typeof rootRoute;
     };
+    "/landing": {
+      id: "/landing";
+      path: "/landing";
+      fullPath: "/landing";
+      preLoaderRoute: typeof LandingImport;
+      parentRoute: typeof rootRoute;
+    };
     "/leaderboard": {
       id: "/leaderboard";
       path: "/leaderboard";
@@ -135,13 +142,6 @@ declare module "@tanstack/react-router" {
       path: "/points_markets";
       fullPath: "/points_markets";
       preLoaderRoute: typeof PointsmarketsImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/portfolio": {
-      id: "/portfolio";
-      path: "/portfolio";
-      fullPath: "/portfolio";
-      preLoaderRoute: typeof PortfolioImport;
       parentRoute: typeof rootRoute;
     };
     "/restricted_countries": {
@@ -168,10 +168,10 @@ export interface FileRoutesByFullPath {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/landing": typeof LandingRoute;
   "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
   "/restricted_countries": typeof RestrictedcountriesRoute;
   "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
 }
@@ -181,10 +181,10 @@ export interface FileRoutesByTo {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/landing": typeof LandingRoute;
   "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
   "/restricted_countries": typeof RestrictedcountriesRoute;
   "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
 }
@@ -195,10 +195,10 @@ export interface FileRoutesById {
   "/chainlog": typeof ChainlogRoute;
   "/error": typeof ErrorRoute;
   "/ineligible": typeof IneligibleRoute;
+  "/landing": typeof LandingRoute;
   "/leaderboard": typeof LeaderboardRoute;
   "/mint": typeof MintRoute;
   "/points_markets": typeof PointsmarketsRoute;
-  "/portfolio": typeof PortfolioRoute;
   "/restricted_countries": typeof RestrictedcountriesRoute;
   "/market/$chainId/$address": typeof MarketChainIdAddressRoute;
 }
@@ -210,10 +210,10 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/landing"
     | "/leaderboard"
     | "/mint"
     | "/points_markets"
-    | "/portfolio"
     | "/restricted_countries"
     | "/market/$chainId/$address";
   fileRoutesByTo: FileRoutesByTo;
@@ -222,10 +222,10 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/landing"
     | "/leaderboard"
     | "/mint"
     | "/points_markets"
-    | "/portfolio"
     | "/restricted_countries"
     | "/market/$chainId/$address";
   id:
@@ -234,10 +234,10 @@ export interface FileRouteTypes {
     | "/chainlog"
     | "/error"
     | "/ineligible"
+    | "/landing"
     | "/leaderboard"
     | "/mint"
     | "/points_markets"
-    | "/portfolio"
     | "/restricted_countries"
     | "/market/$chainId/$address";
   fileRoutesById: FileRoutesById;
@@ -248,10 +248,10 @@ export interface RootRouteChildren {
   ChainlogRoute: typeof ChainlogRoute;
   ErrorRoute: typeof ErrorRoute;
   IneligibleRoute: typeof IneligibleRoute;
+  LandingRoute: typeof LandingRoute;
   LeaderboardRoute: typeof LeaderboardRoute;
   MintRoute: typeof MintRoute;
   PointsmarketsRoute: typeof PointsmarketsRoute;
-  PortfolioRoute: typeof PortfolioRoute;
   RestrictedcountriesRoute: typeof RestrictedcountriesRoute;
   MarketChainIdAddressRoute: typeof MarketChainIdAddressRoute;
 }
@@ -261,10 +261,10 @@ const rootRouteChildren: RootRouteChildren = {
   ChainlogRoute: ChainlogRoute,
   ErrorRoute: ErrorRoute,
   IneligibleRoute: IneligibleRoute,
+  LandingRoute: LandingRoute,
   LeaderboardRoute: LeaderboardRoute,
   MintRoute: MintRoute,
   PointsmarketsRoute: PointsmarketsRoute,
-  PortfolioRoute: PortfolioRoute,
   RestrictedcountriesRoute: RestrictedcountriesRoute,
   MarketChainIdAddressRoute: MarketChainIdAddressRoute,
 };
@@ -283,10 +283,10 @@ export const routeTree = rootRoute
         "/chainlog",
         "/error",
         "/ineligible",
+        "/landing",
         "/leaderboard",
         "/mint",
         "/points_markets",
-        "/portfolio",
         "/restricted_countries",
         "/market/$chainId/$address"
       ]
@@ -303,6 +303,9 @@ export const routeTree = rootRoute
     "/ineligible": {
       "filePath": "ineligible.tsx"
     },
+    "/landing": {
+      "filePath": "landing.tsx"
+    },
     "/leaderboard": {
       "filePath": "leaderboard.tsx"
     },
@@ -311,9 +314,6 @@ export const routeTree = rootRoute
     },
     "/points_markets": {
       "filePath": "points_markets.tsx"
-    },
-    "/portfolio": {
-      "filePath": "portfolio.tsx"
     },
     "/restricted_countries": {
       "filePath": "restricted_countries.tsx"
