@@ -59,11 +59,14 @@ export function ExternalLink({
         });
         onClick?.(e);
       }}
-      className={classNames("group", className)}
+      className={classNames(
+        "group inline-flex items-center gap-0.5",
+        className,
+      )}
     >
       {children}
       {icon === true ? (
-        <ArrowTopRightOnSquareIcon className="size-4 opacity-60 group-hover:opacity-100" />
+        <ArrowTopRightOnSquareIcon className="size-[1em] opacity-60 group-hover:opacity-100" />
       ) : (
         icon && icon
       )}

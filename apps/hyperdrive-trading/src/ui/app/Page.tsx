@@ -1,6 +1,8 @@
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import { ScrollRestoration } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { PropsWithChildren, ReactElement } from "react";
+import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import CustomBanner from "src/ui/base/components/CustomBanner";
@@ -20,11 +22,31 @@ export function Page({ children }: PropsWithChildren): ReactElement {
           className="bg-error/20"
           description={
             <div className="flex w-full flex-1 items-center justify-center gap-4">
-              <span>
-                In an abundance of caution, Hyperdrive pools have been paused
-                while we investigate a potential vulnerability. We are not aware
-                of any loss in user funds at this time.
-              </span>
+              <ExclamationTriangleIcon className="size-5 shrink-0" />
+              <div>
+                <p>
+                  Thank you for using DELV. Unfortunately, we are winding down
+                  operations. This site will remain available for withdrawals
+                  and redemptions until at least __ 2025.
+                </p>
+                <p className="font-bold">
+                  Please ensure you complete any necessary actions before this
+                  period ends, as access cannot be guaranteed afterwards.
+                </p>
+                <p>
+                  To run the UI locally, you can find the source code and setup
+                  instructions on{" "}
+                  <ExternalLink
+                    newTab
+                    icon
+                    href="https://github.com/delvtech/hyperdrive-frontend"
+                    className="daisy-link-hover daisy-link"
+                  >
+                    GitHub
+                  </ExternalLink>
+                  .
+                </p>
+              </div>
             </div>
           }
         />
