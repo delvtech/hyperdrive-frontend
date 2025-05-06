@@ -1,1 +1,1 @@
-export const LANDING_ROUTE = "/";
+export const LANDING_ROUTE = "/landing";

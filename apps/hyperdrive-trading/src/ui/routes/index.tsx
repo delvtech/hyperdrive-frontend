@@ -1,18 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Page } from "src/ui/app/Page";
-import { Landing } from "src/ui/landing/Landing";
-import { LANDING_ROUTE } from "src/ui/landing/routes";
+import { Portfolio } from "src/ui/portfolio/Portfolio";
+import { PORTFOLIO_ROUTE } from "src/ui/portfolio/routes";
 import { z } from "zod";
 
-export const Route = createFileRoute(LANDING_ROUTE)({
+export const Route = createFileRoute(PORTFOLIO_ROUTE)({
   component: () => (
     <Page>
-      <Landing />
+      <Portfolio />
     </Page>
   ),
   validateSearch: z.object({
-    chains: z.array(z.number()).optional(),
-    assets: z.array(z.string()).optional(),
-    hideLowTvl: z.boolean().optional(),
+    position: z.enum(["longs", "shorts", "lp", "rewards"]).optional(),
+    account: z.string().optional(),
   }),
 });
