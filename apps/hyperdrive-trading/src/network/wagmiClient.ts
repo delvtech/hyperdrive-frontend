@@ -13,19 +13,41 @@ import { capsuleWallet } from "src/wallets/capsule";
 import { Chain, http, Transport } from "viem";
 import { base, foundry, gnosis, linea, mainnet, sepolia } from "wagmi/chains";
 
-const {
-  VITE_LOCALHOST_NODE_RPC_URL,
-  VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-  VITE_CUSTOM_CHAIN_CHAIN_ID,
-  VITE_WALLET_CONNECT_PROJECT_ID,
-  VITE_SEPOLIA_RPC_URL,
-  VITE_MAINNET_RPC_URL,
-  VITE_LINEA_RPC_URL,
-  VITE_BASE_RPC_URL,
-  VITE_GNOSIS_FORK_NODE_RPC_URL,
-  VITE_GNOSIS_FORK_CHAIN_ID,
-  VITE_GNOSIS_NODE_RPC_URL,
-} = import.meta.env;
+// Allow users to override the default RPC URL by setting it in local storage,
+// especially useful for custom networks/chains
+const VITE_LOCALHOST_NODE_RPC_URL =
+  localStorage.getItem("VITE_LOCALHOST_NODE_RPC_URL") ||
+  import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
+const VITE_CUSTOM_CHAIN_NODE_RPC_URL =
+  localStorage.getItem("VITE_CUSTOM_CHAIN_NODE_RPC_URL") ||
+  import.meta.env.VITE_CUSTOM_CHAIN_NODE_RPC_URL;
+const VITE_CUSTOM_CHAIN_CHAIN_ID =
+  localStorage.getItem("VITE_CUSTOM_CHAIN_CHAIN_ID") ||
+  import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID;
+const VITE_WALLET_CONNECT_PROJECT_ID =
+  localStorage.getItem("VITE_WALLET_CONNECT_PROJECT_ID") ||
+  import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID;
+const VITE_SEPOLIA_RPC_URL =
+  localStorage.getItem("VITE_SEPOLIA_RPC_URL") ||
+  import.meta.env.VITE_SEPOLIA_RPC_URL;
+const VITE_MAINNET_RPC_URL =
+  localStorage.getItem("VITE_MAINNET_RPC_URL") ||
+  import.meta.env.VITE_MAINNET_RPC_URL;
+const VITE_LINEA_RPC_URL =
+  localStorage.getItem("VITE_LINEA_RPC_URL") ||
+  import.meta.env.VITE_LINEA_RPC_URL;
+const VITE_BASE_RPC_URL =
+  localStorage.getItem("VITE_BASE_RPC_URL") ||
+  import.meta.env.VITE_BASE_RPC_URL;
+const VITE_GNOSIS_FORK_NODE_RPC_URL =
+  localStorage.getItem("VITE_GNOSIS_FORK_NODE_RPC_URL") ||
+  import.meta.env.VITE_GNOSIS_FORK_NODE_RPC_URL;
+const VITE_GNOSIS_FORK_CHAIN_ID =
+  localStorage.getItem("VITE_GNOSIS_FORK_CHAIN_ID") ||
+  import.meta.env.VITE_GNOSIS_FORK_CHAIN_ID;
+const VITE_GNOSIS_NODE_RPC_URL =
+  localStorage.getItem("VITE_GNOSIS_NODE_RPC_URL") ||
+  import.meta.env.VITE_GNOSIS_NODE_RPC_URL;
 
 interface WagmiClientConfig {
   rpcUrl: string;

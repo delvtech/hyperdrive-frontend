@@ -9,6 +9,7 @@ import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAnalyticsUrl } from "src/ui/analytics/useMarketAnalyticsUrl";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { RpcForm } from "src/ui/chains/RpcForm";
 
 export function Navbar(): ReactElement {
   const analyticsUrl = useAnalyticsUrl();
@@ -40,6 +41,7 @@ export function Navbar(): ReactElement {
           <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
         </ExternalLink>
 
+        <RpcForm />
         <ConnectButton
           accountStatus={isTailwindSmall ? "avatar" : "full"}
           showBalance={false}
