@@ -21,6 +21,7 @@ import { wagmiConfig } from "src/network/wagmiClient";
 import { Plausible } from "src/ui/analytics/Plausible";
 import { App } from "src/ui/app/App/App";
 import ToastProvider from "src/ui/base/components/Toaster/ToastProvider";
+import { RpcForm } from "src/ui/chains/RpcForm";
 import { RegionInfoProvider } from "src/ui/compliance/hooks/useRegionInfo";
 import "src/ui/globals.css";
 import { logAppVersion } from "src/ui/version/logAppVersion";
@@ -75,6 +76,7 @@ root.render(
             <RollbarErrorBoundary>
               <RegionInfoProvider>
                 <App />
+                <RpcForm />
               </RegionInfoProvider>
             </RollbarErrorBoundary>
           </RollbarProvider>
