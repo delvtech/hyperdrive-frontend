@@ -25,7 +25,6 @@ import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
-import { PoolHasRewardsBanner } from "src/ui/portfolio/rewards/PoolHasRewardsBanner";
 import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
@@ -107,7 +106,6 @@ export function OpenShortsTableDesktop({
           hyperdrives[0].name.replace(/\d{1,3}d/, "")
         }
       />
-      {poolHasRewards ? <PoolHasRewardsBanner /> : null}
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
         {tableInstance.getRowModel().rows.map((row) => {

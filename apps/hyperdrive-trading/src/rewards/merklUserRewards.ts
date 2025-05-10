@@ -39,16 +39,6 @@ interface MerklUserReward {
 
 const merklRewards: MerklRewardConfig[] = [
   {
-    id: "miles",
-    // Merkl.xyz accumulates Miles across all chains and hyperdrives onto Gnosis
-    // chain only. This makes things easier for turning them into HD later if
-    // they're all just on one chain.
-    rewardChainIds: [gnosis.id],
-    predicate: (reward) => {
-      return reward.token.symbol === "Miles";
-    },
-  },
-  {
     id: "bigShortEnergy",
     // Big Short Energy distributes dai on mainnet or xdai on gnosis chain
     rewardChainIds: [gnosis.id, mainnet.id],
