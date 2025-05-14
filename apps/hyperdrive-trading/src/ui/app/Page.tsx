@@ -23,18 +23,11 @@ export function Page({ children }: PropsWithChildren): ReactElement {
           description={
             <div className="flex w-full flex-1 items-center justify-center gap-4">
               <ExclamationTriangleIcon className="size-5 shrink-0" />
-              <div>
+              <div className="max-w-4xl">
                 <p>
                   Thank you for using DELV. Unfortunately, we are winding down
-                  operations. This site will remain available for withdrawals
-                  and redemptions until at least __ 2025.
-                </p>
-                <p className="font-bold">
-                  Please ensure you complete any necessary actions before this
-                  period ends, as access cannot be guaranteed afterwards.
-                </p>
-                <p>
-                  To run the UI locally, you can find the source code and setup
+                  operations. Access to this site is guaranteed Summer 2027. To
+                  run the UI locally, you can find the source code and setup
                   instructions on{" "}
                   <ExternalLink
                     newTab
