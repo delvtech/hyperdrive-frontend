@@ -26,9 +26,9 @@ export function Page({ children }: PropsWithChildren): ReactElement {
               <div className="max-w-4xl">
                 <p>
                   Thank you for using DELV. Unfortunately, we are winding down
-                  operations. Access to this site is guaranteed Summer 2027. To
-                  run the UI locally, you can find the source code and setup
-                  instructions on{" "}
+                  operations. Access to this site is guaranteed until Summer
+                  2027. To run the UI locally, you can find the source code and
+                  setup instructions on{" "}
                   <ExternalLink
                     newTab
                     icon
