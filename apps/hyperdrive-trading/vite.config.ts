@@ -14,7 +14,6 @@ export default defineConfig({
   plugins: [
     react({
       jsxImportSource:
-        // eslint-disable-next-line turbo/no-undeclared-env-vars
         process.env.NODE_ENV === "development"
           ? "@welldone-software/why-did-you-render"
           : "react",

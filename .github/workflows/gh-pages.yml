@@ -1,17 +1,24 @@
 name: Deploy UI to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main # Adjust this to your default branch
+    branches: [main]
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
     permissions:
       contents: read
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.upload-artifact.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,7 +36,16 @@ jobs:
         run: yarn build:packages
 
       - name: Build UI
-        run: yarn workspace hyperdrive-trading build:dev
+        run: yarn workspace hyperdrive-trading build
+        env:
+          BASE_PATH: "/${{ github.event.repository.name }}/"
+          VITE_MAINNET_RPC_URL: ${{ secrets.MAINNET_RPC_URL }}
+          VITE_BASE_RPC_URL: ${{ secrets.BASE_RPC_URL }}
+          VITE_GNOSIS_NODE_RPC_URL: ${{ secrets.GNOSIS_RPC_URL }}
+          VITE_LINEA_RPC_URL: ${{ secrets.LINEA_RPC_URL }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

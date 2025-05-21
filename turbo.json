@@ -14,6 +14,8 @@
       "env": [
         "DEV",
         "PROD",
+        "BASE_PATH",
+        "NODE_ENV",
         "VITE_ADDRESS_SCREEN_URL",
         "VITE_CAPSULE_API_KEY",
         "VITE_CAPSULE_ENV",
