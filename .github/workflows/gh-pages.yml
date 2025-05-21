@@ -29,7 +29,7 @@ jobs:
         run: yarn build:packages
 
       - name: Build UI
-        run: yarn workspace hyperdrive-trading build
+        run: yarn workspace hyperdrive-trading build:dev
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
