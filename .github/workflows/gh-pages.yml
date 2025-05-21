@@ -47,10 +47,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Inspect dist layout
+        run: |
+          echo "CWD is $(pwd)"
+          find apps/hyperdrive-trading/dist -maxdepth 2 -type f
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/hyperdrive-trading/dist
+          path: apps/hyperdrive-trading/dist/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
