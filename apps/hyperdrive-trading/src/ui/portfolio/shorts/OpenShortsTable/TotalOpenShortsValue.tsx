@@ -19,18 +19,18 @@ export function TotalOpenShortsValue({
   openShorts: (OpenShort & { hyperdrive: HyperdriveConfig })[] | undefined;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
-
+  const hyperdriveConfig = hyperdrives[0];
   const { totalOpenShortsValue, isLoading } = useTotalOpenShortsValue({
     account,
     shorts: openShorts,
     enabled: !!openShorts,
   });
   const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrives[0].chainId,
-    hyperdriveAddress: hyperdrives[0].address,
+    hyperdriveChainId: hyperdriveConfig.chainId,
+    hyperdriveAddress: hyperdriveConfig.address,
     appConfig,
   });
-  const chainInfo = appConfig.chains[hyperdrives[0].chainId];
+  const chainInfo = appConfig.chains[hyperdriveConfig.chainId];
 
   const { fiatPrice } = useTokenFiatPrice({
     chainId: baseToken.chainId,
@@ -46,10 +46,8 @@ export function TotalOpenShortsValue({
           {`$${formatBalance({
             balance:
               totalOpenShortsValue && !isLoading && fiatPrice
-                ? fixed(totalOpenShortsValue, baseToken.decimals).mul(
-                    fiatPrice,
-                    baseToken.decimals,
-                  ).bigint
+                ? fixed(totalOpenShortsValue, baseToken.decimals).mul(fiatPrice)
+                    .bigint
                 : 0n,
             decimals: baseToken.decimals,
             places: 2, // fiat is always 2 decimals for display

@@ -20,6 +20,7 @@ export function TotalOpenLongsValue({
     | (OpenLongPositionReceived & { hyperdrive: HyperdriveConfig })[]
     | undefined;
 }): ReactElement {
+  const hyperdriveConfig = hyperdrives[0];
   const { totalOpenLongsValue, isLoading } = useTotalOpenLongsValueTwo({
     account,
     longs: openLongs,
@@ -27,17 +28,17 @@ export function TotalOpenLongsValue({
   });
   const appConfig = useAppConfigForConnectedChain();
   const baseToken = getBaseToken({
-    hyperdriveChainId: hyperdrives[0].chainId,
-    hyperdriveAddress: hyperdrives[0].address,
+    hyperdriveChainId: hyperdriveConfig.chainId,
+    hyperdriveAddress: hyperdriveConfig.address,
     appConfig,
   });
-  const chainInfo = appConfig.chains[hyperdrives[0].chainId];
+  const chainInfo = appConfig.chains[hyperdriveConfig.chainId];
 
   const { fiatPrice } = useTokenFiatPrice({
     chainId: baseToken.chainId,
     tokenAddress: baseToken.address,
   });
-  const isFiatPriceEnabled = !isTestnetChain(hyperdrives[0].chainId);
+  const isFiatPriceEnabled = !isTestnetChain(hyperdriveConfig.chainId);
 
   return (
     <div className="flex items-center gap-2">
@@ -49,7 +50,6 @@ export function TotalOpenLongsValue({
               totalOpenLongsValue && !isLoading && fiatPrice
                 ? fixed(totalOpenLongsValue || 0n, baseToken?.decimals).mul(
                     fiatPrice,
-                    baseToken?.decimals,
                   ).bigint
                 : 0n,
             decimals: baseToken?.decimals,
