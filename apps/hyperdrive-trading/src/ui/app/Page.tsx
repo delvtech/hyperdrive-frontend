@@ -9,6 +9,8 @@ import CustomBanner from "src/ui/base/components/CustomBanner";
 import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAndPrivacyPolicyModal";
 import { useAddressScreen } from "src/ui/compliance/hooks/useAddressScreen";
 
+const showBanner = import.meta.env.VITE_SHOW_BANNER === "true";
+
 export function Page({ children }: PropsWithChildren): ReactElement {
   // compliance
   useAddressScreen();
@@ -17,32 +19,33 @@ export function Page({ children }: PropsWithChildren): ReactElement {
     <div className="flex min-h-screen flex-col items-center justify-between gap-9">
       <div className="flex w-full grow flex-col items-center gap-9">
         <Navbar />
-        {/* <MilesBanner /> */}
-        <CustomBanner
-          className="bg-error/20"
-          description={
-            <div className="flex w-full flex-1 items-center justify-center gap-4">
-              <ExclamationTriangleIcon className="size-5 shrink-0" />
-              <div className="max-w-4xl">
-                <p>
-                  Thank you for using DELV. Unfortunately, we are winding down
-                  operations. Access to this site is guaranteed until Summer
-                  2027. To run the UI locally, you can find the source code and
-                  setup instructions on{" "}
-                  <ExternalLink
-                    newTab
-                    icon
-                    href="https://github.com/delvtech/hyperdrive-frontend"
-                    className="daisy-link-hover daisy-link"
-                  >
-                    GitHub
-                  </ExternalLink>
-                  .
-                </p>
+        {showBanner && (
+          <CustomBanner
+            className="bg-error/20"
+            description={
+              <div className="flex w-full flex-1 items-center justify-center gap-4">
+                <ExclamationTriangleIcon className="size-5 shrink-0" />
+                <div className="max-w-4xl">
+                  <p>
+                    Thank you for using DELV. Unfortunately, we are winding down
+                    operations. Access to this site is guaranteed until Summer
+                    2027. To run the UI locally, you can find the source code
+                    and setup instructions on{" "}
+                    <ExternalLink
+                      newTab
+                      icon
+                      href="https://github.com/delvtech/hyperdrive-frontend"
+                      className="daisy-link-hover daisy-link"
+                    >
+                      GitHub
+                    </ExternalLink>
+                    .
+                  </p>
+                </div>
               </div>
-            </div>
-          }
-        />
+            }
+          />
+        )}
 
         {/* compliance */}
         <TermsOfUseAndPrivacyPolicyModal />

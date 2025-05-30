@@ -43,6 +43,7 @@ jobs:
           VITE_BASE_RPC_URL: ${{ secrets.BASE_RPC_URL }}
           VITE_GNOSIS_NODE_RPC_URL: ${{ secrets.GNOSIS_RPC_URL }}
           VITE_LINEA_RPC_URL: ${{ secrets.LINEA_RPC_URL }}
+          VITE_SHOW_BANNER: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
