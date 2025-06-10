@@ -120,3 +120,14 @@ yarn workspace hyperdrive-trading build
 
 This will create a static site in the
 [`apps/hyperdrive-trading/dist`](./apps/hyperdrive-trading/dist) directory.
+
+> [!NOTE]
+>
+> The repo includes a [GitHub Actions
+> workflow](https://docs.github.com/en/actions) for deploying to [GitHub
+> Pages](https://pages.github.com/) located at
+> [.github/workflows/gh-pages.yml](.github/workflows/gh-pages.yml). To enable
+> it, go to the repo's **Settings** > **Pages** and select **"GitHub Actions"**
+> as the **Source** under **Build and deployment**. The workflow includes some
+> [hardcoded environment variables](.github/workflows/gh-pages.yml#L41), so you
+> may want to update them in the workflow file before enabling it.
