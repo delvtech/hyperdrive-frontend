@@ -83,7 +83,7 @@ yarn build:packages
 ### 3. Add environment variables
 
 The UI uses environment variables for configuration which are defined in the
-`.env` file. Create one using the
+[`.env`](./apps/hyperdrive-trading/.env) file. Create one using the
 [`.env.example`](./apps/hyperdrive-trading/.env.example) file as a template:
 
 ```sh
@@ -91,9 +91,9 @@ cp apps/hyperdrive-trading/.env.example apps/hyperdrive-trading/.env
 ```
 
 Fill in at least one RPC URL and any optional variables you want to set. You can
-point to an external RPC API like [Alchemy](https://www.alchemy.com), to a
-local node like [`anvil`](https://getfoundry.sh/anvil/overview), or find a public
-RPC endpoint on [ChainList](https://chainlist.org).
+point to an external RPC API like [Alchemy](https://www.alchemy.com), to a local
+node like [`anvil`](https://getfoundry.sh/anvil/overview), or find a public RPC
+endpoint on [ChainList](https://chainlist.org).
 
 ### 4. Start the development server
 
@@ -107,7 +107,7 @@ in your web browser to see the UI.
 ### 5. Build for production
 
 To build the UI for production, double check your environment variables in
-`.env` then run:
+[`.env`](./apps/hyperdrive-trading/.env) then run:
 
 ```sh
 yarn workspace hyperdrive-trading build
