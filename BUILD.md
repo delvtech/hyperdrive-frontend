@@ -1,7 +1,9 @@
 # Building the Hyperdrive UI
 
 This guide will help you build the Hyperdrive UI from source. The UI is built
-using React and TypeScript, and it uses Vite as the build tool.
+using [React](https://react.dev) and
+[TypeScript](https://www.typescriptlang.org/), and it uses
+[Vite](https://vite.dev/) as the build tool.
 
 - [Prerequisites](#prerequisites)
   - [Requirements](#requirements)
@@ -91,10 +93,12 @@ The UI uses environment variables for configuration which are defined in the
 cp apps/hyperdrive-trading/.env.example apps/hyperdrive-trading/.env
 ```
 
-Fill in at least one RPC URL and any optional variables you want to set. You can
-point to an external RPC API like [Alchemy](https://www.alchemy.com), to a local
-node like [`anvil`](https://getfoundry.sh/anvil/overview), or find a public RPC
-endpoint on [ChainList](https://chainlist.org).
+Fill in at least one
+[RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) URL and any
+optional variables you want to set. You can point to an external RPC API like
+[Alchemy](https://www.alchemy.com), to a local node like
+[`anvil`](https://getfoundry.sh/anvil/overview), or find a public RPC endpoint
+on [ChainList](https://chainlist.org).
 
 ### 4. Start the development server
 
