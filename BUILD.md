@@ -91,9 +91,9 @@ cp apps/hyperdrive-trading/.env.example apps/hyperdrive-trading/.env
 ```
 
 Fill in at least one RPC URL and any optional variables you want to set. You can
-point to an external RPC API like [Alchemy](https://www.alchemy.com/), to a
-local node like [`anvil`](https://book.getfoundry.sh/anvil/), or find a public
-RPC endpoint on [ChainList](https://chainlist.org/).
+point to an external RPC API like [Alchemy](https://www.alchemy.com), to a
+local node like [`anvil`](https://getfoundry.sh/anvil/overview), or find a public
+RPC endpoint on [ChainList](https://chainlist.org).
 
 ### 4. Start the development server
 
