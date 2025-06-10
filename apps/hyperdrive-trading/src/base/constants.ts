@@ -5,4 +5,4 @@ export const MAX_UINT256 = BigInt(
 );
 
 export const PORTFOLIO_ONLY_MODE =
-  import.meta.env.VITE_PORTFOLIO_ONLY_MODE === "true";
+  import.meta.env.VITE_PORTFOLIO_ONLY_MODE !== "false";

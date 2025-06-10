@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
+import { CHAINLOG_ROUTE } from "src/ui/chainlog/routes";
 import { privacyPolicyUrl } from "src/ui/compliance/privacyPolicy";
 import { termsOfUseUrl } from "src/ui/compliance/termsOfUse";
 
@@ -29,6 +30,13 @@ export default function Footer(): ReactElement {
         </ExternalLink>
         <ExternalLink
           newTab
+          className="daisy-link-hover daisy-link"
+          href="https://github.com/delvtech"
+        >
+          GitHub
+        </ExternalLink>
+        <ExternalLink
+          newTab
           href="https://hyperdrive.blockanalitica.com"
           className="daisy-link-hover daisy-link"
         >
@@ -41,6 +49,9 @@ export default function Footer(): ReactElement {
         >
           Security
         </ExternalLink>
+        <Link to={CHAINLOG_ROUTE} className="daisy-link-hover daisy-link">
+          Chainlog
+        </Link>
       </nav>
       <nav>
         <header className={footerTitleClassName}>Legal</header>
