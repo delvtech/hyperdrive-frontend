@@ -42,7 +42,7 @@ npm install --global yarn
 ### Working in a Monorepo
 
 In a [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces) monorepo,
-the root [`package.json`](./package.json) file contains a list of workspaces,
+the root [`package.json`](./package.json#L7) file contains a list of workspaces,
 each of which is it's own package with it's own `package.json` file.
 
 You can work with the root [`package.json`](./package.json) mostly like you
