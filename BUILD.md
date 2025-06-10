@@ -4,6 +4,7 @@ This guide will help you build the Hyperdrive UI from source. The UI is built
 using React and TypeScript, and it uses Vite as the build tool.
 
 - [Prerequisites](#prerequisites)
+  - [Requirements](#requirements)
   - [Working in a Monorepo](#working-in-a-monorepo)
 - [Building from Source](#building-from-source)
   - [1. Install dependencies](#1-install-dependencies)
@@ -14,6 +15,8 @@ using React and TypeScript, and it uses Vite as the build tool.
 
 
 ## Prerequisites
+
+### Requirements
 
 Before you start, make sure you have the following installed:
 
