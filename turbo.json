@@ -15,6 +15,7 @@
         "DEV",
         "PROD",
         "VITE_SHOW_BANNER",
+        "VITE_PORTFOLIO_ONLY_MODE",
         "VITE_BASE_PATH",
         "NODE_ENV",
         "VITE_ADDRESS_SCREEN_URL",

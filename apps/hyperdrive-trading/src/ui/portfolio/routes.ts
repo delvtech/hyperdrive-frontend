@@ -1,1 +1,1 @@
-export const PORTFOLIO_ROUTE = "/";
+export const PORTFOLIO_ROUTE = "/portfolio";
