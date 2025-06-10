@@ -22,7 +22,7 @@ This project uses many tools like:
 ### Environment variables
 
 This project requires environment variables in `apps/hyperdrive-trading/.env`.
-See [.env.sample](.env.sample) for reference.
+See [.env.example](.env.example) for reference.
 
 ## Getting Started
 
@@ -48,7 +48,7 @@ cd apps/hyperdrive-trading
 
 ### Run locally
 
-First, copy the .env.sample to .env and you'll need to set the VITE_SEPOLIA_RPC_URL variable to an active rpc url.
+First, copy the .env.example to .env and you'll need to set the VITE_SEPOLIA_RPC_URL variable to an active rpc url.
 
 Serve with hot reload at <http://localhost:5173>.
 
