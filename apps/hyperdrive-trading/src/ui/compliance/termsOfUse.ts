@@ -1,2 +1,2 @@
 export const termsOfUseUrl =
-  "https://delv-public.s3.us-east-2.amazonaws.com/delv-terms-of-service.pdf";
+  "https://github.com/delvtech/hyperdrive-frontend/blob/main/docs/delv-terms-of-service.pdf";

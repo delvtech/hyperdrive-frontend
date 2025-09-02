@@ -1,2 +1,2 @@
 export const privacyPolicyUrl =
-  "https://delv-public.s3.us-east-2.amazonaws.com/delv-privacy-policy.pdf";
+  "https://github.com/delvtech/hyperdrive-frontend/blob/main/docs/delv-privacy-policy.pdf";
