@@ -1,6 +1,7 @@
 import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { getHyperdrive, OpenShort } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
+import { LATEST_POSITION_BLOCKS_BY_CHAIN_ID } from "src/base/latestBlocks";
 import { makeQueryKey, makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -30,21 +31,37 @@ export function usePortfolioShortsData({
         ? async () =>
             await Promise.all(
               appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = await getHyperdrive({
-                  address: hyperdrive.address,
-                  drift: getDrift({ chainId: hyperdrive.chainId }),
-                  earliestBlock: hyperdrive.initializationBlock,
-                  zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
-                      ?.address,
-                });
+                try {
+                  const readHyperdrive = await getHyperdrive({
+                    address: hyperdrive.address,
+                    drift: getDrift({ chainId: hyperdrive.chainId }),
+                    earliestBlock: hyperdrive.initializationBlock,
+                    zapContractAddress:
+                      appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                        ?.address,
+                  });
 
-                return {
-                  hyperdrive,
-                  openShorts: await readHyperdrive.getOpenShorts({
-                    account,
-                  }),
-                };
+                  return {
+                    hyperdrive,
+                    openShorts: await readHyperdrive.getOpenShorts({
+                      account,
+                      options: {
+                        block:
+                          LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
+                            .short,
+                      },
+                    }),
+                  };
+                } catch (e) {
+                  console.error(
+                    `Error fetching shorts for hyperdrive ${hyperdrive.address} on chain ${hyperdrive.chainId}:`,
+                    e,
+                  );
+                  return {
+                    hyperdrive,
+                    openShorts: [],
+                  };
+                }
               }),
             )
         : undefined,
@@ -80,22 +97,35 @@ export function usePortfolioShortsDataFromHyperdrives({
         ? async () => {
             const results = await Promise.all(
               hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = await getHyperdrive({
-                  address: hyperdrive.address,
-                  drift: getDrift({ chainId: hyperdrive.chainId }),
-                  earliestBlock: hyperdrive.initializationBlock,
-                  debugName: hyperdrive.name,
-                  zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
-                      ?.address,
-                });
-                const openShorts = await readHyperdrive.getOpenShorts({
-                  account,
-                });
-                return openShorts.map((openShort) => ({
-                  ...openShort,
-                  hyperdrive,
-                }));
+                try {
+                  const readHyperdrive = await getHyperdrive({
+                    address: hyperdrive.address,
+                    drift: getDrift({ chainId: hyperdrive.chainId }),
+                    earliestBlock: hyperdrive.initializationBlock,
+                    debugName: hyperdrive.name,
+                    zapContractAddress:
+                      appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                        ?.address,
+                  });
+                  const openShorts = await readHyperdrive.getOpenShorts({
+                    account,
+                    options: {
+                      block:
+                        LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
+                          .short,
+                    },
+                  });
+                  return openShorts.map((openShort) => ({
+                    ...openShort,
+                    hyperdrive,
+                  }));
+                } catch (e) {
+                  console.error(
+                    `Error fetching shorts data for ${hyperdrive.address}:`,
+                    e,
+                  );
+                  return [];
+                }
               }),
             );
             return results.flat();

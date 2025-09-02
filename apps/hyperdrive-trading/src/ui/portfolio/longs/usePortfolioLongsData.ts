@@ -78,7 +78,7 @@ export function usePortfolioLongsData({
                   );
                   return {
                     hyperdrive,
-                    openLongs: [] as OpenLongPositionReceived[],
+                    openLongs: [],
                   };
                 }
               }),
