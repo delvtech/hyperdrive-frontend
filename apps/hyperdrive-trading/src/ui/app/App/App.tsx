@@ -1,6 +1,10 @@
 import { ReactElement, StrictMode } from "react";
 
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import {
+  createHashHistory,
+  createRouter,
+  RouterProvider,
+} from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";
@@ -11,6 +15,7 @@ import { useAccount, useAccountEffect } from "wagmi";
 const router = createRouter({
   routeTree,
   basepath: import.meta.env.VITE_BASE_PATH,
+  history: createHashHistory(),
 });
 
 // Register the router instance for type safety
