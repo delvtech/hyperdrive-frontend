@@ -1,9 +1,9 @@
 import {
-  ContractReadOptions,
-  ContractWriteOptions,
   Drift,
+  ReadOptions,
   ReadWriteAdapter,
   ReadWriteContract,
+  WriteOptions,
 } from "@delvtech/drift";
 import { NULL_BYTES } from "src/base/constants";
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
@@ -14,7 +14,7 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 
 type ReadWriteParams<Args> = {
   args: Args;
-  options?: ContractWriteOptions;
+  options?: WriteOptions;
 };
 
 export interface ReadWriteHyperdriveOptions
@@ -29,7 +29,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   }
 
   async getBaseToken(
-    options?: ContractReadOptions,
+    options?: ReadOptions,
   ): Promise<ReadWriteErc20 | ReadWriteEth> {
     const address = await this.contract.read("baseToken", {}, options);
     return address === ReadWriteEth.address
@@ -39,8 +39,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       : new ReadWriteErc20({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
         });
   }
 
@@ -49,7 +47,6 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
     return new ReadWriteErc20({
       address,
       drift: this.drift,
-      cacheNamespace: this.contract.cacheNamespace,
     });
   }
 
@@ -90,7 +87,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
       {
         ...options,
         onMined: (receipt) => {
-          this.contract.invalidateReadsMatching("getMarketState");
+          this.contract.cache.invalidateReadsMatching("getMarketState");
           options?.onMined?.(receipt);
         },
       },

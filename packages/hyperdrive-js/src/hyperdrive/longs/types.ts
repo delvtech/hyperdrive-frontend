@@ -9,7 +9,7 @@ export interface Long {
   baseAmountPaid: bigint;
 }
 
-export interface ClosedLong extends Long {
+export interface ClosedLong extends Omit<Long, "baseAmountPaid"> {
   // A closed long will include the baseAmount that was redeemed
   baseAmount: bigint;
   closedTimestamp: bigint;

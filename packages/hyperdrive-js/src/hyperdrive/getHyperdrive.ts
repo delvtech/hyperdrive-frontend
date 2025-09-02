@@ -22,25 +22,19 @@ export interface HyperdriveOptions<T extends Drift = Drift>
 }
 
 export type Hyperdrive<T extends Drift = Drift> =
-  T extends Drift<ReadWriteAdapter> ? ReadWriteHyperdrive : ReadHyperdrive;
+  T["adapter"] extends ReadWriteAdapter ? ReadWriteHyperdrive : ReadHyperdrive;
 
 export async function getHyperdrive<T extends Drift = Drift>({
   address,
   drift,
-  cache = drift.cache,
-  cacheNamespace,
-  earliestBlock,
+  epochBlock,
   debugName,
   zapContractAddress,
 }: HyperdriveOptions<T>): Promise<Hyperdrive<T>> {
-  cacheNamespace ??= await drift.getChainId();
-
   const options: HyperdriveOptions<T> = {
     address,
     drift,
-    cache,
-    cacheNamespace,
-    earliestBlock,
+    epochBlock,
     debugName,
     zapContractAddress,
   };
@@ -50,7 +44,6 @@ export async function getHyperdrive<T extends Drift = Drift>({
     abi: hyperdriveAbi,
     address,
     fn: "version",
-    cacheNamespace,
   });
   const isV1_0_14 = semver.lte(version, "1.0.14");
 
@@ -60,7 +53,6 @@ export async function getHyperdrive<T extends Drift = Drift>({
         abi: hyperdriveAbi,
         address,
         fn: "kind",
-        cacheNamespace,
       });
 
   switch (kind) {
@@ -99,5 +91,5 @@ export async function getHyperdrive<T extends Drift = Drift>({
 function isReadWriteOptions(
   options: HyperdriveOptions,
 ): options is ReadWriteHyperdriveOptions {
-  return typeof options.drift.write === "function";
+  return options.drift.isReadWrite();
 }

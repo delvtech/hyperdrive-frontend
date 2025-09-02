@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 import { readREthHyperdriveMixin } from "src/hyperdrive/reth/ReadREthHyperdrive";
@@ -10,8 +10,8 @@ export class ReadWriteREthHyperdrive extends readWriteREthHyperdriveMixin(
 ) {}
 
 export interface ReadWriteREthHyperdriveMixin {
-  getBaseToken(options?: ContractReadOptions): Promise<ReadWriteEth>;
-  getSharesToken(options?: ContractReadOptions): Promise<ReadWriteREth>;
+  getBaseToken(options?: ReadOptions): Promise<ReadWriteEth>;
+  getSharesToken(options?: ReadOptions): Promise<ReadWriteREth>;
 }
 
 /**
@@ -27,15 +27,11 @@ export function readWriteREthHyperdriveMixin<
       });
     }
 
-    async getSharesToken(
-      options?: ContractReadOptions,
-    ): Promise<ReadWriteREth> {
+    async getSharesToken(options?: ReadOptions): Promise<ReadWriteREth> {
       const { vaultSharesToken } = await this.getPoolConfig(options);
       return new ReadWriteREth({
         address: vaultSharesToken,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
       });
     }
   };

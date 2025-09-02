@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { Constructor } from "src/base/types";
 import {
@@ -25,12 +25,12 @@ export interface ReadStEthHyperdriveMixin {
   /**
    * Get a client for ETH, the base token for this Hyperdrive instance.
    */
-  getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
+  getBaseToken(options?: ReadOptions): Promise<ReadEth>;
 
   /**
    * Get a client for the Lido stETH token for this Hyperdrive instance.
    */
-  getSharesToken(options?: ContractReadOptions): Promise<ReadStEth>;
+  getSharesToken(options?: ReadOptions): Promise<ReadStEth>;
 }
 
 /**
@@ -57,8 +57,6 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       return new ReadStEth({
         address: vaultSharesToken,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
       });
     }
 

@@ -1,18 +1,13 @@
-import {
-  ContractEvent,
-  ContractReadOptions,
-  FunctionReturn,
-  Pretty,
-} from "@delvtech/drift";
+import { Eval, EventLog, FunctionReturn, ReadOptions } from "@delvtech/drift";
 import { HyperdriveAbi } from "src/hyperdrive/abi";
 
-export type Checkpoint = Pretty<
+export type Checkpoint = Eval<
   {
     checkpointTime: bigint;
   } & FunctionReturn<HyperdriveAbi, "getCheckpoint">
 >;
 
-export type CheckpointEvent = ContractEvent<HyperdriveAbi, "CreateCheckpoint">;
+export type CheckpointEvent = EventLog<HyperdriveAbi, "CreateCheckpoint">;
 
 export type GetCheckpointTimeParams = (
   | {
@@ -30,7 +25,7 @@ export type GetCheckpointTimeParams = (
       blockNumber?: bigint;
     }
 ) & {
-  options?: ContractReadOptions;
+  options?: ReadOptions;
 };
 
 export type GetCheckpointParams = (
@@ -59,5 +54,5 @@ export type GetCheckpointParams = (
       blockNumber?: bigint;
     }
 ) & {
-  options?: ContractReadOptions;
+  options?: ReadOptions;
 };
