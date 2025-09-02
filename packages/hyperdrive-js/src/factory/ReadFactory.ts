@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, type ReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
@@ -14,8 +14,7 @@ export class ReadFactory extends ReadClient {
   constructor({
     debugName = "Hyperdrive Factory",
     address,
-    cache,
-    cacheNamespace,
+    epochBlock,
     ...rest
   }: ReadFactoryOptions) {
     super({ debugName, ...rest });
@@ -23,8 +22,7 @@ export class ReadFactory extends ReadClient {
     this.contract = this.drift.contract({
       abi: factoryAbi,
       address,
-      cache,
-      cacheNamespace,
+      epochBlock,
     });
   }
 
@@ -56,7 +54,7 @@ export class ReadFactory extends ReadClient {
      * Only return deployer coordinators that deployed the given instances.
      */
     instances?: Address[];
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   } = {}): Promise<Address[]> {
     if (instances) {
       const readOnlyAddresses = await this.contract.read(
@@ -93,15 +91,14 @@ export class ReadFactory extends ReadClient {
    * Get a {@linkcode ReadHyperdrive} instance for each Hyperdrive instance
    * deployed by the deployer factory.
    */
-  async getInstances(options?: ContractReadOptions): Promise<ReadHyperdrive[]> {
+  async getInstances(options?: ReadOptions): Promise<ReadHyperdrive[]> {
     const hyperdriveAddresses = await this.getInstanceAddresses(options);
     return hyperdriveAddresses.map(
       (address) =>
         new ReadHyperdrive({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          epochBlock: this.contract.epochBlock,
         }),
     );
   }
@@ -109,9 +106,7 @@ export class ReadFactory extends ReadClient {
   /**
    * Get the address of all Hyperdrive instances deployed by the factory.
    */
-  async getInstanceAddresses(
-    options?: ContractReadOptions,
-  ): Promise<Address[]> {
+  async getInstanceAddresses(options?: ReadOptions): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
 
     if (count === 0n) {
