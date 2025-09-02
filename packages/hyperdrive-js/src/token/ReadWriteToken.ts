@@ -1,9 +1,8 @@
-import { ContractWriteOptions, ReplaceProps } from "@delvtech/drift";
+import { Replace, WriteOptions } from "@delvtech/drift";
 import { ReadWriteClient } from "src/drift/ReadWriteClient";
 import { ReadToken } from "src/token/ReadToken";
 
-export interface ReadWriteToken
-  extends ReplaceProps<ReadToken, ReadWriteClient> {
+export interface ReadWriteToken extends Replace<ReadToken, ReadWriteClient> {
   /**
    * Give a spending allowance to a given spender.
    * @param spender - The address of the spender.
@@ -18,6 +17,6 @@ export interface ReadWriteToken
     owner?: `0x${string}`;
     spender: `0x${string}`;
     amount: bigint;
-    options?: ContractWriteOptions;
+    options?: WriteOptions;
   }): Promise<`0x${string}`>;
 }

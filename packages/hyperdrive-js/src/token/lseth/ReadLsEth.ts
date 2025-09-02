@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { LsEthAbi, lsEthAbi } from "src/token/lseth/abi";
@@ -14,7 +14,7 @@ export interface ReadLsEthMixin {
   /**
    * Get the total supply of underlying eth in the lsEth contract.
    */
-  getTotalEthSupply(options?: ContractReadOptions): Promise<bigint>;
+  getTotalEthSupply(options?: ReadOptions): Promise<bigint>;
 
   /**
    * Get the underlying eth balance of an account.
@@ -24,7 +24,7 @@ export interface ReadLsEthMixin {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -35,7 +35,7 @@ export interface ReadLsEthMixin {
     options,
   }: {
     sharesAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -46,7 +46,7 @@ export interface ReadLsEthMixin {
     options,
   }: {
     ethBalance: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 }
 
@@ -60,18 +60,16 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
     lsEthContract: Contract<LsEthAbi>;
 
     constructor(...[options]: any[]) {
-      const { drift, address, cache, cacheNamespace } =
-        options as ReadErc20Options;
-      super({ address, drift, cache, cacheNamespace });
+      const { drift, address, epochBlock } = options as ReadErc20Options;
+      super({ address, drift, epochBlock });
       this.lsEthContract = drift.contract({
         abi: lsEthAbi,
         address,
-        cache,
-        cacheNamespace,
+        epochBlock,
       });
     }
 
-    async getTotalEthSupply(options?: ContractReadOptions): Promise<bigint> {
+    async getTotalEthSupply(options?: ReadOptions): Promise<bigint> {
       return this.lsEthContract.read("totalUnderlyingSupply", {}, options);
     }
 
@@ -80,7 +78,7 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       account: `0x${string}`;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.lsEthContract.read(
         "balanceOfUnderlying",
@@ -94,7 +92,7 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       sharesAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.lsEthContract.read(
         "underlyingBalanceFromShares",
@@ -110,7 +108,7 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       ethBalance: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.lsEthContract.read(
         "sharesFromUnderlyingBalance",

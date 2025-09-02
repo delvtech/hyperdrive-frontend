@@ -1,4 +1,4 @@
-import { ContractWriteOptions, ReadWriteContract } from "@delvtech/drift";
+import { ReadWriteContract, WriteOptions } from "@delvtech/drift";
 import { MockErc4626Abi } from "src/token/erc4626/abi";
 import { readMockErc4626Mixin } from "src/token/erc4626/ReadMockErc4626";
 import { ReadWriteErc4626 } from "src/token/erc4626/ReadWriteErc4626";
@@ -18,7 +18,7 @@ export class ReadWriteMockErc4626 extends readMockErc4626Mixin(
   }: {
     receiver: `0x${string}`;
     sharesAmount: bigint;
-    options?: ContractWriteOptions;
+    options?: WriteOptions;
   }): Promise<`0x${string}`> {
     return this.mockErc4626Contract.write(
       "mint",
@@ -38,7 +38,7 @@ export class ReadWriteMockErc4626 extends readMockErc4626Mixin(
     options,
   }: {
     rate: bigint;
-    options?: ContractWriteOptions;
+    options?: WriteOptions;
   }): Promise<`0x${string}`> {
     return this.mockErc4626Contract.write("setRate", { _rate_: rate }, options);
   }

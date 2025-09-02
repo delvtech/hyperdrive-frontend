@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
@@ -13,24 +13,19 @@ export class ReadErc20 extends ReadClient implements ReadToken {
   constructor({
     debugName = "ERC-20 Token",
     address,
-    cache,
-    cacheNamespace,
+    epochBlock,
     ...rest
   }: ReadErc20Options) {
     super({ debugName, ...rest });
     this.contract = this.drift.contract({
       abi: erc20Abi,
       address,
-      cache,
-      cacheNamespace,
+      epochBlock,
     });
   }
 
   get address(): Address {
     return this.contract.address;
-  }
-  get namespace(): PropertyKey | undefined {
-    return this.contract.cacheNamespace;
   }
 
   getName(): Promise<string> {
@@ -52,7 +47,7 @@ export class ReadErc20 extends ReadClient implements ReadToken {
   }: {
     owner: `0x${string}`;
     spender: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint> {
     return this.contract.read("allowance", { owner, spender }, options);
   }
@@ -62,7 +57,7 @@ export class ReadErc20 extends ReadClient implements ReadToken {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint> {
     return this.contract.read("balanceOf", { account }, options);
   }
@@ -70,7 +65,7 @@ export class ReadErc20 extends ReadClient implements ReadToken {
   /**
    * Get the total supply of the token.
    */
-  getTotalSupply(options?: ContractReadOptions): Promise<bigint> {
+  getTotalSupply(options?: ReadOptions): Promise<bigint> {
     return this.contract.read("totalSupply", {}, options);
   }
 }

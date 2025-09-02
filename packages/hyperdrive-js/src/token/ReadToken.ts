@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { ReadClient } from "src/drift/ReadClient";
 
 export interface ReadToken extends ReadClient {
@@ -30,7 +30,7 @@ export interface ReadToken extends ReadClient {
   }: {
     owner: `0x${string}`;
     spender: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -41,6 +41,6 @@ export interface ReadToken extends ReadClient {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 }

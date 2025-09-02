@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { StEthAbi, stEthAbi } from "src/token/steth/abi";
@@ -19,7 +19,7 @@ export interface ReadStEthMixin {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -31,7 +31,7 @@ export interface ReadStEthMixin {
     options,
   }: {
     sharesAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -43,7 +43,7 @@ export interface ReadStEthMixin {
     options,
   }: {
     ethAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 }
 
@@ -60,16 +60,14 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       const {
         debugName = "stETH Token",
         address,
-        cache,
-        cacheNamespace,
+        epochBlock,
         ...rest
       } = options as ReadErc20Options;
-      super({ debugName, address, cache, cacheNamespace, ...rest });
+      super({ debugName, address, epochBlock, ...rest });
       this.stEthContract = this.drift.contract({
         abi: stEthAbi,
         address,
-        cache,
-        cacheNamespace,
+        epochBlock,
       });
     }
 
@@ -78,7 +76,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       account: `0x${string}`;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.stEthContract.read(
         "sharesOf",
@@ -92,7 +90,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       sharesAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.stEthContract.read(
         "getPooledEthByShares",
@@ -106,7 +104,7 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       ethAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.stEthContract.read(
         "getSharesByPooledEth",
