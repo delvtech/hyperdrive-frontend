@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Address } from "abitype";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
@@ -19,8 +19,7 @@ export class ReadRegistry extends ReadClient {
   constructor({
     debugName = "Hyperdrive Registry",
     address,
-    cache,
-    cacheNamespace,
+    epochBlock,
     ...rest
   }: ReadRegistryOptions) {
     super({ debugName, ...rest });
@@ -28,23 +27,21 @@ export class ReadRegistry extends ReadClient {
     this.contract = this.drift.contract({
       abi: registryAbi,
       address,
-      cache,
-      cacheNamespace,
+      epochBlock,
     });
   }
 
   /**
    * Get a {@linkcode ReadFactory} instance for each registered factory.
    */
-  async getFactories(options?: ContractReadOptions): Promise<ReadFactory[]> {
+  async getFactories(options?: ReadOptions): Promise<ReadFactory[]> {
     const factoryAddresses = await this.getFactoryAddresses(options);
     return factoryAddresses.map(
       (address) =>
         new ReadFactory({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          epochBlock: this.contract.epochBlock,
         }),
     );
   }
@@ -52,7 +49,7 @@ export class ReadRegistry extends ReadClient {
   /**
    * Get the address of all registered factories.
    */
-  async getFactoryAddresses(options?: ContractReadOptions): Promise<Address[]> {
+  async getFactoryAddresses(options?: ReadOptions): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfFactories", {}, options);
 
     if (count === 0n) {
@@ -75,7 +72,7 @@ export class ReadRegistry extends ReadClient {
    */
   async getFactoryInfo(
     factoryAddress: Address,
-    options?: ContractReadOptions,
+    options?: ReadOptions,
   ): Promise<FactoryInfoWithMetadata> {
     return this.contract.read(
       "getFactoryInfoWithMetadata",
@@ -90,7 +87,7 @@ export class ReadRegistry extends ReadClient {
    */
   async getFactoryInfos(
     factoryAddresses: Address[],
-    options?: ContractReadOptions,
+    options?: ReadOptions,
   ): Promise<FactoryInfoWithMetadata[]> {
     const readonlyInfos = await this.contract.read(
       "getFactoryInfosWithMetadata",
@@ -104,15 +101,14 @@ export class ReadRegistry extends ReadClient {
    * Get a {@linkcode ReadHyperdrive} instance for each Hyperdrive instance
    * registered in the registry.
    */
-  async getInstances(options?: ContractReadOptions): Promise<ReadHyperdrive[]> {
+  async getInstances(options?: ReadOptions): Promise<ReadHyperdrive[]> {
     const hyperdriveAddresses = await this.getInstanceAddresses(options);
     return hyperdriveAddresses.map(
       (address) =>
         new ReadHyperdrive({
           address,
           drift: this.drift,
-          cache: this.contract.cache,
-          cacheNamespace: this.contract.cacheNamespace,
+          epochBlock: this.contract.epochBlock,
         }),
     );
   }
@@ -120,9 +116,7 @@ export class ReadRegistry extends ReadClient {
   /**
    * Get the address of all Hyperdrive instances registered in the registry.
    */
-  async getInstanceAddresses(
-    options?: ContractReadOptions,
-  ): Promise<Address[]> {
+  async getInstanceAddresses(options?: ReadOptions): Promise<Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
 
     if (count === 0n) {
@@ -145,7 +139,7 @@ export class ReadRegistry extends ReadClient {
    */
   async getInstanceInfo(
     instanceAddress: Address,
-    options?: ContractReadOptions,
+    options?: ReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata> {
     const { factory, ...rest } = await this.contract.read(
       "getInstanceInfoWithMetadata",
@@ -156,8 +150,7 @@ export class ReadRegistry extends ReadClient {
       factory: new ReadFactory({
         address: factory,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        epochBlock: this.contract.epochBlock,
       }),
       ...rest,
     };
@@ -168,7 +161,7 @@ export class ReadRegistry extends ReadClient {
    */
   async getInstanceInfos(
     instanceAddresses: Address[],
-    options?: ContractReadOptions,
+    options?: ReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(
       "getInstanceInfosWithMetadata",
@@ -179,8 +172,7 @@ export class ReadRegistry extends ReadClient {
       factory: new ReadFactory({
         address: factory,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
+        epochBlock: this.contract.epochBlock,
       }),
       ...rest,
     }));
