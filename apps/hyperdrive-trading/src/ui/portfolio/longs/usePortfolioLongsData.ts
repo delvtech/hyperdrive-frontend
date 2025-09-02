@@ -4,6 +4,7 @@ import {
   OpenLongPositionReceived,
 } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
+import { LATEST_POSITION_BLOCKS_BY_CHAIN_ID } from "src/base/latestBlocks";
 import { makeQueryKey, makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -32,32 +33,54 @@ export function usePortfolioLongsData({
         ? async () =>
             await Promise.all(
               appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = await getHyperdrive({
-                  address: hyperdrive.address,
-                  drift: getDrift({ chainId: hyperdrive.chainId }),
-                  earliestBlock: hyperdrive.initializationBlock,
-                  zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
-                      ?.address,
-                });
+                try {
+                  const readHyperdrive = await getHyperdrive({
+                    address: hyperdrive.address,
+                    drift: getDrift({ chainId: hyperdrive.chainId }),
+                    earliestBlock: hyperdrive.initializationBlock,
+                    zapContractAddress:
+                      appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                        ?.address,
+                  });
 
-                const allLongs = await readHyperdrive.getOpenLongPositions({
-                  account,
-                });
-                const openLongs = await Promise.all(
-                  allLongs.map(async (long) => ({
-                    ...long,
-                    details: await readHyperdrive.getOpenLongDetails({
-                      assetId: long.assetId,
-                      account,
-                    }),
-                  })),
-                );
+                  const allLongs = await readHyperdrive.getOpenLongPositions({
+                    account,
+                    options: {
+                      block:
+                        LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
+                          .long,
+                    },
+                  });
+                  const openLongs = await Promise.all(
+                    allLongs.map(async (long) => ({
+                      ...long,
+                      details: await readHyperdrive.getOpenLongDetails({
+                        assetId: long.assetId,
+                        account,
+                        options: {
+                          block:
+                            LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
+                              hyperdrive.chainId
+                            ].long,
+                        },
+                      }),
+                    })),
+                  );
 
-                return {
-                  hyperdrive,
-                  openLongs,
-                };
+                  return {
+                    hyperdrive,
+                    openLongs,
+                  };
+                } catch (e) {
+                  console.error(
+                    `Error fetching longs for ${hyperdrive.address}:`,
+                    e,
+                  );
+                  return {
+                    hyperdrive,
+                    openLongs: [] as OpenLongPositionReceived[],
+                  };
+                }
               }),
             )
         : undefined,
@@ -95,30 +118,52 @@ export function usePortfolioLongsDataFromHyperdrives({
         ? async () => {
             const results = await Promise.all(
               hyperdrives.map(async (hyperdrive) => {
-                const readHyperdrive = await getHyperdrive({
-                  address: hyperdrive.address,
-                  drift: getDrift({ chainId: hyperdrive.chainId }),
-                  earliestBlock: hyperdrive.initializationBlock,
-                  zapContractAddress:
-                    appConfigForConnectedChain.zaps[hyperdrive.chainId]
-                      ?.address,
-                });
-                const allLongs = await readHyperdrive.getOpenLongPositions({
-                  account,
-                });
+                try {
+                  const readHyperdrive = await getHyperdrive({
+                    address: hyperdrive.address,
+                    drift: getDrift({ chainId: hyperdrive.chainId }),
+                    earliestBlock: hyperdrive.initializationBlock,
+                    zapContractAddress:
+                      appConfigForConnectedChain.zaps[hyperdrive.chainId]
+                        ?.address,
+                  });
+                  const allLongs = await readHyperdrive.getOpenLongPositions({
+                    account,
+                    options: {
+                      block:
+                        LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
+                          .long,
+                    },
+                  });
 
-                const openLongs = await Promise.all(
-                  allLongs.map(async (long) => ({
-                    ...long,
-                    hyperdrive,
-                    details: await readHyperdrive.getOpenLongDetails({
-                      assetId: long.assetId,
-                      account: account,
-                    }),
-                  })),
-                );
+                  const openLongs = await Promise.all(
+                    allLongs.map(async (long) => ({
+                      ...long,
+                      hyperdrive,
+                      details: await readHyperdrive.getOpenLongDetails({
+                        assetId: long.assetId,
+                        account: account,
+                        options: {
+                          block:
+                            LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
+                              hyperdrive.chainId
+                            ].long,
+                        },
+                      }),
+                    })),
+                  );
 
-                return openLongs;
+                  return openLongs;
+                } catch (e) {
+                  console.error(
+                    `Error fetching long data for ${hyperdrive.address}:`,
+                    e,
+                  );
+                  return [] as (OpenLongPositionReceived & {
+                    hyperdrive: HyperdriveConfig;
+                    details: any;
+                  })[];
+                }
               }),
             );
             return results.flat();
