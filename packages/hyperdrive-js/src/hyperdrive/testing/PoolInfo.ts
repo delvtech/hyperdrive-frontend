@@ -1,6 +1,6 @@
 import { PoolInfo } from "src/hyperdrive/types";
 
-export const simplePoolInfo: PoolInfo = {
+export const stubPoolInfo: PoolInfo = {
   shareReserves: 10000000000000000000000000n,
   bondReserves: 10217899519533796120000000n,
   vaultSharePrice: 1000000000000000000n,

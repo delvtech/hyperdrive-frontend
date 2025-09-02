@@ -1,13 +1,15 @@
 import { ZERO_ADDRESS } from "@delvtech/drift";
+import { createStubBlock, createStubEvents } from "@delvtech/drift/testing";
 import { fixed, parseFixed } from "@delvtech/fixed-point-wasm";
 import { ALICE, BOB } from "src/base/testing/accounts";
+import type { ClosedLong } from "src/exports";
+import { hyperdriveAbi } from "src/hyperdrive/abi";
 import { decodeAssetFromTransferSingleEventData } from "src/hyperdrive/assetId/decodeAssetFromTransferSingleEventData";
-import { CheckpointEvent } from "src/hyperdrive/checkpoint/types";
 import {
-  simplePoolConfig30Days,
-  simplePoolConfig7Days,
+  stubPoolConfig30Days,
+  stubPoolConfig7Days,
 } from "src/hyperdrive/testing/PoolConfig";
-import { simplePoolInfo } from "src/hyperdrive/testing/PoolInfo";
+import { stubPoolInfo } from "src/hyperdrive/testing/PoolInfo";
 import { setupReadHyperdrive } from "src/hyperdrive/testing/setupReadHyperdrive";
 import { assert, expect, test } from "vitest";
 
@@ -32,11 +34,11 @@ test("getPoolConfig should return the PoolConfig from the contract as-is", async
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   // stub out the contract call the sdk is going to make
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig7Days);
 
   // The sdk should return the correct data
   const value = await readHyperdrive.getPoolConfig();
-  expect(value).toBe(simplePoolConfig7Days);
+  expect(value).toBe(stubPoolConfig7Days);
 });
 
 // The sdk should return the exact PoolInfo from the contracts. It should not do
@@ -45,10 +47,10 @@ test("getPoolConfig should return the PoolConfig from the contract as-is", async
 test("getPoolInfo should return the PoolInfo from the contract as-is", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  contract.onRead("getPoolInfo").resolves(stubPoolInfo);
 
   const value = await readHyperdrive.getPoolInfo();
-  expect(value).toBe(simplePoolInfo);
+  expect(value).toBe(stubPoolInfo);
 });
 
 // The sdk should return the exact APR from the contracts. It should not do any
@@ -58,8 +60,8 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 
   // These are necessary to stub, but the values won't be used since we stub
   // calculateAPRFromReserves directly
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
-  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig7Days);
+  contract.onRead("getPoolInfo").resolves(stubPoolInfo);
 
   const value = await readHyperdrive.getFixedApr();
   expect(value).toBe(50000000000000000n);
@@ -68,84 +70,97 @@ test("getFixedRate should get the fixed rate as-is", async () => {
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.onGetEvents("OpenLong").resolves([
-    {
+  contract.onGetEvents("OpenLong").resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        amount: parseFixed("1").bigint,
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: 1729209600n,
-        vaultSharePrice: 1n,
-        asBase: false,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 2n,
-        amount: parseFixed("1").bigint,
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: 1733961600n,
-        asBase: false,
-        trader: ALICE,
-        vaultSharePrice: 0n,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            amount: parseFixed("1").bigint,
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: 1729209600n,
+            vaultSharePrice: 1n,
+            asBase: false,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 2n,
+            amount: parseFixed("1").bigint,
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: 1733961600n,
+            asBase: false,
+            trader: ALICE,
+            vaultSharePrice: 0n,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("CloseLong").resolves([
-    {
+  contract.onGetEvents("CloseLong").resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: 123456789n,
-        trader: BOB,
-        destination: BOB,
-        // received back 1 base
-        asBase: true,
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: 0n,
-        // closed out 0.9 bonds
-        bondAmount: parseFixed("0.9").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: 123456789n,
+            trader: BOB,
+            destination: BOB,
+            // received back 1 base
+            asBase: true,
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: 0n,
+            // closed out 0.9 bonds
+            bondAmount: parseFixed("0.9").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("OpenShort").resolves([
-    {
+  contract.onGetEvents("OpenShort").resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      args: {
-        extraData: "0x",
-        assetId: 3n,
-        amount: parseFixed("1").bigint,
-        bondAmount: parseFixed("100").bigint,
-        maturityTime: 1729296000n,
-        vaultSharePrice: 1n,
-        asBase: false,
-        baseProceeds: parseFixed("100").bigint,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenShort",
-      args: {
-        extraData: "0x",
-        assetId: 4n,
-        amount: parseFixed("2").bigint,
-        bondAmount: parseFixed("190").bigint,
-        maturityTime: 1729296000n,
-        vaultSharePrice: 1n,
-        asBase: false,
-        baseProceeds: parseFixed("190").bigint,
-        trader: BOB,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 3n,
+            amount: parseFixed("1").bigint,
+            bondAmount: parseFixed("100").bigint,
+            maturityTime: 1729296000n,
+            vaultSharePrice: 1n,
+            asBase: false,
+            baseProceeds: parseFixed("100").bigint,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 4n,
+            amount: parseFixed("2").bigint,
+            bondAmount: parseFixed("190").bigint,
+            maturityTime: 1729296000n,
+            vaultSharePrice: 1n,
+            asBase: false,
+            baseProceeds: parseFixed("190").bigint,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
 
   contract.onGetEvents("CloseShort").resolves([]);
 
@@ -159,19 +174,19 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
 });
 
 test("getShortAccruedYield should return the amount of yield a non-mature position has earned", async () => {
-  const { contract, drift, readHyperdrive } = setupReadHyperdrive();
+  const { drift, contract, readHyperdrive } = setupReadHyperdrive();
 
-  drift.onGetBlock().resolves({ blockNumber: 1n, timestamp: 100n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 100n }));
 
   contract.onRead("getPoolConfig").resolves({
-    ...simplePoolConfig7Days,
+    ...stubPoolConfig7Days,
     positionDuration: 86400n, // one day in seconds
     checkpointDuration: 86400n, // one day in seconds
   });
 
   // The pool info gives us the current price
   contract.onRead("getPoolInfo").resolves({
-    ...simplePoolInfo,
+    ...stubPoolInfo,
     vaultSharePrice: parseFixed("1.01").bigint,
   });
 
@@ -194,12 +209,10 @@ test("getShortAccruedYield should return the amount of yield a non-mature positi
 });
 
 test("getShortAccruedYield should return the amount of yield a mature position has earned", async () => {
-  const { drift, contract, readHyperdrive } = setupReadHyperdrive();
-
-  drift.onGetBlock().resolves({ blockNumber: 1n, timestamp: 1699503565n });
+  const { contract, readHyperdrive } = setupReadHyperdrive();
 
   contract.onRead("getPoolConfig").resolves({
-    ...simplePoolConfig7Days,
+    ...stubPoolConfig7Days,
     positionDuration: 86400n, // one day in seconds
     checkpointDuration: 86400n, // one day in seconds
   });
@@ -231,28 +244,32 @@ test("getShortAccruedYield should return the amount of yield a mature position h
 
 test("getCheckpointEvents should return an array of CheckpointEvents", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
-  const checkPointEvents = [
-    {
-      eventName: "CreateCheckpoint",
-      args: {
-        vaultSharePrice: 423890n,
-        checkpointTime: 1699480800n,
-        lpSharePrice: 1000276463406900050n,
-        maturedLongs: 1010694n,
-        maturedShorts: 0n,
+  const checkPointEvents = createStubEvents({
+    abi: hyperdriveAbi,
+    eventName: "CreateCheckpoint",
+    events: [
+      {
+        args: {
+          vaultSharePrice: 423890n,
+          checkpointVaultSharePrice: 423890n,
+          checkpointTime: 1699480800n,
+          lpSharePrice: 1000276463406900050n,
+          maturedLongs: 1010694n,
+          maturedShorts: 0n,
+        },
       },
-    },
-    {
-      eventName: "CreateCheckpoint",
-      args: {
-        sharePrice: 1000378348050038939n,
-        checkpointTime: 1729299000n,
-        lpSharePrice: 80120n,
-        maturedLongs: 923162n,
-        maturedShorts: 230904n,
+      {
+        args: {
+          vaultSharePrice: 1000378348050038939n,
+          checkpointVaultSharePrice: 1000378348050038939n,
+          checkpointTime: 1729299000n,
+          lpSharePrice: 80120n,
+          maturedLongs: 923162n,
+          maturedShorts: 230904n,
+        },
       },
-    },
-  ] as CheckpointEvent[];
+    ],
+  });
   contract.onGetEvents("CreateCheckpoint").resolves(checkPointEvents);
 
   const events = await readHyperdrive.getCheckpointEvents();
@@ -272,38 +289,42 @@ test("getOpenLongs should account for longs opened with base", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: 1n,
-        // received bonds
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: 1n,
+            // received bonds
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
   contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([]);
 
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
@@ -330,38 +351,42 @@ test("getOpenLongs should account for longs opened with shares", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in shares
-        vaultSharePrice: parseFixed("1.15").bigint,
-        amount: parseFixed("1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: timestamp,
-        asBase: false,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in shares
-        vaultSharePrice: parseFixed("1.2").bigint,
-        amount: parseFixed("1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: timestamp,
-        asBase: false,
-        trader: BOB,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in shares
+            vaultSharePrice: parseFixed("1.15").bigint,
+            amount: parseFixed("1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: timestamp,
+            asBase: false,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in shares
+            vaultSharePrice: parseFixed("1.2").bigint,
+            amount: parseFixed("1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: timestamp,
+            asBase: false,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
 
   // Bob has not closed the position at all, these are just stubbed out
   contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([]);
@@ -389,59 +414,68 @@ test("getOpenLongs should account for longs partially closed to base", async () 
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // received bonds
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-  ]);
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+            // received bonds
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 1 base
-        asBase: true,
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+            // received back 1 base
+            asBase: true,
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // closed out 0.9 bonds
-        bondAmount: parseFixed("0.9").bigint,
-      },
-    },
-  ]);
+            // closed out 0.9 bonds
+            bondAmount: parseFixed("0.9").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   // mints
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
@@ -468,114 +502,132 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // received bonds
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-  ]);
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+            // received bonds
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 1 base
-        asBase: true,
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+            // received back 1 base
+            asBase: true,
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // closed out 0.9 bonds
-        bondAmount: parseFixed("0.9").bigint,
-      },
-    },
-  ]);
+            // closed out 0.9 bonds
+            bondAmount: parseFixed("0.9").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // received bonds
-        bondAmount: parseFixed("1.3").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-    {
-      eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("1").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        // received bonds
-        bondAmount: parseFixed("1.4").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-  ]);
+            // received bonds
+            bondAmount: parseFixed("1.3").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("1").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            // received bonds
+            bondAmount: parseFixed("1.4").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 2.5 base
-        asBase: true,
-        amount: parseFixed("2.5").bigint,
-        vaultSharePrice: parseFixed("1.19").bigint,
+            // received back 2.5 base
+            asBase: true,
+            amount: parseFixed("2.5").bigint,
+            vaultSharePrice: parseFixed("1.19").bigint,
 
-        // closed out 2.7 bonds
-        bondAmount: parseFixed("2.7").bigint,
-      },
-    },
-  ]);
+            // closed out 2.7 bonds
+            bondAmount: parseFixed("2.7").bigint,
+          },
+        },
+      ],
+    }),
+  );
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
   expect(value).toEqual([]);
@@ -589,66 +641,75 @@ test("getOpenLongs should handle when user fully closes then re-opens a position
 
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId:
-          452312848583266388373324160190187140051835877600158453279131187532625961856n,
-        maturityTime: 1715299200n,
-        amount: parseFixed("2000").bigint,
-        vaultSharePrice: parseFixed("1.0002871459674").bigint,
-        asBase: true,
-        bondAmount: parseFixed("2020.518819362004558105").bigint,
-      },
-      blockNumber: 1n,
-      data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c6b935b8bbd40000000000000000000000000000000000000000000000000006c639ba602f70a9a7f000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      transactionHash:
-        "0x8b938ee12cc519b7a76debcad41aab61ef3de2cecc8a858adea7575671b1d9b4",
-    },
-    {
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId:
-          452312848583266388373324160190187140051835877600158453279131187532625961856n,
-        maturityTime: 1715299200n,
-        amount: parseFixed("9.0931").bigint,
-        vaultSharePrice: parseFixed("1.0003519789758").bigint,
-        asBase: true,
-        bondAmount: parseFixed("9.196435772384927298").bigint,
-      },
-      blockNumber: 3n,
-      data: "0x00000000000000000000000000000000000000000000000000000000663d63800000000000000000000000000000000000000000000000007e312e45cf1ac0000000000000000000000000000000000000000000000000007e25d062e6d4586900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000007fa04d9c34b2de42",
-      eventName: "OpenLong",
-      transactionHash:
-        "0x5130c7a919f7303343e102020705cfe3db2ab5ca200410d119cef296c4693621",
-    } as const,
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId:
+              452312848583266388373324160190187140051835877600158453279131187532625961856n,
+            maturityTime: 1715299200n,
+            amount: parseFixed("2000").bigint,
+            vaultSharePrice: parseFixed("1.0002871459674").bigint,
+            asBase: true,
+            bondAmount: parseFixed("2020.518819362004558105").bigint,
+          },
+          blockNumber: 1n,
+          data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c6b935b8bbd40000000000000000000000000000000000000000000000000006c639ba602f70a9a7f000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+          transactionHash:
+            "0x8b938ee12cc519b7a76debcad41aab61ef3de2cecc8a858adea7575671b1d9b4",
+        },
+        {
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId:
+              452312848583266388373324160190187140051835877600158453279131187532625961856n,
+            maturityTime: 1715299200n,
+            amount: parseFixed("9.0931").bigint,
+            vaultSharePrice: parseFixed("1.0003519789758").bigint,
+            asBase: true,
+            bondAmount: parseFixed("9.196435772384927298").bigint,
+          },
+          blockNumber: 3n,
+          data: "0x00000000000000000000000000000000000000000000000000000000663d63800000000000000000000000000000000000000000000000007e312e45cf1ac0000000000000000000000000000000000000000000000000007e25d062e6d4586900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000007fa04d9c34b2de42",
+          transactionHash:
+            "0x5130c7a919f7303343e102020705cfe3db2ab5ca200410d119cef296c4693621",
+        } as const,
+      ],
+    }),
+  );
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId:
-          452312848583266388373324160190187140051835877600158453279131187532625961856n,
-        maturityTime: 1715299200n,
-        amount: parseFixed("1998.524066158245200112").bigint,
-        vaultSharePrice: parseFixed("1.0002973144644").bigint,
-        asBase: true,
-        bondAmount: parseFixed("2020.518819362004558105").bigint,
-      },
-      blockNumber: 2n,
-      data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c5717c9895f7a40f000000000000000000000000000000000000000000000006c4ed96d6708a25d07000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      transactionHash:
-        "0x8fff6dfc2498356b665542c5517e895dd6c0364e2fa9bf011d373781dad22655",
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId:
+              452312848583266388373324160190187140051835877600158453279131187532625961856n,
+            maturityTime: 1715299200n,
+            amount: parseFixed("1998.524066158245200112").bigint,
+            vaultSharePrice: parseFixed("1.0002973144644").bigint,
+            asBase: true,
+            bondAmount: parseFixed("2020.518819362004558105").bigint,
+          },
+          blockNumber: 2n,
+          data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c5717c9895f7a40f000000000000000000000000000000000000000000000006c4ed96d6708a25d07000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+          transactionHash:
+            "0x8fff6dfc2498356b665542c5517e895dd6c0364e2fa9bf011d373781dad22655",
+        },
+      ],
+    }),
+  );
 
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
@@ -675,45 +736,55 @@ test("getOpenLongs should account for longs partially closed to shares", async (
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        asBase: true,
-        amount: parseFixed("2").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        // received bonds
-        bondAmount: parseFixed("2.2").bigint,
-        maturityTime: timestamp,
-        trader: BOB,
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            asBase: true,
+            amount: parseFixed("2").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            // received bonds
+            bondAmount: parseFixed("2.2").bigint,
+            maturityTime: timestamp,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          blockNumber: 5n,
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 0.8 shares
-        asBase: false,
-        amount: parseFixed("0.88").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+            // received back 0.8 shares
+            asBase: false,
+            amount: parseFixed("0.88").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // closed out 1.1 bonds
-        bondAmount: parseFixed("1.1").bigint,
-      },
-    },
-  ]);
+            // closed out 1.1 bonds
+            bondAmount: parseFixed("1.1").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
@@ -738,46 +809,56 @@ test("getOpenLongs should account for longs fully closed to shares", async () =>
   const eventData =
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
-  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("OpenLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenLong",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        // paid for in base
-        amount: parseFixed("2").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            // paid for in base
+            amount: parseFixed("2").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // received bonds
-        bondAmount: parseFixed("2.2").bigint,
-        maturityTime: timestamp,
-        asBase: true,
-        trader: BOB,
-      },
-    },
-  ]);
+            // received bonds
+            bondAmount: parseFixed("2.2").bigint,
+            maturityTime: timestamp,
+            asBase: true,
+            trader: BOB,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          blockNumber: 5n,
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 2 shares, and no base
-        asBase: false,
-        amount: parseFixed("2.2").bigint,
-        vaultSharePrice: parseFixed("1.1").bigint,
+            // received back 2 shares, and no base
+            asBase: false,
+            amount: parseFixed("2.2").bigint,
+            vaultSharePrice: parseFixed("1.1").bigint,
 
-        // closed out 2.2 bonds
-        bondAmount: parseFixed("2.2").bigint,
-      },
-    },
-  ]);
+            // closed out 2.2 bonds
+            bondAmount: parseFixed("2.2").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   const value = await readHyperdrive.getOpenLongs({ account: BOB });
 
@@ -793,39 +874,43 @@ test("getClosedLongs should account for closing out to base", async () => {
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          blockNumber: 5n,
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 2.2 base, and no shares
-        asBase: true,
-        amount: parseFixed("2.2").bigint,
-        vaultSharePrice: parseFixed("2.0").bigint,
+            // received back 2.2 base, and no shares
+            asBase: true,
+            amount: parseFixed("2.2").bigint,
+            vaultSharePrice: parseFixed("2.0").bigint,
 
-        // closed out 2.0 bonds
-        bondAmount: parseFixed("2.0").bigint,
-      },
-    },
-  ]);
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+            // closed out 2.0 bonds
+            bondAmount: parseFixed("2.0").bigint,
+          },
+        },
+      ],
+    }),
+  );
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
   const value = await readHyperdrive.getClosedLongs({ account: BOB });
   expect(value).toEqual([
     {
       assetId: 1n,
       baseAmount: parseFixed("2.2").bigint,
-      baseAmountPaid: 0n,
       bondAmount: parseFixed("2.0").bigint,
       closedTimestamp: 123456789n,
       maturity: 1708545600n,
     },
-  ]);
+  ] satisfies ClosedLong[]);
 });
 
 test("getClosedLongs should account for closing out to shares", async () => {
@@ -839,42 +924,46 @@ test("getClosedLongs should account for closing out to shares", async () => {
     "0x0100000000000000000000000000000000000000000000000000000065d65640000000000000000000000000000000000000000000000001bc82c3277b2dc665";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseLong", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseLong",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
+      events: [
+        {
+          blockNumber: 5n,
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
 
-        // received back 1.9 shares, and no base
-        asBase: false,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        amount: parseFixed("1.9").bigint,
+            // received back 1.9 shares, and no base
+            asBase: false,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            amount: parseFixed("1.9").bigint,
 
-        // closed out 2 bonds
-        bondAmount: parseFixed("2.0").bigint,
-      },
-    },
-  ]);
+            // closed out 2 bonds
+            bondAmount: parseFixed("2.0").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   // getBlock gives us the timestamp of when he closed the position
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const value = await readHyperdrive.getClosedLongs({ account: BOB });
   expect(value).toEqual([
     {
       assetId: 1n,
       baseAmount: parseFixed("2.09").bigint,
-      baseAmountPaid: 0n,
       bondAmount: parseFixed("2.0").bigint,
       closedTimestamp: 123456789n,
       maturity: 1708545600n,
     },
-  ]);
+  ] satisfies ClosedLong[]);
 });
 
 test("getOpenShorts should account for shorts opened with base", async () => {
@@ -884,46 +973,47 @@ test("getOpenShorts should account for shorts opened with base", async () => {
 
   const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
-  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
-      eventName: "OpenShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.72527013345635719").bigint,
-        vaultSharePrice: parseFixed("0.721952948135251528").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288611983218631127").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("0.721996107012129147").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.72527013345635719").bigint,
+            vaultSharePrice: parseFixed("0.721952948135251528").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288611983218631127").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([]);
 
-  drift.onGetBlock().resolves({
-    timestamp: 1713801432n,
-    blockNumber: 1n,
-  });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 1713801432n }));
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -949,46 +1039,47 @@ test("getOpenShorts should account for shorts opened with shares", async () => {
 
   const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
-  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.721996107012129147").bigint,
-        vaultSharePrice: parseFixed("1.004590365499").bigint,
-        asBase: false,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
-      eventName: "OpenShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.721952948135251528").bigint,
-        vaultSharePrice: parseFixed("1.004594738936").bigint,
-        asBase: false,
-        baseProceeds: parseFixed("49.288611983218631127").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.721996107012129147").bigint,
+            vaultSharePrice: parseFixed("1.004590365499").bigint,
+            asBase: false,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.721952948135251528").bigint,
+            vaultSharePrice: parseFixed("1.004594738936").bigint,
+            asBase: false,
+            baseProceeds: parseFixed("49.288611983218631127").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([]);
 
-  drift.onGetBlock().resolves({
-    timestamp: 1713801432n,
-    blockNumber: 1n,
-  });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 1713801432n }));
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1014,50 +1105,55 @@ test("getOpenShorts should account for shorts partially closed to base", async (
   // bonds left with a total cost of 0.37 base.
   const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
 
-  const events = [
-    {
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("0.721996107012129147").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.357390566309610627").bigint,
-        vaultSharePrice: parseFixed("0.355730805024955393").bigint,
-        asBase: true,
-        basePayment: parseFixed("24.651318786405479294").bigint,
-        bondAmount: parseFixed("25").bigint,
-      },
-    },
-  ] as const;
+      events: [
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.357390566309610627").bigint,
+            vaultSharePrice: parseFixed("0.355730805024955393").bigint,
+            asBase: true,
+            basePayment: parseFixed("24.651318786405479294").bigint,
+            bondAmount: parseFixed("25").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract
-    .onGetEvents("OpenShort", { filter: { trader: BOB } })
-    .resolves([events[0]]);
-  contract
-    .onGetEvents("CloseShort", { filter: { trader: BOB } })
-    .resolves([events[1]]);
-
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([
@@ -1079,52 +1175,56 @@ test("getOpenShorts should account for shorts fully closed to base", async () =>
   // Description:
   // Bob opens up a short position, then completely closes this position, As a
   // result, he no longer has any open short positions.
-  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
+  const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
 
-  const events = [
-    {
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("0.721996107012129147").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("0.721996107012129147").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.357390566309610627").bigint,
-        vaultSharePrice: parseFixed("0.355730805024955393").bigint,
-        asBase: true,
-        basePayment: parseFixed("24.651318786405479294").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-  ] as const;
+      events: [
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.357390566309610627").bigint,
+            vaultSharePrice: parseFixed("0.355730805024955393").bigint,
+            asBase: true,
+            basePayment: parseFixed("24.651318786405479294").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract
-    .onGetEvents("OpenShort", { filter: { trader: BOB } })
-    .resolves([events[0]]);
-  contract
-    .onGetEvents("CloseShort", { filter: { trader: BOB } })
-    .resolves([events[1]]);
-
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([]);
@@ -1137,50 +1237,55 @@ test("getOpenShorts should account for shorts partially closed to shares", async
   // has 25 bonds left with a total cost of 0.37 base.
   const { contract, readHyperdrive, drift } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
 
-  const events = [
-    {
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("1.004590365499").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("1.004590365499").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.355730805024955393").bigint,
-        vaultSharePrice: parseFixed("1.004665778901").bigint,
-        asBase: false,
-        basePayment: parseFixed("24.651318786405479294").bigint,
-        bondAmount: parseFixed("25").bigint,
-      },
-    },
-  ] as const;
+      events: [
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.355730805024955393").bigint,
+            vaultSharePrice: parseFixed("1.004665778901").bigint,
+            asBase: false,
+            basePayment: parseFixed("24.651318786405479294").bigint,
+            bondAmount: parseFixed("25").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract
-    .onGetEvents("OpenShort", { filter: { trader: BOB } })
-    .resolves([events[0]]);
-  contract
-    .onGetEvents("CloseShort", { filter: { trader: BOB } })
-    .resolves([events[1]]);
-
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([
@@ -1203,51 +1308,56 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
   // Bob opens up a short position, then completely closes this position, As a
   // result, he no longer has any open short positions.
 
-  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
+  const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
-  const events = [
-    {
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
+
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("1.004590365499").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("1.004590365499").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        vaultSharePrice: parseFixed("1.004665778901").bigint,
-        amount: parseFixed("0.355730805024955393").bigint,
-        asBase: false,
-        basePayment: parseFixed("24.651318786405479294").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-  ] as const;
+      events: [
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            vaultSharePrice: parseFixed("1.004665778901").bigint,
+            amount: parseFixed("0.355730805024955393").bigint,
+            asBase: false,
+            basePayment: parseFixed("24.651318786405479294").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  contract
-    .onGetEvents("OpenShort", { filter: { trader: BOB } })
-    .resolves([events[0]]);
-  contract
-    .onGetEvents("CloseShort", { filter: { trader: BOB } })
-    .resolves([events[1]]);
-
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([]);
@@ -1260,76 +1370,75 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
   // (ie: the previous loss is not factored in).
 
   const { contract, drift, readHyperdrive } = setupReadHyperdrive();
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
   // pool info to get the price of shares at the time he closes the short
   contract
     .onRead("getPoolInfo", {}, { block: 5n })
-    .resolves({ ...simplePoolInfo, vaultSharePrice: parseFixed("1.1").bigint });
+    .resolves({ ...stubPoolInfo, vaultSharePrice: parseFixed("1.1").bigint });
 
   // Stub the timestamp so getOpenShorts can construct the checkpoint id
-  drift.onGetBlock().resolves({
-    timestamp: 123456789n,
-    // this blockNumber is unused, but setting this to 3n, as there should be
-    // 3 blocks in this test flow
-    blockNumber: 3n,
-  });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
-  const events = [
-    {
+  contract.onGetEvents("OpenShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "OpenShort",
-      blockNumber: 1n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("1.004590365499").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
+      events: [
+        {
+          blockNumber: 1n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("1.004590365499").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+        {
+          blockNumber: 3n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.725310333032516405").bigint,
+            vaultSharePrice: parseFixed("1.004590365499").bigint,
+            asBase: true,
+            baseProceeds: parseFixed("49.288354060447513457").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
+
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 2n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        destination: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.355730805024955393").bigint,
-        vaultSharePrice: parseFixed("1.004665778901").bigint,
-        asBase: false,
-        basePayment: parseFixed("24.651318786405479294").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-    {
-      eventName: "OpenShort",
-      blockNumber: 3n,
-      args: {
-        extraData: "0x",
-        trader: BOB,
-        assetId: 1n,
-        maturityTime: 1716336000n,
-        amount: parseFixed("0.725310333032516405").bigint,
-        vaultSharePrice: parseFixed("1.004590365499").bigint,
-        asBase: true,
-        baseProceeds: parseFixed("49.288354060447513457").bigint,
-        bondAmount: parseFixed("50").bigint,
-      },
-    },
-  ] as const;
-
-  contract
-    .onGetEvents("OpenShort", { filter: { trader: BOB } })
-    .resolves([events[0], events[2]]);
-
-  contract
-    .onGetEvents("CloseShort", { filter: { trader: BOB } })
-    .resolves([events[1]]);
+      events: [
+        {
+          blockNumber: 2n,
+          args: {
+            extraData: "0x",
+            trader: BOB,
+            destination: BOB,
+            assetId: 1n,
+            maturityTime: 1716336000n,
+            amount: parseFixed("0.355730805024955393").bigint,
+            vaultSharePrice: parseFixed("1.004665778901").bigint,
+            asBase: false,
+            basePayment: parseFixed("24.651318786405479294").bigint,
+            bondAmount: parseFixed("50").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1349,18 +1458,14 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
 });
 
 test("getShortBondsGivenDeposit & previewOpenShort should align within a given tolerance", async () => {
-  const { contract, drift, readHyperdrive } = setupReadHyperdrive();
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig30Days);
-  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig30Days);
+  contract.onRead("getPoolInfo").resolves(stubPoolInfo);
   contract.onRead("getCheckpointExposure").resolves(0n);
   contract.onRead("getCheckpoint").resolves({
     vaultSharePrice: parseFixed(1.05).bigint,
     weightedSpotPrice: 0n,
     lastWeightedSpotPriceUpdateTime: 0n,
-  });
-  drift.onGetBlock().resolves({
-    timestamp: 123456789n,
-    blockNumber: 1n,
   });
 
   const targetDeposit = parseFixed(1.123);
@@ -1386,27 +1491,32 @@ test("getClosedShorts should account for shorts closed to base", async () => {
     "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig7Days);
 
-  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        asBase: true,
-        amount: parseFixed("2").bigint, // closed out to base
-        vaultSharePrice: parseFixed("1.8").bigint, // did not close out to shares
-        bondAmount: parseFixed("100").bigint,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
-        basePayment: parseFixed("2").bigint, // did not close out to base
-      },
-    },
-  ]);
+      events: [
+        {
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            asBase: true,
+            amount: parseFixed("2").bigint, // closed out to base
+            vaultSharePrice: parseFixed("1.8").bigint, // did not close out to shares
+            bondAmount: parseFixed("100").bigint,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
+            basePayment: parseFixed("2").bigint, // did not close out to base
+          },
+        },
+      ],
+    }),
+  );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const value = await readHyperdrive.getClosedShorts({ account: BOB });
 
@@ -1433,28 +1543,33 @@ test("getClosedShorts should account for shorts closed to shares", async () => {
     "0x0200000000000000000000000000000000000000000000000000000065d76f800000000000000000000000000000000000000000000000056bc75e2d63100000";
   const { timestamp } = decodeAssetFromTransferSingleEventData(eventData);
 
-  contract.onRead("getPoolConfig").resolves(simplePoolConfig7Days);
+  contract.onRead("getPoolConfig").resolves(stubPoolConfig7Days);
 
-  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves([
-    {
+  contract.onGetEvents("CloseShort", { filter: { trader: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "CloseShort",
-      blockNumber: 5n,
-      args: {
-        extraData: "0x",
-        assetId: 1n,
-        asBase: false,
-        vaultSharePrice: parseFixed("1.1").bigint,
-        amount: parseFixed("1.1").bigint, // closed out to shares
-        bondAmount: parseFixed("100").bigint,
-        maturityTime: timestamp,
-        trader: BOB,
-        destination: BOB,
-        basePayment: parseFixed("1.21").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          blockNumber: 5n,
+          args: {
+            extraData: "0x",
+            assetId: 1n,
+            asBase: false,
+            vaultSharePrice: parseFixed("1.1").bigint,
+            amount: parseFixed("1.1").bigint, // closed out to shares
+            bondAmount: parseFixed("100").bigint,
+            maturityTime: timestamp,
+            trader: BOB,
+            destination: BOB,
+            basePayment: parseFixed("1.21").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const value = await readHyperdrive.getClosedShorts({ account: BOB });
 
@@ -1478,48 +1593,57 @@ test("getOpenLpPosition should return zero when a position is fully closed", asy
   // 1 base on this position) Bob is left with 0 LP shares and 0 base paid in his
   // current LP position.
 
-  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
-  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+  contract.onRead("getPoolInfo").resolves(stubPoolInfo);
   contract.onSimulateWrite("removeLiquidity").resolves({
     proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 175n });
-  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves([
-    {
+  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "AddLiquidity",
-      blockNumber: 174n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("500").bigint,
-        lpAmount: parseFixed("498").bigint,
-        lpSharePrice: parseFixed("1.000000590811771717").bigint,
-        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: parseFixed("498.570512905658351934").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          blockNumber: 174n,
+          args: {
+            extraData: "0x",
+            asBase: true,
+            amount: parseFixed("500").bigint,
+            lpAmount: parseFixed("498").bigint,
+            lpSharePrice: parseFixed("1.000000590811771717").bigint,
+            provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+            vaultSharePrice: parseFixed("498.570512905658351934").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   contract
     .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RemoveLiquidity",
-        blockNumber: 175n,
-        args: {
-          extraData: "0x",
-          asBase: true,
-          amount: parseFixed("499").bigint,
-          lpAmount: parseFixed("498").bigint,
-          lpSharePrice: parseFixed("1.002867781011873985").bigint,
-          provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-          vaultSharePrice: parseFixed("498.567723245858722697").bigint,
-          withdrawalShareAmount: 0n,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 175n,
+            args: {
+              extraData: "0x",
+              asBase: true,
+              amount: parseFixed("499").bigint,
+              lpAmount: parseFixed("498").bigint,
+              lpSharePrice: parseFixed("1.002867781011873985").bigint,
+              provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+              vaultSharePrice: parseFixed("498.567723245858722697").bigint,
+              withdrawalShareAmount: 0n,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
   const value = await readHyperdrive.getOpenLpPosition({
     account: BOB,
@@ -1541,61 +1665,81 @@ test("getOpenLpPosition should return the current lpShareBalance and baseAmountP
   // receiving 99 LP shares, depositing 100 base. Bob now has with 99 LP
   // shares and 100 base paid in his current LP position.
 
-  const { contract, readHyperdrive, drift } = setupReadHyperdrive();
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 175n });
+  const { contract, readHyperdrive } = setupReadHyperdrive();
   contract.onSimulateWrite("removeLiquidity").resolves({
     proceeds: parseFixed("100").bigint,
     withdrawalShares: 0n,
   });
-  contract.onRead("getPoolInfo").resolves(simplePoolInfo);
-  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves([
-    {
+  contract.onRead("getPoolInfo").resolves(stubPoolInfo);
+  contract
+    .onRead("convertToBase")
+    .callsFake(
+      async ({ args }) =>
+        fixed(args._shareAmount).mul(stubPoolInfo.vaultSharePrice).bigint,
+    );
+  contract
+    .onRead("convertToShares")
+    .callsFake(
+      async ({ args }) =>
+        fixed(args._baseAmount).div(stubPoolInfo.vaultSharePrice).bigint,
+    );
+  contract.onGetEvents("AddLiquidity", { filter: { provider: BOB } }).resolves(
+    createStubEvents({
+      abi: hyperdriveAbi,
       eventName: "AddLiquidity",
-      blockNumber: 174n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("500").bigint,
-        lpAmount: parseFixed("498").bigint,
-        lpSharePrice: parseFixed("1.000000590811771717").bigint,
-        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: parseFixed("1.002867171358").bigint,
-      },
-    },
-    {
-      eventName: "AddLiquidity",
-      blockNumber: 176n,
-      args: {
-        extraData: "0x",
-        asBase: true,
-        amount: parseFixed("100").bigint,
-        lpAmount: parseFixed("99").bigint,
-        lpSharePrice: parseFixed("1.000000576182752684").bigint,
-        provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-        vaultSharePrice: parseFixed("1.002867314461").bigint,
-      },
-    },
-  ]);
+      events: [
+        {
+          blockNumber: 174n,
+          args: {
+            extraData: "0x",
+            asBase: true,
+            amount: parseFixed("500").bigint,
+            lpAmount: parseFixed("498").bigint,
+            lpSharePrice: parseFixed("1.000000590811771717").bigint,
+            provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+            vaultSharePrice: parseFixed("1.002867171358").bigint,
+          },
+        },
+        {
+          blockNumber: 176n,
+          args: {
+            extraData: "0x",
+            asBase: true,
+            amount: parseFixed("100").bigint,
+            lpAmount: parseFixed("99").bigint,
+            lpSharePrice: parseFixed("1.000000576182752684").bigint,
+            provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+            vaultSharePrice: parseFixed("1.002867314461").bigint,
+          },
+        },
+      ],
+    }),
+  );
 
   contract
     .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RemoveLiquidity",
-        blockNumber: 175n,
-        args: {
-          extraData: "0x",
-          asBase: true,
-          amount: parseFixed("499").bigint,
-          lpAmount: parseFixed("498").bigint,
-          lpSharePrice: parseFixed("1.002867781011873985").bigint,
-          provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
-          vaultSharePrice: parseFixed("1.0008670371827").bigint,
-          withdrawalShareAmount: 0n,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 175n,
+            args: {
+              extraData: "0x",
+              asBase: true,
+              amount: parseFixed("499").bigint,
+              lpAmount: parseFixed("498").bigint,
+              lpSharePrice: parseFixed("1.002867781011873985").bigint,
+              provider: "0x020a898437E9c9DCdF3c2ffdDB94E759C0DAdFB6",
+              vaultSharePrice: parseFixed("1.0008670371827").bigint,
+              withdrawalShareAmount: 0n,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
   const value = await readHyperdrive.getOpenLpPosition({
     account: BOB,
@@ -1617,25 +1761,30 @@ test("getClosedLpShares should account for LP shares closed to base", async () =
 
   contract
     .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RemoveLiquidity",
-        blockNumber: 5n,
-        args: {
-          extraData: "0x",
-          asBase: true,
-          amount: parseFixed("10").bigint,
-          vaultSharePrice: parseFixed("9").bigint,
-          provider: BOB,
-          withdrawalShareAmount: 0n,
-          lpAmount: parseFixed("5").bigint,
-          lpSharePrice: parseFixed("2").bigint,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 5n,
+            args: {
+              extraData: "0x",
+              asBase: true,
+              amount: parseFixed("10").bigint,
+              vaultSharePrice: parseFixed("9").bigint,
+              provider: BOB,
+              withdrawalShareAmount: 0n,
+              lpAmount: parseFixed("5").bigint,
+              lpSharePrice: parseFixed("2").bigint,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const closedLpShares = await readHyperdrive.getClosedLpShares({
     account: BOB,
@@ -1659,25 +1808,30 @@ test("getClosedLpShares should account for LP shares closed to vault shares", as
 
   contract
     .onGetEvents("RemoveLiquidity", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RemoveLiquidity",
-        blockNumber: 5n,
-        args: {
-          extraData: "0x",
-          asBase: false,
-          amount: parseFixed("9").bigint,
-          vaultSharePrice: parseFixed("1.1").bigint,
-          provider: BOB,
-          withdrawalShareAmount: 0n,
-          lpAmount: parseFixed("5").bigint,
-          lpSharePrice: parseFixed("2").bigint,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 5n,
+            args: {
+              extraData: "0x",
+              asBase: false,
+              amount: parseFixed("9").bigint,
+              vaultSharePrice: parseFixed("1.1").bigint,
+              provider: BOB,
+              withdrawalShareAmount: 0n,
+              lpAmount: parseFixed("5").bigint,
+              lpSharePrice: parseFixed("2").bigint,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const closedLpShares = await readHyperdrive.getClosedLpShares({
     account: BOB,
@@ -1700,23 +1854,28 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
 
   contract
     .onGetEvents("RedeemWithdrawalShares", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RedeemWithdrawalShares",
-        blockNumber: 5n,
-        args: {
-          extraData: "0x",
-          asBase: true,
-          amount: parseFixed("10").bigint,
-          vaultSharePrice: parseFixed("9.8").bigint,
-          provider: BOB,
-          withdrawalShareAmount: parseFixed("5").bigint,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 5n,
+            args: {
+              extraData: "0x",
+              asBase: true,
+              amount: parseFixed("10").bigint,
+              vaultSharePrice: parseFixed("9.8").bigint,
+              provider: BOB,
+              withdrawalShareAmount: parseFixed("5").bigint,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const redeemedWithdrawalShares =
     await readHyperdrive.getRedeemedWithdrawalShares({
@@ -1738,23 +1897,28 @@ test("getRedeemedWithdrawalShares should account for withdrawal shares closed to
 
   contract
     .onGetEvents("RedeemWithdrawalShares", { filter: { provider: BOB } })
-    .resolves([
-      {
+    .resolves(
+      createStubEvents({
+        abi: hyperdriveAbi,
         eventName: "RedeemWithdrawalShares",
-        blockNumber: 5n,
-        args: {
-          extraData: "0x",
-          asBase: false,
-          vaultSharePrice: parseFixed("1.25").bigint,
-          amount: parseFixed("8").bigint,
-          provider: BOB,
-          withdrawalShareAmount: parseFixed("5").bigint,
-          destination: BOB,
-        },
-      },
-    ]);
+        events: [
+          {
+            blockNumber: 5n,
+            args: {
+              extraData: "0x",
+              asBase: false,
+              vaultSharePrice: parseFixed("1.25").bigint,
+              amount: parseFixed("8").bigint,
+              provider: BOB,
+              withdrawalShareAmount: parseFixed("5").bigint,
+              destination: BOB,
+            },
+          },
+        ],
+      }),
+    );
 
-  drift.onGetBlock().resolves({ timestamp: 123456789n, blockNumber: 5n });
+  drift.onGetBlock().resolves(createStubBlock({ timestamp: 123456789n }));
 
   const redeemedWithdrawalShares =
     await readHyperdrive.getRedeemedWithdrawalShares({
