@@ -1,4 +1,4 @@
-import { Drift } from "@delvtech/drift";
+import { createDrift } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { appConfig } from "@delvtech/hyperdrive-appconfig";
@@ -11,10 +11,16 @@ import { Address, erc20Abi, maxInt256 } from "viem";
 import { publicClient, walletClient } from "../client";
 
 const zapsConfig = appConfig.zaps[707];
-const drift = new Drift(viemAdapter({ publicClient, walletClient }));
+const drift = createDrift({
+  adapter: viemAdapter({ publicClient, walletClient }),
+});
+
+if (!drift.isReadWrite()) {
+  throw new Error("No wallet client available");
+}
 
 const poolAddress = "0x324395D5d835F84a02A75Aa26814f6fD22F25698";
-const earliestBlock = 20180617n;
+const epochBlock = 20180617n;
 const usdcAddress = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
 const assetId: bigint =
   452312848583266388373324160190187140051835877600158453279131187532667606656n;
@@ -26,14 +32,14 @@ const defaultCloseLongAmount = BigInt(26e18);
 const writePool = new ReadWriteHyperdrive({
   address: poolAddress,
   drift,
-  earliestBlock,
+  epochBlock,
 });
 
 const readPool = new ReadHyperdrive({
   address: poolAddress,
   drift,
   zapContractAddress: zapsConfig.address,
-  earliestBlock,
+  epochBlock,
 });
 
 const poolContract = drift.contract({

@@ -1,8 +1,5 @@
-import { initSync, parseFixed, wasmBuffer } from "@delvtech/fixed-point-wasm";
+import { parseFixed } from "@delvtech/fixed-point-wasm";
 import _ from "lodash";
-
-// Initialize the WASM module
-initSync(wasmBuffer);
 
 import { Address } from "viem";
 
