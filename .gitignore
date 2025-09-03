@@ -1,6 +1,7 @@
 dist
 dist-ssr
 *.local
+*.tgz
 
 # dependencies
 node_modules
