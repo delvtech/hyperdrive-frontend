@@ -1,4 +1,4 @@
-import { PoolConfig } from "@delvtech/hyperdrive-viem";
+import type { PoolConfig } from "@delvtech/hyperdrive-js";
 import { YieldSourceId } from "src/yieldSources/types";
 import { Address } from "viem";
 

@@ -1,4 +1,4 @@
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import { getTokenConfig } from "src/tokens/getTokenConfig";
@@ -73,8 +73,7 @@ export async function getCustomHyperdrive({
     address: hyperdrive.address,
     version: version.string,
     name: hyperdriveName,
-    // safe to cast here because we know the pool was initialized
-    initializationBlock: initializationBlock.blockNumber as bigint,
+    initializationBlock: initializationBlock.number,
     initializationTimestamp: initializationBlock.timestamp,
     decimals: await hyperdrive.getDecimals(),
     yieldSource,

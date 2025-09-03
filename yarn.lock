@@ -1690,6 +1690,11 @@
   resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-0.0.1-beta.13.tgz#9f5f38a50f72ea887319ea9480559fa01956c29b"
   integrity sha512-i7PUAmUdq7IRRSjQO4JozV7swvYFcED3X4TT1l5RF0kXAD5drbMHIcpIB1D+2N7V2H2MCd2D4PDWDqVu+Hotzg==
 
+"@delvtech/drift-viem@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-1.0.0.tgz#5cb91072d3b5c46e862a4e633cc2f07ae37d41aa"
+  integrity sha512-gWGdPWLrDKiQUQ0RStTEUvKdFsgqGacJIAZYQDvgBwh/xfhxWjEKZTFcTEksEX7W/RBBPjaNj07W/uZ0KnfDNA==
+
 "@delvtech/drift@^0.0.1-beta.11":
   version "0.0.1-beta.11"
   resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-0.0.1-beta.11.tgz#939c2fe6a07dacfa58ba72cf30ba4917fde7e91d"
@@ -1708,16 +1713,6 @@
     lru-cache "^11.1.0"
     ox "^0.8.6"
     safe-stable-stringify "^2.5.0"
-
-"@delvtech/evm-client@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
-  integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==
-  dependencies:
-    "@types/lodash.ismatch" "^4.4.9"
-    fast-safe-stringify "^2.1.1"
-    lodash.ismatch "^4.4.0"
-    lru-cache "^10.0.1"
 
 "@discordjs/builders@^1.10.1":
   version "1.10.1"
@@ -6687,13 +6682,6 @@
   version "4.6.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.groupby/-/lodash.groupby-4.6.9.tgz#ea1aa9da1038ca50894d1fe1a3b5dabdf865d99c"
   integrity sha512-z2xtCX2ko7GrqORnnYea4+ksT7jZNAvaOcLd6mP9M7J09RHvJs06W8BGdQQAX8ARef09VQLdeRilSOcfHlDQJQ==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash.ismatch@^4.4.9":
-  version "4.4.9"
-  resolved "https://registry.yarnpkg.com/@types/lodash.ismatch/-/lodash.ismatch-4.4.9.tgz#97b4317f7dc3975bb51660a0f9a055ac7b67b134"
-  integrity sha512-qWihnStOPKH8urljLGm6ZOEdN/5Bt4vxKR81tL3L4ArUNLvcf9RW3QSnPs21eix5BiqioSWq4aAXD4Iep+d0fw==
   dependencies:
     "@types/lodash" "*"
 
