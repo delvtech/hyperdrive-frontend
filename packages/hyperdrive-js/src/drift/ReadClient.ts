@@ -1,4 +1,5 @@
 import { Drift } from "@delvtech/drift";
+import { getEventsWithSplitAndRetry } from "src/base/getEventsWithSplitAndRetry";
 
 /**
  * The base options required for all read clients.
@@ -12,6 +13,11 @@ export interface ReadClientOptions {
    * behavior.
    */
   debugName?: string;
+
+  /**
+   * The earliest block number to use for event queries.
+   */
+  epochBlock?: bigint;
 }
 
 /**
@@ -21,8 +27,24 @@ export class ReadClient {
   drift: Drift;
   debugName: string;
 
-  constructor({ debugName, drift }: ReadClientOptions) {
+  constructor({ debugName, drift, epochBlock }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
+
+    // Add a hook to split failed requests into multiple smaller requests to
+    // accommodate block range and/or event count limits.
+    drift.hooks.on("before:getEvents", async ({ args, resolve }) => {
+      const [{ fromBlock, toBlock, ...restParams }] = args;
+      const events = await getEventsWithSplitAndRetry({
+        params: {
+          fromBlock,
+          toBlock,
+          ...restParams,
+        },
+        drift,
+        epochBlock,
+      });
+      resolve(events);
+    });
   }
 }
