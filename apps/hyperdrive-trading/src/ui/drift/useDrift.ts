@@ -1,7 +1,12 @@
-import { Drift, ReadWriteAdapter } from "@delvtech/drift";
+import {
+  createDrift,
+  Drift,
+  ReadWriteAdapter,
+  type Store,
+} from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
 import { useMemo } from "react";
-import { getDriftOptions } from "src/drift/getDrift";
+import { driftStore } from "src/drift/getDrift";
 import {
   usePublicClient,
   UsePublicClientParameters,
@@ -9,22 +14,26 @@ import {
   UseWalletClientParameters,
 } from "wagmi";
 
-export function useDrift(
-  params?: UsePublicClientParameters,
-): Drift | undefined {
-  const publicClient = usePublicClient(params);
-  const { data: walletClient } = useWalletClient(params);
+export interface UseDriftViemOptions
+  extends UsePublicClientParameters,
+    UseWalletClientParameters {
+  store?: Store;
+}
 
-  return useMemo(
-    () =>
-      publicClient
-        ? new Drift(
-            viemAdapter({ publicClient, walletClient }),
-            getDriftOptions({ chainId: publicClient.chain.id }),
-          )
-        : undefined,
-    [publicClient, walletClient],
-  );
+export function useDrift(options?: UseDriftViemOptions): Drift | undefined {
+  const publicClient = usePublicClient(options);
+  const { data: walletClient } = useWalletClient(options);
+
+  return useMemo(() => {
+    if (!publicClient) {
+      return undefined;
+    }
+
+    return createDrift({
+      adapter: viemAdapter({ publicClient, walletClient }),
+      store: options?.store || driftStore,
+    });
+  }, [publicClient, walletClient, options?.store]);
 }
 
 export function useReadWriteDrift(
@@ -36,10 +45,10 @@ export function useReadWriteDrift(
   return useMemo(
     () =>
       publicClient && walletClient
-        ? new Drift(
-            viemAdapter({ publicClient, walletClient }),
-            getDriftOptions({ chainId: publicClient.chain.id }),
-          )
+        ? createDrift({
+            adapter: viemAdapter({ publicClient, walletClient }),
+            store: driftStore,
+          })
         : undefined,
     [publicClient, walletClient],
   );

@@ -33,8 +33,8 @@ export function useTotalOpenShortsValue({
             shorts.map(async (short) => {
               const readHyperdrive = await getHyperdrive({
                 address: short.hyperdrive.address,
-                drift: getDrift({ chainId: short.hyperdrive.chainId }),
-                earliestBlock: short.hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: short.hyperdrive.chainId }),
+                epochBlock: short.hyperdrive.initializationBlock,
               });
               const preview = await readHyperdrive.previewCloseShort({
                 maturityTime: short.maturity,

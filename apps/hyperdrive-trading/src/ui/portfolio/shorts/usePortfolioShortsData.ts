@@ -34,8 +34,8 @@ export function usePortfolioShortsData({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,
@@ -46,7 +46,7 @@ export function usePortfolioShortsData({
                     openShorts: await readHyperdrive.getOpenShorts({
                       account,
                       options: {
-                        block:
+                        toBlock:
                           LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
                             .short,
                       },
@@ -100,8 +100,8 @@ export function usePortfolioShortsDataFromHyperdrives({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
                     debugName: hyperdrive.name,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
@@ -110,7 +110,7 @@ export function usePortfolioShortsDataFromHyperdrives({
                   const openShorts = await readHyperdrive.getOpenShorts({
                     account,
                     options: {
-                      block:
+                      toBlock:
                         LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
                           .short,
                     },

@@ -47,8 +47,8 @@ export function useUnpausedPools(): {
             .map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({
                 address: hyperdrive.address,
-                drift: getDrift({ chainId: hyperdrive.chainId }),
-                earliestBlock: hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: hyperdrive.chainId }),
+                epochBlock: hyperdrive.initializationBlock,
                 zapContractAddress: appConfig.zaps[hyperdrive.chainId]?.address,
               });
 

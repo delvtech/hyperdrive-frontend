@@ -1,5 +1,3 @@
-import { Drift } from "@delvtech/drift";
-import { viemAdapter } from "@delvtech/drift-viem";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { getBaseToken, TokenConfig } from "@delvtech/hyperdrive-appconfig";
 import { zapAbi } from "@delvtech/hyperdrive-js";
@@ -9,17 +7,12 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
+import { useReadWriteDrift } from "src/ui/drift/useDrift";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { useTokenFiatPrice } from "src/ui/token/hooks/useTokenFiatPrice";
 import TransactionToast from "src/ui/transactions/TransactionToast";
-import { Address, encodePacked, WalletClient } from "viem";
-import {
-  useAccount,
-  useBlock,
-  useBlockNumber,
-  usePublicClient,
-  useWalletClient,
-} from "wagmi";
+import { Address, encodePacked } from "viem";
+import { useAccount, useBlock, useBlockNumber } from "wagmi";
 
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
@@ -48,16 +41,14 @@ export function useCloseLongZap({
   status: MutationStatus;
 } {
   const { address: account } = useAccount();
-  const publicClient = usePublicClient();
   const addTransaction = useAddRecentTransaction();
-  const { data: walletClient } = useWalletClient({ chainId });
   const appConfig = useAppConfigForConnectedChain();
   const zapsConfig = appConfig.zaps[chainId];
   const { data: blockNumber } = useBlockNumber();
   const { data: block } = useBlock({ blockNumber });
+  const drift = useReadWriteDrift();
 
-  const isMutationEnabled =
-    !!zapsConfig && !!account && !!publicClient && !!walletClient && enabled;
+  const isMutationEnabled = !!zapsConfig && !!account && !!drift && enabled;
   const baseToken = getBaseToken({
     hyperdriveChainId: chainId,
     hyperdriveAddress,
@@ -96,13 +87,6 @@ export function useCloseLongZap({
       ) {
         return;
       }
-
-      const drift = new Drift(
-        viemAdapter({
-          publicClient,
-          walletClient: walletClient as WalletClient,
-        }),
-      );
 
       try {
         const hash = await drift.write({

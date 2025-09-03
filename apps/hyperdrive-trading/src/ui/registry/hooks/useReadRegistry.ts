@@ -12,7 +12,6 @@ export function useReadRegistry(chainId: number): ReadRegistry | undefined {
         ? new ReadRegistry({
             address: registries[chainId],
             drift,
-            cacheNamespace: chainId,
           })
         : undefined,
     [drift, registries, chainId],

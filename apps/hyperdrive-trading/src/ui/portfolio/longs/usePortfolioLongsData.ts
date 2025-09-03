@@ -36,8 +36,8 @@ export function usePortfolioLongsData({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,
@@ -46,7 +46,7 @@ export function usePortfolioLongsData({
                   const allLongs = await readHyperdrive.getOpenLongPositions({
                     account,
                     options: {
-                      block:
+                      toBlock:
                         LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
                           .long,
                     },
@@ -58,7 +58,7 @@ export function usePortfolioLongsData({
                         assetId: long.assetId,
                         account,
                         options: {
-                          block:
+                          toBlock:
                             LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
                               hyperdrive.chainId
                             ].long,
@@ -121,8 +121,8 @@ export function usePortfolioLongsDataFromHyperdrives({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,
@@ -130,7 +130,7 @@ export function usePortfolioLongsDataFromHyperdrives({
                   const allLongs = await readHyperdrive.getOpenLongPositions({
                     account,
                     options: {
-                      block:
+                      toBlock:
                         LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
                           .long,
                     },
@@ -144,7 +144,7 @@ export function usePortfolioLongsDataFromHyperdrives({
                         assetId: long.assetId,
                         account: account,
                         options: {
-                          block:
+                          toBlock:
                             LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
                               hyperdrive.chainId
                             ].long,

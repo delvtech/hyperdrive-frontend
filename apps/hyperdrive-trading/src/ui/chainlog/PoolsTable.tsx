@@ -228,7 +228,7 @@ function usePoolsQuery(): UseQueryResult<Pool[]> {
         chainIds.map(async (chainId) => {
           const registry = new ReadRegistry({
             address: connectedAppConfig.registries[chainId],
-            drift: getDrift({ chainId }),
+            drift: await getDrift({ chainId }),
           });
 
           return registry.getInstances().then((instances) => {
