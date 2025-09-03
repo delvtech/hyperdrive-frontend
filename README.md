@@ -13,13 +13,11 @@ Powered by [TurboRepo](https://turbo.build).
 Apps
 
 - [hyperdrive-trading](apps/hyperdrive-trading/) - A simple frontend for interacting with Hyperdrive.
-- [hyperdrive-sdk-docs](apps/hyperdrive-sdk-docs/) - Docs site for the Hyperdrive SDK.
 - [sdk-sandbox](apps/sdk-sandbox/) - A sandbox for trying out the Hyperdrive SDK.
 
 Packages
 
-- [@delvtech/hyperdrive-js-core](packages/hyperdrive-js-core/) - Hyperdrive SDK core logic.
-- [@delvtech/hyperdrive-viem](packages/hyperdrive-viem/) - Viem bindings for `@delvtech/hyperdrive-js-core`.
+- [@delvtech/hyperdrive-js](packages/hyperdrive-js/) - Hyperdrive SDK.
 - [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts.
 - [@delvtech/fixed-point-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [fixedpointmath](https://github.com/delvtech/hyperdrive-rs/tree/main/crates/fixedpointmath) Rust crate.
 - [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs).
