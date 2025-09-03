@@ -23,12 +23,12 @@
     "@uniswap/smart-order-router": "^4.18.2",
     "@uniswap/v3-periphery": "^1.4.4",
     "ethers": "^5.7.2",
-    "viem": "^2.22.19"
+    "viem": "^2.37.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
     "dotenv": "^16.4.5",
     "tsx": "^4.19.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.9.2"
   }
 }

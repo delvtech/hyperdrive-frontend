@@ -35,11 +35,11 @@
     "prettier-plugin-organize-imports": "4.0.0",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "turbo": "^2.0.6",
-    "typescript": "^5.5.4"
+    "typescript": "^5.9.2"
   },
   "resolutions": {
-    "typescript": "^5.5.4",
-    "viem": "2.9.2"
+    "typescript": "^5.9.2",
+    "viem": "2.37.2"
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [

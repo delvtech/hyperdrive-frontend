@@ -47,14 +47,17 @@
     "tsconfig-paths": "^4.1.0",
     "tsup": "^7.2.0",
     "tsx": "^4.7.0",
-    "typescript": "^5.0.2",
+    "typescript": "^5.9.2",
+    "viem": "^2.37.2",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "graphql-request": "^7.1.0",
-    "viem": "^2.7.8"
+    "graphql-request": "^7.1.0"
+  },
+  "peerDependencies": {
+    "viem": "^2.37.2"
   }
 }
