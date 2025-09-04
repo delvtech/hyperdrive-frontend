@@ -4,8 +4,21 @@ import {
   EventLog,
   EventName,
   GetEventsParams,
+  type RangeBlock,
 } from "@delvtech/drift";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
+
+class EventFetchError extends HyperdriveSdkError {
+  constructor(chainId: number, chunkedParams: GetEventsParams<Abi, string>[]) {
+    const { event, address } = chunkedParams[0];
+    let message = `Failed to fetch "${event}" events from ${address} on chain ${chainId}.`;
+    message += "\n  Requested block ranges:";
+    for (const params of chunkedParams) {
+      message += `\n    - ${params.fromBlock} to ${params.toBlock}`;
+    }
+    super(message);
+  }
+}
 
 /**
  * @internal
@@ -16,119 +29,155 @@ export async function getEventsWithSplitAndRetry<
 >({
   params,
   drift,
-  epochBlock,
-  /**
-   * The maximum number of times to split failed event requests into smaller
-   * requests before giving up. Defaults to 4.
-   */
-  retries = 4,
+  epochBlock = 0n,
+  retries = 3,
+  backoff = (attempt: number) => 2 ** attempt * 100,
 }: {
   params: GetEventsParams<A, E>;
   drift: Drift;
   epochBlock?: bigint;
+  /**
+   * The maximum number of times to split failed event requests into smaller
+   * requests before giving up.
+   *
+   * **Caution:** this has the potential to increase the number of requests
+   * _exponentially_, so it should be used with care.
+   *
+   * @default 3
+   */
   retries?: number;
+  /**
+   * The time (in milliseconds) to wait before each retry attempt.
+   *
+   * @default 2 ** attempt * 100
+   */
+  backoff?: number | ((attempt: number) => number);
 }): Promise<EventLog<A, E>[]> {
-  const paramChunks: (GetEventsParams<A, E> | GetEventsParams<A, E>[])[] = [
-    params,
-  ];
-  let error: Error | undefined;
+  const backoffFn = typeof backoff === "number" ? () => backoff : backoff;
+  const chainId = await drift.getChainId();
+  const rangeMap = new Map<string, EventLog<A, E>[]>();
+  let chunks: GetEventsParams<A, E>[] = [params];
 
-  while (retries) {
-    error = undefined;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const nextChunks: GetEventsParams<A, E>[][] = [];
+    let hadErrors = false;
 
-    const chunkedEvents = await Promise.all(
-      paramChunks.flat().map(async (params, i) => {
-        let { fromBlock, toBlock } = params;
-
-        // Check the cache for the chunk
-        const cachedEvents = await drift.cache.getEvents(params);
+    const events = await Promise.all(
+      chunks.map(async (params, i) => {
+        // 1. Check the range map (fast)
+        const rangeKey = [params.fromBlock, params.toBlock].join("-");
+        let cachedEvents = rangeMap.get(rangeKey);
         if (cachedEvents) {
-          paramChunks[i] = params;
+          nextChunks[i] = [params];
           return cachedEvents;
         }
 
-        const chunk = await drift.adapter
-          .getEvents(params)
-          // Split the request into 2 smaller requests if it throws an error
-          .catch(async (e) => {
-            error = new HyperdriveSdkError(e);
-
-            // Throw if the chunk is too small to split
-            if (
-              [0n, "earliest", fromBlock].includes(toBlock) ||
-              // Implies the chunk starts at "finalized", "latest", "safe", or "pending"
-              (typeof fromBlock === "string" && fromBlock !== "earliest")
-            ) {
-              throw error;
-            }
-
-            // Coerce fromBlock and toBlock to bigints to find the middle
-            if (typeof fromBlock !== "bigint") {
-              fromBlock = epochBlock || 0n;
-            }
-            if (typeof toBlock !== "bigint") {
-              const block = await drift.getBlock();
-              if (!block?.number) {
-                throw error;
-              }
-              toBlock = block.number;
-            }
-
-            // Validate the block range size after coercion
-            const blockRangeSize = toBlock - fromBlock;
-            if (blockRangeSize <= 0n) {
-              throw error;
-            }
-
-            // Split the chunk into two smaller chunks
-            const middleBlock = fromBlock + blockRangeSize / 2n;
-            paramChunks[i] = [
-              {
-                ...params,
-                fromBlock,
-                toBlock: middleBlock,
-              },
-              {
-                ...params,
-                fromBlock: middleBlock + 1n,
-                toBlock,
-              },
-            ];
-          });
-
-        // Cache the chunk if it was fetched successfully
-        if (chunk) {
-          drift.cache.preloadEvents({
-            ...params,
-            value: chunk,
-          });
-          paramChunks[i] = params;
-          return chunk;
+        // 2. Check the cache (most-likely fast, but cache dependent)
+        cachedEvents = await drift.cache.getEvents(params);
+        if (cachedEvents) {
+          rangeMap.set(rangeKey, cachedEvents);
+          nextChunks[i] = [params];
+          return cachedEvents;
         }
 
-        // Return an empty array if the chunk failed and was split
-        return [];
+        // 3. Try to fetch (network dependent)
+        try {
+          const events = await drift.adapter.getEvents(params);
+          rangeMap.set(rangeKey, events);
+          drift.cache.preloadEvents({
+            ...params,
+            value: events,
+          });
+          nextChunks[i] = [params];
+          return events;
+        } catch {
+          // 4. Split on failure
+          hadErrors = true;
+          const halves = await splitParams(drift, params, epochBlock);
+          if (!halves) {
+            // Throw if the params can't be split further
+            throw new EventFetchError(chainId, chunks);
+          }
+          nextChunks[i] = halves;
+          return [];
+        }
       }),
     );
 
     // Return the events if there were no errors
-    if (!error) {
-      return chunkedEvents.flat();
+    if (!hadErrors) {
+      return events.flat();
     }
 
-    console.warn(
-      `Failed to fetch '${params.event}' events from ${params.address}. Retrying with ${
-        paramChunks.flat().length
-      } requests.`,
-    );
+    const error = new EventFetchError(chainId, chunks);
 
-    retries--;
+    // Throw if this was the last attempt
+    if (attempt === retries) {
+      throw error;
+    }
+
+    chunks = nextChunks.flat();
+    let warning = error.message;
+    warning += `\n  Number of attempts left: ${retries - attempt}`;
+    warning += `\n  Retrying with ${chunks.length} requests...`;
+    console.warn(warning);
+
+    // Exponential backoff before retrying
+    const retryDelay = backoffFn(attempt);
+    const jitteredRetryDelay = Math.floor(retryDelay * (0.5 + Math.random()));
+    await sleep(jitteredRetryDelay);
   }
 
-  throw (
-    error ||
-    new HyperdriveSdkError(
-      `Unknown error fetching '${params.event}' events from ${params.address}`,
-    )
-  );
+  throw new EventFetchError(chainId, [params]);
+}
+
+async function resolveRangeBlock(
+  drift: Drift,
+  block: RangeBlock | undefined,
+  epochBlock = 0n,
+): Promise<bigint | undefined> {
+  if (typeof block === "bigint") {
+    return block;
+  }
+  if (block === "earliest") {
+    return epochBlock;
+  }
+  const { number } = await drift.getBlock(block);
+  return number;
+}
+
+async function splitParams<A extends Abi, E extends EventName<A>>(
+  drift: Drift,
+  { fromBlock, toBlock, ...restParams }: GetEventsParams<A, E>,
+  epochBlock = 0n,
+): Promise<[GetEventsParams<A, E>, GetEventsParams<A, E>] | null> {
+  if (fromBlock === toBlock) {
+    return null;
+  }
+  fromBlock = await resolveRangeBlock(drift, fromBlock, epochBlock);
+  if (fromBlock === undefined) {
+    return null;
+  }
+  toBlock = await resolveRangeBlock(drift, toBlock, epochBlock);
+  if (toBlock === undefined || fromBlock >= toBlock) {
+    return null;
+  }
+  const blockRangeSize = toBlock - fromBlock;
+  const middleBlock = fromBlock + blockRangeSize / 2n;
+  return [
+    {
+      fromBlock,
+      toBlock: middleBlock,
+      ...restParams,
+    },
+    {
+      fromBlock: middleBlock + 1n,
+      toBlock,
+      ...restParams,
+    },
+  ];
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
