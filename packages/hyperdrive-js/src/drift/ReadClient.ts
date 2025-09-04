@@ -18,6 +18,24 @@ export interface ReadClientOptions {
    * The earliest block number to use for event queries.
    */
   epochBlock?: bigint;
+
+  /**
+   * The maximum number of times to split failed event requests into smaller
+   * requests before giving up.
+   *
+   * **Caution:** this has the potential to increase the number of requests
+   * _exponentially_, so it should be used with care.
+   *
+   * @default 3
+   */
+  eventQueryRetries?: number;
+
+  /**
+   * The time (in milliseconds) to wait before each event request retry attempt.
+   *
+   * @default 2 ** attempt * 100
+   */
+  eventQueryRetryBackoff?: number | ((attempt: number) => number);
 }
 
 /**
@@ -27,7 +45,12 @@ export class ReadClient {
   drift: Drift;
   debugName: string;
 
-  constructor({ debugName, drift, epochBlock }: ReadClientOptions) {
+  constructor({
+    debugName,
+    drift,
+    epochBlock,
+    eventQueryRetries: eventFetchRetries = 3,
+  }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
 
@@ -43,6 +66,7 @@ export class ReadClient {
         },
         drift,
         epochBlock,
+        retries: eventFetchRetries,
       });
       resolve(events);
     });

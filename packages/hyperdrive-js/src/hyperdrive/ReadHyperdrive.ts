@@ -69,7 +69,7 @@ export class ReadHyperdrive extends ReadClient {
     zapContractAddress,
     ...rest
   }: ReadHyperdriveOptions) {
-    super({ debugName, ...rest });
+    super({ debugName, epochBlock, ...rest });
     this.address = address;
     this.zapContractAddress = zapContractAddress;
     this.contract = this.drift.contract({

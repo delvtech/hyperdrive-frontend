@@ -53,9 +53,9 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
         debugName = "ERC-4626 Tokenized Vault",
         address,
         epochBlock,
-        ...rest
+        ...restOptions
       } = options as ReadErc20Options;
-      super({ debugName, address, epochBlock, ...rest });
+      super({ debugName, address, epochBlock, ...restOptions });
       this.erc4626Contract = this.drift.contract({
         abi: erc4626Abi,
         address,

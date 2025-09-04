@@ -24,20 +24,10 @@ export interface HyperdriveOptions<T extends Drift = Drift>
 export type Hyperdrive<T extends Drift = Drift> =
   T["adapter"] extends ReadWriteAdapter ? ReadWriteHyperdrive : ReadHyperdrive;
 
-export async function getHyperdrive<T extends Drift = Drift>({
-  address,
-  drift,
-  epochBlock,
-  debugName,
-  zapContractAddress,
-}: HyperdriveOptions<T>): Promise<Hyperdrive<T>> {
-  const options: HyperdriveOptions<T> = {
-    address,
-    drift,
-    epochBlock,
-    debugName,
-    zapContractAddress,
-  };
+export async function getHyperdrive<T extends Drift = Drift>(
+  options: HyperdriveOptions<T>,
+): Promise<Hyperdrive<T>> {
+  const { address, drift } = options;
   const isReadWrite = isReadWriteOptions(options);
 
   const version = await drift.read({

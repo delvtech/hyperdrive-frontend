@@ -60,8 +60,14 @@ export function readREthMixin<T extends Constructor<ReadErc20>>(
     rEthContract: Contract<REthAbi>;
 
     constructor(...[options]: any[]) {
-      const { drift, address, epochBlock } = options as ReadErc20Options;
-      super({ address, drift, epochBlock });
+      const {
+        debugName = "rETH Token",
+        drift,
+        address,
+        epochBlock,
+        ...restOptions
+      } = options as ReadErc20Options;
+      super({ debugName, address, drift, epochBlock, ...restOptions });
       this.rEthContract = drift.contract({
         abi: rEthAbi,
         address,

@@ -60,8 +60,14 @@ export function readLsEthMixin<T extends Constructor<ReadErc20>>(
     lsEthContract: Contract<LsEthAbi>;
 
     constructor(...[options]: any[]) {
-      const { drift, address, epochBlock } = options as ReadErc20Options;
-      super({ address, drift, epochBlock });
+      const {
+        debugName = "lsETH Token",
+        drift,
+        address,
+        epochBlock,
+        ...restOptions
+      } = options as ReadErc20Options;
+      super({ debugName, address, drift, epochBlock, ...restOptions });
       this.lsEthContract = drift.contract({
         abi: lsEthAbi,
         address,

@@ -61,9 +61,9 @@ export function readStEthMixin<T extends Constructor<ReadErc20>>(
         debugName = "stETH Token",
         address,
         epochBlock,
-        ...rest
+        ...restOptions
       } = options as ReadErc20Options;
-      super({ debugName, address, epochBlock, ...rest });
+      super({ debugName, address, epochBlock, ...restOptions });
       this.stEthContract = this.drift.contract({
         abi: stEthAbi,
         address,

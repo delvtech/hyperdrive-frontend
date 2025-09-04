@@ -17,7 +17,7 @@ export class ReadFactory extends ReadClient {
     epochBlock,
     ...rest
   }: ReadFactoryOptions) {
-    super({ debugName, ...rest });
+    super({ debugName, epochBlock, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: factoryAbi,
