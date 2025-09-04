@@ -1,11 +1,16 @@
 {
   "name": "@delvtech/hyperdrive-artifacts",
   "version": "1.0.20",
-  "license": "AGPL-3.0",
+  "description": "Strongly typed build artifacts, including ABIs and Bytecodes, for the Hyperdrive AMM.",
+  "license": "Apache-2.0",
+  "author": "DELV (https://github.com/delvtech)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delvtech/hyperdrive-frontend.git",
+    "directory": "packages/hyperdrive-artifacts"
+  },
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "sideEffects": false,
   "exports": {
     "./*": {
       "types": "./dist/*.d.ts",
@@ -26,6 +31,9 @@
     "tsc": "^2.0.4",
     "typescript": "^5.9.2"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   }

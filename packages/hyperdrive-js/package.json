@@ -1,8 +1,39 @@
 {
   "name": "@delvtech/hyperdrive-js",
   "version": "0.0.2",
-  "license": "AGPL-3.0",
+  "description": "TypeScript SDK for the Hyperdrive AMM.",
+  "license": "Apache-2.0",
+  "author": "DELV (https://github.com/delvtech)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delvtech/hyperdrive-frontend.git",
+    "directory": "packages/hyperdrive-js"
+  },
   "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./v1.0.14": {
+      "require": {
+        "types": "./dist/v1.0.14.d.cts",
+        "default": "./dist/v1.0.14.cjs"
+      },
+      "import": {
+        "types": "./dist/v1.0.14.d.ts",
+        "default": "./dist/v1.0.14.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsup",
     "watch": "npm run build -- --watch",
@@ -41,24 +72,22 @@
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.4"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "v1.0.14": [
+        "./dist/v1.0.14.js"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./v1.0.14": {
-      "types": "./dist/v1.0.14.d.ts",
-      "default": "./dist/v1.0.14.js",
-      "require": "./dist/v1.0.14.cjs"
-    },
-    "./package.json": "./package.json"
-  },
   "publishConfig": {
     "access": "public"
   }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@hyperdrive/tsconfig/base.json",
-  "include": ["./*.json", "src"],
+  "include": ["src"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist",
