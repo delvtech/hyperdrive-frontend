@@ -29,6 +29,7 @@ export function usePortfolioShortsData({
       enabled: queryEnabled,
       retry: false,
       refetchOnWindowFocus: false,
+      staleTime: Infinity,
       queryFn: queryEnabled
         ? async () =>
             await Promise.all(
@@ -94,6 +95,7 @@ export function usePortfolioShortsDataFromHyperdrives({
       }),
       retry: false,
       refetchOnWindowFocus: false,
+      staleTime: Infinity,
       queryFn: queryEnabled
         ? async () => {
             const results = await Promise.all(
