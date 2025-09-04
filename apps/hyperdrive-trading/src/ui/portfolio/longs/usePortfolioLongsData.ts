@@ -29,6 +29,8 @@ export function usePortfolioLongsData({
     {
       queryKey: makeQueryKey("portfolioLongs", { account }),
       enabled: queryEnabled,
+      retry: false,
+      refetchOnWindowFocus: false,
       queryFn: queryEnabled
         ? async () =>
             await Promise.all(
@@ -108,6 +110,8 @@ export function usePortfolioLongsDataFromHyperdrives({
         queryId: "openLongPositions",
         params: { account, hyperdrives },
       }),
+      retry: false,
+      refetchOnWindowFocus: false,
       queryFn: queryEnabled
         ? async () => {
             const results = await Promise.all(
@@ -117,6 +121,7 @@ export function usePortfolioLongsDataFromHyperdrives({
                     address: hyperdrive.address,
                     drift: await getDrift({ chainId: hyperdrive.chainId }),
                     epochBlock: hyperdrive.initializationBlock,
+                    eventQueryRetries: 9,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,

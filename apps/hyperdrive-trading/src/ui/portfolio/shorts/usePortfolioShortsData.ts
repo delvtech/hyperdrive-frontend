@@ -27,6 +27,8 @@ export function usePortfolioShortsData({
     useQuery({
       queryKey: makeQueryKey("portfolioShorts", { account }),
       enabled: queryEnabled,
+      retry: false,
+      refetchOnWindowFocus: false,
       queryFn: queryEnabled
         ? async () =>
             await Promise.all(
@@ -90,6 +92,8 @@ export function usePortfolioShortsDataFromHyperdrives({
         queryId: "openShortPositions",
         params: { account, hyperdrives },
       }),
+      retry: false,
+      refetchOnWindowFocus: false,
       queryFn: queryEnabled
         ? async () => {
             const results = await Promise.all(
