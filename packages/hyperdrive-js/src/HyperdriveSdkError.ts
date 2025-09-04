@@ -1,7 +1,7 @@
 import { DriftError } from "@delvtech/drift";
 
 export class HyperdriveSdkError extends DriftError {
-  constructor(error: string, options?: ErrorOptions) {
+  constructor(error: unknown, options?: ErrorOptions) {
     super(error, {
       ...options,
       prefix: "ᛋ ",

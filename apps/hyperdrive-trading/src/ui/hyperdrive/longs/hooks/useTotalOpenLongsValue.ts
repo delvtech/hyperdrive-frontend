@@ -45,8 +45,8 @@ export function useTotalOpenLongsValueTwo({
             longs.map(async (long) => {
               const readHyperdrive = await getHyperdrive({
                 address: long.hyperdrive.address,
-                drift: getDrift({ chainId: long.hyperdrive.chainId }),
-                earliestBlock: long.hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: long.hyperdrive.chainId }),
+                epochBlock: long.hyperdrive.initializationBlock,
               });
               const preview = await readHyperdrive.previewCloseLong({
                 maturityTime: long.details?.maturity || 0n,

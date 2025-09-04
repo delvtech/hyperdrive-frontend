@@ -152,7 +152,6 @@ export {
 // Drift //
 
 export type {
-  ContractClientOptions,
   ReadContractClientOptions,
   ReadWriteContractClientOptions,
 } from "src/drift/ContractClient";

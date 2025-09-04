@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@delvtech/drift": "^0.0.1-beta.11"
+    "@delvtech/drift": "^1.0.0"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.8",
@@ -22,7 +22,7 @@
     "semver": "^7.6.3"
   },
   "devDependencies": {
-    "@delvtech/drift": "^0.0.1-beta.11",
+    "@delvtech/drift": "^1.0.0",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
@@ -37,7 +37,7 @@
     "sinon": "^18.0.0",
     "tsconfig-paths": "^4.2.0",
     "tsup": "^8.2.3",
-    "typescript": "^5.5.4",
+    "typescript": "^5.9.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^2.0.4"
   },

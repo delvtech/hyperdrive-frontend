@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { Erc4626Abi, erc4626Abi } from "src/token/erc4626/abi";
@@ -14,7 +14,7 @@ export interface ReadErc4626Mixin {
   /**
    * Get the total supply of assets in the vault.
    */
-  getTotalAssets(options?: ContractReadOptions): Promise<bigint>;
+  getTotalAssets(options?: ReadOptions): Promise<bigint>;
 
   /**
    * Convert a shares amount to an assets amount.
@@ -24,7 +24,7 @@ export interface ReadErc4626Mixin {
     options,
   }: {
     sharesAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -35,7 +35,7 @@ export interface ReadErc4626Mixin {
     options,
   }: {
     assetsAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 }
 
@@ -52,20 +52,18 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       const {
         debugName = "ERC-4626 Tokenized Vault",
         address,
-        cache,
-        cacheNamespace,
-        ...rest
+        epochBlock,
+        ...restOptions
       } = options as ReadErc20Options;
-      super({ debugName, address, cache, cacheNamespace, ...rest });
+      super({ debugName, address, epochBlock, ...restOptions });
       this.erc4626Contract = this.drift.contract({
         abi: erc4626Abi,
         address,
-        cache,
-        cacheNamespace,
+        epochBlock,
       });
     }
 
-    getTotalAssets(options?: ContractReadOptions): Promise<bigint> {
+    getTotalAssets(options?: ReadOptions): Promise<bigint> {
       return this.erc4626Contract.read("totalAssets", {}, options);
     }
 
@@ -74,7 +72,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       sharesAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.erc4626Contract.read(
         "convertToAssets",
@@ -88,7 +86,7 @@ export function readErc4626Mixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       assetsAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.erc4626Contract.read(
         "convertToShares",

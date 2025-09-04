@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import { Constructor } from "src/base/types";
 import {
@@ -37,7 +37,7 @@ export function readHyperdriveMixin_v1_0_14<
       options,
     }: {
       sharesAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       const { vaultSharePrice } = await this.getPoolInfo(options);
       const decimals = await this.getDecimals();
@@ -50,7 +50,7 @@ export function readHyperdriveMixin_v1_0_14<
       options,
     }: {
       baseAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       const { vaultSharePrice } = await this.getPoolInfo(options);
       const decimals = await this.getDecimals();

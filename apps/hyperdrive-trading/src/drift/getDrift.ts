@@ -1,23 +1,34 @@
-import { createLruSimpleCache, Drift, DriftOptions } from "@delvtech/drift";
+import { createDrift, LruStore, type Drift, type Store } from "@delvtech/drift";
 import { viemAdapter } from "@delvtech/drift-viem";
-import { getPublicClient, GetPublicClientParameters } from "@wagmi/core";
+import {
+  getPublicClient,
+  getWalletClient,
+  type GetPublicClientParameters,
+  type GetWalletClientParameters,
+} from "@wagmi/core";
 import { wagmiConfig } from "src/network/wagmiClient";
 
-// 1 minute TTL to match the queryClient's staleTime
-export const sdkCache = createLruSimpleCache({ max: 500, ttl: 60_000 });
+export const driftStore = new LruStore({
+  max: 500,
+  ttl: 60_000, // 1 minute TTL to match the queryClient's staleTime
+});
 
-export function getDriftOptions({
-  chainId,
-}: {
-  chainId?: number;
-} = {}): DriftOptions {
-  return {
-    cache: sdkCache,
-    cacheNamespace: chainId,
+type WagmiConfig = typeof wagmiConfig;
+
+export type GetDriftOptions = GetPublicClientParameters<WagmiConfig> &
+  GetWalletClientParameters<WagmiConfig> & {
+    store?: Store;
   };
-}
 
-export function getDrift(params?: GetPublicClientParameters): Drift {
-  const publicClient = getPublicClient(wagmiConfig as any, params) as any;
-  return new Drift(viemAdapter({ publicClient }), getDriftOptions(params));
+export async function getDrift(options?: GetDriftOptions): Promise<Drift> {
+  const publicClient = getPublicClient(wagmiConfig, options);
+  const walletClient = await getWalletClient(wagmiConfig, options).catch(
+    () => undefined,
+  );
+  return createDrift({
+    adapter: publicClient
+      ? viemAdapter({ publicClient, walletClient })
+      : undefined,
+    store: options?.store || driftStore,
+  });
 }

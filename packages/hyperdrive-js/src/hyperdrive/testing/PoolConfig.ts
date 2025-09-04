@@ -1,8 +1,10 @@
-import { ZERO_ADDRESS } from "src/base/constants";
+import { ZERO_ADDRESS } from "@delvtech/drift";
 import { PoolConfig } from "src/hyperdrive/types";
 
 const SEVEN_DAYS = 604_800n;
-export const simplePoolConfig7Days: PoolConfig = {
+const THIRTY_DAYS = 2_592_000n;
+
+export const stubPoolConfig7Days: PoolConfig = {
   baseToken: ZERO_ADDRESS,
   vaultSharesToken: ZERO_ADDRESS,
   governance: ZERO_ADDRESS,
@@ -26,8 +28,7 @@ export const simplePoolConfig7Days: PoolConfig = {
   checkpointRewarder: ZERO_ADDRESS,
 };
 
-const THIRTY_DAYS = 2_592_000n;
-export const simplePoolConfig30Days: PoolConfig = {
-  ...simplePoolConfig7Days,
+export const stubPoolConfig30Days: PoolConfig = {
+  ...stubPoolConfig7Days,
   positionDuration: THIRTY_DAYS,
 };

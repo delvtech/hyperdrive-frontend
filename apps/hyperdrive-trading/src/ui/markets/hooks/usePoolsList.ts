@@ -24,7 +24,6 @@ import {
   PoolListFilters,
   usePoolListFilters,
 } from "src/ui/markets/PoolsList/usePoolListFilters";
-import { PublicClient } from "viem";
 import { useChainId } from "wagmi";
 
 export const PINNED_POOLS = [
@@ -157,13 +156,13 @@ function useSortedPools({
             pools.map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({
                 address: hyperdrive.address,
-                drift: getDrift({ chainId: hyperdrive.chainId }),
-                earliestBlock: hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: hyperdrive.chainId }),
+                epochBlock: hyperdrive.initializationBlock,
                 zapContractAddress: appConfig.zaps[hyperdrive.chainId]?.address,
               });
-              const publicClient = getPublicClient(wagmiConfig as any, {
+              const publicClient = getPublicClient(wagmiConfig, {
                 chainId: hyperdrive.chainId,
-              }) as PublicClient;
+              })!;
               const [fixedApr, lpApy, tvl, yieldSourceRate, longPrice] =
                 await Promise.all([
                   readHyperdrive.getFixedApr(),

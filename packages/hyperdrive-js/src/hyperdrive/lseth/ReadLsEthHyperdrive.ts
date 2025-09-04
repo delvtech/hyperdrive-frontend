@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -18,12 +18,12 @@ export interface ReadLsEthHyperdriveMixin {
   /**
    * Get a client for ETH, the base token for this Hyperdrive instance.
    */
-  getBaseToken(options?: ContractReadOptions): Promise<ReadEth>;
+  getBaseToken(options?: ReadOptions): Promise<ReadEth>;
 
   /**
    * Get a client for the LsETH token for this Hyperdrive instance.
    */
-  getSharesToken(options?: ContractReadOptions): Promise<ReadLsEth>;
+  getSharesToken(options?: ReadOptions): Promise<ReadLsEth>;
 }
 
 /**
@@ -45,14 +45,12 @@ export function readLsEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
     }
 
-    async getSharesToken(options?: ContractReadOptions): Promise<ReadLsEth> {
+    async getSharesToken(options?: ReadOptions): Promise<ReadLsEth> {
       const { vaultSharesToken } = await this.getPoolConfig(options);
 
       return new ReadLsEth({
         address: vaultSharesToken,
         drift: this.drift,
-        cache: this.contract.cache,
-        cacheNamespace: this.contract.cacheNamespace,
       });
     }
   };

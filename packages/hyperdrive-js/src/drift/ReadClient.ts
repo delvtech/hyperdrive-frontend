@@ -1,4 +1,5 @@
 import { Drift } from "@delvtech/drift";
+import { getEventsWithSplitAndRetry } from "src/base/getEventsWithSplitAndRetry";
 
 /**
  * The base options required for all read clients.
@@ -14,9 +15,27 @@ export interface ReadClientOptions {
   debugName?: string;
 
   /**
-   * The earliest block to fetch events from.
+   * The earliest block number to use for event queries.
    */
-  earliestBlock?: bigint;
+  epochBlock?: bigint;
+
+  /**
+   * The maximum number of times to split failed event requests into smaller
+   * requests before giving up.
+   *
+   * **Caution:** this has the potential to increase the number of requests
+   * _exponentially_, so it should be used with care.
+   *
+   * @default 3
+   */
+  eventQueryRetries?: number;
+
+  /**
+   * The time (in milliseconds) to wait before each event request retry attempt.
+   *
+   * @default 2 ** attempt * 100
+   */
+  eventQueryRetryBackoff?: number | ((attempt: number) => number);
 }
 
 /**
@@ -26,33 +45,32 @@ export class ReadClient {
   drift: Drift;
   debugName: string;
 
-  constructor({ debugName, drift, earliestBlock }: ReadClientOptions) {
+  constructor({
+    debugName,
+    drift,
+    epochBlock,
+    eventQueryRetries = 3,
+    eventQueryRetryBackoff = (attempt: number) => 2 ** attempt * 100,
+  }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
 
-    // Override the contract factory to ensure that events are fetched from the
-    // earliest block if necessary.
-    if (earliestBlock) {
-      const originalContractFactory = this.drift.contract;
-      this.drift.contract = (options) => {
-        const contract = originalContractFactory(options);
-
-        // Override the getEvents method
-        const originalGetEvents = contract.getEvents;
-        contract.getEvents = async function (eventName, options) {
-          const _options = { ...options };
-          const fromBlock = _options?.fromBlock;
-          const isBeforeEarliest =
-            typeof fromBlock === "bigint" && fromBlock < earliestBlock;
-          if (!fromBlock || fromBlock === "earliest" || isBeforeEarliest) {
-            _options.fromBlock = earliestBlock;
-          }
-
-          return originalGetEvents(eventName, _options);
-        };
-
-        return contract as any;
-      };
-    }
+    // Add a hook to split failed requests into multiple smaller requests to
+    // accommodate block range and/or event count limits.
+    drift.hooks.on("before:getEvents", async ({ args, resolve }) => {
+      const [{ fromBlock, toBlock, ...restParams }] = args;
+      const events = await getEventsWithSplitAndRetry({
+        params: {
+          fromBlock,
+          toBlock,
+          ...restParams,
+        },
+        drift,
+        epochBlock,
+        retries: eventQueryRetries,
+        backoff: eventQueryRetryBackoff,
+      });
+      resolve(events);
+    });
   }
 }

@@ -24,7 +24,8 @@ import { HyperdriveSdkError } from "src/HyperdriveSdkError";
  *      // Use `assertNever(arg, true)` instead to fail silently.
  *      return assertNever(arg);
  *    }
- */ export function assertNever(value: never, noThrow?: boolean): never {
+ */
+export function assertNever(value: never, noThrow?: boolean): never {
   if (noThrow) {
     return value;
   }

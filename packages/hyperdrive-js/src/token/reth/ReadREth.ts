@@ -1,4 +1,4 @@
-import { Contract, ContractReadOptions } from "@delvtech/drift";
+import { Contract, ReadOptions } from "@delvtech/drift";
 import { Constructor } from "src/base/types";
 import { ReadErc20, ReadErc20Options } from "src/token/erc20/ReadErc20";
 import { REthAbi, rEthAbi } from "src/token/reth/abi";
@@ -14,7 +14,7 @@ export interface ReadREthMixin {
   /**
    * Get the total supply of underlying eth in the rETH contract.
    */
-  getTotalEthSupply(options?: ContractReadOptions): Promise<bigint>;
+  getTotalEthSupply(options?: ReadOptions): Promise<bigint>;
 
   /**
    * Get the underlying eth balance of an account.
@@ -24,7 +24,7 @@ export interface ReadREthMixin {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -35,7 +35,7 @@ export interface ReadREthMixin {
     options,
   }: {
     rEthAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 
   /**
@@ -46,7 +46,7 @@ export interface ReadREthMixin {
     options,
   }: {
     ethAmount: bigint;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint>;
 }
 
@@ -60,18 +60,22 @@ export function readREthMixin<T extends Constructor<ReadErc20>>(
     rEthContract: Contract<REthAbi>;
 
     constructor(...[options]: any[]) {
-      const { drift, address, cache, cacheNamespace } =
-        options as ReadErc20Options;
-      super({ address, drift, cache, cacheNamespace });
+      const {
+        debugName = "rETH Token",
+        drift,
+        address,
+        epochBlock,
+        ...restOptions
+      } = options as ReadErc20Options;
+      super({ debugName, address, drift, epochBlock, ...restOptions });
       this.rEthContract = drift.contract({
         abi: rEthAbi,
         address,
-        cache,
-        cacheNamespace,
+        epochBlock,
       });
     }
 
-    async getTotalEthSupply(options?: ContractReadOptions): Promise<bigint> {
+    async getTotalEthSupply(options?: ReadOptions): Promise<bigint> {
       return this.rEthContract.read("getTotalCollateral", {}, options);
     }
 
@@ -80,7 +84,7 @@ export function readREthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       account: `0x${string}`;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       const rEthBalance = await this.getBalanceOf({ account, options });
       return this.rEthContract.read(
@@ -95,7 +99,7 @@ export function readREthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       rEthAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.rEthContract.read(
         "getEthValue",
@@ -111,7 +115,7 @@ export function readREthMixin<T extends Constructor<ReadErc20>>(
       options,
     }: {
       ethAmount: bigint;
-      options?: ContractReadOptions;
+      options?: ReadOptions;
     }): Promise<bigint> {
       return this.rEthContract.read(
         "getRethValue",

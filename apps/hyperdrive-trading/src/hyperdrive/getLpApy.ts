@@ -1,4 +1,3 @@
-import { Block } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
 import {
   AppConfig,
@@ -51,8 +50,8 @@ export async function getLpApy({
   appConfig: AppConfig;
 }): Promise<LpApyResult> {
   // Get current block and configuration
-  const currentBlock = (await readHyperdrive.drift.getBlock()) as Block;
-  const currentBlockNumber = currentBlock.blockNumber!;
+  const currentBlock = await readHyperdrive.drift.getBlock();
+  const currentBlockNumber = currentBlock.number;
   const chainConfig = appConfig.chains[hyperdrive.chainId];
 
   // Get yield source and calculate historical block range

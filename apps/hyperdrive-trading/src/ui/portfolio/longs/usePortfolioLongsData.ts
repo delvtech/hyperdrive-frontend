@@ -4,7 +4,7 @@ import {
   OpenLongPositionReceived,
 } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
-import { LATEST_POSITION_BLOCKS_BY_CHAIN_ID } from "src/base/latestBlocks";
+import { POSITION_BLOCK_BOUNDARIES_BY_CHAIN_ID } from "src/base/latestBlocks";
 import { makeQueryKey, makeQueryKey2 } from "src/base/makeQueryKey";
 import { getDrift } from "src/drift/getDrift";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
@@ -29,6 +29,9 @@ export function usePortfolioLongsData({
     {
       queryKey: makeQueryKey("portfolioLongs", { account }),
       enabled: queryEnabled,
+      retry: false,
+      refetchOnWindowFocus: false,
+      staleTime: Infinity,
       queryFn: queryEnabled
         ? async () =>
             await Promise.all(
@@ -36,8 +39,9 @@ export function usePortfolioLongsData({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
+                    eventQueryRetries: 9,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,
@@ -45,11 +49,9 @@ export function usePortfolioLongsData({
 
                   const allLongs = await readHyperdrive.getOpenLongPositions({
                     account,
-                    options: {
-                      block:
-                        LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
-                          .long,
-                    },
+                    options:
+                      POSITION_BLOCK_BOUNDARIES_BY_CHAIN_ID[hyperdrive.chainId]
+                        .long,
                   });
                   const openLongs = await Promise.all(
                     allLongs.map(async (long) => ({
@@ -57,12 +59,10 @@ export function usePortfolioLongsData({
                       details: await readHyperdrive.getOpenLongDetails({
                         assetId: long.assetId,
                         account,
-                        options: {
-                          block:
-                            LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
-                              hyperdrive.chainId
-                            ].long,
-                        },
+                        options:
+                          POSITION_BLOCK_BOUNDARIES_BY_CHAIN_ID[
+                            hyperdrive.chainId
+                          ].long,
                       }),
                     })),
                   );
@@ -72,10 +72,7 @@ export function usePortfolioLongsData({
                     openLongs,
                   };
                 } catch (e) {
-                  console.error(
-                    `Error fetching longs for ${hyperdrive.address}:`,
-                    e,
-                  );
+                  console.error(e);
                   return {
                     hyperdrive,
                     openLongs: [],
@@ -114,6 +111,9 @@ export function usePortfolioLongsDataFromHyperdrives({
         queryId: "openLongPositions",
         params: { account, hyperdrives },
       }),
+      retry: false,
+      refetchOnWindowFocus: false,
+      staleTime: Infinity,
       queryFn: queryEnabled
         ? async () => {
             const results = await Promise.all(
@@ -121,19 +121,18 @@ export function usePortfolioLongsDataFromHyperdrives({
                 try {
                   const readHyperdrive = await getHyperdrive({
                     address: hyperdrive.address,
-                    drift: getDrift({ chainId: hyperdrive.chainId }),
-                    earliestBlock: hyperdrive.initializationBlock,
+                    drift: await getDrift({ chainId: hyperdrive.chainId }),
+                    epochBlock: hyperdrive.initializationBlock,
+                    eventQueryRetries: 9,
                     zapContractAddress:
                       appConfigForConnectedChain.zaps[hyperdrive.chainId]
                         ?.address,
                   });
                   const allLongs = await readHyperdrive.getOpenLongPositions({
                     account,
-                    options: {
-                      block:
-                        LATEST_POSITION_BLOCKS_BY_CHAIN_ID[hyperdrive.chainId]
-                          .long,
-                    },
+                    options:
+                      POSITION_BLOCK_BOUNDARIES_BY_CHAIN_ID[hyperdrive.chainId]
+                        .long,
                   });
 
                   const openLongs = await Promise.all(
@@ -143,22 +142,17 @@ export function usePortfolioLongsDataFromHyperdrives({
                       details: await readHyperdrive.getOpenLongDetails({
                         assetId: long.assetId,
                         account: account,
-                        options: {
-                          block:
-                            LATEST_POSITION_BLOCKS_BY_CHAIN_ID[
-                              hyperdrive.chainId
-                            ].long,
-                        },
+                        options:
+                          POSITION_BLOCK_BOUNDARIES_BY_CHAIN_ID[
+                            hyperdrive.chainId
+                          ].long,
                       }),
                     })),
                   );
 
                   return openLongs;
                 } catch (e) {
-                  console.error(
-                    `Error fetching long data for ${hyperdrive.address}:`,
-                    e,
-                  );
+                  console.error(e);
                   return [] as (OpenLongPositionReceived & {
                     hyperdrive: HyperdriveConfig;
                     details: any;

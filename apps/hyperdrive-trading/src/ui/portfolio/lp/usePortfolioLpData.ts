@@ -38,8 +38,8 @@ export function usePortfolioLpDataFromHyperdrives({
             hyperdrives.map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({
                 address: hyperdrive.address,
-                drift: getDrift({ chainId: hyperdrive.chainId }),
-                earliestBlock: hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: hyperdrive.chainId }),
+                epochBlock: hyperdrive.initializationBlock,
                 zapContractAddress:
                   appConfigForConnectedChain.zaps[hyperdrive.chainId]?.address,
               });
@@ -89,8 +89,8 @@ export function usePortfolioLpData({
             appConfigForConnectedChain.hyperdrives.map(async (hyperdrive) => {
               const readHyperdrive = await getHyperdrive({
                 address: hyperdrive.address,
-                drift: getDrift({ chainId: hyperdrive.chainId }),
-                earliestBlock: hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: hyperdrive.chainId }),
+                epochBlock: hyperdrive.initializationBlock,
                 zapContractAddress:
                   appConfigForConnectedChain.zaps[hyperdrive.chainId]?.address,
               });

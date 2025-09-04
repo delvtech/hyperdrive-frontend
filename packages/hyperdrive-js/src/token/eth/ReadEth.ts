@@ -1,4 +1,4 @@
-import { ContractReadOptions } from "@delvtech/drift";
+import { ReadOptions } from "@delvtech/drift";
 import { ReadClient, ReadClientOptions } from "src/drift/ReadClient";
 import { ReadToken } from "src/token/ReadToken";
 
@@ -40,7 +40,7 @@ export class ReadEth extends ReadClient implements ReadToken {
     options,
   }: {
     account: `0x${string}`;
-    options?: ContractReadOptions;
+    options?: ReadOptions;
   }): Promise<bigint> {
     return this.drift.getBalance({
       address: account,

@@ -32,7 +32,7 @@ export function useReadHyperdrive({
           return getHyperdrive({
             address,
             drift,
-            earliestBlock: initializationBlock,
+            epochBlock: initializationBlock,
             zapContractAddress: appConfig.zaps[chainId]?.address,
           });
         }

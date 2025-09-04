@@ -1,4 +1,4 @@
-import { createSerializableKey } from "@delvtech/drift";
+import { stringifyKey } from "@delvtech/drift";
 import { QueryKey } from "@tanstack/query-core";
 /**
  * This is a factory function for generating application-level query keys. By
@@ -35,7 +35,7 @@ export function makeQueryKey2<
 }): QueryKey {
   return [
     ...makeNamespaceQueryKey({ namespace, queryId }),
-    createSerializableKey(params as any),
+    stringifyKey(params as any),
   ];
 }
 

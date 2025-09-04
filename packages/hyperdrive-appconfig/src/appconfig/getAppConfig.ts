@@ -1,4 +1,6 @@
-import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-viem";
+import { createDrift } from "@delvtech/drift";
+import { viemAdapter } from "@delvtech/drift-viem";
+import { ReadHyperdrive, ReadRegistry } from "@delvtech/hyperdrive-js";
 import chalk from "chalk";
 import uniqBy from "lodash.uniqby";
 import { AppConfig } from "src/appconfig/AppConfig";
@@ -920,11 +922,11 @@ const hyperdriveKindResolvers: Record<
 export async function getAppConfig({
   registryAddress,
   publicClient,
-  earliestBlock,
+  epochBlock,
 }: {
   registryAddress: Address;
   publicClient: PublicClient;
-  earliestBlock?: bigint;
+  epochBlock?: bigint;
 }): Promise<AppConfig> {
   const tokens: TokenConfig[] = [];
   let allRewards: Record<AnyRewardId, RewardConfigId[]> = {};
@@ -932,10 +934,13 @@ export async function getAppConfig({
 
   // Get ReadHyperdrive instances from the registry to ensure
   // that only registered pools are delivered to the frontend
+  const drift = createDrift({
+    adapter: viemAdapter({ publicClient }),
+  });
   const registry = new ReadRegistry({
     address: registryAddress,
-    publicClient,
-    earliestBlock,
+    drift,
+    epochBlock: epochBlock,
   });
   const hyperdrives = await registry.getInstances();
 
@@ -948,7 +953,7 @@ export async function getAppConfig({
       }
 
       const { hyperdriveConfig, baseTokenConfig, sharesTokenConfig, rewards } =
-        await hyperdriveResolver(hyperdrive, publicClient, earliestBlock);
+        await hyperdriveResolver(hyperdrive, publicClient, epochBlock);
       console.log(
         chalk.yellow(hyperdriveConfig.name),
         chalk.blue(kind),

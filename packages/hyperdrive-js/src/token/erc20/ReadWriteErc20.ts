@@ -1,8 +1,8 @@
 import {
-  ContractWriteOptions,
   Drift,
   ReadWriteAdapter,
   ReadWriteContract,
+  WriteOptions,
 } from "@delvtech/drift";
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
@@ -27,7 +27,7 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
     owner?: `0x${string}`;
     spender: `0x${string}`;
     amount: bigint;
-    options?: ContractWriteOptions;
+    options?: WriteOptions;
   }): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "approve",
@@ -35,7 +35,7 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
       {
         ...options,
         onMined: (receipt) => {
-          this.contract.invalidateReadsMatching("allowance");
+          this.contract.cache.invalidateReadsMatching("allowance");
           options?.onMined?.(receipt);
         },
       },

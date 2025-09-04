@@ -139,7 +139,7 @@ for (const { chain, rpcUrl, registryAddress, earliestBlock } of chainConfigs) {
   const appConfig = await getAppConfig({
     registryAddress,
     publicClient,
-    earliestBlock,
+    epochBlock: earliestBlock,
   });
 
   // Merge the current appConfig with the combinedAppConfig

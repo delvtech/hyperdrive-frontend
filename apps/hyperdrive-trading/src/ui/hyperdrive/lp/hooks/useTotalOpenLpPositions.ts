@@ -49,8 +49,8 @@ export function useTotalOpenLpPositions({
             openLpPositions.map(async (position) => {
               const readHyperdrive = await getHyperdrive({
                 address: position.hyperdrive.address,
-                drift: getDrift({ chainId: position.hyperdrive.chainId }),
-                earliestBlock: position.hyperdrive.initializationBlock,
+                drift: await getDrift({ chainId: position.hyperdrive.chainId }),
+                epochBlock: position.hyperdrive.initializationBlock,
               });
               const openLpPosition = await readHyperdrive.getOpenLpPosition({
                 account,
