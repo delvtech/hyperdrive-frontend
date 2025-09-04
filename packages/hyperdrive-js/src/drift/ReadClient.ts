@@ -49,7 +49,8 @@ export class ReadClient {
     debugName,
     drift,
     epochBlock,
-    eventQueryRetries: eventFetchRetries = 3,
+    eventQueryRetries = 3,
+    eventQueryRetryBackoff = (attempt: number) => 2 ** attempt * 100,
   }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
@@ -66,7 +67,8 @@ export class ReadClient {
         },
         drift,
         epochBlock,
-        retries: eventFetchRetries,
+        retries: eventQueryRetries,
+        backoff: eventQueryRetryBackoff,
       });
       resolve(events);
     });
