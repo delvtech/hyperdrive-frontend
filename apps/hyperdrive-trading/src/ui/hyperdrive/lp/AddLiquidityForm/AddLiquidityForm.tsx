@@ -144,7 +144,7 @@ export function AddLiquidityForm({
   // For example, if the fixed rate is at 10%, the minApr would be set to 9.5%
   // and the maxApr would be set to 10.5%.
   // fixed rate @ 10% = .1
-  // rate gaurd @ 5% = 0.05
+  // rate guard @ 5% = 0.05
   // minApr = .1 * (1 - .05)
   // maxApr = .1 * (1 + .05)
   const { fixedApr } = useFixedRate({

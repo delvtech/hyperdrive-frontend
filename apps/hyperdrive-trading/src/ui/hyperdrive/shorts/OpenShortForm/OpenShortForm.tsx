@@ -395,7 +395,7 @@ export function OpenShortForm({
         </div>
       }
       primaryStats={
-        // TOOD: Make this it's own component, OpenShortStats
+        // TODO: Make this it's own component, OpenShortStats
         <div className="flex flex-col gap-4 py-8">
           <div className="flex w-full justify-between px-4">
             <PrimaryStat

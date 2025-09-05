@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-// We need this seperate configuration for this problem
+// We need this separate configuration for this problem
 // https://github.com/wevm/wagmi/discussions/2248
 export default defineConfig({
   base: process.env.VITE_BASE_PATH ?? "/",
