@@ -1,5 +1,16 @@
 # @delvtech/hyperdrive-js
 
+## 1.0.0
+
+### Major Changes
+
+- 7b7d88f: Bumped Drift, added split and retry logic for failed event queries, removed yield source specific Hyperdrive and Token classes.
+
+### Patch Changes
+
+- Updated dependencies [1958d8a]
+  - @delvtech/hyperdrive-artifacts@1.0.21
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 1.0.21
+
+### Patch Changes
+
+- 1958d8a: Added a `name` field for the contract's name.
+
 ## 1.0.20
 
 ### Patch Changes
