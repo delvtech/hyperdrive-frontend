@@ -1,4 +1,9 @@
-import { Drift, ReadWriteAdapter } from "@delvtech/drift";
+import {
+  Drift,
+  ReadWriteAdapter,
+  type ReadAdapter,
+  type WriteAdapter,
+} from "@delvtech/drift";
 import semver from "semver";
 import { hyperdriveAbi } from "src/hyperdrive/abi";
 import {
@@ -9,10 +14,6 @@ import {
   ReadWriteHyperdrive,
   ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
-import { ReadStEthHyperdrive } from "src/hyperdrive/steth/ReadStEthHyperdrive";
-import { ReadWriteStEthHyperdrive } from "src/hyperdrive/steth/ReadWriteStEthHyperdrive";
-import { ReadStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadStEthHyperdrive_v1_0_14";
-import { ReadWriteStEthHyperdrive_v1_0_14 } from "src/hyperdrive/steth/v1.0.14/ReadWriteStEthHyperdrive_v1_0_14";
 import { ReadHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadHyperdrive_v1_0_14";
 import { ReadWriteHyperdrive_v1_0_14 } from "src/hyperdrive/v1.0.14/ReadWriteHyperdrive_v1_0_14";
 
@@ -22,7 +23,13 @@ export interface HyperdriveOptions<T extends Drift = Drift>
 }
 
 export type Hyperdrive<T extends Drift = Drift> =
-  T["adapter"] extends ReadWriteAdapter ? ReadWriteHyperdrive : ReadHyperdrive;
+  T["adapter"] extends ReadWriteAdapter
+    ? ReadWriteHyperdrive
+    : T["adapter"] extends ReadAdapter & {
+          [K in keyof WriteAdapter]?: never;
+        }
+      ? ReadHyperdrive
+      : ReadHyperdrive & Partial<ReadWriteHyperdrive>;
 
 export async function getHyperdrive<T extends Drift = Drift>(
   options: HyperdriveOptions<T>,
@@ -37,45 +44,15 @@ export async function getHyperdrive<T extends Drift = Drift>(
   });
   const isV1_0_14 = semver.lte(version, "1.0.14");
 
-  const kind = isV1_0_14
-    ? undefined
-    : await drift.read({
-        abi: hyperdriveAbi,
-        address,
-        fn: "kind",
-      });
-
-  switch (kind) {
-    case "StETHHyperdrive":
-      if (isReadWrite && isV1_0_14) {
-        return new ReadWriteStEthHyperdrive_v1_0_14(options);
-      }
-
-      if (isReadWrite) {
-        return new ReadWriteStEthHyperdrive(options);
-      }
-
-      if (isV1_0_14) {
-        return new ReadStEthHyperdrive_v1_0_14(options) as any;
-      }
-
-      return new ReadStEthHyperdrive(options) as any;
-
-    default:
-      if (isReadWrite && isV1_0_14) {
-        return new ReadWriteHyperdrive_v1_0_14(options);
-      }
-
-      if (isReadWrite) {
-        return new ReadWriteHyperdrive(options);
-      }
-
-      if (isV1_0_14) {
-        return new ReadHyperdrive_v1_0_14(options) as any;
-      }
-
-      return new ReadHyperdrive(options) as any;
+  if (isV1_0_14) {
+    return isReadWrite
+      ? new ReadWriteHyperdrive_v1_0_14(options)
+      : (new ReadHyperdrive_v1_0_14(options) as Hyperdrive<T>);
   }
+
+  return isReadWrite
+    ? new ReadWriteHyperdrive(options)
+    : (new ReadHyperdrive(options) as Hyperdrive<T>);
 }
 
 function isReadWriteOptions(
