@@ -2,7 +2,6 @@ import { HyperdriveConfig } from "@delvtech/hyperdrive-appconfig";
 import { ClosedLong } from "@delvtech/hyperdrive-js";
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { Address } from "viem";
 
@@ -17,14 +16,9 @@ export function useTotalClosedLongsValue({
   closedLongs: ClosedLong[] | undefined;
   enabled: boolean;
 }): { totalClosedLongsValue: bigint | undefined; isLoading: boolean } {
-  const readHyperdrive = useReadHyperdrive({
-    chainId: hyperdrive.chainId,
-    address: hyperdrive.address,
-  });
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
-  const queryEnabled =
-    !!account && !!closedLongs && !!readHyperdrive && enabled;
+  const queryEnabled = !!account && !!closedLongs && enabled;
 
   const { data: totalClosedLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalClosedLongsValue", {

@@ -23,14 +23,3 @@ export class ReadWriteEth extends ReadEth implements ReadWriteToken {
     );
   }
 }
-
-export interface MethodNotImplementedErrorOptions {
-  /**
-   * The name of the object that the method was not implemented in.
-   */
-  objectName: string;
-  /**
-   * The name of the method that was not implemented.
-   */
-  methodName: string;
-}
