@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-js",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "TypeScript SDK for the Hyperdrive AMM.",
   "license": "Apache-2.0",
   "author": "DELV (https://github.com/delvtech)",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.8",
-    "@delvtech/hyperdrive-artifacts": "^1.0.20",
+    "@delvtech/hyperdrive-artifacts": "^1.0.21",
     "@delvtech/hyperdrive-wasm": "^0.16.1",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
