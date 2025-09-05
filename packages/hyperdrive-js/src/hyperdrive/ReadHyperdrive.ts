@@ -2,6 +2,7 @@ import {
   Address,
   Block,
   BlockTag,
+  deleteMatches,
   EventLog,
   GetEventsOptions,
   ReadContract,
@@ -11,10 +12,6 @@ import {
 import { fixed } from "@delvtech/fixed-point-wasm";
 import retry from "p-retry";
 import { HyperdriveSdkError } from "src/HyperdriveSdkError";
-import { assertNever } from "src/base/assertNever";
-import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
-import { MAX_UINT256, NULL_BYTES, SECONDS_PER_YEAR } from "src/base/constants";
-import type { Merge } from "src/base/types";
 import { ReadContractClientOptions } from "src/drift/ContractClient";
 import { ReadClient } from "src/drift/ReadClient";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
@@ -42,6 +39,10 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/hyperdrive/withdrawalShares/assetI
 import { hyperwasm } from "src/hyperwasm";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
 import { ReadEth } from "src/token/eth/ReadEth";
+import { assertNever } from "src/utils/assertNever";
+import { calculateAprFromPrice } from "src/utils/calculateAprFromPrice";
+import { MAX_U256, NULL_BYTES, SECONDS_PER_YEAR } from "src/utils/constants";
+import type { Merge } from "src/utils/types";
 
 export interface ReadHyperdriveOptions extends ReadContractClientOptions {
   /**
@@ -69,7 +70,7 @@ export class ReadHyperdrive extends ReadClient {
     zapContractAddress,
     ...rest
   }: ReadHyperdriveOptions) {
-    super({ debugName, epochBlock, ...rest });
+    super({ debugName, ...rest });
     this.address = address;
     this.zapContractAddress = zapContractAddress;
     this.contract = this.drift.contract({
@@ -193,7 +194,11 @@ export class ReadHyperdrive extends ReadClient {
         if (!events.length || events[0].blockNumber === undefined) {
           // We need to clear the cache otherwise we'll get the same empty array
           // back from the cache.
-          this.contract.cache.clear();
+          const cacheKey = await this.contract.cache.eventsKey("Initialize");
+          await deleteMatches({
+            matchKey: cacheKey,
+            store: this.contract.cache.store,
+          });
           throw new HyperdriveSdkError(
             `Pool has not been initialized, no block found. ${this.address}`,
           );
@@ -739,8 +744,8 @@ export class ReadHyperdrive extends ReadClient {
     openLongEvents,
     closeLongEvents,
   }: {
-    openLongEvents: EventLog<HyperdriveAbi, "OpenLong">[];
-    closeLongEvents: EventLog<HyperdriveAbi, "CloseLong">[];
+    openLongEvents: readonly EventLog<HyperdriveAbi, "OpenLong">[];
+    closeLongEvents: readonly EventLog<HyperdriveAbi, "CloseLong">[];
   }): Long[] {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
@@ -987,8 +992,8 @@ export class ReadHyperdrive extends ReadClient {
     hyperdriveAddress: Address;
     checkpointDuration: bigint;
     positionDuration: bigint;
-    openShortEvents: EventLog<typeof hyperdriveAbi, "OpenShort">[];
-    closeShortEvents: EventLog<typeof hyperdriveAbi, "CloseShort">[];
+    openShortEvents: readonly EventLog<typeof hyperdriveAbi, "OpenShort">[];
+    closeShortEvents: readonly EventLog<typeof hyperdriveAbi, "CloseShort">[];
   }): Promise<OpenShort[]> {
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
@@ -1209,7 +1214,7 @@ export class ReadHyperdrive extends ReadClient {
     const maxBaseIn = hyperwasm.maxLong({
       poolInfo,
       poolConfig,
-      budget: MAX_UINT256,
+      budget: MAX_U256,
       checkpointExposure,
     });
 
@@ -1349,8 +1354,14 @@ export class ReadHyperdrive extends ReadClient {
     addLiquidityEvents,
     removeLiquidityEvents,
   }: {
-    addLiquidityEvents: EventLog<typeof hyperdriveAbi, "AddLiquidity">[];
-    removeLiquidityEvents: EventLog<typeof hyperdriveAbi, "RemoveLiquidity">[];
+    addLiquidityEvents: readonly EventLog<
+      typeof hyperdriveAbi,
+      "AddLiquidity"
+    >[];
+    removeLiquidityEvents: readonly EventLog<
+      typeof hyperdriveAbi,
+      "RemoveLiquidity"
+    >[];
   }) {
     const combinedEventsInOrder = [
       ...addLiquidityEvents,

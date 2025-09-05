@@ -13,8 +13,8 @@
     "deploy-multicall": "tsx -r dotenv/config scripts/deploy-multicall.ts"
   },
   "dependencies": {
-    "@delvtech/drift": "^1.0.0",
-    "@delvtech/drift-viem": "^1.0.0",
+    "@delvtech/drift": "^1.0.1",
+    "@delvtech/drift-viem": "^1.0.1",
     "@delvtech/fixed-point-wasm": "*",
     "@delvtech/hyperdrive-appconfig": "*",
     "@delvtech/hyperdrive-js": "*",

@@ -27,15 +27,13 @@ export async function getEventsWithSplitAndRetry<
   A extends Abi,
   E extends EventName<A>,
 >({
-  params,
   drift,
-  epochBlock = 0n,
+  params,
   retries = 3,
   backoff = (attempt: number) => 2 ** attempt * 100,
 }: {
-  params: GetEventsParams<A, E>;
   drift: Drift;
-  epochBlock?: bigint;
+  params: GetEventsParams<A, E>;
   /**
    * The maximum number of times to split failed event requests into smaller
    * requests before giving up.
@@ -93,7 +91,7 @@ export async function getEventsWithSplitAndRetry<
         } catch {
           // 4. Split on failure
           hadErrors = true;
-          const halves = await splitParams(drift, params, epochBlock);
+          const halves = await splitParams(drift, params);
           if (!halves) {
             // Throw if the params can't be split further
             throw new EventFetchError(chainId, chunks);
@@ -134,13 +132,9 @@ export async function getEventsWithSplitAndRetry<
 async function resolveRangeBlock(
   drift: Drift,
   block: RangeBlock | undefined,
-  epochBlock = 0n,
 ): Promise<bigint | undefined> {
   if (typeof block === "bigint") {
     return block;
-  }
-  if (block === "earliest") {
-    return epochBlock;
   }
   const { number } = await drift.getBlock(block);
   return number;
@@ -149,16 +143,15 @@ async function resolveRangeBlock(
 async function splitParams<A extends Abi, E extends EventName<A>>(
   drift: Drift,
   { fromBlock, toBlock, ...restParams }: GetEventsParams<A, E>,
-  epochBlock = 0n,
 ): Promise<[GetEventsParams<A, E>, GetEventsParams<A, E>] | null> {
   if (fromBlock === toBlock) {
     return null;
   }
-  fromBlock = await resolveRangeBlock(drift, fromBlock, epochBlock);
+  fromBlock = await resolveRangeBlock(drift, fromBlock);
   if (fromBlock === undefined) {
     return null;
   }
-  toBlock = await resolveRangeBlock(drift, toBlock, epochBlock);
+  toBlock = await resolveRangeBlock(drift, toBlock);
   if (toBlock === undefined || fromBlock >= toBlock) {
     return null;
   }

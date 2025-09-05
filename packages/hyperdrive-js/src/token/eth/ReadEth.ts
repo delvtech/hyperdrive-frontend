@@ -1,6 +1,7 @@
 import { ReadOptions } from "@delvtech/drift";
 import { ReadClient, ReadClientOptions } from "src/drift/ReadClient";
 import { ReadToken } from "src/token/ReadToken";
+import { MAX_U256 } from "src/utils/constants";
 
 export interface ReadEthOptions extends ReadClientOptions {}
 
@@ -31,8 +32,7 @@ export class ReadEth extends ReadClient implements ReadToken {
    * value to indicate the absence of an allowance mechanism for ETH.
    */
   async getAllowance(): Promise<bigint> {
-    // Max value for uint256
-    return 2n ** 256n - 1n;
+    return MAX_U256;
   }
 
   async getBalanceOf({

@@ -1,5 +1,5 @@
 import { Drift } from "@delvtech/drift";
-import { getEventsWithSplitAndRetry } from "src/base/getEventsWithSplitAndRetry";
+import { getEventsWithSplitAndRetry } from "src/drift/utils/getEventsWithSplitAndRetry";
 
 /**
  * The base options required for all read clients.
@@ -13,11 +13,6 @@ export interface ReadClientOptions {
    * behavior.
    */
   debugName?: string;
-
-  /**
-   * The earliest block number to use for event queries.
-   */
-  epochBlock?: bigint;
 
   /**
    * The maximum number of times to split failed event requests into smaller
@@ -48,29 +43,33 @@ export class ReadClient {
   constructor({
     debugName,
     drift,
-    epochBlock,
     eventQueryRetries = 3,
     eventQueryRetryBackoff = (attempt: number) => 2 ** attempt * 100,
   }: ReadClientOptions) {
     this.debugName = debugName ?? this.constructor.name;
     this.drift = drift;
 
-    // Add a hook to split failed requests into multiple smaller requests to
-    // accommodate block range and/or event count limits.
-    drift.hooks.on("before:getEvents", async ({ args, resolve }) => {
-      const [{ fromBlock, toBlock, ...restParams }] = args;
-      const events = await getEventsWithSplitAndRetry({
-        params: {
-          fromBlock,
-          toBlock,
-          ...restParams,
+    if (eventQueryRetries > 0) {
+      // Overwrite the getEvents method to split failed requests into multiple
+      // smaller requests to accommodate block range and/or event count limits.
+      drift.extend({
+        getEvents({
+          fromBlock = "earliest",
+          toBlock = "latest",
+          ...restParams
+        }) {
+          return getEventsWithSplitAndRetry({
+            params: {
+              fromBlock,
+              toBlock,
+              ...restParams,
+            },
+            drift,
+            retries: eventQueryRetries,
+            backoff: eventQueryRetryBackoff,
+          });
         },
-        drift,
-        epochBlock,
-        retries: eventQueryRetries,
-        backoff: eventQueryRetryBackoff,
       });
-      resolve(events);
-    });
+    }
   }
 }

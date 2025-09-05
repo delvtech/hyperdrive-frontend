@@ -17,7 +17,7 @@ export class ReadFactory extends ReadClient {
     epochBlock,
     ...rest
   }: ReadFactoryOptions) {
-    super({ debugName, epochBlock, ...rest });
+    super({ debugName, ...rest });
     this.address = address;
     this.contract = this.drift.contract({
       abi: factoryAbi,
@@ -53,17 +53,13 @@ export class ReadFactory extends ReadClient {
     /**
      * Only return deployer coordinators that deployed the given instances.
      */
-    instances?: Address[];
+    instances?: readonly Address[];
     options?: ReadOptions;
-  } = {}): Promise<Address[]> {
+  } = {}): Promise<readonly Address[]> {
     if (instances) {
-      const readOnlyAddresses = await this.contract.read(
-        "getDeployerCoordinatorByInstances",
-        {
-          __instances: instances,
-        },
-      );
-      return readOnlyAddresses.slice();
+      return this.contract.read("getDeployerCoordinatorByInstances", {
+        __instances: instances,
+      });
     }
 
     const count = await this.contract.read(
@@ -76,7 +72,7 @@ export class ReadFactory extends ReadClient {
       return [];
     }
 
-    const readOnlyAddresses = await this.contract.read(
+    return this.contract.read(
       "getDeployerCoordinatorsInRange",
       {
         _startIndex: 0n,
@@ -84,7 +80,6 @@ export class ReadFactory extends ReadClient {
       },
       options,
     );
-    return readOnlyAddresses.slice();
   }
 
   /**
@@ -106,14 +101,16 @@ export class ReadFactory extends ReadClient {
   /**
    * Get the address of all Hyperdrive instances deployed by the factory.
    */
-  async getInstanceAddresses(options?: ReadOptions): Promise<Address[]> {
+  async getInstanceAddresses(
+    options?: ReadOptions,
+  ): Promise<readonly Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
 
     if (count === 0n) {
       return [];
     }
 
-    const readOnlyAddresses = await this.contract.read(
+    return this.contract.read(
       "getInstancesInRange",
       {
         _startIndex: 0n,
@@ -121,6 +118,5 @@ export class ReadFactory extends ReadClient {
       },
       options,
     );
-    return readOnlyAddresses.slice();
   }
 }

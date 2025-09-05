@@ -104,8 +104,8 @@ export {
 
 // Base //
 
-export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
-export { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
-export { getHprFromApr } from "src/base/getHprFromApr";
-export { getHprFromApy } from "src/base/getHprFromApy";
-export type { Constructor } from "src/base/types";
+export { adjustAmountByPercentage } from "src/utils/adjustAmountByPercentage";
+export { calculateAprFromPrice } from "src/utils/calculateAprFromPrice";
+export { getHprFromApr } from "src/utils/getHprFromApr";
+export { getHprFromApy } from "src/utils/getHprFromApy";
+export type { Constructor } from "src/utils/types";

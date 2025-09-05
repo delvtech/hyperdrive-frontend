@@ -22,6 +22,16 @@
         "default": "./dist/index.js"
       }
     },
+    "./testing": {
+      "require": {
+        "types": "./dist/testing.d.cts",
+        "default": "./dist/testing.cjs"
+      },
+      "import": {
+        "types": "./dist/testing.d.ts",
+        "default": "./dist/testing.js"
+      }
+    },
     "./v1.0.14": {
       "require": {
         "types": "./dist/v1.0.14.d.cts",
@@ -42,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@delvtech/drift": "^1.0.0"
+    "@delvtech/drift": "^1.0.1"
   },
   "dependencies": {
     "@delvtech/fixed-point-wasm": "^0.0.8",
@@ -53,7 +63,7 @@
     "semver": "^7.6.3"
   },
   "devDependencies": {
-    "@delvtech/drift": "^1.0.0",
+    "@delvtech/drift": "^1.0.1",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
@@ -79,6 +89,9 @@
     "*": {
       ".": [
         "./dist/index.d.ts"
+      ],
+      "testing": [
+        "./dist/testing.js"
       ],
       "v1.0.14": [
         "./dist/v1.0.14.js"

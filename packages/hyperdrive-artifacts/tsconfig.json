@@ -5,7 +5,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist",
-    "module": "ESNext",
-    "target": "ESNext"
+    "module": "nodenext",
+    "target": "esnext"
   }
 }

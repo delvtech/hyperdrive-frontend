@@ -91,7 +91,7 @@ export class ReadWriteRegistry extends ReadRegistry {
    * Gets the instance info with associated metadata for a list of instances.
    */
   async getInstanceInfos(
-    instanceAddresses: Address[],
+    instanceAddresses: readonly Address[],
     options?: ReadOptions,
   ): Promise<ReadWriteInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(

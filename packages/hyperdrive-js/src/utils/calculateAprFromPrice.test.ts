@@ -1,4 +1,4 @@
-import { calculateAprFromPrice } from "src/base/calculateAprFromPrice";
+import { calculateAprFromPrice } from "src/utils/calculateAprFromPrice";
 import { expect, test } from "vitest";
 
 test("calculateAprFromPrice should return fixed rate an open long position is currently earning", async () => {

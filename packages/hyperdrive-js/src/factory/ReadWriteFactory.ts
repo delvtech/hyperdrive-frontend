@@ -32,6 +32,7 @@ export class ReadWriteFactory extends ReadFactory {
         new ReadWriteHyperdrive({
           address,
           drift: this.drift,
+          epochBlock: this.contract.epochBlock,
         }),
     );
   }

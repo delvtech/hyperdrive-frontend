@@ -5,12 +5,12 @@ import {
   ReadWriteContract,
   WriteOptions,
 } from "@delvtech/drift";
-import { NULL_BYTES } from "src/base/constants";
 import { ReadWriteContractClientOptions } from "src/drift/ContractClient";
 import { HyperdriveAbi } from "src/hyperdrive/abi";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 import { ReadWriteErc20 } from "src/token/erc20/ReadWriteErc20";
 import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
+import { NULL_BYTES } from "src/utils/constants";
 
 type ReadWriteParams<Args> = {
   args: Args;

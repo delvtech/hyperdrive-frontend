@@ -710,15 +710,15 @@
     viem "^2.27.2"
     zustand "5.0.3"
 
-"@delvtech/drift-viem@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-1.0.0.tgz#5cb91072d3b5c46e862a4e633cc2f07ae37d41aa"
-  integrity sha512-gWGdPWLrDKiQUQ0RStTEUvKdFsgqGacJIAZYQDvgBwh/xfhxWjEKZTFcTEksEX7W/RBBPjaNj07W/uZ0KnfDNA==
+"@delvtech/drift-viem@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift-viem/-/drift-viem-1.0.1.tgz#f65607bd3e369e8abc5d81de708b8d5165f1453d"
+  integrity sha512-HKLxEgfklOhoe1EKhaiOwgGInlG/Cm06X+mSmEWL8EHk01lwezqXi2ckr+mGLIcxH5wPIVwosUXpjYHco4Pycw==
 
-"@delvtech/drift@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-1.0.0.tgz#40448c6a361b6e3e64f6da380c0ff24a5c57644c"
-  integrity sha512-EkUsR67Nq9J1b/SQiwUMMLb2Sq/y/zOF4egZ414MTvvQEIIURMBvvdoy08ML8/hr2CjFkR9BnoY2MXX9soePmg==
+"@delvtech/drift@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/drift/-/drift-1.0.1.tgz#07375cf2922615c1f2e946b1ce688532ffe3b4e3"
+  integrity sha512-kSH96Z+8ySibHVyP+hW6FXdSSXDIFzVajH4lUwVJW/j5ODoVjEBdxWPzZiME5mf/dAvTn2r5Y8o0nF5wvW/HjQ==
   dependencies:
     lodash.ismatch "^4.4.0"
     lru-cache "^11.1.0"

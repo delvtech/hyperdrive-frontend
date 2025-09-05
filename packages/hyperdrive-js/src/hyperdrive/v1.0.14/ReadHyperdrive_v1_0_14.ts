@@ -1,10 +1,10 @@
 import { ReadOptions } from "@delvtech/drift";
 import { fixed } from "@delvtech/fixed-point-wasm";
-import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive";
+import { Constructor } from "src/utils/types";
 
 /**
  * A Hyperdrive instance that is compatible with Hyperdrive <= v1.0.14.

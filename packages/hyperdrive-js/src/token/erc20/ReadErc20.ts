@@ -16,7 +16,7 @@ export class ReadErc20 extends ReadClient implements ReadToken {
     epochBlock,
     ...rest
   }: ReadErc20Options) {
-    super({ debugName, epochBlock, ...rest });
+    super({ debugName, ...rest });
     this.contract = this.drift.contract({
       abi: erc20Abi,
       address,

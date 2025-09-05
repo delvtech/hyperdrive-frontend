@@ -25,8 +25,8 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@delvtech/drift": "^1.0.0",
-    "@delvtech/drift-viem": "^1.0.0",
+    "@delvtech/drift": "^1.0.1",
+    "@delvtech/drift-viem": "^1.0.1",
     "@delvtech/fixed-point-wasm": "^0.0.8",
     "@delvtech/hyperdrive-artifacts": "^1.0.21",
     "@delvtech/hyperdrive-js": "^1.0.0",

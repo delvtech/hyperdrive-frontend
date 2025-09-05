@@ -49,14 +49,16 @@ export class ReadRegistry extends ReadClient {
   /**
    * Get the address of all registered factories.
    */
-  async getFactoryAddresses(options?: ReadOptions): Promise<Address[]> {
+  async getFactoryAddresses(
+    options?: ReadOptions,
+  ): Promise<readonly Address[]> {
     const count = await this.contract.read("getNumberOfFactories", {}, options);
 
     if (count === 0n) {
       return [];
     }
 
-    const readOnlyAddresses = await this.contract.read(
+    return this.contract.read(
       "getFactoriesInRange",
       {
         _startIndex: 0n,
@@ -64,7 +66,6 @@ export class ReadRegistry extends ReadClient {
       },
       options,
     );
-    return readOnlyAddresses.slice();
   }
 
   /**
@@ -86,15 +87,14 @@ export class ReadRegistry extends ReadClient {
    * factories
    */
   async getFactoryInfos(
-    factoryAddresses: Address[],
+    factoryAddresses: readonly Address[],
     options?: ReadOptions,
-  ): Promise<FactoryInfoWithMetadata[]> {
-    const readonlyInfos = await this.contract.read(
+  ): Promise<readonly FactoryInfoWithMetadata[]> {
+    return this.contract.read(
       "getFactoryInfosWithMetadata",
       { __factories: factoryAddresses },
       options,
     );
-    return readonlyInfos.slice();
   }
 
   /**
@@ -116,14 +116,16 @@ export class ReadRegistry extends ReadClient {
   /**
    * Get the address of all Hyperdrive instances registered in the registry.
    */
-  async getInstanceAddresses(options?: ReadOptions): Promise<Address[]> {
+  async getInstanceAddresses(
+    options?: ReadOptions,
+  ): Promise<readonly Address[]> {
     const count = await this.contract.read("getNumberOfInstances", {}, options);
 
     if (count === 0n) {
       return [];
     }
 
-    const readOnlyAddresses = await this.contract.read(
+    return this.contract.read(
       "getInstancesInRange",
       {
         _startIndex: 0n,
@@ -131,7 +133,6 @@ export class ReadRegistry extends ReadClient {
       },
       options,
     );
-    return readOnlyAddresses.slice();
   }
 
   /**
@@ -160,7 +161,7 @@ export class ReadRegistry extends ReadClient {
    * Gets the instance info with associated metadata for a list of instances.
    */
   async getInstanceInfos(
-    instanceAddresses: Address[],
+    instanceAddresses: readonly Address[],
     options?: ReadOptions,
   ): Promise<ReadInstanceInfoWithMetadata[]> {
     const infos = await this.contract.read(
