@@ -37,7 +37,9 @@ export function usePortfolioLongsSnapshotData({
 
             await Promise.all(
               POSITIONS_SNAPSHOT.longs.map(async (long) => {
-                if (long.accountAddress !== account) {
+                if (
+                  long.accountAddress.toLowerCase() !== account.toLowerCase()
+                ) {
                   return;
                 }
 
