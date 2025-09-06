@@ -1,7 +1,6 @@
 import {
   AppConfig,
   getBaseToken,
-  getOpenShortRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
@@ -62,14 +61,6 @@ export function OpenShortsTableDesktop({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-  });
-  const poolHasRewards = hyperdrives.some((hyperdrive) => {
-    const rewardConfigs = getOpenShortRewardConfigs({
-      appConfig,
-      chainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
-    });
-    return !!rewardConfigs?.length;
   });
 
   if (!account) {
