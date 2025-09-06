@@ -15,6 +15,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { useAssetBalance } from "src/ui/hyperdrive/hooks/useAssetBalance";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
@@ -60,6 +61,13 @@ export function CloseShortForm({
     defaultItems.push(sharesToken);
   }
 
+  const { assetBalance = 0n } = useAssetBalance({
+    account,
+    assetId: short.assetId,
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
+  });
+
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
     tokenAddress: baseToken.address,
@@ -88,7 +96,7 @@ export function CloseShortForm({
 
   // You can't close an amount that's larger than the position size
   const isAmountLargerThanPositionSize = !!(
-    amountAsBigInt && amountAsBigInt > short.bondAmount
+    amountAsBigInt && amountAsBigInt > assetBalance
   );
   const { amountOut, flatPlusCurveFee, previewCloseShortStatus } =
     usePreviewCloseShort({
@@ -158,7 +166,7 @@ export function CloseShortForm({
             token={`hy${baseToken.symbol}`}
             value={amount ?? ""}
             maxValue={
-              short ? formatUnits(short.bondAmount, hyperdrive.decimals) : ""
+              short ? formatUnits(assetBalance, hyperdrive.decimals) : ""
             }
             onChange={(newAmount) => {
               window.plausible("formChange", {
@@ -177,9 +185,9 @@ export function CloseShortForm({
               <div className="flex flex-col text-xs text-neutral-content">
                 {short
                   ? `Balance: ${formatBalance({
-                      balance: short.bondAmount,
+                      balance: assetBalance,
                       decimals: hyperdrive.decimals,
-                      places: baseToken?.places,
+                      places: 4,
                     })}`
                   : undefined}
               </div>
