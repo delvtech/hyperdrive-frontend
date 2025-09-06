@@ -109,15 +109,15 @@ export function OpenShortsTableDesktop({
       />
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
-        {tableInstance.getRowModel().rows.map((row) => {
-          const modalId = `${row.original.hyperdriveAddress}-${row.original.assetId}`;
+        {tableInstance.getRowModel().rows.map(({ original }) => {
+          const modalId = `${original.hyperdrive.address}-${original.assetId}`;
           return (
             <CloseShortModalButton
               key={modalId}
               account={account}
-              hyperdrive={row.original.hyperdrive}
+              hyperdrive={original.hyperdrive}
               modalId={modalId}
-              short={row.original}
+              short={original}
             />
           );
         })}
