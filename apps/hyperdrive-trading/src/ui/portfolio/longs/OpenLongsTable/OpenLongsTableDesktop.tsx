@@ -25,8 +25,9 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
-import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { StatusCell } from "src/ui/hyperdrive/StatusCell";
+import { CurrentBalanceCell } from "src/ui/portfolio/CurrentBalanceCell";
 import { CurrentValueCell } from "src/ui/portfolio/longs/OpenLongsTable/CurrentValueCell";
 import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageLongsButton";
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
@@ -322,13 +323,20 @@ function getColumns({
     }),
     columnHelper.accessor("maturity", {
       id: "value",
-      header: `Status`,
+      header: "Status / Current Balance",
       cell: ({ row, getValue }) => {
         return (
-          <StatusCell
-            maturity={getValue()}
-            chainId={row.original.hyperdrive.chainId}
-          />
+          <div>
+            <StatusCell
+              maturity={getValue()}
+              chainId={row.original.hyperdrive.chainId}
+            />
+            <CurrentBalanceCell
+              account={account!}
+              hyperdrive={row.original.hyperdrive}
+              row={row.original}
+            />
+          </div>
         );
       },
     }),

@@ -1,6 +1,12 @@
 import "src/base/makeQueryKey";
 import { Address } from "viem";
 interface HyperdriveQueryKeys {
+  assetBalance: {
+    account: Address | undefined;
+    assetId: bigint;
+    hyperdriveAddress: Address;
+    chainId: number;
+  };
   unpausedPools: {
     chainId: number;
     filterPoolsWithoutRewards?: boolean;

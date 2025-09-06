@@ -24,7 +24,7 @@ import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChai
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
+import { StatusCell } from "src/ui/hyperdrive/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";

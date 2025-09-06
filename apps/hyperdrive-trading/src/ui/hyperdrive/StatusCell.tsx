@@ -29,7 +29,7 @@ export function StatusCell({
       className={classNames("flex w-28 items-center gap-2 font-inter", {
         "rounded-md border border-accent/20 bg-accent/20 px-[6px] py-[2px] text-accent":
           isTermComplete,
-        [statusCellClassName || "text-neutral-content"]: !isTermComplete,
+        [statusCellClassName || ""]: !isTermComplete,
       })}
     >
       {isTermComplete ? <CheckCircleIcon className="size-4" /> : null}
