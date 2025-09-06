@@ -28,7 +28,7 @@ export function useAssetBalance({
         account,
         assetId,
         chainId,
-        hyperdriveAddress: hyperdriveAddress,
+        hyperdriveAddress,
       },
     }),
     queryFn: queryEnabled
