@@ -25,12 +25,13 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
-import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { StatusCell } from "src/ui/hyperdrive/StatusCell";
+import { CurrentBalanceCell } from "src/ui/portfolio/CurrentBalanceCell";
 import { CurrentValueCell } from "src/ui/portfolio/longs/OpenLongsTable/CurrentValueCell";
 import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageLongsButton";
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
-import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { usePortfolioLongsSnapshotDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsSnapshotData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { Address } from "viem";
 
@@ -41,7 +42,7 @@ export function OpenLongsTableDesktop({
   hyperdrives: HyperdriveConfig[];
   account: Address | undefined;
 }): ReactElement | null {
-  const { openLongPositions } = usePortfolioLongsDataFromHyperdrives({
+  const { openLongPositions } = usePortfolioLongsSnapshotDataFromHyperdrives({
     hyperdrives,
     account,
   });
@@ -322,13 +323,20 @@ function getColumns({
     }),
     columnHelper.accessor("maturity", {
       id: "value",
-      header: `Status`,
+      header: "Status / Current Balance",
       cell: ({ row, getValue }) => {
         return (
-          <StatusCell
-            maturity={getValue()}
-            chainId={row.original.hyperdrive.chainId}
-          />
+          <div>
+            <StatusCell
+              maturity={getValue()}
+              chainId={row.original.hyperdrive.chainId}
+            />
+            <CurrentBalanceCell
+              account={account!}
+              hyperdrive={row.original.hyperdrive}
+              row={row.original}
+            />
+          </div>
         );
       },
     }),

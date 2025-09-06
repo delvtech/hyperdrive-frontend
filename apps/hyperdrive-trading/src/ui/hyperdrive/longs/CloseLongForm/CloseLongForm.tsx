@@ -21,10 +21,11 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { SwitchNetworksButton } from "src/ui/chains/SwitchChainButton/SwitchChainButton";
+import { useAssetBalance } from "src/ui/hyperdrive/hooks/useAssetBalance";
 import { InvalidTransactionButton } from "src/ui/hyperdrive/InvalidTransactionButton";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
+import { StatusCell } from "src/ui/hyperdrive/StatusCell";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useCloseLongZap } from "src/ui/hyperdrive/zaps/hooks/useCloseLongZap";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
@@ -60,6 +61,12 @@ export function CloseLongForm({
     hyperdriveAddress: hyperdrive.address,
     hyperdriveChainId: hyperdrive.chainId,
     appConfig,
+  });
+  const { assetBalance = 0n } = useAssetBalance({
+    account,
+    assetId: long.assetId,
+    hyperdriveAddress: hyperdrive.address,
+    chainId: hyperdrive.chainId,
   });
 
   const { isFlagEnabled: isZapsEnabled } = useFeatureFlag("zaps");
@@ -183,7 +190,7 @@ export function CloseLongForm({
   }
   // You can't close an amount that's larger than the position size
   const isAmountLargerThanPositionSize = !!(
-    bondAmountAsBigInt && bondAmountAsBigInt > long.bondAmount
+    bondAmountAsBigInt && bondAmountAsBigInt > assetBalance
   );
 
   const { closeLongZap } = useCloseLongZap({
@@ -232,7 +239,7 @@ export function CloseLongForm({
               token={`hy${baseToken.symbol}`}
               value={bondAmount ?? ""}
               maxValue={
-                long ? formatUnits(long.bondAmount, hyperdrive.decimals) : ""
+                long ? formatUnits(assetBalance, hyperdrive.decimals) : ""
               }
               onChange={(newAmount) => {
                 window.plausible("formChange", {
@@ -250,9 +257,9 @@ export function CloseLongForm({
               bottomRightElement={
                 <div className="flex flex-col gap-1 text-xs text-neutral-content">
                   {`Balance: ${formatBalance({
-                    balance: long.bondAmount,
+                    balance: assetBalance,
                     decimals: hyperdrive.decimals,
-                    places: baseToken.places,
+                    places: 4,
                   })}`}
                 </div>
               }

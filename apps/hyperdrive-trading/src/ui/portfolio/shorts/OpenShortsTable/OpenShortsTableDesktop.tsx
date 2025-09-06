@@ -1,7 +1,6 @@
 import {
   AppConfig,
   getBaseToken,
-  getOpenShortRewardConfigs,
   HyperdriveConfig,
 } from "@delvtech/hyperdrive-appconfig";
 import { OpenShort } from "@delvtech/hyperdrive-js";
@@ -21,15 +20,16 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { StatusCell } from "src/ui/hyperdrive/longs/StatusCell";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
+import { StatusCell } from "src/ui/hyperdrive/StatusCell";
+import { CurrentBalanceCell } from "src/ui/portfolio/CurrentBalanceCell";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/CurrentShortsValueCell";
 import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortsValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
-import { usePortfolioShortsDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsData";
+import { usePortfolioShortsSnapshotDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsSnapshotData";
 import { Address } from "viem";
 
 export function OpenShortsTableDesktop({
@@ -40,7 +40,7 @@ export function OpenShortsTableDesktop({
   account: Address | undefined;
 }): ReactElement | null {
   const appConfig = useAppConfigForConnectedChain();
-  const { openShortPositions } = usePortfolioShortsDataFromHyperdrives({
+  const { openShortPositions } = usePortfolioShortsSnapshotDataFromHyperdrives({
     hyperdrives,
     account,
   });
@@ -61,14 +61,6 @@ export function OpenShortsTableDesktop({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-  });
-  const poolHasRewards = hyperdrives.some((hyperdrive) => {
-    const rewardConfigs = getOpenShortRewardConfigs({
-      appConfig,
-      chainId: hyperdrive.chainId,
-      hyperdriveAddress: hyperdrive.address,
-    });
-    return !!rewardConfigs?.length;
   });
 
   if (!account) {
@@ -108,15 +100,15 @@ export function OpenShortsTableDesktop({
       />
       <div className="daisy-card overflow-x-clip rounded-box bg-gray-750 pt-3">
         {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
-        {tableInstance.getRowModel().rows.map((row) => {
-          const modalId = `${row.original.hyperdriveAddress}-${row.original.assetId}`;
+        {tableInstance.getRowModel().rows.map(({ original }) => {
+          const modalId = `${original.hyperdrive.address}-${original.assetId}`;
           return (
             <CloseShortModalButton
               key={modalId}
               account={account}
-              hyperdrive={row.original.hyperdrive}
+              hyperdrive={original.hyperdrive}
               modalId={modalId}
-              short={row.original}
+              short={original}
             />
           );
         })}
@@ -288,13 +280,20 @@ function getColumns({
     }),
     columnHelper.display({
       id: "status",
-      header: `Status`,
+      header: "Status / Current Balance",
       cell: ({ row }) => {
         return (
-          <StatusCell
-            chainId={row.original.hyperdrive.chainId}
-            maturity={row.original.maturity}
-          />
+          <div>
+            <StatusCell
+              chainId={row.original.hyperdrive.chainId}
+              maturity={row.original.maturity}
+            />
+            <CurrentBalanceCell
+              account={account!}
+              hyperdrive={row.original.hyperdrive}
+              row={row.original}
+            />
+          </div>
         );
       },
     }),
