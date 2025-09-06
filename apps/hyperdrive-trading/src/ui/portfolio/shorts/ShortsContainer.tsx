@@ -8,7 +8,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { OpenShortsTableDesktop } from "src/ui/portfolio/shorts/OpenShortsTable/OpenShortsTableDesktop";
-import { usePortfolioShortsData } from "src/ui/portfolio/shorts/usePortfolioShortsData";
+import { usePortfolioShortsSnapshotData } from "src/ui/portfolio/shorts/usePortfolioShortsSnapshotData";
 import { Address } from "viem";
 
 export function OpenShortsContainer({
@@ -17,7 +17,7 @@ export function OpenShortsContainer({
   account: Address | undefined;
 }): ReactElement | null {
   const { openShortPositions, openShortPositionsStatus } =
-    usePortfolioShortsData({ account });
+    usePortfolioShortsSnapshotData({ account });
   const appConfig = useAppConfigForConnectedChain();
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,

@@ -29,7 +29,7 @@ import { CurrentShortsValueCell } from "src/ui/portfolio/shorts/OpenShortsTable/
 import { ManageShortButton } from "src/ui/portfolio/shorts/OpenShortsTable/ManageShortButton";
 import { ShortRateAndSizeCell } from "src/ui/portfolio/shorts/OpenShortsTable/ShortRateAndSizeCell";
 import { TotalOpenShortsValue } from "src/ui/portfolio/shorts/OpenShortsTable/TotalOpenShortsValue";
-import { usePortfolioShortsDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsData";
+import { usePortfolioShortsSnapshotDataFromHyperdrives } from "src/ui/portfolio/shorts/usePortfolioShortsSnapshotData";
 import { Address } from "viem";
 
 export function OpenShortsTableDesktop({
@@ -40,7 +40,7 @@ export function OpenShortsTableDesktop({
   account: Address | undefined;
 }): ReactElement | null {
   const appConfig = useAppConfigForConnectedChain();
-  const { openShortPositions } = usePortfolioShortsDataFromHyperdrives({
+  const { openShortPositions } = usePortfolioShortsSnapshotDataFromHyperdrives({
     hyperdrives,
     account,
   });

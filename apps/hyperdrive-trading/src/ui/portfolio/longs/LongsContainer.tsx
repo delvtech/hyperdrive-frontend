@@ -5,7 +5,7 @@ import { ExternalLink } from "src/ui/analytics/ExternalLink";
 import { useAppConfigForConnectedChain } from "src/ui/appconfig/useAppConfigForConnectedChain";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { usePortfolioLongsData } from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { usePortfolioLongsSnapshotData } from "src/ui/portfolio/longs/usePortfolioLongsSnapshotData";
 import { NoWalletConnected } from "src/ui/portfolio/NoWalletConnected";
 import { PositionContainer } from "src/ui/portfolio/PositionContainer";
 import { Address } from "viem";
@@ -17,9 +17,10 @@ export function OpenLongsContainer({
   account: Address | undefined;
 }): ReactElement {
   const appConfig = useAppConfigForConnectedChain();
-  const { openLongPositions, openLongPositionsStatus } = usePortfolioLongsData({
-    account,
-  });
+  const { openLongPositions, openLongPositionsStatus } =
+    usePortfolioLongsSnapshotData({
+      account,
+    });
 
   const hyperdrivesByChainAndYieldSource = groupBy(
     appConfig.hyperdrives,
@@ -75,7 +76,7 @@ export function OpenLongsContainer({
   return (
     <PositionContainer className="mt-10">
       {Object.entries(hyperdrivesByChainAndYieldSource).map(
-        ([key, hyperdrives], i) => (
+        ([, hyperdrives], i) => (
           <OpenLongsTableDesktop
             key={i}
             hyperdrives={hyperdrives}

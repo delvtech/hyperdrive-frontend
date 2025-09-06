@@ -30,7 +30,7 @@ import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
 import { CurrentValueCell } from "src/ui/portfolio/longs/OpenLongsTable/CurrentValueCell";
 import { ManageLongsButton } from "src/ui/portfolio/longs/OpenLongsTable/ManageLongsButton";
 import { TotalOpenLongsValue } from "src/ui/portfolio/longs/TotalOpenLongsValue/TotalOpenLongsValue";
-import { usePortfolioLongsDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsData";
+import { usePortfolioLongsSnapshotDataFromHyperdrives } from "src/ui/portfolio/longs/usePortfolioLongsSnapshotData";
 import { PositionTableHeading } from "src/ui/portfolio/PositionTableHeading";
 import { Address } from "viem";
 
@@ -41,7 +41,7 @@ export function OpenLongsTableDesktop({
   hyperdrives: HyperdriveConfig[];
   account: Address | undefined;
 }): ReactElement | null {
-  const { openLongPositions } = usePortfolioLongsDataFromHyperdrives({
+  const { openLongPositions } = usePortfolioLongsSnapshotDataFromHyperdrives({
     hyperdrives,
     account,
   });
