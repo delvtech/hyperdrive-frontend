@@ -1,6 +1,7 @@
+import { hyperdriveAbi } from "@delvtech/hyperdrive-js";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey2 } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useDrift } from "src/ui/drift/useDrift";
 import { Address } from "viem";
 
 export function useAssetBalance({
@@ -17,11 +18,8 @@ export function useAssetBalance({
   assetBalance: bigint | undefined;
   assetBalanceStatus: QueryStatus;
 } {
-  const readHyperdrive = useReadHyperdrive({
-    chainId,
-    address: hyperdriveAddress,
-  });
-  const queryEnabled = !!account && !!readHyperdrive;
+  const drift = useDrift({ chainId });
+  const queryEnabled = !!account && !!drift;
   const { data, status } = useQuery({
     queryKey: makeQueryKey2({
       namespace: "hyperdrive",
@@ -35,9 +33,14 @@ export function useAssetBalance({
     }),
     queryFn: queryEnabled
       ? async () =>
-          readHyperdrive.contract.read("balanceOf", {
-            owner: account,
-            tokenId: assetId,
+          drift.read({
+            address: hyperdriveAddress,
+            abi: hyperdriveAbi,
+            fn: "balanceOf",
+            args: {
+              owner: account,
+              tokenId: assetId,
+            },
           })
       : undefined,
     enabled: queryEnabled,
