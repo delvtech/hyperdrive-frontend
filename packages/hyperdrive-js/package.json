@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript SDK for the Hyperdrive AMM.",
   "license": "Apache-2.0",
   "author": "DELV (https://github.com/delvtech)",

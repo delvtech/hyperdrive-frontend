@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js
 
+## 1.0.1
+
+### Patch Changes
+
+- cea340e: Added `MockHyperdrive` client and misc. cleanup.
+
 ## 1.0.0
 
 ### Major Changes
