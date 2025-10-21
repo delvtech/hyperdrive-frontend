@@ -158,7 +158,7 @@ console.log(
 );
 await addRewardTokenConfigs({ appConfig: combinedAppConfig });
 
-// Occassionally Hyperdrives have been added to the registry, but the frontend work is not complete.
+// Occasionally Hyperdrives have been added to the registry, but the frontend work is not complete.
 // Skipping these allows us to continue to push releases without showing these pools in the UI.
 console.log(
   `\n${chalk.white(chalk.underline("Removing hyperdrives that have been added to the registry but we don't want to show in the UI"))}`,
